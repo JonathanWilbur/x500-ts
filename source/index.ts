@@ -3,7 +3,6 @@ export * from "./modules/AttributeCertificateDefinitions/index";
 export * from "./modules/AuthenticationFramework/index";
 export * from "./modules/CertificateExtensions/index";
 export * from "./modules/InformationFramework/index";
-export * from "./modules/MTSAbstractService/index";
 export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";
