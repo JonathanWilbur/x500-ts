@@ -1,0 +1,3 @@
+/**
+ * `MRMappings ::= SEQUENCE OF MRMapping`
+ */

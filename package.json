@@ -1,0 +1,63 @@
+{
+    "bugs": {
+        "email": "jonathan@wilbur.space"
+    },
+    "contributors": [
+        {
+            "email": "jonathan@wilbur.space",
+            "name": "Jonathan M. Wilbur",
+            "url": "https://github.com/JonathanWilbur"
+        }
+    ],
+    "description": "X.500 Directory / X.509 PKI Certificates and CRLs",
+    "devDependencies": {
+        "@babel/core": "^7.6.4",
+        "@babel/preset-env": "^7.6.3",
+        "@babel/preset-typescript": "^7.6.0",
+        "@types/node": "^12.7.12",
+        "@typescript-eslint/eslint-plugin": "^2.3.3",
+        "@typescript-eslint/parser": "^2.3.3",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.5.1",
+        "jest": "^24.9.0",
+        "jest-junit": "^7.0.0",
+        "serverless": "^1.54.0",
+        "ts-loader": "^6.2.0",
+        "typescript": "^3.6.4",
+        "webpack": "^4.41.1",
+        "webpack-cli": "^3.3.9"
+    },
+    "directories": {
+        "doc": "documentation",
+        "test": "test"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "keywords": [
+        "X.500",
+        "X500",
+        "Directory",
+        "X.509",
+        "TLS",
+        "Certificate",
+        "LDAP",
+        "CRL"
+    ],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "name": "x500-ts",
+    "scripts": {
+        "build": "npx tsc && npx webpack",
+        "clean": "rm -rf dist; mkdir -p dist",
+        "deploy-functions": "npx sls deploy",
+        "lint": "npx eslint --config .eslintrc.yml './source/**/*.ts' || true",
+        "remove-functions": "npx sls remove",
+        "test": "npx jest --ci --reporters=default --reporters=jest-junit"
+    },
+    "types": "./dist/index.d.ts",
+    "version": "0.1.0",
+    "dependencies": {
+        "asn1-ts": "^2.0.0"
+    }
+}

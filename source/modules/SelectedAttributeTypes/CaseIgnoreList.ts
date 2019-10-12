@@ -1,0 +1,3 @@
+/**
+ * `CaseIgnoreList ::= SEQUENCE OF UnboundedDirectoryString`
+ */
