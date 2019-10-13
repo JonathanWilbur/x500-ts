@@ -10,3 +10,4 @@ export { default as Holder } from "./Holder";
 export { default as IssuerSerial } from "./IssuerSerial";
 export { default as ObjectDigestInfo } from "./ObjectDigestInfo";
 export { default as TBSAttributeCertificate } from "./TBSAttributeCertificate";
+export { default as TargetCert } from "./TargetCert";

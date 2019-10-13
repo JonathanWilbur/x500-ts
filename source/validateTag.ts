@@ -18,12 +18,12 @@ export default function validateTag (
             2: "CONTEXT-SPECIFIC",
             3: "PRIVATE",
         })[element.tagClass];
-        throw new errors.X500Error(`Invalid tag class on ${name}. Actual class: ${tagClassName}.`);
+        throw new errors.X500Error(`Invalid tag class on ${name}. Actual class: ${tagClassName}. Element bytes: ${element.toBytes()}.`);
     }
-    case -2: throw new errors.X500Error(`Invalid construction on ${name}.`);
+    case -2: throw new errors.X500Error(`Invalid construction on ${name}. Element bytes: ${element.toBytes()}.`);
     case -3: throw new errors.X500Error(
-        `Invalid tag number on ${name}. Actual number was ${element.tagNumber}.`,
+        `Invalid tag number on ${name}. Actual number was ${element.tagNumber}. Element bytes: ${element.toBytes()}.`,
     );
-    default: throw new errors.X500Error(`Undefined error when validating ${name} tag.`);
+    default: throw new errors.X500Error(`Undefined error when validating ${name} tag. Element bytes: ${element.toBytes()}.`);
     }
 }

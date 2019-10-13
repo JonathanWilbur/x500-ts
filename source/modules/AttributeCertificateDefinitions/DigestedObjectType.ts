@@ -7,7 +7,7 @@
 //     digestAlgorithm     AlgorithmIdentifier{{SupportedAlgorithms}},
 //     objectDigest        BIT STRING,
 //     ... }
-const enum DigestedObjectType {
+enum DigestedObjectType {
     publicKey = 0,
     publicKeyCert = 1,
     otherObjectTypes = 2,
