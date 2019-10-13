@@ -88,7 +88,6 @@ import * as errors from "../../errors";
 //     ...
 //   }
 
-// toString()
 // UnboundedDirectoryString ::= CHOICE {
 //     teletexString    TeletexString(SIZE (1..MAX)),
 //     printableString  PrintableString(SIZE (1..MAX)),

@@ -16,6 +16,9 @@
 - [ ] Cease use of `Element.validateTag`.
 - [ ] Find some interface you can implement
 - [ ] See if you can implement methods on type aliases or implement them as classes gracefully.
+- [ ] ASN.1 library
+  - [ ] Support BigInt
+  - [ ] Support Passing in undefined elements in array to sequence and set.
 - [ ] Certificate Extensions
   - [x] authorityKeyIdentifier
   - [ ] keyAttributes
