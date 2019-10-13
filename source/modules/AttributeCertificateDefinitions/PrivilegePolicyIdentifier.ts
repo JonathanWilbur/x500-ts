@@ -1,4 +1,4 @@
-// import PrivilegePolicy from "./PrivilegePolicy";
+import PrivilegePolicy from "./PrivilegePolicy";
 // import
 /**
  * PrivilegePolicyIdentifier ::= SEQUENCE {
@@ -6,8 +6,8 @@
  *   privPolSyntax    InfoSyntax,
  *   ... }
  */
-// export default class PrivilegePolicyIdentifier {
-//     constructor (
-//         readonly privilegePolicy
-//     ) {}
-// }
+export default class PrivilegePolicyIdentifier {
+    constructor (
+        readonly privilegePolicy: PrivilegePolicy
+    ) {}
+}

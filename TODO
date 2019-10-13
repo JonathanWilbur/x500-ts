@@ -19,6 +19,8 @@
 - [ ] ASN.1 library
   - [ ] Support BigInt
   - [ ] Support Passing in undefined elements in array to sequence and set.
+  - [ ] Create `fromSequence` and `fromSet` methods.
+  - [ ] Extend the constructor for ASN1Element to take an additional `Uint8Array` or some other type.
 - [ ] Certificate Extensions
   - [x] authorityKeyIdentifier
   - [ ] keyAttributes

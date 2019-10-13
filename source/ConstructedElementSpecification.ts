@@ -3,7 +3,7 @@ import { ASN1Element, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "
 export default
 interface ConstructedElementSpecification {
     name: string;
-    optional: boolean;
+    optional?: boolean;
     tagClass?: ASN1TagClass;
     construction?: ASN1Construction;
     tagNumber?: ASN1UniversalType;

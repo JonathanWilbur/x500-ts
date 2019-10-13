@@ -1,7 +1,6 @@
 import IssuerSerial from "./IssuerSerial";
 import ObjectDigestInfo from "./ObjectDigestInfo";
 import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
-import * as errors from "../../errors";
 import GeneralName from "../CertificateExtensions/GeneralName";
 // import validateTag from '../../validateTag';
 import validateConstruction from "../../validateConstruction";
@@ -19,7 +18,7 @@ export default class TargetCert {
         readonly certDigestInfo: ObjectDigestInfo | undefined,
     ) {}
 
-    public static fromElement2 (value: DERElement): TargetCert {
+    public static fromElement (value: DERElement): TargetCert {
         let targetCertificate!: IssuerSerial;
         let targetName: GeneralName | undefined = undefined;
         let certDigestInfo: ObjectDigestInfo | undefined = undefined;
@@ -53,81 +52,12 @@ export default class TargetCert {
                 },
             },
         ];
-
-        validateConstruction(value, specification);
-
-        // const targetCertElements: DERElement[] = value.sequence;
-        // let i: number = 0;
-        // const failOrContinue = (spec: { name: string; optional: boolean }): void => {
-        //     if (!spec.optional) {
-        //         throw new errors.X500Error(
-        //             `Missing '${spec.name}'.`
-        //         );
-        //     }
-        // };
-        // specification.forEach(spec => {
-        //     if (
-        //         (i >= targetCertElements.length)
-        //         || (spec.tagClass && spec.tagClass !== targetCertElements[i].tagClass)
-        //         || (spec.construction && spec.construction !== targetCertElements[i].construction)
-        //         || (spec.tagNumber && spec.tagNumber !== targetCertElements[i].tagNumber)
-        //     ) {
-        //         failOrContinue(spec);
-        //         return;
-        //     }
-        //     spec.callback(targetCertElements[i++]);
-        // });
-
+        validateConstruction(value.sequence, specification);
         return new TargetCert(
             targetCertificate,
             targetName,
             certDigestInfo,
         );
-    }
-
-    public static fromElement (value: DERElement): TargetCert {
-        const targetCertElements: DERElement[] = value.sequence;
-
-        switch (targetCertElements.length) {
-        case (1): {
-            return new TargetCert(
-                IssuerSerial.fromElement(targetCertElements[0]),
-                undefined,
-                undefined,
-            );
-        }
-        case (2): {
-            if (
-                targetCertElements[1].tagClass === ASN1TagClass.universal
-                && targetCertElements[1].construction === ASN1Construction.constructed
-                && targetCertElements[1].tagNumber === ASN1UniversalType.sequence
-            ) {
-                return new TargetCert(
-                    IssuerSerial.fromElement(targetCertElements[0]),
-                    undefined,
-                    ObjectDigestInfo.fromElement(targetCertElements[1]),
-                );
-            } else if (targetCertElements[1].tagClass === ASN1TagClass.context) {
-                return new TargetCert(
-                    IssuerSerial.fromElement(targetCertElements[0]),
-                    targetCertElements[1],
-                    undefined,
-                );
-            } else {
-                throw new errors.X500Error("Malformed TargetCert.");
-            }
-        }
-        case (3): {
-            return new TargetCert(
-                IssuerSerial.fromElement(targetCertElements[0]),
-                targetCertElements[1],
-                ObjectDigestInfo.fromElement(targetCertElements[2]),
-            );
-        }
-        default: {
-            throw new errors.X500Error("Invalid number of elements in TargetCert.");
-        }
-        }
     }
 
     public toElement (): DERElement {
