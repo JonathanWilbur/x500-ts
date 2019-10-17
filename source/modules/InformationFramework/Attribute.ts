@@ -30,11 +30,9 @@ class Attribute {
     ) {}
 
     public static fromElement (value: DERElement): Attribute {
-        validateTag(value, "Attribute",
-            [ ASN1TagClass.universal ],
-            [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ],
-        );
+        if (value.construction !== ASN1Construction.constructed) {
+            throw new errors.X500Error("Attribute was not of constructed construction.");
+        }
         const attributeElements: DERElement[] = value.sequence;
         if (attributeElements.length < 2) {
             throw new errors.X500Error(`Invalid number of elements in Attribute: ${attributeElements.length}.`);

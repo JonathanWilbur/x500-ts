@@ -6,9 +6,6 @@
 - [ ] Add static print to almost anything
 - [ ] Make sure that each root constructed element is validated
 - [ ] PolicyQualifierInfo.qualified
-- [ ] Put these in an x501 library:
-  - [ ] PkiPMIProtocolSpecifications
-  - [ ] PkiPmiWrapper
 - [ ] Make fromBytes static
 - [ ] Experiment with making a `SIGNED` object instead of using a separate
       `Certificate`, `AttributeCertificate`, `CertificateList`.
@@ -16,11 +13,11 @@
 - [ ] Cease use of `Element.validateTag`.
 - [ ] Find some interface you can implement
 - [ ] See if you can implement methods on type aliases or implement them as classes gracefully.
-- [ ] ASN.1 library
-  - [ ] Support BigInt
-  - [ ] Support Passing in undefined elements in array to sequence and set.
-  - [ ] Create `fromSequence` and `fromSet` methods.
-  - [ ] Extend the constructor for ASN1Element to take an additional `Uint8Array` or some other type.
+- [ ] Resolve issues with duplicated defintions:
+  - [ ] GeneralSubtree
+  - [ ] GeneralSubtrees
+  - [ ] BaseDistance
+  - [ ] CertPolicyId
 - [ ] Certificate Extensions
   - [x] authorityKeyIdentifier
   - [ ] keyAttributes
