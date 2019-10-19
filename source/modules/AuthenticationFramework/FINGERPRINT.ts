@@ -3,21 +3,21 @@ import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Elem
 import validateConstruction from "../../validateConstruction";
 
 /**
- * `SIGNATURE ::= SEQUENCE {
- *     algorithmIdentifier  AlgorithmIdentifier{{SupportedAlgorithms}},
- *     signature            BIT STRING,
- *     ... }`
+ * `FINGERPRINT {ToBeFingerprinted} ::= SEQUENCE {
+ *   algorithmIdentifier  AlgorithmIdentifier{{SupportedAlgorithms}},
+ *   fingerprint          BIT STRING,
+ *   ... }`
  */
 export default
-class SIGNATURE {
+class FINGERPRINT {
     constructor (
         readonly algorithmIdentifier: AlgorithmIdentifier,
-        readonly signature: boolean[],
+        readonly fingerprint: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): SIGNATURE {
+    public static fromElement (value: DERElement): FINGERPRINT {
         let algorithmIdentifier!: AlgorithmIdentifier;
-        let signature!: boolean[];
+        let fingerprint!: boolean[];
         const specification = [
             {
                 name: "algorithmIdentifier",
@@ -30,28 +30,28 @@ class SIGNATURE {
                 },
             },
             {
-                name: "signature",
+                name: "fingerprint",
                 optional: true,
                 tagClass: ASN1TagClass.context,
                 callback: (el: ASN1Element): void => {
-                    signature = el.bitString;
+                    fingerprint = el.bitString;
                 },
             },
         ];
         validateConstruction([ value ], specification);
-        return new SIGNATURE(
+        return new FINGERPRINT(
             algorithmIdentifier,
-            signature,
+            fingerprint,
         );
     }
 
     public toElement (): DERElement {
-        const signatureValueElement: DERElement = new DERElement(
+        const fingerprintValueElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
             ASN1UniversalType.bitString,
         );
-        signatureValueElement.bitString = this.signature;
+        fingerprintValueElement.bitString = this.fingerprint;
         const signatureElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
@@ -59,15 +59,15 @@ class SIGNATURE {
         );
         signatureElement.sequence = [
             this.algorithmIdentifier.toElement(),
-            signatureValueElement,
+            fingerprintValueElement,
         ];
         return signatureElement;
     }
 
-    public static fromBytes (value: Uint8Array): SIGNATURE {
+    public static fromBytes (value: Uint8Array): FINGERPRINT {
         const el: DERElement = new DERElement();
         el.fromBytes(value);
-        return SIGNATURE.fromElement(el);
+        return FINGERPRINT.fromElement(el);
     }
 
     public toBytes (): Uint8Array {

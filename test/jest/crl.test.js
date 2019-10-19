@@ -16,18 +16,14 @@ describe("Certificate Revocation List", () => {
             new x509.AlgorithmIdentifier(
                 new asn1.ObjectIdentifier([ 1, 2, 3 ]),
             ),
-            new x509.RDNSequence(
+            [
                 [
-                    new x509.RelativeDistinguishedName(
-                        [
-                            new x509.AttributeTypeAndValue(
-                                new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
-                                issuer,
-                            ),
-                        ],
+                    new x509.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        issuer,
                     ),
                 ],
-            ),
+            ],
             new Date(),
             new Date() + 1000,
             [

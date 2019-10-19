@@ -1,3 +1,7 @@
-// CertPolicyId ::= OBJECT IDENTIFIER
-type CertPolicyId = Uint8Array;
+import { ObjectIdentifier } from "asn1-ts";
+
+/**
+ * `CertPolicyId ::= OBJECT IDENTIFIER`
+ */
+type CertPolicyId = ObjectIdentifier;
 export default CertPolicyId;

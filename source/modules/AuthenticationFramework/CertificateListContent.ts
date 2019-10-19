@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import Version from "./Version";
@@ -6,7 +6,8 @@ import CertificateSerialNumber from "../AuthenticationFramework/CertificateSeria
 import AlgorithmIdentifier from "../AuthenticationFramework/AlgorithmIdentifier";
 import Extensions from "../AuthenticationFramework/Extensions";
 import { Extension } from "../AuthenticationFramework";
-import RDNSequence from "../InformationFramework/RDNSequence";
+import RelativeDistinguishedName from "../InformationFramework/RelativeDistinguishedName";
+import AttributeTypeAndValue from "../InformationFramework/AttributeTypeAndValue";
 import Name from "../InformationFramework/Name";
 
 // CertificateListContent ::= SEQUENCE {
@@ -69,7 +70,23 @@ class CertificateListContent {
         }
 
         const signature: AlgorithmIdentifier = AlgorithmIdentifier.fromElement(attributeCertificateElements[encounteredElements++]);
-        const issuer: Name = RDNSequence.fromElement(attributeCertificateElements[encounteredElements++]);
+        const issuer: Name = attributeCertificateElements[encounteredElements++].sizeConstrainedSequenceOf(1)
+            .map((rdnElement: ASN1Element, rdnIndex: number): RelativeDistinguishedName => {
+                validateTag(rdnElement as DERElement, `issuer[${rdnIndex}]`,
+                    [ ASN1TagClass.universal ],
+                    [ ASN1Construction.constructed ],
+                    [ ASN1UniversalType.set ],
+                );
+                return rdnElement.sizeConstrainedSetOf(1)
+                    .map((atavElement: ASN1Element, atavIndex: number): AttributeTypeAndValue => {
+                        validateTag(atavElement as DERElement, `issuer[${rdnIndex}][${atavIndex}]`,
+                            [ ASN1TagClass.universal ],
+                            [ ASN1Construction.constructed ],
+                            [ ASN1UniversalType.sequence ],
+                        );
+                        return AttributeTypeAndValue.fromElement(atavElement as DERElement);
+                    });
+            });
 
         validateTag(attributeCertificateElements[encounteredElements], "CertificateListContent.thisUpdate",
             [ ASN1TagClass.universal ],
@@ -244,7 +261,9 @@ class CertificateListContent {
         certificateListContentElements.push(versionElement);
 
         certificateListContentElements.push(this.signature.toElement());
-        certificateListContentElements.push(this.issuer.toElement());
+        certificateListContentElements.push(DERElement.fromSequence(
+            this.issuer.map((rdn) => DERElement.fromSet(rdn.map((atav) => atav.toElement()))),
+        ));
 
         const thisUpdateElement: DERElement = new DERElement();
         if (this.thisUpdate.getFullYear() >= 2050) {

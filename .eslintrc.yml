@@ -153,9 +153,9 @@ rules:
     - error
   no-path-concat:
     - error
+  # There are just too many places where I need this in this library.
   max-params:
-    - warn
-    - 5
+    - off
   no-lonely-if:
     - error
   no-mixed-operators:

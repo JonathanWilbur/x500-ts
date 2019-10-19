@@ -31,34 +31,26 @@ describe("Issue #1 - TBSCertificate.toElement() adding subject and issuer", () =
                 new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
                 new asn1.DERElement(),
             ),
-            new x509.RDNSequence(
+            [
                 [
-                    new x509.RelativeDistinguishedName(
-                        [
-                            new x509.AttributeTypeAndValue(
-                                new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
-                                issuer,
-                            ),
-                        ],
+                    new x509.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        issuer,
                     ),
                 ],
-            ),
+            ],
             new x509.Validity(
                 new Date(),
                 new Date(),
             ),
-            new x509.RDNSequence(
+            [
                 [
-                    new x509.RelativeDistinguishedName(
-                        [
-                            new x509.AttributeTypeAndValue(
-                                new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
-                                subject,
-                            ),
-                        ],
+                    new x509.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        subject,
                     ),
                 ],
-            ),
+            ],
             new x509.SubjectPublicKeyInfo(
                 new x509.AlgorithmIdentifier(
                     new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
@@ -181,34 +173,26 @@ describe("Issue #7 - KeyIdentifier is included in encoded output", () => {
                 new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),
                 new asn1.DERElement(),
             ),
-            new x509.RDNSequence(
+            [
                 [
-                    new x509.RelativeDistinguishedName(
-                        [
-                            new x509.AttributeTypeAndValue(
-                                new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
-                                issuer,
-                            ),
-                        ],
+                    new x509.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        issuer,
                     ),
                 ],
-            ),
+            ],
             new x509.Validity(
                 new Date(),
                 new Date(),
             ),
-            new x509.RDNSequence(
+            [
                 [
-                    new x509.RelativeDistinguishedName(
-                        [
-                            new x509.AttributeTypeAndValue(
-                                new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
-                                subject,
-                            ),
-                        ],
+                    new x509.AttributeTypeAndValue(
+                        new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]), // commonName
+                        subject,
                     ),
                 ],
-            ),
+            ],
             new x509.SubjectPublicKeyInfo(
                 new x509.AlgorithmIdentifier(
                     new asn1.ObjectIdentifier([ 1, 2, 3, 4 ]),

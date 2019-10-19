@@ -1,6 +1,6 @@
 import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
 import EDIPartyName from "./EDIPartyName";
-import { RDNSequence } from "../InformationFramework";
+import AttributeTypeAndValue from "../InformationFramework/AttributeTypeAndValue";
 import * as errors from "../../errors";
 
 // GeneralName ::= CHOICE {
@@ -153,8 +153,11 @@ function printGeneralName (value: DERElement): string {
         return ""; // TODO:
     }
     case (4): { // directoryName
-        const rdn: RDNSequence = RDNSequence.fromElement(value);
-        return rdn.toString();
+        return value.sizeConstrainedSequenceOf(1)
+            .map((rdn) => rdn.sizeConstrainedSetOf(1)
+                .map((atav) => AttributeTypeAndValue.fromElement(atav as DERElement).toString())
+                .join("+")
+            ).join(",");
     }
     case (5): { // ediPartyName
         const epn: EDIPartyName = EDIPartyName.fromElement(value);

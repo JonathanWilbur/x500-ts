@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import Name from "../InformationFramework/Name";
 import Validity from "./Validity";
@@ -11,7 +11,7 @@ import RelativeDistinguishedName from "../InformationFramework/RelativeDistingui
 import AttributeTypeAndValue from "../InformationFramework/AttributeTypeAndValue";
 import UniqueIdentifier from "../SelectedAttributeTypes/UniqueIdentifier";
 import Extension from "./Extension";
-import { RDNSequence } from "../InformationFramework";
+import validateTag from "../../validateTag";
 
 // TBSCertificate ::= SEQUENCE {
 //     version                  [0]  Version DEFAULT v1,
@@ -134,9 +134,45 @@ class TBSCertificate {
         const signature: AlgorithmIdentifier = AlgorithmIdentifier.fromElement(
             tbsCertificateElements[encounteredElements++]
         );
-        const issuer: Name = RDNSequence.fromElement(tbsCertificateElements[encounteredElements++]);
+        // const issuer: Name = RDNSequence.fromElement(tbsCertificateElements[encounteredElements++]);
+        const issuer: Name = tbsCertificateElements[encounteredElements++].sizeConstrainedSequenceOf(1)
+            .map((rdnElement: ASN1Element, rdnIndex: number): RelativeDistinguishedName => {
+                validateTag(rdnElement as DERElement, `issuer[${rdnIndex}]`,
+                    [ ASN1TagClass.universal ],
+                    [ ASN1Construction.constructed ],
+                    [ ASN1UniversalType.set ],
+                );
+                return rdnElement.sizeConstrainedSetOf(1)
+                    .map((atavElement: ASN1Element, atavIndex: number): AttributeTypeAndValue => {
+                        validateTag(atavElement as DERElement, `issuer[${rdnIndex}][${atavIndex}]`,
+                            [ ASN1TagClass.universal ],
+                            [ ASN1Construction.constructed ],
+                            [ ASN1UniversalType.sequence ],
+                        );
+                        return AttributeTypeAndValue.fromElement(atavElement as DERElement);
+                    });
+            });
+
         const validity: Validity = Validity.fromElement(tbsCertificateElements[encounteredElements++]);
-        const subject: Name = RDNSequence.fromElement(tbsCertificateElements[encounteredElements++]);
+
+        const subject: Name = tbsCertificateElements[encounteredElements++].sizeConstrainedSequenceOf(1)
+            .map((rdnElement: ASN1Element, rdnIndex: number): RelativeDistinguishedName => {
+                validateTag(rdnElement as DERElement, `issuer[${rdnIndex}]`,
+                    [ ASN1TagClass.universal ],
+                    [ ASN1Construction.constructed ],
+                    [ ASN1UniversalType.set ],
+                );
+                return rdnElement.sizeConstrainedSetOf(1)
+                    .map((atavElement: ASN1Element, atavIndex: number): AttributeTypeAndValue => {
+                        validateTag(atavElement as DERElement, `issuer[${rdnIndex}][${atavIndex}]`,
+                            [ ASN1TagClass.universal ],
+                            [ ASN1Construction.constructed ],
+                            [ ASN1UniversalType.sequence ],
+                        );
+                        return AttributeTypeAndValue.fromElement(atavElement as DERElement);
+                    });
+            });
+
         const subjectPublicKeyInfo: SubjectPublicKeyInfo = SubjectPublicKeyInfo.fromElement(
             tbsCertificateElements[encounteredElements++]
         );
@@ -271,157 +307,75 @@ class TBSCertificate {
             subjectPublicKeyInfo,
             issuerUniqueID,
             subjectUniqueID,
-            extensions
+            extensions,
         );
     }
 
     public toElement (): DERElement {
         const retSequence: DERElement[] = [];
-
-        // version
-        {
-            const versionInnerElement: DERElement = new DERElement(
-                ASN1TagClass.universal,
-                ASN1Construction.primitive,
-                ASN1UniversalType.integer
-            );
-            versionInnerElement.integer = this.ver;
-
-            const versionOuterElement: DERElement = new DERElement(
-                ASN1TagClass.context,
-                ASN1Construction.constructed,
-                0
-            );
-            versionOuterElement.sequence = [ versionInnerElement ];
-            retSequence.push(versionOuterElement);
-        }
-
-        // serialNumber
-        {
-            const serialNumberElement: DERElement = new DERElement(
-                ASN1TagClass.universal,
-                ASN1Construction.primitive,
-                ASN1UniversalType.integer
-            );
-            serialNumberElement.octetString = this.serialNumber;
-            retSequence.push(serialNumberElement);
-        }
-
-        // signature
-        {
-            retSequence.push(this.signature.toElement());
-        }
-
-        // issuer
-        {
-            const issuerElement: DERElement = new DERElement(
-                ASN1TagClass.universal,
-                ASN1Construction.constructed,
-                ASN1UniversalType.sequence
-            );
-
-            issuerElement.sequence = this.issuer.value.map((rdn: RelativeDistinguishedName) => {
-                const rdnElement: DERElement = new DERElement(
-                    ASN1TagClass.universal,
-                    ASN1Construction.constructed,
-                    ASN1UniversalType.set
-                );
-                rdnElement.sequence = rdn.value.map(
-                    (rdnValue: AttributeTypeAndValue): DERElement => rdnValue.toElement()
-                );
-                return rdnElement;
-            });
-
-            retSequence.push(issuerElement);
-        }
-
-        // validity
-        {
-            retSequence.push(this.validity.toElement());
-        }
-
-        // subject
-        {
-            const subjectElement: DERElement = new DERElement(
-                ASN1TagClass.universal,
-                ASN1Construction.constructed,
-                ASN1UniversalType.sequence
-            );
-
-            subjectElement.sequence = this.subject.value.map((rdn: RelativeDistinguishedName) => {
-                const rdnElement: DERElement = new DERElement(
-                    ASN1TagClass.universal,
-                    ASN1Construction.constructed,
-                    ASN1UniversalType.set
-                );
-                rdnElement.sequence = rdn.value.map(
-                    (rdnValue: AttributeTypeAndValue): DERElement => rdnValue.toElement()
-                );
-                return rdnElement;
-            });
-
-            retSequence.push(subjectElement);
-        }
-
-        // subjectPublicKeyInfo
-        {
-            retSequence.push(this.subjectPublicKeyInfo.toElement());
-        }
+        const versionElement: DERElement = new DERElement(
+            ASN1TagClass.context,
+            ASN1Construction.constructed,
+            0,
+        );
+        versionElement.inner = new DERElement(
+            ASN1TagClass.universal,
+            ASN1Construction.primitive,
+            ASN1UniversalType.integer,
+            this.ver,
+        );
+        retSequence.push(versionElement);
+        retSequence.push(new DERElement(
+            ASN1TagClass.universal,
+            ASN1Construction.primitive,
+            ASN1UniversalType.integer,
+            this.serialNumber,
+        ));
+        retSequence.push(this.signature.toElement());
+        retSequence.push(DERElement.fromSequence(
+            this.issuer.map((rdn) => DERElement.fromSet(rdn.map((atav) => atav.toElement()))),
+        ));
+        retSequence.push(this.validity.toElement());
+        retSequence.push(DERElement.fromSequence(
+            this.subject.map((rdn) => DERElement.fromSet(rdn.map((atav) => atav.toElement()))),
+        ));
+        retSequence.push(this.subjectPublicKeyInfo.toElement());
 
         if (this.ver !== Version.v1) {
-            // issuerUniqueIdentifier
             if (this.issuerUniqueID) {
-                const issuerUniqueIdentifierElement: DERElement = new DERElement(
+                retSequence.push(new DERElement(
                     ASN1TagClass.context,
                     ASN1Construction.primitive,
-                    1
-                );
-                issuerUniqueIdentifierElement.bitString = this.issuerUniqueID;
-                retSequence.push(issuerUniqueIdentifierElement);
+                    1,
+                    this.issuerUniqueID,
+                ));
             }
-
-            // subjectUniqueIdentifier
             if (this.subjectUniqueID) {
-                const subjectUniqueIdentifierElement: DERElement = new DERElement(
+                retSequence.push(new DERElement(
                     ASN1TagClass.context,
                     ASN1Construction.primitive,
-                    2
-                );
-                subjectUniqueIdentifierElement.bitString = this.subjectUniqueID;
-                retSequence.push(subjectUniqueIdentifierElement);
+                    2,
+                    this.subjectUniqueID,
+                ));
             }
         }
 
-        if (this.ver === Version.v3) {
-            // extensions
-            if (this.extensions) {
-                const extensionElements: DERElement[] = [];
-                this.extensions.forEach((extension) => {
-                    extensionElements.push(extension.toElement());
-                });
-                const extensionsElement: DERElement = new DERElement(
-                    ASN1TagClass.universal,
-                    ASN1Construction.constructed,
-                    ASN1UniversalType.sequence
-                );
-                extensionsElement.sequence = extensionElements;
-                const extensionsOuterElement: DERElement = new DERElement(
-                    ASN1TagClass.context,
-                    ASN1Construction.constructed,
-                    3
-                );
-                extensionsOuterElement.sequence = [ extensionsElement ];
-                retSequence.push(extensionsOuterElement);
-            }
+        if (this.ver === Version.v3 && this.extensions) {
+            const extensionElements: DERElement[] = [];
+            this.extensions.forEach((extension) => {
+                extensionElements.push(extension.toElement());
+            });
+            const extensionsElement: DERElement = DERElement.fromSequence(extensionElements);
+            const extensionsOuterElement: DERElement = new DERElement(
+                ASN1TagClass.context,
+                ASN1Construction.constructed,
+                3,
+            );
+            extensionsOuterElement.inner = extensionsElement;
+            retSequence.push(extensionsOuterElement);
         }
 
-        const ret: DERElement = new DERElement(
-            ASN1TagClass.universal,
-            ASN1Construction.constructed,
-            ASN1UniversalType.sequence
-        );
-        ret.sequence = retSequence;
-        return ret;
+        return DERElement.fromSequence(retSequence);
     }
 
     public fromBytes (value: Uint8Array): TBSCertificate {

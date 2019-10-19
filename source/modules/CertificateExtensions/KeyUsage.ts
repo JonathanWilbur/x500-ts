@@ -1,14 +1,13 @@
 import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
-import * as errors from "../../errors";
 
-// KeyUsage ::= BIT STRING {
-//     digitalSignature(0), contentCommitment(1), keyEncipherment(2),
-//     dataEncipherment(3), keyAgreement(4), keyCertSign(5), cRLSign(6),
-//     encipherOnly(7), decipherOnly(8)}
-
+/**
+ * `KeyUsage ::= BIT STRING {
+ *     digitalSignature(0), contentCommitment(1), keyEncipherment(2),
+ *     dataEncipherment(3), keyAgreement(4), keyCertSign(5), cRLSign(6),
+ *     encipherOnly(7), decipherOnly(8)}`
+ */
 export default
 class KeyUsage {
-    // eslint-disable-next-line max-params
     constructor (
         readonly digitalSignature: boolean,
         readonly contentCommitment: boolean,
@@ -22,18 +21,6 @@ class KeyUsage {
     ) {}
 
     public static fromElement (value: DERElement): KeyUsage {
-        switch (value.validateTag(
-            [ ASN1TagClass.universal ],
-            [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.bitString ]
-        )) {
-        case 0: break;
-        case -1: throw new errors.X500Error("Invalid tag class on KeyUsage");
-        case -2: throw new errors.X500Error("Invalid construction on KeyUsage");
-        case -3: throw new errors.X500Error("Invalid tag number on KeyUsage");
-        default: throw new errors.X500Error("Undefined error when validating KeyUsage tag");
-        }
-
         const bits: boolean[] = value.bitString;
         return new KeyUsage(
             ((bits.length > 0) ? bits[0] : false),
@@ -52,7 +39,7 @@ class KeyUsage {
         const keyUsageElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.bitString
+            ASN1UniversalType.bitString,
         );
         keyUsageElement.bitString = [
             this.digitalSignature,
