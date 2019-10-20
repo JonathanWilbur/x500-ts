@@ -31,4 +31,4 @@ though it will result in a more bloated codebase.
 - [ ] SchemaAdministration (3 hours)
 - [ ] SelectedAttributeTypes (1 hour)
 - [ ] ServiceAdministration (2 hours)
-- [ ] UsefulDefinitions (0.5 hours)
+- [x] UsefulDefinitions (0.5 hours)

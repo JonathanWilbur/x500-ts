@@ -11,3 +11,4 @@ export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";
 export * from "./modules/PKIXImplicit93";
 export * from "./modules/SelectedAttributeTypes/index";
+export * from "./modules/UsefulDefinitions/index";
