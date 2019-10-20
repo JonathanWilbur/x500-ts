@@ -5,6 +5,7 @@ export * from "./modules/BasicAccessControl/index";
 export * from "./modules/CertificateExtensions/index";
 export * from "./modules/DSAOperationalAttributeTypes/index";
 export * from "./modules/InformationFramework/index";
+export * from "./modules/LdapSystemSchema";
 export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";

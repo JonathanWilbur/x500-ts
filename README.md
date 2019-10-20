@@ -15,3 +15,20 @@ though it will result in a more bloated codebase.
 - [ ] Serverless Commands
   - [ ] `DeserializeDistinguishedName`
   - [ ] `TestLDAPFilter`
+
+## Development
+
+- [ ] CertificateExtensions (1 day)
+- [ ] DirectoryAbstractService (2 days)
+- [ ] EnhancedSecurity (3 hours)
+- [ ] InformationFramework (1 hour)
+- [x] LdapSystemSchema (0.5 hours)
+- [ ] OperationalBindingManagement (4 hours)
+- [ ] PkiPmiExternalDataTypes (3 hours)
+- [ ] PkiPmiProtocolSpecifications (4 hours)
+- [ ] PkiPmiWrapper (1 hour)
+- [ ] PKIXImplicit93 (0.5 hours)
+- [ ] SchemaAdministration (3 hours)
+- [ ] SelectedAttributeTypes (1 hour)
+- [ ] ServiceAdministration (2 hours)
+- [ ] UsefulDefinitions (0.5 hours)

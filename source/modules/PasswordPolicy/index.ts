@@ -1,6 +1,9 @@
 import { ObjectIdentifier } from "asn1-ts";
 
+export { default as PwdAlphabet } from "./PwdAlphabet";
+export { default as PwdEncAlg } from "./PwdEncAlg";
 export { default as PwdVocabulary } from "./PwdVocabulary";
+export { default as UserPwd } from "./UserPwd";
 
 export const id_at_userPwd                    = new ObjectIdentifier([2, 5, 4, 85]);
 
