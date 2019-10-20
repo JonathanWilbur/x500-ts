@@ -168,25 +168,6 @@ class TBSCertAVL {
         );
     }
 
-    /**
-     * `TBSCertAVL ::= SEQUENCE {
-     *   version               [0]  IMPLICIT Version DEFAULT v1,
-     *   serialNumber               AvlSerialNumber OPTIONAL,
-     *   signature                  AlgorithmIdentifier {{SupportedAlgorithms}},
-     *   issuer                     Name,
-     *   constrained                BOOLEAN,
-     *   entries                    SEQUENCE (SIZE (1..MAX)) OF SEQUENCE {
-     *     idType                     CHOICE {
-     *       certIdentifier        [0]  PKCertIdentifier,
-     *       entityGroup                DistinguishedName, -- only for constrained = FALSE
-     *       ... },
-     *     scope                 [0]  IMPLICIT ScopeRestrictions OPTIONAL,
-     *     entryExtensions       [1]  IMPLICIT Extensions OPTIONAL,
-     *     ... },
-     *   ...,
-     *   ...,
-     *   avlExtensions              Extensions OPTIONAL }`
-     */
     public toElement (): DERElement {
         return DERElement.fromSequence([
             new DERElement(
