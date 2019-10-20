@@ -27,7 +27,7 @@ though it will result in a more bloated codebase.
 - [ ] PkiPmiExternalDataTypes (3 hours)
 - [ ] PkiPmiProtocolSpecifications (4 hours)
 - [ ] PkiPmiWrapper (1 hour)
-- [ ] PKIXImplicit93 (0.5 hours)
+- [x] PKIXImplicit93 (0.5 hours)
 - [ ] SchemaAdministration (3 hours)
 - [ ] SelectedAttributeTypes (1 hour)
 - [ ] ServiceAdministration (2 hours)

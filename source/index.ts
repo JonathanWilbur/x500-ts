@@ -9,4 +9,5 @@ export * from "./modules/LdapSystemSchema";
 export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";
+export * from "./modules/PKIXImplicit93";
 export * from "./modules/SelectedAttributeTypes/index";
