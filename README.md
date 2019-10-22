@@ -21,7 +21,7 @@ though it will result in a more bloated codebase.
 - [ ] CertificateExtensions (1 day)
 - [ ] DirectoryAbstractService (2 days)
 - [ ] EnhancedSecurity (3 hours)
-- [ ] InformationFramework (1 hour)
+- [x] InformationFramework (1 hour)
 - [x] LdapSystemSchema (0.5 hours)
 - [ ] OperationalBindingManagement (4 hours)
 - [ ] PkiPmiExternalDataTypes (3 hours)
