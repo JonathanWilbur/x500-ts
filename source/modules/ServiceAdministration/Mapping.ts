@@ -8,47 +8,50 @@ import {
     ASN1UniversalType,
 } from "asn1-ts";
 import ConstructedElementSpecification from "../../ConstructedElementSpecification";
-import UnboundedDirectoryString from "../SelectedAttributeTypes/UnboundedDirectoryString";
 
 /**
- * `LdapSyntaxDescription ::= SEQUENCE {
- *   identifier               SYNTAX-NAME.&id,
- *   description              UnboundedDirectoryString OPTIONAL,
+ * `Mapping ::= SEQUENCE {
+ *   mappingFunction  OBJECT IDENTIFIER (CONSTRAINED BY {-- shall be an--
+ *                      -- object identifier of a mapping-based matching algorithm -- }),
+ *   level            INTEGER DEFAULT 0,
  *   ... }`
  */
 export default
-class LdapSyntaxDescription {
+class Mapping {
     constructor (
-        readonly identifier: ObjectIdentifier,
-        readonly description: UnboundedDirectoryString | undefined,
+        readonly mappingFunction: ObjectIdentifier,
+        readonly level: number,
     ) {}
 
-    public static fromElement (value: DERElement): LdapSyntaxDescription {
-        let identifier!: ObjectIdentifier;
-        let description: UnboundedDirectoryString | undefined = undefined;
+    public static fromElement (value: DERElement): Mapping {
+        let mappingFunction!: ObjectIdentifier;
+        let level: number = 0;
         const specification: ConstructedElementSpecification[] = [
             {
-                name: "identifier",
+                name: "mappingFunction",
                 optional: false,
                 tagClass: ASN1TagClass.universal,
                 construction: ASN1Construction.primitive,
                 tagNumber: ASN1UniversalType.objectIdentifier,
                 callback: (el: ASN1Element): void => {
-                    identifier = (el as DERElement).objectIdentifier;
+                    mappingFunction = el.objectIdentifier;
                 },
             },
             {
-                name: "description",
-                optional: false,
+                name: "level",
+                optional: true,
+                tagClass: ASN1TagClass.universal,
+                construction: ASN1Construction.primitive,
+                tagNumber: ASN1UniversalType.integer,
                 callback: (el: ASN1Element): void => {
-                    description = UnboundedDirectoryString.fromElement(el as DERElement);
+                    level = el.integer;
                 },
             },
         ];
         validateConstruction(value.sequence, specification);
-        return new LdapSyntaxDescription(
-            identifier,
-            description,
+        return new Mapping(
+            mappingFunction,
+            level,
         );
     }
 
@@ -58,18 +61,21 @@ class LdapSyntaxDescription {
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
                 ASN1UniversalType.objectIdentifier,
-                this.identifier,
+                this.mappingFunction,
             ),
-            this.description
-                ? this.description.toElement()
-                : undefined,
+            new DERElement(
+                ASN1TagClass.universal,
+                ASN1Construction.primitive,
+                ASN1UniversalType.integer,
+                this.level,
+            ),
         ]);
     }
 
-    public static fromBytes (value: Uint8Array): LdapSyntaxDescription {
+    public static fromBytes (value: Uint8Array): Mapping {
         const el: DERElement = new DERElement();
         el.fromBytes(value);
-        return LdapSyntaxDescription.fromElement(el);
+        return Mapping.fromElement(el);
     }
 
     public toBytes (): Uint8Array {

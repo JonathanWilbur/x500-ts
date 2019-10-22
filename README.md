@@ -30,5 +30,5 @@ though it will result in a more bloated codebase.
 - [x] PKIXImplicit93 (0.5 hours)
 - [ ] SchemaAdministration (3 hours)
 - [ ] SelectedAttributeTypes (1 hour)
-- [ ] ServiceAdministration (2 hours)
+- [x] ServiceAdministration (2 hours)
 - [x] UsefulDefinitions (0.5 hours)

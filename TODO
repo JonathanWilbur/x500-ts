@@ -17,6 +17,7 @@
 - [ ] Make all exports non-default.
 - [ ] Create functions for handling SEQUENCE and SET types, even though they are just aliases.
 - [ ] Make UnboundedDirectoryString an alias for string.
+- [ ] Ensure that all constructors where integers are expected throw upon reals.
 - [ ] Resolve issues with duplicated defintions:
   - [ ] GeneralSubtree
   - [ ] GeneralSubtrees
