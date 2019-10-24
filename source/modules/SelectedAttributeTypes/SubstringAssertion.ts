@@ -1,3 +1,5 @@
+import { DERElement } from "asn1-ts";
+
 /**
  * SubstringAssertion ::= SEQUENCE OF CHOICE {
  *   initial  [0]  UnboundedDirectoryString,
@@ -8,3 +10,5 @@
  *     -- Used to specify interpretation of the following items
  *   ... }
  */
+type SubstringAssertion = DERElement[];
+export default SubstringAssertion;

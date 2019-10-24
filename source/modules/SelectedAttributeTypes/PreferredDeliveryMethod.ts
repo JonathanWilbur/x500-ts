@@ -11,3 +11,5 @@
  *   videotex-delivery     (8),
  *   telephone-delivery    (9) }
  */
+type PreferredDeliveryMethod = number[];
+export default PreferredDeliveryMethod;

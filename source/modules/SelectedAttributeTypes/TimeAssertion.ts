@@ -1,5 +1,7 @@
+import { DERElement } from "asn1-ts";
+
 /**
- * TimeAssertion ::= CHOICE {
+ * `TimeAssertion ::= CHOICE {
  *   now             NULL,
  *   at              GeneralizedTime,
  *   between         SEQUENCE {
@@ -7,5 +9,7 @@
  *     endTime    [1]  GeneralizedTime OPTIONAL,
  *     entirely        BOOLEAN DEFAULT FALSE,
  *     ...},
- *   ... }
+ *   ... }`
  */
+type TimeAssertion = DERElement;
+export default TimeAssertion;
