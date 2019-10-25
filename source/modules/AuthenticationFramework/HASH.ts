@@ -40,11 +40,8 @@ class HASH {
                 },
             },
         ];
-        validateConstruction([ value ], specification);
-        return new HASH(
-            algorithmIdentifier,
-            hashValue,
-        );
+        validateConstruction(value.sequence, specification);
+        return new HASH(algorithmIdentifier, hashValue);
     }
 
     public toElement (): DERElement {

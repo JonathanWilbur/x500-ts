@@ -1,0 +1,46 @@
+/**
+ * `PkiWaError ::= ENUMERATED {
+ *   unsupportedWrapperVersion           (0),
+ *   unsupportedSignatureAlgorithm       (1),
+ *   incompleteCertPath                  (2),
+ *   certificationPathFailure            (3),
+ *   invalidSignature                    (4),
+ *   missingMandatoryAttributes          (5),
+ *   unwantedAttribute                   (6),
+ *   unsupportedPduType                  (7),
+ *   unexpectedPduType                   (8),
+ *   invalidPduSyntax                    (9),
+ *   unknownDHpkCetificate               (10),
+ *   invalidKeyingMaterial               (11),
+ *   dhAlgorithmMismatch                 (12),
+ *   invalideDhPublickey                 (13),
+ *   unsupportedKeyWrappingAlgorithm     (14),
+ *   keyEncAlgorithmParametersMissing    (15),
+ *   keyEncAlgorithmParametersNotAllowed (16),
+ *   invalidParmsForSymEncryptAlgorithms (17),
+ *   decryptionFailed                    (18),
+ *   ... }`
+ */
+enum PkiWaError {
+    unsupportedWrapperVersion           = 0,
+    unsupportedSignatureAlgorithm       = 1,
+    incompleteCertPath                  = 2,
+    certificationPathFailure            = 3,
+    invalidSignature                    = 4,
+    missingMandatoryAttributes          = 5,
+    unwantedAttribute                   = 6,
+    unsupportedPduType                  = 7,
+    unexpectedPduType                   = 8,
+    invalidPduSyntax                    = 9,
+    unknownDHpkCetificate               = 10,
+    invalidKeyingMaterial               = 11,
+    dhAlgorithmMismatch                 = 12,
+    invalideDhPublickey                 = 13,
+    unsupportedKeyWrappingAlgorithm     = 14,
+    keyEncAlgorithmParametersMissing    = 15,
+    keyEncAlgorithmParametersNotAllowed = 16,
+    invalidParmsForSymEncryptAlgorithms = 17,
+    decryptionFailed                    = 18,
+}
+
+export default PkiWaError;

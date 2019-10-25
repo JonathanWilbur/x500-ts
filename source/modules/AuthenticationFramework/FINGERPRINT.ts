@@ -38,11 +38,8 @@ class FINGERPRINT {
                 },
             },
         ];
-        validateConstruction([ value ], specification);
-        return new FINGERPRINT(
-            algorithmIdentifier,
-            fingerprint,
-        );
+        validateConstruction(value.sequence, specification);
+        return new FINGERPRINT(algorithmIdentifier, fingerprint);
     }
 
     public toElement (): DERElement {

@@ -26,7 +26,7 @@ though it will result in a more bloated codebase.
 - [ ] OperationalBindingManagement? (4 hours)
 - [ ] PkiPmiExternalDataTypes? (3 hours)
 - [ ] PkiPmiProtocolSpecifications? (4 hours)
-- [ ] PkiPmiWrapper (1 hour)
+- [x] PkiPmiWrapper (1 hour)
 - [x] PKIXImplicit93 (0.5 hours)
 - [ ] SchemaAdministration (3 hours)
 - [x] SelectedAttributeTypes (1 hour)

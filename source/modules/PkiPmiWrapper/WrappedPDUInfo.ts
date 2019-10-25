@@ -10,55 +10,55 @@ import {
 } from "asn1-ts";
 
 /**
- * `AlgorithmIdentifier{ALGORITHM:SupportedAlgorithms} ::= SEQUENCE {
- *   algorithm   ALGORITHM.&id({SupportedAlgorithms}),
- *   parameters  ALGORITHM.&Type({SupportedAlgorithms}{@algorithm}) OPTIONAL,
+ * `WrappedPDUInfo ::= SEQUENCE {
+ *   pduType      WRAPPED-PDU.&id ({SupportedPduSet}),
+ *   pduInfo      WRAPPED-PDU.&Type ({SupportedPduSet}{@pduType}),
  *   ... }`
  */
 export default
-class AlgorithmIdentifier {
+class WrappedPDUInfo {
     constructor (
-        readonly algorithm: ObjectIdentifier,
-        readonly parameters?: DERElement,
+        readonly pduType: ObjectIdentifier,
+        readonly pduInfo: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): AlgorithmIdentifier {
-        let algorithm!: ObjectIdentifier;
-        let parameters: DERElement | undefined = undefined;
+    public static fromElement (value: DERElement): WrappedPDUInfo {
+        let pduType!: ObjectIdentifier;
+        let pduInfo!: DERElement;
         const specification: ConstructedElementSpecification[] = [
             {
-                name: "algorithm",
+                name: "pduType",
                 optional: false,
                 tagClass: ASN1TagClass.universal,
                 construction: ASN1Construction.primitive,
                 tagNumber: ASN1UniversalType.objectIdentifier,
                 callback: (el: ASN1Element): void => {
-                    algorithm = el.objectIdentifier;
+                    pduType = el.objectIdentifier;
                 },
             },
             {
-                name: "parameters",
+                name: "pduInfo",
                 optional: true,
                 callback: (el: ASN1Element): void => {
-                    parameters = el as DERElement;
+                    pduInfo = el as DERElement;
                 },
             },
         ];
         validateConstruction(value.sequence, specification);
-        return new AlgorithmIdentifier(algorithm, parameters);
+        return new WrappedPDUInfo(pduType, pduInfo);
     }
 
     public toElement (): DERElement {
         const algorithmElement: DERElement = new DERElement();
         algorithmElement.tagNumber = ASN1UniversalType.objectIdentifier;
-        algorithmElement.objectIdentifier = this.algorithm;
-        return DERElement.fromSequence([algorithmElement, this.parameters]);
+        algorithmElement.objectIdentifier = this.pduType;
+        return DERElement.fromSequence([algorithmElement, this.pduInfo]);
     }
 
-    public static fromBytes (value: Uint8Array): AlgorithmIdentifier {
+    public static fromBytes (value: Uint8Array): WrappedPDUInfo {
         const el: DERElement = new DERElement();
         el.fromBytes(value);
-        return AlgorithmIdentifier.fromElement(el);
+        return WrappedPDUInfo.fromElement(el);
     }
 
     public toBytes (): Uint8Array {

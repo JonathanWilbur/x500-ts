@@ -313,3 +313,5 @@ rules:
       message: 'Please use Number.isFinite instead.'
     - name: isNaN
       message: 'Please use Number.isNaN instead.'
+  '@typescript-eslint/class-name-casing':
+    - off

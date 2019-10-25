@@ -1,23 +1,23 @@
-import AlgorithmIdentifier from "./AlgorithmIdentifier";
+import AlgorithmIdentifier from "../AuthenticationFramework/AlgorithmIdentifier";
 import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import validateConstruction from "../../validateConstruction";
 
 /**
- * `SIGNATURE ::= SEQUENCE {
- *     algorithmIdentifier  AlgorithmIdentifier{{SupportedAlgorithms}},
- *     signature            BIT STRING,
- *     ... }`
+ * `SenderDhPublicKey ::= SEQUENCE {
+ *   algorithm   AlgorithmIdentifier {{SupportedDHPublicKeyAlgorithms}},
+ *   publicKey   BIT STRING,
+ *   ... }`
  */
 export default
-class SIGNATURE {
+class SenderDhPublicKey {
     constructor (
         readonly algorithmIdentifier: AlgorithmIdentifier,
-        readonly signature: boolean[],
+        readonly publicKey: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): SIGNATURE {
+    public static fromElement (value: DERElement): SenderDhPublicKey {
         let algorithmIdentifier!: AlgorithmIdentifier;
-        let signature!: boolean[];
+        let publicKey!: boolean[];
         const specification = [
             {
                 name: "algorithmIdentifier",
@@ -30,16 +30,17 @@ class SIGNATURE {
                 },
             },
             {
-                name: "signature",
-                optional: true,
-                tagClass: ASN1TagClass.context,
+                name: "publicKey",
+                optional: false,
+                tagClass: ASN1TagClass.universal,
+                tagNumber: ASN1UniversalType.bitString,
                 callback: (el: ASN1Element): void => {
-                    signature = el.bitString;
+                    publicKey = el.bitString;
                 },
             },
         ];
         validateConstruction(value.sequence, specification);
-        return new SIGNATURE(algorithmIdentifier, signature);
+        return new SenderDhPublicKey(algorithmIdentifier, publicKey);
     }
 
     public toElement (): DERElement {
@@ -48,17 +49,17 @@ class SIGNATURE {
             ASN1Construction.primitive,
             ASN1UniversalType.bitString,
         );
-        signatureValueElement.bitString = this.signature;
+        signatureValueElement.bitString = this.publicKey;
         return DERElement.fromSequence([
             this.algorithmIdentifier.toElement(),
             signatureValueElement,
         ]);
     }
 
-    public static fromBytes (value: Uint8Array): SIGNATURE {
+    public static fromBytes (value: Uint8Array): SenderDhPublicKey {
         const el: DERElement = new DERElement();
         el.fromBytes(value);
-        return SIGNATURE.fromElement(el);
+        return SenderDhPublicKey.fromElement(el);
     }
 
     public toBytes (): Uint8Array {
