@@ -1,43 +1,40 @@
-import CertificateSerialNumber from "../AuthenticationFramework/CertificateSerialNumber";
-import AttCertIssuer from "./AttCertIssuer";
 import {
-    ASN1Construction,
     ASN1Element,
+    ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1UniversalType,
+    ConstructedElementSpecification,
     validateConstruction,
-    ObjectIdentifier,
 } from "asn1-ts";
-import ConstructedElementSpecification from "../../ConstructedElementSpecification";
 
-/**
- * `AttributeCertificateExactAssertion ::= SEQUENCE {
- *   serialNumber  CertificateSerialNumber,
- *   issuer        AttCertIssuer,
- *   ... }`
- */
 export default
-class AttributeCertificateExactAssertion {
+class TimeSpecification {
     constructor (
-        readonly serialNumber: CertificateSerialNumber,
-        readonly issuer: AttCertIssuer,
+
     ) {}
 
-    public static fromElement (value: DERElement): AttributeCertificateExactAssertion {
-
+    public static fromElement (value: DERElement): TimeSpecification {
+        const specification: ConstructedElementSpecification[] = [
+            // {
+            //     name: "notThisTime",
+            //     optional: true,
+            //     tagClass: ASN1TagClass.universal,
+            //     construction: ASN1Construction.primitive,
+            //     tagNumber: ASN1UniversalType.boolean,
+            //     callback: (el: ASN1Element): void => {
+            //         notThisTime = el.boolean;
+            //     },
+            // },
+        ];
+        validateConstruction(value.sequence, specification);
+        return new TimeSpecification(
+        );
     }
 
     public toElement (): DERElement {
+        return DERElement.fromSequence([
 
-    }
-
-    public static fromBytes (value: Uint8Array): AttributeMapping {
-        const el: DERElement = new DERElement();
-        el.fromBytes(value);
-        return AttributeMapping.fromElement(el);
-    }
-
-    public toBytes (): Uint8Array {
-        return this.toElement().toBytes();
+        ]);
     }
 }

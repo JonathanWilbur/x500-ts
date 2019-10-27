@@ -1,5 +1,5 @@
 /**
  * `CRLNumber ::= INTEGER(0..MAX)`
  */
-type CRLNumber = number;
+type CRLNumber = Uint8Array;
 export default CRLNumber;

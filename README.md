@@ -18,7 +18,7 @@ though it will result in a more bloated codebase.
 
 ## Development
 
-- [ ] CertificateExtensions (1 day)
+- [x] CertificateExtensions (1 day)
 - [ ] DirectoryAbstractService (2 days)
 - [ ] EnhancedSecurity (3 hours)
 - [x] InformationFramework (1 hour)
