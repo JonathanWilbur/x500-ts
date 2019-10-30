@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `DSACredentials  ::=  CHOICE  {
@@ -8,5 +8,5 @@ import { BERElement } from "asn1-ts";
  *   spkm               [3]  SpkmCredentials,
  *   ... }`
  */
-type DSACredentials = BERElement;
+type DSACredentials = ASN1Element;
 export default DSACredentials;

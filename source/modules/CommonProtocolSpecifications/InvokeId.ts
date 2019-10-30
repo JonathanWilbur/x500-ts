@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `InvokeId ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   absent   NULL,
  *   ... }`
  */
-type InvokeId = BERElement;
+type InvokeId = ASN1Element;
 export default InvokeId;

@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `Code ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   global  OBJECT IDENTIFIER,
  *   ... }`
  */
-type Code = BERElement;
+type Code = ASN1Element;
 export default Code;
