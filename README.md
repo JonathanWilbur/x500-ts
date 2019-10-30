@@ -19,7 +19,7 @@ though it will result in a more bloated codebase.
 ## Development
 
 - [x] CertificateExtensions (1 day)
-- [ ] CommonProtocolSpecifications (1 hour)
+- [x] CommonProtocolSpecifications (1 hour)
 - [ ] DirectoryAbstractService (2 days)
 - [ ] DistributedOperations (1 hour)
 - [ ] DSAOperationalAttributeTypes (0.5 hours)

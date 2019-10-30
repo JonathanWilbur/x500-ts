@@ -3,6 +3,7 @@ export * from "./modules/AttributeCertificateDefinitions/index";
 export * from "./modules/AuthenticationFramework/index";
 export * from "./modules/BasicAccessControl/index";
 export * from "./modules/CertificateExtensions/index";
+export * from "./modules/CommonProtocolSpecifications/index";
 export * from "./modules/DSAOperationalAttributeTypes/index";
 export * from "./modules/InformationFramework/index";
 export * from "./modules/LdapSystemSchema";
