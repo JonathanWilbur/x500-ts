@@ -1,5 +1,7 @@
 import { ObjectIdentifier } from "asn1-ts";
 
+export { default as ExtensionAttribute } from "./ExtensionAttribute";
+
 export const id_ce_a_subjectDirectoryAttributes         = new ObjectIdentifier([2, 5, 29, 9, 1]);
 export const id_ce_a_subjectKeyIdentifier               = new ObjectIdentifier([2, 5, 29, 14, 1]);
 export const id_ce_a_keyUsage                           = new ObjectIdentifier([2, 5, 29, 15, 1]);
