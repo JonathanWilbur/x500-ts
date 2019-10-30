@@ -19,8 +19,12 @@ though it will result in a more bloated codebase.
 ## Development
 
 - [x] CertificateExtensions (1 day)
+- [ ] CommonProtocolSpecifications (1 hour)
 - [ ] DirectoryAbstractService (2 days)
+- [ ] DistributedOperations (1 hour)
+- [ ] DSAOperationalAttributeTypes (0.5 hours)
 - [ ] EnhancedSecurity (3 hours)
+- [ ] ExtensionAttributes (1 hour)
 - [x] InformationFramework (1 hour)
 - [x] LdapSystemSchema (0.5 hours)
 - [ ] OperationalBindingManagement? (4 hours)
