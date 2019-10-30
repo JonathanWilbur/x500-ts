@@ -1,0 +1,3 @@
+/**
+ * `TraceInformation ::= SEQUENCE OF TraceItem`
+ */
