@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `ModifyRights ::= SET OF SEQUENCE {
  *   item      CHOICE {
@@ -12,3 +14,9 @@
  *     move    (3)},
  *   ... }`
  */
+type ModifyRights = {
+    item: ASN1Element;
+    permission: [ boolean, boolean, boolean, boolean, ];
+}[];
+
+export default ModifyRights;

@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts"
+import { ASN1Element } from "asn1-ts"
 
 /**
  * `Credentials ::= CHOICE {
@@ -9,5 +9,5 @@ import { BERElement } from "asn1-ts"
  *   sasl               [4]  SaslCredentials,
  *   ... }`
  */
-type Credentials = BERElement;
+type Credentials = ASN1Element;
 export default Credentials;

@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `ContextSelection ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   selectedContexts  SET SIZE (1..MAX) OF TypeAndContextAssertion,
  *   ... }`
  */
-type ContextSelection = BERElement;
+type ContextSelection = ASN1Element;
 export default ContextSelection;

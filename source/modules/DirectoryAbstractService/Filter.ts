@@ -1,4 +1,4 @@
-import { DERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `Filter ::= CHOICE {
@@ -8,5 +8,5 @@ import { DERElement } from "asn1-ts";
  *   not   [3]  Filter,
  *   ... }`
  */
-type Filter = DERElement;
+type Filter = ASN1Element;
 export default Filter;

@@ -308,7 +308,7 @@ class ProtectedItems {
                 ASN1Construction.constructed,
                 7,
             );
-            rangeOfValuesElement.inner = this.rangeOfValues;
+            rangeOfValuesElement.inner = this.rangeOfValues as DERElement;
             protectedItemsElements.push(rangeOfValuesElement);
         }
 

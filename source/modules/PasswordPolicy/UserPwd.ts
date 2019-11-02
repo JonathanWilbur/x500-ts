@@ -1,4 +1,4 @@
-import { DERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `UserPwd ::= CHOICE {
@@ -9,5 +9,5 @@ import { DERElement } from "asn1-ts";
  *       ...},
  *     ...}`
  */
-type UserPwd = DERElement;
+type UserPwd = ASN1Element;
 export default UserPwd;
