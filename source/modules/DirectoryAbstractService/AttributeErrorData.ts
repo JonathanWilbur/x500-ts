@@ -1,3 +1,9 @@
+import CommonResults from "./CommonResults";
+import Name from "../InformationFramework/Name";
+import AttributeProblem from "./AttributeProblem";
+import AttributeType from "../InformationFramework/AttributeType";
+import AttributeValue from "../InformationFramework/AttributeValue";
+
 /**
  * `AttributeErrorData ::= SET {
  *   object   [0]  Name,
@@ -10,3 +16,15 @@
  *   ...,
  *   COMPONENTS OF CommonResults }`
  */
+export default
+class AttributeErrorData {
+    constructor (
+        readonly object: Name,
+        readonly problems: {
+            problem: AttributeProblem;
+            type: AttributeType;
+            value: AttributeValue | undefined;
+        }[],
+        readonly commonResults: CommonResults,
+    ) {}
+}

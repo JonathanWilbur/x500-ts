@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `SearchResultData ::= CHOICE {
@@ -14,5 +14,5 @@ import { BERElement } from "asn1-ts";
  *   uncorrelatedSearchInfo   [0]  SET OF SearchResult,
  *   ... }`
  */
-type SearchResultData = BERElement;
+type SearchResultData = ASN1Element;
 export default SearchResultData;

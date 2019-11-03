@@ -1,3 +1,7 @@
+import CommonArguments from "./CommonArguments";
+import DistinguishedName from "../InformationFramework/DistinguishedName";
+import RelativeDistinguishedName from "../InformationFramework/RelativeDistinguishedName";
+
 /**
  * `ModifyDNArgumentData ::= SET {
  *   object        [0]  DistinguishedName,
@@ -8,3 +12,13 @@
  *   ...,
  *   COMPONENTS OF      CommonArguments }`
  */
+export default
+class ListArgumentData {
+    constructor (
+        readonly object: DistinguishedName,
+        readonly newRDN: RelativeDistinguishedName,
+        readonly deleteOldRDN: boolean,
+        readonly newSuperior: DistinguishedName | undefined,
+        readonly commonArguments: CommonArguments,
+    ) {}
+}

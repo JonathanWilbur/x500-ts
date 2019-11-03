@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `ModifyEntryResult ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   information  OPTIONALLY-PROTECTED-SEQ { ModifyEntryResultData },
  *   ... }`
  */
-type ModifyEntryResult = BERElement;
+type ModifyEntryResult = ASN1Element;
 export default ModifyEntryResult;

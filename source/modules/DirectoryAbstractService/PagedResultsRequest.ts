@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `PagedResultsRequest ::= CHOICE {
@@ -13,5 +13,5 @@ import { BERElement } from "asn1-ts";
  *   abandonQuery  [0]  OCTET STRING,
  *   ... }`
  */
-type PagedResultsRequest = BERElement;
+type PagedResultsRequest = ASN1Element;
 export default PagedResultsRequest;

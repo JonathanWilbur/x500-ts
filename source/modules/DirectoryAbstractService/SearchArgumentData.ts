@@ -1,3 +1,13 @@
+import Name from "../InformationFramework/Name";
+import Filter from "./Filter";
+import EntryInformationSelection from "./EntryInformationSelection";
+import PagedResultsRequest from "./PagedResultsRequest";
+import RelaxationPolicy from "../ServiceAdministration/RelaxationPolicy";
+import HierarchySelections from "./HierarchySelections";
+import SearchControlOptions from "./SearchControlOptions";
+import JoinArgument from "./JoinArgument";
+import CommonArguments from "./CommonArguments";
+
 /**
  * `SearchArgumentData ::= SET {
  *   baseObject            [0]  Name,
@@ -25,3 +35,24 @@
  *   ...,
  *   COMPONENTS OF              CommonArguments }`
  */
+export default
+class SearchArgumentData {
+    constructor (
+        readonly baseObject: Name,
+        readonly subset: number,
+        readonly filter: Filter,
+        readonly searchAliases: boolean,
+        readonly selection: EntryInformationSelection,
+        readonly pagedResults: PagedResultsRequest | undefined,
+        readonly matchedValuesOnly: boolean,
+        readonly extendedFilter: Filter | undefined,
+        readonly checkOverspecified: boolean,
+        readonly relaxation: RelaxationPolicy | undefined,
+        readonly extendedArea: number | undefined,
+        readonly hierarchySelections: HierarchySelections,
+        readonly searchControlOptions: SearchControlOptions,
+        readonly joinArguments: JoinArgument[] | undefined,
+        readonly joinType: number,
+        readonly commonArguments: CommonArguments,
+    ) {}
+}

@@ -1,3 +1,7 @@
+import CommonResults from "./CommonResults";
+import Name from "../InformationFramework/Name";
+import AttributeType from "../InformationFramework/AttributeType";
+
 /**
  * `CompareResultData ::= SET {
  *   name                 Name OPTIONAL,
@@ -8,3 +12,13 @@
  *   ...,
  *   COMPONENTS OF        CommonResults }`
  */
+export default
+class CompareResultData {
+    constructor (
+        readonly name: Name,
+        readonly matched: boolean,
+        readonly fromEntry: boolean,
+        readonly matchedSubtype: AttributeType | undefined,
+        readonly commonResults: CommonResults,
+    ) {}
+}

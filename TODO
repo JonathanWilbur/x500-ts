@@ -19,6 +19,8 @@
 - [ ] Make UnboundedDirectoryString an alias for string.
 - [ ] Ensure that all constructors where integers are expected throw upon reals.
 - [ ] Get rid of toBytes() and fromBytes() entirely.
+- [ ] Should you use `Map` to map tag numbers to callbacks, or use `switch` statements?
+- [ ] Check that constructed members having falsy values still get encoded.
 - [ ] Resolve issues with duplicated defintions:
   - [ ] GeneralSubtree
   - [ ] GeneralSubtrees

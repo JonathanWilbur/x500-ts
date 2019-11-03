@@ -1,3 +1,8 @@
+import CommonArguments from "./CommonArguments";
+import Name from "../InformationFramework/Name";
+import EntryModification from "./EntryModification";
+import EntryInformationSelection from "./EntryInformationSelection";
+
 /**
  * `ModifyEntryArgumentData ::= SET {
  *   object     [0]  Name,
@@ -7,3 +12,12 @@
  *   ...,
  *   COMPONENTS OF   CommonArguments }`
  */
+export default
+class ModifyEntryArgumentData {
+    constructor (
+        readonly object: Name,
+        readonly changes: EntryModification[],
+        readonly selection: EntryInformationSelection,
+        readonly commonArguments: CommonArguments,
+    ) {}
+}

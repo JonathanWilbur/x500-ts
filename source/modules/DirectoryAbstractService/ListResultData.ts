@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `ListResultData ::= CHOICE {
@@ -17,5 +17,5 @@ import { BERElement } from "asn1-ts";
  *   uncorrelatedListInfo    [0]  SET OF ListResult,
  *   ... }`
  */
-type ListResultData = BERElement;
+type ListResultData = ASN1Element;
 export default ListResultData;

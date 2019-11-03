@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `EntryModification ::= CHOICE {
@@ -11,5 +11,5 @@ import { BERElement } from "asn1-ts";
  *   replaceValues    [6]  Attribute{{SupportedAttributes}},
  *   ... }`
  */
-type EntryModification = BERElement;
+type EntryModification = ASN1Element;
 export default EntryModification;

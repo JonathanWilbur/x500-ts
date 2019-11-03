@@ -18,25 +18,25 @@ though it will result in a more bloated codebase.
 
 ## Development
 
-- [x] CertificateExtensions (1 day)
-- [x] CommonProtocolSpecifications (1 hour)
-- [ ] DirectoryAbstractService (2 days)
+- [x] CertificateExtensions
+- [x] CommonProtocolSpecifications
+- [x] DirectoryAbstractService (Mostly done)
 - [ ] DirectoryOperationalBindingTypes (0.25 hours)
 - [ ] DirectoryOSIProtocols (0.25 hours)
 - [ ] DirectoryShadowAbstractService (4 hours)
-- [x] DistributedOperations (1 hour)
-- [x] DSAOperationalAttributeTypes (0.5 hours)
+- [x] DistributedOperations
+- [x] DSAOperationalAttributeTypes
 - [ ] EnhancedSecurity (6 hours)
-- [x] ExtensionAttributes (1 hour)
-- [x] InformationFramework (1 hour)
-- [x] LdapSystemSchema (0.5 hours)
+- [x] ExtensionAttributes
+- [x] InformationFramework
+- [x] LdapSystemSchema
 - [ ] OperationalBindingManagement? (8 hours)
 - [ ] OSIProtocolSpecification (8 hours)
 - [ ] PkiPmiExternalDataTypes? (6 hours)
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
-- [x] PkiPmiWrapper (1 hour)
-- [x] PKIXImplicit93 (0.5 hours)
+- [x] PkiPmiWrapper
+- [x] PKIXImplicit93
 - [ ] SchemaAdministration (6 hours)
-- [x] SelectedAttributeTypes (1 hour)
-- [x] ServiceAdministration (2 hours)
-- [x] UsefulDefinitions (0.5 hours)
+- [x] SelectedAttributeTypes
+- [x] ServiceAdministration
+- [x] UsefulDefinitions

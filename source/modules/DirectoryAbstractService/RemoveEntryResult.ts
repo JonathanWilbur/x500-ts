@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `RemoveEntryResult ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   information   OPTIONALLY-PROTECTED-SEQ { RemoveEntryResultData },
  *   ... }`
  */
-type RemoveEntryResult = BERElement;
+type RemoveEntryResult = ASN1Element;
 export default RemoveEntryResult;

@@ -1,4 +1,5 @@
-import { BERElement } from "asn1-ts";
+import Name from "../InformationFramework/Name";
+import CommonArguments from "./CommonArguments";
 
 /**
  * `RemoveEntryArgumentData ::= SET {
@@ -7,5 +8,10 @@ import { BERElement } from "asn1-ts";
  *   ...,
  *   COMPONENTS OF   CommonArguments }`
  */
-type RemoveEntryArgumentData = BERElement;
-export default RemoveEntryArgumentData;
+export default
+class RemoveEntryArgumentData {
+    constructor (
+        readonly object: Name,
+        readonly commonArguments: CommonArguments,
+    ) {}
+}
