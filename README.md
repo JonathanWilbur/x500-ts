@@ -21,8 +21,8 @@ though it will result in a more bloated codebase.
 - [x] CertificateExtensions
 - [x] CommonProtocolSpecifications
 - [x] DirectoryAbstractService (Mostly done)
-- [x] DirectoryOperationalBindingTypes (0.25 hours)
-- [ ] DirectoryOSIProtocols (0.25 hours)
+- [x] DirectoryOperationalBindingTypes
+- [x] DirectoryOSIProtocols
 - [ ] DirectoryShadowAbstractService (4 hours)
 - [x] DistributedOperations
 - [x] DSAOperationalAttributeTypes

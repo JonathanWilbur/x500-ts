@@ -6,6 +6,7 @@ export * from "./modules/CertificateExtensions/index";
 export * from "./modules/CommonProtocolSpecifications/index";
 export * from "./modules/DirectoryAbstractService/index";
 export * from "./modules/DirectoryOperationalBindingTypes/index";
+export * from "./modules/DirectoryOSIProtocols/index";
 export * from "./modules/DistributedOperations/index";
 export * from "./modules/DSAOperationalAttributeTypes/index";
 export * from "./modules/ExtensionAttributes/index";
