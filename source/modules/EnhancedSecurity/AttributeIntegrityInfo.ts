@@ -1,0 +1,3 @@
+/**
+ * `AttributeIntegrityInfo ::= SIGNED{AttributeIntegrityInfoContent}`
+ */
