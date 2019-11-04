@@ -1,0 +1,3 @@
+/**
+ * `AttributeSelection ::= SET OF ClassAttributeSelection`
+ */
