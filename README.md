@@ -36,7 +36,7 @@ though it will result in a more bloated codebase.
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
 - [x] PkiPmiWrapper
 - [x] PKIXImplicit93
-- [ ] SchemaAdministration (6 hours)
+- [x] SchemaAdministration
 - [x] SelectedAttributeTypes
 - [x] ServiceAdministration
 - [x] UsefulDefinitions

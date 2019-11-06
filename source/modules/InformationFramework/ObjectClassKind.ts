@@ -4,8 +4,10 @@
  *   structural (1),
  *   auxiliary  (2)}`
  */
-export enum ObjectClassKind {
+enum ObjectClassKind {
     abstract = 0,
     structural = 1,
     auxiliary = 2,
 }
+
+export default ObjectClassKind;
