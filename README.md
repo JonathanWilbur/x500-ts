@@ -26,7 +26,7 @@ though it will result in a more bloated codebase.
 - [x] DirectoryShadowAbstractService (4 hours)
 - [x] DistributedOperations
 - [x] DSAOperationalAttributeTypes
-- [ ] EnhancedSecurity (6 hours)
+- [x] EnhancedSecurity (6 hours)
 - [x] ExtensionAttributes
 - [x] InformationFramework
 - [x] LdapSystemSchema
