@@ -1,4 +1,4 @@
-import { BERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `AdministerPasswordResult ::= CHOICE {
@@ -6,5 +6,5 @@ import { BERElement } from "asn1-ts";
  *   information OPTIONALLY-PROTECTED-SEQ { AdministerPasswordResultData },
  *   ...}`
  */
-type AdministerPasswordResult = BERElement;
+type AdministerPasswordResult = ASN1Element;
 export default AdministerPasswordResult;

@@ -23,7 +23,7 @@ though it will result in a more bloated codebase.
 - [x] DirectoryAbstractService (Mostly done)
 - [x] DirectoryOperationalBindingTypes
 - [x] DirectoryOSIProtocols
-- [ ] DirectoryShadowAbstractService (4 hours)
+- [x] DirectoryShadowAbstractService (4 hours)
 - [x] DistributedOperations
 - [x] DSAOperationalAttributeTypes
 - [ ] EnhancedSecurity (6 hours)

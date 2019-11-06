@@ -38,14 +38,14 @@ class AdministerPasswordArgumentData {
                 callback: (el: ASN1Element): void => {
                     object = el.sizeConstrainedSequenceOf(1)
                         .map((rdnElement: ASN1Element, rdnIndex: number): RelativeDistinguishedName => {
-                            validateTag(rdnElement as DERElement, `issuer[${rdnIndex}]`,
+                            validateTag(rdnElement as DERElement, `object[${rdnIndex}]`,
                                 [ ASN1TagClass.universal ],
                                 [ ASN1Construction.constructed ],
                                 [ ASN1UniversalType.set ],
                             );
                             return rdnElement.sizeConstrainedSetOf(1)
                                 .map((atavElement: ASN1Element, atavIndex: number): AttributeTypeAndValue => {
-                                    validateTag(atavElement as DERElement, `issuer[${rdnIndex}][${atavIndex}]`,
+                                    validateTag(atavElement as DERElement, `object[${rdnIndex}][${atavIndex}]`,
                                         [ ASN1TagClass.universal ],
                                         [ ASN1Construction.constructed ],
                                         [ ASN1UniversalType.sequence ],
