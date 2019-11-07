@@ -21,13 +21,22 @@ though it will result in a more bloated codebase.
 - [x] CertificateExtensions
 - [x] CommonProtocolSpecifications
 - [x] DirectoryAbstractService (Mostly done)
+- [ ] DirectoryAccessProtocol
+- [ ] DirectoryIDMProtocols
+- [ ] DirectoryInformationShadowProtocol
+- [ ] DirectoryManagement
+- [ ] DirectoryOperationalBindingManagementProtocol
 - [x] DirectoryOperationalBindingTypes
 - [x] DirectoryOSIProtocols
+- [ ] DirectorySecurityExchanges
 - [x] DirectoryShadowAbstractService (4 hours)
+- [ ] DirectorySystemProtocol
 - [x] DistributedOperations
 - [x] DSAOperationalAttributeTypes
 - [x] EnhancedSecurity (6 hours)
 - [x] ExtensionAttributes
+- [ ] HierarchicalOperationalBindings
+- [ ] IDMProtocolSpecification
 - [x] InformationFramework
 - [x] LdapSystemSchema
 - [x] OperationalBindingManagement
@@ -36,7 +45,10 @@ though it will result in a more bloated codebase.
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
 - [x] PkiPmiWrapper
 - [x] PKIXImplicit93
+- [ ] ProtocolObjectIdentifiers
 - [x] SchemaAdministration
 - [x] SelectedAttributeTypes
+- [ ] SelectedObjectClasses
 - [x] ServiceAdministration
+- [ ] SpkmGssTokens
 - [x] UsefulDefinitions
