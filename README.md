@@ -30,7 +30,7 @@ though it will result in a more bloated codebase.
 - [x] ExtensionAttributes
 - [x] InformationFramework
 - [x] LdapSystemSchema
-- [ ] OperationalBindingManagement? (8 hours)
+- [x] OperationalBindingManagement
 - [ ] OSIProtocolSpecification (8 hours)
 - [ ] PkiPmiExternalDataTypes? (6 hours)
 - [ ] PkiPmiProtocolSpecifications? (8 hours)

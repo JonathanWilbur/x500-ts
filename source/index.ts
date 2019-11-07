@@ -14,6 +14,7 @@ export * from "./modules/EnhancedSecurity/index";
 export * from "./modules/ExtensionAttributes/index";
 export * from "./modules/InformationFramework/index";
 export * from "./modules/LdapSystemSchema";
+export * from "./modules/OperationalBindingManagement/index";
 export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";
