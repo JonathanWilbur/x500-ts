@@ -36,7 +36,7 @@ though it will result in a more bloated codebase.
 - [x] EnhancedSecurity (6 hours)
 - [x] ExtensionAttributes
 - [x] HierarchicalOperationalBindings
-- [ ] IDMProtocolSpecification
+- [x] IDMProtocolSpecification
 - [x] InformationFramework
 - [x] LdapSystemSchema
 - [x] OperationalBindingManagement
