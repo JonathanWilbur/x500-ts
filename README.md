@@ -48,7 +48,7 @@ though it will result in a more bloated codebase.
 - [ ] ProtocolObjectIdentifiers
 - [x] SchemaAdministration
 - [x] SelectedAttributeTypes
-- [ ] SelectedObjectClasses
+- [x] SelectedObjectClasses
 - [x] ServiceAdministration
 - [ ] SpkmGssTokens
 - [x] UsefulDefinitions
