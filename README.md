@@ -21,7 +21,7 @@ though it will result in a more bloated codebase.
 - [x] CertificateExtensions
 - [x] CommonProtocolSpecifications
 - [x] DirectoryAbstractService (Mostly done)
-- [ ] DirectoryAccessProtocol
+- [x] DirectoryAccessProtocol
 - [ ] DirectoryIDMProtocols
 - [ ] DirectoryInformationShadowProtocol
 - [ ] DirectoryManagement
