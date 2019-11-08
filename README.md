@@ -28,9 +28,9 @@ though it will result in a more bloated codebase.
 - [x] DirectoryOperationalBindingManagementProtocol
 - [x] DirectoryOperationalBindingTypes
 - [x] DirectoryOSIProtocols
-- [x] DirectorySecurityExchanges
+- [x] DirectorySecurityExchanges (Blocked on `SIGNED`)
 - [x] DirectoryShadowAbstractService (4 hours)
-- [ ] DirectorySystemProtocol
+- [x] DirectorySystemProtocol
 - [x] DistributedOperations
 - [x] DSAOperationalAttributeTypes
 - [x] EnhancedSecurity (6 hours)
