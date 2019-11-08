@@ -8,6 +8,7 @@ export * from "./modules/DirectoryAbstractService/index";
 export * from "./modules/DirectoryAccessProtocol/index";
 export * from "./modules/DirectoryIDMProtocols/index";
 export * from "./modules/DirectoryInformationShadowProtocol/index";
+export * from "./modules/DirectoryManagement/index";
 export * from "./modules/DirectoryOperationalBindingTypes/index";
 export * from "./modules/DirectoryOSIProtocols/index";
 export * from "./modules/DirectoryShadowAbstractService/index";
