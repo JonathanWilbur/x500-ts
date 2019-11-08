@@ -23,7 +23,7 @@ though it will result in a more bloated codebase.
 - [x] DirectoryAbstractService (Mostly done)
 - [x] DirectoryAccessProtocol
 - [x] DirectoryIDMProtocols
-- [ ] DirectoryInformationShadowProtocol
+- [x] DirectoryInformationShadowProtocol
 - [ ] DirectoryManagement
 - [ ] DirectoryOperationalBindingManagementProtocol
 - [x] DirectoryOperationalBindingTypes
