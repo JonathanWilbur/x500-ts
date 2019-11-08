@@ -16,6 +16,7 @@ export * from "./modules/DistributedOperations/index";
 export * from "./modules/DSAOperationalAttributeTypes/index";
 export * from "./modules/EnhancedSecurity/index";
 export * from "./modules/ExtensionAttributes/index";
+export * from "./modules/HierarchicalOperationalBindings/index";
 export * from "./modules/InformationFramework/index";
 export * from "./modules/LdapSystemSchema";
 export * from "./modules/OperationalBindingManagement/index";

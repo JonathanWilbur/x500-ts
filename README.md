@@ -35,7 +35,7 @@ though it will result in a more bloated codebase.
 - [x] DSAOperationalAttributeTypes
 - [x] EnhancedSecurity (6 hours)
 - [x] ExtensionAttributes
-- [ ] HierarchicalOperationalBindings
+- [x] HierarchicalOperationalBindings
 - [ ] IDMProtocolSpecification
 - [x] InformationFramework
 - [x] LdapSystemSchema
