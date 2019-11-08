@@ -25,6 +25,7 @@ export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";
 export * from "./modules/PKIXImplicit93";
+export * from "./modules/ProtocolObjectIdentifiers/index";
 export * from "./modules/SchemaAdministration/index";
 export * from "./modules/SelectedAttributeTypes/index";
 export * from "./modules/SelectedObjectClasses/index";

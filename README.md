@@ -45,7 +45,7 @@ though it will result in a more bloated codebase.
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
 - [x] PkiPmiWrapper
 - [x] PKIXImplicit93
-- [ ] ProtocolObjectIdentifiers
+- [x] ProtocolObjectIdentifiers
 - [x] SchemaAdministration
 - [x] SelectedAttributeTypes
 - [x] SelectedObjectClasses
