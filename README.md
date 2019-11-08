@@ -22,7 +22,7 @@ though it will result in a more bloated codebase.
 - [x] CommonProtocolSpecifications
 - [x] DirectoryAbstractService (Mostly done)
 - [x] DirectoryAccessProtocol
-- [ ] DirectoryIDMProtocols
+- [x] DirectoryIDMProtocols
 - [ ] DirectoryInformationShadowProtocol
 - [ ] DirectoryManagement
 - [ ] DirectoryOperationalBindingManagementProtocol
