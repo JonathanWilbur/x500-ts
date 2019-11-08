@@ -25,7 +25,7 @@ though it will result in a more bloated codebase.
 - [x] DirectoryIDMProtocols
 - [x] DirectoryInformationShadowProtocol
 - [x] DirectoryManagement
-- [ ] DirectoryOperationalBindingManagementProtocol
+- [x] DirectoryOperationalBindingManagementProtocol
 - [x] DirectoryOperationalBindingTypes
 - [x] DirectoryOSIProtocols
 - [ ] DirectorySecurityExchanges
