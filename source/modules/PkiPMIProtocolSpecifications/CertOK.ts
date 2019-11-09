@@ -1,0 +1,5 @@
+/**
+ * `CertOK ::= SEQUENCE {
+ *   dhCert  Certificate,
+ *   ... }`
+ */

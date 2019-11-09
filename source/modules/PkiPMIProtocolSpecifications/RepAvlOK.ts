@@ -1,0 +1,5 @@
+/**
+ * `RepAvlOK ::= SEQUENCE {
+ *   ok     NULL,
+ *   ... }`
+ */

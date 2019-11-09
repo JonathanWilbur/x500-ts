@@ -1,0 +1,5 @@
+/**
+ * `DelAvlOK ::= SEQUENCE {
+ *   ok     NULL,
+ *   ... }`
+ */

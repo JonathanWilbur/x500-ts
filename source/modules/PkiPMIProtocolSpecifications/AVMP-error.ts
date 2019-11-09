@@ -1,0 +1,26 @@
+/**
+ * `AVMP-error ::= ENUMERATED {
+ *   noReason                           (0),
+ *   unknownAvlEntity                   (1),
+ *   unknownContentType                 (2),
+ *   unsupportedAVMPversion             (3),
+ *   missingContent                     (4),
+ *   missingContentComponent            (5),
+ *   invalidContentComponent            (6),
+ *   sequenceError                      (7),
+ *   protocolError                      (8),
+ *   invalidAvlSignature                (9),
+ *   duplicateAVL                       (10),
+ *   missingAvlComponent                (11),
+ *   invalidAvlVersion                  (12),
+ *   notAllowedForConstrainedAVLEntity  (13),
+ *   constrainedRequired                (14),
+ *   nonConstrainedRequired             (15),
+ *   unsupportedCriticalEntryExtension  (16),
+ *   unsupportedCriticalExtension       (17),
+ *   maxAVLsExceeded                    (18),
+ *   unknownCert                        (19),
+ *   unknownAVL                         (20),
+ *   unsupportedScopeRestriction        (21),
+ *   ... }`
+ */
