@@ -1,0 +1,3 @@
+/**
+ * `Random-Integer ::= BIT STRING`
+ */

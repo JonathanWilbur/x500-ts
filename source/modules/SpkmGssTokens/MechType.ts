@@ -1,0 +1,3 @@
+/**
+ * `MechType ::= OBJECT IDENTIFIER`
+ */
