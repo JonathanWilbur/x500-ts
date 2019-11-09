@@ -1,0 +1,3 @@
+/**
+ * `NetworkAddress ::= X121Address`
+ */
