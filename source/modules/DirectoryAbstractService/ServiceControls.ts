@@ -44,7 +44,7 @@ class ServiceControls {
         readonly userClass: number | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ServiceControls {
+    public static fromElement (value: ASN1Element): ServiceControls {
         let options: ServiceControlOptions = new ServiceControlOptions(
             false, false, false, false, false, false, false, false,
             false, false, false, false, false, false, false,
@@ -88,7 +88,7 @@ class ServiceControls {
                 break;
             }
             case (6): {
-                const manageDSAITPlaneRefElements: DERElement[] = element.sequence;
+                const manageDSAITPlaneRefElements: ASN1Element[] = element.sequence;
                 manageDSAITPlaneRef = {
                     dsaName: manageDSAITPlaneRefElements[0].sizeConstrainedSequenceOf(1)
                         .map((rdnElement: ASN1Element, rdnIndex: number): RelativeDistinguishedName => {

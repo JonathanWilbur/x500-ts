@@ -28,7 +28,7 @@ class ChangePasswordArgumentData {
         readonly newPwd: UserPwd,
     ) {}
 
-    public static fromElement (value: DERElement): ChangePasswordArgumentData {
+    public static fromElement (value: ASN1Element): ChangePasswordArgumentData {
         let object!: DistinguishedName;
         let oldPwd!: UserPwd;
         let newPwd!: UserPwd;

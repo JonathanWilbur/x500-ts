@@ -31,7 +31,7 @@ class SDSEContent {
         readonly attValIncomplete: AttributeType[],
     ) {}
 
-    public static fromElement (value: DERElement): SDSEContent {
+    public static fromElement (value: ASN1Element): SDSEContent {
         let sDSEType!: SDSEType;
         let subComplete: boolean = false;
         let attComplete: boolean | undefined = undefined;

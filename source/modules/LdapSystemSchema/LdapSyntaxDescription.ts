@@ -23,7 +23,7 @@ class LdapSyntaxDescription {
         readonly description: UnboundedDirectoryString | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): LdapSyntaxDescription {
+    public static fromElement (value: ASN1Element): LdapSyntaxDescription {
         let identifier!: ObjectIdentifier;
         let description: UnboundedDirectoryString | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

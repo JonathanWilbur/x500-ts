@@ -22,7 +22,7 @@ class HolderNameConstraintsSyntax {
         readonly excludedSubtrees: GeneralSubtrees | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): HolderNameConstraintsSyntax {
+    public static fromElement (value: ASN1Element): HolderNameConstraintsSyntax {
         let permittedSubtrees!: GeneralSubtrees;
         let excludedSubtrees: GeneralSubtrees | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

@@ -21,7 +21,7 @@ class PwdHistory {
         readonly password: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): PwdHistory {
+    public static fromElement (value: ASN1Element): PwdHistory {
         let time!: Date;
         let password!: DERElement;
         const specification: ConstructedElementSpecification[] = [

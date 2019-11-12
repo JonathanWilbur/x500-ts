@@ -23,7 +23,7 @@ class NumberRange {
         readonly modulus: Uint8Array | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): NumberRange {
+    public static fromElement (value: ASN1Element): NumberRange {
         let startingNumber: Uint8Array | undefined = undefined;
         let endingNumber: Uint8Array | undefined = undefined;
         let modulus: Uint8Array | undefined = undefined;

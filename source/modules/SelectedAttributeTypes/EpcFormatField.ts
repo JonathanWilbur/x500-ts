@@ -30,7 +30,7 @@ class EpcFormatField {
         readonly result: number,
     ) {}
 
-    public static fromElement (value: DERElement): EpcFormatField {
+    public static fromElement (value: ASN1Element): EpcFormatField {
         let bits!: number;
         let charField!: { characters: number } | { maxValue: number };
         let result: number = 0;

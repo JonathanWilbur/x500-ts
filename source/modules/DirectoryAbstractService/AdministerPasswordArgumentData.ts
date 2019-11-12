@@ -26,7 +26,7 @@ class AdministerPasswordArgumentData {
         readonly newPwd: UserPwd,
     ) {}
 
-    public static fromElement (value: DERElement): AdministerPasswordArgumentData {
+    public static fromElement (value: ASN1Element): AdministerPasswordArgumentData {
         let object!: DistinguishedName;
         let newPwd!: UserPwd;
         const specification: ConstructedElementSpecification[] = [

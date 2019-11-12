@@ -29,7 +29,7 @@ class MatchingRuleUseDescription {
         readonly information: ObjectIdentifier[],
     ) {}
 
-    public static fromElement (value: DERElement): MatchingRuleUseDescription {
+    public static fromElement (value: ASN1Element): MatchingRuleUseDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

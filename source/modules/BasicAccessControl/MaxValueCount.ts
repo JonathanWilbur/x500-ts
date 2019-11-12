@@ -22,7 +22,7 @@ class MaxValueCount {
         readonly maxCount: number,
     ) {}
 
-    public static fromElement (value: DERElement): MaxValueCount {
+    public static fromElement (value: ASN1Element): MaxValueCount {
         let type!: AttributeType;
         let maxCount!: number;
         const specification: ConstructedElementSpecification[] = [

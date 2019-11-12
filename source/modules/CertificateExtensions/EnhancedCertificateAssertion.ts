@@ -55,7 +55,7 @@ class EnhancedCertificateAssertion {
         readonly nameConstraints: NameConstraintsSyntax | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): EnhancedCertificateAssertion {
+    public static fromElement (value: ASN1Element): EnhancedCertificateAssertion {
         let serialNumber: CertificateSerialNumber | undefined = undefined;
         let issuer: Name | undefined = undefined;
         let subjectKeyIdentifier: SubjectKeyIdentifier | undefined = undefined;

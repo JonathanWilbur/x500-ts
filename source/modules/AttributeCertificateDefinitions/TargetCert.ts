@@ -18,7 +18,7 @@ export default class TargetCert {
         readonly certDigestInfo: ObjectDigestInfo | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TargetCert {
+    public static fromElement (value: ASN1Element): TargetCert {
         let targetCertificate!: IssuerSerial;
         let targetName: GeneralName | undefined = undefined;
         let certDigestInfo: ObjectDigestInfo | undefined = undefined;
@@ -61,7 +61,7 @@ export default class TargetCert {
     }
 
     public toElement (): DERElement {
-        const targetCertElements: DERElement[] = [
+        const targetCertElements: ASN1Element[] = [
             this.targetCertificate.toElement(),
         ];
 

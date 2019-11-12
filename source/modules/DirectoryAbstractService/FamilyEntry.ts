@@ -30,7 +30,7 @@ class FamilyEntry {
         readonly familyInfo: FamilyEntries[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): FamilyEntry {
+    public static fromElement (value: ASN1Element): FamilyEntry {
         let rdn!: RelativeDistinguishedName;
         let information!: ASN1Element[];
         let familyInfo: FamilyEntries[] | undefined = undefined;

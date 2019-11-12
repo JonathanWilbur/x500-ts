@@ -20,7 +20,7 @@ class AltName {
         readonly altNameValue: GeneralName | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AltName {
+    public static fromElement (value: ASN1Element): AltName {
         let altnameType!: AltNameType;
         let altNameValue: GeneralName | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

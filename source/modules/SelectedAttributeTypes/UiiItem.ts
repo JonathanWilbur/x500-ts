@@ -4,6 +4,7 @@ import {
     DERElement,
     ObjectIdentifier,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
@@ -20,8 +21,8 @@ class UiiItem {
         readonly length: number | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): UiiItem {
-        const uiiItemElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): UiiItem {
+        const uiiItemElements: ASN1Element[] = value.sequence;
         if (uiiItemElements.length < 1) {
             throw new errors.X500Error("Empty UiiItem.");
         }

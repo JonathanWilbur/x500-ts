@@ -23,7 +23,7 @@ class MultipleMatchingLocalities {
         readonly attributeList: AttributeValueAssertion[],
     ) {}
 
-    public static fromElement (value: DERElement): MultipleMatchingLocalities {
+    public static fromElement (value: ASN1Element): MultipleMatchingLocalities {
         let matchingRuleUsed: ObjectIdentifier | undefined = undefined;
         let attributeList!: AttributeValueAssertion[];
         const specification: ConstructedElementSpecification[] = [

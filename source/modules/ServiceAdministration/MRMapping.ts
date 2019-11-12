@@ -23,7 +23,7 @@ class MRMapping {
         readonly substitution: MRSubstitution[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): MRMapping {
+    public static fromElement (value: ASN1Element): MRMapping {
         let mapping: Mapping[] | undefined = undefined;
         let substitution: MRSubstitution[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

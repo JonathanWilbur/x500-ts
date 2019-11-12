@@ -38,7 +38,7 @@ class TerminateOperationalBindingArgumentData {
         readonly securityParameters: SecurityParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TerminateOperationalBindingArgumentData {
+    public static fromElement (value: ASN1Element): TerminateOperationalBindingArgumentData {
         let bindingType!: ObjectIdentifier;
         let bindingID!: OperationalBindingID;
         let initiator: ASN1Element | undefined = undefined;

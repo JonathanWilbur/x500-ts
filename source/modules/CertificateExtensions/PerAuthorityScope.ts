@@ -39,7 +39,7 @@ class PerAuthorityScope {
         readonly baseRevocationInfo: BaseRevocationInfo | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): PerAuthorityScope {
+    public static fromElement (value: ASN1Element): PerAuthorityScope {
         let authorityName: GeneralName | undefined = undefined;
         let distributionPoint: DistributionPointName | undefined = undefined;
         let onlyContains: OnlyCertificateTypes | undefined = undefined;
@@ -143,7 +143,7 @@ class PerAuthorityScope {
                 ASN1Construction.constructed,
                 0,
             );
-            authorityNameElement.inner = this.authorityName;
+            authorityNameElement.sequence = [ this.authorityName ];
         }
 
         let distributionPointElement: DERElement | undefined = undefined;
@@ -153,7 +153,7 @@ class PerAuthorityScope {
                 ASN1Construction.constructed,
                 1,
             );
-            distributionPointElement.inner = this.distributionPoint;
+            distributionPointElement.sequence = [ this.distributionPoint ];
         }
 
         let onlyContainsElement: DERElement | undefined = undefined;

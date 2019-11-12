@@ -1,6 +1,6 @@
 import DistributionPointName from "./DistributionPointName";
 import ReasonFlags from "./ReasonFlags";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 // IssuingDistPointSyntax ::= SEQUENCE {
 //     -- If onlyContainsUserPublicKeyCerts and onlyContainsCACerts are both FALSE,
@@ -21,14 +21,14 @@ class IssuingDistPointSyntax {
         readonly onlyContainsUserPublicKeyCerts: boolean = false,
         readonly onlyContainsCACerts: boolean = false,
         readonly onlySomeReasons? : ReasonFlags,
-        readonly indirectCRL: boolean = false
+        readonly indirectCRL: boolean = false,
     ) {}
 
-    public static fromElement (value: DERElement): IssuingDistPointSyntax {
+    public static fromElement (value: ASN1Element): IssuingDistPointSyntax {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on IssuingDistPointSyntax");
@@ -43,7 +43,7 @@ class IssuingDistPointSyntax {
         let onlySomeReasons: ReasonFlags | undefined;
         let indirectCRL: boolean | undefined;
 
-        const issuingDistPointSyntaxElements: DERElement[] = value.sequence;
+        const issuingDistPointSyntaxElements: ASN1Element[] = value.sequence;
         let lastEncounteredTagNumber: number;
         issuingDistPointSyntaxElements.forEach((element) => {
             if (!lastEncounteredTagNumber) {
@@ -106,12 +106,12 @@ class IssuingDistPointSyntax {
             onlyContainsUserPublicKeyCerts,
             onlyContainsCACerts,
             onlySomeReasons,
-            indirectCRL
+            indirectCRL,
         );
     }
 
     public toElement (): DERElement {
-        const issuingDistPointSyntaxElements: DERElement[] = [];
+        const issuingDistPointSyntaxElements: ASN1Element[] = [];
 
         if (this.distributionPoint) {
             issuingDistPointSyntaxElements.push(this.distributionPoint);
@@ -121,7 +121,7 @@ class IssuingDistPointSyntax {
             const onlyContainsUserPublicKeyCertsElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                ASN1UniversalType.boolean
+                ASN1UniversalType.boolean,
             );
             onlyContainsUserPublicKeyCertsElement.boolean = this.onlyContainsUserPublicKeyCerts;
             issuingDistPointSyntaxElements.push(onlyContainsUserPublicKeyCertsElement);
@@ -131,7 +131,7 @@ class IssuingDistPointSyntax {
             const onlyContainsCACertsElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                ASN1UniversalType.boolean
+                ASN1UniversalType.boolean,
             );
             onlyContainsCACertsElement.boolean = this.onlyContainsUserPublicKeyCerts;
             issuingDistPointSyntaxElements.push(onlyContainsCACertsElement);
@@ -145,7 +145,7 @@ class IssuingDistPointSyntax {
             const indirectCRLElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                ASN1UniversalType.boolean
+                ASN1UniversalType.boolean,
             );
             indirectCRLElement.boolean = this.onlyContainsUserPublicKeyCerts;
             issuingDistPointSyntaxElements.push(indirectCRLElement);
@@ -154,7 +154,7 @@ class IssuingDistPointSyntax {
         const issuingDistPointSyntaxElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         issuingDistPointSyntaxElement.sequence = issuingDistPointSyntaxElements;
         return issuingDistPointSyntaxElement;

@@ -36,7 +36,7 @@ class EntryInformation {
         readonly derivedEntry: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): EntryInformation {
+    public static fromElement (value: ASN1Element): EntryInformation {
         let name!: Name;
         let fromEntry: boolean = true;
         let information: ASN1Element[] | undefined = undefined;

@@ -23,7 +23,7 @@ class FamilyEntries {
         readonly familyEntries: FamilyEntry[],
     ) {}
 
-    public static fromElement (value: DERElement): FamilyEntries {
+    public static fromElement (value: ASN1Element): FamilyEntries {
         let familyClass!: ObjectIdentifier;
         let familyEntries!: FamilyEntry[];
         const specification: ConstructedElementSpecification[] = [

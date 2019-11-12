@@ -42,7 +42,7 @@ class ContentChange {
         readonly attValIncomplete: AttributeType[],
     ) {}
 
-    public static fromElement (value: DERElement): ContentChange {
+    public static fromElement (value: ASN1Element): ContentChange {
         let rename: RelativeDistinguishedName | DistinguishedName | undefined = undefined;
         let attributeChanges: Attribute[] | EntryModification[] | undefined = undefined;
         let sDSEType!: SDSEType;

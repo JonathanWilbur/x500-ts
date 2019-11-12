@@ -28,7 +28,7 @@ class IdmBind {
         readonly argument: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): IdmBind {
+    public static fromElement (value: ASN1Element): IdmBind {
         let protocolID!: ObjectIdentifier;
         let callingAETitle: GeneralName | undefined = undefined;
         let calledAETitle: GeneralName | undefined = undefined;

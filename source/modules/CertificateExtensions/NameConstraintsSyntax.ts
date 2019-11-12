@@ -1,6 +1,6 @@
 import GeneralSubtrees from "./GeneralSubtrees";
 import GeneralSubtree from "./GeneralSubtree";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // NameConstraintsSyntax ::= SEQUENCE {
@@ -20,7 +20,7 @@ export default
 class NameConstraintsSyntax {
     constructor (
         readonly permittedSubtrees? : GeneralSubtrees,
-        readonly excludedSubtrees? : GeneralSubtrees
+        readonly excludedSubtrees? : GeneralSubtrees,
     ) {
         if (!permittedSubtrees && !excludedSubtrees) {
             throw new errors.X500Error(
@@ -29,7 +29,7 @@ class NameConstraintsSyntax {
         }
     }
 
-    public static fromElement (value: DERElement): NameConstraintsSyntax {
+    public static fromElement (value: ASN1Element): NameConstraintsSyntax {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
@@ -42,7 +42,7 @@ class NameConstraintsSyntax {
         default: throw new errors.X500Error("Undefined error when validating NameConstraintsSyntax tag");
         }
 
-        const nameConstraintsSyntaxElements: DERElement[] = value.sequence;
+        const nameConstraintsSyntaxElements: ASN1Element[] = value.sequence;
         if (nameConstraintsSyntaxElements.length === 0) {
             throw new errors.X500Error("NameConstraintsSyntax SEQUENCE was constituted from zero elements");
         }
@@ -50,7 +50,7 @@ class NameConstraintsSyntax {
         let permittedSubtrees: GeneralSubtrees | undefined;
         let excludedSubtrees: GeneralSubtrees | undefined;
         let fixedPositionElementsEncountered: number = 0;
-        nameConstraintsSyntaxElements.forEach((element: DERElement) => {
+        nameConstraintsSyntaxElements.forEach((element: ASN1Element) => {
             if (element.tagClass === ASN1TagClass.context) {
                 if (element.tagNumber === 0) { // permittedSubtrees
                     if (element.construction !== ASN1Construction.primitive) {
@@ -72,17 +72,17 @@ class NameConstraintsSyntax {
                     if (excludedSubtrees) {
                         throw new errors.X500Error("NameConstraintsSyntax.excludedSubtrees already defined");
                     }
-                    excludedSubtrees = element.sequence.map((xsub: DERElement) => GeneralSubtree.fromElement(xsub));
+                    excludedSubtrees = element.sequence.map((xsub: ASN1Element) => GeneralSubtree.fromElement(xsub));
                     fixedPositionElementsEncountered++;
                 }
             }
         });
 
-        if (!DERElement.isUniquelyTagged(nameConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
+        if (!ASN1Element.isUniquelyTagged(nameConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
             throw new errors.X500Error("Elements of GeneralSubtree were not uniquely tagged");
         }
 
-        if (!DERElement.isInCanonicalOrder(nameConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
+        if (!ASN1Element.isInCanonicalOrder(nameConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
             throw new errors.X500Error("Extended elements of GeneralSubtree were not in canonical order");
         }
 

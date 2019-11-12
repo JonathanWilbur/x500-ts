@@ -23,7 +23,7 @@ class Mapping {
         readonly level: number,
     ) {}
 
-    public static fromElement (value: DERElement): Mapping {
+    public static fromElement (value: ASN1Element): Mapping {
         let mappingFunction!: ObjectIdentifier;
         let level: number = 0;
         const specification: ConstructedElementSpecification[] = [

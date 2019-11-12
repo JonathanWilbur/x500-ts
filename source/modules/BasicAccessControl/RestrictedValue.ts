@@ -22,7 +22,7 @@ class RestrictedValue {
         readonly valuesIn: AttributeType,
     ) {}
 
-    public static fromElement (value: DERElement): RestrictedValue {
+    public static fromElement (value: ASN1Element): RestrictedValue {
         let type!: AttributeType;
         let valuesIn!: AttributeType;
         const specification: ConstructedElementSpecification[] = [

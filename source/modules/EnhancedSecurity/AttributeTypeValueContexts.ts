@@ -25,7 +25,7 @@ class AttributeTypeValueContexts {
         readonly contextList: Context[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeTypeValueContexts {
+    public static fromElement (value: ASN1Element): AttributeTypeValueContexts {
         let type!: ObjectIdentifier;
         let value_!: ASN1Element;
         let contextList: Context[] | undefined = undefined;

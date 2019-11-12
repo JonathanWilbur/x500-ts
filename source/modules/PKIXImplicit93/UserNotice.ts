@@ -23,7 +23,7 @@ class UserNotice {
         readonly explicitText: DisplayText | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): UserNotice {
+    public static fromElement (value: ASN1Element): UserNotice {
         let noticeRef: NoticeReference | undefined = undefined;
         let explicitText: DisplayText | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

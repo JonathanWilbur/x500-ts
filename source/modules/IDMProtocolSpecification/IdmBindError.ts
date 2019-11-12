@@ -32,7 +32,7 @@ class IdmBindError {
         readonly error: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): IdmBindError {
+    public static fromElement (value: ASN1Element): IdmBindError {
         let protocolID!: ObjectIdentifier;
         let respondingAETitle: GeneralName | undefined = undefined;
         let aETitleError: number | undefined = undefined;

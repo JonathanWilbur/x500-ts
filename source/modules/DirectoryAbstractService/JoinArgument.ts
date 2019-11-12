@@ -42,7 +42,7 @@ class JoinArgument {
         readonly joinSelection: EntryInformationSelection,
     ) {}
 
-    public static fromElement (value: DERElement): JoinArgument {
+    public static fromElement (value: ASN1Element): JoinArgument {
         let joinBaseObject!: Name;
         let domainLocalID: DomainLocalID | undefined = undefined;
         let joinSubset: number = 0;

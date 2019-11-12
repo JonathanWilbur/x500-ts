@@ -36,7 +36,7 @@ class IdmReject {
         readonly reason: number,
     ) {}
 
-    public static fromElement (value: DERElement): IdmReject {
+    public static fromElement (value: ASN1Element): IdmReject {
         let invokeID!: number;
         let reason!: number;
         const specification: ConstructedElementSpecification[] = [

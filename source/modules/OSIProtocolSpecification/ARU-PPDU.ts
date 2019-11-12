@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `ARU-PPDU ::= CHOICE {
  *   normal-mode-parameters     [0] IMPLICIT SEQUENCE {
@@ -9,3 +11,5 @@
  *         presentation-data-values            CHOICE {
  *           single-ASN1-type               [0]  ABSTRACT-SYNTAX.&Type(ABRT-apdu)}}}}}`
  */
+type ARU_PPDU = ASN1Element;
+export default ARU_PPDU;

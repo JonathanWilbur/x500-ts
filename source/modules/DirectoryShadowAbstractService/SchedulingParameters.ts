@@ -23,7 +23,7 @@ class SchedulingParameters {
         readonly othertimes: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): SchedulingParameters {
+    public static fromElement (value: ASN1Element): SchedulingParameters {
         let periodicStrategy: PeriodicStrategy | undefined = undefined;
         let othertimes: boolean = false;
         const specification: ConstructedElementSpecification[] = [

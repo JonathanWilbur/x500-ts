@@ -23,7 +23,7 @@ class TotalRefresh {
         readonly subtree: Subtree[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TotalRefresh {
+    public static fromElement (value: ASN1Element): TotalRefresh {
         let sDSE: SDSEContent | undefined = undefined;
         let subtree: Subtree[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

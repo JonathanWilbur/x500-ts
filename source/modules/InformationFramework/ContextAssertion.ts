@@ -24,7 +24,7 @@ class ContextAssertion {
         readonly contextValues: DERElement[],
     ) {}
 
-    public static fromElement (value: DERElement): ContextAssertion {
+    public static fromElement (value: ASN1Element): ContextAssertion {
         let contextType!: AttributeType;
         let contextValues!: DERElement[];
         const specification: ConstructedElementSpecification[] = [

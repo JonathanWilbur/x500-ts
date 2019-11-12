@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 
 /**
  * `ServiceControlOptions ::= BIT STRING {
@@ -38,7 +38,7 @@ class ServiceControlOptions {
         readonly allowWriteableCopy: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): ServiceControlOptions {
+    public static fromElement (value: ASN1Element): ServiceControlOptions {
         const bits: boolean[] = value.bitString;
         return new ServiceControlOptions(
             ((bits.length >  0) ? bits[ 0] : false),

@@ -34,7 +34,7 @@ class CRLReferral {
         readonly lastChangedCRL: Date | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CRLReferral {
+    public static fromElement (value: ASN1Element): CRLReferral {
         let issuer: GeneralName | undefined = undefined;
         let location: GeneralName | undefined = undefined;
         let deltaRefInfo: DeltaRefInfo | undefined = undefined;
@@ -119,7 +119,7 @@ class CRLReferral {
                 ASN1Construction.constructed,
                 0,
             );
-            issuerElement.inner = this.issuer;
+            issuerElement.sequence = [ this.issuer ];
         }
 
         let locationElement: DERElement | undefined = undefined;
@@ -129,7 +129,7 @@ class CRLReferral {
                 ASN1Construction.constructed,
                 1,
             );
-            locationElement.inner = this.location;
+            locationElement.sequence = [ this.location ];
         }
 
         let deltaRefInfoElement: DERElement | undefined = undefined;

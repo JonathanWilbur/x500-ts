@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import Context from "./Context";
@@ -25,19 +25,19 @@ export default
 class Attribute {
     constructor (
         readonly type: ObjectIdentifier,
-        readonly values: DERElement[],
-        readonly valuesWithContext: { value: DERElement; contextList: Context[] }[] | undefined,
+        readonly values: ASN1Element[],
+        readonly valuesWithContext: { value: ASN1Element; contextList: Context[] }[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Attribute {
+    public static fromElement (value: ASN1Element): Attribute {
         if (value.construction !== ASN1Construction.constructed) {
             throw new errors.X500Error("Attribute was not of constructed construction.");
         }
-        const attributeElements: DERElement[] = value.sequence;
+        const attributeElements: ASN1Element[] = value.sequence;
         if (attributeElements.length < 2) {
             throw new errors.X500Error(`Invalid number of elements in Attribute: ${attributeElements.length}.`);
         }
-        if (!DERElement.isInCanonicalOrder(attributeElements)) {
+        if (!ASN1Element.isInCanonicalOrder(attributeElements)) {
             throw new errors.X500Error("Elements of Attribute were not in canonical order.");
         }
 
@@ -54,8 +54,8 @@ class Attribute {
         );
 
         const type: ObjectIdentifier = attributeElements[0].objectIdentifier;
-        const values: DERElement[] = attributeElements[1].set;
-        const valuesWithContext: { value: DERElement; contextList: Context[] }[] | undefined = (() => {
+        const values: ASN1Element[] = attributeElements[1].set;
+        const valuesWithContext: { value: ASN1Element; contextList: Context[] }[] | undefined = (() => {
             if (
                 attributeElements.length <= 2
                 || attributeElements[2].tagClass !== ASN1TagClass.universal
@@ -64,13 +64,13 @@ class Attribute {
             ) {
                 return undefined;
             }
-            return attributeElements[2].set.map((vwc: DERElement) => {
+            return attributeElements[2].set.map((vwc: ASN1Element) => {
                 validateTag(vwc, "valuesWithContext element",
                     [ ASN1TagClass.universal ],
                     [ ASN1Construction.constructed ],
                     [ ASN1UniversalType.sequence ],
                 );
-                const vwcElements: DERElement[] = vwc.sequence;
+                const vwcElements: ASN1Element[] = vwc.sequence;
                 if (vwcElements.length < 2) {
                     throw new errors.X500Error("Too few elements in a valuesWithContext element.");
                 }
@@ -79,7 +79,7 @@ class Attribute {
                     [ ASN1Construction.constructed ],
                     [ ASN1UniversalType.set ],
                 );
-                const contexts: DERElement[] = vwcElements[1].set;
+                const contexts: ASN1Element[] = vwcElements[1].set;
                 if (contexts.length < 1) {
                     throw new errors.X500Error("valuesWithContext.contextList must have at least one Context.");
                 }
@@ -125,13 +125,13 @@ class Attribute {
                     ASN1UniversalType.sequence,
                 );
 
-                const contextValueElement: DERElement = vwc.value;
+                const contextValueElement: ASN1Element = vwc.value;
                 const contextListElement: DERElement = new DERElement(
                     ASN1TagClass.universal,
                     ASN1Construction.constructed,
                     ASN1UniversalType.set,
                 );
-                contextListElement.set = vwc.contextList.map(c => c.toElement());
+                contextListElement.set = vwc.contextList.map((c) => c.toElement());
 
                 vwcElement.sequence = [
                     contextValueElement,

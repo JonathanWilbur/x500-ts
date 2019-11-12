@@ -23,7 +23,7 @@ class DelMatchSyntax {
         readonly lastHolder: Holder,
     ) {}
 
-    public static fromElement (value: DERElement): DelMatchSyntax {
+    public static fromElement (value: ASN1Element): DelMatchSyntax {
         let firstIssuer!: AttCertIssuer;
         let lastHolder!: Holder;
         const specification: ConstructedElementSpecification[] = [

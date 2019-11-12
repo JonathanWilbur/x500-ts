@@ -26,7 +26,7 @@ class TraceItem {
         readonly operationProgress: OperationProgress,
     ) {}
 
-    public static fromElement (value: DERElement): TraceItem {
+    public static fromElement (value: ASN1Element): TraceItem {
         let dsa!: Name;
         let targetObject: Name | undefined = undefined;
         let operationProgress!: OperationProgress;

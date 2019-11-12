@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `OsiBindError{APPLICATION-CONTEXT:Protocols} ::= CHOICE {
  *   normal-mode-parameters  SEQUENCE {
@@ -16,3 +18,5 @@
  *           single-ASN1-type               [0]
  *                      ABSTRACT-SYNTAX.&Type(AAREerr-apdu{{Protocols}})}}} OPTIONAL}}`
  */
+type OsiBindError = ASN1Element;
+export default OsiBindError;

@@ -25,7 +25,7 @@ class ControlOptions {
         readonly hierarchyOptions: HierarchySelections | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ControlOptions {
+    public static fromElement (value: ASN1Element): ControlOptions {
         let serviceControls: ServiceControlOptions = new ServiceControlOptions(
             false,
             false,

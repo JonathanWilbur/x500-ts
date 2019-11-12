@@ -21,7 +21,7 @@ class DayTimeBand {
         readonly endDayTime: DayTime,
     ) {}
 
-    public static fromElement (value: DERElement): DayTimeBand {
+    public static fromElement (value: ASN1Element): DayTimeBand {
         let startDayTime: DayTime = new DayTime(0, 0, 0);
         let endDayTime: DayTime = new DayTime(23, 59, 59);
         const specification: ConstructedElementSpecification[] = [

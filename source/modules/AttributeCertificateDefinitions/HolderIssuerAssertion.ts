@@ -22,7 +22,7 @@ class HolderIssuerAssertion {
         readonly issuer: AttCertIssuer | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): HolderIssuerAssertion {
+    public static fromElement (value: ASN1Element): HolderIssuerAssertion {
         let holder: Holder | undefined = undefined;
         let issuer: AttCertIssuer | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

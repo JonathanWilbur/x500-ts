@@ -25,7 +25,7 @@ class MRSubstitution {
         readonly newMatchingRule: ObjectIdentifier | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): MRSubstitution {
+    public static fromElement (value: ASN1Element): MRSubstitution {
         let attribute!: AttributeType;
         let oldMatchingRule: ObjectIdentifier | undefined = undefined;
         let newMatchingRule: ObjectIdentifier | undefined = undefined;

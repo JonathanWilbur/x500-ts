@@ -15,7 +15,7 @@ class SenderDhPublicKey {
         readonly publicKey: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): SenderDhPublicKey {
+    public static fromElement (value: ASN1Element): SenderDhPublicKey {
         let algorithmIdentifier!: AlgorithmIdentifier;
         let publicKey!: boolean[];
         const specification = [

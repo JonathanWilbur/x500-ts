@@ -26,7 +26,7 @@ class IssuerAndSerialNumber {
         readonly serial: CertificateSerialNumber,
     ) {}
 
-    public static fromElement (value: DERElement): IssuerAndSerialNumber {
+    public static fromElement (value: ASN1Element): IssuerAndSerialNumber {
         let issuer!: Name;
         let serial!: CertificateSerialNumber;
         const specification: ConstructedElementSpecification[] = [

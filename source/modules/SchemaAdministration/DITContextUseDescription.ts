@@ -30,7 +30,7 @@ class DITContextUseDescription {
         readonly information: DITContextUseInformation,
     ) {}
 
-    public static fromElement (value: DERElement): DITContextUseDescription {
+    public static fromElement (value: ASN1Element): DITContextUseDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

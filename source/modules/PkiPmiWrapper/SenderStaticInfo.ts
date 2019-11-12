@@ -29,7 +29,7 @@ class SenderStaticInfo {
         readonly partyAinfo: UserKeyingMaterial,
     ) {}
 
-    public static fromElement (value: DERElement): SenderStaticInfo {
+    public static fromElement (value: ASN1Element): SenderStaticInfo {
         let issuer!: Name;
         let serialNumber!: CertificateSerialNumber;
         let partyAinfo!: UserKeyingMaterial;

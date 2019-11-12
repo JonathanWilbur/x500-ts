@@ -25,7 +25,7 @@ class SubordinateChanges {
         readonly changes: IncrementalStepRefresh,
     ) {}
 
-    public static fromElement (value: DERElement): SubordinateChanges {
+    public static fromElement (value: ASN1Element): SubordinateChanges {
         let subordinate!: RelativeDistinguishedName;
         let changes!: IncrementalStepRefresh;
         const specification: ConstructedElementSpecification[] = [

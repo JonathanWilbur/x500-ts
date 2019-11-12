@@ -20,7 +20,7 @@ export default class InfoSyntax {
         readonly choice: string | { name: GeneralNames; hash?: HASH }
     ) {}
 
-    public static fromElement (value: DERElement): InfoSyntax {
+    public static fromElement (value: ASN1Element): InfoSyntax {
         let choice!: string | { name: GeneralNames; hash: HASH };
         const specification: ConstructedElementSpecification[] = [
             {
@@ -33,7 +33,7 @@ export default class InfoSyntax {
                         construction: ASN1Construction.constructed,
                         tagNumber: ASN1UniversalType.sequence,
                         callback: (el: ASN1Element): void => {
-                            const elements: DERElement[] = (el as DERElement).sequence;
+                            const elements: ASN1Element[] = (el as DERElement).sequence;
                             choice = {
                                 name: elements[0].sequence,
                                 hash: HASH.fromElement(elements[1]),

@@ -53,7 +53,7 @@ class CommonArgumentsSeq {
         readonly familyGrouping: FamilyGrouping,
     ) {}
 
-    public static fromElement (value: DERElement): CommonArgumentsSeq {
+    public static fromElement (value: ASN1Element): CommonArgumentsSeq {
         let serviceControls: ServiceControls = new ServiceControls(
             undefined,
             1,

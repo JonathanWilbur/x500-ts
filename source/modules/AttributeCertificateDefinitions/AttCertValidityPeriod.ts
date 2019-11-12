@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -11,17 +11,17 @@ export default
 class AttCertValidityPeriod {
     constructor (
         readonly notBefore: Date,
-        readonly notAfter: Date
+        readonly notAfter: Date,
     ) {}
 
-    public static fromElement (value: DERElement): AttCertValidityPeriod {
+    public static fromElement (value: ASN1Element): AttCertValidityPeriod {
         validateTag(value, "AttCertValidityPeriod",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
 
-        const validityElements: DERElement[] = value.sequence;
+        const validityElements: ASN1Element[] = value.sequence;
         if (validityElements.length < 2) {
             throw new errors.X500Error("AttCertValidityPeriod contained fewer than two ASN.1 elements.");
         }

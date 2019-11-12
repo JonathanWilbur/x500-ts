@@ -36,7 +36,7 @@ class TBSPDU_wrapper {
         readonly conf: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): TBSPDU_wrapper {
+    public static fromElement (value: ASN1Element): TBSPDU_wrapper {
         let version!: Version;
         let signatureAlgorithm!: AlgorithmIdentifier;
         let certPath!: PkiPath;

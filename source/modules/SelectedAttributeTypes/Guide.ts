@@ -23,7 +23,7 @@ class Guide {
         readonly criteria: Criteria,
     ) {}
 
-    public static fromElement (value: DERElement): Guide {
+    public static fromElement (value: ASN1Element): Guide {
         let objectClass: ObjectIdentifier | undefined = undefined;
         let criteria!: Criteria;
         const specification: ConstructedElementSpecification[] = [

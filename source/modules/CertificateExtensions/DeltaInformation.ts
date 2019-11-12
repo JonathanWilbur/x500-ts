@@ -22,7 +22,7 @@ class DeltaInformation {
         readonly nextDelta: Date | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DeltaInformation {
+    public static fromElement (value: ASN1Element): DeltaInformation {
         let deltaLocation!: GeneralName;
         let nextDelta: Date | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

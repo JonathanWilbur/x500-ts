@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import Certificate from "../AuthenticationFramework/Certificate";
 import AttributeCertificate from "../AttributeCertificateDefinitions/AttributeCertificate";
 
@@ -15,8 +15,8 @@ class ACPathData {
         readonly attributeCertificate: AttributeCertificate | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ACPathData {
-        const acPathDataElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): ACPathData {
+        const acPathDataElements: ASN1Element[] = value.sequence;
         let certificate: Certificate | undefined = undefined;
         let attributeCertificate: AttributeCertificate | undefined = undefined;
 

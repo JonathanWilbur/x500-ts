@@ -15,7 +15,7 @@ class FINGERPRINT {
         readonly fingerprint: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): FINGERPRINT {
+    public static fromElement (value: ASN1Element): FINGERPRINT {
         let algorithmIdentifier!: AlgorithmIdentifier;
         let fingerprint!: boolean[];
         const specification = [

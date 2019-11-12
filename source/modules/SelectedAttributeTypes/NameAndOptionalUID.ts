@@ -24,7 +24,7 @@ class NameAndOptionalUID {
         readonly uid: UniqueIdentifier | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): NameAndOptionalUID {
+    public static fromElement (value: ASN1Element): NameAndOptionalUID {
         let dn!: DistinguishedName;
         let uid: UniqueIdentifier | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

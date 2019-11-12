@@ -44,7 +44,7 @@ class ContinuationReference {
         readonly nameResolveOnMaster: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): ContinuationReference {
+    public static fromElement (value: ASN1Element): ContinuationReference {
         let targetObject: Name | undefined = undefined;
         let aliasedRDNs: number | undefined = undefined;
         let operationProgress: OperationProgress | undefined = undefined;

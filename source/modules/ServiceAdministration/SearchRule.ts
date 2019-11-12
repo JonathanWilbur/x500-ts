@@ -63,7 +63,7 @@ class SearchRule {
         readonly entryLimit: EntryLimit | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SearchRule {
+    public static fromElement (value: ASN1Element): SearchRule {
         let id!: number;
         let dmdId!: ObjectIdentifier;
         let serviceType: ObjectIdentifier | undefined = undefined;

@@ -21,7 +21,7 @@ class SuperiorToSubordinateModification {
         readonly immediateSuperiorInfo: Attribute[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SuperiorToSubordinateModification {
+    public static fromElement (value: ASN1Element): SuperiorToSubordinateModification {
         let contextPrefixInfo!: DITcontext;
         let immediateSuperiorInfo: Attribute[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

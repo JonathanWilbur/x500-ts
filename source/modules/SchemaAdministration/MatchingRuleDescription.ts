@@ -30,7 +30,7 @@ class MatchingRuleDescription {
         readonly information: UnboundedDirectoryString | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): MatchingRuleDescription {
+    public static fromElement (value: ASN1Element): MatchingRuleDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

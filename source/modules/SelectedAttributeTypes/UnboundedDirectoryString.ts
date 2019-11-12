@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 /**
@@ -17,12 +17,12 @@ class UnboundedDirectoryString {
         return this.value;
     }
 
-    public static print (element: DERElement): string {
+    public static print (element: ASN1Element): string {
         const uds: UnboundedDirectoryString = UnboundedDirectoryString.fromElement(element);
         return uds.toString();
     }
 
-    public static fromElement (value: DERElement): UnboundedDirectoryString {
+    public static fromElement (value: ASN1Element): UnboundedDirectoryString {
         if (value.tagClass !== ASN1TagClass.universal) {
             throw new errors.X500Error("UnboundedDirectoryString must be of universal class");
         }
@@ -57,7 +57,7 @@ class UnboundedDirectoryString {
         const unboundedDirectoryStringElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.utf8String
+            ASN1UniversalType.utf8String,
         );
         unboundedDirectoryStringElement.utf8String = this.value;
         return unboundedDirectoryStringElement;

@@ -81,7 +81,7 @@ class ChainingArguments {
         readonly excludeWriteableCopies: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): ChainingArguments {
+    public static fromElement (value: ASN1Element): ChainingArguments {
         let originator: DistinguishedName | undefined = undefined;
         let targetObject: DistinguishedName | undefined = undefined;
         let operationProgress: OperationProgress = new OperationProgress(1, undefined);

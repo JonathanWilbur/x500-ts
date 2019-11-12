@@ -1,6 +1,6 @@
 import CertificateListContent from "./CertificateListContent";
 import AlgorithmIdentifier from "./AlgorithmIdentifier";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -26,14 +26,14 @@ class CertificateList {
         readonly signatureValue: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): CertificateList {
+    public static fromElement (value: ASN1Element): CertificateList {
         validateTag(value, "CertificateList",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
 
-        const certificateListElements: DERElement[] = value.sequence;
+        const certificateListElements: ASN1Element[] = value.sequence;
         if (certificateListElements.length !== 3) {
             throw new errors.X500Error("Invalid number of elements in CertificateList");
         }

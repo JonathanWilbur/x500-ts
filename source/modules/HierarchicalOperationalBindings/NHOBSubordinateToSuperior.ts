@@ -23,7 +23,7 @@ class NHOBSubordinateToSuperior {
         readonly subentries: SubentryInfo[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): NHOBSubordinateToSuperior {
+    public static fromElement (value: ASN1Element): NHOBSubordinateToSuperior {
         let accessPoints: MasterAndShadowAccessPoints | undefined = undefined;
         let subentries: SubentryInfo[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

@@ -29,7 +29,7 @@ class UiiFormat {
         readonly next: number | UiiFilter,
     ) {}
 
-    public static fromElement (value: DERElement): UiiFormat {
+    public static fromElement (value: ASN1Element): UiiFormat {
         let baseObject: URI | undefined = undefined;
         let subset!: number;
         let next!: number | UiiFilter;

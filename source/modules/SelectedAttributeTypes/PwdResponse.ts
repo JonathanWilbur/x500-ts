@@ -26,7 +26,7 @@ class PwdResponse {
         readonly error: number | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): PwdResponse {
+    public static fromElement (value: ASN1Element): PwdResponse {
         let warning: DERElement | undefined = undefined;
         let error: number | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

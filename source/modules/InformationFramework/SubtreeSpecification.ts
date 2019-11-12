@@ -33,7 +33,7 @@ class SubtreeSpecification {
         readonly specificationFilter: Refinement | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SubtreeSpecification {
+    public static fromElement (value: ASN1Element): SubtreeSpecification {
         let base: LocalName | undefined = undefined;
         let specificExclusions: DERElement[] | undefined = undefined;
         let minimum: BaseDistance | undefined = undefined;

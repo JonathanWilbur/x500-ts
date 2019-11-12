@@ -27,7 +27,7 @@ class SuperiorToSubordinate {
         readonly immediateSuperiorInfo: Attribute[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SuperiorToSubordinate {
+    public static fromElement (value: ASN1Element): SuperiorToSubordinate {
         let contextPrefixInfo!: DITcontext;
         let entryInfo: Attribute[] | undefined = undefined;
         let immediateSuperiorInfo: Attribute[] | undefined = undefined;

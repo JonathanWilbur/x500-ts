@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -17,8 +17,8 @@ class ValidationParms {
         readonly pgenCounter: Uint8Array,
     ) {}
 
-    public static fromElement (value: DERElement): ValidationParms {
-        const validationParms: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): ValidationParms {
+        const validationParms: ASN1Element[] = value.sequence;
         if (validationParms.length < 2) {
             throw new errors.X500Error("Too few elements in ValidationParms.");
         }

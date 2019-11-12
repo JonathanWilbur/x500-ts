@@ -25,7 +25,7 @@ class IncrementalStepRefresh {
         readonly subordinateUpdates: SubordinateChanges[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): IncrementalStepRefresh {
+    public static fromElement (value: ASN1Element): IncrementalStepRefresh {
         let sDSEChanges: ASN1Element | undefined = undefined;
         let subordinateUpdates: SubordinateChanges[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

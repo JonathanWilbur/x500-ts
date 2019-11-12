@@ -2,6 +2,7 @@ import {
     ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1Element,
 } from "asn1-ts";
 
 /**
@@ -21,7 +22,7 @@ class OperationProgress {
         readonly nextRDNToBeResolved: number | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): OperationProgress {
+    public static fromElement (value: ASN1Element): OperationProgress {
         let nameResolutionPhase!: number;
         let nextRDNToBeResolved: number | undefined = undefined;
         value.set.forEach((element) => {

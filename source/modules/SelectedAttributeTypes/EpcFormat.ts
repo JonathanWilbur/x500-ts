@@ -33,7 +33,7 @@ class EpcFormat {
         readonly urnPrefix: string | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): EpcFormat {
+    public static fromElement (value: ASN1Element): EpcFormat {
         let fields!: EpcFormatField[];
         let digitShift: number | undefined = undefined;
         let checkCalc: number | undefined = undefined;

@@ -32,7 +32,7 @@ class CommonResultsSeq {
         readonly notification: Attribute[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CommonResultsSeq {
+    public static fromElement (value: ASN1Element): CommonResultsSeq {
         let securityParameters: SecurityParameters | undefined = undefined;
         let performer: DistinguishedName | undefined = undefined;
         let aliasDereferenced: boolean = false;

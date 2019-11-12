@@ -30,7 +30,7 @@ class AAIssuingDistPointSyntax {
         readonly containsSOAPublicKeyCerts: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): AAIssuingDistPointSyntax {
+    public static fromElement (value: ASN1Element): AAIssuingDistPointSyntax {
         let distributionPoint: DistributionPointName | undefined = undefined;
         let onlySomeReasons: ReasonFlags | undefined = undefined;
         let indirectCRL: boolean = false;

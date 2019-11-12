@@ -33,7 +33,7 @@ class SupplierInformation {
         readonly nonSupplyingMaster: AccessPoint | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SupplierInformation {
+    public static fromElement (value: ASN1Element): SupplierInformation {
         let aeTitle: Name | undefined = undefined;
         let address: PresentationAddress | undefined = undefined;
         let protocolInformation: ProtocolInformation[] | undefined = undefined;

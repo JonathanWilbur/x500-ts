@@ -35,7 +35,7 @@ class OperationalBindingID {
         }
     }
 
-    public static fromElement (value: DERElement): OperationalBindingID {
+    public static fromElement (value: ASN1Element): OperationalBindingID {
         let identifier!: number;
         let version!: number;
         const specification: ConstructedElementSpecification[] = [

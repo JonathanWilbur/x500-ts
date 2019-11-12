@@ -27,7 +27,7 @@ class SupportedAlgorithm {
         readonly intendedCertificatePolicies: CertificatePoliciesSyntax | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SupportedAlgorithm {
+    public static fromElement (value: ASN1Element): SupportedAlgorithm {
         let algorithmIdentifier!: AlgorithmIdentifier;
         let intendedUsage: KeyUsage | undefined = undefined;
         let intendedCertificatePolicies: CertificatePoliciesSyntax | undefined = undefined;

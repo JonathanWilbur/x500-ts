@@ -23,7 +23,7 @@ class Certificates {
         readonly certificationPath: ForwardCertificationPath | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Certificates {
+    public static fromElement (value: ASN1Element): Certificates {
         let userCertificate!: Certificate;
         let certificationPath: ForwardCertificationPath | undefined = undefined;
         const specification = [

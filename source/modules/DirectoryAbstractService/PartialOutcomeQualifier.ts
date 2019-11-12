@@ -39,7 +39,7 @@ class PartialOutcomeQualifier {
         readonly entryCount: ASN1Element | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): PartialOutcomeQualifier {
+    public static fromElement (value: ASN1Element): PartialOutcomeQualifier {
         let limitProblem: LimitProblem | undefined = undefined;
         let unexplored: ContinuationReference[] | undefined = undefined;
         let unavailableCriticalExtensions: boolean = false;

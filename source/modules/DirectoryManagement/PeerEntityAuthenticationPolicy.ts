@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 
 /**
  * `PeerEntityAuthenticationPolicy ::= BIT STRING {
@@ -20,7 +20,7 @@ class PeerEntityAuthenticationPolicy {
         readonly external: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): PeerEntityAuthenticationPolicy {
+    public static fromElement (value: ASN1Element): PeerEntityAuthenticationPolicy {
         const bits: boolean[] = value.bitString;
         return new PeerEntityAuthenticationPolicy(
             ((bits.length >=  1) ? bits[0] : false),

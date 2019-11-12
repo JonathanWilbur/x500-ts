@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import AlgorithmIdentifier from "./AlgorithmIdentifier";
 import PublicKey from "./PublicKey";
@@ -16,10 +16,10 @@ export default
 class SubjectPublicKeyInfo {
     constructor (
         readonly algorithm: AlgorithmIdentifier,
-        readonly subjectPublicKey: PublicKey
+        readonly subjectPublicKey: PublicKey,
     ) {}
 
-    public static fromElement (value: DERElement): SubjectPublicKeyInfo {
+    public static fromElement (value: ASN1Element): SubjectPublicKeyInfo {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
@@ -32,11 +32,11 @@ class SubjectPublicKeyInfo {
         default: throw new errors.X500Error("Undefined error when validating SubjectPublicKeyInfo tag");
         }
 
-        const subjectPublicKeyElements: DERElement[] = value.sequence;
+        const subjectPublicKeyElements: ASN1Element[] = value.sequence;
         switch (subjectPublicKeyElements[1].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.bitString ]
+            [ ASN1UniversalType.bitString ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on SubjectPublicKeyInfo.subjectPublicKey");
@@ -49,7 +49,7 @@ class SubjectPublicKeyInfo {
 
         return new SubjectPublicKeyInfo(
             AlgorithmIdentifier.fromElement(subjectPublicKeyElements[0]),
-            subjectPublicKeyElements[1].bitString
+            subjectPublicKeyElements[1].bitString,
         );
     }
 

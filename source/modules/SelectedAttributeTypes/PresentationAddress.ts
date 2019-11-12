@@ -25,7 +25,7 @@ class PresentationAddress {
         readonly nAddresses: Uint8Array[],
     ) {}
 
-    public static fromElement (value: DERElement): PresentationAddress {
+    public static fromElement (value: ASN1Element): PresentationAddress {
         let pSelector: Uint8Array | undefined = undefined;
         let sSelector: Uint8Array | undefined = undefined;
         let tSelector: Uint8Array | undefined = undefined;

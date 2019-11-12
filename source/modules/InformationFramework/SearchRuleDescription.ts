@@ -53,7 +53,7 @@ class SearchRuleDescription {
         readonly description: UnboundedDirectoryString | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SearchRuleDescription {
+    public static fromElement (value: ASN1Element): SearchRuleDescription {
         let id!: number;
         let dmdId!: ObjectIdentifier;
         let serviceType: ObjectIdentifier | undefined = undefined;

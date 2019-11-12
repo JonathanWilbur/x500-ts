@@ -1,9 +1,9 @@
-import { DERElement, ASN1TagClass, ASN1Construction } from "asn1-ts";
+import { ASN1Element, ASN1TagClass, ASN1Construction } from "asn1-ts";
 import * as errors from "./errors";
 
 // eslint-disable-next-line max-params
 export default function validateTag (
-    element: DERElement,
+    element: ASN1Element,
     name: string,
     acceptableTagClasses: ASN1TagClass[],
     acceptableConstructions: ASN1Construction[],

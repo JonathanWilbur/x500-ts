@@ -1,5 +1,5 @@
 import PolicyQualifierInfo from "./PolicyQualifierInfo";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // PolicyInformation ::= SEQUENCE {
@@ -21,14 +21,14 @@ export default
 class PolicyInformation {
     constructor (
         readonly policyIdentifier: ObjectIdentifier,
-        readonly policyQualifiers? : PolicyQualifierInfo[]
+        readonly policyQualifiers? : PolicyQualifierInfo[],
     ) {}
 
-    public static fromElement (value: DERElement): PolicyInformation {
+    public static fromElement (value: ASN1Element): PolicyInformation {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on PolicyInformation");
@@ -37,13 +37,13 @@ class PolicyInformation {
         default: throw new errors.X500Error("Undefined error when validating PolicyInformation tag");
         }
 
-        const policyInformationElements: DERElement[] = value.sequence;
+        const policyInformationElements: ASN1Element[] = value.sequence;
         let policyQualifiers: PolicyQualifierInfo[] | undefined;
 
         switch (policyInformationElements[0].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.objectIdentifier ]
+            [ ASN1UniversalType.objectIdentifier ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on PolicyInformation.policyIdentifier");
@@ -56,7 +56,7 @@ class PolicyInformation {
         let fixedPositionElementsEncountered: number = 1;
         if (policyInformationElements.length > 1) {
             policyQualifiers = policyInformationElements[1].sequence.map(
-                (element: DERElement) => PolicyQualifierInfo.fromElement(element)
+                (element: ASN1Element) => PolicyQualifierInfo.fromElement(element),
             );
             fixedPositionElementsEncountered++;
         }
@@ -78,14 +78,14 @@ class PolicyInformation {
             new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
-                ASN1UniversalType.objectIdentifier
+                ASN1UniversalType.objectIdentifier,
             ),
         ];
         if (this.policyQualifiers) {
             const policyQualifiersElement: DERElement = new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.constructed,
-                ASN1UniversalType.sequence
+                ASN1UniversalType.sequence,
             );
             policyQualifiersElement.sequence = this.policyQualifiers.map((pqi: PolicyQualifierInfo) => pqi.toElement());
             policyInformationElements.push(policyQualifiersElement);
@@ -93,7 +93,7 @@ class PolicyInformation {
         const policyInformationElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         policyInformationElement.sequence = policyInformationElements;
         return policyInformationElement;

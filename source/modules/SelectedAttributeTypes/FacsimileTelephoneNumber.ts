@@ -23,7 +23,7 @@ class FacsimileTelephoneNumber {
         readonly parameters: G3FacsimileNonBasicParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): FacsimileTelephoneNumber {
+    public static fromElement (value: ASN1Element): FacsimileTelephoneNumber {
         let telephoneNumber!: TelephoneNumber;
         let parameters!: G3FacsimileNonBasicParameters;
         const specification: ConstructedElementSpecification[] = [

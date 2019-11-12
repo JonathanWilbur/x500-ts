@@ -27,7 +27,7 @@ class ObjectClassInformation {
         readonly optionals: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ObjectClassInformation {
+    public static fromElement (value: ASN1Element): ObjectClassInformation {
         let subclassOf: ObjectIdentifier[] | undefined = undefined;
         let kind: ObjectClassKind = ObjectClassKind.structural;
         let mandatories: ObjectIdentifier[] | undefined = undefined;

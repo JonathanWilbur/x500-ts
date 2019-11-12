@@ -1,4 +1,4 @@
-import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement } from "asn1-ts";
+import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement, ASN1Element } from "asn1-ts";
 
 /**
  * `DSEType ::= BIT STRING {
@@ -45,7 +45,7 @@ class DSEType {
         readonly ditBridge: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): DSEType {
+    public static fromElement (value: ASN1Element): DSEType {
         const bits: boolean[] = value.bitString;
         return new DSEType(
             (bits.length >  0 ? bits[ 0] : false),

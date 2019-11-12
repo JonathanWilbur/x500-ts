@@ -30,7 +30,7 @@ class ContextDescription {
         readonly information: ContextInformation,
     ) {}
 
-    public static fromElement (value: DERElement): ContextDescription {
+    public static fromElement (value: ASN1Element): ContextDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

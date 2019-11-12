@@ -19,7 +19,7 @@ class AbandonArgumentData {
         readonly invokeId: InvokeId,
     ) {}
 
-    public static fromElement (value: DERElement): AbandonArgumentData {
+    public static fromElement (value: ASN1Element): AbandonArgumentData {
         let invokeId!: InvokeId;
         const specification: ConstructedElementSpecification[] = [
             {

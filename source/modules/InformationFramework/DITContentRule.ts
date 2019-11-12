@@ -28,7 +28,7 @@ class DITContentRule {
         readonly precluded: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DITContentRule {
+    public static fromElement (value: ASN1Element): DITContentRule {
         let structuralObjectClass!: ObjectIdentifier;
         let auxiliaries: ObjectIdentifier[] | undefined = undefined;
         let mandatory: ObjectIdentifier[] | undefined = undefined;

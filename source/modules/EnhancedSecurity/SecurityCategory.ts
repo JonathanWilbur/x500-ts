@@ -21,7 +21,7 @@ class SecurityCategory {
         readonly value: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): SecurityCategory {
+    public static fromElement (value: ASN1Element): SecurityCategory {
         let type!: ObjectIdentifier;
         let value_!: ASN1Element;
         const specification: ConstructedElementSpecification[] = [

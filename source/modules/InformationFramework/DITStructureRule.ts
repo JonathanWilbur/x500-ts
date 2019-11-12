@@ -26,7 +26,7 @@ class DITStructureRule {
         readonly superiorStructureRules: RuleIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DITStructureRule {
+    public static fromElement (value: ASN1Element): DITStructureRule {
         let ruleIdentifier!: RuleIdentifier;
         let nameForm!: ObjectIdentifier;
         let superiorStructureRules: RuleIdentifier[] | undefined = undefined;

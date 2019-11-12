@@ -24,7 +24,7 @@ class DitBridgeKnowledge {
         readonly accessPoints: MasterAndShadowAccessPoints,
     ) {}
 
-    public static fromElement (value: DERElement): DitBridgeKnowledge {
+    public static fromElement (value: ASN1Element): DitBridgeKnowledge {
         let domainLocalID: UnboundedDirectoryString | undefined = undefined;
         let accessPoints!: MasterAndShadowAccessPoints;
         const specification: ConstructedElementSpecification[] = [

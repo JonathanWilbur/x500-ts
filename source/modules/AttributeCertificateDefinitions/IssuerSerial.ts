@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import GeneralNames from "../CertificateExtensions/GeneralNames";
 import CertificateSerialNumber from "../AuthenticationFramework/CertificateSerialNumber";
@@ -22,13 +22,13 @@ class IssuerSerial {
         readonly issuerUID?: UniqueIdentifier,
     ) {}
 
-    public static fromElement (value: DERElement): IssuerSerial {
+    public static fromElement (value: ASN1Element): IssuerSerial {
         validateTag(value, "IssuerElement",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
-        const issuerSerialElements: DERElement[] = value.sequence;
+        const issuerSerialElements: ASN1Element[] = value.sequence;
         if (issuerSerialElements.length < 2 || issuerSerialElements.length > 3) {
             throw new errors.X500Error(
                 `Invalid number of elements in IssuerSerial: ${issuerSerialElements.length}`,
@@ -37,19 +37,19 @@ class IssuerSerial {
         validateTag(issuerSerialElements[0], "IssuerSerial.issuer",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         );
         validateTag(issuerSerialElements[1], "IssuerSerial.serial",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.integer ]
+            [ ASN1UniversalType.integer ],
         );
 
         if (issuerSerialElements.length === 3) {
             validateTag(issuerSerialElements[2], "IssuerSerial.issuerUID",
                 [ ASN1TagClass.universal ],
                 [ ASN1Construction.primitive ],
-                [ ASN1UniversalType.bitString ]
+                [ ASN1UniversalType.bitString ],
             );
         }
 
@@ -72,7 +72,7 @@ class IssuerSerial {
         const issuerElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         issuerElement.sequence = this.issuer;
         issuerSerialElements.push(issuerElement);

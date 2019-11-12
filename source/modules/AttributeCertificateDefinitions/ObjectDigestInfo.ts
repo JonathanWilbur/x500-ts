@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import DigestedObjectType from "./DigestedObjectType";
@@ -22,20 +22,20 @@ class ObjectDigestInfo {
         readonly objectDigest: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): ObjectDigestInfo {
+    public static fromElement (value: ASN1Element): ObjectDigestInfo {
         validateTag(value, "ObjectDigestInfo",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
-        const objectDigestInfoElements: DERElement[] = value.sequence;
+        const objectDigestInfoElements: ASN1Element[] = value.sequence;
         if (objectDigestInfoElements.length < 3) {
             throw new errors.X500Error(
                 `Too few elements in ObjectDigestInfo: ${objectDigestInfoElements.length}.`,
             );
         }
 
-        const elements: Map<string, DERElement> = new Map<string, DERElement>([
+        const elements: Map<string, ASN1Element> = new Map<string, ASN1Element>([
             ["digestedObjectType", objectDigestInfoElements[0]],
         ]);
 

@@ -26,7 +26,7 @@ class FamilyReturn {
         readonly familySelect: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): FamilyReturn {
+    public static fromElement (value: ASN1Element): FamilyReturn {
         let memberSelect!: number;
         let familySelect: ObjectIdentifier[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

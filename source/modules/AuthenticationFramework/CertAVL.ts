@@ -1,6 +1,6 @@
 import TBSCertAVL from "./TBSCertAVL";
 import AlgorithmIdentifier from "./AlgorithmIdentifier";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -14,11 +14,11 @@ class CertAVL {
     constructor (
         readonly tbsCertAVL: TBSCertAVL,
         readonly signatureAlgorithm: AlgorithmIdentifier,
-        readonly signatureValue: boolean[]
+        readonly signatureValue: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): CertAVL {
-        const certAVLElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): CertAVL {
+        const certAVLElements: ASN1Element[] = value.sequence;
         if (certAVLElements.length !== 3) {
             throw new errors.X500Error("Invalid number of elements in TBSCertAVL");
         }
@@ -40,7 +40,7 @@ class CertAVL {
         return new CertAVL(
             TBSCertAVL.fromElement(certAVLElements[0]),
             AlgorithmIdentifier.fromElement(certAVLElements[1]),
-            certAVLElements[2].bitString
+            certAVLElements[2].bitString,
         );
     }
 

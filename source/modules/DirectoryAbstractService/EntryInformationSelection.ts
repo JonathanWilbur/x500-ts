@@ -3,6 +3,7 @@ import {
     ASN1TagClass,
     DERElement,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import AttributeType from "../InformationFramework/AttributeType";
 import ContextSelection from "./ContextSelection";
@@ -36,7 +37,7 @@ class EntryInformationSelection {
         readonly familyReturn: FamilyReturn,
     ) {}
 
-    public static fromElement (value: DERElement): EntryInformationSelection {
+    public static fromElement (value: ASN1Element): EntryInformationSelection {
         let attributes: null | AttributeType[] = null;
         let infoTypes: number = 0;
         let extraAttributes: null | AttributeType[] | undefined = undefined;

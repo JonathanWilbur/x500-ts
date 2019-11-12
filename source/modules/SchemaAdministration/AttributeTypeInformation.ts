@@ -38,7 +38,7 @@ class AttributeTypeInformation {
         readonly application: AttributeUsage,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeTypeInformation {
+    public static fromElement (value: ASN1Element): AttributeTypeInformation {
         let derivation: ObjectIdentifier | undefined = undefined;
         let equalityMatch: ObjectIdentifier | undefined = undefined;
         let orderingMatch: ObjectIdentifier | undefined = undefined;

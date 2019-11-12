@@ -26,7 +26,7 @@ class JoinAttPair {
         readonly joinContext: JoinContextType[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): JoinAttPair {
+    public static fromElement (value: ASN1Element): JoinAttPair {
         let baseAtt!: AttributeType;
         let joinAtt!: AttributeType;
         let joinContext: JoinContextType[] | undefined = undefined;

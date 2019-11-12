@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import GeneralNames from "../CertificateExtensions/GeneralNames";
 import validateTag from "../../validateTag";
@@ -22,13 +22,13 @@ class AttCertIssuer {
         readonly objectDigestInfo: ObjectDigestInfo | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AttCertIssuer {
+    public static fromElement (value: ASN1Element): AttCertIssuer {
         validateTag(value, "AttCertIssuer",
             [ ASN1TagClass.context ],
             [ ASN1Construction.constructed ],
             [ 0 ],
         );
-        const holderElements: DERElement[] = value.sequence;
+        const holderElements: ASN1Element[] = value.sequence;
         if (holderElements.length < 1) {
             throw new errors.X500Error(`Invalid number of elements in AttCertIssuer: ${holderElements.length}.`);
         }
@@ -40,7 +40,7 @@ class AttCertIssuer {
         let baseCertificateID: IssuerSerial | undefined;
         let objectDigestInfo: ObjectDigestInfo | undefined;
 
-        holderElements.forEach((he: DERElement): void => {
+        holderElements.forEach((he: ASN1Element): void => {
             if (he.construction !== ASN1Construction.constructed) return;
             if (he.tagClass === ASN1TagClass.context) {
                 if (he.tagNumber === 0) {

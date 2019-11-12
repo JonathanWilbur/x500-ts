@@ -32,7 +32,7 @@ class TokenContent {
         readonly response: boolean[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TokenContent {
+    public static fromElement (value: ASN1Element): TokenContent {
         let algorithm!: AlgorithmIdentifier;
         let name!: DistinguishedName;
         let time!: Date;

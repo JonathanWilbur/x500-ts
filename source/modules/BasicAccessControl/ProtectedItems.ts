@@ -57,7 +57,7 @@ class ProtectedItems {
         readonly classes: Refinement | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ProtectedItems {
+    public static fromElement (value: ASN1Element): ProtectedItems {
         let entry: null | undefined = undefined;
         let allUserAttributeTypes: null | undefined = undefined;
         let attributeType: AttributeType[] | undefined = undefined;

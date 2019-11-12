@@ -32,7 +32,7 @@ class TBSCertAVLEntry {
         readonly entryExtensions: Extensions | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TBSCertAVLEntry {
+    public static fromElement (value: ASN1Element): TBSCertAVLEntry {
         let idType!: DERElement;
         let scope: ScopeRestrictions | undefined = undefined;
         let entryExtensions: Extensions | undefined = undefined;

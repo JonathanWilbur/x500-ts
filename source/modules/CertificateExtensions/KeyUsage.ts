@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 
 /**
  * `KeyUsage ::= BIT STRING {
@@ -20,7 +20,7 @@ class KeyUsage {
         readonly decipherOnly: boolean
     ) {}
 
-    public static fromElement (value: DERElement): KeyUsage {
+    public static fromElement (value: ASN1Element): KeyUsage {
         const bits: boolean[] = value.bitString;
         return new KeyUsage(
             ((bits.length > 0) ? bits[0] : false),

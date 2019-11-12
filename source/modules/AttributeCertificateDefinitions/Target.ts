@@ -21,7 +21,7 @@ export default Target;
 //         readonly targetCert: TargetCert,
 //     ) {}
 
-//     public static fromElement (value: DERElement): Target {
+//     public static fromElement (value: ASN1Element): Target {
 //         const targetElements: DERElement[] = value.sequence;
 //         if (targetElements.length < 3) {
 //             throw new errors.X500Error("Too few elements in Target.");

@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 //   ReasonFlags ::= BIT STRING {
@@ -22,11 +22,11 @@ class ReasonFlags {
         readonly weakAlgorithmOrKeySize: boolean = false
     ) {}
 
-    public static fromElement (value: DERElement): ReasonFlags {
+    public static fromElement (value: ASN1Element): ReasonFlags {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.bitString ]
+            [ ASN1UniversalType.bitString ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on ReasonFlags");
@@ -46,7 +46,7 @@ class ReasonFlags {
             ((bits.length >=  7) ? bits[6] : false),
             ((bits.length >=  8) ? bits[7] : false),
             ((bits.length >=  9) ? bits[8] : false),
-            ((bits.length >= 10) ? bits[9] : false)
+            ((bits.length >= 10) ? bits[9] : false),
         );
     }
 
@@ -54,7 +54,7 @@ class ReasonFlags {
         const ret: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.bitString
+            ASN1UniversalType.bitString,
         );
         ret.bitString = [
             this.unused,

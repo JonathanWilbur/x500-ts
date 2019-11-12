@@ -1,4 +1,4 @@
-import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement } from "asn1-ts";
+import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement, ASN1Element } from "asn1-ts";
 
 /**
  * `GrantsAndDenials ::= BIT STRING {
@@ -66,7 +66,7 @@ class GrantsAndDenials {
         readonly denyInvoke: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): GrantsAndDenials {
+    public static fromElement (value: ASN1Element): GrantsAndDenials {
         const bits: boolean[] = value.bitString;
         return new GrantsAndDenials(
             (bits.length >  0 ? bits[ 0] : false),

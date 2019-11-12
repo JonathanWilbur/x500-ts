@@ -22,7 +22,7 @@ class DITContextUseInformation {
         readonly optionalContexts: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DITContextUseInformation {
+    public static fromElement (value: ASN1Element): DITContextUseInformation {
         let mandatoryContexts: ObjectIdentifier[] | undefined = undefined;
         let optionalContexts: ObjectIdentifier[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

@@ -1,4 +1,4 @@
-import { DERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 /**
  * `AuthenticationLevel ::= CHOICE {
@@ -10,5 +10,5 @@ import { DERElement } from "asn1-ts";
  *   other           EXTERNAL,
  *   ... }`
  */
-type AuthenticationLevel = DERElement;
+type AuthenticationLevel = ASN1Element;
 export default AuthenticationLevel;

@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import SkipCerts from "./SkipCerts";
 
@@ -19,7 +19,7 @@ export default
 class PolicyConstraintsSyntax {
     constructor (
         readonly requireExplicitPolicy? : SkipCerts,
-        readonly inhibitPolicyMapping? : SkipCerts
+        readonly inhibitPolicyMapping? : SkipCerts,
     ) {
         if (!requireExplicitPolicy && !inhibitPolicyMapping) {
             throw new errors.X500Error(
@@ -28,11 +28,11 @@ class PolicyConstraintsSyntax {
         }
     }
 
-    public static fromElement (value: DERElement): PolicyConstraintsSyntax {
+    public static fromElement (value: ASN1Element): PolicyConstraintsSyntax {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on PolicyConstraintsSyntax");
@@ -41,7 +41,7 @@ class PolicyConstraintsSyntax {
         default: throw new errors.X500Error("Undefined error when validating PolicyConstraintsSyntax tag");
         }
 
-        const policyConstraintsSyntaxElements: DERElement[] = value.sequence;
+        const policyConstraintsSyntaxElements: ASN1Element[] = value.sequence;
         if (policyConstraintsSyntaxElements.length === 0) {
             throw new errors.X500Error("PolicyConstraintsSyntax SEQUENCE was constituted from zero elements");
         }
@@ -49,7 +49,7 @@ class PolicyConstraintsSyntax {
         let requireExplicitPolicy: SkipCerts | undefined;
         let inhibitPolicyMapping: SkipCerts | undefined;
         let fixedPositionElementsEncountered: number = 0;
-        policyConstraintsSyntaxElements.forEach((element: DERElement, index: number) => {
+        policyConstraintsSyntaxElements.forEach((element: ASN1Element, index: number) => {
             if (element.tagClass === ASN1TagClass.context) {
                 if (element.tagNumber === 0) { // requireExplicitPolicy
                     if (element.construction !== ASN1Construction.primitive) {
@@ -111,7 +111,7 @@ class PolicyConstraintsSyntax {
             const requireExplicitPolicyElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                0
+                0,
             );
             requireExplicitPolicyElement.integer = this.requireExplicitPolicy;
             policyConstraintsSyntaxElements.push(requireExplicitPolicyElement);
@@ -120,7 +120,7 @@ class PolicyConstraintsSyntax {
             const inhibitPolicyMappingElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                1
+                1,
             );
             inhibitPolicyMappingElement.integer = this.inhibitPolicyMapping;
             policyConstraintsSyntaxElements.push(inhibitPolicyMappingElement);
@@ -128,7 +128,7 @@ class PolicyConstraintsSyntax {
         const policyConstraintsSyntaxElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         policyConstraintsSyntaxElement.sequence = policyConstraintsSyntaxElements;
         return policyConstraintsSyntaxElement;

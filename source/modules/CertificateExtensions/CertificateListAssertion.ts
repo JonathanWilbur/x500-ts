@@ -37,7 +37,7 @@ class CertificateListAssertion {
         readonly authorityKeyIdentifier: AuthorityKeyIdentifier | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CertificateListAssertion {
+    public static fromElement (value: ASN1Element): CertificateListAssertion {
         let issuer: Name | undefined = undefined;
         let minCRLNumber: CRLNumber | undefined = undefined;
         let maxCRLNumber: CRLNumber | undefined = undefined;
@@ -150,7 +150,7 @@ class CertificateListAssertion {
         let issuerElement: DERElement | undefined = undefined;
         if (this.issuer) {
             issuerElement = DERElement.fromSequence(
-                this.issuer.map((rdn) => DERElement.fromSet(rdn.map((atav) => atav.toElement())))
+                this.issuer.map((rdn) => DERElement.fromSet(rdn.map((atav) => atav.toElement()))),
             );
         }
 
@@ -196,7 +196,7 @@ class CertificateListAssertion {
                 ASN1Construction.constructed,
                 2,
             );
-            distributionPointElement.inner = this.distributionPoint;
+            distributionPointElement.sequence = [ this.distributionPoint ];
         }
 
         let authorityKeyIdentifierElement: DERElement | undefined = undefined;

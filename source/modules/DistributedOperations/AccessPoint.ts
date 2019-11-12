@@ -29,7 +29,7 @@ class AccessPoint {
         readonly protocolInformation: ProtocolInformation[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AccessPoint {
+    public static fromElement (value: ASN1Element): AccessPoint {
         let aeTitle: Name | undefined = undefined;
         let address: PresentationAddress | undefined = undefined;
         let protocolInformation: ProtocolInformation[] | undefined = undefined;

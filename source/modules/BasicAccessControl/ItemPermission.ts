@@ -27,7 +27,7 @@ class ItemPermission {
         readonly grantsAndDenials: GrantsAndDenials,
     ) {}
 
-    public static fromElement (value: DERElement): ItemPermission {
+    public static fromElement (value: ASN1Element): ItemPermission {
         let precedence: Precedence | undefined = undefined;
         let userClasses!: UserClasses;
         let grantsAndDenials!: GrantsAndDenials;

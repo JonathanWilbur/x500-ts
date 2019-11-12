@@ -45,7 +45,7 @@ class ModifyOperationalBindingArgumentData {
         readonly securityParameters: SecurityParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ModifyOperationalBindingArgumentData {
+    public static fromElement (value: ASN1Element): ModifyOperationalBindingArgumentData {
         let bindingType!: ObjectIdentifier;
         let bindingID!: OperationalBindingID;
         let accessPoint: AccessPoint | undefined = undefined;

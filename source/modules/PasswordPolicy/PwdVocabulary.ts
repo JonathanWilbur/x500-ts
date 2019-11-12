@@ -1,4 +1,4 @@
-import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement } from "asn1-ts";
+import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement, ASN1Element } from "asn1-ts";
 
 /**
  * This specifies the type of words that are forbidden to be used for
@@ -18,7 +18,7 @@ class PwdVocabulary {
         readonly noGeographicalNames: boolean = false,
     ) {}
 
-    public static fromElement (value: DERElement): PwdVocabulary {
+    public static fromElement (value: ASN1Element): PwdVocabulary {
         const bits: boolean[] = value.bitString;
         return new PwdVocabulary(
             (bits.length > 0 ? bits[0] : false),

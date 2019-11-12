@@ -31,7 +31,7 @@ class TimeSpecification {
         readonly timeZone: TimeZone | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TimeSpecification {
+    public static fromElement (value: ASN1Element): TimeSpecification {
         let time!:  { startTime: Date | undefined; endTime: Date | undefined } | Period[];
         let notThisTime: boolean = false;
         let timeZone: TimeZone | undefined = undefined;

@@ -1,77 +1,18 @@
-import { DERElement,ObjectIdentifier, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement,ObjectIdentifier, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import UnboundedDirectoryString from "../SelectedAttributeTypes/UnboundedDirectoryString";
 import * as errors from "../../errors";
 
-// AttributeTypeAndValue ::= SEQUENCE {
-//   type                  ATTRIBUTE.&id({SupportedAttributes}),
-//   value                 ATTRIBUTE.&Type({SupportedAttributes}{@type}),
-//   ... }
-
-// ATTRIBUTE ::= CLASS {
-//     &derivation               ATTRIBUTE OPTIONAL,
-//     &Type                     OPTIONAL, -- either &Type or &derivation required
-//     &equality-match           MATCHING-RULE OPTIONAL,
-//     &ordering-match           MATCHING-RULE OPTIONAL,
-//     &substrings-match         MATCHING-RULE OPTIONAL,
-//     &single-valued            BOOLEAN DEFAULT FALSE,
-//     &collective               BOOLEAN DEFAULT FALSE,
-//     &dummy                    BOOLEAN DEFAULT FALSE,
-//     -- operational extensions
-//     &no-user-modification     BOOLEAN DEFAULT FALSE,
-//     &usage                    AttributeUsage DEFAULT userApplications,
-//     &ldapSyntax               SYNTAX-NAME.&id OPTIONAL,
-//     &ldapName                 SEQUENCE SIZE(1..MAX) OF UTF8String OPTIONAL,
-//     &ldapDesc                 UTF8String OPTIONAL,
-//     &obsolete                 BOOLEAN DEFAULT FALSE,
-//     &id                       OBJECT IDENTIFIER UNIQUE }
-//   WITH SYNTAX {
-//     [SUBTYPE OF               &derivation]
-//     [WITH SYNTAX              &Type]
-//     [EQUALITY MATCHING RULE   &equality-match]
-//     [ORDERING MATCHING RULE   &ordering-match]
-//     [SUBSTRINGS MATCHING RULE &substrings-match]
-//     [SINGLE VALUE             &single-valued]
-//     [COLLECTIVE               &collective]
-//     [DUMMY                    &dummy]
-//     [NO USER MODIFICATION     &no-user-modification]
-//     [USAGE                    &usage]
-//     [LDAP-SYNTAX              &ldapSyntax]
-//     [LDAP-NAME                &ldapName]
-//     [LDAP-DESC                &ldapDesc]
-//     [OBSOLETE                 &obsolete]
-//     ID                        &id }
-
-// MATCHING-RULE ::= CLASS {
-//     &ParentMatchingRules    MATCHING-RULE OPTIONAL,
-//     &AssertionType          OPTIONAL,
-//     &uniqueMatchIndicator   ATTRIBUTE OPTIONAL,
-//     &ldapSyntax             SYNTAX-NAME.&id OPTIONAL,
-//     &ldapName               SEQUENCE SIZE(1..MAX) OF UTF8String OPTIONAL,
-//     &ldapDesc               UTF8String OPTIONAL,
-//     &id                     OBJECT IDENTIFIER UNIQUE }
-//   WITH SYNTAX {
-//     [PARENT                 &ParentMatchingRules]
-//     [SYNTAX                 &AssertionType]
-//     [UNIQUE-MATCH-INDICATOR &uniqueMatchIndicator]
-//     [LDAP-SYNTAX            &ldapSyntax]
-//     [LDAP-NAME              &ldapName]
-//     [LDAP-DESC              &ldapDesc]
-//     ID                      &id }
-
-// SYNTAX-NAME ::= CLASS {
-//     &ldapDesc               UTF8String,
-//     &Type                   OPTIONAL,
-//     &id                     OBJECT IDENTIFIER UNIQUE }
-//   WITH SYNTAX {
-//     LDAP-DESC               &ldapDesc
-//     [DIRECTORY SYNTAX       &Type]
-//     ID                      &id }
-
+/**
+ * `AttributeTypeAndValue ::= SEQUENCE {
+ *   type                  ATTRIBUTE.&id({SupportedAttributes}),
+ *   value                 ATTRIBUTE.&Type({SupportedAttributes}{@type}),
+ *   ... }`
+ */
 export default
 class AttributeTypeAndValue {
     constructor (
         readonly type: ObjectIdentifier,
-        readonly value: DERElement
+        readonly value: ASN1Element,
     ) {}
 
     public static escapeDirectoryCharacters (unescaped: string): string {
@@ -88,7 +29,7 @@ class AttributeTypeAndValue {
             const attributeNameString: string = AttributeTypeAndValue.attributeToNameMapping[oidString];
             const valueString: string
                 = AttributeTypeAndValue.escapeDirectoryCharacters(
-                    AttributeTypeAndValue.attributeToValuePrinterMapping[oidString](this.value)
+                    AttributeTypeAndValue.attributeToValuePrinterMapping[oidString](this.value),
                 );
             return `${attributeNameString}=${valueString}`;
         } else {
@@ -97,7 +38,7 @@ class AttributeTypeAndValue {
         }
     }
 
-    public static attributeToNameMapping: { [ oid: string ]: string }= {
+    public static attributeToNameMapping: { [ oid: string ]: string } = {
         "2.5.4.3": "cn",
         "2.5.4.7.1": "c-l",
         "2.5.4.8.1": "c-st",
@@ -256,10 +197,10 @@ class AttributeTypeAndValue {
         "2.5.4.76": "xmlPrivPolicy",
     };
 
-    public static attributeToValuePrinterMapping: { [ oid: string ]: (element: DERElement) => string }= {
+    public static attributeToValuePrinterMapping: { [ oid: string ]: (element: ASN1Element) => string }= {
 
         // commonName, cn
-        "2.5.4.3": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.3": (element: ASN1Element) => UnboundedDirectoryString.print(element),
         // "2.5.4.7.1": "c-l",
         // "2.5.4.8.1": "c-st",
         // "2.5.4.9.1": "c-street",
@@ -276,64 +217,64 @@ class AttributeTypeAndValue {
         // "2.5.4.2": "knowledgeInformation",
 
         // surName, sn
-        "2.5.4.4": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.4": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // serialNumber
-        "2.5.4.5": (element: DERElement) => element.printableString,
+        "2.5.4.5": (element: ASN1Element) => element.printableString,
 
         // countryName
-        "2.5.4.6": (element: DERElement) => element.printableString,
+        "2.5.4.6": (element: ASN1Element) => element.printableString,
 
         // localityName, l
-        "2.5.4.7": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.7": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // stateOrProvinceName, st
-        "2.5.4.8": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.8": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // streetAddress
-        "2.5.4.9": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.9": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // organizationName, o
-        "2.5.4.10": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.10": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // organizationalUnit, ou
-        "2.5.4.11": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.11": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // title
-        "2.5.4.12": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.12": (element: ASN1Element) => UnboundedDirectoryString.print(element),
         // "2.5.4.14": "searchGuide",
 
         // businessCategory
-        "2.5.4.15": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.15": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // "2.5.4.16": "postalAddress", // SEQUENCE
 
         // postalCode
-        "2.5.4.17": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.17": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // postOfficeBox
-        "2.5.4.18": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.18": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // physicalDeliveryOfficeName
-        "2.5.4.19": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.19": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // telephoneNumber
-        "2.5.4.20": (element: DERElement) => element.printableString,
+        "2.5.4.20": (element: ASN1Element) => element.printableString,
 
         // "2.5.4.21": "telexNumber", // SEQUENCE
         // "2.5.4.22": "teletexTerminalIdentifier",
         // "2.5.4.23": "facsimileTelephoneNumber", // SEQUENCE
 
         // x121Address
-        "2.5.4.24": (element: DERElement) => element.numericString,
+        "2.5.4.24": (element: ASN1Element) => element.numericString,
 
         // internationaliSDNNumber
-        "2.5.4.25": (element: DERElement) => element.numericString,
+        "2.5.4.25": (element: ASN1Element) => element.numericString,
 
         // "2.5.4.26": "registeredAddress", // SEQUENCE
 
         // destinationIndicator
-        "2.5.4.27": (element: DERElement) => element.printableString,
+        "2.5.4.27": (element: ASN1Element) => element.printableString,
 
         // "2.5.4.28": "preferredDeliveryMethod",
         // "2.5.4.29": "presentationAddress",
@@ -348,16 +289,16 @@ class AttributeTypeAndValue {
         // "2.5.4.40": "crossCertificatePair",
 
         // givenName, gn
-        "2.5.4.42": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.42": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // initials
-        "2.5.4.43": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.43": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // generationQualifier
-        "2.5.4.44": (element: DERElement) => UnboundedDirectoryString.print(element),
+        "2.5.4.44": (element: ASN1Element) => UnboundedDirectoryString.print(element),
 
         // "2.5.4.45": "x500UniqueIdentifier",
-        "2.5.4.46": (element: DERElement) => element.printableString,
+        "2.5.4.46": (element: ASN1Element) => element.printableString,
         // "2.5.4.47": "enhancedSearchGuide", // See http://www.faqs.org/rfcs/rfc2256.html
         // "2.5.4.48": "protocolInformation",
         // "2.5.4.50": "uniqueMember",
@@ -462,8 +403,8 @@ class AttributeTypeAndValue {
         // "2.5.4.76": "xmlPrivPolicy"
     };
 
-    public static fromElement (value: DERElement): AttributeTypeAndValue {
-        const attributeTypeAndValueElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): AttributeTypeAndValue {
+        const attributeTypeAndValueElements: ASN1Element[] = value.sequence;
         if (attributeTypeAndValueElements.length !== 2) {
             throw new errors.X500Error("Invalid number of elements in AttributeTypeAndValue");
         }
@@ -480,7 +421,7 @@ class AttributeTypeAndValue {
         }
         return new AttributeTypeAndValue(
             attributeTypeAndValueElements[0].objectIdentifier,
-            attributeTypeAndValueElements[1]
+            attributeTypeAndValueElements[1],
         );
     }
 

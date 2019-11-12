@@ -32,7 +32,7 @@ class AttributeMapping {
             | { local: AttributeTypeAndValue; remote: AttributeTypeAndValue }
     ) {}
 
-    public static fromElement (value: DERElement): AttributeMapping {
+    public static fromElement (value: ASN1Element): AttributeMapping {
         let choice!:
             { local: AttributeType; remote: AttributeType }
             | { local: AttributeTypeAndValue; remote: AttributeTypeAndValue };

@@ -20,7 +20,7 @@ class ModificationParameter {
         readonly secondaryShadows: SupplierAndConsumers[],
     ) {}
 
-    public static fromElement (value: DERElement): ModificationParameter {
+    public static fromElement (value: ASN1Element): ModificationParameter {
         let secondaryShadows!: SupplierAndConsumers[];
         const specification: ConstructedElementSpecification[] = [
             {

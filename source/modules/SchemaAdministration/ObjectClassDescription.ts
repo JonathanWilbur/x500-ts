@@ -30,7 +30,7 @@ class ObjectClassDescription {
         readonly information: ObjectClassInformation,
     ) {}
 
-    public static fromElement (value: DERElement): ObjectClassDescription {
+    public static fromElement (value: ASN1Element): ObjectClassDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

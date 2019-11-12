@@ -20,8 +20,8 @@ class BasicAttConstraintsSyntax {
         readonly pathLenConstraint: number | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): BasicAttConstraintsSyntax {
-        const bacsElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): BasicAttConstraintsSyntax {
+        const bacsElements: ASN1Element[] = value.sequence;
         let authority: boolean = false;
         let pathLenConstraint: number | undefined = undefined;
 

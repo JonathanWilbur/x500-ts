@@ -23,7 +23,7 @@ class TelexNumber {
         readonly answerback: string,
     ) {}
 
-    public static fromElement (value: DERElement): TelexNumber {
+    public static fromElement (value: ASN1Element): TelexNumber {
         let telexNumber!: string;
         let countryCode!: string;
         let answerback!: string;

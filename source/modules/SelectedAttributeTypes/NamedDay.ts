@@ -3,6 +3,7 @@ import {
     ASN1TagClass,
     DERElement,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
@@ -34,7 +35,7 @@ class NamedDay {
             | [ boolean, boolean, boolean, boolean, boolean, boolean, boolean ],
     ) {}
 
-    public static fromElement (value: DERElement): NamedDay {
+    public static fromElement (value: ASN1Element): NamedDay {
         validateTag(value, "NamedDay",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],

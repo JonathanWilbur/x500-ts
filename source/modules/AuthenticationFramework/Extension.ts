@@ -1,4 +1,4 @@
-import { DERElement,ObjectIdentifier, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement,ObjectIdentifier, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 // import { Byteable,Elementable } from "../interfaces";
 import * as errors from "../../errors";
 
@@ -21,10 +21,10 @@ class Extension { // implements Byteable,Elementable {
     constructor (
         readonly extnID: ObjectIdentifier,
         readonly critical: boolean,
-        readonly extnValue: Uint8Array
+        readonly extnValue: Uint8Array,
     ) {}
 
-    public static fromElement (value: DERElement): Extension {
+    public static fromElement (value: ASN1Element): Extension {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
@@ -37,7 +37,7 @@ class Extension { // implements Byteable,Elementable {
         default: throw new errors.X500Error("Undefined error when validating Extension tag");
         }
 
-        const extensionElements: DERElement[] = value.sequence;
+        const extensionElements: ASN1Element[] = value.sequence;
         if (extensionElements.length > 3) {
             throw new errors.X500Error("An Extension encoded more than three elements");
         } else if (extensionElements.length < 2) {
@@ -61,7 +61,7 @@ class Extension { // implements Byteable,Elementable {
             switch (extensionElements[1].validateTag(
                 [ ASN1TagClass.universal ],
                 [ ASN1Construction.primitive ],
-                [ ASN1UniversalType.boolean ]
+                [ ASN1UniversalType.boolean ],
             )) {
             case 0: break;
             case -1: throw new errors.X500Error("Invalid tag class on Extension.critical");
@@ -75,7 +75,7 @@ class Extension { // implements Byteable,Elementable {
         switch (extensionElements[extensionElements.length - 1].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive, ASN1Construction.constructed ],
-            [ ASN1UniversalType.octetString ]
+            [ ASN1UniversalType.octetString ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on Extension.extnValue");
@@ -84,7 +84,7 @@ class Extension { // implements Byteable,Elementable {
         default: throw new errors.X500Error("Undefined error when validating Extension.extnValue tag");
         }
 
-        const extnID: ObjectIdentifier= extensionElements[0].objectIdentifier;
+        const extnID: ObjectIdentifier = extensionElements[0].objectIdentifier;
         const extnValue: Uint8Array = extensionElements[extensionElements.length - 1].octetString;
 
         return new Extension(extnID, critical, extnValue);

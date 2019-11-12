@@ -15,7 +15,7 @@ class SIGNATURE {
         readonly signature: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): SIGNATURE {
+    public static fromElement (value: ASN1Element): SIGNATURE {
         let algorithmIdentifier!: AlgorithmIdentifier;
         let signature!: boolean[];
         const specification = [

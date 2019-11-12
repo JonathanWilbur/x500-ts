@@ -30,7 +30,7 @@ class AttributeTypeDescription {
         readonly information: AttributeTypeInformation,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeTypeDescription {
+    public static fromElement (value: ASN1Element): AttributeTypeDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

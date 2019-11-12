@@ -25,7 +25,7 @@ class HierarchicalAgreement {
         readonly immediateSuperior: DistinguishedName,
     ) {}
 
-    public static fromElement (value: DERElement): HierarchicalAgreement {
+    public static fromElement (value: ASN1Element): HierarchicalAgreement {
         let rdn!: RelativeDistinguishedName;
         let immediateSuperior!: DistinguishedName;
         const specification: ConstructedElementSpecification[] = [

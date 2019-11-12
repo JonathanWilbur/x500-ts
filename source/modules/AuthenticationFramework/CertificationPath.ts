@@ -22,7 +22,7 @@ class CertificationPath {
         readonly theCACertificates: CertificatePair[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CertificationPath {
+    public static fromElement (value: ASN1Element): CertificationPath {
         let userCertificate!: Certificate;
         let theCACertificates: CertificatePair[] | undefined = undefined;
         const specification = [

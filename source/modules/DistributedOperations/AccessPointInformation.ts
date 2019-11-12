@@ -30,7 +30,7 @@ class AccessPointInformation {
         readonly additionalPoints: MasterAndShadowAccessPoints | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AccessPointInformation {
+    public static fromElement (value: ASN1Element): AccessPointInformation {
         let aeTitle: Name | undefined = undefined;
         let address: PresentationAddress | undefined = undefined;
         let protocolInformation: ProtocolInformation[] | undefined = undefined;

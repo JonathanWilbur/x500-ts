@@ -26,7 +26,7 @@ class ChopSpecification {
         readonly maximum: BaseDistance | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ChopSpecification {
+    public static fromElement (value: ASN1Element): ChopSpecification {
         let specificExclusions: DERElement[] | undefined = undefined;
         let minimum: BaseDistance = 0;
         let maximum: BaseDistance | undefined = undefined;

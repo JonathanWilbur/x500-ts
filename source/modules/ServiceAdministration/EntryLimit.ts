@@ -21,7 +21,7 @@ class EntryLimit {
         readonly max: number,
     ) {}
 
-    public static fromElement (value: DERElement): EntryLimit {
+    public static fromElement (value: ASN1Element): EntryLimit {
         let default_!: number;
         let max!: number;
         const specification: ConstructedElementSpecification[] = [

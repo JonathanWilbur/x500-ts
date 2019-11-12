@@ -29,7 +29,7 @@ class DITStructureRuleDescription {
         readonly obsolete: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): DITStructureRuleDescription {
+    public static fromElement (value: ASN1Element): DITStructureRuleDescription {
         let ruleIdentifier!: RuleIdentifier;
         let nameForm!: ObjectIdentifier;
         let superiorStructureRules: RuleIdentifier[] | undefined = undefined;

@@ -22,7 +22,7 @@ class UUIDPair {
         readonly subjectUUID: UUID,
     ) {}
 
-    public static fromElement (value: DERElement): UUIDPair {
+    public static fromElement (value: ASN1Element): UUIDPair {
         let issuerUUID!: UUID;
         let subjectUUID!: UUID;
         const specification: ConstructedElementSpecification[] = [

@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `Associate-source-diagnostic ::= CHOICE {
  *   acse-service-user     [1]  INTEGER {
@@ -17,3 +19,5 @@
  *     no-reason-given                                 (1),
  *     no-common-acse-version                          (2)}(0..2, ...)}`
  */
+type Associate_source_diagnostic = ASN1Element;
+export default Associate_source_diagnostic;

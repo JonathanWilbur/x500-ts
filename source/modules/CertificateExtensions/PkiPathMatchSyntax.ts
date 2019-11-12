@@ -22,7 +22,7 @@ class PkiPathMatchSyntax {
         readonly lastSubject: Name,
     ) {}
 
-    public static fromElement (value: DERElement): PkiPathMatchSyntax {
+    public static fromElement (value: ASN1Element): PkiPathMatchSyntax {
         let firstIssuer!: Name;
         let lastSubject!: Name;
         const specification: ConstructedElementSpecification[] = [

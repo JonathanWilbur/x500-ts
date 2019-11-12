@@ -43,14 +43,14 @@ class TBSCertificate {
         readonly subjectPublicKeyInfo: SubjectPublicKeyInfo,
         readonly issuerUniqueID? : UniqueIdentifier,
         readonly subjectUniqueID? : UniqueIdentifier,
-        readonly extensions? : Extensions
+        readonly extensions? : Extensions,
     ) {}
 
-    public static fromElement (value: DERElement): TBSCertificate {
+    public static fromElement (value: ASN1Element): TBSCertificate {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on TBSCertificate");
@@ -59,7 +59,7 @@ class TBSCertificate {
         default: throw new errors.X500Error("Undefined error when validating TBSCertificate tag");
         }
 
-        const tbsCertificateElements: DERElement[] = value.sequence;
+        const tbsCertificateElements: ASN1Element[] = value.sequence;
         if (tbsCertificateElements.length < 6) {
             throw new errors.X500Error(
                 `TBSCertificate was too short. It contained ${tbsCertificateElements.length} elements.`,
@@ -86,7 +86,7 @@ class TBSCertificate {
                 && tbsCertificateElements[encounteredElements].construction === ASN1Construction.constructed
                 && tbsCertificateElements[encounteredElements].tagNumber === 0
             ) {
-                const versionElements: DERElement[] = tbsCertificateElements[encounteredElements].sequence;
+                const versionElements: ASN1Element[] = tbsCertificateElements[encounteredElements].sequence;
                 if (versionElements.length !== 1) throw new errors.X500Error("version can only contain one element.");
                 switch (versionElements[0].validateTag(
                     [ ASN1TagClass.universal ],
@@ -132,7 +132,7 @@ class TBSCertificate {
         }
 
         const signature: AlgorithmIdentifier = AlgorithmIdentifier.fromElement(
-            tbsCertificateElements[encounteredElements++]
+            tbsCertificateElements[encounteredElements++],
         );
         // const issuer: Name = RDNSequence.fromElement(tbsCertificateElements[encounteredElements++]);
         const issuer: Name = tbsCertificateElements[encounteredElements++].sizeConstrainedSequenceOf(1)
@@ -174,7 +174,7 @@ class TBSCertificate {
             });
 
         const subjectPublicKeyInfo: SubjectPublicKeyInfo = SubjectPublicKeyInfo.fromElement(
-            tbsCertificateElements[encounteredElements++]
+            tbsCertificateElements[encounteredElements++],
         );
 
         // issuerUniqueIdentifier
@@ -219,15 +219,15 @@ class TBSCertificate {
         DERElement.isInCanonicalOrder(
             tbsCertificateElements.slice(
                 encounteredElements,
-                endOfTBSCertficateExtensionsIndex
-            )
+                endOfTBSCertficateExtensionsIndex,
+            ),
         );
 
         DERElement.isUniquelyTagged(
             tbsCertificateElements.slice(
                 encounteredElements,
-                endOfTBSCertficateExtensionsIndex
-            )
+                endOfTBSCertficateExtensionsIndex,
+            ),
         );
 
         while (encounteredElements < tbsCertificateElements.length) {
@@ -236,12 +236,12 @@ class TBSCertificate {
                 case (2): {
                     if (ver === Version.v1) {
                         throw new errors.X500Error(
-                            "subjectUniqueIdentifier not allowed in Version 1 X.509 certificate."
+                            "subjectUniqueIdentifier not allowed in Version 1 X.509 certificate.",
                         );
                     }
                     if ((tbsCertificateElements.length - encounteredElements) > 2) {
                         throw new errors.X500Error(
-                            "subjectUniqueIdentifier must be last or second to last in the TBSCertificate."
+                            "subjectUniqueIdentifier must be last or second to last in the TBSCertificate.",
                         );
                     }
                     subjectUniqueID = tbsCertificateElements[encounteredElements].bitString;
@@ -259,7 +259,7 @@ class TBSCertificate {
                     switch (tbsCertificateElements[encounteredElements].validateTag(
                         [ ASN1TagClass.context ],
                         [ ASN1Construction.constructed ],
-                        [ 3 ]
+                        [ 3 ],
                     )) {
                     case 0: break;
                     case -1: {
@@ -273,18 +273,18 @@ class TBSCertificate {
                     }
                     default: {
                         throw new errors.X500Error(
-                            "Undefined error when validating a TBSCertificate.extensions outer element tag"
+                            "Undefined error when validating a TBSCertificate.extensions outer element tag",
                         );
                     }
                     }
 
-                    const extensionsElement: DERElement = new DERElement();
+                    const extensionsElement: ASN1Element = new DERElement();
                     extensionsElement.fromBytes(tbsCertificateElements[encounteredElements].value);
-                    const extensionElements: DERElement[] = extensionsElement.sequence;
+                    const extensionElements: ASN1Element[] = extensionsElement.sequence;
                     if (extensionElements.length === 0) {
                         throw new errors.X500Error(
                             "extensions element may not be present in X.509 "
-                            + "TBSCertificate if there are no extensions in it."
+                            + "TBSCertificate if there are no extensions in it.",
                         );
                     }
                     if (typeof extensions === "undefined") extensions = [];

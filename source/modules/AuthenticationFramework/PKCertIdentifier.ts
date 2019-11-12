@@ -24,7 +24,7 @@ class PKCertIdentifier {
         readonly fingerprintPK: FINGERPRINT,
     ) {}
 
-    public static fromElement (value: DERElement): PKCertIdentifier {
+    public static fromElement (value: ASN1Element): PKCertIdentifier {
         let issuerSerialNumber!: IssuerSerialNumber;
         let fingerprintPKC!: FINGERPRINT;
         let fingerprintPK!: FINGERPRINT;

@@ -31,7 +31,7 @@ class AllowedAttributeAssignment {
         readonly holderDomain: GeneralName,
     ) {}
 
-    public static fromElement (value: DERElement): AllowedAttributeAssignment {
+    public static fromElement (value: ASN1Element): AllowedAttributeAssignment {
         const attributes: (AttributeType | Attribute)[] = [];
         let holderDomain!: GeneralName;
 
@@ -86,7 +86,7 @@ class AllowedAttributeAssignment {
             },
         ];
 
-        const aaaElements: DERElement[] = value.sequence;
+        const aaaElements: ASN1Element[] = value.sequence;
         validateConstruction(aaaElements, specification);
         return new AllowedAttributeAssignment(
             attributes,

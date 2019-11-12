@@ -28,7 +28,7 @@ class ResultAttribute {
         readonly contexts: ContextProfile[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ResultAttribute {
+    public static fromElement (value: ASN1Element): ResultAttribute {
         let attributeType!: ObjectIdentifier;
         let outputValues: DERElement[] | null | undefined = undefined;
         let contexts: ContextProfile[] | undefined = undefined;

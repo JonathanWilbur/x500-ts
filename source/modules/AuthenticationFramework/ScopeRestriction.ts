@@ -22,7 +22,7 @@ class ScopeRestriction {
         readonly restriction: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): ScopeRestriction {
+    public static fromElement (value: ASN1Element): ScopeRestriction {
         let id!: ObjectIdentifier;
         let restriction!: DERElement;
         const specification: ConstructedElementSpecification[] = [

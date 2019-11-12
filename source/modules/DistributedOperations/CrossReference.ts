@@ -24,7 +24,7 @@ class CrossReference {
         readonly accessPoint: AccessPointInformation,
     ) {}
 
-    public static fromElement (value: DERElement): CrossReference {
+    public static fromElement (value: ASN1Element): CrossReference {
         let contextPrefix!: DistinguishedName;
         let accessPoint!: AccessPointInformation;
         value.set.forEach((element) => {

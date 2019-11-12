@@ -36,7 +36,7 @@ class UnitOfReplication {
         readonly supplyContexts: ASN1Element | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): UnitOfReplication {
+    public static fromElement (value: ASN1Element): UnitOfReplication {
         let area!: AreaSpecification;
         let attributes!: AttributeSelection;
         let knowledge: Knowledge | undefined = undefined;

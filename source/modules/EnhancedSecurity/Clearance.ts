@@ -26,7 +26,7 @@ class Clearance {
         readonly securityCategories: SecurityCategory[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Clearance {
+    public static fromElement (value: ASN1Element): Clearance {
         let policyId!: ObjectIdentifier;
         let classList: ClassList = new ClassList(false, true, false, false, false, false);
         let securityCategories: SecurityCategory[] | undefined = undefined;

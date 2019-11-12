@@ -30,7 +30,7 @@ class NameFormDescription {
         readonly information: NameFormInformation,
     ) {}
 
-    public static fromElement (value: DERElement): NameFormDescription {
+    public static fromElement (value: ASN1Element): NameFormDescription {
         let identifier!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

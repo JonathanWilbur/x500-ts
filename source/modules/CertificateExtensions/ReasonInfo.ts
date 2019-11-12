@@ -23,7 +23,7 @@ class ReasonInfo {
         readonly holdInstructionCode: HoldInstruction | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ReasonInfo {
+    public static fromElement (value: ASN1Element): ReasonInfo {
         let reasonCode!: CRLReason;
         let holdInstructionCode: HoldInstruction | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

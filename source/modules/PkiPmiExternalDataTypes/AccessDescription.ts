@@ -1,4 +1,4 @@
-import { ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, DERElement } from "asn1-ts";
+import { ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, DERElement, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // AccessDescription ::= SEQUENCE {
@@ -9,14 +9,14 @@ export default
 class AccessDescription {
     constructor (
         readonly accessMethod: ObjectIdentifier,
-        readonly accessLocation: DERElement,
+        readonly accessLocation: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): AccessDescription {
+    public static fromElement (value: ASN1Element): AccessDescription {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on AccessDescription");
@@ -25,7 +25,7 @@ class AccessDescription {
         default: throw new errors.X500Error("Undefined error when validating AccessDescription tag");
         }
 
-        const accessDescriptionElements: DERElement[] = value.sequence;
+        const accessDescriptionElements: ASN1Element[] = value.sequence;
         if (accessDescriptionElements.length !== 2) {
             throw new errors.X500Error("Invalid number of elements in AccessDescription.");
         }
@@ -33,7 +33,7 @@ class AccessDescription {
         switch (accessDescriptionElements[0].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.objectIdentifier ]
+            [ ASN1UniversalType.objectIdentifier ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on AccessDescription.accessMethod");
@@ -44,7 +44,7 @@ class AccessDescription {
 
         return new AccessDescription(
             accessDescriptionElements[0].objectIdentifier,
-            accessDescriptionElements[1]
+            accessDescriptionElements[1],
         );
     }
 
@@ -52,13 +52,13 @@ class AccessDescription {
         const accessMethodElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.objectIdentifier
+            ASN1UniversalType.objectIdentifier,
         );
         accessMethodElement.objectIdentifier = this.accessMethod;
         const accessDescriptionElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         accessDescriptionElement.sequence = [
             accessMethodElement,

@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import GeneralNames from "../CertificateExtensions/GeneralNames";
@@ -17,8 +17,8 @@ class RoleSyntax {
         readonly roleName: GeneralName,
     ) {}
 
-    public static fromElement (value: DERElement): RoleSyntax {
-        const roleSyntaxElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): RoleSyntax {
+        const roleSyntaxElements: ASN1Element[] = value.sequence;
         if (roleSyntaxElements.length < 1) {
             throw new errors.X500Error("Too few elements in RoleSyntax.");
         }
@@ -62,7 +62,7 @@ class RoleSyntax {
     }
 
     public toElement (): DERElement {
-        const roleSyntaxElements: DERElement[] = [];
+        const roleSyntaxElements: ASN1Element[] = [];
 
         if (this.roleAuthority) {
             const roleAuthorityElement: DERElement = new DERElement(

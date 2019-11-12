@@ -40,7 +40,7 @@ class RequestAttribute {
         readonly matchingUse: MatchingUse[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): RequestAttribute {
+    public static fromElement (value: ASN1Element): RequestAttribute {
         let attributeType!: ObjectIdentifier;
         let includeSubtypes: boolean = false;
         let selectedValues: DERElement[] | undefined = undefined;

@@ -43,7 +43,7 @@ class EstablishOperationalBindingArgumentData {
         readonly securityParameters: SecurityParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): EstablishOperationalBindingArgumentData {
+    public static fromElement (value: ASN1Element): EstablishOperationalBindingArgumentData {
         let bindingType!: ObjectIdentifier;
         let bindingID: OperationalBindingID | undefined = undefined;
         let accessPoint!: AccessPoint;

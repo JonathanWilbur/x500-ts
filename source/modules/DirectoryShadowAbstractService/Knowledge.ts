@@ -25,7 +25,7 @@ class Knowledge {
         readonly extendedKnowledge: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): Knowledge {
+    public static fromElement (value: ASN1Element): Knowledge {
         let knowledgeType!: KnowledgeType;
         let extendedKnowledge: boolean = false;
         const specification: ConstructedElementSpecification[] = [

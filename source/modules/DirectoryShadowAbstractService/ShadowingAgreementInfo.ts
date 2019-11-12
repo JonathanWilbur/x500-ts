@@ -27,7 +27,7 @@ class ShadowingAgreementInfo {
         readonly secondaryShadows: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): ShadowingAgreementInfo {
+    public static fromElement (value: ASN1Element): ShadowingAgreementInfo {
         let shadowSubject!: UnitOfReplication;
         let updateMode: UpdateMode = new DERElement(
             ASN1TagClass.context,

@@ -23,7 +23,7 @@ class AttributeCertificateExactAssertion {
         readonly issuer: AttCertIssuer,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeCertificateExactAssertion {
+    public static fromElement (value: ASN1Element): AttributeCertificateExactAssertion {
         let serialNumber!: CertificateSerialNumber;
         let issuer!: AttCertIssuer;
         const specification: ConstructedElementSpecification[] = [

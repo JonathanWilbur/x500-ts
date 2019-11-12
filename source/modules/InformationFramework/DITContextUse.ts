@@ -24,7 +24,7 @@ class DITContextUse {
         readonly optionalContexts: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DITContextUse {
+    public static fromElement (value: ASN1Element): DITContextUse {
         let attributeType!: ObjectIdentifier;
         let mandatoryContexts: ObjectIdentifier[] | undefined = undefined;
         let optionalContexts: ObjectIdentifier[] | undefined = undefined;

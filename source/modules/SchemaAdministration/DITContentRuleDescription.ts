@@ -38,7 +38,7 @@ class DITContentRuleDescription {
         readonly obsolete: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): DITContentRuleDescription {
+    public static fromElement (value: ASN1Element): DITContentRuleDescription {
         let structuralObjectClass!: ObjectIdentifier;
         let auxiliaries: ObjectIdentifier[] | undefined = undefined;
         let mandatory: ObjectIdentifier[] | undefined = undefined;

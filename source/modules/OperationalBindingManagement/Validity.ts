@@ -26,7 +26,7 @@ class Validity {
         readonly validUntil: ASN1Element | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Validity {
+    public static fromElement (value: ASN1Element): Validity {
         let validFrom: ASN1Element = new DERElement(
             ASN1TagClass.context,
             ASN1Construction.primitive,

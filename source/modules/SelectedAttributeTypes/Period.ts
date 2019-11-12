@@ -65,7 +65,7 @@ class Period {
         readonly years: number[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Period {
+    public static fromElement (value: ASN1Element): Period {
         let timesOfDay: DayTimeBand[] | undefined = undefined;
         let days: DERElement | undefined = undefined;
         let weeks: DERElement | undefined = undefined;

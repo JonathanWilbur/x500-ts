@@ -28,7 +28,7 @@ class DirectoryInformationServiceElement {
         readonly attributeValue: AttributeValue | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DirectoryInformationServiceElement {
+    public static fromElement (value: ASN1Element): DirectoryInformationServiceElement {
         let operationType: boolean[] | undefined = undefined;
         let attributeType: AttributeType | undefined = undefined;
         let attributeValue: AttributeValue | undefined = undefined;

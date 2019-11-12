@@ -37,7 +37,7 @@ class ACIItem {
         readonly itemOrUserFirst: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): ACIItem {
+    public static fromElement (value: ASN1Element): ACIItem {
         let identificationTag!: UnboundedDirectoryString;
         let precedence!: Precedence;
         let authenticationLevel!: AuthenticationLevel;

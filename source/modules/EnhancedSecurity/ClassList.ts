@@ -1,4 +1,4 @@
-import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement } from "asn1-ts";
+import { ASN1Construction, ASN1TagClass, ASN1UniversalType, DERElement, ASN1Element } from "asn1-ts";
 
 /**
  * `ClassList ::= BIT STRING {
@@ -20,7 +20,7 @@ class ClassList {
         readonly topSecret: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): ClassList {
+    public static fromElement (value: ASN1Element): ClassList {
         const bits: boolean[] = value.bitString;
         return new ClassList(
             (bits.length >  0 ? bits[ 0] : false),

@@ -24,7 +24,7 @@ class SaslCredentials {
         readonly saslAbort: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): SaslCredentials {
+    public static fromElement (value: ASN1Element): SaslCredentials {
         let mechanism!: DirectoryString;
         let credentials: Uint8Array | undefined = undefined;
         let saslAbort: boolean = false;

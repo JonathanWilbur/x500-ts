@@ -21,7 +21,7 @@ class UpdateWindow {
         readonly stop: Date,
     ) {}
 
-    public static fromElement (value: DERElement): UpdateWindow {
+    public static fromElement (value: ASN1Element): UpdateWindow {
         let start!: Date;
         let stop!: Date;
         const specification: ConstructedElementSpecification[] = [

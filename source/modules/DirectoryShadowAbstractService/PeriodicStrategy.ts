@@ -24,7 +24,7 @@ class PeriodicStrategy {
         readonly updateInterval: number,
     ) {}
 
-    public static fromElement (value: DERElement): PeriodicStrategy {
+    public static fromElement (value: ASN1Element): PeriodicStrategy {
         let beginTime: Time | undefined = undefined;
         let windowSize!: number;
         let updateInterval!: number;

@@ -26,7 +26,7 @@ class IdmBindResult {
         readonly result: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): IdmBindResult {
+    public static fromElement (value: ASN1Element): IdmBindResult {
         let protocolID!: ObjectIdentifier;
         let respondingAETitle: GeneralName | undefined = undefined;
         let result!: ASN1Element;

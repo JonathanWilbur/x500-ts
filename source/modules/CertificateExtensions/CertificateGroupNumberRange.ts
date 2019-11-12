@@ -20,7 +20,7 @@ class CertificateGroupNumberRange {
         readonly endingNumber: Uint8Array,
     ) {}
 
-    public static fromElement (value: DERElement): CertificateGroupNumberRange {
+    public static fromElement (value: ASN1Element): CertificateGroupNumberRange {
         let startingNumber!: Uint8Array;
         let endingNumber!: Uint8Array;
         const specification: ConstructedElementSpecification[] = [

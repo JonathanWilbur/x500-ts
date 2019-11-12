@@ -32,7 +32,7 @@ class Vertex {
         readonly accessPoints: MasterAndShadowAccessPoints | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): Vertex {
+    public static fromElement (value: ASN1Element): Vertex {
         let rdn!: RelativeDistinguishedName;
         let admPointInfo: Attribute[] | undefined = undefined;
         let subentries: SubentryInfo[] | undefined = undefined;

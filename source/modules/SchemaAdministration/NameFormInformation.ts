@@ -24,7 +24,7 @@ class NameFormInformation {
         readonly namingOptionals: ObjectIdentifier[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): NameFormInformation {
+    public static fromElement (value: ASN1Element): NameFormInformation {
         let subordinate!: ObjectIdentifier;
         let namingMandatories!: ObjectIdentifier[];
         let namingOptionals: ObjectIdentifier[] | undefined = undefined;

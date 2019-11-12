@@ -3,6 +3,7 @@ import {
     ASN1TagClass,
     DERElement,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import validateTag from "../../validateTag";
 import * as errors from "../../errors";
@@ -21,8 +22,8 @@ class UtmCoordinates {
         readonly northing: string,
     ) {}
 
-    public static fromElement (value: DERElement): UtmCoordinates {
-        const utmCoordinatesElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): UtmCoordinates {
+        const utmCoordinatesElements: ASN1Element[] = value.sequence;
         if (utmCoordinatesElements.length !== 3) {
             throw new errors.X500Error(
                 "Invalid number of elements in UtmCoordinates. Expected "

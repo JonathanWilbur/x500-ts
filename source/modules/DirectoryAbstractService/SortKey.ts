@@ -23,7 +23,7 @@ class SortKey {
         readonly orderingRule: ObjectIdentifier | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SortKey {
+    public static fromElement (value: ASN1Element): SortKey {
         let type!: AttributeType;
         let orderingRule: ObjectIdentifier | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

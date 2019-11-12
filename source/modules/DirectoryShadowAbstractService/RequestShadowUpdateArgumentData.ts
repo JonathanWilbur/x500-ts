@@ -35,7 +35,7 @@ class RequestShadowUpdateArgumentData {
         readonly securityParameters: SecurityParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): RequestShadowUpdateArgumentData {
+    public static fromElement (value: ASN1Element): RequestShadowUpdateArgumentData {
         let agreementID!: AgreementID;
         let lastUpdate: Time | undefined = undefined;
         let requestedStrategy!: ASN1Element;

@@ -25,7 +25,7 @@ class SubentryInfo {
         readonly info: Attribute[],
     ) {}
 
-    public static fromElement (value: DERElement): SubentryInfo {
+    public static fromElement (value: ASN1Element): SubentryInfo {
         let rdn!: RelativeDistinguishedName;
         let info!: Attribute[];
         const specification: ConstructedElementSpecification[] = [

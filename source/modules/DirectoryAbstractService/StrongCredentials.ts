@@ -30,7 +30,7 @@
 //         readonly bindToken:
 //     ) {}
 
-//     public static fromElement (value: DERElement): StrongCredentials {
+//     public static fromElement (value: ASN1Element): StrongCredentials {
 //         let securityParameters: SecurityParameters | undefined = undefined;
 //         let performer: DistinguishedName | undefined = undefined;
 //         let aliasDereferenced: boolean = false;

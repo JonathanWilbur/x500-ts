@@ -27,7 +27,7 @@ class CertificatePair {
         }
     }
 
-    public static fromElement (value: DERElement): CertificatePair {
+    public static fromElement (value: ASN1Element): CertificatePair {
         let issuedToThisCA: Certificate | undefined = undefined;
         let issuedByThisCA: Certificate | undefined = undefined;
         const specification = [

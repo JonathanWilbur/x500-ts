@@ -22,7 +22,7 @@ class ClassAttributeSelection {
         readonly classAttributes: ClassAttributes,
     ) {}
 
-    public static fromElement (value: DERElement): ClassAttributeSelection {
+    public static fromElement (value: ASN1Element): ClassAttributeSelection {
         let class_: ObjectIdentifier | undefined = undefined;
         let classAttributes: ClassAttributes = new DERElement(
             ASN1TagClass.universal,

@@ -2,6 +2,7 @@ import {
     ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1Element,
 } from "asn1-ts";
 import Credentials from "./Credentials";
 import Versions from "./Versions";
@@ -22,7 +23,7 @@ class DirectoryBindResult {
         readonly pwdResponseValue: PwdResponseValue | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): DirectoryBindResult {
+    public static fromElement (value: ASN1Element): DirectoryBindResult {
         let credentials: Credentials | undefined = undefined;
         let versions: Versions = new Versions(true, false);
         let pwdResponseValue: PwdResponseValue | undefined = undefined;

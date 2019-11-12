@@ -51,7 +51,7 @@ class CommonArguments {
         readonly familyGrouping: FamilyGrouping,
     ) {}
 
-    public static fromElement (value: DERElement): CommonArguments {
+    public static fromElement (value: ASN1Element): CommonArguments {
         let serviceControls: ServiceControls = new ServiceControls(
             undefined,
             1,

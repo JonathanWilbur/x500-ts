@@ -29,7 +29,7 @@ class SupplierOrConsumer {
         readonly agreementID: OperationalBindingID,
     ) {}
 
-    public static fromElement (value: DERElement): SupplierOrConsumer {
+    public static fromElement (value: ASN1Element): SupplierOrConsumer {
         let aeTitle: Name | undefined = undefined;
         let address: PresentationAddress | undefined = undefined;
         let protocolInformation: ProtocolInformation[] | undefined = undefined;

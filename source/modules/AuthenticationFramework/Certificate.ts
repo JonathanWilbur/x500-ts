@@ -1,6 +1,6 @@
 import TBSCertificate from "./TBSCertificate";
 import AlgorithmIdentifier from "./AlgorithmIdentifier";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // Certificate ::= SIGNED{TBSCertificate}
@@ -28,14 +28,14 @@ class Certificate {
     constructor (
         readonly tbsCertificate: TBSCertificate,
         readonly signatureAlgorithm: AlgorithmIdentifier,
-        readonly signatureValue: boolean[]
+        readonly signatureValue: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): Certificate {
+    public static fromElement (value: ASN1Element): Certificate {
         switch(value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on Certificate");
@@ -44,13 +44,13 @@ class Certificate {
         default: throw new errors.X500Error("Undefined error when validating Certificate tag");
         }
 
-        const certificateElements: DERElement[] = value.sequence;
+        const certificateElements: ASN1Element[] = value.sequence;
         if (certificateElements.length !== 3) throw new errors.X500Error("Invalid number of elements in Certificate");
 
         switch(certificateElements[2].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.bitString ]
+            [ ASN1UniversalType.bitString ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on Certificate.signatureValue");
@@ -62,7 +62,7 @@ class Certificate {
         return new Certificate(
             TBSCertificate.fromElement(certificateElements[0]),
             AlgorithmIdentifier.fromElement(certificateElements[1]),
-            certificateElements[2].bitString
+            certificateElements[2].bitString,
         );
     }
 
@@ -70,14 +70,14 @@ class Certificate {
         const signatureValueElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.bitString
+            ASN1UniversalType.bitString,
         );
         signatureValueElement.bitString = this.signatureValue;
 
         const ret: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         ret.sequence = [
             this.tbsCertificate.toElement(),

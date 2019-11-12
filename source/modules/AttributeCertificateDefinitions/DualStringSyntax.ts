@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import UnboundedDirectoryString from "../SelectedAttributeTypes/UnboundedDirectoryString";
 
@@ -14,8 +14,8 @@ export default class DualStringSyntax {
         readonly object: UnboundedDirectoryString,
     ) {}
 
-    public static fromElement (value: DERElement): DualStringSyntax {
-        const dualStringSyntaxElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): DualStringSyntax {
+        const dualStringSyntaxElements: ASN1Element[] = value.sequence;
         if (dualStringSyntaxElements.length < 2) {
             throw new errors.X500Error("Too few elements in DualStringSyntax.");
         }

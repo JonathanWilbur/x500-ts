@@ -30,7 +30,7 @@ class UserClasses {
         readonly subtree: SubtreeSpecification[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): UserClasses {
+    public static fromElement (value: ASN1Element): UserClasses {
         let allUsers: null | undefined = undefined;
         let thisEntry: null | undefined = undefined;
         let name: NameAndOptionalUID[] | undefined = undefined;

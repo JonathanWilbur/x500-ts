@@ -30,7 +30,7 @@ class CommonResults {
         readonly notification: Attribute[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CommonResults {
+    public static fromElement (value: ASN1Element): CommonResults {
         let securityParameters: SecurityParameters | undefined = undefined;
         let performer: DistinguishedName | undefined = undefined;
         let aliasDereferenced: boolean = false;

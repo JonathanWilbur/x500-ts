@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // BasicConstraintsSyntax ::= SEQUENCE {
@@ -11,14 +11,14 @@ export default
 class BasicConstraintsSyntax {
     constructor (
         readonly ca: boolean,
-        readonly pathLenConstraint? : number
+        readonly pathLenConstraint?: number,
     ) {}
 
-    public static fromElement (value: DERElement): BasicConstraintsSyntax {
+    public static fromElement (value: ASN1Element): BasicConstraintsSyntax {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on BasicConstraintsSyntax");
@@ -31,14 +31,14 @@ class BasicConstraintsSyntax {
         let pathLenConstraint: number | undefined;
         let fixedPositionElementsEncountered: number = 0;
 
-        const basicConstraintsSyntaxElements: DERElement[] = value.sequence;
+        const basicConstraintsSyntaxElements: ASN1Element[] = value.sequence;
 
         /*
             Doing the check for unique tags here will prevent us from
             encountering multiple ca or pathLenConstraint elements in the loop
             that follows.
         */
-        if (!DERElement.isUniquelyTagged(basicConstraintsSyntaxElements)) {
+        if (!ASN1Element.isUniquelyTagged(basicConstraintsSyntaxElements)) {
             throw new errors.X500Error("Elements of BasicConstraintsSyntax were not uniquely tagged");
         }
 
@@ -60,7 +60,7 @@ class BasicConstraintsSyntax {
             serve as the index for the start of the extensions, and hence the
             subject of the canonical ordering check.
         */
-        basicConstraintsSyntaxElements.forEach((element: DERElement, index: number) => {
+        basicConstraintsSyntaxElements.forEach((element: ASN1Element, index: number) => {
             if (element.tagClass === ASN1TagClass.universal) {
                 if (element.tagNumber === ASN1UniversalType.boolean) {
                     if (element.construction !== ASN1Construction.primitive) {
@@ -115,7 +115,7 @@ class BasicConstraintsSyntax {
             order. The start of the remaining elements is indicated by
             fixedPositionElementsEncountered.
         */
-        if (!DERElement.isInCanonicalOrder(basicConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
+        if (!ASN1Element.isInCanonicalOrder(basicConstraintsSyntaxElements.slice(fixedPositionElementsEncountered))) {
             throw new errors.X500Error("Extended elements of BasicConstraintsSyntax were not in canonical order");
         }
 
@@ -128,7 +128,7 @@ class BasicConstraintsSyntax {
             throw new errors.X500Error(
                 "BasicConstraintsSyntax.cA was encoded with the default "
                 + "value, which is prohibited by the Distinguished Encoding "
-                + "Rules."
+                + "Rules.",
             );
         }
         if (ca === undefined) ca = false;
@@ -143,7 +143,7 @@ class BasicConstraintsSyntax {
             const caElement: DERElement = new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
-                ASN1UniversalType.boolean
+                ASN1UniversalType.boolean,
             );
             caElement.boolean = true;
             basicConstraintsSyntaxElements.push(caElement);
@@ -153,7 +153,7 @@ class BasicConstraintsSyntax {
             const pathLenConstraintElement: DERElement = new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
-                ASN1UniversalType.integer
+                ASN1UniversalType.integer,
             );
             pathLenConstraintElement.integer = this.pathLenConstraint;
             basicConstraintsSyntaxElements.push(pathLenConstraintElement);
@@ -162,7 +162,7 @@ class BasicConstraintsSyntax {
         const basicConstraintsSyntaxElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         basicConstraintsSyntaxElement.sequence = basicConstraintsSyntaxElements;
         return basicConstraintsSyntaxElement;

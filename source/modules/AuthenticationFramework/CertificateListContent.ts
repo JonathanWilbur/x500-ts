@@ -43,14 +43,14 @@ class CertificateListContent {
         readonly crlExtensions: Extensions | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CertificateListContent {
+    public static fromElement (value: ASN1Element): CertificateListContent {
         validateTag(value, "CertificateListContent",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
 
-        const attributeCertificateElements: DERElement[] = value.sequence;
+        const attributeCertificateElements: ASN1Element[] = value.sequence;
         if (attributeCertificateElements.length < 3) {
             throw new errors.X500Error(
                 `CertificateListContent was too short. It contained ${attributeCertificateElements.length} elements.`,
@@ -134,7 +134,7 @@ class CertificateListContent {
             && attributeCertificateElements[encounteredElements].construction === ASN1Construction.primitive
             && attributeCertificateElements[encounteredElements].tagNumber === ASN1UniversalType.sequence
         ) {
-            const revokedCertificatesElements: DERElement[] = attributeCertificateElements[encounteredElements].sequence;
+            const revokedCertificatesElements: ASN1Element[] = attributeCertificateElements[encounteredElements].sequence;
 
             revokedCertificates = revokedCertificatesElements.map(rc => {
                 validateTag(rc, "CertificateListContent.revokedCertificates[#]",
@@ -142,7 +142,7 @@ class CertificateListContent {
                     [ ASN1Construction.constructed ],
                     [ ASN1UniversalType.sequence ],
                 );
-                const rcElements: DERElement[] = rc.sequence;
+                const rcElements: ASN1Element[] = rc.sequence;
                 if (rcElements.length > 3) {
                     throw new errors.X500Error("Too few elements in CertificateListContent.revokedCertificates[#] element.");
                 }
@@ -210,7 +210,7 @@ class CertificateListContent {
             && attributeCertificateElements[lastIndex].construction === ASN1Construction.constructed
             && attributeCertificateElements[lastIndex].tagNumber === 0
         ) {
-            const crlExtensionsInnerElements: DERElement[] = attributeCertificateElements[lastIndex].sequence;
+            const crlExtensionsInnerElements: ASN1Element[] = attributeCertificateElements[lastIndex].sequence;
             if (crlExtensionsInnerElements.length !== 1) {
                 throw new errors.X500Error(
                     "CertificateListContent.crlExtensions did not contain only one inner SEQUENCE.",
@@ -227,14 +227,14 @@ class CertificateListContent {
         DERElement.isInCanonicalOrder(
             attributeCertificateElements.slice(
                 encounteredElements,
-                crlExtensions ? (attributeCertificateElements.length - 1) : undefined
+                crlExtensions ? (attributeCertificateElements.length - 1) : undefined,
             ),
         );
 
         DERElement.isUniquelyTagged(
             attributeCertificateElements.slice(
                 encounteredElements,
-                crlExtensions ? (attributeCertificateElements.length - 1) : undefined
+                crlExtensions ? (attributeCertificateElements.length - 1) : undefined,
             ),
         );
 

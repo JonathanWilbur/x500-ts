@@ -42,7 +42,7 @@ class SecurityParameters {
         readonly errorCode: Code | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SecurityParameters {
+    public static fromElement (value: ASN1Element): SecurityParameters {
         let certificationPath: CertificationPath | undefined = undefined;
         let name: DistinguishedName | undefined = undefined;
         let time: Date | undefined = undefined;

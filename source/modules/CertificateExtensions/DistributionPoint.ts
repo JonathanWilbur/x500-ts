@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import ReasonFlags from "./ReasonFlags";
 import DistributionPointName from "./DistributionPointName";
@@ -22,14 +22,14 @@ class DistributionPoint {
     constructor (
         readonly distributionPoint? : DistributionPointName,
         readonly reasons? : ReasonFlags,
-        readonly cRLIssuer? : GeneralNames
+        readonly cRLIssuer? : GeneralNames,
     ) {}
 
-    public static fromElement (value: DERElement): DistributionPoint {
+    public static fromElement (value: ASN1Element): DistributionPoint {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on DistributionPoint");
@@ -38,7 +38,7 @@ class DistributionPoint {
         default: throw new errors.X500Error("Undefined error when validating DistributionPoint tag");
         }
 
-        const distributionPointElements: DERElement[] = value.sequence;
+        const distributionPointElements: ASN1Element[] = value.sequence;
 
         let distributionPoint: DistributionPointName | undefined;
         let reasons: ReasonFlags | undefined;
@@ -68,12 +68,12 @@ class DistributionPoint {
         return new DistributionPoint(
             distributionPoint,
             reasons,
-            cRLIssuer
+            cRLIssuer,
         );
     }
 
     public toElement (): DERElement {
-        const distributionPointElements: DERElement[] = [];
+        const distributionPointElements: ASN1Element[] = [];
 
         if (this.distributionPoint) {
             distributionPointElements.push(this.distributionPoint);
@@ -87,7 +87,7 @@ class DistributionPoint {
             const crlIssuerElement: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.constructed,
-                2
+                2,
             );
             crlIssuerElement.sequence = this.cRLIssuer;
             distributionPointElements.push(crlIssuerElement);
@@ -96,7 +96,7 @@ class DistributionPoint {
         const ret: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         ret.sequence = distributionPointElements;
         return ret;

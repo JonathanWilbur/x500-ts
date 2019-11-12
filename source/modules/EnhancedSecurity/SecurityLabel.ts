@@ -3,6 +3,7 @@ import {
     ASN1TagClass,
     DERElement,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import SecurityPolicyIdentifier from "./SecurityPolicyIdentifier";
 import SecurityClassification from "./SecurityClassification";
@@ -28,7 +29,7 @@ class SecurityLabel {
         readonly securityCategories: SecurityCategories | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SecurityLabel {
+    public static fromElement (value: ASN1Element): SecurityLabel {
         let securityPolicyIdentifier: SecurityPolicyIdentifier | undefined = undefined;
         let securityClassification: SecurityClassification | undefined = undefined;
         let privacyMark: PrivacyMark | undefined = undefined;
@@ -53,7 +54,7 @@ class SecurityLabel {
             }
             case (ASN1UniversalType.set): {
                 securityCategories = element.sizeConstrainedSetOf(1)
-                    .map((sc) => SecurityCategory.fromElement(sc as DERElement));
+                    .map((sc: ASN1Element) => SecurityCategory.fromElement(sc));
                 break;
             }
             default: { break; }

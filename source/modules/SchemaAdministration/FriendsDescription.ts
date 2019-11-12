@@ -29,7 +29,7 @@ class FriendsDescription {
         readonly friends: ObjectIdentifier[],
     ) {}
 
-    public static fromElement (value: DERElement): FriendsDescription {
+    public static fromElement (value: ASN1Element): FriendsDescription {
         let anchor!: ObjectIdentifier;
         let name: UnboundedDirectoryString[] | undefined = undefined;
         let description: UnboundedDirectoryString | undefined = undefined;

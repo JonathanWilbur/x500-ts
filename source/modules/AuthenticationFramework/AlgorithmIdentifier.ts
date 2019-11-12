@@ -19,12 +19,12 @@ export default
 class AlgorithmIdentifier {
     constructor (
         readonly algorithm: ObjectIdentifier,
-        readonly parameters?: DERElement,
+        readonly parameters?: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): AlgorithmIdentifier {
+    public static fromElement (value: ASN1Element): AlgorithmIdentifier {
         let algorithm!: ObjectIdentifier;
-        let parameters: DERElement | undefined = undefined;
+        let parameters: ASN1Element | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [
             {
                 name: "algorithm",
@@ -40,7 +40,7 @@ class AlgorithmIdentifier {
                 name: "parameters",
                 optional: true,
                 callback: (el: ASN1Element): void => {
-                    parameters = el as DERElement;
+                    parameters = el;
                 },
             },
         ];

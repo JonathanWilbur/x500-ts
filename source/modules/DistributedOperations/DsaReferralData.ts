@@ -31,7 +31,7 @@ class DsaReferralData {
         readonly commonResults: CommonResults,
     ) {}
 
-    public static fromElement (value: DERElement): DsaReferralData {
+    public static fromElement (value: ASN1Element): DsaReferralData {
         let reference: ContinuationReference | undefined = undefined;
         let contextPrefix: DistinguishedName | undefined = undefined;
         let securityParameters: SecurityParameters | undefined = undefined;

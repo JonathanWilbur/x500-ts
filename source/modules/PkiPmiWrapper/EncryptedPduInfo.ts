@@ -34,7 +34,7 @@ class EncryptedPduInfo {
         readonly encryptedPdu: EncryptedPdu,
     ) {}
 
-    public static fromElement (value: DERElement): EncryptedPduInfo {
+    public static fromElement (value: ASN1Element): EncryptedPduInfo {
         let pduType!: ObjectIdentifier;
         let encryptedKey: EncryptedKey | undefined = undefined;
         let pduEncryptionAlgorithm: {

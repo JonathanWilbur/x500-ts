@@ -27,8 +27,8 @@ class RoleSpecCertIdentifier {
         readonly roleCertLocator: GeneralNames | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): RoleSpecCertIdentifier {
-        const rsciElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): RoleSpecCertIdentifier {
+        const rsciElements: ASN1Element[] = value.sequence;
         let roleName!: GeneralName;
         let roleCertIssuer!: GeneralName;
         let roleCertSerialNumber: CertificateSerialNumber | undefined = undefined;

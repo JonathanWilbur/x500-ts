@@ -17,7 +17,7 @@ class HASH {
         readonly hashValue: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): HASH {
+    public static fromElement (value: ASN1Element): HASH {
         let algorithmIdentifier!: AlgorithmIdentifier;
         let hashValue!: boolean[];
         const specification = [

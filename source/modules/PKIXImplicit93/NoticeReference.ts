@@ -3,6 +3,7 @@ import {
     ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1Element,
     ASN1UniversalType,
 } from "asn1-ts";
 import * as errors from "../../errors";
@@ -20,8 +21,8 @@ class NoticeReference {
         readonly noticeNumbers: number[],
     ) {}
 
-    public static fromElement (value: DERElement): NoticeReference {
-        const noticeReferenceElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): NoticeReference {
+        const noticeReferenceElements: ASN1Element[] = value.sequence;
         if (noticeReferenceElements.length !== 2) {
             throw new errors.X500Error(
                 "Invalid number of elements in NoticeReference. Expected "

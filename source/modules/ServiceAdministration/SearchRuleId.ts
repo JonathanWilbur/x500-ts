@@ -4,6 +4,7 @@ import {
     DERElement,
     ObjectIdentifier,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
@@ -20,8 +21,8 @@ class SearchRuleId {
         readonly dmdId: ObjectIdentifier,
     ) {}
 
-    public static fromElement (value: DERElement): SearchRuleId {
-        const searchRuleIdElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): SearchRuleId {
+        const searchRuleIdElements: ASN1Element[] = value.sequence;
         if (searchRuleIdElements.length !== 2) {
             throw new errors.X500Error(
                 "Invalid number of elements in ProtocolInformation. Expected "

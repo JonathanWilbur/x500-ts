@@ -1,5 +1,5 @@
 import UnboundedDirectoryString from "../SelectedAttributeTypes/UnboundedDirectoryString";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // EDIPartyName ::= SEQUENCE {
@@ -12,14 +12,14 @@ export default
 class EDIPartyName {
     constructor (
         readonly nameAssigner: UnboundedDirectoryString | undefined,
-        readonly partyName: UnboundedDirectoryString
+        readonly partyName: UnboundedDirectoryString,
     ) {}
 
     public toString (): string {
         return this.partyName.toString();
     }
 
-    public static fromElement (value: DERElement): EDIPartyName {
+    public static fromElement (value: ASN1Element): EDIPartyName {
         switch(value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
@@ -32,9 +32,9 @@ class EDIPartyName {
         default: throw new errors.X500Error("Undefined error when validating EDIPartyName tag");
         }
 
-        const ediPartNameElements: DERElement[] = value.sequence;
+        const ediPartNameElements: ASN1Element[] = value.sequence;
 
-        if (!DERElement.isUniquelyTagged(ediPartNameElements)) {
+        if (!ASN1Element.isUniquelyTagged(ediPartNameElements)) {
             throw new errors.X500Error("Elements of EDIPartyName were not uniquely tagged");
         }
 
@@ -42,7 +42,7 @@ class EDIPartyName {
         let partyName: UnboundedDirectoryString | undefined;
         let fixedPositionElementsEncountered: number = 0;
 
-        ediPartNameElements.forEach((element: DERElement, index: number) => {
+        ediPartNameElements.forEach((element: ASN1Element, index: number) => {
             if (element.tagClass === ASN1TagClass.context) {
                 if (element.tagNumber === 0) { // nameAssigner
                     if (element.construction !== ASN1Construction.primitive) {
@@ -93,7 +93,7 @@ class EDIPartyName {
             order. The start of the remaining elements is indicated by
             fixedPositionElementsEncountered.
         */
-        if (!DERElement.isInCanonicalOrder(ediPartNameElements.slice(fixedPositionElementsEncountered))) {
+        if (!ASN1Element.isInCanonicalOrder(ediPartNameElements.slice(fixedPositionElementsEncountered))) {
             throw new errors.X500Error("Extended elements of EDIPartyName were not in canonical order");
         }
 
@@ -111,7 +111,7 @@ class EDIPartyName {
         const ediPartNameElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         ediPartNameElement.sequence = ediPartNameElements;
         return ediPartNameElement;

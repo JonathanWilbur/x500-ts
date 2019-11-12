@@ -23,7 +23,7 @@ class AttributeTypeAssertion {
         readonly assertedContexts: ContextAssertion[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeTypeAssertion {
+    public static fromElement (value: ASN1Element): AttributeTypeAssertion {
         let type!: ObjectIdentifier;
         let assertedContexts: ContextAssertion[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

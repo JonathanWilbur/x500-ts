@@ -24,7 +24,7 @@ class AttributeValueIntegrityInfoContent {
         readonly aVIHash: AVIHash,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeValueIntegrityInfoContent {
+    public static fromElement (value: ASN1Element): AttributeValueIntegrityInfoContent {
         let signer: Signer | undefined = undefined;
         let aVIHash!: AVIHash;
         const specification: ConstructedElementSpecification[] = [

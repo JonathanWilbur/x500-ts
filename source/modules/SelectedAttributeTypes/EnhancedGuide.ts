@@ -28,7 +28,7 @@ class Guide {
         readonly subset: 0 | 1 | 2,
     ) {}
 
-    public static fromElement (value: DERElement): Guide {
+    public static fromElement (value: ASN1Element): Guide {
         let objectClass: ObjectIdentifier | undefined = undefined;
         let criteria!: Criteria;
         let subset: 0 | 1 | 2 = 1;

@@ -1,6 +1,6 @@
 import TBSAttributeCertificate from "./TBSAttributeCertificate";
 import AlgorithmIdentifier from "../AuthenticationFramework/AlgorithmIdentifier";
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -26,14 +26,14 @@ class AttributeCertificate {
         readonly signatureValue: boolean[],
     ) {}
 
-    public static fromElement (value: DERElement): AttributeCertificate {
+    public static fromElement (value: ASN1Element): AttributeCertificate {
         validateTag(value, "AttributeCertificate",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
 
-        const attributeCertificateElements: DERElement[] = value.sequence;
+        const attributeCertificateElements: ASN1Element[] = value.sequence;
         if (attributeCertificateElements.length !== 3) {
             throw new errors.X500Error("Invalid number of elements in AttributeCertificate");
         }

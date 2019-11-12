@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import AttributeCertificate from "../AttributeCertificateDefinitions/AttributeCertificate";
@@ -17,8 +17,8 @@ class AttributeCertificationPath {
         readonly acPath: ACPathData[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeCertificationPath {
-        const acPathDataElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): AttributeCertificationPath {
+        const acPathDataElements: ASN1Element[] = value.sequence;
         if (acPathDataElements.length < 1) {
             throw new errors.X500Error("Invalid number of elements in AttributeCertificationPath.");
         }

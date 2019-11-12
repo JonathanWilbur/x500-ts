@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 import AttCertVersion from "./AttCertVersion";
@@ -41,14 +41,14 @@ class TBSAttributeCertificate {
         readonly extensions: Extensions | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TBSAttributeCertificate {
+    public static fromElement (value: ASN1Element): TBSAttributeCertificate {
         validateTag(value, "TBSAttributeCertificate",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
 
-        const attributeCertificateElements: DERElement[] = value.sequence;
+        const attributeCertificateElements: ASN1Element[] = value.sequence;
         if (attributeCertificateElements.length < 7) {
             throw new errors.X500Error(
                 `TBSAttributeCertificate was too short. It contained ${attributeCertificateElements.length} elements.`,
@@ -107,14 +107,14 @@ class TBSAttributeCertificate {
         DERElement.isInCanonicalOrder(
             attributeCertificateElements.slice(
                 encounteredElements,
-                extensions ? (attributeCertificateElements.length - 1) : undefined
+                extensions ? (attributeCertificateElements.length - 1) : undefined,
             ),
         );
 
         DERElement.isUniquelyTagged(
             attributeCertificateElements.slice(
                 encounteredElements,
-                extensions ? (attributeCertificateElements.length - 1) : undefined
+                extensions ? (attributeCertificateElements.length - 1) : undefined,
             ),
         );
 

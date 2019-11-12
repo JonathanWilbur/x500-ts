@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { ASN1Element, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
 import EDIPartyName from "./EDIPartyName";
 import AttributeTypeAndValue from "../InformationFramework/AttributeTypeAndValue";
 import * as errors from "../../errors";
@@ -16,11 +16,11 @@ import * as errors from "../../errors";
  *   registeredID               [8]  OBJECT IDENTIFIER,
  *   ... }`
  */
-type GeneralName = DERElement;
+type GeneralName = ASN1Element;
 export default GeneralName;
 
 export
-function printGeneralName (value: DERElement): string {
+function printGeneralName (value: ASN1Element): string {
     if (value.tagClass !== ASN1TagClass.context) return "";
     switch (value.tagNumber) {
     case (0): { // otherName
@@ -36,7 +36,7 @@ function printGeneralName (value: DERElement): string {
         default: throw new errors.X500Error("Undefined error when validating INSTANCE OF OTHER-NAME tag");
         }
 
-        const otherNameElements: DERElement[] = value.sequence;
+        const otherNameElements: ASN1Element[] = value.sequence;
         if (otherNameElements.length !== 2) {
             throw new errors.X500Error("Invalid number of elements in INSTANCE OF OTHER-NAME");
         }
@@ -76,8 +76,8 @@ function printGeneralName (value: DERElement): string {
     case (4): { // directoryName
         return value.sizeConstrainedSequenceOf(1)
             .map((rdn) => rdn.sizeConstrainedSetOf(1)
-                .map((atav) => AttributeTypeAndValue.fromElement(atav as DERElement).toString())
-                .join("+")
+                .map((atav) => AttributeTypeAndValue.fromElement(atav).toString())
+                .join("+"),
             ).join(",");
     }
     case (5): { // ediPartyName

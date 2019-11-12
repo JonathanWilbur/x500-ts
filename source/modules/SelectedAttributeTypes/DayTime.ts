@@ -22,7 +22,7 @@ class DayTime {
         readonly second: number,
     ) {}
 
-    public static fromElement (value: DERElement): DayTime {
+    public static fromElement (value: ASN1Element): DayTime {
         let hour!: number;
         let minute: number = 0;
         let second: number = 0;

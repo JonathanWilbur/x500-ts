@@ -33,7 +33,7 @@ class UpdateShadowArgumentData {
         readonly securityParameters: SecurityParameters | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): UpdateShadowArgumentData {
+    public static fromElement (value: ASN1Element): UpdateShadowArgumentData {
         let agreementID!: AgreementID;
         let updateTime!: Time;
         let updateWindow: UpdateWindow | undefined = undefined;

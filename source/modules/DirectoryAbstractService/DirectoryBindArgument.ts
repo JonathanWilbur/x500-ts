@@ -2,6 +2,7 @@ import {
     ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1Element,
 } from "asn1-ts";
 import Credentials from "./Credentials";
 import Versions from "./Versions";
@@ -19,7 +20,7 @@ class DirectoryBindArgument {
         readonly versions: Versions,
     ) {}
 
-    public static fromElement (value: DERElement): DirectoryBindArgument {
+    public static fromElement (value: ASN1Element): DirectoryBindArgument {
         let credentials: Credentials | undefined = undefined;
         let versions: Versions = new Versions(true, false);
         value.set.forEach((element) => {

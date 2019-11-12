@@ -21,8 +21,8 @@ export default class PrivilegePolicyIdentifier {
         readonly privPolSyntax: InfoSyntax,
     ) {}
 
-    public static fromElement (value: DERElement): PrivilegePolicyIdentifier {
-        const ppiElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): PrivilegePolicyIdentifier {
+        const ppiElements: ASN1Element[] = value.sequence;
         let privilegePolicy!: PrivilegePolicy;
         let privPolSyntax!: InfoSyntax;
         const specification = [

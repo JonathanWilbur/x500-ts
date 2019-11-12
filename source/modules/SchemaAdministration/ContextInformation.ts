@@ -20,7 +20,7 @@ class ContextInformation {
         readonly assertionSyntax: UnboundedDirectoryString | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ContextInformation {
+    public static fromElement (value: ASN1Element): ContextInformation {
         let syntax!: UnboundedDirectoryString;
         let assertionSyntax: UnboundedDirectoryString | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

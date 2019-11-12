@@ -22,7 +22,7 @@ class RTABapdu {
         readonly userdataAB: ASN1Element | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): RTABapdu {
+    public static fromElement (value: ASN1Element): RTABapdu {
         let abortReason: AbortReason | undefined = undefined;
         let reflectedParameter: boolean[] | undefined = undefined;
         let userdataAB: ASN1Element | undefined = undefined;

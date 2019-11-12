@@ -21,7 +21,7 @@ class NHOBSuperiorToSubordinate {
         readonly immediateSuperiorInfo: Attribute[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): NHOBSuperiorToSubordinate {
+    public static fromElement (value: ASN1Element): NHOBSuperiorToSubordinate {
         let contextPrefixInfo!: DITcontext;
         let immediateSuperiorInfo: Attribute[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

@@ -27,7 +27,7 @@ class AttributeIntegrityInfoContent {
         readonly attribsHash: AttribsHash,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeIntegrityInfoContent {
+    public static fromElement (value: ASN1Element): AttributeIntegrityInfoContent {
         let scope!: Scope;
         let signer: Signer | undefined = undefined;
         let attribsHash!: AttribsHash;

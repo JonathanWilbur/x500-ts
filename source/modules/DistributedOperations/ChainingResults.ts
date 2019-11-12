@@ -30,7 +30,7 @@ class ChainingResults {
         readonly alreadySearched: Exclusions | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ChainingResults {
+    public static fromElement (value: ASN1Element): ChainingResults {
         let info: DomainInfo | undefined = undefined;
         let crossReferences: CrossReference[] | undefined = undefined;
         let securityParameters!: SecurityParameters;

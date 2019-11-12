@@ -26,7 +26,7 @@ class SpecificallyIdentified {
         readonly serial: CertificateSerialNumber | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SpecificallyIdentified {
+    public static fromElement (value: ASN1Element): SpecificallyIdentified {
         let name!: GeneralName;
         let issuer: GeneralName | undefined = undefined;
         let serial: CertificateSerialNumber | undefined = undefined;

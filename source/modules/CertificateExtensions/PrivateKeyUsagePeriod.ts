@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // PrivateKeyUsagePeriod ::= SEQUENCE {
@@ -18,18 +18,18 @@ export default
 class PrivateKeyUsagePeriod {
     constructor (
         readonly notBefore? : Date,
-        readonly notAfter? : Date
+        readonly notAfter? : Date,
     ) {
         if (!notBefore && !notAfter) {
             throw new errors.X500Error("Either notBefore or notAfter must be set in PrivateKeyUsagePeriod");
         }
     }
 
-    public static fromElement (value: DERElement): PrivateKeyUsagePeriod {
+    public static fromElement (value: ASN1Element): PrivateKeyUsagePeriod {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on inner sequence of PrivateKeyUsagePeriod");
@@ -40,7 +40,7 @@ class PrivateKeyUsagePeriod {
         }
         }
 
-        const privateKeyUsagePeriodElements: DERElement[] = value.sequence;
+        const privateKeyUsagePeriodElements: ASN1Element[] = value.sequence;
         if (privateKeyUsagePeriodElements.length === 0) {
             throw new errors.X500Error("PrivateKeyUsagePeriod must have at least one element in SEQUENCE");
         }
@@ -49,7 +49,7 @@ class PrivateKeyUsagePeriod {
         let notAfter: Date | undefined;
         let fixedPositionElementsEncountered: number = 0;
 
-        privateKeyUsagePeriodElements.forEach((element: DERElement) => {
+        privateKeyUsagePeriodElements.forEach((element: ASN1Element) => {
             if (element.tagClass === ASN1TagClass.context) {
                 if (element.tagNumber === 0) {
                     if (notBefore) throw new errors.X500Error("PrivateKeyUsagePeriod.notBefore already defined");
@@ -81,7 +81,7 @@ class PrivateKeyUsagePeriod {
             const notBeforeElement: DERElement = new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
-                ASN1UniversalType.generalizedTime
+                ASN1UniversalType.generalizedTime,
             );
             notBeforeElement.generalizedTime = this.notBefore;
             privateKeyUsagePeriodElements.push(notBeforeElement);
@@ -90,7 +90,7 @@ class PrivateKeyUsagePeriod {
             const notAfterElement: DERElement = new DERElement(
                 ASN1TagClass.universal,
                 ASN1Construction.primitive,
-                ASN1UniversalType.generalizedTime
+                ASN1UniversalType.generalizedTime,
             );
             notAfterElement.generalizedTime = this.notAfter;
             privateKeyUsagePeriodElements.push(notAfterElement);
@@ -98,7 +98,7 @@ class PrivateKeyUsagePeriod {
         const privateKeyUsagePeriodElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         privateKeyUsagePeriodElement.sequence = privateKeyUsagePeriodElements;
         return privateKeyUsagePeriodElement;

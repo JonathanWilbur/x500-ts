@@ -26,7 +26,7 @@ class CertificateListExactAssertion {
         readonly distributionPoint: DistributionPointName | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CertificateListExactAssertion {
+    public static fromElement (value: ASN1Element): CertificateListExactAssertion {
         let issuer!: Name;
         let thisUpdate!: Date;
         let distributionPoint: DistributionPointName | undefined = undefined;

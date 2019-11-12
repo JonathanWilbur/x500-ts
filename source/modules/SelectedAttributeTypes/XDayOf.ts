@@ -2,6 +2,7 @@ import {
     ASN1Construction,
     ASN1TagClass,
     DERElement,
+    ASN1Element,
 } from "asn1-ts";
 import NamedDay from "./NamedDay";
 import validateTag from "../../validateTag";
@@ -26,7 +27,7 @@ class XDayOf {
             | { fifth: NamedDay },
     ) {}
 
-    public static fromElement (value: DERElement): XDayOf {
+    public static fromElement (value: ASN1Element): XDayOf {
         validateTag(value, "XDayOf",
             [ ASN1TagClass.context ],
             [ ASN1Construction.constructed ],

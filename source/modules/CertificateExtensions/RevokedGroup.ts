@@ -27,7 +27,7 @@ class RevokedGroup {
         readonly revokedcertificateGroup: RevokedCertificateGroup,
     ) {}
 
-    public static fromElement (value: DERElement): RevokedGroup {
+    public static fromElement (value: ASN1Element): RevokedGroup {
         let certificateIssuer: GeneralName | undefined = undefined;
         let reasonInfo: ReasonInfo | undefined = undefined;
         let invalidityDate: Date | undefined = undefined;

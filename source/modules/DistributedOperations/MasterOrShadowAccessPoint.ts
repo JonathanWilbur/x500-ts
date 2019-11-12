@@ -33,7 +33,7 @@ class MasterOrShadowAccessPoint {
         readonly chainingRequired: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): MasterOrShadowAccessPoint {
+    public static fromElement (value: ASN1Element): MasterOrShadowAccessPoint {
         let aeTitle: Name | undefined = undefined;
         let address: PresentationAddress | undefined = undefined;
         let protocolInformation: ProtocolInformation[] | undefined = undefined;

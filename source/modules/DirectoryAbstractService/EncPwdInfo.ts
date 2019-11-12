@@ -23,7 +23,7 @@ class EncPwdInfo {
         readonly pwdQualityRule: AttributeTypeAndValue[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): EncPwdInfo {
+    public static fromElement (value: ASN1Element): EncPwdInfo {
         let algorithms: AlgorithmIdentifier[] | undefined = undefined;
         let pwdQualityRule: AttributeTypeAndValue[] | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

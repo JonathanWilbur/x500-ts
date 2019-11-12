@@ -28,7 +28,7 @@ class SubordinateToSuperior {
         readonly subentries: SubentryInfo[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SubordinateToSuperior {
+    public static fromElement (value: ASN1Element): SubordinateToSuperior {
         let accessPoints: MasterAndShadowAccessPoints | undefined = undefined;
         let alias: boolean = false;
         let entryInfo: Attribute[] | undefined = undefined;

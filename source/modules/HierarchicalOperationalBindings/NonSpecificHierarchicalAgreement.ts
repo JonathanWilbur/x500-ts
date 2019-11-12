@@ -23,7 +23,7 @@ class NonSpecificHierarchicalAgreement {
         readonly immediateSuperior: DistinguishedName,
     ) {}
 
-    public static fromElement (value: DERElement): NonSpecificHierarchicalAgreement {
+    public static fromElement (value: ASN1Element): NonSpecificHierarchicalAgreement {
         let immediateSuperior!: DistinguishedName;
         const specification: ConstructedElementSpecification[] = [
             {

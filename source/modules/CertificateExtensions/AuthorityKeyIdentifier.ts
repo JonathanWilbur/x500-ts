@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import GeneralNames from "./GeneralNames";
 import * as errors from "../../errors";
 
@@ -26,14 +26,14 @@ class AuthorityKeyIdentifier {
     constructor (
         readonly keyIdentifier: Uint8Array,
         readonly authorityCertIssuer? : GeneralNames,
-        readonly authorityCertSerialNumber? : Uint8Array
+        readonly authorityCertSerialNumber? : Uint8Array,
     ) {}
 
-    public static fromElement (value: DERElement): AuthorityKeyIdentifier {
+    public static fromElement (value: ASN1Element): AuthorityKeyIdentifier {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on AuthorityKeyIdentifier");
@@ -42,7 +42,7 @@ class AuthorityKeyIdentifier {
         default: throw new errors.X500Error("Undefined error when validating AuthorityKeyIdentifier tag");
         }
 
-        const authorityKeyIdentifierElements: DERElement[] = value.sequence;
+        const authorityKeyIdentifierElements: ASN1Element[] = value.sequence;
 
         if (
             authorityKeyIdentifierElements.length !== 1
@@ -114,7 +114,7 @@ class AuthorityKeyIdentifier {
         return new AuthorityKeyIdentifier(
             keyIdentifier,
             authorityCertIssuer,
-            authorityCertSerialNumber
+            authorityCertSerialNumber,
         );
     }
 
@@ -124,7 +124,7 @@ class AuthorityKeyIdentifier {
         const keyIdentifierElement: DERElement = new DERElement(
             ASN1TagClass.context,
             ASN1Construction.primitive,
-            0
+            0,
         );
         keyIdentifierElement.octetString = this.keyIdentifier;
         authorityKeyIdentifierElements.push(keyIdentifierElement);
@@ -141,13 +141,13 @@ class AuthorityKeyIdentifier {
             const authorityCertIssuer: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.constructed,
-                1
+                1,
             );
 
             const authorityCertSerialNumber: DERElement = new DERElement(
                 ASN1TagClass.context,
                 ASN1Construction.primitive,
-                2
+                2,
             );
 
             authorityKeyIdentifierElements.push(authorityCertIssuer);
@@ -157,7 +157,7 @@ class AuthorityKeyIdentifier {
         const authorityKeyIdentifierElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         authorityKeyIdentifierElement.sequence = authorityKeyIdentifierElements;
         return authorityKeyIdentifierElement;

@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -13,21 +13,21 @@ export default
 class Context {
     constructor (
         readonly contextType: ObjectIdentifier,
-        readonly contextValues: DERElement[],
+        readonly contextValues: ASN1Element[],
         readonly fallback: boolean = false,
     ) {}
 
-    public static fromElement (value: DERElement): Context {
+    public static fromElement (value: ASN1Element): Context {
         validateTag(value, "Context",
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
             [ ASN1UniversalType.sequence ],
         );
-        const contextElements: DERElement[] = value.sequence;
+        const contextElements: ASN1Element[] = value.sequence;
         if (contextElements.length < 2) {
             throw new errors.X500Error(`Invalid number of elements in Context: ${contextElements.length}.`);
         }
-        if (!DERElement.isInCanonicalOrder(contextElements)) {
+        if (!ASN1Element.isInCanonicalOrder(contextElements)) {
             throw new errors.X500Error("Elements of Context were not in canonical order.");
         }
 
@@ -44,7 +44,7 @@ class Context {
         );
 
         const contextType: ObjectIdentifier = contextElements[0].objectIdentifier;
-        const contextValues: DERElement[] = contextElements[1].set;
+        const contextValues: ASN1Element[] = contextElements[1].set;
         const fallback: boolean | undefined = ((): boolean | undefined => {
             if (
                 contextElements.length > 2

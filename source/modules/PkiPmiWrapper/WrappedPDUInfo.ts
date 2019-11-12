@@ -22,7 +22,7 @@ class WrappedPDUInfo {
         readonly pduInfo: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): WrappedPDUInfo {
+    public static fromElement (value: ASN1Element): WrappedPDUInfo {
         let pduType!: ObjectIdentifier;
         let pduInfo!: DERElement;
         const specification: ConstructedElementSpecification[] = [

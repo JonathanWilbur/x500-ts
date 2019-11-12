@@ -26,7 +26,7 @@ class Subtree {
         readonly totalRefresh: TotalRefresh,
     ) {}
 
-    public static fromElement (value: DERElement): Subtree {
+    public static fromElement (value: ASN1Element): Subtree {
         let rdn!: RelativeDistinguishedName;
         let sDSE: SDSEContent | undefined = undefined;
         let subtree: Subtree[] | undefined = undefined;

@@ -29,7 +29,7 @@ class MatchingRuleAssertion {
         readonly dnAttributes: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): MatchingRuleAssertion {
+    public static fromElement (value: ASN1Element): MatchingRuleAssertion {
         let matchingRule!: ObjectIdentifier[];
         let type: AttributeType | undefined = undefined;
         let matchValue!: ASN1Element;

@@ -31,7 +31,7 @@ class AttributeCertificateAssertion {
         readonly attType: AttributeType[] | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): AttributeCertificateAssertion {
+    public static fromElement (value: ASN1Element): AttributeCertificateAssertion {
         let holder: DERElement | undefined = undefined;
         let issuer: GeneralNames | undefined = undefined;
         let attCertValidity: Date | undefined = undefined;
@@ -73,7 +73,7 @@ class AttributeCertificateAssertion {
                 construction: ASN1Construction.primitive,
                 tagNumber: 3,
                 callback: (el: ASN1Element): void => {
-                    attType = (el as DERElement).set.map((att: DERElement): AttributeType => att.objectIdentifier);
+                    attType = el.set.map((att: ASN1Element): AttributeType => att.objectIdentifier);
                 },
             },
         ];

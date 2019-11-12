@@ -23,7 +23,7 @@ class MatchingUse {
         readonly restrictionValue: DERElement,
     ) {}
 
-    public static fromElement (value: DERElement): MatchingUse {
+    public static fromElement (value: ASN1Element): MatchingUse {
         let restrictionType!: ObjectIdentifier;
         let restrictionValue!: DERElement;
         const specification: ConstructedElementSpecification[] = [

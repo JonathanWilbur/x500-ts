@@ -1,4 +1,4 @@
-import { DERElement } from "asn1-ts";
+import { ASN1Element } from "asn1-ts";
 
 
 /**
@@ -7,5 +7,5 @@ import { DERElement } from "asn1-ts";
  *   nameRelativeToCRLIssuer  [1]  RelativeDistinguishedName,
  *   ... }`
  */
-type DistributionPointName = DERElement;
+type DistributionPointName = ASN1Element;
 export default DistributionPointName;

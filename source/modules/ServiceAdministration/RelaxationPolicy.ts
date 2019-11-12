@@ -27,7 +27,7 @@ class RelaxationPolicy {
         readonly minimum: number,
     ) {}
 
-    public static fromElement (value: DERElement): RelaxationPolicy {
+    public static fromElement (value: ASN1Element): RelaxationPolicy {
         let basic!: MRMapping;
         let tightenings: MRMapping[] | undefined = undefined;
         let relaxations: MRMapping[] | undefined = undefined;

@@ -4,6 +4,7 @@ import {
     DERElement,
     ObjectIdentifier,
     ASN1UniversalType,
+    ASN1Element,
 } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
@@ -20,8 +21,8 @@ class ProtocolInformation {
         readonly profiles: ObjectIdentifier[],
     ) {}
 
-    public static fromElement (value: DERElement): ProtocolInformation {
-        const protocolInformationElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): ProtocolInformation {
+        const protocolInformationElements: ASN1Element[] = value.sequence;
         if (protocolInformationElements.length !== 2) {
             throw new errors.X500Error(
                 "Invalid number of elements in ProtocolInformation. Expected "

@@ -30,7 +30,7 @@ class CertificatePairExactAssertion {
         readonly issuedByThisCAAssertion: CertificateExactAssertion | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): CertificatePairExactAssertion {
+    public static fromElement (value: ASN1Element): CertificatePairExactAssertion {
         let issuedToThisCAAssertion: CertificateExactAssertion | undefined = undefined;
         let issuedByThisCAAssertion: CertificateExactAssertion | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [

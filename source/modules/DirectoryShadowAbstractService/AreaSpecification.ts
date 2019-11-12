@@ -26,7 +26,7 @@ class AreaSpecification {
         readonly replicationArea: SubtreeSpecification,
     ) {}
 
-    public static fromElement (value: DERElement): AreaSpecification {
+    public static fromElement (value: ASN1Element): AreaSpecification {
         let contextPrefix!: DistinguishedName;
         let replicationArea!: SubtreeSpecification;
         const specification: ConstructedElementSpecification[] = [

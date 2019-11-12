@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 
 /**
  * `HierarchySelections ::= BIT STRING {
@@ -28,7 +28,7 @@ class HierarchySelections {
         readonly all: boolean,
     ) {}
 
-    public static fromElement (value: DERElement): HierarchySelections {
+    public static fromElement (value: ASN1Element): HierarchySelections {
         const bits: boolean[] = value.bitString;
         return new HierarchySelections(
             ((bits.length >  0) ? bits[ 0] : false),

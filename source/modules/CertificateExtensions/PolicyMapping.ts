@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ObjectIdentifier, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // PolicyMappingsSyntax ::=
@@ -11,14 +11,14 @@ export default
 class PolicyMapping {
     constructor (
         readonly issuerDomainPolicy: ObjectIdentifier,
-        readonly subjectDomainPolicy: ObjectIdentifier
+        readonly subjectDomainPolicy: ObjectIdentifier,
     ) {}
 
-    public static fromElement (value: DERElement): PolicyMapping {
+    public static fromElement (value: ASN1Element): PolicyMapping {
         switch (value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
-            [ ASN1UniversalType.sequence ]
+            [ ASN1UniversalType.sequence ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on inner sequence of PolicyMappingsSyntax");
@@ -29,7 +29,7 @@ class PolicyMapping {
         }
         }
 
-        const policyMappingElements: DERElement[] = value.sequence;
+        const policyMappingElements: ASN1Element[] = value.sequence;
         if (policyMappingElements.length < 2) {
             throw new errors.X500Error("Too few elements in inner sequence of PolicyMappingsSyntax");
         }
@@ -37,7 +37,7 @@ class PolicyMapping {
         switch (policyMappingElements[0].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.objectIdentifier ]
+            [ ASN1UniversalType.objectIdentifier ],
         )) {
         case 0: break;
         case -1: {
@@ -70,7 +70,7 @@ class PolicyMapping {
         switch (policyMappingElements[1].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.objectIdentifier ]
+            [ ASN1UniversalType.objectIdentifier ],
         )) {
         case 0: break;
         case -1: {
@@ -102,7 +102,7 @@ class PolicyMapping {
 
         return new PolicyMapping(
             policyMappingElements[0].objectIdentifier,
-            policyMappingElements[1].objectIdentifier
+            policyMappingElements[1].objectIdentifier,
         );
     }
 
@@ -110,19 +110,19 @@ class PolicyMapping {
         const issuerDomainPolicyElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.objectIdentifier
+            ASN1UniversalType.objectIdentifier,
         );
         issuerDomainPolicyElement.objectIdentifier = this.issuerDomainPolicy;
         const subjectDomainPolicyElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.primitive,
-            ASN1UniversalType.objectIdentifier
+            ASN1UniversalType.objectIdentifier,
         );
         subjectDomainPolicyElement.objectIdentifier = this.subjectDomainPolicy;
         const policyMappingElement: DERElement = new DERElement(
             ASN1TagClass.universal,
             ASN1Construction.constructed,
-            ASN1UniversalType.sequence
+            ASN1UniversalType.sequence,
         );
         policyMappingElement.sequence = [
             issuerDomainPolicyElement,

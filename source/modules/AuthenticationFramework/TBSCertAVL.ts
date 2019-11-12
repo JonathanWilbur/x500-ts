@@ -49,8 +49,8 @@ class TBSCertAVL {
         readonly avlExtensions: Extensions | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): TBSCertAVL {
-        const tbsCertAVLElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): TBSCertAVL {
+        const tbsCertAVLElements: ASN1Element[] = value.sequence;
         let encounteredDefinedElements: number = 0;
         let version: Version = Version.v1;
         let serialNumber: Uint8Array | undefined = undefined;
@@ -146,14 +146,14 @@ class TBSCertAVL {
         ];
         validateConstruction(tbsCertAVLElements, specification);
 
-        const lastElement: DERElement = tbsCertAVLElements[tbsCertAVLElements.length - 1];
+        const lastElement: ASN1Element = tbsCertAVLElements[tbsCertAVLElements.length - 1];
         if (
             tbsCertAVLElements.length > (encounteredDefinedElements + 1)
             && lastElement.tagClass === ASN1TagClass.universal
             && lastElement.construction === ASN1Construction.constructed
             && lastElement.tagNumber === ASN1UniversalType.sequence
         ) {
-            avlExtensions = (lastElement.sizeConstrainedSequenceOf(1) as DERElement[])
+            avlExtensions = (lastElement.sizeConstrainedSequenceOf(1))
                 .map(Extension.fromElement);
         }
 

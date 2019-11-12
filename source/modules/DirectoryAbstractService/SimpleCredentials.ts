@@ -43,7 +43,7 @@ class SaslCredentials {
         readonly password: ASN1Element | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): SaslCredentials {
+    public static fromElement (value: ASN1Element): SaslCredentials {
         let name!: DistinguishedName;
         let validity: {
             time1: Date | undefined;

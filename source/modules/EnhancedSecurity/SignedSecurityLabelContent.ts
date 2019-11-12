@@ -32,7 +32,7 @@ class SignedSecurityLabelContent {
         readonly securityLabel: SecurityLabel,
     ) {}
 
-    public static fromElement (value: DERElement): SignedSecurityLabelContent {
+    public static fromElement (value: ASN1Element): SignedSecurityLabelContent {
         let attHash!: HASH;
         let issuer: Name | undefined;
         let keyIdentifier: KeyIdentifier | undefined;

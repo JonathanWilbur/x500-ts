@@ -25,7 +25,7 @@ class SortKey {
         readonly contextAssertions: ASN1Element,
     ) {}
 
-    public static fromElement (value: DERElement): SortKey {
+    public static fromElement (value: ASN1Element): SortKey {
         let type!: AttributeType;
         let contextAssertions!: ASN1Element;
         const specification: ConstructedElementSpecification[] = [

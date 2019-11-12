@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 
 // Validity ::= SEQUENCE {
@@ -14,10 +14,10 @@ export default
 class Validity {
     constructor (
         readonly notBefore: Date,
-        readonly notAfter: Date
+        readonly notAfter: Date,
     ) {}
 
-    public static fromElement (value: DERElement): Validity {
+    public static fromElement (value: ASN1Element): Validity {
         switch(value.validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.constructed ],
@@ -29,7 +29,7 @@ class Validity {
         case -3: throw new errors.X500Error("Invalid tag number on validity");
         default: throw new errors.X500Error("Undefined error when validating validity tag");
         }
-        const validityElements: DERElement[] = value.sequence;
+        const validityElements: ASN1Element[] = value.sequence;
         if (validityElements.length !== 2) {
             throw new errors.X500Error("validity contained more than two ASN.1 elements");
         }
@@ -38,7 +38,7 @@ class Validity {
         switch(validityElements[0].validateTag(
             [ ASN1TagClass.universal ],
             [ ASN1Construction.primitive ],
-            [ ASN1UniversalType.utcTime, ASN1UniversalType.generalizedTime ]
+            [ ASN1UniversalType.utcTime, ASN1UniversalType.generalizedTime ],
         )) {
         case 0: break;
         case -1: throw new errors.X500Error("Invalid tag class on validity.notBefore");
@@ -64,7 +64,7 @@ class Validity {
             (validityElements[0].tagNumber === ASN1UniversalType.generalizedTime)
                 ? validityElements[0].generalizedTime : validityElements[0].utcTime,
             (validityElements[1].tagNumber === ASN1UniversalType.generalizedTime)
-                ? validityElements[1].generalizedTime : validityElements[1].utcTime
+                ? validityElements[1].generalizedTime : validityElements[1].utcTime,
         );
     }
 

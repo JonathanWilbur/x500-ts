@@ -29,7 +29,7 @@ class KeyAgreement {
         },
     ) {}
 
-    public static fromElement (value: DERElement): KeyAgreement {
+    public static fromElement (value: ASN1Element): KeyAgreement {
         let senderDhInfo!: SenderDhInfo;
         let keyEncryptionAlgorithm!: {
             algorithm: ObjectIdentifier;

@@ -24,7 +24,7 @@ class TimeSpecification {
         readonly baseThisUpdate: Date,
     ) {}
 
-    public static fromElement (value: DERElement): TimeSpecification {
+    public static fromElement (value: ASN1Element): TimeSpecification {
         let cRLStreamIdentifier: CRLStreamIdentifier | undefined = undefined;
         let cRLNumber!: CRLNumber;
         let baseThisUpdate!: Date;

@@ -1,4 +1,4 @@
-import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType } from "asn1-ts";
+import { DERElement, ASN1TagClass, ASN1Construction, ASN1UniversalType, ASN1Element } from "asn1-ts";
 import * as errors from "../../errors";
 import validateTag from "../../validateTag";
 
@@ -19,8 +19,8 @@ class DSSParms {
         readonly g: Uint8Array,
     ) {}
 
-    public static fromElement (value: DERElement): DSSParms {
-        const dssParmsElements: DERElement[] = value.sequence;
+    public static fromElement (value: ASN1Element): DSSParms {
+        const dssParmsElements: ASN1Element[] = value.sequence;
         if (dssParmsElements.length < 3) {
             throw new errors.X500Error("Too few elements in DSS-Parms.");
         }

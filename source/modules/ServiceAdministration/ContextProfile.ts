@@ -23,7 +23,7 @@ class ContextProfile {
         readonly contextValue: DERElement | undefined,
     ) {}
 
-    public static fromElement (value: DERElement): ContextProfile {
+    public static fromElement (value: ASN1Element): ContextProfile {
         let contextType!: ObjectIdentifier;
         let contextValue: DERElement | undefined = undefined;
         const specification: ConstructedElementSpecification[] = [
