@@ -40,7 +40,7 @@ though it will result in a more bloated codebase.
 - [x] InformationFramework
 - [x] LdapSystemSchema
 - [x] OperationalBindingManagement
-- [ ] OSIProtocolSpecification (8 hours)
+- [x] OSIProtocolSpecification
 - [ ] PkiPmiExternalDataTypes? (6 hours)
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
 - [x] PkiPmiWrapper

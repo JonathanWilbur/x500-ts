@@ -21,6 +21,7 @@ export * from "./modules/IDMProtocolSpecification/index";
 export * from "./modules/InformationFramework/index";
 export * from "./modules/LdapSystemSchema";
 export * from "./modules/OperationalBindingManagement/index";
+export * from "./modules/OSIProtocolSpecification/index";
 export * from "./modules/PkiPmiExternalDataTypes/index";
 export * from "./modules/PkiPMIProtocolSpecifications/index";
 export * from "./modules/PkiPmiWrapper";

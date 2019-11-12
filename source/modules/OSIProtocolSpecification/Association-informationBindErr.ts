@@ -1,3 +1,5 @@
+import { External } from "asn1-ts";
+
 /**
  * `Association-informationBindErr{APPLICATION-CONTEXT:Protocols} ::=
  *   SEQUENCE SIZE (1) OF
@@ -7,3 +9,5 @@
  *         data-value-descriptor  ABSENT,
  *         data-value             (CONTAINING TheOsiBindErr{{Protocols}})})`
  */
+type Association_informationBindErr = [ External ];
+export default Association_informationBindErr;
