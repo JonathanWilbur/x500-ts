@@ -2,47 +2,114 @@ import { ObjectIdentifier } from "asn1-ts";
 export const pkiPmiExternalDataTypesOID: ObjectIdentifier = new ObjectIdentifier([ 2, 5, 1, 40 ]);
 
 export { default as AccessDescription } from "./AccessDescription";
+export { default as AdministrationDomainName } from "./AdministrationDomainName";
 export { default as AuthorityInfoAccessSyntax } from "./AuthorityInfoAccessSyntax";
+export { default as BuiltInDomainDefinedAttribute } from "./BuiltInDomainDefinedAttribute";
+export { default as BuiltInDomainDefinedAttributes } from "./BuiltInDomainDefinedAttributes";
+export { default as BuiltInStandardAttributes } from "./BuiltInStandardAttributes";
+export { default as CommonName } from "./CommonName";
+// export { default as CountryName } from "./CountryName";
+// export { default as DisplayText } from "./DisplayText";
+export { default as ExtendedNetworkAddress } from "./ExtendedNetworkAddress";
+// export { default as ExtensionAttribute } from "./ExtensionAttribute";
+export { default as ExtensionAttributes } from "./ExtensionAttributes";
+export { default as ExtensionORAddressComponents } from "./ExtensionORAddressComponents";
+export { default as ExtensionPhysicalDeliveryAddressComponents } from "./ExtensionPhysicalDeliveryAddressComponents";
+export { default as G3FacsimileNonBasicParameters } from "./G3FacsimileNonBasicParameters";
+export { default as LocalPostalAttributes } from "./LocalPostalAttributes";
+export { default as NetworkAddress } from "./NetworkAddress";
+// export { default as NoticeReference } from "./NoticeReference";
+export { default as NumericUserIdentifier } from "./NumericUserIdentifier";
+export { default as ORAddress } from "./ORAddress";
+export { default as OrganizationName } from "./OrganizationName";
+export { default as OrganizationalUnitName } from "./OrganizationalUnitName";
+export { default as OrganizationalUnitNames } from "./OrganizationalUnitNames";
+export { default as PDSName } from "./PDSName";
+export { default as PDSParameter } from "./PDSParameter";
+export { default as PersonalName } from "./PersonalName";
+export { default as PhysicalDeliveryCountryName } from "./PhysicalDeliveryCountryName";
+export { default as PhysicalDeliveryOfficeName } from "./PhysicalDeliveryOfficeName";
+export { default as PhysicalDeliveryOfficeNumber } from "./PhysicalDeliveryOfficeNumber";
+export { default as PhysicalDeliveryOrganizationalName } from "./PhysicalDeliveryOrganizationalName";
+export { default as PhysicalDeliveryPersonalName } from "./PhysicalDeliveryPersonalName";
+export { default as PostOfficeBoxAddress } from "./PostOfficeBoxAddress";
+export { default as PostalCode } from "./PostalCode";
+export { default as PosteRestanteAddress } from "./PosteRestanteAddress";
+export { default as PrivateDomainName } from "./PrivateDomainName";
+export { default as StreetAddress } from "./StreetAddress";
 export { default as SubjectInfoAccessSyntax } from "./SubjectInfoAccessSyntax";
+export { default as TeletexCommonName } from "./TeletexCommonName";
+export { default as TeletexDomainDefinedAttribute } from "./TeletexDomainDefinedAttribute";
+export { default as TeletexDomainDefinedAttributes } from "./TeletexDomainDefinedAttributes";
+export { default as TeletexOrganizationName } from "./TeletexOrganizationName";
+export { default as TeletexOrganizationalUnitName } from "./TeletexOrganizationalUnitName";
+export { default as TeletexOrganizationalUnitNames } from "./TeletexOrganizationalUnitNames";
+export { default as TeletexPersonalName } from "./TeletexPersonalName";
+export { default as TerminalIdentifier } from "./TerminalIdentifier";
+export { default as TerminalType } from "./TerminalType";
+export { default as UnformattedPostalAddress } from "./UnformattedPostalAddress";
+export { default as UniquePostalName } from "./UniquePostalName";
+export { default as UniversalCommonName } from "./UniversalCommonName";
+export { default as UniversalDomainDefinedAttribute } from "./UniversalDomainDefinedAttribute";
+export { default as UniversalDomainDefinedAttributes } from "./UniversalDomainDefinedAttributes";
+export { default as UniversalExtensionORAddressComponents } from "./UniversalExtensionORAddressComponents";
+export {
+    default as UniversalExtensionPhysicalDeliveryAddressComponents,
+} from "./UniversalExtensionPhysicalDeliveryAddressComponents";
+export { default as UniversalLocalPostalAttributes } from "./UniversalLocalPostalAttributes";
+export { default as UniversalOrBMPString } from "./UniversalOrBMPString";
+export { default as UniversalOrganizationName } from "./UniversalOrganizationName";
+export { default as UniversalOrganizationalUnitName } from "./UniversalOrganizationalUnitName";
+export { default as UniversalOrganizationalUnitNames } from "./UniversalOrganizationalUnitNames";
+export { default as UniversalPDSParameter } from "./UniversalPDSParameter";
+export { default as UniversalPersonalName } from "./UniversalPersonalName";
+export { default as UniversalPhysicalDeliveryOfficeName } from "./UniversalPhysicalDeliveryOfficeName";
+export { default as UniversalPhysicalDeliveryOfficeNumber } from "./UniversalPhysicalDeliveryOfficeNumber";
+export { default as UniversalPhysicalDeliveryOrganizationName } from "./UniversalPhysicalDeliveryOrganizationName";
+export { default as UniversalPhysicalDeliveryPersonalName } from "./UniversalPhysicalDeliveryPersonalName";
+export { default as UniversalPostOfficeBoxAddress } from "./UniversalPostOfficeBoxAddress";
+export { default as UniversalPosteRestanteAddress } from "./UniversalPosteRestanteAddress";
+export { default as UniversalStreetAddress } from "./UniversalStreetAddress";
+export { default as UniversalUnformattedPostalAddress } from "./UniversalUnformattedPostalAddress";
+export { default as UniversalUniquePostalName } from "./UniversalUniquePostalName";
+// export { default as UserNotice } from "./UserNotice";
+// export { default as X121Address } from "./X121Address";
 
-// id-pkix                   OBJECT IDENTIFIER ::= { intSecurity mechanisms(5) pkix(7) }
+export const id_pkix                   = new ObjectIdentifier([1, 3, 6, 1, 5, 7]);
+export const id_pe                     = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 1]);
+export const id_ad                     = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 48]);
+export const id_pe_authorityInfoAccess = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 1, 1]);
+export const id_pe_subjectInfoAccess   = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 1, 11]);
+export const id_ad_caIssuers           = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 48, 2]);
+export const id_ad_ocsp                = new ObjectIdentifier([1, 3, 6, 1, 5, 7, 48, 1]);
 
-// id-pe                     OBJECT IDENTIFIER ::= { id-pkix 1 }
-// id-ad                     OBJECT IDENTIFIER ::= { id-pkix 48 }
-
-// id-pe-authorityInfoAccess OBJECT IDENTIFIER ::= { id-pe 1 }
-// id-pe-subjectInfoAccess   OBJECT IDENTIFIER ::= { id-pe 11 }
-// id-ad-caIssuers           OBJECT IDENTIFIER ::= { id-ad 2 }
-// id-ad-ocsp                OBJECT IDENTIFIER ::= { id-ad 1 }
-
-
-// ub-integer-options                        INTEGER ::= 256
-// ub-e163-4-number-length                   INTEGER ::= 15
-// ub-e163-4-sub-address-length              INTEGER ::= 40
-// ub-unformatted-address-length             INTEGER ::= 180
-// ub-pds-parameter-length                   INTEGER ::= 30
-// ub-pds-physical-address-lines             INTEGER ::= 6
-// ub-postal-code-length                     INTEGER ::= 16
-// ub-pds-name-length                        INTEGER ::= 16
-// ub-universal-surname-length               INTEGER ::= 64
-// ub-universal-given-name-length            INTEGER ::= 40
-// ub-universal-initials-length              INTEGER ::= 16
-// ub-universal-generation-qualifier-length  INTEGER ::= 16
-// ub-common-name-length                     INTEGER ::= 64
-// ub-extension-attributes                   INTEGER ::= 256
-// ub-domain-defined-attribute-type-length   INTEGER ::= 8
-// ub-domain-defined-attribute-value-length  INTEGER ::= 128
-// ub-domain-defined-attributes              INTEGER ::= 4
-// ub-organizational-unit-name-length        INTEGER ::= 32
-// ub-organizational-units                   INTEGER ::= 4
-// ub-generation-qualifier-length            INTEGER ::= 3
-// ub-initials-length                        INTEGER ::= 5
-// ub-given-name-length                      INTEGER ::= 16
-// ub-surname-length                         INTEGER ::= 40
-// ub-numeric-user-id-length                 INTEGER ::= 32
-// ub-organization-name-length               INTEGER ::= 64
-// ub-terminal-id-length                     INTEGER ::= 24
-// ub-x121-address-length                    INTEGER ::= 16
-// ub-domain-name-length                     INTEGER ::= 16
-// ub-country-name-alpha-length              INTEGER ::= 2
-// ub-country-name-numeric-length            INTEGER ::= 3
+export const ub_integer_options                        = 256;
+export const ub_e163_4_number_length                   = 15;
+export const ub_e163_4_sub_address_length              = 40;
+export const ub_unformatted_address_length             = 180;
+export const ub_pds_parameter_length                   = 30;
+export const ub_pds_physical_address_lines             = 6;
+export const ub_postal_code_length                     = 16;
+export const ub_pds_name_length                        = 16;
+export const ub_universal_surname_length               = 64;
+export const ub_universal_given_name_length            = 40;
+export const ub_universal_initials_length              = 16;
+export const ub_universal_generation_qualifier_length  = 16;
+export const ub_common_name_length                     = 64;
+export const ub_extension_attributes                   = 256;
+export const ub_domain_defined_attribute_type_length   = 8;
+export const ub_domain_defined_attribute_value_length  = 128;
+export const ub_domain_defined_attributes              = 4;
+export const ub_organizational_unit_name_length        = 32;
+export const ub_organizational_units                   = 4;
+export const ub_generation_qualifier_length            = 3;
+export const ub_initials_length                        = 5;
+export const ub_given_name_length                      = 16;
+export const ub_surname_length                         = 40;
+export const ub_numeric_user_id_length                 = 32;
+export const ub_organization_name_length               = 64;
+export const ub_terminal_id_length                     = 24;
+export const ub_x121_address_length                    = 16;
+export const ub_domain_name_length                     = 16;
+export const ub_country_name_alpha_length              = 2;
+export const ub_country_name_numeric_length            = 3;

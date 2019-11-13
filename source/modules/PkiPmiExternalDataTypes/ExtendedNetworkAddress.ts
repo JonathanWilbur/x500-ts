@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `ExtendedNetworkAddress ::= CHOICE {
  *   e163-4-address    SEQUENCE {
@@ -6,3 +8,5 @@
  *                   OPTIONAL},
  *   psap-address [0]  PresentationAddress }`
  */
+type ExtendedNetworkAddress = ASN1Element;
+export default ExtendedNetworkAddress;

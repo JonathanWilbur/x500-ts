@@ -42,7 +42,7 @@ though it will result in a more bloated codebase.
 - [x] OperationalBindingManagement
 - [x] OSIProtocolSpecification
 - [x] PkiPmiExternalDataTypes
-- [ ] PkiPmiProtocolSpecifications? (8 hours)
+- [x] PkiPmiProtocolSpecifications
 - [x] PkiPmiWrapper
 - [x] PKIXImplicit93
 - [x] ProtocolObjectIdentifiers
