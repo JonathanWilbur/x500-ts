@@ -1,29 +1,77 @@
 import { ObjectIdentifier } from "asn1-ts";
 export const pkiPMIProtocolSpecificationsOID: ObjectIdentifier = new ObjectIdentifier([ 2, 5, 1, 43 ]);
 
-// id-signedData OBJECT IDENTIFIER ::= {iso(1) member-body(2)
-//     us(840)rsadsi(113549) pkcs(1) pkcs7(7) 2}
+export { default as AVMP_error } from "./AVMP-error";
+export { default as AVMPcommonComponents } from "./AVMPcommonComponents";
+export { default as AVMPsequence } from "./AVMPsequence";
+export { default as AVMPversion } from "./AVMPversion";
+export { default as AddAvlErr } from "./AddAvlErr";
+export { default as AddAvlOK } from "./AddAvlOK";
+export { default as AddAvlReq } from "./AddAvlReq";
+export { default as AddAvlRsp } from "./AddAvlRsp";
+export { default as CASP_CertStatusCode } from "./CASP-CertStatusCode";
+export { default as CASP_error } from "./CASP-error";
+export { default as CASPcommonComponents } from "./CASPcommonComponents";
+export { default as CASPsequence } from "./CASPsequence";
+export { default as CASPversion } from "./CASPversion";
+export { default as CertErr } from "./CertErr";
+export { default as CertOK } from "./CertOK";
+export { default as CertReplaceErr } from "./CertReplaceErr";
+export { default as CertReplaceOK } from "./CertReplaceOK";
+export { default as CertReplaceReq } from "./CertReplaceReq";
+export { default as CertReplaceRsp } from "./CertReplaceRsp";
+export { default as CertReq } from "./CertReq";
+export { default as CertRsp } from "./CertRsp";
+export { default as CertStatus } from "./CertStatus";
+export { default as CertSubscribeErr } from "./CertSubscribeErr";
+export { default as CertSubscribeOK } from "./CertSubscribeOK";
+export { default as CertSubscribeReq } from "./CertSubscribeReq";
+export { default as CertSubscribeRsp } from "./CertSubscribeRsp";
+export { default as CertUnsubscribeErr } from "./CertUnsubscribeErr";
+export { default as CertUnsubscribeOK } from "./CertUnsubscribeOK";
+export { default as CertUnsubscribeReq } from "./CertUnsubscribeReq";
+export { default as CertUnsubscribeRsp } from "./CertUnsubscribeRsp";
+export { default as CertUpdateErr } from "./CertUpdateErr";
+export { default as CertUpdateOK } from "./CertUpdateOK";
+export { default as CertUpdateReq } from "./CertUpdateReq";
+export { default as CertUpdateRsp } from "./CertUpdateRsp";
+export { default as DelAvlErr } from "./DelAvlErr";
+export { default as DelAvlOK } from "./DelAvlOK";
+export { default as DeleteAvlReq } from "./DeleteAvlReq";
+export { default as DeleteAvlRsp } from "./DeleteAvlRsp";
+export { default as EnvelopedData_error } from "./EnvelopedData-error";
+export { default as Notifications } from "./Notifications";
+export { default as RejectAVL } from "./RejectAVL";
+export { default as RejectCAsubscribe } from "./RejectCAsubscribe";
+export { default as RepAvlErr } from "./RepAvlErr";
+export { default as RepAvlOK } from "./RepAvlOK";
+export { default as ReplaceAvlReq } from "./ReplaceAvlReq";
+export { default as ReplaceAvlRsp } from "./ReplaceAvlRsp";
+export { default as SignedData_error } from "./SignedData-error";
+export { default as TBOK } from "./TBOK";
+export { default as TBerror } from "./TBerror";
+export { default as TBrequest } from "./TBrequest";
+export { default as TBresponse } from "./TBresponse";
 
-// id-envelopedData OBJECT IDENTIFIER ::= {iso(1) member-body(2) us(840)
-//     rsadsi(113549) pkcs(1) pkcs7(7) 3}
-
-// id-certReq              OBJECT IDENTIFIER ::= {id-cmsct 0}
-// id-certRsp              OBJECT IDENTIFIER ::= {id-cmsct 1}
-// id-addAvlReq            OBJECT IDENTIFIER ::= {id-cmsct 2}
-// id-addAvlRsp            OBJECT IDENTIFIER ::= {id-cmsct 3}
-// id-replaceAvlReq        OBJECT IDENTIFIER ::= {id-cmsct 4}
-// id-replaceAvlRsp        OBJECT IDENTIFIER ::= {id-cmsct 5}
-// id-updateAvlReq         OBJECT IDENTIFIER ::= {id-cmsct 6}
-// id-updateAvlRsp         OBJECT IDENTIFIER ::= {id-cmsct 7}
-// id-deleteAvlReq         OBJECT IDENTIFIER ::= {id-cmsct 8}
-// id-deleteAvlRsp         OBJECT IDENTIFIER ::= {id-cmsct 9}
-// id-rejectAVL            OBJECT IDENTIFIER ::= {id-cmsct 10}
-// id-certSubscribeReq     OBJECT IDENTIFIER ::= {id-cmsct 11}
-// id-certSubscribeRsp     OBJECT IDENTIFIER ::= {id-cmsct 12}
-// id-certUnsubscribeReq   OBJECT IDENTIFIER ::= {id-cmsct 13}
-// id-certUnsubscribeRsp   OBJECT IDENTIFIER ::= {id-cmsct 14}
-// id-certReplaceReq       OBJECT IDENTIFIER ::= {id-cmsct 15}
-// id-certReplaceRsp       OBJECT IDENTIFIER ::= {id-cmsct 16}
-// id-certUpdateReq        OBJECT IDENTIFIER ::= {id-cmsct 17}
-// id-certUpdateRsp        OBJECT IDENTIFIER ::= {id-cmsct 18}
-// id-rejectCAsubscribe    OBJECT IDENTIFIER ::= {id-cmsct 19}
+export const id_signedData          = new ObjectIdentifier([1, 2, 840, 113549, 1, 7, 2]);
+export const id_envelopedData       = new ObjectIdentifier([1, 2, 840, 113549, 1, 7, 3]);
+export const id_certReq             = new ObjectIdentifier([2, 5, 41, 0]);
+export const id_certRsp             = new ObjectIdentifier([2, 5, 41, 1]);
+export const id_addAvlReq           = new ObjectIdentifier([2, 5, 41, 2]);
+export const id_addAvlRsp           = new ObjectIdentifier([2, 5, 41, 3]);
+export const id_replaceAvlReq       = new ObjectIdentifier([2, 5, 41, 4]);
+export const id_replaceAvlRsp       = new ObjectIdentifier([2, 5, 41, 5]);
+export const id_updateAvlReq        = new ObjectIdentifier([2, 5, 41, 6]);
+export const id_updateAvlRsp        = new ObjectIdentifier([2, 5, 41, 7]);
+export const id_deleteAvlReq        = new ObjectIdentifier([2, 5, 41, 8]);
+export const id_deleteAvlRsp        = new ObjectIdentifier([2, 5, 41, 9]);
+export const id_rejectAVL           = new ObjectIdentifier([2, 5, 41, 10]);
+export const id_certSubscribeReq    = new ObjectIdentifier([2, 5, 41, 11]);
+export const id_certSubscribeRsp    = new ObjectIdentifier([2, 5, 41, 12]);
+export const id_certUnsubscribeReq  = new ObjectIdentifier([2, 5, 41, 13]);
+export const id_certUnsubscribeRsp  = new ObjectIdentifier([2, 5, 41, 14]);
+export const id_certReplaceReq      = new ObjectIdentifier([2, 5, 41, 15]);
+export const id_certReplaceRsp      = new ObjectIdentifier([2, 5, 41, 16]);
+export const id_certUpdateReq       = new ObjectIdentifier([2, 5, 41, 17]);
+export const id_certUpdateRsp       = new ObjectIdentifier([2, 5, 41, 18]);
+export const id_rejectCAsubscribe   = new ObjectIdentifier([2, 5, 41, 19]);

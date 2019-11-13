@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `CertSubscribeOK ::= SEQUENCE (SIZE (1..MAX)) OF CHOICE {
  *   ok       [0] SEQUENCE {
@@ -10,3 +12,5 @@
  *     ... },
  *   ... }`
  */
+type CertSubscribeOK = ASN1Element[];
+export default CertSubscribeOK;

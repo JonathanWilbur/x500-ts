@@ -1,3 +1,10 @@
+import {
+    ASN1Element,
+    DERElement,
+    ConstructedElementSpecification,
+    validateConstruction,
+} from "asn1-ts";
+
 /**
  * `CertReplaceErr ::= SEQUENCE {
  *   code        CHOICE {
@@ -7,3 +14,30 @@
  *     ... },
  *   ... }`
  */
+export default
+class CertReplaceErr {
+    constructor (
+        readonly code: ASN1Element,
+    ) {}
+
+    public static fromElement (value: DERElement): CertReplaceErr {
+        let code!: ASN1Element;
+        const specification: ConstructedElementSpecification[] = [
+            {
+                name: "code",
+                optional: false,
+                callback: (el: ASN1Element): void => {
+                    code = el;
+                },
+            },
+        ];
+        validateConstruction(value.sequence, specification);
+        return new CertReplaceErr(code);
+    }
+
+    public toElement (): DERElement {
+        return DERElement.fromSequence([
+            this.code,
+        ]);
+    }
+}

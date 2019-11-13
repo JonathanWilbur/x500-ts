@@ -41,7 +41,7 @@ though it will result in a more bloated codebase.
 - [x] LdapSystemSchema
 - [x] OperationalBindingManagement
 - [x] OSIProtocolSpecification
-- [ ] PkiPmiExternalDataTypes? (6 hours)
+- [x] PkiPmiExternalDataTypes
 - [ ] PkiPmiProtocolSpecifications? (8 hours)
 - [x] PkiPmiWrapper
 - [x] PKIXImplicit93
