@@ -1,3 +1,5 @@
+import { ASN1Element } from "asn1-ts";
+
 /**
  * `SPKMInnerContextToken ::= CHOICE {
  *   req     [0]  SPKM-REQ,
@@ -9,3 +11,5 @@
  *   del     [6]  SPKM-DEL
  * }`
  */
+type SPKMInnerContextToken = ASN1Element;
+export default SPKMInnerContextToken;

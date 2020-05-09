@@ -1,5 +1,45 @@
+import {
+    ASN1Element,
+    ASN1Construction,
+    ASN1TagClass,
+    DERElement,
+    ASN1UniversalType,
+    ConstructedElementSpecification,
+    validateConstruction,
+} from "asn1-ts";
+
 /**
  * `AuthorizationData ::=
  *   SEQUENCE OF SEQUENCE {ad-type  INTEGER,
  *                         ad-data  OCTET STRING}`
  */
+export default
+class TimeSpecification {
+    constructor (
+
+    ) {}
+
+    public static fromElement (value: DERElement): TimeSpecification {
+        const specification: ConstructedElementSpecification[] = [
+            // {
+            //     name: "notThisTime",
+            //     optional: true,
+            //     tagClass: ASN1TagClass.universal,
+            //     construction: ASN1Construction.primitive,
+            //     tagNumber: ASN1UniversalType.boolean,
+            //     callback: (el: ASN1Element): void => {
+            //         notThisTime = el.boolean;
+            //     },
+            // },
+        ];
+        validateConstruction(value.sequence, specification);
+        return new TimeSpecification(
+        );
+    }
+
+    public toElement (): DERElement {
+        return DERElement.fromSequence([
+
+        ]);
+    }
+}
