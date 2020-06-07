@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         /* Basic Options */
-        "target": "ESNEXT",
+        "target": "ES2019",
         "module": "commonjs",
         // "lib": [],
         "allowJs": false,
@@ -11,7 +11,7 @@
         "declarationMap": true,
         "sourceMap": true,
         // "outFile": "./",
-        "outDir": "./dist",
+        "outDir": "./dist/node",
         // "rootDir": "./",
         // "composite": true,
         "removeComments": true,
@@ -45,5 +45,12 @@
         // "inlineSources": true,
         // "experimentalDecorators": true,
         // "emitDecoratorMetadata": true,
-    }
+    },
+    "include": [
+        "source/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }

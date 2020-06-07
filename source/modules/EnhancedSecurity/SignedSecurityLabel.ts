@@ -1,3 +1,0 @@
-/**
- * `SignedSecurityLabel ::= SIGNED{SignedSecurityLabelContent}`
- */

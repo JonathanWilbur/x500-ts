@@ -1,6 +1,6 @@
 {
     "eslint.run": "onSave",
-    "eslint.enable": true,
+    "eslint.enable": false,
     "eslint.workingDirectories": [
         "source",
     ],

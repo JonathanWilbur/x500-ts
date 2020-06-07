@@ -1,54 +1,15 @@
-# X.500 Directory in TypeScript
+# X.500 TypeScript Library
 
 * Author: [Jonathan M. Wilbur](https://github.com/JonathanWilbur) <[jonathan@wilbur.space](mailto:jonathan@wilbur.space)>
-* Copyright Year: 2019
+* Copyright Year: 2020
 * License: [MIT License](https://mit-license.org/)
 
-## Why not separate libraries for each ITU specification, such as X.509?
+Be sure to correct information in:
 
-Almost all of the specifications within the ITU X.500 series are mutually
-referential. Being mutually dependent, it made sense to combine them, even
-though it will result in a more bloated codebase.
+- `package.json`
+- `webpack.config.js`
+- `Jenkinsfile` (Specifically, the `url` for the Git repository.)
+- `./test/testpage.html`
+- `Dockerfile`
+- `docker-compose.yaml`
 
-## TODO
-
-- [ ] Serverless Commands
-  - [ ] `DeserializeDistinguishedName`
-  - [ ] `TestLDAPFilter`
-
-## Development
-
-- [x] CertificateExtensions
-- [x] CommonProtocolSpecifications
-- [x] DirectoryAbstractService (Mostly done)
-- [x] DirectoryAccessProtocol
-- [x] DirectoryIDMProtocols
-- [x] DirectoryInformationShadowProtocol
-- [x] DirectoryManagement
-- [x] DirectoryOperationalBindingManagementProtocol
-- [x] DirectoryOperationalBindingTypes
-- [x] DirectoryOSIProtocols
-- [x] DirectorySecurityExchanges (Blocked on `SIGNED`)
-- [x] DirectoryShadowAbstractService (4 hours)
-- [x] DirectorySystemProtocol
-- [x] DistributedOperations
-- [x] DSAOperationalAttributeTypes
-- [x] EnhancedSecurity (6 hours)
-- [x] ExtensionAttributes
-- [x] HierarchicalOperationalBindings
-- [x] IDMProtocolSpecification
-- [x] InformationFramework
-- [x] LdapSystemSchema
-- [x] OperationalBindingManagement
-- [x] OSIProtocolSpecification
-- [x] PkiPmiExternalDataTypes
-- [x] PkiPmiProtocolSpecifications
-- [x] PkiPmiWrapper
-- [x] PKIXImplicit93
-- [x] ProtocolObjectIdentifiers
-- [x] SchemaAdministration
-- [x] SelectedAttributeTypes
-- [x] SelectedObjectClasses
-- [x] ServiceAdministration
-- [ ] SpkmGssTokens
-- [x] UsefulDefinitions
