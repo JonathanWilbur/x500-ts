@@ -74,13 +74,13 @@ export type OPTIONALLY_PROTECTED<Type> =
     { unsigned: Type }
     | { signed: SIGNED<Type> };
 export const _get_decoder_for_OPTIONALLY_PROTECTED = function <Type>(_decode_Type: __utils.ASN1Decoder<Type>) {
-return __utils._decode_inextensible_choice<OPTIONALLY_PROTECTED>({
+return __utils._decode_inextensible_choice<OPTIONALLY_PROTECTED<Type>>({
     /* NO_TAG_OR_TAG_CLASS */: [ "unsigned", _decode_Type ],
     "UNIVERSAL 16": [ "signed", _get_decoder_for_SIGNED<Type>(_decode_Type) ]
 })
 }
 export const _get_encoder_for_OPTIONALLY_PROTECTED = function <Type>(_encode_Type: __utils.ASN1Encoder<Type>) {
-return __utils._encode_choice<OPTIONALLY_PROTECTED>({
+return __utils._encode_choice<OPTIONALLY_PROTECTED<Type>>({
     "unsigned": _encode_Type,
     "signed": _get_encoder_for_SIGNED<Type>(_encode_Type),
 }, __utils.BER)
@@ -91,13 +91,13 @@ export type OPTIONALLY_PROTECTED_SEQ<Type> =
     { unsigned: Type }
     | { signed: SIGNED<Type> };
 export const _get_decoder_for_OPTIONALLY_PROTECTED_SEQ = function <Type>(_decode_Type: __utils.ASN1Decoder<Type>) {
-return __utils._decode_inextensible_choice<OPTIONALLY_PROTECTED_SEQ>({
+return __utils._decode_inextensible_choice<OPTIONALLY_PROTECTED_SEQ<Type>>({
     /* NO_TAG_OR_TAG_CLASS */: [ "unsigned", _decode_Type ],
     "CONTEXT 0": [ "signed", __utils._decode_implicit<SIGNED<Type>>(() => _get_decoder_for_SIGNED<Type>(_decode_Type)) ]
 })
 }
 export const _get_encoder_for_OPTIONALLY_PROTECTED_SEQ = function <Type>(_encode_Type: __utils.ASN1Encoder<Type>) {
-return __utils._encode_choice<OPTIONALLY_PROTECTED_SEQ>({
+return __utils._encode_choice<OPTIONALLY_PROTECTED_SEQ<Type>>({
     "unsigned": _encode_Type,
     "signed": __utils._encode_implicit(asn1.ASN1TagClass.context, 0, () => _get_encoder_for_SIGNED<Type>(_encode_Type), __utils.BER),
 }, __utils.BER)
@@ -135,7 +135,7 @@ export const _encode_PrivacyMark = __utils._encodePrintableString;
 
 export class SecurityCategory {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -158,13 +158,13 @@ export const _decode_SecurityCategory = function (el: asn1.ASN1Element): Securit
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let value!: asn1.ASN1Element;
-    type = __utils._decode_implicit<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(sequence[0]);
+    type_ = __utils._decode_implicit<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(sequence[0]);
     value = __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny)(sequence[1]);
     // TODO: Validate values.
     return new SecurityCategory(
-        type,
+        type_,
         value,
         sequence.slice(2),
     );
@@ -172,7 +172,7 @@ export const _decode_SecurityCategory = function (el: asn1.ASN1Element): Securit
 export const _encode_SecurityCategory = function (value: SecurityCategory, elGetter: __utils.ASN1Encoder<SecurityCategory>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encode_implicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeObjectIdentifier, __utils.BER)(value.type, __utils.BER),
+            __utils._encode_implicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeObjectIdentifier, __utils.BER)(value.type_, __utils.BER),
             __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeAny, __utils.BER)(value.value, __utils.BER)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -628,7 +628,7 @@ export const _encode_AttributeIntegrityInfo = _get_encoder_for_SIGNED<AttributeI
 
 export class AttributeTypeValueContexts {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
         readonly contextList: Context[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -647,14 +647,14 @@ const _extension_additions_list_spec_for_AttributeTypeValueContexts: __utils.Com
 ];
 export const _decode_AttributeTypeValueContexts = function (el: asn1.ASN1Element): AttributeTypeValueContexts {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let value!: asn1.ASN1Element;
     let contextList: asn1.OPTIONAL<Context[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decodeObjectIdentifier(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decodeObjectIdentifier(_el); },
         "value": (_el: asn1.ASN1Element): void => { value = __utils._decodeAny(_el); },
         "contextList": (_el: asn1.ASN1Element): void => { contextList = __utils._decodeSetOf<Context>(() => _decode_Context)(_el); }
     };
@@ -666,7 +666,7 @@ export const _decode_AttributeTypeValueContexts = function (el: asn1.ASN1Element
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new AttributeTypeValueContexts( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         value,
         contextList,
         _unrecognizedExtensionsList
@@ -675,7 +675,7 @@ export const _decode_AttributeTypeValueContexts = function (el: asn1.ASN1Element
 export const _encode_AttributeTypeValueContexts = function (value: AttributeTypeValueContexts, elGetter: __utils.ASN1Encoder<AttributeTypeValueContexts>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeAny(value.value, __utils.BER),
             (value.contextList ? __utils._encodeSetOf<Context>(() => _encode_Context, __utils.BER)(value.contextList, __utils.BER) : undefined)
         ],

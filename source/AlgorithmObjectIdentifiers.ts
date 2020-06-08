@@ -31,25 +31,39 @@ export const _decode_ID = __utils._decodeObjectIdentifier;
 export const _encode_ID = __utils._encodeObjectIdentifier;
 
 
-// TODO: ObjectAssignment: nullAlgorithm
+export const nullAlgorithm: ID = new asn1.ObjectIdentifier([
+    0,
+], algorithm);
 
-// TODO: ObjectAssignment: encryptionAlgorithm
+export const encryptionAlgorithm: ID = new asn1.ObjectIdentifier([
+    1,
+], algorithm);
 
-// TODO: ObjectAssignment: hashAlgorithm
+export const id_ea: ID = encryptionAlgorithm;
 
-// TODO: ObjectAssignment: signatureAlgorithm
+export const hashAlgorithm: ID = new asn1.ObjectIdentifier([
+    2,
+], algorithm);
 
-// TODO: ObjectAssignment: id-ea
+export const id_ha: ID = hashAlgorithm;
 
-// TODO: ObjectAssignment: id-ha
+export const signatureAlgorithm: ID = new asn1.ObjectIdentifier([
+    3,
+], algorithm);
 
-// TODO: ObjectAssignment: id-sa
+export const id_sa: ID = signatureAlgorithm;
 
-// TODO: ObjectAssignment: id-ea-rsa
+export const id_ea_rsa: ID = new asn1.ObjectIdentifier([
+    1,
+], id_ea);
 
-// TODO: ObjectAssignment: id-ha-sqMod-n
+export const id_ha_sqMod_n: ID = new asn1.ObjectIdentifier([
+    1,
+], id_ha);
 
-// TODO: ObjectAssignment: id-sa-sqMod-nWithRSA
+export const id_sa_sqMod_nWithRSA: ID = new asn1.ObjectIdentifier([
+    1,
+], id_sa);
 
 export const us_iso: ID = new asn1.ObjectIdentifier([
     /* iso */ 1,
@@ -132,11 +146,17 @@ export const nistAlgorithms: ID = new asn1.ObjectIdentifier([
     /* nistAlgorithm */ 4,
 ], csor);
 
-// TODO: ObjectAssignment: aes
+export const aes: ID = new asn1.ObjectIdentifier([
+    1,
+], nistAlgorithms);
 
-// TODO: ObjectAssignment: hashAlgs
+export const hashAlgs: ID = new asn1.ObjectIdentifier([
+    2,
+], nistAlgorithms);
 
-// TODO: ObjectAssignment: sigAlgs
+export const sigAlgs: ID = new asn1.ObjectIdentifier([
+    3,
+], nistAlgorithms);
 
 export const rsadsi: ID = new asn1.ObjectIdentifier([
     /* iso */ 1,
@@ -154,17 +174,29 @@ export const digestAlgorithm: ID = new asn1.ObjectIdentifier([
     /* digestAlgorithm */ 2,
 ], rsadsi);
 
-// TODO: ObjectAssignment: id-aes128-CBC
+export const id_aes128_CBC: ID = new asn1.ObjectIdentifier([
+    2,
+], aes);
 
-// TODO: ObjectAssignment: id-aes192-CBC
+export const id_aes192_CBC: ID = new asn1.ObjectIdentifier([
+    22,
+], aes);
 
-// TODO: ObjectAssignment: id-aes256-CBC
+export const id_aes256_CBC: ID = new asn1.ObjectIdentifier([
+    42,
+], aes);
 
-// TODO: ObjectAssignment: id-aes128-wrap
+export const id_aes128_wrap: ID = new asn1.ObjectIdentifier([
+    5,
+], aes);
 
-// TODO: ObjectAssignment: id-aes192-wrap
+export const id_aes192_wrap: ID = new asn1.ObjectIdentifier([
+    25,
+], aes);
 
-// TODO: ObjectAssignment: id-aes256-wrap
+export const id_aes256_wrap: ID = new asn1.ObjectIdentifier([
+    45,
+], aes);
 
 export const rsaEncryption: ID = new asn1.ObjectIdentifier([
     /* rsaEncryption */ 1,
@@ -208,17 +240,29 @@ export const id_sha1: ID = new asn1.ObjectIdentifier([
     26,
 ]);
 
-// TODO: ObjectAssignment: id-sha256
+export const id_sha256: ID = new asn1.ObjectIdentifier([
+    1,
+], hashAlgs);
 
-// TODO: ObjectAssignment: id-sha384
+export const id_sha384: ID = new asn1.ObjectIdentifier([
+    2,
+], hashAlgs);
 
-// TODO: ObjectAssignment: id-sha512
+export const id_sha512: ID = new asn1.ObjectIdentifier([
+    3,
+], hashAlgs);
 
-// TODO: ObjectAssignment: id-sha224
+export const id_sha224: ID = new asn1.ObjectIdentifier([
+    4,
+], hashAlgs);
 
-// TODO: ObjectAssignment: id-sha512-224
+export const id_sha512_224: ID = new asn1.ObjectIdentifier([
+    5,
+], hashAlgs);
 
-// TODO: ObjectAssignment: id-sha512-256
+export const id_sha512_256: ID = new asn1.ObjectIdentifier([
+    6,
+], hashAlgs);
 
 export const hashAlg: ID = new asn1.ObjectIdentifier([
     /* iso */ 1,
@@ -252,9 +296,13 @@ export const sha224WithRSAEncryption: ID = new asn1.ObjectIdentifier([
     /* sha224WithRSAEncryption */ 14,
 ], pkcs_1);
 
-// TODO: ObjectAssignment: id-RSASSA-PSS
+export const id_RSASSA_PSS: ID = new asn1.ObjectIdentifier([
+    10,
+], pkcs_1);
 
-// TODO: ObjectAssignment: id-mgf1
+export const id_mgf1: ID = new asn1.ObjectIdentifier([
+    8,
+], pkcs_1);
 
 export const id_dsa_with_sha1: ID = new asn1.ObjectIdentifier([
     /* iso */ 1,
@@ -265,9 +313,13 @@ export const id_dsa_with_sha1: ID = new asn1.ObjectIdentifier([
     /* dsa-with-sha1 */ 3,
 ]);
 
-// TODO: ObjectAssignment: id-dsa-with-sha224
+export const id_dsa_with_sha224: ID = new asn1.ObjectIdentifier([
+    1,
+], sigAlgs);
 
-// TODO: ObjectAssignment: id-dsa-with-sha256
+export const id_dsa_with_sha256: ID = new asn1.ObjectIdentifier([
+    2,
+], sigAlgs);
 
 export const ecdsa_with_SHA224: ID = new asn1.ObjectIdentifier([
     /* signatures */ 4,
@@ -299,15 +351,25 @@ export const secp192r1: ID = new asn1.ObjectIdentifier([
     1,
 ], ansi_x9_62);
 
-// TODO: ObjectAssignment: sect163k1
+export const sect163k1: ID = new asn1.ObjectIdentifier([
+    1,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect163r2
+export const sect163r2: ID = new asn1.ObjectIdentifier([
+    15,
+], certicom_curve);
 
-// TODO: ObjectAssignment: secp224r1
+export const secp224r1: ID = new asn1.ObjectIdentifier([
+    33,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect233k1
+export const sect233k1: ID = new asn1.ObjectIdentifier([
+    26,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect233r1
+export const sect233r1: ID = new asn1.ObjectIdentifier([
+    27,
+], certicom_curve);
 
 export const secp256r1: ID = new asn1.ObjectIdentifier([
     /* curves */ 3,
@@ -315,59 +377,111 @@ export const secp256r1: ID = new asn1.ObjectIdentifier([
     7,
 ], ansi_x9_62);
 
-// TODO: ObjectAssignment: sect283k1
+export const sect283k1: ID = new asn1.ObjectIdentifier([
+    16,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect283r1
+export const sect283r1: ID = new asn1.ObjectIdentifier([
+    17,
+], certicom_curve);
 
-// TODO: ObjectAssignment: secp384r1
+export const secp384r1: ID = new asn1.ObjectIdentifier([
+    34,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect409k1
+export const sect409k1: ID = new asn1.ObjectIdentifier([
+    36,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect409r1
+export const sect409r1: ID = new asn1.ObjectIdentifier([
+    37,
+], certicom_curve);
 
-// TODO: ObjectAssignment: secp521r1
+export const secp521r1: ID = new asn1.ObjectIdentifier([
+    35,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect571k1
+export const sect571k1: ID = new asn1.ObjectIdentifier([
+    38,
+], certicom_curve);
 
-// TODO: ObjectAssignment: sect571r1
+export const sect571r1: ID = new asn1.ObjectIdentifier([
+    39,
+], certicom_curve);
 
-// TODO: ObjectAssignment: brainpoolP160r1
+export const brainpoolP160r1: ID = new asn1.ObjectIdentifier([
+    1,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP160t1
+export const brainpoolP160t1: ID = new asn1.ObjectIdentifier([
+    2,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP192r1
+export const brainpoolP192r1: ID = new asn1.ObjectIdentifier([
+    3,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP192t1
+export const brainpoolP192t1: ID = new asn1.ObjectIdentifier([
+    4,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP224r1
+export const brainpoolP224r1: ID = new asn1.ObjectIdentifier([
+    5,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP224t1
+export const brainpoolP224t1: ID = new asn1.ObjectIdentifier([
+    6,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP256r1
+export const brainpoolP256r1: ID = new asn1.ObjectIdentifier([
+    7,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP256t1
+export const brainpoolP256t1: ID = new asn1.ObjectIdentifier([
+    8,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP320r1
+export const brainpoolP320r1: ID = new asn1.ObjectIdentifier([
+    9,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP320t1
+export const brainpoolP320t1: ID = new asn1.ObjectIdentifier([
+    10,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP384r1
+export const brainpoolP384r1: ID = new asn1.ObjectIdentifier([
+    11,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP384t1
+export const brainpoolP384t1: ID = new asn1.ObjectIdentifier([
+    12,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP512r1
+export const brainpoolP512r1: ID = new asn1.ObjectIdentifier([
+    13,
+], versionOne);
 
-// TODO: ObjectAssignment: brainpoolP512t1
+export const brainpoolP512t1: ID = new asn1.ObjectIdentifier([
+    14,
+], versionOne);
 
 export type X509Curves = asn1.OBJECT_IDENTIFIER; /* VALUE_SET_ASSIGNMENT */
 
-// TODO: ObjectAssignment: id-hmacWithSHA224
+export const id_hmacWithSHA224: ID = new asn1.ObjectIdentifier([
+    8,
+], digestAlgorithm);
 
-// TODO: ObjectAssignment: id-hmacWithSHA256
+export const id_hmacWithSHA256: ID = new asn1.ObjectIdentifier([
+    9,
+], digestAlgorithm);
 
-// TODO: ObjectAssignment: id-hmacWithSHA384
+export const id_hmacWithSHA384: ID = new asn1.ObjectIdentifier([
+    10,
+], digestAlgorithm);
 
-// TODO: ObjectAssignment: id-hmacWithSHA512
+export const id_hmacWithSHA512: ID = new asn1.ObjectIdentifier([
+    11,
+], digestAlgorithm);
 
 export const id_gmac: ID = new asn1.ObjectIdentifier([
     /* part3 */ 3,

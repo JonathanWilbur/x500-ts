@@ -352,10 +352,10 @@ export class EstablishOperationalBindingResultData {
         readonly accessPoint: AccessPoint,
         readonly initiator: EstablishOperationalBindingResultData_initiator,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
@@ -640,10 +640,10 @@ export class ModifyOperationalBindingResultData {
         readonly newAgreement: asn1.ASN1Element,
         readonly valid: Validity | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
@@ -723,16 +723,16 @@ export const _encode_ModifyOperationalBindingResultData = function (value: Modif
 
 
 export type ModifyOperationalBindingResult =
-    { null: asn1.NULL }
-    | { protected: OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData> }
+    { null_: asn1.NULL }
+    | { protected_: OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData> }
     | asn1.ASN1Element;
 export const _decode_ModifyOperationalBindingResult = __utils._decode_extensible_choice<ModifyOperationalBindingResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
-    "CONTEXT 1": [ "protected", __utils._decode_explicit<OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>>(() => _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>(_decode_ModifyOperationalBindingResultData)) ]
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
+    "CONTEXT 1": [ "protected_", __utils._decode_explicit<OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>>(() => _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>(_decode_ModifyOperationalBindingResultData)) ]
 });
 export const _encode_ModifyOperationalBindingResult = __utils._encode_choice<ModifyOperationalBindingResult>({
-    "null": __utils._encodeNull,
-    "protected": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>(_encode_ModifyOperationalBindingResultData), __utils.BER),
+    "null_": __utils._encodeNull,
+    "protected_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>(_encode_ModifyOperationalBindingResultData), __utils.BER),
 }, __utils.BER);
 
 
@@ -835,10 +835,10 @@ export class TerminateOperationalBindingResultData {
         readonly bindingType: asn1.OBJECT_IDENTIFIER,
         readonly terminateAt: asn1.GeneralizedTime | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
@@ -913,16 +913,16 @@ export const _encode_TerminateOperationalBindingResultData = function (value: Te
 
 
 export type TerminateOperationalBindingResult =
-    { null: asn1.NULL }
-    | { protected: OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData> }
+    { null_: asn1.NULL }
+    | { protected_: OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData> }
     | asn1.ASN1Element;
 export const _decode_TerminateOperationalBindingResult = __utils._decode_extensible_choice<TerminateOperationalBindingResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
-    "CONTEXT 1": [ "protected", __utils._decode_explicit<OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>>(() => _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(_decode_TerminateOperationalBindingResultData)) ]
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
+    "CONTEXT 1": [ "protected_", __utils._decode_explicit<OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>>(() => _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(_decode_TerminateOperationalBindingResultData)) ]
 });
 export const _encode_TerminateOperationalBindingResult = __utils._encode_choice<TerminateOperationalBindingResult>({
-    "null": __utils._encodeNull,
-    "protected": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(_encode_TerminateOperationalBindingResultData), __utils.BER),
+    "null_": __utils._encodeNull,
+    "protected_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(_encode_TerminateOperationalBindingResultData), __utils.BER),
 }, __utils.BER);
 
 
@@ -966,10 +966,10 @@ export class OpBindingErrorParam {
         readonly agreementProposal: asn1.ASN1Element | undefined,
         readonly retryAt: Time | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [

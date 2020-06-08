@@ -72,9 +72,9 @@ const joint_iso_ccitt: number = 2;
 
 export class DITStructureRuleDescription {
     constructor (
-        readonly ruleIdentifier: RuleIdentifier,
-        readonly nameForm: asn1.OBJECT_IDENTIFIER,
-        readonly superiorStructureRules: RuleIdentifier[] | undefined,
+        readonly ruleIdentifier: RuleIdentifier /* REPLICATED_COMPONENT */,
+        readonly nameForm: asn1.OBJECT_IDENTIFIER /* REPLICATED_COMPONENT */,
+        readonly superiorStructureRules: RuleIdentifier[] | undefined /* REPLICATED_COMPONENT */,
         readonly name: UnboundedDirectoryString[] | undefined,
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
@@ -82,7 +82,7 @@ export class DITStructureRuleDescription {
     ) {}
 }
 const _root_component_type_list_1_spec_for_DITStructureRuleDescription: __utils.ComponentSpec[] = [
-    /* FIXME: ruleIdentifier COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("ruleIdentifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("nameForm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("superiorStructureRules", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
@@ -150,11 +150,11 @@ export const _encode_DITStructureRuleDescription = function (value: DITStructure
 
 export class DITContentRuleDescription {
     constructor (
-        readonly structuralObjectClass: asn1.OBJECT_IDENTIFIER,
-        readonly auxiliaries: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly mandatory: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly optional: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly precluded: asn1.OBJECT_IDENTIFIER[] | undefined,
+        readonly structuralObjectClass: asn1.OBJECT_IDENTIFIER /* REPLICATED_COMPONENT */,
+        readonly auxiliaries: asn1.OBJECT_IDENTIFIER[] | undefined /* REPLICATED_COMPONENT */,
+        readonly mandatory: asn1.OBJECT_IDENTIFIER[] | undefined /* REPLICATED_COMPONENT */,
+        readonly optional: asn1.OBJECT_IDENTIFIER[] | undefined /* REPLICATED_COMPONENT */,
+        readonly precluded: asn1.OBJECT_IDENTIFIER[] | undefined /* REPLICATED_COMPONENT */,
         readonly name: UnboundedDirectoryString[] | undefined,
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,

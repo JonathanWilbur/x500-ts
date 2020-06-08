@@ -513,7 +513,7 @@ export const _encode_BuiltInStandardAttributes = function (value: BuiltInStandar
 
 export class BuiltInDomainDefinedAttribute {
     constructor (
-        readonly type: asn1.PrintableString,
+        readonly type_: asn1.PrintableString,
         readonly value: asn1.PrintableString
     ) {}
 }
@@ -535,13 +535,13 @@ export const _decode_BuiltInDomainDefinedAttribute = function (el: asn1.ASN1Elem
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: asn1.PrintableString;
+    let type_!: asn1.PrintableString;
     let value!: asn1.PrintableString;
-    type = __utils._decodePrintableString(sequence[0]);
+    type_ = __utils._decodePrintableString(sequence[0]);
     value = __utils._decodePrintableString(sequence[1]);
     // TODO: Validate values.
     return new BuiltInDomainDefinedAttribute(
-        type,
+        type_,
         value,
 
     );
@@ -549,7 +549,7 @@ export const _decode_BuiltInDomainDefinedAttribute = function (el: asn1.ASN1Elem
 export const _encode_BuiltInDomainDefinedAttribute = function (value: BuiltInDomainDefinedAttribute, elGetter: __utils.ASN1Encoder<BuiltInDomainDefinedAttribute>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodePrintableString(value.type, __utils.BER),
+            __utils._encodePrintableString(value.type_, __utils.BER),
             __utils._encodePrintableString(value.value, __utils.BER)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
@@ -1236,7 +1236,7 @@ export const _encode_UniversalLocalPostalAttributes = _encode_UniversalPDSParame
 
 export class ExtendedNetworkAddress_e163_4_address {
     constructor (
-        readonly number: asn1.NumericString,
+        readonly number_: asn1.NumericString,
         readonly sub_address: asn1.NumericString | undefined
     ) {}
 }
@@ -1252,12 +1252,12 @@ const _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_address: 
 ];
 export const _decode_ExtendedNetworkAddress_e163_4_address = function (el: asn1.ASN1Element): ExtendedNetworkAddress_e163_4_address {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let number!: asn1.NumericString;
+    let number_!: asn1.NumericString;
     let sub_address: asn1.OPTIONAL<asn1.NumericString>;
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "number": (_el: asn1.ASN1Element): void => { number = __utils._decode_explicit<asn1.NumericString>(() => __utils._decodeNumericString)(_el); },
+        "number": (_el: asn1.ASN1Element): void => { number_ = __utils._decode_explicit<asn1.NumericString>(() => __utils._decodeNumericString)(_el); },
         "sub-address": (_el: asn1.ASN1Element): void => { sub_address = __utils._decode_explicit<asn1.NumericString>(() => __utils._decodeNumericString)(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -1268,14 +1268,14 @@ export const _decode_ExtendedNetworkAddress_e163_4_address = function (el: asn1.
         undefined,
     );
     return new ExtendedNetworkAddress_e163_4_address( /* SEQUENCE_CONSTRUCTOR_CALL */
-        number,
+        number_,
         sub_address
     );
 };
 export const _encode_ExtendedNetworkAddress_e163_4_address = function (value: ExtendedNetworkAddress_e163_4_address, elGetter: __utils.ASN1Encoder<ExtendedNetworkAddress_e163_4_address>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeNumericString, __utils.BER)(value.number, __utils.BER),
+            __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeNumericString, __utils.BER)(value.number_, __utils.BER),
             (value.sub_address ? __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeNumericString, __utils.BER)(value.sub_address, __utils.BER) : undefined)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
@@ -1318,7 +1318,7 @@ export const _encode_TerminalType = __utils._encodeInteger;
 
 export class TeletexDomainDefinedAttribute {
     constructor (
-        readonly type: asn1.TeletexString,
+        readonly type_: asn1.TeletexString,
         readonly value: asn1.TeletexString
     ) {}
 }
@@ -1340,13 +1340,13 @@ export const _decode_TeletexDomainDefinedAttribute = function (el: asn1.ASN1Elem
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: asn1.TeletexString;
+    let type_!: asn1.TeletexString;
     let value!: asn1.TeletexString;
-    type = __utils._decodeTeletexString(sequence[0]);
+    type_ = __utils._decodeTeletexString(sequence[0]);
     value = __utils._decodeTeletexString(sequence[1]);
     // TODO: Validate values.
     return new TeletexDomainDefinedAttribute(
-        type,
+        type_,
         value,
 
     );
@@ -1354,7 +1354,7 @@ export const _decode_TeletexDomainDefinedAttribute = function (el: asn1.ASN1Elem
 export const _encode_TeletexDomainDefinedAttribute = function (value: TeletexDomainDefinedAttribute, elGetter: __utils.ASN1Encoder<TeletexDomainDefinedAttribute>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeTeletexString(value.type, __utils.BER),
+            __utils._encodeTeletexString(value.type_, __utils.BER),
             __utils._encodeTeletexString(value.value, __utils.BER)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
@@ -1374,7 +1374,7 @@ export const ub_domain_defined_attribute_value_length: asn1.INTEGER = 128;
 
 export class UniversalDomainDefinedAttribute {
     constructor (
-        readonly type: UniversalOrBMPString,
+        readonly type_: UniversalOrBMPString,
         readonly value: UniversalOrBMPString
     ) {}
 }
@@ -1396,13 +1396,13 @@ export const _decode_UniversalDomainDefinedAttribute = function (el: asn1.ASN1El
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: UniversalOrBMPString;
+    let type_!: UniversalOrBMPString;
     let value!: UniversalOrBMPString;
-    type = _decode_UniversalOrBMPString(sequence[0]);
+    type_ = _decode_UniversalOrBMPString(sequence[0]);
     value = _decode_UniversalOrBMPString(sequence[1]);
     // TODO: Validate values.
     return new UniversalDomainDefinedAttribute(
-        type,
+        type_,
         value,
 
     );
@@ -1410,7 +1410,7 @@ export const _decode_UniversalDomainDefinedAttribute = function (el: asn1.ASN1El
 export const _encode_UniversalDomainDefinedAttribute = function (value: UniversalDomainDefinedAttribute, elGetter: __utils.ASN1Encoder<UniversalDomainDefinedAttribute>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            _encode_UniversalOrBMPString(value.type, __utils.BER),
+            _encode_UniversalOrBMPString(value.type_, __utils.BER),
             _encode_UniversalOrBMPString(value.value, __utils.BER)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);

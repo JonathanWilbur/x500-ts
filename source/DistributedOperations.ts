@@ -277,9 +277,9 @@ export const _encode_MasterOrShadowAccessPoint_category = __utils._encodeEnumera
 
 export class MasterOrShadowAccessPoint {
     constructor (
-        readonly ae_title: Name,
-        readonly address: PresentationAddress,
-        readonly protocolInformation: ProtocolInformation[] | undefined,
+        readonly ae_title: Name /* REPLICATED_COMPONENT */,
+        readonly address: PresentationAddress /* REPLICATED_COMPONENT */,
+        readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
         readonly category: MasterOrShadowAccessPoint_category | undefined,
         readonly chainingRequired: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -352,11 +352,11 @@ export const _encode_MasterAndShadowAccessPoints = __utils._encodeSetOf<MasterOr
 
 export class AccessPointInformation {
     constructor (
-        readonly ae_title: Name,
-        readonly address: PresentationAddress,
-        readonly protocolInformation: ProtocolInformation[] | undefined,
-        readonly category: MasterOrShadowAccessPoint_category | undefined,
-        readonly chainingRequired: asn1.BOOLEAN | undefined,
+        readonly ae_title: Name /* REPLICATED_COMPONENT */,
+        readonly address: PresentationAddress /* REPLICATED_COMPONENT */,
+        readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
+        readonly category: MasterOrShadowAccessPoint_category | undefined /* REPLICATED_COMPONENT */,
+        readonly chainingRequired: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly additionalPoints: MasterAndShadowAccessPoints | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -536,10 +536,10 @@ export class DsaReferralData {
         readonly reference: ContinuationReference,
         readonly contextPrefix: DistinguishedName | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_DsaReferralData: __utils.ComponentSpec[] = [
@@ -732,7 +732,7 @@ const _root_component_type_list_1_spec_for_ChainingArguments: __utils.ComponentS
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 10), undefined, undefined),
     new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 11), undefined, undefined),
     new __utils.ComponentSpec("uniqueIdentifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 12), undefined, undefined),
-    /* FIXME: authenticationLevel COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("authenticationLevel", true, __utils.hasTag(asn1.ASN1TagClass.context, 13), undefined, undefined),
     new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 14), undefined, undefined),
     new __utils.ComponentSpec("excludeShadows", true, __utils.hasTag(asn1.ASN1TagClass.context, 15), undefined, undefined),
     new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 16), undefined, undefined),

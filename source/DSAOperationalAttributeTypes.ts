@@ -108,9 +108,9 @@ export const _encode_DSEType = __utils._encodeBitString;
 
 export class SupplierOrConsumer {
     constructor (
-        readonly ae_title: Name,
-        readonly address: PresentationAddress,
-        readonly protocolInformation: ProtocolInformation[] | undefined,
+        readonly ae_title: Name /* REPLICATED_COMPONENT */,
+        readonly address: PresentationAddress /* REPLICATED_COMPONENT */,
+        readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
         readonly agreementID: OperationalBindingID,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -172,10 +172,10 @@ export const _encode_SupplierOrConsumer = function (value: SupplierOrConsumer, e
 
 export class SupplierInformation {
     constructor (
-        readonly ae_title: Name,
-        readonly address: PresentationAddress,
-        readonly protocolInformation: ProtocolInformation[] | undefined,
-        readonly agreementID: OperationalBindingID,
+        readonly ae_title: Name /* REPLICATED_COMPONENT */,
+        readonly address: PresentationAddress /* REPLICATED_COMPONENT */,
+        readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
+        readonly agreementID: OperationalBindingID /* REPLICATED_COMPONENT */,
         readonly supplier_is_master: asn1.BOOLEAN | undefined,
         readonly non_supplying_master: AccessPoint | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -257,9 +257,9 @@ export const _encode_ConsumerInformation = _encode_SupplierOrConsumer;
 
 export class SupplierAndConsumers {
     constructor (
-        readonly ae_title: Name,
-        readonly address: PresentationAddress,
-        readonly protocolInformation: ProtocolInformation[] | undefined,
+        readonly ae_title: Name /* REPLICATED_COMPONENT */,
+        readonly address: PresentationAddress /* REPLICATED_COMPONENT */,
+        readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
         readonly consumers: AccessPoint[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}

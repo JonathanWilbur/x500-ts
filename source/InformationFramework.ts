@@ -181,7 +181,7 @@ export const _encode_Attribute_valuesWithContext_Item = function (value: Attribu
 
 export class Attribute {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly values: asn1.ASN1Element[],
         readonly valuesWithContext: Attribute_valuesWithContext_Item[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -200,14 +200,14 @@ const _extension_additions_list_spec_for_Attribute: __utils.ComponentSpec[] = [
 ];
 export const _decode_Attribute = function (el: asn1.ASN1Element): Attribute {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let values!: asn1.ASN1Element[];
     let valuesWithContext: asn1.OPTIONAL<Attribute_valuesWithContext_Item[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decodeObjectIdentifier(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decodeObjectIdentifier(_el); },
         "values": (_el: asn1.ASN1Element): void => { values = __utils._decodeSetOf<asn1.ASN1Element>(() => __utils._decodeAny)(_el); },
         "valuesWithContext": (_el: asn1.ASN1Element): void => { valuesWithContext = __utils._decodeSetOf<Attribute_valuesWithContext_Item>(() => _decode_Attribute_valuesWithContext_Item)(_el); }
     };
@@ -219,7 +219,7 @@ export const _decode_Attribute = function (el: asn1.ASN1Element): Attribute {
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new Attribute( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         values,
         valuesWithContext,
         _unrecognizedExtensionsList
@@ -228,7 +228,7 @@ export const _decode_Attribute = function (el: asn1.ASN1Element): Attribute {
 export const _encode_Attribute = function (value: Attribute, elGetter: __utils.ASN1Encoder<Attribute>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeSetOf<asn1.ASN1Element>(() => __utils._encodeAny, __utils.BER)(value.values, __utils.BER),
             (value.valuesWithContext ? __utils._encodeSetOf<Attribute_valuesWithContext_Item>(() => _encode_Attribute_valuesWithContext_Item, __utils.BER)(value.valuesWithContext, __utils.BER) : undefined)
         ],
@@ -309,7 +309,7 @@ export const _encode_AttributeValueAssertion_assertedContexts = __utils._encode_
 
 export class AttributeValueAssertion {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly assertion: asn1.ASN1Element,
         readonly assertedContexts: AttributeValueAssertion_assertedContexts | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -328,14 +328,14 @@ const _extension_additions_list_spec_for_AttributeValueAssertion: __utils.Compon
 ];
 export const _decode_AttributeValueAssertion = function (el: asn1.ASN1Element): AttributeValueAssertion {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let assertion!: asn1.ASN1Element;
     let assertedContexts: asn1.OPTIONAL<AttributeValueAssertion_assertedContexts>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decodeObjectIdentifier(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decodeObjectIdentifier(_el); },
         "assertion": (_el: asn1.ASN1Element): void => { assertion = __utils._decodeAny(_el); },
         "assertedContexts": (_el: asn1.ASN1Element): void => { assertedContexts = _decode_AttributeValueAssertion_assertedContexts(_el); }
     };
@@ -347,7 +347,7 @@ export const _decode_AttributeValueAssertion = function (el: asn1.ASN1Element): 
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new AttributeValueAssertion( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         assertion,
         assertedContexts,
         _unrecognizedExtensionsList
@@ -356,7 +356,7 @@ export const _decode_AttributeValueAssertion = function (el: asn1.ASN1Element): 
 export const _encode_AttributeValueAssertion = function (value: AttributeValueAssertion, elGetter: __utils.ASN1Encoder<AttributeValueAssertion>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeAny(value.assertion, __utils.BER),
             (value.assertedContexts ? _encode_AttributeValueAssertion_assertedContexts(value.assertedContexts, __utils.BER) : undefined)
         ],
@@ -367,7 +367,7 @@ export const _encode_AttributeValueAssertion = function (value: AttributeValueAs
 
 export class AttributeTypeAssertion {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly assertedContexts: ContextAssertion[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -384,13 +384,13 @@ const _extension_additions_list_spec_for_AttributeTypeAssertion: __utils.Compone
 ];
 export const _decode_AttributeTypeAssertion = function (el: asn1.ASN1Element): AttributeTypeAssertion {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let assertedContexts: asn1.OPTIONAL<ContextAssertion[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decodeObjectIdentifier(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decodeObjectIdentifier(_el); },
         "assertedContexts": (_el: asn1.ASN1Element): void => { assertedContexts = __utils._decodeSequenceOf<ContextAssertion>(() => _decode_ContextAssertion)(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -401,7 +401,7 @@ export const _decode_AttributeTypeAssertion = function (el: asn1.ASN1Element): A
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new AttributeTypeAssertion( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         assertedContexts,
         _unrecognizedExtensionsList
     );
@@ -409,7 +409,7 @@ export const _decode_AttributeTypeAssertion = function (el: asn1.ASN1Element): A
 export const _encode_AttributeTypeAssertion = function (value: AttributeTypeAssertion, elGetter: __utils.ASN1Encoder<AttributeTypeAssertion>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             (value.assertedContexts ? __utils._encodeSequenceOf<ContextAssertion>(() => _encode_ContextAssertion, __utils.BER)(value.assertedContexts, __utils.BER) : undefined)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -423,7 +423,7 @@ export const _encode_AttributeTypeAssertion = function (value: AttributeTypeAsse
 
 export class AttributeTypeAndValue {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -446,13 +446,13 @@ export const _decode_AttributeTypeAndValue = function (el: asn1.ASN1Element): At
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let value!: asn1.ASN1Element;
-    type = __utils._decodeObjectIdentifier(sequence[0]);
+    type_ = __utils._decodeObjectIdentifier(sequence[0]);
     value = __utils._decodeAny(sequence[1]);
     // TODO: Validate values.
     return new AttributeTypeAndValue(
-        type,
+        type_,
         value,
         sequence.slice(2),
     );
@@ -460,7 +460,7 @@ export const _decode_AttributeTypeAndValue = function (el: asn1.ASN1Element): At
 export const _encode_AttributeTypeAndValue = function (value: AttributeTypeAndValue, elGetter: __utils.ASN1Encoder<AttributeTypeAndValue>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeAny(value.value, __utils.BER)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -599,9 +599,9 @@ export const _encode_Refinement = __utils._encode_choice<Refinement>({
 export class SubtreeSpecification {
     constructor (
         readonly base: LocalName | undefined,
-        readonly specificExclusions: ChopSpecification_specificExclusions_Item[] | undefined,
-        readonly minimum: BaseDistance | undefined,
-        readonly maximum: BaseDistance | undefined,
+        readonly specificExclusions: ChopSpecification_specificExclusions_Item[] | undefined /* REPLICATED_COMPONENT */,
+        readonly minimum: BaseDistance | undefined /* REPLICATED_COMPONENT */,
+        readonly maximum: BaseDistance | undefined /* REPLICATED_COMPONENT */,
         readonly specificationFilter: Refinement | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}

@@ -399,19 +399,19 @@ export const _encode_CriteriaItem = __utils._encode_choice<CriteriaItem>({
 
 /* TODO: CHECK_RECURSIVE_DEFINITION */
 export type Criteria =
-    { type: CriteriaItem }
+    { type_: CriteriaItem }
     | { and: Criteria[] }
     | { or: Criteria[] }
     | { not: Criteria }
     | asn1.ASN1Element;
 export const _decode_Criteria = __utils._decode_extensible_choice<Criteria>({
-    "CONTEXT 0": [ "type", __utils._decode_explicit<CriteriaItem>(() => _decode_CriteriaItem) ],
+    "CONTEXT 0": [ "type_", __utils._decode_explicit<CriteriaItem>(() => _decode_CriteriaItem) ],
     "CONTEXT 1": [ "and", __utils._decode_explicit<Criteria[]>(() => __utils._decodeSetOf<Criteria>(() => _decode_Criteria)) ],
     "CONTEXT 2": [ "or", __utils._decode_explicit<Criteria[]>(() => __utils._decodeSetOf<Criteria>(() => _decode_Criteria)) ],
     "CONTEXT 3": [ "not", __utils._decode_explicit<Criteria>(() => _decode_Criteria) ]
 });
 export const _encode_Criteria = __utils._encode_choice<Criteria>({
-    "type": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_CriteriaItem, __utils.BER),
+    "type_": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_CriteriaItem, __utils.BER),
     "and": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<Criteria>(() => _encode_Criteria, __utils.BER), __utils.BER),
     "or": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeSetOf<Criteria>(() => _encode_Criteria, __utils.BER), __utils.BER),
     "not": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_Criteria, __utils.BER),
@@ -926,7 +926,7 @@ export class NameAndOptionalUID {
     ) {}
 }
 const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
-    /* FIXME: dn COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("dn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("uid", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
@@ -1009,7 +1009,7 @@ export const _encode_UiiFormat_subset = __utils._encodeEnumerated;
 
 export class UiiItem {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly length: asn1.INTEGER | undefined
     ) {}
 }
@@ -1025,12 +1025,12 @@ const _extension_additions_list_spec_for_UiiItem: __utils.ComponentSpec[] = [
 ];
 export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let length: asn1.OPTIONAL<asn1.INTEGER>;
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decodeObjectIdentifier(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decodeObjectIdentifier(_el); },
         "length": (_el: asn1.ASN1Element): void => { length = __utils._decodeInteger(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -1041,14 +1041,14 @@ export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
         undefined,
     );
     return new UiiItem( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         length
     );
 };
 export const _encode_UiiItem = function (value: UiiItem, elGetter: __utils.ASN1Encoder<UiiItem>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             (value.length ? __utils._encodeInteger(value.length, __utils.BER) : undefined)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
@@ -1481,19 +1481,19 @@ export const _encode_PwdResponse = function (value: PwdResponse, elGetter: __uti
 
 export type SubstringAssertion_Item =
     { initial: UnboundedDirectoryString }
-    | { any: UnboundedDirectoryString }
+    | { any_: UnboundedDirectoryString }
     | { final: UnboundedDirectoryString }
     | { control: Attribute }
     | asn1.ASN1Element;
 export const _decode_SubstringAssertion_Item = __utils._decode_extensible_choice<SubstringAssertion_Item>({
     "CONTEXT 0": [ "initial", __utils._decode_explicit<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString) ],
-    "CONTEXT 1": [ "any", __utils._decode_explicit<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString) ],
+    "CONTEXT 1": [ "any_", __utils._decode_explicit<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString) ],
     "CONTEXT 2": [ "final", __utils._decode_explicit<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString) ],
     "UNIVERSAL 16": [ "control", _decode_Attribute ]
 });
 export const _encode_SubstringAssertion_Item = __utils._encode_choice<SubstringAssertion_Item>({
     "initial": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_UnboundedDirectoryString, __utils.BER),
-    "any": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_UnboundedDirectoryString, __utils.BER),
+    "any_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_UnboundedDirectoryString, __utils.BER),
     "final": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_UnboundedDirectoryString, __utils.BER),
     "control": _encode_Attribute,
 }, __utils.BER);
@@ -1537,17 +1537,17 @@ export const _encode_CaseIgnoreList = __utils._encodeSequenceOf<UnboundedDirecto
 
 export type OctetSubstringAssertion_Item =
     { initial: asn1.OCTET_STRING }
-    | { any: asn1.OCTET_STRING }
+    | { any_: asn1.OCTET_STRING }
     | { final: asn1.OCTET_STRING }
     | asn1.ASN1Element;
 export const _decode_OctetSubstringAssertion_Item = __utils._decode_extensible_choice<OctetSubstringAssertion_Item>({
     "CONTEXT 0": [ "initial", __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString) ],
-    "CONTEXT 1": [ "any", __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString) ],
+    "CONTEXT 1": [ "any_", __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString) ],
     "CONTEXT 2": [ "final", __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString) ]
 });
 export const _encode_OctetSubstringAssertion_Item = __utils._encode_choice<OctetSubstringAssertion_Item>({
     "initial": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeOctetString, __utils.BER),
-    "any": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeOctetString, __utils.BER),
+    "any_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeOctetString, __utils.BER),
     "final": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeOctetString, __utils.BER),
 }, __utils.BER);
 
@@ -1900,9 +1900,7 @@ const _extension_additions_list_spec_for_DayTimeBand: __utils.ComponentSpec[] = 
 ];
 export const _decode_DayTimeBand = function (el: asn1.ASN1Element): DayTimeBand {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let startDayTime: asn1.OPTIONAL<DayTime> = new asn1.ObjectIdentifier([
-    0,
-], hour);
+    let startDayTime: asn1.OPTIONAL<DayTime> = new asn1.ObjectIdentifier([0,], hour);
     let endDayTime: asn1.OPTIONAL<DayTime> = /* FIXME: endDayTime COULD_NOT_COMPILE_DEFAULT_VALUE */;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1927,9 +1925,7 @@ export const _decode_DayTimeBand = function (el: asn1.ASN1Element): DayTimeBand 
 export const _encode_DayTimeBand = function (value: DayTimeBand, elGetter: __utils.ASN1Encoder<DayTimeBand>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            ((value.startDayTime !== undefined && value.startDayTime !== new asn1.ObjectIdentifier([
-    0,
-], hour)) /* TODO: Review this condition. */ ? __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DayTime, __utils.BER)(value.startDayTime, __utils.BER) : undefined),
+            ((value.startDayTime !== undefined && value.startDayTime !== new asn1.ObjectIdentifier([0,], hour)) /* TODO: Review this condition. */ ? __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DayTime, __utils.BER)(value.startDayTime, __utils.BER) : undefined),
             (value.endDayTime /* FIXME: COULD_NOT_COMPILE_DEFAULT_VALUE */? __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_DayTime, __utils.BER)(value.endDayTime, __utils.BER) : undefined)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),

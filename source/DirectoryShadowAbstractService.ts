@@ -169,7 +169,7 @@ export class AreaSpecification {
     ) {}
 }
 const _root_component_type_list_1_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
-    /* FIXME: contextPrefix COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("contextPrefix", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("replicationArea", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
@@ -232,7 +232,7 @@ export const _encode_ClassAttributes = __utils._encode_choice<ClassAttributes>({
 
 export class ClassAttributeSelection {
     constructor (
-        readonly class: asn1.OBJECT_IDENTIFIER | undefined,
+        readonly class_: asn1.OBJECT_IDENTIFIER | undefined,
         readonly classAttributes: ClassAttributes | undefined
     ) {}
 }
@@ -248,12 +248,12 @@ const _extension_additions_list_spec_for_ClassAttributeSelection: __utils.Compon
 ];
 export const _decode_ClassAttributeSelection = function (el: asn1.ASN1Element): ClassAttributeSelection {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let class: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
+    let class_: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
     let classAttributes: asn1.OPTIONAL<ClassAttributes> = { allAttributes: null };
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "class": (_el: asn1.ASN1Element): void => { class = __utils._decodeObjectIdentifier(_el); },
+        "class": (_el: asn1.ASN1Element): void => { class_ = __utils._decodeObjectIdentifier(_el); },
         "classAttributes": (_el: asn1.ASN1Element): void => { classAttributes = _decode_ClassAttributes(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -264,14 +264,14 @@ export const _decode_ClassAttributeSelection = function (el: asn1.ASN1Element): 
         undefined,
     );
     return new ClassAttributeSelection( /* SEQUENCE_CONSTRUCTOR_CALL */
-        class,
+        class_,
         classAttributes
     );
 };
 export const _encode_ClassAttributeSelection = function (value: ClassAttributeSelection, elGetter: __utils.ASN1Encoder<ClassAttributeSelection>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            (value.class ? __utils._encodeObjectIdentifier(value.class, __utils.BER) : undefined),
+            (value.class_ ? __utils._encodeObjectIdentifier(value.class_, __utils.BER) : undefined),
             ((value.classAttributes !== undefined && value.classAttributes !== { allAttributes: null }) /* TODO: Review this condition. */ ? _encode_ClassAttributes(value.classAttributes, __utils.BER) : undefined)
         ],
     ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
@@ -806,15 +806,15 @@ export const _encode_CoordinateShadowUpdateResultData = __utils._encode_implicit
 
 
 export type CoordinateShadowUpdateResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED<CoordinateShadowUpdateResultData> }
     | asn1.ASN1Element;
 export const _decode_CoordinateShadowUpdateResult = __utils._decode_extensible_choice<CoordinateShadowUpdateResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateResultData>(_decode_CoordinateShadowUpdateResultData) ]
 });
 export const _encode_CoordinateShadowUpdateResult = __utils._encode_choice<CoordinateShadowUpdateResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateResultData>(_encode_CoordinateShadowUpdateResultData),
 }, __utils.BER);
 
@@ -973,15 +973,15 @@ export const _encode_RequestShadowUpdateResultData = __utils._encode_implicit(as
 
 
 export type RequestShadowUpdateResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED<RequestShadowUpdateResultData> }
     | asn1.ASN1Element;
 export const _decode_RequestShadowUpdateResult = __utils._decode_extensible_choice<RequestShadowUpdateResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateResultData>(_decode_RequestShadowUpdateResultData) ]
 });
 export const _encode_RequestShadowUpdateResult = __utils._encode_choice<RequestShadowUpdateResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateResultData>(_encode_RequestShadowUpdateResultData),
 }, __utils.BER);
 
@@ -1113,8 +1113,8 @@ export const _encode_SDSEContent = function (value: SDSEContent, elGetter: __uti
 export class Subtree {
     constructor (
         readonly rdn: RelativeDistinguishedName,
-        readonly sDSE: SDSEContent | undefined,
-        readonly subtree: Subtree[] | undefined,
+        readonly sDSE: SDSEContent | undefined /* REPLICATED_COMPONENT */,
+        readonly subtree: Subtree[] | undefined /* REPLICATED_COMPONENT */,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
@@ -1225,7 +1225,7 @@ export type ContentChange_rename =
     | { newDN: DistinguishedName };
 export const _decode_ContentChange_rename = __utils._decode_inextensible_choice<ContentChange_rename>({
     "UNIVERSAL 17": [ "newRDN", _decode_RelativeDistinguishedName ],
-    /* NO_TAG_OR_TAG_CLASS */: [ "newDN", _decode_DistinguishedName ]
+    "UNIVERSAL 16": [ "newDN", _decode_DistinguishedName ]
 });
 export const _encode_ContentChange_rename = __utils._encode_choice<ContentChange_rename>({
     "newRDN": _encode_RelativeDistinguishedName,
@@ -1594,15 +1594,15 @@ export const _encode_UpdateShadowResultData = __utils._encode_implicit(asn1.ASN1
 
 
 export type UpdateShadowResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED<UpdateShadowResultData> }
     | asn1.ASN1Element;
 export const _decode_UpdateShadowResult = __utils._decode_extensible_choice<UpdateShadowResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED<UpdateShadowResultData>(_decode_UpdateShadowResultData) ]
 });
 export const _encode_UpdateShadowResult = __utils._encode_choice<UpdateShadowResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED<UpdateShadowResultData>(_encode_UpdateShadowResultData),
 }, __utils.BER);
 
@@ -1642,10 +1642,10 @@ export class ShadowErrorData {
         readonly lastUpdate: Time | undefined,
         readonly updateWindow: UpdateWindow | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
@@ -1655,7 +1655,7 @@ const _root_component_type_list_1_spec_for_ShadowErrorData: __utils.ComponentSpe
 ];
 const _root_component_type_list_2_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];

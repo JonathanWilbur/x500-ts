@@ -59,13 +59,10 @@ export const ldap_wall: ID = new asn1.ObjectIdentifier([
     /* wahl */ 1466,
 ], ldap_enterprise);
 
-// TODO: ObjectAssignment: ldap-dynExt
-
-// TODO: ObjectAssignment: ldap-attr
-
-// TODO: ObjectAssignment: ldap-match
-
-// TODO: ObjectAssignment: ldap-syntax
+export const ldap_dynExt: ID = new asn1.ObjectIdentifier([
+    101,
+    119,
+], ldap_wall);
 
 export const cosine: ID = new asn1.ObjectIdentifier([
     /* itu-t */ 0,
@@ -75,316 +72,382 @@ export const cosine: ID = new asn1.ObjectIdentifier([
     /* pilot */ 100,
 ]);
 
-// TODO: ObjectAssignment: module
+export const module_: ID = new asn1.ObjectIdentifier([
+    1,
+], ds);
 
-// TODO: ObjectAssignment: serviceElement
+export const serviceElement: ID = new asn1.ObjectIdentifier([
+    2,
+], ds);
 
-// TODO: ObjectAssignment: applicationContext
+export const attributeSyntaxVendor: ID = new asn1.ObjectIdentifier([
+    5,
+], ds);
 
-// TODO: ObjectAssignment: attributeType
+export const algorithm: ID = new asn1.ObjectIdentifier([
+    8,
+], ds);
 
-// TODO: ObjectAssignment: attributeSyntaxVendor
-
-// TODO: ObjectAssignment: objectClass
-
-// TODO: ObjectAssignment: algorithm
-
-// TODO: ObjectAssignment: abstractSyntax
-
-// TODO: ObjectAssignment: dsaOperationalAttribute
-
-// TODO: ObjectAssignment: matchingRule
-
-// TODO: ObjectAssignment: knowledgeMatchingRule
-
-// TODO: ObjectAssignment: nameForm
-
-// TODO: ObjectAssignment: group
-
-// TODO: ObjectAssignment: subentry
-
-// TODO: ObjectAssignment: operationalAttributeType
-
-// TODO: ObjectAssignment: operationalBinding
-
-// TODO: ObjectAssignment: schemaObjectClass
-
-// TODO: ObjectAssignment: schemaOperationalAttribute
-
-// TODO: ObjectAssignment: administrativeRoles
-
-// TODO: ObjectAssignment: accessControlAttribute
-
-// TODO: ObjectAssignment: accessControlSchemes
-
-// TODO: ObjectAssignment: certificateExtension
-
-// TODO: ObjectAssignment: managementObject
-
-// TODO: ObjectAssignment: attributeValueContext
-
-// TODO: ObjectAssignment: idmProtocol
-
-// TODO: ObjectAssignment: problem
-
-// TODO: ObjectAssignment: notification
-
-// TODO: ObjectAssignment: matchingRestriction
-
-// TODO: ObjectAssignment: controlAttributeType
-
-// TODO: ObjectAssignment: keyPurposes
-
-// TODO: ObjectAssignment: passwordQuality
-
-// TODO: ObjectAssignment: attributeSyntax
-
-// TODO: ObjectAssignment: avRestriction
-
-// TODO: ObjectAssignment: cmsContentType
+export const group: ID = new asn1.ObjectIdentifier([
+    16,
+], ds);
 
 export const usefulDefinitions: ID = new asn1.ObjectIdentifier([
     /* usefulDefinitions */ 0,
     8,
-], module);
+], module_);
 
 export const informationFramework: ID = new asn1.ObjectIdentifier([
     /* informationFramework */ 1,
     8,
-], module);
+], module_);
 
 export const directoryAbstractService: ID = new asn1.ObjectIdentifier([
     /* directoryAbstractService */ 2,
     8,
-], module);
+], module_);
 
 export const distributedOperations: ID = new asn1.ObjectIdentifier([
     /* distributedOperations */ 3,
     8,
-], module);
+], module_);
 
 export const selectedAttributeTypes: ID = new asn1.ObjectIdentifier([
     /* selectedAttributeTypes */ 5,
     8,
-], module);
+], module_);
 
 export const selectedObjectClasses: ID = new asn1.ObjectIdentifier([
     /* selectedObjectClasses */ 6,
     8,
-], module);
+], module_);
 
 export const authenticationFramework: ID = new asn1.ObjectIdentifier([
     /* authenticationFramework */ 7,
     8,
-], module);
+], module_);
 
 export const algorithmObjectIdentifiers: ID = new asn1.ObjectIdentifier([
     /* algorithmObjectIdentifiers */ 8,
     8,
-], module);
+], module_);
 
 export const directoryObjectIdentifiers: ID = new asn1.ObjectIdentifier([
     /* directoryObjectIdentifiers */ 9,
     8,
-], module);
+], module_);
 
 export const distributedDirectoryOIDs: ID = new asn1.ObjectIdentifier([
     /* distributedDirectoryOIDs */ 13,
     8,
-], module);
+], module_);
 
 export const directoryShadowOIDs: ID = new asn1.ObjectIdentifier([
     /* directoryShadowOIDs */ 14,
     8,
-], module);
+], module_);
 
 export const directoryShadowAbstractService: ID = new asn1.ObjectIdentifier([
     /* directoryShadowAbstractService */ 15,
     8,
-], module);
+], module_);
 
 export const opBindingManagement: ID = new asn1.ObjectIdentifier([
     /* opBindingManagement */ 18,
     8,
-], module);
+], module_);
 
 export const opBindingOIDs: ID = new asn1.ObjectIdentifier([
     /* opBindingOIDs */ 19,
     8,
-], module);
+], module_);
 
 export const hierarchicalOperationalBindings: ID = new asn1.ObjectIdentifier([
     /* hierarchicalOperationalBindings */ 20,
     8,
-], module);
+], module_);
 
 export const dsaOperationalAttributeTypes: ID = new asn1.ObjectIdentifier([
     /* dsaOperationalAttributeTypes */ 22,
     8,
-], module);
+], module_);
 
 export const schemaAdministration: ID = new asn1.ObjectIdentifier([
     /* schemaAdministration */ 23,
     8,
-], module);
+], module_);
 
 export const basicAccessControl: ID = new asn1.ObjectIdentifier([
     /* basicAccessControl */ 24,
     8,
-], module);
+], module_);
 
 export const directoryOperationalBindingTypes: ID = new asn1.ObjectIdentifier([
     /* directoryOperationalBindingTypes */ 25,
     8,
-], module);
+], module_);
 
 export const certificateExtensions: ID = new asn1.ObjectIdentifier([
     /* certificateExtensions */ 26,
     8,
-], module);
+], module_);
 
 export const directoryManagement: ID = new asn1.ObjectIdentifier([
     /* directoryManagement */ 27,
     8,
-], module);
+], module_);
 
 export const enhancedSecurity: ID = new asn1.ObjectIdentifier([
     /* enhancedSecurity */ 28,
     8,
-], module);
+], module_);
 
 export const iDMProtocolSpecification: ID = new asn1.ObjectIdentifier([
     /* iDMProtocolSpecification */ 30,
     8,
-], module);
+], module_);
 
 export const directoryIDMProtocols: ID = new asn1.ObjectIdentifier([
     /* directoryIDMProtocols */ 31,
     8,
-], module);
+], module_);
 
 export const attributeCertificateDefinitions: ID = new asn1.ObjectIdentifier([
     /* attributeCertificateDefinitions */ 32,
     8,
-], module);
+], module_);
 
 export const serviceAdministration: ID = new asn1.ObjectIdentifier([
     /* serviceAdministration */ 33,
     8,
-], module);
+], module_);
 
 export const ldapAttributes: ID = new asn1.ObjectIdentifier([
     /* ldapAttributes */ 34,
     8,
-], module);
+], module_);
 
 export const commonProtocolSpecification: ID = new asn1.ObjectIdentifier([
     /* commonProtocolSpecification */ 35,
     8,
-], module);
+], module_);
 
 export const oSIProtocolSpecification: ID = new asn1.ObjectIdentifier([
     /* oSIProtocolSpecification */ 36,
     8,
-], module);
+], module_);
 
 export const directoryOSIProtocols: ID = new asn1.ObjectIdentifier([
     /* directoryOSIProtocols */ 37,
     8,
-], module);
+], module_);
 
 export const ldapSystemSchema: ID = new asn1.ObjectIdentifier([
     /* ldapSystemSchema */ 38,
     8,
-], module);
+], module_);
 
 export const passwordPolicy: ID = new asn1.ObjectIdentifier([
     /* passwordPolicy */ 39,
     8,
-], module);
+], module_);
 
 export const pkiPmiExternalDataTypes: ID = new asn1.ObjectIdentifier([
     /* pkiPmiExternalDataTypes */ 40,
     8,
-], module);
+], module_);
 
 export const extensionAttributes: ID = new asn1.ObjectIdentifier([
     /* extensionAttributes */ 41,
     8,
-], module);
+], module_);
 
 export const pkiPmiWrapper: ID = new asn1.ObjectIdentifier([
     /* pkiPmiWrapper */ 42,
     8,
-], module);
+], module_);
 
 export const avlManagement: ID = new asn1.ObjectIdentifier([
     /* avlManagement */ 43,
     8,
-], module);
+], module_);
 
 export const trustBrokerProtocol: ID = new asn1.ObjectIdentifier([
     /* trustBrokerProtocol */ 44,
     8,
-], module);
+], module_);
 
-// TODO: ObjectAssignment: id-oc
+export const objectClass: ID = new asn1.ObjectIdentifier([
+    6,
+], ds);
 
-// TODO: ObjectAssignment: id-at
+export const id_oc: ID = objectClass;
 
-// TODO: ObjectAssignment: id-as
+export const attributeType: ID = new asn1.ObjectIdentifier([
+    4,
+], ds);
 
-// TODO: ObjectAssignment: id-mr
+export const id_at: ID = attributeType;
 
-// TODO: ObjectAssignment: id-nf
+export const abstractSyntax: ID = new asn1.ObjectIdentifier([
+    9,
+], ds);
 
-// TODO: ObjectAssignment: id-sc
+export const id_as: ID = abstractSyntax;
 
-// TODO: ObjectAssignment: id-oa
+export const matchingRule: ID = new asn1.ObjectIdentifier([
+    13,
+], ds);
 
-// TODO: ObjectAssignment: id-ob
+export const id_mr: ID = matchingRule;
 
-// TODO: ObjectAssignment: id-doa
+export const nameForm: ID = new asn1.ObjectIdentifier([
+    15,
+], ds);
 
-// TODO: ObjectAssignment: id-kmr
+export const id_nf: ID = nameForm;
 
-// TODO: ObjectAssignment: id-soc
+export const subentry: ID = new asn1.ObjectIdentifier([
+    17,
+], ds);
 
-// TODO: ObjectAssignment: id-soa
+export const id_sc: ID = subentry;
 
-// TODO: ObjectAssignment: id-ar
+export const operationalAttributeType: ID = new asn1.ObjectIdentifier([
+    18,
+], ds);
 
-// TODO: ObjectAssignment: id-aca
+export const id_oa: ID = operationalAttributeType;
 
-// TODO: ObjectAssignment: id-ac
+export const operationalBinding: ID = new asn1.ObjectIdentifier([
+    19,
+], ds);
 
-// TODO: ObjectAssignment: id-acScheme
+export const id_ob: ID = operationalBinding;
 
-// TODO: ObjectAssignment: id-ce
+export const dsaOperationalAttribute: ID = new asn1.ObjectIdentifier([
+    12,
+], ds);
 
-// TODO: ObjectAssignment: id-mgt
+export const id_doa: ID = dsaOperationalAttribute;
 
-// TODO: ObjectAssignment: id-avc
+export const knowledgeMatchingRule: ID = new asn1.ObjectIdentifier([
+    14,
+], ds);
 
-// TODO: ObjectAssignment: id-idm
+export const id_kmr: ID = knowledgeMatchingRule;
 
-// TODO: ObjectAssignment: id-pr
+export const schemaObjectClass: ID = new asn1.ObjectIdentifier([
+    20,
+], ds);
 
-// TODO: ObjectAssignment: id-not
+export const id_soc: ID = schemaObjectClass;
 
-// TODO: ObjectAssignment: id-mre
+export const schemaOperationalAttribute: ID = new asn1.ObjectIdentifier([
+    21,
+], ds);
 
-// TODO: ObjectAssignment: id-cat
+export const id_soa: ID = schemaOperationalAttribute;
 
-// TODO: ObjectAssignment: id-kp
+export const administrativeRoles: ID = new asn1.ObjectIdentifier([
+    23,
+], ds);
 
-// TODO: ObjectAssignment: id-pq
+export const id_ar: ID = administrativeRoles;
 
-// TODO: ObjectAssignment: id-ats
+export const accessControlAttribute: ID = new asn1.ObjectIdentifier([
+    24,
+], ds);
 
-// TODO: ObjectAssignment: id-asx
+export const id_aca: ID = accessControlAttribute;
 
-// TODO: ObjectAssignment: id-lsx
+export const applicationContext: ID = new asn1.ObjectIdentifier([
+    3,
+], ds);
+
+export const id_ac: ID = applicationContext;
+
+export const accessControlSchemes: ID = new asn1.ObjectIdentifier([
+    28,
+], ds);
+
+export const id_acScheme: ID = accessControlSchemes;
+
+export const certificateExtension: ID = new asn1.ObjectIdentifier([
+    29,
+], ds);
+
+export const id_ce: ID = certificateExtension;
+
+export const managementObject: ID = new asn1.ObjectIdentifier([
+    30,
+], ds);
+
+export const id_mgt: ID = managementObject;
+
+export const attributeValueContext: ID = new asn1.ObjectIdentifier([
+    31,
+], ds);
+
+export const id_avc: ID = attributeValueContext;
+
+export const idmProtocol: ID = new asn1.ObjectIdentifier([
+    33,
+], ds);
+
+export const id_idm: ID = idmProtocol;
+
+export const problem: ID = new asn1.ObjectIdentifier([
+    34,
+], ds);
+
+export const id_pr: ID = problem;
+
+export const notification: ID = new asn1.ObjectIdentifier([
+    35,
+], ds);
+
+export const id_not: ID = notification;
+
+export const matchingRestriction: ID = new asn1.ObjectIdentifier([
+    36,
+], ds);
+
+export const id_mre: ID = matchingRestriction;
+
+export const controlAttributeType: ID = new asn1.ObjectIdentifier([
+    37,
+], ds);
+
+export const id_cat: ID = controlAttributeType;
+
+export const keyPurposes: ID = new asn1.ObjectIdentifier([
+    38,
+], ds);
+
+export const id_kp: ID = keyPurposes;
+
+export const passwordQuality: ID = new asn1.ObjectIdentifier([
+    39,
+], ds);
+
+export const id_pq: ID = passwordQuality;
+
+export const attributeSyntax: ID = new asn1.ObjectIdentifier([
+    40,
+], ds);
+
+export const id_ats: ID = attributeSyntax;
+
+export const id_asx: ID = attributeSyntax;
+
+export const ldap_syntax: ID = new asn1.ObjectIdentifier([
+    115,
+    121,
+    1,
+], ldap_wall);
+
+export const id_lsx: ID = ldap_syntax;
 
 export const ldap_x509: ID = new asn1.ObjectIdentifier([
     /* x509 */ 15,
@@ -392,9 +455,19 @@ export const ldap_x509: ID = new asn1.ObjectIdentifier([
 
 export const id_ldx: ID = ldap_x509;
 
-// TODO: ObjectAssignment: id-lat
+export const ldap_attr: ID = new asn1.ObjectIdentifier([
+    101,
+    120,
+], ldap_wall);
 
-// TODO: ObjectAssignment: id-lmr
+export const id_lat: ID = ldap_attr;
+
+export const ldap_match: ID = new asn1.ObjectIdentifier([
+    109,
+    114,
+], ldap_wall);
+
+export const id_lmr: ID = ldap_match;
 
 export const openLDAP_attributes: ID = new asn1.ObjectIdentifier([
     /* attributeType */ 3,
@@ -408,7 +481,15 @@ export const cosineAttr: ID = new asn1.ObjectIdentifier([
 
 export const id_coat: ID = cosineAttr;
 
-// TODO: ObjectAssignment: id-avr
+export const avRestriction: ID = new asn1.ObjectIdentifier([
+    41,
+], ds);
 
-// TODO: ObjectAssignment: id-cmsct
+export const id_avr: ID = avRestriction;
+
+export const cmsContentType: ID = new asn1.ObjectIdentifier([
+    42,
+], ds);
+
+export const id_cmsct: ID = cmsContentType;
 

@@ -73,14 +73,14 @@ export const _encode_Options = __utils._encodeBitString;
 
 export type Conf_Algs =
     { algs: AlgorithmIdentifier[] }
-    | { null: asn1.NULL };
+    | { null_: asn1.NULL };
 export const _decode_Conf_Algs = __utils._decode_inextensible_choice<Conf_Algs>({
     "CONTEXT 0": [ "algs", __utils._decode_implicit<AlgorithmIdentifier[]>(() => __utils._decodeSequenceOf<AlgorithmIdentifier>(() => _decode_AlgorithmIdentifier)) ],
-    "CONTEXT 1": [ "null", __utils._decode_implicit<asn1.NULL>(() => __utils._decodeNull) ]
+    "CONTEXT 1": [ "null_", __utils._decode_implicit<asn1.NULL>(() => __utils._decodeNull) ]
 });
 export const _encode_Conf_Algs = __utils._encode_choice<Conf_Algs>({
     "algs": __utils._encode_implicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeSequenceOf<AlgorithmIdentifier>(() => _encode_AlgorithmIdentifier, __utils.BER), __utils.BER),
-    "null": __utils._encode_implicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeNull, __utils.BER),
+    "null_": __utils._encode_implicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeNull, __utils.BER),
 }, __utils.BER);
 
 
@@ -347,9 +347,9 @@ export class CertificationPath {
 }
 const _root_component_type_list_1_spec_for_CertificationPath: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("userKeyId", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: userCertif COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("userCertif", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("verifKeyId", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    /* FIXME: userVerifCertif COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("userVerifCertif", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("theCACertificates", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [
@@ -410,7 +410,7 @@ export class CertificationData {
 }
 const _root_component_type_list_1_spec_for_CertificationData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certificationPath", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: certificateRevocationList COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec("certificateRevocationList", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_CertificationData: __utils.ComponentSpec[] = [
     
@@ -1141,14 +1141,14 @@ export const _encode_SPKM_MIC = function (value: SPKM_MIC, elGetter: __utils.ASN
 
 export type Conf_Alg =
     { algId: AlgorithmIdentifier }
-    | { null: asn1.NULL };
+    | { null_: asn1.NULL };
 export const _decode_Conf_Alg = __utils._decode_inextensible_choice<Conf_Alg>({
     "CONTEXT 0": [ "algId", __utils._decode_implicit<AlgorithmIdentifier>(() => _decode_AlgorithmIdentifier) ],
-    "CONTEXT 1": [ "null", __utils._decode_implicit<asn1.NULL>(() => __utils._decodeNull) ]
+    "CONTEXT 1": [ "null_", __utils._decode_implicit<asn1.NULL>(() => __utils._decodeNull) ]
 });
 export const _encode_Conf_Alg = __utils._encode_choice<Conf_Alg>({
     "algId": __utils._encode_implicit(asn1.ASN1TagClass.context, 0, () => _encode_AlgorithmIdentifier, __utils.BER),
-    "null": __utils._encode_implicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeNull, __utils.BER),
+    "null_": __utils._encode_implicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeNull, __utils.BER),
 }, __utils.BER);
 
 

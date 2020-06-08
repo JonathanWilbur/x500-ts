@@ -150,7 +150,7 @@ export const _encode_ExtensionAttribute_value_Item = function (value: ExtensionA
 
 export class ExtensionAttribute {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: ExtensionAttribute_value_Item[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -173,13 +173,13 @@ export const _decode_ExtensionAttribute = function (el: asn1.ASN1Element): Exten
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "value";
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let value!: ExtensionAttribute_value_Item[];
-    type = __utils._decodeObjectIdentifier(sequence[0]);
+    type_ = __utils._decodeObjectIdentifier(sequence[0]);
     value = __utils._decodeSetOf<ExtensionAttribute_value_Item>(() => _decode_ExtensionAttribute_value_Item)(sequence[1]);
     // TODO: Validate values.
     return new ExtensionAttribute(
-        type,
+        type_,
         value,
         sequence.slice(2),
     );
@@ -187,7 +187,7 @@ export const _decode_ExtensionAttribute = function (el: asn1.ASN1Element): Exten
 export const _encode_ExtensionAttribute = function (value: ExtensionAttribute, elGetter: __utils.ASN1Encoder<ExtensionAttribute>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeSetOf<ExtensionAttribute_value_Item>(() => _encode_ExtensionAttribute_value_Item, __utils.BER)(value.value, __utils.BER)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),

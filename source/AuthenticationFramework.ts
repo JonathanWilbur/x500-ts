@@ -42,7 +42,7 @@ import {
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
     bitStringMatch,
-    boolean,
+    boolean_,
     booleanMatch,
     caseExactMatch,
     commonName,
@@ -112,7 +112,7 @@ const iso: number = 1;
 const joint_iso_itu_t: number = 2;
 const joint_iso_ccitt: number = 2;
 
-export type ENCRYPTED = asn1.BIT_STRING;
+export type ENCRYPTED<ToBeEnciphered> = asn1.BIT_STRING;
 export const _get_decoder_for_ENCRYPTED = function <ToBeEnciphered>(_decode_ToBeEnciphered: __utils.ASN1Decoder<ToBeEnciphered>) {
 return __utils._decodeBitString
 }
@@ -121,7 +121,7 @@ return __utils._encodeBitString
 }
 
 
-export type ENCRYPTED_HASH = asn1.BIT_STRING;
+export type ENCRYPTED_HASH<ToBeSigned> = asn1.BIT_STRING;
 export const _get_decoder_for_ENCRYPTED_HASH = function <ToBeSigned>(_decode_ToBeSigned: __utils.ASN1Decoder<ToBeSigned>) {
 return __utils._decodeBitString
 }
@@ -252,8 +252,8 @@ export const _encode_SIGNATURE = function (value: SIGNATURE, elGetter: __utils.A
 export class SIGNED<ToBeSigned> {
     constructor (
         readonly toBeSigned: ToBeSigned,
-        readonly algorithmIdentifier: AlgorithmIdentifier,
-        readonly signature: asn1.BIT_STRING,
+        readonly algorithmIdentifier: AlgorithmIdentifier /* REPLICATED_COMPONENT */,
+        readonly signature: asn1.BIT_STRING /* REPLICATED_COMPONENT */,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
@@ -1051,7 +1051,7 @@ export type TBSCertAVL_entries_Item_idType =
     | asn1.ASN1Element;
 export const _decode_TBSCertAVL_entries_Item_idType = __utils._decode_extensible_choice<TBSCertAVL_entries_Item_idType>({
     "CONTEXT 0": [ "certIdentifier", __utils._decode_explicit<PKCertIdentifier>(() => _decode_PKCertIdentifier) ],
-    /* NO_TAG_OR_TAG_CLASS */: [ "entityGroup", _decode_DistinguishedName ]
+    "UNIVERSAL 16": [ "entityGroup", _decode_DistinguishedName ]
 });
 export const _encode_TBSCertAVL_entries_Item_idType = __utils._encode_choice<TBSCertAVL_entries_Item_idType>({
     "certIdentifier": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_PKCertIdentifier, __utils.BER),

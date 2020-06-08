@@ -825,8 +825,8 @@ export const _encode_Associate_result = __utils._encodeInteger;
 
 
 export type Associate_source_diagnostic_acse_service_user = asn1.INTEGER;
-export const Associate_source_diagnostic_acse_service_user_null: Associate_source_diagnostic_acse_service_user = 0; /* LONG_NAMED_INTEGER_VALUE */
-export const null: Associate_source_diagnostic_acse_service_user = Associate_source_diagnostic_acse_service_user_null; /* SHORT_NAMED_INTEGER_VALUE */
+export const Associate_source_diagnostic_acse_service_user_null_: Associate_source_diagnostic_acse_service_user = 0; /* LONG_NAMED_INTEGER_VALUE */
+export const null_: Associate_source_diagnostic_acse_service_user = Associate_source_diagnostic_acse_service_user_null_; /* SHORT_NAMED_INTEGER_VALUE */
 export const Associate_source_diagnostic_acse_service_user_no_reason_given: Associate_source_diagnostic_acse_service_user = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const no_reason_given: Associate_source_diagnostic_acse_service_user = Associate_source_diagnostic_acse_service_user_no_reason_given; /* SHORT_NAMED_INTEGER_VALUE */
 export const Associate_source_diagnostic_acse_service_user_application_context_name_not_supported: Associate_source_diagnostic_acse_service_user = 2; /* LONG_NAMED_INTEGER_VALUE */
@@ -852,8 +852,8 @@ export const _encode_Associate_source_diagnostic_acse_service_user = __utils._en
 
 
 export type Associate_source_diagnostic_acse_service_provider = asn1.INTEGER;
-export const Associate_source_diagnostic_acse_service_provider_null: Associate_source_diagnostic_acse_service_provider = 0; /* LONG_NAMED_INTEGER_VALUE */
-export const null: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_null; /* SHORT_NAMED_INTEGER_VALUE */
+export const Associate_source_diagnostic_acse_service_provider_null_: Associate_source_diagnostic_acse_service_provider = 0; /* LONG_NAMED_INTEGER_VALUE */
+export const null_: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_null_; /* SHORT_NAMED_INTEGER_VALUE */
 export const Associate_source_diagnostic_acse_service_provider_no_reason_given: Associate_source_diagnostic_acse_service_provider = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const no_reason_given: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_no_reason_given; /* SHORT_NAMED_INTEGER_VALUE */
 export const Associate_source_diagnostic_acse_service_provider_no_common_acse_version: Associate_source_diagnostic_acse_service_provider = 2; /* LONG_NAMED_INTEGER_VALUE */

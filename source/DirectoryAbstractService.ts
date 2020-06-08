@@ -298,16 +298,16 @@ export const _encode_SimpleCredentials_validity = function (value: SimpleCredent
 
 export type SimpleCredentials_password =
     { unprotected: asn1.OCTET_STRING }
-    | { protected: HASH<asn1.OCTET_STRING> }
+    | { protected_: HASH<asn1.OCTET_STRING> }
     | asn1.ASN1Element;
 export const _decode_SimpleCredentials_password = __utils._decode_extensible_choice<SimpleCredentials_password>({
     "UNIVERSAL 4": [ "unprotected", __utils._decodeOctetString ],
-    "UNIVERSAL 16": [ "protected", _get_decoder_for_HASH<asn1.OCTET_STRING>(__utils._decodeOctetString) ],
+    "UNIVERSAL 16": [ "protected_", _get_decoder_for_HASH<asn1.OCTET_STRING>(__utils._decodeOctetString) ],
     "CONTEXT 0": [ "userPwd", __utils._decode_explicit<UserPwd>(() => _decode_UserPwd) ]
 });
 export const _encode_SimpleCredentials_password = __utils._encode_choice<SimpleCredentials_password>({
     "unprotected": __utils._encodeOctetString,
-    "protected": _get_encoder_for_HASH<asn1.OCTET_STRING>(__utils._encodeOctetString),
+    "protected_": _get_encoder_for_HASH<asn1.OCTET_STRING>(__utils._encodeOctetString),
     "userPwd": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_UserPwd, __utils.BER),
 }, __utils.BER);
 
@@ -320,7 +320,7 @@ export class SimpleCredentials {
     ) {}
 }
 const _root_component_type_list_1_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
-    /* FIXME: name COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("validity", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("password", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
@@ -392,7 +392,7 @@ export class TokenContent {
 }
 const _root_component_type_list_1_spec_for_TokenContent: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: name COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("time", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("random", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("response", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
@@ -467,7 +467,7 @@ export class StrongCredentials {
 const _root_component_type_list_1_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bind-token", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    /* FIXME: name COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("attributeCertificationPath", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
@@ -867,7 +867,7 @@ export const _encode_TypeAndContextAssertion_contextAssertions = __utils._encode
 
 export class TypeAndContextAssertion {
     constructor (
-        readonly type: AttributeType,
+        readonly type_: AttributeType,
         readonly contextAssertions: TypeAndContextAssertion_contextAssertions,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -890,13 +890,13 @@ export const _decode_TypeAndContextAssertion = function (el: asn1.ASN1Element): 
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "contextAssertions";
-    let type!: AttributeType;
+    let type_!: AttributeType;
     let contextAssertions!: TypeAndContextAssertion_contextAssertions;
-    type = _decode_AttributeType(sequence[0]);
+    type_ = _decode_AttributeType(sequence[0]);
     contextAssertions = _decode_TypeAndContextAssertion_contextAssertions(sequence[1]);
     // TODO: Validate values.
     return new TypeAndContextAssertion(
-        type,
+        type_,
         contextAssertions,
         sequence.slice(2),
     );
@@ -904,7 +904,7 @@ export const _decode_TypeAndContextAssertion = function (el: asn1.ASN1Element): 
 export const _encode_TypeAndContextAssertion = function (value: TypeAndContextAssertion, elGetter: __utils.ASN1Encoder<TypeAndContextAssertion>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            _encode_AttributeType(value.type, __utils.BER),
+            _encode_AttributeType(value.type_, __utils.BER),
             _encode_TypeAndContextAssertion_contextAssertions(value.contextAssertions, __utils.BER)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -1125,7 +1125,7 @@ export class ServiceControls_manageDSAITPlaneRef {
 }
 const _root_component_type_list_1_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("dsaName", false, __utils.hasAnyTag, undefined, undefined),
-    /* FIXME: agreementID COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
     
@@ -1290,7 +1290,7 @@ export class SecurityParameters {
 }
 const _root_component_type_list_1_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: name COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("time", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("random", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("target", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
@@ -1396,7 +1396,7 @@ export class CommonArguments {
 const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -1494,18 +1494,18 @@ export class ReadArgumentData {
         readonly selection: EntryInformationSelection | undefined,
         readonly modifyRightsRequest: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
@@ -1516,7 +1516,7 @@ const _root_component_type_list_1_spec_for_ReadArgumentData: __utils.ComponentSp
 const _root_component_type_list_2_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -1807,7 +1807,7 @@ export class CommonResults {
 }
 const _root_component_type_list_1_spec_for_CommonResults: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -1865,10 +1865,10 @@ export class ReadResultData {
         readonly entry: EntryInformation,
         readonly modifyRights: ModifyRights | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ReadResultData: __utils.ComponentSpec[] = [
@@ -1877,7 +1877,7 @@ const _root_component_type_list_1_spec_for_ReadResultData: __utils.ComponentSpec
 ];
 const _root_component_type_list_2_spec_for_ReadResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -1949,18 +1949,18 @@ export class CompareArgumentData {
         readonly object: Name,
         readonly purported: AttributeValueAssertion,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
@@ -1970,7 +1970,7 @@ const _root_component_type_list_1_spec_for_CompareArgumentData: __utils.Componen
 const _root_component_type_list_2_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -2081,10 +2081,10 @@ export class CompareResultData {
         readonly fromEntry: asn1.BOOLEAN | undefined,
         readonly matchedSubtype: AttributeType | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_CompareResultData: __utils.ComponentSpec[] = [
@@ -2095,7 +2095,7 @@ const _root_component_type_list_1_spec_for_CompareResultData: __utils.ComponentS
 ];
 const _root_component_type_list_2_spec_for_CompareResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -2226,7 +2226,7 @@ export class CommonResultsSeq {
 }
 const _root_component_type_list_1_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -2283,10 +2283,10 @@ export class AbandonResultData {
     constructor (
         readonly invokeID: InvokeId,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
@@ -2294,7 +2294,7 @@ const _root_component_type_list_1_spec_for_AbandonResultData: __utils.ComponentS
 ];
 const _root_component_type_list_2_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -2351,15 +2351,15 @@ export const _encode_AbandonResultData = function (value: AbandonResultData, elG
 
 
 export type AbandonResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AbandonResultData> }
     | asn1.ASN1Element;
 export const _decode_AbandonResult = __utils._decode_extensible_choice<AbandonResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(_decode_AbandonResultData) ]
 });
 export const _encode_AbandonResult = __utils._encode_choice<AbandonResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(_encode_AbandonResultData),
 }, __utils.BER);
 
@@ -2368,7 +2368,7 @@ export const _encode_AbandonResult = __utils._encode_choice<AbandonResult>({
 
 export class SortKey {
     constructor (
-        readonly type: AttributeType,
+        readonly type_: AttributeType,
         readonly orderingRule: asn1.OBJECT_IDENTIFIER | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -2385,13 +2385,13 @@ const _extension_additions_list_spec_for_SortKey: __utils.ComponentSpec[] = [
 ];
 export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type!: AttributeType;
+    let type_!: AttributeType;
     let orderingRule: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type = _decode_AttributeType(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = _decode_AttributeType(_el); },
         "orderingRule": (_el: asn1.ASN1Element): void => { orderingRule = __utils._decodeObjectIdentifier(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -2402,7 +2402,7 @@ export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new SortKey( /* SEQUENCE_CONSTRUCTOR_CALL */
-        type,
+        type_,
         orderingRule,
         _unrecognizedExtensionsList
     );
@@ -2410,7 +2410,7 @@ export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
 export const _encode_SortKey = function (value: SortKey, elGetter: __utils.ASN1Encoder<SortKey>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            _encode_AttributeType(value.type, __utils.BER),
+            _encode_AttributeType(value.type_, __utils.BER),
             (value.orderingRule ? __utils._encodeObjectIdentifier(value.orderingRule, __utils.BER) : undefined)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -2511,18 +2511,18 @@ export class ListArgumentData {
         readonly pagedResults: PagedResultsRequest | undefined,
         readonly listFamily: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
@@ -2533,7 +2533,7 @@ const _root_component_type_list_1_spec_for_ListArgumentData: __utils.ComponentSp
 const _root_component_type_list_2_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -2656,19 +2656,19 @@ export const _encode_SearchArgumentData_subset = __utils._encodeInteger;
 
 export type FilterItem_substrings_strings_Item =
     { initial: asn1.ASN1Element }
-    | { any: asn1.ASN1Element }
+    | { any_: asn1.ASN1Element }
     | { final: asn1.ASN1Element }
     | { control: Attribute }
     | asn1.ASN1Element;
 export const _decode_FilterItem_substrings_strings_Item = __utils._decode_extensible_choice<FilterItem_substrings_strings_Item>({
     "CONTEXT 0": [ "initial", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
-    "CONTEXT 1": [ "any", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
+    "CONTEXT 1": [ "any_", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
     "CONTEXT 2": [ "final", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
     "UNIVERSAL 16": [ "control", _decode_Attribute ]
 });
 export const _encode_FilterItem_substrings_strings_Item = __utils._encode_choice<FilterItem_substrings_strings_Item>({
     "initial": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeAny, __utils.BER),
-    "any": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeAny, __utils.BER),
+    "any_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeAny, __utils.BER),
     "final": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeAny, __utils.BER),
     "control": _encode_Attribute,
 }, __utils.BER);
@@ -2676,7 +2676,7 @@ export const _encode_FilterItem_substrings_strings_Item = __utils._encode_choice
 
 export class FilterItem_substrings {
     constructor (
-        readonly type: asn1.OBJECT_IDENTIFIER,
+        readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly strings: FilterItem_substrings_strings_Item[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -2699,13 +2699,13 @@ export const _decode_FilterItem_substrings = function (el: asn1.ASN1Element): Fi
     // TODO: Validate tags.
     sequence[0].name = "type";
     sequence[1].name = "strings";
-    let type!: asn1.OBJECT_IDENTIFIER;
+    let type_!: asn1.OBJECT_IDENTIFIER;
     let strings!: FilterItem_substrings_strings_Item[];
-    type = __utils._decodeObjectIdentifier(sequence[0]);
+    type_ = __utils._decodeObjectIdentifier(sequence[0]);
     strings = __utils._decodeSequenceOf<FilterItem_substrings_strings_Item>(() => _decode_FilterItem_substrings_strings_Item)(sequence[1]);
     // TODO: Validate values.
     return new FilterItem_substrings(
-        type,
+        type_,
         strings,
         sequence.slice(2),
     );
@@ -2713,7 +2713,7 @@ export const _decode_FilterItem_substrings = function (el: asn1.ASN1Element): Fi
 export const _encode_FilterItem_substrings = function (value: FilterItem_substrings, elGetter: __utils.ASN1Encoder<FilterItem_substrings>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            __utils._encodeObjectIdentifier(value.type, __utils.BER),
+            __utils._encodeObjectIdentifier(value.type_, __utils.BER),
             __utils._encodeSequenceOf<FilterItem_substrings_strings_Item>(() => _encode_FilterItem_substrings_strings_Item, __utils.BER)(value.strings, __utils.BER)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -2724,7 +2724,7 @@ export const _encode_FilterItem_substrings = function (value: FilterItem_substri
 export class MatchingRuleAssertion {
     constructor (
         readonly matchingRule: asn1.OBJECT_IDENTIFIER[],
-        readonly type: AttributeType | undefined,
+        readonly type_: AttributeType | undefined,
         readonly matchValue: asn1.ASN1Element,
         readonly dnAttributes: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
@@ -2745,7 +2745,7 @@ const _extension_additions_list_spec_for_MatchingRuleAssertion: __utils.Componen
 export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): MatchingRuleAssertion {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let matchingRule!: asn1.OBJECT_IDENTIFIER[];
-    let type: asn1.OPTIONAL<AttributeType>;
+    let type_: asn1.OPTIONAL<AttributeType>;
     let matchValue!: asn1.ASN1Element;
     let dnAttributes: asn1.OPTIONAL<asn1.BOOLEAN> = false;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -2753,7 +2753,7 @@ export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): Ma
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
         "matchingRule": (_el: asn1.ASN1Element): void => { matchingRule = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER[]>(() => __utils._decodeSetOf<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier))(_el); },
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
         "matchValue": (_el: asn1.ASN1Element): void => { matchValue = __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny)(_el); },
         "dnAttributes": (_el: asn1.ASN1Element): void => { dnAttributes = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); }
     };
@@ -2766,7 +2766,7 @@ export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): Ma
     );
     return new MatchingRuleAssertion( /* SEQUENCE_CONSTRUCTOR_CALL */
         matchingRule,
-        type,
+        type_,
         matchValue,
         dnAttributes,
         _unrecognizedExtensionsList
@@ -2776,7 +2776,7 @@ export const _encode_MatchingRuleAssertion = function (value: MatchingRuleAssert
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
             __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(() => __utils._encodeObjectIdentifier, __utils.BER), __utils.BER)(value.matchingRule, __utils.BER),
-            (value.type ? __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeType, __utils.BER)(value.type, __utils.BER) : undefined),
+            (value.type_ ? __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeType, __utils.BER)(value.type_, __utils.BER) : undefined),
             __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeAny, __utils.BER)(value.matchValue, __utils.BER),
             ((value.dnAttributes !== undefined && value.dnAttributes !== false) /* TODO: Review this condition. */ ? __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeBoolean, __utils.BER)(value.dnAttributes, __utils.BER) : undefined)
         ],
@@ -3077,18 +3077,18 @@ export class SearchArgumentData {
         readonly joinArguments: JoinArgument[] | undefined,
         readonly joinType: SearchArgumentData_joinType | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
@@ -3111,7 +3111,7 @@ const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.Component
 const _root_component_type_list_2_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -3275,18 +3275,18 @@ export class AddEntryArgumentData {
         readonly entry: Attribute[],
         readonly targetSystem: AccessPoint | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
@@ -3297,7 +3297,7 @@ const _root_component_type_list_1_spec_for_AddEntryArgumentData: __utils.Compone
 const _root_component_type_list_2_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -3408,10 +3408,10 @@ export const _encode_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<Ad
 export class AddEntryResultData {
     constructor (
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
@@ -3419,7 +3419,7 @@ const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.Component
 ];
 const _root_component_type_list_2_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -3470,15 +3470,15 @@ export const _encode_AddEntryResultData = function (value: AddEntryResultData, e
 
 
 export type AddEntryResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AddEntryResultData> }
     | asn1.ASN1Element;
 export const _decode_AddEntryResult = __utils._decode_extensible_choice<AddEntryResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(_decode_AddEntryResultData) ]
 });
 export const _encode_AddEntryResult = __utils._encode_choice<AddEntryResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(_encode_AddEntryResultData),
 }, __utils.BER);
 
@@ -3489,18 +3489,18 @@ export class RemoveEntryArgumentData {
     constructor (
         readonly object: Name,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
@@ -3509,7 +3509,7 @@ const _root_component_type_list_1_spec_for_RemoveEntryArgumentData: __utils.Comp
 const _root_component_type_list_2_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -3612,10 +3612,10 @@ export const _encode_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED
 export class RemoveEntryResultData {
     constructor (
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
@@ -3623,7 +3623,7 @@ const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.Compon
 ];
 const _root_component_type_list_2_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -3674,15 +3674,15 @@ export const _encode_RemoveEntryResultData = function (value: RemoveEntryResultD
 
 
 export type RemoveEntryResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData> }
     | asn1.ASN1Element;
 export const _decode_RemoveEntryResult = __utils._decode_extensible_choice<RemoveEntryResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(_decode_RemoveEntryResultData) ]
 });
 export const _encode_RemoveEntryResult = __utils._encode_choice<RemoveEntryResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(_encode_RemoveEntryResultData),
 }, __utils.BER);
 
@@ -3724,18 +3724,18 @@ export class ModifyEntryArgumentData {
         readonly changes: EntryModification[],
         readonly selection: EntryInformationSelection | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
@@ -3746,7 +3746,7 @@ const _root_component_type_list_1_spec_for_ModifyEntryArgumentData: __utils.Comp
 const _root_component_type_list_2_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -3858,10 +3858,10 @@ export class ModifyEntryResultData {
     constructor (
         readonly entry: EntryInformation | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
@@ -3869,7 +3869,7 @@ const _root_component_type_list_1_spec_for_ModifyEntryResultData: __utils.Compon
 ];
 const _root_component_type_list_2_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -3926,15 +3926,15 @@ export const _encode_ModifyEntryResultData = function (value: ModifyEntryResultD
 
 
 export type ModifyEntryResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData> }
     | asn1.ASN1Element;
 export const _decode_ModifyEntryResult = __utils._decode_extensible_choice<ModifyEntryResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(_decode_ModifyEntryResultData) ]
 });
 export const _encode_ModifyEntryResult = __utils._encode_choice<ModifyEntryResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(_encode_ModifyEntryResultData),
 }, __utils.BER);
 
@@ -3948,30 +3948,30 @@ export class ModifyDNArgumentData {
         readonly deleteOldRDN: asn1.BOOLEAN | undefined,
         readonly newSuperior: DistinguishedName | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
-    /* FIXME: object COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("newRDN", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("deleteOldRDN", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    /* FIXME: newSuperior COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec("newSuperior", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -4087,10 +4087,10 @@ export class ModifyDNResultData {
     constructor (
         readonly newRDN: RelativeDistinguishedName,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
@@ -4098,7 +4098,7 @@ const _root_component_type_list_1_spec_for_ModifyDNResultData: __utils.Component
 ];
 const _root_component_type_list_2_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -4155,15 +4155,15 @@ export const _encode_ModifyDNResultData = function (value: ModifyDNResultData, e
 
 
 export type ModifyDNResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData> }
     | asn1.ASN1Element;
 export const _decode_ModifyDNResult = __utils._decode_extensible_choice<ModifyDNResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(_decode_ModifyDNResultData) ]
 });
 export const _encode_ModifyDNResult = __utils._encode_choice<ModifyDNResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(_encode_ModifyDNResultData),
 }, __utils.BER);
 
@@ -4179,7 +4179,7 @@ export class ChangePasswordArgumentData {
     ) {}
 }
 const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
-    /* FIXME: object COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: oldPwd COULD_NOT_RESOLVE_TYPE_DEF */,
     /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
 ];
@@ -4232,10 +4232,10 @@ export const _encode_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTEC
 export class ChangePasswordResultData {
     constructor (
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
@@ -4243,7 +4243,7 @@ const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.Com
 ];
 const _root_component_type_list_2_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -4294,15 +4294,15 @@ export const _encode_ChangePasswordResultData = function (value: ChangePasswordR
 
 
 export type ChangePasswordResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData> }
     | asn1.ASN1Element;
 export const _decode_ChangePasswordResult = __utils._decode_extensible_choice<ChangePasswordResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(_decode_ChangePasswordResultData) ]
 });
 export const _encode_ChangePasswordResult = __utils._encode_choice<ChangePasswordResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(_encode_ChangePasswordResultData),
 }, __utils.BER);
 
@@ -4317,7 +4317,7 @@ export class AdministerPasswordArgumentData {
     ) {}
 }
 const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
-    /* FIXME: object COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
 ];
 const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
@@ -4364,10 +4364,10 @@ export const _encode_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PR
 export class AdministerPasswordResultData {
     constructor (
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
@@ -4375,7 +4375,7 @@ const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils
 ];
 const _root_component_type_list_2_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -4426,15 +4426,15 @@ export const _encode_AdministerPasswordResultData = function (value: AdministerP
 
 
 export type AdministerPasswordResult =
-    { null: asn1.NULL }
+    { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData> }
     | asn1.ASN1Element;
 export const _decode_AdministerPasswordResult = __utils._decode_extensible_choice<AdministerPasswordResult>({
-    "UNIVERSAL 5": [ "null", __utils._decodeNull ],
+    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
     /* NO_TAG_OR_TAG_CLASS */: [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(_decode_AdministerPasswordResultData) ]
 });
 export const _encode_AdministerPasswordResult = __utils._encode_choice<AdministerPasswordResult>({
-    "null": __utils._encodeNull,
+    "null_": __utils._encodeNull,
     "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(_encode_AdministerPasswordResultData),
 }, __utils.BER);
 
@@ -4466,7 +4466,7 @@ export class CommonArgumentsSeq {
 const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -4564,29 +4564,29 @@ export class LdapArgumentData {
         readonly ldapMessage: LDAPMessage,
         readonly linkId: LinkId | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
-    /* FIXME: object COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     /* FIXME: ldapMessage COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("linkId", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
 const _root_component_type_list_2_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -4699,10 +4699,10 @@ export class LdapResultData {
         readonly ldapMessages: LDAPMessage[] | undefined,
         readonly returnToClient: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_LdapResultData: __utils.ComponentSpec[] = [
@@ -4711,7 +4711,7 @@ const _root_component_type_list_1_spec_for_LdapResultData: __utils.ComponentSpec
 ];
 const _root_component_type_list_2_spec_for_LdapResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -4785,22 +4785,22 @@ export class LinkedArgumentData {
         readonly linkId: LinkId,
         readonly returnToClient: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly serviceControls: ServiceControls | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly requestor: DistinguishedName | undefined,
-        readonly operationProgress: OperationProgress | undefined,
-        readonly aliasedRDNs: asn1.INTEGER | undefined,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined,
-        readonly referenceType: ReferenceType | undefined,
-        readonly entryOnly: asn1.BOOLEAN | undefined,
-        readonly exclusions: Exclusions | undefined,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly operationContexts: ContextSelection | undefined,
-        readonly familyGrouping: FamilyGrouping | undefined
+        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
-    /* FIXME: object COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     /* FIXME: ldapMessage COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("linkId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("returnToClient", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
@@ -4808,7 +4808,7 @@ const _root_component_type_list_1_spec_for_LinkedArgumentData: __utils.Component
 const _root_component_type_list_2_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    /* FIXME: requestor COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
     new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
     new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
@@ -4939,10 +4939,10 @@ export class AbandonedData {
     constructor (
         readonly problem: AbandonedProblem | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AbandonedData: __utils.ComponentSpec[] = [
@@ -4950,7 +4950,7 @@ const _root_component_type_list_1_spec_for_AbandonedData: __utils.ComponentSpec[
 ];
 const _root_component_type_list_2_spec_for_AbandonedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5024,10 +5024,10 @@ export class AbandonFailedData {
         readonly problem: AbandonProblem,
         readonly operation: InvokeId,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
@@ -5036,7 +5036,7 @@ const _root_component_type_list_1_spec_for_AbandonFailedData: __utils.ComponentS
 ];
 const _root_component_type_list_2_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5120,7 +5120,7 @@ export const _encode_AttributeProblem = __utils._encodeInteger;
 export class AttributeErrorData_problems_Item {
     constructor (
         readonly problem: AttributeProblem,
-        readonly type: AttributeType,
+        readonly type_: AttributeType,
         readonly value: AttributeValue | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
@@ -5139,14 +5139,14 @@ const _extension_additions_list_spec_for_AttributeErrorData_problems_Item: __uti
 export const _decode_AttributeErrorData_problems_Item = function (el: asn1.ASN1Element): AttributeErrorData_problems_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let problem!: AttributeProblem;
-    let type!: AttributeType;
+    let type_!: AttributeType;
     let value: asn1.OPTIONAL<AttributeValue>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
         "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<AttributeProblem>(() => _decode_AttributeProblem)(_el); },
-        "type": (_el: asn1.ASN1Element): void => { type = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
+        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
         "value": (_el: asn1.ASN1Element): void => { value = __utils._decode_explicit<AttributeValue>(() => _decode_AttributeValue)(_el); }
     };
     /* END_OF_CALLBACKS_MAP */
@@ -5158,7 +5158,7 @@ export const _decode_AttributeErrorData_problems_Item = function (el: asn1.ASN1E
     );
     return new AttributeErrorData_problems_Item( /* SEQUENCE_CONSTRUCTOR_CALL */
         problem,
-        type,
+        type_,
         value,
         _unrecognizedExtensionsList
     );
@@ -5167,7 +5167,7 @@ export const _encode_AttributeErrorData_problems_Item = function (value: Attribu
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
             __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_AttributeProblem, __utils.BER)(value.problem, __utils.BER),
-            __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeType, __utils.BER)(value.type, __utils.BER),
+            __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeType, __utils.BER)(value.type_, __utils.BER),
             (value.value ? __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeValue, __utils.BER)(value.value, __utils.BER) : undefined)
         ],
         (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
@@ -5180,10 +5180,10 @@ export class AttributeErrorData {
         readonly object: Name,
         readonly problems: AttributeErrorData_problems_Item[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
@@ -5192,7 +5192,7 @@ const _root_component_type_list_1_spec_for_AttributeErrorData: __utils.Component
 ];
 const _root_component_type_list_2_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5272,10 +5272,10 @@ export class NameErrorData {
         readonly problem: NameProblem,
         readonly matched: Name,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_NameErrorData: __utils.ComponentSpec[] = [
@@ -5284,7 +5284,7 @@ const _root_component_type_list_1_spec_for_NameErrorData: __utils.ComponentSpec[
 ];
 const _root_component_type_list_2_spec_for_NameErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5350,10 +5350,10 @@ export class ReferralData {
     constructor (
         readonly candidate: ContinuationReference,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ReferralData: __utils.ComponentSpec[] = [
@@ -5361,7 +5361,7 @@ const _root_component_type_list_1_spec_for_ReferralData: __utils.ComponentSpec[]
 ];
 const _root_component_type_list_2_spec_for_ReferralData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5504,10 +5504,10 @@ export class SecurityErrorData {
         readonly spkmInfo: SPKM_ERROR | undefined,
         readonly encPwdInfo: EncPwdInfo | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
@@ -5517,7 +5517,7 @@ const _root_component_type_list_1_spec_for_SecurityErrorData: __utils.ComponentS
 ];
 const _root_component_type_list_2_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5628,10 +5628,10 @@ export class ServiceErrorData {
     constructor (
         readonly problem: ServiceProblem,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
@@ -5639,7 +5639,7 @@ const _root_component_type_list_1_spec_for_ServiceErrorData: __utils.ComponentSp
 ];
 const _root_component_type_list_2_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -5751,10 +5751,10 @@ export class UpdateErrorData {
         readonly problem: UpdateProblem,
         readonly attributeInfo: UpdateErrorData_attributeInfo_Item[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
@@ -5763,7 +5763,7 @@ const _root_component_type_list_1_spec_for_UpdateErrorData: __utils.ComponentSpe
 ];
 const _root_component_type_list_2_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -6122,10 +6122,10 @@ export class ListResultData_listInfo {
         readonly subordinates: ListResultData_listInfo_subordinates_Item[],
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
@@ -6135,7 +6135,7 @@ const _root_component_type_list_1_spec_for_ListResultData_listInfo: __utils.Comp
 ];
 const _root_component_type_list_2_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
@@ -6225,10 +6225,10 @@ export class SearchResultData_searchInfo {
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
         readonly altMatching: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly performer: DistinguishedName | undefined,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined,
-        readonly notification: Attribute[] | undefined
+        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
+        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
+        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 const _root_component_type_list_1_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
@@ -6239,7 +6239,7 @@ const _root_component_type_list_1_spec_for_SearchResultData_searchInfo: __utils.
 ];
 const _root_component_type_list_2_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
