@@ -220,7 +220,7 @@ export {
 export class ModificationParameter {
     constructor (
         readonly secondaryShadows: SupplierAndConsumers[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
@@ -261,7 +261,7 @@ export class AreaSpecification {
     constructor (
         readonly contextPrefix: DistinguishedName,
         readonly replicationArea: SubtreeSpecification,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
@@ -398,7 +398,7 @@ export class Knowledge {
     constructor (
         readonly knowledgeType: Knowledge_knowledgeType,
         readonly extendedKnowledge: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Knowledge: __utils.ComponentSpec[] = [
@@ -542,7 +542,7 @@ export class PeriodicStrategy {
         readonly beginTime: Time | undefined,
         readonly windowSize: asn1.INTEGER,
         readonly updateInterval: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
@@ -599,7 +599,7 @@ export class SchedulingParameters {
     constructor (
         readonly periodic: PeriodicStrategy | undefined,
         readonly othertimes: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
@@ -782,7 +782,7 @@ export class CoordinateShadowUpdateArgumentData {
         readonly lastUpdate: Time | undefined,
         readonly updateStrategy: CoordinateShadowUpdateArgumentData_updateStrategy,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
@@ -849,7 +849,7 @@ export class CoordinateShadowUpdateResultData {
     constructor (
         readonly agreementID: AgreementID,
         readonly lastUpdate: Time | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
@@ -949,7 +949,7 @@ export class RequestShadowUpdateArgumentData {
         readonly lastUpdate: Time | undefined,
         readonly requestedStrategy: RequestShadowUpdateArgumentData_requestedStrategy,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
@@ -1016,7 +1016,7 @@ export class RequestShadowUpdateResultData {
     constructor (
         readonly agreementID: AgreementID,
         readonly lastUpdate: Time | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
@@ -1091,7 +1091,7 @@ export class UpdateWindow {
     constructor (
         readonly start: Time,
         readonly stop: Time,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
@@ -1146,7 +1146,7 @@ export class SDSEContent {
         readonly attComplete: asn1.BOOLEAN | undefined,
         readonly attributes: Attribute[],
         readonly attValIncomplete: AttributeType[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SDSEContent: __utils.ComponentSpec[] = [
@@ -1214,7 +1214,7 @@ export class Subtree {
         readonly rdn: RelativeDistinguishedName,
         readonly sDSE: SDSEContent | undefined /* REPLICATED_COMPONENT */,
         readonly subtree: Subtree[] | undefined /* REPLICATED_COMPONENT */,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Subtree: __utils.ComponentSpec[] = [
@@ -1271,7 +1271,7 @@ export class TotalRefresh {
     constructor (
         readonly sDSE: SDSEContent | undefined,
         readonly subtree: Subtree[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
@@ -1353,7 +1353,7 @@ export class ContentChange {
         readonly subComplete: asn1.BOOLEAN | undefined,
         readonly attComplete: asn1.BOOLEAN | undefined,
         readonly attValIncomplete: AttributeType[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ContentChange: __utils.ComponentSpec[] = [
@@ -1442,7 +1442,7 @@ export class SubordinateChanges {
     constructor (
         readonly subordinate: RelativeDistinguishedName,
         readonly changes: IncrementalStepRefresh,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
@@ -1565,7 +1565,7 @@ export class UpdateShadowArgumentData {
         readonly updateWindow: UpdateWindow | undefined,
         readonly updatedInfo: RefreshInformation,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
@@ -1637,7 +1637,7 @@ export class UpdateShadowResultData {
     constructor (
         readonly agreementID: AgreementID,
         readonly lastUpdate: Time | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
@@ -1740,7 +1740,7 @@ export class ShadowErrorData {
         readonly problem: ShadowProblem,
         readonly lastUpdate: Time | undefined,
         readonly updateWindow: UpdateWindow | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,

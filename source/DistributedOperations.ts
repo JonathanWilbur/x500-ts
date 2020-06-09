@@ -236,7 +236,7 @@ export class OperationProgress {
     constructor (
         readonly nameResolutionPhase: OperationProgress_nameResolutionPhase,
         readonly nextRDNToBeResolved: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_OperationProgress: __utils.ComponentSpec[] = [
@@ -312,7 +312,7 @@ export class AccessPoint {
         readonly ae_title: Name,
         readonly address: PresentationAddress,
         readonly protocolInformation: ProtocolInformation[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AccessPoint: __utils.ComponentSpec[] = [
@@ -383,7 +383,7 @@ export class MasterOrShadowAccessPoint {
         readonly protocolInformation: ProtocolInformation[] | undefined /* REPLICATED_COMPONENT */,
         readonly category: MasterOrShadowAccessPoint_category | undefined,
         readonly chainingRequired: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MasterOrShadowAccessPoint: __utils.ComponentSpec[] = [
@@ -459,7 +459,7 @@ export class AccessPointInformation {
         readonly category: MasterOrShadowAccessPoint_category | undefined /* REPLICATED_COMPONENT */,
         readonly chainingRequired: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly additionalPoints: MasterAndShadowAccessPoints | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AccessPointInformation: __utils.ComponentSpec[] = [
@@ -544,7 +544,7 @@ export class ContinuationReference {
         readonly exclusions: Exclusions | undefined,
         readonly returnToDUA: asn1.BOOLEAN | undefined,
         readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ContinuationReference: __utils.ComponentSpec[] = [
@@ -636,7 +636,7 @@ export class DsaReferralData {
     constructor (
         readonly reference: ContinuationReference,
         readonly contextPrefix: DistinguishedName | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -714,7 +714,7 @@ export class TraceItem {
         readonly dsa: Name,
         readonly targetObject: Name | undefined,
         readonly operationProgress: OperationProgress,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TraceItem: __utils.ComponentSpec[] = [
@@ -816,7 +816,7 @@ export class ChainingArguments {
         readonly relatedEntry: asn1.INTEGER | undefined,
         readonly dspPaging: asn1.BOOLEAN | undefined,
         readonly excludeWriteableCopies: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ChainingArguments: __utils.ComponentSpec[] = [
@@ -838,8 +838,8 @@ export const _root_component_type_list_1_spec_for_ChainingArguments: __utils.Com
     new __utils.ComponentSpec("excludeShadows", true, __utils.hasTag(asn1.ASN1TagClass.context, 15), undefined, undefined),
     new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 16), undefined, undefined),
     new __utils.ComponentSpec("operationIdentifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 17), undefined, undefined),
-    /* FIXME: searchRuleId COULD_NOT_RESOLVE_TYPE_DEF */,
-    /* FIXME: chainedRelaxation COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("searchRuleId", true, __utils.hasTag(asn1.ASN1TagClass.context, 18), undefined, undefined),
+    new __utils.ComponentSpec("chainedRelaxation", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined),
     new __utils.ComponentSpec("relatedEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("dspPaging", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
     new __utils.ComponentSpec("excludeWriteableCopies", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined)
@@ -973,7 +973,7 @@ export class CrossReference {
     constructor (
         readonly contextPrefix: DistinguishedName,
         readonly accessPoint: AccessPointInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CrossReference: __utils.ComponentSpec[] = [
@@ -1027,7 +1027,7 @@ export class ChainingResults {
         readonly crossReferences: CrossReference[] | undefined,
         readonly securityParameters: SecurityParameters | undefined,
         readonly alreadySearched: Exclusions | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ChainingResults: __utils.ComponentSpec[] = [
@@ -1089,7 +1089,7 @@ export class DitBridgeKnowledge {
     constructor (
         readonly domainLocalID: UnboundedDirectoryString | undefined,
         readonly accessPoints: MasterAndShadowAccessPoints,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DitBridgeKnowledge: __utils.ComponentSpec[] = [
@@ -1163,7 +1163,7 @@ export class DSABindArgument {
     constructor (
         readonly credentials: DSACredentials | undefined,
         readonly versions: Versions | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DSABindArgument: __utils.ComponentSpec[] = [

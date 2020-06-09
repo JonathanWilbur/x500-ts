@@ -60,7 +60,7 @@ export class HierarchicalAgreement {
     constructor(
         readonly rdn: RelativeDistinguishedName,
         readonly immediateSuperior: DistinguishedName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
@@ -142,7 +142,7 @@ export class SubentryInfo {
     constructor(
         readonly rdn: RelativeDistinguishedName,
         readonly info: Attribute[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
@@ -230,7 +230,7 @@ export class SubordinateToSuperior {
         readonly alias: asn1.BOOLEAN | undefined,
         readonly entryInfo: Attribute[] | undefined,
         readonly subentries: SubentryInfo[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
@@ -309,8 +309,8 @@ export const _decode_SubordinateToSuperior = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SubordinateToSuperior(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
+    return new SubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
+        accessPoints,
         alias,
         entryInfo,
         subentries,
@@ -384,7 +384,7 @@ export class Vertex {
         readonly admPointInfo: Attribute[] | undefined,
         readonly subentries: SubentryInfo[] | undefined,
         readonly accessPoints: MasterAndShadowAccessPoints | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Vertex: __utils.ComponentSpec[] = [
@@ -461,8 +461,8 @@ export const _decode_Vertex = function (el: asn1.ASN1Element): Vertex {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Vertex(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
+    return new Vertex /* SEQUENCE_CONSTRUCTOR_CALL */(
+        rdn,
         admPointInfo,
         subentries,
         accessPoints,
@@ -541,7 +541,7 @@ export class SuperiorToSubordinate {
         readonly contextPrefixInfo: DITcontext,
         readonly entryInfo: Attribute[] | undefined,
         readonly immediateSuperiorInfo: Attribute[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
@@ -607,8 +607,8 @@ export const _decode_SuperiorToSubordinate = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SuperiorToSubordinate(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ contextPrefixInfo,
+    return new SuperiorToSubordinate /* SEQUENCE_CONSTRUCTOR_CALL */(
+        contextPrefixInfo,
         entryInfo,
         immediateSuperiorInfo,
         _unrecognizedExtensionsList
@@ -671,7 +671,7 @@ export const _encode_SuperiorToSubordinateModification = _encode_SuperiorToSubor
 export class NonSpecificHierarchicalAgreement {
     constructor(
         readonly immediateSuperior: DistinguishedName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
@@ -742,7 +742,7 @@ export class NHOBSubordinateToSuperior {
     constructor(
         readonly accessPoints: MasterAndShadowAccessPoints | undefined,
         readonly subentries: SubentryInfo[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
@@ -795,8 +795,8 @@ export const _decode_NHOBSubordinateToSuperior = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NHOBSubordinateToSuperior(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
+    return new NHOBSubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
+        accessPoints,
         subentries,
         _unrecognizedExtensionsList
     );

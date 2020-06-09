@@ -160,7 +160,7 @@ export class PrivateKeyUsagePeriod {
     constructor (
         readonly notBefore: asn1.GeneralizedTime | undefined,
         readonly notAfter: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PrivateKeyUsagePeriod: __utils.ComponentSpec[] = [
@@ -219,7 +219,7 @@ export class PolicyQualifierInfo {
     constructor (
         readonly policyQualifierId: asn1.OBJECT_IDENTIFIER,
         readonly qualifier: asn1.ASN1Element | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PolicyQualifierInfo: __utils.ComponentSpec[] = [
@@ -271,7 +271,7 @@ export class PolicyInformation {
     constructor (
         readonly policyIdentifier: CertPolicyId,
         readonly policyQualifiers: PolicyQualifierInfo[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PolicyInformation: __utils.ComponentSpec[] = [
@@ -338,7 +338,7 @@ export class PolicyMappingsSyntax_Item {
     constructor (
         readonly issuerDomainPolicy: CertPolicyId,
         readonly subjectDomainPolicy: CertPolicyId,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PolicyMappingsSyntax_Item: __utils.ComponentSpec[] = [
@@ -392,7 +392,7 @@ export class AvlId {
     constructor (
         readonly issuer: Name,
         readonly serialNumber: AvlSerialNumber | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AvlId: __utils.ComponentSpec[] = [
@@ -457,7 +457,7 @@ export class BasicConstraintsSyntax {
     constructor (
         readonly cA: asn1.BOOLEAN | undefined,
         readonly pathLenConstraint: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_BasicConstraintsSyntax: __utils.ComponentSpec[] = [
@@ -518,7 +518,7 @@ export class PolicyConstraintsSyntax {
     constructor (
         readonly requireExplicitPolicy: SkipCerts | undefined,
         readonly inhibitPolicyMapping: SkipCerts | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PolicyConstraintsSyntax: __utils.ComponentSpec[] = [
@@ -580,7 +580,7 @@ export class EDIPartyName {
     constructor (
         readonly nameAssigner: UnboundedDirectoryString | undefined,
         readonly partyName: UnboundedDirectoryString,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EDIPartyName: __utils.ComponentSpec[] = [
@@ -667,7 +667,7 @@ export class DeltaRefInfo {
     constructor (
         readonly deltaLocation: GeneralName,
         readonly lastDelta: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DeltaRefInfo: __utils.ComponentSpec[] = [
@@ -775,7 +775,7 @@ export class NumberRange {
         readonly startingNumber: asn1.INTEGER | undefined,
         readonly endingNumber: asn1.INTEGER | undefined,
         readonly modulus: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NumberRange: __utils.ComponentSpec[] = [
@@ -843,7 +843,7 @@ export class BaseRevocationInfo {
         readonly cRLStreamIdentifier: CRLStreamIdentifier | undefined,
         readonly cRLNumber: CRLNumber,
         readonly baseThisUpdate: asn1.GeneralizedTime,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_BaseRevocationInfo: __utils.ComponentSpec[] = [
@@ -906,7 +906,7 @@ export class PerAuthorityScope {
         readonly subjectKeyIdRange: NumberRange | undefined,
         readonly nameSubtrees: GeneralNames | undefined,
         readonly baseRevocationInfo: BaseRevocationInfo | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PerAuthorityScope: __utils.ComponentSpec[] = [
@@ -997,7 +997,7 @@ export class CRLReferral {
         readonly cRLScope: CRLScopeSyntax,
         readonly lastUpdate: asn1.GeneralizedTime | undefined,
         readonly lastChangedCRL: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CRLReferral: __utils.ComponentSpec[] = [
@@ -1105,7 +1105,7 @@ export class DeltaInformation {
     constructor (
         readonly deltaLocation: GeneralName,
         readonly nextDelta: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DeltaInformation: __utils.ComponentSpec[] = [
@@ -1191,7 +1191,7 @@ export class ReasonInfo {
     constructor (
         readonly reasonCode: CRLReason,
         readonly holdInstructionCode: HoldInstruction | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReasonInfo: __utils.ComponentSpec[] = [
@@ -1248,7 +1248,7 @@ export class CertificateGroupNumberRange {
     constructor (
         readonly startingNumber: asn1.INTEGER,
         readonly endingNumber: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificateGroupNumberRange: __utils.ComponentSpec[] = [
@@ -1314,7 +1314,7 @@ export class ToBeRevokedGroup {
         readonly reasonInfo: ReasonInfo | undefined,
         readonly revocationTime: asn1.GeneralizedTime,
         readonly certificateGroup: CertificateGroup,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ToBeRevokedGroup: __utils.ComponentSpec[] = [
@@ -1398,7 +1398,7 @@ export class RevokedGroup {
         readonly reasonInfo: ReasonInfo | undefined,
         readonly invalidityDate: asn1.GeneralizedTime | undefined,
         readonly revokedcertificateGroup: RevokedCertificateGroup,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RevokedGroup: __utils.ComponentSpec[] = [
@@ -1481,7 +1481,7 @@ export class DistributionPoint {
         readonly distributionPoint: DistributionPointName | undefined,
         readonly reasons: ReasonFlags | undefined,
         readonly cRLIssuer: GeneralNames | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DistributionPoint: __utils.ComponentSpec[] = [
@@ -1549,7 +1549,7 @@ export class IssuingDistPointSyntax {
         readonly onlySomeReasons: ReasonFlags | undefined,
         readonly indirectCRL: asn1.BOOLEAN | undefined,
         readonly onlyContainsAttributeCerts: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IssuingDistPointSyntax: __utils.ComponentSpec[] = [
@@ -1640,7 +1640,7 @@ export class AAIssuingDistPointSyntax {
         readonly containsUserAttributeCerts: asn1.BOOLEAN | undefined,
         readonly containsAACerts: asn1.BOOLEAN | undefined,
         readonly containsSOAPublicKeyCerts: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AAIssuingDistPointSyntax: __utils.ComponentSpec[] = [
@@ -1718,7 +1718,7 @@ export class CertificateExactAssertion {
     constructor (
         readonly serialNumber: CertificateSerialNumber,
         readonly issuer: Name,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificateExactAssertion: __utils.ComponentSpec[] = [
@@ -1765,7 +1765,7 @@ export class CertificatePairExactAssertion {
     constructor (
         readonly issuedToThisCAAssertion: CertificateExactAssertion | undefined,
         readonly issuedByThisCAAssertion: CertificateExactAssertion | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificatePairExactAssertion: __utils.ComponentSpec[] = [
@@ -1830,7 +1830,7 @@ export class AuthorityKeyIdentifier {
         readonly keyIdentifier: KeyIdentifier | undefined,
         readonly authorityCertIssuer: GeneralNames | undefined,
         readonly authorityCertSerialNumber: CertificateSerialNumber | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AuthorityKeyIdentifier: __utils.ComponentSpec[] = [
@@ -1956,7 +1956,7 @@ export class GeneralSubtree {
         readonly base: GeneralName,
         readonly minimum: BaseDistance | undefined,
         readonly maximum: BaseDistance | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [
@@ -2018,7 +2018,7 @@ export class NameConstraintsSyntax {
     constructor (
         readonly permittedSubtrees: GeneralSubtrees | undefined,
         readonly excludedSubtrees: GeneralSubtrees | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NameConstraintsSyntax: __utils.ComponentSpec[] = [
@@ -2081,7 +2081,7 @@ export class CertificateAssertion {
         readonly pathToName: Name | undefined,
         readonly subject: Name | undefined,
         readonly nameConstraints: NameConstraintsSyntax | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificateAssertion: __utils.ComponentSpec[] = [
@@ -2188,7 +2188,7 @@ export class CertificatePairAssertion {
     constructor (
         readonly issuedToThisCAAssertion: CertificateAssertion | undefined,
         readonly issuedByThisCAAssertion: CertificateAssertion | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificatePairAssertion: __utils.ComponentSpec[] = [
@@ -2303,7 +2303,7 @@ export class CertificateListAssertion {
         readonly dateAndTime: Time | undefined,
         readonly distributionPoint: DistributionPointName | undefined,
         readonly authorityKeyIdentifier: AuthorityKeyIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertificateListAssertion: __utils.ComponentSpec[] = [
@@ -2386,7 +2386,7 @@ export class PkiPathMatchSyntax {
     constructor (
         readonly firstIssuer: Name,
         readonly lastSubject: Name,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PkiPathMatchSyntax: __utils.ComponentSpec[] = [
@@ -2494,7 +2494,7 @@ export class EnhancedCertificateAssertion {
         readonly pathToName: GeneralNames | undefined,
         readonly subject: Name | undefined,
         readonly nameConstraints: NameConstraintsSyntax | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EnhancedCertificateAssertion: __utils.ComponentSpec[] = [

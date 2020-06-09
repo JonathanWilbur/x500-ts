@@ -426,7 +426,7 @@ export class DSS_Parms {
         readonly p: asn1.INTEGER,
         readonly q: asn1.INTEGER,
         readonly g: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
@@ -511,7 +511,7 @@ export class ValidationParms {
     constructor(
         readonly seed: asn1.BIT_STRING,
         readonly pgenCounter: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ValidationParms: __utils.ComponentSpec[] = [
@@ -582,7 +582,7 @@ export class DomainParameters {
         readonly q: asn1.INTEGER,
         readonly j: asn1.INTEGER | undefined,
         readonly validationParms: ValidationParms | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DomainParameters: __utils.ComponentSpec[] = [
@@ -664,8 +664,8 @@ export const _decode_DomainParameters = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DomainParameters(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ p,
+    return new DomainParameters /* SEQUENCE_CONSTRUCTOR_CALL */(
+        p,
         g,
         q,
         j,

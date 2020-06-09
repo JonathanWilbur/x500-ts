@@ -150,7 +150,7 @@ export class AVMPcommonComponents {
         readonly version: AVMPversion | undefined,
         readonly timeStamp: asn1.GeneralizedTime,
         readonly sequence: AVMPsequence,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
@@ -210,8 +210,8 @@ export const _decode_AVMPcommonComponents = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AVMPcommonComponents(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new AVMPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         _unrecognizedExtensionsList
@@ -251,7 +251,7 @@ export class CertReq {
         readonly version: AVMPversion | undefined /* REPLICATED_COMPONENT */,
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReq: __utils.ComponentSpec[] = [
@@ -309,8 +309,8 @@ export const _decode_CertReq = function (el: asn1.ASN1Element): CertReq {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         _unrecognizedExtensionsList
@@ -350,7 +350,7 @@ export const _encode_CertReq = function (
 export class CertOK {
     constructor(
         readonly dhCert: Certificate,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertOK: __utils.ComponentSpec[] = [
@@ -492,7 +492,7 @@ export class CertErr {
     constructor(
         readonly notOK: CertErr_notOK,
         readonly note: Notifications | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertErr: __utils.ComponentSpec[] = [
@@ -539,8 +539,8 @@ export const _decode_CertErr = function (el: asn1.ASN1Element): CertErr {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertErr(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ notOK,
+    return new CertErr /* SEQUENCE_CONSTRUCTOR_CALL */(
+        notOK,
         note,
         _unrecognizedExtensionsList
     );
@@ -609,7 +609,7 @@ export class CertRsp {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly result: CertRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertRsp: __utils.ComponentSpec[] = [
@@ -678,8 +678,8 @@ export const _decode_CertRsp = function (el: asn1.ASN1Element): CertRsp {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         result,
@@ -724,7 +724,7 @@ export class AddAvlReq {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly certlist: CertAVL,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
@@ -793,8 +793,8 @@ export const _decode_AddAvlReq = function (el: asn1.ASN1Element): AddAvlReq {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AddAvlReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new AddAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         certlist,
@@ -836,7 +836,7 @@ export const _encode_AddAvlReq = function (
 export class AddAvlOK {
     constructor(
         readonly ok: asn1.NULL,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
@@ -888,7 +888,7 @@ export const _encode_AddAvlOK = function (
 export class AddAvlErr {
     constructor(
         readonly notOK: AVMP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
@@ -979,7 +979,7 @@ export class AddAvlRsp {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly result: AddAvlRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
@@ -1048,8 +1048,8 @@ export const _decode_AddAvlRsp = function (el: asn1.ASN1Element): AddAvlRsp {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AddAvlRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new AddAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         result,
@@ -1095,7 +1095,7 @@ export class ReplaceAvlReq {
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly old: AvlSerialNumber | undefined,
         readonly new_: CertAVL,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
@@ -1177,8 +1177,8 @@ export const _decode_ReplaceAvlReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ReplaceAvlReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new ReplaceAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         old,
@@ -1224,7 +1224,7 @@ export const _encode_ReplaceAvlReq = function (
 export class RepAvlOK {
     constructor(
         readonly ok: asn1.NULL,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
@@ -1276,7 +1276,7 @@ export const _encode_RepAvlOK = function (
 export class RepAvlErr {
     constructor(
         readonly notOK: AVMP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
@@ -1367,7 +1367,7 @@ export class ReplaceAvlRsp {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly result: ReplaceAvlRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
@@ -1438,8 +1438,8 @@ export const _decode_ReplaceAvlRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ReplaceAvlRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new ReplaceAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         result,
@@ -1484,7 +1484,7 @@ export class DeleteAvlReq {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly avl_Id: AvlSerialNumber | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
@@ -1555,8 +1555,8 @@ export const _decode_DeleteAvlReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeleteAvlReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new DeleteAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         avl_Id,
@@ -1600,7 +1600,7 @@ export const _encode_DeleteAvlReq = function (
 export class DelAvlOK {
     constructor(
         readonly ok: asn1.NULL,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
@@ -1652,7 +1652,7 @@ export const _encode_DelAvlOK = function (
 export class DelAvlErr {
     constructor(
         readonly notOK: AVMP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
@@ -1743,7 +1743,7 @@ export class DeleteAvlRsp {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly result: DeleteAvlRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
@@ -1814,8 +1814,8 @@ export const _decode_DeleteAvlRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeleteAvlRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new DeleteAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         result,
@@ -1860,7 +1860,7 @@ export class RejectAVL {
         readonly timeStamp: asn1.GeneralizedTime /* REPLICATED_COMPONENT */,
         readonly sequence: AVMPsequence /* REPLICATED_COMPONENT */,
         readonly reason: AVMP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RejectAVL: __utils.ComponentSpec[] = [
@@ -1929,8 +1929,8 @@ export const _decode_RejectAVL = function (el: asn1.ASN1Element): RejectAVL {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RejectAVL(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new RejectAVL /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         timeStamp,
         sequence,
         reason,
@@ -1987,7 +1987,7 @@ export class CASPcommonComponents {
     constructor(
         readonly version: CASPversion | undefined,
         readonly sequence: CASPsequence,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
@@ -2036,8 +2036,8 @@ export const _decode_CASPcommonComponents = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CASPcommonComponents(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CASPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         _unrecognizedExtensionsList
     );
@@ -2071,7 +2071,7 @@ export class CertSubscribeReq_certs_Item {
     constructor(
         readonly subject: Name,
         readonly serialNumber: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
@@ -2147,7 +2147,7 @@ export class CertSubscribeReq {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly certs: CertSubscribeReq_certs_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
@@ -2209,8 +2209,8 @@ export const _decode_CertSubscribeReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertSubscribeReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -2264,7 +2264,7 @@ export class CertSubscribeOK_Item_ok {
         readonly cert: Certificate,
         readonly status: CertStatus,
         readonly revokeReason: CRLReason | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
@@ -2324,8 +2324,8 @@ export const _decode_CertSubscribeOK_Item_ok = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeOK_Item_ok(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ cert,
+    return new CertSubscribeOK_Item_ok /* SEQUENCE_CONSTRUCTOR_CALL */(
+        cert,
         status,
         revokeReason,
         _unrecognizedExtensionsList
@@ -2367,7 +2367,7 @@ export const _encode_CASP_CertStatusCode = __utils._encodeEnumerated;
 export class CertSubscribeOK_Item_not_ok {
     constructor(
         readonly status: CASP_CertStatusCode,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
@@ -2491,7 +2491,7 @@ export const _encode_CASP_error = __utils._encodeEnumerated;
 export class CertSubscribeErr {
     constructor(
         readonly code: CASP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
@@ -2587,7 +2587,7 @@ export class CertSubscribeRsp {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly result: CertSubscribeRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
@@ -2647,8 +2647,8 @@ export const _decode_CertSubscribeRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertSubscribeRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -2686,7 +2686,7 @@ export class CertUnsubscribeReq_certs_Item {
     constructor(
         readonly subject: Name,
         readonly serialNumber: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
@@ -2762,7 +2762,7 @@ export class CertUnsubscribeReq {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly certs: CertUnsubscribeReq_certs_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
@@ -2824,8 +2824,8 @@ export const _decode_CertUnsubscribeReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUnsubscribeReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertUnsubscribeReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -2866,7 +2866,7 @@ export class CertUnsubscribeOK_Item_ok {
     constructor(
         readonly subject: Name,
         readonly serialNumber: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
@@ -2940,7 +2940,7 @@ export const _encode_CertUnsubscribeOK_Item_ok = function (
 export class CertUnsubscribeOK_Item_not_ok {
     constructor(
         readonly status: CASP_CertStatusCode,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
@@ -3042,7 +3042,7 @@ export const _encode_CertUnsubscribeOK = __utils._encodeSequenceOf<
 export class CertUnsubscribeErr {
     constructor(
         readonly code: CASP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
@@ -3138,7 +3138,7 @@ export class CertUnsubscribeRsp {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly result: CertUnsubscribeRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
@@ -3198,8 +3198,8 @@ export const _decode_CertUnsubscribeRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUnsubscribeRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertUnsubscribeRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -3240,7 +3240,7 @@ export class CertReplaceReq_certs_Item {
     constructor(
         readonly old: CertificateSerialNumber,
         readonly new_: Certificate,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
@@ -3309,7 +3309,7 @@ export class CertReplaceReq {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly certs: CertReplaceReq_certs_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
@@ -3371,8 +3371,8 @@ export const _decode_CertReplaceReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReplaceReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertReplaceReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -3413,7 +3413,7 @@ export class CertReplaceOK_Item_ok {
     constructor(
         readonly issuer: Name,
         readonly serialNumber: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
@@ -3483,7 +3483,7 @@ export const _encode_CertReplaceOK_Item_ok = function (
 export class CertReplaceOK_Item_not_ok {
     constructor(
         readonly status: CASP_CertStatusCode,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
@@ -3660,7 +3660,7 @@ export const _encode_CertReplaceErr_code = __utils._encode_choice<
 export class CertReplaceErr {
     constructor(
         readonly code: CertReplaceErr_code,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
@@ -3752,7 +3752,7 @@ export class CertReplaceRsp {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly result: CertReplaceRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
@@ -3812,8 +3812,8 @@ export const _decode_CertReplaceRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReplaceRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertReplaceRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -3852,7 +3852,7 @@ export class CertUpdateReq_certs_Item {
         readonly subject: Name,
         readonly serialNumber: CertificateSerialNumber,
         readonly certStatus: CertStatus,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
@@ -3940,7 +3940,7 @@ export class CertUpdateReq {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly certs: CertUpdateReq_certs_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
@@ -4002,8 +4002,8 @@ export const _decode_CertUpdateReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUpdateReq(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertUpdateReq /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -4044,7 +4044,7 @@ export class CertUpdateOK_Item_ok {
     constructor(
         readonly subject: Name,
         readonly serialNumber: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
@@ -4114,7 +4114,7 @@ export const _encode_CertUpdateOK_Item_ok = function (
 export class CertUpdateOK_Item_not_ok {
     constructor(
         readonly status: CASP_CertStatusCode,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
@@ -4216,7 +4216,7 @@ export const _encode_CertUpdateOK = __utils._encodeSequenceOf<
 export class CertUpdateErr {
     constructor(
         readonly code: CASP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
@@ -4308,7 +4308,7 @@ export class CertUpdateRsp {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly result: CertUpdateRsp_result,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
@@ -4368,8 +4368,8 @@ export const _decode_CertUpdateRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUpdateRsp(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new CertUpdateRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -4408,7 +4408,7 @@ export class RejectCAsubscribe {
         readonly version: CASPversion | undefined /* REPLICATED_COMPONENT */,
         readonly sequence: CASPsequence /* REPLICATED_COMPONENT */,
         readonly reason: CASP_error,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
@@ -4468,8 +4468,8 @@ export const _decode_RejectCAsubscribe = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RejectCAsubscribe(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new RejectCAsubscribe /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         sequence,
         reason,
         _unrecognizedExtensionsList
@@ -4665,7 +4665,7 @@ export class TBOK {
         readonly confidenceLevel: asn1.INTEGER,
         readonly validationTime: asn1.UTCTime,
         readonly info: asn1.UTF8String | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TBOK: __utils.ComponentSpec[] = [
@@ -4740,8 +4740,8 @@ export const _decode_TBOK = function (el: asn1.ASN1Element): TBOK {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBOK(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ levelOfAssurance,
+    return new TBOK /* SEQUENCE_CONSTRUCTOR_CALL */(
+        levelOfAssurance,
         confidenceLevel,
         validationTime,
         info,
@@ -4815,7 +4815,7 @@ export class TBerror {
     constructor(
         readonly code: TBerror_code,
         readonly diagnostic: asn1.UTF8String | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TBerror: __utils.ComponentSpec[] = [
@@ -4862,8 +4862,8 @@ export const _decode_TBerror = function (el: asn1.ASN1Element): TBerror {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBerror(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ code,
+    return new TBerror /* SEQUENCE_CONSTRUCTOR_CALL */(
+        code,
         diagnostic,
         _unrecognizedExtensionsList
     );

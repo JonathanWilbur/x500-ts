@@ -81,7 +81,7 @@ export class ExtensionAttribute_value_Item {
         readonly mandatory: asn1.BOOLEAN | undefined,
         readonly critical: asn1.BOOLEAN | undefined,
         readonly ext: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
@@ -147,8 +147,8 @@ export const _decode_ExtensionAttribute_value_Item = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ExtensionAttribute_value_Item(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
+    return new ExtensionAttribute_value_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
+        mandatory,
         critical,
         ext,
         _unrecognizedExtensionsList
@@ -202,7 +202,7 @@ export class ExtensionAttribute {
     constructor(
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: ExtensionAttribute_value_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [

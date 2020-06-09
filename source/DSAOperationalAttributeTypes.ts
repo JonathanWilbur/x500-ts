@@ -115,7 +115,7 @@ export class SupplierOrConsumer {
             | ProtocolInformation[]
             | undefined /* REPLICATED_COMPONENT */,
         readonly agreementID: OperationalBindingID,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
@@ -190,8 +190,8 @@ export const _decode_SupplierOrConsumer = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierOrConsumer(
-        /* SET_CONSTRUCTOR_CALL */ ae_title,
+    return new SupplierOrConsumer /* SET_CONSTRUCTOR_CALL */(
+        ae_title,
         address,
         protocolInformation,
         agreementID,
@@ -258,7 +258,7 @@ export class SupplierInformation {
         readonly agreementID: OperationalBindingID /* REPLICATED_COMPONENT */,
         readonly supplier_is_master: asn1.BOOLEAN | undefined,
         readonly non_supplying_master: AccessPoint | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
@@ -359,8 +359,8 @@ export const _decode_SupplierInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierInformation(
-        /* SET_CONSTRUCTOR_CALL */ ae_title,
+    return new SupplierInformation /* SET_CONSTRUCTOR_CALL */(
+        ae_title,
         address,
         protocolInformation,
         agreementID,
@@ -453,7 +453,7 @@ export class SupplierAndConsumers {
             | ProtocolInformation[]
             | undefined /* REPLICATED_COMPONENT */,
         readonly consumers: AccessPoint[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
@@ -528,8 +528,8 @@ export const _decode_SupplierAndConsumers = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierAndConsumers(
-        /* SET_CONSTRUCTOR_CALL */ ae_title,
+    return new SupplierAndConsumers /* SET_CONSTRUCTOR_CALL */(
+        ae_title,
         address,
         protocolInformation,
         consumers,

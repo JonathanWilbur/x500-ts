@@ -143,7 +143,7 @@ export class OperationalBindingID {
     constructor (
         readonly identifier: asn1.INTEGER,
         readonly version: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
@@ -248,7 +248,7 @@ export class Validity {
     constructor (
         readonly validFrom: Validity_validFrom | undefined,
         readonly validUntil: Validity_validUntil | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpec[] = [
@@ -305,7 +305,7 @@ export class EstablishOperationalBindingArgumentData {
         readonly agreement: asn1.ASN1Element,
         readonly valid: Validity | undefined,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
@@ -407,7 +407,7 @@ export class EstablishOperationalBindingResultData {
         readonly bindingID: OperationalBindingID | undefined,
         readonly accessPoint: AccessPoint,
         readonly initiator: EstablishOperationalBindingResultData_initiator,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -548,7 +548,7 @@ export class ModifiedValidity {
     constructor (
         readonly validFrom: ModifiedValidity_validFrom | undefined,
         readonly validUntil: ModifiedValidity_validUntil | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
@@ -606,7 +606,7 @@ export class ModifyOperationalBindingArgumentData {
         readonly newAgreement: asn1.ASN1Element | undefined,
         readonly valid: ModifiedValidity | undefined,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
@@ -695,7 +695,7 @@ export class ModifyOperationalBindingResultData {
         readonly bindingType: asn1.OBJECT_IDENTIFIER,
         readonly newAgreement: asn1.ASN1Element,
         readonly valid: Validity | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -817,7 +817,7 @@ export class TerminateOperationalBindingArgumentData {
         readonly initiator: TerminateOperationalBindingArgumentData_initiator | undefined,
         readonly terminateAt: Time | undefined,
         readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
@@ -890,7 +890,7 @@ export class TerminateOperationalBindingResultData {
         readonly bindingID: OperationalBindingID,
         readonly bindingType: asn1.OBJECT_IDENTIFIER,
         readonly terminateAt: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -1021,7 +1021,7 @@ export class OpBindingErrorParam {
         readonly bindingType: asn1.OBJECT_IDENTIFIER | undefined,
         readonly agreementProposal: asn1.ASN1Element | undefined,
         readonly retryAt: Time | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,

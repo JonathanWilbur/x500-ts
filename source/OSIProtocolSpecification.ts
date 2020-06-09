@@ -1949,7 +1949,7 @@ export class OsiRej {
     constructor (
         readonly invokeId: InvokeId,
         readonly problem: OsiRej_problem,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_OsiRej: __utils.ComponentSpec[] = [

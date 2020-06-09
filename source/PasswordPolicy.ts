@@ -58,7 +58,7 @@ export class UserPwd_encrypted {
     constructor(
         readonly algorithmIdentifier: AlgorithmIdentifier,
         readonly encryptedString: asn1.OCTET_STRING,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UserPwd_encrypted: __utils.ComponentSpec[] = [

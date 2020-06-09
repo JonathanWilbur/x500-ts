@@ -47,7 +47,7 @@ export class IdmBind {
         readonly callingAETitle: GeneralName | undefined,
         readonly calledAETitle: GeneralName | undefined,
         readonly argument: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IdmBind: __utils.ComponentSpec[] = [
@@ -122,8 +122,8 @@ export const _decode_IdmBind = function (el: asn1.ASN1Element): IdmBind {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBind(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
+    return new IdmBind /* SEQUENCE_CONSTRUCTOR_CALL */(
+        protocolID,
         callingAETitle,
         calledAETitle,
         argument,
@@ -181,7 +181,7 @@ export class IdmBindResult {
         readonly protocolID: asn1.OBJECT_IDENTIFIER,
         readonly respondingAETitle: GeneralName | undefined,
         readonly result: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
@@ -245,8 +245,8 @@ export const _decode_IdmBindResult = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBindResult(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
+    return new IdmBindResult /* SEQUENCE_CONSTRUCTOR_CALL */(
+        protocolID,
         respondingAETitle,
         result,
         _unrecognizedExtensionsList
@@ -304,7 +304,7 @@ export class IdmBindError {
         readonly respondingAETitle: GeneralName | undefined,
         readonly aETitleError: IdmBindError_aETitleError | undefined,
         readonly error: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IdmBindError: __utils.ComponentSpec[] = [
@@ -379,8 +379,8 @@ export const _decode_IdmBindError = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBindError(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
+    return new IdmBindError /* SEQUENCE_CONSTRUCTOR_CALL */(
+        protocolID,
         respondingAETitle,
         aETitleError,
         error,
@@ -436,7 +436,7 @@ export class Request {
         readonly invokeID: asn1.INTEGER,
         readonly opcode: Code,
         readonly argument: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Request: __utils.ComponentSpec[] = [
@@ -514,7 +514,7 @@ export class IdmResult {
         readonly invokeID: asn1.INTEGER,
         readonly opcode: Code,
         readonly result: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IdmResult: __utils.ComponentSpec[] = [
@@ -592,7 +592,7 @@ export class Error {
         readonly invokeID: asn1.INTEGER,
         readonly errcode: asn1.ASN1Element,
         readonly error: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Error: __utils.ComponentSpec[] = [
@@ -699,7 +699,7 @@ export class IdmReject {
     constructor(
         readonly invokeID: asn1.INTEGER,
         readonly reason: IdmReject_reason,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IdmReject: __utils.ComponentSpec[] = [

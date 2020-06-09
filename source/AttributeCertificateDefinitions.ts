@@ -165,7 +165,7 @@ export class IssuerSerial {
         readonly issuer: GeneralNames,
         readonly serial: CertificateSerialNumber,
         readonly issuerUID: UniqueIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IssuerSerial: __utils.ComponentSpec[] = [
@@ -225,8 +225,8 @@ export const _decode_IssuerSerial = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IssuerSerial(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
+    return new IssuerSerial /* SEQUENCE_CONSTRUCTOR_CALL */(
+        issuer,
         serial,
         issuerUID,
         _unrecognizedExtensionsList
@@ -285,7 +285,7 @@ export class ObjectDigestInfo {
         readonly otherObjectTypeID: asn1.OBJECT_IDENTIFIER | undefined,
         readonly digestAlgorithm: AlgorithmIdentifier,
         readonly objectDigest: asn1.BIT_STRING,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [
@@ -358,8 +358,8 @@ export const _decode_ObjectDigestInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectDigestInfo(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ digestedObjectType,
+    return new ObjectDigestInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
+        digestedObjectType,
         otherObjectTypeID,
         digestAlgorithm,
         objectDigest,
@@ -466,8 +466,8 @@ export const _decode_Holder = function (el: asn1.ASN1Element): Holder {
         _root_component_type_list_2_spec_for_Holder,
         undefined
     );
-    return new Holder(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ baseCertificateID,
+    return new Holder /* SEQUENCE_CONSTRUCTOR_CALL */(
+        baseCertificateID,
         entityName,
         objectDigestInfo
     );
@@ -516,7 +516,7 @@ export class AttCertIssuer {
         readonly issuerName: GeneralNames | undefined,
         readonly baseCertificateID: IssuerSerial | undefined,
         readonly objectDigestInfo: ObjectDigestInfo | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [
@@ -580,8 +580,8 @@ export const _decode_AttCertIssuer = __utils._decode_implicit<AttCertIssuer>(
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttCertIssuer(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ issuerName,
+            return new AttCertIssuer /* SEQUENCE_CONSTRUCTOR_CALL */(
+                issuerName,
                 baseCertificateID,
                 objectDigestInfo,
                 _unrecognizedExtensionsList
@@ -640,7 +640,7 @@ export class AttCertValidityPeriod {
     constructor(
         readonly notBeforeTime: asn1.GeneralizedTime,
         readonly notAfterTime: asn1.GeneralizedTime,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [
@@ -724,7 +724,7 @@ export class TBSAttributeCertificate {
         readonly attrCertValidityPeriod: AttCertValidityPeriod,
         readonly attributes: Attribute[],
         readonly issuerUniqueID: UniqueIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly extensions: Extensions | undefined
     ) {}
 }
@@ -854,8 +854,8 @@ export const _decode_TBSAttributeCertificate = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSAttributeCertificate(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new TBSAttributeCertificate /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         holder,
         issuer,
         signature,
@@ -926,7 +926,7 @@ export class ACPathData {
     constructor(
         readonly certificate: Certificate | undefined,
         readonly attributeCertificate: AttributeCertificate | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ACPathData: __utils.ComponentSpec[] = [
@@ -977,8 +977,8 @@ export const _decode_ACPathData = function (el: asn1.ASN1Element): ACPathData {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ACPathData(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ certificate,
+    return new ACPathData /* SEQUENCE_CONSTRUCTOR_CALL */(
+        certificate,
         attributeCertificate,
         _unrecognizedExtensionsList
     );
@@ -1023,7 +1023,7 @@ export class AttributeCertificationPath {
     constructor(
         readonly attributeCertificate: AttributeCertificate,
         readonly acPath: ACPathData[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [
@@ -1074,8 +1074,8 @@ export const _decode_AttributeCertificationPath = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeCertificationPath(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ attributeCertificate,
+    return new AttributeCertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
+        attributeCertificate,
         acPath,
         _unrecognizedExtensionsList
     );
@@ -1116,7 +1116,7 @@ export class RoleSyntax {
     constructor(
         readonly roleAuthority: GeneralNames | undefined,
         readonly roleName: GeneralName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RoleSyntax: __utils.ComponentSpec[] = [
@@ -1167,8 +1167,8 @@ export const _decode_RoleSyntax = function (el: asn1.ASN1Element): RoleSyntax {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RoleSyntax(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ roleAuthority,
+    return new RoleSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
+        roleAuthority,
         roleName,
         _unrecognizedExtensionsList
     );
@@ -1215,7 +1215,7 @@ export class DualStringSyntax {
     constructor(
         readonly operation: UnboundedDirectoryString,
         readonly object: UnboundedDirectoryString,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [
@@ -1360,8 +1360,8 @@ export const _decode_TargetCert = function (el: asn1.ASN1Element): TargetCert {
         _root_component_type_list_2_spec_for_TargetCert,
         undefined
     );
-    return new TargetCert(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ targetCertificate,
+    return new TargetCert /* SEQUENCE_CONSTRUCTOR_CALL */(
+        targetCertificate,
         targetName,
         certDigestInfo
     );
@@ -1487,7 +1487,7 @@ export class PrivilegePolicyIdentifier {
     constructor(
         readonly privilegePolicy: PrivilegePolicy,
         readonly privPolSyntax: InfoSyntax,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [
@@ -1562,7 +1562,7 @@ export class AttributeDescriptorSyntax {
         readonly name: AttributeName | undefined,
         readonly description: AttributeDescription | undefined,
         readonly dominationRule: PrivilegePolicyIdentifier,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [
@@ -1648,8 +1648,8 @@ export const _decode_AttributeDescriptorSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeDescriptorSyntax(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new AttributeDescriptorSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         attributeSyntax,
         name,
         description,
@@ -1714,7 +1714,7 @@ export class RoleSpecCertIdentifier {
         readonly roleCertIssuer: GeneralName,
         readonly roleCertSerialNumber: CertificateSerialNumber | undefined,
         readonly roleCertLocator: GeneralNames | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [
@@ -1793,8 +1793,8 @@ export const _decode_RoleSpecCertIdentifier = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RoleSpecCertIdentifier(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ roleName,
+    return new RoleSpecCertIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
+        roleName,
         roleCertIssuer,
         roleCertSerialNumber,
         roleCertLocator,
@@ -1865,7 +1865,7 @@ export class BasicAttConstraintsSyntax {
     constructor(
         readonly authority: asn1.BOOLEAN | undefined,
         readonly pathLenConstraint: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [
@@ -1914,8 +1914,8 @@ export const _decode_BasicAttConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new BasicAttConstraintsSyntax(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ authority,
+    return new BasicAttConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
+        authority,
         pathLenConstraint,
         _unrecognizedExtensionsList
     );
@@ -2036,7 +2036,7 @@ export class AllowedAttributeAssignments_Item {
     constructor(
         readonly attributes: AllowedAttributeAssignments_Item_attributes_Item[],
         readonly holderDomain: GeneralName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [
@@ -2143,7 +2143,7 @@ export class AttributeMappings_Item_typeMappings {
     constructor(
         readonly local: AttributeType,
         readonly remote: AttributeType,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [
@@ -2229,7 +2229,7 @@ export class AttributeMappings_Item_typeValueMappings {
     constructor(
         readonly local: AttributeTypeAndValue,
         readonly remote: AttributeTypeAndValue,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [
@@ -2357,7 +2357,7 @@ export class GeneralSubtree {
         readonly base: GeneralName,
         readonly minimum: BaseDistance | undefined,
         readonly maximum: BaseDistance | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [
@@ -2421,8 +2421,8 @@ export const _decode_GeneralSubtree = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new GeneralSubtree(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ base,
+    return new GeneralSubtree /* SEQUENCE_CONSTRUCTOR_CALL */(
+        base,
         minimum,
         maximum,
         _unrecognizedExtensionsList
@@ -2478,7 +2478,7 @@ export class HolderNameConstraintsSyntax {
     constructor(
         readonly permittedSubtrees: GeneralSubtrees,
         readonly excludedSubtrees: GeneralSubtrees | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [
@@ -2531,8 +2531,8 @@ export const _decode_HolderNameConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new HolderNameConstraintsSyntax(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ permittedSubtrees,
+    return new HolderNameConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
+        permittedSubtrees,
         excludedSubtrees,
         _unrecognizedExtensionsList
     );
@@ -2619,7 +2619,7 @@ export class AttributeCertificateExactAssertion {
     constructor(
         readonly serialNumber: CertificateSerialNumber,
         readonly issuer: AttCertIssuer,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [
@@ -2734,7 +2734,7 @@ export class AttributeCertificateAssertion {
         readonly issuer: GeneralNames | undefined,
         readonly attCertValidity: asn1.GeneralizedTime | undefined,
         readonly attType: AttributeType[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [
@@ -2813,8 +2813,8 @@ export const _decode_AttributeCertificateAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeCertificateAssertion(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
+    return new AttributeCertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
+        holder,
         issuer,
         attCertValidity,
         attType,
@@ -2884,7 +2884,7 @@ export class HolderIssuerAssertion {
     constructor(
         readonly holder: Holder | undefined,
         readonly issuer: AttCertIssuer | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [
@@ -2937,8 +2937,8 @@ export const _decode_HolderIssuerAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new HolderIssuerAssertion(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
+    return new HolderIssuerAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
+        holder,
         issuer,
         _unrecognizedExtensionsList
     );
@@ -2985,7 +2985,7 @@ export class DelMatchSyntax {
     constructor(
         readonly firstIssuer: AttCertIssuer,
         readonly lastHolder: Holder,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [

@@ -566,7 +566,7 @@ export class TokenContent {
         readonly time: Time,
         readonly random: asn1.BIT_STRING,
         readonly response: asn1.BIT_STRING | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TokenContent: __utils.ComponentSpec[] = [
@@ -640,7 +640,7 @@ export class StrongCredentials {
         readonly bind_token: Token,
         readonly name: DistinguishedName | undefined,
         readonly attributeCertificationPath: AttributeCertificationPath | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
@@ -719,7 +719,7 @@ export class SaslCredentials {
         readonly mechanism: DirectoryString,
         readonly credentials: asn1.OCTET_STRING | undefined,
         readonly saslAbort: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
@@ -808,7 +808,7 @@ export class DirectoryBindArgument {
     constructor (
         readonly credentials: Credentials | undefined,
         readonly versions: Versions | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
@@ -932,7 +932,7 @@ export class DirectoryBindResult {
         readonly credentials: Credentials | undefined,
         readonly versions: Versions | undefined,
         readonly pwdResponseValue: PwdResponseValue | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
@@ -1048,7 +1048,7 @@ export class TypeAndContextAssertion {
     constructor (
         readonly type_: AttributeType,
         readonly contextAssertions: TypeAndContextAssertion_contextAssertions,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
@@ -1120,7 +1120,7 @@ export class FamilyReturn {
     constructor (
         readonly memberSelect: FamilyReturn_memberSelect,
         readonly familySelect: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
@@ -1299,7 +1299,7 @@ export class ServiceControls_manageDSAITPlaneRef {
     constructor (
         readonly dsaName: Name,
         readonly agreementID: AgreementID,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
@@ -1353,7 +1353,7 @@ export class ServiceControls {
         readonly manageDSAITPlaneRef: ServiceControls_manageDSAITPlaneRef | undefined,
         readonly serviceType: asn1.OBJECT_IDENTIFIER | undefined,
         readonly userClass: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ServiceControls: __utils.ComponentSpec[] = [
@@ -1464,7 +1464,7 @@ export class SecurityParameters {
         readonly operationCode: Code | undefined,
         readonly errorProtection: ErrorProtectionRequest | undefined,
         readonly errorCode: Code | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
@@ -1569,7 +1569,7 @@ export class CommonArguments {
         readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
         readonly operationContexts: ContextSelection | undefined,
         readonly familyGrouping: FamilyGrouping | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpec[] = [
@@ -1672,7 +1672,7 @@ export class ReadArgumentData {
         readonly object: Name,
         readonly selection: EntryInformationSelection | undefined,
         readonly modifyRightsRequest: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -1825,7 +1825,7 @@ export class EntryInformation {
         readonly incompleteEntry: asn1.BOOLEAN | undefined,
         readonly partialName: asn1.BOOLEAN | undefined,
         readonly derivedEntry: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EntryInformation: __utils.ComponentSpec[] = [
@@ -1927,7 +1927,7 @@ export class ModifyRights_Item {
     constructor (
         readonly item: ModifyRights_Item_item,
         readonly permission: ModifyRights_Item_permission,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
@@ -1981,7 +1981,7 @@ export class CommonResults {
         readonly performer: DistinguishedName | undefined,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined,
         readonly notification: Attribute[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonResults: __utils.ComponentSpec[] = [
@@ -2043,7 +2043,7 @@ export class ReadResultData {
     constructor (
         readonly entry: EntryInformation,
         readonly modifyRights: ModifyRights | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -2127,7 +2127,7 @@ export class CompareArgumentData {
     constructor (
         readonly object: Name,
         readonly purported: AttributeValueAssertion,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -2259,7 +2259,7 @@ export class CompareResultData {
         readonly matched: asn1.BOOLEAN,
         readonly fromEntry: asn1.BOOLEAN | undefined,
         readonly matchedSubtype: AttributeType | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -2352,7 +2352,7 @@ export const _encode_CompareResult = _get_encoder_for_OPTIONALLY_PROTECTED<Compa
 export class AbandonArgumentData {
     constructor (
         readonly invokeID: InvokeId,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
@@ -2400,7 +2400,7 @@ export class CommonResultsSeq {
         readonly performer: DistinguishedName | undefined,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined,
         readonly notification: Attribute[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
@@ -2461,7 +2461,7 @@ export const _encode_CommonResultsSeq = function (value: CommonResultsSeq, elGet
 export class AbandonResultData {
     constructor (
         readonly invokeID: InvokeId,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -2549,7 +2549,7 @@ export class SortKey {
     constructor (
         readonly type_: AttributeType,
         readonly orderingRule: asn1.OBJECT_IDENTIFIER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SortKey: __utils.ComponentSpec[] = [
@@ -2604,7 +2604,7 @@ export class PagedResultsRequest_newRequest {
         readonly reverse: asn1.BOOLEAN | undefined,
         readonly unmerged: asn1.BOOLEAN | undefined,
         readonly pageNumber: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
@@ -2689,7 +2689,7 @@ export class ListArgumentData {
         readonly object: Name,
         readonly pagedResults: PagedResultsRequest | undefined,
         readonly listFamily: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -2857,7 +2857,7 @@ export class FilterItem_substrings {
     constructor (
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly strings: FilterItem_substrings_strings_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
@@ -2906,7 +2906,7 @@ export class MatchingRuleAssertion {
         readonly type_: AttributeType | undefined,
         readonly matchValue: asn1.ASN1Element,
         readonly dnAttributes: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
@@ -3097,7 +3097,7 @@ export class JoinAttPair {
         readonly baseAtt: AttributeType,
         readonly joinAtt: AttributeType,
         readonly joinContext: JoinContextType[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
@@ -3158,7 +3158,7 @@ export class JoinArgument {
         readonly joinFilter: Filter | undefined,
         readonly joinAttributes: JoinAttPair[] | undefined,
         readonly joinSelection: EntryInformationSelection,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_JoinArgument: __utils.ComponentSpec[] = [
@@ -3258,7 +3258,7 @@ export class SearchArgumentData {
         readonly searchControlOptions: SearchControlOptions | undefined,
         readonly joinArguments: JoinArgument[] | undefined,
         readonly joinType: SearchArgumentData_joinType | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -3283,7 +3283,7 @@ export const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.Co
     new __utils.ComponentSpec("matchedValuesOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
     new __utils.ComponentSpec("extendedFilter", true, __utils.hasTag(asn1.ASN1TagClass.context, 7), undefined, undefined),
     new __utils.ComponentSpec("checkOverspecified", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined),
-    /* FIXME: relaxation COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("relaxation", true, __utils.hasTag(asn1.ASN1TagClass.context, 9), undefined, undefined),
     new __utils.ComponentSpec("extendedArea", true, __utils.hasTag(asn1.ASN1TagClass.context, 10), undefined, undefined),
     new __utils.ComponentSpec("hierarchySelections", true, __utils.hasTag(asn1.ASN1TagClass.context, 11), undefined, undefined),
     new __utils.ComponentSpec("searchControlOptions", true, __utils.hasTag(asn1.ASN1TagClass.context, 12), undefined, undefined),
@@ -3456,7 +3456,7 @@ export class AddEntryArgumentData {
         readonly object: Name,
         readonly entry: Attribute[],
         readonly targetSystem: AccessPoint | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -3589,7 +3589,7 @@ export const _encode_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<Ad
 
 export class AddEntryResultData {
     constructor (
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -3670,7 +3670,7 @@ export const _encode_AddEntryResult = __utils._encode_choice<AddEntryResult>({
 export class RemoveEntryArgumentData {
     constructor (
         readonly object: Name,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -3793,7 +3793,7 @@ export const _encode_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED
 
 export class RemoveEntryResultData {
     constructor (
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -3905,7 +3905,7 @@ export class ModifyEntryArgumentData {
         readonly object: Name,
         readonly changes: EntryModification[],
         readonly selection: EntryInformationSelection | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -4039,7 +4039,7 @@ export const _encode_ModifyEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED
 export class ModifyEntryResultData {
     constructor (
         readonly entry: EntryInformation | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -4129,7 +4129,7 @@ export class ModifyDNArgumentData {
         readonly newRDN: RelativeDistinguishedName,
         readonly deleteOldRDN: asn1.BOOLEAN | undefined,
         readonly newSuperior: DistinguishedName | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -4268,7 +4268,7 @@ export const _encode_ModifyDNArgument = _get_encoder_for_OPTIONALLY_PROTECTED<Mo
 export class ModifyDNResultData {
     constructor (
         readonly newRDN: RelativeDistinguishedName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -4357,7 +4357,7 @@ export class ChangePasswordArgumentData {
         readonly object: DistinguishedName,
         readonly oldPwd: UserPwd,
         readonly newPwd: UserPwd,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
@@ -4413,7 +4413,7 @@ export const _encode_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTEC
 
 export class ChangePasswordResultData {
     constructor (
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -4495,7 +4495,7 @@ export class AdministerPasswordArgumentData {
     constructor (
         readonly object: DistinguishedName,
         readonly newPwd: UserPwd,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
@@ -4545,7 +4545,7 @@ export const _encode_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PR
 
 export class AdministerPasswordResultData {
     constructor (
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -4642,7 +4642,7 @@ export class CommonArgumentsSeq {
         readonly nameResolveOnMaster: asn1.BOOLEAN | undefined,
         readonly operationContexts: ContextSelection | undefined,
         readonly familyGrouping: FamilyGrouping | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
@@ -4745,7 +4745,7 @@ export class LdapArgumentData {
         readonly object: DistinguishedName,
         readonly ldapMessage: LDAPMessage,
         readonly linkId: LinkId | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -4880,7 +4880,7 @@ export class LdapResultData {
     constructor (
         readonly ldapMessages: LDAPMessage[] | undefined,
         readonly returnToClient: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -4966,7 +4966,7 @@ export class LinkedArgumentData {
         readonly ldapMessage: LDAPMessage,
         readonly linkId: LinkId,
         readonly returnToClient: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
@@ -5121,7 +5121,7 @@ export const _encode_AbandonedProblem = __utils._encodeEnumerated;
 export class AbandonedData {
     constructor (
         readonly problem: AbandonedProblem | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5206,7 +5206,7 @@ export class AbandonFailedData {
     constructor (
         readonly problem: AbandonProblem,
         readonly operation: InvokeId,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5305,7 +5305,7 @@ export class AttributeErrorData_problems_Item {
         readonly problem: AttributeProblem,
         readonly type_: AttributeType,
         readonly value: AttributeValue | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
@@ -5362,7 +5362,7 @@ export class AttributeErrorData {
     constructor (
         readonly object: Name,
         readonly problems: AttributeErrorData_problems_Item[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5454,7 +5454,7 @@ export class NameErrorData {
     constructor (
         readonly problem: NameProblem,
         readonly matched: Name,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5532,7 +5532,7 @@ export const _encode_NameErrorData = function (value: NameErrorData, elGetter: _
 export class ReferralData {
     constructor (
         readonly candidate: ContinuationReference,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5633,7 +5633,7 @@ export class EncPwdInfo {
     constructor (
         readonly algorithms: AlgorithmIdentifier[] | undefined,
         readonly pwdQualityRule: AttributeTypeAndValue[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
@@ -5686,7 +5686,7 @@ export class SecurityErrorData {
         readonly problem: SecurityProblem,
         readonly spkmInfo: SPKM_ERROR | undefined,
         readonly encPwdInfo: EncPwdInfo | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5810,7 +5810,7 @@ export const _encode_ServiceProblem = __utils._encodeInteger;
 export class ServiceErrorData {
     constructor (
         readonly problem: ServiceProblem,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -5933,7 +5933,7 @@ export class UpdateErrorData {
     constructor (
         readonly problem: UpdateProblem,
         readonly attributeInfo: UpdateErrorData_attributeInfo_Item[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -6029,7 +6029,7 @@ export class FamilyEntry {
         readonly rdn: RelativeDistinguishedName,
         readonly information: FamilyEntry_information_Item[],
         readonly family_info: FamilyEntries[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
@@ -6086,7 +6086,7 @@ export class FamilyEntries {
     constructor (
         readonly family_class: asn1.OBJECT_IDENTIFIER,
         readonly familyEntries: FamilyEntry[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
@@ -6134,7 +6134,7 @@ export class ListResultData_listInfo_subordinates_Item {
         readonly rdn: RelativeDistinguishedName,
         readonly aliasEntry: asn1.BOOLEAN | undefined,
         readonly fromEntry: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
@@ -6304,7 +6304,7 @@ export class ListResultData_listInfo {
         readonly name: Name | undefined,
         readonly subordinates: ListResultData_listInfo_subordinates_Item[],
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
@@ -6407,7 +6407,7 @@ export class SearchResultData_searchInfo {
         readonly entries: EntryInformation[],
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
         readonly altMatching: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[],
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
         readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,

@@ -127,7 +127,7 @@ export class Context {
         readonly contextType: asn1.OBJECT_IDENTIFIER,
         readonly contextValues: asn1.ASN1Element[],
         readonly fallback: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Context: __utils.ComponentSpec[] = [
@@ -184,7 +184,7 @@ export class Attribute_valuesWithContext_Item {
     constructor (
         readonly value: asn1.ASN1Element,
         readonly contextList: Context[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
@@ -232,7 +232,7 @@ export class Attribute {
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly values: asn1.ASN1Element[],
         readonly valuesWithContext: Attribute_valuesWithContext_Item[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Attribute: __utils.ComponentSpec[] = [
@@ -299,7 +299,7 @@ export class ContextAssertion {
     constructor (
         readonly contextType: asn1.OBJECT_IDENTIFIER,
         readonly contextValues: asn1.ASN1Element[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
@@ -360,7 +360,7 @@ export class AttributeValueAssertion {
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly assertion: asn1.ASN1Element,
         readonly assertedContexts: AttributeValueAssertion_assertedContexts | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
@@ -417,7 +417,7 @@ export class AttributeTypeAssertion {
     constructor (
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly assertedContexts: ContextAssertion[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
@@ -473,7 +473,7 @@ export class AttributeTypeAndValue {
     constructor (
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
@@ -570,7 +570,7 @@ export class ChopSpecification {
         readonly specificExclusions: ChopSpecification_specificExclusions_Item[] | undefined,
         readonly minimum: BaseDistance | undefined,
         readonly maximum: BaseDistance | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
@@ -651,7 +651,7 @@ export class SubtreeSpecification {
         readonly minimum: BaseDistance | undefined /* REPLICATED_COMPONENT */,
         readonly maximum: BaseDistance | undefined /* REPLICATED_COMPONENT */,
         readonly specificationFilter: Refinement | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
@@ -759,7 +759,7 @@ export class DITStructureRule {
         readonly ruleIdentifier: RuleIdentifier,
         readonly nameForm: asn1.OBJECT_IDENTIFIER,
         readonly superiorStructureRules: RuleIdentifier[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
@@ -823,7 +823,7 @@ export class DITContentRule {
         readonly mandatory: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly optional: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly precluded: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITContentRule: __utils.ComponentSpec[] = [
@@ -893,7 +893,7 @@ export class DITContextUse {
         readonly attributeType: asn1.OBJECT_IDENTIFIER,
         readonly mandatoryContexts: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly optionalContexts: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITContextUse: __utils.ComponentSpec[] = [
@@ -1002,14 +1002,46 @@ export const _encode_DITContextUse = function (value: DITContextUse, elGetter: _
 
 export class SearchRuleDescription {
     constructor (
-        readonly _componentsOf_SearchRule: SearchRule,
+        readonly id: asn1.INTEGER /* REPLICATED_COMPONENT */,
+        readonly dmdId: asn1.OBJECT_IDENTIFIER /* REPLICATED_COMPONENT */,
+        readonly serviceType: asn1.OBJECT_IDENTIFIER | undefined /* REPLICATED_COMPONENT */,
+        readonly userClass: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
+        readonly inputAttributeTypes: RequestAttribute[] | undefined /* REPLICATED_COMPONENT */,
+        readonly attributeCombination: AttributeCombination | undefined /* REPLICATED_COMPONENT */,
+        readonly outputAttributeTypes: ResultAttribute[] | undefined /* REPLICATED_COMPONENT */,
+        readonly defaultControls: ControlOptions | undefined /* REPLICATED_COMPONENT */,
+        readonly mandatoryControls: ControlOptions | undefined /* REPLICATED_COMPONENT */,
+        readonly searchRuleControls: ControlOptions | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */,
+        readonly familyReturn: FamilyReturn | undefined /* REPLICATED_COMPONENT */,
+        readonly relaxation: RelaxationPolicy | undefined /* REPLICATED_COMPONENT */,
+        readonly additionalControl: AttributeType[] | undefined /* REPLICATED_COMPONENT */,
+        readonly allowedSubset: AllowedSubset | undefined /* REPLICATED_COMPONENT */,
+        readonly imposedSubset: ImposedSubset | undefined /* REPLICATED_COMPONENT */,
+        readonly entryLimit: EntryLimit | undefined /* REPLICATED_COMPONENT */,
         readonly name: UnboundedDirectoryString[] | undefined,
         readonly description: UnboundedDirectoryString | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
-    /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */,
+    new __utils.ComponentSpec("id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
+    new __utils.ComponentSpec("dmdId", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
+    new __utils.ComponentSpec("serviceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
+    new __utils.ComponentSpec("userClass", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
+    new __utils.ComponentSpec("inputAttributeTypes", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
+    /* FIXME: attributeCombination COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("outputAttributeTypes", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
+    /* FIXME: defaultControls COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: mandatoryControls COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: searchRuleControls COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: familyGrouping COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: familyReturn COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: relaxation COULD_NOT_RESOLVE_TYPE_DEF */,
+    new __utils.ComponentSpec("additionalControl", true, __utils.hasTag(asn1.ASN1TagClass.context, 12), undefined, undefined),
+    /* FIXME: allowedSubset COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: imposedSubset COULD_NOT_RESOLVE_TYPE_DEF */,
+    /* FIXME: entryLimit COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("description", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined)
 ];
@@ -1021,14 +1053,46 @@ export const _extension_additions_list_spec_for_SearchRuleDescription: __utils.C
 ];
 export const _decode_SearchRuleDescription = function (el: asn1.ASN1Element): SearchRuleDescription {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let _componentsOf!: SearchRule;
+    let id!: asn1.INTEGER;
+    let dmdId!: asn1.OBJECT_IDENTIFIER;
+    let serviceType: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
+    let userClass: asn1.OPTIONAL<asn1.INTEGER>;
+    let inputAttributeTypes: asn1.OPTIONAL<RequestAttribute[]>;
+    let attributeCombination: asn1.OPTIONAL<AttributeCombination> = /* FIXME: attributeCombination COULD_NOT_COMPILE_DEFAULT_VALUE */;
+    let outputAttributeTypes: asn1.OPTIONAL<ResultAttribute[]>;
+    let defaultControls: asn1.OPTIONAL<ControlOptions>;
+    let mandatoryControls: asn1.OPTIONAL<ControlOptions>;
+    let searchRuleControls: asn1.OPTIONAL<ControlOptions>;
+    let familyGrouping: asn1.OPTIONAL<FamilyGrouping>;
+    let familyReturn: asn1.OPTIONAL<FamilyReturn>;
+    let relaxation: asn1.OPTIONAL<RelaxationPolicy>;
+    let additionalControl: asn1.OPTIONAL<AttributeType[]>;
+    let allowedSubset: asn1.OPTIONAL<AllowedSubset> = new Uint8ClampedArray([ 1, 1, 1 ]);
+    let imposedSubset: asn1.OPTIONAL<ImposedSubset>;
+    let entryLimit: asn1.OPTIONAL<EntryLimit>;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        /* COULD_NOT_GENERATE_CALLBACK_FOR_COMPONENTS_OF */,
+        "id": (_el: asn1.ASN1Element): void => { id = __utils._decodeInteger(_el); },
+        "dmdId": (_el: asn1.ASN1Element): void => { dmdId = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(_el); },
+        "serviceType": (_el: asn1.ASN1Element): void => { serviceType = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(_el); },
+        "userClass": (_el: asn1.ASN1Element): void => { userClass = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
+        "inputAttributeTypes": (_el: asn1.ASN1Element): void => { inputAttributeTypes = __utils._decode_explicit<RequestAttribute[]>(() => __utils._decodeSequenceOf<RequestAttribute>(() => _decode_RequestAttribute))(_el); },
+        "attributeCombination": (_el: asn1.ASN1Element): void => { attributeCombination = __utils._decode_explicit<AttributeCombination>(() => _decode_AttributeCombination)(_el); },
+        "outputAttributeTypes": (_el: asn1.ASN1Element): void => { outputAttributeTypes = __utils._decode_explicit<ResultAttribute[]>(() => __utils._decodeSequenceOf<ResultAttribute>(() => _decode_ResultAttribute))(_el); },
+        "defaultControls": (_el: asn1.ASN1Element): void => { defaultControls = __utils._decode_explicit<ControlOptions>(() => _decode_ControlOptions)(_el); },
+        "mandatoryControls": (_el: asn1.ASN1Element): void => { mandatoryControls = __utils._decode_explicit<ControlOptions>(() => _decode_ControlOptions)(_el); },
+        "searchRuleControls": (_el: asn1.ASN1Element): void => { searchRuleControls = __utils._decode_explicit<ControlOptions>(() => _decode_ControlOptions)(_el); },
+        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); },
+        "familyReturn": (_el: asn1.ASN1Element): void => { familyReturn = __utils._decode_explicit<FamilyReturn>(() => _decode_FamilyReturn)(_el); },
+        "relaxation": (_el: asn1.ASN1Element): void => { relaxation = __utils._decode_explicit<RelaxationPolicy>(() => _decode_RelaxationPolicy)(_el); },
+        "additionalControl": (_el: asn1.ASN1Element): void => { additionalControl = __utils._decode_explicit<AttributeType[]>(() => __utils._decodeSequenceOf<AttributeType>(() => _decode_AttributeType))(_el); },
+        "allowedSubset": (_el: asn1.ASN1Element): void => { allowedSubset = __utils._decode_explicit<AllowedSubset>(() => _decode_AllowedSubset)(_el); },
+        "imposedSubset": (_el: asn1.ASN1Element): void => { imposedSubset = __utils._decode_explicit<ImposedSubset>(() => _decode_ImposedSubset)(_el); },
+        "entryLimit": (_el: asn1.ASN1Element): void => { entryLimit = __utils._decode_explicit<EntryLimit>(() => _decode_EntryLimit)(_el); },
         "name": (_el: asn1.ASN1Element): void => { name = __utils._decode_explicit<UnboundedDirectoryString[]>(() => __utils._decodeSetOf<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString))(_el); },
         "description": (_el: asn1.ASN1Element): void => { description = __utils._decode_explicit<UnboundedDirectoryString>(() => _decode_UnboundedDirectoryString)(_el); }
     };
@@ -1040,7 +1104,23 @@ export const _decode_SearchRuleDescription = function (el: asn1.ASN1Element): Se
         (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
     );
     return new SearchRuleDescription( /* SEQUENCE_CONSTRUCTOR_CALL */
-        _componentsOf,
+        id,
+        dmdId,
+        serviceType,
+        userClass,
+        inputAttributeTypes,
+        attributeCombination,
+        outputAttributeTypes,
+        defaultControls,
+        mandatoryControls,
+        searchRuleControls,
+        familyGrouping,
+        familyReturn,
+        relaxation,
+        additionalControl,
+        allowedSubset,
+        imposedSubset,
+        entryLimit,
         name,
         description,
         _unrecognizedExtensionsList
@@ -1049,7 +1129,23 @@ export const _decode_SearchRuleDescription = function (el: asn1.ASN1Element): Se
 export const _encode_SearchRuleDescription = function (value: SearchRuleDescription, elGetter: __utils.ASN1Encoder<SearchRuleDescription>): asn1.ASN1Element {
     return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
         [
-            /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */,
+            __utils._encodeInteger(value.id, __utils.BER),
+            __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeObjectIdentifier, __utils.BER)(value.dmdId, __utils.BER),
+            (value.serviceType ? __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeObjectIdentifier, __utils.BER)(value.serviceType, __utils.BER) : undefined),
+            (value.userClass ? __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeInteger, __utils.BER)(value.userClass, __utils.BER) : undefined),
+            (value.inputAttributeTypes ? __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeSequenceOf<RequestAttribute>(() => _encode_RequestAttribute, __utils.BER), __utils.BER)(value.inputAttributeTypes, __utils.BER) : undefined),
+            (value.attributeCombination /* FIXME: COULD_NOT_COMPILE_DEFAULT_VALUE */? __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_AttributeCombination, __utils.BER)(value.attributeCombination, __utils.BER) : undefined),
+            (value.outputAttributeTypes ? __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => __utils._encodeSequenceOf<ResultAttribute>(() => _encode_ResultAttribute, __utils.BER), __utils.BER)(value.outputAttributeTypes, __utils.BER) : undefined),
+            (value.defaultControls ? __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => _encode_ControlOptions, __utils.BER)(value.defaultControls, __utils.BER) : undefined),
+            (value.mandatoryControls ? __utils._encode_explicit(asn1.ASN1TagClass.context, 7, () => _encode_ControlOptions, __utils.BER)(value.mandatoryControls, __utils.BER) : undefined),
+            (value.searchRuleControls ? __utils._encode_explicit(asn1.ASN1TagClass.context, 8, () => _encode_ControlOptions, __utils.BER)(value.searchRuleControls, __utils.BER) : undefined),
+            (value.familyGrouping ? __utils._encode_explicit(asn1.ASN1TagClass.context, 9, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER) : undefined),
+            (value.familyReturn ? __utils._encode_explicit(asn1.ASN1TagClass.context, 10, () => _encode_FamilyReturn, __utils.BER)(value.familyReturn, __utils.BER) : undefined),
+            (value.relaxation ? __utils._encode_explicit(asn1.ASN1TagClass.context, 11, () => _encode_RelaxationPolicy, __utils.BER)(value.relaxation, __utils.BER) : undefined),
+            (value.additionalControl ? __utils._encode_explicit(asn1.ASN1TagClass.context, 12, () => __utils._encodeSequenceOf<AttributeType>(() => _encode_AttributeType, __utils.BER), __utils.BER)(value.additionalControl, __utils.BER) : undefined),
+            ((value.allowedSubset !== undefined && value.allowedSubset !== new Uint8ClampedArray([ 1, 1, 1 ])) /* TODO: Review this condition. */ ? __utils._encode_explicit(asn1.ASN1TagClass.context, 13, () => _encode_AllowedSubset, __utils.BER)(value.allowedSubset, __utils.BER) : undefined),
+            (value.imposedSubset ? __utils._encode_explicit(asn1.ASN1TagClass.context, 14, () => _encode_ImposedSubset, __utils.BER)(value.imposedSubset, __utils.BER) : undefined),
+            (value.entryLimit ? __utils._encode_explicit(asn1.ASN1TagClass.context, 15, () => _encode_EntryLimit, __utils.BER)(value.entryLimit, __utils.BER) : undefined),
             (value.name ? __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeSetOf<UnboundedDirectoryString>(() => _encode_UnboundedDirectoryString, __utils.BER), __utils.BER)(value.name, __utils.BER) : undefined),
             (value.description ? __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_UnboundedDirectoryString, __utils.BER)(value.description, __utils.BER) : undefined)
         ],
@@ -1068,7 +1164,7 @@ export class PwdHistory {
     constructor (
         readonly time: asn1.GeneralizedTime,
         readonly password: asn1.ASN1Element /* COULD_NOT_RESOLVE_REFERENCED_OBJECTS */,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PwdHistory: __utils.ComponentSpec[] = [

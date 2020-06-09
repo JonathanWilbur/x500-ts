@@ -131,7 +131,7 @@ export class WrappedPDUInfo {
     constructor(
         readonly pduType: asn1.OBJECT_IDENTIFIER,
         readonly pduInfo: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
@@ -204,7 +204,7 @@ export class SenderStaticInfo {
         readonly issuer: Name,
         readonly serialNumber: CertificateSerialNumber,
         readonly partyAinfo: UserKeyingMaterial,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
@@ -291,7 +291,7 @@ export class SenderDhPublicKey {
     constructor(
         readonly algorithm: AlgorithmIdentifier,
         readonly publicKey: asn1.BIT_STRING,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
@@ -397,7 +397,7 @@ export class KeyAgreement_keyEncryptionAlgorithm {
     constructor(
         readonly algorithm: asn1.OBJECT_IDENTIFIER,
         readonly parameters: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
@@ -472,7 +472,7 @@ export class KeyAgreement {
     constructor(
         readonly senderDhInfo: SenderDhInfo,
         readonly keyEncryptionAlgorithm: KeyAgreement_keyEncryptionAlgorithm,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
@@ -630,7 +630,7 @@ export class EncryptedPduInfo {
             | EncryptedPduInfo_pduEncryptionAlgorithm
             | undefined,
         readonly encryptedPdu: EncryptedPdu,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
@@ -705,8 +705,8 @@ export const _decode_EncryptedPduInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EncryptedPduInfo(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ pduType,
+    return new EncryptedPduInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
+        pduType,
         encryptedKey,
         pduEncryptionAlgorithm,
         encryptedPdu,
@@ -753,7 +753,7 @@ export class EncryptedInfo {
     constructor(
         readonly keyAgreement: KeyAgreement,
         readonly encryptedPduInfo: EncryptedPduInfo,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
@@ -863,7 +863,7 @@ export class TBSPDU_wrapper {
         readonly certPath: PkiPath,
         readonly signedAttrs: SignedAttributes | undefined,
         readonly conf: TBSPDU_wrapper_conf,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
@@ -949,8 +949,8 @@ export const _decode_TBSPDU_wrapper = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSPDU_wrapper(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+    return new TBSPDU_wrapper /* SEQUENCE_CONSTRUCTOR_CALL */(
+        version,
         signatureAlgorithm,
         certPath,
         signedAttrs,

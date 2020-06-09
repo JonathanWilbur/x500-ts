@@ -66,7 +66,7 @@ export class LdapSyntaxDescription {
     constructor(
         readonly identifier: asn1.OBJECT_IDENTIFIER,
         readonly description: UnboundedDirectoryString | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
@@ -115,8 +115,8 @@ export const _decode_LdapSyntaxDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new LdapSyntaxDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new LdapSyntaxDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         description,
         _unrecognizedExtensionsList
     );

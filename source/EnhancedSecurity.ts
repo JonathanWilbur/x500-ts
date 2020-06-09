@@ -198,7 +198,7 @@ export class SecurityCategory {
     constructor (
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SecurityCategory: __utils.ComponentSpec[] = [
@@ -252,7 +252,7 @@ export class SecurityLabel {
         readonly security_classification: SecurityClassification | undefined,
         readonly privacy_mark: PrivacyMark | undefined,
         readonly security_categories: SecurityCategories | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SecurityLabel: __utils.ComponentSpec[] = [
@@ -316,7 +316,7 @@ export class SignedSecurityLabelContent {
         readonly issuer: Name | undefined,
         readonly keyIdentifier: KeyIdentifier | undefined,
         readonly securityLabel: SecurityLabel,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SignedSecurityLabelContent: __utils.ComponentSpec[] = [
@@ -403,7 +403,7 @@ export class Clearance {
         readonly policyId: asn1.OBJECT_IDENTIFIER,
         readonly classList: ClassList | undefined,
         readonly securityCategories: SecurityCategory[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Clearance: __utils.ComponentSpec[] = [
@@ -485,7 +485,7 @@ export class IssuerAndSerialNumber {
     constructor (
         readonly issuer: Name,
         readonly serial: CertificateSerialNumber,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_IssuerAndSerialNumber: __utils.ComponentSpec[] = [
@@ -625,7 +625,7 @@ export class AttributeIntegrityInfoContent {
         readonly scope: Scope,
         readonly signer: Signer | undefined,
         readonly attribsHash: AttribsHash,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeIntegrityInfoContent: __utils.ComponentSpec[] = [
@@ -692,7 +692,7 @@ export class AttributeTypeValueContexts {
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly value: asn1.ASN1Element,
         readonly contextList: Context[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeTypeValueContexts: __utils.ComponentSpec[] = [
@@ -754,7 +754,7 @@ export class AttributeValueIntegrityInfoContent {
     constructor (
         readonly signer: Signer | undefined,
         readonly aVIHash: AVIHash,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeValueIntegrityInfoContent: __utils.ComponentSpec[] = [

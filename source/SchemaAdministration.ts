@@ -84,7 +84,7 @@ export class DITStructureRuleDescription {
         readonly name: UnboundedDirectoryString[] | undefined,
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITStructureRuleDescription: __utils.ComponentSpec[] = [
@@ -183,8 +183,8 @@ export const _decode_DITStructureRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITStructureRuleDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ ruleIdentifier,
+    return new DITStructureRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        ruleIdentifier,
         nameForm,
         superiorStructureRules,
         name,
@@ -268,7 +268,7 @@ export class DITContentRuleDescription {
         readonly name: UnboundedDirectoryString[] | undefined,
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITContentRuleDescription: __utils.ComponentSpec[] = [
@@ -401,8 +401,8 @@ export const _decode_DITContentRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContentRuleDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ structuralObjectClass,
+    return new DITContentRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        structuralObjectClass,
         auxiliaries,
         mandatory,
         optional,
@@ -512,7 +512,7 @@ export class MatchingRuleDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: UnboundedDirectoryString | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MatchingRuleDescription: __utils.ComponentSpec[] = [
@@ -598,8 +598,8 @@ export const _decode_MatchingRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MatchingRuleDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new MatchingRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -668,7 +668,7 @@ export class AttributeTypeInformation {
         readonly collective: asn1.BOOLEAN | undefined,
         readonly userModifiable: asn1.BOOLEAN | undefined,
         readonly application: AttributeUsage | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeTypeInformation: __utils.ComponentSpec[] = [
@@ -810,8 +810,8 @@ export const _decode_AttributeTypeInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeInformation(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ derivation,
+    return new AttributeTypeInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
+        derivation,
         equalityMatch,
         orderingMatch,
         substringsMatch,
@@ -925,7 +925,7 @@ export class AttributeTypeDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: AttributeTypeInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeTypeDescription: __utils.ComponentSpec[] = [
@@ -1011,8 +1011,8 @@ export const _decode_AttributeTypeDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new AttributeTypeDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -1074,7 +1074,7 @@ export class ObjectClassInformation {
         readonly kind: ObjectClassKind | undefined,
         readonly mandatories: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly optionals: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ObjectClassInformation: __utils.ComponentSpec[] = [
@@ -1156,8 +1156,8 @@ export const _decode_ObjectClassInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectClassInformation(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ subclassOf,
+    return new ObjectClassInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
+        subclassOf,
         kind,
         mandatories,
         optionals,
@@ -1225,7 +1225,7 @@ export class ObjectClassDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: ObjectClassInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ObjectClassDescription: __utils.ComponentSpec[] = [
@@ -1311,8 +1311,8 @@ export const _decode_ObjectClassDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectClassDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new ObjectClassDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -1373,7 +1373,7 @@ export class NameFormInformation {
         readonly subordinate: asn1.OBJECT_IDENTIFIER,
         readonly namingMandatories: asn1.OBJECT_IDENTIFIER[],
         readonly namingOptionals: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NameFormInformation: __utils.ComponentSpec[] = [
@@ -1437,8 +1437,8 @@ export const _decode_NameFormInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameFormInformation(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ subordinate,
+    return new NameFormInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
+        subordinate,
         namingMandatories,
         namingOptionals,
         _unrecognizedExtensionsList
@@ -1485,7 +1485,7 @@ export class NameFormDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: NameFormInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NameFormDescription: __utils.ComponentSpec[] = [
@@ -1571,8 +1571,8 @@ export const _decode_NameFormDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameFormDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new NameFormDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -1635,7 +1635,7 @@ export class MatchingRuleUseDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: asn1.OBJECT_IDENTIFIER[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MatchingRuleUseDescription: __utils.ComponentSpec[] = [
@@ -1724,8 +1724,8 @@ export const _decode_MatchingRuleUseDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MatchingRuleUseDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new MatchingRuleUseDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -1793,7 +1793,7 @@ export class ContextInformation {
     constructor(
         readonly syntax: UnboundedDirectoryString,
         readonly assertionSyntax: UnboundedDirectoryString | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ContextInformation: __utils.ComponentSpec[] = [
@@ -1842,8 +1842,8 @@ export const _decode_ContextInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContextInformation(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ syntax,
+    return new ContextInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
+        syntax,
         assertionSyntax,
         _unrecognizedExtensionsList
     );
@@ -1882,7 +1882,7 @@ export class ContextDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: ContextInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ContextDescription: __utils.ComponentSpec[] = [
@@ -1968,8 +1968,8 @@ export const _decode_ContextDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContextDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new ContextDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -2029,7 +2029,7 @@ export class DITContextUseInformation {
     constructor(
         readonly mandatoryContexts: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly optionalContexts: asn1.OBJECT_IDENTIFIER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITContextUseInformation: __utils.ComponentSpec[] = [
@@ -2090,8 +2090,8 @@ export const _decode_DITContextUseInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContextUseInformation(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ mandatoryContexts,
+    return new DITContextUseInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
+        mandatoryContexts,
         optionalContexts,
         _unrecognizedExtensionsList
     );
@@ -2147,7 +2147,7 @@ export class DITContextUseDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly information: DITContextUseInformation,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DITContextUseDescription: __utils.ComponentSpec[] = [
@@ -2233,8 +2233,8 @@ export const _decode_DITContextUseDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContextUseDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+    return new DITContextUseDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        identifier,
         name,
         description,
         obsolete,
@@ -2297,7 +2297,7 @@ export class FriendsDescription {
         readonly description: UnboundedDirectoryString | undefined,
         readonly obsolete: asn1.BOOLEAN | undefined,
         readonly friends: asn1.OBJECT_IDENTIFIER[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FriendsDescription: __utils.ComponentSpec[] = [
@@ -2385,8 +2385,8 @@ export const _decode_FriendsDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new FriendsDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ anchor,
+    return new FriendsDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
+        anchor,
         name,
         description,
         obsolete,

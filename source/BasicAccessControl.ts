@@ -112,7 +112,7 @@ export class AuthenticationLevel_basicLevels {
         readonly level: AuthenticationLevel_basicLevels_level,
         readonly localQualifier: asn1.INTEGER | undefined,
         readonly signed: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
@@ -172,8 +172,8 @@ export const _decode_AuthenticationLevel_basicLevels = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AuthenticationLevel_basicLevels(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ level,
+    return new AuthenticationLevel_basicLevels /* SEQUENCE_CONSTRUCTOR_CALL */(
+        level,
         localQualifier,
         signed,
         _unrecognizedExtensionsList
@@ -237,7 +237,7 @@ export class MaxValueCount {
     constructor(
         readonly type_: AttributeType,
         readonly maxCount: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
@@ -305,7 +305,7 @@ export class RestrictedValue {
     constructor(
         readonly type_: AttributeType,
         readonly valuesIn: AttributeType,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
@@ -384,7 +384,7 @@ export class ProtectedItems {
         readonly restrictedBy: RestrictedValue[] | undefined,
         readonly contexts: ContextAssertion[] | undefined,
         readonly classes: Refinement | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
@@ -587,8 +587,8 @@ export const _decode_ProtectedItems = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ProtectedItems(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ entry,
+    return new ProtectedItems /* SEQUENCE_CONSTRUCTOR_CALL */(
+        entry,
         allUserAttributeTypes,
         attributeType,
         allAttributeValues,
@@ -763,7 +763,7 @@ export class UserClasses {
         readonly name: NameAndOptionalUID[] | undefined,
         readonly userGroup: NameAndOptionalUID[] | undefined,
         readonly subtree: SubtreeSpecification[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UserClasses: __utils.ComponentSpec[] = [
@@ -861,8 +861,8 @@ export const _decode_UserClasses = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new UserClasses(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ allUsers,
+    return new UserClasses /* SEQUENCE_CONSTRUCTOR_CALL */(
+        allUsers,
         thisEntry,
         name,
         userGroup,
@@ -1003,7 +1003,7 @@ export class ItemPermission {
         readonly precedence: Precedence | undefined,
         readonly userClasses: UserClasses,
         readonly grantsAndDenials: GrantsAndDenials,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ItemPermission: __utils.ComponentSpec[] = [
@@ -1063,8 +1063,8 @@ export const _decode_ItemPermission = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ItemPermission(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
+    return new ItemPermission /* SEQUENCE_CONSTRUCTOR_CALL */(
+        precedence,
         userClasses,
         grantsAndDenials,
         _unrecognizedExtensionsList
@@ -1102,7 +1102,7 @@ export class ACIItem_itemOrUserFirst_itemFirst {
     constructor(
         readonly protectedItems: ProtectedItems,
         readonly itemPermissions: ItemPermission[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
@@ -1180,7 +1180,7 @@ export class UserPermission {
         readonly precedence: Precedence | undefined,
         readonly protectedItems: ProtectedItems,
         readonly grantsAndDenials: GrantsAndDenials,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UserPermission: __utils.ComponentSpec[] = [
@@ -1240,8 +1240,8 @@ export const _decode_UserPermission = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new UserPermission(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
+    return new UserPermission /* SEQUENCE_CONSTRUCTOR_CALL */(
+        precedence,
         protectedItems,
         grantsAndDenials,
         _unrecognizedExtensionsList
@@ -1279,7 +1279,7 @@ export class ACIItem_itemOrUserFirst_userFirst {
     constructor(
         readonly userClasses: UserClasses,
         readonly userPermissions: UserPermission[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
@@ -1398,7 +1398,7 @@ export class ACIItem {
         readonly precedence: Precedence,
         readonly authenticationLevel: AuthenticationLevel,
         readonly itemOrUserFirst: ACIItem_itemOrUserFirst,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec[] = [
