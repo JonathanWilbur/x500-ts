@@ -13,13 +13,17 @@ import {
     _decode_GeneralName,
     _encode_GeneralName,
 } from "./CertificateExtensions";
+import {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "./CommonProtocolSpecification";
 import * as __utils from "./__utils";
 export {
     GeneralName,
     _decode_GeneralName,
     _encode_GeneralName,
 } from "./CertificateExtensions";
-import { Code, _encode_Code, _decode_Code } from "./CommonProtocolSpecification";
 export {
     SecurityProblem,
     ServiceProblem,
@@ -123,8 +127,8 @@ export const _decode_IdmBind = function (el: asn1.ASN1Element): IdmBind {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBind /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocolID,
+    return new IdmBind(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
         callingAETitle,
         calledAETitle,
         argument,
@@ -247,8 +251,8 @@ export const _decode_IdmBindResult = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBindResult /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocolID,
+    return new IdmBindResult(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
         respondingAETitle,
         result,
         _unrecognizedExtensionsList
@@ -382,8 +386,8 @@ export const _decode_IdmBindError = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IdmBindError /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocolID,
+    return new IdmBindError(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
         respondingAETitle,
         aETitleError,
         error,

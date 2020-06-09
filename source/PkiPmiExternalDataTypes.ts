@@ -176,8 +176,8 @@ export const _decode_UserNotice = function (el: asn1.ASN1Element): UserNotice {
         _root_component_type_list_2_spec_for_UserNotice,
         undefined
     );
-    return new UserNotice /* SEQUENCE_CONSTRUCTOR_CALL */(
-        noticeRef,
+    return new UserNotice(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ noticeRef,
         explicitText
     );
 };
@@ -550,8 +550,8 @@ export const _decode_PersonalName = function (
         _root_component_type_list_2_spec_for_PersonalName,
         undefined
     );
-    return new PersonalName /* SET_CONSTRUCTOR_CALL */(
-        surname,
+    return new PersonalName(
+        /* SET_CONSTRUCTOR_CALL */ surname,
         given_name,
         initials,
         generation_qualifier
@@ -764,8 +764,8 @@ export const _decode_BuiltInStandardAttributes = function (
         _root_component_type_list_2_spec_for_BuiltInStandardAttributes,
         undefined
     );
-    return new BuiltInStandardAttributes /* SEQUENCE_CONSTRUCTOR_CALL */(
-        country_name,
+    return new BuiltInStandardAttributes(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ country_name,
         administration_domain_name,
         network_address,
         terminal_identifier,
@@ -1087,8 +1087,8 @@ export const _decode_ORAddress = function (el: asn1.ASN1Element): ORAddress {
         _root_component_type_list_2_spec_for_ORAddress,
         undefined
     );
-    return new ORAddress /* SEQUENCE_CONSTRUCTOR_CALL */(
-        built_in_standard_attributes,
+    return new ORAddress(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ built_in_standard_attributes,
         built_in_domain_defined_attributes,
         extension_attributes
     );
@@ -1214,8 +1214,8 @@ export const _decode_UniversalOrBMPString = function (
         _root_component_type_list_2_spec_for_UniversalOrBMPString,
         undefined
     );
-    return new UniversalOrBMPString /* SET_CONSTRUCTOR_CALL */(
-        character_encoding,
+    return new UniversalOrBMPString(
+        /* SET_CONSTRUCTOR_CALL */ character_encoding,
         iso_639_language_code
     );
 };
@@ -1348,8 +1348,8 @@ export const _decode_TeletexPersonalName = function (
         _root_component_type_list_2_spec_for_TeletexPersonalName,
         undefined
     );
-    return new TeletexPersonalName /* SET_CONSTRUCTOR_CALL */(
-        surname,
+    return new TeletexPersonalName(
+        /* SET_CONSTRUCTOR_CALL */ surname,
         given_name,
         initials,
         generation_qualifier
@@ -1492,8 +1492,8 @@ export const _decode_UniversalPersonalName = function (
         _root_component_type_list_2_spec_for_UniversalPersonalName,
         undefined
     );
-    return new UniversalPersonalName /* SET_CONSTRUCTOR_CALL */(
-        surname,
+    return new UniversalPersonalName(
+        /* SET_CONSTRUCTOR_CALL */ surname,
         given_name,
         initials,
         generation_qualifier
@@ -1674,8 +1674,8 @@ export const _decode_PDSParameter = function (
         _root_component_type_list_2_spec_for_PDSParameter,
         undefined
     );
-    return new PDSParameter /* SET_CONSTRUCTOR_CALL */(
-        printable_string,
+    return new PDSParameter(
+        /* SET_CONSTRUCTOR_CALL */ printable_string,
         teletex_string
     );
 };
@@ -1836,8 +1836,8 @@ export const _decode_UnformattedPostalAddress = function (
         _root_component_type_list_2_spec_for_UnformattedPostalAddress,
         undefined
     );
-    return new UnformattedPostalAddress /* SET_CONSTRUCTOR_CALL */(
-        printable_address,
+    return new UnformattedPostalAddress(
+        /* SET_CONSTRUCTOR_CALL */ printable_address,
         teletex_string
     );
 };
@@ -1992,8 +1992,8 @@ export const _decode_ExtendedNetworkAddress_e163_4_address = function (
         _root_component_type_list_2_spec_for_ExtendedNetworkAddress_e163_4_address,
         undefined
     );
-    return new ExtendedNetworkAddress_e163_4_address /* SEQUENCE_CONSTRUCTOR_CALL */(
-        number_,
+    return new ExtendedNetworkAddress_e163_4_address(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ number_,
         sub_address
     );
 };

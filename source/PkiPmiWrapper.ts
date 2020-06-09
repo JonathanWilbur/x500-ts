@@ -731,8 +731,8 @@ export const _decode_EncryptedPduInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EncryptedPduInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        pduType,
+    return new EncryptedPduInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ pduType,
         encryptedKey,
         pduEncryptionAlgorithm,
         encryptedPdu,
@@ -938,7 +938,8 @@ export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
-export const _default_value_for_TBSPDU_wrapper__version = AuthenticationFramework.Version_v1;
+export const _default_value_for_TBSPDU_wrapper__version =
+    AuthenticationFramework.Version_v1;
 export const _decode_TBSPDU_wrapper = function (
     el: asn1.ASN1Element
 ): TBSPDU_wrapper {
@@ -983,8 +984,8 @@ export const _decode_TBSPDU_wrapper = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSPDU_wrapper /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new TBSPDU_wrapper(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         signatureAlgorithm,
         certPath,
         signedAttrs,

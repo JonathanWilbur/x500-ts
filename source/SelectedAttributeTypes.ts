@@ -632,8 +632,8 @@ export const _decode_Guide = function (el: asn1.ASN1Element): Guide {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Guide /* SET_CONSTRUCTOR_CALL */(
-        objectClass,
+    return new Guide(
+        /* SET_CONSTRUCTOR_CALL */ objectClass,
         criteria,
         _unrecognizedExtensionsList
     );
@@ -753,8 +753,8 @@ export const _decode_EnhancedGuide = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EnhancedGuide /* SEQUENCE_CONSTRUCTOR_CALL */(
-        objectClass,
+    return new EnhancedGuide(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ objectClass,
         criteria,
         subset,
         _unrecognizedExtensionsList
@@ -1029,8 +1029,8 @@ export const _decode_FacsimileTelephoneNumber = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new FacsimileTelephoneNumber /* SEQUENCE_CONSTRUCTOR_CALL */(
-        telephoneNumber,
+    return new FacsimileTelephoneNumber(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ telephoneNumber,
         parameters,
         _unrecognizedExtensionsList
     );
@@ -1229,8 +1229,8 @@ export const _decode_PresentationAddress = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PresentationAddress /* SEQUENCE_CONSTRUCTOR_CALL */(
-        pSelector,
+    return new PresentationAddress(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ pSelector,
         sSelector,
         tSelector,
         nAddresses,
@@ -1430,8 +1430,8 @@ export const _decode_NameAndOptionalUID = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameAndOptionalUID /* SEQUENCE_CONSTRUCTOR_CALL */(
-        dn,
+    return new NameAndOptionalUID(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ dn,
         uid,
         _unrecognizedExtensionsList
     );
@@ -1549,7 +1549,7 @@ export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
         _root_component_type_list_2_spec_for_UiiItem,
         undefined
     );
-    return new UiiItem /* SEQUENCE_CONSTRUCTOR_CALL */(type_, length);
+    return new UiiItem(/* SEQUENCE_CONSTRUCTOR_CALL */ type_, length);
 };
 export const _encode_UiiItem = function (
     value: UiiItem,
@@ -1719,8 +1719,8 @@ export const _decode_UiiFormat = function (el: asn1.ASN1Element): UiiFormat {
         _root_component_type_list_2_spec_for_UiiFormat,
         undefined
     );
-    return new UiiFormat /* SEQUENCE_CONSTRUCTOR_CALL */(
-        baseObject,
+    return new UiiFormat(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ baseObject,
         subset,
         next
     );
@@ -1883,8 +1883,8 @@ export const _decode_EpcFormat_fields_Item = function (
         _root_component_type_list_2_spec_for_EpcFormat_fields_Item,
         undefined
     );
-    return new EpcFormat_fields_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bits,
+    return new EpcFormat_fields_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bits,
         charField,
         result
     );
@@ -2000,8 +2000,8 @@ export const _decode_EpcFormat = function (el: asn1.ASN1Element): EpcFormat {
         _root_component_type_list_2_spec_for_EpcFormat,
         undefined
     );
-    return new EpcFormat /* SEQUENCE_CONSTRUCTOR_CALL */(
-        fields,
+    return new EpcFormat(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ fields,
         digitShift,
         checkCalc,
         urnPrefix
@@ -2137,8 +2137,8 @@ export const _decode_MultipleMatchingLocalities = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MultipleMatchingLocalities /* SEQUENCE_CONSTRUCTOR_CALL */(
-        matchingRuleUsed,
+    return new MultipleMatchingLocalities(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ matchingRuleUsed,
         attributeList,
         _unrecognizedExtensionsList
     );
@@ -2284,7 +2284,7 @@ export const _decode_PwdResponse = function (
         _root_component_type_list_2_spec_for_PwdResponse,
         undefined
     );
-    return new PwdResponse /* SEQUENCE_CONSTRUCTOR_CALL */(warning, error);
+    return new PwdResponse(/* SEQUENCE_CONSTRUCTOR_CALL */ warning, error);
 };
 export const _encode_PwdResponse = function (
     value: PwdResponse,
@@ -2755,8 +2755,8 @@ export const _decode_TimeSpecification_time_absolute = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TimeSpecification_time_absolute /* SEQUENCE_CONSTRUCTOR_CALL */(
-        startTime,
+    return new TimeSpecification_time_absolute(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
         endTime,
         _unrecognizedExtensionsList
     );
@@ -2868,8 +2868,8 @@ export const _decode_DayTime = function (el: asn1.ASN1Element): DayTime {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DayTime /* SEQUENCE_CONSTRUCTOR_CALL */(
-        hour,
+    return new DayTime(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ hour,
         minute,
         second,
         _unrecognizedExtensionsList
@@ -2992,8 +2992,8 @@ export const _decode_DayTimeBand = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DayTimeBand /* SEQUENCE_CONSTRUCTOR_CALL */(
-        startDayTime,
+    return new DayTimeBand(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ startDayTime,
         endDayTime,
         _unrecognizedExtensionsList
     );
@@ -3394,8 +3394,8 @@ export const _decode_Period = function (el: asn1.ASN1Element): Period {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Period /* SEQUENCE_CONSTRUCTOR_CALL */(
-        timesOfDay,
+    return new Period(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ timesOfDay,
         days,
         weeks,
         months,
@@ -3566,8 +3566,8 @@ export const _decode_TimeSpecification = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TimeSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-        time,
+    return new TimeSpecification(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ time,
         notThisTime,
         timeZone,
         _unrecognizedExtensionsList
@@ -3680,8 +3680,8 @@ export const _decode_TimeAssertion_between = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TimeAssertion_between /* SEQUENCE_CONSTRUCTOR_CALL */(
-        startTime,
+    return new TimeAssertion_between(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
         endTime,
         entirely,
         _unrecognizedExtensionsList

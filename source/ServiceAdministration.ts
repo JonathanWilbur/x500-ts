@@ -114,8 +114,8 @@ export const _decode_RequestAttribute_defaultValues_Item = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RequestAttribute_defaultValues_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        entryType,
+    return new RequestAttribute_defaultValues_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ entryType,
         values,
         _unrecognizedExtensionsList
     );
@@ -208,8 +208,8 @@ export const _decode_ContextProfile = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContextProfile /* SEQUENCE_CONSTRUCTOR_CALL */(
-        contextType,
+    return new ContextProfile(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ contextType,
         contextValue,
         _unrecognizedExtensionsList
     );
@@ -543,8 +543,8 @@ export const _decode_RequestAttribute = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RequestAttribute /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attributeType,
+    return new RequestAttribute(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attributeType,
         includeSubtypes,
         selectedValues,
         defaultValues,
@@ -825,8 +825,8 @@ export const _decode_ResultAttribute = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ResultAttribute /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attributeType,
+    return new ResultAttribute(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attributeType,
         outputValues,
         contexts,
         _unrecognizedExtensionsList
@@ -951,8 +951,8 @@ export const _decode_ControlOptions = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ControlOptions /* SEQUENCE_CONSTRUCTOR_CALL */(
-        serviceControls,
+    return new ControlOptions(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ serviceControls,
         searchOptions,
         hierarchyOptions,
         _unrecognizedExtensionsList
@@ -1062,8 +1062,8 @@ export const _decode_Mapping = function (el: asn1.ASN1Element): Mapping {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Mapping /* SEQUENCE_CONSTRUCTOR_CALL */(
-        mappingFunction,
+    return new Mapping(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ mappingFunction,
         level,
         _unrecognizedExtensionsList
     );
@@ -1169,8 +1169,8 @@ export const _decode_MRSubstitution = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MRSubstitution /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attribute,
+    return new MRSubstitution(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attribute,
         oldMatchingRule,
         newMatchingRule,
         _unrecognizedExtensionsList
@@ -1274,8 +1274,8 @@ export const _decode_MRMapping = function (el: asn1.ASN1Element): MRMapping {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MRMapping /* SEQUENCE_CONSTRUCTOR_CALL */(
-        mapping,
+    return new MRMapping(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ mapping,
         substitution,
         _unrecognizedExtensionsList
     );
@@ -1428,8 +1428,8 @@ export const _decode_RelaxationPolicy = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RelaxationPolicy /* SEQUENCE_CONSTRUCTOR_CALL */(
-        basic,
+    return new RelaxationPolicy(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ basic,
         tightenings,
         relaxations,
         maximum,
@@ -1875,8 +1875,8 @@ export const _decode_SearchRule = function (el: asn1.ASN1Element): SearchRule {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SearchRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-        id,
+    return new SearchRule(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ id,
         dmdId,
         serviceType,
         userClass,

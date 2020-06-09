@@ -380,8 +380,8 @@ export const _decode_ClassAttributeSelection = function (
         _root_component_type_list_2_spec_for_ClassAttributeSelection,
         undefined
     );
-    return new ClassAttributeSelection /* SEQUENCE_CONSTRUCTOR_CALL */(
-        class_,
+    return new ClassAttributeSelection(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ class_,
         classAttributes
     );
 };
@@ -496,8 +496,8 @@ export const _decode_Knowledge = function (el: asn1.ASN1Element): Knowledge {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Knowledge /* SEQUENCE_CONSTRUCTOR_CALL */(
-        knowledgeType,
+    return new Knowledge(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ knowledgeType,
         extendedKnowledge,
         _unrecognizedExtensionsList
     );
@@ -664,8 +664,8 @@ export const _decode_UnitOfReplication = function (
         _root_component_type_list_2_spec_for_UnitOfReplication,
         undefined
     );
-    return new UnitOfReplication /* SEQUENCE_CONSTRUCTOR_CALL */(
-        area,
+    return new UnitOfReplication(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ area,
         attributes,
         knowledge,
         subordinates,
@@ -790,8 +790,8 @@ export const _decode_PeriodicStrategy = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PeriodicStrategy /* SEQUENCE_CONSTRUCTOR_CALL */(
-        beginTime,
+    return new PeriodicStrategy(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ beginTime,
         windowSize,
         updateInterval,
         _unrecognizedExtensionsList
@@ -882,8 +882,8 @@ export const _decode_SchedulingParameters = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SchedulingParameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-        periodic,
+    return new SchedulingParameters(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ periodic,
         othertimes,
         _unrecognizedExtensionsList
     );
@@ -1059,8 +1059,8 @@ export const _decode_ShadowingAgreementInfo = function (
         _root_component_type_list_2_spec_for_ShadowingAgreementInfo,
         undefined
     );
-    return new ShadowingAgreementInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        shadowSubject,
+    return new ShadowingAgreementInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ shadowSubject,
         updateMode,
         master,
         secondaryShadows
@@ -1232,8 +1232,8 @@ export const _decode_CoordinateShadowUpdateArgumentData = __utils._decode_implic
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CoordinateShadowUpdateArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new CoordinateShadowUpdateArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 lastUpdate,
                 updateStrategy,
                 securityParameters,
@@ -1356,8 +1356,8 @@ export const _decode_CoordinateShadowUpdateResultData = __utils._decode_implicit
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CoordinateShadowUpdateResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new CoordinateShadowUpdateResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 lastUpdate,
                 _unrecognizedExtensionsList,
                 _componentsOf
@@ -1542,8 +1542,8 @@ export const _decode_RequestShadowUpdateArgumentData = __utils._decode_implicit<
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RequestShadowUpdateArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new RequestShadowUpdateArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 lastUpdate,
                 requestedStrategy,
                 securityParameters,
@@ -1666,8 +1666,8 @@ export const _decode_RequestShadowUpdateResultData = __utils._decode_implicit<
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RequestShadowUpdateResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new RequestShadowUpdateResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 lastUpdate,
                 _unrecognizedExtensionsList,
                 _componentsOf
@@ -1913,8 +1913,8 @@ export const _decode_SDSEContent = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SDSEContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-        sDSEType,
+    return new SDSEContent(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ sDSEType,
         subComplete,
         attComplete,
         attributes,
@@ -2044,8 +2044,8 @@ export const _decode_Subtree = function (el: asn1.ASN1Element): Subtree {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Subtree /* SEQUENCE_CONSTRUCTOR_CALL */(
-        rdn,
+    return new Subtree(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
         sDSE,
         subtree,
         _unrecognizedExtensionsList
@@ -2138,8 +2138,8 @@ export const _decode_TotalRefresh = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TotalRefresh /* SEQUENCE_CONSTRUCTOR_CALL */(
-        sDSE,
+    return new TotalRefresh(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ sDSE,
         subtree,
         _unrecognizedExtensionsList
     );
@@ -2352,8 +2352,8 @@ export const _decode_ContentChange = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContentChange /* SEQUENCE_CONSTRUCTOR_CALL */(
-        rename,
+    return new ContentChange(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ rename,
         attributeChanges,
         sDSEType,
         subComplete,
@@ -2594,8 +2594,8 @@ export const _decode_IncrementalStepRefresh = function (
         _root_component_type_list_2_spec_for_IncrementalStepRefresh,
         undefined
     );
-    return new IncrementalStepRefresh /* SEQUENCE_CONSTRUCTOR_CALL */(
-        sDSEChanges,
+    return new IncrementalStepRefresh(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ sDSEChanges,
         subordinateUpdates
     );
 };
@@ -2770,8 +2770,8 @@ export const _decode_UpdateShadowArgumentData = __utils._decode_implicit<
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new UpdateShadowArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new UpdateShadowArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 updateTime,
                 updateWindow,
                 updatedInfo,
@@ -2902,8 +2902,8 @@ export const _decode_UpdateShadowResultData = __utils._decode_implicit<
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new UpdateShadowResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                agreementID,
+            return new UpdateShadowResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                 lastUpdate,
                 _unrecognizedExtensionsList,
                 _componentsOf
@@ -3132,8 +3132,8 @@ export const _decode_ShadowErrorData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ShadowErrorData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        problem,
+    return new ShadowErrorData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ problem,
         lastUpdate,
         updateWindow,
         _unrecognizedExtensionsList,

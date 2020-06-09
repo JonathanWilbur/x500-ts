@@ -213,8 +213,8 @@ export const _decode_OperationProgress = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new OperationProgress /* SET_CONSTRUCTOR_CALL */(
-        nameResolutionPhase,
+    return new OperationProgress(
+        /* SET_CONSTRUCTOR_CALL */ nameResolutionPhase,
         nextRDNToBeResolved,
         _unrecognizedExtensionsList
     );
@@ -348,8 +348,8 @@ export const _decode_AccessPoint = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AccessPoint /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new AccessPoint(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         _unrecognizedExtensionsList
@@ -515,8 +515,8 @@ export const _decode_MasterOrShadowAccessPoint = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MasterOrShadowAccessPoint /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new MasterOrShadowAccessPoint(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         category,
@@ -723,8 +723,8 @@ export const _decode_AccessPointInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AccessPointInformation /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new AccessPointInformation(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         category,
@@ -993,8 +993,8 @@ export const _decode_ContinuationReference = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContinuationReference /* SET_CONSTRUCTOR_CALL */(
-        targetObject,
+    return new ContinuationReference(
+        /* SET_CONSTRUCTOR_CALL */ targetObject,
         aliasedRDNs,
         operationProgress,
         rdnsResolved,
@@ -1238,8 +1238,8 @@ export const _decode_DsaReferralData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DsaReferralData /* SET_CONSTRUCTOR_CALL */(
-        reference,
+    return new DsaReferralData(
+        /* SET_CONSTRUCTOR_CALL */ reference,
         contextPrefix,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -1392,8 +1392,8 @@ export const _decode_TraceItem = function (el: asn1.ASN1Element): TraceItem {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TraceItem /* SET_CONSTRUCTOR_CALL */(
-        dsa,
+    return new TraceItem(
+        /* SET_CONSTRUCTOR_CALL */ dsa,
         targetObject,
         operationProgress,
         _unrecognizedExtensionsList
@@ -1839,8 +1839,8 @@ export const _decode_ChainingArguments = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ChainingArguments /* SET_CONSTRUCTOR_CALL */(
-        originator,
+    return new ChainingArguments(
+        /* SET_CONSTRUCTOR_CALL */ originator,
         targetObject,
         operationProgress,
         traceInformation,
@@ -2167,8 +2167,8 @@ export const _decode_CrossReference = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CrossReference /* SET_CONSTRUCTOR_CALL */(
-        contextPrefix,
+    return new CrossReference(
+        /* SET_CONSTRUCTOR_CALL */ contextPrefix,
         accessPoint,
         _unrecognizedExtensionsList
     );
@@ -2302,8 +2302,8 @@ export const _decode_ChainingResults = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ChainingResults /* SET_CONSTRUCTOR_CALL */(
-        info,
+    return new ChainingResults(
+        /* SET_CONSTRUCTOR_CALL */ info,
         crossReferences,
         securityParameters,
         alreadySearched,
@@ -2424,8 +2424,8 @@ export const _decode_DitBridgeKnowledge = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DitBridgeKnowledge /* SEQUENCE_CONSTRUCTOR_CALL */(
-        domainLocalID,
+    return new DitBridgeKnowledge(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ domainLocalID,
         accessPoints,
         _unrecognizedExtensionsList
     );
@@ -2584,8 +2584,8 @@ export const _decode_DSABindArgument = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DSABindArgument /* SET_CONSTRUCTOR_CALL */(
-        credentials,
+    return new DSABindArgument(
+        /* SET_CONSTRUCTOR_CALL */ credentials,
         versions,
         _unrecognizedExtensionsList
     );

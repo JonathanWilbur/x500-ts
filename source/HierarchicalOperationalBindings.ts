@@ -309,8 +309,8 @@ export const _decode_SubordinateToSuperior = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
-        accessPoints,
+    return new SubordinateToSuperior(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
         alias,
         entryInfo,
         subentries,
@@ -465,8 +465,8 @@ export const _decode_Vertex = function (el: asn1.ASN1Element): Vertex {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Vertex /* SEQUENCE_CONSTRUCTOR_CALL */(
-        rdn,
+    return new Vertex(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
         admPointInfo,
         subentries,
         accessPoints,
@@ -612,8 +612,8 @@ export const _decode_SuperiorToSubordinate = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SuperiorToSubordinate /* SEQUENCE_CONSTRUCTOR_CALL */(
-        contextPrefixInfo,
+    return new SuperiorToSubordinate(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ contextPrefixInfo,
         entryInfo,
         immediateSuperiorInfo,
         _unrecognizedExtensionsList
@@ -802,8 +802,8 @@ export const _decode_NHOBSubordinateToSuperior = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NHOBSubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
-        accessPoints,
+    return new NHOBSubordinateToSuperior(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
         subentries,
         _unrecognizedExtensionsList
     );

@@ -168,8 +168,8 @@ export const _decode_AuthenticationLevel_basicLevels = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AuthenticationLevel_basicLevels /* SEQUENCE_CONSTRUCTOR_CALL */(
-        level,
+    return new AuthenticationLevel_basicLevels(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ level,
         localQualifier,
         signed,
         _unrecognizedExtensionsList
@@ -601,8 +601,8 @@ export const _decode_ProtectedItems = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ProtectedItems /* SEQUENCE_CONSTRUCTOR_CALL */(
-        entry,
+    return new ProtectedItems(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ entry,
         allUserAttributeTypes,
         attributeType,
         allAttributeValues,
@@ -877,8 +877,8 @@ export const _decode_UserClasses = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new UserClasses /* SEQUENCE_CONSTRUCTOR_CALL */(
-        allUsers,
+    return new UserClasses(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ allUsers,
         thisEntry,
         name,
         userGroup,
@@ -1080,8 +1080,8 @@ export const _decode_ItemPermission = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ItemPermission /* SEQUENCE_CONSTRUCTOR_CALL */(
-        precedence,
+    return new ItemPermission(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
         userClasses,
         grantsAndDenials,
         _unrecognizedExtensionsList
@@ -1265,8 +1265,8 @@ export const _decode_UserPermission = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new UserPermission /* SEQUENCE_CONSTRUCTOR_CALL */(
-        precedence,
+    return new UserPermission(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
         protectedItems,
         grantsAndDenials,
         _unrecognizedExtensionsList

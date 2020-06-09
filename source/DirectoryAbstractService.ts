@@ -1,4 +1,3 @@
-
 /*
     BEGIN_MODULE DirectoryAbstractService
     OID: joint-iso-itu-t.ds.module.directoryAbstractService.8
@@ -9,141 +8,41 @@
     Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
 */
 import * as asn1 from "asn1-ts";
-import * as __utils from "./__utils";
 import {
-    itu_t,
-    itu_r,
-    ccitt,
-    iso,
-    joint_iso_itu_t,
-    joint_iso_ccitt,
-} from "./__utils";
-import * as UsefulDefinitions from "./UsefulDefinitions";
+    AttributeCertificationPath,
+    _decode_AttributeCertificationPath,
+    _encode_AttributeCertificationPath,
+} from "./AttributeCertificateDefinitions";
 import {
-    attributeCertificateDefinitions,
-    authenticationFramework,
-    basicAccessControl,
-    commonProtocolSpecification,
-    directoryShadowAbstractService,
-    distributedOperations,
-    enhancedSecurity,
-    id_at,
-    informationFramework,
-    selectedAttributeTypes,
-    serviceAdministration,
-    passwordPolicy
-} from "./UsefulDefinitions";
-export {
-    attributeCertificateDefinitions,
-    authenticationFramework,
-    basicAccessControl,
-    commonProtocolSpecification,
-    directoryShadowAbstractService,
-    distributedOperations,
-    enhancedSecurity,
-    id_at,
-    informationFramework,
-    selectedAttributeTypes,
-    serviceAdministration,
-    passwordPolicy
-} from "./UsefulDefinitions";
-
-import * as InformationFramework from "./InformationFramework";
+    AlgorithmIdentifier,
+    CertificationPath,
+    ENCRYPTED,
+    HASH,
+    SIGNED,
+    _decode_AlgorithmIdentifier,
+    _decode_CertificationPath,
+    _encode_AlgorithmIdentifier,
+    _encode_CertificationPath,
+    _get_decoder_for_ENCRYPTED,
+    _get_decoder_for_HASH,
+    _get_decoder_for_SIGNED,
+    _get_encoder_for_ENCRYPTED,
+    _get_encoder_for_HASH,
+    _get_encoder_for_SIGNED,
+} from "./AuthenticationFramework";
 import {
-    AttributeType,
-    AttributeTypeAndValue,
-    AttributeTypeAssertion,
-    AttributeValue,
-    AttributeValueAssertion,
-    ContextAssertion,
-    DistinguishedName,
-    Name,
-    RelativeDistinguishedName,
-    Attribute,
-    _decode_AttributeType,
-    _encode_AttributeType,
-    _decode_AttributeTypeAndValue,
-    _encode_AttributeTypeAndValue,
-    _decode_AttributeTypeAssertion,
-    _encode_AttributeTypeAssertion,
-    _decode_AttributeValue,
-    _encode_AttributeValue,
-    _decode_AttributeValueAssertion,
-    _encode_AttributeValueAssertion,
-    _decode_ContextAssertion,
-    _encode_ContextAssertion,
-    _decode_DistinguishedName,
-    _encode_DistinguishedName,
-    _decode_Name,
-    _encode_Name,
-    _decode_RelativeDistinguishedName,
-    _encode_RelativeDistinguishedName,
-    _decode_Attribute,
-    _encode_Attribute
-} from "./InformationFramework";
-export {
-    AttributeType,
-    AttributeTypeAndValue,
-    AttributeTypeAssertion,
-    AttributeValue,
-    AttributeValueAssertion,
-    ContextAssertion,
-    DistinguishedName,
-    Name,
-    RelativeDistinguishedName,
-    Attribute,
-    _decode_AttributeType,
-    _encode_AttributeType,
-    _decode_AttributeTypeAndValue,
-    _encode_AttributeTypeAndValue,
-    _decode_AttributeTypeAssertion,
-    _encode_AttributeTypeAssertion,
-    _decode_AttributeValue,
-    _encode_AttributeValue,
-    _decode_AttributeValueAssertion,
-    _encode_AttributeValueAssertion,
-    _decode_ContextAssertion,
-    _encode_ContextAssertion,
-    _decode_DistinguishedName,
-    _encode_DistinguishedName,
-    _decode_Name,
-    _encode_Name,
-    _decode_RelativeDistinguishedName,
-    _encode_RelativeDistinguishedName,
-    _decode_Attribute,
-    _encode_Attribute
-} from "./InformationFramework";
-
-import * as ServiceAdministration from "./ServiceAdministration";
+    Code,
+    InvokeId,
+    _decode_Code,
+    _decode_InvokeId,
+    _encode_Code,
+    _encode_InvokeId,
+} from "./CommonProtocolSpecification";
 import {
-    RelaxationPolicy,
-    _decode_RelaxationPolicy,
-    _encode_RelaxationPolicy
-} from "./ServiceAdministration";
-export {
-    RelaxationPolicy,
-    _decode_RelaxationPolicy,
-    _encode_RelaxationPolicy
-} from "./ServiceAdministration";
-
-import * as EnhancedSecurity from "./EnhancedSecurity";
-import {
-    OPTIONALLY_PROTECTED,
-    OPTIONALLY_PROTECTED_SEQ,
-    _get_decoder_for_OPTIONALLY_PROTECTED,
-    _get_encoder_for_OPTIONALLY_PROTECTED,
-    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
-    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
-} from "./EnhancedSecurity";
-export {
-    OPTIONALLY_PROTECTED,
-    OPTIONALLY_PROTECTED_SEQ,
-    _get_decoder_for_OPTIONALLY_PROTECTED,
-    _get_encoder_for_OPTIONALLY_PROTECTED,
-    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
-    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
-} from "./EnhancedSecurity";
-
+    AgreementID,
+    _decode_AgreementID,
+    _encode_AgreementID,
+} from "./DirectoryShadowAbstractService";
 import * as DistributedOperations from "./DistributedOperations";
 import {
     AccessPoint,
@@ -152,16 +51,144 @@ import {
     OperationProgress,
     ReferenceType,
     _decode_AccessPoint,
-    _encode_AccessPoint,
     _decode_ContinuationReference,
-    _encode_ContinuationReference,
     _decode_Exclusions,
-    _encode_Exclusions,
     _decode_OperationProgress,
-    _encode_OperationProgress,
     _decode_ReferenceType,
-    _encode_ReferenceType
+    _encode_AccessPoint,
+    _encode_ContinuationReference,
+    _encode_Exclusions,
+    _encode_OperationProgress,
+    _encode_ReferenceType,
 } from "./DistributedOperations";
+import {
+    OPTIONALLY_PROTECTED,
+    OPTIONALLY_PROTECTED_SEQ,
+    _get_decoder_for_OPTIONALLY_PROTECTED,
+    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
+    _get_encoder_for_OPTIONALLY_PROTECTED,
+    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
+} from "./EnhancedSecurity";
+import {
+    Attribute,
+    AttributeType,
+    AttributeTypeAndValue,
+    AttributeTypeAssertion,
+    AttributeValue,
+    AttributeValueAssertion,
+    ContextAssertion,
+    DistinguishedName,
+    Name,
+    RelativeDistinguishedName,
+    _decode_Attribute,
+    _decode_AttributeType,
+    _decode_AttributeTypeAndValue,
+    _decode_AttributeTypeAssertion,
+    _decode_AttributeValue,
+    _decode_AttributeValueAssertion,
+    _decode_ContextAssertion,
+    _decode_DistinguishedName,
+    _decode_Name,
+    _decode_RelativeDistinguishedName,
+    _encode_Attribute,
+    _encode_AttributeType,
+    _encode_AttributeTypeAndValue,
+    _encode_AttributeTypeAssertion,
+    _encode_AttributeValue,
+    _encode_AttributeValueAssertion,
+    _encode_ContextAssertion,
+    _encode_DistinguishedName,
+    _encode_Name,
+    _encode_RelativeDistinguishedName,
+} from "./InformationFramework";
+import {
+    LDAPMessage,
+    _decode_LDAPMessage,
+    _encode_LDAPMessage,
+} from "./Lightweight-Directory-Access-Protocol-V3";
+import { UserPwd, _decode_UserPwd, _encode_UserPwd } from "./PasswordPolicy";
+import {
+    DirectoryString,
+    UnboundedDirectoryString,
+    _decode_DirectoryString,
+    _decode_UnboundedDirectoryString,
+    _encode_DirectoryString,
+    _encode_UnboundedDirectoryString,
+} from "./SelectedAttributeTypes";
+import {
+    RelaxationPolicy,
+    _decode_RelaxationPolicy,
+    _encode_RelaxationPolicy,
+} from "./ServiceAdministration";
+import {
+    SPKM_ERROR,
+    SPKM_REP_TI,
+    SPKM_REQ,
+    _decode_SPKM_ERROR,
+    _decode_SPKM_REP_TI,
+    _decode_SPKM_REQ,
+    _encode_SPKM_ERROR,
+    _encode_SPKM_REP_TI,
+    _encode_SPKM_REQ,
+} from "./SpkmGssTokens";
+import { id_at } from "./UsefulDefinitions";
+import * as __utils from "./__utils";
+export {
+    AttributeCertificationPath,
+    _decode_AttributeCertificationPath,
+    _encode_AttributeCertificationPath,
+} from "./AttributeCertificateDefinitions";
+export {
+    AlgorithmIdentifier,
+    CertificationPath,
+    ENCRYPTED,
+    HASH,
+    SIGNED,
+    _decode_AlgorithmIdentifier,
+    _decode_CertificationPath,
+    _encode_AlgorithmIdentifier,
+    _encode_CertificationPath,
+    _get_decoder_for_ENCRYPTED,
+    _get_decoder_for_HASH,
+    _get_decoder_for_SIGNED,
+    _get_encoder_for_ENCRYPTED,
+    _get_encoder_for_HASH,
+    _get_encoder_for_SIGNED,
+} from "./AuthenticationFramework";
+export {
+    Code,
+    id_errcode_abandoned,
+    id_errcode_abandonFailed,
+    id_errcode_attributeError,
+    id_errcode_nameError,
+    id_errcode_referral,
+    id_errcode_securityError,
+    id_errcode_serviceError,
+    id_errcode_updateError,
+    id_opcode_abandon,
+    id_opcode_addEntry,
+    id_opcode_administerPassword,
+    id_opcode_changePassword,
+    id_opcode_compare,
+    id_opcode_ldapTransport,
+    id_opcode_linkedLDAP,
+    id_opcode_list,
+    id_opcode_modifyDN,
+    id_opcode_modifyEntry,
+    id_opcode_read,
+    id_opcode_removeEntry,
+    id_opcode_search,
+    InvokeId,
+    _decode_Code,
+    _decode_InvokeId,
+    _encode_Code,
+    _encode_InvokeId,
+} from "./CommonProtocolSpecification";
+export {
+    AgreementID,
+    _decode_AgreementID,
+    _encode_AgreementID,
+} from "./DirectoryShadowAbstractService";
 export {
     AccessPoint,
     ContinuationReference,
@@ -169,236 +196,145 @@ export {
     OperationProgress,
     ReferenceType,
     _decode_AccessPoint,
-    _encode_AccessPoint,
     _decode_ContinuationReference,
-    _encode_ContinuationReference,
     _decode_Exclusions,
-    _encode_Exclusions,
     _decode_OperationProgress,
-    _encode_OperationProgress,
     _decode_ReferenceType,
-    _encode_ReferenceType
+    _encode_AccessPoint,
+    _encode_ContinuationReference,
+    _encode_Exclusions,
+    _encode_OperationProgress,
+    _encode_ReferenceType,
 } from "./DistributedOperations";
-
-import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
-import {
-    Code,
-    id_errcode_abandoned,
-    id_errcode_abandonFailed,
-    id_errcode_attributeError,
-    id_errcode_nameError,
-    id_errcode_referral,
-    id_errcode_securityError,
-    id_errcode_serviceError,
-    id_errcode_updateError,
-    id_opcode_abandon,
-    id_opcode_addEntry,
-    id_opcode_administerPassword,
-    id_opcode_compare,
-    id_opcode_changePassword,
-    id_opcode_ldapTransport,
-    id_opcode_linkedLDAP,
-    id_opcode_list,
-    id_opcode_modifyDN,
-    id_opcode_modifyEntry,
-    id_opcode_read,
-    id_opcode_removeEntry,
-    id_opcode_search,
-    InvokeId,
-    _decode_Code,
-    _encode_Code,
-    _decode_InvokeId,
-    _encode_InvokeId
-} from "./CommonProtocolSpecification";
 export {
-    Code,
-    id_errcode_abandoned,
-    id_errcode_abandonFailed,
-    id_errcode_attributeError,
-    id_errcode_nameError,
-    id_errcode_referral,
-    id_errcode_securityError,
-    id_errcode_serviceError,
-    id_errcode_updateError,
-    id_opcode_abandon,
-    id_opcode_addEntry,
-    id_opcode_administerPassword,
-    id_opcode_compare,
-    id_opcode_changePassword,
-    id_opcode_ldapTransport,
-    id_opcode_linkedLDAP,
-    id_opcode_list,
-    id_opcode_modifyDN,
-    id_opcode_modifyEntry,
-    id_opcode_read,
-    id_opcode_removeEntry,
-    id_opcode_search,
-    InvokeId,
-    _decode_Code,
-    _encode_Code,
-    _decode_InvokeId,
-    _encode_InvokeId
-} from "./CommonProtocolSpecification";
-
-import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
-import {
-    UnboundedDirectoryString,
+    OPTIONALLY_PROTECTED,
+    OPTIONALLY_PROTECTED_SEQ,
+    _get_decoder_for_OPTIONALLY_PROTECTED,
+    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
+    _get_encoder_for_OPTIONALLY_PROTECTED,
+    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
+} from "./EnhancedSecurity";
+export {
+    Attribute,
+    AttributeType,
+    AttributeTypeAndValue,
+    AttributeTypeAssertion,
+    AttributeValue,
+    AttributeValueAssertion,
+    ContextAssertion,
+    DistinguishedName,
+    Name,
+    RelativeDistinguishedName,
+    _decode_Attribute,
+    _decode_AttributeType,
+    _decode_AttributeTypeAndValue,
+    _decode_AttributeTypeAssertion,
+    _decode_AttributeValue,
+    _decode_AttributeValueAssertion,
+    _decode_ContextAssertion,
+    _decode_DistinguishedName,
+    _decode_Name,
+    _decode_RelativeDistinguishedName,
+    _encode_Attribute,
+    _encode_AttributeType,
+    _encode_AttributeTypeAndValue,
+    _encode_AttributeTypeAssertion,
+    _encode_AttributeValue,
+    _encode_AttributeValueAssertion,
+    _encode_ContextAssertion,
+    _encode_DistinguishedName,
+    _encode_Name,
+    _encode_RelativeDistinguishedName,
+} from "./InformationFramework";
+export {
+    LDAPMessage,
+    _decode_LDAPMessage,
+    _encode_LDAPMessage,
+} from "./Lightweight-Directory-Access-Protocol-V3";
+export { UserPwd, _decode_UserPwd, _encode_UserPwd } from "./PasswordPolicy";
+export {
     DirectoryString,
-    _decode_UnboundedDirectoryString,
-    _encode_UnboundedDirectoryString,
+    UnboundedDirectoryString,
     _decode_DirectoryString,
-    _encode_DirectoryString
+    _decode_UnboundedDirectoryString,
+    _encode_DirectoryString,
+    _encode_UnboundedDirectoryString,
 } from "./SelectedAttributeTypes";
 export {
-    UnboundedDirectoryString,
-    DirectoryString,
-    _decode_UnboundedDirectoryString,
-    _encode_UnboundedDirectoryString,
-    _decode_DirectoryString,
-    _encode_DirectoryString
-} from "./SelectedAttributeTypes";
-
-import * as AuthenticationFramework from "./AuthenticationFramework";
-import {
-    CertificationPath,
-    AlgorithmIdentifier,
-    ENCRYPTED,
-    HASH,
-    SIGNED,
-    _decode_CertificationPath,
-    _encode_CertificationPath,
-    _decode_AlgorithmIdentifier,
-    _encode_AlgorithmIdentifier,
-    _get_decoder_for_ENCRYPTED,
-    _get_encoder_for_ENCRYPTED,
-    _get_decoder_for_HASH,
-    _get_encoder_for_HASH,
-    _get_decoder_for_SIGNED,
-    _get_encoder_for_SIGNED
-} from "./AuthenticationFramework";
-export {
-    CertificationPath,
-    AlgorithmIdentifier,
-    ENCRYPTED,
-    HASH,
-    SIGNED,
-    _decode_CertificationPath,
-    _encode_CertificationPath,
-    _decode_AlgorithmIdentifier,
-    _encode_AlgorithmIdentifier,
-    _get_decoder_for_ENCRYPTED,
-    _get_encoder_for_ENCRYPTED,
-    _get_decoder_for_HASH,
-    _get_encoder_for_HASH,
-    _get_decoder_for_SIGNED,
-    _get_encoder_for_SIGNED
-} from "./AuthenticationFramework";
-
-import * as PasswordPolicy from "./PasswordPolicy";
-import {
-    UserPwd,
-    _decode_UserPwd,
-    _encode_UserPwd
-} from "./PasswordPolicy";
-export {
-    UserPwd,
-    _decode_UserPwd,
-    _encode_UserPwd
-} from "./PasswordPolicy";
-
-import * as AttributeCertificateDefinitions from "./AttributeCertificateDefinitions";
-import {
-    AttributeCertificationPath,
-    _decode_AttributeCertificationPath,
-    _encode_AttributeCertificationPath
-} from "./AttributeCertificateDefinitions";
-export {
-    AttributeCertificationPath,
-    _decode_AttributeCertificationPath,
-    _encode_AttributeCertificationPath
-} from "./AttributeCertificateDefinitions";
-
-import * as DirectoryShadowAbstractService from "./DirectoryShadowAbstractService";
-import {
-    AgreementID,
-    _decode_AgreementID,
-    _encode_AgreementID
-} from "./DirectoryShadowAbstractService";
-export {
-    AgreementID,
-    _decode_AgreementID,
-    _encode_AgreementID
-} from "./DirectoryShadowAbstractService";
-
-import * as SpkmGssTokens from "./SpkmGssTokens";
-import {
-    SPKM_ERROR,
-    SPKM_REP_TI,
-    SPKM_REQ,
-    _decode_SPKM_ERROR,
-    _encode_SPKM_ERROR,
-    _decode_SPKM_REP_TI,
-    _encode_SPKM_REP_TI,
-    _decode_SPKM_REQ,
-    _encode_SPKM_REQ
-} from "./SpkmGssTokens";
+    RelaxationPolicy,
+    _decode_RelaxationPolicy,
+    _encode_RelaxationPolicy,
+} from "./ServiceAdministration";
 export {
     SPKM_ERROR,
     SPKM_REP_TI,
     SPKM_REQ,
     _decode_SPKM_ERROR,
-    _encode_SPKM_ERROR,
     _decode_SPKM_REP_TI,
-    _encode_SPKM_REP_TI,
     _decode_SPKM_REQ,
-    _encode_SPKM_REQ
+    _encode_SPKM_ERROR,
+    _encode_SPKM_REP_TI,
+    _encode_SPKM_REQ,
 } from "./SpkmGssTokens";
-
-import * as Lightweight_Directory_Access_Protocol_V3 from "./Lightweight-Directory-Access-Protocol-V3";
-import {
-    LDAPMessage,
-    _decode_LDAPMessage,
-    _encode_LDAPMessage
-} from "./Lightweight-Directory-Access-Protocol-V3";
 export {
-    LDAPMessage,
-    _decode_LDAPMessage,
-    _encode_LDAPMessage
-} from "./Lightweight-Directory-Access-Protocol-V3";
-
+    attributeCertificateDefinitions,
+    authenticationFramework,
+    basicAccessControl,
+    commonProtocolSpecification,
+    directoryShadowAbstractService,
+    distributedOperations,
+    enhancedSecurity,
+    id_at,
+    informationFramework,
+    passwordPolicy,
+    selectedAttributeTypes,
+    serviceAdministration,
+} from "./UsefulDefinitions";
 
 // TODO: ObjectAssignment: family-information
 
 // TODO: ObjectAssignment: directoryBind
 
 export type SimpleCredentials_validity_time1 =
-    { utc: asn1.UTCTime }
+    | { utc: asn1.UTCTime }
     | { gt: asn1.GeneralizedTime };
-export const _decode_SimpleCredentials_validity_time1 = __utils._decode_inextensible_choice<SimpleCredentials_validity_time1>({
-    "UNIVERSAL 23": [ "utc", __utils._decodeUTCTime ],
-    "UNIVERSAL 24": [ "gt", __utils._decodeGeneralizedTime ]
+export const _decode_SimpleCredentials_validity_time1 = __utils._decode_inextensible_choice<
+    SimpleCredentials_validity_time1
+>({
+    "UNIVERSAL 23": ["utc", __utils._decodeUTCTime],
+    "UNIVERSAL 24": ["gt", __utils._decodeGeneralizedTime],
 });
-export const _encode_SimpleCredentials_validity_time1 = __utils._encode_choice<SimpleCredentials_validity_time1>({
-    "utc": __utils._encodeUTCTime,
-    "gt": __utils._encodeGeneralizedTime,
-}, __utils.BER);
-
+export const _encode_SimpleCredentials_validity_time1 = __utils._encode_choice<
+    SimpleCredentials_validity_time1
+>(
+    {
+        utc: __utils._encodeUTCTime,
+        gt: __utils._encodeGeneralizedTime,
+    },
+    __utils.BER
+);
 
 export type SimpleCredentials_validity_time2 =
-    { utc: asn1.UTCTime }
+    | { utc: asn1.UTCTime }
     | { gt: asn1.GeneralizedTime };
-export const _decode_SimpleCredentials_validity_time2 = __utils._decode_inextensible_choice<SimpleCredentials_validity_time2>({
-    "UNIVERSAL 23": [ "utc", __utils._decodeUTCTime ],
-    "UNIVERSAL 24": [ "gt", __utils._decodeGeneralizedTime ]
+export const _decode_SimpleCredentials_validity_time2 = __utils._decode_inextensible_choice<
+    SimpleCredentials_validity_time2
+>({
+    "UNIVERSAL 23": ["utc", __utils._decodeUTCTime],
+    "UNIVERSAL 24": ["gt", __utils._decodeGeneralizedTime],
 });
-export const _encode_SimpleCredentials_validity_time2 = __utils._encode_choice<SimpleCredentials_validity_time2>({
-    "utc": __utils._encodeUTCTime,
-    "gt": __utils._encodeGeneralizedTime,
-}, __utils.BER);
-
+export const _encode_SimpleCredentials_validity_time2 = __utils._encode_choice<
+    SimpleCredentials_validity_time2
+>(
+    {
+        utc: __utils._encodeUTCTime,
+        gt: __utils._encodeGeneralizedTime,
+    },
+    __utils.BER
+);
 
 export class SimpleCredentials_validity {
-    constructor (
+    constructor(
         readonly time1: SimpleCredentials_validity_time1 | undefined,
         readonly time2: SimpleCredentials_validity_time2 | undefined,
         readonly random1: asn1.BIT_STRING | undefined,
@@ -406,19 +342,41 @@ export class SimpleCredentials_validity {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("time1", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("time2", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("random1", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("random2", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "time1",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "time2",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "random1",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "random2",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_SimpleCredentials_validity = function (el: asn1.ASN1Element): SimpleCredentials_validity {
+export const _decode_SimpleCredentials_validity = function (
+    el: asn1.ASN1Element
+): SimpleCredentials_validity {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let time1: asn1.OPTIONAL<SimpleCredentials_validity_time1>;
     let time2: asn1.OPTIONAL<SimpleCredentials_validity_time2>;
@@ -427,74 +385,162 @@ export const _decode_SimpleCredentials_validity = function (el: asn1.ASN1Element
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "time1": (_el: asn1.ASN1Element): void => { time1 = __utils._decode_explicit<SimpleCredentials_validity_time1>(() => _decode_SimpleCredentials_validity_time1)(_el); },
-        "time2": (_el: asn1.ASN1Element): void => { time2 = __utils._decode_explicit<SimpleCredentials_validity_time2>(() => _decode_SimpleCredentials_validity_time2)(_el); },
-        "random1": (_el: asn1.ASN1Element): void => { random1 = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "random2": (_el: asn1.ASN1Element): void => { random2 = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); }
+        time1: (_el: asn1.ASN1Element): void => {
+            time1 = __utils._decode_explicit<SimpleCredentials_validity_time1>(
+                () => _decode_SimpleCredentials_validity_time1
+            )(_el);
+        },
+        time2: (_el: asn1.ASN1Element): void => {
+            time2 = __utils._decode_explicit<SimpleCredentials_validity_time2>(
+                () => _decode_SimpleCredentials_validity_time2
+            )(_el);
+        },
+        random1: (_el: asn1.ASN1Element): void => {
+            random1 = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        random2: (_el: asn1.ASN1Element): void => {
+            random2 = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SimpleCredentials_validity,
         _extension_additions_list_spec_for_SimpleCredentials_validity,
         _root_component_type_list_2_spec_for_SimpleCredentials_validity,
-        undefined,
+        undefined
     );
-    return new SimpleCredentials_validity( /* SET_CONSTRUCTOR_CALL */
+    return new SimpleCredentials_validity /* SET_CONSTRUCTOR_CALL */(
         time1,
         time2,
         random1,
         random2
     );
 };
-export const _encode_SimpleCredentials_validity = function (value: SimpleCredentials_validity, elGetter: __utils.ASN1Encoder<SimpleCredentials_validity>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.time1 === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_SimpleCredentials_validity_time1, __utils.BER)(value.time1, __utils.BER)),
-            /* IF_ABSENT  */ ((value.time2 === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_SimpleCredentials_validity_time2, __utils.BER)(value.time2, __utils.BER)),
-            /* IF_ABSENT  */ ((value.random1 === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBitString, __utils.BER)(value.random1, __utils.BER)),
-            /* IF_ABSENT  */ ((value.random2 === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBitString, __utils.BER)(value.random2, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SimpleCredentials_validity = function (
+    value: SimpleCredentials_validity,
+    elGetter: __utils.ASN1Encoder<SimpleCredentials_validity>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat([
+                /* IF_ABSENT  */ value.time1 === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          0,
+                          () => _encode_SimpleCredentials_validity_time1,
+                          __utils.BER
+                      )(value.time1, __utils.BER),
+                /* IF_ABSENT  */ value.time2 === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          1,
+                          () => _encode_SimpleCredentials_validity_time2,
+                          __utils.BER
+                      )(value.time2, __utils.BER),
+                /* IF_ABSENT  */ value.random1 === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          2,
+                          () => __utils._encodeBitString,
+                          __utils.BER
+                      )(value.random1, __utils.BER),
+                /* IF_ABSENT  */ value.random2 === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          3,
+                          () => __utils._encodeBitString,
+                          __utils.BER
+                      )(value.random2, __utils.BER),
+            ])
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type SimpleCredentials_password =
-    { unprotected: asn1.OCTET_STRING }
+    | { unprotected: asn1.OCTET_STRING }
     | { protected_: HASH<asn1.OCTET_STRING> }
     | { userPwd: UserPwd }
     | asn1.ASN1Element;
-export const _decode_SimpleCredentials_password = __utils._decode_extensible_choice<SimpleCredentials_password>({
-    "UNIVERSAL 4": [ "unprotected", __utils._decodeOctetString ],
-    "UNIVERSAL 16": [ "protected_", _get_decoder_for_HASH<asn1.OCTET_STRING>(__utils._decodeOctetString) ],
-    "CONTEXT 0": [ "userPwd", __utils._decode_explicit<UserPwd>(() => _decode_UserPwd) ]
+export const _decode_SimpleCredentials_password = __utils._decode_extensible_choice<
+    SimpleCredentials_password
+>({
+    "UNIVERSAL 4": ["unprotected", __utils._decodeOctetString],
+    "UNIVERSAL 16": [
+        "protected_",
+        _get_decoder_for_HASH<asn1.OCTET_STRING>(__utils._decodeOctetString),
+    ],
+    "CONTEXT 0": [
+        "userPwd",
+        __utils._decode_explicit<UserPwd>(() => _decode_UserPwd),
+    ],
 });
-export const _encode_SimpleCredentials_password = __utils._encode_choice<SimpleCredentials_password>({
-    "unprotected": __utils._encodeOctetString,
-    "protected_": _get_encoder_for_HASH<asn1.OCTET_STRING>(__utils._encodeOctetString),
-    "userPwd": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_UserPwd, __utils.BER),
-}, __utils.BER);
-
+export const _encode_SimpleCredentials_password = __utils._encode_choice<
+    SimpleCredentials_password
+>(
+    {
+        unprotected: __utils._encodeOctetString,
+        protected_: _get_encoder_for_HASH<asn1.OCTET_STRING>(
+            __utils._encodeOctetString
+        ),
+        userPwd: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_UserPwd,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export class SimpleCredentials {
-    constructor (
+    constructor(
         readonly name: DistinguishedName,
         readonly validity: SimpleCredentials_validity | undefined,
         readonly password: SimpleCredentials_password | undefined
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("validity", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("password", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "name",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "validity",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "password",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_SimpleCredentials = function (el: asn1.ASN1Element): SimpleCredentials {
+export const _decode_SimpleCredentials = function (
+    el: asn1.ASN1Element
+): SimpleCredentials {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let name!: DistinguishedName;
     let validity: asn1.OPTIONAL<SimpleCredentials_validity>;
@@ -502,50 +548,92 @@ export const _decode_SimpleCredentials = function (el: asn1.ASN1Element): Simple
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "name": (_el: asn1.ASN1Element): void => { name = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "validity": (_el: asn1.ASN1Element): void => { validity = __utils._decode_explicit<SimpleCredentials_validity>(() => _decode_SimpleCredentials_validity)(_el); },
-        "password": (_el: asn1.ASN1Element): void => { password = __utils._decode_explicit<SimpleCredentials_password>(() => _decode_SimpleCredentials_password)(_el); }
+        name: (_el: asn1.ASN1Element): void => {
+            name = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        validity: (_el: asn1.ASN1Element): void => {
+            validity = __utils._decode_explicit<SimpleCredentials_validity>(
+                () => _decode_SimpleCredentials_validity
+            )(_el);
+        },
+        password: (_el: asn1.ASN1Element): void => {
+            password = __utils._decode_explicit<SimpleCredentials_password>(
+                () => _decode_SimpleCredentials_password
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SimpleCredentials,
         _extension_additions_list_spec_for_SimpleCredentials,
         _root_component_type_list_2_spec_for_SimpleCredentials,
-        undefined,
+        undefined
     );
-    return new SimpleCredentials( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new SimpleCredentials /* SEQUENCE_CONSTRUCTOR_CALL */(
         name,
         validity,
         password
     );
 };
-export const _encode_SimpleCredentials = function (value: SimpleCredentials, elGetter: __utils.ASN1Encoder<SimpleCredentials>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DistinguishedName, __utils.BER)(value.name, __utils.BER),
-            /* IF_ABSENT  */ ((value.validity === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_SimpleCredentials_validity, __utils.BER)(value.validity, __utils.BER)),
-            /* IF_ABSENT  */ ((value.password === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_SimpleCredentials_password, __utils.BER)(value.password, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SimpleCredentials = function (
+    value: SimpleCredentials,
+    elGetter: __utils.ASN1Encoder<SimpleCredentials>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat([
+                /* REQUIRED   */ __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_DistinguishedName,
+                    __utils.BER
+                )(value.name, __utils.BER),
+                /* IF_ABSENT  */ value.validity === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          1,
+                          () => _encode_SimpleCredentials_validity,
+                          __utils.BER
+                      )(value.validity, __utils.BER),
+                /* IF_ABSENT  */ value.password === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          2,
+                          () => _encode_SimpleCredentials_password,
+                          __utils.BER
+                      )(value.password, __utils.BER),
+            ])
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type Time =
-    { utcTime: asn1.UTCTime }
+    | { utcTime: asn1.UTCTime }
     | { generalizedTime: asn1.GeneralizedTime }
     | asn1.ASN1Element;
 export const _decode_Time = __utils._decode_extensible_choice<Time>({
-    "UNIVERSAL 23": [ "utcTime", __utils._decodeUTCTime ],
-    "UNIVERSAL 24": [ "generalizedTime", __utils._decodeGeneralizedTime ]
+    "UNIVERSAL 23": ["utcTime", __utils._decodeUTCTime],
+    "UNIVERSAL 24": ["generalizedTime", __utils._decodeGeneralizedTime],
 });
-export const _encode_Time = __utils._encode_choice<Time>({
-    "utcTime": __utils._encodeUTCTime,
-    "generalizedTime": __utils._encodeGeneralizedTime,
-}, __utils.BER);
-
+export const _encode_Time = __utils._encode_choice<Time>(
+    {
+        utcTime: __utils._encodeUTCTime,
+        generalizedTime: __utils._encodeGeneralizedTime,
+    },
+    __utils.BER
+);
 
 export class TokenContent {
-    constructor (
+    constructor(
         readonly algorithm: AlgorithmIdentifier,
         readonly name: DistinguishedName,
         readonly time: Time,
@@ -555,20 +643,48 @@ export class TokenContent {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TokenContent: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("time", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("random", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("response", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
+    new __utils.ComponentSpec(
+        "algorithm",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "name",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "time",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "random",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "response",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_TokenContent: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TokenContent: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_TokenContent: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_TokenContent: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_TokenContent = function (el: asn1.ASN1Element): TokenContent {
+export const _decode_TokenContent = function (
+    el: asn1.ASN1Element
+): TokenContent {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let algorithm!: AlgorithmIdentifier;
     let name!: DistinguishedName;
@@ -579,20 +695,42 @@ export const _decode_TokenContent = function (el: asn1.ASN1Element): TokenConten
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "algorithm": (_el: asn1.ASN1Element): void => { algorithm = __utils._decode_explicit<AlgorithmIdentifier>(() => _decode_AlgorithmIdentifier)(_el); },
-        "name": (_el: asn1.ASN1Element): void => { name = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "time": (_el: asn1.ASN1Element): void => { time = __utils._decode_explicit<Time>(() => _decode_Time)(_el); },
-        "random": (_el: asn1.ASN1Element): void => { random = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "response": (_el: asn1.ASN1Element): void => { response = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); }
+        algorithm: (_el: asn1.ASN1Element): void => {
+            algorithm = __utils._decode_explicit<AlgorithmIdentifier>(
+                () => _decode_AlgorithmIdentifier
+            )(_el);
+        },
+        name: (_el: asn1.ASN1Element): void => {
+            name = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        time: (_el: asn1.ASN1Element): void => {
+            time = __utils._decode_explicit<Time>(() => _decode_Time)(_el);
+        },
+        random: (_el: asn1.ASN1Element): void => {
+            random = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        response: (_el: asn1.ASN1Element): void => {
+            response = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_TokenContent,
         _extension_additions_list_spec_for_TokenContent,
         _root_component_type_list_2_spec_for_TokenContent,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new TokenContent( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new TokenContent /* SEQUENCE_CONSTRUCTOR_CALL */(
         algorithm,
         name,
         time,
@@ -601,48 +739,113 @@ export const _decode_TokenContent = function (el: asn1.ASN1Element): TokenConten
         _unrecognizedExtensionsList
     );
 };
-export const _encode_TokenContent = function (value: TokenContent, elGetter: __utils.ASN1Encoder<TokenContent>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_AlgorithmIdentifier, __utils.BER)(value.algorithm, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_DistinguishedName, __utils.BER)(value.name, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_Time, __utils.BER)(value.time, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBitString, __utils.BER)(value.random, __utils.BER),
-            /* IF_ABSENT  */ ((value.response === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeBitString, __utils.BER)(value.response, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_TokenContent = function (
+    value: TokenContent,
+    elGetter: __utils.ASN1Encoder<TokenContent>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_AlgorithmIdentifier,
+                        __utils.BER
+                    )(value.algorithm, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_DistinguishedName,
+                        __utils.BER
+                    )(value.name, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        2,
+                        () => _encode_Time,
+                        __utils.BER
+                    )(value.time, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        3,
+                        () => __utils._encodeBitString,
+                        __utils.BER
+                    )(value.random, __utils.BER),
+                    /* IF_ABSENT  */ value.response === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.response, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type Token = SIGNED<TokenContent>; // DefinedType
-export const _decode_Token = _get_decoder_for_SIGNED<TokenContent>(_decode_TokenContent);
-export const _encode_Token = _get_encoder_for_SIGNED<TokenContent>(_encode_TokenContent);
-
+export const _decode_Token = _get_decoder_for_SIGNED<TokenContent>(
+    _decode_TokenContent
+);
+export const _encode_Token = _get_encoder_for_SIGNED<TokenContent>(
+    _encode_TokenContent
+);
 
 export class StrongCredentials {
-    constructor (
+    constructor(
         readonly certification_path: CertificationPath | undefined,
         readonly bind_token: Token,
         readonly name: DistinguishedName | undefined,
-        readonly attributeCertificationPath: AttributeCertificationPath | undefined,
+        readonly attributeCertificationPath:
+            | AttributeCertificationPath
+            | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("bind-token", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("attributeCertificationPath", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "certification-path",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "bind-token",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "name",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "attributeCertificationPath",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_StrongCredentials: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_StrongCredentials: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_StrongCredentials = function (el: asn1.ASN1Element): StrongCredentials {
+export const _decode_StrongCredentials = function (
+    el: asn1.ASN1Element
+): StrongCredentials {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let certification_path: asn1.OPTIONAL<CertificationPath>;
     let bind_token!: Token;
@@ -652,19 +855,39 @@ export const _decode_StrongCredentials = function (el: asn1.ASN1Element): Strong
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "certification-path": (_el: asn1.ASN1Element): void => { certification_path = __utils._decode_explicit<CertificationPath>(() => _decode_CertificationPath)(_el); },
-        "bind-token": (_el: asn1.ASN1Element): void => { bind_token = __utils._decode_explicit<Token>(() => _decode_Token)(_el); },
-        "name": (_el: asn1.ASN1Element): void => { name = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "attributeCertificationPath": (_el: asn1.ASN1Element): void => { attributeCertificationPath = __utils._decode_explicit<AttributeCertificationPath>(() => _decode_AttributeCertificationPath)(_el); }
+        "certification-path": (_el: asn1.ASN1Element): void => {
+            certification_path = __utils._decode_explicit<CertificationPath>(
+                () => _decode_CertificationPath
+            )(_el);
+        },
+        "bind-token": (_el: asn1.ASN1Element): void => {
+            bind_token = __utils._decode_explicit<Token>(() => _decode_Token)(
+                _el
+            );
+        },
+        name: (_el: asn1.ASN1Element): void => {
+            name = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        attributeCertificationPath: (_el: asn1.ASN1Element): void => {
+            attributeCertificationPath = __utils._decode_explicit<
+                AttributeCertificationPath
+            >(() => _decode_AttributeCertificationPath)(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_StrongCredentials,
         _extension_additions_list_spec_for_StrongCredentials,
         _root_component_type_list_2_spec_for_StrongCredentials,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new StrongCredentials( /* SET_CONSTRUCTOR_CALL */
+    return new StrongCredentials /* SET_CONSTRUCTOR_CALL */(
         certification_path,
         bind_token,
         name,
@@ -672,37 +895,95 @@ export const _decode_StrongCredentials = function (el: asn1.ASN1Element): Strong
         _unrecognizedExtensionsList
     );
 };
-export const _encode_StrongCredentials = function (value: StrongCredentials, elGetter: __utils.ASN1Encoder<StrongCredentials>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.certification_path === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_CertificationPath, __utils.BER)(value.certification_path, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_Token, __utils.BER)(value.bind_token, __utils.BER),
-            /* IF_ABSENT  */ ((value.name === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_DistinguishedName, __utils.BER)(value.name, __utils.BER)),
-            /* IF_ABSENT  */ ((value.attributeCertificationPath === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_AttributeCertificationPath, __utils.BER)(value.attributeCertificationPath, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_StrongCredentials = function (
+    value: StrongCredentials,
+    elGetter: __utils.ASN1Encoder<StrongCredentials>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.certification_path === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_CertificationPath,
+                              __utils.BER
+                          )(value.certification_path, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_Token,
+                        __utils.BER
+                    )(value.bind_token, __utils.BER),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeCertificationPath ===
+                    undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => _encode_AttributeCertificationPath,
+                              __utils.BER
+                          )(value.attributeCertificationPath, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type SpkmCredentials =
-    { req: SPKM_REQ }
+    | { req: SPKM_REQ }
     | { rep: SPKM_REP_TI }
     | asn1.ASN1Element;
-export const _decode_SpkmCredentials = __utils._decode_extensible_choice<SpkmCredentials>({
-    "CONTEXT 0": [ "req", __utils._decode_explicit<SPKM_REQ>(() => _decode_SPKM_REQ) ],
-    "CONTEXT 1": [ "rep", __utils._decode_explicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI) ]
+export const _decode_SpkmCredentials = __utils._decode_extensible_choice<
+    SpkmCredentials
+>({
+    "CONTEXT 0": [
+        "req",
+        __utils._decode_explicit<SPKM_REQ>(() => _decode_SPKM_REQ),
+    ],
+    "CONTEXT 1": [
+        "rep",
+        __utils._decode_explicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI),
+    ],
 });
-export const _encode_SpkmCredentials = __utils._encode_choice<SpkmCredentials>({
-    "req": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_SPKM_REQ, __utils.BER),
-    "rep": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_SPKM_REP_TI, __utils.BER),
-}, __utils.BER);
-
+export const _encode_SpkmCredentials = __utils._encode_choice<SpkmCredentials>(
+    {
+        req: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_SPKM_REQ,
+            __utils.BER
+        ),
+        rep: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => _encode_SPKM_REP_TI,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export const ub_saslMechanism: asn1.INTEGER = 20;
 
 export class SaslCredentials {
-    constructor (
+    constructor(
         readonly mechanism: DirectoryString,
         readonly credentials: asn1.OCTET_STRING | undefined,
         readonly saslAbort: asn1.BOOLEAN | undefined,
@@ -710,18 +991,34 @@ export class SaslCredentials {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("mechanism", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("saslAbort", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "mechanism",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "credentials",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "saslAbort",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_SaslCredentials: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SaslCredentials: __utils.ComponentSpec[] = [];
 export const _default_value_for_SaslCredentials__saslAbort = false;
-export const _decode_SaslCredentials = function (el: asn1.ASN1Element): SaslCredentials {
+export const _decode_SaslCredentials = function (
+    el: asn1.ASN1Element
+): SaslCredentials {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let mechanism!: DirectoryString;
     let credentials: asn1.OPTIONAL<asn1.OCTET_STRING>;
@@ -730,58 +1027,160 @@ export const _decode_SaslCredentials = function (el: asn1.ASN1Element): SaslCred
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "mechanism": (_el: asn1.ASN1Element): void => { mechanism = __utils._decode_explicit<DirectoryString>(() => _decode_DirectoryString)(_el); },
-        "credentials": (_el: asn1.ASN1Element): void => { credentials = __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString)(_el); },
-        "saslAbort": (_el: asn1.ASN1Element): void => { saslAbort = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); }
+        mechanism: (_el: asn1.ASN1Element): void => {
+            mechanism = __utils._decode_explicit<DirectoryString>(
+                () => _decode_DirectoryString
+            )(_el);
+        },
+        credentials: (_el: asn1.ASN1Element): void => {
+            credentials = __utils._decode_explicit<asn1.OCTET_STRING>(
+                () => __utils._decodeOctetString
+            )(_el);
+        },
+        saslAbort: (_el: asn1.ASN1Element): void => {
+            saslAbort = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SaslCredentials,
         _extension_additions_list_spec_for_SaslCredentials,
         _root_component_type_list_2_spec_for_SaslCredentials,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SaslCredentials( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new SaslCredentials /* SEQUENCE_CONSTRUCTOR_CALL */(
         mechanism,
         credentials,
         saslAbort,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_SaslCredentials = function (value: SaslCredentials, elGetter: __utils.ASN1Encoder<SaslCredentials>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DirectoryString, __utils.BER)(value.mechanism, __utils.BER),
-            /* IF_ABSENT  */ ((value.credentials === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeOctetString, __utils.BER)(value.credentials, __utils.BER)),
-            /* IF_DEFAULT */ (value.saslAbort === undefined || __utils.deepEq(value.saslAbort, _default_value_for_SaslCredentials__saslAbort) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.saslAbort, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SaslCredentials = function (
+    value: SaslCredentials,
+    elGetter: __utils.ASN1Encoder<SaslCredentials>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_DirectoryString,
+                        __utils.BER
+                    )(value.mechanism, __utils.BER),
+                    /* IF_ABSENT  */ value.credentials === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => __utils._encodeOctetString,
+                              __utils.BER
+                          )(value.credentials, __utils.BER),
+                    /* IF_DEFAULT */ value.saslAbort === undefined ||
+                    __utils.deepEq(
+                        value.saslAbort,
+                        _default_value_for_SaslCredentials__saslAbort
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.saslAbort, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type Credentials =
-    { simple: SimpleCredentials }
+    | { simple: SimpleCredentials }
     | { strong: StrongCredentials }
     | { externalProcedure: asn1.EXTERNAL }
     | { spkm: SpkmCredentials }
     | { sasl: SaslCredentials }
     | asn1.ASN1Element;
-export const _decode_Credentials = __utils._decode_extensible_choice<Credentials>({
-    "CONTEXT 0": [ "simple", __utils._decode_explicit<SimpleCredentials>(() => _decode_SimpleCredentials) ],
-    "CONTEXT 1": [ "strong", __utils._decode_explicit<StrongCredentials>(() => _decode_StrongCredentials) ],
-    "CONTEXT 2": [ "externalProcedure", __utils._decode_explicit<asn1.EXTERNAL>(() => __utils._decodeExternal) ],
-    "CONTEXT 3": [ "spkm", __utils._decode_explicit<SpkmCredentials>(() => _decode_SpkmCredentials) ],
-    "CONTEXT 4": [ "sasl", __utils._decode_explicit<SaslCredentials>(() => _decode_SaslCredentials) ]
+export const _decode_Credentials = __utils._decode_extensible_choice<
+    Credentials
+>({
+    "CONTEXT 0": [
+        "simple",
+        __utils._decode_explicit<SimpleCredentials>(
+            () => _decode_SimpleCredentials
+        ),
+    ],
+    "CONTEXT 1": [
+        "strong",
+        __utils._decode_explicit<StrongCredentials>(
+            () => _decode_StrongCredentials
+        ),
+    ],
+    "CONTEXT 2": [
+        "externalProcedure",
+        __utils._decode_explicit<asn1.EXTERNAL>(() => __utils._decodeExternal),
+    ],
+    "CONTEXT 3": [
+        "spkm",
+        __utils._decode_explicit<SpkmCredentials>(
+            () => _decode_SpkmCredentials
+        ),
+    ],
+    "CONTEXT 4": [
+        "sasl",
+        __utils._decode_explicit<SaslCredentials>(
+            () => _decode_SaslCredentials
+        ),
+    ],
 });
-export const _encode_Credentials = __utils._encode_choice<Credentials>({
-    "simple": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_SimpleCredentials, __utils.BER),
-    "strong": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_StrongCredentials, __utils.BER),
-    "externalProcedure": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeExternal, __utils.BER),
-    "spkm": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_SpkmCredentials, __utils.BER),
-    "sasl": __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_SaslCredentials, __utils.BER),
-}, __utils.BER);
-
+export const _encode_Credentials = __utils._encode_choice<Credentials>(
+    {
+        simple: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_SimpleCredentials,
+            __utils.BER
+        ),
+        strong: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => _encode_StrongCredentials,
+            __utils.BER
+        ),
+        externalProcedure: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () => __utils._encodeExternal,
+            __utils.BER
+        ),
+        spkm: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            3,
+            () => _encode_SpkmCredentials,
+            __utils.BER
+        ),
+        sasl: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            4,
+            () => _encode_SaslCredentials,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type Versions = asn1.BIT_STRING;
 export const Versions_v1: number = 0; /* LONG_NAMED_BIT */
@@ -791,26 +1190,37 @@ export const v2: number = Versions_v2; /* SHORT_NAMED_BIT */
 export const _decode_Versions = __utils._decodeBitString;
 export const _encode_Versions = __utils._encodeBitString;
 
-
 export class DirectoryBindArgument {
-    constructor (
+    constructor(
         readonly credentials: Credentials | undefined,
         readonly versions: Versions | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("versions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "credentials",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "versions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
-
-];
-export const _default_value_for_DirectoryBindArgument__versions = /* COULD_NOT_COMPILE_DEFAULT_VALUE versions */;
-export const _decode_DirectoryBindArgument = function (el: asn1.ASN1Element): DirectoryBindArgument {
+export const _root_component_type_list_2_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [];
+export const _default_value_for_DirectoryBindArgument__versions = new Uint8ClampedArray(
+    [asn1.TRUE_BIT]
+);
+export const _decode_DirectoryBindArgument = function (
+    el: asn1.ASN1Element
+): DirectoryBindArgument {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let credentials: asn1.OPTIONAL<Credentials>;
     let versions: asn1.OPTIONAL<Versions> = _default_value_for_DirectoryBindArgument__versions;
@@ -818,46 +1228,109 @@ export const _decode_DirectoryBindArgument = function (el: asn1.ASN1Element): Di
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "credentials": (_el: asn1.ASN1Element): void => { credentials = __utils._decode_explicit<Credentials>(() => _decode_Credentials)(_el); },
-        "versions": (_el: asn1.ASN1Element): void => { versions = __utils._decode_explicit<Versions>(() => _decode_Versions)(_el); }
+        credentials: (_el: asn1.ASN1Element): void => {
+            credentials = __utils._decode_explicit<Credentials>(
+                () => _decode_Credentials
+            )(_el);
+        },
+        versions: (_el: asn1.ASN1Element): void => {
+            versions = __utils._decode_explicit<Versions>(
+                () => _decode_Versions
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_DirectoryBindArgument,
         _extension_additions_list_spec_for_DirectoryBindArgument,
         _root_component_type_list_2_spec_for_DirectoryBindArgument,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new DirectoryBindArgument( /* SET_CONSTRUCTOR_CALL */
+    return new DirectoryBindArgument /* SET_CONSTRUCTOR_CALL */(
         credentials,
         versions,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_DirectoryBindArgument = function (value: DirectoryBindArgument, elGetter: __utils.ASN1Encoder<DirectoryBindArgument>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.credentials === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Credentials, __utils.BER)(value.credentials, __utils.BER)),
-            /* IF_DEFAULT */ (value.versions === undefined || __utils.deepEq(value.versions, _default_value_for_DirectoryBindArgument__versions) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_Versions, __utils.BER)(value.versions, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_DirectoryBindArgument = function (
+    value: DirectoryBindArgument,
+    elGetter: __utils.ASN1Encoder<DirectoryBindArgument>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.credentials === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_Credentials,
+                              __utils.BER
+                          )(value.credentials, __utils.BER),
+                    /* IF_DEFAULT */ value.versions === undefined ||
+                    __utils.deepEq(
+                        value.versions,
+                        _default_value_for_DirectoryBindArgument__versions
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_Versions,
+                              __utils.BER
+                          )(value.versions, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type PwdResponseValue_warning =
-    { timeLeft: asn1.INTEGER }
+    | { timeLeft: asn1.INTEGER }
     | { graceRemaining: asn1.INTEGER }
     | asn1.ASN1Element;
-export const _decode_PwdResponseValue_warning = __utils._decode_extensible_choice<PwdResponseValue_warning>({
-    "CONTEXT 0": [ "timeLeft", __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger) ],
-    "CONTEXT 1": [ "graceRemaining", __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger) ]
+export const _decode_PwdResponseValue_warning = __utils._decode_extensible_choice<
+    PwdResponseValue_warning
+>({
+    "CONTEXT 0": [
+        "timeLeft",
+        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
+    ],
+    "CONTEXT 1": [
+        "graceRemaining",
+        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
+    ],
 });
-export const _encode_PwdResponseValue_warning = __utils._encode_choice<PwdResponseValue_warning>({
-    "timeLeft": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeInteger, __utils.BER),
-    "graceRemaining": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeInteger, __utils.BER),
-}, __utils.BER);
-
+export const _encode_PwdResponseValue_warning = __utils._encode_choice<
+    PwdResponseValue_warning
+>(
+    {
+        timeLeft: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => __utils._encodeInteger,
+            __utils.BER
+        ),
+        graceRemaining: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => __utils._encodeInteger,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type PwdResponseValue_error = asn1.ENUMERATED;
 export const PwdResponseValue_error_passwordExpired: PwdResponseValue_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -865,58 +1338,84 @@ export const PwdResponseValue_error_changeAfterReset: PwdResponseValue_error = 1
 export const _decode_PwdResponseValue_error = __utils._decodeEnumerated;
 export const _encode_PwdResponseValue_error = __utils._encodeEnumerated;
 
-
 export class PwdResponseValue {
-    constructor (
+    constructor(
         readonly warning: PwdResponseValue_warning | undefined,
         readonly error: PwdResponseValue_error | undefined
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("warning", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("error", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
+    new __utils.ComponentSpec(
+        "warning",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "error",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 10),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_PwdResponseValue = function (el: asn1.ASN1Element): PwdResponseValue {
+export const _decode_PwdResponseValue = function (
+    el: asn1.ASN1Element
+): PwdResponseValue {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let warning: asn1.OPTIONAL<PwdResponseValue_warning>;
     let error: asn1.OPTIONAL<PwdResponseValue_error>;
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "warning": (_el: asn1.ASN1Element): void => { warning = _decode_PwdResponseValue_warning(_el); },
-        "error": (_el: asn1.ASN1Element): void => { error = _decode_PwdResponseValue_error(_el); }
+        warning: (_el: asn1.ASN1Element): void => {
+            warning = _decode_PwdResponseValue_warning(_el);
+        },
+        error: (_el: asn1.ASN1Element): void => {
+            error = _decode_PwdResponseValue_error(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_PwdResponseValue,
         _extension_additions_list_spec_for_PwdResponseValue,
         _root_component_type_list_2_spec_for_PwdResponseValue,
-        undefined,
+        undefined
     );
-    return new PwdResponseValue( /* SEQUENCE_CONSTRUCTOR_CALL */
-        warning,
-        error
+    return new PwdResponseValue /* SEQUENCE_CONSTRUCTOR_CALL */(warning, error);
+};
+export const _encode_PwdResponseValue = function (
+    value: PwdResponseValue,
+    elGetter: __utils.ASN1Encoder<PwdResponseValue>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat([
+                /* IF_ABSENT  */ value.warning === undefined
+                    ? undefined
+                    : _encode_PwdResponseValue_warning(
+                          value.warning,
+                          __utils.BER
+                      ),
+                /* IF_ABSENT  */ value.error === undefined
+                    ? undefined
+                    : _encode_PwdResponseValue_error(value.error, __utils.BER),
+            ])
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
     );
 };
-export const _encode_PwdResponseValue = function (value: PwdResponseValue, elGetter: __utils.ASN1Encoder<PwdResponseValue>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.warning === undefined) ? undefined : _encode_PwdResponseValue_warning(value.warning, __utils.BER)),
-            /* IF_ABSENT  */ ((value.error === undefined) ? undefined : _encode_PwdResponseValue_error(value.error, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
-};
-
 
 export class DirectoryBindResult {
-    constructor (
+    constructor(
         readonly credentials: Credentials | undefined,
         readonly versions: Versions | undefined,
         readonly pwdResponseValue: PwdResponseValue | undefined,
@@ -924,17 +1423,37 @@ export class DirectoryBindResult {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("versions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "credentials",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "versions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("pwdResponseValue", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "pwdResponseValue",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
-export const _default_value_for_DirectoryBindResult__versions = /* COULD_NOT_COMPILE_DEFAULT_VALUE versions */;
-export const _decode_DirectoryBindResult = function (el: asn1.ASN1Element): DirectoryBindResult {
+export const _default_value_for_DirectoryBindResult__versions = new Uint8ClampedArray(
+    [asn1.TRUE_BIT]
+);
+export const _decode_DirectoryBindResult = function (
+    el: asn1.ASN1Element
+): DirectoryBindResult {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let credentials: asn1.OPTIONAL<Credentials>;
     let versions: asn1.OPTIONAL<Versions> = _default_value_for_DirectoryBindResult__versions;
@@ -943,118 +1462,264 @@ export const _decode_DirectoryBindResult = function (el: asn1.ASN1Element): Dire
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "credentials": (_el: asn1.ASN1Element): void => { credentials = __utils._decode_explicit<Credentials>(() => _decode_Credentials)(_el); },
-        "versions": (_el: asn1.ASN1Element): void => { versions = __utils._decode_explicit<Versions>(() => _decode_Versions)(_el); },
-        "pwdResponseValue": (_el: asn1.ASN1Element): void => { pwdResponseValue = __utils._decode_explicit<PwdResponseValue>(() => _decode_PwdResponseValue)(_el); }
+        credentials: (_el: asn1.ASN1Element): void => {
+            credentials = __utils._decode_explicit<Credentials>(
+                () => _decode_Credentials
+            )(_el);
+        },
+        versions: (_el: asn1.ASN1Element): void => {
+            versions = __utils._decode_explicit<Versions>(
+                () => _decode_Versions
+            )(_el);
+        },
+        pwdResponseValue: (_el: asn1.ASN1Element): void => {
+            pwdResponseValue = __utils._decode_explicit<PwdResponseValue>(
+                () => _decode_PwdResponseValue
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_DirectoryBindResult,
         _extension_additions_list_spec_for_DirectoryBindResult,
         _root_component_type_list_2_spec_for_DirectoryBindResult,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new DirectoryBindResult( /* SET_CONSTRUCTOR_CALL */
+    return new DirectoryBindResult /* SET_CONSTRUCTOR_CALL */(
         credentials,
         versions,
         pwdResponseValue,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_DirectoryBindResult = function (value: DirectoryBindResult, elGetter: __utils.ASN1Encoder<DirectoryBindResult>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.credentials === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Credentials, __utils.BER)(value.credentials, __utils.BER)),
-            /* IF_DEFAULT */ (value.versions === undefined || __utils.deepEq(value.versions, _default_value_for_DirectoryBindResult__versions) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_Versions, __utils.BER)(value.versions, __utils.BER))
-        ],
-        [
-            /* IF_ABSENT  */ ((value.pwdResponseValue === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_PwdResponseValue, __utils.BER)(value.pwdResponseValue, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_DirectoryBindResult = function (
+    value: DirectoryBindResult,
+    elGetter: __utils.ASN1Encoder<DirectoryBindResult>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.credentials === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_Credentials,
+                              __utils.BER
+                          )(value.credentials, __utils.BER),
+                    /* IF_DEFAULT */ value.versions === undefined ||
+                    __utils.deepEq(
+                        value.versions,
+                        _default_value_for_DirectoryBindResult__versions
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_Versions,
+                              __utils.BER
+                          )(value.versions, __utils.BER),
+                ],
+                [
+                    /* IF_ABSENT  */ value.pwdResponseValue === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_PwdResponseValue,
+                              __utils.BER
+                          )(value.pwdResponseValue, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: directoryBindError
 
 export type BindKeyInfo = ENCRYPTED<asn1.BIT_STRING>; // DefinedType
-export const _decode_BindKeyInfo = _get_decoder_for_ENCRYPTED<asn1.BIT_STRING>(__utils._decodeBitString);
-export const _encode_BindKeyInfo = _get_encoder_for_ENCRYPTED<asn1.BIT_STRING>(__utils._encodeBitString);
-
+export const _decode_BindKeyInfo = _get_decoder_for_ENCRYPTED<asn1.BIT_STRING>(
+    __utils._decodeBitString
+);
+export const _encode_BindKeyInfo = _get_encoder_for_ENCRYPTED<asn1.BIT_STRING>(
+    __utils._encodeBitString
+);
 
 // TODO: ObjectAssignment: read
 
 export type EntryInformationSelection_attributes =
-    { allUserAttributes: asn1.NULL }
+    | { allUserAttributes: asn1.NULL }
     | { select: AttributeType[] };
-export const _decode_EntryInformationSelection_attributes = __utils._decode_inextensible_choice<EntryInformationSelection_attributes>({
-    "CONTEXT 0": [ "allUserAttributes", __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull) ],
-    "CONTEXT 1": [ "select", __utils._decode_explicit<AttributeType[]>(() => __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)) ]
+export const _decode_EntryInformationSelection_attributes = __utils._decode_inextensible_choice<
+    EntryInformationSelection_attributes
+>({
+    "CONTEXT 0": [
+        "allUserAttributes",
+        __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
+    ],
+    "CONTEXT 1": [
+        "select",
+        __utils._decode_explicit<AttributeType[]>(() =>
+            __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)
+        ),
+    ],
 });
-export const _encode_EntryInformationSelection_attributes = __utils._encode_choice<EntryInformationSelection_attributes>({
-    "allUserAttributes": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeNull, __utils.BER),
-    "select": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<AttributeType>(() => _encode_AttributeType, __utils.BER), __utils.BER),
-}, __utils.BER);
-
+export const _encode_EntryInformationSelection_attributes = __utils._encode_choice<
+    EntryInformationSelection_attributes
+>(
+    {
+        allUserAttributes: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => __utils._encodeNull,
+            __utils.BER
+        ),
+        select: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () =>
+                __utils._encodeSetOf<AttributeType>(
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type EntryInformationSelection_infoTypes = asn1.INTEGER;
 export const EntryInformationSelection_infoTypes_attributeTypesOnly: EntryInformationSelection_infoTypes = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const attributeTypesOnly: EntryInformationSelection_infoTypes = EntryInformationSelection_infoTypes_attributeTypesOnly; /* SHORT_NAMED_INTEGER_VALUE */
 export const EntryInformationSelection_infoTypes_attributeTypesAndValues: EntryInformationSelection_infoTypes = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const attributeTypesAndValues: EntryInformationSelection_infoTypes = EntryInformationSelection_infoTypes_attributeTypesAndValues; /* SHORT_NAMED_INTEGER_VALUE */
-export const _decode_EntryInformationSelection_infoTypes = __utils._decodeInteger;
-export const _encode_EntryInformationSelection_infoTypes = __utils._encodeInteger;
-
+export const _decode_EntryInformationSelection_infoTypes =
+    __utils._decodeInteger;
+export const _encode_EntryInformationSelection_infoTypes =
+    __utils._encodeInteger;
 
 export type EntryInformationSelection_extraAttributes =
-    { allOperationalAttributes: asn1.NULL }
+    | { allOperationalAttributes: asn1.NULL }
     | { select: AttributeType[] };
-export const _decode_EntryInformationSelection_extraAttributes = __utils._decode_inextensible_choice<EntryInformationSelection_extraAttributes>({
-    "CONTEXT 3": [ "allOperationalAttributes", __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull) ],
-    "CONTEXT 4": [ "select", __utils._decode_explicit<AttributeType[]>(() => __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)) ]
+export const _decode_EntryInformationSelection_extraAttributes = __utils._decode_inextensible_choice<
+    EntryInformationSelection_extraAttributes
+>({
+    "CONTEXT 3": [
+        "allOperationalAttributes",
+        __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
+    ],
+    "CONTEXT 4": [
+        "select",
+        __utils._decode_explicit<AttributeType[]>(() =>
+            __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)
+        ),
+    ],
 });
-export const _encode_EntryInformationSelection_extraAttributes = __utils._encode_choice<EntryInformationSelection_extraAttributes>({
-    "allOperationalAttributes": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeNull, __utils.BER),
-    "select": __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeSetOf<AttributeType>(() => _encode_AttributeType, __utils.BER), __utils.BER),
-}, __utils.BER);
-
+export const _encode_EntryInformationSelection_extraAttributes = __utils._encode_choice<
+    EntryInformationSelection_extraAttributes
+>(
+    {
+        allOperationalAttributes: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            3,
+            () => __utils._encodeNull,
+            __utils.BER
+        ),
+        select: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            4,
+            () =>
+                __utils._encodeSetOf<AttributeType>(
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type TypeAndContextAssertion_contextAssertions =
-    { preference: ContextAssertion[] }
+    | { preference: ContextAssertion[] }
     | { all: ContextAssertion[] }
     | asn1.ASN1Element;
-export const _decode_TypeAndContextAssertion_contextAssertions = __utils._decode_extensible_choice<TypeAndContextAssertion_contextAssertions>({
-    "UNIVERSAL 16": [ "preference", __utils._decodeSequenceOf<ContextAssertion>(() => _decode_ContextAssertion) ],
-    "UNIVERSAL 17": [ "all", __utils._decodeSetOf<ContextAssertion>(() => _decode_ContextAssertion) ]
+export const _decode_TypeAndContextAssertion_contextAssertions = __utils._decode_extensible_choice<
+    TypeAndContextAssertion_contextAssertions
+>({
+    "UNIVERSAL 16": [
+        "preference",
+        __utils._decodeSequenceOf<ContextAssertion>(
+            () => _decode_ContextAssertion
+        ),
+    ],
+    "UNIVERSAL 17": [
+        "all",
+        __utils._decodeSetOf<ContextAssertion>(() => _decode_ContextAssertion),
+    ],
 });
-export const _encode_TypeAndContextAssertion_contextAssertions = __utils._encode_choice<TypeAndContextAssertion_contextAssertions>({
-    "preference": __utils._encodeSequenceOf<ContextAssertion>(() => _encode_ContextAssertion, __utils.BER),
-    "all": __utils._encodeSetOf<ContextAssertion>(() => _encode_ContextAssertion, __utils.BER),
-}, __utils.BER);
-
+export const _encode_TypeAndContextAssertion_contextAssertions = __utils._encode_choice<
+    TypeAndContextAssertion_contextAssertions
+>(
+    {
+        preference: __utils._encodeSequenceOf<ContextAssertion>(
+            () => _encode_ContextAssertion,
+            __utils.BER
+        ),
+        all: __utils._encodeSetOf<ContextAssertion>(
+            () => _encode_ContextAssertion,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export class TypeAndContextAssertion {
-    constructor (
+    constructor(
         readonly type_: AttributeType,
         readonly contextAssertions: TypeAndContextAssertion_contextAssertions,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("contextAssertions", false, __utils.hasAnyTag, undefined, undefined)
+    new __utils.ComponentSpec(
+        "type",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "contextAssertions",
+        false,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_TypeAndContextAssertion = function (el: asn1.ASN1Element): TypeAndContextAssertion {
+export const _decode_TypeAndContextAssertion = function (
+    el: asn1.ASN1Element
+): TypeAndContextAssertion {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("TypeAndContextAssertion contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "TypeAndContextAssertion contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "type";
@@ -1062,38 +1727,71 @@ export const _decode_TypeAndContextAssertion = function (el: asn1.ASN1Element): 
     let type_!: AttributeType;
     let contextAssertions!: TypeAndContextAssertion_contextAssertions;
     type_ = _decode_AttributeType(sequence[0]);
-    contextAssertions = _decode_TypeAndContextAssertion_contextAssertions(sequence[1]);
+    contextAssertions = _decode_TypeAndContextAssertion_contextAssertions(
+        sequence[1]
+    );
     // TODO: Validate values.
     return new TypeAndContextAssertion(
         type_,
         contextAssertions,
-        sequence.slice(2),
+        sequence.slice(2)
     );
 };
-export const _encode_TypeAndContextAssertion = function (value: TypeAndContextAssertion, elGetter: __utils.ASN1Encoder<TypeAndContextAssertion>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_AttributeType(value.type_, __utils.BER),
-            /* REQUIRED   */ _encode_TypeAndContextAssertion_contextAssertions(value.contextAssertions, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_TypeAndContextAssertion = function (
+    value: TypeAndContextAssertion,
+    elGetter: __utils.ASN1Encoder<TypeAndContextAssertion>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.type_,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_TypeAndContextAssertion_contextAssertions(
+                        value.contextAssertions,
+                        __utils.BER
+                    ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ContextSelection =
-    { allContexts: asn1.NULL }
+    | { allContexts: asn1.NULL }
     | { selectedContexts: TypeAndContextAssertion[] }
     | asn1.ASN1Element;
-export const _decode_ContextSelection = __utils._decode_extensible_choice<ContextSelection>({
-    "UNIVERSAL 5": [ "allContexts", __utils._decodeNull ],
-    "UNIVERSAL 17": [ "selectedContexts", __utils._decodeSetOf<TypeAndContextAssertion>(() => _decode_TypeAndContextAssertion) ]
+export const _decode_ContextSelection = __utils._decode_extensible_choice<
+    ContextSelection
+>({
+    "UNIVERSAL 5": ["allContexts", __utils._decodeNull],
+    "UNIVERSAL 17": [
+        "selectedContexts",
+        __utils._decodeSetOf<TypeAndContextAssertion>(
+            () => _decode_TypeAndContextAssertion
+        ),
+    ],
 });
-export const _encode_ContextSelection = __utils._encode_choice<ContextSelection>({
-    "allContexts": __utils._encodeNull,
-    "selectedContexts": __utils._encodeSetOf<TypeAndContextAssertion>(() => _encode_TypeAndContextAssertion, __utils.BER),
-}, __utils.BER);
-
+export const _encode_ContextSelection = __utils._encode_choice<
+    ContextSelection
+>(
+    {
+        allContexts: __utils._encodeNull,
+        selectedContexts: __utils._encodeSetOf<TypeAndContextAssertion>(
+            () => _encode_TypeAndContextAssertion,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type FamilyReturn_memberSelect = asn1.ENUMERATED;
 export const FamilyReturn_memberSelect_contributingEntriesOnly: FamilyReturn_memberSelect = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1104,26 +1802,35 @@ export const FamilyReturn_memberSelect_compoundEntry: FamilyReturn_memberSelect 
 export const _decode_FamilyReturn_memberSelect = __utils._decodeEnumerated;
 export const _encode_FamilyReturn_memberSelect = __utils._encodeEnumerated;
 
-
 export class FamilyReturn {
-    constructor (
+    constructor(
         readonly memberSelect: FamilyReturn_memberSelect,
         readonly familySelect: asn1.OBJECT_IDENTIFIER[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("memberSelect", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
-    new __utils.ComponentSpec("familySelect", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "memberSelect",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 10),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familySelect",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyReturn: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_FamilyReturn: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_FamilyReturn = function (el: asn1.ASN1Element): FamilyReturn {
+export const _decode_FamilyReturn = function (
+    el: asn1.ASN1Element
+): FamilyReturn {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let memberSelect!: FamilyReturn_memberSelect;
     let familySelect: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER[]>;
@@ -1131,65 +1838,132 @@ export const _decode_FamilyReturn = function (el: asn1.ASN1Element): FamilyRetur
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "memberSelect": (_el: asn1.ASN1Element): void => { memberSelect = _decode_FamilyReturn_memberSelect(_el); },
-        "familySelect": (_el: asn1.ASN1Element): void => { familySelect = __utils._decodeSequenceOf<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(_el); }
+        memberSelect: (_el: asn1.ASN1Element): void => {
+            memberSelect = _decode_FamilyReturn_memberSelect(_el);
+        },
+        familySelect: (_el: asn1.ASN1Element): void => {
+            familySelect = __utils._decodeSequenceOf<asn1.OBJECT_IDENTIFIER>(
+                () => __utils._decodeObjectIdentifier
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_FamilyReturn,
         _extension_additions_list_spec_for_FamilyReturn,
         _root_component_type_list_2_spec_for_FamilyReturn,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new FamilyReturn( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new FamilyReturn /* SEQUENCE_CONSTRUCTOR_CALL */(
         memberSelect,
         familySelect,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_FamilyReturn = function (value: FamilyReturn, elGetter: __utils.ASN1Encoder<FamilyReturn>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_FamilyReturn_memberSelect(value.memberSelect, __utils.BER),
-            /* IF_ABSENT  */ ((value.familySelect === undefined) ? undefined : __utils._encodeSequenceOf<asn1.OBJECT_IDENTIFIER>(() => __utils._encodeObjectIdentifier, __utils.BER)(value.familySelect, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_FamilyReturn = function (
+    value: FamilyReturn,
+    elGetter: __utils.ASN1Encoder<FamilyReturn>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_FamilyReturn_memberSelect(
+                        value.memberSelect,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.familySelect === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<asn1.OBJECT_IDENTIFIER>(
+                              () => __utils._encodeObjectIdentifier,
+                              __utils.BER
+                          )(value.familySelect, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class EntryInformationSelection {
-    constructor (
+    constructor(
         readonly attributes: EntryInformationSelection_attributes | undefined,
         readonly infoTypes: EntryInformationSelection_infoTypes | undefined,
-        readonly extraAttributes: EntryInformationSelection_extraAttributes | undefined,
+        readonly extraAttributes:
+            | EntryInformationSelection_extraAttributes
+            | undefined,
         readonly contextSelection: ContextSelection | undefined,
         readonly returnContexts: asn1.BOOLEAN | undefined,
         readonly familyReturn: FamilyReturn | undefined
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("attributes", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("infoTypes", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("extraAttributes", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("contextSelection", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("returnContexts", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined),
-    new __utils.ComponentSpec("familyReturn", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "attributes",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "infoTypes",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "extraAttributes",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "contextSelection",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "returnContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyReturn",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
-
-];
-export const _default_value_for_EntryInformationSelection__attributes = { allUserAttributes: null };
+export const _root_component_type_list_2_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [];
+export const _default_value_for_EntryInformationSelection__attributes = {
+    allUserAttributes: null,
+};
 export const _default_value_for_EntryInformationSelection__infoTypes = attributeTypesAndValues;
 export const _default_value_for_EntryInformationSelection__returnContexts = false;
 export const _default_value_for_EntryInformationSelection__familyReturn = new FamilyReturn(
     FamilyReturn_memberSelect_contributingEntriesOnly,
-    undefined,
+    undefined
 );
-export const _decode_EntryInformationSelection = function (el: asn1.ASN1Element): EntryInformationSelection {
+export const _decode_EntryInformationSelection = function (
+    el: asn1.ASN1Element
+): EntryInformationSelection {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let attributes: asn1.OPTIONAL<EntryInformationSelection_attributes> = _default_value_for_EntryInformationSelection__attributes;
     let infoTypes: asn1.OPTIONAL<EntryInformationSelection_infoTypes> = _default_value_for_EntryInformationSelection__infoTypes;
@@ -1200,21 +1974,39 @@ export const _decode_EntryInformationSelection = function (el: asn1.ASN1Element)
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "attributes": (_el: asn1.ASN1Element): void => { attributes = _decode_EntryInformationSelection_attributes(_el); },
-        "infoTypes": (_el: asn1.ASN1Element): void => { infoTypes = __utils._decode_explicit<EntryInformationSelection_infoTypes>(() => _decode_EntryInformationSelection_infoTypes)(_el); },
-        "extraAttributes": (_el: asn1.ASN1Element): void => { extraAttributes = _decode_EntryInformationSelection_extraAttributes(_el); },
-        "contextSelection": (_el: asn1.ASN1Element): void => { contextSelection = _decode_ContextSelection(_el); },
-        "returnContexts": (_el: asn1.ASN1Element): void => { returnContexts = __utils._decodeBoolean(_el); },
-        "familyReturn": (_el: asn1.ASN1Element): void => { familyReturn = _decode_FamilyReturn(_el); }
+        attributes: (_el: asn1.ASN1Element): void => {
+            attributes = _decode_EntryInformationSelection_attributes(_el);
+        },
+        infoTypes: (_el: asn1.ASN1Element): void => {
+            infoTypes = __utils._decode_explicit<
+                EntryInformationSelection_infoTypes
+            >(() => _decode_EntryInformationSelection_infoTypes)(_el);
+        },
+        extraAttributes: (_el: asn1.ASN1Element): void => {
+            extraAttributes = _decode_EntryInformationSelection_extraAttributes(
+                _el
+            );
+        },
+        contextSelection: (_el: asn1.ASN1Element): void => {
+            contextSelection = _decode_ContextSelection(_el);
+        },
+        returnContexts: (_el: asn1.ASN1Element): void => {
+            returnContexts = __utils._decodeBoolean(_el);
+        },
+        familyReturn: (_el: asn1.ASN1Element): void => {
+            familyReturn = _decode_FamilyReturn(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_EntryInformationSelection,
         _extension_additions_list_spec_for_EntryInformationSelection,
         _root_component_type_list_2_spec_for_EntryInformationSelection,
-        undefined,
+        undefined
     );
-    return new EntryInformationSelection( /* SET_CONSTRUCTOR_CALL */
+    return new EntryInformationSelection /* SET_CONSTRUCTOR_CALL */(
         attributes,
         infoTypes,
         extraAttributes,
@@ -1223,19 +2015,68 @@ export const _decode_EntryInformationSelection = function (el: asn1.ASN1Element)
         familyReturn
     );
 };
-export const _encode_EntryInformationSelection = function (value: EntryInformationSelection, elGetter: __utils.ASN1Encoder<EntryInformationSelection>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_DEFAULT */ (value.attributes === undefined || __utils.deepEq(value.attributes, _default_value_for_EntryInformationSelection__attributes) ? undefined : _encode_EntryInformationSelection_attributes(value.attributes, __utils.BER)),
-            /* IF_DEFAULT */ (value.infoTypes === undefined || __utils.deepEq(value.infoTypes, _default_value_for_EntryInformationSelection__infoTypes) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_EntryInformationSelection_infoTypes, __utils.BER)(value.infoTypes, __utils.BER)),
-            /* IF_ABSENT  */ ((value.extraAttributes === undefined) ? undefined : _encode_EntryInformationSelection_extraAttributes(value.extraAttributes, __utils.BER)),
-            /* IF_ABSENT  */ ((value.contextSelection === undefined) ? undefined : _encode_ContextSelection(value.contextSelection, __utils.BER)),
-            /* IF_DEFAULT */ (value.returnContexts === undefined || __utils.deepEq(value.returnContexts, _default_value_for_EntryInformationSelection__returnContexts) ? undefined : __utils._encodeBoolean(value.returnContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyReturn === undefined || __utils.deepEq(value.familyReturn, _default_value_for_EntryInformationSelection__familyReturn) ? undefined : _encode_FamilyReturn(value.familyReturn, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_EntryInformationSelection = function (
+    value: EntryInformationSelection,
+    elGetter: __utils.ASN1Encoder<EntryInformationSelection>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat([
+                /* IF_DEFAULT */ value.attributes === undefined ||
+                __utils.deepEq(
+                    value.attributes,
+                    _default_value_for_EntryInformationSelection__attributes
+                )
+                    ? undefined
+                    : _encode_EntryInformationSelection_attributes(
+                          value.attributes,
+                          __utils.BER
+                      ),
+                /* IF_DEFAULT */ value.infoTypes === undefined ||
+                __utils.deepEq(
+                    value.infoTypes,
+                    _default_value_for_EntryInformationSelection__infoTypes
+                )
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          2,
+                          () => _encode_EntryInformationSelection_infoTypes,
+                          __utils.BER
+                      )(value.infoTypes, __utils.BER),
+                /* IF_ABSENT  */ value.extraAttributes === undefined
+                    ? undefined
+                    : _encode_EntryInformationSelection_extraAttributes(
+                          value.extraAttributes,
+                          __utils.BER
+                      ),
+                /* IF_ABSENT  */ value.contextSelection === undefined
+                    ? undefined
+                    : _encode_ContextSelection(
+                          value.contextSelection,
+                          __utils.BER
+                      ),
+                /* IF_DEFAULT */ value.returnContexts === undefined ||
+                __utils.deepEq(
+                    value.returnContexts,
+                    _default_value_for_EntryInformationSelection__returnContexts
+                )
+                    ? undefined
+                    : __utils._encodeBoolean(value.returnContexts, __utils.BER),
+                /* IF_DEFAULT */ value.familyReturn === undefined ||
+                __utils.deepEq(
+                    value.familyReturn,
+                    _default_value_for_EntryInformationSelection__familyReturn
+                )
+                    ? undefined
+                    : _encode_FamilyReturn(value.familyReturn, __utils.BER),
+            ])
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 export type ServiceControlOptions = asn1.BIT_STRING;
 export const ServiceControlOptions_preferChaining: number = 0; /* LONG_NAMED_BIT */
@@ -1271,7 +2112,6 @@ export const allowWriteableCopy: number = ServiceControlOptions_allowWriteableCo
 export const _decode_ServiceControlOptions = __utils._decodeBitString;
 export const _encode_ServiceControlOptions = __utils._encodeBitString;
 
-
 export type ServiceControls_priority = asn1.INTEGER;
 export const ServiceControls_priority_low: ServiceControls_priority = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const low: ServiceControls_priority = ServiceControls_priority_low; /* SHORT_NAMED_INTEGER_VALUE */
@@ -1282,7 +2122,6 @@ export const high: ServiceControls_priority = ServiceControls_priority_high; /* 
 export const _decode_ServiceControls_priority = __utils._decodeInteger;
 export const _encode_ServiceControls_priority = __utils._encodeInteger;
 
-
 export type ServiceControls_scopeOfReferral = asn1.INTEGER;
 export const ServiceControls_scopeOfReferral_dmd: ServiceControls_scopeOfReferral = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const dmd: ServiceControls_scopeOfReferral = ServiceControls_scopeOfReferral_dmd; /* SHORT_NAMED_INTEGER_VALUE */
@@ -1291,29 +2130,42 @@ export const country: ServiceControls_scopeOfReferral = ServiceControls_scopeOfR
 export const _decode_ServiceControls_scopeOfReferral = __utils._decodeInteger;
 export const _encode_ServiceControls_scopeOfReferral = __utils._encodeInteger;
 
-
 export class ServiceControls_manageDSAITPlaneRef {
-    constructor (
+    constructor(
         readonly dsaName: Name,
         readonly agreementID: AgreementID,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("dsaName", false, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "dsaName",
+        false,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "agreementID",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_ServiceControls_manageDSAITPlaneRef = function (el: asn1.ASN1Element): ServiceControls_manageDSAITPlaneRef {
+export const _decode_ServiceControls_manageDSAITPlaneRef = function (
+    el: asn1.ASN1Element
+): ServiceControls_manageDSAITPlaneRef {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("ServiceControls-manageDSAITPlaneRef contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "ServiceControls-manageDSAITPlaneRef contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "dsaName";
@@ -1326,54 +2178,124 @@ export const _decode_ServiceControls_manageDSAITPlaneRef = function (el: asn1.AS
     return new ServiceControls_manageDSAITPlaneRef(
         dsaName,
         agreementID,
-        sequence.slice(2),
+        sequence.slice(2)
     );
 };
-export const _encode_ServiceControls_manageDSAITPlaneRef = function (value: ServiceControls_manageDSAITPlaneRef, elGetter: __utils.ASN1Encoder<ServiceControls_manageDSAITPlaneRef>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_Name(value.dsaName, __utils.BER),
-            /* REQUIRED   */ _encode_AgreementID(value.agreementID, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ServiceControls_manageDSAITPlaneRef = function (
+    value: ServiceControls_manageDSAITPlaneRef,
+    elGetter: __utils.ASN1Encoder<ServiceControls_manageDSAITPlaneRef>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_Name(value.dsaName, __utils.BER),
+                    /* REQUIRED   */ _encode_AgreementID(
+                        value.agreementID,
+                        __utils.BER
+                    ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class ServiceControls {
-    constructor (
+    constructor(
         readonly options: ServiceControlOptions | undefined,
         readonly priority: ServiceControls_priority | undefined,
         readonly timeLimit: asn1.INTEGER | undefined,
         readonly sizeLimit: asn1.INTEGER | undefined,
         readonly scopeOfReferral: ServiceControls_scopeOfReferral | undefined,
         readonly attributeSizeLimit: asn1.INTEGER | undefined,
-        readonly manageDSAITPlaneRef: ServiceControls_manageDSAITPlaneRef | undefined,
+        readonly manageDSAITPlaneRef:
+            | ServiceControls_manageDSAITPlaneRef
+            | undefined,
         readonly serviceType: asn1.OBJECT_IDENTIFIER | undefined,
         readonly userClass: asn1.INTEGER | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ServiceControls: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("options", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("priority", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("timeLimit", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("sizeLimit", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("scopeOfReferral", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("attributeSizeLimit", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
-    new __utils.ComponentSpec("manageDSAITPlaneRef", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
-    new __utils.ComponentSpec("serviceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 7), undefined, undefined),
-    new __utils.ComponentSpec("userClass", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined)
+    new __utils.ComponentSpec(
+        "options",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "priority",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "timeLimit",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "sizeLimit",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "scopeOfReferral",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "attributeSizeLimit",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "manageDSAITPlaneRef",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "serviceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 7),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "userClass",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 8),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_ServiceControls: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_ServiceControls: __utils.ComponentSpec[] = [
-
-];
-export const _default_value_for_ServiceControls__options = /* COULD_NOT_COMPILE_DEFAULT_VALUE options */;
+export const _root_component_type_list_2_spec_for_ServiceControls: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_ServiceControls: __utils.ComponentSpec[] = [];
+export const _default_value_for_ServiceControls__options = new Uint8ClampedArray(
+    0
+);
 export const _default_value_for_ServiceControls__priority = medium;
-export const _decode_ServiceControls = function (el: asn1.ASN1Element): ServiceControls {
+export const _decode_ServiceControls = function (
+    el: asn1.ASN1Element
+): ServiceControls {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let options: asn1.OPTIONAL<ServiceControlOptions> = _default_value_for_ServiceControls__options;
     let priority: asn1.OPTIONAL<ServiceControls_priority> = _default_value_for_ServiceControls__priority;
@@ -1388,24 +2310,64 @@ export const _decode_ServiceControls = function (el: asn1.ASN1Element): ServiceC
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "options": (_el: asn1.ASN1Element): void => { options = __utils._decode_explicit<ServiceControlOptions>(() => _decode_ServiceControlOptions)(_el); },
-        "priority": (_el: asn1.ASN1Element): void => { priority = __utils._decode_explicit<ServiceControls_priority>(() => _decode_ServiceControls_priority)(_el); },
-        "timeLimit": (_el: asn1.ASN1Element): void => { timeLimit = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "sizeLimit": (_el: asn1.ASN1Element): void => { sizeLimit = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "scopeOfReferral": (_el: asn1.ASN1Element): void => { scopeOfReferral = __utils._decode_explicit<ServiceControls_scopeOfReferral>(() => _decode_ServiceControls_scopeOfReferral)(_el); },
-        "attributeSizeLimit": (_el: asn1.ASN1Element): void => { attributeSizeLimit = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "manageDSAITPlaneRef": (_el: asn1.ASN1Element): void => { manageDSAITPlaneRef = __utils._decode_explicit<ServiceControls_manageDSAITPlaneRef>(() => _decode_ServiceControls_manageDSAITPlaneRef)(_el); },
-        "serviceType": (_el: asn1.ASN1Element): void => { serviceType = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier)(_el); },
-        "userClass": (_el: asn1.ASN1Element): void => { userClass = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); }
+        options: (_el: asn1.ASN1Element): void => {
+            options = __utils._decode_explicit<ServiceControlOptions>(
+                () => _decode_ServiceControlOptions
+            )(_el);
+        },
+        priority: (_el: asn1.ASN1Element): void => {
+            priority = __utils._decode_explicit<ServiceControls_priority>(
+                () => _decode_ServiceControls_priority
+            )(_el);
+        },
+        timeLimit: (_el: asn1.ASN1Element): void => {
+            timeLimit = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        sizeLimit: (_el: asn1.ASN1Element): void => {
+            sizeLimit = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        scopeOfReferral: (_el: asn1.ASN1Element): void => {
+            scopeOfReferral = __utils._decode_explicit<
+                ServiceControls_scopeOfReferral
+            >(() => _decode_ServiceControls_scopeOfReferral)(_el);
+        },
+        attributeSizeLimit: (_el: asn1.ASN1Element): void => {
+            attributeSizeLimit = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        manageDSAITPlaneRef: (_el: asn1.ASN1Element): void => {
+            manageDSAITPlaneRef = __utils._decode_explicit<
+                ServiceControls_manageDSAITPlaneRef
+            >(() => _decode_ServiceControls_manageDSAITPlaneRef)(_el);
+        },
+        serviceType: (_el: asn1.ASN1Element): void => {
+            serviceType = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(
+                () => __utils._decodeObjectIdentifier
+            )(_el);
+        },
+        userClass: (_el: asn1.ASN1Element): void => {
+            userClass = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ServiceControls,
         _extension_additions_list_spec_for_ServiceControls,
         _root_component_type_list_2_spec_for_ServiceControls,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ServiceControls( /* SET_CONSTRUCTOR_CALL */
+    return new ServiceControls /* SET_CONSTRUCTOR_CALL */(
         options,
         priority,
         timeLimit,
@@ -1418,23 +2380,105 @@ export const _decode_ServiceControls = function (el: asn1.ASN1Element): ServiceC
         _unrecognizedExtensionsList
     );
 };
-export const _encode_ServiceControls = function (value: ServiceControls, elGetter: __utils.ASN1Encoder<ServiceControls>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_DEFAULT */ (value.options === undefined || __utils.deepEq(value.options, _default_value_for_ServiceControls__options) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_ServiceControlOptions, __utils.BER)(value.options, __utils.BER)),
-            /* IF_DEFAULT */ (value.priority === undefined || __utils.deepEq(value.priority, _default_value_for_ServiceControls__priority) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_ServiceControls_priority, __utils.BER)(value.priority, __utils.BER)),
-            /* IF_ABSENT  */ ((value.timeLimit === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeInteger, __utils.BER)(value.timeLimit, __utils.BER)),
-            /* IF_ABSENT  */ ((value.sizeLimit === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeInteger, __utils.BER)(value.sizeLimit, __utils.BER)),
-            /* IF_ABSENT  */ ((value.scopeOfReferral === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_ServiceControls_scopeOfReferral, __utils.BER)(value.scopeOfReferral, __utils.BER)),
-            /* IF_ABSENT  */ ((value.attributeSizeLimit === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => __utils._encodeInteger, __utils.BER)(value.attributeSizeLimit, __utils.BER)),
-            /* IF_ABSENT  */ ((value.manageDSAITPlaneRef === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => _encode_ServiceControls_manageDSAITPlaneRef, __utils.BER)(value.manageDSAITPlaneRef, __utils.BER)),
-            /* IF_ABSENT  */ ((value.serviceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 7, () => __utils._encodeObjectIdentifier, __utils.BER)(value.serviceType, __utils.BER)),
-            /* IF_ABSENT  */ ((value.userClass === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 8, () => __utils._encodeInteger, __utils.BER)(value.userClass, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ServiceControls = function (
+    value: ServiceControls,
+    elGetter: __utils.ASN1Encoder<ServiceControls>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_DEFAULT */ value.options === undefined ||
+                    __utils.deepEq(
+                        value.options,
+                        _default_value_for_ServiceControls__options
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_ServiceControlOptions,
+                              __utils.BER
+                          )(value.options, __utils.BER),
+                    /* IF_DEFAULT */ value.priority === undefined ||
+                    __utils.deepEq(
+                        value.priority,
+                        _default_value_for_ServiceControls__priority
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_ServiceControls_priority,
+                              __utils.BER
+                          )(value.priority, __utils.BER),
+                    /* IF_ABSENT  */ value.timeLimit === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.timeLimit, __utils.BER),
+                    /* IF_ABSENT  */ value.sizeLimit === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.sizeLimit, __utils.BER),
+                    /* IF_ABSENT  */ value.scopeOfReferral === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => _encode_ServiceControls_scopeOfReferral,
+                              __utils.BER
+                          )(value.scopeOfReferral, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeSizeLimit === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              5,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.attributeSizeLimit, __utils.BER),
+                    /* IF_ABSENT  */ value.manageDSAITPlaneRef === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              6,
+                              () => _encode_ServiceControls_manageDSAITPlaneRef,
+                              __utils.BER
+                          )(value.manageDSAITPlaneRef, __utils.BER),
+                    /* IF_ABSENT  */ value.serviceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              7,
+                              () => __utils._encodeObjectIdentifier,
+                              __utils.BER
+                          )(value.serviceType, __utils.BER),
+                    /* IF_ABSENT  */ value.userClass === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              8,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.userClass, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 export type ProtectionRequest = asn1.INTEGER;
 export const ProtectionRequest_none: ProtectionRequest = 0; /* LONG_NAMED_INTEGER_VALUE */
@@ -1442,16 +2486,14 @@ export const ProtectionRequest_signed: ProtectionRequest = 1; /* LONG_NAMED_INTE
 export const _decode_ProtectionRequest = __utils._decodeInteger;
 export const _encode_ProtectionRequest = __utils._encodeInteger;
 
-
 export type ErrorProtectionRequest = asn1.INTEGER;
 export const ErrorProtectionRequest_none: ErrorProtectionRequest = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const ErrorProtectionRequest_signed: ErrorProtectionRequest = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const _decode_ErrorProtectionRequest = __utils._decodeInteger;
 export const _encode_ErrorProtectionRequest = __utils._encodeInteger;
 
-
 export class SecurityParameters {
-    constructor (
+    constructor(
         readonly certification_path: CertificationPath | undefined,
         readonly name: DistinguishedName | undefined,
         readonly time: Time | undefined,
@@ -1464,23 +2506,69 @@ export class SecurityParameters {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("time", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("random", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("target", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("operationCode", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
-    new __utils.ComponentSpec("errorProtection", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined),
-    new __utils.ComponentSpec("errorCode", true, __utils.hasTag(asn1.ASN1TagClass.context, 9), undefined, undefined)
+    new __utils.ComponentSpec(
+        "certification-path",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "name",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "time",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "random",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "target",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationCode",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "errorProtection",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 8),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "errorCode",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 9),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SecurityParameters: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SecurityParameters: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_SecurityParameters = function (el: asn1.ASN1Element): SecurityParameters {
+export const _decode_SecurityParameters = function (
+    el: asn1.ASN1Element
+): SecurityParameters {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let certification_path: asn1.OPTIONAL<CertificationPath>;
     let name: asn1.OPTIONAL<DistinguishedName>;
@@ -1494,23 +2582,55 @@ export const _decode_SecurityParameters = function (el: asn1.ASN1Element): Secur
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "certification-path": (_el: asn1.ASN1Element): void => { certification_path = __utils._decode_explicit<CertificationPath>(() => _decode_CertificationPath)(_el); },
-        "name": (_el: asn1.ASN1Element): void => { name = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "time": (_el: asn1.ASN1Element): void => { time = __utils._decode_explicit<Time>(() => _decode_Time)(_el); },
-        "random": (_el: asn1.ASN1Element): void => { random = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "target": (_el: asn1.ASN1Element): void => { target = __utils._decode_explicit<ProtectionRequest>(() => _decode_ProtectionRequest)(_el); },
-        "operationCode": (_el: asn1.ASN1Element): void => { operationCode = __utils._decode_explicit<Code>(() => _decode_Code)(_el); },
-        "errorProtection": (_el: asn1.ASN1Element): void => { errorProtection = __utils._decode_explicit<ErrorProtectionRequest>(() => _decode_ErrorProtectionRequest)(_el); },
-        "errorCode": (_el: asn1.ASN1Element): void => { errorCode = __utils._decode_explicit<Code>(() => _decode_Code)(_el); }
+        "certification-path": (_el: asn1.ASN1Element): void => {
+            certification_path = __utils._decode_explicit<CertificationPath>(
+                () => _decode_CertificationPath
+            )(_el);
+        },
+        name: (_el: asn1.ASN1Element): void => {
+            name = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        time: (_el: asn1.ASN1Element): void => {
+            time = __utils._decode_explicit<Time>(() => _decode_Time)(_el);
+        },
+        random: (_el: asn1.ASN1Element): void => {
+            random = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        target: (_el: asn1.ASN1Element): void => {
+            target = __utils._decode_explicit<ProtectionRequest>(
+                () => _decode_ProtectionRequest
+            )(_el);
+        },
+        operationCode: (_el: asn1.ASN1Element): void => {
+            operationCode = __utils._decode_explicit<Code>(() => _decode_Code)(
+                _el
+            );
+        },
+        errorProtection: (_el: asn1.ASN1Element): void => {
+            errorProtection = __utils._decode_explicit<ErrorProtectionRequest>(
+                () => _decode_ErrorProtectionRequest
+            )(_el);
+        },
+        errorCode: (_el: asn1.ASN1Element): void => {
+            errorCode = __utils._decode_explicit<Code>(() => _decode_Code)(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SecurityParameters,
         _extension_additions_list_spec_for_SecurityParameters,
         _root_component_type_list_2_spec_for_SecurityParameters,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SecurityParameters( /* SET_CONSTRUCTOR_CALL */
+    return new SecurityParameters /* SET_CONSTRUCTOR_CALL */(
         certification_path,
         name,
         time,
@@ -1522,22 +2642,89 @@ export const _decode_SecurityParameters = function (el: asn1.ASN1Element): Secur
         _unrecognizedExtensionsList
     );
 };
-export const _encode_SecurityParameters = function (value: SecurityParameters, elGetter: __utils.ASN1Encoder<SecurityParameters>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.certification_path === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_CertificationPath, __utils.BER)(value.certification_path, __utils.BER)),
-            /* IF_ABSENT  */ ((value.name === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_DistinguishedName, __utils.BER)(value.name, __utils.BER)),
-            /* IF_ABSENT  */ ((value.time === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_Time, __utils.BER)(value.time, __utils.BER)),
-            /* IF_ABSENT  */ ((value.random === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBitString, __utils.BER)(value.random, __utils.BER)),
-            /* IF_ABSENT  */ ((value.target === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_ProtectionRequest, __utils.BER)(value.target, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationCode === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => _encode_Code, __utils.BER)(value.operationCode, __utils.BER)),
-            /* IF_ABSENT  */ ((value.errorProtection === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 8, () => _encode_ErrorProtectionRequest, __utils.BER)(value.errorProtection, __utils.BER)),
-            /* IF_ABSENT  */ ((value.errorCode === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 9, () => _encode_Code, __utils.BER)(value.errorCode, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SecurityParameters = function (
+    value: SecurityParameters,
+    elGetter: __utils.ASN1Encoder<SecurityParameters>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.certification_path === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_CertificationPath,
+                              __utils.BER
+                          )(value.certification_path, __utils.BER),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.time === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_Time,
+                              __utils.BER
+                          )(value.time, __utils.BER),
+                    /* IF_ABSENT  */ value.random === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.random, __utils.BER),
+                    /* IF_ABSENT  */ value.target === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => _encode_ProtectionRequest,
+                              __utils.BER
+                          )(value.target, __utils.BER),
+                    /* IF_ABSENT  */ value.operationCode === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              6,
+                              () => _encode_Code,
+                              __utils.BER
+                          )(value.operationCode, __utils.BER),
+                    /* IF_ABSENT  */ value.errorProtection === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              8,
+                              () => _encode_ErrorProtectionRequest,
+                              __utils.BER
+                          )(value.errorProtection, __utils.BER),
+                    /* IF_ABSENT  */ value.errorCode === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              9,
+                              () => _encode_Code,
+                              __utils.BER
+                          )(value.errorCode, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 export type FamilyGrouping = asn1.ENUMERATED;
 export const FamilyGrouping_entryOnly: FamilyGrouping = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1550,9 +2737,8 @@ export const multiStrand: FamilyGrouping = FamilyGrouping_multiStrand; /* SHORT_
 export const _decode_FamilyGrouping = __utils._decodeEnumerated;
 export const _encode_FamilyGrouping = __utils._encodeEnumerated;
 
-
 export class CommonArguments {
-    constructor (
+    constructor(
         readonly serviceControls: ServiceControls | undefined,
         readonly securityParameters: SecurityParameters | undefined,
         readonly requestor: DistinguishedName | undefined,
@@ -1569,25 +2755,93 @@ export class CommonArguments {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_CommonArguments: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_CommonArguments: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_CommonArguments: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_CommonArguments: __utils.ComponentSpec[] = [];
 export const _default_value_for_CommonArguments__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -1598,13 +2852,18 @@ export const _default_value_for_CommonArguments__serviceControls = new ServiceCo
     undefined,
     undefined,
     undefined,
-    undefined,
-);;
-export const _default_value_for_CommonArguments__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+    undefined
+);
+export const _default_value_for_CommonArguments__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_CommonArguments__entryOnly = true;
 export const _default_value_for_CommonArguments__nameResolveOnMaster = false;
 export const _default_value_for_CommonArguments__familyGrouping = entryOnly;
-export const _decode_CommonArguments = function (el: asn1.ASN1Element): CommonArguments {
+export const _decode_CommonArguments = function (
+    el: asn1.ASN1Element
+): CommonArguments {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let serviceControls: asn1.OPTIONAL<ServiceControls> = _default_value_for_CommonArguments__serviceControls;
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -1622,27 +2881,79 @@ export const _decode_CommonArguments = function (el: asn1.ASN1Element): CommonAr
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CommonArguments,
         _extension_additions_list_spec_for_CommonArguments,
         _root_component_type_list_2_spec_for_CommonArguments,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CommonArguments( /* SET_CONSTRUCTOR_CALL */
+    return new CommonArguments /* SET_CONSTRUCTOR_CALL */(
         serviceControls,
         securityParameters,
         requestor,
@@ -1658,70 +2969,300 @@ export const _decode_CommonArguments = function (el: asn1.ASN1Element): CommonAr
         _unrecognizedExtensionsList
     );
 };
-export const _encode_CommonArguments = function (value: CommonArguments, elGetter: __utils.ASN1Encoder<CommonArguments>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_CommonArguments__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_CommonArguments__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_CommonArguments__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_CommonArguments__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_CommonArguments__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CommonArguments = function (
+    value: CommonArguments,
+    elGetter: __utils.ASN1Encoder<CommonArguments>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_CommonArguments__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_CommonArguments__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_CommonArguments__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_CommonArguments__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_CommonArguments__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class ReadArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly selection: EntryInformationSelection | undefined,
         readonly modifyRightsRequest: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("selection", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("modifyRightsRequest", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "selection",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "modifyRightsRequest",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
-
-];
-export const _default_value_for_ReadArgumentData__selection = /* COULD_NOT_COMPILE_DEFAULT_VALUE selection */;
+export const _extension_additions_list_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [];
+export const _default_value_for_ReadArgumentData__selection = new EntryInformationSelection(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+);
 export const _default_value_for_ReadArgumentData__modifyRightsRequest = false;
 export const _default_value_for_ReadArgumentData__serviceControls = new ServiceControls(
     undefined,
@@ -1733,13 +3274,18 @@ export const _default_value_for_ReadArgumentData__serviceControls = new ServiceC
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_ReadArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_ReadArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_ReadArgumentData__entryOnly = true;
 export const _default_value_for_ReadArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_ReadArgumentData__familyGrouping = entryOnly;
-export const _decode_ReadArgumentData = function (el: asn1.ASN1Element): ReadArgumentData {
+export const _decode_ReadArgumentData = function (
+    el: asn1.ASN1Element
+): ReadArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let selection: asn1.OPTIONAL<EntryInformationSelection> = _default_value_for_ReadArgumentData__selection;
@@ -1760,30 +3306,92 @@ export const _decode_ReadArgumentData = function (el: asn1.ASN1Element): ReadArg
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "selection": (_el: asn1.ASN1Element): void => { selection = __utils._decode_explicit<EntryInformationSelection>(() => _decode_EntryInformationSelection)(_el); },
-        "modifyRightsRequest": (_el: asn1.ASN1Element): void => { modifyRightsRequest = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        selection: (_el: asn1.ASN1Element): void => {
+            selection = __utils._decode_explicit<EntryInformationSelection>(
+                () => _decode_EntryInformationSelection
+            )(_el);
+        },
+        modifyRightsRequest: (_el: asn1.ASN1Element): void => {
+            modifyRightsRequest = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ReadArgumentData,
         _extension_additions_list_spec_for_ReadArgumentData,
         _root_component_type_list_2_spec_for_ReadArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ReadArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new ReadArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         selection,
         modifyRightsRequest,
@@ -1802,53 +3410,204 @@ export const _decode_ReadArgumentData = function (el: asn1.ASN1Element): ReadArg
         familyGrouping
     );
 };
-export const _encode_ReadArgumentData = function (value: ReadArgumentData, elGetter: __utils.ASN1Encoder<ReadArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* IF_DEFAULT */ (value.selection === undefined || __utils.deepEq(value.selection, _default_value_for_ReadArgumentData__selection) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_EntryInformationSelection, __utils.BER)(value.selection, __utils.BER)),
-            /* IF_DEFAULT */ (value.modifyRightsRequest === undefined || __utils.deepEq(value.modifyRightsRequest, _default_value_for_ReadArgumentData__modifyRightsRequest) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.modifyRightsRequest, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_ReadArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_ReadArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_ReadArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_ReadArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_ReadArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ReadArgumentData = function (
+    value: ReadArgumentData,
+    elGetter: __utils.ASN1Encoder<ReadArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* IF_DEFAULT */ value.selection === undefined ||
+                    __utils.deepEq(
+                        value.selection,
+                        _default_value_for_ReadArgumentData__selection
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_EntryInformationSelection,
+                              __utils.BER
+                          )(value.selection, __utils.BER),
+                    /* IF_DEFAULT */ value.modifyRightsRequest === undefined ||
+                    __utils.deepEq(
+                        value.modifyRightsRequest,
+                        _default_value_for_ReadArgumentData__modifyRightsRequest
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.modifyRightsRequest, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_ReadArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_ReadArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_ReadArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_ReadArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_ReadArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ReadArgument = OPTIONALLY_PROTECTED<ReadArgumentData>; // DefinedType
-export const _decode_ReadArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ReadArgumentData>(_decode_ReadArgumentData);
-export const _encode_ReadArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ReadArgumentData>(_encode_ReadArgumentData);
-
+export const _decode_ReadArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ReadArgumentData
+>(_decode_ReadArgumentData);
+export const _encode_ReadArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ReadArgumentData
+>(_encode_ReadArgumentData);
 
 export type EntryInformation_information_Item =
-    { attributeType: AttributeType }
+    | { attributeType: AttributeType }
     | { attribute: Attribute }
     | asn1.ASN1Element;
-export const _decode_EntryInformation_information_Item = __utils._decode_extensible_choice<EntryInformation_information_Item>({
-    "UNIVERSAL 6": [ "attributeType", _decode_AttributeType ],
-    "UNIVERSAL 16": [ "attribute", _decode_Attribute ]
+export const _decode_EntryInformation_information_Item = __utils._decode_extensible_choice<
+    EntryInformation_information_Item
+>({
+    "UNIVERSAL 6": ["attributeType", _decode_AttributeType],
+    "UNIVERSAL 16": ["attribute", _decode_Attribute],
 });
-export const _encode_EntryInformation_information_Item = __utils._encode_choice<EntryInformation_information_Item>({
-    "attributeType": _encode_AttributeType,
-    "attribute": _encode_Attribute,
-}, __utils.BER);
-
+export const _encode_EntryInformation_information_Item = __utils._encode_choice<
+    EntryInformation_information_Item
+>(
+    {
+        attributeType: _encode_AttributeType,
+        attribute: _encode_Attribute,
+    },
+    __utils.BER
+);
 
 export class EntryInformation {
-    constructor (
+    constructor(
         readonly name: Name,
         readonly fromEntry: asn1.BOOLEAN | undefined,
         readonly information: EntryInformation_information_Item[] | undefined,
@@ -1859,24 +3618,58 @@ export class EntryInformation {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EntryInformation: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("name", false, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined),
-    new __utils.ComponentSpec("information", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
-    new __utils.ComponentSpec("incompleteEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("partialName", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("derivedEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined)
+    new __utils.ComponentSpec(
+        "name",
+        false,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "fromEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "information",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "incompleteEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "partialName",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "derivedEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_EntryInformation: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_EntryInformation: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_EntryInformation: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_EntryInformation: __utils.ComponentSpec[] = [];
 export const _default_value_for_EntryInformation__fromEntry = true;
 export const _default_value_for_EntryInformation__incompleteEntry = false;
 export const _default_value_for_EntryInformation__partialName = false;
 export const _default_value_for_EntryInformation__derivedEntry = false;
-export const _decode_EntryInformation = function (el: asn1.ASN1Element): EntryInformation {
+export const _decode_EntryInformation = function (
+    el: asn1.ASN1Element
+): EntryInformation {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let name!: Name;
     let fromEntry: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_EntryInformation__fromEntry;
@@ -1888,21 +3681,45 @@ export const _decode_EntryInformation = function (el: asn1.ASN1Element): EntryIn
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "name": (_el: asn1.ASN1Element): void => { name = _decode_Name(_el); },
-        "fromEntry": (_el: asn1.ASN1Element): void => { fromEntry = __utils._decodeBoolean(_el); },
-        "information": (_el: asn1.ASN1Element): void => { information = __utils._decodeSetOf<EntryInformation_information_Item>(() => _decode_EntryInformation_information_Item)(_el); },
-        "incompleteEntry": (_el: asn1.ASN1Element): void => { incompleteEntry = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "partialName": (_el: asn1.ASN1Element): void => { partialName = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "derivedEntry": (_el: asn1.ASN1Element): void => { derivedEntry = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); }
+        name: (_el: asn1.ASN1Element): void => {
+            name = _decode_Name(_el);
+        },
+        fromEntry: (_el: asn1.ASN1Element): void => {
+            fromEntry = __utils._decodeBoolean(_el);
+        },
+        information: (_el: asn1.ASN1Element): void => {
+            information = __utils._decodeSetOf<
+                EntryInformation_information_Item
+            >(() => _decode_EntryInformation_information_Item)(_el);
+        },
+        incompleteEntry: (_el: asn1.ASN1Element): void => {
+            incompleteEntry = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        partialName: (_el: asn1.ASN1Element): void => {
+            partialName = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        derivedEntry: (_el: asn1.ASN1Element): void => {
+            derivedEntry = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_EntryInformation,
         _extension_additions_list_spec_for_EntryInformation,
         _root_component_type_list_2_spec_for_EntryInformation,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new EntryInformation( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new EntryInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
         name,
         fromEntry,
         information,
@@ -1912,37 +3729,126 @@ export const _decode_EntryInformation = function (el: asn1.ASN1Element): EntryIn
         _unrecognizedExtensionsList
     );
 };
-export const _encode_EntryInformation = function (value: EntryInformation, elGetter: __utils.ASN1Encoder<EntryInformation>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_Name(value.name, __utils.BER),
-            /* IF_DEFAULT */ (value.fromEntry === undefined || __utils.deepEq(value.fromEntry, _default_value_for_EntryInformation__fromEntry) ? undefined : __utils._encodeBoolean(value.fromEntry, __utils.BER)),
-            /* IF_ABSENT  */ ((value.information === undefined) ? undefined : __utils._encodeSetOf<EntryInformation_information_Item>(() => _encode_EntryInformation_information_Item, __utils.BER)(value.information, __utils.BER)),
-            /* IF_DEFAULT */ (value.incompleteEntry === undefined || __utils.deepEq(value.incompleteEntry, _default_value_for_EntryInformation__incompleteEntry) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBoolean, __utils.BER)(value.incompleteEntry, __utils.BER)),
-            /* IF_DEFAULT */ (value.partialName === undefined || __utils.deepEq(value.partialName, _default_value_for_EntryInformation__partialName) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeBoolean, __utils.BER)(value.partialName, __utils.BER)),
-            /* IF_DEFAULT */ (value.derivedEntry === undefined || __utils.deepEq(value.derivedEntry, _default_value_for_EntryInformation__derivedEntry) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => __utils._encodeBoolean, __utils.BER)(value.derivedEntry, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_EntryInformation = function (
+    value: EntryInformation,
+    elGetter: __utils.ASN1Encoder<EntryInformation>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_Name(value.name, __utils.BER),
+                    /* IF_DEFAULT */ value.fromEntry === undefined ||
+                    __utils.deepEq(
+                        value.fromEntry,
+                        _default_value_for_EntryInformation__fromEntry
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.fromEntry, __utils.BER),
+                    /* IF_ABSENT  */ value.information === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<
+                              EntryInformation_information_Item
+                          >(
+                              () => _encode_EntryInformation_information_Item,
+                              __utils.BER
+                          )(value.information, __utils.BER),
+                    /* IF_DEFAULT */ value.incompleteEntry === undefined ||
+                    __utils.deepEq(
+                        value.incompleteEntry,
+                        _default_value_for_EntryInformation__incompleteEntry
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.incompleteEntry, __utils.BER),
+                    /* IF_DEFAULT */ value.partialName === undefined ||
+                    __utils.deepEq(
+                        value.partialName,
+                        _default_value_for_EntryInformation__partialName
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.partialName, __utils.BER),
+                    /* IF_DEFAULT */ value.derivedEntry === undefined ||
+                    __utils.deepEq(
+                        value.derivedEntry,
+                        _default_value_for_EntryInformation__derivedEntry
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              5,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.derivedEntry, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ModifyRights_Item_item =
-    { entry: asn1.NULL }
+    | { entry: asn1.NULL }
     | { attribute: AttributeType }
     | { value: AttributeValueAssertion }
     | asn1.ASN1Element;
-export const _decode_ModifyRights_Item_item = __utils._decode_extensible_choice<ModifyRights_Item_item>({
-    "CONTEXT 0": [ "entry", __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull) ],
-    "CONTEXT 1": [ "attribute", __utils._decode_explicit<AttributeType>(() => _decode_AttributeType) ],
-    "CONTEXT 2": [ "value", __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion) ]
+export const _decode_ModifyRights_Item_item = __utils._decode_extensible_choice<
+    ModifyRights_Item_item
+>({
+    "CONTEXT 0": [
+        "entry",
+        __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
+    ],
+    "CONTEXT 1": [
+        "attribute",
+        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
+    ],
+    "CONTEXT 2": [
+        "value",
+        __utils._decode_explicit<AttributeValueAssertion>(
+            () => _decode_AttributeValueAssertion
+        ),
+    ],
 });
-export const _encode_ModifyRights_Item_item = __utils._encode_choice<ModifyRights_Item_item>({
-    "entry": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeNull, __utils.BER),
-    "attribute": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeType, __utils.BER),
-    "value": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeValueAssertion, __utils.BER),
-}, __utils.BER);
-
+export const _encode_ModifyRights_Item_item = __utils._encode_choice<
+    ModifyRights_Item_item
+>(
+    {
+        entry: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => __utils._encodeNull,
+            __utils.BER
+        ),
+        attribute: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => _encode_AttributeType,
+            __utils.BER
+        ),
+        value: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () => _encode_AttributeValueAssertion,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type ModifyRights_Item_permission = asn1.BIT_STRING;
 export const ModifyRights_Item_permission_add: number = 0; /* LONG_NAMED_BIT */
@@ -1956,29 +3862,42 @@ export const move: number = ModifyRights_Item_permission_move; /* SHORT_NAMED_BI
 export const _decode_ModifyRights_Item_permission = __utils._decodeBitString;
 export const _encode_ModifyRights_Item_permission = __utils._encodeBitString;
 
-
 export class ModifyRights_Item {
-    constructor (
+    constructor(
         readonly item: ModifyRights_Item_item,
         readonly permission: ModifyRights_Item_permission,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("item", false, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("permission", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "item",
+        false,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "permission",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_ModifyRights_Item = function (el: asn1.ASN1Element): ModifyRights_Item {
+export const _decode_ModifyRights_Item = function (
+    el: asn1.ASN1Element
+): ModifyRights_Item {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("ModifyRights-Item contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "ModifyRights-Item contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "item";
@@ -1986,32 +3905,53 @@ export const _decode_ModifyRights_Item = function (el: asn1.ASN1Element): Modify
     let item!: ModifyRights_Item_item;
     let permission!: ModifyRights_Item_permission;
     item = _decode_ModifyRights_Item_item(sequence[0]);
-    permission = __utils._decode_explicit<ModifyRights_Item_permission>(() => _decode_ModifyRights_Item_permission)(sequence[1]);
+    permission = __utils._decode_explicit<ModifyRights_Item_permission>(
+        () => _decode_ModifyRights_Item_permission
+    )(sequence[1]);
     // TODO: Validate values.
-    return new ModifyRights_Item(
-        item,
-        permission,
-        sequence.slice(2),
+    return new ModifyRights_Item(item, permission, sequence.slice(2));
+};
+export const _encode_ModifyRights_Item = function (
+    value: ModifyRights_Item,
+    elGetter: __utils.ASN1Encoder<ModifyRights_Item>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_ModifyRights_Item_item(
+                        value.item,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        3,
+                        () => _encode_ModifyRights_Item_permission,
+                        __utils.BER
+                    )(value.permission, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
     );
 };
-export const _encode_ModifyRights_Item = function (value: ModifyRights_Item, elGetter: __utils.ASN1Encoder<ModifyRights_Item>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_ModifyRights_Item_item(value.item, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_ModifyRights_Item_permission, __utils.BER)(value.permission, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
-};
-
 
 export type ModifyRights = ModifyRights_Item[]; // SetOfType
-export const _decode_ModifyRights = __utils._decodeSetOf<ModifyRights_Item>(() => _decode_ModifyRights_Item);
-export const _encode_ModifyRights = __utils._encodeSetOf<ModifyRights_Item>(() => _encode_ModifyRights_Item, __utils.BER);
-
+export const _decode_ModifyRights = __utils._decodeSetOf<ModifyRights_Item>(
+    () => _decode_ModifyRights_Item
+);
+export const _encode_ModifyRights = __utils._encodeSetOf<ModifyRights_Item>(
+    () => _encode_ModifyRights_Item,
+    __utils.BER
+);
 
 export class CommonResults {
-    constructor (
+    constructor(
         readonly securityParameters: SecurityParameters | undefined,
         readonly performer: DistinguishedName | undefined,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined,
@@ -2020,19 +3960,41 @@ export class CommonResults {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonResults: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_CommonResults: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_CommonResults: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_CommonResults: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_CommonResults: __utils.ComponentSpec[] = [];
 export const _default_value_for_CommonResults__aliasDereferenced = false;
-export const _decode_CommonResults = function (el: asn1.ASN1Element): CommonResults {
+export const _decode_CommonResults = function (
+    el: asn1.ASN1Element
+): CommonResults {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
     let performer: asn1.OPTIONAL<DistinguishedName>;
@@ -2042,19 +4004,39 @@ export const _decode_CommonResults = function (el: asn1.ASN1Element): CommonResu
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CommonResults,
         _extension_additions_list_spec_for_CommonResults,
         _root_component_type_list_2_spec_for_CommonResults,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CommonResults( /* SET_CONSTRUCTOR_CALL */
+    return new CommonResults /* SET_CONSTRUCTOR_CALL */(
         securityParameters,
         performer,
         aliasDereferenced,
@@ -2062,45 +4044,136 @@ export const _decode_CommonResults = function (el: asn1.ASN1Element): CommonResu
         _unrecognizedExtensionsList
     );
 };
-export const _encode_CommonResults = function (value: CommonResults, elGetter: __utils.ASN1Encoder<CommonResults>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_CommonResults__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CommonResults = function (
+    value: CommonResults,
+    elGetter: __utils.ASN1Encoder<CommonResults>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_CommonResults__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class ReadResultData {
-    constructor (
+    constructor(
         readonly entry: EntryInformation,
         readonly modifyRights: ModifyRights | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReadResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("entry", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("modifyRights", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "entry",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "modifyRights",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ReadResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ReadResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ReadResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ReadResultData__aliasDereferenced = false;
-export const _decode_ReadResultData = function (el: asn1.ASN1Element): ReadResultData {
+export const _decode_ReadResultData = function (
+    el: asn1.ASN1Element
+): ReadResultData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let entry!: EntryInformation;
     let modifyRights: asn1.OPTIONAL<ModifyRights>;
@@ -2112,21 +4185,49 @@ export const _decode_ReadResultData = function (el: asn1.ASN1Element): ReadResul
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "entry": (_el: asn1.ASN1Element): void => { entry = __utils._decode_explicit<EntryInformation>(() => _decode_EntryInformation)(_el); },
-        "modifyRights": (_el: asn1.ASN1Element): void => { modifyRights = __utils._decode_explicit<ModifyRights>(() => _decode_ModifyRights)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        entry: (_el: asn1.ASN1Element): void => {
+            entry = __utils._decode_explicit<EntryInformation>(
+                () => _decode_EntryInformation
+            )(_el);
+        },
+        modifyRights: (_el: asn1.ASN1Element): void => {
+            modifyRights = __utils._decode_explicit<ModifyRights>(
+                () => _decode_ModifyRights
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ReadResultData,
         _extension_additions_list_spec_for_ReadResultData,
         _root_component_type_list_2_spec_for_ReadResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ReadResultData( /* SET_CONSTRUCTOR_CALL */
+    return new ReadResultData /* SET_CONSTRUCTOR_CALL */(
         entry,
         modifyRights,
         _unrecognizedExtensionsList,
@@ -2136,70 +4237,234 @@ export const _decode_ReadResultData = function (el: asn1.ASN1Element): ReadResul
         notification
     );
 };
-export const _encode_ReadResultData = function (value: ReadResultData, elGetter: __utils.ASN1Encoder<ReadResultData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_EntryInformation, __utils.BER)(value.entry, __utils.BER),
-            /* IF_ABSENT  */ ((value.modifyRights === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_ModifyRights, __utils.BER)(value.modifyRights, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ReadResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ReadResultData = function (
+    value: ReadResultData,
+    elGetter: __utils.ASN1Encoder<ReadResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_EntryInformation,
+                        __utils.BER
+                    )(value.entry, __utils.BER),
+                    /* IF_ABSENT  */ value.modifyRights === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_ModifyRights,
+                              __utils.BER
+                          )(value.modifyRights, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ReadResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ReadResult = OPTIONALLY_PROTECTED<ReadResultData>; // DefinedType
-export const _decode_ReadResult = _get_decoder_for_OPTIONALLY_PROTECTED<ReadResultData>(_decode_ReadResultData);
-export const _encode_ReadResult = _get_encoder_for_OPTIONALLY_PROTECTED<ReadResultData>(_encode_ReadResultData);
-
+export const _decode_ReadResult = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ReadResultData
+>(_decode_ReadResultData);
+export const _encode_ReadResult = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ReadResultData
+>(_encode_ReadResultData);
 
 // TODO: ObjectAssignment: compare
 
 export class CompareArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly purported: AttributeValueAssertion,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("purported", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "purported",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_CompareArgumentData__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -2210,13 +4475,18 @@ export const _default_value_for_CompareArgumentData__serviceControls = new Servi
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_CompareArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_CompareArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_CompareArgumentData__entryOnly = true;
 export const _default_value_for_CompareArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_CompareArgumentData__familyGrouping = entryOnly;
-export const _decode_CompareArgumentData = function (el: asn1.ASN1Element): CompareArgumentData {
+export const _decode_CompareArgumentData = function (
+    el: asn1.ASN1Element
+): CompareArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let purported!: AttributeValueAssertion;
@@ -2236,29 +4506,87 @@ export const _decode_CompareArgumentData = function (el: asn1.ASN1Element): Comp
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "purported": (_el: asn1.ASN1Element): void => { purported = __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        purported: (_el: asn1.ASN1Element): void => {
+            purported = __utils._decode_explicit<AttributeValueAssertion>(
+                () => _decode_AttributeValueAssertion
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CompareArgumentData,
         _extension_additions_list_spec_for_CompareArgumentData,
         _root_component_type_list_2_spec_for_CompareArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CompareArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new CompareArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         purported,
         _unrecognizedExtensionsList,
@@ -2276,67 +4604,251 @@ export const _decode_CompareArgumentData = function (el: asn1.ASN1Element): Comp
         familyGrouping
     );
 };
-export const _encode_CompareArgumentData = function (value: CompareArgumentData, elGetter: __utils.ASN1Encoder<CompareArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeValueAssertion, __utils.BER)(value.purported, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_CompareArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_CompareArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_CompareArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_CompareArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_CompareArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CompareArgumentData = function (
+    value: CompareArgumentData,
+    elGetter: __utils.ASN1Encoder<CompareArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_AttributeValueAssertion,
+                        __utils.BER
+                    )(value.purported, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_CompareArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_CompareArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_CompareArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_CompareArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_CompareArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type CompareArgument = OPTIONALLY_PROTECTED<CompareArgumentData>; // DefinedType
-export const _decode_CompareArgument = _get_decoder_for_OPTIONALLY_PROTECTED<CompareArgumentData>(_decode_CompareArgumentData);
-export const _encode_CompareArgument = _get_encoder_for_OPTIONALLY_PROTECTED<CompareArgumentData>(_encode_CompareArgumentData);
-
+export const _decode_CompareArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    CompareArgumentData
+>(_decode_CompareArgumentData);
+export const _encode_CompareArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    CompareArgumentData
+>(_encode_CompareArgumentData);
 
 export class CompareResultData {
-    constructor (
+    constructor(
         readonly name: Name | undefined,
         readonly matched: asn1.BOOLEAN,
         readonly fromEntry: asn1.BOOLEAN | undefined,
         readonly matchedSubtype: AttributeType | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CompareResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("matched", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("matchedSubtype", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "name",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "matched",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "fromEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "matchedSubtype",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_CompareResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_CompareResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_CompareResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_CompareResultData__fromEntry = true;
 export const _default_value_for_CompareResultData__aliasDereferenced = false;
-export const _decode_CompareResultData = function (el: asn1.ASN1Element): CompareResultData {
+export const _decode_CompareResultData = function (
+    el: asn1.ASN1Element
+): CompareResultData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let name: asn1.OPTIONAL<Name>;
     let matched!: asn1.BOOLEAN;
@@ -2350,23 +4862,57 @@ export const _decode_CompareResultData = function (el: asn1.ASN1Element): Compar
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "name": (_el: asn1.ASN1Element): void => { name = _decode_Name(_el); },
-        "matched": (_el: asn1.ASN1Element): void => { matched = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "fromEntry": (_el: asn1.ASN1Element): void => { fromEntry = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "matchedSubtype": (_el: asn1.ASN1Element): void => { matchedSubtype = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        name: (_el: asn1.ASN1Element): void => {
+            name = _decode_Name(_el);
+        },
+        matched: (_el: asn1.ASN1Element): void => {
+            matched = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        fromEntry: (_el: asn1.ASN1Element): void => {
+            fromEntry = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        matchedSubtype: (_el: asn1.ASN1Element): void => {
+            matchedSubtype = __utils._decode_explicit<AttributeType>(
+                () => _decode_AttributeType
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CompareResultData,
         _extension_additions_list_spec_for_CompareResultData,
         _root_component_type_list_2_spec_for_CompareResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CompareResultData( /* SET_CONSTRUCTOR_CALL */
+    return new CompareResultData /* SET_CONSTRUCTOR_CALL */(
         name,
         matched,
         fromEntry,
@@ -2378,80 +4924,181 @@ export const _decode_CompareResultData = function (el: asn1.ASN1Element): Compar
         notification
     );
 };
-export const _encode_CompareResultData = function (value: CompareResultData, elGetter: __utils.ASN1Encoder<CompareResultData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.name === undefined) ? undefined : _encode_Name(value.name, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeBoolean, __utils.BER)(value.matched, __utils.BER),
-            /* IF_DEFAULT */ (value.fromEntry === undefined || __utils.deepEq(value.fromEntry, _default_value_for_CompareResultData__fromEntry) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeBoolean, __utils.BER)(value.fromEntry, __utils.BER)),
-            /* IF_ABSENT  */ ((value.matchedSubtype === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeType, __utils.BER)(value.matchedSubtype, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_CompareResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CompareResultData = function (
+    value: CompareResultData,
+    elGetter: __utils.ASN1Encoder<CompareResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : _encode_Name(value.name, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => __utils._encodeBoolean,
+                        __utils.BER
+                    )(value.matched, __utils.BER),
+                    /* IF_DEFAULT */ value.fromEntry === undefined ||
+                    __utils.deepEq(
+                        value.fromEntry,
+                        _default_value_for_CompareResultData__fromEntry
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.fromEntry, __utils.BER),
+                    /* IF_ABSENT  */ value.matchedSubtype === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_AttributeType,
+                              __utils.BER
+                          )(value.matchedSubtype, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_CompareResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type CompareResult = OPTIONALLY_PROTECTED<CompareResultData>; // DefinedType
-export const _decode_CompareResult = _get_decoder_for_OPTIONALLY_PROTECTED<CompareResultData>(_decode_CompareResultData);
-export const _encode_CompareResult = _get_encoder_for_OPTIONALLY_PROTECTED<CompareResultData>(_encode_CompareResultData);
-
+export const _decode_CompareResult = _get_decoder_for_OPTIONALLY_PROTECTED<
+    CompareResultData
+>(_decode_CompareResultData);
+export const _encode_CompareResult = _get_encoder_for_OPTIONALLY_PROTECTED<
+    CompareResultData
+>(_encode_CompareResultData);
 
 // TODO: ObjectAssignment: abandon
 
 export class AbandonArgumentData {
-    constructor (
+    constructor(
         readonly invokeID: InvokeId,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
+    new __utils.ComponentSpec(
+        "invokeID",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_AbandonArgumentData = function (el: asn1.ASN1Element): AbandonArgumentData {
+export const _decode_AbandonArgumentData = function (
+    el: asn1.ASN1Element
+): AbandonArgumentData {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
-        throw new asn1.ASN1ConstructionError("AbandonArgumentData contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "AbandonArgumentData contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "invokeID";
     let invokeID!: InvokeId;
-    invokeID = __utils._decode_explicit<InvokeId>(() => _decode_InvokeId)(sequence[0]);
+    invokeID = __utils._decode_explicit<InvokeId>(() => _decode_InvokeId)(
+        sequence[0]
+    );
     // TODO: Validate values.
-    return new AbandonArgumentData(
-        invokeID,
-        sequence.slice(1),
+    return new AbandonArgumentData(invokeID, sequence.slice(1));
+};
+export const _encode_AbandonArgumentData = function (
+    value: AbandonArgumentData,
+    elGetter: __utils.ASN1Encoder<AbandonArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_InvokeId,
+                        __utils.BER
+                    )(value.invokeID, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
     );
 };
-export const _encode_AbandonArgumentData = function (value: AbandonArgumentData, elGetter: __utils.ASN1Encoder<AbandonArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_InvokeId, __utils.BER)(value.invokeID, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
-};
-
 
 export type AbandonArgument = OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>; // DefinedType
-export const _decode_AbandonArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>(_decode_AbandonArgumentData);
-export const _encode_AbandonArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>(_encode_AbandonArgumentData);
-
+export const _decode_AbandonArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    AbandonArgumentData
+>(_decode_AbandonArgumentData);
+export const _encode_AbandonArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    AbandonArgumentData
+>(_encode_AbandonArgumentData);
 
 export class CommonResultsSeq {
-    constructor (
+    constructor(
         readonly securityParameters: SecurityParameters | undefined,
         readonly performer: DistinguishedName | undefined,
         readonly aliasDereferenced: asn1.BOOLEAN | undefined,
@@ -2460,19 +5107,41 @@ export class CommonResultsSeq {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [];
 export const _default_value_for_CommonResultsSeq__aliasDereferenced = false;
-export const _decode_CommonResultsSeq = function (el: asn1.ASN1Element): CommonResultsSeq {
+export const _decode_CommonResultsSeq = function (
+    el: asn1.ASN1Element
+): CommonResultsSeq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
     let performer: asn1.OPTIONAL<DistinguishedName>;
@@ -2482,19 +5151,39 @@ export const _decode_CommonResultsSeq = function (el: asn1.ASN1Element): CommonR
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CommonResultsSeq,
         _extension_additions_list_spec_for_CommonResultsSeq,
         _root_component_type_list_2_spec_for_CommonResultsSeq,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CommonResultsSeq( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new CommonResultsSeq /* SEQUENCE_CONSTRUCTOR_CALL */(
         securityParameters,
         performer,
         aliasDereferenced,
@@ -2502,43 +5191,128 @@ export const _decode_CommonResultsSeq = function (el: asn1.ASN1Element): CommonR
         _unrecognizedExtensionsList
     );
 };
-export const _encode_CommonResultsSeq = function (value: CommonResultsSeq, elGetter: __utils.ASN1Encoder<CommonResultsSeq>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_CommonResultsSeq__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CommonResultsSeq = function (
+    value: CommonResultsSeq,
+    elGetter: __utils.ASN1Encoder<CommonResultsSeq>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_CommonResultsSeq__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class AbandonResultData {
-    constructor (
+    constructor(
         readonly invokeID: InvokeId,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("invokeID", false, __utils.hasAnyTag, undefined, undefined)
+    new __utils.ComponentSpec(
+        "invokeID",
+        false,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AbandonResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AbandonResultData__aliasDereferenced = false;
-export const _decode_AbandonResultData = function (el: asn1.ASN1Element): AbandonResultData {
+export const _decode_AbandonResultData = function (
+    el: asn1.ASN1Element
+): AbandonResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let invokeID!: InvokeId;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -2549,20 +5323,42 @@ export const _decode_AbandonResultData = function (el: asn1.ASN1Element): Abando
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "invokeID": (_el: asn1.ASN1Element): void => { invokeID = _decode_InvokeId(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        invokeID: (_el: asn1.ASN1Element): void => {
+            invokeID = _decode_InvokeId(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AbandonResultData,
         _extension_additions_list_spec_for_AbandonResultData,
         _root_component_type_list_2_spec_for_AbandonResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AbandonResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new AbandonResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         invokeID,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -2571,56 +5367,130 @@ export const _decode_AbandonResultData = function (el: asn1.ASN1Element): Abando
         notification
     );
 };
-export const _encode_AbandonResultData = function (value: AbandonResultData, elGetter: __utils.ASN1Encoder<AbandonResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_InvokeId(value.invokeID, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AbandonResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AbandonResultData = function (
+    value: AbandonResultData,
+    elGetter: __utils.ASN1Encoder<AbandonResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_InvokeId(
+                        value.invokeID,
+                        __utils.BER
+                    ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AbandonResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type AbandonResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AbandonResultData> }
     | asn1.ASN1Element;
-export const _decode_AbandonResult = __utils._decode_extensible_choice<AbandonResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(_decode_AbandonResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(_decode_AbandonResultData) ],
+export const _decode_AbandonResult = __utils._decode_extensible_choice<
+    AbandonResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(
+            _decode_AbandonResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(
+            _decode_AbandonResultData
+        ),
+    ],
 });
-export const _encode_AbandonResult = __utils._encode_choice<AbandonResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(_encode_AbandonResultData),
-}, __utils.BER);
-
+export const _encode_AbandonResult = __utils._encode_choice<AbandonResult>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            AbandonResultData
+        >(_encode_AbandonResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: list
 
 export class SortKey {
-    constructor (
+    constructor(
         readonly type_: AttributeType,
         readonly orderingRule: asn1.OBJECT_IDENTIFIER | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SortKey: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("orderingRule", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined)
+    new __utils.ComponentSpec(
+        "type",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "orderingRule",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_SortKey: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_SortKey: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_SortKey: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SortKey: __utils.ComponentSpec[] = [];
 
 export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -2630,35 +5500,62 @@ export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "type": (_el: asn1.ASN1Element): void => { type_ = _decode_AttributeType(_el); },
-        "orderingRule": (_el: asn1.ASN1Element): void => { orderingRule = __utils._decodeObjectIdentifier(_el); }
+        type: (_el: asn1.ASN1Element): void => {
+            type_ = _decode_AttributeType(_el);
+        },
+        orderingRule: (_el: asn1.ASN1Element): void => {
+            orderingRule = __utils._decodeObjectIdentifier(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SortKey,
         _extension_additions_list_spec_for_SortKey,
         _root_component_type_list_2_spec_for_SortKey,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SortKey( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new SortKey /* SEQUENCE_CONSTRUCTOR_CALL */(
         type_,
         orderingRule,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_SortKey = function (value: SortKey, elGetter: __utils.ASN1Encoder<SortKey>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_AttributeType(value.type_, __utils.BER),
-            /* IF_ABSENT  */ ((value.orderingRule === undefined) ? undefined : __utils._encodeObjectIdentifier(value.orderingRule, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SortKey = function (
+    value: SortKey,
+    elGetter: __utils.ASN1Encoder<SortKey>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.type_,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.orderingRule === undefined
+                        ? undefined
+                        : __utils._encodeObjectIdentifier(
+                              value.orderingRule,
+                              __utils.BER
+                          ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class PagedResultsRequest_newRequest {
-    constructor (
+    constructor(
         readonly pageSize: asn1.INTEGER,
         readonly sortKeys: SortKey[] | undefined,
         readonly reverse: asn1.BOOLEAN | undefined,
@@ -2668,21 +5565,49 @@ export class PagedResultsRequest_newRequest {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("pageSize", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
-    new __utils.ComponentSpec("sortKeys", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("reverse", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("unmerged", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("pageNumber", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "pageSize",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "sortKeys",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "reverse",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "unmerged",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "pageNumber",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [];
 export const _default_value_for_PagedResultsRequest_newRequest__reverse = false;
 export const _default_value_for_PagedResultsRequest_newRequest__unmerged = false;
-export const _decode_PagedResultsRequest_newRequest = function (el: asn1.ASN1Element): PagedResultsRequest_newRequest {
+export const _decode_PagedResultsRequest_newRequest = function (
+    el: asn1.ASN1Element
+): PagedResultsRequest_newRequest {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let pageSize!: asn1.INTEGER;
     let sortKeys: asn1.OPTIONAL<SortKey[]>;
@@ -2693,20 +5618,42 @@ export const _decode_PagedResultsRequest_newRequest = function (el: asn1.ASN1Ele
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "pageSize": (_el: asn1.ASN1Element): void => { pageSize = __utils._decodeInteger(_el); },
-        "sortKeys": (_el: asn1.ASN1Element): void => { sortKeys = __utils._decodeSequenceOf<SortKey>(() => _decode_SortKey)(_el); },
-        "reverse": (_el: asn1.ASN1Element): void => { reverse = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "unmerged": (_el: asn1.ASN1Element): void => { unmerged = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "pageNumber": (_el: asn1.ASN1Element): void => { pageNumber = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); }
+        pageSize: (_el: asn1.ASN1Element): void => {
+            pageSize = __utils._decodeInteger(_el);
+        },
+        sortKeys: (_el: asn1.ASN1Element): void => {
+            sortKeys = __utils._decodeSequenceOf<SortKey>(
+                () => _decode_SortKey
+            )(_el);
+        },
+        reverse: (_el: asn1.ASN1Element): void => {
+            reverse = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        unmerged: (_el: asn1.ASN1Element): void => {
+            unmerged = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        pageNumber: (_el: asn1.ASN1Element): void => {
+            pageNumber = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_PagedResultsRequest_newRequest,
         _extension_additions_list_spec_for_PagedResultsRequest_newRequest,
         _root_component_type_list_2_spec_for_PagedResultsRequest_newRequest,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new PagedResultsRequest_newRequest( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new PagedResultsRequest_newRequest /* SEQUENCE_CONSTRUCTOR_CALL */(
         pageSize,
         sortKeys,
         reverse,
@@ -2715,79 +5662,251 @@ export const _decode_PagedResultsRequest_newRequest = function (el: asn1.ASN1Ele
         _unrecognizedExtensionsList
     );
 };
-export const _encode_PagedResultsRequest_newRequest = function (value: PagedResultsRequest_newRequest, elGetter: __utils.ASN1Encoder<PagedResultsRequest_newRequest>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encodeInteger(value.pageSize, __utils.BER),
-            /* IF_ABSENT  */ ((value.sortKeys === undefined) ? undefined : __utils._encodeSequenceOf<SortKey>(() => _encode_SortKey, __utils.BER)(value.sortKeys, __utils.BER)),
-            /* IF_DEFAULT */ (value.reverse === undefined || __utils.deepEq(value.reverse, _default_value_for_PagedResultsRequest_newRequest__reverse) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeBoolean, __utils.BER)(value.reverse, __utils.BER)),
-            /* IF_DEFAULT */ (value.unmerged === undefined || __utils.deepEq(value.unmerged, _default_value_for_PagedResultsRequest_newRequest__unmerged) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.unmerged, __utils.BER)),
-            /* IF_ABSENT  */ ((value.pageNumber === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeInteger, __utils.BER)(value.pageNumber, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_PagedResultsRequest_newRequest = function (
+    value: PagedResultsRequest_newRequest,
+    elGetter: __utils.ASN1Encoder<PagedResultsRequest_newRequest>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.pageSize,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.sortKeys === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<SortKey>(
+                              () => _encode_SortKey,
+                              __utils.BER
+                          )(value.sortKeys, __utils.BER),
+                    /* IF_DEFAULT */ value.reverse === undefined ||
+                    __utils.deepEq(
+                        value.reverse,
+                        _default_value_for_PagedResultsRequest_newRequest__reverse
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.reverse, __utils.BER),
+                    /* IF_DEFAULT */ value.unmerged === undefined ||
+                    __utils.deepEq(
+                        value.unmerged,
+                        _default_value_for_PagedResultsRequest_newRequest__unmerged
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.unmerged, __utils.BER),
+                    /* IF_ABSENT  */ value.pageNumber === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.pageNumber, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type PagedResultsRequest =
-    { newRequest: PagedResultsRequest_newRequest }
+    | { newRequest: PagedResultsRequest_newRequest }
     | { queryReference: asn1.OCTET_STRING }
     | { abandonQuery: asn1.OCTET_STRING }
     | asn1.ASN1Element;
-export const _decode_PagedResultsRequest = __utils._decode_extensible_choice<PagedResultsRequest>({
-    "UNIVERSAL 16": [ "newRequest", _decode_PagedResultsRequest_newRequest ],
-    "UNIVERSAL 4": [ "queryReference", __utils._decodeOctetString ],
-    "CONTEXT 0": [ "abandonQuery", __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString) ]
+export const _decode_PagedResultsRequest = __utils._decode_extensible_choice<
+    PagedResultsRequest
+>({
+    "UNIVERSAL 16": ["newRequest", _decode_PagedResultsRequest_newRequest],
+    "UNIVERSAL 4": ["queryReference", __utils._decodeOctetString],
+    "CONTEXT 0": [
+        "abandonQuery",
+        __utils._decode_explicit<asn1.OCTET_STRING>(
+            () => __utils._decodeOctetString
+        ),
+    ],
 });
-export const _encode_PagedResultsRequest = __utils._encode_choice<PagedResultsRequest>({
-    "newRequest": _encode_PagedResultsRequest_newRequest,
-    "queryReference": __utils._encodeOctetString,
-    "abandonQuery": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeOctetString, __utils.BER),
-}, __utils.BER);
-
+export const _encode_PagedResultsRequest = __utils._encode_choice<
+    PagedResultsRequest
+>(
+    {
+        newRequest: _encode_PagedResultsRequest_newRequest,
+        queryReference: __utils._encodeOctetString,
+        abandonQuery: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => __utils._encodeOctetString,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export class ListArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly pagedResults: PagedResultsRequest | undefined,
         readonly listFamily: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("pagedResults", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("listFamily", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "pagedResults",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "listFamily",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ListArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ListArgumentData__listFamily = false;
 export const _default_value_for_ListArgumentData__serviceControls = new ServiceControls(
     undefined,
@@ -2799,13 +5918,18 @@ export const _default_value_for_ListArgumentData__serviceControls = new ServiceC
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_ListArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_ListArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_ListArgumentData__entryOnly = true;
 export const _default_value_for_ListArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_ListArgumentData__familyGrouping = entryOnly;
-export const _decode_ListArgumentData = function (el: asn1.ASN1Element): ListArgumentData {
+export const _decode_ListArgumentData = function (
+    el: asn1.ASN1Element
+): ListArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let pagedResults: asn1.OPTIONAL<PagedResultsRequest>;
@@ -2826,30 +5950,92 @@ export const _decode_ListArgumentData = function (el: asn1.ASN1Element): ListArg
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "pagedResults": (_el: asn1.ASN1Element): void => { pagedResults = __utils._decode_explicit<PagedResultsRequest>(() => _decode_PagedResultsRequest)(_el); },
-        "listFamily": (_el: asn1.ASN1Element): void => { listFamily = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        pagedResults: (_el: asn1.ASN1Element): void => {
+            pagedResults = __utils._decode_explicit<PagedResultsRequest>(
+                () => _decode_PagedResultsRequest
+            )(_el);
+        },
+        listFamily: (_el: asn1.ASN1Element): void => {
+            listFamily = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ListArgumentData,
         _extension_additions_list_spec_for_ListArgumentData,
         _root_component_type_list_2_spec_for_ListArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ListArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new ListArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         pagedResults,
         listFamily,
@@ -2868,36 +6054,177 @@ export const _decode_ListArgumentData = function (el: asn1.ASN1Element): ListArg
         familyGrouping
     );
 };
-export const _encode_ListArgumentData = function (value: ListArgumentData, elGetter: __utils.ASN1Encoder<ListArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* IF_ABSENT  */ ((value.pagedResults === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_PagedResultsRequest, __utils.BER)(value.pagedResults, __utils.BER)),
-            /* IF_DEFAULT */ (value.listFamily === undefined || __utils.deepEq(value.listFamily, _default_value_for_ListArgumentData__listFamily) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.listFamily, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_ListArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_ListArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_ListArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_ListArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_ListArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ListArgumentData = function (
+    value: ListArgumentData,
+    elGetter: __utils.ASN1Encoder<ListArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* IF_ABSENT  */ value.pagedResults === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_PagedResultsRequest,
+                              __utils.BER
+                          )(value.pagedResults, __utils.BER),
+                    /* IF_DEFAULT */ value.listFamily === undefined ||
+                    __utils.deepEq(
+                        value.listFamily,
+                        _default_value_for_ListArgumentData__listFamily
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.listFamily, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_ListArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_ListArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_ListArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_ListArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_ListArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ListArgument = OPTIONALLY_PROTECTED<ListArgumentData>; // DefinedType
-export const _decode_ListArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ListArgumentData>(_decode_ListArgumentData);
-export const _encode_ListArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ListArgumentData>(_encode_ListArgumentData);
-
+export const _decode_ListArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ListArgumentData
+>(_decode_ListArgumentData);
+export const _encode_ListArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ListArgumentData
+>(_encode_ListArgumentData);
 
 // TODO: ObjectAssignment: search
 
@@ -2908,49 +6235,92 @@ export const SearchArgumentData_subset_wholeSubtree: SearchArgumentData_subset =
 export const _decode_SearchArgumentData_subset = __utils._decodeInteger;
 export const _encode_SearchArgumentData_subset = __utils._encodeInteger;
 
-
 export type FilterItem_substrings_strings_Item =
-    { initial: asn1.ASN1Element }
+    | { initial: asn1.ASN1Element }
     | { any_: asn1.ASN1Element }
     | { final: asn1.ASN1Element }
     | { control: Attribute }
     | asn1.ASN1Element;
-export const _decode_FilterItem_substrings_strings_Item = __utils._decode_extensible_choice<FilterItem_substrings_strings_Item>({
-    "CONTEXT 0": [ "initial", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
-    "CONTEXT 1": [ "any_", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
-    "CONTEXT 2": [ "final", __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny) ],
-    "UNIVERSAL 16": [ "control", _decode_Attribute ]
+export const _decode_FilterItem_substrings_strings_Item = __utils._decode_extensible_choice<
+    FilterItem_substrings_strings_Item
+>({
+    "CONTEXT 0": [
+        "initial",
+        __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny),
+    ],
+    "CONTEXT 1": [
+        "any_",
+        __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny),
+    ],
+    "CONTEXT 2": [
+        "final",
+        __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny),
+    ],
+    "UNIVERSAL 16": ["control", _decode_Attribute],
 });
-export const _encode_FilterItem_substrings_strings_Item = __utils._encode_choice<FilterItem_substrings_strings_Item>({
-    "initial": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeAny, __utils.BER),
-    "any_": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeAny, __utils.BER),
-    "final": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeAny, __utils.BER),
-    "control": _encode_Attribute,
-}, __utils.BER);
-
+export const _encode_FilterItem_substrings_strings_Item = __utils._encode_choice<
+    FilterItem_substrings_strings_Item
+>(
+    {
+        initial: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => __utils._encodeAny,
+            __utils.BER
+        ),
+        any_: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => __utils._encodeAny,
+            __utils.BER
+        ),
+        final: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () => __utils._encodeAny,
+            __utils.BER
+        ),
+        control: _encode_Attribute,
+    },
+    __utils.BER
+);
 
 export class FilterItem_substrings {
-    constructor (
+    constructor(
         readonly type_: asn1.OBJECT_IDENTIFIER,
         readonly strings: FilterItem_substrings_strings_Item[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("strings", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "type",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "strings",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_FilterItem_substrings = function (el: asn1.ASN1Element): FilterItem_substrings {
+export const _decode_FilterItem_substrings = function (
+    el: asn1.ASN1Element
+): FilterItem_substrings {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("FilterItem-substrings contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "FilterItem-substrings contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "type";
@@ -2958,27 +6328,44 @@ export const _decode_FilterItem_substrings = function (el: asn1.ASN1Element): Fi
     let type_!: asn1.OBJECT_IDENTIFIER;
     let strings!: FilterItem_substrings_strings_Item[];
     type_ = __utils._decodeObjectIdentifier(sequence[0]);
-    strings = __utils._decodeSequenceOf<FilterItem_substrings_strings_Item>(() => _decode_FilterItem_substrings_strings_Item)(sequence[1]);
+    strings = __utils._decodeSequenceOf<FilterItem_substrings_strings_Item>(
+        () => _decode_FilterItem_substrings_strings_Item
+    )(sequence[1]);
     // TODO: Validate values.
-    return new FilterItem_substrings(
-        type_,
-        strings,
-        sequence.slice(2),
+    return new FilterItem_substrings(type_, strings, sequence.slice(2));
+};
+export const _encode_FilterItem_substrings = function (
+    value: FilterItem_substrings,
+    elGetter: __utils.ASN1Encoder<FilterItem_substrings>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.type_,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        FilterItem_substrings_strings_Item
+                    >(
+                        () => _encode_FilterItem_substrings_strings_Item,
+                        __utils.BER
+                    )(value.strings, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
     );
 };
-export const _encode_FilterItem_substrings = function (value: FilterItem_substrings, elGetter: __utils.ASN1Encoder<FilterItem_substrings>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encodeObjectIdentifier(value.type_, __utils.BER),
-            /* REQUIRED   */ __utils._encodeSequenceOf<FilterItem_substrings_strings_Item>(() => _encode_FilterItem_substrings_strings_Item, __utils.BER)(value.strings, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
-};
-
 
 export class MatchingRuleAssertion {
-    constructor (
+    constructor(
         readonly matchingRule: asn1.OBJECT_IDENTIFIER[],
         readonly type_: AttributeType | undefined,
         readonly matchValue: asn1.ASN1Element,
@@ -2987,19 +6374,41 @@ export class MatchingRuleAssertion {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("matchingRule", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("type", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("matchValue", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("dnAttributes", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
+    new __utils.ComponentSpec(
+        "matchingRule",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "type",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "matchValue",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "dnAttributes",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [];
 export const _default_value_for_MatchingRuleAssertion__dnAttributes = false;
-export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): MatchingRuleAssertion {
+export const _decode_MatchingRuleAssertion = function (
+    el: asn1.ASN1Element
+): MatchingRuleAssertion {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let matchingRule!: asn1.OBJECT_IDENTIFIER[];
     let type_: asn1.OPTIONAL<AttributeType>;
@@ -3009,19 +6418,42 @@ export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): Ma
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "matchingRule": (_el: asn1.ASN1Element): void => { matchingRule = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER[]>(() => __utils._decodeSetOf<asn1.OBJECT_IDENTIFIER>(() => __utils._decodeObjectIdentifier))(_el); },
-        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
-        "matchValue": (_el: asn1.ASN1Element): void => { matchValue = __utils._decode_explicit<asn1.ASN1Element>(() => __utils._decodeAny)(_el); },
-        "dnAttributes": (_el: asn1.ASN1Element): void => { dnAttributes = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); }
+        matchingRule: (_el: asn1.ASN1Element): void => {
+            matchingRule = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER[]>(
+                () =>
+                    __utils._decodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                        () => __utils._decodeObjectIdentifier
+                    )
+            )(_el);
+        },
+        type: (_el: asn1.ASN1Element): void => {
+            type_ = __utils._decode_explicit<AttributeType>(
+                () => _decode_AttributeType
+            )(_el);
+        },
+        matchValue: (_el: asn1.ASN1Element): void => {
+            matchValue = __utils._decode_explicit<asn1.ASN1Element>(
+                () => __utils._decodeAny
+            )(_el);
+        },
+        dnAttributes: (_el: asn1.ASN1Element): void => {
+            dnAttributes = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_MatchingRuleAssertion,
         _extension_additions_list_spec_for_MatchingRuleAssertion,
         _root_component_type_list_2_spec_for_MatchingRuleAssertion,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new MatchingRuleAssertion( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new MatchingRuleAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
         matchingRule,
         type_,
         matchValue,
@@ -3029,21 +6461,64 @@ export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): Ma
         _unrecognizedExtensionsList
     );
 };
-export const _encode_MatchingRuleAssertion = function (value: MatchingRuleAssertion, elGetter: __utils.ASN1Encoder<MatchingRuleAssertion>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(() => __utils._encodeObjectIdentifier, __utils.BER), __utils.BER)(value.matchingRule, __utils.BER),
-            /* IF_ABSENT  */ ((value.type_ === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeType, __utils.BER)(value.type_, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeAny, __utils.BER)(value.matchValue, __utils.BER),
-            /* IF_DEFAULT */ (value.dnAttributes === undefined || __utils.deepEq(value.dnAttributes, _default_value_for_MatchingRuleAssertion__dnAttributes) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeBoolean, __utils.BER)(value.dnAttributes, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_MatchingRuleAssertion = function (
+    value: MatchingRuleAssertion,
+    elGetter: __utils.ASN1Encoder<MatchingRuleAssertion>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () =>
+                            __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                                () => __utils._encodeObjectIdentifier,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.matchingRule, __utils.BER),
+                    /* IF_ABSENT  */ value.type_ === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_AttributeType,
+                              __utils.BER
+                          )(value.type_, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        3,
+                        () => __utils._encodeAny,
+                        __utils.BER
+                    )(value.matchValue, __utils.BER),
+                    /* IF_DEFAULT */ value.dnAttributes === undefined ||
+                    __utils.deepEq(
+                        value.dnAttributes,
+                        _default_value_for_MatchingRuleAssertion__dnAttributes
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.dnAttributes, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type FilterItem =
-    { equality: AttributeValueAssertion }
+    | { equality: AttributeValueAssertion }
     | { substrings: FilterItem_substrings }
     | { greaterOrEqual: AttributeValueAssertion }
     | { lessOrEqual: AttributeValueAssertion }
@@ -3052,48 +6527,172 @@ export type FilterItem =
     | { extensibleMatch: MatchingRuleAssertion }
     | { contextPresent: AttributeTypeAssertion }
     | asn1.ASN1Element;
-export const _decode_FilterItem = __utils._decode_extensible_choice<FilterItem>({
-    "CONTEXT 0": [ "equality", __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion) ],
-    "CONTEXT 1": [ "substrings", __utils._decode_explicit<FilterItem_substrings>(() => _decode_FilterItem_substrings) ],
-    "CONTEXT 2": [ "greaterOrEqual", __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion) ],
-    "CONTEXT 3": [ "lessOrEqual", __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion) ],
-    "CONTEXT 4": [ "present", __utils._decode_explicit<AttributeType>(() => _decode_AttributeType) ],
-    "CONTEXT 5": [ "approximateMatch", __utils._decode_explicit<AttributeValueAssertion>(() => _decode_AttributeValueAssertion) ],
-    "CONTEXT 6": [ "extensibleMatch", __utils._decode_explicit<MatchingRuleAssertion>(() => _decode_MatchingRuleAssertion) ],
-    "CONTEXT 7": [ "contextPresent", __utils._decode_explicit<AttributeTypeAssertion>(() => _decode_AttributeTypeAssertion) ]
-});
-export const _encode_FilterItem = __utils._encode_choice<FilterItem>({
-    "equality": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_AttributeValueAssertion, __utils.BER),
-    "substrings": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_FilterItem_substrings, __utils.BER),
-    "greaterOrEqual": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeValueAssertion, __utils.BER),
-    "lessOrEqual": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_AttributeValueAssertion, __utils.BER),
-    "present": __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_AttributeType, __utils.BER),
-    "approximateMatch": __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => _encode_AttributeValueAssertion, __utils.BER),
-    "extensibleMatch": __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => _encode_MatchingRuleAssertion, __utils.BER),
-    "contextPresent": __utils._encode_explicit(asn1.ASN1TagClass.context, 7, () => _encode_AttributeTypeAssertion, __utils.BER),
-}, __utils.BER);
-
+export const _decode_FilterItem = __utils._decode_extensible_choice<FilterItem>(
+    {
+        "CONTEXT 0": [
+            "equality",
+            __utils._decode_explicit<AttributeValueAssertion>(
+                () => _decode_AttributeValueAssertion
+            ),
+        ],
+        "CONTEXT 1": [
+            "substrings",
+            __utils._decode_explicit<FilterItem_substrings>(
+                () => _decode_FilterItem_substrings
+            ),
+        ],
+        "CONTEXT 2": [
+            "greaterOrEqual",
+            __utils._decode_explicit<AttributeValueAssertion>(
+                () => _decode_AttributeValueAssertion
+            ),
+        ],
+        "CONTEXT 3": [
+            "lessOrEqual",
+            __utils._decode_explicit<AttributeValueAssertion>(
+                () => _decode_AttributeValueAssertion
+            ),
+        ],
+        "CONTEXT 4": [
+            "present",
+            __utils._decode_explicit<AttributeType>(
+                () => _decode_AttributeType
+            ),
+        ],
+        "CONTEXT 5": [
+            "approximateMatch",
+            __utils._decode_explicit<AttributeValueAssertion>(
+                () => _decode_AttributeValueAssertion
+            ),
+        ],
+        "CONTEXT 6": [
+            "extensibleMatch",
+            __utils._decode_explicit<MatchingRuleAssertion>(
+                () => _decode_MatchingRuleAssertion
+            ),
+        ],
+        "CONTEXT 7": [
+            "contextPresent",
+            __utils._decode_explicit<AttributeTypeAssertion>(
+                () => _decode_AttributeTypeAssertion
+            ),
+        ],
+    }
+);
+export const _encode_FilterItem = __utils._encode_choice<FilterItem>(
+    {
+        equality: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_AttributeValueAssertion,
+            __utils.BER
+        ),
+        substrings: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => _encode_FilterItem_substrings,
+            __utils.BER
+        ),
+        greaterOrEqual: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () => _encode_AttributeValueAssertion,
+            __utils.BER
+        ),
+        lessOrEqual: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            3,
+            () => _encode_AttributeValueAssertion,
+            __utils.BER
+        ),
+        present: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            4,
+            () => _encode_AttributeType,
+            __utils.BER
+        ),
+        approximateMatch: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            5,
+            () => _encode_AttributeValueAssertion,
+            __utils.BER
+        ),
+        extensibleMatch: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            6,
+            () => _encode_MatchingRuleAssertion,
+            __utils.BER
+        ),
+        contextPresent: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            7,
+            () => _encode_AttributeTypeAssertion,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 /* TODO: CHECK_RECURSIVE_DEFINITION */
 export type Filter =
-    { item: FilterItem }
+    | { item: FilterItem }
     | { and: Filter[] }
     | { or: Filter[] }
     | { not: Filter }
     | asn1.ASN1Element;
 export const _decode_Filter = __utils._decode_extensible_choice<Filter>({
-    "CONTEXT 0": [ "item", __utils._decode_explicit<FilterItem>(() => _decode_FilterItem) ],
-    "CONTEXT 1": [ "and", __utils._decode_explicit<Filter[]>(() => __utils._decodeSetOf<Filter>(() => _decode_Filter)) ],
-    "CONTEXT 2": [ "or", __utils._decode_explicit<Filter[]>(() => __utils._decodeSetOf<Filter>(() => _decode_Filter)) ],
-    "CONTEXT 3": [ "not", __utils._decode_explicit<Filter>(() => _decode_Filter) ]
+    "CONTEXT 0": [
+        "item",
+        __utils._decode_explicit<FilterItem>(() => _decode_FilterItem),
+    ],
+    "CONTEXT 1": [
+        "and",
+        __utils._decode_explicit<Filter[]>(() =>
+            __utils._decodeSetOf<Filter>(() => _decode_Filter)
+        ),
+    ],
+    "CONTEXT 2": [
+        "or",
+        __utils._decode_explicit<Filter[]>(() =>
+            __utils._decodeSetOf<Filter>(() => _decode_Filter)
+        ),
+    ],
+    "CONTEXT 3": [
+        "not",
+        __utils._decode_explicit<Filter>(() => _decode_Filter),
+    ],
 });
-export const _encode_Filter = __utils._encode_choice<Filter>({
-    "item": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_FilterItem, __utils.BER),
-    "and": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<Filter>(() => _encode_Filter, __utils.BER), __utils.BER),
-    "or": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeSetOf<Filter>(() => _encode_Filter, __utils.BER), __utils.BER),
-    "not": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_Filter, __utils.BER),
-}, __utils.BER);
-
+export const _encode_Filter = __utils._encode_choice<Filter>(
+    {
+        item: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_FilterItem,
+            __utils.BER
+        ),
+        and: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () =>
+                __utils._encodeSetOf<Filter>(() => _encode_Filter, __utils.BER),
+            __utils.BER
+        ),
+        or: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () =>
+                __utils._encodeSetOf<Filter>(() => _encode_Filter, __utils.BER),
+            __utils.BER
+        ),
+        not: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            3,
+            () => _encode_Filter,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type HierarchySelections = asn1.BIT_STRING;
 export const HierarchySelections_self: number = 0; /* LONG_NAMED_BIT */
@@ -3118,7 +6717,6 @@ export const HierarchySelections_all: number = 9; /* LONG_NAMED_BIT */
 export const all: number = HierarchySelections_all; /* SHORT_NAMED_BIT */
 export const _decode_HierarchySelections = __utils._decodeBitString;
 export const _encode_HierarchySelections = __utils._encodeBitString;
-
 
 export type SearchControlOptions = asn1.BIT_STRING;
 export const SearchControlOptions_searchAliases: number = 0; /* LONG_NAMED_BIT */
@@ -3148,11 +6746,9 @@ export const searchFamily: number = SearchControlOptions_searchFamily; /* SHORT_
 export const _decode_SearchControlOptions = __utils._decodeBitString;
 export const _encode_SearchControlOptions = __utils._encodeBitString;
 
-
 export type DomainLocalID = UnboundedDirectoryString; // DefinedType
 export const _decode_DomainLocalID = _decode_UnboundedDirectoryString;
 export const _encode_DomainLocalID = _encode_UnboundedDirectoryString;
-
 
 export type JoinArgument_joinSubset = asn1.ENUMERATED;
 export const JoinArgument_joinSubset_baseObject: JoinArgument_joinSubset = 0; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -3161,14 +6757,12 @@ export const JoinArgument_joinSubset_wholeSubtree: JoinArgument_joinSubset = 2; 
 export const _decode_JoinArgument_joinSubset = __utils._decodeEnumerated;
 export const _encode_JoinArgument_joinSubset = __utils._encodeEnumerated;
 
-
 export type JoinContextType = asn1.OBJECT_IDENTIFIER; // ObjectClassFieldType
 export const _decode_JoinContextType = __utils._decodeObjectIdentifier;
 export const _encode_JoinContextType = __utils._encodeObjectIdentifier;
 
-
 export class JoinAttPair {
-    constructor (
+    constructor(
         readonly baseAtt: AttributeType,
         readonly joinAtt: AttributeType,
         readonly joinContext: JoinContextType[] | undefined,
@@ -3176,18 +6770,34 @@ export class JoinAttPair {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("baseAtt", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("joinAtt", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("joinContext", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "baseAtt",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinAtt",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinContext",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_JoinAttPair: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_JoinAttPair: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_JoinAttPair = function (el: asn1.ASN1Element): JoinAttPair {
+export const _decode_JoinAttPair = function (
+    el: asn1.ASN1Element
+): JoinAttPair {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let baseAtt!: AttributeType;
     let joinAtt!: AttributeType;
@@ -3196,38 +6806,72 @@ export const _decode_JoinAttPair = function (el: asn1.ASN1Element): JoinAttPair 
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "baseAtt": (_el: asn1.ASN1Element): void => { baseAtt = _decode_AttributeType(_el); },
-        "joinAtt": (_el: asn1.ASN1Element): void => { joinAtt = _decode_AttributeType(_el); },
-        "joinContext": (_el: asn1.ASN1Element): void => { joinContext = __utils._decodeSequenceOf<JoinContextType>(() => _decode_JoinContextType)(_el); }
+        baseAtt: (_el: asn1.ASN1Element): void => {
+            baseAtt = _decode_AttributeType(_el);
+        },
+        joinAtt: (_el: asn1.ASN1Element): void => {
+            joinAtt = _decode_AttributeType(_el);
+        },
+        joinContext: (_el: asn1.ASN1Element): void => {
+            joinContext = __utils._decodeSequenceOf<JoinContextType>(
+                () => _decode_JoinContextType
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_JoinAttPair,
         _extension_additions_list_spec_for_JoinAttPair,
         _root_component_type_list_2_spec_for_JoinAttPair,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new JoinAttPair( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new JoinAttPair /* SEQUENCE_CONSTRUCTOR_CALL */(
         baseAtt,
         joinAtt,
         joinContext,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_JoinAttPair = function (value: JoinAttPair, elGetter: __utils.ASN1Encoder<JoinAttPair>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_AttributeType(value.baseAtt, __utils.BER),
-            /* REQUIRED   */ _encode_AttributeType(value.joinAtt, __utils.BER),
-            /* IF_ABSENT  */ ((value.joinContext === undefined) ? undefined : __utils._encodeSequenceOf<JoinContextType>(() => _encode_JoinContextType, __utils.BER)(value.joinContext, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_JoinAttPair = function (
+    value: JoinAttPair,
+    elGetter: __utils.ASN1Encoder<JoinAttPair>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.baseAtt,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.joinAtt,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.joinContext === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<JoinContextType>(
+                              () => _encode_JoinContextType,
+                              __utils.BER
+                          )(value.joinContext, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class JoinArgument {
-    constructor (
+    constructor(
         readonly joinBaseObject: Name,
         readonly domainLocalID: DomainLocalID | undefined,
         readonly joinSubset: JoinArgument_joinSubset | undefined,
@@ -3238,21 +6882,55 @@ export class JoinArgument {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_JoinArgument: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("joinBaseObject", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("domainLocalID", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("joinSubset", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("joinFilter", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("joinAttributes", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("joinSelection", false, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined)
+    new __utils.ComponentSpec(
+        "joinBaseObject",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "domainLocalID",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinSubset",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinFilter",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinAttributes",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinSelection",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_JoinArgument: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_JoinArgument: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_JoinArgument: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_JoinArgument: __utils.ComponentSpec[] = [];
 export const _default_value_for_JoinArgument__joinSubset = JoinArgument_joinSubset_baseObject;
-export const _decode_JoinArgument = function (el: asn1.ASN1Element): JoinArgument {
+export const _decode_JoinArgument = function (
+    el: asn1.ASN1Element
+): JoinArgument {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let joinBaseObject!: Name;
     let domainLocalID: asn1.OPTIONAL<DomainLocalID>;
@@ -3264,21 +6942,51 @@ export const _decode_JoinArgument = function (el: asn1.ASN1Element): JoinArgumen
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "joinBaseObject": (_el: asn1.ASN1Element): void => { joinBaseObject = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "domainLocalID": (_el: asn1.ASN1Element): void => { domainLocalID = __utils._decode_explicit<DomainLocalID>(() => _decode_DomainLocalID)(_el); },
-        "joinSubset": (_el: asn1.ASN1Element): void => { joinSubset = __utils._decode_explicit<JoinArgument_joinSubset>(() => _decode_JoinArgument_joinSubset)(_el); },
-        "joinFilter": (_el: asn1.ASN1Element): void => { joinFilter = __utils._decode_explicit<Filter>(() => _decode_Filter)(_el); },
-        "joinAttributes": (_el: asn1.ASN1Element): void => { joinAttributes = __utils._decode_explicit<JoinAttPair[]>(() => __utils._decodeSequenceOf<JoinAttPair>(() => _decode_JoinAttPair))(_el); },
-        "joinSelection": (_el: asn1.ASN1Element): void => { joinSelection = __utils._decode_explicit<EntryInformationSelection>(() => _decode_EntryInformationSelection)(_el); }
+        joinBaseObject: (_el: asn1.ASN1Element): void => {
+            joinBaseObject = __utils._decode_explicit<Name>(() => _decode_Name)(
+                _el
+            );
+        },
+        domainLocalID: (_el: asn1.ASN1Element): void => {
+            domainLocalID = __utils._decode_explicit<DomainLocalID>(
+                () => _decode_DomainLocalID
+            )(_el);
+        },
+        joinSubset: (_el: asn1.ASN1Element): void => {
+            joinSubset = __utils._decode_explicit<JoinArgument_joinSubset>(
+                () => _decode_JoinArgument_joinSubset
+            )(_el);
+        },
+        joinFilter: (_el: asn1.ASN1Element): void => {
+            joinFilter = __utils._decode_explicit<Filter>(() => _decode_Filter)(
+                _el
+            );
+        },
+        joinAttributes: (_el: asn1.ASN1Element): void => {
+            joinAttributes = __utils._decode_explicit<JoinAttPair[]>(() =>
+                __utils._decodeSequenceOf<JoinAttPair>(
+                    () => _decode_JoinAttPair
+                )
+            )(_el);
+        },
+        joinSelection: (_el: asn1.ASN1Element): void => {
+            joinSelection = __utils._decode_explicit<EntryInformationSelection>(
+                () => _decode_EntryInformationSelection
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_JoinArgument,
         _extension_additions_list_spec_for_JoinArgument,
         _root_component_type_list_2_spec_for_JoinArgument,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new JoinArgument( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new JoinArgument /* SEQUENCE_CONSTRUCTOR_CALL */(
         joinBaseObject,
         domainLocalID,
         joinSubset,
@@ -3288,38 +6996,100 @@ export const _decode_JoinArgument = function (el: asn1.ASN1Element): JoinArgumen
         _unrecognizedExtensionsList
     );
 };
-export const _encode_JoinArgument = function (value: JoinArgument, elGetter: __utils.ASN1Encoder<JoinArgument>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.joinBaseObject, __utils.BER),
-            /* IF_ABSENT  */ ((value.domainLocalID === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_DomainLocalID, __utils.BER)(value.domainLocalID, __utils.BER)),
-            /* IF_DEFAULT */ (value.joinSubset === undefined || __utils.deepEq(value.joinSubset, _default_value_for_JoinArgument__joinSubset) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_JoinArgument_joinSubset, __utils.BER)(value.joinSubset, __utils.BER)),
-            /* IF_ABSENT  */ ((value.joinFilter === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_Filter, __utils.BER)(value.joinFilter, __utils.BER)),
-            /* IF_ABSENT  */ ((value.joinAttributes === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeSequenceOf<JoinAttPair>(() => _encode_JoinAttPair, __utils.BER), __utils.BER)(value.joinAttributes, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => _encode_EntryInformationSelection, __utils.BER)(value.joinSelection, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_JoinArgument = function (
+    value: JoinArgument,
+    elGetter: __utils.ASN1Encoder<JoinArgument>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.joinBaseObject, __utils.BER),
+                    /* IF_ABSENT  */ value.domainLocalID === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_DomainLocalID,
+                              __utils.BER
+                          )(value.domainLocalID, __utils.BER),
+                    /* IF_DEFAULT */ value.joinSubset === undefined ||
+                    __utils.deepEq(
+                        value.joinSubset,
+                        _default_value_for_JoinArgument__joinSubset
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_JoinArgument_joinSubset,
+                              __utils.BER
+                          )(value.joinSubset, __utils.BER),
+                    /* IF_ABSENT  */ value.joinFilter === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => _encode_Filter,
+                              __utils.BER
+                          )(value.joinFilter, __utils.BER),
+                    /* IF_ABSENT  */ value.joinAttributes === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () =>
+                                  __utils._encodeSequenceOf<JoinAttPair>(
+                                      () => _encode_JoinAttPair,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.joinAttributes, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        5,
+                        () => _encode_EntryInformationSelection,
+                        __utils.BER
+                    )(value.joinSelection, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 export enum SearchArgumentData_joinType {
     innerJoin = 0,
     leftOuterJoin = 1,
     fullOuterJoin = 2,
 }
-export const SearchArgumentData_joinType_innerJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.innerJoin; /* LONG_NAMED_ENUMERATED_VALUE */
-export const innerJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.innerJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const SearchArgumentData_joinType_leftOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.leftOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
-export const leftOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.leftOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const SearchArgumentData_joinType_fullOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.fullOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
-export const fullOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.fullOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const SearchArgumentData_joinType_innerJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.innerJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const innerJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.innerJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const SearchArgumentData_joinType_leftOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.leftOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const leftOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.leftOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const SearchArgumentData_joinType_fullOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.fullOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const fullOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.fullOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_SearchArgumentData_joinType = __utils._decodeEnumerated;
 export const _encode_SearchArgumentData_joinType = __utils._encodeEnumerated;
 
-
 export class SearchArgumentData {
-    constructor (
+    constructor(
         readonly baseObject: Name,
         readonly subset: SearchArgumentData_subset | undefined,
         readonly filter: Filter | undefined,
@@ -3336,62 +7106,253 @@ export class SearchArgumentData {
         readonly joinArguments: JoinArgument[] | undefined,
         readonly joinType: SearchArgumentData_joinType | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("baseObject", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("subset", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("filter", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("searchAliases", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("selection", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("pagedResults", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
-    new __utils.ComponentSpec("matchedValuesOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
-    new __utils.ComponentSpec("extendedFilter", true, __utils.hasTag(asn1.ASN1TagClass.context, 7), undefined, undefined),
-    new __utils.ComponentSpec("checkOverspecified", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined),
-    new __utils.ComponentSpec("relaxation", true, __utils.hasTag(asn1.ASN1TagClass.context, 9), undefined, undefined),
-    new __utils.ComponentSpec("extendedArea", true, __utils.hasTag(asn1.ASN1TagClass.context, 10), undefined, undefined),
-    new __utils.ComponentSpec("hierarchySelections", true, __utils.hasTag(asn1.ASN1TagClass.context, 11), undefined, undefined),
-    new __utils.ComponentSpec("searchControlOptions", true, __utils.hasTag(asn1.ASN1TagClass.context, 12), undefined, undefined),
-    new __utils.ComponentSpec("joinArguments", true, __utils.hasTag(asn1.ASN1TagClass.context, 13), undefined, undefined),
-    new __utils.ComponentSpec("joinType", true, __utils.hasTag(asn1.ASN1TagClass.context, 14), undefined, undefined)
+    new __utils.ComponentSpec(
+        "baseObject",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "subset",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "filter",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "searchAliases",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "selection",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "pagedResults",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "matchedValuesOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "extendedFilter",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 7),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "checkOverspecified",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 8),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "relaxation",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 9),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "extendedArea",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 10),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "hierarchySelections",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 11),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "searchControlOptions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 12),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinArguments",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 13),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "joinType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 14),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
-
-];
-export const _default_value_for_SearchArgumentData__subset = baseObject;
+export const _extension_additions_list_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [];
+export const _default_value_for_SearchArgumentData__subset = SearchArgumentData_subset_baseObject;
 export const _default_value_for_SearchArgumentData__filter = { and: [] };
 export const _default_value_for_SearchArgumentData__searchAliases = true;
-export const _default_value_for_SearchArgumentData__selection = new EntryInformationSelection(undefined, undefined, undefined, undefined, undefined, undefined);
+export const _default_value_for_SearchArgumentData__selection = new EntryInformationSelection(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+);
 export const _default_value_for_SearchArgumentData__matchedValuesOnly = false;
 export const _default_value_for_SearchArgumentData__checkOverspecified = false;
-export const _default_value_for_SearchArgumentData__hierarchySelections = new Uint8ClampedArray([ asn1.TRUE_BIT ]);
-export const _default_value_for_SearchArgumentData__searchControlOptions = new Uint8ClampedArray([ asn1.TRUE_BIT ]);
+export const _default_value_for_SearchArgumentData__hierarchySelections = new Uint8ClampedArray(
+    [asn1.TRUE_BIT]
+);
+export const _default_value_for_SearchArgumentData__searchControlOptions = new Uint8ClampedArray(
+    [asn1.TRUE_BIT]
+);
 export const _default_value_for_SearchArgumentData__joinType = leftOuterJoin;
 export const _default_value_for_SearchArgumentData__serviceControls = new ServiceControls(
     undefined,
@@ -3403,13 +7364,18 @@ export const _default_value_for_SearchArgumentData__serviceControls = new Servic
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_SearchArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_SearchArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_SearchArgumentData__entryOnly = true;
 export const _default_value_for_SearchArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_SearchArgumentData__familyGrouping = entryOnly;
-export const _decode_SearchArgumentData = function (el: asn1.ASN1Element): SearchArgumentData {
+export const _decode_SearchArgumentData = function (
+    el: asn1.ASN1Element
+): SearchArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let baseObject!: Name;
     let subset: asn1.OPTIONAL<SearchArgumentData_subset> = _default_value_for_SearchArgumentData__subset;
@@ -3442,42 +7408,156 @@ export const _decode_SearchArgumentData = function (el: asn1.ASN1Element): Searc
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "baseObject": (_el: asn1.ASN1Element): void => { baseObject = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "subset": (_el: asn1.ASN1Element): void => { subset = __utils._decode_explicit<SearchArgumentData_subset>(() => _decode_SearchArgumentData_subset)(_el); },
-        "filter": (_el: asn1.ASN1Element): void => { filter = __utils._decode_explicit<Filter>(() => _decode_Filter)(_el); },
-        "searchAliases": (_el: asn1.ASN1Element): void => { searchAliases = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "selection": (_el: asn1.ASN1Element): void => { selection = __utils._decode_explicit<EntryInformationSelection>(() => _decode_EntryInformationSelection)(_el); },
-        "pagedResults": (_el: asn1.ASN1Element): void => { pagedResults = __utils._decode_explicit<PagedResultsRequest>(() => _decode_PagedResultsRequest)(_el); },
-        "matchedValuesOnly": (_el: asn1.ASN1Element): void => { matchedValuesOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "extendedFilter": (_el: asn1.ASN1Element): void => { extendedFilter = __utils._decode_explicit<Filter>(() => _decode_Filter)(_el); },
-        "checkOverspecified": (_el: asn1.ASN1Element): void => { checkOverspecified = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "relaxation": (_el: asn1.ASN1Element): void => { relaxation = __utils._decode_explicit<RelaxationPolicy>(() => _decode_RelaxationPolicy)(_el); },
-        "extendedArea": (_el: asn1.ASN1Element): void => { extendedArea = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "hierarchySelections": (_el: asn1.ASN1Element): void => { hierarchySelections = __utils._decode_explicit<HierarchySelections>(() => _decode_HierarchySelections)(_el); },
-        "searchControlOptions": (_el: asn1.ASN1Element): void => { searchControlOptions = __utils._decode_explicit<SearchControlOptions>(() => _decode_SearchControlOptions)(_el); },
-        "joinArguments": (_el: asn1.ASN1Element): void => { joinArguments = __utils._decode_explicit<JoinArgument[]>(() => __utils._decodeSequenceOf<JoinArgument>(() => _decode_JoinArgument))(_el); },
-        "joinType": (_el: asn1.ASN1Element): void => { joinType = __utils._decode_explicit<SearchArgumentData_joinType>(() => _decode_SearchArgumentData_joinType)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        baseObject: (_el: asn1.ASN1Element): void => {
+            baseObject = __utils._decode_explicit<Name>(() => _decode_Name)(
+                _el
+            );
+        },
+        subset: (_el: asn1.ASN1Element): void => {
+            subset = __utils._decode_explicit<SearchArgumentData_subset>(
+                () => _decode_SearchArgumentData_subset
+            )(_el);
+        },
+        filter: (_el: asn1.ASN1Element): void => {
+            filter = __utils._decode_explicit<Filter>(() => _decode_Filter)(
+                _el
+            );
+        },
+        searchAliases: (_el: asn1.ASN1Element): void => {
+            searchAliases = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        selection: (_el: asn1.ASN1Element): void => {
+            selection = __utils._decode_explicit<EntryInformationSelection>(
+                () => _decode_EntryInformationSelection
+            )(_el);
+        },
+        pagedResults: (_el: asn1.ASN1Element): void => {
+            pagedResults = __utils._decode_explicit<PagedResultsRequest>(
+                () => _decode_PagedResultsRequest
+            )(_el);
+        },
+        matchedValuesOnly: (_el: asn1.ASN1Element): void => {
+            matchedValuesOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        extendedFilter: (_el: asn1.ASN1Element): void => {
+            extendedFilter = __utils._decode_explicit<Filter>(
+                () => _decode_Filter
+            )(_el);
+        },
+        checkOverspecified: (_el: asn1.ASN1Element): void => {
+            checkOverspecified = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        relaxation: (_el: asn1.ASN1Element): void => {
+            relaxation = __utils._decode_explicit<RelaxationPolicy>(
+                () => _decode_RelaxationPolicy
+            )(_el);
+        },
+        extendedArea: (_el: asn1.ASN1Element): void => {
+            extendedArea = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        hierarchySelections: (_el: asn1.ASN1Element): void => {
+            hierarchySelections = __utils._decode_explicit<HierarchySelections>(
+                () => _decode_HierarchySelections
+            )(_el);
+        },
+        searchControlOptions: (_el: asn1.ASN1Element): void => {
+            searchControlOptions = __utils._decode_explicit<
+                SearchControlOptions
+            >(() => _decode_SearchControlOptions)(_el);
+        },
+        joinArguments: (_el: asn1.ASN1Element): void => {
+            joinArguments = __utils._decode_explicit<JoinArgument[]>(() =>
+                __utils._decodeSequenceOf<JoinArgument>(
+                    () => _decode_JoinArgument
+                )
+            )(_el);
+        },
+        joinType: (_el: asn1.ASN1Element): void => {
+            joinType = __utils._decode_explicit<SearchArgumentData_joinType>(
+                () => _decode_SearchArgumentData_joinType
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SearchArgumentData,
         _extension_additions_list_spec_for_SearchArgumentData,
         _root_component_type_list_2_spec_for_SearchArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SearchArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new SearchArgumentData /* SET_CONSTRUCTOR_CALL */(
         baseObject,
         subset,
         filter,
@@ -3508,93 +7588,462 @@ export const _decode_SearchArgumentData = function (el: asn1.ASN1Element): Searc
         familyGrouping
     );
 };
-export const _encode_SearchArgumentData = function (value: SearchArgumentData, elGetter: __utils.ASN1Encoder<SearchArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.baseObject, __utils.BER),
-            /* IF_DEFAULT */ (value.subset === undefined || __utils.deepEq(value.subset, _default_value_for_SearchArgumentData__subset) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_SearchArgumentData_subset, __utils.BER)(value.subset, __utils.BER)),
-            /* IF_DEFAULT */ (value.filter === undefined || __utils.deepEq(value.filter, _default_value_for_SearchArgumentData__filter) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_Filter, __utils.BER)(value.filter, __utils.BER)),
-            /* IF_DEFAULT */ (value.searchAliases === undefined || __utils.deepEq(value.searchAliases, _default_value_for_SearchArgumentData__searchAliases) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBoolean, __utils.BER)(value.searchAliases, __utils.BER)),
-            /* IF_DEFAULT */ (value.selection === undefined || __utils.deepEq(value.selection, _default_value_for_SearchArgumentData__selection) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_EntryInformationSelection, __utils.BER)(value.selection, __utils.BER)),
-            /* IF_ABSENT  */ ((value.pagedResults === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => _encode_PagedResultsRequest, __utils.BER)(value.pagedResults, __utils.BER)),
-            /* IF_DEFAULT */ (value.matchedValuesOnly === undefined || __utils.deepEq(value.matchedValuesOnly, _default_value_for_SearchArgumentData__matchedValuesOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => __utils._encodeBoolean, __utils.BER)(value.matchedValuesOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.extendedFilter === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 7, () => _encode_Filter, __utils.BER)(value.extendedFilter, __utils.BER)),
-            /* IF_DEFAULT */ (value.checkOverspecified === undefined || __utils.deepEq(value.checkOverspecified, _default_value_for_SearchArgumentData__checkOverspecified) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 8, () => __utils._encodeBoolean, __utils.BER)(value.checkOverspecified, __utils.BER)),
-            /* IF_ABSENT  */ ((value.relaxation === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 9, () => _encode_RelaxationPolicy, __utils.BER)(value.relaxation, __utils.BER)),
-            /* IF_ABSENT  */ ((value.extendedArea === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 10, () => __utils._encodeInteger, __utils.BER)(value.extendedArea, __utils.BER)),
-            /* IF_DEFAULT */ (value.hierarchySelections === undefined || __utils.deepEq(value.hierarchySelections, _default_value_for_SearchArgumentData__hierarchySelections) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 11, () => _encode_HierarchySelections, __utils.BER)(value.hierarchySelections, __utils.BER)),
-            /* IF_DEFAULT */ (value.searchControlOptions === undefined || __utils.deepEq(value.searchControlOptions, _default_value_for_SearchArgumentData__searchControlOptions) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 12, () => _encode_SearchControlOptions, __utils.BER)(value.searchControlOptions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.joinArguments === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 13, () => __utils._encodeSequenceOf<JoinArgument>(() => _encode_JoinArgument, __utils.BER), __utils.BER)(value.joinArguments, __utils.BER)),
-            /* IF_DEFAULT */ (value.joinType === undefined || __utils.deepEq(value.joinType, _default_value_for_SearchArgumentData__joinType) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 14, () => _encode_SearchArgumentData_joinType, __utils.BER)(value.joinType, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_SearchArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_SearchArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_SearchArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_SearchArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_SearchArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SearchArgumentData = function (
+    value: SearchArgumentData,
+    elGetter: __utils.ASN1Encoder<SearchArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.baseObject, __utils.BER),
+                    /* IF_DEFAULT */ value.subset === undefined ||
+                    __utils.deepEq(
+                        value.subset,
+                        _default_value_for_SearchArgumentData__subset
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_SearchArgumentData_subset,
+                              __utils.BER
+                          )(value.subset, __utils.BER),
+                    /* IF_DEFAULT */ value.filter === undefined ||
+                    __utils.deepEq(
+                        value.filter,
+                        _default_value_for_SearchArgumentData__filter
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_Filter,
+                              __utils.BER
+                          )(value.filter, __utils.BER),
+                    /* IF_DEFAULT */ value.searchAliases === undefined ||
+                    __utils.deepEq(
+                        value.searchAliases,
+                        _default_value_for_SearchArgumentData__searchAliases
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.searchAliases, __utils.BER),
+                    /* IF_DEFAULT */ value.selection === undefined ||
+                    __utils.deepEq(
+                        value.selection,
+                        _default_value_for_SearchArgumentData__selection
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              4,
+                              () => _encode_EntryInformationSelection,
+                              __utils.BER
+                          )(value.selection, __utils.BER),
+                    /* IF_ABSENT  */ value.pagedResults === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              5,
+                              () => _encode_PagedResultsRequest,
+                              __utils.BER
+                          )(value.pagedResults, __utils.BER),
+                    /* IF_DEFAULT */ value.matchedValuesOnly === undefined ||
+                    __utils.deepEq(
+                        value.matchedValuesOnly,
+                        _default_value_for_SearchArgumentData__matchedValuesOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              6,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.matchedValuesOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.extendedFilter === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              7,
+                              () => _encode_Filter,
+                              __utils.BER
+                          )(value.extendedFilter, __utils.BER),
+                    /* IF_DEFAULT */ value.checkOverspecified === undefined ||
+                    __utils.deepEq(
+                        value.checkOverspecified,
+                        _default_value_for_SearchArgumentData__checkOverspecified
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              8,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.checkOverspecified, __utils.BER),
+                    /* IF_ABSENT  */ value.relaxation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              9,
+                              () => _encode_RelaxationPolicy,
+                              __utils.BER
+                          )(value.relaxation, __utils.BER),
+                    /* IF_ABSENT  */ value.extendedArea === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              10,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.extendedArea, __utils.BER),
+                    /* IF_DEFAULT */ value.hierarchySelections === undefined ||
+                    __utils.deepEq(
+                        value.hierarchySelections,
+                        _default_value_for_SearchArgumentData__hierarchySelections
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              11,
+                              () => _encode_HierarchySelections,
+                              __utils.BER
+                          )(value.hierarchySelections, __utils.BER),
+                    /* IF_DEFAULT */ value.searchControlOptions === undefined ||
+                    __utils.deepEq(
+                        value.searchControlOptions,
+                        _default_value_for_SearchArgumentData__searchControlOptions
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              12,
+                              () => _encode_SearchControlOptions,
+                              __utils.BER
+                          )(value.searchControlOptions, __utils.BER),
+                    /* IF_ABSENT  */ value.joinArguments === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              13,
+                              () =>
+                                  __utils._encodeSequenceOf<JoinArgument>(
+                                      () => _encode_JoinArgument,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.joinArguments, __utils.BER),
+                    /* IF_DEFAULT */ value.joinType === undefined ||
+                    __utils.deepEq(
+                        value.joinType,
+                        _default_value_for_SearchArgumentData__joinType
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              14,
+                              () => _encode_SearchArgumentData_joinType,
+                              __utils.BER
+                          )(value.joinType, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_SearchArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_SearchArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_SearchArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_SearchArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_SearchArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type SearchArgument = OPTIONALLY_PROTECTED<SearchArgumentData>; // DefinedType
-export const _decode_SearchArgument = _get_decoder_for_OPTIONALLY_PROTECTED<SearchArgumentData>(_decode_SearchArgumentData);
-export const _encode_SearchArgument = _get_encoder_for_OPTIONALLY_PROTECTED<SearchArgumentData>(_encode_SearchArgumentData);
-
+export const _decode_SearchArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    SearchArgumentData
+>(_decode_SearchArgumentData);
+export const _encode_SearchArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    SearchArgumentData
+>(_encode_SearchArgumentData);
 
 // TODO: ObjectAssignment: addEntry
 
 export class AddEntryArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly entry: Attribute[],
         readonly targetSystem: AccessPoint | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("entry", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("targetSystem", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entry",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "targetSystem",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AddEntryArgumentData__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -3605,13 +8054,18 @@ export const _default_value_for_AddEntryArgumentData__serviceControls = new Serv
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_AddEntryArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_AddEntryArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_AddEntryArgumentData__entryOnly = true;
 export const _default_value_for_AddEntryArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_AddEntryArgumentData__familyGrouping = entryOnly;
-export const _decode_AddEntryArgumentData = function (el: asn1.ASN1Element): AddEntryArgumentData {
+export const _decode_AddEntryArgumentData = function (
+    el: asn1.ASN1Element
+): AddEntryArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let entry!: Attribute[];
@@ -3632,30 +8086,92 @@ export const _decode_AddEntryArgumentData = function (el: asn1.ASN1Element): Add
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "entry": (_el: asn1.ASN1Element): void => { entry = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSetOf<Attribute>(() => _decode_Attribute))(_el); },
-        "targetSystem": (_el: asn1.ASN1Element): void => { targetSystem = __utils._decode_explicit<AccessPoint>(() => _decode_AccessPoint)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        entry: (_el: asn1.ASN1Element): void => {
+            entry = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSetOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
+        targetSystem: (_el: asn1.ASN1Element): void => {
+            targetSystem = __utils._decode_explicit<AccessPoint>(
+                () => _decode_AccessPoint
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AddEntryArgumentData,
         _extension_additions_list_spec_for_AddEntryArgumentData,
         _root_component_type_list_2_spec_for_AddEntryArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AddEntryArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new AddEntryArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         entry,
         targetSystem,
@@ -3674,60 +8190,229 @@ export const _decode_AddEntryArgumentData = function (el: asn1.ASN1Element): Add
         familyGrouping
     );
 };
-export const _encode_AddEntryArgumentData = function (value: AddEntryArgumentData, elGetter: __utils.ASN1Encoder<AddEntryArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.entry, __utils.BER),
-            /* IF_ABSENT  */ ((value.targetSystem === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AccessPoint, __utils.BER)(value.targetSystem, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_AddEntryArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_AddEntryArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_AddEntryArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_AddEntryArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_AddEntryArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AddEntryArgumentData = function (
+    value: AddEntryArgumentData,
+    elGetter: __utils.ASN1Encoder<AddEntryArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () =>
+                            __utils._encodeSetOf<Attribute>(
+                                () => _encode_Attribute,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.entry, __utils.BER),
+                    /* IF_ABSENT  */ value.targetSystem === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_AccessPoint,
+                              __utils.BER
+                          )(value.targetSystem, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_AddEntryArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_AddEntryArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_AddEntryArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_AddEntryArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_AddEntryArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type AddEntryArgument = OPTIONALLY_PROTECTED<AddEntryArgumentData>; // DefinedType
-export const _decode_AddEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<AddEntryArgumentData>(_decode_AddEntryArgumentData);
-export const _encode_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<AddEntryArgumentData>(_encode_AddEntryArgumentData);
-
+export const _decode_AddEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    AddEntryArgumentData
+>(_decode_AddEntryArgumentData);
+export const _encode_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    AddEntryArgumentData
+>(_encode_AddEntryArgumentData);
 
 export class AddEntryResultData {
-    constructor (
+    constructor(
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-export const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [];
 export const _root_component_type_list_2_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AddEntryResultData__aliasDereferenced = false;
-export const _decode_AddEntryResultData = function (el: asn1.ASN1Element): AddEntryResultData {
+export const _decode_AddEntryResultData = function (
+    el: asn1.ASN1Element
+): AddEntryResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -3737,19 +8422,39 @@ export const _decode_AddEntryResultData = function (el: asn1.ASN1Element): AddEn
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AddEntryResultData,
         _extension_additions_list_spec_for_AddEntryResultData,
         _root_component_type_list_2_spec_for_AddEntryResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AddEntryResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new AddEntryResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         _unrecognizedExtensionsList,
         securityParameters,
         performer,
@@ -3757,74 +8462,233 @@ export const _decode_AddEntryResultData = function (el: asn1.ASN1Element): AddEn
         notification
     );
 };
-export const _encode_AddEntryResultData = function (value: AddEntryResultData, elGetter: __utils.ASN1Encoder<AddEntryResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AddEntryResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AddEntryResultData = function (
+    value: AddEntryResultData,
+    elGetter: __utils.ASN1Encoder<AddEntryResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AddEntryResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type AddEntryResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AddEntryResultData> }
     | asn1.ASN1Element;
-export const _decode_AddEntryResult = __utils._decode_extensible_choice<AddEntryResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(_decode_AddEntryResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(_decode_AddEntryResultData) ],
+export const _decode_AddEntryResult = __utils._decode_extensible_choice<
+    AddEntryResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(
+            _decode_AddEntryResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(
+            _decode_AddEntryResultData
+        ),
+    ],
 });
-export const _encode_AddEntryResult = __utils._encode_choice<AddEntryResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(_encode_AddEntryResultData),
-}, __utils.BER);
-
+export const _encode_AddEntryResult = __utils._encode_choice<AddEntryResult>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            AddEntryResultData
+        >(_encode_AddEntryResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: removeEntry
 
 export class RemoveEntryArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_RemoveEntryArgumentData__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -3835,13 +8699,18 @@ export const _default_value_for_RemoveEntryArgumentData__serviceControls = new S
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_RemoveEntryArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_RemoveEntryArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_RemoveEntryArgumentData__entryOnly = true;
 export const _default_value_for_RemoveEntryArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_RemoveEntryArgumentData__familyGrouping = entryOnly;
-export const _decode_RemoveEntryArgumentData = function (el: asn1.ASN1Element): RemoveEntryArgumentData {
+export const _decode_RemoveEntryArgumentData = function (
+    el: asn1.ASN1Element
+): RemoveEntryArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -3860,28 +8729,82 @@ export const _decode_RemoveEntryArgumentData = function (el: asn1.ASN1Element): 
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_RemoveEntryArgumentData,
         _extension_additions_list_spec_for_RemoveEntryArgumentData,
         _root_component_type_list_2_spec_for_RemoveEntryArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new RemoveEntryArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new RemoveEntryArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         _unrecognizedExtensionsList,
         serviceControls,
@@ -3898,58 +8821,211 @@ export const _decode_RemoveEntryArgumentData = function (el: asn1.ASN1Element): 
         familyGrouping
     );
 };
-export const _encode_RemoveEntryArgumentData = function (value: RemoveEntryArgumentData, elGetter: __utils.ASN1Encoder<RemoveEntryArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_RemoveEntryArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_RemoveEntryArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_RemoveEntryArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_RemoveEntryArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_RemoveEntryArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_RemoveEntryArgumentData = function (
+    value: RemoveEntryArgumentData,
+    elGetter: __utils.ASN1Encoder<RemoveEntryArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_RemoveEntryArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_RemoveEntryArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_RemoveEntryArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_RemoveEntryArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_RemoveEntryArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type RemoveEntryArgument = OPTIONALLY_PROTECTED<RemoveEntryArgumentData>; // DefinedType
-export const _decode_RemoveEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<RemoveEntryArgumentData>(_decode_RemoveEntryArgumentData);
-export const _encode_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<RemoveEntryArgumentData>(_encode_RemoveEntryArgumentData);
-
+export const _decode_RemoveEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    RemoveEntryArgumentData
+>(_decode_RemoveEntryArgumentData);
+export const _encode_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    RemoveEntryArgumentData
+>(_encode_RemoveEntryArgumentData);
 
 export class RemoveEntryResultData {
-    constructor (
+    constructor(
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-export const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [];
 export const _root_component_type_list_2_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_RemoveEntryResultData__aliasDereferenced = false;
-export const _decode_RemoveEntryResultData = function (el: asn1.ASN1Element): RemoveEntryResultData {
+export const _decode_RemoveEntryResultData = function (
+    el: asn1.ASN1Element
+): RemoveEntryResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -3959,19 +9035,39 @@ export const _decode_RemoveEntryResultData = function (el: asn1.ASN1Element): Re
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_RemoveEntryResultData,
         _extension_additions_list_spec_for_RemoveEntryResultData,
         _root_component_type_list_2_spec_for_RemoveEntryResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new RemoveEntryResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new RemoveEntryResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         _unrecognizedExtensionsList,
         securityParameters,
         performer,
@@ -3979,38 +9075,103 @@ export const _decode_RemoveEntryResultData = function (el: asn1.ASN1Element): Re
         notification
     );
 };
-export const _encode_RemoveEntryResultData = function (value: RemoveEntryResultData, elGetter: __utils.ASN1Encoder<RemoveEntryResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_RemoveEntryResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_RemoveEntryResultData = function (
+    value: RemoveEntryResultData,
+    elGetter: __utils.ASN1Encoder<RemoveEntryResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_RemoveEntryResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type RemoveEntryResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData> }
     | asn1.ASN1Element;
-export const _decode_RemoveEntryResult = __utils._decode_extensible_choice<RemoveEntryResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(_decode_RemoveEntryResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(_decode_RemoveEntryResultData) ],
+export const _decode_RemoveEntryResult = __utils._decode_extensible_choice<
+    RemoveEntryResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(
+            _decode_RemoveEntryResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(
+            _decode_RemoveEntryResultData
+        ),
+    ],
 });
-export const _encode_RemoveEntryResult = __utils._encode_choice<RemoveEntryResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(_encode_RemoveEntryResultData),
-}, __utils.BER);
-
+export const _encode_RemoveEntryResult = __utils._encode_choice<
+    RemoveEntryResult
+>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            RemoveEntryResultData
+        >(_encode_RemoveEntryResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: modifyEntry
 
 export type EntryModification =
-    { addAttribute: Attribute }
+    | { addAttribute: Attribute }
     | { removeAttribute: AttributeType }
     | { addValues: Attribute }
     | { removeValues: Attribute }
@@ -4018,68 +9179,240 @@ export type EntryModification =
     | { resetValue: AttributeType }
     | { replaceValues: Attribute }
     | asn1.ASN1Element;
-export const _decode_EntryModification = __utils._decode_extensible_choice<EntryModification>({
-    "CONTEXT 0": [ "addAttribute", __utils._decode_explicit<Attribute>(() => _decode_Attribute) ],
-    "CONTEXT 1": [ "removeAttribute", __utils._decode_explicit<AttributeType>(() => _decode_AttributeType) ],
-    "CONTEXT 2": [ "addValues", __utils._decode_explicit<Attribute>(() => _decode_Attribute) ],
-    "CONTEXT 3": [ "removeValues", __utils._decode_explicit<Attribute>(() => _decode_Attribute) ],
-    "CONTEXT 4": [ "alterValues", __utils._decode_explicit<AttributeTypeAndValue>(() => _decode_AttributeTypeAndValue) ],
-    "CONTEXT 5": [ "resetValue", __utils._decode_explicit<AttributeType>(() => _decode_AttributeType) ],
-    "CONTEXT 6": [ "replaceValues", __utils._decode_explicit<Attribute>(() => _decode_Attribute) ]
+export const _decode_EntryModification = __utils._decode_extensible_choice<
+    EntryModification
+>({
+    "CONTEXT 0": [
+        "addAttribute",
+        __utils._decode_explicit<Attribute>(() => _decode_Attribute),
+    ],
+    "CONTEXT 1": [
+        "removeAttribute",
+        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
+    ],
+    "CONTEXT 2": [
+        "addValues",
+        __utils._decode_explicit<Attribute>(() => _decode_Attribute),
+    ],
+    "CONTEXT 3": [
+        "removeValues",
+        __utils._decode_explicit<Attribute>(() => _decode_Attribute),
+    ],
+    "CONTEXT 4": [
+        "alterValues",
+        __utils._decode_explicit<AttributeTypeAndValue>(
+            () => _decode_AttributeTypeAndValue
+        ),
+    ],
+    "CONTEXT 5": [
+        "resetValue",
+        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
+    ],
+    "CONTEXT 6": [
+        "replaceValues",
+        __utils._decode_explicit<Attribute>(() => _decode_Attribute),
+    ],
 });
-export const _encode_EntryModification = __utils._encode_choice<EntryModification>({
-    "addAttribute": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Attribute, __utils.BER),
-    "removeAttribute": __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeType, __utils.BER),
-    "addValues": __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_Attribute, __utils.BER),
-    "removeValues": __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_Attribute, __utils.BER),
-    "alterValues": __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => _encode_AttributeTypeAndValue, __utils.BER),
-    "resetValue": __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => _encode_AttributeType, __utils.BER),
-    "replaceValues": __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => _encode_Attribute, __utils.BER),
-}, __utils.BER);
-
+export const _encode_EntryModification = __utils._encode_choice<
+    EntryModification
+>(
+    {
+        addAttribute: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () => _encode_Attribute,
+            __utils.BER
+        ),
+        removeAttribute: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            1,
+            () => _encode_AttributeType,
+            __utils.BER
+        ),
+        addValues: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            2,
+            () => _encode_Attribute,
+            __utils.BER
+        ),
+        removeValues: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            3,
+            () => _encode_Attribute,
+            __utils.BER
+        ),
+        alterValues: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            4,
+            () => _encode_AttributeTypeAndValue,
+            __utils.BER
+        ),
+        resetValue: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            5,
+            () => _encode_AttributeType,
+            __utils.BER
+        ),
+        replaceValues: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            6,
+            () => _encode_Attribute,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export class ModifyEntryArgumentData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly changes: EntryModification[],
         readonly selection: EntryInformationSelection | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("changes", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("selection", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "changes",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "selection",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ModifyEntryArgumentData__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -4090,13 +9423,18 @@ export const _default_value_for_ModifyEntryArgumentData__serviceControls = new S
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_ModifyEntryArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_ModifyEntryArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_ModifyEntryArgumentData__entryOnly = true;
 export const _default_value_for_ModifyEntryArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_ModifyEntryArgumentData__familyGrouping = entryOnly;
-export const _decode_ModifyEntryArgumentData = function (el: asn1.ASN1Element): ModifyEntryArgumentData {
+export const _decode_ModifyEntryArgumentData = function (
+    el: asn1.ASN1Element
+): ModifyEntryArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let changes!: EntryModification[];
@@ -4117,30 +9455,94 @@ export const _decode_ModifyEntryArgumentData = function (el: asn1.ASN1Element): 
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "changes": (_el: asn1.ASN1Element): void => { changes = __utils._decode_explicit<EntryModification[]>(() => __utils._decodeSequenceOf<EntryModification>(() => _decode_EntryModification))(_el); },
-        "selection": (_el: asn1.ASN1Element): void => { selection = __utils._decode_explicit<EntryInformationSelection>(() => _decode_EntryInformationSelection)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        changes: (_el: asn1.ASN1Element): void => {
+            changes = __utils._decode_explicit<EntryModification[]>(() =>
+                __utils._decodeSequenceOf<EntryModification>(
+                    () => _decode_EntryModification
+                )
+            )(_el);
+        },
+        selection: (_el: asn1.ASN1Element): void => {
+            selection = __utils._decode_explicit<EntryInformationSelection>(
+                () => _decode_EntryInformationSelection
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ModifyEntryArgumentData,
         _extension_additions_list_spec_for_ModifyEntryArgumentData,
         _root_component_type_list_2_spec_for_ModifyEntryArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ModifyEntryArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new ModifyEntryArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         changes,
         selection,
@@ -4159,61 +9561,238 @@ export const _decode_ModifyEntryArgumentData = function (el: asn1.ASN1Element): 
         familyGrouping
     );
 };
-export const _encode_ModifyEntryArgumentData = function (value: ModifyEntryArgumentData, elGetter: __utils.ASN1Encoder<ModifyEntryArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSequenceOf<EntryModification>(() => _encode_EntryModification, __utils.BER), __utils.BER)(value.changes, __utils.BER),
-            /* IF_ABSENT  */ ((value.selection === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_EntryInformationSelection, __utils.BER)(value.selection, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_ModifyEntryArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_ModifyEntryArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_ModifyEntryArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_ModifyEntryArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_ModifyEntryArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ModifyEntryArgumentData = function (
+    value: ModifyEntryArgumentData,
+    elGetter: __utils.ASN1Encoder<ModifyEntryArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () =>
+                            __utils._encodeSequenceOf<EntryModification>(
+                                () => _encode_EntryModification,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.changes, __utils.BER),
+                    /* IF_ABSENT  */ value.selection === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_EntryInformationSelection,
+                              __utils.BER
+                          )(value.selection, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_ModifyEntryArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_ModifyEntryArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_ModifyEntryArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_ModifyEntryArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_ModifyEntryArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ModifyEntryArgument = OPTIONALLY_PROTECTED<ModifyEntryArgumentData>; // DefinedType
-export const _decode_ModifyEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ModifyEntryArgumentData>(_decode_ModifyEntryArgumentData);
-export const _encode_ModifyEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ModifyEntryArgumentData>(_encode_ModifyEntryArgumentData);
-
+export const _decode_ModifyEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ModifyEntryArgumentData
+>(_decode_ModifyEntryArgumentData);
+export const _encode_ModifyEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ModifyEntryArgumentData
+>(_encode_ModifyEntryArgumentData);
 
 export class ModifyEntryResultData {
-    constructor (
+    constructor(
         readonly entry: EntryInformation | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("entry", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
+    new __utils.ComponentSpec(
+        "entry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ModifyEntryResultData__aliasDereferenced = false;
-export const _decode_ModifyEntryResultData = function (el: asn1.ASN1Element): ModifyEntryResultData {
+export const _decode_ModifyEntryResultData = function (
+    el: asn1.ASN1Element
+): ModifyEntryResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let entry: asn1.OPTIONAL<EntryInformation>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -4224,20 +9803,44 @@ export const _decode_ModifyEntryResultData = function (el: asn1.ASN1Element): Mo
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "entry": (_el: asn1.ASN1Element): void => { entry = __utils._decode_explicit<EntryInformation>(() => _decode_EntryInformation)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        entry: (_el: asn1.ASN1Element): void => {
+            entry = __utils._decode_explicit<EntryInformation>(
+                () => _decode_EntryInformation
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ModifyEntryResultData,
         _extension_additions_list_spec_for_ModifyEntryResultData,
         _root_component_type_list_2_spec_for_ModifyEntryResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ModifyEntryResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new ModifyEntryResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         entry,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -4246,83 +9849,269 @@ export const _decode_ModifyEntryResultData = function (el: asn1.ASN1Element): Mo
         notification
     );
 };
-export const _encode_ModifyEntryResultData = function (value: ModifyEntryResultData, elGetter: __utils.ASN1Encoder<ModifyEntryResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.entry === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_EntryInformation, __utils.BER)(value.entry, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ModifyEntryResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ModifyEntryResultData = function (
+    value: ModifyEntryResultData,
+    elGetter: __utils.ASN1Encoder<ModifyEntryResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.entry === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => _encode_EntryInformation,
+                              __utils.BER
+                          )(value.entry, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ModifyEntryResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ModifyEntryResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData> }
     | asn1.ASN1Element;
-export const _decode_ModifyEntryResult = __utils._decode_extensible_choice<ModifyEntryResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(_decode_ModifyEntryResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(_decode_ModifyEntryResultData) ],
+export const _decode_ModifyEntryResult = __utils._decode_extensible_choice<
+    ModifyEntryResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(
+            _decode_ModifyEntryResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(
+            _decode_ModifyEntryResultData
+        ),
+    ],
 });
-export const _encode_ModifyEntryResult = __utils._encode_choice<ModifyEntryResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(_encode_ModifyEntryResultData),
-}, __utils.BER);
-
+export const _encode_ModifyEntryResult = __utils._encode_choice<
+    ModifyEntryResult
+>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            ModifyEntryResultData
+        >(_encode_ModifyEntryResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: modifyDN
 
 export class ModifyDNArgumentData {
-    constructor (
+    constructor(
         readonly object: DistinguishedName,
         readonly newRDN: RelativeDistinguishedName,
         readonly deleteOldRDN: asn1.BOOLEAN | undefined,
         readonly newSuperior: DistinguishedName | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("newRDN", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("deleteOldRDN", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("newSuperior", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "newRDN",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "deleteOldRDN",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "newSuperior",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ModifyDNArgumentData__deleteOldRDN = false;
 export const _default_value_for_ModifyDNArgumentData__serviceControls = new ServiceControls(
     undefined,
@@ -4334,13 +10123,18 @@ export const _default_value_for_ModifyDNArgumentData__serviceControls = new Serv
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_ModifyDNArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_ModifyDNArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_ModifyDNArgumentData__entryOnly = true;
 export const _default_value_for_ModifyDNArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_ModifyDNArgumentData__familyGrouping = entryOnly;
-export const _decode_ModifyDNArgumentData = function (el: asn1.ASN1Element): ModifyDNArgumentData {
+export const _decode_ModifyDNArgumentData = function (
+    el: asn1.ASN1Element
+): ModifyDNArgumentData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: DistinguishedName;
     let newRDN!: RelativeDistinguishedName;
@@ -4362,31 +10156,99 @@ export const _decode_ModifyDNArgumentData = function (el: asn1.ASN1Element): Mod
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "newRDN": (_el: asn1.ASN1Element): void => { newRDN = __utils._decode_explicit<RelativeDistinguishedName>(() => _decode_RelativeDistinguishedName)(_el); },
-        "deleteOldRDN": (_el: asn1.ASN1Element): void => { deleteOldRDN = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "newSuperior": (_el: asn1.ASN1Element): void => { newSuperior = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        newRDN: (_el: asn1.ASN1Element): void => {
+            newRDN = __utils._decode_explicit<RelativeDistinguishedName>(
+                () => _decode_RelativeDistinguishedName
+            )(_el);
+        },
+        deleteOldRDN: (_el: asn1.ASN1Element): void => {
+            deleteOldRDN = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        newSuperior: (_el: asn1.ASN1Element): void => {
+            newSuperior = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ModifyDNArgumentData,
         _extension_additions_list_spec_for_ModifyDNArgumentData,
         _root_component_type_list_2_spec_for_ModifyDNArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ModifyDNArgumentData( /* SET_CONSTRUCTOR_CALL */
+    return new ModifyDNArgumentData /* SET_CONSTRUCTOR_CALL */(
         object,
         newRDN,
         deleteOldRDN,
@@ -4406,62 +10268,246 @@ export const _decode_ModifyDNArgumentData = function (el: asn1.ASN1Element): Mod
         familyGrouping
     );
 };
-export const _encode_ModifyDNArgumentData = function (value: ModifyDNArgumentData, elGetter: __utils.ASN1Encoder<ModifyDNArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DistinguishedName, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_RelativeDistinguishedName, __utils.BER)(value.newRDN, __utils.BER),
-            /* IF_DEFAULT */ (value.deleteOldRDN === undefined || __utils.deepEq(value.deleteOldRDN, _default_value_for_ModifyDNArgumentData__deleteOldRDN) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.deleteOldRDN, __utils.BER)),
-            /* IF_ABSENT  */ ((value.newSuperior === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => _encode_DistinguishedName, __utils.BER)(value.newSuperior, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_ModifyDNArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_ModifyDNArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_ModifyDNArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_ModifyDNArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_ModifyDNArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ModifyDNArgumentData = function (
+    value: ModifyDNArgumentData,
+    elGetter: __utils.ASN1Encoder<ModifyDNArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_DistinguishedName,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_RelativeDistinguishedName,
+                        __utils.BER
+                    )(value.newRDN, __utils.BER),
+                    /* IF_DEFAULT */ value.deleteOldRDN === undefined ||
+                    __utils.deepEq(
+                        value.deleteOldRDN,
+                        _default_value_for_ModifyDNArgumentData__deleteOldRDN
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.deleteOldRDN, __utils.BER),
+                    /* IF_ABSENT  */ value.newSuperior === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.newSuperior, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_ModifyDNArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_ModifyDNArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_ModifyDNArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_ModifyDNArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_ModifyDNArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ModifyDNArgument = OPTIONALLY_PROTECTED<ModifyDNArgumentData>; // DefinedType
-export const _decode_ModifyDNArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ModifyDNArgumentData>(_decode_ModifyDNArgumentData);
-export const _encode_ModifyDNArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ModifyDNArgumentData>(_encode_ModifyDNArgumentData);
-
+export const _decode_ModifyDNArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ModifyDNArgumentData
+>(_decode_ModifyDNArgumentData);
+export const _encode_ModifyDNArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ModifyDNArgumentData
+>(_encode_ModifyDNArgumentData);
 
 export class ModifyDNResultData {
-    constructor (
+    constructor(
         readonly newRDN: RelativeDistinguishedName,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("newRDN", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
+    new __utils.ComponentSpec(
+        "newRDN",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ModifyDNResultData__aliasDereferenced = false;
-export const _decode_ModifyDNResultData = function (el: asn1.ASN1Element): ModifyDNResultData {
+export const _decode_ModifyDNResultData = function (
+    el: asn1.ASN1Element
+): ModifyDNResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let newRDN!: RelativeDistinguishedName;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -4472,20 +10518,42 @@ export const _decode_ModifyDNResultData = function (el: asn1.ASN1Element): Modif
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "newRDN": (_el: asn1.ASN1Element): void => { newRDN = _decode_RelativeDistinguishedName(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        newRDN: (_el: asn1.ASN1Element): void => {
+            newRDN = _decode_RelativeDistinguishedName(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ModifyDNResultData,
         _extension_additions_list_spec_for_ModifyDNResultData,
         _root_component_type_list_2_spec_for_ModifyDNResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ModifyDNResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new ModifyDNResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         newRDN,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -4494,41 +10562,107 @@ export const _decode_ModifyDNResultData = function (el: asn1.ASN1Element): Modif
         notification
     );
 };
-export const _encode_ModifyDNResultData = function (value: ModifyDNResultData, elGetter: __utils.ASN1Encoder<ModifyDNResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_RelativeDistinguishedName(value.newRDN, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ModifyDNResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ModifyDNResultData = function (
+    value: ModifyDNResultData,
+    elGetter: __utils.ASN1Encoder<ModifyDNResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_RelativeDistinguishedName(
+                        value.newRDN,
+                        __utils.BER
+                    ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ModifyDNResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ModifyDNResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData> }
     | asn1.ASN1Element;
-export const _decode_ModifyDNResult = __utils._decode_extensible_choice<ModifyDNResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(_decode_ModifyDNResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(_decode_ModifyDNResultData) ],
+export const _decode_ModifyDNResult = __utils._decode_extensible_choice<
+    ModifyDNResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(
+            _decode_ModifyDNResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(
+            _decode_ModifyDNResultData
+        ),
+    ],
 });
-export const _encode_ModifyDNResult = __utils._encode_choice<ModifyDNResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(_encode_ModifyDNResultData),
-}, __utils.BER);
-
+export const _encode_ModifyDNResult = __utils._encode_choice<ModifyDNResult>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            ModifyDNResultData
+        >(_encode_ModifyDNResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: changePassword
 
 export class ChangePasswordArgumentData {
-    constructor (
+    constructor(
         readonly object: DistinguishedName,
         readonly oldPwd: UserPwd,
         readonly newPwd: UserPwd,
@@ -4536,21 +10670,41 @@ export class ChangePasswordArgumentData {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("oldPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("newPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "oldPwd",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "newPwd",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_ChangePasswordArgumentData = function (el: asn1.ASN1Element): ChangePasswordArgumentData {
+export const _decode_ChangePasswordArgumentData = function (
+    el: asn1.ASN1Element
+): ChangePasswordArgumentData {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
-        throw new asn1.ASN1ConstructionError("ChangePasswordArgumentData contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "ChangePasswordArgumentData contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "object";
@@ -4559,57 +10713,124 @@ export const _decode_ChangePasswordArgumentData = function (el: asn1.ASN1Element
     let object!: DistinguishedName;
     let oldPwd!: UserPwd;
     let newPwd!: UserPwd;
-    object = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(sequence[0]);
-    oldPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(sequence[1]);
-    newPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(sequence[2]);
+    object = __utils._decode_explicit<DistinguishedName>(
+        () => _decode_DistinguishedName
+    )(sequence[0]);
+    oldPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(
+        sequence[1]
+    );
+    newPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(
+        sequence[2]
+    );
     // TODO: Validate values.
     return new ChangePasswordArgumentData(
         object,
         oldPwd,
         newPwd,
-        sequence.slice(3),
+        sequence.slice(3)
     );
 };
-export const _encode_ChangePasswordArgumentData = function (value: ChangePasswordArgumentData, elGetter: __utils.ASN1Encoder<ChangePasswordArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DistinguishedName, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_UserPwd, __utils.BER)(value.oldPwd, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_UserPwd, __utils.BER)(value.newPwd, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ChangePasswordArgumentData = function (
+    value: ChangePasswordArgumentData,
+    elGetter: __utils.ASN1Encoder<ChangePasswordArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_DistinguishedName,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_UserPwd,
+                        __utils.BER
+                    )(value.oldPwd, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        2,
+                        () => _encode_UserPwd,
+                        __utils.BER
+                    )(value.newPwd, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
-export type ChangePasswordArgument = OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>; // DefinedType
-export const _decode_ChangePasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>(_decode_ChangePasswordArgumentData);
-export const _encode_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>(_encode_ChangePasswordArgumentData);
-
+export type ChangePasswordArgument = OPTIONALLY_PROTECTED_SEQ<
+    ChangePasswordArgumentData
+>; // DefinedType
+export const _decode_ChangePasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    ChangePasswordArgumentData
+>(_decode_ChangePasswordArgumentData);
+export const _encode_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    ChangePasswordArgumentData
+>(_encode_ChangePasswordArgumentData);
 
 export class ChangePasswordResultData {
-    constructor (
+    constructor(
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-export const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [];
 export const _root_component_type_list_2_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ChangePasswordResultData__aliasDereferenced = false;
-export const _decode_ChangePasswordResultData = function (el: asn1.ASN1Element): ChangePasswordResultData {
+export const _decode_ChangePasswordResultData = function (
+    el: asn1.ASN1Element
+): ChangePasswordResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -4619,19 +10840,39 @@ export const _decode_ChangePasswordResultData = function (el: asn1.ASN1Element):
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ChangePasswordResultData,
         _extension_additions_list_spec_for_ChangePasswordResultData,
         _root_component_type_list_2_spec_for_ChangePasswordResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ChangePasswordResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new ChangePasswordResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         _unrecognizedExtensionsList,
         securityParameters,
         performer,
@@ -4639,112 +10880,251 @@ export const _decode_ChangePasswordResultData = function (el: asn1.ASN1Element):
         notification
     );
 };
-export const _encode_ChangePasswordResultData = function (value: ChangePasswordResultData, elGetter: __utils.ASN1Encoder<ChangePasswordResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ChangePasswordResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ChangePasswordResultData = function (
+    value: ChangePasswordResultData,
+    elGetter: __utils.ASN1Encoder<ChangePasswordResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ChangePasswordResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ChangePasswordResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData> }
     | asn1.ASN1Element;
-export const _decode_ChangePasswordResult = __utils._decode_extensible_choice<ChangePasswordResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(_decode_ChangePasswordResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(_decode_ChangePasswordResultData) ],
+export const _decode_ChangePasswordResult = __utils._decode_extensible_choice<
+    ChangePasswordResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(
+            _decode_ChangePasswordResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(
+            _decode_ChangePasswordResultData
+        ),
+    ],
 });
-export const _encode_ChangePasswordResult = __utils._encode_choice<ChangePasswordResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(_encode_ChangePasswordResultData),
-}, __utils.BER);
-
+export const _encode_ChangePasswordResult = __utils._encode_choice<
+    ChangePasswordResult
+>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            ChangePasswordResultData
+        >(_encode_ChangePasswordResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: administerPassword
 
 export class AdministerPasswordArgumentData {
-    constructor (
+    constructor(
         readonly object: DistinguishedName,
         readonly newPwd: UserPwd,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("newPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "newPwd",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_AdministerPasswordArgumentData = function (el: asn1.ASN1Element): AdministerPasswordArgumentData {
+export const _decode_AdministerPasswordArgumentData = function (
+    el: asn1.ASN1Element
+): AdministerPasswordArgumentData {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("AdministerPasswordArgumentData contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "AdministerPasswordArgumentData contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "object";
     sequence[1].name = "newPwd";
     let object!: DistinguishedName;
     let newPwd!: UserPwd;
-    object = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(sequence[0]);
-    newPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(sequence[1]);
+    object = __utils._decode_explicit<DistinguishedName>(
+        () => _decode_DistinguishedName
+    )(sequence[0]);
+    newPwd = __utils._decode_explicit<UserPwd>(() => _decode_UserPwd)(
+        sequence[1]
+    );
     // TODO: Validate values.
     return new AdministerPasswordArgumentData(
         object,
         newPwd,
-        sequence.slice(2),
+        sequence.slice(2)
     );
 };
-export const _encode_AdministerPasswordArgumentData = function (value: AdministerPasswordArgumentData, elGetter: __utils.ASN1Encoder<AdministerPasswordArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_DistinguishedName, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_UserPwd, __utils.BER)(value.newPwd, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AdministerPasswordArgumentData = function (
+    value: AdministerPasswordArgumentData,
+    elGetter: __utils.ASN1Encoder<AdministerPasswordArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_DistinguishedName,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_UserPwd,
+                        __utils.BER
+                    )(value.newPwd, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
-export type AdministerPasswordArgument = OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>; // DefinedType
-export const _decode_AdministerPasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>(_decode_AdministerPasswordArgumentData);
-export const _encode_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>(_encode_AdministerPasswordArgumentData);
-
+export type AdministerPasswordArgument = OPTIONALLY_PROTECTED_SEQ<
+    AdministerPasswordArgumentData
+>; // DefinedType
+export const _decode_AdministerPasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    AdministerPasswordArgumentData
+>(_decode_AdministerPasswordArgumentData);
+export const _encode_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    AdministerPasswordArgumentData
+>(_encode_AdministerPasswordArgumentData);
 
 export class AdministerPasswordResultData {
-    constructor (
+    constructor(
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-export const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [];
 export const _root_component_type_list_2_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AdministerPasswordResultData__aliasDereferenced = false;
-export const _decode_AdministerPasswordResultData = function (el: asn1.ASN1Element): AdministerPasswordResultData {
+export const _decode_AdministerPasswordResultData = function (
+    el: asn1.ASN1Element
+): AdministerPasswordResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -4754,19 +11134,39 @@ export const _decode_AdministerPasswordResultData = function (el: asn1.ASN1Eleme
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AdministerPasswordResultData,
         _extension_additions_list_spec_for_AdministerPasswordResultData,
         _root_component_type_list_2_spec_for_AdministerPasswordResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AdministerPasswordResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new AdministerPasswordResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         _unrecognizedExtensionsList,
         securityParameters,
         performer,
@@ -4774,33 +11174,98 @@ export const _decode_AdministerPasswordResultData = function (el: asn1.ASN1Eleme
         notification
     );
 };
-export const _encode_AdministerPasswordResultData = function (value: AdministerPasswordResultData, elGetter: __utils.ASN1Encoder<AdministerPasswordResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AdministerPasswordResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AdministerPasswordResultData = function (
+    value: AdministerPasswordResultData,
+    elGetter: __utils.ASN1Encoder<AdministerPasswordResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AdministerPasswordResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type AdministerPasswordResult =
-    { null_: asn1.NULL }
+    | { null_: asn1.NULL }
     | { information: OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData> }
     | asn1.ASN1Element;
-export const _decode_AdministerPasswordResult = __utils._decode_extensible_choice<AdministerPasswordResult>({
-    "UNIVERSAL 5": [ "null_", __utils._decodeNull ],
-    "UNIVERSAL 16": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(_decode_AdministerPasswordResultData) ],
-    "CONTEXT 0": [ "information", _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(_decode_AdministerPasswordResultData) ],
+export const _decode_AdministerPasswordResult = __utils._decode_extensible_choice<
+    AdministerPasswordResult
+>({
+    "UNIVERSAL 5": ["null_", __utils._decodeNull],
+    "UNIVERSAL 16": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(
+            _decode_AdministerPasswordResultData
+        ),
+    ],
+    "CONTEXT 0": [
+        "information",
+        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(
+            _decode_AdministerPasswordResultData
+        ),
+    ],
 });
-export const _encode_AdministerPasswordResult = __utils._encode_choice<AdministerPasswordResult>({
-    "null_": __utils._encodeNull,
-    "information": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(_encode_AdministerPasswordResultData),
-}, __utils.BER);
-
+export const _encode_AdministerPasswordResult = __utils._encode_choice<
+    AdministerPasswordResult
+>(
+    {
+        null_: __utils._encodeNull,
+        information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            AdministerPasswordResultData
+        >(_encode_AdministerPasswordResultData),
+    },
+    __utils.BER
+);
 
 // TODO: ObjectAssignment: ldapTransport
 
@@ -4808,9 +11273,8 @@ export type LinkId = asn1.INTEGER;
 export const _decode_LinkId = __utils._decodeInteger;
 export const _encode_LinkId = __utils._encodeInteger;
 
-
 export class CommonArgumentsSeq {
-    constructor (
+    constructor(
         readonly serviceControls: ServiceControls | undefined,
         readonly securityParameters: SecurityParameters | undefined,
         readonly requestor: DistinguishedName | undefined,
@@ -4827,25 +11291,93 @@ export class CommonArgumentsSeq {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [];
 export const _default_value_for_CommonArgumentsSeq__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -4856,13 +11388,18 @@ export const _default_value_for_CommonArgumentsSeq__serviceControls = new Servic
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_CommonArgumentsSeq__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_CommonArgumentsSeq__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_CommonArgumentsSeq__entryOnly = true;
 export const _default_value_for_CommonArgumentsSeq__nameResolveOnMaster = false;
 export const _default_value_for_CommonArgumentsSeq__familyGrouping = entryOnly;
-export const _decode_CommonArgumentsSeq = function (el: asn1.ASN1Element): CommonArgumentsSeq {
+export const _decode_CommonArgumentsSeq = function (
+    el: asn1.ASN1Element
+): CommonArgumentsSeq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let serviceControls: asn1.OPTIONAL<ServiceControls> = _default_value_for_CommonArgumentsSeq__serviceControls;
     let securityParameters: asn1.OPTIONAL<SecurityParameters>;
@@ -4880,27 +11417,79 @@ export const _decode_CommonArgumentsSeq = function (el: asn1.ASN1Element): Commo
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_CommonArgumentsSeq,
         _extension_additions_list_spec_for_CommonArgumentsSeq,
         _root_component_type_list_2_spec_for_CommonArgumentsSeq,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new CommonArgumentsSeq( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new CommonArgumentsSeq /* SEQUENCE_CONSTRUCTOR_CALL */(
         serviceControls,
         securityParameters,
         requestor,
@@ -4916,69 +11505,292 @@ export const _decode_CommonArgumentsSeq = function (el: asn1.ASN1Element): Commo
         _unrecognizedExtensionsList
     );
 };
-export const _encode_CommonArgumentsSeq = function (value: CommonArgumentsSeq, elGetter: __utils.ASN1Encoder<CommonArgumentsSeq>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_CommonArgumentsSeq__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_CommonArgumentsSeq__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_CommonArgumentsSeq__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_CommonArgumentsSeq__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_CommonArgumentsSeq__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_CommonArgumentsSeq = function (
+    value: CommonArgumentsSeq,
+    elGetter: __utils.ASN1Encoder<CommonArgumentsSeq>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_CommonArgumentsSeq__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_CommonArgumentsSeq__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_CommonArgumentsSeq__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_CommonArgumentsSeq__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_CommonArgumentsSeq__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class LdapArgumentData {
-    constructor (
+    constructor(
         readonly object: DistinguishedName,
         readonly ldapMessage: LDAPMessage,
         readonly linkId: LinkId | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("ldapMessage", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("linkId", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "ldapMessage",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "linkId",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_LdapArgumentData__serviceControls = new ServiceControls(
     undefined,
     undefined,
@@ -4989,13 +11801,18 @@ export const _default_value_for_LdapArgumentData__serviceControls = new ServiceC
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_LdapArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_LdapArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_LdapArgumentData__entryOnly = true;
 export const _default_value_for_LdapArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_LdapArgumentData__familyGrouping = entryOnly;
-export const _decode_LdapArgumentData = function (el: asn1.ASN1Element): LdapArgumentData {
+export const _decode_LdapArgumentData = function (
+    el: asn1.ASN1Element
+): LdapArgumentData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let object!: DistinguishedName;
     let ldapMessage!: LDAPMessage;
@@ -5016,30 +11833,88 @@ export const _decode_LdapArgumentData = function (el: asn1.ASN1Element): LdapArg
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = _decode_DistinguishedName(_el); },
-        "ldapMessage": (_el: asn1.ASN1Element): void => { ldapMessage = _decode_LDAPMessage(_el); },
-        "linkId": (_el: asn1.ASN1Element): void => { linkId = _decode_LinkId(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = _decode_DistinguishedName(_el);
+        },
+        ldapMessage: (_el: asn1.ASN1Element): void => {
+            ldapMessage = _decode_LDAPMessage(_el);
+        },
+        linkId: (_el: asn1.ASN1Element): void => {
+            linkId = _decode_LinkId(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_LdapArgumentData,
         _extension_additions_list_spec_for_LdapArgumentData,
         _root_component_type_list_2_spec_for_LdapArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new LdapArgumentData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new LdapArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
         object,
         ldapMessage,
         linkId,
@@ -5058,64 +11933,234 @@ export const _decode_LdapArgumentData = function (el: asn1.ASN1Element): LdapArg
         familyGrouping
     );
 };
-export const _encode_LdapArgumentData = function (value: LdapArgumentData, elGetter: __utils.ASN1Encoder<LdapArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_DistinguishedName(value.object, __utils.BER),
-            /* REQUIRED   */ _encode_LDAPMessage(value.ldapMessage, __utils.BER),
-            /* IF_ABSENT  */ ((value.linkId === undefined) ? undefined : _encode_LinkId(value.linkId, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_LdapArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_LdapArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_LdapArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_LdapArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_LdapArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_LdapArgumentData = function (
+    value: LdapArgumentData,
+    elGetter: __utils.ASN1Encoder<LdapArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_DistinguishedName(
+                        value.object,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_LDAPMessage(
+                        value.ldapMessage,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.linkId === undefined
+                        ? undefined
+                        : _encode_LinkId(value.linkId, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_LdapArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_LdapArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_LdapArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_LdapArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_LdapArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type LdapArgument = OPTIONALLY_PROTECTED_SEQ<LdapArgumentData>; // DefinedType
-export const _decode_LdapArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LdapArgumentData>(_decode_LdapArgumentData);
-export const _encode_LdapArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LdapArgumentData>(_encode_LdapArgumentData);
-
+export const _decode_LdapArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LdapArgumentData
+>(_decode_LdapArgumentData);
+export const _encode_LdapArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LdapArgumentData
+>(_encode_LdapArgumentData);
 
 export class LdapResultData {
-    constructor (
+    constructor(
         readonly ldapMessages: LDAPMessage[] | undefined,
         readonly returnToClient: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_LdapResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("ldapMessages", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("returnToClient", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "ldapMessages",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "returnToClient",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_LdapResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_LdapResultData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_LdapResultData: __utils.ComponentSpec[] = [];
 export const _default_value_for_LdapResultData__returnToClient = false;
 export const _default_value_for_LdapResultData__aliasDereferenced = false;
-export const _decode_LdapResultData = function (el: asn1.ASN1Element): LdapResultData {
+export const _decode_LdapResultData = function (
+    el: asn1.ASN1Element
+): LdapResultData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let ldapMessages: asn1.OPTIONAL<LDAPMessage[]>;
     let returnToClient: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_LdapResultData__returnToClient;
@@ -5127,21 +12172,47 @@ export const _decode_LdapResultData = function (el: asn1.ASN1Element): LdapResul
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "ldapMessages": (_el: asn1.ASN1Element): void => { ldapMessages = __utils._decodeSequenceOf<LDAPMessage>(() => _decode_LDAPMessage)(_el); },
-        "returnToClient": (_el: asn1.ASN1Element): void => { returnToClient = __utils._decodeBoolean(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        ldapMessages: (_el: asn1.ASN1Element): void => {
+            ldapMessages = __utils._decodeSequenceOf<LDAPMessage>(
+                () => _decode_LDAPMessage
+            )(_el);
+        },
+        returnToClient: (_el: asn1.ASN1Element): void => {
+            returnToClient = __utils._decodeBoolean(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_LdapResultData,
         _extension_additions_list_spec_for_LdapResultData,
         _root_component_type_list_2_spec_for_LdapResultData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new LdapResultData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new LdapResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
         ldapMessages,
         returnToClient,
         _unrecognizedExtensionsList,
@@ -5151,74 +12222,252 @@ export const _decode_LdapResultData = function (el: asn1.ASN1Element): LdapResul
         notification
     );
 };
-export const _encode_LdapResultData = function (value: LdapResultData, elGetter: __utils.ASN1Encoder<LdapResultData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.ldapMessages === undefined) ? undefined : __utils._encodeSequenceOf<LDAPMessage>(() => _encode_LDAPMessage, __utils.BER)(value.ldapMessages, __utils.BER)),
-            /* IF_DEFAULT */ (value.returnToClient === undefined || __utils.deepEq(value.returnToClient, _default_value_for_LdapResultData__returnToClient) ? undefined : __utils._encodeBoolean(value.returnToClient, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_LdapResultData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_LdapResultData = function (
+    value: LdapResultData,
+    elGetter: __utils.ASN1Encoder<LdapResultData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.ldapMessages === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<LDAPMessage>(
+                              () => _encode_LDAPMessage,
+                              __utils.BER
+                          )(value.ldapMessages, __utils.BER),
+                    /* IF_DEFAULT */ value.returnToClient === undefined ||
+                    __utils.deepEq(
+                        value.returnToClient,
+                        _default_value_for_LdapResultData__returnToClient
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(
+                              value.returnToClient,
+                              __utils.BER
+                          ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_LdapResultData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type LdapResult = OPTIONALLY_PROTECTED_SEQ<LdapResultData>; // DefinedType
-export const _decode_LdapResult = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LdapResultData>(_decode_LdapResultData);
-export const _encode_LdapResult = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LdapResultData>(_encode_LdapResultData);
-
+export const _decode_LdapResult = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LdapResultData
+>(_decode_LdapResultData);
+export const _encode_LdapResult = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LdapResultData
+>(_encode_LdapResultData);
 
 // TODO: ObjectAssignment: linkedLDAP
 
 export class LinkedArgumentData {
-    constructor (
+    constructor(
         readonly object: DistinguishedName,
         readonly ldapMessage: LDAPMessage,
         readonly linkId: LinkId,
         readonly returnToClient: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly serviceControls: ServiceControls | undefined /* REPLICATED_COMPONENT */,
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly requestor: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly operationProgress: OperationProgress | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasedRDNs: asn1.INTEGER | undefined /* REPLICATED_COMPONENT */,
-        readonly criticalExtensions: asn1.BIT_STRING | undefined /* REPLICATED_COMPONENT */,
-        readonly referenceType: ReferenceType | undefined /* REPLICATED_COMPONENT */,
+        readonly serviceControls:
+            | ServiceControls
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly requestor:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationProgress:
+            | OperationProgress
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasedRDNs:
+            | asn1.INTEGER
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions:
+            | asn1.BIT_STRING
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly referenceType:
+            | ReferenceType
+            | undefined /* REPLICATED_COMPONENT */,
         readonly entryOnly: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
         readonly exclusions: Exclusions | undefined /* REPLICATED_COMPONENT */,
-        readonly nameResolveOnMaster: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly operationContexts: ContextSelection | undefined /* REPLICATED_COMPONENT */,
-        readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
+        readonly nameResolveOnMaster:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly operationContexts:
+            | ContextSelection
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly familyGrouping:
+            | FamilyGrouping
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("ldapMessage", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("linkId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
-    new __utils.ComponentSpec("returnToClient", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "ldapMessage",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "linkId",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "returnToClient",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("operationProgress", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined),
-    new __utils.ComponentSpec("aliasedRDNs", true, __utils.hasTag(asn1.ASN1TagClass.context, 26), undefined, undefined),
-    new __utils.ComponentSpec("criticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 25), undefined, undefined),
-    new __utils.ComponentSpec("referenceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 24), undefined, undefined),
-    new __utils.ComponentSpec("entryOnly", true, __utils.hasTag(asn1.ASN1TagClass.context, 23), undefined, undefined),
-    new __utils.ComponentSpec("exclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 22), undefined, undefined),
-    new __utils.ComponentSpec("nameResolveOnMaster", true, __utils.hasTag(asn1.ASN1TagClass.context, 21), undefined, undefined),
-    new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
-    new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
+    new __utils.ComponentSpec(
+        "serviceControls",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "requestor",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationProgress",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasedRDNs",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 26),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "criticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 25),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "referenceType",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 24),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryOnly",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 23),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "exclusions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 22),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "nameResolveOnMaster",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 21),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operationContexts",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 20),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyGrouping",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 19),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [];
 export const _default_value_for_LinkedArgumentData__returnToClient = false;
 export const _default_value_for_LinkedArgumentData__serviceControls = new ServiceControls(
     undefined,
@@ -5230,13 +12479,18 @@ export const _default_value_for_LinkedArgumentData__serviceControls = new Servic
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
 );
-export const _default_value_for_LinkedArgumentData__operationProgress = new OperationProgress(DistributedOperations.OperationProgress_nameResolutionPhase_notStarted, undefined);
+export const _default_value_for_LinkedArgumentData__operationProgress = new OperationProgress(
+    DistributedOperations.OperationProgress_nameResolutionPhase_notStarted,
+    undefined
+);
 export const _default_value_for_LinkedArgumentData__entryOnly = true;
 export const _default_value_for_LinkedArgumentData__nameResolveOnMaster = false;
 export const _default_value_for_LinkedArgumentData__familyGrouping = entryOnly;
-export const _decode_LinkedArgumentData = function (el: asn1.ASN1Element): LinkedArgumentData {
+export const _decode_LinkedArgumentData = function (
+    el: asn1.ASN1Element
+): LinkedArgumentData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let object!: DistinguishedName;
     let ldapMessage!: LDAPMessage;
@@ -5258,31 +12512,91 @@ export const _decode_LinkedArgumentData = function (el: asn1.ASN1Element): Linke
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = _decode_DistinguishedName(_el); },
-        "ldapMessage": (_el: asn1.ASN1Element): void => { ldapMessage = _decode_LDAPMessage(_el); },
-        "linkId": (_el: asn1.ASN1Element): void => { linkId = _decode_LinkId(_el); },
-        "returnToClient": (_el: asn1.ASN1Element): void => { returnToClient = __utils._decodeBoolean(_el); },
-        "serviceControls": (_el: asn1.ASN1Element): void => { serviceControls = __utils._decode_explicit<ServiceControls>(() => _decode_ServiceControls)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "requestor": (_el: asn1.ASN1Element): void => { requestor = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "operationProgress": (_el: asn1.ASN1Element): void => { operationProgress = __utils._decode_explicit<OperationProgress>(() => _decode_OperationProgress)(_el); },
-        "aliasedRDNs": (_el: asn1.ASN1Element): void => { aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger)(_el); },
-        "criticalExtensions": (_el: asn1.ASN1Element): void => { criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(() => __utils._decodeBitString)(_el); },
-        "referenceType": (_el: asn1.ASN1Element): void => { referenceType = __utils._decode_explicit<ReferenceType>(() => _decode_ReferenceType)(_el); },
-        "entryOnly": (_el: asn1.ASN1Element): void => { entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "exclusions": (_el: asn1.ASN1Element): void => { exclusions = __utils._decode_explicit<Exclusions>(() => _decode_Exclusions)(_el); },
-        "nameResolveOnMaster": (_el: asn1.ASN1Element): void => { nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "operationContexts": (_el: asn1.ASN1Element): void => { operationContexts = __utils._decode_explicit<ContextSelection>(() => _decode_ContextSelection)(_el); },
-        "familyGrouping": (_el: asn1.ASN1Element): void => { familyGrouping = __utils._decode_explicit<FamilyGrouping>(() => _decode_FamilyGrouping)(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = _decode_DistinguishedName(_el);
+        },
+        ldapMessage: (_el: asn1.ASN1Element): void => {
+            ldapMessage = _decode_LDAPMessage(_el);
+        },
+        linkId: (_el: asn1.ASN1Element): void => {
+            linkId = _decode_LinkId(_el);
+        },
+        returnToClient: (_el: asn1.ASN1Element): void => {
+            returnToClient = __utils._decodeBoolean(_el);
+        },
+        serviceControls: (_el: asn1.ASN1Element): void => {
+            serviceControls = __utils._decode_explicit<ServiceControls>(
+                () => _decode_ServiceControls
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        requestor: (_el: asn1.ASN1Element): void => {
+            requestor = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        operationProgress: (_el: asn1.ASN1Element): void => {
+            operationProgress = __utils._decode_explicit<OperationProgress>(
+                () => _decode_OperationProgress
+            )(_el);
+        },
+        aliasedRDNs: (_el: asn1.ASN1Element): void => {
+            aliasedRDNs = __utils._decode_explicit<asn1.INTEGER>(
+                () => __utils._decodeInteger
+            )(_el);
+        },
+        criticalExtensions: (_el: asn1.ASN1Element): void => {
+            criticalExtensions = __utils._decode_explicit<asn1.BIT_STRING>(
+                () => __utils._decodeBitString
+            )(_el);
+        },
+        referenceType: (_el: asn1.ASN1Element): void => {
+            referenceType = __utils._decode_explicit<ReferenceType>(
+                () => _decode_ReferenceType
+            )(_el);
+        },
+        entryOnly: (_el: asn1.ASN1Element): void => {
+            entryOnly = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        exclusions: (_el: asn1.ASN1Element): void => {
+            exclusions = __utils._decode_explicit<Exclusions>(
+                () => _decode_Exclusions
+            )(_el);
+        },
+        nameResolveOnMaster: (_el: asn1.ASN1Element): void => {
+            nameResolveOnMaster = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        operationContexts: (_el: asn1.ASN1Element): void => {
+            operationContexts = __utils._decode_explicit<ContextSelection>(
+                () => _decode_ContextSelection
+            )(_el);
+        },
+        familyGrouping: (_el: asn1.ASN1Element): void => {
+            familyGrouping = __utils._decode_explicit<FamilyGrouping>(
+                () => _decode_FamilyGrouping
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_LinkedArgumentData,
         _extension_additions_list_spec_for_LinkedArgumentData,
         _root_component_type_list_2_spec_for_LinkedArgumentData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new LinkedArgumentData( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new LinkedArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
         object,
         ldapMessage,
         linkId,
@@ -5302,78 +12616,249 @@ export const _decode_LinkedArgumentData = function (el: asn1.ASN1Element): Linke
         familyGrouping
     );
 };
-export const _encode_LinkedArgumentData = function (value: LinkedArgumentData, elGetter: __utils.ASN1Encoder<LinkedArgumentData>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_DistinguishedName(value.object, __utils.BER),
-            /* REQUIRED   */ _encode_LDAPMessage(value.ldapMessage, __utils.BER),
-            /* REQUIRED   */ _encode_LinkId(value.linkId, __utils.BER),
-            /* IF_DEFAULT */ (value.returnToClient === undefined || __utils.deepEq(value.returnToClient, _default_value_for_LinkedArgumentData__returnToClient) ? undefined : __utils._encodeBoolean(value.returnToClient, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_DEFAULT */ (value.serviceControls === undefined || __utils.deepEq(value.serviceControls, _default_value_for_LinkedArgumentData__serviceControls) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_ServiceControls, __utils.BER)(value.serviceControls, __utils.BER)),
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.requestor === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => _encode_DistinguishedName, __utils.BER)(value.requestor, __utils.BER)),
-            /* IF_DEFAULT */ (value.operationProgress === undefined || __utils.deepEq(value.operationProgress, _default_value_for_LinkedArgumentData__operationProgress) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => _encode_OperationProgress, __utils.BER)(value.operationProgress, __utils.BER)),
-            /* IF_ABSENT  */ ((value.aliasedRDNs === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 26, () => __utils._encodeInteger, __utils.BER)(value.aliasedRDNs, __utils.BER)),
-            /* IF_ABSENT  */ ((value.criticalExtensions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 25, () => __utils._encodeBitString, __utils.BER)(value.criticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.referenceType === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 24, () => _encode_ReferenceType, __utils.BER)(value.referenceType, __utils.BER)),
-            /* IF_DEFAULT */ (value.entryOnly === undefined || __utils.deepEq(value.entryOnly, _default_value_for_LinkedArgumentData__entryOnly) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 23, () => __utils._encodeBoolean, __utils.BER)(value.entryOnly, __utils.BER)),
-            /* IF_ABSENT  */ ((value.exclusions === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 22, () => _encode_Exclusions, __utils.BER)(value.exclusions, __utils.BER)),
-            /* IF_DEFAULT */ (value.nameResolveOnMaster === undefined || __utils.deepEq(value.nameResolveOnMaster, _default_value_for_LinkedArgumentData__nameResolveOnMaster) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 21, () => __utils._encodeBoolean, __utils.BER)(value.nameResolveOnMaster, __utils.BER)),
-            /* IF_ABSENT  */ ((value.operationContexts === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 20, () => _encode_ContextSelection, __utils.BER)(value.operationContexts, __utils.BER)),
-            /* IF_DEFAULT */ (value.familyGrouping === undefined || __utils.deepEq(value.familyGrouping, _default_value_for_LinkedArgumentData__familyGrouping) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 19, () => _encode_FamilyGrouping, __utils.BER)(value.familyGrouping, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_LinkedArgumentData = function (
+    value: LinkedArgumentData,
+    elGetter: __utils.ASN1Encoder<LinkedArgumentData>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_DistinguishedName(
+                        value.object,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_LDAPMessage(
+                        value.ldapMessage,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_LinkId(value.linkId, __utils.BER),
+                    /* IF_DEFAULT */ value.returnToClient === undefined ||
+                    __utils.deepEq(
+                        value.returnToClient,
+                        _default_value_for_LinkedArgumentData__returnToClient
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(
+                              value.returnToClient,
+                              __utils.BER
+                          ),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_LinkedArgumentData__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_ServiceControls,
+                              __utils.BER
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.requestor === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.requestor, __utils.BER),
+                    /* IF_DEFAULT */ value.operationProgress === undefined ||
+                    __utils.deepEq(
+                        value.operationProgress,
+                        _default_value_for_LinkedArgumentData__operationProgress
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () => _encode_OperationProgress,
+                              __utils.BER
+                          )(value.operationProgress, __utils.BER),
+                    /* IF_ABSENT  */ value.aliasedRDNs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              26,
+                              () => __utils._encodeInteger,
+                              __utils.BER
+                          )(value.aliasedRDNs, __utils.BER),
+                    /* IF_ABSENT  */ value.criticalExtensions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              25,
+                              () => __utils._encodeBitString,
+                              __utils.BER
+                          )(value.criticalExtensions, __utils.BER),
+                    /* IF_ABSENT  */ value.referenceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              24,
+                              () => _encode_ReferenceType,
+                              __utils.BER
+                          )(value.referenceType, __utils.BER),
+                    /* IF_DEFAULT */ value.entryOnly === undefined ||
+                    __utils.deepEq(
+                        value.entryOnly,
+                        _default_value_for_LinkedArgumentData__entryOnly
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              23,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.entryOnly, __utils.BER),
+                    /* IF_ABSENT  */ value.exclusions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              22,
+                              () => _encode_Exclusions,
+                              __utils.BER
+                          )(value.exclusions, __utils.BER),
+                    /* IF_DEFAULT */ value.nameResolveOnMaster === undefined ||
+                    __utils.deepEq(
+                        value.nameResolveOnMaster,
+                        _default_value_for_LinkedArgumentData__nameResolveOnMaster
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              21,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.nameResolveOnMaster, __utils.BER),
+                    /* IF_ABSENT  */ value.operationContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              20,
+                              () => _encode_ContextSelection,
+                              __utils.BER
+                          )(value.operationContexts, __utils.BER),
+                    /* IF_DEFAULT */ value.familyGrouping === undefined ||
+                    __utils.deepEq(
+                        value.familyGrouping,
+                        _default_value_for_LinkedArgumentData__familyGrouping
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              19,
+                              () => _encode_FamilyGrouping,
+                              __utils.BER
+                          )(value.familyGrouping, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type LinkedArgument = OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>; // DefinedType
-export const _decode_LinkedArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>(_decode_LinkedArgumentData);
-export const _encode_LinkedArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>(_encode_LinkedArgumentData);
-
+export const _decode_LinkedArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LinkedArgumentData
+>(_decode_LinkedArgumentData);
+export const _encode_LinkedArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+    LinkedArgumentData
+>(_encode_LinkedArgumentData);
 
 export type LinkedResult = asn1.NULL; // NullType
 export const _decode_LinkedResult = __utils._decodeNull;
 export const _encode_LinkedResult = __utils._encodeNull;
-
 
 // TODO: ObjectAssignment: abandoned
 
 export enum AbandonedProblem {
     pagingAbandoned = 0,
 }
-export const AbandonedProblem_pagingAbandoned: AbandonedProblem = AbandonedProblem.pagingAbandoned; /* LONG_NAMED_ENUMERATED_VALUE */
-export const pagingAbandoned: AbandonedProblem = AbandonedProblem.pagingAbandoned; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const AbandonedProblem_pagingAbandoned: AbandonedProblem =
+    AbandonedProblem.pagingAbandoned; /* LONG_NAMED_ENUMERATED_VALUE */
+export const pagingAbandoned: AbandonedProblem =
+    AbandonedProblem.pagingAbandoned; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_AbandonedProblem = __utils._decodeEnumerated;
 export const _encode_AbandonedProblem = __utils._encodeEnumerated;
 
-
 export class AbandonedData {
-    constructor (
+    constructor(
         readonly problem: AbandonedProblem | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AbandonedData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 10),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AbandonedData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AbandonedData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AbandonedData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AbandonedData__aliasDereferenced = false;
-export const _decode_AbandonedData = function (el: asn1.ASN1Element): AbandonedData {
+export const _decode_AbandonedData = function (
+    el: asn1.ASN1Element
+): AbandonedData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem: asn1.OPTIONAL<AbandonedProblem>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -5384,20 +12869,42 @@ export const _decode_AbandonedData = function (el: asn1.ASN1Element): AbandonedD
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = _decode_AbandonedProblem(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = _decode_AbandonedProblem(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AbandonedData,
         _extension_additions_list_spec_for_AbandonedData,
         _root_component_type_list_2_spec_for_AbandonedData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AbandonedData( /* SET_CONSTRUCTOR_CALL */
+    return new AbandonedData /* SET_CONSTRUCTOR_CALL */(
         problem,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -5406,21 +12913,70 @@ export const _decode_AbandonedData = function (el: asn1.ASN1Element): AbandonedD
         notification
     );
 };
-export const _encode_AbandonedData = function (value: AbandonedData, elGetter: __utils.ASN1Encoder<AbandonedData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.problem === undefined) ? undefined : _encode_AbandonedProblem(value.problem, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AbandonedData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AbandonedData = function (
+    value: AbandonedData,
+    elGetter: __utils.ASN1Encoder<AbandonedData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.problem === undefined
+                        ? undefined
+                        : _encode_AbandonedProblem(value.problem, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AbandonedData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: abandonFailed
 
@@ -5434,33 +12990,76 @@ export const cannotAbandon: AbandonProblem = AbandonProblem_cannotAbandon; /* SH
 export const _decode_AbandonProblem = __utils._decodeInteger;
 export const _encode_AbandonProblem = __utils._encodeInteger;
 
-
 export class AbandonFailedData {
-    constructor (
+    constructor(
         readonly problem: AbandonProblem,
         readonly operation: InvokeId,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("operation", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "operation",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AbandonFailedData__aliasDereferenced = false;
-export const _decode_AbandonFailedData = function (el: asn1.ASN1Element): AbandonFailedData {
+export const _decode_AbandonFailedData = function (
+    el: asn1.ASN1Element
+): AbandonFailedData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem!: AbandonProblem;
     let operation!: InvokeId;
@@ -5472,21 +13071,49 @@ export const _decode_AbandonFailedData = function (el: asn1.ASN1Element): Abando
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<AbandonProblem>(() => _decode_AbandonProblem)(_el); },
-        "operation": (_el: asn1.ASN1Element): void => { operation = __utils._decode_explicit<InvokeId>(() => _decode_InvokeId)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<AbandonProblem>(
+                () => _decode_AbandonProblem
+            )(_el);
+        },
+        operation: (_el: asn1.ASN1Element): void => {
+            operation = __utils._decode_explicit<InvokeId>(
+                () => _decode_InvokeId
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AbandonFailedData,
         _extension_additions_list_spec_for_AbandonFailedData,
         _root_component_type_list_2_spec_for_AbandonFailedData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AbandonFailedData( /* SET_CONSTRUCTOR_CALL */
+    return new AbandonFailedData /* SET_CONSTRUCTOR_CALL */(
         problem,
         operation,
         _unrecognizedExtensionsList,
@@ -5496,22 +13123,79 @@ export const _decode_AbandonFailedData = function (el: asn1.ASN1Element): Abando
         notification
     );
 };
-export const _encode_AbandonFailedData = function (value: AbandonFailedData, elGetter: __utils.ASN1Encoder<AbandonFailedData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_AbandonProblem, __utils.BER)(value.problem, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_InvokeId, __utils.BER)(value.operation, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AbandonFailedData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AbandonFailedData = function (
+    value: AbandonFailedData,
+    elGetter: __utils.ASN1Encoder<AbandonFailedData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_AbandonProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_InvokeId,
+                        __utils.BER
+                    )(value.operation, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AbandonFailedData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: attributeError
 
@@ -5532,9 +13216,8 @@ export const contextViolation: AttributeProblem = AttributeProblem_contextViolat
 export const _decode_AttributeProblem = __utils._decodeInteger;
 export const _encode_AttributeProblem = __utils._encodeInteger;
 
-
 export class AttributeErrorData_problems_Item {
-    constructor (
+    constructor(
         readonly problem: AttributeProblem,
         readonly type_: AttributeType,
         readonly value: AttributeValue | undefined,
@@ -5542,18 +13225,34 @@ export class AttributeErrorData_problems_Item {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("value", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "type",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "value",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_AttributeErrorData_problems_Item = function (el: asn1.ASN1Element): AttributeErrorData_problems_Item {
+export const _decode_AttributeErrorData_problems_Item = function (
+    el: asn1.ASN1Element
+): AttributeErrorData_problems_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let problem!: AttributeProblem;
     let type_!: AttributeType;
@@ -5562,62 +13261,150 @@ export const _decode_AttributeErrorData_problems_Item = function (el: asn1.ASN1E
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<AttributeProblem>(() => _decode_AttributeProblem)(_el); },
-        "type": (_el: asn1.ASN1Element): void => { type_ = __utils._decode_explicit<AttributeType>(() => _decode_AttributeType)(_el); },
-        "value": (_el: asn1.ASN1Element): void => { value = __utils._decode_explicit<AttributeValue>(() => _decode_AttributeValue)(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<AttributeProblem>(
+                () => _decode_AttributeProblem
+            )(_el);
+        },
+        type: (_el: asn1.ASN1Element): void => {
+            type_ = __utils._decode_explicit<AttributeType>(
+                () => _decode_AttributeType
+            )(_el);
+        },
+        value: (_el: asn1.ASN1Element): void => {
+            value = __utils._decode_explicit<AttributeValue>(
+                () => _decode_AttributeValue
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AttributeErrorData_problems_Item,
         _extension_additions_list_spec_for_AttributeErrorData_problems_Item,
         _root_component_type_list_2_spec_for_AttributeErrorData_problems_Item,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AttributeErrorData_problems_Item( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new AttributeErrorData_problems_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
         problem,
         type_,
         value,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_AttributeErrorData_problems_Item = function (value: AttributeErrorData_problems_Item, elGetter: __utils.ASN1Encoder<AttributeErrorData_problems_Item>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_AttributeProblem, __utils.BER)(value.problem, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_AttributeType, __utils.BER)(value.type_, __utils.BER),
-            /* IF_ABSENT  */ ((value.value === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_AttributeValue, __utils.BER)(value.value, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AttributeErrorData_problems_Item = function (
+    value: AttributeErrorData_problems_Item,
+    elGetter: __utils.ASN1Encoder<AttributeErrorData_problems_Item>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_AttributeProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_AttributeType,
+                        __utils.BER
+                    )(value.type_, __utils.BER),
+                    /* IF_ABSENT  */ value.value === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_AttributeValue,
+                              __utils.BER
+                          )(value.value, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class AttributeErrorData {
-    constructor (
+    constructor(
         readonly object: Name,
         readonly problems: AttributeErrorData_problems_Item[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("problems", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "object",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "problems",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [];
 export const _default_value_for_AttributeErrorData__aliasDereferenced = false;
-export const _decode_AttributeErrorData = function (el: asn1.ASN1Element): AttributeErrorData {
+export const _decode_AttributeErrorData = function (
+    el: asn1.ASN1Element
+): AttributeErrorData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let object!: Name;
     let problems!: AttributeErrorData_problems_Item[];
@@ -5629,21 +13416,51 @@ export const _decode_AttributeErrorData = function (el: asn1.ASN1Element): Attri
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "object": (_el: asn1.ASN1Element): void => { object = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "problems": (_el: asn1.ASN1Element): void => { problems = __utils._decode_explicit<AttributeErrorData_problems_Item[]>(() => __utils._decodeSetOf<AttributeErrorData_problems_Item>(() => _decode_AttributeErrorData_problems_Item))(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        object: (_el: asn1.ASN1Element): void => {
+            object = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        problems: (_el: asn1.ASN1Element): void => {
+            problems = __utils._decode_explicit<
+                AttributeErrorData_problems_Item[]
+            >(() =>
+                __utils._decodeSetOf<AttributeErrorData_problems_Item>(
+                    () => _decode_AttributeErrorData_problems_Item
+                )
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_AttributeErrorData,
         _extension_additions_list_spec_for_AttributeErrorData,
         _root_component_type_list_2_spec_for_AttributeErrorData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new AttributeErrorData( /* SET_CONSTRUCTOR_CALL */
+    return new AttributeErrorData /* SET_CONSTRUCTOR_CALL */(
         object,
         problems,
         _unrecognizedExtensionsList,
@@ -5653,22 +13470,85 @@ export const _decode_AttributeErrorData = function (el: asn1.ASN1Element): Attri
         notification
     );
 };
-export const _encode_AttributeErrorData = function (value: AttributeErrorData, elGetter: __utils.ASN1Encoder<AttributeErrorData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_Name, __utils.BER)(value.object, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<AttributeErrorData_problems_Item>(() => _encode_AttributeErrorData_problems_Item, __utils.BER), __utils.BER)(value.problems, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_AttributeErrorData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_AttributeErrorData = function (
+    value: AttributeErrorData,
+    elGetter: __utils.ASN1Encoder<AttributeErrorData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.object, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () =>
+                            __utils._encodeSetOf<
+                                AttributeErrorData_problems_Item
+                            >(
+                                () => _encode_AttributeErrorData_problems_Item,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.problems, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_AttributeErrorData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: nameError
 
@@ -5683,33 +13563,76 @@ export const aliasDereferencingProblem: NameProblem = NameProblem_aliasDereferen
 export const _decode_NameProblem = __utils._decodeInteger;
 export const _encode_NameProblem = __utils._encodeInteger;
 
-
 export class NameErrorData {
-    constructor (
+    constructor(
         readonly problem: NameProblem,
         readonly matched: Name,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NameErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("matched", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "matched",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_NameErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_NameErrorData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_NameErrorData: __utils.ComponentSpec[] = [];
 export const _default_value_for_NameErrorData__aliasDereferenced = false;
-export const _decode_NameErrorData = function (el: asn1.ASN1Element): NameErrorData {
+export const _decode_NameErrorData = function (
+    el: asn1.ASN1Element
+): NameErrorData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem!: NameProblem;
     let matched!: Name;
@@ -5721,21 +13644,47 @@ export const _decode_NameErrorData = function (el: asn1.ASN1Element): NameErrorD
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<NameProblem>(() => _decode_NameProblem)(_el); },
-        "matched": (_el: asn1.ASN1Element): void => { matched = __utils._decode_explicit<Name>(() => _decode_Name)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<NameProblem>(
+                () => _decode_NameProblem
+            )(_el);
+        },
+        matched: (_el: asn1.ASN1Element): void => {
+            matched = __utils._decode_explicit<Name>(() => _decode_Name)(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_NameErrorData,
         _extension_additions_list_spec_for_NameErrorData,
         _root_component_type_list_2_spec_for_NameErrorData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new NameErrorData( /* SET_CONSTRUCTOR_CALL */
+    return new NameErrorData /* SET_CONSTRUCTOR_CALL */(
         problem,
         matched,
         _unrecognizedExtensionsList,
@@ -5745,49 +13694,144 @@ export const _decode_NameErrorData = function (el: asn1.ASN1Element): NameErrorD
         notification
     );
 };
-export const _encode_NameErrorData = function (value: NameErrorData, elGetter: __utils.ASN1Encoder<NameErrorData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_NameProblem, __utils.BER)(value.problem, __utils.BER),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_Name, __utils.BER)(value.matched, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_NameErrorData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_NameErrorData = function (
+    value: NameErrorData,
+    elGetter: __utils.ASN1Encoder<NameErrorData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_NameProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () => _encode_Name,
+                        __utils.BER
+                    )(value.matched, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_NameErrorData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: referral
 
 export class ReferralData {
-    constructor (
+    constructor(
         readonly candidate: ContinuationReference,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ReferralData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("candidate", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
+    new __utils.ComponentSpec(
+        "candidate",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ReferralData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ReferralData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ReferralData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ReferralData__aliasDereferenced = false;
-export const _decode_ReferralData = function (el: asn1.ASN1Element): ReferralData {
+export const _decode_ReferralData = function (
+    el: asn1.ASN1Element
+): ReferralData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let candidate!: ContinuationReference;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -5798,20 +13842,44 @@ export const _decode_ReferralData = function (el: asn1.ASN1Element): ReferralDat
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "candidate": (_el: asn1.ASN1Element): void => { candidate = __utils._decode_explicit<ContinuationReference>(() => _decode_ContinuationReference)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        candidate: (_el: asn1.ASN1Element): void => {
+            candidate = __utils._decode_explicit<ContinuationReference>(
+                () => _decode_ContinuationReference
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ReferralData,
         _extension_additions_list_spec_for_ReferralData,
         _root_component_type_list_2_spec_for_ReferralData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ReferralData( /* SET_CONSTRUCTOR_CALL */
+    return new ReferralData /* SET_CONSTRUCTOR_CALL */(
         candidate,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -5820,21 +13888,73 @@ export const _decode_ReferralData = function (el: asn1.ASN1Element): ReferralDat
         notification
     );
 };
-export const _encode_ReferralData = function (value: ReferralData, elGetter: __utils.ASN1Encoder<ReferralData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_ContinuationReference, __utils.BER)(value.candidate, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ReferralData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ReferralData = function (
+    value: ReferralData,
+    elGetter: __utils.ASN1Encoder<ReferralData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_ContinuationReference,
+                        __utils.BER
+                    )(value.candidate, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ReferralData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: securityError
 
@@ -5863,24 +13983,31 @@ export const inappropriateAlgorithms: SecurityProblem = SecurityProblem_inapprop
 export const _decode_SecurityProblem = __utils._decodeInteger;
 export const _encode_SecurityProblem = __utils._encodeInteger;
 
-
 export class EncPwdInfo {
-    constructor (
+    constructor(
         readonly algorithms: AlgorithmIdentifier[] | undefined,
         readonly pwdQualityRule: AttributeTypeAndValue[] | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("algorithms", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("pwdQualityRule", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "algorithms",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "pwdQualityRule",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [];
 
 export const _decode_EncPwdInfo = function (el: asn1.ASN1Element): EncPwdInfo {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -5890,61 +14017,165 @@ export const _decode_EncPwdInfo = function (el: asn1.ASN1Element): EncPwdInfo {
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "algorithms": (_el: asn1.ASN1Element): void => { algorithms = __utils._decode_explicit<AlgorithmIdentifier[]>(() => __utils._decodeSequenceOf<AlgorithmIdentifier>(() => _decode_AlgorithmIdentifier))(_el); },
-        "pwdQualityRule": (_el: asn1.ASN1Element): void => { pwdQualityRule = __utils._decode_explicit<AttributeTypeAndValue[]>(() => __utils._decodeSequenceOf<AttributeTypeAndValue>(() => _decode_AttributeTypeAndValue))(_el); }
+        algorithms: (_el: asn1.ASN1Element): void => {
+            algorithms = __utils._decode_explicit<AlgorithmIdentifier[]>(() =>
+                __utils._decodeSequenceOf<AlgorithmIdentifier>(
+                    () => _decode_AlgorithmIdentifier
+                )
+            )(_el);
+        },
+        pwdQualityRule: (_el: asn1.ASN1Element): void => {
+            pwdQualityRule = __utils._decode_explicit<AttributeTypeAndValue[]>(
+                () =>
+                    __utils._decodeSequenceOf<AttributeTypeAndValue>(
+                        () => _decode_AttributeTypeAndValue
+                    )
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_EncPwdInfo,
         _extension_additions_list_spec_for_EncPwdInfo,
         _root_component_type_list_2_spec_for_EncPwdInfo,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new EncPwdInfo( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new EncPwdInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
         algorithms,
         pwdQualityRule,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_EncPwdInfo = function (value: EncPwdInfo, elGetter: __utils.ASN1Encoder<EncPwdInfo>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.algorithms === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeSequenceOf<AlgorithmIdentifier>(() => _encode_AlgorithmIdentifier, __utils.BER), __utils.BER)(value.algorithms, __utils.BER)),
-            /* IF_ABSENT  */ ((value.pwdQualityRule === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSequenceOf<AttributeTypeAndValue>(() => _encode_AttributeTypeAndValue, __utils.BER), __utils.BER)(value.pwdQualityRule, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_EncPwdInfo = function (
+    value: EncPwdInfo,
+    elGetter: __utils.ASN1Encoder<EncPwdInfo>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.algorithms === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () =>
+                                  __utils._encodeSequenceOf<
+                                      AlgorithmIdentifier
+                                  >(
+                                      () => _encode_AlgorithmIdentifier,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.algorithms, __utils.BER),
+                    /* IF_ABSENT  */ value.pwdQualityRule === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () =>
+                                  __utils._encodeSequenceOf<
+                                      AttributeTypeAndValue
+                                  >(
+                                      () => _encode_AttributeTypeAndValue,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.pwdQualityRule, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class SecurityErrorData {
-    constructor (
+    constructor(
         readonly problem: SecurityProblem,
         readonly spkmInfo: SPKM_ERROR | undefined,
         readonly encPwdInfo: EncPwdInfo | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("spkmInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("encPwdInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "spkmInfo",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "encPwdInfo",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [];
 export const _default_value_for_SecurityErrorData__aliasDereferenced = false;
-export const _decode_SecurityErrorData = function (el: asn1.ASN1Element): SecurityErrorData {
+export const _decode_SecurityErrorData = function (
+    el: asn1.ASN1Element
+): SecurityErrorData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem!: SecurityProblem;
     let spkmInfo: asn1.OPTIONAL<SPKM_ERROR>;
@@ -5957,22 +14188,54 @@ export const _decode_SecurityErrorData = function (el: asn1.ASN1Element): Securi
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<SecurityProblem>(() => _decode_SecurityProblem)(_el); },
-        "spkmInfo": (_el: asn1.ASN1Element): void => { spkmInfo = __utils._decode_explicit<SPKM_ERROR>(() => _decode_SPKM_ERROR)(_el); },
-        "encPwdInfo": (_el: asn1.ASN1Element): void => { encPwdInfo = __utils._decode_explicit<EncPwdInfo>(() => _decode_EncPwdInfo)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<SecurityProblem>(
+                () => _decode_SecurityProblem
+            )(_el);
+        },
+        spkmInfo: (_el: asn1.ASN1Element): void => {
+            spkmInfo = __utils._decode_explicit<SPKM_ERROR>(
+                () => _decode_SPKM_ERROR
+            )(_el);
+        },
+        encPwdInfo: (_el: asn1.ASN1Element): void => {
+            encPwdInfo = __utils._decode_explicit<EncPwdInfo>(
+                () => _decode_EncPwdInfo
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SecurityErrorData,
         _extension_additions_list_spec_for_SecurityErrorData,
         _root_component_type_list_2_spec_for_SecurityErrorData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SecurityErrorData( /* SET_CONSTRUCTOR_CALL */
+    return new SecurityErrorData /* SET_CONSTRUCTOR_CALL */(
         problem,
         spkmInfo,
         encPwdInfo,
@@ -5983,23 +14246,89 @@ export const _decode_SecurityErrorData = function (el: asn1.ASN1Element): Securi
         notification
     );
 };
-export const _encode_SecurityErrorData = function (value: SecurityErrorData, elGetter: __utils.ASN1Encoder<SecurityErrorData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_SecurityProblem, __utils.BER)(value.problem, __utils.BER),
-            /* IF_ABSENT  */ ((value.spkmInfo === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => _encode_SPKM_ERROR, __utils.BER)(value.spkmInfo, __utils.BER)),
-            /* IF_ABSENT  */ ((value.encPwdInfo === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_EncPwdInfo, __utils.BER)(value.encPwdInfo, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_SecurityErrorData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SecurityErrorData = function (
+    value: SecurityErrorData,
+    elGetter: __utils.ASN1Encoder<SecurityErrorData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_SecurityProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                    /* IF_ABSENT  */ value.spkmInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => _encode_SPKM_ERROR,
+                              __utils.BER
+                          )(value.spkmInfo, __utils.BER),
+                    /* IF_ABSENT  */ value.encPwdInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_EncPwdInfo,
+                              __utils.BER
+                          )(value.encPwdInfo, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_SecurityErrorData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: serviceError
 
@@ -6041,31 +14370,68 @@ export const notSupportedByLDAP: ServiceProblem = ServiceProblem_notSupportedByL
 export const _decode_ServiceProblem = __utils._decodeInteger;
 export const _encode_ServiceProblem = __utils._encodeInteger;
 
-
 export class ServiceErrorData {
-    constructor (
+    constructor(
         readonly problem: ServiceProblem,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [];
 export const _default_value_for_ServiceErrorData__aliasDereferenced = false;
-export const _decode_ServiceErrorData = function (el: asn1.ASN1Element): ServiceErrorData {
+export const _decode_ServiceErrorData = function (
+    el: asn1.ASN1Element
+): ServiceErrorData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem!: ServiceProblem;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -6076,20 +14442,44 @@ export const _decode_ServiceErrorData = function (el: asn1.ASN1Element): Service
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<ServiceProblem>(() => _decode_ServiceProblem)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<ServiceProblem>(
+                () => _decode_ServiceProblem
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ServiceErrorData,
         _extension_additions_list_spec_for_ServiceErrorData,
         _root_component_type_list_2_spec_for_ServiceErrorData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ServiceErrorData( /* SET_CONSTRUCTOR_CALL */
+    return new ServiceErrorData /* SET_CONSTRUCTOR_CALL */(
         problem,
         _unrecognizedExtensionsList,
         securityParameters,
@@ -6098,21 +14488,73 @@ export const _decode_ServiceErrorData = function (el: asn1.ASN1Element): Service
         notification
     );
 };
-export const _encode_ServiceErrorData = function (value: ServiceErrorData, elGetter: __utils.ASN1Encoder<ServiceErrorData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_ServiceProblem, __utils.BER)(value.problem, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ServiceErrorData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ServiceErrorData = function (
+    value: ServiceErrorData,
+    elGetter: __utils.ASN1Encoder<ServiceErrorData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_ServiceProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ServiceErrorData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 // TODO: ObjectAssignment: updateError
 
@@ -6150,47 +14592,98 @@ export const noPasswordSlot: UpdateProblem = UpdateProblem_noPasswordSlot; /* SH
 export const _decode_UpdateProblem = __utils._decodeInteger;
 export const _encode_UpdateProblem = __utils._encodeInteger;
 
-
 export type UpdateErrorData_attributeInfo_Item =
-    { attributeType: AttributeType }
+    | { attributeType: AttributeType }
     | { attribute: Attribute }
     | asn1.ASN1Element;
-export const _decode_UpdateErrorData_attributeInfo_Item = __utils._decode_extensible_choice<UpdateErrorData_attributeInfo_Item>({
-    "UNIVERSAL 6": [ "attributeType", _decode_AttributeType ],
-    "UNIVERSAL 16": [ "attribute", _decode_Attribute ]
+export const _decode_UpdateErrorData_attributeInfo_Item = __utils._decode_extensible_choice<
+    UpdateErrorData_attributeInfo_Item
+>({
+    "UNIVERSAL 6": ["attributeType", _decode_AttributeType],
+    "UNIVERSAL 16": ["attribute", _decode_Attribute],
 });
-export const _encode_UpdateErrorData_attributeInfo_Item = __utils._encode_choice<UpdateErrorData_attributeInfo_Item>({
-    "attributeType": _encode_AttributeType,
-    "attribute": _encode_Attribute,
-}, __utils.BER);
-
+export const _encode_UpdateErrorData_attributeInfo_Item = __utils._encode_choice<
+    UpdateErrorData_attributeInfo_Item
+>(
+    {
+        attributeType: _encode_AttributeType,
+        attribute: _encode_Attribute,
+    },
+    __utils.BER
+);
 
 export class UpdateErrorData {
-    constructor (
+    constructor(
         readonly problem: UpdateProblem,
-        readonly attributeInfo: UpdateErrorData_attributeInfo_Item[] | undefined,
+        readonly attributeInfo:
+            | UpdateErrorData_attributeInfo_Item[]
+            | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("attributeInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "problem",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "attributeInfo",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [];
 export const _default_value_for_UpdateErrorData__aliasDereferenced = false;
-export const _decode_UpdateErrorData = function (el: asn1.ASN1Element): UpdateErrorData {
+export const _decode_UpdateErrorData = function (
+    el: asn1.ASN1Element
+): UpdateErrorData {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let problem!: UpdateProblem;
     let attributeInfo: asn1.OPTIONAL<UpdateErrorData_attributeInfo_Item[]>;
@@ -6202,21 +14695,53 @@ export const _decode_UpdateErrorData = function (el: asn1.ASN1Element): UpdateEr
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "problem": (_el: asn1.ASN1Element): void => { problem = __utils._decode_explicit<UpdateProblem>(() => _decode_UpdateProblem)(_el); },
-        "attributeInfo": (_el: asn1.ASN1Element): void => { attributeInfo = __utils._decode_explicit<UpdateErrorData_attributeInfo_Item[]>(() => __utils._decodeSetOf<UpdateErrorData_attributeInfo_Item>(() => _decode_UpdateErrorData_attributeInfo_Item))(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        problem: (_el: asn1.ASN1Element): void => {
+            problem = __utils._decode_explicit<UpdateProblem>(
+                () => _decode_UpdateProblem
+            )(_el);
+        },
+        attributeInfo: (_el: asn1.ASN1Element): void => {
+            attributeInfo = __utils._decode_explicit<
+                UpdateErrorData_attributeInfo_Item[]
+            >(() =>
+                __utils._decodeSetOf<UpdateErrorData_attributeInfo_Item>(
+                    () => _decode_UpdateErrorData_attributeInfo_Item
+                )
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_UpdateErrorData,
         _extension_additions_list_spec_for_UpdateErrorData,
         _root_component_type_list_2_spec_for_UpdateErrorData,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new UpdateErrorData( /* SET_CONSTRUCTOR_CALL */
+    return new UpdateErrorData /* SET_CONSTRUCTOR_CALL */(
         problem,
         attributeInfo,
         _unrecognizedExtensionsList,
@@ -6226,43 +14751,116 @@ export const _decode_UpdateErrorData = function (el: asn1.ASN1Element): UpdateEr
         notification
     );
 };
-export const _encode_UpdateErrorData = function (value: UpdateErrorData, elGetter: __utils.ASN1Encoder<UpdateErrorData>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_UpdateProblem, __utils.BER)(value.problem, __utils.BER),
-            /* IF_ABSENT  */ ((value.attributeInfo === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<UpdateErrorData_attributeInfo_Item>(() => _encode_UpdateErrorData_attributeInfo_Item, __utils.BER), __utils.BER)(value.attributeInfo, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_UpdateErrorData__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_UpdateErrorData = function (
+    value: UpdateErrorData,
+    elGetter: __utils.ASN1Encoder<UpdateErrorData>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () => _encode_UpdateProblem,
+                        __utils.BER
+                    )(value.problem, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () =>
+                                  __utils._encodeSetOf<
+                                      UpdateErrorData_attributeInfo_Item
+                                  >(
+                                      () =>
+                                          _encode_UpdateErrorData_attributeInfo_Item,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.attributeInfo, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_UpdateErrorData__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
-export const id_at_family_information: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier([
-    64,
-], id_at);
+export const id_at_family_information: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+    [64],
+    id_at
+);
 
 export type FamilyEntry_information_Item =
-    { attributeType: AttributeType }
+    | { attributeType: AttributeType }
     | { attribute: Attribute }
     | asn1.ASN1Element;
-export const _decode_FamilyEntry_information_Item = __utils._decode_extensible_choice<FamilyEntry_information_Item>({
-    "UNIVERSAL 6": [ "attributeType", _decode_AttributeType ],
-    "UNIVERSAL 16": [ "attribute", _decode_Attribute ]
+export const _decode_FamilyEntry_information_Item = __utils._decode_extensible_choice<
+    FamilyEntry_information_Item
+>({
+    "UNIVERSAL 6": ["attributeType", _decode_AttributeType],
+    "UNIVERSAL 16": ["attribute", _decode_Attribute],
 });
-export const _encode_FamilyEntry_information_Item = __utils._encode_choice<FamilyEntry_information_Item>({
-    "attributeType": _encode_AttributeType,
-    "attribute": _encode_Attribute,
-}, __utils.BER);
-
+export const _encode_FamilyEntry_information_Item = __utils._encode_choice<
+    FamilyEntry_information_Item
+>(
+    {
+        attributeType: _encode_AttributeType,
+        attribute: _encode_Attribute,
+    },
+    __utils.BER
+);
 
 export class FamilyEntry {
-    constructor (
+    constructor(
         readonly rdn: RelativeDistinguishedName,
         readonly information: FamilyEntry_information_Item[],
         readonly family_info: FamilyEntries[] | undefined,
@@ -6270,18 +14868,34 @@ export class FamilyEntry {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
-    new __utils.ComponentSpec("information", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
-    new __utils.ComponentSpec("family-info", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "rdn",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "information",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "family-info",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyEntry: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_FamilyEntry: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_FamilyEntry = function (el: asn1.ASN1Element): FamilyEntry {
+export const _decode_FamilyEntry = function (
+    el: asn1.ASN1Element
+): FamilyEntry {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let rdn!: RelativeDistinguishedName;
     let information!: FamilyEntry_information_Item[];
@@ -6290,58 +14904,110 @@ export const _decode_FamilyEntry = function (el: asn1.ASN1Element): FamilyEntry 
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "rdn": (_el: asn1.ASN1Element): void => { rdn = _decode_RelativeDistinguishedName(_el); },
-        "information": (_el: asn1.ASN1Element): void => { information = __utils._decodeSequenceOf<FamilyEntry_information_Item>(() => _decode_FamilyEntry_information_Item)(_el); },
-        "family-info": (_el: asn1.ASN1Element): void => { family_info = __utils._decodeSequenceOf<FamilyEntries>(() => _decode_FamilyEntries)(_el); }
+        rdn: (_el: asn1.ASN1Element): void => {
+            rdn = _decode_RelativeDistinguishedName(_el);
+        },
+        information: (_el: asn1.ASN1Element): void => {
+            information = __utils._decodeSequenceOf<
+                FamilyEntry_information_Item
+            >(() => _decode_FamilyEntry_information_Item)(_el);
+        },
+        "family-info": (_el: asn1.ASN1Element): void => {
+            family_info = __utils._decodeSequenceOf<FamilyEntries>(
+                () => _decode_FamilyEntries
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_FamilyEntry,
         _extension_additions_list_spec_for_FamilyEntry,
         _root_component_type_list_2_spec_for_FamilyEntry,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new FamilyEntry( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new FamilyEntry /* SEQUENCE_CONSTRUCTOR_CALL */(
         rdn,
         information,
         family_info,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_FamilyEntry = function (value: FamilyEntry, elGetter: __utils.ASN1Encoder<FamilyEntry>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_RelativeDistinguishedName(value.rdn, __utils.BER),
-            /* REQUIRED   */ __utils._encodeSequenceOf<FamilyEntry_information_Item>(() => _encode_FamilyEntry_information_Item, __utils.BER)(value.information, __utils.BER),
-            /* IF_ABSENT  */ ((value.family_info === undefined) ? undefined : __utils._encodeSequenceOf<FamilyEntries>(() => _encode_FamilyEntries, __utils.BER)(value.family_info, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_FamilyEntry = function (
+    value: FamilyEntry,
+    elGetter: __utils.ASN1Encoder<FamilyEntry>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_RelativeDistinguishedName(
+                        value.rdn,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        FamilyEntry_information_Item
+                    >(() => _encode_FamilyEntry_information_Item, __utils.BER)(
+                        value.information,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.family_info === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<FamilyEntries>(
+                              () => _encode_FamilyEntries,
+                              __utils.BER
+                          )(value.family_info, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class FamilyEntries {
-    constructor (
+    constructor(
         readonly family_class: asn1.OBJECT_IDENTIFIER,
         readonly familyEntries: FamilyEntry[],
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("family-class", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
-    new __utils.ComponentSpec("familyEntries", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
+    new __utils.ComponentSpec(
+        "family-class",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "familyEntries",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyEntries: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_FamilyEntries: __utils.ComponentSpec[] = [];
 
-];
-export const _extension_additions_list_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
-
-];
-
-export const _decode_FamilyEntries = function (el: asn1.ASN1Element): FamilyEntries {
+export const _decode_FamilyEntries = function (
+    el: asn1.ASN1Element
+): FamilyEntries {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError("FamilyEntries contained only " + sequence.length.toString() + " elements.");
+        throw new asn1.ASN1ConstructionError(
+            "FamilyEntries contained only " +
+                sequence.length.toString() +
+                " elements."
+        );
     }
     // TODO: Validate tags.
     sequence[0].name = "family-class";
@@ -6349,27 +15015,42 @@ export const _decode_FamilyEntries = function (el: asn1.ASN1Element): FamilyEntr
     let family_class!: asn1.OBJECT_IDENTIFIER;
     let familyEntries!: FamilyEntry[];
     family_class = __utils._decodeObjectIdentifier(sequence[0]);
-    familyEntries = __utils._decodeSequenceOf<FamilyEntry>(() => _decode_FamilyEntry)(sequence[1]);
+    familyEntries = __utils._decodeSequenceOf<FamilyEntry>(
+        () => _decode_FamilyEntry
+    )(sequence[1]);
     // TODO: Validate values.
-    return new FamilyEntries(
-        family_class,
-        familyEntries,
-        sequence.slice(2),
+    return new FamilyEntries(family_class, familyEntries, sequence.slice(2));
+};
+export const _encode_FamilyEntries = function (
+    value: FamilyEntries,
+    elGetter: __utils.ASN1Encoder<FamilyEntries>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.family_class,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<FamilyEntry>(
+                        () => _encode_FamilyEntry,
+                        __utils.BER
+                    )(value.familyEntries, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
     );
 };
-export const _encode_FamilyEntries = function (value: FamilyEntries, elGetter: __utils.ASN1Encoder<FamilyEntries>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ __utils._encodeObjectIdentifier(value.family_class, __utils.BER),
-            /* REQUIRED   */ __utils._encodeSequenceOf<FamilyEntry>(() => _encode_FamilyEntry, __utils.BER)(value.familyEntries, __utils.BER)
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
-};
-
 
 export class ListResultData_listInfo_subordinates_Item {
-    constructor (
+    constructor(
         readonly rdn: RelativeDistinguishedName,
         readonly aliasEntry: asn1.BOOLEAN | undefined,
         readonly fromEntry: asn1.BOOLEAN | undefined,
@@ -6377,19 +15058,35 @@ export class ListResultData_listInfo_subordinates_Item {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
-    new __utils.ComponentSpec("aliasEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
+    new __utils.ComponentSpec(
+        "rdn",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "fromEntry",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [];
 export const _default_value_for_ListResultData_listInfo_subordinates_Item__aliasEntry = false;
 export const _default_value_for_ListResultData_listInfo_subordinates_Item__fromEntry = true;
-export const _decode_ListResultData_listInfo_subordinates_Item = function (el: asn1.ASN1Element): ListResultData_listInfo_subordinates_Item {
+export const _decode_ListResultData_listInfo_subordinates_Item = function (
+    el: asn1.ASN1Element
+): ListResultData_listInfo_subordinates_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let rdn!: RelativeDistinguishedName;
     let aliasEntry: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ListResultData_listInfo_subordinates_Item__aliasEntry;
@@ -6398,35 +15095,85 @@ export const _decode_ListResultData_listInfo_subordinates_Item = function (el: a
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "rdn": (_el: asn1.ASN1Element): void => { rdn = _decode_RelativeDistinguishedName(_el); },
-        "aliasEntry": (_el: asn1.ASN1Element): void => { aliasEntry = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "fromEntry": (_el: asn1.ASN1Element): void => { fromEntry = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); }
+        rdn: (_el: asn1.ASN1Element): void => {
+            rdn = _decode_RelativeDistinguishedName(_el);
+        },
+        aliasEntry: (_el: asn1.ASN1Element): void => {
+            aliasEntry = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        fromEntry: (_el: asn1.ASN1Element): void => {
+            fromEntry = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(el, callbacks,
+    __utils._parse_sequence(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ListResultData_listInfo_subordinates_Item,
         _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item,
         _root_component_type_list_2_spec_for_ListResultData_listInfo_subordinates_Item,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); },
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ListResultData_listInfo_subordinates_Item( /* SEQUENCE_CONSTRUCTOR_CALL */
+    return new ListResultData_listInfo_subordinates_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
         rdn,
         aliasEntry,
         fromEntry,
         _unrecognizedExtensionsList
     );
 };
-export const _encode_ListResultData_listInfo_subordinates_Item = function (value: ListResultData_listInfo_subordinates_Item, elGetter: __utils.ASN1Encoder<ListResultData_listInfo_subordinates_Item>): asn1.ASN1Element {
-    return __utils._encodeSequence(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* REQUIRED   */ _encode_RelativeDistinguishedName(value.rdn, __utils.BER),
-            /* IF_DEFAULT */ (value.aliasEntry === undefined || __utils.deepEq(value.aliasEntry, _default_value_for_ListResultData_listInfo_subordinates_Item__aliasEntry) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeBoolean, __utils.BER)(value.aliasEntry, __utils.BER)),
-            /* IF_DEFAULT */ (value.fromEntry === undefined || __utils.deepEq(value.fromEntry, _default_value_for_ListResultData_listInfo_subordinates_Item__fromEntry) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeBoolean, __utils.BER)(value.fromEntry, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ListResultData_listInfo_subordinates_Item = function (
+    value: ListResultData_listInfo_subordinates_Item,
+    elGetter: __utils.ASN1Encoder<ListResultData_listInfo_subordinates_Item>
+): asn1.ASN1Element {
+    return __utils._encodeSequence(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* REQUIRED   */ _encode_RelativeDistinguishedName(
+                        value.rdn,
+                        __utils.BER
+                    ),
+                    /* IF_DEFAULT */ value.aliasEntry === undefined ||
+                    __utils.deepEq(
+                        value.aliasEntry,
+                        _default_value_for_ListResultData_listInfo_subordinates_Item__aliasEntry
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              0,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasEntry, __utils.BER),
+                    /* IF_DEFAULT */ value.fromEntry === undefined ||
+                    __utils.deepEq(
+                        value.fromEntry,
+                        _default_value_for_ListResultData_listInfo_subordinates_Item__fromEntry
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              1,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.fromEntry, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : []
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
-
 
 export type LimitProblem = asn1.INTEGER;
 export const LimitProblem_timeLimitExceeded: LimitProblem = 0; /* LONG_NAMED_INTEGER_VALUE */
@@ -6435,26 +15182,55 @@ export const LimitProblem_administrativeLimitExceeded: LimitProblem = 2; /* LONG
 export const _decode_LimitProblem = __utils._decodeInteger;
 export const _encode_LimitProblem = __utils._encodeInteger;
 
-
 export type PartialOutcomeQualifier_entryCount =
-    { bestEstimate: asn1.INTEGER }
+    | { bestEstimate: asn1.INTEGER }
     | { lowEstimate: asn1.INTEGER }
     | { exact: asn1.INTEGER }
     | asn1.ASN1Element;
-export const _decode_PartialOutcomeQualifier_entryCount = __utils._decode_extensible_choice<PartialOutcomeQualifier_entryCount>({
-    "CONTEXT 7": [ "bestEstimate", __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger) ],
-    "CONTEXT 8": [ "lowEstimate", __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger) ],
-    "CONTEXT 9": [ "exact", __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger) ]
+export const _decode_PartialOutcomeQualifier_entryCount = __utils._decode_extensible_choice<
+    PartialOutcomeQualifier_entryCount
+>({
+    "CONTEXT 7": [
+        "bestEstimate",
+        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
+    ],
+    "CONTEXT 8": [
+        "lowEstimate",
+        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
+    ],
+    "CONTEXT 9": [
+        "exact",
+        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
+    ],
 });
-export const _encode_PartialOutcomeQualifier_entryCount = __utils._encode_choice<PartialOutcomeQualifier_entryCount>({
-    "bestEstimate": __utils._encode_explicit(asn1.ASN1TagClass.context, 7, () => __utils._encodeInteger, __utils.BER),
-    "lowEstimate": __utils._encode_explicit(asn1.ASN1TagClass.context, 8, () => __utils._encodeInteger, __utils.BER),
-    "exact": __utils._encode_explicit(asn1.ASN1TagClass.context, 9, () => __utils._encodeInteger, __utils.BER),
-}, __utils.BER);
-
+export const _encode_PartialOutcomeQualifier_entryCount = __utils._encode_choice<
+    PartialOutcomeQualifier_entryCount
+>(
+    {
+        bestEstimate: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            7,
+            () => __utils._encodeInteger,
+            __utils.BER
+        ),
+        lowEstimate: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            8,
+            () => __utils._encodeInteger,
+            __utils.BER
+        ),
+        exact: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            9,
+            () => __utils._encodeInteger,
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export class PartialOutcomeQualifier {
-    constructor (
+    constructor(
         readonly limitProblem: LimitProblem | undefined,
         readonly unexplored: ContinuationReference[] | undefined,
         readonly unavailableCriticalExtensions: asn1.BOOLEAN | undefined,
@@ -6466,23 +15242,69 @@ export class PartialOutcomeQualifier {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("limitProblem", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("unexplored", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("unavailableCriticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("unknownErrors", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
-    new __utils.ComponentSpec("queryReference", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
-    new __utils.ComponentSpec("overspecFilter", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
-    new __utils.ComponentSpec("entryCount", true, __utils.hasAnyTag, undefined, undefined)
+    new __utils.ComponentSpec(
+        "limitProblem",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "unexplored",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "unavailableCriticalExtensions",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "unknownErrors",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "queryReference",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "overspecFilter",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entryCount",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
 ];
-export const _root_component_type_list_2_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
-
-];
-export const _extension_additions_list_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
-
-];
+export const _root_component_type_list_2_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [];
 export const _default_value_for_PartialOutcomeQualifier__unavailableCriticalExtensions = false;
-export const _decode_PartialOutcomeQualifier = function (el: asn1.ASN1Element): PartialOutcomeQualifier {
+export const _decode_PartialOutcomeQualifier = function (
+    el: asn1.ASN1Element
+): PartialOutcomeQualifier {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let limitProblem: asn1.OPTIONAL<LimitProblem>;
     let unexplored: asn1.OPTIONAL<ContinuationReference[]>;
@@ -6495,23 +15317,57 @@ export const _decode_PartialOutcomeQualifier = function (el: asn1.ASN1Element): 
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "limitProblem": (_el: asn1.ASN1Element): void => { limitProblem = __utils._decode_explicit<LimitProblem>(() => _decode_LimitProblem)(_el); },
-        "unexplored": (_el: asn1.ASN1Element): void => { unexplored = __utils._decode_explicit<ContinuationReference[]>(() => __utils._decodeSetOf<ContinuationReference>(() => _decode_ContinuationReference))(_el); },
-        "unavailableCriticalExtensions": (_el: asn1.ASN1Element): void => { unavailableCriticalExtensions = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "unknownErrors": (_el: asn1.ASN1Element): void => { unknownErrors = __utils._decode_explicit<asn1.ASN1Element[]>(() => __utils._decodeSetOf<asn1.ASN1Element>(() => __utils._decodeAny))(_el); },
-        "queryReference": (_el: asn1.ASN1Element): void => { queryReference = __utils._decode_explicit<asn1.OCTET_STRING>(() => __utils._decodeOctetString)(_el); },
-        "overspecFilter": (_el: asn1.ASN1Element): void => { overspecFilter = __utils._decode_explicit<Filter>(() => _decode_Filter)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); },
-        "entryCount": (_el: asn1.ASN1Element): void => { entryCount = _decode_PartialOutcomeQualifier_entryCount(_el); }
+        limitProblem: (_el: asn1.ASN1Element): void => {
+            limitProblem = __utils._decode_explicit<LimitProblem>(
+                () => _decode_LimitProblem
+            )(_el);
+        },
+        unexplored: (_el: asn1.ASN1Element): void => {
+            unexplored = __utils._decode_explicit<ContinuationReference[]>(() =>
+                __utils._decodeSetOf<ContinuationReference>(
+                    () => _decode_ContinuationReference
+                )
+            )(_el);
+        },
+        unavailableCriticalExtensions: (_el: asn1.ASN1Element): void => {
+            unavailableCriticalExtensions = __utils._decode_explicit<
+                asn1.BOOLEAN
+            >(() => __utils._decodeBoolean)(_el);
+        },
+        unknownErrors: (_el: asn1.ASN1Element): void => {
+            unknownErrors = __utils._decode_explicit<asn1.ASN1Element[]>(() =>
+                __utils._decodeSetOf<asn1.ASN1Element>(() => __utils._decodeAny)
+            )(_el);
+        },
+        queryReference: (_el: asn1.ASN1Element): void => {
+            queryReference = __utils._decode_explicit<asn1.OCTET_STRING>(
+                () => __utils._decodeOctetString
+            )(_el);
+        },
+        overspecFilter: (_el: asn1.ASN1Element): void => {
+            overspecFilter = __utils._decode_explicit<Filter>(
+                () => _decode_Filter
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
+        entryCount: (_el: asn1.ASN1Element): void => {
+            entryCount = _decode_PartialOutcomeQualifier_entryCount(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_PartialOutcomeQualifier,
         _extension_additions_list_spec_for_PartialOutcomeQualifier,
         _root_component_type_list_2_spec_for_PartialOutcomeQualifier,
-        undefined,
+        undefined
     );
-    return new PartialOutcomeQualifier( /* SET_CONSTRUCTOR_CALL */
+    return new PartialOutcomeQualifier /* SET_CONSTRUCTOR_CALL */(
         limitProblem,
         unexplored,
         unavailableCriticalExtensions,
@@ -6522,50 +15378,178 @@ export const _decode_PartialOutcomeQualifier = function (el: asn1.ASN1Element): 
         entryCount
     );
 };
-export const _encode_PartialOutcomeQualifier = function (value: PartialOutcomeQualifier, elGetter: __utils.ASN1Encoder<PartialOutcomeQualifier>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.limitProblem === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => _encode_LimitProblem, __utils.BER)(value.limitProblem, __utils.BER)),
-            /* IF_ABSENT  */ ((value.unexplored === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<ContinuationReference>(() => _encode_ContinuationReference, __utils.BER), __utils.BER)(value.unexplored, __utils.BER)),
-            /* IF_DEFAULT */ (value.unavailableCriticalExtensions === undefined || __utils.deepEq(value.unavailableCriticalExtensions, _default_value_for_PartialOutcomeQualifier__unavailableCriticalExtensions) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => __utils._encodeBoolean, __utils.BER)(value.unavailableCriticalExtensions, __utils.BER)),
-            /* IF_ABSENT  */ ((value.unknownErrors === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeSetOf<asn1.ASN1Element>(() => __utils._encodeAny, __utils.BER), __utils.BER)(value.unknownErrors, __utils.BER)),
-            /* IF_ABSENT  */ ((value.queryReference === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 4, () => __utils._encodeOctetString, __utils.BER)(value.queryReference, __utils.BER)),
-            /* IF_ABSENT  */ ((value.overspecFilter === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 5, () => _encode_Filter, __utils.BER)(value.overspecFilter, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 6, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER)),
-            /* IF_ABSENT  */ ((value.entryCount === undefined) ? undefined : _encode_PartialOutcomeQualifier_entryCount(value.entryCount, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_PartialOutcomeQualifier = function (
+    value: PartialOutcomeQualifier,
+    elGetter: __utils.ASN1Encoder<PartialOutcomeQualifier>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat([
+                /* IF_ABSENT  */ value.limitProblem === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          0,
+                          () => _encode_LimitProblem,
+                          __utils.BER
+                      )(value.limitProblem, __utils.BER),
+                /* IF_ABSENT  */ value.unexplored === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          1,
+                          () =>
+                              __utils._encodeSetOf<ContinuationReference>(
+                                  () => _encode_ContinuationReference,
+                                  __utils.BER
+                              ),
+                          __utils.BER
+                      )(value.unexplored, __utils.BER),
+                /* IF_DEFAULT */ value.unavailableCriticalExtensions ===
+                    undefined ||
+                __utils.deepEq(
+                    value.unavailableCriticalExtensions,
+                    _default_value_for_PartialOutcomeQualifier__unavailableCriticalExtensions
+                )
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          2,
+                          () => __utils._encodeBoolean,
+                          __utils.BER
+                      )(value.unavailableCriticalExtensions, __utils.BER),
+                /* IF_ABSENT  */ value.unknownErrors === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          3,
+                          () =>
+                              __utils._encodeSetOf<asn1.ASN1Element>(
+                                  () => __utils._encodeAny,
+                                  __utils.BER
+                              ),
+                          __utils.BER
+                      )(value.unknownErrors, __utils.BER),
+                /* IF_ABSENT  */ value.queryReference === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          4,
+                          () => __utils._encodeOctetString,
+                          __utils.BER
+                      )(value.queryReference, __utils.BER),
+                /* IF_ABSENT  */ value.overspecFilter === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          5,
+                          () => _encode_Filter,
+                          __utils.BER
+                      )(value.overspecFilter, __utils.BER),
+                /* IF_ABSENT  */ value.notification === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
+                          asn1.ASN1TagClass.context,
+                          6,
+                          () =>
+                              __utils._encodeSequenceOf<Attribute>(
+                                  () => _encode_Attribute,
+                                  __utils.BER
+                              ),
+                          __utils.BER
+                      )(value.notification, __utils.BER),
+                /* IF_ABSENT  */ value.entryCount === undefined
+                    ? undefined
+                    : _encode_PartialOutcomeQualifier_entryCount(
+                          value.entryCount,
+                          __utils.BER
+                      ),
+            ])
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export class ListResultData_listInfo {
-    constructor (
+    constructor(
         readonly name: Name | undefined,
         readonly subordinates: ListResultData_listInfo_subordinates_Item[],
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("subordinates", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
-    new __utils.ComponentSpec("partialOutcomeQualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
+    new __utils.ComponentSpec(
+        "name",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "subordinates",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "partialOutcomeQualifier",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [];
 export const _default_value_for_ListResultData_listInfo__aliasDereferenced = false;
-export const _decode_ListResultData_listInfo = function (el: asn1.ASN1Element): ListResultData_listInfo {
+export const _decode_ListResultData_listInfo = function (
+    el: asn1.ASN1Element
+): ListResultData_listInfo {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let name: asn1.OPTIONAL<Name>;
     let subordinates!: ListResultData_listInfo_subordinates_Item[];
@@ -6578,22 +15562,56 @@ export const _decode_ListResultData_listInfo = function (el: asn1.ASN1Element): 
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "name": (_el: asn1.ASN1Element): void => { name = _decode_Name(_el); },
-        "subordinates": (_el: asn1.ASN1Element): void => { subordinates = __utils._decode_explicit<ListResultData_listInfo_subordinates_Item[]>(() => __utils._decodeSetOf<ListResultData_listInfo_subordinates_Item>(() => _decode_ListResultData_listInfo_subordinates_Item))(_el); },
-        "partialOutcomeQualifier": (_el: asn1.ASN1Element): void => { partialOutcomeQualifier = __utils._decode_explicit<PartialOutcomeQualifier>(() => _decode_PartialOutcomeQualifier)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        name: (_el: asn1.ASN1Element): void => {
+            name = _decode_Name(_el);
+        },
+        subordinates: (_el: asn1.ASN1Element): void => {
+            subordinates = __utils._decode_explicit<
+                ListResultData_listInfo_subordinates_Item[]
+            >(() =>
+                __utils._decodeSetOf<ListResultData_listInfo_subordinates_Item>(
+                    () => _decode_ListResultData_listInfo_subordinates_Item
+                )
+            )(_el);
+        },
+        partialOutcomeQualifier: (_el: asn1.ASN1Element): void => {
+            partialOutcomeQualifier = __utils._decode_explicit<
+                PartialOutcomeQualifier
+            >(() => _decode_PartialOutcomeQualifier)(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_ListResultData_listInfo,
         _extension_additions_list_spec_for_ListResultData_listInfo,
         _root_component_type_list_2_spec_for_ListResultData_listInfo,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new ListResultData_listInfo( /* SET_CONSTRUCTOR_CALL */
+    return new ListResultData_listInfo /* SET_CONSTRUCTOR_CALL */(
         name,
         subordinates,
         partialOutcomeQualifier,
@@ -6604,74 +15622,219 @@ export const _decode_ListResultData_listInfo = function (el: asn1.ASN1Element): 
         notification
     );
 };
-export const _encode_ListResultData_listInfo = function (value: ListResultData_listInfo, elGetter: __utils.ASN1Encoder<ListResultData_listInfo>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.name === undefined) ? undefined : _encode_Name(value.name, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 1, () => __utils._encodeSetOf<ListResultData_listInfo_subordinates_Item>(() => _encode_ListResultData_listInfo_subordinates_Item, __utils.BER), __utils.BER)(value.subordinates, __utils.BER),
-            /* IF_ABSENT  */ ((value.partialOutcomeQualifier === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_PartialOutcomeQualifier, __utils.BER)(value.partialOutcomeQualifier, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_ListResultData_listInfo__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_ListResultData_listInfo = function (
+    value: ListResultData_listInfo,
+    elGetter: __utils.ASN1Encoder<ListResultData_listInfo>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : _encode_Name(value.name, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        1,
+                        () =>
+                            __utils._encodeSetOf<
+                                ListResultData_listInfo_subordinates_Item
+                            >(
+                                () =>
+                                    _encode_ListResultData_listInfo_subordinates_Item,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.subordinates, __utils.BER),
+                    /* IF_ABSENT  */ value.partialOutcomeQualifier === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_PartialOutcomeQualifier,
+                              __utils.BER
+                          )(value.partialOutcomeQualifier, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_ListResultData_listInfo__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type ListResultData =
-    { listInfo: ListResultData_listInfo }
+    | { listInfo: ListResultData_listInfo }
     | { uncorrelatedListInfo: ListResult[] }
     | asn1.ASN1Element;
-export const _decode_ListResultData = __utils._decode_extensible_choice<ListResultData>({
-    "UNIVERSAL 17": [ "listInfo", _decode_ListResultData_listInfo ],
-    "CONTEXT 0": [ "uncorrelatedListInfo", __utils._decode_explicit<ListResult[]>(() => __utils._decodeSetOf<ListResult>(() => _decode_ListResult)) ]
+export const _decode_ListResultData = __utils._decode_extensible_choice<
+    ListResultData
+>({
+    "UNIVERSAL 17": ["listInfo", _decode_ListResultData_listInfo],
+    "CONTEXT 0": [
+        "uncorrelatedListInfo",
+        __utils._decode_explicit<ListResult[]>(() =>
+            __utils._decodeSetOf<ListResult>(() => _decode_ListResult)
+        ),
+    ],
 });
-export const _encode_ListResultData = __utils._encode_choice<ListResultData>({
-    "listInfo": _encode_ListResultData_listInfo,
-    "uncorrelatedListInfo": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeSetOf<ListResult>(() => _encode_ListResult, __utils.BER), __utils.BER),
-}, __utils.BER);
-
+export const _encode_ListResultData = __utils._encode_choice<ListResultData>(
+    {
+        listInfo: _encode_ListResultData_listInfo,
+        uncorrelatedListInfo: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () =>
+                __utils._encodeSetOf<ListResult>(
+                    () => _encode_ListResult,
+                    __utils.BER
+                ),
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type ListResult = OPTIONALLY_PROTECTED<ListResultData>; // DefinedType
-export const _decode_ListResult = _get_decoder_for_OPTIONALLY_PROTECTED<ListResultData>(_decode_ListResultData);
-export const _encode_ListResult = _get_encoder_for_OPTIONALLY_PROTECTED<ListResultData>(_encode_ListResultData);
-
+export const _decode_ListResult = _get_decoder_for_OPTIONALLY_PROTECTED<
+    ListResultData
+>(_decode_ListResultData);
+export const _encode_ListResult = _get_encoder_for_OPTIONALLY_PROTECTED<
+    ListResultData
+>(_encode_ListResultData);
 
 export class SearchResultData_searchInfo {
-    constructor (
+    constructor(
         readonly name: Name | undefined,
         readonly entries: EntryInformation[],
         readonly partialOutcomeQualifier: PartialOutcomeQualifier | undefined,
         readonly altMatching: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters: SecurityParameters | undefined /* REPLICATED_COMPONENT */,
-        readonly performer: DistinguishedName | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced: asn1.BOOLEAN | undefined /* REPLICATED_COMPONENT */,
-        readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
+        readonly securityParameters:
+            | SecurityParameters
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly performer:
+            | DistinguishedName
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced:
+            | asn1.BOOLEAN
+            | undefined /* REPLICATED_COMPONENT */,
+        readonly notification:
+            | Attribute[]
+            | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
 export const _root_component_type_list_1_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
-    new __utils.ComponentSpec("entries", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    new __utils.ComponentSpec("partialOutcomeQualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
-    new __utils.ComponentSpec("altMatching", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
+    new __utils.ComponentSpec(
+        "name",
+        true,
+        __utils.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "entries",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "partialOutcomeQualifier",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "altMatching",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
-    new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
-    new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
-    new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
+    new __utils.ComponentSpec(
+        "securityParameters",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "performer",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "notification",
+        true,
+        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        undefined,
+        undefined
+    ),
 ];
-export const _extension_additions_list_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
-
-];
+export const _extension_additions_list_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [];
 export const _default_value_for_SearchResultData_searchInfo__altMatching = false;
 export const _default_value_for_SearchResultData_searchInfo__aliasDereferenced = false;
-export const _decode_SearchResultData_searchInfo = function (el: asn1.ASN1Element): SearchResultData_searchInfo {
+export const _decode_SearchResultData_searchInfo = function (
+    el: asn1.ASN1Element
+): SearchResultData_searchInfo {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let name: asn1.OPTIONAL<Name>;
     let entries!: EntryInformation[];
@@ -6685,23 +15848,59 @@ export const _decode_SearchResultData_searchInfo = function (el: asn1.ASN1Elemen
     /* END_OF_SET_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
-        "name": (_el: asn1.ASN1Element): void => { name = _decode_Name(_el); },
-        "entries": (_el: asn1.ASN1Element): void => { entries = __utils._decode_explicit<EntryInformation[]>(() => __utils._decodeSetOf<EntryInformation>(() => _decode_EntryInformation))(_el); },
-        "partialOutcomeQualifier": (_el: asn1.ASN1Element): void => { partialOutcomeQualifier = __utils._decode_explicit<PartialOutcomeQualifier>(() => _decode_PartialOutcomeQualifier)(_el); },
-        "altMatching": (_el: asn1.ASN1Element): void => { altMatching = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "securityParameters": (_el: asn1.ASN1Element): void => { securityParameters = __utils._decode_explicit<SecurityParameters>(() => _decode_SecurityParameters)(_el); },
-        "performer": (_el: asn1.ASN1Element): void => { performer = __utils._decode_explicit<DistinguishedName>(() => _decode_DistinguishedName)(_el); },
-        "aliasDereferenced": (_el: asn1.ASN1Element): void => { aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(() => __utils._decodeBoolean)(_el); },
-        "notification": (_el: asn1.ASN1Element): void => { notification = __utils._decode_explicit<Attribute[]>(() => __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute))(_el); }
+        name: (_el: asn1.ASN1Element): void => {
+            name = _decode_Name(_el);
+        },
+        entries: (_el: asn1.ASN1Element): void => {
+            entries = __utils._decode_explicit<EntryInformation[]>(() =>
+                __utils._decodeSetOf<EntryInformation>(
+                    () => _decode_EntryInformation
+                )
+            )(_el);
+        },
+        partialOutcomeQualifier: (_el: asn1.ASN1Element): void => {
+            partialOutcomeQualifier = __utils._decode_explicit<
+                PartialOutcomeQualifier
+            >(() => _decode_PartialOutcomeQualifier)(_el);
+        },
+        altMatching: (_el: asn1.ASN1Element): void => {
+            altMatching = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        securityParameters: (_el: asn1.ASN1Element): void => {
+            securityParameters = __utils._decode_explicit<SecurityParameters>(
+                () => _decode_SecurityParameters
+            )(_el);
+        },
+        performer: (_el: asn1.ASN1Element): void => {
+            performer = __utils._decode_explicit<DistinguishedName>(
+                () => _decode_DistinguishedName
+            )(_el);
+        },
+        aliasDereferenced: (_el: asn1.ASN1Element): void => {
+            aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
+                () => __utils._decodeBoolean
+            )(_el);
+        },
+        notification: (_el: asn1.ASN1Element): void => {
+            notification = __utils._decode_explicit<Attribute[]>(() =>
+                __utils._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+            )(_el);
+        },
     };
     /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(el, callbacks,
+    __utils._parse_set(
+        el,
+        callbacks,
         _root_component_type_list_1_spec_for_SearchResultData_searchInfo,
         _extension_additions_list_spec_for_SearchResultData_searchInfo,
         _root_component_type_list_2_spec_for_SearchResultData_searchInfo,
-        (ext: asn1.ASN1Element): void => { _unrecognizedExtensionsList.push(ext); } ,
+        (ext: asn1.ASN1Element): void => {
+            _unrecognizedExtensionsList.push(ext);
+        }
     );
-    return new SearchResultData_searchInfo( /* SET_CONSTRUCTOR_CALL */
+    return new SearchResultData_searchInfo /* SET_CONSTRUCTOR_CALL */(
         name,
         entries,
         partialOutcomeQualifier,
@@ -6713,42 +15912,141 @@ export const _decode_SearchResultData_searchInfo = function (el: asn1.ASN1Elemen
         notification
     );
 };
-export const _encode_SearchResultData_searchInfo = function (value: SearchResultData_searchInfo, elGetter: __utils.ASN1Encoder<SearchResultData_searchInfo>): asn1.ASN1Element {
-    return __utils._encodeSet(([] as (asn1.ASN1Element | undefined)[]).concat(
-        [
-            /* IF_ABSENT  */ ((value.name === undefined) ? undefined : _encode_Name(value.name, __utils.BER)),
-            /* REQUIRED   */ __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeSetOf<EntryInformation>(() => _encode_EntryInformation, __utils.BER), __utils.BER)(value.entries, __utils.BER),
-            /* IF_ABSENT  */ ((value.partialOutcomeQualifier === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 2, () => _encode_PartialOutcomeQualifier, __utils.BER)(value.partialOutcomeQualifier, __utils.BER)),
-            /* IF_DEFAULT */ (value.altMatching === undefined || __utils.deepEq(value.altMatching, _default_value_for_SearchResultData_searchInfo__altMatching) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 3, () => __utils._encodeBoolean, __utils.BER)(value.altMatching, __utils.BER))
-        ],
-        (value._unrecognizedExtensionsList ? value._unrecognizedExtensionsList : []),
-        [
-            /* IF_ABSENT  */ ((value.securityParameters === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 30, () => _encode_SecurityParameters, __utils.BER)(value.securityParameters, __utils.BER)),
-            /* IF_ABSENT  */ ((value.performer === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 29, () => _encode_DistinguishedName, __utils.BER)(value.performer, __utils.BER)),
-            /* IF_DEFAULT */ (value.aliasDereferenced === undefined || __utils.deepEq(value.aliasDereferenced, _default_value_for_SearchResultData_searchInfo__aliasDereferenced) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 28, () => __utils._encodeBoolean, __utils.BER)(value.aliasDereferenced, __utils.BER)),
-            /* IF_ABSENT  */ ((value.notification === undefined) ? undefined : __utils._encode_explicit(asn1.ASN1TagClass.context, 27, () => __utils._encodeSequenceOf<Attribute>(() => _encode_Attribute, __utils.BER), __utils.BER)(value.notification, __utils.BER))
-        ],
-    ).filter((c: (asn1.ASN1Element | undefined)): boolean => (!!c)) as asn1.ASN1Element[], __utils.BER);
+export const _encode_SearchResultData_searchInfo = function (
+    value: SearchResultData_searchInfo,
+    elGetter: __utils.ASN1Encoder<SearchResultData_searchInfo>
+): asn1.ASN1Element {
+    return __utils._encodeSet(
+        ([] as (asn1.ASN1Element | undefined)[])
+            .concat(
+                [
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : _encode_Name(value.name, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
+                        asn1.ASN1TagClass.context,
+                        0,
+                        () =>
+                            __utils._encodeSetOf<EntryInformation>(
+                                () => _encode_EntryInformation,
+                                __utils.BER
+                            ),
+                        __utils.BER
+                    )(value.entries, __utils.BER),
+                    /* IF_ABSENT  */ value.partialOutcomeQualifier === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              2,
+                              () => _encode_PartialOutcomeQualifier,
+                              __utils.BER
+                          )(value.partialOutcomeQualifier, __utils.BER),
+                    /* IF_DEFAULT */ value.altMatching === undefined ||
+                    __utils.deepEq(
+                        value.altMatching,
+                        _default_value_for_SearchResultData_searchInfo__altMatching
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              3,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.altMatching, __utils.BER),
+                ],
+                value._unrecognizedExtensionsList
+                    ? value._unrecognizedExtensionsList
+                    : [],
+                [
+                    /* IF_ABSENT  */ value.securityParameters === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              30,
+                              () => _encode_SecurityParameters,
+                              __utils.BER
+                          )(value.securityParameters, __utils.BER),
+                    /* IF_ABSENT  */ value.performer === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              29,
+                              () => _encode_DistinguishedName,
+                              __utils.BER
+                          )(value.performer, __utils.BER),
+                    /* IF_DEFAULT */ value.aliasDereferenced === undefined ||
+                    __utils.deepEq(
+                        value.aliasDereferenced,
+                        _default_value_for_SearchResultData_searchInfo__aliasDereferenced
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              28,
+                              () => __utils._encodeBoolean,
+                              __utils.BER
+                          )(value.aliasDereferenced, __utils.BER),
+                    /* IF_ABSENT  */ value.notification === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
+                              asn1.ASN1TagClass.context,
+                              27,
+                              () =>
+                                  __utils._encodeSequenceOf<Attribute>(
+                                      () => _encode_Attribute,
+                                      __utils.BER
+                                  ),
+                              __utils.BER
+                          )(value.notification, __utils.BER),
+                ]
+            )
+            .filter(
+                (c: asn1.ASN1Element | undefined): boolean => !!c
+            ) as asn1.ASN1Element[],
+        __utils.BER
+    );
 };
 
-
 export type SearchResultData =
-    { searchInfo: SearchResultData_searchInfo }
+    | { searchInfo: SearchResultData_searchInfo }
     | { uncorrelatedSearchInfo: SearchResult[] }
     | asn1.ASN1Element;
-export const _decode_SearchResultData = __utils._decode_extensible_choice<SearchResultData>({
-    "UNIVERSAL 17": [ "searchInfo", _decode_SearchResultData_searchInfo ],
-    "CONTEXT 0": [ "uncorrelatedSearchInfo", __utils._decode_explicit<SearchResult[]>(() => __utils._decodeSetOf<SearchResult>(() => _decode_SearchResult)) ]
+export const _decode_SearchResultData = __utils._decode_extensible_choice<
+    SearchResultData
+>({
+    "UNIVERSAL 17": ["searchInfo", _decode_SearchResultData_searchInfo],
+    "CONTEXT 0": [
+        "uncorrelatedSearchInfo",
+        __utils._decode_explicit<SearchResult[]>(() =>
+            __utils._decodeSetOf<SearchResult>(() => _decode_SearchResult)
+        ),
+    ],
 });
-export const _encode_SearchResultData = __utils._encode_choice<SearchResultData>({
-    "searchInfo": _encode_SearchResultData_searchInfo,
-    "uncorrelatedSearchInfo": __utils._encode_explicit(asn1.ASN1TagClass.context, 0, () => __utils._encodeSetOf<SearchResult>(() => _encode_SearchResult, __utils.BER), __utils.BER),
-}, __utils.BER);
-
+export const _encode_SearchResultData = __utils._encode_choice<
+    SearchResultData
+>(
+    {
+        searchInfo: _encode_SearchResultData_searchInfo,
+        uncorrelatedSearchInfo: __utils._encode_explicit(
+            asn1.ASN1TagClass.context,
+            0,
+            () =>
+                __utils._encodeSetOf<SearchResult>(
+                    () => _encode_SearchResult,
+                    __utils.BER
+                ),
+            __utils.BER
+        ),
+    },
+    __utils.BER
+);
 
 export type SearchResult = OPTIONALLY_PROTECTED<SearchResultData>; // DefinedType
-export const _decode_SearchResult = _get_decoder_for_OPTIONALLY_PROTECTED<SearchResultData>(_decode_SearchResultData);
-export const _encode_SearchResult = _get_encoder_for_OPTIONALLY_PROTECTED<SearchResultData>(_encode_SearchResultData);
-
+export const _decode_SearchResult = _get_decoder_for_OPTIONALLY_PROTECTED<
+    SearchResultData
+>(_decode_SearchResultData);
+export const _encode_SearchResult = _get_encoder_for_OPTIONALLY_PROTECTED<
+    SearchResultData
+>(_encode_SearchResultData);
 
 /* END_MODULE DirectoryAbstractService */

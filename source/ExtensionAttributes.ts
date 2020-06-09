@@ -92,8 +92,8 @@ export const _decode_ExtensionAttribute_value_Item = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ExtensionAttribute_value_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        mandatory,
+    return new ExtensionAttribute_value_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
         critical,
         ext,
         _unrecognizedExtensionsList

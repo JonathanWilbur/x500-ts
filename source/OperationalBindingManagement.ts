@@ -338,8 +338,8 @@ export const _decode_Validity = function (el: asn1.ASN1Element): Validity {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Validity /* SEQUENCE_CONSTRUCTOR_CALL */(
-        validFrom,
+    return new Validity(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
         validUntil,
         _unrecognizedExtensionsList
     );
@@ -519,8 +519,8 @@ export const _decode_EstablishOperationalBindingArgumentData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EstablishOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bindingType,
+    return new EstablishOperationalBindingArgumentData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
         bindingID,
         accessPoint,
         initiator,
@@ -809,8 +809,8 @@ export const _decode_EstablishOperationalBindingResultData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EstablishOperationalBindingResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bindingType,
+    return new EstablishOperationalBindingResultData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
         bindingID,
         accessPoint,
         initiator,
@@ -1103,8 +1103,8 @@ export const _decode_ModifiedValidity = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ModifiedValidity /* SEQUENCE_CONSTRUCTOR_CALL */(
-        validFrom,
+    return new ModifiedValidity(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
         validUntil,
         _unrecognizedExtensionsList
     );
@@ -1297,8 +1297,8 @@ export const _decode_ModifyOperationalBindingArgumentData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ModifyOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bindingType,
+    return new ModifyOperationalBindingArgumentData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
         bindingID,
         accessPoint,
         initiator,
@@ -1538,8 +1538,8 @@ export const _decode_ModifyOperationalBindingResultData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ModifyOperationalBindingResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        newBindingID,
+    return new ModifyOperationalBindingResultData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ newBindingID,
         bindingType,
         newAgreement,
         valid,
@@ -1818,8 +1818,8 @@ export const _decode_TerminateOperationalBindingArgumentData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TerminateOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bindingType,
+    return new TerminateOperationalBindingArgumentData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
         bindingID,
         initiator,
         terminateAt,
@@ -2022,8 +2022,8 @@ export const _decode_TerminateOperationalBindingResultData = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TerminateOperationalBindingResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        bindingID,
+    return new TerminateOperationalBindingResultData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ bindingID,
         bindingType,
         terminateAt,
         _unrecognizedExtensionsList,
@@ -2331,8 +2331,8 @@ export const _decode_OpBindingErrorParam = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new OpBindingErrorParam /* SEQUENCE_CONSTRUCTOR_CALL */(
-        problem,
+    return new OpBindingErrorParam(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ problem,
         bindingType,
         agreementProposal,
         retryAt,

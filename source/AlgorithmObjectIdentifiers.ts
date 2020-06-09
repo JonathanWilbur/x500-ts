@@ -680,8 +680,8 @@ export const _decode_DomainParameters = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DomainParameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-        p,
+    return new DomainParameters(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ p,
         g,
         q,
         j,

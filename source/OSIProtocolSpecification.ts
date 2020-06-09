@@ -99,7 +99,7 @@ export const _decode_OsiBind_mode_selector = function (
         _root_component_type_list_2_spec_for_OsiBind_mode_selector,
         undefined
     );
-    return new OsiBind_mode_selector /* SET_CONSTRUCTOR_CALL */(mode_value);
+    return new OsiBind_mode_selector(/* SET_CONSTRUCTOR_CALL */ mode_value);
 };
 export const _encode_OsiBind_mode_selector = function (
     value: OsiBind_mode_selector,
@@ -338,8 +338,8 @@ export const _decode_OsiBind_normal_mode_parameters_user_data_fully_encoded_data
         _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item,
         undefined
     );
-    return new OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        transfer_syntax_name,
+    return new OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ transfer_syntax_name,
         presentation_context_identifier,
         presentation_data_values
     );
@@ -522,8 +522,8 @@ export const _decode_OsiBind_normal_mode_parameters = function (
         _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters,
         undefined
     );
-    return new OsiBind_normal_mode_parameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocol_version,
+    return new OsiBind_normal_mode_parameters(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
         calling_presentation_selector,
         called_presentation_selector,
         presentation_context_definition_list,
@@ -638,8 +638,8 @@ export const _decode_OsiBind = function (el: asn1.ASN1Element): OsiBind {
         _root_component_type_list_2_spec_for_OsiBind,
         undefined
     );
-    return new OsiBind /* SET_CONSTRUCTOR_CALL */(
-        mode_selector,
+    return new OsiBind(
+        /* SET_CONSTRUCTOR_CALL */ mode_selector,
         normal_mode_parameters
     );
 };
@@ -911,8 +911,8 @@ export const _decode_AARQ_apdu = __utils._decode_explicit<AARQ_apdu>(
                 _root_component_type_list_2_spec_for_AARQ_apdu,
                 undefined
             );
-            return new AARQ_apdu /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocol_version,
+            return new AARQ_apdu(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                 application_context_name,
                 called_AP_title,
                 called_AE_qualifier,
@@ -1111,8 +1111,8 @@ export const _decode_OsiBindResult_mode_selector = function (
         _root_component_type_list_2_spec_for_OsiBindResult_mode_selector,
         undefined
     );
-    return new OsiBindResult_mode_selector /* SET_CONSTRUCTOR_CALL */(
-        mode_value
+    return new OsiBindResult_mode_selector(
+        /* SET_CONSTRUCTOR_CALL */ mode_value
     );
 };
 export const _encode_OsiBindResult_mode_selector = function (
@@ -1326,8 +1326,8 @@ export const _decode_OsiBindResult_normal_mode_parameters_user_data_fully_encode
         _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item,
         undefined
     );
-    return new OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        transfer_syntax_name,
+    return new OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ transfer_syntax_name,
         presentation_context_identifier,
         presentation_data_values
     );
@@ -1504,8 +1504,8 @@ export const _decode_OsiBindResult_normal_mode_parameters = function (
         _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters,
         undefined
     );
-    return new OsiBindResult_normal_mode_parameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocol_version,
+    return new OsiBindResult_normal_mode_parameters(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
         responding_presentation_selector,
         presentation_context_definition_result_list,
         user_data
@@ -1622,8 +1622,8 @@ export const _decode_OsiBindResult = function (
         _root_component_type_list_2_spec_for_OsiBindResult,
         undefined
     );
-    return new OsiBindResult /* SET_CONSTRUCTOR_CALL */(
-        mode_selector,
+    return new OsiBindResult(
+        /* SET_CONSTRUCTOR_CALL */ mode_selector,
         normal_mode_parameters
     );
 };
@@ -1930,8 +1930,8 @@ export const _decode_AARE_apdu = __utils._decode_explicit<AARE_apdu>(
                 _root_component_type_list_2_spec_for_AARE_apdu,
                 undefined
             );
-            return new AARE_apdu /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocol_version,
+            return new AARE_apdu(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                 application_context_name,
                 result,
                 result_source_diagnostic,
@@ -2146,8 +2146,8 @@ export const _decode_Result_list_Item = function (
         _root_component_type_list_2_spec_for_Result_list_Item,
         undefined
     );
-    return new Result_list_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        result,
+    return new Result_list_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ result,
         transfer_syntax_name,
         provider_reason
     );
@@ -2308,8 +2308,8 @@ export const _decode_OsiBindError_normal_mode_parameters_user_data_fully_encoded
         _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item,
         undefined
     );
-    return new OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        transfer_syntax_name,
+    return new OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ transfer_syntax_name,
         presentation_context_identifier,
         presentation_data_values
     );
@@ -2497,8 +2497,8 @@ export const _decode_OsiBindError_normal_mode_parameters = function (
         _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters,
         undefined
     );
-    return new OsiBindError_normal_mode_parameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-        protocol_version,
+    return new OsiBindError_normal_mode_parameters(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
         responding_presentation_selector,
         presentation_context_definition_result_list,
         provider_reason,
@@ -2775,8 +2775,8 @@ export const _decode_AAREerr_apdu = __utils._decode_explicit<AAREerr_apdu>(
                 _root_component_type_list_2_spec_for_AAREerr_apdu,
                 undefined
             );
-            return new AAREerr_apdu /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocol_version,
+            return new AAREerr_apdu(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                 application_context_name,
                 result,
                 result_source_diagnostic,
@@ -3084,7 +3084,7 @@ export const _decode_TheOsiUnbind = __utils._decode_explicit<TheOsiUnbind>(
                 _root_component_type_list_2_spec_for_TheOsiUnbind,
                 undefined
             );
-            return new TheOsiUnbind /* SEQUENCE_CONSTRUCTOR_CALL */(reason);
+            return new TheOsiUnbind(/* SEQUENCE_CONSTRUCTOR_CALL */ reason);
         }
 );
 export const _encode_TheOsiUnbind = __utils._encode_explicit(
@@ -3296,7 +3296,7 @@ export const _decode_TheOsiUnbindRes = __utils._decode_explicit<
                 _root_component_type_list_2_spec_for_TheOsiUnbindRes,
                 undefined
             );
-            return new TheOsiUnbindRes /* SEQUENCE_CONSTRUCTOR_CALL */(reason);
+            return new TheOsiUnbindRes(/* SEQUENCE_CONSTRUCTOR_CALL */ reason);
         }
 );
 export const _encode_TheOsiUnbindRes = __utils._encode_explicit(
@@ -4402,8 +4402,8 @@ export const _decode_ARP_PPDU = function (el: asn1.ASN1Element): ARP_PPDU {
         _root_component_type_list_2_spec_for_ARP_PPDU,
         undefined
     );
-    return new ARP_PPDU /* SEQUENCE_CONSTRUCTOR_CALL */(
-        provider_reason,
+    return new ARP_PPDU(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ provider_reason,
         event_identifier
     );
 };

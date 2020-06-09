@@ -347,8 +347,8 @@ export const _decode_SecurityLabel = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SecurityLabel /* SET_CONSTRUCTOR_CALL */(
-        security_policy_identifier,
+    return new SecurityLabel(
+        /* SET_CONSTRUCTOR_CALL */ security_policy_identifier,
         security_classification,
         privacy_mark,
         security_categories,
@@ -477,8 +477,8 @@ export const _decode_SignedSecurityLabelContent = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SignedSecurityLabelContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attHash,
+    return new SignedSecurityLabelContent(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attHash,
         issuer,
         keyIdentifier,
         securityLabel,
@@ -613,8 +613,8 @@ export const _decode_Clearance = function (el: asn1.ASN1Element): Clearance {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Clearance /* SEQUENCE_CONSTRUCTOR_CALL */(
-        policyId,
+    return new Clearance(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ policyId,
         classList,
         securityCategories,
         _unrecognizedExtensionsList
@@ -854,8 +854,8 @@ export const _decode_SpecificallyIdentified = function (
         _root_component_type_list_2_spec_for_SpecificallyIdentified,
         undefined
     );
-    return new SpecificallyIdentified /* SEQUENCE_CONSTRUCTOR_CALL */(
-        name,
+    return new SpecificallyIdentified(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ name,
         issuer,
         serial
     );
@@ -1002,8 +1002,8 @@ export const _decode_AttributeIntegrityInfoContent = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeIntegrityInfoContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-        scope,
+    return new AttributeIntegrityInfoContent(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ scope,
         signer,
         attribsHash,
         _unrecognizedExtensionsList
@@ -1117,8 +1117,8 @@ export const _decode_AttributeTypeValueContexts = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeValueContexts /* SEQUENCE_CONSTRUCTOR_CALL */(
-        type_,
+    return new AttributeTypeValueContexts(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
         value,
         contextList,
         _unrecognizedExtensionsList
@@ -1220,8 +1220,8 @@ export const _decode_AttributeValueIntegrityInfoContent = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeValueIntegrityInfoContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-        signer,
+    return new AttributeValueIntegrityInfoContent(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ signer,
         aVIHash,
         _unrecognizedExtensionsList
     );

@@ -107,8 +107,8 @@ export const _decode_LdapSyntaxDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new LdapSyntaxDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new LdapSyntaxDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         description,
         _unrecognizedExtensionsList
     );

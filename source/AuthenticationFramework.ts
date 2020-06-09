@@ -206,8 +206,8 @@ export const _decode_AlgorithmIdentifier = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AlgorithmIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-        algorithm,
+    return new AlgorithmIdentifier(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
         parameters,
         _unrecognizedExtensionsList
     );
@@ -379,8 +379,8 @@ export const _get_decoder_for_SIGNED = function <ToBeSigned>(
                 _unrecognizedExtensionsList.push(ext);
             }
         );
-        return new SIGNED /* SEQUENCE_CONSTRUCTOR_CALL */(
-            toBeSigned,
+        return new SIGNED(
+            /* SEQUENCE_CONSTRUCTOR_CALL */ toBeSigned,
             algorithmIdentifier,
             signature,
             _unrecognizedExtensionsList
@@ -666,8 +666,8 @@ export const _decode_Extension = function (el: asn1.ASN1Element): Extension {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Extension /* SEQUENCE_CONSTRUCTOR_CALL */(
-        extnId,
+    return new Extension(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ extnId,
         critical,
         extnValue,
         _unrecognizedExtensionsList
@@ -876,8 +876,8 @@ export const _decode_TBSCertificate = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSCertificate /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new TBSCertificate(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         serialNumber,
         signature,
         issuer,
@@ -1045,8 +1045,8 @@ export const _decode_Certificates = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Certificates /* SEQUENCE_CONSTRUCTOR_CALL */(
-        userCertificate,
+    return new Certificates(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
         certificationPath,
         _unrecognizedExtensionsList
     );
@@ -1139,8 +1139,8 @@ export const _decode_CertificatePair = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificatePair /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuedToThisCA,
+    return new CertificatePair(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCA,
         issuedByThisCA,
         _unrecognizedExtensionsList
     );
@@ -1237,8 +1237,8 @@ export const _decode_CertificationPath = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
-        userCertificate,
+    return new CertificationPath(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
         theCACertificates,
         _unrecognizedExtensionsList
     );
@@ -1348,8 +1348,8 @@ export const _decode_CertificateListContent_revokedCertificates_Item = function 
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificateListContent_revokedCertificates_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        serialNumber,
+    return new CertificateListContent_revokedCertificates_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
         revocationDate,
         crlEntryExtensions,
         _unrecognizedExtensionsList
@@ -1516,8 +1516,8 @@ export const _decode_CertificateListContent = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificateListContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertificateListContent(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         signature,
         issuer,
         thisUpdate,
@@ -1979,8 +1979,8 @@ export const _decode_TBSCertAVL_entries_Item = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSCertAVL_entries_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-        idType,
+    return new TBSCertAVL_entries_Item(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ idType,
         scope,
         entryExtensions,
         _unrecognizedExtensionsList
@@ -2143,8 +2143,8 @@ export const _decode_TBSCertAVL = function (el: asn1.ASN1Element): TBSCertAVL {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSCertAVL /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new TBSCertAVL(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         serialNumber,
         signature,
         issuer,
@@ -2336,8 +2336,8 @@ export const _decode_SupportedAlgorithm = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupportedAlgorithm /* SEQUENCE_CONSTRUCTOR_CALL */(
-        algorithmIdentifier,
+    return new SupportedAlgorithm(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ algorithmIdentifier,
         intendedUsage,
         intendedCertificatePolicies,
         _unrecognizedExtensionsList
@@ -2541,8 +2541,8 @@ export const _decode_InfoSyntax_pointer = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new InfoSyntax_pointer /* SEQUENCE_CONSTRUCTOR_CALL */(
-        name,
+    return new InfoSyntax_pointer(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ name,
         hash,
         _unrecognizedExtensionsList
     );

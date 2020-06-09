@@ -166,8 +166,8 @@ export const _decode_PrivateKeyUsagePeriod = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PrivateKeyUsagePeriod /* SEQUENCE_CONSTRUCTOR_CALL */(
-        notBefore,
+    return new PrivateKeyUsagePeriod(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ notBefore,
         notAfter,
         _unrecognizedExtensionsList
     );
@@ -268,8 +268,8 @@ export const _decode_PolicyQualifierInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PolicyQualifierInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        policyQualifierId,
+    return new PolicyQualifierInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ policyQualifierId,
         qualifier,
         _unrecognizedExtensionsList
     );
@@ -357,8 +357,8 @@ export const _decode_PolicyInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PolicyInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        policyIdentifier,
+    return new PolicyInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ policyIdentifier,
         policyQualifiers,
         _unrecognizedExtensionsList
     );
@@ -558,8 +558,8 @@ export const _decode_AvlId = function (el: asn1.ASN1Element): AvlId {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AvlId /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuer,
+    return new AvlId(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
         serialNumber,
         _unrecognizedExtensionsList
     );
@@ -662,8 +662,8 @@ export const _decode_BasicConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new BasicConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        cA,
+    return new BasicConstraintsSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ cA,
         pathLenConstraint,
         _unrecognizedExtensionsList
     );
@@ -767,8 +767,8 @@ export const _decode_PolicyConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PolicyConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        requireExplicitPolicy,
+    return new PolicyConstraintsSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ requireExplicitPolicy,
         inhibitPolicyMapping,
         _unrecognizedExtensionsList
     );
@@ -877,8 +877,8 @@ export const _decode_EDIPartyName = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EDIPartyName /* SEQUENCE_CONSTRUCTOR_CALL */(
-        nameAssigner,
+    return new EDIPartyName(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ nameAssigner,
         partyName,
         _unrecognizedExtensionsList
     );
@@ -1094,8 +1094,8 @@ export const _decode_DeltaRefInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeltaRefInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        deltaLocation,
+    return new DeltaRefInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ deltaLocation,
         lastDelta,
         _unrecognizedExtensionsList
     );
@@ -1271,8 +1271,8 @@ export const _decode_NumberRange = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NumberRange /* SEQUENCE_CONSTRUCTOR_CALL */(
-        startingNumber,
+    return new NumberRange(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ startingNumber,
         endingNumber,
         modulus,
         _unrecognizedExtensionsList
@@ -1397,8 +1397,8 @@ export const _decode_BaseRevocationInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new BaseRevocationInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        cRLStreamIdentifier,
+    return new BaseRevocationInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ cRLStreamIdentifier,
         cRLNumber,
         baseThisUpdate,
         _unrecognizedExtensionsList
@@ -1586,8 +1586,8 @@ export const _decode_PerAuthorityScope = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new PerAuthorityScope /* SEQUENCE_CONSTRUCTOR_CALL */(
-        authorityName,
+    return new PerAuthorityScope(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ authorityName,
         distributionPoint,
         onlyContains,
         onlySomeReasons,
@@ -1802,8 +1802,8 @@ export const _decode_CRLReferral = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CRLReferral /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuer,
+    return new CRLReferral(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
         location,
         deltaRefInfo,
         cRLScope,
@@ -1990,8 +1990,8 @@ export const _decode_DeltaInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeltaInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        deltaLocation,
+    return new DeltaInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ deltaLocation,
         nextDelta,
         _unrecognizedExtensionsList
     );
@@ -2099,8 +2099,8 @@ export const _decode_ReasonInfo = function (el: asn1.ASN1Element): ReasonInfo {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ReasonInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        reasonCode,
+    return new ReasonInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ reasonCode,
         holdInstructionCode,
         _unrecognizedExtensionsList
     );
@@ -2363,8 +2363,8 @@ export const _decode_ToBeRevokedGroup = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ToBeRevokedGroup /* SEQUENCE_CONSTRUCTOR_CALL */(
-        certificateIssuer,
+    return new ToBeRevokedGroup(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ certificateIssuer,
         reasonInfo,
         revocationTime,
         certificateGroup,
@@ -2538,8 +2538,8 @@ export const _decode_RevokedGroup = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RevokedGroup /* SEQUENCE_CONSTRUCTOR_CALL */(
-        certificateIssuer,
+    return new RevokedGroup(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ certificateIssuer,
         reasonInfo,
         invalidityDate,
         revokedcertificateGroup,
@@ -2690,8 +2690,8 @@ export const _decode_DistributionPoint = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DistributionPoint /* SEQUENCE_CONSTRUCTOR_CALL */(
-        distributionPoint,
+    return new DistributionPoint(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
         reasons,
         cRLIssuer,
         _unrecognizedExtensionsList
@@ -2867,8 +2867,8 @@ export const _decode_IssuingDistPointSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IssuingDistPointSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        distributionPoint,
+    return new IssuingDistPointSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
         onlyContainsUserPublicKeyCerts,
         onlyContainsCACerts,
         onlySomeReasons,
@@ -3090,8 +3090,8 @@ export const _decode_AAIssuingDistPointSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AAIssuingDistPointSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        distributionPoint,
+    return new AAIssuingDistPointSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
         onlySomeReasons,
         indirectCRL,
         containsUserAttributeCerts,
@@ -3326,8 +3326,8 @@ export const _decode_CertificatePairExactAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificatePairExactAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuedToThisCAAssertion,
+    return new CertificatePairExactAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCAAssertion,
         issuedByThisCAAssertion,
         _unrecognizedExtensionsList
     );
@@ -3450,8 +3450,8 @@ export const _decode_AuthorityKeyIdentifier = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AuthorityKeyIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-        keyIdentifier,
+    return new AuthorityKeyIdentifier(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ keyIdentifier,
         authorityCertIssuer,
         authorityCertSerialNumber,
         _unrecognizedExtensionsList
@@ -3645,8 +3645,8 @@ export const _decode_GeneralSubtree = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new GeneralSubtree /* SEQUENCE_CONSTRUCTOR_CALL */(
-        base,
+    return new GeneralSubtree(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ base,
         minimum,
         maximum,
         _unrecognizedExtensionsList
@@ -3762,8 +3762,8 @@ export const _decode_NameConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        permittedSubtrees,
+    return new NameConstraintsSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ permittedSubtrees,
         excludedSubtrees,
         _unrecognizedExtensionsList
     );
@@ -4012,8 +4012,8 @@ export const _decode_CertificateAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        serialNumber,
+    return new CertificateAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
         issuer,
         subjectKeyIdentifier,
         authorityKeyIdentifier,
@@ -4211,8 +4211,8 @@ export const _decode_CertificatePairAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificatePairAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuedToThisCAAssertion,
+    return new CertificatePairAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCAAssertion,
         issuedByThisCAAssertion,
         _unrecognizedExtensionsList
     );
@@ -4317,8 +4317,8 @@ export const _decode_CertificateListExactAssertion = function (
         _root_component_type_list_2_spec_for_CertificateListExactAssertion,
         undefined
     );
-    return new CertificateListExactAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuer,
+    return new CertificateListExactAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
         thisUpdate,
         distributionPoint
     );
@@ -4470,8 +4470,8 @@ export const _decode_CertificateListAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertificateListAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuer,
+    return new CertificateListAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
         minCRLNumber,
         maxCRLNumber,
         reasonFlags,
@@ -4673,8 +4673,8 @@ export const _decode_AltName = function (el: asn1.ASN1Element): AltName {
         _root_component_type_list_2_spec_for_AltName,
         undefined
     );
-    return new AltName /* SEQUENCE_CONSTRUCTOR_CALL */(
-        altnameType,
+    return new AltName(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ altnameType,
         altNameValue
     );
 };
@@ -4908,8 +4908,8 @@ export const _decode_EnhancedCertificateAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new EnhancedCertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        serialNumber,
+    return new EnhancedCertificateAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
         issuer,
         subjectKeyIdentifier,
         authorityKeyIdentifier,

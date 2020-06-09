@@ -13,12 +13,12 @@ import {
     AttributeUsage,
     ObjectClassKind,
     RuleIdentifier,
-    _decode_RuleIdentifier,
-    _encode_RuleIdentifier,
     _decode_AttributeUsage,
     _decode_ObjectClassKind,
+    _decode_RuleIdentifier,
     _encode_AttributeUsage,
     _encode_ObjectClassKind,
+    _encode_RuleIdentifier,
 } from "./InformationFramework";
 import {
     UnboundedDirectoryString,
@@ -168,8 +168,8 @@ export const _decode_DITStructureRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITStructureRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        ruleIdentifier,
+    return new DITStructureRuleDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ ruleIdentifier,
         nameForm,
         superiorStructureRules,
         name,
@@ -393,8 +393,8 @@ export const _decode_DITContentRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContentRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        structuralObjectClass,
+    return new DITContentRuleDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ structuralObjectClass,
         auxiliaries,
         mandatory,
         optional,
@@ -594,8 +594,8 @@ export const _decode_MatchingRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MatchingRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new MatchingRuleDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -740,7 +740,8 @@ export const _extension_additions_list_spec_for_AttributeTypeInformation: __util
 export const _default_value_for_AttributeTypeInformation__multi_valued = true;
 export const _default_value_for_AttributeTypeInformation__collective = false;
 export const _default_value_for_AttributeTypeInformation__userModifiable = true;
-export const _default_value_for_AttributeTypeInformation__application = InformationFramework.AttributeUsage_userApplications;
+export const _default_value_for_AttributeTypeInformation__application =
+    InformationFramework.AttributeUsage_userApplications;
 export const _decode_AttributeTypeInformation = function (
     el: asn1.ASN1Element
 ): AttributeTypeInformation {
@@ -813,8 +814,8 @@ export const _decode_AttributeTypeInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        derivation,
+    return new AttributeTypeInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ derivation,
         equalityMatch,
         orderingMatch,
         substringsMatch,
@@ -1026,8 +1027,8 @@ export const _decode_AttributeTypeDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new AttributeTypeDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -1127,7 +1128,8 @@ export const _root_component_type_list_1_spec_for_ObjectClassInformation: __util
 ];
 export const _root_component_type_list_2_spec_for_ObjectClassInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ObjectClassInformation: __utils.ComponentSpec[] = [];
-export const _default_value_for_ObjectClassInformation__kind = InformationFramework.structural;
+export const _default_value_for_ObjectClassInformation__kind =
+    InformationFramework.structural;
 export const _decode_ObjectClassInformation = function (
     el: asn1.ASN1Element
 ): ObjectClassInformation {
@@ -1175,8 +1177,8 @@ export const _decode_ObjectClassInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectClassInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        subclassOf,
+    return new ObjectClassInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ subclassOf,
         kind,
         mandatories,
         optionals,
@@ -1334,8 +1336,8 @@ export const _decode_ObjectClassDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectClassDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new ObjectClassDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -1464,8 +1466,8 @@ export const _decode_NameFormInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameFormInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        subordinate,
+    return new NameFormInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ subordinate,
         namingMandatories,
         namingOptionals,
         _unrecognizedExtensionsList
@@ -1601,8 +1603,8 @@ export const _decode_NameFormDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new NameFormDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new NameFormDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -1758,8 +1760,8 @@ export const _decode_MatchingRuleUseDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new MatchingRuleUseDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new MatchingRuleUseDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -1880,8 +1882,8 @@ export const _decode_ContextInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContextInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        syntax,
+    return new ContextInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ syntax,
         assertionSyntax,
         _unrecognizedExtensionsList
     );
@@ -2010,8 +2012,8 @@ export const _decode_ContextDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ContextDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new ContextDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -2136,8 +2138,8 @@ export const _decode_DITContextUseInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContextUseInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-        mandatoryContexts,
+    return new DITContextUseInformation(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ mandatoryContexts,
         optionalContexts,
         _unrecognizedExtensionsList
     );
@@ -2280,8 +2282,8 @@ export const _decode_DITContextUseDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContextUseDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new DITContextUseDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         name,
         description,
         obsolete,
@@ -2436,8 +2438,8 @@ export const _decode_FriendsDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new FriendsDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        anchor,
+    return new FriendsDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ anchor,
         name,
         description,
         obsolete,

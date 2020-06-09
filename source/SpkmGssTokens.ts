@@ -231,8 +231,8 @@ export const _decode_Context_Data = function (
         _root_component_type_list_2_spec_for_Context_Data,
         undefined
     );
-    return new Context_Data /* SEQUENCE_CONSTRUCTOR_CALL */(
-        channelId,
+    return new Context_Data(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ channelId,
         seq_number,
         options,
         conf_alg,
@@ -445,8 +445,8 @@ export const _decode_Req_contents = function (
         _root_component_type_list_2_spec_for_Req_contents,
         undefined
     );
-    return new Req_contents /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new Req_contents(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         pvno,
         timestamp,
@@ -713,8 +713,8 @@ export const _decode_CertificationPath = function (
         _root_component_type_list_2_spec_for_CertificationPath,
         undefined
     );
-    return new CertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
-        userKeyId,
+    return new CertificationPath(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ userKeyId,
         userCertif,
         verifKeyId,
         userVerifCertif,
@@ -834,8 +834,8 @@ export const _decode_CertificationData = function (
         _root_component_type_list_2_spec_for_CertificationData,
         undefined
     );
-    return new CertificationData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        certificationPath,
+    return new CertificationData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ certificationPath,
         certificateRevocationList
     );
 };
@@ -1011,8 +1011,8 @@ export const _decode_SPKM_REQ = function (el: asn1.ASN1Element): SPKM_REQ {
         _root_component_type_list_2_spec_for_SPKM_REQ,
         undefined
     );
-    return new SPKM_REQ /* SEQUENCE_CONSTRUCTOR_CALL */(
-        requestToken,
+    return new SPKM_REQ(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ requestToken,
         certif_data,
         auth_data
     );
@@ -1226,8 +1226,8 @@ export const _decode_Rep_ti_contents = function (
         _root_component_type_list_2_spec_for_Rep_ti_contents,
         undefined
     );
-    return new Rep_ti_contents /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new Rep_ti_contents(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         pvno,
         timestamp,
@@ -1447,8 +1447,8 @@ export const _decode_SPKM_REP_TI = function (
         _root_component_type_list_2_spec_for_SPKM_REP_TI,
         undefined
     );
-    return new SPKM_REP_TI /* SEQUENCE_CONSTRUCTOR_CALL */(
-        responseToken,
+    return new SPKM_REP_TI(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ responseToken,
         certif_data
     );
 };
@@ -1584,8 +1584,8 @@ export const _decode_REP_IT_TOKEN = function (
         _root_component_type_list_2_spec_for_REP_IT_TOKEN,
         undefined
     );
-    return new REP_IT_TOKEN /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new REP_IT_TOKEN(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         randSrc,
         randTarg,
@@ -2002,8 +2002,8 @@ export const _decode_Mic_Header = function (el: asn1.ASN1Element): Mic_Header {
         _root_component_type_list_2_spec_for_Mic_Header,
         undefined
     );
-    return new Mic_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new Mic_Header(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         int_alg,
         snd_seq
@@ -2238,8 +2238,8 @@ export const _decode_Wrap_Header = function (
         _root_component_type_list_2_spec_for_Wrap_Header,
         undefined
     );
-    return new Wrap_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new Wrap_Header(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         int_alg,
         conf_alg,
@@ -2503,8 +2503,8 @@ export const _decode_Del_Header = function (el: asn1.ASN1Element): Del_Header {
         _root_component_type_list_2_spec_for_Del_Header,
         undefined
     );
-    return new Del_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-        tok_id,
+    return new Del_Header(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
         context_id,
         int_alg,
         snd_seq

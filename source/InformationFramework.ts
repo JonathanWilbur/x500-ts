@@ -165,8 +165,8 @@ export const _decode_Context = function (el: asn1.ASN1Element): Context {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Context /* SEQUENCE_CONSTRUCTOR_CALL */(
-        contextType,
+    return new Context(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ contextType,
         contextValues,
         fallback,
         _unrecognizedExtensionsList
@@ -358,8 +358,8 @@ export const _decode_Attribute = function (el: asn1.ASN1Element): Attribute {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new Attribute /* SEQUENCE_CONSTRUCTOR_CALL */(
-        type_,
+    return new Attribute(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
         values,
         valuesWithContext,
         _unrecognizedExtensionsList
@@ -599,8 +599,8 @@ export const _decode_AttributeValueAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeValueAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        type_,
+    return new AttributeValueAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
         assertion,
         assertedContexts,
         _unrecognizedExtensionsList
@@ -696,8 +696,8 @@ export const _decode_AttributeTypeAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeTypeAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        type_,
+    return new AttributeTypeAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
         assertedContexts,
         _unrecognizedExtensionsList
     );
@@ -966,8 +966,8 @@ export const _decode_ChopSpecification = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ChopSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-        specificExclusions,
+    return new ChopSpecification(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ specificExclusions,
         minimum,
         maximum,
         _unrecognizedExtensionsList
@@ -1208,8 +1208,8 @@ export const _decode_SubtreeSpecification = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SubtreeSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-        base,
+    return new SubtreeSpecification(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ base,
         specificExclusions,
         minimum,
         maximum,
@@ -1404,8 +1404,8 @@ export const _decode_DITStructureRule = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITStructureRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-        ruleIdentifier,
+    return new DITStructureRule(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ ruleIdentifier,
         nameForm,
         superiorStructureRules,
         _unrecognizedExtensionsList
@@ -1553,8 +1553,8 @@ export const _decode_DITContentRule = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContentRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-        structuralObjectClass,
+    return new DITContentRule(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ structuralObjectClass,
         auxiliaries,
         mandatory,
         optional,
@@ -1708,8 +1708,8 @@ export const _decode_DITContextUse = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DITContextUse /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attributeType,
+    return new DITContextUse(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attributeType,
         mandatoryContexts,
         optionalContexts,
         _unrecognizedExtensionsList
@@ -2152,8 +2152,8 @@ export const _decode_SearchRuleDescription = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SearchRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-        id,
+    return new SearchRuleDescription(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ id,
         dmdId,
         serviceType,
         userClass,
