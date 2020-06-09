@@ -15,49 +15,6 @@ import {
 } from "./OSIProtocolSpecification";
 import { id_ac, id_as } from "./UsefulDefinitions";
 import { joint_iso_itu_t } from "./__utils";
-export { OPERATION } from "./CommonProtocolSpecification";
-export {
-    abandon,
-    addEntry,
-    administerPassword,
-    changePassword,
-    compare,
-    directoryBind,
-    list,
-    modifyDN,
-    modifyEntry,
-    read,
-    removeEntry,
-    search,
-} from "./DirectoryAbstractService";
-export {
-    coordinateShadowUpdate,
-    dSAShadowBind,
-    requestShadowUpdate,
-    updateShadow,
-} from "./DirectoryShadowAbstractService";
-export {
-    chainedAbandon,
-    chainedAddEntry,
-    chainedAdministerPassword,
-    chainedChangePassword,
-    chainedCompare,
-    chainedLdapTransport,
-    chainedLinkedLDAP,
-    chainedList,
-    chainedModifyDN,
-    chainedModifyEntry,
-    chainedRead,
-    chainedRemoveEntry,
-    chainedSearch,
-    dSABind,
-} from "./DistributedOperations";
-export {
-    dSAOperationalBindingManagementBind,
-    establishOperationalBinding,
-    modifyOperationalBinding,
-    terminateOperationalBinding,
-} from "./OperationalBindingManagement";
 export {
     OSI_PDU,
     _decode_OSI_PDU,

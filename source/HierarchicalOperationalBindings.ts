@@ -29,7 +29,6 @@ export {
     id_op_binding_hierarchical,
     id_op_binding_non_specific_hierarchical,
 } from "./DirectoryOperationalBindingTypes";
-export { directorySystemAC } from "./DirectoryOSIProtocols";
 export {
     MasterAndShadowAccessPoints,
     _decode_MasterAndShadowAccessPoints,
@@ -39,7 +38,6 @@ export {
     Attribute,
     DistinguishedName,
     RelativeDistinguishedName,
-    SupportedAttributes,
     _decode_Attribute,
     _decode_DistinguishedName,
     _decode_RelativeDistinguishedName,
@@ -47,7 +45,6 @@ export {
     _encode_DistinguishedName,
     _encode_RelativeDistinguishedName,
 } from "./InformationFramework";
-export { OPERATIONAL_BINDING } from "./OperationalBindingManagement";
 export {
     directoryOperationalBindingTypes,
     directoryOSIProtocols,
@@ -81,6 +78,7 @@ export const _root_component_type_list_1_spec_for_HierarchicalAgreement: __utils
 ];
 export const _root_component_type_list_2_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [];
+
 export const _decode_HierarchicalAgreement = function (
     el: asn1.ASN1Element
 ): HierarchicalAgreement {
@@ -114,13 +112,13 @@ export const _encode_HierarchicalAgreement = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_RelativeDistinguishedName,
                         __utils.BER
                     )(value.rdn, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_DistinguishedName,
@@ -163,6 +161,7 @@ export const _root_component_type_list_1_spec_for_SubentryInfo: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_SubentryInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SubentryInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_SubentryInfo = function (
     el: asn1.ASN1Element
 ): SubentryInfo {
@@ -196,13 +195,13 @@ export const _encode_SubentryInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_RelativeDistinguishedName,
                         __utils.BER
                     )(value.rdn, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () =>
@@ -265,12 +264,13 @@ export const _root_component_type_list_1_spec_for_SubordinateToSuperior: __utils
 ];
 export const _root_component_type_list_2_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [];
+export const _default_value_for_SubordinateToSuperior__alias = false;
 export const _decode_SubordinateToSuperior = function (
     el: asn1.ASN1Element
 ): SubordinateToSuperior {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let accessPoints: asn1.OPTIONAL<MasterAndShadowAccessPoints>;
-    let alias: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let alias: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_SubordinateToSuperior__alias;
     let entryInfo: asn1.OPTIONAL<Attribute[]>;
     let subentries: asn1.OPTIONAL<SubentryInfo[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -325,25 +325,29 @@ export const _encode_SubordinateToSuperior = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.accessPoints
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.accessPoints === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_MasterAndShadowAccessPoints,
                               __utils.BER
-                          )(value.accessPoints, __utils.BER)
-                        : undefined,
-                    value.alias !== undefined &&
-                    value.alias !== false /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.accessPoints, __utils.BER),
+                    /* IF_DEFAULT */ value.alias === undefined ||
+                    __utils.deepEq(
+                        value.alias,
+                        _default_value_for_SubordinateToSuperior__alias
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.alias, __utils.BER)
-                        : undefined,
-                    value.entryInfo
-                        ? __utils._encode_explicit(
+                          )(value.alias, __utils.BER),
+                    /* IF_ABSENT  */ value.entryInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -352,10 +356,10 @@ export const _encode_SubordinateToSuperior = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.entryInfo, __utils.BER)
-                        : undefined,
-                    value.subentries
-                        ? __utils._encode_explicit(
+                          )(value.entryInfo, __utils.BER),
+                    /* IF_ABSENT  */ value.subentries === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -364,8 +368,7 @@ export const _encode_SubordinateToSuperior = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.subentries, __utils.BER)
-                        : undefined,
+                          )(value.subentries, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -419,6 +422,7 @@ export const _root_component_type_list_1_spec_for_Vertex: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_Vertex: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Vertex: __utils.ComponentSpec[] = [];
+
 export const _decode_Vertex = function (el: asn1.ASN1Element): Vertex {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let rdn!: RelativeDistinguishedName;
@@ -477,14 +481,15 @@ export const _encode_Vertex = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_RelativeDistinguishedName,
                         __utils.BER
                     )(value.rdn, __utils.BER),
-                    value.admPointInfo
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.admPointInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -493,10 +498,10 @@ export const _encode_Vertex = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.admPointInfo, __utils.BER)
-                        : undefined,
-                    value.subentries
-                        ? __utils._encode_explicit(
+                          )(value.admPointInfo, __utils.BER),
+                    /* IF_ABSENT  */ value.subentries === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -505,16 +510,15 @@ export const _encode_Vertex = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.subentries, __utils.BER)
-                        : undefined,
-                    value.accessPoints
-                        ? __utils._encode_explicit(
+                          )(value.subentries, __utils.BER),
+                    /* IF_ABSENT  */ value.accessPoints === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () => _encode_MasterAndShadowAccessPoints,
                               __utils.BER
-                          )(value.accessPoints, __utils.BER)
-                        : undefined,
+                          )(value.accessPoints, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -569,6 +573,7 @@ export const _root_component_type_list_1_spec_for_SuperiorToSubordinate: __utils
 ];
 export const _root_component_type_list_2_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [];
+
 export const _decode_SuperiorToSubordinate = function (
     el: asn1.ASN1Element
 ): SuperiorToSubordinate {
@@ -622,14 +627,15 @@ export const _encode_SuperiorToSubordinate = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_DITcontext,
                         __utils.BER
                     )(value.contextPrefixInfo, __utils.BER),
-                    value.entryInfo
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.entryInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -638,10 +644,10 @@ export const _encode_SuperiorToSubordinate = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.entryInfo, __utils.BER)
-                        : undefined,
-                    value.immediateSuperiorInfo
-                        ? __utils._encode_explicit(
+                          )(value.entryInfo, __utils.BER),
+                    /* IF_ABSENT  */ value.immediateSuperiorInfo === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -650,8 +656,7 @@ export const _encode_SuperiorToSubordinate = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.immediateSuperiorInfo, __utils.BER)
-                        : undefined,
+                          )(value.immediateSuperiorInfo, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -685,6 +690,7 @@ export const _root_component_type_list_1_spec_for_NonSpecificHierarchicalAgreeme
 ];
 export const _root_component_type_list_2_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [];
+
 export const _decode_NonSpecificHierarchicalAgreement = function (
     el: asn1.ASN1Element
 ): NonSpecificHierarchicalAgreement {
@@ -716,7 +722,7 @@ export const _encode_NonSpecificHierarchicalAgreement = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_DistinguishedName,
@@ -763,6 +769,7 @@ export const _root_component_type_list_1_spec_for_NHOBSubordinateToSuperior: __u
 ];
 export const _root_component_type_list_2_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [];
+
 export const _decode_NHOBSubordinateToSuperior = function (
     el: asn1.ASN1Element
 ): NHOBSubordinateToSuperior {
@@ -809,16 +816,17 @@ export const _encode_NHOBSubordinateToSuperior = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.accessPoints
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.accessPoints === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_MasterAndShadowAccessPoints,
                               __utils.BER
-                          )(value.accessPoints, __utils.BER)
-                        : undefined,
-                    value.subentries
-                        ? __utils._encode_explicit(
+                          )(value.accessPoints, __utils.BER),
+                    /* IF_ABSENT  */ value.subentries === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -827,8 +835,7 @@ export const _encode_NHOBSubordinateToSuperior = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.subentries, __utils.BER)
-                        : undefined,
+                          )(value.subentries, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

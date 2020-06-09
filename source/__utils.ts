@@ -140,6 +140,29 @@ export function tagClassName(tagClass: ASN1TagClass): string {
     }
 }
 
+export function deepEq(value1: any, value2: any): boolean {
+    if (value1 === value2) {
+        return true;
+    }
+    return JSON.stringify(value1) === JSON.stringify(value2);
+}
+
+export function isDefault(defaultValue: any): (actualValue: any) => boolean {
+    return function (actualValue: any): boolean {
+        return deepEq(defaultValue, actualValue);
+    };
+}
+
+/**
+ * Kept for the sake of documentation: this cannot be used to determine
+ * component presence, because typescript cannot recurse into this for the sake
+ * of type-checking. TypeScript cannot tell that, if this function returns true,
+ * the value should not be undefined.
+ */
+export function present(value: any): boolean {
+    return value !== undefined;
+}
+
 // TAGGING CODECS
 
 /**

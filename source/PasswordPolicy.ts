@@ -16,34 +16,10 @@ import {
 import { id_asx, id_at, id_mr, id_oa } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
 export {
-    ALGORITHM,
     AlgorithmIdentifier,
-    EXTENSION,
-    SupportedAlgorithms,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
 } from "./AuthenticationFramework";
-export {
-    ATTRIBUTE,
-    MATCHING_RULE,
-    pwdHistory,
-    pwdHistoryMatch,
-    pwdRecentlyExpired,
-    SYNTAX_NAME,
-} from "./InformationFramework";
-export {
-    bitStringMatch,
-    booleanMatch,
-    boolean_,
-    directoryString,
-    generalizedTime,
-    generalizedTimeMatch,
-    generalizedTimeOrderingMatch,
-    integer,
-    integerMatch,
-    integerOrderingMatch,
-    uri,
-} from "./SelectedAttributeTypes";
 export {
     authenticationFramework,
     id_asx,
@@ -79,6 +55,7 @@ export const _root_component_type_list_1_spec_for_UserPwd_encrypted: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_UserPwd_encrypted: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserPwd_encrypted: __utils.ComponentSpec[] = [];
+
 export const _decode_UserPwd_encrypted = function (
     el: asn1.ASN1Element
 ): UserPwd_encrypted {
@@ -112,11 +89,11 @@ export const _encode_UserPwd_encrypted = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AlgorithmIdentifier(
+                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
                         value.algorithmIdentifier,
                         __utils.BER
                     ),
-                    __utils._encodeOctetString(
+                    /* REQUIRED   */ __utils._encodeOctetString(
                         value.encryptedString,
                         __utils.BER
                     ),

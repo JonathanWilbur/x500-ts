@@ -189,6 +189,7 @@ export const _root_component_type_list_1_spec_for_Context_Data: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_Context_Data: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Context_Data: __utils.ComponentSpec[] = [];
+
 export const _decode_Context_Data = function (
     el: asn1.ASN1Element
 ): Context_Data {
@@ -246,16 +247,16 @@ export const _encode_Context_Data = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.channelId
-                    ? _encode_ChannelId(value.channelId, __utils.BER)
-                    : undefined,
-                value.seq_number
-                    ? __utils._encodeInteger(value.seq_number, __utils.BER)
-                    : undefined,
-                _encode_Options(value.options, __utils.BER),
-                _encode_Conf_Algs(value.conf_alg, __utils.BER),
-                _encode_Intg_Algs(value.intg_alg, __utils.BER),
-                _encode_OWF_Algs(value.owf_alg, __utils.BER),
+                /* IF_ABSENT  */ value.channelId === undefined
+                    ? undefined
+                    : _encode_ChannelId(value.channelId, __utils.BER),
+                /* IF_ABSENT  */ value.seq_number === undefined
+                    ? undefined
+                    : __utils._encodeInteger(value.seq_number, __utils.BER),
+                /* REQUIRED   */ _encode_Options(value.options, __utils.BER),
+                /* REQUIRED   */ _encode_Conf_Algs(value.conf_alg, __utils.BER),
+                /* REQUIRED   */ _encode_Intg_Algs(value.intg_alg, __utils.BER),
+                /* REQUIRED   */ _encode_OWF_Algs(value.owf_alg, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -376,6 +377,7 @@ export const _root_component_type_list_1_spec_for_Req_contents: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_Req_contents: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Req_contents: __utils.ComponentSpec[] = [];
+
 export const _decode_Req_contents = function (
     el: asn1.ASN1Element
 ): Req_contents {
@@ -465,41 +467,59 @@ export const _encode_Req_contents = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                __utils._encodeBitString(value.pvno, __utils.BER),
-                value.timestamp
-                    ? __utils._encodeUTCTime(value.timestamp, __utils.BER)
-                    : undefined,
-                _encode_Random_Integer(value.randSrc, __utils.BER),
-                _encode_Name(value.targ_name, __utils.BER),
-                value.src_name
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeBitString(
+                    value.pvno,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.timestamp === undefined
+                    ? undefined
+                    : __utils._encodeUTCTime(value.timestamp, __utils.BER),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.randSrc,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Name(value.targ_name, __utils.BER),
+                /* IF_ABSENT  */ value.src_name === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_Name,
                           __utils.BER
-                      )(value.src_name, __utils.BER)
-                    : undefined,
-                _encode_Context_Data(value.req_data, __utils.BER),
-                value.validity
-                    ? __utils._encode_implicit(
+                      )(value.src_name, __utils.BER),
+                /* REQUIRED   */ _encode_Context_Data(
+                    value.req_data,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.validity === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_Validity,
                           __utils.BER
-                      )(value.validity, __utils.BER)
-                    : undefined,
-                _encode_Key_Estb_Algs(value.key_estb_set, __utils.BER),
-                value.key_estb_req
-                    ? __utils._encodeBitString(value.key_estb_req, __utils.BER)
-                    : undefined,
-                value.key_src_bind
-                    ? __utils._encodeOctetString(
+                      )(value.validity, __utils.BER),
+                /* REQUIRED   */ _encode_Key_Estb_Algs(
+                    value.key_estb_set,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.key_estb_req === undefined
+                    ? undefined
+                    : __utils._encodeBitString(value.key_estb_req, __utils.BER),
+                /* IF_ABSENT  */ value.key_src_bind === undefined
+                    ? undefined
+                    : __utils._encodeOctetString(
                           value.key_src_bind,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -544,6 +564,7 @@ export const _root_component_type_list_1_spec_for_REQ_TOKEN: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [];
+
 export const _decode_REQ_TOKEN = function (el: asn1.ASN1Element): REQ_TOKEN {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -573,9 +594,18 @@ export const _encode_REQ_TOKEN = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_Req_contents(value.req_contents, __utils.BER),
-                _encode_AlgorithmIdentifier(value.algId, __utils.BER),
-                _encode_Integrity(value.req_integrity, __utils.BER),
+                /* REQUIRED   */ _encode_Req_contents(
+                    value.req_contents,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                    value.algId,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Integrity(
+                    value.req_integrity,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -632,6 +662,7 @@ export const _root_component_type_list_1_spec_for_CertificationPath: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertificationPath: __utils.ComponentSpec[] = [];
+
 export const _decode_CertificationPath = function (
     el: asn1.ASN1Element
 ): CertificationPath {
@@ -697,40 +728,41 @@ export const _encode_CertificationPath = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.userKeyId
-                    ? __utils._encode_implicit(
+                /* IF_ABSENT  */ value.userKeyId === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => __utils._encodeOctetString,
                           __utils.BER
-                      )(value.userKeyId, __utils.BER)
-                    : undefined,
-                value.userCertif
-                    ? __utils._encode_implicit(
+                      )(value.userKeyId, __utils.BER),
+                /* IF_ABSENT  */ value.userCertif === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_Certificate,
                           __utils.BER
-                      )(value.userCertif, __utils.BER)
-                    : undefined,
-                value.verifKeyId
-                    ? __utils._encode_implicit(
+                      )(value.userCertif, __utils.BER),
+                /* IF_ABSENT  */ value.verifKeyId === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => __utils._encodeOctetString,
                           __utils.BER
-                      )(value.verifKeyId, __utils.BER)
-                    : undefined,
-                value.userVerifCertif
-                    ? __utils._encode_implicit(
+                      )(value.verifKeyId, __utils.BER),
+                /* IF_ABSENT  */ value.userVerifCertif === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           3,
                           () => _encode_Certificate,
                           __utils.BER
-                      )(value.userVerifCertif, __utils.BER)
-                    : undefined,
-                value.theCACertificates
-                    ? __utils._encode_implicit(
+                      )(value.userVerifCertif, __utils.BER),
+                /* IF_ABSENT  */ value.theCACertificates === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           4,
                           () =>
@@ -739,8 +771,7 @@ export const _encode_CertificationPath = function (
                                   __utils.BER
                               ),
                           __utils.BER
-                      )(value.theCACertificates, __utils.BER)
-                    : undefined,
+                      )(value.theCACertificates, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -773,6 +804,7 @@ export const _root_component_type_list_1_spec_for_CertificationData: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_CertificationData: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertificationData: __utils.ComponentSpec[] = [];
+
 export const _decode_CertificationData = function (
     el: asn1.ASN1Element
 ): CertificationData {
@@ -814,22 +846,22 @@ export const _encode_CertificationData = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.certificationPath
-                    ? __utils._encode_implicit(
+                /* IF_ABSENT  */ value.certificationPath === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_CertificationPath,
                           __utils.BER
-                      )(value.certificationPath, __utils.BER)
-                    : undefined,
-                value.certificateRevocationList
-                    ? __utils._encode_implicit(
+                      )(value.certificationPath, __utils.BER),
+                /* IF_ABSENT  */ value.certificateRevocationList === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_CertificateList,
                           __utils.BER
-                      )(value.certificateRevocationList, __utils.BER)
-                    : undefined,
+                      )(value.certificateRevocationList, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -862,6 +894,7 @@ export const _root_component_type_list_1_spec_for_AuthorizationData_Item: __util
 ];
 export const _root_component_type_list_2_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_AuthorizationData_Item = function (
     el: asn1.ASN1Element
 ): AuthorizationData_Item {
@@ -890,8 +923,14 @@ export const _encode_AuthorizationData_Item = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.ad_type, __utils.BER),
-                __utils._encodeOctetString(value.ad_data, __utils.BER),
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.ad_type,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeOctetString(
+                    value.ad_data,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -940,6 +979,7 @@ export const _root_component_type_list_1_spec_for_SPKM_REQ: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_REQ = function (el: asn1.ASN1Element): SPKM_REQ {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let requestToken!: REQ_TOKEN;
@@ -984,23 +1024,26 @@ export const _encode_SPKM_REQ = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_REQ_TOKEN(value.requestToken, __utils.BER),
-                value.certif_data
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ _encode_REQ_TOKEN(
+                    value.requestToken,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.certif_data === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_CertificationData,
                           __utils.BER
-                      )(value.certif_data, __utils.BER)
-                    : undefined,
-                value.auth_data
-                    ? __utils._encode_implicit(
+                      )(value.certif_data, __utils.BER),
+                /* IF_ABSENT  */ value.auth_data === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_AuthorizationData,
                           __utils.BER
-                      )(value.auth_data, __utils.BER)
-                    : undefined,
+                      )(value.auth_data, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1113,6 +1156,7 @@ export const _root_component_type_list_1_spec_for_Rep_ti_contents: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [];
+
 export const _decode_Rep_ti_contents = function (
     el: asn1.ASN1Element
 ): Rep_ti_contents {
@@ -1204,48 +1248,63 @@ export const _encode_Rep_ti_contents = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                value.pvno
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.pvno === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => __utils._encodeBitString,
                           __utils.BER
-                      )(value.pvno, __utils.BER)
-                    : undefined,
-                value.timestamp
-                    ? __utils._encodeUTCTime(value.timestamp, __utils.BER)
-                    : undefined,
-                _encode_Random_Integer(value.randTarg, __utils.BER),
-                value.src_name
-                    ? __utils._encode_implicit(
+                      )(value.pvno, __utils.BER),
+                /* IF_ABSENT  */ value.timestamp === undefined
+                    ? undefined
+                    : __utils._encodeUTCTime(value.timestamp, __utils.BER),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.randTarg,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.src_name === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_Name,
                           __utils.BER
-                      )(value.src_name, __utils.BER)
-                    : undefined,
-                _encode_Name(value.targ_name, __utils.BER),
-                _encode_Random_Integer(value.randSrc, __utils.BER),
-                _encode_Context_Data(value.rep_data, __utils.BER),
-                value.validity
-                    ? __utils._encode_implicit(
+                      )(value.src_name, __utils.BER),
+                /* REQUIRED   */ _encode_Name(value.targ_name, __utils.BER),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.randSrc,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Context_Data(
+                    value.rep_data,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.validity === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => _encode_Validity,
                           __utils.BER
-                      )(value.validity, __utils.BER)
-                    : undefined,
-                value.key_estb_id
-                    ? _encode_AlgorithmIdentifier(
+                      )(value.validity, __utils.BER),
+                /* IF_ABSENT  */ value.key_estb_id === undefined
+                    ? undefined
+                    : _encode_AlgorithmIdentifier(
                           value.key_estb_id,
                           __utils.BER
-                      )
-                    : undefined,
-                value.key_estb_str
-                    ? __utils._encodeBitString(value.key_estb_str, __utils.BER)
-                    : undefined,
+                      ),
+                /* IF_ABSENT  */ value.key_estb_str === undefined
+                    ? undefined
+                    : __utils._encodeBitString(value.key_estb_str, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1286,6 +1345,7 @@ export const _root_component_type_list_1_spec_for_REP_TI_TOKEN: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [];
+
 export const _decode_REP_TI_TOKEN = function (
     el: asn1.ASN1Element
 ): REP_TI_TOKEN {
@@ -1317,9 +1377,18 @@ export const _encode_REP_TI_TOKEN = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_Rep_ti_contents(value.rep_ti_contents, __utils.BER),
-                _encode_AlgorithmIdentifier(value.algId, __utils.BER),
-                _encode_Integrity(value.rep_ti_integ, __utils.BER),
+                /* REQUIRED   */ _encode_Rep_ti_contents(
+                    value.rep_ti_contents,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                    value.algId,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Integrity(
+                    value.rep_ti_integ,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1352,6 +1421,7 @@ export const _root_component_type_list_1_spec_for_SPKM_REP_TI: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_REP_TI = function (
     el: asn1.ASN1Element
 ): SPKM_REP_TI {
@@ -1389,10 +1459,13 @@ export const _encode_SPKM_REP_TI = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_REP_TI_TOKEN(value.responseToken, __utils.BER),
-                value.certif_data
-                    ? _encode_CertificationData(value.certif_data, __utils.BER)
-                    : undefined,
+                /* REQUIRED   */ _encode_REP_TI_TOKEN(
+                    value.responseToken,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.certif_data === undefined
+                    ? undefined
+                    : _encode_CertificationData(value.certif_data, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1465,6 +1538,7 @@ export const _root_component_type_list_1_spec_for_REP_IT_TOKEN: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [];
+
 export const _decode_REP_IT_TOKEN = function (
     el: asn1.ASN1Element
 ): REP_IT_TOKEN {
@@ -1527,17 +1601,29 @@ export const _encode_REP_IT_TOKEN = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                _encode_Random_Integer(value.randSrc, __utils.BER),
-                _encode_Random_Integer(value.randTarg, __utils.BER),
-                _encode_Name(value.targ_name, __utils.BER),
-                value.src_name
-                    ? _encode_Name(value.src_name, __utils.BER)
-                    : undefined,
-                value.key_estb_rep
-                    ? __utils._encodeBitString(value.key_estb_rep, __utils.BER)
-                    : undefined,
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.randSrc,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.randTarg,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Name(value.targ_name, __utils.BER),
+                /* IF_ABSENT  */ value.src_name === undefined
+                    ? undefined
+                    : _encode_Name(value.src_name, __utils.BER),
+                /* IF_ABSENT  */ value.key_estb_rep === undefined
+                    ? undefined
+                    : __utils._encodeBitString(value.key_estb_rep, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1578,6 +1664,7 @@ export const _root_component_type_list_1_spec_for_SPKM_REP_IT: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_REP_IT = function (
     el: asn1.ASN1Element
 ): SPKM_REP_IT {
@@ -1609,9 +1696,18 @@ export const _encode_SPKM_REP_IT = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_REP_IT_TOKEN(value.responseToken, __utils.BER),
-                _encode_AlgorithmIdentifier(value.algId, __utils.BER),
-                _encode_Integrity(value.rep_it_integ, __utils.BER),
+                /* REQUIRED   */ _encode_REP_IT_TOKEN(
+                    value.responseToken,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                    value.algId,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Integrity(
+                    value.rep_it_integ,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1644,6 +1740,7 @@ export const _root_component_type_list_1_spec_for_ERROR_TOKEN: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [];
+
 export const _decode_ERROR_TOKEN = function (
     el: asn1.ASN1Element
 ): ERROR_TOKEN {
@@ -1672,8 +1769,14 @@ export const _encode_ERROR_TOKEN = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1714,6 +1817,7 @@ export const _root_component_type_list_1_spec_for_SPKM_ERROR: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_ERROR = function (el: asn1.ASN1Element): SPKM_ERROR {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -1743,9 +1847,18 @@ export const _encode_SPKM_ERROR = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_ERROR_TOKEN(value.errorToken, __utils.BER),
-                _encode_AlgorithmIdentifier(value.algId, __utils.BER),
-                _encode_Integrity(value.integrity, __utils.BER),
+                /* REQUIRED   */ _encode_ERROR_TOKEN(
+                    value.errorToken,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                    value.algId,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Integrity(
+                    value.integrity,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1775,6 +1888,7 @@ export const _root_component_type_list_1_spec_for_SeqNum: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_SeqNum: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SeqNum: __utils.ComponentSpec[] = [];
+
 export const _decode_SeqNum = function (el: asn1.ASN1Element): SeqNum {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -1799,8 +1913,11 @@ export const _encode_SeqNum = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.num, __utils.BER),
-                __utils._encodeBoolean(value.dir_ind, __utils.BER),
+                /* REQUIRED   */ __utils._encodeInteger(value.num, __utils.BER),
+                /* REQUIRED   */ __utils._encodeBoolean(
+                    value.dir_ind,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1849,6 +1966,7 @@ export const _root_component_type_list_1_spec_for_Mic_Header: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_Mic_Header: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Mic_Header: __utils.ComponentSpec[] = [];
+
 export const _decode_Mic_Header = function (el: asn1.ASN1Element): Mic_Header {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let tok_id!: asn1.INTEGER;
@@ -1898,24 +2016,30 @@ export const _encode_Mic_Header = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                value.int_alg
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.int_alg === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_AlgorithmIdentifier,
                           __utils.BER
-                      )(value.int_alg, __utils.BER)
-                    : undefined,
-                value.snd_seq
-                    ? __utils._encode_implicit(
+                      )(value.int_alg, __utils.BER),
+                /* IF_ABSENT  */ value.snd_seq === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_SeqNum,
                           __utils.BER
-                      )(value.snd_seq, __utils.BER)
-                    : undefined,
+                      )(value.snd_seq, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1948,6 +2072,7 @@ export const _root_component_type_list_1_spec_for_SPKM_MIC: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_MIC = function (el: asn1.ASN1Element): SPKM_MIC {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -1974,8 +2099,14 @@ export const _encode_SPKM_MIC = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_Mic_Header(value.mic_header, __utils.BER),
-                __utils._encodeBitString(value.int_cksum, __utils.BER),
+                /* REQUIRED   */ _encode_Mic_Header(
+                    value.mic_header,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeBitString(
+                    value.int_cksum,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2063,6 +2194,7 @@ export const _root_component_type_list_1_spec_for_Wrap_Header: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_Wrap_Header: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Wrap_Header: __utils.ComponentSpec[] = [];
+
 export const _decode_Wrap_Header = function (
     el: asn1.ASN1Element
 ): Wrap_Header {
@@ -2121,32 +2253,38 @@ export const _encode_Wrap_Header = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                value.int_alg
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.int_alg === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_AlgorithmIdentifier,
                           __utils.BER
-                      )(value.int_alg, __utils.BER)
-                    : undefined,
-                value.conf_alg
-                    ? __utils._encode_implicit(
+                      )(value.int_alg, __utils.BER),
+                /* IF_ABSENT  */ value.conf_alg === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_Conf_Alg,
                           __utils.BER
-                      )(value.conf_alg, __utils.BER)
-                    : undefined,
-                value.snd_seq
-                    ? __utils._encode_implicit(
+                      )(value.conf_alg, __utils.BER),
+                /* IF_ABSENT  */ value.snd_seq === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => _encode_SeqNum,
                           __utils.BER
-                      )(value.snd_seq, __utils.BER)
-                    : undefined,
+                      )(value.snd_seq, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2179,6 +2317,7 @@ export const _root_component_type_list_1_spec_for_Wrap_Body: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_Wrap_Body: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Wrap_Body: __utils.ComponentSpec[] = [];
+
 export const _decode_Wrap_Body = function (el: asn1.ASN1Element): Wrap_Body {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -2205,8 +2344,14 @@ export const _encode_Wrap_Body = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeBitString(value.int_cksum, __utils.BER),
-                __utils._encodeBitString(value.data, __utils.BER),
+                /* REQUIRED   */ __utils._encodeBitString(
+                    value.int_cksum,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeBitString(
+                    value.data,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2239,6 +2384,7 @@ export const _root_component_type_list_1_spec_for_SPKM_WRAP: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_WRAP = function (el: asn1.ASN1Element): SPKM_WRAP {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -2265,8 +2411,14 @@ export const _encode_SPKM_WRAP = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_Wrap_Header(value.wrap_header, __utils.BER),
-                _encode_Wrap_Body(value.wrap_body, __utils.BER),
+                /* REQUIRED   */ _encode_Wrap_Header(
+                    value.wrap_header,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Wrap_Body(
+                    value.wrap_body,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2315,6 +2467,7 @@ export const _root_component_type_list_1_spec_for_Del_Header: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_Del_Header: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Del_Header: __utils.ComponentSpec[] = [];
+
 export const _decode_Del_Header = function (el: asn1.ASN1Element): Del_Header {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let tok_id!: asn1.INTEGER;
@@ -2364,24 +2517,30 @@ export const _encode_Del_Header = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.tok_id, __utils.BER),
-                _encode_Random_Integer(value.context_id, __utils.BER),
-                value.int_alg
-                    ? __utils._encode_implicit(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.tok_id,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_Random_Integer(
+                    value.context_id,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.int_alg === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_AlgorithmIdentifier,
                           __utils.BER
-                      )(value.int_alg, __utils.BER)
-                    : undefined,
-                value.snd_seq
-                    ? __utils._encode_implicit(
+                      )(value.int_alg, __utils.BER),
+                /* IF_ABSENT  */ value.snd_seq === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_SeqNum,
                           __utils.BER
-                      )(value.snd_seq, __utils.BER)
-                    : undefined,
+                      )(value.snd_seq, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2414,6 +2573,7 @@ export const _root_component_type_list_1_spec_for_SPKM_DEL: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [];
+
 export const _decode_SPKM_DEL = function (el: asn1.ASN1Element): SPKM_DEL {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -2440,8 +2600,14 @@ export const _encode_SPKM_DEL = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_Del_Header(value.del_header, __utils.BER),
-                __utils._encodeBitString(value.int_cksum, __utils.BER),
+                /* REQUIRED   */ _encode_Del_Header(
+                    value.del_header,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeBitString(
+                    value.int_cksum,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2564,6 +2730,7 @@ export const _root_component_type_list_1_spec_for_InitialContextToken: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_InitialContextToken: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_InitialContextToken: __utils.ComponentSpec[] = [];
+
 export const _decode_InitialContextToken = __utils._decode_implicit<
     InitialContextToken
 >(
@@ -2599,8 +2766,11 @@ export const _encode_InitialContextToken = __utils._encode_implicit(
             return __utils._encodeSequence(
                 ([] as (asn1.ASN1Element | undefined)[])
                     .concat([
-                        _encode_MechType(value.thisMech, __utils.BER),
-                        _encode_SPKMInnerContextToken(
+                        /* REQUIRED   */ _encode_MechType(
+                            value.thisMech,
+                            __utils.BER
+                        ),
+                        /* REQUIRED   */ _encode_SPKMInnerContextToken(
                             value.innerContextToken,
                             __utils.BER
                         ),

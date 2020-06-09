@@ -17,21 +17,12 @@ import { id_lat, id_oat } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
 export { ub_saslMechanism } from "./DirectoryAbstractService";
 export {
-    ATTRIBUTE,
     DistinguishedName,
-    SYNTAX_NAME,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "./InformationFramework";
 export {
-    directoryString,
     DirectoryString,
-    dn,
-    ia5String,
-    integer,
-    ldapSyntaxDescription,
-    objectIdentifierFirstComponentMatch,
-    oid,
     UnboundedDirectoryString,
     _decode_DirectoryString,
     _decode_UnboundedDirectoryString,
@@ -87,6 +78,7 @@ export const _root_component_type_list_1_spec_for_LdapSyntaxDescription: __utils
 ];
 export const _root_component_type_list_2_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [];
+
 export const _decode_LdapSyntaxDescription = function (
     el: asn1.ASN1Element
 ): LdapSyntaxDescription {
@@ -129,16 +121,16 @@ export const _encode_LdapSyntaxDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

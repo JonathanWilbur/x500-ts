@@ -10,8 +10,14 @@
 import * as asn1 from "asn1-ts";
 import {
     AccessPoint,
+    PresentationAddress,
+    ProtocolInformation,
     _decode_AccessPoint,
+    _decode_PresentationAddress,
+    _decode_ProtocolInformation,
     _encode_AccessPoint,
+    _encode_PresentationAddress,
+    _encode_ProtocolInformation,
 } from "./DistributedOperations";
 import { Name, _decode_Name, _encode_Name } from "./InformationFramework";
 import {
@@ -32,22 +38,12 @@ export {
     _encode_DitBridgeKnowledge,
     _encode_MasterAndShadowAccessPoints,
 } from "./DistributedOperations";
-export {
-    ATTRIBUTE,
-    MATCHING_RULE,
-    Name,
-    _decode_Name,
-    _encode_Name,
-} from "./InformationFramework";
+export { Name, _decode_Name, _encode_Name } from "./InformationFramework";
 export {
     OperationalBindingID,
     _decode_OperationalBindingID,
     _encode_OperationalBindingID,
 } from "./OperationalBindingManagement";
-export {
-    bitStringMatch,
-    directoryStringFirstComponentMatch,
-} from "./SelectedAttributeTypes";
 export {
     distributedOperations,
     id_doa,
@@ -126,8 +122,14 @@ export const _root_component_type_list_1_spec_for_SupplierOrConsumer: __utils.Co
         undefined,
         undefined
     ),
-    ,
-    /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */ new __utils.ComponentSpec(
+    new __utils.ComponentSpec(
+        "address",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
         "protocolInformation",
         true,
         __utils.hasTag(asn1.ASN1TagClass.context, 2),
@@ -144,6 +146,7 @@ export const _root_component_type_list_1_spec_for_SupplierOrConsumer: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [];
+
 export const _decode_SupplierOrConsumer = function (
     el: asn1.ASN1Element
 ): SupplierOrConsumer {
@@ -190,8 +193,8 @@ export const _decode_SupplierOrConsumer = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierOrConsumer /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new SupplierOrConsumer(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         agreementID,
@@ -206,20 +209,21 @@ export const _encode_SupplierOrConsumer = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_Name,
                         __utils.BER
                     )(value.ae_title, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_PresentationAddress,
                         __utils.BER
                     )(value.address, __utils.BER),
-                    value.protocolInformation
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.protocolInformation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -228,9 +232,8 @@ export const _encode_SupplierOrConsumer = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.protocolInformation, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.protocolInformation, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         3,
                         () => _encode_OperationalBindingID,
@@ -269,8 +272,14 @@ export const _root_component_type_list_1_spec_for_SupplierInformation: __utils.C
         undefined,
         undefined
     ),
-    ,
-    /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */ new __utils.ComponentSpec(
+    new __utils.ComponentSpec(
+        "address",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
         "protocolInformation",
         true,
         __utils.hasTag(asn1.ASN1TagClass.context, 2),
@@ -301,6 +310,7 @@ export const _root_component_type_list_1_spec_for_SupplierInformation: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_SupplierInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SupplierInformation: __utils.ComponentSpec[] = [];
+export const _default_value_for_SupplierInformation__supplier_is_master = true;
 export const _decode_SupplierInformation = function (
     el: asn1.ASN1Element
 ): SupplierInformation {
@@ -309,7 +319,7 @@ export const _decode_SupplierInformation = function (
     let address!: PresentationAddress;
     let protocolInformation: asn1.OPTIONAL<ProtocolInformation[]>;
     let agreementID!: OperationalBindingID;
-    let supplier_is_master: asn1.OPTIONAL<asn1.BOOLEAN> = true;
+    let supplier_is_master: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_SupplierInformation__supplier_is_master;
     let non_supplying_master: asn1.OPTIONAL<AccessPoint>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SET_COMPONENT_DECLARATIONS */
@@ -359,8 +369,8 @@ export const _decode_SupplierInformation = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierInformation /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new SupplierInformation(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         agreementID,
@@ -377,20 +387,21 @@ export const _encode_SupplierInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_Name,
                         __utils.BER
                     )(value.ae_title, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_PresentationAddress,
                         __utils.BER
                     )(value.address, __utils.BER),
-                    value.protocolInformation
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.protocolInformation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -399,32 +410,33 @@ export const _encode_SupplierInformation = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.protocolInformation, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.protocolInformation, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         3,
                         () => _encode_OperationalBindingID,
                         __utils.BER
                     )(value.agreementID, __utils.BER),
-                    value.supplier_is_master !== undefined &&
-                    value.supplier_is_master !==
-                        true /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.supplier_is_master === undefined ||
+                    __utils.deepEq(
+                        value.supplier_is_master,
+                        _default_value_for_SupplierInformation__supplier_is_master
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.supplier_is_master, __utils.BER)
-                        : undefined,
-                    value.non_supplying_master
-                        ? __utils._encode_explicit(
+                          )(value.supplier_is_master, __utils.BER),
+                    /* IF_ABSENT  */ value.non_supplying_master === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               5,
                               () => _encode_AccessPoint,
                               __utils.BER
-                          )(value.non_supplying_master, __utils.BER)
-                        : undefined,
+                          )(value.non_supplying_master, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -464,8 +476,14 @@ export const _root_component_type_list_1_spec_for_SupplierAndConsumers: __utils.
         undefined,
         undefined
     ),
-    ,
-    /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */ new __utils.ComponentSpec(
+    new __utils.ComponentSpec(
+        "address",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
         "protocolInformation",
         true,
         __utils.hasTag(asn1.ASN1TagClass.context, 2),
@@ -482,6 +500,7 @@ export const _root_component_type_list_1_spec_for_SupplierAndConsumers: __utils.
 ];
 export const _root_component_type_list_2_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [];
+
 export const _decode_SupplierAndConsumers = function (
     el: asn1.ASN1Element
 ): SupplierAndConsumers {
@@ -528,8 +547,8 @@ export const _decode_SupplierAndConsumers = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new SupplierAndConsumers /* SET_CONSTRUCTOR_CALL */(
-        ae_title,
+    return new SupplierAndConsumers(
+        /* SET_CONSTRUCTOR_CALL */ ae_title,
         address,
         protocolInformation,
         consumers,
@@ -544,20 +563,21 @@ export const _encode_SupplierAndConsumers = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_Name,
                         __utils.BER
                     )(value.ae_title, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_PresentationAddress,
                         __utils.BER
                     )(value.address, __utils.BER),
-                    value.protocolInformation
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.protocolInformation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -566,9 +586,8 @@ export const _encode_SupplierAndConsumers = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.protocolInformation, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.protocolInformation, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         3,
                         () =>

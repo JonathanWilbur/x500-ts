@@ -11,63 +11,6 @@ import * as asn1 from "asn1-ts";
 import { id_ce } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
 export {
-    acceptableCertPolicies,
-    acceptablePrivilegePolicies,
-    allowedAttributeAssignments,
-    attributeDescriptor,
-    attributeMappings,
-    authorityAttributeIdentifier,
-    basicAttConstraints,
-    delegatedNameConstraints,
-    groupAC,
-    holderNameConstraints,
-    issuedOnBehalfOf,
-    noAssertion,
-    noRevAvail,
-    roleSpecCertIdentifier,
-    singleUse,
-    sOAIdentifier,
-    targetingInformation,
-    timeSpecification,
-    userNotice,
-} from "./AttributeCertificateDefinitions";
-export { EXTENSION } from "./AuthenticationFramework";
-export {
-    aAissuingDistributionPoint,
-    authorityKeyIdentifier,
-    authorizationValidation,
-    baseUpdateTime,
-    basicConstraints,
-    certificateIssuer,
-    certificatePolicies,
-    cRLDistributionPoints,
-    cRLNumber,
-    cRLStreamIdentifier,
-    deltaCRLIndicator,
-    deltaInfo,
-    expiredCertsOnCRL,
-    extKeyUsage,
-    freshestCRL,
-    holdInstructionCode,
-    invalidityDate,
-    issuerAltName,
-    issuingDistributionPoint,
-    keyUsage,
-    nameConstraints,
-    orderedList,
-    policyConstraints,
-    policyMappings,
-    privateKeyUsagePeriod,
-    reasonCode,
-    revokedGroups,
-    statusReferrals,
-    subjectAltName,
-    subjectDirectoryAttributes,
-    subjectKeyIdentifier,
-    toBeRevoked,
-} from "./CertificateExtensions";
-export { ATTRIBUTE, SYNTAX_NAME } from "./InformationFramework";
-export {
     attributeCertificateDefinitions,
     authenticationFramework,
     certificateExtensions,
@@ -109,12 +52,14 @@ export const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item:
 ];
 export const _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [];
+export const _default_value_for_ExtensionAttribute_value_Item__mandatory = false;
+export const _default_value_for_ExtensionAttribute_value_Item__critical = false;
 export const _decode_ExtensionAttribute_value_Item = function (
     el: asn1.ASN1Element
 ): ExtensionAttribute_value_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let mandatory: asn1.OPTIONAL<asn1.BOOLEAN> = false;
-    let critical: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let mandatory: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ExtensionAttribute_value_Item__mandatory;
+    let critical: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ExtensionAttribute_value_Item__critical;
     let ext!: asn1.ASN1Element;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -162,25 +107,31 @@ export const _encode_ExtensionAttribute_value_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.mandatory !== undefined &&
-                    value.mandatory !== false /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.mandatory === undefined ||
+                    __utils.deepEq(
+                        value.mandatory,
+                        _default_value_for_ExtensionAttribute_value_Item__mandatory
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.mandatory, __utils.BER)
-                        : undefined,
-                    value.critical !== undefined &&
-                    value.critical !== false /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.mandatory, __utils.BER),
+                    /* IF_DEFAULT */ value.critical === undefined ||
+                    __utils.deepEq(
+                        value.critical,
+                        _default_value_for_ExtensionAttribute_value_Item__critical
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.critical, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.critical, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         2,
                         () => __utils._encodeAny,
@@ -223,6 +174,7 @@ export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_ExtensionAttribute = function (
     el: asn1.ASN1Element
 ): ExtensionAttribute {
@@ -254,11 +206,16 @@ export const _encode_ExtensionAttribute = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(value.type_, __utils.BER),
-                    __utils._encodeSetOf<ExtensionAttribute_value_Item>(
-                        () => _encode_ExtensionAttribute_value_Item,
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.type_,
                         __utils.BER
-                    )(value.value, __utils.BER),
+                    ),
+                    /* REQUIRED   */ __utils._encodeSetOf<
+                        ExtensionAttribute_value_Item
+                    >(() => _encode_ExtensionAttribute_value_Item, __utils.BER)(
+                        value.value,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

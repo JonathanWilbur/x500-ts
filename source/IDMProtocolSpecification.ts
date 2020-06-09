@@ -19,7 +19,7 @@ export {
     _decode_GeneralName,
     _encode_GeneralName,
 } from "./CertificateExtensions";
-export { OPERATION } from "./CommonProtocolSpecification";
+import { Code, _encode_Code, _decode_Code } from "./CommonProtocolSpecification";
 export {
     SecurityProblem,
     ServiceProblem,
@@ -82,6 +82,7 @@ export const _root_component_type_list_1_spec_for_IdmBind: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_IdmBind: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IdmBind: __utils.ComponentSpec[] = [];
+
 export const _decode_IdmBind = function (el: asn1.ASN1Element): IdmBind {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let protocolID!: asn1.OBJECT_IDENTIFIER;
@@ -138,27 +139,27 @@ export const _encode_IdmBind = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.protocolID,
                         __utils.BER
                     ),
-                    value.callingAETitle
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.callingAETitle === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_GeneralName,
                               __utils.BER
-                          )(value.callingAETitle, __utils.BER)
-                        : undefined,
-                    value.calledAETitle
-                        ? __utils._encode_explicit(
+                          )(value.callingAETitle, __utils.BER),
+                    /* IF_ABSENT  */ value.calledAETitle === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_GeneralName,
                               __utils.BER
-                          )(value.calledAETitle, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.calledAETitle, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         2,
                         () => __utils._encodeAny,
@@ -209,6 +210,7 @@ export const _root_component_type_list_1_spec_for_IdmBindResult: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_IdmBindResult: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IdmBindResult: __utils.ComponentSpec[] = [];
+
 export const _decode_IdmBindResult = function (
     el: asn1.ASN1Element
 ): IdmBindResult {
@@ -260,19 +262,19 @@ export const _encode_IdmBindResult = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.protocolID,
                         __utils.BER
                     ),
-                    value.respondingAETitle
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.respondingAETitle === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_GeneralName,
                               __utils.BER
-                          )(value.respondingAETitle, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.respondingAETitle, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => __utils._encodeAny,
@@ -339,6 +341,7 @@ export const _root_component_type_list_1_spec_for_IdmBindError: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_IdmBindError: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IdmBindError: __utils.ComponentSpec[] = [];
+
 export const _decode_IdmBindError = function (
     el: asn1.ASN1Element
 ): IdmBindError {
@@ -395,25 +398,25 @@ export const _encode_IdmBindError = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.protocolID,
                         __utils.BER
                     ),
-                    value.respondingAETitle
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.respondingAETitle === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_GeneralName,
                               __utils.BER
-                          )(value.respondingAETitle, __utils.BER)
-                        : undefined,
-                    value.aETitleError
-                        ? _encode_IdmBindError_aETitleError(
+                          )(value.respondingAETitle, __utils.BER),
+                    /* IF_ABSENT  */ value.aETitleError === undefined
+                        ? undefined
+                        : _encode_IdmBindError_aETitleError(
                               value.aETitleError,
                               __utils.BER
-                          )
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => __utils._encodeAny,
@@ -464,6 +467,7 @@ export const _root_component_type_list_1_spec_for_Request: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_Request: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Request: __utils.ComponentSpec[] = [];
+
 export const _decode_Request = function (el: asn1.ASN1Element): Request {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -494,9 +498,15 @@ export const _encode_Request = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.invokeID, __utils.BER),
-                    _encode_Code(value.opcode, __utils.BER),
-                    __utils._encodeAny(value.argument, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.invokeID,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_Code(value.opcode, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.argument,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -542,6 +552,7 @@ export const _root_component_type_list_1_spec_for_IdmResult: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_IdmResult: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IdmResult: __utils.ComponentSpec[] = [];
+
 export const _decode_IdmResult = function (el: asn1.ASN1Element): IdmResult {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -572,9 +583,15 @@ export const _encode_IdmResult = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.invokeID, __utils.BER),
-                    _encode_Code(value.opcode, __utils.BER),
-                    __utils._encodeAny(value.result, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.invokeID,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_Code(value.opcode, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -620,6 +637,7 @@ export const _root_component_type_list_1_spec_for_Error: __utils.ComponentSpec[]
 ];
 export const _root_component_type_list_2_spec_for_Error: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Error: __utils.ComponentSpec[] = [];
+
 export const _decode_Error = function (el: asn1.ASN1Element): Error {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -648,9 +666,18 @@ export const _encode_Error = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.invokeID, __utils.BER),
-                    __utils._encodeAny(value.errcode, __utils.BER),
-                    __utils._encodeAny(value.error, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.invokeID,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.errcode,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.error,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -665,7 +692,6 @@ export const _encode_Error = function (
 
 export type IdmReject_reason = asn1.ENUMERATED;
 export const IdmReject_reason_mistypedPDU: IdmReject_reason = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const mistypedPDU: IdmReject_reason = IdmReject_reason_mistypedPDU; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const IdmReject_reason_duplicateInvokeIDRequest: IdmReject_reason = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const duplicateInvokeIDRequest: IdmReject_reason = IdmReject_reason_duplicateInvokeIDRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const IdmReject_reason_unsupportedOperationRequest: IdmReject_reason = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -720,6 +746,7 @@ export const _root_component_type_list_1_spec_for_IdmReject: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_IdmReject: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IdmReject: __utils.ComponentSpec[] = [];
+
 export const _decode_IdmReject = function (el: asn1.ASN1Element): IdmReject {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -747,8 +774,14 @@ export const _encode_IdmReject = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.invokeID, __utils.BER),
-                    _encode_IdmReject_reason(value.reason, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.invokeID,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_IdmReject_reason(
+                        value.reason,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -767,7 +800,6 @@ export const _encode_Unbind = __utils._encodeNull;
 
 export type Abort = asn1.ENUMERATED;
 export const Abort_mistypedPDU: Abort = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const mistypedPDU: Abort = Abort_mistypedPDU; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const Abort_unboundRequest: Abort = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const unboundRequest: Abort = Abort_unboundRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const Abort_invalidPDU: Abort = 2; /* LONG_NAMED_ENUMERATED_VALUE */

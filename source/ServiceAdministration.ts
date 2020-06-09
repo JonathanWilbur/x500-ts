@@ -83,6 +83,7 @@ export const _root_component_type_list_1_spec_for_RequestAttribute_defaultValues
 ];
 export const _root_component_type_list_2_spec_for_RequestAttribute_defaultValues_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RequestAttribute_defaultValues_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_RequestAttribute_defaultValues_Item = function (
     el: asn1.ASN1Element
 ): RequestAttribute_defaultValues_Item {
@@ -127,16 +128,18 @@ export const _encode_RequestAttribute_defaultValues_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.entryType
-                        ? __utils._encodeObjectIdentifier(
+                    /* IF_ABSENT  */ value.entryType === undefined
+                        ? undefined
+                        : __utils._encodeObjectIdentifier(
                               value.entryType,
                               __utils.BER
-                          )
-                        : undefined,
-                    __utils._encodeSequenceOf<asn1.ASN1Element>(
-                        () => __utils._encodeAny,
+                          ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        asn1.ASN1Element
+                    >(() => __utils._encodeAny, __utils.BER)(
+                        value.values,
                         __utils.BER
-                    )(value.values, __utils.BER),
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -174,6 +177,7 @@ export const _root_component_type_list_1_spec_for_ContextProfile: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ContextProfile: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ContextProfile: __utils.ComponentSpec[] = [];
+
 export const _decode_ContextProfile = function (
     el: asn1.ASN1Element
 ): ContextProfile {
@@ -218,16 +222,16 @@ export const _encode_ContextProfile = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.contextType,
                         __utils.BER
                     ),
-                    value.contextValue
-                        ? __utils._encodeSequenceOf<asn1.ASN1Element>(
+                    /* IF_ABSENT  */ value.contextValue === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<asn1.ASN1Element>(
                               () => __utils._encodeAny,
                               __utils.BER
-                          )(value.contextValue, __utils.BER)
-                        : undefined,
+                          )(value.contextValue, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -344,6 +348,7 @@ export const _root_component_type_list_1_spec_for_MatchingUse: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_MatchingUse: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MatchingUse: __utils.ComponentSpec[] = [];
+
 export const _decode_MatchingUse = function (
     el: asn1.ASN1Element
 ): MatchingUse {
@@ -377,11 +382,14 @@ export const _encode_MatchingUse = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.restrictionType,
                         __utils.BER
                     ),
-                    __utils._encodeAny(value.restrictionValue, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.restrictionValue,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -461,16 +469,20 @@ export const _root_component_type_list_1_spec_for_RequestAttribute: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_RequestAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RequestAttribute: __utils.ComponentSpec[] = [];
+export const _default_value_for_RequestAttribute__includeSubtypes = false;
+export const _default_value_for_RequestAttribute__contextCombination = {
+    and: [],
+};
 export const _decode_RequestAttribute = function (
     el: asn1.ASN1Element
 ): RequestAttribute {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let attributeType!: asn1.OBJECT_IDENTIFIER;
-    let includeSubtypes: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let includeSubtypes: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_RequestAttribute__includeSubtypes;
     let selectedValues: asn1.OPTIONAL<asn1.ASN1Element[]>;
     let defaultValues: asn1.OPTIONAL<RequestAttribute_defaultValues_Item[]>;
     let contexts: asn1.OPTIONAL<ContextProfile[]>;
-    let contextCombination: asn1.OPTIONAL<ContextCombination> = { and: [] };
+    let contextCombination: asn1.OPTIONAL<ContextCombination> = _default_value_for_RequestAttribute__contextCombination;
     let matchingUse: asn1.OPTIONAL<MatchingUse[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -550,22 +562,25 @@ export const _encode_RequestAttribute = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.attributeType,
                         __utils.BER
                     ),
-                    value.includeSubtypes !== undefined &&
-                    value.includeSubtypes !==
-                        false /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.includeSubtypes === undefined ||
+                    __utils.deepEq(
+                        value.includeSubtypes,
+                        _default_value_for_RequestAttribute__includeSubtypes
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.includeSubtypes, __utils.BER)
-                        : undefined,
-                    value.selectedValues
-                        ? __utils._encode_explicit(
+                          )(value.includeSubtypes, __utils.BER),
+                    /* IF_ABSENT  */ value.selectedValues === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -574,10 +589,10 @@ export const _encode_RequestAttribute = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.selectedValues, __utils.BER)
-                        : undefined,
-                    value.defaultValues
-                        ? __utils._encode_explicit(
+                          )(value.selectedValues, __utils.BER),
+                    /* IF_ABSENT  */ value.defaultValues === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -589,10 +604,10 @@ export const _encode_RequestAttribute = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.defaultValues, __utils.BER)
-                        : undefined,
-                    value.contexts
-                        ? __utils._encode_explicit(
+                          )(value.defaultValues, __utils.BER),
+                    /* IF_ABSENT  */ value.contexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -601,19 +616,22 @@ export const _encode_RequestAttribute = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.contexts, __utils.BER)
-                        : undefined,
-                    JSON.stringify(value.contextCombination) ===
-                    JSON.stringify({ and: [] })
-                        ? __utils._encode_explicit(
+                          )(value.contexts, __utils.BER),
+                    /* IF_DEFAULT */ value.contextCombination === undefined ||
+                    __utils.deepEq(
+                        value.contextCombination,
+                        _default_value_for_RequestAttribute__contextCombination
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => _encode_ContextCombination,
                               __utils.BER
-                          )(value.contextCombination, __utils.BER)
-                        : undefined,
-                    value.matchingUse
-                        ? __utils._encode_explicit(
+                          )(value.contextCombination, __utils.BER),
+                    /* IF_ABSENT  */ value.matchingUse === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               5,
                               () =>
@@ -622,8 +640,7 @@ export const _encode_RequestAttribute = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.matchingUse, __utils.BER)
-                        : undefined,
+                          )(value.matchingUse, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -771,6 +788,7 @@ export const _root_component_type_list_1_spec_for_ResultAttribute: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_ResultAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ResultAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_ResultAttribute = function (
     el: asn1.ASN1Element
 ): ResultAttribute {
@@ -822,18 +840,19 @@ export const _encode_ResultAttribute = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.attributeType,
                         __utils.BER
                     ),
-                    value.outputValues
-                        ? _encode_ResultAttribute_outputValues(
+                    /* IF_ABSENT  */ value.outputValues === undefined
+                        ? undefined
+                        : _encode_ResultAttribute_outputValues(
                               value.outputValues,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.contexts
-                        ? __utils._encode_explicit(
+                          ),
+                    /* IF_ABSENT  */ value.contexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () =>
@@ -842,8 +861,7 @@ export const _encode_ResultAttribute = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.contexts, __utils.BER)
-                        : undefined,
+                          )(value.contexts, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -889,16 +907,18 @@ export const _root_component_type_list_1_spec_for_ControlOptions: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ControlOptions: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ControlOptions: __utils.ComponentSpec[] = [];
+export const _default_value_for_ControlOptions__serviceControls = new Uint8ClampedArray(
+    0
+);
+export const _default_value_for_ControlOptions__searchOptions = new Uint8ClampedArray(
+    [asn1.TRUE_BIT]
+);
 export const _decode_ControlOptions = function (
     el: asn1.ASN1Element
 ): ControlOptions {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let serviceControls: asn1.OPTIONAL<ServiceControlOptions> = new Uint8ClampedArray(
-        0
-    );
-    let searchOptions: asn1.OPTIONAL<SearchControlOptions> = new Uint8ClampedArray(
-        [asn1.FALSE_BIT]
-    );
+    let serviceControls: asn1.OPTIONAL<ServiceControlOptions> = _default_value_for_ControlOptions__serviceControls;
+    let searchOptions: asn1.OPTIONAL<SearchControlOptions> = _default_value_for_ControlOptions__searchOptions;
     let hierarchyOptions: asn1.OPTIONAL<HierarchySelections>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -946,32 +966,38 @@ export const _encode_ControlOptions = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    JSON.stringify(value.serviceControls) ===
-                    JSON.stringify(new Uint8ClampedArray(0))
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.serviceControls === undefined ||
+                    __utils.deepEq(
+                        value.serviceControls,
+                        _default_value_for_ControlOptions__serviceControls
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_ServiceControlOptions,
                               __utils.BER
-                          )(value.serviceControls, __utils.BER)
-                        : undefined,
-                    JSON.stringify(value.searchOptions) ===
-                    JSON.stringify(new Uint8ClampedArray([asn1.FALSE_BIT]))
-                        ? __utils._encode_explicit(
+                          )(value.serviceControls, __utils.BER),
+                    /* IF_DEFAULT */ value.searchOptions === undefined ||
+                    __utils.deepEq(
+                        value.searchOptions,
+                        _default_value_for_ControlOptions__searchOptions
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_SearchControlOptions,
                               __utils.BER
-                          )(value.searchOptions, __utils.BER)
-                        : undefined,
-                    value.hierarchyOptions
-                        ? __utils._encode_explicit(
+                          )(value.searchOptions, __utils.BER),
+                    /* IF_ABSENT  */ value.hierarchyOptions === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => _encode_HierarchySelections,
                               __utils.BER
-                          )(value.hierarchyOptions, __utils.BER)
-                        : undefined,
+                          )(value.hierarchyOptions, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1009,10 +1035,11 @@ export const _root_component_type_list_1_spec_for_Mapping: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_Mapping: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Mapping: __utils.ComponentSpec[] = [];
+export const _default_value_for_Mapping__level = 0;
 export const _decode_Mapping = function (el: asn1.ASN1Element): Mapping {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let mappingFunction!: asn1.OBJECT_IDENTIFIER;
-    let level: asn1.OPTIONAL<asn1.INTEGER> = 0;
+    let level: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_Mapping__level;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -1049,14 +1076,17 @@ export const _encode_Mapping = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.mappingFunction,
                         __utils.BER
                     ),
-                    value.level !== undefined &&
-                    value.level !== 0 /* TODO: Review this condition. */
-                        ? __utils._encodeInteger(value.level, __utils.BER)
-                        : undefined,
+                    /* IF_DEFAULT */ value.level === undefined ||
+                    __utils.deepEq(
+                        value.level,
+                        _default_value_for_Mapping__level
+                    )
+                        ? undefined
+                        : __utils._encodeInteger(value.level, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1102,6 +1132,7 @@ export const _root_component_type_list_1_spec_for_MRSubstitution: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_MRSubstitution: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MRSubstitution: __utils.ComponentSpec[] = [];
+
 export const _decode_MRSubstitution = function (
     el: asn1.ASN1Element
 ): MRSubstitution {
@@ -1153,23 +1184,26 @@ export const _encode_MRSubstitution = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttributeType(value.attribute, __utils.BER),
-                    value.oldMatchingRule
-                        ? __utils._encode_explicit(
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.attribute,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.oldMatchingRule === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.oldMatchingRule, __utils.BER)
-                        : undefined,
-                    value.newMatchingRule
-                        ? __utils._encode_explicit(
+                          )(value.oldMatchingRule, __utils.BER),
+                    /* IF_ABSENT  */ value.newMatchingRule === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.newMatchingRule, __utils.BER)
-                        : undefined,
+                          )(value.newMatchingRule, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1207,6 +1241,7 @@ export const _root_component_type_list_1_spec_for_MRMapping: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_MRMapping: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MRMapping: __utils.ComponentSpec[] = [];
+
 export const _decode_MRMapping = function (el: asn1.ASN1Element): MRMapping {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let mapping: asn1.OPTIONAL<Mapping[]>;
@@ -1253,8 +1288,9 @@ export const _encode_MRMapping = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.mapping
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.mapping === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () =>
@@ -1263,10 +1299,10 @@ export const _encode_MRMapping = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.mapping, __utils.BER)
-                        : undefined,
-                    value.substitution
-                        ? __utils._encode_explicit(
+                          )(value.mapping, __utils.BER),
+                    /* IF_ABSENT  */ value.substitution === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -1275,8 +1311,7 @@ export const _encode_MRMapping = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.substitution, __utils.BER)
-                        : undefined,
+                          )(value.substitution, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1338,15 +1373,20 @@ export const _root_component_type_list_1_spec_for_RelaxationPolicy: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_RelaxationPolicy: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RelaxationPolicy: __utils.ComponentSpec[] = [];
+export const _default_value_for_RelaxationPolicy__basic = new MRMapping(
+    undefined,
+    undefined
+);
+export const _default_value_for_RelaxationPolicy__minimum = 1;
 export const _decode_RelaxationPolicy = function (
     el: asn1.ASN1Element
 ): RelaxationPolicy {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let basic: asn1.OPTIONAL<MRMapping> = new MRMapping(undefined, undefined);
+    let basic: asn1.OPTIONAL<MRMapping> = _default_value_for_RelaxationPolicy__basic;
     let tightenings: asn1.OPTIONAL<MRMapping[]>;
     let relaxations: asn1.OPTIONAL<MRMapping[]>;
     let maximum: asn1.OPTIONAL<asn1.INTEGER>;
-    let minimum: asn1.OPTIONAL<asn1.INTEGER> = 1;
+    let minimum: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_RelaxationPolicy__minimum;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -1405,17 +1445,21 @@ export const _encode_RelaxationPolicy = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    JSON.stringify(value.basic) ===
-                    JSON.stringify(new MRMapping(undefined, undefined))
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.basic === undefined ||
+                    __utils.deepEq(
+                        value.basic,
+                        _default_value_for_RelaxationPolicy__basic
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_MRMapping,
                               __utils.BER
-                          )(value.basic, __utils.BER)
-                        : undefined,
-                    value.tightenings
-                        ? __utils._encode_explicit(
+                          )(value.basic, __utils.BER),
+                    /* IF_ABSENT  */ value.tightenings === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -1424,10 +1468,10 @@ export const _encode_RelaxationPolicy = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.tightenings, __utils.BER)
-                        : undefined,
-                    value.relaxations
-                        ? __utils._encode_explicit(
+                          )(value.tightenings, __utils.BER),
+                    /* IF_ABSENT  */ value.relaxations === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -1436,25 +1480,27 @@ export const _encode_RelaxationPolicy = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.relaxations, __utils.BER)
-                        : undefined,
-                    value.maximum
-                        ? __utils._encode_explicit(
+                          )(value.relaxations, __utils.BER),
+                    /* IF_ABSENT  */ value.maximum === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.maximum, __utils.BER)
-                        : undefined,
-                    value.minimum !== undefined &&
-                    value.minimum !== 1 /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.maximum, __utils.BER),
+                    /* IF_DEFAULT */ value.minimum === undefined ||
+                    __utils.deepEq(
+                        value.minimum,
+                        _default_value_for_RelaxationPolicy__minimum
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.minimum, __utils.BER)
-                        : undefined,
+                          )(value.minimum, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1506,6 +1552,7 @@ export const _root_component_type_list_1_spec_for_EntryLimit: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_EntryLimit: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EntryLimit: __utils.ComponentSpec[] = [];
+
 export const _decode_EntryLimit = function (el: asn1.ASN1Element): EntryLimit {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -1533,8 +1580,14 @@ export const _encode_EntryLimit = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.default_, __utils.BER),
-                    __utils._encodeInteger(value.max, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.default_,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.max,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1692,6 +1745,10 @@ export const _root_component_type_list_1_spec_for_SearchRule: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_SearchRule: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SearchRule: __utils.ComponentSpec[] = [];
+export const _default_value_for_SearchRule__attributeCombination = { and: [] };
+export const _default_value_for_SearchRule__allowedSubset = new Uint8ClampedArray(
+    [1, 1, 1]
+);
 export const _decode_SearchRule = function (el: asn1.ASN1Element): SearchRule {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let id!: asn1.INTEGER;
@@ -1699,7 +1756,7 @@ export const _decode_SearchRule = function (el: asn1.ASN1Element): SearchRule {
     let serviceType: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
     let userClass: asn1.OPTIONAL<asn1.INTEGER>;
     let inputAttributeTypes: asn1.OPTIONAL<RequestAttribute[]>;
-    let attributeCombination: asn1.OPTIONAL<AttributeCombination> = { and: [] };
+    let attributeCombination: asn1.OPTIONAL<AttributeCombination> = _default_value_for_SearchRule__attributeCombination;
     let outputAttributeTypes: asn1.OPTIONAL<ResultAttribute[]>;
     let defaultControls: asn1.OPTIONAL<ControlOptions>;
     let mandatoryControls: asn1.OPTIONAL<ControlOptions>;
@@ -1708,11 +1765,7 @@ export const _decode_SearchRule = function (el: asn1.ASN1Element): SearchRule {
     let familyReturn: asn1.OPTIONAL<FamilyReturn>;
     let relaxation: asn1.OPTIONAL<RelaxationPolicy>;
     let additionalControl: asn1.OPTIONAL<AttributeType[]>;
-    let allowedSubset: asn1.OPTIONAL<AllowedSubset> = new Uint8ClampedArray([
-        1,
-        1,
-        1,
-    ]);
+    let allowedSubset: asn1.OPTIONAL<AllowedSubset> = _default_value_for_SearchRule__allowedSubset;
     let imposedSubset: asn1.OPTIONAL<ImposedSubset>;
     let entryLimit: asn1.OPTIONAL<EntryLimit>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -1851,31 +1904,35 @@ export const _encode_SearchRule = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.id, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.id,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => __utils._encodeObjectIdentifier,
                         __utils.BER
                     )(value.dmdId, __utils.BER),
-                    value.serviceType
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.serviceType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.serviceType, __utils.BER)
-                        : undefined,
-                    value.userClass
-                        ? __utils._encode_explicit(
+                          )(value.serviceType, __utils.BER),
+                    /* IF_ABSENT  */ value.userClass === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.userClass, __utils.BER)
-                        : undefined,
-                    value.inputAttributeTypes
-                        ? __utils._encode_explicit(
+                          )(value.userClass, __utils.BER),
+                    /* IF_ABSENT  */ value.inputAttributeTypes === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -1884,19 +1941,22 @@ export const _encode_SearchRule = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.inputAttributeTypes, __utils.BER)
-                        : undefined,
-                    JSON.stringify(value.attributeCombination) ===
-                    JSON.stringify({ and: [] })
-                        ? __utils._encode_explicit(
+                          )(value.inputAttributeTypes, __utils.BER),
+                    /* IF_DEFAULT */ value.attributeCombination === undefined ||
+                    __utils.deepEq(
+                        value.attributeCombination,
+                        _default_value_for_SearchRule__attributeCombination
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => _encode_AttributeCombination,
                               __utils.BER
-                          )(value.attributeCombination, __utils.BER)
-                        : undefined,
-                    value.outputAttributeTypes
-                        ? __utils._encode_explicit(
+                          )(value.attributeCombination, __utils.BER),
+                    /* IF_ABSENT  */ value.outputAttributeTypes === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               5,
                               () =>
@@ -1905,58 +1965,58 @@ export const _encode_SearchRule = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.outputAttributeTypes, __utils.BER)
-                        : undefined,
-                    value.defaultControls
-                        ? __utils._encode_explicit(
+                          )(value.outputAttributeTypes, __utils.BER),
+                    /* IF_ABSENT  */ value.defaultControls === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               6,
                               () => _encode_ControlOptions,
                               __utils.BER
-                          )(value.defaultControls, __utils.BER)
-                        : undefined,
-                    value.mandatoryControls
-                        ? __utils._encode_explicit(
+                          )(value.defaultControls, __utils.BER),
+                    /* IF_ABSENT  */ value.mandatoryControls === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               7,
                               () => _encode_ControlOptions,
                               __utils.BER
-                          )(value.mandatoryControls, __utils.BER)
-                        : undefined,
-                    value.searchRuleControls
-                        ? __utils._encode_explicit(
+                          )(value.mandatoryControls, __utils.BER),
+                    /* IF_ABSENT  */ value.searchRuleControls === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               8,
                               () => _encode_ControlOptions,
                               __utils.BER
-                          )(value.searchRuleControls, __utils.BER)
-                        : undefined,
-                    value.familyGrouping
-                        ? __utils._encode_explicit(
+                          )(value.searchRuleControls, __utils.BER),
+                    /* IF_ABSENT  */ value.familyGrouping === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               9,
                               () => _encode_FamilyGrouping,
                               __utils.BER
-                          )(value.familyGrouping, __utils.BER)
-                        : undefined,
-                    value.familyReturn
-                        ? __utils._encode_explicit(
+                          )(value.familyGrouping, __utils.BER),
+                    /* IF_ABSENT  */ value.familyReturn === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               10,
                               () => _encode_FamilyReturn,
                               __utils.BER
-                          )(value.familyReturn, __utils.BER)
-                        : undefined,
-                    value.relaxation
-                        ? __utils._encode_explicit(
+                          )(value.familyReturn, __utils.BER),
+                    /* IF_ABSENT  */ value.relaxation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               11,
                               () => _encode_RelaxationPolicy,
                               __utils.BER
-                          )(value.relaxation, __utils.BER)
-                        : undefined,
-                    value.additionalControl
-                        ? __utils._encode_explicit(
+                          )(value.relaxation, __utils.BER),
+                    /* IF_ABSENT  */ value.additionalControl === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               12,
                               () =>
@@ -1965,38 +2025,35 @@ export const _encode_SearchRule = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.additionalControl, __utils.BER)
-                        : undefined,
-                    value.allowedSubset !== undefined &&
-                    value.allowedSubset !==
-                        new Uint8ClampedArray([
-                            1,
-                            1,
-                            1,
-                        ]) /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.additionalControl, __utils.BER),
+                    /* IF_DEFAULT */ value.allowedSubset === undefined ||
+                    __utils.deepEq(
+                        value.allowedSubset,
+                        _default_value_for_SearchRule__allowedSubset
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               13,
                               () => _encode_AllowedSubset,
                               __utils.BER
-                          )(value.allowedSubset, __utils.BER)
-                        : undefined,
-                    value.imposedSubset
-                        ? __utils._encode_explicit(
+                          )(value.allowedSubset, __utils.BER),
+                    /* IF_ABSENT  */ value.imposedSubset === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               14,
                               () => _encode_ImposedSubset,
                               __utils.BER
-                          )(value.imposedSubset, __utils.BER)
-                        : undefined,
-                    value.entryLimit
-                        ? __utils._encode_explicit(
+                          )(value.imposedSubset, __utils.BER),
+                    /* IF_ABSENT  */ value.entryLimit === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               15,
                               () => _encode_EntryLimit,
                               __utils.BER
-                          )(value.entryLimit, __utils.BER)
-                        : undefined,
+                          )(value.entryLimit, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2033,6 +2090,7 @@ export const _root_component_type_list_1_spec_for_SearchRuleId: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_SearchRuleId: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SearchRuleId: __utils.ComponentSpec[] = [];
+
 export const _decode_SearchRuleId = function (
     el: asn1.ASN1Element
 ): SearchRuleId {
@@ -2063,8 +2121,8 @@ export const _encode_SearchRuleId = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.id, __utils.BER),
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encodeInteger(value.id, __utils.BER),
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => __utils._encodeObjectIdentifier,

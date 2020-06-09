@@ -9,11 +9,6 @@
 */
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
-export {
-    establishOperationalBinding,
-    modifyOperationalBinding,
-    terminateOperationalBinding,
-} from "./OperationalBindingManagement";
 export { opBindingManagement } from "./UsefulDefinitions";
 
 export type Code =

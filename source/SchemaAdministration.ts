@@ -8,9 +8,13 @@
     Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
 */
 import * as asn1 from "asn1-ts";
+import * as InformationFramework from "./InformationFramework";
 import {
     AttributeUsage,
     ObjectClassKind,
+    RuleIdentifier,
+    _decode_RuleIdentifier,
+    _encode_RuleIdentifier,
     _decode_AttributeUsage,
     _decode_ObjectClassKind,
     _encode_AttributeUsage,
@@ -24,17 +28,10 @@ import {
 import { id_soa, id_soc } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
 export {
-    ATTRIBUTE,
     AttributeUsage,
-    CONTEXT,
     DITContentRule,
     DITStructureRule,
-    MATCHING_RULE,
-    NAME_FORM,
     ObjectClassKind,
-    objectIdentifierMatch,
-    OBJECT_CLASS,
-    SYNTAX_NAME,
     _decode_AttributeUsage,
     _decode_DITContentRule,
     _decode_DITStructureRule,
@@ -44,20 +41,7 @@ export {
     _encode_DITStructureRule,
     _encode_ObjectClassKind,
 } from "./InformationFramework";
-export { ldapSyntaxes } from "./LdapSystemSchema";
 export {
-    attributeTypeDescription,
-    dITContentRuleDescription,
-    dITStructureRuleDescription,
-    integer,
-    integerFirstComponentMatch,
-    integerMatch,
-    matchingRuleDescription,
-    matchingRuleUseDescription,
-    nameFormDescription,
-    objectClassDescription,
-    objectIdentifierFirstComponentMatch,
-    oid,
     UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
@@ -133,6 +117,7 @@ export const _root_component_type_list_1_spec_for_DITStructureRuleDescription: _
 ];
 export const _root_component_type_list_2_spec_for_DITStructureRuleDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DITStructureRuleDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_DITStructureRuleDescription__obsolete = false;
 export const _decode_DITStructureRuleDescription = function (
     el: asn1.ASN1Element
 ): DITStructureRuleDescription {
@@ -142,7 +127,7 @@ export const _decode_DITStructureRuleDescription = function (
     let superiorStructureRules: asn1.OPTIONAL<RuleIdentifier[]>;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_DITStructureRuleDescription__obsolete;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -201,19 +186,23 @@ export const _encode_DITStructureRuleDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_RuleIdentifier(value.ruleIdentifier, __utils.BER),
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ _encode_RuleIdentifier(
+                        value.ruleIdentifier,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.nameForm,
                         __utils.BER
                     ),
-                    value.superiorStructureRules
-                        ? __utils._encodeSetOf<RuleIdentifier>(
+                    /* IF_ABSENT  */ value.superiorStructureRules === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<RuleIdentifier>(
                               () => _encode_RuleIdentifier,
                               __utils.BER
-                          )(value.superiorStructureRules, __utils.BER)
-                        : undefined,
-                    value.name
-                        ? __utils._encode_explicit(
+                          )(value.superiorStructureRules, __utils.BER),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -224,18 +213,20 @@ export const _encode_DITStructureRuleDescription = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_DITStructureRuleDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -331,6 +322,7 @@ export const _root_component_type_list_1_spec_for_DITContentRuleDescription: __u
 ];
 export const _root_component_type_list_2_spec_for_DITContentRuleDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DITContentRuleDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_DITContentRuleDescription__obsolete = false;
 export const _decode_DITContentRuleDescription = function (
     el: asn1.ASN1Element
 ): DITContentRuleDescription {
@@ -342,7 +334,7 @@ export const _decode_DITContentRuleDescription = function (
     let precluded: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER[]>;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_DITContentRuleDescription__obsolete;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -421,18 +413,19 @@ export const _encode_DITContentRuleDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.structuralObjectClass,
                         __utils.BER
                     ),
-                    value.auxiliaries
-                        ? __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                    /* IF_ABSENT  */ value.auxiliaries === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.auxiliaries, __utils.BER)
-                        : undefined,
-                    value.mandatory
-                        ? __utils._encode_explicit(
+                          )(value.auxiliaries, __utils.BER),
+                    /* IF_ABSENT  */ value.mandatory === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -441,10 +434,10 @@ export const _encode_DITContentRuleDescription = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.mandatory, __utils.BER)
-                        : undefined,
-                    value.optional
-                        ? __utils._encode_explicit(
+                          )(value.mandatory, __utils.BER),
+                    /* IF_ABSENT  */ value.optional === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -453,10 +446,10 @@ export const _encode_DITContentRuleDescription = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.optional, __utils.BER)
-                        : undefined,
-                    value.precluded
-                        ? __utils._encode_explicit(
+                          )(value.optional, __utils.BER),
+                    /* IF_ABSENT  */ value.precluded === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -465,10 +458,10 @@ export const _encode_DITContentRuleDescription = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.precluded, __utils.BER)
-                        : undefined,
-                    value.name
-                        ? __utils._encode_explicit(
+                          )(value.precluded, __utils.BER),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () =>
@@ -479,18 +472,20 @@ export const _encode_DITContentRuleDescription = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_DITContentRuleDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -554,6 +549,7 @@ export const _root_component_type_list_1_spec_for_MatchingRuleDescription: __uti
 ];
 export const _root_component_type_list_2_spec_for_MatchingRuleDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MatchingRuleDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_MatchingRuleDescription__obsolete = false;
 export const _decode_MatchingRuleDescription = function (
     el: asn1.ASN1Element
 ): MatchingRuleDescription {
@@ -561,7 +557,7 @@ export const _decode_MatchingRuleDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_MatchingRuleDescription__obsolete;
     let information: asn1.OPTIONAL<UnboundedDirectoryString>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -615,34 +611,37 @@ export const _encode_MatchingRuleDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    value.information
-                        ? __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_MatchingRuleDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* IF_ABSENT  */ value.information === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.information, __utils.BER)
-                        : undefined,
+                          )(value.information, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -738,6 +737,10 @@ export const _root_component_type_list_1_spec_for_AttributeTypeInformation: __ut
 ];
 export const _root_component_type_list_2_spec_for_AttributeTypeInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeTypeInformation: __utils.ComponentSpec[] = [];
+export const _default_value_for_AttributeTypeInformation__multi_valued = true;
+export const _default_value_for_AttributeTypeInformation__collective = false;
+export const _default_value_for_AttributeTypeInformation__userModifiable = true;
+export const _default_value_for_AttributeTypeInformation__application = InformationFramework.AttributeUsage_userApplications;
 export const _decode_AttributeTypeInformation = function (
     el: asn1.ASN1Element
 ): AttributeTypeInformation {
@@ -747,10 +750,10 @@ export const _decode_AttributeTypeInformation = function (
     let orderingMatch: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
     let substringsMatch: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
     let attributeSyntax: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let multi_valued: asn1.OPTIONAL<asn1.BOOLEAN> = true;
-    let collective: asn1.OPTIONAL<asn1.BOOLEAN> = false;
-    let userModifiable: asn1.OPTIONAL<asn1.BOOLEAN> = true;
-    let application: asn1.OPTIONAL<AttributeUsage> = userApplications;
+    let multi_valued: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AttributeTypeInformation__multi_valued;
+    let collective: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AttributeTypeInformation__collective;
+    let userModifiable: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AttributeTypeInformation__userModifiable;
+    let application: asn1.OPTIONAL<AttributeUsage> = _default_value_for_AttributeTypeInformation__application;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -831,81 +834,92 @@ export const _encode_AttributeTypeInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.derivation
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.derivation === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.derivation, __utils.BER)
-                        : undefined,
-                    value.equalityMatch
-                        ? __utils._encode_explicit(
+                          )(value.derivation, __utils.BER),
+                    /* IF_ABSENT  */ value.equalityMatch === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.equalityMatch, __utils.BER)
-                        : undefined,
-                    value.orderingMatch
-                        ? __utils._encode_explicit(
+                          )(value.equalityMatch, __utils.BER),
+                    /* IF_ABSENT  */ value.orderingMatch === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.orderingMatch, __utils.BER)
-                        : undefined,
-                    value.substringsMatch
-                        ? __utils._encode_explicit(
+                          )(value.orderingMatch, __utils.BER),
+                    /* IF_ABSENT  */ value.substringsMatch === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.substringsMatch, __utils.BER)
-                        : undefined,
-                    value.attributeSyntax
-                        ? __utils._encode_explicit(
+                          )(value.substringsMatch, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeSyntax === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.attributeSyntax, __utils.BER)
-                        : undefined,
-                    value.multi_valued !== undefined &&
-                    value.multi_valued !==
-                        true /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.attributeSyntax, __utils.BER),
+                    /* IF_DEFAULT */ value.multi_valued === undefined ||
+                    __utils.deepEq(
+                        value.multi_valued,
+                        _default_value_for_AttributeTypeInformation__multi_valued
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               5,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.multi_valued, __utils.BER)
-                        : undefined,
-                    value.collective !== undefined &&
-                    value.collective !==
-                        false /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.multi_valued, __utils.BER),
+                    /* IF_DEFAULT */ value.collective === undefined ||
+                    __utils.deepEq(
+                        value.collective,
+                        _default_value_for_AttributeTypeInformation__collective
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               6,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.collective, __utils.BER)
-                        : undefined,
-                    value.userModifiable !== undefined &&
-                    value.userModifiable !==
-                        true /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.collective, __utils.BER),
+                    /* IF_DEFAULT */ value.userModifiable === undefined ||
+                    __utils.deepEq(
+                        value.userModifiable,
+                        _default_value_for_AttributeTypeInformation__userModifiable
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               7,
                               () => __utils._encodeBoolean,
                               __utils.BER
-                          )(value.userModifiable, __utils.BER)
-                        : undefined,
-                    value.application !== undefined &&
-                    value.application !==
-                        userApplications /* TODO: Review this condition. */
-                        ? _encode_AttributeUsage(value.application, __utils.BER)
-                        : undefined,
+                          )(value.userModifiable, __utils.BER),
+                    /* IF_DEFAULT */ value.application === undefined ||
+                    __utils.deepEq(
+                        value.application,
+                        _default_value_for_AttributeTypeInformation__application
+                    )
+                        ? undefined
+                        : _encode_AttributeUsage(
+                              value.application,
+                              __utils.BER
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -967,6 +981,7 @@ export const _root_component_type_list_1_spec_for_AttributeTypeDescription: __ut
 ];
 export const _root_component_type_list_2_spec_for_AttributeTypeDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeTypeDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_AttributeTypeDescription__obsolete = false;
 export const _decode_AttributeTypeDescription = function (
     el: asn1.ASN1Element
 ): AttributeTypeDescription {
@@ -974,7 +989,7 @@ export const _decode_AttributeTypeDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AttributeTypeDescription__obsolete;
     let information!: AttributeTypeInformation;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1028,27 +1043,30 @@ export const _encode_AttributeTypeDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_AttributeTypeDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_AttributeTypeInformation,
@@ -1109,12 +1127,13 @@ export const _root_component_type_list_1_spec_for_ObjectClassInformation: __util
 ];
 export const _root_component_type_list_2_spec_for_ObjectClassInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ObjectClassInformation: __utils.ComponentSpec[] = [];
+export const _default_value_for_ObjectClassInformation__kind = InformationFramework.structural;
 export const _decode_ObjectClassInformation = function (
     el: asn1.ASN1Element
 ): ObjectClassInformation {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let subclassOf: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER[]>;
-    let kind: asn1.OPTIONAL<ObjectClassKind> = structural;
+    let kind: asn1.OPTIONAL<ObjectClassKind> = _default_value_for_ObjectClassInformation__kind;
     let mandatories: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER[]>;
     let optionals: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER[]>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -1172,18 +1191,22 @@ export const _encode_ObjectClassInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.subclassOf
-                        ? __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                    /* IF_ABSENT  */ value.subclassOf === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.subclassOf, __utils.BER)
-                        : undefined,
-                    value.kind !== undefined &&
-                    value.kind !== structural /* TODO: Review this condition. */
-                        ? _encode_ObjectClassKind(value.kind, __utils.BER)
-                        : undefined,
-                    value.mandatories
-                        ? __utils._encode_explicit(
+                          )(value.subclassOf, __utils.BER),
+                    /* IF_DEFAULT */ value.kind === undefined ||
+                    __utils.deepEq(
+                        value.kind,
+                        _default_value_for_ObjectClassInformation__kind
+                    )
+                        ? undefined
+                        : _encode_ObjectClassKind(value.kind, __utils.BER),
+                    /* IF_ABSENT  */ value.mandatories === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -1192,10 +1215,10 @@ export const _encode_ObjectClassInformation = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.mandatories, __utils.BER)
-                        : undefined,
-                    value.optionals
-                        ? __utils._encode_explicit(
+                          )(value.mandatories, __utils.BER),
+                    /* IF_ABSENT  */ value.optionals === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () =>
@@ -1204,8 +1227,7 @@ export const _encode_ObjectClassInformation = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.optionals, __utils.BER)
-                        : undefined,
+                          )(value.optionals, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1267,6 +1289,7 @@ export const _root_component_type_list_1_spec_for_ObjectClassDescription: __util
 ];
 export const _root_component_type_list_2_spec_for_ObjectClassDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ObjectClassDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_ObjectClassDescription__obsolete = false;
 export const _decode_ObjectClassDescription = function (
     el: asn1.ASN1Element
 ): ObjectClassDescription {
@@ -1274,7 +1297,7 @@ export const _decode_ObjectClassDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ObjectClassDescription__obsolete;
     let information!: ObjectClassInformation;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1328,27 +1351,30 @@ export const _encode_ObjectClassDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_ObjectClassDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_ObjectClassInformation,
@@ -1401,6 +1427,7 @@ export const _root_component_type_list_1_spec_for_NameFormInformation: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_NameFormInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NameFormInformation: __utils.ComponentSpec[] = [];
+
 export const _decode_NameFormInformation = function (
     el: asn1.ASN1Element
 ): NameFormInformation {
@@ -1452,20 +1479,22 @@ export const _encode_NameFormInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.subordinate,
                         __utils.BER
                     ),
-                    __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
-                        () => __utils._encodeObjectIdentifier,
+                    /* REQUIRED   */ __utils._encodeSetOf<
+                        asn1.OBJECT_IDENTIFIER
+                    >(() => __utils._encodeObjectIdentifier, __utils.BER)(
+                        value.namingMandatories,
                         __utils.BER
-                    )(value.namingMandatories, __utils.BER),
-                    value.namingOptionals
-                        ? __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                    ),
+                    /* IF_ABSENT  */ value.namingOptionals === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.namingOptionals, __utils.BER)
-                        : undefined,
+                          )(value.namingOptionals, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1527,6 +1556,7 @@ export const _root_component_type_list_1_spec_for_NameFormDescription: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_NameFormDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NameFormDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_NameFormDescription__obsolete = false;
 export const _decode_NameFormDescription = function (
     el: asn1.ASN1Element
 ): NameFormDescription {
@@ -1534,7 +1564,7 @@ export const _decode_NameFormDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_NameFormDescription__obsolete;
     let information!: NameFormInformation;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1588,27 +1618,30 @@ export const _encode_NameFormDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_NameFormDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_NameFormInformation,
@@ -1677,6 +1710,7 @@ export const _root_component_type_list_1_spec_for_MatchingRuleUseDescription: __
 ];
 export const _root_component_type_list_2_spec_for_MatchingRuleUseDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MatchingRuleUseDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_MatchingRuleUseDescription__obsolete = false;
 export const _decode_MatchingRuleUseDescription = function (
     el: asn1.ASN1Element
 ): MatchingRuleUseDescription {
@@ -1684,7 +1718,7 @@ export const _decode_MatchingRuleUseDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_MatchingRuleUseDescription__obsolete;
     let information!: asn1.OBJECT_IDENTIFIER[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1741,27 +1775,30 @@ export const _encode_MatchingRuleUseDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_MatchingRuleUseDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () =>
@@ -1814,6 +1851,7 @@ export const _root_component_type_list_1_spec_for_ContextInformation: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_ContextInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ContextInformation: __utils.ComponentSpec[] = [];
+
 export const _decode_ContextInformation = function (
     el: asn1.ASN1Element
 ): ContextInformation {
@@ -1856,13 +1894,16 @@ export const _encode_ContextInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_UnboundedDirectoryString(value.syntax, __utils.BER),
-                    value.assertionSyntax
-                        ? _encode_UnboundedDirectoryString(
+                    /* REQUIRED   */ _encode_UnboundedDirectoryString(
+                        value.syntax,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.assertionSyntax === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.assertionSyntax,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1924,6 +1965,7 @@ export const _root_component_type_list_1_spec_for_ContextDescription: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_ContextDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ContextDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_ContextDescription__obsolete = false;
 export const _decode_ContextDescription = function (
     el: asn1.ASN1Element
 ): ContextDescription {
@@ -1931,7 +1973,7 @@ export const _decode_ContextDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ContextDescription__obsolete;
     let information!: ContextInformation;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1985,27 +2027,30 @@ export const _encode_ContextDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_ContextDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_ContextInformation,
@@ -2050,6 +2095,7 @@ export const _root_component_type_list_1_spec_for_DITContextUseInformation: __ut
 ];
 export const _root_component_type_list_2_spec_for_DITContextUseInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DITContextUseInformation: __utils.ComponentSpec[] = [];
+
 export const _decode_DITContextUseInformation = function (
     el: asn1.ASN1Element
 ): DITContextUseInformation {
@@ -2104,8 +2150,9 @@ export const _encode_DITContextUseInformation = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.mandatoryContexts
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.mandatoryContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () =>
@@ -2114,10 +2161,10 @@ export const _encode_DITContextUseInformation = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.mandatoryContexts, __utils.BER)
-                        : undefined,
-                    value.optionalContexts
-                        ? __utils._encode_explicit(
+                          )(value.mandatoryContexts, __utils.BER),
+                    /* IF_ABSENT  */ value.optionalContexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -2126,8 +2173,7 @@ export const _encode_DITContextUseInformation = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.optionalContexts, __utils.BER)
-                        : undefined,
+                          )(value.optionalContexts, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2189,6 +2235,7 @@ export const _root_component_type_list_1_spec_for_DITContextUseDescription: __ut
 ];
 export const _root_component_type_list_2_spec_for_DITContextUseDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DITContextUseDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_DITContextUseDescription__obsolete = false;
 export const _decode_DITContextUseDescription = function (
     el: asn1.ASN1Element
 ): DITContextUseDescription {
@@ -2196,7 +2243,7 @@ export const _decode_DITContextUseDescription = function (
     let identifier!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_DITContextUseDescription__obsolete;
     let information!: DITContextUseInformation;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -2250,27 +2297,30 @@ export const _encode_DITContextUseDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.identifier,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_DITContextUseDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_DITContextUseInformation,
@@ -2339,6 +2389,7 @@ export const _root_component_type_list_1_spec_for_FriendsDescription: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_FriendsDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_FriendsDescription: __utils.ComponentSpec[] = [];
+export const _default_value_for_FriendsDescription__obsolete = false;
 export const _decode_FriendsDescription = function (
     el: asn1.ASN1Element
 ): FriendsDescription {
@@ -2346,7 +2397,7 @@ export const _decode_FriendsDescription = function (
     let anchor!: asn1.OBJECT_IDENTIFIER;
     let name: asn1.OPTIONAL<UnboundedDirectoryString[]>;
     let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let obsolete: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_FriendsDescription__obsolete;
     let friends!: asn1.OBJECT_IDENTIFIER[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -2402,24 +2453,30 @@ export const _encode_FriendsDescription = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(value.anchor, __utils.BER),
-                    value.name
-                        ? __utils._encodeSetOf<UnboundedDirectoryString>(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.anchor,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encodeSetOf<UnboundedDirectoryString>(
                               () => _encode_UnboundedDirectoryString,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? _encode_UnboundedDirectoryString(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : _encode_UnboundedDirectoryString(
                               value.description,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.obsolete !== undefined &&
-                    value.obsolete !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.obsolete, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* IF_DEFAULT */ value.obsolete === undefined ||
+                    __utils.deepEq(
+                        value.obsolete,
+                        _default_value_for_FriendsDescription__obsolete
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.obsolete, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () =>

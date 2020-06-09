@@ -11,9 +11,7 @@ import * as asn1 from "asn1-ts";
 import { algorithm } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
 export {
-    ALGORITHM,
     AlgorithmIdentifier,
-    SupportedAlgorithms,
     SupportedCurves,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
@@ -454,6 +452,7 @@ export const _root_component_type_list_1_spec_for_DSS_Parms: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_DSS_Parms: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DSS_Parms: __utils.ComponentSpec[] = [];
+
 export const _decode_DSS_Parms = function (el: asn1.ASN1Element): DSS_Parms {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 3) {
@@ -484,9 +483,18 @@ export const _encode_DSS_Parms = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.p, __utils.BER),
-                    __utils._encodeInteger(value.q, __utils.BER),
-                    __utils._encodeInteger(value.g, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.p,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.q,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.g,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -532,6 +540,7 @@ export const _root_component_type_list_1_spec_for_ValidationParms: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_ValidationParms: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ValidationParms: __utils.ComponentSpec[] = [];
+
 export const _decode_ValidationParms = function (
     el: asn1.ASN1Element
 ): ValidationParms {
@@ -561,8 +570,14 @@ export const _encode_ValidationParms = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeBitString(value.seed, __utils.BER),
-                    __utils._encodeInteger(value.pgenCounter, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeBitString(
+                        value.seed,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.pgenCounter,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -624,6 +639,7 @@ export const _root_component_type_list_1_spec_for_DomainParameters: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_DomainParameters: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DomainParameters: __utils.ComponentSpec[] = [];
+
 export const _decode_DomainParameters = function (
     el: asn1.ASN1Element
 ): DomainParameters {
@@ -681,18 +697,27 @@ export const _encode_DomainParameters = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeInteger(value.p, __utils.BER),
-                    __utils._encodeInteger(value.g, __utils.BER),
-                    __utils._encodeInteger(value.q, __utils.BER),
-                    value.j
-                        ? __utils._encodeInteger(value.j, __utils.BER)
-                        : undefined,
-                    value.validationParms
-                        ? _encode_ValidationParms(
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.p,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.g,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.q,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.j === undefined
+                        ? undefined
+                        : __utils._encodeInteger(value.j, __utils.BER),
+                    /* IF_ABSENT  */ value.validationParms === undefined
+                        ? undefined
+                        : _encode_ValidationParms(
                               value.validationParms,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

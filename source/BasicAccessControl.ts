@@ -46,16 +46,12 @@ export {
     _encode_Filter,
 } from "./DirectoryAbstractService";
 export {
-    ATTRIBUTE,
     AttributeType,
     AttributeTypeAndValue,
     ContextAssertion,
     DistinguishedName,
-    MATCHING_RULE,
-    objectIdentifierMatch,
     Refinement,
     SubtreeSpecification,
-    SupportedAttributes,
     _decode_AttributeType,
     _decode_AttributeTypeAndValue,
     _decode_ContextAssertion,
@@ -70,7 +66,6 @@ export {
     _encode_SubtreeSpecification,
 } from "./InformationFramework";
 export {
-    directoryStringFirstComponentMatch,
     NameAndOptionalUID,
     UnboundedDirectoryString,
     UniqueIdentifier,
@@ -140,13 +135,14 @@ export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevel
 ];
 export const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
+export const _default_value_for_AuthenticationLevel_basicLevels__signed = false;
 export const _decode_AuthenticationLevel_basicLevels = function (
     el: asn1.ASN1Element
 ): AuthenticationLevel_basicLevels {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let level!: AuthenticationLevel_basicLevels_level;
     let localQualifier: asn1.OPTIONAL<asn1.INTEGER>;
-    let signed: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let signed: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AuthenticationLevel_basicLevels__signed;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -187,20 +183,23 @@ export const _encode_AuthenticationLevel_basicLevels = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AuthenticationLevel_basicLevels_level(
+                    /* REQUIRED   */ _encode_AuthenticationLevel_basicLevels_level(
                         value.level,
                         __utils.BER
                     ),
-                    value.localQualifier
-                        ? __utils._encodeInteger(
+                    /* IF_ABSENT  */ value.localQualifier === undefined
+                        ? undefined
+                        : __utils._encodeInteger(
                               value.localQualifier,
                               __utils.BER
-                          )
-                        : undefined,
-                    value.signed !== undefined &&
-                    value.signed !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.signed, __utils.BER)
-                        : undefined,
+                          ),
+                    /* IF_DEFAULT */ value.signed === undefined ||
+                    __utils.deepEq(
+                        value.signed,
+                        _default_value_for_AuthenticationLevel_basicLevels__signed
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.signed, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -258,6 +257,7 @@ export const _root_component_type_list_1_spec_for_MaxValueCount: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
+
 export const _decode_MaxValueCount = function (
     el: asn1.ASN1Element
 ): MaxValueCount {
@@ -287,8 +287,14 @@ export const _encode_MaxValueCount = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttributeType(value.type_, __utils.BER),
-                    __utils._encodeInteger(value.maxCount, __utils.BER),
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.type_,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeInteger(
+                        value.maxCount,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -326,6 +332,7 @@ export const _root_component_type_list_1_spec_for_RestrictedValue: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
+
 export const _decode_RestrictedValue = function (
     el: asn1.ASN1Element
 ): RestrictedValue {
@@ -355,8 +362,14 @@ export const _encode_RestrictedValue = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttributeType(value.type_, __utils.BER),
-                    _encode_AttributeType(value.valuesIn, __utils.BER),
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.type_,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AttributeType(
+                        value.valuesIn,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -482,6 +495,7 @@ export const _root_component_type_list_1_spec_for_ProtectedItems: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
+
 export const _decode_ProtectedItems = function (
     el: asn1.ASN1Element
 ): ProtectedItems {
@@ -612,24 +626,25 @@ export const _encode_ProtectedItems = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.entry
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.entry === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeNull,
                               __utils.BER
-                          )(value.entry, __utils.BER)
-                        : undefined,
-                    value.allUserAttributeTypes
-                        ? __utils._encode_explicit(
+                          )(value.entry, __utils.BER),
+                    /* IF_ABSENT  */ value.allUserAttributeTypes === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeNull,
                               __utils.BER
-                          )(value.allUserAttributeTypes, __utils.BER)
-                        : undefined,
-                    value.attributeType
-                        ? __utils._encode_explicit(
+                          )(value.allUserAttributeTypes, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeType === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -638,10 +653,10 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.attributeType, __utils.BER)
-                        : undefined,
-                    value.allAttributeValues
-                        ? __utils._encode_explicit(
+                          )(value.attributeType, __utils.BER),
+                    /* IF_ABSENT  */ value.allAttributeValues === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -650,18 +665,19 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.allAttributeValues, __utils.BER)
-                        : undefined,
-                    value.allUserAttributeTypesAndValues
-                        ? __utils._encode_explicit(
+                          )(value.allAttributeValues, __utils.BER),
+                    /* IF_ABSENT  */ value.allUserAttributeTypesAndValues ===
+                    undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () => __utils._encodeNull,
                               __utils.BER
-                          )(value.allUserAttributeTypesAndValues, __utils.BER)
-                        : undefined,
-                    value.attributeValue
-                        ? __utils._encode_explicit(
+                          )(value.allUserAttributeTypesAndValues, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeValue === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               5,
                               () =>
@@ -670,10 +686,10 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.attributeValue, __utils.BER)
-                        : undefined,
-                    value.selfValue
-                        ? __utils._encode_explicit(
+                          )(value.attributeValue, __utils.BER),
+                    /* IF_ABSENT  */ value.selfValue === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               6,
                               () =>
@@ -682,18 +698,18 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.selfValue, __utils.BER)
-                        : undefined,
-                    value.rangeOfValues
-                        ? __utils._encode_explicit(
+                          )(value.selfValue, __utils.BER),
+                    /* IF_ABSENT  */ value.rangeOfValues === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               7,
                               () => _encode_Filter,
                               __utils.BER
-                          )(value.rangeOfValues, __utils.BER)
-                        : undefined,
-                    value.maxValueCount
-                        ? __utils._encode_explicit(
+                          )(value.rangeOfValues, __utils.BER),
+                    /* IF_ABSENT  */ value.maxValueCount === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               8,
                               () =>
@@ -702,18 +718,18 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.maxValueCount, __utils.BER)
-                        : undefined,
-                    value.maxImmSub
-                        ? __utils._encode_explicit(
+                          )(value.maxValueCount, __utils.BER),
+                    /* IF_ABSENT  */ value.maxImmSub === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               9,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.maxImmSub, __utils.BER)
-                        : undefined,
-                    value.restrictedBy
-                        ? __utils._encode_explicit(
+                          )(value.maxImmSub, __utils.BER),
+                    /* IF_ABSENT  */ value.restrictedBy === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               10,
                               () =>
@@ -722,10 +738,10 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.restrictedBy, __utils.BER)
-                        : undefined,
-                    value.contexts
-                        ? __utils._encode_explicit(
+                          )(value.restrictedBy, __utils.BER),
+                    /* IF_ABSENT  */ value.contexts === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               11,
                               () =>
@@ -734,16 +750,15 @@ export const _encode_ProtectedItems = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.contexts, __utils.BER)
-                        : undefined,
-                    value.classes
-                        ? __utils._encode_explicit(
+                          )(value.contexts, __utils.BER),
+                    /* IF_ABSENT  */ value.classes === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               12,
                               () => _encode_Refinement,
                               __utils.BER
-                          )(value.classes, __utils.BER)
-                        : undefined,
+                          )(value.classes, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -805,6 +820,7 @@ export const _root_component_type_list_1_spec_for_UserClasses: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_UserClasses: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserClasses: __utils.ComponentSpec[] = [];
+
 export const _decode_UserClasses = function (
     el: asn1.ASN1Element
 ): UserClasses {
@@ -878,24 +894,25 @@ export const _encode_UserClasses = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.allUsers
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.allUsers === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeNull,
                               __utils.BER
-                          )(value.allUsers, __utils.BER)
-                        : undefined,
-                    value.thisEntry
-                        ? __utils._encode_explicit(
+                          )(value.allUsers, __utils.BER),
+                    /* IF_ABSENT  */ value.thisEntry === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeNull,
                               __utils.BER
-                          )(value.thisEntry, __utils.BER)
-                        : undefined,
-                    value.name
-                        ? __utils._encode_explicit(
+                          )(value.thisEntry, __utils.BER),
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () =>
@@ -904,10 +921,10 @@ export const _encode_UserClasses = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.userGroup
-                        ? __utils._encode_explicit(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.userGroup === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -916,10 +933,10 @@ export const _encode_UserClasses = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.userGroup, __utils.BER)
-                        : undefined,
-                    value.subtree
-                        ? __utils._encode_explicit(
+                          )(value.userGroup, __utils.BER),
+                    /* IF_ABSENT  */ value.subtree === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () =>
@@ -928,8 +945,7 @@ export const _encode_UserClasses = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.subtree, __utils.BER)
-                        : undefined,
+                          )(value.subtree, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1031,6 +1047,7 @@ export const _root_component_type_list_1_spec_for_ItemPermission: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
+
 export const _decode_ItemPermission = function (
     el: asn1.ASN1Element
 ): ItemPermission {
@@ -1078,11 +1095,14 @@ export const _encode_ItemPermission = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.precedence
-                        ? _encode_Precedence(value.precedence, __utils.BER)
-                        : undefined,
-                    _encode_UserClasses(value.userClasses, __utils.BER),
-                    _encode_GrantsAndDenials(
+                    /* IF_ABSENT  */ value.precedence === undefined
+                        ? undefined
+                        : _encode_Precedence(value.precedence, __utils.BER),
+                    /* REQUIRED   */ _encode_UserClasses(
+                        value.userClasses,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_GrantsAndDenials(
                         value.grantsAndDenials,
                         __utils.BER
                     ),
@@ -1123,6 +1143,7 @@ export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFi
 ];
 export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
+
 export const _decode_ACIItem_itemOrUserFirst_itemFirst = function (
     el: asn1.ASN1Element
 ): ACIItem_itemOrUserFirst_itemFirst {
@@ -1158,8 +1179,11 @@ export const _encode_ACIItem_itemOrUserFirst_itemFirst = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_ProtectedItems(value.protectedItems, __utils.BER),
-                    __utils._encodeSetOf<ItemPermission>(
+                    /* REQUIRED   */ _encode_ProtectedItems(
+                        value.protectedItems,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeSetOf<ItemPermission>(
                         () => _encode_ItemPermission,
                         __utils.BER
                     )(value.itemPermissions, __utils.BER),
@@ -1208,6 +1232,7 @@ export const _root_component_type_list_1_spec_for_UserPermission: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_UserPermission: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserPermission: __utils.ComponentSpec[] = [];
+
 export const _decode_UserPermission = function (
     el: asn1.ASN1Element
 ): UserPermission {
@@ -1255,11 +1280,14 @@ export const _encode_UserPermission = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.precedence
-                        ? _encode_Precedence(value.precedence, __utils.BER)
-                        : undefined,
-                    _encode_ProtectedItems(value.protectedItems, __utils.BER),
-                    _encode_GrantsAndDenials(
+                    /* IF_ABSENT  */ value.precedence === undefined
+                        ? undefined
+                        : _encode_Precedence(value.precedence, __utils.BER),
+                    /* REQUIRED   */ _encode_ProtectedItems(
+                        value.protectedItems,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_GrantsAndDenials(
                         value.grantsAndDenials,
                         __utils.BER
                     ),
@@ -1300,6 +1328,7 @@ export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFi
 ];
 export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
+
 export const _decode_ACIItem_itemOrUserFirst_userFirst = function (
     el: asn1.ASN1Element
 ): ACIItem_itemOrUserFirst_userFirst {
@@ -1335,8 +1364,11 @@ export const _encode_ACIItem_itemOrUserFirst_userFirst = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_UserClasses(value.userClasses, __utils.BER),
-                    __utils._encodeSetOf<UserPermission>(
+                    /* REQUIRED   */ _encode_UserClasses(
+                        value.userClasses,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeSetOf<UserPermission>(
                         () => _encode_UserPermission,
                         __utils.BER
                     )(value.userPermissions, __utils.BER),
@@ -1433,6 +1465,7 @@ export const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_ACIItem: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem: __utils.ComponentSpec[] = [];
+
 export const _decode_ACIItem = function (el: asn1.ASN1Element): ACIItem {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 4) {
@@ -1472,16 +1505,19 @@ export const _encode_ACIItem = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_UnboundedDirectoryString(
+                    /* REQUIRED   */ _encode_UnboundedDirectoryString(
                         value.identificationTag,
                         __utils.BER
                     ),
-                    _encode_Precedence(value.precedence, __utils.BER),
-                    _encode_AuthenticationLevel(
+                    /* REQUIRED   */ _encode_Precedence(
+                        value.precedence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AuthenticationLevel(
                         value.authenticationLevel,
                         __utils.BER
                     ),
-                    _encode_ACIItem_itemOrUserFirst(
+                    /* REQUIRED   */ _encode_ACIItem_itemOrUserFirst(
                         value.itemOrUserFirst,
                         __utils.BER
                     ),

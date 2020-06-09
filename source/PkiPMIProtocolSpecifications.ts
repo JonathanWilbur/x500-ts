@@ -51,7 +51,6 @@ export {
     _encode_AttributeCertificate,
 } from "./AttributeCertificateDefinitions";
 export {
-    ALGORITHM,
     AlgorithmIdentifier,
     AvlSerialNumber,
     CertAVL,
@@ -98,10 +97,8 @@ export {
     _encode_SubjectKeyIdentifier,
 } from "./CertificateExtensions";
 export {
-    ATTRIBUTE,
     Attribute,
     Name,
-    SupportedAttributes,
     _decode_Attribute,
     _decode_Name,
     _encode_Attribute,
@@ -109,14 +106,9 @@ export {
 } from "./InformationFramework";
 export {
     PkiWaError,
-    WRAPPED_PDU,
     _decode_PkiWaError,
     _encode_PkiWaError,
 } from "./PkiPmiWrapper";
-export {
-    objectIdentifierMatch,
-    octetStringMatch,
-} from "./SelectedAttributeTypes";
 export {
     attributeCertificateDefinitions,
     authenticationFramework,
@@ -133,11 +125,8 @@ export {
 
 export type AVMPversion = asn1.ENUMERATED;
 export const AVMPversion_v1: AVMPversion = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v1: AVMPversion = AVMPversion_v1; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMPversion_v2: AVMPversion = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v2: AVMPversion = AVMPversion_v2; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMPversion_v3: AVMPversion = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v3: AVMPversion = AVMPversion_v3; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_AVMPversion = __utils._decodeEnumerated;
 export const _encode_AVMPversion = __utils._encodeEnumerated;
 
@@ -178,11 +167,12 @@ export const _root_component_type_list_1_spec_for_AVMPcommonComponents: __utils.
 ];
 export const _root_component_type_list_2_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [];
+export const _default_value_for_AVMPcommonComponents__version = AVMPversion_v1;
 export const _decode_AVMPcommonComponents = function (
     el: asn1.ASN1Element
 ): AVMPcommonComponents {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_AVMPcommonComponents__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -210,8 +200,8 @@ export const _decode_AVMPcommonComponents = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AVMPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new AVMPcommonComponents(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         _unrecognizedExtensionsList
@@ -225,15 +215,21 @@ export const _encode_AVMPcommonComponents = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_AVMPcommonComponents__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -279,9 +275,10 @@ export const _root_component_type_list_1_spec_for_CertReq: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_CertReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertReq__version = AVMPversion_v1;
 export const _decode_CertReq = function (el: asn1.ASN1Element): CertReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_CertReq__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -309,8 +306,8 @@ export const _decode_CertReq = function (el: asn1.ASN1Element): CertReq {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         _unrecognizedExtensionsList
@@ -324,15 +321,21 @@ export const _encode_CertReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertReq__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -364,6 +367,7 @@ export const _root_component_type_list_1_spec_for_CertOK: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_CertOK: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertOK: __utils.ComponentSpec[] = [];
+
 export const _decode_CertOK = function (el: asn1.ASN1Element): CertOK {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -385,7 +389,12 @@ export const _encode_CertOK = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_Certificate(value.dhCert, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_Certificate(
+                        value.dhCert,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -399,49 +408,27 @@ export const _encode_CertOK = function (
 
 export type AVMP_error = asn1.ENUMERATED;
 export const AVMP_error_noReason: AVMP_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const noReason: AVMP_error = AVMP_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unknownAvlEntity: AVMP_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownAvlEntity: AVMP_error = AVMP_error_unknownAvlEntity; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unknownContentType: AVMP_error = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownContentType: AVMP_error = AVMP_error_unknownContentType; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unsupportedAVMPversion: AVMP_error = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedAVMPversion: AVMP_error = AVMP_error_unsupportedAVMPversion; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_missingContent: AVMP_error = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContent: AVMP_error = AVMP_error_missingContent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_missingContentComponent: AVMP_error = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContentComponent: AVMP_error = AVMP_error_missingContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_invalidContentComponent: AVMP_error = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidContentComponent: AVMP_error = AVMP_error_invalidContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_sequenceError: AVMP_error = 7; /* LONG_NAMED_ENUMERATED_VALUE */
-export const sequenceError: AVMP_error = AVMP_error_sequenceError; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_protocolError: AVMP_error = 8; /* LONG_NAMED_ENUMERATED_VALUE */
-export const protocolError: AVMP_error = AVMP_error_protocolError; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_invalidAvlSignature: AVMP_error = 9; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidAvlSignature: AVMP_error = AVMP_error_invalidAvlSignature; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_duplicateAVL: AVMP_error = 10; /* LONG_NAMED_ENUMERATED_VALUE */
-export const duplicateAVL: AVMP_error = AVMP_error_duplicateAVL; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_missingAvlComponent: AVMP_error = 11; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingAvlComponent: AVMP_error = AVMP_error_missingAvlComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_invalidAvlVersion: AVMP_error = 12; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidAvlVersion: AVMP_error = AVMP_error_invalidAvlVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_notAllowedForConstrainedAVLEntity: AVMP_error = 13; /* LONG_NAMED_ENUMERATED_VALUE */
-export const notAllowedForConstrainedAVLEntity: AVMP_error = AVMP_error_notAllowedForConstrainedAVLEntity; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_constrainedRequired: AVMP_error = 14; /* LONG_NAMED_ENUMERATED_VALUE */
-export const constrainedRequired: AVMP_error = AVMP_error_constrainedRequired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_nonConstrainedRequired: AVMP_error = 15; /* LONG_NAMED_ENUMERATED_VALUE */
-export const nonConstrainedRequired: AVMP_error = AVMP_error_nonConstrainedRequired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unsupportedCriticalEntryExtension: AVMP_error = 16; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedCriticalEntryExtension: AVMP_error = AVMP_error_unsupportedCriticalEntryExtension; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unsupportedCriticalExtension: AVMP_error = 17; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedCriticalExtension: AVMP_error = AVMP_error_unsupportedCriticalExtension; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_maxAVLsExceeded: AVMP_error = 18; /* LONG_NAMED_ENUMERATED_VALUE */
-export const maxAVLsExceeded: AVMP_error = AVMP_error_maxAVLsExceeded; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unknownCert: AVMP_error = 19; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownCert: AVMP_error = AVMP_error_unknownCert; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unknownAVL: AVMP_error = 20; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownAVL: AVMP_error = AVMP_error_unknownAVL; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AVMP_error_unsupportedScopeRestriction: AVMP_error = 21; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedScopeRestriction: AVMP_error = AVMP_error_unsupportedScopeRestriction; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_AVMP_error = __utils._decodeEnumerated;
 export const _encode_AVMP_error = __utils._encodeEnumerated;
 
@@ -513,6 +500,7 @@ export const _root_component_type_list_1_spec_for_CertErr: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_CertErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertErr: __utils.ComponentSpec[] = [];
+
 export const _decode_CertErr = function (el: asn1.ASN1Element): CertErr {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let notOK!: CertErr_notOK;
@@ -539,8 +527,8 @@ export const _decode_CertErr = function (el: asn1.ASN1Element): CertErr {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertErr /* SEQUENCE_CONSTRUCTOR_CALL */(
-        notOK,
+    return new CertErr(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ notOK,
         note,
         _unrecognizedExtensionsList
     );
@@ -553,10 +541,13 @@ export const _encode_CertErr = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_CertErr_notOK(value.notOK, __utils.BER),
-                    value.note
-                        ? _encode_Notifications(value.note, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_CertErr_notOK(
+                        value.notOK,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.note === undefined
+                        ? undefined
+                        : _encode_Notifications(value.note, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -644,9 +635,10 @@ export const _root_component_type_list_1_spec_for_CertRsp: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_CertRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertRsp__version = AVMPversion_v1;
 export const _decode_CertRsp = function (el: asn1.ASN1Element): CertRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_CertRsp__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let result!: CertRsp_result;
@@ -678,8 +670,8 @@ export const _decode_CertRsp = function (el: asn1.ASN1Element): CertRsp {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         result,
@@ -694,16 +686,25 @@ export const _encode_CertRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertRsp__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_CertRsp_result(value.result, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -759,9 +760,10 @@ export const _root_component_type_list_1_spec_for_AddAvlReq: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_AddAvlReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AddAvlReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_AddAvlReq__version = AVMPversion_v1;
 export const _decode_AddAvlReq = function (el: asn1.ASN1Element): AddAvlReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_AddAvlReq__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let certlist!: CertAVL;
@@ -793,8 +795,8 @@ export const _decode_AddAvlReq = function (el: asn1.ASN1Element): AddAvlReq {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AddAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new AddAvlReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         certlist,
@@ -809,16 +811,25 @@ export const _encode_AddAvlReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_AddAvlReq__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_CertAVL(value.certlist, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertAVL(
+                        value.certlist,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -850,6 +861,7 @@ export const _root_component_type_list_1_spec_for_AddAvlOK: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_AddAvlOK: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AddAvlOK: __utils.ComponentSpec[] = [];
+
 export const _decode_AddAvlOK = function (el: asn1.ASN1Element): AddAvlOK {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -873,7 +885,7 @@ export const _encode_AddAvlOK = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [__utils._encodeNull(value.ok, __utils.BER)],
+                [/* REQUIRED   */ __utils._encodeNull(value.ok, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -902,6 +914,7 @@ export const _root_component_type_list_1_spec_for_AddAvlErr: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_AddAvlErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AddAvlErr: __utils.ComponentSpec[] = [];
+
 export const _decode_AddAvlErr = function (el: asn1.ASN1Element): AddAvlErr {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -925,7 +938,7 @@ export const _encode_AddAvlErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_AVMP_error(value.notOK, __utils.BER)],
+                [/* REQUIRED   */ _encode_AVMP_error(value.notOK, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -1014,9 +1027,10 @@ export const _root_component_type_list_1_spec_for_AddAvlRsp: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_AddAvlRsp__version = AVMPversion_v1;
 export const _decode_AddAvlRsp = function (el: asn1.ASN1Element): AddAvlRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_AddAvlRsp__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let result!: AddAvlRsp_result;
@@ -1048,8 +1062,8 @@ export const _decode_AddAvlRsp = function (el: asn1.ASN1Element): AddAvlRsp {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AddAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new AddAvlRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         result,
@@ -1064,16 +1078,25 @@ export const _encode_AddAvlRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_AddAvlRsp__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_AddAvlRsp_result(value.result, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AddAvlRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1137,11 +1160,12 @@ export const _root_component_type_list_1_spec_for_ReplaceAvlReq: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_ReplaceAvlReq__version = AVMPversion_v1;
 export const _decode_ReplaceAvlReq = function (
     el: asn1.ASN1Element
 ): ReplaceAvlReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_ReplaceAvlReq__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let old: asn1.OPTIONAL<AvlSerialNumber>;
@@ -1177,8 +1201,8 @@ export const _decode_ReplaceAvlReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ReplaceAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new ReplaceAvlReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         old,
@@ -1194,19 +1218,25 @@ export const _encode_ReplaceAvlReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_ReplaceAvlReq__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    value.old
-                        ? _encode_AvlSerialNumber(value.old, __utils.BER)
-                        : undefined,
-                    _encode_CertAVL(value.new_, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.old === undefined
+                        ? undefined
+                        : _encode_AvlSerialNumber(value.old, __utils.BER),
+                    /* REQUIRED   */ _encode_CertAVL(value.new_, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1238,6 +1268,7 @@ export const _root_component_type_list_1_spec_for_RepAvlOK: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_RepAvlOK: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RepAvlOK: __utils.ComponentSpec[] = [];
+
 export const _decode_RepAvlOK = function (el: asn1.ASN1Element): RepAvlOK {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -1261,7 +1292,7 @@ export const _encode_RepAvlOK = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [__utils._encodeNull(value.ok, __utils.BER)],
+                [/* REQUIRED   */ __utils._encodeNull(value.ok, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -1290,6 +1321,7 @@ export const _root_component_type_list_1_spec_for_RepAvlErr: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_RepAvlErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RepAvlErr: __utils.ComponentSpec[] = [];
+
 export const _decode_RepAvlErr = function (el: asn1.ASN1Element): RepAvlErr {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -1313,7 +1345,7 @@ export const _encode_RepAvlErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_AVMP_error(value.notOK, __utils.BER)],
+                [/* REQUIRED   */ _encode_AVMP_error(value.notOK, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -1402,11 +1434,12 @@ export const _root_component_type_list_1_spec_for_ReplaceAvlRsp: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_ReplaceAvlRsp__version = AVMPversion_v1;
 export const _decode_ReplaceAvlRsp = function (
     el: asn1.ASN1Element
 ): ReplaceAvlRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_ReplaceAvlRsp__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let result!: ReplaceAvlRsp_result;
@@ -1438,8 +1471,8 @@ export const _decode_ReplaceAvlRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ReplaceAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new ReplaceAvlRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         result,
@@ -1454,16 +1487,25 @@ export const _encode_ReplaceAvlRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_ReplaceAvlRsp__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_ReplaceAvlRsp_result(value.result, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_ReplaceAvlRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1519,11 +1561,12 @@ export const _root_component_type_list_1_spec_for_DeleteAvlReq: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_DeleteAvlReq__version = AVMPversion_v1;
 export const _decode_DeleteAvlReq = function (
     el: asn1.ASN1Element
 ): DeleteAvlReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_DeleteAvlReq__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let avl_Id: asn1.OPTIONAL<AvlSerialNumber>;
@@ -1555,8 +1598,8 @@ export const _decode_DeleteAvlReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeleteAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new DeleteAvlReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         avl_Id,
@@ -1571,18 +1614,24 @@ export const _encode_DeleteAvlReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_DeleteAvlReq__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    value.avl_Id
-                        ? _encode_AvlSerialNumber(value.avl_Id, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.avl_Id === undefined
+                        ? undefined
+                        : _encode_AvlSerialNumber(value.avl_Id, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1614,6 +1663,7 @@ export const _root_component_type_list_1_spec_for_DelAvlOK: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_DelAvlOK: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DelAvlOK: __utils.ComponentSpec[] = [];
+
 export const _decode_DelAvlOK = function (el: asn1.ASN1Element): DelAvlOK {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -1637,7 +1687,7 @@ export const _encode_DelAvlOK = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [__utils._encodeNull(value.ok, __utils.BER)],
+                [/* REQUIRED   */ __utils._encodeNull(value.ok, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -1666,6 +1716,7 @@ export const _root_component_type_list_1_spec_for_DelAvlErr: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_DelAvlErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DelAvlErr: __utils.ComponentSpec[] = [];
+
 export const _decode_DelAvlErr = function (el: asn1.ASN1Element): DelAvlErr {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 1) {
@@ -1689,7 +1740,7 @@ export const _encode_DelAvlErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_AVMP_error(value.notOK, __utils.BER)],
+                [/* REQUIRED   */ _encode_AVMP_error(value.notOK, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -1778,11 +1829,12 @@ export const _root_component_type_list_1_spec_for_DeleteAvlRsp: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_DeleteAvlRsp__version = AVMPversion_v1;
 export const _decode_DeleteAvlRsp = function (
     el: asn1.ASN1Element
 ): DeleteAvlRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_DeleteAvlRsp__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let result!: DeleteAvlRsp_result;
@@ -1814,8 +1866,8 @@ export const _decode_DeleteAvlRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new DeleteAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new DeleteAvlRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         result,
@@ -1830,16 +1882,25 @@ export const _encode_DeleteAvlRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_DeleteAvlRsp__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_DeleteAvlRsp_result(value.result, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_DeleteAvlRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1895,9 +1956,10 @@ export const _root_component_type_list_1_spec_for_RejectAVL: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_RejectAVL: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RejectAVL: __utils.ComponentSpec[] = [];
+export const _default_value_for_RejectAVL__version = AVMPversion_v1;
 export const _decode_RejectAVL = function (el: asn1.ASN1Element): RejectAVL {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<AVMPversion> = v1;
+    let version: asn1.OPTIONAL<AVMPversion> = _default_value_for_RejectAVL__version;
     let timeStamp!: asn1.GeneralizedTime;
     let sequence!: AVMPsequence;
     let reason!: AVMP_error;
@@ -1929,8 +1991,8 @@ export const _decode_RejectAVL = function (el: asn1.ASN1Element): RejectAVL {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RejectAVL /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new RejectAVL(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         timeStamp,
         sequence,
         reason,
@@ -1945,16 +2007,25 @@ export const _encode_RejectAVL = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_AVMPversion(value.version, __utils.BER)
-                        : undefined,
-                    __utils._encodeGeneralizedTime(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_RejectAVL__version
+                    )
+                        ? undefined
+                        : _encode_AVMPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.timeStamp,
                         __utils.BER
                     ),
-                    _encode_AVMPsequence(value.sequence, __utils.BER),
-                    _encode_AVMP_error(value.reason, __utils.BER),
+                    /* REQUIRED   */ _encode_AVMPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AVMP_error(
+                        value.reason,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1971,11 +2042,8 @@ export const _encode_RejectAVL = function (
 
 export type CASPversion = asn1.ENUMERATED;
 export const CASPversion_v1: CASPversion = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v1: CASPversion = CASPversion_v1; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASPversion_v2: CASPversion = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v2: CASPversion = CASPversion_v2; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASPversion_v3: CASPversion = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const v3: CASPversion = CASPversion_v3; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_CASPversion = __utils._decodeEnumerated;
 export const _encode_CASPversion = __utils._encodeEnumerated;
 
@@ -2008,11 +2076,12 @@ export const _root_component_type_list_1_spec_for_CASPcommonComponents: __utils.
 ];
 export const _root_component_type_list_2_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [];
+export const _default_value_for_CASPcommonComponents__version = CASPversion_v1;
 export const _decode_CASPcommonComponents = function (
     el: asn1.ASN1Element
 ): CASPcommonComponents {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CASPcommonComponents__version;
     let sequence!: CASPsequence;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -2036,8 +2105,8 @@ export const _decode_CASPcommonComponents = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CASPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CASPcommonComponents(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         _unrecognizedExtensionsList
     );
@@ -2050,11 +2119,17 @@ export const _encode_CASPcommonComponents = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CASPcommonComponents__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2092,6 +2167,7 @@ export const _root_component_type_list_1_spec_for_CertSubscribeReq_certs_Item: _
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_CertSubscribeReq_certs_Item = function (
     el: asn1.ASN1Element
 ): CertSubscribeReq_certs_Item {
@@ -2125,8 +2201,8 @@ export const _encode_CertSubscribeReq_certs_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.subject, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
@@ -2175,11 +2251,12 @@ export const _root_component_type_list_1_spec_for_CertSubscribeReq: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertSubscribeReq__version = CASPversion_v1;
 export const _decode_CertSubscribeReq = function (
     el: asn1.ASN1Element
 ): CertSubscribeReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertSubscribeReq__version;
     let sequence!: CASPsequence;
     let certs!: CertSubscribeReq_certs_Item[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -2209,8 +2286,8 @@ export const _decode_CertSubscribeReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertSubscribeReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -2224,15 +2301,23 @@ export const _encode_CertSubscribeReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    __utils._encodeSequenceOf<CertSubscribeReq_certs_Item>(
-                        () => _encode_CertSubscribeReq_certs_Item,
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertSubscribeReq__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
                         __utils.BER
-                    )(value.certs, __utils.BER),
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        CertSubscribeReq_certs_Item
+                    >(() => _encode_CertSubscribeReq_certs_Item, __utils.BER)(
+                        value.certs,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2249,13 +2334,9 @@ export const _encode_CertSubscribeReq = function (
 
 export type CertStatus = asn1.ENUMERATED;
 export const CertStatus_good: CertStatus = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const good: CertStatus = CertStatus_good; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CertStatus_revoked: CertStatus = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const revoked: CertStatus = CertStatus_revoked; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CertStatus_on_hold: CertStatus = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const on_hold: CertStatus = CertStatus_on_hold; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CertStatus_expired: CertStatus = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const expired: CertStatus = CertStatus_expired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_CertStatus = __utils._decodeEnumerated;
 export const _encode_CertStatus = __utils._encodeEnumerated;
 
@@ -2292,6 +2373,7 @@ export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_ok: __uti
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertSubscribeOK_Item_ok = function (
     el: asn1.ASN1Element
 ): CertSubscribeOK_Item_ok {
@@ -2324,8 +2406,8 @@ export const _decode_CertSubscribeOK_Item_ok = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeOK_Item_ok /* SEQUENCE_CONSTRUCTOR_CALL */(
-        cert,
+    return new CertSubscribeOK_Item_ok(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ cert,
         status,
         revokeReason,
         _unrecognizedExtensionsList
@@ -2339,11 +2421,17 @@ export const _encode_CertSubscribeOK_Item_ok = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Certificate(value.cert, __utils.BER),
-                    _encode_CertStatus(value.status, __utils.BER),
-                    value.revokeReason
-                        ? _encode_CRLReason(value.revokeReason, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_Certificate(
+                        value.cert,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertStatus(
+                        value.status,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.revokeReason === undefined
+                        ? undefined
+                        : _encode_CRLReason(value.revokeReason, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2358,9 +2446,7 @@ export const _encode_CertSubscribeOK_Item_ok = function (
 
 export type CASP_CertStatusCode = asn1.ENUMERATED;
 export const CASP_CertStatusCode_noReason: CASP_CertStatusCode = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const noReason: CASP_CertStatusCode = CASP_CertStatusCode_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_CertStatusCode_unknownCert: CASP_CertStatusCode = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownCert: CASP_CertStatusCode = CASP_CertStatusCode_unknownCert; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_CASP_CertStatusCode = __utils._decodeEnumerated;
 export const _encode_CASP_CertStatusCode = __utils._encodeEnumerated;
 
@@ -2381,6 +2467,7 @@ export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_not_ok: _
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertSubscribeOK_Item_not_ok = function (
     el: asn1.ASN1Element
 ): CertSubscribeOK_Item_not_ok {
@@ -2406,7 +2493,12 @@ export const _encode_CertSubscribeOK_Item_not_ok = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_CertStatusCode(value.status, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_CASP_CertStatusCode(
+                        value.status,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -2468,23 +2560,14 @@ export const _encode_CertSubscribeOK = __utils._encodeSequenceOf<
 
 export type CASP_error = asn1.ENUMERATED;
 export const CASP_error_noReason: CASP_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const noReason: CASP_error = CASP_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_unknownContentType: CASP_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownContentType: CASP_error = CASP_error_unknownContentType; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_unsupportedWLMPversion: CASP_error = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedWLMPversion: CASP_error = CASP_error_unsupportedWLMPversion; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_missingContent: CASP_error = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContent: CASP_error = CASP_error_missingContent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_missingContentComponent: CASP_error = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContentComponent: CASP_error = CASP_error_missingContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_invalidContentComponent: CASP_error = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidContentComponent: CASP_error = CASP_error_invalidContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_sequenceError: CASP_error = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const sequenceError: CASP_error = CASP_error_sequenceError; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_unknownSubject: CASP_error = 7; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownSubject: CASP_error = CASP_error_unknownSubject; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CASP_error_unknownCert: CASP_error = 8; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownCert: CASP_error = CASP_error_unknownCert; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_CASP_error = __utils._decodeEnumerated;
 export const _encode_CASP_error = __utils._encodeEnumerated;
 
@@ -2505,6 +2588,7 @@ export const _root_component_type_list_1_spec_for_CertSubscribeErr: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [];
+
 export const _decode_CertSubscribeErr = function (
     el: asn1.ASN1Element
 ): CertSubscribeErr {
@@ -2530,7 +2614,7 @@ export const _encode_CertSubscribeErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_error(value.code, __utils.BER)],
+                [/* REQUIRED   */ _encode_CASP_error(value.code, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -2615,11 +2699,12 @@ export const _root_component_type_list_1_spec_for_CertSubscribeRsp: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertSubscribeRsp__version = CASPversion_v1;
 export const _decode_CertSubscribeRsp = function (
     el: asn1.ASN1Element
 ): CertSubscribeRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertSubscribeRsp__version;
     let sequence!: CASPsequence;
     let result!: CertSubscribeRsp_result;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -2647,8 +2732,8 @@ export const _decode_CertSubscribeRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertSubscribeRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertSubscribeRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -2662,12 +2747,21 @@ export const _encode_CertSubscribeRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    _encode_CertSubscribeRsp_result(value.result, __utils.BER),
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertSubscribeRsp__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertSubscribeRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2707,6 +2801,7 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeReq_certs_Item:
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUnsubscribeReq_certs_Item = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeReq_certs_Item {
@@ -2740,8 +2835,8 @@ export const _encode_CertUnsubscribeReq_certs_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.subject, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
@@ -2790,11 +2885,12 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeReq: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertUnsubscribeReq__version = CASPversion_v1;
 export const _decode_CertUnsubscribeReq = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertUnsubscribeReq__version;
     let sequence!: CASPsequence;
     let certs!: CertUnsubscribeReq_certs_Item[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -2824,8 +2920,8 @@ export const _decode_CertUnsubscribeReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUnsubscribeReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertUnsubscribeReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -2839,15 +2935,23 @@ export const _encode_CertUnsubscribeReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    __utils._encodeSequenceOf<CertUnsubscribeReq_certs_Item>(
-                        () => _encode_CertUnsubscribeReq_certs_Item,
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertUnsubscribeReq__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
                         __utils.BER
-                    )(value.certs, __utils.BER),
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        CertUnsubscribeReq_certs_Item
+                    >(() => _encode_CertUnsubscribeReq_certs_Item, __utils.BER)(
+                        value.certs,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2887,6 +2991,7 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_ok: __u
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUnsubscribeOK_Item_ok = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeOK_Item_ok {
@@ -2920,8 +3025,8 @@ export const _encode_CertUnsubscribeOK_Item_ok = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.subject, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
@@ -2954,6 +3059,7 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_not_ok:
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUnsubscribeOK_Item_not_ok = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeOK_Item_not_ok {
@@ -2979,7 +3085,12 @@ export const _encode_CertUnsubscribeOK_Item_not_ok = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_CertStatusCode(value.status, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_CASP_CertStatusCode(
+                        value.status,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -3056,6 +3167,7 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeErr: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUnsubscribeErr = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeErr {
@@ -3081,7 +3193,7 @@ export const _encode_CertUnsubscribeErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_error(value.code, __utils.BER)],
+                [/* REQUIRED   */ _encode_CASP_error(value.code, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -3166,11 +3278,12 @@ export const _root_component_type_list_1_spec_for_CertUnsubscribeRsp: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertUnsubscribeRsp__version = CASPversion_v1;
 export const _decode_CertUnsubscribeRsp = function (
     el: asn1.ASN1Element
 ): CertUnsubscribeRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertUnsubscribeRsp__version;
     let sequence!: CASPsequence;
     let result!: CertUnsubscribeRsp_result;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -3198,8 +3311,8 @@ export const _decode_CertUnsubscribeRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUnsubscribeRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertUnsubscribeRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -3213,12 +3326,18 @@ export const _encode_CertUnsubscribeRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    _encode_CertUnsubscribeRsp_result(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertUnsubscribeRsp__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertUnsubscribeRsp_result(
                         value.result,
                         __utils.BER
                     ),
@@ -3261,6 +3380,7 @@ export const _root_component_type_list_1_spec_for_CertReplaceReq_certs_Item: __u
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_CertReplaceReq_certs_Item = function (
     el: asn1.ASN1Element
 ): CertReplaceReq_certs_Item {
@@ -3290,8 +3410,14 @@ export const _encode_CertReplaceReq_certs_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_CertificateSerialNumber(value.old, __utils.BER),
-                    _encode_Certificate(value.new_, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
+                        value.old,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_Certificate(
+                        value.new_,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3337,11 +3463,12 @@ export const _root_component_type_list_1_spec_for_CertReplaceReq: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertReplaceReq__version = CASPversion_v1;
 export const _decode_CertReplaceReq = function (
     el: asn1.ASN1Element
 ): CertReplaceReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertReplaceReq__version;
     let sequence!: CASPsequence;
     let certs!: CertReplaceReq_certs_Item[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -3371,8 +3498,8 @@ export const _decode_CertReplaceReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReplaceReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertReplaceReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -3386,15 +3513,23 @@ export const _encode_CertReplaceReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    __utils._encodeSequenceOf<CertReplaceReq_certs_Item>(
-                        () => _encode_CertReplaceReq_certs_Item,
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertReplaceReq__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
                         __utils.BER
-                    )(value.certs, __utils.BER),
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        CertReplaceReq_certs_Item
+                    >(() => _encode_CertReplaceReq_certs_Item, __utils.BER)(
+                        value.certs,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3434,6 +3569,7 @@ export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_ok: __utils
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertReplaceOK_Item_ok = function (
     el: asn1.ASN1Element
 ): CertReplaceOK_Item_ok {
@@ -3463,8 +3599,8 @@ export const _encode_CertReplaceOK_Item_ok = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.issuer, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
@@ -3497,6 +3633,7 @@ export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_not_ok: __u
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertReplaceOK_Item_not_ok = function (
     el: asn1.ASN1Element
 ): CertReplaceOK_Item_not_ok {
@@ -3522,7 +3659,12 @@ export const _encode_CertReplaceOK_Item_not_ok = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_CertStatusCode(value.status, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_CASP_CertStatusCode(
+                        value.status,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -3584,25 +3726,17 @@ export const _encode_CertReplaceOK = __utils._encodeSequenceOf<
 
 export type SignedData_error = asn1.ENUMERATED;
 export const SignedData_error_noReason: SignedData_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const noReason: SignedData_error = SignedData_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_signedDataContectTypeExpected: SignedData_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const signedDataContectTypeExpected: SignedData_error = SignedData_error_signedDataContectTypeExpected; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_wrongSignedDataVersion: SignedData_error = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const wrongSignedDataVersion: SignedData_error = SignedData_error_wrongSignedDataVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_missingContent: SignedData_error = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContent: SignedData_error = SignedData_error_missingContent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_missingContentComponent: SignedData_error = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingContentComponent: SignedData_error = SignedData_error_missingContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_invalidContentComponent: SignedData_error = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidContentComponent: SignedData_error = SignedData_error_invalidContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SignedData_error_unsupportedHashAlgorithm: SignedData_error = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedHashAlgorithm: SignedData_error = SignedData_error_unsupportedHashAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_SignedData_error = __utils._decodeEnumerated;
 export const _encode_SignedData_error = __utils._encodeEnumerated;
 
 export type EnvelopedData_error = asn1.ENUMERATED;
 export const EnvelopedData_error_noReason: EnvelopedData_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const noReason: EnvelopedData_error = EnvelopedData_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_EnvelopedData_error = __utils._decodeEnumerated;
 export const _encode_EnvelopedData_error = __utils._encodeEnumerated;
 
@@ -3674,6 +3808,7 @@ export const _root_component_type_list_1_spec_for_CertReplaceErr: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [];
+
 export const _decode_CertReplaceErr = function (
     el: asn1.ASN1Element
 ): CertReplaceErr {
@@ -3699,7 +3834,12 @@ export const _encode_CertReplaceErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CertReplaceErr_code(value.code, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_CertReplaceErr_code(
+                        value.code,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -3780,11 +3920,12 @@ export const _root_component_type_list_1_spec_for_CertReplaceRsp: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertReplaceRsp__version = CASPversion_v1;
 export const _decode_CertReplaceRsp = function (
     el: asn1.ASN1Element
 ): CertReplaceRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertReplaceRsp__version;
     let sequence!: CASPsequence;
     let result!: CertReplaceRsp_result;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -3812,8 +3953,8 @@ export const _decode_CertReplaceRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertReplaceRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertReplaceRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -3827,12 +3968,21 @@ export const _encode_CertReplaceRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    _encode_CertReplaceRsp_result(value.result, __utils.BER),
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertReplaceRsp__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertReplaceRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3880,6 +4030,7 @@ export const _root_component_type_list_1_spec_for_CertUpdateReq_certs_Item: __ut
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUpdateReq_certs_Item = function (
     el: asn1.ASN1Element
 ): CertUpdateReq_certs_Item {
@@ -3917,12 +4068,15 @@ export const _encode_CertUpdateReq_certs_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.subject, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
-                    _encode_CertStatus(value.certStatus, __utils.BER),
+                    /* REQUIRED   */ _encode_CertStatus(
+                        value.certStatus,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3968,11 +4122,12 @@ export const _root_component_type_list_1_spec_for_CertUpdateReq: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertUpdateReq__version = CASPversion_v1;
 export const _decode_CertUpdateReq = function (
     el: asn1.ASN1Element
 ): CertUpdateReq {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertUpdateReq__version;
     let sequence!: CASPsequence;
     let certs!: CertUpdateReq_certs_Item[];
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -4002,8 +4157,8 @@ export const _decode_CertUpdateReq = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUpdateReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertUpdateReq(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         certs,
         _unrecognizedExtensionsList
@@ -4017,15 +4172,23 @@ export const _encode_CertUpdateReq = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    __utils._encodeSequenceOf<CertUpdateReq_certs_Item>(
-                        () => _encode_CertUpdateReq_certs_Item,
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertUpdateReq__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
                         __utils.BER
-                    )(value.certs, __utils.BER),
+                    ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        CertUpdateReq_certs_Item
+                    >(() => _encode_CertUpdateReq_certs_Item, __utils.BER)(
+                        value.certs,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -4065,6 +4228,7 @@ export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_ok: __utils.
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUpdateOK_Item_ok = function (
     el: asn1.ASN1Element
 ): CertUpdateOK_Item_ok {
@@ -4094,8 +4258,8 @@ export const _encode_CertUpdateOK_Item_ok = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.subject, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
@@ -4128,6 +4292,7 @@ export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_not_ok: __ut
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUpdateOK_Item_not_ok = function (
     el: asn1.ASN1Element
 ): CertUpdateOK_Item_not_ok {
@@ -4153,7 +4318,12 @@ export const _encode_CertUpdateOK_Item_not_ok = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_CertStatusCode(value.status, __utils.BER)],
+                [
+                    /* REQUIRED   */ _encode_CASP_CertStatusCode(
+                        value.status,
+                        __utils.BER
+                    ),
+                ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -4230,6 +4400,7 @@ export const _root_component_type_list_1_spec_for_CertUpdateErr: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [];
+
 export const _decode_CertUpdateErr = function (
     el: asn1.ASN1Element
 ): CertUpdateErr {
@@ -4255,7 +4426,7 @@ export const _encode_CertUpdateErr = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
-                [_encode_CASP_error(value.code, __utils.BER)],
+                [/* REQUIRED   */ _encode_CASP_error(value.code, __utils.BER)],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : []
@@ -4336,11 +4507,12 @@ export const _root_component_type_list_1_spec_for_CertUpdateRsp: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [];
+export const _default_value_for_CertUpdateRsp__version = CASPversion_v1;
 export const _decode_CertUpdateRsp = function (
     el: asn1.ASN1Element
 ): CertUpdateRsp {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_CertUpdateRsp__version;
     let sequence!: CASPsequence;
     let result!: CertUpdateRsp_result;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -4368,8 +4540,8 @@ export const _decode_CertUpdateRsp = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new CertUpdateRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new CertUpdateRsp(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         result,
         _unrecognizedExtensionsList
@@ -4383,12 +4555,21 @@ export const _encode_CertUpdateRsp = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    _encode_CertUpdateRsp_result(value.result, __utils.BER),
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_CertUpdateRsp__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertUpdateRsp_result(
+                        value.result,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -4436,11 +4617,12 @@ export const _root_component_type_list_1_spec_for_RejectCAsubscribe: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [];
+export const _default_value_for_RejectCAsubscribe__version = CASPversion_v1;
 export const _decode_RejectCAsubscribe = function (
     el: asn1.ASN1Element
 ): RejectCAsubscribe {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<CASPversion> = v1;
+    let version: asn1.OPTIONAL<CASPversion> = _default_value_for_RejectCAsubscribe__version;
     let sequence!: CASPsequence;
     let reason!: CASP_error;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
@@ -4468,8 +4650,8 @@ export const _decode_RejectCAsubscribe = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RejectCAsubscribe /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new RejectCAsubscribe(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         sequence,
         reason,
         _unrecognizedExtensionsList
@@ -4483,12 +4665,21 @@ export const _encode_RejectCAsubscribe = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_CASPversion(value.version, __utils.BER)
-                        : undefined,
-                    _encode_CASPsequence(value.sequence, __utils.BER),
-                    _encode_CASP_error(value.reason, __utils.BER),
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_RejectCAsubscribe__version
+                    )
+                        ? undefined
+                        : _encode_CASPversion(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_CASPsequence(
+                        value.sequence,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CASP_error(
+                        value.reason,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -4700,6 +4891,7 @@ export const _root_component_type_list_1_spec_for_TBOK: __utils.ComponentSpec[] 
 ];
 export const _root_component_type_list_2_spec_for_TBOK: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TBOK: __utils.ComponentSpec[] = [];
+
 export const _decode_TBOK = function (el: asn1.ASN1Element): TBOK {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let levelOfAssurance!: asn1.INTEGER;
@@ -4740,8 +4932,8 @@ export const _decode_TBOK = function (el: asn1.ASN1Element): TBOK {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBOK /* SEQUENCE_CONSTRUCTOR_CALL */(
-        levelOfAssurance,
+    return new TBOK(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ levelOfAssurance,
         confidenceLevel,
         validationTime,
         info,
@@ -4756,27 +4948,27 @@ export const _encode_TBOK = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => __utils._encodeInteger,
                         __utils.BER
                     )(value.levelOfAssurance, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => __utils._encodeInteger,
                         __utils.BER
                     )(value.confidenceLevel, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         2,
                         () => __utils._encodeUTCTime,
                         __utils.BER
                     )(value.validationTime, __utils.BER),
-                    value.info
-                        ? __utils._encodeUTF8String(value.info, __utils.BER)
-                        : undefined,
+                    /* IF_ABSENT  */ value.info === undefined
+                        ? undefined
+                        : __utils._encodeUTF8String(value.info, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -4791,23 +4983,14 @@ export const _encode_TBOK = function (
 
 export type TBerror_code = asn1.ENUMERATED;
 export const TBerror_code_caCertInvalid: TBerror_code = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const caCertInvalid: TBerror_code = TBerror_code_caCertInvalid; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_unknownCert: TBerror_code = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownCert: TBerror_code = TBerror_code_unknownCert; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_unknownCertStatus: TBerror_code = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownCertStatus: TBerror_code = TBerror_code_unknownCertStatus; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_subjectCertRevoked: TBerror_code = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const subjectCertRevoked: TBerror_code = TBerror_code_subjectCertRevoked; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_incorrectCert: TBerror_code = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const incorrectCert: TBerror_code = TBerror_code_incorrectCert; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_contractExpired: TBerror_code = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const contractExpired: TBerror_code = TBerror_code_contractExpired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_pathValidationFailed: TBerror_code = 7; /* LONG_NAMED_ENUMERATED_VALUE */
-export const pathValidationFailed: TBerror_code = TBerror_code_pathValidationFailed; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_timeOut: TBerror_code = 8; /* LONG_NAMED_ENUMERATED_VALUE */
-export const timeOut: TBerror_code = TBerror_code_timeOut; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const TBerror_code_other: TBerror_code = 99; /* LONG_NAMED_ENUMERATED_VALUE */
-export const other: TBerror_code = TBerror_code_other; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_TBerror_code = __utils._decodeEnumerated;
 export const _encode_TBerror_code = __utils._encodeEnumerated;
 
@@ -4836,6 +5019,7 @@ export const _root_component_type_list_1_spec_for_TBerror: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_TBerror: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TBerror: __utils.ComponentSpec[] = [];
+
 export const _decode_TBerror = function (el: asn1.ASN1Element): TBerror {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let code!: TBerror_code;
@@ -4862,8 +5046,8 @@ export const _decode_TBerror = function (el: asn1.ASN1Element): TBerror {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBerror /* SEQUENCE_CONSTRUCTOR_CALL */(
-        code,
+    return new TBerror(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ code,
         diagnostic,
         _unrecognizedExtensionsList
     );
@@ -4876,13 +5060,16 @@ export const _encode_TBerror = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_TBerror_code(value.code, __utils.BER),
-                    value.diagnostic
-                        ? __utils._encodeUTF8String(
+                    /* REQUIRED   */ _encode_TBerror_code(
+                        value.code,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.diagnostic === undefined
+                        ? undefined
+                        : __utils._encodeUTF8String(
                               value.diagnostic,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

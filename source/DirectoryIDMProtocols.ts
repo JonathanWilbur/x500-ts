@@ -15,53 +15,10 @@ import {
 } from "./IDMProtocolSpecification";
 import { id_idm } from "./UsefulDefinitions";
 export {
-    abandon,
-    addEntry,
-    administerPassword,
-    changePassword,
-    compare,
-    directoryBind,
-    list,
-    modifyDN,
-    modifyEntry,
-    read,
-    removeEntry,
-    search,
-} from "./DirectoryAbstractService";
-export {
-    coordinateShadowUpdate,
-    dSAShadowBind,
-    requestShadowUpdate,
-    updateShadow,
-} from "./DirectoryShadowAbstractService";
-export {
-    chainedAbandon,
-    chainedAddEntry,
-    chainedAdministerPassword,
-    chainedChangePassword,
-    chainedCompare,
-    chainedLdapTransport,
-    chainedLinkedLDAP,
-    chainedList,
-    chainedModifyDN,
-    chainedModifyEntry,
-    chainedRead,
-    chainedRemoveEntry,
-    chainedSearch,
-    dSABind,
-} from "./DistributedOperations";
-export {
     IDM_PDU,
-    IDM_PROTOCOL,
     _decode_IDM_PDU,
     _encode_IDM_PDU,
 } from "./IDMProtocolSpecification";
-export {
-    dSAOperationalBindingManagementBind,
-    establishOperationalBinding,
-    modifyOperationalBinding,
-    terminateOperationalBinding,
-} from "./OperationalBindingManagement";
 export {
     directoryAbstractService,
     directoryShadowAbstractService,

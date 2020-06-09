@@ -64,13 +64,10 @@ export {
     Certificate,
     CertificateList,
     CertificateSerialNumber,
-    EXTENSION,
     Extensions,
     InfoSyntax,
     PolicySyntax,
     SIGNED,
-    SupportedAlgorithms,
-    x509CertificateList,
     _decode_AlgorithmIdentifier,
     _decode_Certificate,
     _decode_CertificateList,
@@ -94,7 +91,6 @@ export {
     _encode_AttributeTypeAndValue,
 } from "./BasicAccessControl";
 export {
-    certificateListExactMatch,
     GeneralName,
     GeneralNames,
     NameConstraintsSyntax,
@@ -106,16 +102,10 @@ export {
     _encode_NameConstraintsSyntax,
 } from "./CertificateExtensions";
 export {
-    ATTRIBUTE,
     Attribute,
     AttributeType,
-    MATCHING_RULE,
     Name,
-    OBJECT_CLASS,
     RelativeDistinguishedName,
-    SupportedAttributes,
-    SYNTAX_NAME,
-    top,
     _decode_Attribute,
     _decode_AttributeType,
     _decode_Name,
@@ -193,6 +183,7 @@ export const _root_component_type_list_1_spec_for_IssuerSerial: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_IssuerSerial: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IssuerSerial: __utils.ComponentSpec[] = [];
+
 export const _decode_IssuerSerial = function (
     el: asn1.ASN1Element
 ): IssuerSerial {
@@ -225,8 +216,8 @@ export const _decode_IssuerSerial = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new IssuerSerial /* SEQUENCE_CONSTRUCTOR_CALL */(
-        issuer,
+    return new IssuerSerial(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
         serial,
         issuerUID,
         _unrecognizedExtensionsList
@@ -240,11 +231,20 @@ export const _encode_IssuerSerial = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_GeneralNames(value.issuer, __utils.BER),
-                    _encode_CertificateSerialNumber(value.serial, __utils.BER),
-                    value.issuerUID
-                        ? _encode_UniqueIdentifier(value.issuerUID, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_GeneralNames(
+                        value.issuer,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
+                        value.serial,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.issuerUID === undefined
+                        ? undefined
+                        : _encode_UniqueIdentifier(
+                              value.issuerUID,
+                              __utils.BER
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -320,6 +320,7 @@ export const _root_component_type_list_1_spec_for_ObjectDigestInfo: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_ObjectDigestInfo = function (
     el: asn1.ASN1Element
 ): ObjectDigestInfo {
@@ -358,8 +359,8 @@ export const _decode_ObjectDigestInfo = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ObjectDigestInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-        digestedObjectType,
+    return new ObjectDigestInfo(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ digestedObjectType,
         otherObjectTypeID,
         digestAlgorithm,
         objectDigest,
@@ -374,21 +375,24 @@ export const _encode_ObjectDigestInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_ObjectDigestInfo_digestedObjectType(
+                    /* REQUIRED   */ _encode_ObjectDigestInfo_digestedObjectType(
                         value.digestedObjectType,
                         __utils.BER
                     ),
-                    value.otherObjectTypeID
-                        ? __utils._encodeObjectIdentifier(
+                    /* IF_ABSENT  */ value.otherObjectTypeID === undefined
+                        ? undefined
+                        : __utils._encodeObjectIdentifier(
                               value.otherObjectTypeID,
                               __utils.BER
-                          )
-                        : undefined,
-                    _encode_AlgorithmIdentifier(
+                          ),
+                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
                         value.digestAlgorithm,
                         __utils.BER
                     ),
-                    __utils._encodeBitString(value.objectDigest, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeBitString(
+                        value.objectDigest,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -433,6 +437,7 @@ export const _root_component_type_list_1_spec_for_Holder: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_Holder: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Holder: __utils.ComponentSpec[] = [];
+
 export const _decode_Holder = function (el: asn1.ASN1Element): Holder {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let baseCertificateID: asn1.OPTIONAL<IssuerSerial>;
@@ -466,8 +471,8 @@ export const _decode_Holder = function (el: asn1.ASN1Element): Holder {
         _root_component_type_list_2_spec_for_Holder,
         undefined
     );
-    return new Holder /* SEQUENCE_CONSTRUCTOR_CALL */(
-        baseCertificateID,
+    return new Holder(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ baseCertificateID,
         entityName,
         objectDigestInfo
     );
@@ -479,30 +484,30 @@ export const _encode_Holder = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.baseCertificateID
-                    ? __utils._encode_implicit(
+                /* IF_ABSENT  */ value.baseCertificateID === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_IssuerSerial,
                           __utils.BER
-                      )(value.baseCertificateID, __utils.BER)
-                    : undefined,
-                value.entityName
-                    ? __utils._encode_implicit(
+                      )(value.baseCertificateID, __utils.BER),
+                /* IF_ABSENT  */ value.entityName === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_GeneralNames,
                           __utils.BER
-                      )(value.entityName, __utils.BER)
-                    : undefined,
-                value.objectDigestInfo
-                    ? __utils._encode_implicit(
+                      )(value.entityName, __utils.BER),
+                /* IF_ABSENT  */ value.objectDigestInfo === undefined
+                    ? undefined
+                    : __utils._encode_implicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => _encode_ObjectDigestInfo,
                           __utils.BER
-                      )(value.objectDigestInfo, __utils.BER)
-                    : undefined,
+                      )(value.objectDigestInfo, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -544,6 +549,7 @@ export const _root_component_type_list_1_spec_for_AttCertIssuer: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [];
+
 export const _decode_AttCertIssuer = __utils._decode_implicit<AttCertIssuer>(
     () =>
         function (el: asn1.ASN1Element): AttCertIssuer {
@@ -580,8 +586,8 @@ export const _decode_AttCertIssuer = __utils._decode_implicit<AttCertIssuer>(
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttCertIssuer /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuerName,
+            return new AttCertIssuer(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuerName,
                 baseCertificateID,
                 objectDigestInfo,
                 _unrecognizedExtensionsList
@@ -600,28 +606,30 @@ export const _encode_AttCertIssuer = __utils._encode_implicit(
                 ([] as (asn1.ASN1Element | undefined)[])
                     .concat(
                         [
-                            value.issuerName
-                                ? _encode_GeneralNames(
+                            /* IF_ABSENT  */ value.issuerName === undefined
+                                ? undefined
+                                : _encode_GeneralNames(
                                       value.issuerName,
                                       __utils.BER
-                                  )
-                                : undefined,
-                            value.baseCertificateID
-                                ? __utils._encode_implicit(
+                                  ),
+                            /* IF_ABSENT  */ value.baseCertificateID ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_IssuerSerial,
                                       __utils.BER
-                                  )(value.baseCertificateID, __utils.BER)
-                                : undefined,
-                            value.objectDigestInfo
-                                ? __utils._encode_implicit(
+                                  )(value.baseCertificateID, __utils.BER),
+                            /* IF_ABSENT  */ value.objectDigestInfo ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_ObjectDigestInfo,
                                       __utils.BER
-                                  )(value.objectDigestInfo, __utils.BER)
-                                : undefined,
+                                  )(value.objectDigestInfo, __utils.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -661,6 +669,7 @@ export const _root_component_type_list_1_spec_for_AttCertValidityPeriod: __utils
 ];
 export const _root_component_type_list_2_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [];
+
 export const _decode_AttCertValidityPeriod = function (
     el: asn1.ASN1Element
 ): AttCertValidityPeriod {
@@ -694,11 +703,11 @@ export const _encode_AttCertValidityPeriod = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeGeneralizedTime(
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.notBeforeTime,
                         __utils.BER
                     ),
-                    __utils._encodeGeneralizedTime(
+                    /* REQUIRED   */ __utils._encodeGeneralizedTime(
                         value.notAfterTime,
                         __utils.BER
                     ),
@@ -796,6 +805,7 @@ export const _root_component_type_list_2_spec_for_TBSAttributeCertificate: __uti
     ),
 ];
 export const _extension_additions_list_spec_for_TBSAttributeCertificate: __utils.ComponentSpec[] = [];
+
 export const _decode_TBSAttributeCertificate = function (
     el: asn1.ASN1Element
 ): TBSAttributeCertificate {
@@ -854,8 +864,8 @@ export const _decode_TBSAttributeCertificate = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new TBSAttributeCertificate /* SEQUENCE_CONSTRUCTOR_CALL */(
-        version,
+    return new TBSAttributeCertificate(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
         holder,
         issuer,
         signature,
@@ -875,36 +885,45 @@ export const _encode_TBSAttributeCertificate = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttCertVersion(value.version, __utils.BER),
-                    _encode_Holder(value.holder, __utils.BER),
-                    _encode_AttCertIssuer(value.issuer, __utils.BER),
-                    _encode_AlgorithmIdentifier(value.signature, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_AttCertVersion(
+                        value.version,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_Holder(value.holder, __utils.BER),
+                    /* REQUIRED   */ _encode_AttCertIssuer(
+                        value.issuer,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                        value.signature,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
-                    _encode_AttCertValidityPeriod(
+                    /* REQUIRED   */ _encode_AttCertValidityPeriod(
                         value.attrCertValidityPeriod,
                         __utils.BER
                     ),
-                    __utils._encodeSequenceOf<Attribute>(
+                    /* REQUIRED   */ __utils._encodeSequenceOf<Attribute>(
                         () => _encode_Attribute,
                         __utils.BER
                     )(value.attributes, __utils.BER),
-                    value.issuerUniqueID
-                        ? _encode_UniqueIdentifier(
+                    /* IF_ABSENT  */ value.issuerUniqueID === undefined
+                        ? undefined
+                        : _encode_UniqueIdentifier(
                               value.issuerUniqueID,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
                     : [],
                 [
-                    value.extensions
-                        ? _encode_Extensions(value.extensions, __utils.BER)
-                        : undefined,
+                    /* IF_ABSENT  */ value.extensions === undefined
+                        ? undefined
+                        : _encode_Extensions(value.extensions, __utils.BER),
                 ]
             )
             .filter(
@@ -947,6 +966,7 @@ export const _root_component_type_list_1_spec_for_ACPathData: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_ACPathData: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACPathData: __utils.ComponentSpec[] = [];
+
 export const _decode_ACPathData = function (el: asn1.ASN1Element): ACPathData {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let certificate: asn1.OPTIONAL<Certificate>;
@@ -977,8 +997,8 @@ export const _decode_ACPathData = function (el: asn1.ASN1Element): ACPathData {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new ACPathData /* SEQUENCE_CONSTRUCTOR_CALL */(
-        certificate,
+    return new ACPathData(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ certificate,
         attributeCertificate,
         _unrecognizedExtensionsList
     );
@@ -991,22 +1011,22 @@ export const _encode_ACPathData = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.certificate
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.certificate === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_Certificate,
                               __utils.BER
-                          )(value.certificate, __utils.BER)
-                        : undefined,
-                    value.attributeCertificate
-                        ? __utils._encode_implicit(
+                          )(value.certificate, __utils.BER),
+                    /* IF_ABSENT  */ value.attributeCertificate === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_AttributeCertificate,
                               __utils.BER
-                          )(value.attributeCertificate, __utils.BER)
-                        : undefined,
+                          )(value.attributeCertificate, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1044,6 +1064,7 @@ export const _root_component_type_list_1_spec_for_AttributeCertificationPath: __
 ];
 export const _root_component_type_list_2_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeCertificationPath = function (
     el: asn1.ASN1Element
 ): AttributeCertificationPath {
@@ -1074,8 +1095,8 @@ export const _decode_AttributeCertificationPath = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeCertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
-        attributeCertificate,
+    return new AttributeCertificationPath(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ attributeCertificate,
         acPath,
         _unrecognizedExtensionsList
     );
@@ -1088,16 +1109,16 @@ export const _encode_AttributeCertificationPath = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttributeCertificate(
+                    /* REQUIRED   */ _encode_AttributeCertificate(
                         value.attributeCertificate,
                         __utils.BER
                     ),
-                    value.acPath
-                        ? __utils._encodeSequenceOf<ACPathData>(
+                    /* IF_ABSENT  */ value.acPath === undefined
+                        ? undefined
+                        : __utils._encodeSequenceOf<ACPathData>(
                               () => _encode_ACPathData,
                               __utils.BER
-                          )(value.acPath, __utils.BER)
-                        : undefined,
+                          )(value.acPath, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1137,6 +1158,7 @@ export const _root_component_type_list_1_spec_for_RoleSyntax: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_RoleSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RoleSyntax: __utils.ComponentSpec[] = [];
+
 export const _decode_RoleSyntax = function (el: asn1.ASN1Element): RoleSyntax {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let roleAuthority: asn1.OPTIONAL<GeneralNames>;
@@ -1167,8 +1189,8 @@ export const _decode_RoleSyntax = function (el: asn1.ASN1Element): RoleSyntax {
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RoleSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        roleAuthority,
+    return new RoleSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ roleAuthority,
         roleName,
         _unrecognizedExtensionsList
     );
@@ -1181,15 +1203,15 @@ export const _encode_RoleSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.roleAuthority
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.roleAuthority === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_GeneralNames,
                               __utils.BER
-                          )(value.roleAuthority, __utils.BER)
-                        : undefined,
-                    __utils._encode_implicit(
+                          )(value.roleAuthority, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_GeneralName,
@@ -1236,6 +1258,7 @@ export const _root_component_type_list_1_spec_for_DualStringSyntax: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [];
+
 export const _decode_DualStringSyntax = function (
     el: asn1.ASN1Element
 ): DualStringSyntax {
@@ -1269,13 +1292,13 @@ export const _encode_DualStringSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_UnboundedDirectoryString,
                         __utils.BER
                     )(value.operation, __utils.BER),
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_UnboundedDirectoryString,
@@ -1333,6 +1356,7 @@ export const _root_component_type_list_1_spec_for_TargetCert: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_TargetCert: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TargetCert: __utils.ComponentSpec[] = [];
+
 export const _decode_TargetCert = function (el: asn1.ASN1Element): TargetCert {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let targetCertificate!: IssuerSerial;
@@ -1360,8 +1384,8 @@ export const _decode_TargetCert = function (el: asn1.ASN1Element): TargetCert {
         _root_component_type_list_2_spec_for_TargetCert,
         undefined
     );
-    return new TargetCert /* SEQUENCE_CONSTRUCTOR_CALL */(
-        targetCertificate,
+    return new TargetCert(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ targetCertificate,
         targetName,
         certDigestInfo
     );
@@ -1373,16 +1397,19 @@ export const _encode_TargetCert = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_IssuerSerial(value.targetCertificate, __utils.BER),
-                value.targetName
-                    ? _encode_GeneralName(value.targetName, __utils.BER)
-                    : undefined,
-                value.certDigestInfo
-                    ? _encode_ObjectDigestInfo(
+                /* REQUIRED   */ _encode_IssuerSerial(
+                    value.targetCertificate,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.targetName === undefined
+                    ? undefined
+                    : _encode_GeneralName(value.targetName, __utils.BER),
+                /* IF_ABSENT  */ value.certDigestInfo === undefined
+                    ? undefined
+                    : _encode_ObjectDigestInfo(
                           value.certDigestInfo,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1508,6 +1535,7 @@ export const _root_component_type_list_1_spec_for_PrivilegePolicyIdentifier: __u
 ];
 export const _root_component_type_list_2_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [];
+
 export const _decode_PrivilegePolicyIdentifier = function (
     el: asn1.ASN1Element
 ): PrivilegePolicyIdentifier {
@@ -1541,8 +1569,14 @@ export const _encode_PrivilegePolicyIdentifier = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_PrivilegePolicy(value.privilegePolicy, __utils.BER),
-                    _encode_InfoSyntax(value.privPolSyntax, __utils.BER),
+                    /* REQUIRED   */ _encode_PrivilegePolicy(
+                        value.privilegePolicy,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_InfoSyntax(
+                        value.privPolSyntax,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1604,6 +1638,7 @@ export const _root_component_type_list_1_spec_for_AttributeDescriptorSyntax: __u
 ];
 export const _root_component_type_list_2_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeDescriptorSyntax = function (
     el: asn1.ASN1Element
 ): AttributeDescriptorSyntax {
@@ -1648,8 +1683,8 @@ export const _decode_AttributeDescriptorSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeDescriptorSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        identifier,
+    return new AttributeDescriptorSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
         attributeSyntax,
         name,
         description,
@@ -1665,28 +1700,31 @@ export const _encode_AttributeDescriptorSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttributeIdentifier(value.identifier, __utils.BER),
-                    __utils._encodeOctetString(
+                    /* REQUIRED   */ _encode_AttributeIdentifier(
+                        value.identifier,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeOctetString(
                         value.attributeSyntax,
                         __utils.BER
                     ),
-                    value.name
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.name === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_AttributeName,
                               __utils.BER
-                          )(value.name, __utils.BER)
-                        : undefined,
-                    value.description
-                        ? __utils._encode_implicit(
+                          )(value.name, __utils.BER),
+                    /* IF_ABSENT  */ value.description === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_AttributeDescription,
                               __utils.BER
-                          )(value.description, __utils.BER)
-                        : undefined,
-                    _encode_PrivilegePolicyIdentifier(
+                          )(value.description, __utils.BER),
+                    /* REQUIRED   */ _encode_PrivilegePolicyIdentifier(
                         value.dominationRule,
                         __utils.BER
                     ),
@@ -1749,6 +1787,7 @@ export const _root_component_type_list_1_spec_for_RoleSpecCertIdentifier: __util
 ];
 export const _root_component_type_list_2_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [];
+
 export const _decode_RoleSpecCertIdentifier = function (
     el: asn1.ASN1Element
 ): RoleSpecCertIdentifier {
@@ -1793,8 +1832,8 @@ export const _decode_RoleSpecCertIdentifier = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new RoleSpecCertIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-        roleName,
+    return new RoleSpecCertIdentifier(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ roleName,
         roleCertIssuer,
         roleCertSerialNumber,
         roleCertLocator,
@@ -1809,34 +1848,34 @@ export const _encode_RoleSpecCertIdentifier = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_GeneralName,
                         __utils.BER
                     )(value.roleName, __utils.BER),
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_GeneralName,
                         __utils.BER
                     )(value.roleCertIssuer, __utils.BER),
-                    value.roleCertSerialNumber
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.roleCertSerialNumber === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => _encode_CertificateSerialNumber,
                               __utils.BER
-                          )(value.roleCertSerialNumber, __utils.BER)
-                        : undefined,
-                    value.roleCertLocator
-                        ? __utils._encode_implicit(
+                          )(value.roleCertSerialNumber, __utils.BER),
+                    /* IF_ABSENT  */ value.roleCertLocator === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () => _encode_GeneralNames,
                               __utils.BER
-                          )(value.roleCertLocator, __utils.BER)
-                        : undefined,
+                          )(value.roleCertLocator, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1886,11 +1925,12 @@ export const _root_component_type_list_1_spec_for_BasicAttConstraintsSyntax: __u
 ];
 export const _root_component_type_list_2_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [];
+export const _default_value_for_BasicAttConstraintsSyntax__authority = false;
 export const _decode_BasicAttConstraintsSyntax = function (
     el: asn1.ASN1Element
 ): BasicAttConstraintsSyntax {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let authority: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let authority: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_BasicAttConstraintsSyntax__authority;
     let pathLenConstraint: asn1.OPTIONAL<asn1.INTEGER>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1914,8 +1954,8 @@ export const _decode_BasicAttConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new BasicAttConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        authority,
+    return new BasicAttConstraintsSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ authority,
         pathLenConstraint,
         _unrecognizedExtensionsList
     );
@@ -1928,16 +1968,19 @@ export const _encode_BasicAttConstraintsSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.authority !== undefined &&
-                    value.authority !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.authority, __utils.BER)
-                        : undefined,
-                    value.pathLenConstraint
-                        ? __utils._encodeInteger(
+                    /* IF_DEFAULT */ value.authority === undefined ||
+                    __utils.deepEq(
+                        value.authority,
+                        _default_value_for_BasicAttConstraintsSyntax__authority
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.authority, __utils.BER),
+                    /* IF_ABSENT  */ value.pathLenConstraint === undefined
+                        ? undefined
+                        : __utils._encodeInteger(
                               value.pathLenConstraint,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2057,6 +2100,7 @@ export const _root_component_type_list_1_spec_for_AllowedAttributeAssignments_It
 ];
 export const _root_component_type_list_2_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [];
+
 export const _decode_AllowedAttributeAssignments_Item = function (
     el: asn1.ASN1Element
 ): AllowedAttributeAssignments_Item {
@@ -2098,7 +2142,7 @@ export const _encode_AllowedAttributeAssignments_Item = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () =>
@@ -2111,7 +2155,7 @@ export const _encode_AllowedAttributeAssignments_Item = function (
                             ),
                         __utils.BER
                     )(value.attributes, __utils.BER),
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_GeneralName,
@@ -2164,6 +2208,7 @@ export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeMap
 ];
 export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeMappings_Item_typeMappings = function (
     el: asn1.ASN1Element
 ): AttributeMappings_Item_typeMappings {
@@ -2201,13 +2246,13 @@ export const _encode_AttributeMappings_Item_typeMappings = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_AttributeType,
                         __utils.BER
                     )(value.local, __utils.BER),
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_AttributeType,
@@ -2233,11 +2278,24 @@ export class AttributeMappings_Item_typeValueMappings {
     ) {}
 }
 export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [
-    ,/* FIXME: local COULD_NOT_RESOLVE_TYPE_DEF */
-/* FIXME: remote COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec(
+        "local",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new __utils.ComponentSpec(
+        "remote",
+        false,
+        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
 ];
 export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeMappings_Item_typeValueMappings = function (
     el: asn1.ASN1Element
 ): AttributeMappings_Item_typeValueMappings {
@@ -2275,13 +2333,13 @@ export const _encode_AttributeMappings_Item_typeValueMappings = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_AttributeTypeAndValue,
                         __utils.BER
                     )(value.local, __utils.BER),
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_AttributeTypeAndValue,
@@ -2385,12 +2443,13 @@ export const _root_component_type_list_1_spec_for_GeneralSubtree: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [];
+export const _default_value_for_GeneralSubtree__minimum = 0;
 export const _decode_GeneralSubtree = function (
     el: asn1.ASN1Element
 ): GeneralSubtree {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let base!: GeneralName;
-    let minimum: asn1.OPTIONAL<BaseDistance> = 0;
+    let minimum: asn1.OPTIONAL<BaseDistance> = _default_value_for_GeneralSubtree__minimum;
     let maximum: asn1.OPTIONAL<BaseDistance>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -2421,8 +2480,8 @@ export const _decode_GeneralSubtree = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new GeneralSubtree /* SEQUENCE_CONSTRUCTOR_CALL */(
-        base,
+    return new GeneralSubtree(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ base,
         minimum,
         maximum,
         _unrecognizedExtensionsList
@@ -2436,24 +2495,30 @@ export const _encode_GeneralSubtree = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_GeneralName(value.base, __utils.BER),
-                    value.minimum !== undefined &&
-                    value.minimum !== 0 /* TODO: Review this condition. */
-                        ? __utils._encode_implicit(
+                    /* REQUIRED   */ _encode_GeneralName(
+                        value.base,
+                        __utils.BER
+                    ),
+                    /* IF_DEFAULT */ value.minimum === undefined ||
+                    __utils.deepEq(
+                        value.minimum,
+                        _default_value_for_GeneralSubtree__minimum
+                    )
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_BaseDistance,
                               __utils.BER
-                          )(value.minimum, __utils.BER)
-                        : undefined,
-                    value.maximum
-                        ? __utils._encode_implicit(
+                          )(value.minimum, __utils.BER),
+                    /* IF_ABSENT  */ value.maximum === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_BaseDistance,
                               __utils.BER
-                          )(value.maximum, __utils.BER)
-                        : undefined,
+                          )(value.maximum, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2499,6 +2564,7 @@ export const _root_component_type_list_1_spec_for_HolderNameConstraintsSyntax: _
 ];
 export const _root_component_type_list_2_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [];
+
 export const _decode_HolderNameConstraintsSyntax = function (
     el: asn1.ASN1Element
 ): HolderNameConstraintsSyntax {
@@ -2531,8 +2597,8 @@ export const _decode_HolderNameConstraintsSyntax = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new HolderNameConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-        permittedSubtrees,
+    return new HolderNameConstraintsSyntax(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ permittedSubtrees,
         excludedSubtrees,
         _unrecognizedExtensionsList
     );
@@ -2545,20 +2611,20 @@ export const _encode_HolderNameConstraintsSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_implicit(
+                    /* REQUIRED   */ __utils._encode_implicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_GeneralSubtrees,
                         __utils.BER
                     )(value.permittedSubtrees, __utils.BER),
-                    value.excludedSubtrees
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.excludedSubtrees === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_GeneralSubtrees,
                               __utils.BER
-                          )(value.excludedSubtrees, __utils.BER)
-                        : undefined,
+                          )(value.excludedSubtrees, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2640,6 +2706,7 @@ export const _root_component_type_list_1_spec_for_AttributeCertificateExactAsser
 ];
 export const _root_component_type_list_2_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeCertificateExactAssertion = function (
     el: asn1.ASN1Element
 ): AttributeCertificateExactAssertion {
@@ -2673,11 +2740,14 @@ export const _encode_AttributeCertificateExactAssertion = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
-                    _encode_AttCertIssuer(value.issuer, __utils.BER),
+                    /* REQUIRED   */ _encode_AttCertIssuer(
+                        value.issuer,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2769,6 +2839,7 @@ export const _root_component_type_list_1_spec_for_AttributeCertificateAssertion:
 ];
 export const _root_component_type_list_2_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [];
+
 export const _decode_AttributeCertificateAssertion = function (
     el: asn1.ASN1Element
 ): AttributeCertificateAssertion {
@@ -2813,8 +2884,8 @@ export const _decode_AttributeCertificateAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new AttributeCertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        holder,
+    return new AttributeCertificateAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
         issuer,
         attCertValidity,
         attType,
@@ -2829,33 +2900,34 @@ export const _encode_AttributeCertificateAssertion = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.holder
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.holder === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () =>
                                   _encode_AttributeCertificateAssertion_holder,
                               __utils.BER
-                          )(value.holder, __utils.BER)
-                        : undefined,
-                    value.issuer
-                        ? __utils._encode_implicit(
+                          )(value.holder, __utils.BER),
+                    /* IF_ABSENT  */ value.issuer === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_GeneralNames,
                               __utils.BER
-                          )(value.issuer, __utils.BER)
-                        : undefined,
-                    value.attCertValidity
-                        ? __utils._encode_implicit(
+                          )(value.issuer, __utils.BER),
+                    /* IF_ABSENT  */ value.attCertValidity === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => __utils._encodeGeneralizedTime,
                               __utils.BER
-                          )(value.attCertValidity, __utils.BER)
-                        : undefined,
-                    value.attType
-                        ? __utils._encode_implicit(
+                          )(value.attCertValidity, __utils.BER),
+                    /* IF_ABSENT  */ value.attType === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () =>
@@ -2864,8 +2936,7 @@ export const _encode_AttributeCertificateAssertion = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.attType, __utils.BER)
-                        : undefined,
+                          )(value.attType, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2905,6 +2976,7 @@ export const _root_component_type_list_1_spec_for_HolderIssuerAssertion: __utils
 ];
 export const _root_component_type_list_2_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [];
+
 export const _decode_HolderIssuerAssertion = function (
     el: asn1.ASN1Element
 ): HolderIssuerAssertion {
@@ -2937,8 +3009,8 @@ export const _decode_HolderIssuerAssertion = function (
             _unrecognizedExtensionsList.push(ext);
         }
     );
-    return new HolderIssuerAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-        holder,
+    return new HolderIssuerAssertion(
+        /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
         issuer,
         _unrecognizedExtensionsList
     );
@@ -2951,22 +3023,22 @@ export const _encode_HolderIssuerAssertion = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.holder
-                        ? __utils._encode_implicit(
+                    /* IF_ABSENT  */ value.holder === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_Holder,
                               __utils.BER
-                          )(value.holder, __utils.BER)
-                        : undefined,
-                    value.issuer
-                        ? __utils._encode_implicit(
+                          )(value.holder, __utils.BER),
+                    /* IF_ABSENT  */ value.issuer === undefined
+                        ? undefined
+                        : __utils._encode_implicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_AttCertIssuer,
                               __utils.BER
-                          )(value.issuer, __utils.BER)
-                        : undefined,
+                          )(value.issuer, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3006,6 +3078,7 @@ export const _root_component_type_list_1_spec_for_DelMatchSyntax: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [];
+
 export const _decode_DelMatchSyntax = function (
     el: asn1.ASN1Element
 ): DelMatchSyntax {
@@ -3035,8 +3108,14 @@ export const _encode_DelMatchSyntax = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AttCertIssuer(value.firstIssuer, __utils.BER),
-                    _encode_Holder(value.lastHolder, __utils.BER),
+                    /* REQUIRED   */ _encode_AttCertIssuer(
+                        value.firstIssuer,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_Holder(
+                        value.lastHolder,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

@@ -20,7 +20,6 @@ import {
 } from "./SelectedAttributeTypes";
 import { intSecurity } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
-export { EXTENSION } from "./AuthenticationFramework";
 export {
     GeneralName,
     _decode_GeneralName,
@@ -82,6 +81,7 @@ export const _root_component_type_list_1_spec_for_NoticeReference: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_NoticeReference: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NoticeReference: __utils.ComponentSpec[] = [];
+
 export const _decode_NoticeReference = function (
     el: asn1.ASN1Element
 ): NoticeReference {
@@ -112,8 +112,11 @@ export const _encode_NoticeReference = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_DisplayText(value.organization, __utils.BER),
-                __utils._encodeSequenceOf<asn1.INTEGER>(
+                /* REQUIRED   */ _encode_DisplayText(
+                    value.organization,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeSequenceOf<asn1.INTEGER>(
                     () => __utils._encodeInteger,
                     __utils.BER
                 )(value.noticeNumbers, __utils.BER),
@@ -149,6 +152,7 @@ export const _root_component_type_list_1_spec_for_UserNotice: __utils.ComponentS
 ];
 export const _root_component_type_list_2_spec_for_UserNotice: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserNotice: __utils.ComponentSpec[] = [];
+
 export const _decode_UserNotice = function (el: asn1.ASN1Element): UserNotice {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let noticeRef: asn1.OPTIONAL<NoticeReference>;
@@ -184,12 +188,12 @@ export const _encode_UserNotice = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.noticeRef
-                    ? _encode_NoticeReference(value.noticeRef, __utils.BER)
-                    : undefined,
-                value.explicitText
-                    ? _encode_DisplayText(value.explicitText, __utils.BER)
-                    : undefined,
+                /* IF_ABSENT  */ value.noticeRef === undefined
+                    ? undefined
+                    : _encode_NoticeReference(value.noticeRef, __utils.BER),
+                /* IF_ABSENT  */ value.explicitText === undefined
+                    ? undefined
+                    : _encode_DisplayText(value.explicitText, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -224,6 +228,7 @@ export const _root_component_type_list_1_spec_for_AccessDescription: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_AccessDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AccessDescription: __utils.ComponentSpec[] = [];
+
 export const _decode_AccessDescription = function (
     el: asn1.ASN1Element
 ): AccessDescription {
@@ -252,11 +257,14 @@ export const _encode_AccessDescription = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeObjectIdentifier(
+                /* REQUIRED   */ __utils._encodeObjectIdentifier(
                     value.accessMethod,
                     __utils.BER
                 ),
-                _encode_GeneralName(value.accessLocation, __utils.BER),
+                /* REQUIRED   */ _encode_GeneralName(
+                    value.accessLocation,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -500,6 +508,7 @@ export const _root_component_type_list_1_spec_for_PersonalName: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_PersonalName: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PersonalName: __utils.ComponentSpec[] = [];
+
 export const _decode_PersonalName = function (
     el: asn1.ASN1Element
 ): PersonalName {
@@ -555,36 +564,36 @@ export const _encode_PersonalName = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => __utils._encodePrintableString,
                     __utils.BER
                 )(value.surname, __utils.BER),
-                value.given_name
-                    ? __utils._encode_explicit(
+                /* IF_ABSENT  */ value.given_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => __utils._encodePrintableString,
                           __utils.BER
-                      )(value.given_name, __utils.BER)
-                    : undefined,
-                value.initials
-                    ? __utils._encode_explicit(
+                      )(value.given_name, __utils.BER),
+                /* IF_ABSENT  */ value.initials === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => __utils._encodePrintableString,
                           __utils.BER
-                      )(value.initials, __utils.BER)
-                    : undefined,
-                value.generation_qualifier
-                    ? __utils._encode_explicit(
+                      )(value.initials, __utils.BER),
+                /* IF_ABSENT  */ value.generation_qualifier === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           3,
                           () => __utils._encodePrintableString,
                           __utils.BER
-                      )(value.generation_qualifier, __utils.BER)
-                    : undefined,
+                      )(value.generation_qualifier, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -687,6 +696,7 @@ export const _root_component_type_list_1_spec_for_BuiltInStandardAttributes: __u
 ];
 export const _root_component_type_list_2_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [];
+
 export const _decode_BuiltInStandardAttributes = function (
     el: asn1.ASN1Element
 ): BuiltInStandardAttributes {
@@ -773,71 +783,71 @@ export const _encode_BuiltInStandardAttributes = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.country_name
-                    ? _encode_CountryName(value.country_name, __utils.BER)
-                    : undefined,
-                value.administration_domain_name
-                    ? _encode_AdministrationDomainName(
+                /* IF_ABSENT  */ value.country_name === undefined
+                    ? undefined
+                    : _encode_CountryName(value.country_name, __utils.BER),
+                /* IF_ABSENT  */ value.administration_domain_name === undefined
+                    ? undefined
+                    : _encode_AdministrationDomainName(
                           value.administration_domain_name,
                           __utils.BER
-                      )
-                    : undefined,
-                value.network_address
-                    ? __utils._encode_explicit(
+                      ),
+                /* IF_ABSENT  */ value.network_address === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => _encode_NetworkAddress,
                           __utils.BER
-                      )(value.network_address, __utils.BER)
-                    : undefined,
-                value.terminal_identifier
-                    ? __utils._encode_explicit(
+                      )(value.network_address, __utils.BER),
+                /* IF_ABSENT  */ value.terminal_identifier === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_TerminalIdentifier,
                           __utils.BER
-                      )(value.terminal_identifier, __utils.BER)
-                    : undefined,
-                value.private_domain_name
-                    ? __utils._encode_explicit(
+                      )(value.terminal_identifier, __utils.BER),
+                /* IF_ABSENT  */ value.private_domain_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => _encode_PrivateDomainName,
                           __utils.BER
-                      )(value.private_domain_name, __utils.BER)
-                    : undefined,
-                value.organization_name
-                    ? __utils._encode_explicit(
+                      )(value.private_domain_name, __utils.BER),
+                /* IF_ABSENT  */ value.organization_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           3,
                           () => _encode_OrganizationName,
                           __utils.BER
-                      )(value.organization_name, __utils.BER)
-                    : undefined,
-                value.numeric_user_identifier
-                    ? __utils._encode_explicit(
+                      )(value.organization_name, __utils.BER),
+                /* IF_ABSENT  */ value.numeric_user_identifier === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           4,
                           () => _encode_NumericUserIdentifier,
                           __utils.BER
-                      )(value.numeric_user_identifier, __utils.BER)
-                    : undefined,
-                value.personal_name
-                    ? __utils._encode_explicit(
+                      )(value.numeric_user_identifier, __utils.BER),
+                /* IF_ABSENT  */ value.personal_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           5,
                           () => _encode_PersonalName,
                           __utils.BER
-                      )(value.personal_name, __utils.BER)
-                    : undefined,
-                value.organizational_unit_names
-                    ? __utils._encode_explicit(
+                      )(value.personal_name, __utils.BER),
+                /* IF_ABSENT  */ value.organizational_unit_names === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           6,
                           () => _encode_OrganizationalUnitNames,
                           __utils.BER
-                      )(value.organizational_unit_names, __utils.BER)
-                    : undefined,
+                      )(value.organizational_unit_names, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -870,6 +880,7 @@ export const _root_component_type_list_1_spec_for_BuiltInDomainDefinedAttribute:
 ];
 export const _root_component_type_list_2_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_BuiltInDomainDefinedAttribute = function (
     el: asn1.ASN1Element
 ): BuiltInDomainDefinedAttribute {
@@ -898,8 +909,14 @@ export const _encode_BuiltInDomainDefinedAttribute = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodePrintableString(value.type_, __utils.BER),
-                __utils._encodePrintableString(value.value, __utils.BER),
+                /* REQUIRED   */ __utils._encodePrintableString(
+                    value.type_,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodePrintableString(
+                    value.value,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -940,6 +957,7 @@ export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_ExtensionAttribute = function (
     el: asn1.ASN1Element
 ): ExtensionAttribute {
@@ -975,13 +993,13 @@ export const _encode_ExtensionAttribute = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => __utils._encodeInteger,
                     __utils.BER
                 )(value.extension_attribute_type, __utils.BER),
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     1,
                     () => __utils._encodeAny,
@@ -1037,6 +1055,7 @@ export const _root_component_type_list_1_spec_for_ORAddress: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_ORAddress: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ORAddress: __utils.ComponentSpec[] = [];
+
 export const _decode_ORAddress = function (el: asn1.ASN1Element): ORAddress {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let built_in_standard_attributes!: BuiltInStandardAttributes;
@@ -1081,22 +1100,23 @@ export const _encode_ORAddress = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_BuiltInStandardAttributes(
+                /* REQUIRED   */ _encode_BuiltInStandardAttributes(
                     value.built_in_standard_attributes,
                     __utils.BER
                 ),
-                value.built_in_domain_defined_attributes
-                    ? _encode_BuiltInDomainDefinedAttributes(
+                /* IF_ABSENT  */ value.built_in_domain_defined_attributes ===
+                undefined
+                    ? undefined
+                    : _encode_BuiltInDomainDefinedAttributes(
                           value.built_in_domain_defined_attributes,
                           __utils.BER
-                      )
-                    : undefined,
-                value.extension_attributes
-                    ? _encode_ExtensionAttributes(
+                      ),
+                /* IF_ABSENT  */ value.extension_attributes === undefined
+                    ? undefined
+                    : _encode_ExtensionAttributes(
                           value.extension_attributes,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1166,6 +1186,7 @@ export const _root_component_type_list_1_spec_for_UniversalOrBMPString: __utils.
 ];
 export const _root_component_type_list_2_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [];
+
 export const _decode_UniversalOrBMPString = function (
     el: asn1.ASN1Element
 ): UniversalOrBMPString {
@@ -1205,16 +1226,16 @@ export const _encode_UniversalOrBMPString = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_UniversalOrBMPString_character_encoding(
+                /* REQUIRED   */ _encode_UniversalOrBMPString_character_encoding(
                     value.character_encoding,
                     __utils.BER
                 ),
-                value.iso_639_language_code
-                    ? __utils._encodePrintableString(
+                /* IF_ABSENT  */ value.iso_639_language_code === undefined
+                    ? undefined
+                    : __utils._encodePrintableString(
                           value.iso_639_language_code,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1285,6 +1306,7 @@ export const _root_component_type_list_1_spec_for_TeletexPersonalName: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [];
+
 export const _decode_TeletexPersonalName = function (
     el: asn1.ASN1Element
 ): TeletexPersonalName {
@@ -1340,36 +1362,36 @@ export const _encode_TeletexPersonalName = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => __utils._encodeTeletexString,
                     __utils.BER
                 )(value.surname, __utils.BER),
-                value.given_name
-                    ? __utils._encode_explicit(
+                /* IF_ABSENT  */ value.given_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => __utils._encodeTeletexString,
                           __utils.BER
-                      )(value.given_name, __utils.BER)
-                    : undefined,
-                value.initials
-                    ? __utils._encode_explicit(
+                      )(value.given_name, __utils.BER),
+                /* IF_ABSENT  */ value.initials === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => __utils._encodeTeletexString,
                           __utils.BER
-                      )(value.initials, __utils.BER)
-                    : undefined,
-                value.generation_qualifier
-                    ? __utils._encode_explicit(
+                      )(value.initials, __utils.BER),
+                /* IF_ABSENT  */ value.generation_qualifier === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           3,
                           () => __utils._encodeTeletexString,
                           __utils.BER
-                      )(value.generation_qualifier, __utils.BER)
-                    : undefined,
+                      )(value.generation_qualifier, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1428,6 +1450,7 @@ export const _root_component_type_list_1_spec_for_UniversalPersonalName: __utils
 ];
 export const _root_component_type_list_2_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [];
+
 export const _decode_UniversalPersonalName = function (
     el: asn1.ASN1Element
 ): UniversalPersonalName {
@@ -1483,36 +1506,36 @@ export const _encode_UniversalPersonalName = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_UniversalOrBMPString,
                     __utils.BER
                 )(value.surname, __utils.BER),
-                value.given_name
-                    ? __utils._encode_explicit(
+                /* IF_ABSENT  */ value.given_name === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => _encode_UniversalOrBMPString,
                           __utils.BER
-                      )(value.given_name, __utils.BER)
-                    : undefined,
-                value.initials
-                    ? __utils._encode_explicit(
+                      )(value.given_name, __utils.BER),
+                /* IF_ABSENT  */ value.initials === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           2,
                           () => _encode_UniversalOrBMPString,
                           __utils.BER
-                      )(value.initials, __utils.BER)
-                    : undefined,
-                value.generation_qualifier
-                    ? __utils._encode_explicit(
+                      )(value.initials, __utils.BER),
+                /* IF_ABSENT  */ value.generation_qualifier === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           3,
                           () => _encode_UniversalOrBMPString,
                           __utils.BER
-                      )(value.generation_qualifier, __utils.BER)
-                    : undefined,
+                      )(value.generation_qualifier, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1625,6 +1648,7 @@ export const _root_component_type_list_1_spec_for_PDSParameter: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_PDSParameter: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PDSParameter: __utils.ComponentSpec[] = [];
+
 export const _decode_PDSParameter = function (
     el: asn1.ASN1Element
 ): PDSParameter {
@@ -1662,18 +1686,18 @@ export const _encode_PDSParameter = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.printable_string
-                    ? __utils._encodePrintableString(
+                /* IF_ABSENT  */ value.printable_string === undefined
+                    ? undefined
+                    : __utils._encodePrintableString(
                           value.printable_string,
                           __utils.BER
-                      )
-                    : undefined,
-                value.teletex_string
-                    ? __utils._encodeTeletexString(
+                      ),
+                /* IF_ABSENT  */ value.teletex_string === undefined
+                    ? undefined
+                    : __utils._encodeTeletexString(
                           value.teletex_string,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1784,6 +1808,7 @@ export const _root_component_type_list_1_spec_for_UnformattedPostalAddress: __ut
 ];
 export const _root_component_type_list_2_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [];
+
 export const _decode_UnformattedPostalAddress = function (
     el: asn1.ASN1Element
 ): UnformattedPostalAddress {
@@ -1823,18 +1848,18 @@ export const _encode_UnformattedPostalAddress = function (
     return __utils._encodeSet(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.printable_address
-                    ? __utils._encodeSequenceOf<asn1.PrintableString>(
+                /* IF_ABSENT  */ value.printable_address === undefined
+                    ? undefined
+                    : __utils._encodeSequenceOf<asn1.PrintableString>(
                           () => __utils._encodePrintableString,
                           __utils.BER
-                      )(value.printable_address, __utils.BER)
-                    : undefined,
-                value.teletex_string
-                    ? __utils._encodeTeletexString(
+                      )(value.printable_address, __utils.BER),
+                /* IF_ABSENT  */ value.teletex_string === undefined
+                    ? undefined
+                    : __utils._encodeTeletexString(
                           value.teletex_string,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1937,6 +1962,7 @@ export const _root_component_type_list_1_spec_for_ExtendedNetworkAddress_e163_4_
 ];
 export const _root_component_type_list_2_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [];
+
 export const _decode_ExtendedNetworkAddress_e163_4_address = function (
     el: asn1.ASN1Element
 ): ExtendedNetworkAddress_e163_4_address {
@@ -1978,20 +2004,20 @@ export const _encode_ExtendedNetworkAddress_e163_4_address = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encode_explicit(
+                /* REQUIRED   */ __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
                     0,
                     () => __utils._encodeNumericString,
                     __utils.BER
                 )(value.number_, __utils.BER),
-                value.sub_address
-                    ? __utils._encode_explicit(
+                /* IF_ABSENT  */ value.sub_address === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => __utils._encodeNumericString,
                           __utils.BER
-                      )(value.sub_address, __utils.BER)
-                    : undefined,
+                      )(value.sub_address, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2076,6 +2102,7 @@ export const _root_component_type_list_1_spec_for_TeletexDomainDefinedAttribute:
 ];
 export const _root_component_type_list_2_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_TeletexDomainDefinedAttribute = function (
     el: asn1.ASN1Element
 ): TeletexDomainDefinedAttribute {
@@ -2104,8 +2131,14 @@ export const _encode_TeletexDomainDefinedAttribute = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeTeletexString(value.type_, __utils.BER),
-                __utils._encodeTeletexString(value.value, __utils.BER),
+                /* REQUIRED   */ __utils._encodeTeletexString(
+                    value.type_,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeTeletexString(
+                    value.value,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2152,6 +2185,7 @@ export const _root_component_type_list_1_spec_for_UniversalDomainDefinedAttribut
 ];
 export const _root_component_type_list_2_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [];
+
 export const _decode_UniversalDomainDefinedAttribute = function (
     el: asn1.ASN1Element
 ): UniversalDomainDefinedAttribute {
@@ -2180,8 +2214,14 @@ export const _encode_UniversalDomainDefinedAttribute = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                _encode_UniversalOrBMPString(value.type_, __utils.BER),
-                _encode_UniversalOrBMPString(value.value, __utils.BER),
+                /* REQUIRED   */ _encode_UniversalOrBMPString(
+                    value.type_,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_UniversalOrBMPString(
+                    value.value,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c

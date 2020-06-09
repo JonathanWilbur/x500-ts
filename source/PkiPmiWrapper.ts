@@ -13,6 +13,7 @@ import {
     _decode_AttributeCertificate,
     _encode_AttributeCertificate,
 } from "./AttributeCertificateDefinitions";
+import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
     AlgorithmIdentifier,
     CertificateSerialNumber,
@@ -45,7 +46,6 @@ export {
     _encode_AttributeCertificate,
 } from "./AttributeCertificateDefinitions";
 export {
-    ALGORITHM,
     AlgorithmIdentifier,
     AvlSerialNumber,
     CertAVL,
@@ -95,7 +95,6 @@ export {
     _encode_SubjectKeyIdentifier,
 } from "./CertificateExtensions";
 export {
-    ATTRIBUTE,
     Attribute,
     Name,
     _decode_Attribute,
@@ -103,10 +102,6 @@ export {
     _encode_Attribute,
     _encode_Name,
 } from "./InformationFramework";
-export {
-    objectIdentifierMatch,
-    octetStringMatch,
-} from "./SelectedAttributeTypes";
 export {
     attributeCertificateDefinitions,
     authenticationFramework,
@@ -152,6 +147,7 @@ export const _root_component_type_list_1_spec_for_WrappedPDUInfo: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_WrappedPDUInfo = function (
     el: asn1.ASN1Element
 ): WrappedPDUInfo {
@@ -181,8 +177,14 @@ export const _encode_WrappedPDUInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(value.pduType, __utils.BER),
-                    __utils._encodeAny(value.pduInfo, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.pduType,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.pduInfo,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -232,6 +234,7 @@ export const _root_component_type_list_1_spec_for_SenderStaticInfo: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_SenderStaticInfo = function (
     el: asn1.ASN1Element
 ): SenderStaticInfo {
@@ -269,12 +272,15 @@ export const _encode_SenderStaticInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_Name(value.issuer, __utils.BER),
-                    _encode_CertificateSerialNumber(
+                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
+                    /* REQUIRED   */ _encode_CertificateSerialNumber(
                         value.serialNumber,
                         __utils.BER
                     ),
-                    _encode_UserKeyingMaterial(value.partyAinfo, __utils.BER),
+                    /* REQUIRED   */ _encode_UserKeyingMaterial(
+                        value.partyAinfo,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -312,6 +318,7 @@ export const _root_component_type_list_1_spec_for_SenderDhPublicKey: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [];
+
 export const _decode_SenderDhPublicKey = function (
     el: asn1.ASN1Element
 ): SenderDhPublicKey {
@@ -341,8 +348,14 @@ export const _encode_SenderDhPublicKey = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_AlgorithmIdentifier(value.algorithm, __utils.BER),
-                    __utils._encodeBitString(value.publicKey, __utils.BER),
+                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                        value.algorithm,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ __utils._encodeBitString(
+                        value.publicKey,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -418,6 +431,7 @@ export const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgo
 ];
 export const _root_component_type_list_2_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [];
+
 export const _decode_KeyAgreement_keyEncryptionAlgorithm = function (
     el: asn1.ASN1Element
 ): KeyAgreement_keyEncryptionAlgorithm {
@@ -451,11 +465,14 @@ export const _encode_KeyAgreement_keyEncryptionAlgorithm = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
                         value.algorithm,
                         __utils.BER
                     ),
-                    __utils._encodeAny(value.parameters, __utils.BER),
+                    /* REQUIRED   */ __utils._encodeAny(
+                        value.parameters,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -493,6 +510,7 @@ export const _root_component_type_list_1_spec_for_KeyAgreement: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_KeyAgreement: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_KeyAgreement: __utils.ComponentSpec[] = [];
+
 export const _decode_KeyAgreement = function (
     el: asn1.ASN1Element
 ): KeyAgreement {
@@ -530,13 +548,13 @@ export const _encode_KeyAgreement = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_SenderDhInfo,
                         __utils.BER
                     )(value.senderDhInfo, __utils.BER),
-                    _encode_KeyAgreement_keyEncryptionAlgorithm(
+                    /* REQUIRED   */ _encode_KeyAgreement_keyEncryptionAlgorithm(
                         value.keyEncryptionAlgorithm,
                         __utils.BER
                     ),
@@ -580,6 +598,7 @@ export const _root_component_type_list_1_spec_for_EncryptedPduInfo_pduEncryption
 ];
 export const _root_component_type_list_2_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [];
+
 export const _decode_EncryptedPduInfo_pduEncryptionAlgorithm = function (
     el: asn1.ASN1Element
 ): EncryptedPduInfo_pduEncryptionAlgorithm {
@@ -608,8 +627,14 @@ export const _encode_EncryptedPduInfo_pduEncryptionAlgorithm = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeObjectIdentifier(value.algorithm, __utils.BER),
-                __utils._encodeAny(value.parameter, __utils.BER),
+                /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                    value.algorithm,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeAny(
+                    value.parameter,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -665,6 +690,7 @@ export const _root_component_type_list_1_spec_for_EncryptedPduInfo: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_EncryptedPduInfo = function (
     el: asn1.ASN1Element
 ): EncryptedPduInfo {
@@ -721,17 +747,20 @@ export const _encode_EncryptedPduInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodeObjectIdentifier(value.pduType, __utils.BER),
-                    value.encryptedKey
-                        ? _encode_EncryptedKey(value.encryptedKey, __utils.BER)
-                        : undefined,
-                    value.pduEncryptionAlgorithm
-                        ? _encode_EncryptedPduInfo_pduEncryptionAlgorithm(
+                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        value.pduType,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.encryptedKey === undefined
+                        ? undefined
+                        : _encode_EncryptedKey(value.encryptedKey, __utils.BER),
+                    /* IF_ABSENT  */ value.pduEncryptionAlgorithm === undefined
+                        ? undefined
+                        : _encode_EncryptedPduInfo_pduEncryptionAlgorithm(
                               value.pduEncryptionAlgorithm,
                               __utils.BER
-                          )
-                        : undefined,
-                    __utils._encode_explicit(
+                          ),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_EncryptedPdu,
@@ -774,6 +803,7 @@ export const _root_component_type_list_1_spec_for_EncryptedInfo: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [];
+
 export const _decode_EncryptedInfo = function (
     el: asn1.ASN1Element
 ): EncryptedInfo {
@@ -803,8 +833,11 @@ export const _encode_EncryptedInfo = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_KeyAgreement(value.keyAgreement, __utils.BER),
-                    _encode_EncryptedPduInfo(
+                    /* REQUIRED   */ _encode_KeyAgreement(
+                        value.keyAgreement,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_EncryptedPduInfo(
                         value.encryptedPduInfo,
                         __utils.BER
                     ),
@@ -905,11 +938,12 @@ export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
+export const _default_value_for_TBSPDU_wrapper__version = AuthenticationFramework.Version_v1;
 export const _decode_TBSPDU_wrapper = function (
     el: asn1.ASN1Element
 ): TBSPDU_wrapper {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<Version> = v1;
+    let version: asn1.OPTIONAL<Version> = _default_value_for_TBSPDU_wrapper__version;
     let signatureAlgorithm!: AlgorithmIdentifier;
     let certPath!: PkiPath;
     let signedAttrs: asn1.OPTIONAL<SignedAttributes>;
@@ -966,29 +1000,35 @@ export const _encode_TBSPDU_wrapper = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.version !== undefined &&
-                    value.version !== v1 /* TODO: Review this condition. */
-                        ? _encode_Version(value.version, __utils.BER)
-                        : undefined,
-                    _encode_AlgorithmIdentifier(
+                    /* IF_DEFAULT */ value.version === undefined ||
+                    __utils.deepEq(
+                        value.version,
+                        _default_value_for_TBSPDU_wrapper__version
+                    )
+                        ? undefined
+                        : _encode_Version(value.version, __utils.BER),
+                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
                         value.signatureAlgorithm,
                         __utils.BER
                     ),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => _encode_PkiPath,
                         __utils.BER
                     )(value.certPath, __utils.BER),
-                    value.signedAttrs
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.signedAttrs === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_SignedAttributes,
                               __utils.BER
-                          )(value.signedAttrs, __utils.BER)
-                        : undefined,
-                    _encode_TBSPDU_wrapper_conf(value.conf, __utils.BER),
+                          )(value.signedAttrs, __utils.BER),
+                    /* REQUIRED   */ _encode_TBSPDU_wrapper_conf(
+                        value.conf,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList

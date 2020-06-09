@@ -227,7 +227,7 @@ export class UUIDPair {
     constructor(
         readonly issuerUUID: UUID,
         readonly subjectUUID: UUID,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_UUIDPair: __utils.ComponentSpec[] = [
@@ -248,6 +248,7 @@ export const _root_component_type_list_1_spec_for_UUIDPair: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_UUIDPair: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UUIDPair: __utils.ComponentSpec[] = [];
+
 export const _decode_UUIDPair = function (el: asn1.ASN1Element): UUIDPair {
     const sequence: asn1.ASN1Element[] = el.sequence;
     if (sequence.length < 2) {
@@ -275,8 +276,14 @@ export const _encode_UUIDPair = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_UUID(value.issuerUUID, __utils.BER),
-                    _encode_UUID(value.subjectUUID, __utils.BER),
+                    /* REQUIRED   */ _encode_UUID(
+                        value.issuerUUID,
+                        __utils.BER
+                    ),
+                    /* REQUIRED   */ _encode_UUID(
+                        value.subjectUUID,
+                        __utils.BER
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -367,6 +374,7 @@ export const _root_component_type_list_1_spec_for_UtmCoordinates: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [];
+
 export const _decode_UtmCoordinates = function (
     el: asn1.ASN1Element
 ): UtmCoordinates {
@@ -398,9 +406,18 @@ export const _encode_UtmCoordinates = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodePrintableString(value.zone, __utils.BER),
-                __utils._encodeNumericString(value.easting, __utils.BER),
-                __utils._encodeNumericString(value.northing, __utils.BER),
+                /* REQUIRED   */ __utils._encodePrintableString(
+                    value.zone,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeNumericString(
+                    value.easting,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeNumericString(
+                    value.northing,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -563,7 +580,7 @@ export class Guide {
     constructor(
         readonly objectClass: asn1.OBJECT_IDENTIFIER | undefined,
         readonly criteria: Criteria,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Guide: __utils.ComponentSpec[] = [
@@ -584,6 +601,7 @@ export const _root_component_type_list_1_spec_for_Guide: __utils.ComponentSpec[]
 ];
 export const _root_component_type_list_2_spec_for_Guide: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Guide: __utils.ComponentSpec[] = [];
+
 export const _decode_Guide = function (el: asn1.ASN1Element): Guide {
     /* START_OF_SET_COMPONENT_DECLARATIONS */
     let objectClass: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
@@ -628,15 +646,15 @@ export const _encode_Guide = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.objectClass
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.objectClass === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeObjectIdentifier,
                               __utils.BER
-                          )(value.objectClass, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.objectClass, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_Criteria,
@@ -668,7 +686,7 @@ export class EnhancedGuide {
         readonly objectClass: asn1.OBJECT_IDENTIFIER,
         readonly criteria: Criteria,
         readonly subset: EnhancedGuide_subset | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
@@ -696,13 +714,14 @@ export const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [];
+export const _default_value_for_EnhancedGuide__subset = EnhancedGuide_subset_oneLevel;
 export const _decode_EnhancedGuide = function (
     el: asn1.ASN1Element
 ): EnhancedGuide {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let objectClass!: asn1.OBJECT_IDENTIFIER;
     let criteria!: Criteria;
-    let subset: asn1.OPTIONAL<EnhancedGuide_subset> = EnhancedGuide_subset_oneLevel;
+    let subset: asn1.OPTIONAL<EnhancedGuide_subset> = _default_value_for_EnhancedGuide__subset;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -749,28 +768,30 @@ export const _encode_EnhancedGuide = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => __utils._encodeObjectIdentifier,
                         __utils.BER
                     )(value.objectClass, __utils.BER),
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         1,
                         () => _encode_Criteria,
                         __utils.BER
                     )(value.criteria, __utils.BER),
-                    value.subset !== undefined &&
-                    value.subset !==
-                        EnhancedGuide_subset_oneLevel /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.subset === undefined ||
+                    __utils.deepEq(
+                        value.subset,
+                        _default_value_for_EnhancedGuide__subset
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => _encode_EnhancedGuide_subset,
                               __utils.BER
-                          )(value.subset, __utils.BER)
-                        : undefined,
+                          )(value.subset, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -850,7 +871,7 @@ export class TelexNumber {
         readonly telexNumber: asn1.PrintableString,
         readonly countryCode: asn1.PrintableString,
         readonly answerback: asn1.PrintableString,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TelexNumber: __utils.ComponentSpec[] = [
@@ -878,6 +899,7 @@ export const _root_component_type_list_1_spec_for_TelexNumber: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_TelexNumber: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TelexNumber: __utils.ComponentSpec[] = [];
+
 export const _decode_TelexNumber = function (
     el: asn1.ASN1Element
 ): TelexNumber {
@@ -915,15 +937,15 @@ export const _encode_TelexNumber = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encodePrintableString(
+                    /* REQUIRED   */ __utils._encodePrintableString(
                         value.telexNumber,
                         __utils.BER
                     ),
-                    __utils._encodePrintableString(
+                    /* REQUIRED   */ __utils._encodePrintableString(
                         value.countryCode,
                         __utils.BER
                     ),
-                    __utils._encodePrintableString(
+                    /* REQUIRED   */ __utils._encodePrintableString(
                         value.answerback,
                         __utils.BER
                     ),
@@ -957,7 +979,7 @@ export class FacsimileTelephoneNumber {
     constructor(
         readonly telephoneNumber: TelephoneNumber,
         readonly parameters: G3FacsimileNonBasicParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
@@ -978,6 +1000,7 @@ export const _root_component_type_list_1_spec_for_FacsimileTelephoneNumber: __ut
 ];
 export const _root_component_type_list_2_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [];
+
 export const _decode_FacsimileTelephoneNumber = function (
     el: asn1.ASN1Element
 ): FacsimileTelephoneNumber {
@@ -1020,13 +1043,16 @@ export const _encode_FacsimileTelephoneNumber = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_TelephoneNumber(value.telephoneNumber, __utils.BER),
-                    value.parameters
-                        ? _encode_G3FacsimileNonBasicParameters(
+                    /* REQUIRED   */ _encode_TelephoneNumber(
+                        value.telephoneNumber,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.parameters === undefined
+                        ? undefined
+                        : _encode_G3FacsimileNonBasicParameters(
                               value.parameters,
                               __utils.BER
-                          )
-                        : undefined,
+                          ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1121,7 +1147,7 @@ export class PresentationAddress {
         readonly sSelector: asn1.OCTET_STRING | undefined,
         readonly tSelector: asn1.OCTET_STRING | undefined,
         readonly nAddresses: asn1.OCTET_STRING[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
@@ -1156,6 +1182,7 @@ export const _root_component_type_list_1_spec_for_PresentationAddress: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_PresentationAddress: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PresentationAddress: __utils.ComponentSpec[] = [];
+
 export const _decode_PresentationAddress = function (
     el: asn1.ASN1Element
 ): PresentationAddress {
@@ -1218,31 +1245,31 @@ export const _encode_PresentationAddress = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.pSelector
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.pSelector === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeOctetString,
                               __utils.BER
-                          )(value.pSelector, __utils.BER)
-                        : undefined,
-                    value.sSelector
-                        ? __utils._encode_explicit(
+                          )(value.pSelector, __utils.BER),
+                    /* IF_ABSENT  */ value.sSelector === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeOctetString,
                               __utils.BER
-                          )(value.sSelector, __utils.BER)
-                        : undefined,
-                    value.tSelector
-                        ? __utils._encode_explicit(
+                          )(value.sSelector, __utils.BER),
+                    /* IF_ABSENT  */ value.tSelector === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => __utils._encodeOctetString,
                               __utils.BER
-                          )(value.tSelector, __utils.BER)
-                        : undefined,
-                    __utils._encode_explicit(
+                          )(value.tSelector, __utils.BER),
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         3,
                         () =>
@@ -1292,6 +1319,7 @@ export const _root_component_type_list_1_spec_for_ProtocolInformation: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [];
+
 export const _decode_ProtocolInformation = function (
     el: asn1.ASN1Element
 ): ProtocolInformation {
@@ -1322,8 +1350,11 @@ export const _encode_ProtocolInformation = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeOctetString(value.nAddress, __utils.BER),
-                __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                /* REQUIRED   */ __utils._encodeOctetString(
+                    value.nAddress,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
                     () => __utils._encodeObjectIdentifier,
                     __utils.BER
                 )(value.profiles, __utils.BER),
@@ -1349,7 +1380,7 @@ export class NameAndOptionalUID {
     constructor(
         readonly dn: DistinguishedName,
         readonly uid: UniqueIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
@@ -1370,6 +1401,7 @@ export const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [];
+
 export const _decode_NameAndOptionalUID = function (
     el: asn1.ASN1Element
 ): NameAndOptionalUID {
@@ -1412,10 +1444,13 @@ export const _encode_NameAndOptionalUID = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_DistinguishedName(value.dn, __utils.BER),
-                    value.uid
-                        ? _encode_UniqueIdentifier(value.uid, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_DistinguishedName(
+                        value.dn,
+                        __utils.BER
+                    ),
+                    /* IF_ABSENT  */ value.uid === undefined
+                        ? undefined
+                        : _encode_UniqueIdentifier(value.uid, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -1490,6 +1525,7 @@ export const _root_component_type_list_1_spec_for_UiiItem: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_UiiItem: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UiiItem: __utils.ComponentSpec[] = [];
+
 export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let type_!: asn1.OBJECT_IDENTIFIER;
@@ -1522,10 +1558,13 @@ export const _encode_UiiItem = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeObjectIdentifier(value.type_, __utils.BER),
-                value.length
-                    ? __utils._encodeInteger(value.length, __utils.BER)
-                    : undefined,
+                /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                    value.type_,
+                    __utils.BER
+                ),
+                /* IF_ABSENT  */ value.length === undefined
+                    ? undefined
+                    : __utils._encodeInteger(value.length, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1652,10 +1691,11 @@ export const _root_component_type_list_1_spec_for_UiiFormat: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_UiiFormat: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UiiFormat: __utils.ComponentSpec[] = [];
+export const _default_value_for_UiiFormat__subset = UiiFormat_subset_baseObject;
 export const _decode_UiiFormat = function (el: asn1.ASN1Element): UiiFormat {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let baseObject: asn1.OPTIONAL<URI>;
-    let subset: asn1.OPTIONAL<UiiFormat_subset> = UiiFormat_subset_baseObject;
+    let subset: asn1.OPTIONAL<UiiFormat_subset> = _default_value_for_UiiFormat__subset;
     let next!: UiiFormat_next;
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -1692,14 +1732,20 @@ export const _encode_UiiFormat = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.baseObject
-                    ? _encode_URI(value.baseObject, __utils.BER)
-                    : undefined,
-                value.subset !== undefined &&
-                value.subset !== UiiFormat_subset_baseObject
-                    ? _encode_UiiFormat_subset(value.subset, __utils.BER)
-                    : undefined,
-                _encode_UiiFormat_next(value.next, __utils.BER),
+                /* IF_ABSENT  */ value.baseObject === undefined
+                    ? undefined
+                    : _encode_URI(value.baseObject, __utils.BER),
+                /* IF_DEFAULT */ value.subset === undefined ||
+                __utils.deepEq(
+                    value.subset,
+                    _default_value_for_UiiFormat__subset
+                )
+                    ? undefined
+                    : _encode_UiiFormat_subset(value.subset, __utils.BER),
+                /* REQUIRED   */ _encode_UiiFormat_next(
+                    value.next,
+                    __utils.BER
+                ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1807,13 +1853,14 @@ export const _root_component_type_list_1_spec_for_EpcFormat_fields_Item: __utils
 ];
 export const _root_component_type_list_2_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [];
+export const _default_value_for_EpcFormat_fields_Item__result = numericPad;
 export const _decode_EpcFormat_fields_Item = function (
     el: asn1.ASN1Element
 ): EpcFormat_fields_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let bits!: asn1.INTEGER;
     let charField!: EpcFormat_fields_Item_charField;
-    let result: asn1.OPTIONAL<EpcFormat_fields_Item_result> = numericPad;
+    let result: asn1.OPTIONAL<EpcFormat_fields_Item_result> = _default_value_for_EpcFormat_fields_Item__result;
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
     const callbacks: __utils.DecodingMap = {
@@ -1849,18 +1896,24 @@ export const _encode_EpcFormat_fields_Item = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeInteger(value.bits, __utils.BER),
-                _encode_EpcFormat_fields_Item_charField(
+                /* REQUIRED   */ __utils._encodeInteger(
+                    value.bits,
+                    __utils.BER
+                ),
+                /* REQUIRED   */ _encode_EpcFormat_fields_Item_charField(
                     value.charField,
                     __utils.BER
                 ),
-                value.result !== undefined &&
-                value.result !== numericPad /* TODO: Review this condition. */
-                    ? _encode_EpcFormat_fields_Item_result(
+                /* IF_DEFAULT */ value.result === undefined ||
+                __utils.deepEq(
+                    value.result,
+                    _default_value_for_EpcFormat_fields_Item__result
+                )
+                    ? undefined
+                    : _encode_EpcFormat_fields_Item_result(
                           value.result,
                           __utils.BER
-                      )
-                    : undefined,
+                      ),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -1909,6 +1962,7 @@ export const _root_component_type_list_1_spec_for_EpcFormat: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_EpcFormat: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EpcFormat: __utils.ComponentSpec[] = [];
+
 export const _decode_EpcFormat = function (el: asn1.ASN1Element): EpcFormat {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let fields!: EpcFormat_fields_Item[];
@@ -1960,29 +2014,31 @@ export const _encode_EpcFormat = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                __utils._encodeSequenceOf<EpcFormat_fields_Item>(
-                    () => _encode_EpcFormat_fields_Item,
+                /* REQUIRED   */ __utils._encodeSequenceOf<
+                    EpcFormat_fields_Item
+                >(() => _encode_EpcFormat_fields_Item, __utils.BER)(
+                    value.fields,
                     __utils.BER
-                )(value.fields, __utils.BER),
-                value.digitShift
-                    ? __utils._encode_explicit(
+                ),
+                /* IF_ABSENT  */ value.digitShift === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           0,
                           () => __utils._encodeInteger,
                           __utils.BER
-                      )(value.digitShift, __utils.BER)
-                    : undefined,
-                value.checkCalc
-                    ? __utils._encode_explicit(
+                      )(value.digitShift, __utils.BER),
+                /* IF_ABSENT  */ value.checkCalc === undefined
+                    ? undefined
+                    : __utils._encode_explicit(
                           asn1.ASN1TagClass.context,
                           1,
                           () => __utils._encodeInteger,
                           __utils.BER
-                      )(value.checkCalc, __utils.BER)
-                    : undefined,
-                value.urnPrefix
-                    ? __utils._encodeUTF8String(value.urnPrefix, __utils.BER)
-                    : undefined,
+                      )(value.checkCalc, __utils.BER),
+                /* IF_ABSENT  */ value.urnPrefix === undefined
+                    ? undefined
+                    : __utils._encodeUTF8String(value.urnPrefix, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2029,7 +2085,7 @@ export class MultipleMatchingLocalities {
     constructor(
         readonly matchingRuleUsed: asn1.OBJECT_IDENTIFIER | undefined,
         readonly attributeList: AttributeValueAssertion[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
@@ -2050,6 +2106,7 @@ export const _root_component_type_list_1_spec_for_MultipleMatchingLocalities: __
 ];
 export const _root_component_type_list_2_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [];
+
 export const _decode_MultipleMatchingLocalities = function (
     el: asn1.ASN1Element
 ): MultipleMatchingLocalities {
@@ -2094,16 +2151,18 @@ export const _encode_MultipleMatchingLocalities = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.matchingRuleUsed
-                        ? __utils._encodeObjectIdentifier(
+                    /* IF_ABSENT  */ value.matchingRuleUsed === undefined
+                        ? undefined
+                        : __utils._encodeObjectIdentifier(
                               value.matchingRuleUsed,
                               __utils.BER
-                          )
-                        : undefined,
-                    __utils._encodeSequenceOf<AttributeValueAssertion>(
-                        () => _encode_AttributeValueAssertion,
+                          ),
+                    /* REQUIRED   */ __utils._encodeSequenceOf<
+                        AttributeValueAssertion
+                    >(() => _encode_AttributeValueAssertion, __utils.BER)(
+                        value.attributeList,
                         __utils.BER
-                    )(value.attributeList, __utils.BER),
+                    ),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2178,7 +2237,7 @@ export const _encode_PwdResponse_error = __utils._encodeEnumerated;
 export class PwdResponse {
     constructor(
         readonly warning: PwdResponse_warning | undefined,
-        readonly error: PwdResponse_error | undefined,
+        readonly error: PwdResponse_error | undefined
     ) {}
 }
 export const _root_component_type_list_1_spec_for_PwdResponse: __utils.ComponentSpec[] = [
@@ -2199,6 +2258,7 @@ export const _root_component_type_list_1_spec_for_PwdResponse: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_PwdResponse: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PwdResponse: __utils.ComponentSpec[] = [];
+
 export const _decode_PwdResponse = function (
     el: asn1.ASN1Element
 ): PwdResponse {
@@ -2233,12 +2293,12 @@ export const _encode_PwdResponse = function (
     return __utils._encodeSequence(
         ([] as (asn1.ASN1Element | undefined)[])
             .concat([
-                value.warning
-                    ? _encode_PwdResponse_warning(value.warning, __utils.BER)
-                    : undefined,
-                value.error
-                    ? _encode_PwdResponse_error(value.error, __utils.BER)
-                    : undefined,
+                /* IF_ABSENT  */ value.warning === undefined
+                    ? undefined
+                    : _encode_PwdResponse_warning(value.warning, __utils.BER),
+                /* IF_ABSENT  */ value.error === undefined
+                    ? undefined
+                    : _encode_PwdResponse_error(value.error, __utils.BER),
             ])
             .filter(
                 (c: asn1.ASN1Element | undefined): boolean => !!c
@@ -2641,7 +2701,7 @@ export class TimeSpecification_time_absolute {
     constructor(
         readonly startTime: asn1.GeneralizedTime | undefined,
         readonly endTime: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
@@ -2662,6 +2722,7 @@ export const _root_component_type_list_1_spec_for_TimeSpecification_time_absolut
 ];
 export const _root_component_type_list_2_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [];
+
 export const _decode_TimeSpecification_time_absolute = function (
     el: asn1.ASN1Element
 ): TimeSpecification_time_absolute {
@@ -2708,22 +2769,22 @@ export const _encode_TimeSpecification_time_absolute = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.startTime
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.startTime === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => __utils._encodeGeneralizedTime,
                               __utils.BER
-                          )(value.startTime, __utils.BER)
-                        : undefined,
-                    value.endTime
-                        ? __utils._encode_explicit(
+                          )(value.startTime, __utils.BER),
+                    /* IF_ABSENT  */ value.endTime === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeGeneralizedTime,
                               __utils.BER
-                          )(value.endTime, __utils.BER)
-                        : undefined,
+                          )(value.endTime, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2741,7 +2802,7 @@ export class DayTime {
         readonly hour: asn1.INTEGER,
         readonly minute: asn1.INTEGER | undefined,
         readonly second: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec[] = [
@@ -2769,11 +2830,13 @@ export const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_DayTime: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DayTime: __utils.ComponentSpec[] = [];
+export const _default_value_for_DayTime__minute = 0;
+export const _default_value_for_DayTime__second = 0;
 export const _decode_DayTime = function (el: asn1.ASN1Element): DayTime {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let hour!: asn1.INTEGER;
-    let minute: asn1.OPTIONAL<asn1.INTEGER> = 0;
-    let second: asn1.OPTIONAL<asn1.INTEGER> = 0;
+    let minute: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_DayTime__minute;
+    let second: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_DayTime__second;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -2820,30 +2883,36 @@ export const _encode_DayTime = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => __utils._encodeInteger,
                         __utils.BER
                     )(value.hour, __utils.BER),
-                    value.minute !== undefined &&
-                    value.minute !== 0 /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.minute === undefined ||
+                    __utils.deepEq(
+                        value.minute,
+                        _default_value_for_DayTime__minute
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.minute, __utils.BER)
-                        : undefined,
-                    value.second !== undefined &&
-                    value.second !== 0 /* TODO: Review this condition. */
-                        ? __utils._encode_explicit(
+                          )(value.minute, __utils.BER),
+                    /* IF_DEFAULT */ value.second === undefined ||
+                    __utils.deepEq(
+                        value.second,
+                        _default_value_for_DayTime__second
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => __utils._encodeInteger,
                               __utils.BER
-                          )(value.second, __utils.BER)
-                        : undefined,
+                          )(value.second, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -2860,7 +2929,7 @@ export class DayTimeBand {
     constructor(
         readonly startDayTime: DayTime | undefined,
         readonly endDayTime: DayTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
@@ -2881,17 +2950,22 @@ export const _root_component_type_list_1_spec_for_DayTimeBand: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_DayTimeBand: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DayTimeBand: __utils.ComponentSpec[] = [];
+export const _default_value_for_DayTimeBand__startDayTime = new DayTime(
+    0,
+    undefined,
+    undefined
+);
+export const _default_value_for_DayTimeBand__endDayTime = new DayTime(
+    23,
+    59,
+    59
+);
 export const _decode_DayTimeBand = function (
     el: asn1.ASN1Element
 ): DayTimeBand {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let startDayTime: asn1.OPTIONAL<DayTime> = new DayTime(
-        0,
-        undefined,
-        undefined,
-        []
-    );
-    let endDayTime: asn1.OPTIONAL<DayTime> = new DayTime(23, 59, 59, []);
+    let startDayTime: asn1.OPTIONAL<DayTime> = _default_value_for_DayTimeBand__startDayTime;
+    let endDayTime: asn1.OPTIONAL<DayTime> = _default_value_for_DayTimeBand__endDayTime;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -2932,26 +3006,30 @@ export const _encode_DayTimeBand = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.startDayTime !== undefined &&
-                    JSON.stringify(value.startDayTime) !==
-                        JSON.stringify(new DayTime(0, undefined, undefined, []))
-                        ? __utils._encode_explicit(
+                    /* IF_DEFAULT */ value.startDayTime === undefined ||
+                    __utils.deepEq(
+                        value.startDayTime,
+                        _default_value_for_DayTimeBand__startDayTime
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () => _encode_DayTime,
                               __utils.BER
-                          )(value.startDayTime, __utils.BER)
-                        : undefined,
-                    value.endDayTime !== undefined &&
-                    JSON.stringify(value.endDayTime) !==
-                        JSON.stringify(new DayTime(23, 59, 59, []))
-                        ? __utils._encode_explicit(
+                          )(value.startDayTime, __utils.BER),
+                    /* IF_DEFAULT */ value.endDayTime === undefined ||
+                    __utils.deepEq(
+                        value.endDayTime,
+                        _default_value_for_DayTimeBand__endDayTime
+                    )
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_DayTime,
                               __utils.BER
-                          )(value.endDayTime, __utils.BER)
-                        : undefined,
+                          )(value.endDayTime, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3225,7 +3303,7 @@ export class Period {
         readonly weeks: Period_weeks | undefined,
         readonly months: Period_months | undefined,
         readonly years: asn1.INTEGER[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_Period: __utils.ComponentSpec[] = [
@@ -3267,6 +3345,7 @@ export const _root_component_type_list_1_spec_for_Period: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_Period: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Period: __utils.ComponentSpec[] = [];
+
 export const _decode_Period = function (el: asn1.ASN1Element): Period {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let timesOfDay: asn1.OPTIONAL<DayTimeBand[]>;
@@ -3332,8 +3411,9 @@ export const _encode_Period = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    value.timesOfDay
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.timesOfDay === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               0,
                               () =>
@@ -3342,34 +3422,34 @@ export const _encode_Period = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.timesOfDay, __utils.BER)
-                        : undefined,
-                    value.days
-                        ? __utils._encode_explicit(
+                          )(value.timesOfDay, __utils.BER),
+                    /* IF_ABSENT  */ value.days === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => _encode_Period_days,
                               __utils.BER
-                          )(value.days, __utils.BER)
-                        : undefined,
-                    value.weeks
-                        ? __utils._encode_explicit(
+                          )(value.days, __utils.BER),
+                    /* IF_ABSENT  */ value.weeks === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               2,
                               () => _encode_Period_weeks,
                               __utils.BER
-                          )(value.weeks, __utils.BER)
-                        : undefined,
-                    value.months
-                        ? __utils._encode_explicit(
+                          )(value.weeks, __utils.BER),
+                    /* IF_ABSENT  */ value.months === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               3,
                               () => _encode_Period_months,
                               __utils.BER
-                          )(value.months, __utils.BER)
-                        : undefined,
-                    value.years
-                        ? __utils._encode_explicit(
+                          )(value.months, __utils.BER),
+                    /* IF_ABSENT  */ value.years === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               4,
                               () =>
@@ -3378,8 +3458,7 @@ export const _encode_Period = function (
                                       __utils.BER
                                   ),
                               __utils.BER
-                          )(value.years, __utils.BER)
-                        : undefined,
+                          )(value.years, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3426,7 +3505,7 @@ export class TimeSpecification {
         readonly time: TimeSpecification_time,
         readonly notThisTime: asn1.BOOLEAN | undefined,
         readonly timeZone: TimeZone | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
@@ -3454,12 +3533,13 @@ export const _root_component_type_list_1_spec_for_TimeSpecification: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_TimeSpecification: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeSpecification: __utils.ComponentSpec[] = [];
+export const _default_value_for_TimeSpecification__notThisTime = false;
 export const _decode_TimeSpecification = function (
     el: asn1.ASN1Element
 ): TimeSpecification {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let time!: TimeSpecification_time;
-    let notThisTime: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let notThisTime: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_TimeSpecification__notThisTime;
     let timeZone: asn1.OPTIONAL<TimeZone>;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -3501,15 +3581,23 @@ export const _encode_TimeSpecification = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    _encode_TimeSpecification_time(value.time, __utils.BER),
-                    value.notThisTime !== undefined &&
-                    value.notThisTime !==
-                        false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.notThisTime, __utils.BER)
-                        : undefined,
-                    value.timeZone
-                        ? _encode_TimeZone(value.timeZone, __utils.BER)
-                        : undefined,
+                    /* REQUIRED   */ _encode_TimeSpecification_time(
+                        value.time,
+                        __utils.BER
+                    ),
+                    /* IF_DEFAULT */ value.notThisTime === undefined ||
+                    __utils.deepEq(
+                        value.notThisTime,
+                        _default_value_for_TimeSpecification__notThisTime
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(
+                              value.notThisTime,
+                              __utils.BER
+                          ),
+                    /* IF_ABSENT  */ value.timeZone === undefined
+                        ? undefined
+                        : _encode_TimeZone(value.timeZone, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
@@ -3527,7 +3615,7 @@ export class TimeAssertion_between {
         readonly startTime: asn1.GeneralizedTime,
         readonly endTime: asn1.GeneralizedTime | undefined,
         readonly entirely: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
+        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
 export const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
@@ -3555,13 +3643,14 @@ export const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils
 ];
 export const _root_component_type_list_2_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [];
+export const _default_value_for_TimeAssertion_between__entirely = false;
 export const _decode_TimeAssertion_between = function (
     el: asn1.ASN1Element
 ): TimeAssertion_between {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     let startTime!: asn1.GeneralizedTime;
     let endTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
-    let entirely: asn1.OPTIONAL<asn1.BOOLEAN> = false;
+    let entirely: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_TimeAssertion_between__entirely;
     let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
     /* START_OF_CALLBACKS_MAP */
@@ -3606,24 +3695,27 @@ export const _encode_TimeAssertion_between = function (
         ([] as (asn1.ASN1Element | undefined)[])
             .concat(
                 [
-                    __utils._encode_explicit(
+                    /* REQUIRED   */ __utils._encode_explicit(
                         asn1.ASN1TagClass.context,
                         0,
                         () => __utils._encodeGeneralizedTime,
                         __utils.BER
                     )(value.startTime, __utils.BER),
-                    value.endTime
-                        ? __utils._encode_explicit(
+                    /* IF_ABSENT  */ value.endTime === undefined
+                        ? undefined
+                        : __utils._encode_explicit(
                               asn1.ASN1TagClass.context,
                               1,
                               () => __utils._encodeGeneralizedTime,
                               __utils.BER
-                          )(value.endTime, __utils.BER)
-                        : undefined,
-                    value.entirely !== undefined &&
-                    value.entirely !== false /* TODO: Review this condition. */
-                        ? __utils._encodeBoolean(value.entirely, __utils.BER)
-                        : undefined,
+                          )(value.endTime, __utils.BER),
+                    /* IF_DEFAULT */ value.entirely === undefined ||
+                    __utils.deepEq(
+                        value.entirely,
+                        _default_value_for_TimeAssertion_between__entirely
+                    )
+                        ? undefined
+                        : __utils._encodeBoolean(value.entirely, __utils.BER),
                 ],
                 value._unrecognizedExtensionsList
                     ? value._unrecognizedExtensionsList
