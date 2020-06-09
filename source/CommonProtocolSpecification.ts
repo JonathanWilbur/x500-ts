@@ -1,27 +1,12 @@
-
 // CommonProtocolSpecification
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
-import * as UsefulDefinitions from "./UsefulDefinitions";
-import {
-    opBindingManagement
-} from "./UsefulDefinitions";
-export {
-    opBindingManagement
-} from "./UsefulDefinitions";
-
-import * as OperationalBindingManagement from "./OperationalBindingManagement";
-import {
-    establishOperationalBinding,
-    modifyOperationalBinding,
-    terminateOperationalBinding
-} from "./OperationalBindingManagement";
 export {
     establishOperationalBinding,
     modifyOperationalBinding,
-    terminateOperationalBinding
+    terminateOperationalBinding,
 } from "./OperationalBindingManagement";
-
+export { opBindingManagement } from "./UsefulDefinitions";
 
 const itu_t: number = 0;
 const itu_r: number = 0;
@@ -31,36 +16,40 @@ const joint_iso_itu_t: number = 2;
 const joint_iso_ccitt: number = 2;
 
 export type Code =
-    { local: asn1.INTEGER }
+    | { local: asn1.INTEGER }
     | { global: asn1.OBJECT_IDENTIFIER }
     | asn1.ASN1Element;
 export const _decode_Code = __utils._decode_extensible_choice<Code>({
-    "UNIVERSAL 2": [ "local", __utils._decodeInteger ],
-    "UNIVERSAL 6": [ "global", __utils._decodeObjectIdentifier ]
+    "UNIVERSAL 2": ["local", __utils._decodeInteger],
+    "UNIVERSAL 6": ["global", __utils._decodeObjectIdentifier],
 });
-export const _encode_Code = __utils._encode_choice<Code>({
-    "local": __utils._encodeInteger,
-    "global": __utils._encodeObjectIdentifier,
-}, __utils.BER);
-
+export const _encode_Code = __utils._encode_choice<Code>(
+    {
+        local: __utils._encodeInteger,
+        global: __utils._encodeObjectIdentifier,
+    },
+    __utils.BER
+);
 
 // TODO: ObjectClassAssignment: ERROR
 
 // TODO: ObjectClassAssignment: OPERATION
 
 export type InvokeId =
-    { present: asn1.INTEGER }
+    | { present: asn1.INTEGER }
     | { absent: asn1.NULL }
     | asn1.ASN1Element;
 export const _decode_InvokeId = __utils._decode_extensible_choice<InvokeId>({
-    "UNIVERSAL 2": [ "present", __utils._decodeInteger ],
-    "UNIVERSAL 5": [ "absent", __utils._decodeNull ]
+    "UNIVERSAL 2": ["present", __utils._decodeInteger],
+    "UNIVERSAL 5": ["absent", __utils._decodeNull],
 });
-export const _encode_InvokeId = __utils._encode_choice<InvokeId>({
-    "present": __utils._encodeInteger,
-    "absent": __utils._encodeNull,
-}, __utils.BER);
-
+export const _encode_InvokeId = __utils._encode_choice<InvokeId>(
+    {
+        present: __utils._encodeInteger,
+        absent: __utils._encodeNull,
+    },
+    __utils.BER
+);
 
 export const id_opcode_read: Code = { local: 1 };
 
@@ -125,4 +114,3 @@ export const id_err_operationalBindingError: Code = { local: 100 };
 // TODO: ObjectSetAssignment: DOP-Invokable
 
 // TODO: ObjectSetAssignment: DOP-Returnable
-

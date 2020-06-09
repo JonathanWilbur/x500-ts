@@ -1,8 +1,5 @@
-
 // UpperBounds
 import * as asn1 from "asn1-ts";
-import * as __utils from "./__utils";
-
 
 const itu_t: number = 0;
 const itu_r: number = 0;
@@ -88,4 +85,3 @@ export const ub_title: asn1.INTEGER = 64;
 export const ub_user_password: asn1.INTEGER = 128;
 
 export const ub_x121_address: asn1.INTEGER = 15;
-
