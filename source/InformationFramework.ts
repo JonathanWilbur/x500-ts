@@ -15,9 +15,26 @@ import {
     selectedAttributeTypes,
     serviceAdministration
 } from "./UsefulDefinitions";
+export {
+    directoryAbstractService,
+    id_ar,
+    id_at,
+    id_mr,
+    id_nf,
+    id_oa,
+    id_oc,
+    id_sc,
+    selectedAttributeTypes,
+    serviceAdministration
+} from "./UsefulDefinitions";
 
 import * as ServiceAdministration from "./ServiceAdministration";
 import {
+    SearchRule,
+    _decode_SearchRule,
+    _encode_SearchRule
+} from "./ServiceAdministration";
+export {
     SearchRule,
     _decode_SearchRule,
     _encode_SearchRule
@@ -29,9 +46,31 @@ import {
     _decode_TypeAndContextAssertion,
     _encode_TypeAndContextAssertion
 } from "./DirectoryAbstractService";
+export {
+    TypeAndContextAssertion,
+    _decode_TypeAndContextAssertion,
+    _encode_TypeAndContextAssertion
+} from "./DirectoryAbstractService";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    booleanMatch,
+    commonName,
+    dn,
+    generalizedTime,
+    generalizedTimeMatch,
+    generalizedTimeOrderingMatch,
+    integerFirstComponentMatch,
+    integerMatch,
+    integerOrderingMatch,
+    objectIdentifierFirstComponentMatch,
+    oid,
+    subtreeSpec,
+    UnboundedDirectoryString,
+    _decode_UnboundedDirectoryString,
+    _encode_UnboundedDirectoryString
+} from "./SelectedAttributeTypes";
+export {
     booleanMatch,
     commonName,
     dn,
@@ -82,15 +121,15 @@ export class Context {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Context: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Context: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("contextType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("contextValues", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("fallback", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Context: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Context: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Context: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Context: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Context = function (el: asn1.ASN1Element): Context {
@@ -139,14 +178,14 @@ export class Attribute_valuesWithContext_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("value", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("contextList", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Attribute_valuesWithContext_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Attribute_valuesWithContext_Item = function (el: asn1.ASN1Element): Attribute_valuesWithContext_Item {
@@ -187,15 +226,15 @@ export class Attribute {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Attribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Attribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("values", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("valuesWithContext", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Attribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Attribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Attribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Attribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Attribute = function (el: asn1.ASN1Element): Attribute {
@@ -254,14 +293,14 @@ export class ContextAssertion {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("contextType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("contextValues", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ContextAssertion: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ContextAssertion = function (el: asn1.ASN1Element): ContextAssertion {
@@ -315,15 +354,15 @@ export class AttributeValueAssertion {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("assertion", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("assertedContexts", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AttributeValueAssertion: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AttributeValueAssertion = function (el: asn1.ASN1Element): AttributeValueAssertion {
@@ -372,14 +411,14 @@ export class AttributeTypeAssertion {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("assertedContexts", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AttributeTypeAssertion: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AttributeTypeAssertion = function (el: asn1.ASN1Element): AttributeTypeAssertion {
@@ -428,14 +467,14 @@ export class AttributeTypeAndValue {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("value", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AttributeTypeAndValue: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AttributeTypeAndValue = function (el: asn1.ASN1Element): AttributeTypeAndValue {
@@ -525,15 +564,15 @@ export class ChopSpecification {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("specificExclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("minimum", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("maximum", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ChopSpecification: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ChopSpecification = function (el: asn1.ASN1Element): ChopSpecification {
@@ -606,17 +645,17 @@ export class SubtreeSpecification {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("base", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("specificExclusions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("minimum", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("maximum", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("specificationFilter", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SubtreeSpecification: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SubtreeSpecification = function (el: asn1.ASN1Element): SubtreeSpecification {
@@ -671,9 +710,12 @@ export enum ObjectClassKind {
     structural = 1,
     auxiliary = 2,
 }
-export const abstract: ObjectClassKind = 0;
-export const structural: ObjectClassKind = 1;
-export const auxiliary: ObjectClassKind = 2;
+export const ObjectClassKind_abstract: ObjectClassKind = ObjectClassKind.abstract; /* LONG_NAMED_ENUMERATED_VALUE */
+export const abstract: ObjectClassKind = ObjectClassKind.abstract; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const ObjectClassKind_structural: ObjectClassKind = ObjectClassKind.structural; /* LONG_NAMED_ENUMERATED_VALUE */
+export const structural: ObjectClassKind = ObjectClassKind.structural; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const ObjectClassKind_auxiliary: ObjectClassKind = ObjectClassKind.auxiliary; /* LONG_NAMED_ENUMERATED_VALUE */
+export const auxiliary: ObjectClassKind = ObjectClassKind.auxiliary; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_ObjectClassKind = __utils._decodeEnumerated;
 export const _encode_ObjectClassKind = __utils._encodeEnumerated;
 
@@ -711,15 +753,15 @@ export class DITStructureRule {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ruleIdentifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("nameForm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("superiorStructureRules", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DITStructureRule: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DITStructureRule = function (el: asn1.ASN1Element): DITStructureRule {
@@ -775,17 +817,17 @@ export class DITContentRule {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DITContentRule: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DITContentRule: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("structuralObjectClass", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("auxiliaries", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("mandatory", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("optional", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("precluded", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DITContentRule: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DITContentRule: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DITContentRule: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DITContentRule: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DITContentRule = function (el: asn1.ASN1Element): DITContentRule {
@@ -845,15 +887,15 @@ export class DITContextUse {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DITContextUse: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DITContextUse: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("attributeType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("mandatoryContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("optionalContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DITContextUse: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DITContextUse: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DITContextUse: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DITContextUse: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DITContextUse = function (el: asn1.ASN1Element): DITContextUse {
@@ -957,15 +999,15 @@ export class SearchRuleDescription {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
     /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */,
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("description", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SearchRuleDescription: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SearchRuleDescription = function (el: asn1.ASN1Element): SearchRuleDescription {
@@ -1020,14 +1062,14 @@ export class PwdHistory {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_PwdHistory: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PwdHistory: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("time", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("password", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PwdHistory: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PwdHistory: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PwdHistory: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PwdHistory: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PwdHistory = function (el: asn1.ASN1Element): PwdHistory {

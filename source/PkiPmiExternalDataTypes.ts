@@ -9,9 +9,18 @@ import {
     intSecurity,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    authenticationFramework,
+    certificateExtensions,
+    intSecurity,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
+    EXTENSION
+} from "./AuthenticationFramework";
+export {
     EXTENSION
 } from "./AuthenticationFramework";
 
@@ -21,9 +30,19 @@ import {
     _decode_GeneralName,
     _encode_GeneralName
 } from "./CertificateExtensions";
+export {
+    GeneralName,
+    _decode_GeneralName,
+    _encode_GeneralName
+} from "./CertificateExtensions";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    PresentationAddress,
+    _decode_PresentationAddress,
+    _encode_PresentationAddress
+} from "./SelectedAttributeTypes";
+export {
     PresentationAddress,
     _decode_PresentationAddress,
     _encode_PresentationAddress
@@ -59,14 +78,14 @@ export class NoticeReference {
         readonly noticeNumbers: asn1.INTEGER[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_NoticeReference: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_NoticeReference: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("organization", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("noticeNumbers", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_NoticeReference: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_NoticeReference: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_NoticeReference: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_NoticeReference: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_NoticeReference = function (el: asn1.ASN1Element): NoticeReference {
@@ -104,14 +123,14 @@ export class UserNotice {
         readonly explicitText: DisplayText | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UserNotice: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UserNotice: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("noticeRef", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("explicitText", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UserNotice: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UserNotice: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UserNotice: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UserNotice: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UserNotice = function (el: asn1.ASN1Element): UserNotice {
@@ -154,14 +173,14 @@ export class AccessDescription {
         readonly accessLocation: GeneralName
     ) {}
 }
-const _root_component_type_list_1_spec_for_AccessDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AccessDescription: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("accessMethod", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("accessLocation", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AccessDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AccessDescription: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AccessDescription: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AccessDescription: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AccessDescription = function (el: asn1.ASN1Element): AccessDescription {
@@ -359,16 +378,16 @@ export class PersonalName {
         readonly generation_qualifier: asn1.PrintableString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_PersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PersonalName: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("surname", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("given-name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("initials", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("generation-qualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PersonalName: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PersonalName: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PersonalName: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PersonalName = function (el: asn1.ASN1Element): PersonalName {
@@ -434,7 +453,7 @@ export class BuiltInStandardAttributes {
         readonly organizational_unit_names: OrganizationalUnitNames | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("country-name", true, __utils.hasTag(asn1.ASN1TagClass.application, 1), undefined, undefined),
     new __utils.ComponentSpec("administration-domain-name", true, __utils.hasTag(asn1.ASN1TagClass.application, 2), undefined, undefined),
     new __utils.ComponentSpec("network-address", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
@@ -445,10 +464,10 @@ const _root_component_type_list_1_spec_for_BuiltInStandardAttributes: __utils.Co
     new __utils.ComponentSpec("personal-name", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
     new __utils.ComponentSpec("organizational-unit-names", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_BuiltInStandardAttributes: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_BuiltInStandardAttributes = function (el: asn1.ASN1Element): BuiltInStandardAttributes {
@@ -517,14 +536,14 @@ export class BuiltInDomainDefinedAttribute {
         readonly value: asn1.PrintableString
     ) {}
 }
-const _root_component_type_list_1_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("value", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_BuiltInDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_BuiltInDomainDefinedAttribute = function (el: asn1.ASN1Element): BuiltInDomainDefinedAttribute {
@@ -567,14 +586,14 @@ export class ExtensionAttribute {
         readonly extension_attribute_value: asn1.ASN1Element
     ) {}
 }
-const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("extension-attribute-type", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("extension-attribute-value", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ExtensionAttribute = function (el: asn1.ASN1Element): ExtensionAttribute {
@@ -618,15 +637,15 @@ export class ORAddress {
         readonly extension_attributes: ExtensionAttributes | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_ORAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ORAddress: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("built-in-standard-attributes", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("built-in-domain-defined-attributes", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("extension-attributes", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ORAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ORAddress: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ORAddress: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ORAddress: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ORAddress = function (el: asn1.ASN1Element): ORAddress {
@@ -704,14 +723,14 @@ export class UniversalOrBMPString {
         readonly iso_639_language_code: asn1.PrintableString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("character-encoding", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("iso-639-language-code", true, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UniversalOrBMPString: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UniversalOrBMPString = function (el: asn1.ASN1Element): UniversalOrBMPString {
@@ -779,16 +798,16 @@ export class TeletexPersonalName {
         readonly generation_qualifier: asn1.TeletexString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("surname", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("given-name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("initials", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("generation-qualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TeletexPersonalName: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TeletexPersonalName = function (el: asn1.ASN1Element): TeletexPersonalName {
@@ -849,16 +868,16 @@ export class UniversalPersonalName {
         readonly generation_qualifier: UniversalOrBMPString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("surname", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("given-name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("initials", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("generation-qualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UniversalPersonalName: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UniversalPersonalName = function (el: asn1.ASN1Element): UniversalPersonalName {
@@ -972,14 +991,14 @@ export class PDSParameter {
         readonly teletex_string: asn1.TeletexString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_PDSParameter: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PDSParameter: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("printable-string", true, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("teletex-string", true, __utils.hasTag(asn1.ASN1TagClass.universal, 20), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PDSParameter: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PDSParameter: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PDSParameter: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PDSParameter: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PDSParameter = function (el: asn1.ASN1Element): PDSParameter {
@@ -1111,14 +1130,14 @@ export class UnformattedPostalAddress {
         readonly teletex_string: asn1.TeletexString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("printable-address", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("teletex-string", true, __utils.hasTag(asn1.ASN1TagClass.universal, 20), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UnformattedPostalAddress: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UnformattedPostalAddress = function (el: asn1.ASN1Element): UnformattedPostalAddress {
@@ -1240,14 +1259,14 @@ export class ExtendedNetworkAddress_e163_4_address {
         readonly sub_address: asn1.NumericString | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("number", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("sub-address", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_address: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ExtendedNetworkAddress_e163_4_address = function (el: asn1.ASN1Element): ExtendedNetworkAddress_e163_4_address {
@@ -1322,14 +1341,14 @@ export class TeletexDomainDefinedAttribute {
         readonly value: asn1.TeletexString
     ) {}
 }
-const _root_component_type_list_1_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 20), undefined, undefined),
     new __utils.ComponentSpec("value", false, __utils.hasTag(asn1.ASN1TagClass.universal, 20), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TeletexDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TeletexDomainDefinedAttribute = function (el: asn1.ASN1Element): TeletexDomainDefinedAttribute {
@@ -1378,14 +1397,14 @@ export class UniversalDomainDefinedAttribute {
         readonly value: UniversalOrBMPString
     ) {}
 }
-const _root_component_type_list_1_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("value", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UniversalDomainDefinedAttribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UniversalDomainDefinedAttribute = function (el: asn1.ASN1Element): UniversalDomainDefinedAttribute {

@@ -10,9 +10,24 @@ import {
     enhancedSecurity,
     informationFramework
 } from "./UsefulDefinitions";
+export {
+    commonProtocolSpecification,
+    directoryAbstractService,
+    directoryOSIProtocols,
+    enhancedSecurity,
+    informationFramework
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    Name,
+    RelativeDistinguishedName,
+    _decode_Name,
+    _encode_Name,
+    _decode_RelativeDistinguishedName,
+    _encode_RelativeDistinguishedName
+} from "./InformationFramework";
+export {
     Name,
     RelativeDistinguishedName,
     _decode_Name,
@@ -33,6 +48,17 @@ import {
     _decode_Versions,
     _encode_Versions
 } from "./DirectoryAbstractService";
+export {
+    SecurityProblem,
+    ServiceProblem,
+    Versions,
+    _decode_SecurityProblem,
+    _encode_SecurityProblem,
+    _decode_ServiceProblem,
+    _encode_ServiceProblem,
+    _decode_Versions,
+    _encode_Versions
+} from "./DirectoryAbstractService";
 
 import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
 import {
@@ -41,9 +67,18 @@ import {
     _decode_InvokeId,
     _encode_InvokeId
 } from "./CommonProtocolSpecification";
+export {
+    InvokeId,
+    OPERATION,
+    _decode_InvokeId,
+    _encode_InvokeId
+} from "./CommonProtocolSpecification";
 
 import * as DirectoryOSIProtocols from "./DirectoryOSIProtocols";
 import {
+    APPLICATION_CONTEXT
+} from "./DirectoryOSIProtocols";
+export {
     APPLICATION_CONTEXT
 } from "./DirectoryOSIProtocols";
 
@@ -65,13 +100,13 @@ export class OsiBind_mode_selector {
         readonly mode_value: asn1.INTEGER
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mode-value", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBind_mode_selector: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBind_mode_selector = function (el: asn1.ASN1Element): OsiBind_mode_selector {
@@ -136,15 +171,15 @@ export class Context_list_Item {
         readonly transfer_syntax_name_list: Transfer_syntax_name[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("abstract-syntax-name", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("transfer-syntax-name-list", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Context_list_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Context_list_Item = function (el: asn1.ASN1Element): Context_list_Item {
@@ -203,15 +238,15 @@ export class OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item {
         readonly presentation_data_values: OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("transfer-syntax-name", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item {
@@ -269,17 +304,17 @@ export class OsiBind_normal_mode_parameters {
         readonly user_data: OsiBind_normal_mode_parameters_user_data
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("calling-presentation-selector", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("called-presentation-selector", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-definition-list", false, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
     new __utils.ComponentSpec("user-data", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBind_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBind_normal_mode_parameters = function (el: asn1.ASN1Element): OsiBind_normal_mode_parameters {
@@ -332,14 +367,14 @@ export class OsiBind {
         readonly normal_mode_parameters: OsiBind_normal_mode_parameters
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBind: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mode-selector", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("normal-mode-parameters", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBind: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBind: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBind: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBind = function (el: asn1.ASN1Element): OsiBind {
@@ -422,7 +457,7 @@ export class AARQ_apdu {
         readonly user_information: Association_informationBind
     ) {}
 }
-const _root_component_type_list_1_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("application-context-name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("called-AP-title", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -436,10 +471,10 @@ const _root_component_type_list_1_spec_for_AARQ_apdu: __utils.ComponentSpec[] = 
     new __utils.ComponentSpec("implementation-information", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("user-information", false, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AARQ_apdu: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AARQ_apdu = __utils._decode_explicit<AARQ_apdu>(() => function (el: asn1.ASN1Element): AARQ_apdu {
@@ -524,13 +559,13 @@ export class OsiBindResult_mode_selector {
         readonly mode_value: asn1.INTEGER
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mode-value", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindResult_mode_selector: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindResult_mode_selector = function (el: asn1.ASN1Element): OsiBindResult_mode_selector {
@@ -585,14 +620,14 @@ export class OsiBindResult_normal_mode_parameters_presentation_context_definitio
         readonly transfer_syntax_name: Transfer_syntax_name
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("transfer-syntax-name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item = function (el: asn1.ASN1Element): OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item {
@@ -641,15 +676,15 @@ export class OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_I
         readonly presentation_data_values: OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("transfer-syntax-name", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item {
@@ -706,16 +741,16 @@ export class OsiBindResult_normal_mode_parameters {
         readonly user_data: OsiBindResult_normal_mode_parameters_user_data
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("responding-presentation-selector", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-definition-result-list", false, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
     new __utils.ComponentSpec("user-data", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindResult_normal_mode_parameters = function (el: asn1.ASN1Element): OsiBindResult_normal_mode_parameters {
@@ -764,14 +799,14 @@ export class OsiBindResult {
         readonly normal_mode_parameters: OsiBindResult_normal_mode_parameters
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mode-selector", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("normal-mode-parameters", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindResult: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindResult = function (el: asn1.ASN1Element): OsiBindResult {
@@ -894,7 +929,7 @@ export class AARE_apdu {
         readonly user_information: Association_informationBindRes
     ) {}
 }
-const _root_component_type_list_1_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("application-context-name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -906,10 +941,10 @@ const _root_component_type_list_1_spec_for_AARE_apdu: __utils.ComponentSpec[] = 
     new __utils.ComponentSpec("implementation-information", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("user-information", false, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AARE_apdu: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AARE_apdu = __utils._decode_explicit<AARE_apdu>(() => function (el: asn1.ASN1Element): AARE_apdu {
@@ -1006,15 +1041,15 @@ export class Result_list_Item {
         readonly provider_reason: Result_list_Item_provider_reason | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("transfer-syntax-name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("provider-reason", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Result_list_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Result_list_Item = function (el: asn1.ASN1Element): Result_list_Item {
@@ -1096,15 +1131,15 @@ export class OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_It
         readonly presentation_data_values: OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("transfer-syntax-name", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item {
@@ -1162,17 +1197,17 @@ export class OsiBindError_normal_mode_parameters {
         readonly user_data: OsiBindError_normal_mode_parameters_user_data | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("responding-presentation-selector", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("presentation-context-definition-result-list", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
     new __utils.ComponentSpec("provider-reason", true, __utils.hasTag(asn1.ASN1TagClass.context, 10), undefined, undefined),
     new __utils.ComponentSpec("user-data", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiBindError_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiBindError_normal_mode_parameters = function (el: asn1.ASN1Element): OsiBindError_normal_mode_parameters {
@@ -1255,7 +1290,7 @@ export class AAREerr_apdu {
         readonly user_information: Association_informationBindErr | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocol-version", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("application-context-name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -1267,10 +1302,10 @@ const _root_component_type_list_1_spec_for_AAREerr_apdu: __utils.ComponentSpec[]
     new __utils.ComponentSpec("implementation-information", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("user-information", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AAREerr_apdu: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AAREerr_apdu = __utils._decode_explicit<AAREerr_apdu>(() => function (el: asn1.ASN1Element): AAREerr_apdu {
@@ -1358,14 +1393,14 @@ export class OsiUnbind_fully_encoded_data_Item {
         readonly presentation_data_values: OsiUnbind_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiUnbind_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiUnbind_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiUnbind_fully_encoded_data_Item {
@@ -1419,13 +1454,13 @@ export class TheOsiUnbind {
         readonly reason: Release_request_reason | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("reason", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TheOsiUnbind: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TheOsiUnbind = __utils._decode_explicit<TheOsiUnbind>(() => function (el: asn1.ASN1Element): TheOsiUnbind {
@@ -1472,14 +1507,14 @@ export class OsiUnbindResult_fully_encoded_data_Item {
         readonly presentation_data_values: OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiUnbindResult_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiUnbindResult_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiUnbindResult_fully_encoded_data_Item {
@@ -1533,13 +1568,13 @@ export class TheOsiUnbindRes {
         readonly reason: Release_response_reason | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("reason", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TheOsiUnbindRes: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TheOsiUnbindRes = __utils._decode_explicit<TheOsiUnbindRes>(() => function (el: asn1.ASN1Element): TheOsiUnbindRes {
@@ -1586,14 +1621,14 @@ export class OsiOperation_fully_encoded_data_Item {
         readonly presentation_data_values: OsiOperation_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiOperation_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiOperation_fully_encoded_data_Item = function (el: asn1.ASN1Element): OsiOperation_fully_encoded_data_Item {
@@ -1642,15 +1677,15 @@ export class OsiReq {
         readonly argument: asn1.ASN1Element
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeId", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("opcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("argument", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiReq = __utils._decode_explicit<OsiReq>(() => function (el: asn1.ASN1Element): OsiReq {
@@ -1693,14 +1728,14 @@ export class OsiRes_result {
         readonly result: asn1.ASN1Element
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("opcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiRes_result: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiRes_result = function (el: asn1.ASN1Element): OsiRes_result {
@@ -1738,14 +1773,14 @@ export class OsiRes {
         readonly result: OsiRes_result
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiRes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiRes: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeId", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiRes: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiRes: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiRes: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiRes: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiRes = __utils._decode_explicit<OsiRes>(() => function (el: asn1.ASN1Element): OsiRes {
@@ -1784,15 +1819,15 @@ export class OsiErr {
         readonly error: asn1.ASN1Element
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("errcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("error", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiErr = __utils._decode_explicit<OsiErr>(() => function (el: asn1.ASN1Element): OsiErr {
@@ -1908,14 +1943,14 @@ export class OsiRej {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_OsiRej: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OsiRej: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeId", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("problem", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OsiRej: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OsiRej: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OsiRej: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OsiRej: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OsiRej = __utils._decode_explicit<OsiRej>(() => function (el: asn1.ASN1Element): OsiRej {
@@ -1973,14 +2008,14 @@ export class Presentation_context_identifier_list_Item {
         readonly transfer_syntax_name: Transfer_syntax_name
     ) {}
 }
-const _root_component_type_list_1_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("transfer-syntax-name", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Presentation_context_identifier_list_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Presentation_context_identifier_list_Item = function (el: asn1.ASN1Element): Presentation_context_identifier_list_Item {
@@ -2033,14 +2068,14 @@ export class ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item {
         readonly presentation_data_values: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {}
 }
-const _root_component_type_list_1_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("presentation-data-values", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item = function (el: asn1.ASN1Element): ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item {
@@ -2088,14 +2123,14 @@ export class ARU_PPDU_normal_mode_parameters {
         readonly user_data: ARU_PPDU_normal_mode_parameters_user_data
     ) {}
 }
-const _root_component_type_list_1_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("presentation-context-identifier-list", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("user-data", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ARU_PPDU_normal_mode_parameters = function (el: asn1.ASN1Element): ARU_PPDU_normal_mode_parameters {
@@ -2183,14 +2218,14 @@ export class ARP_PPDU {
         readonly event_identifier: Event_identifier | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("provider-reason", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("event-identifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ARP_PPDU: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ARP_PPDU = function (el: asn1.ASN1Element): ARP_PPDU {
@@ -2252,13 +2287,13 @@ export class ABRT_apdu {
         readonly abort_source: ABRT_source
     ) {}
 }
-const _root_component_type_list_1_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("abort-source", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ABRT_apdu: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ABRT_apdu = __utils._decode_explicit<ABRT_apdu>(() => function (el: asn1.ASN1Element): ABRT_apdu {

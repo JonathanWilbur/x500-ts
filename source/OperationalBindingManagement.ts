@@ -12,9 +12,23 @@ import {
     hierarchicalOperationalBindings,
     commonProtocolSpecification
 } from "./UsefulDefinitions";
+export {
+    directoryAbstractService,
+    directoryShadowAbstractService,
+    distributedOperations,
+    directoryOSIProtocols,
+    enhancedSecurity,
+    hierarchicalOperationalBindings,
+    commonProtocolSpecification
+} from "./UsefulDefinitions";
 
 import * as EnhancedSecurity from "./EnhancedSecurity";
 import {
+    OPTIONALLY_PROTECTED_SEQ,
+    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
+    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
+} from "./EnhancedSecurity";
+export {
     OPTIONALLY_PROTECTED_SEQ,
     _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
@@ -25,9 +39,22 @@ import {
     hierarchicalOperationalBinding,
     nonSpecificHierarchicalOperationalBinding
 } from "./HierarchicalOperationalBindings";
+export {
+    hierarchicalOperationalBinding,
+    nonSpecificHierarchicalOperationalBinding
+} from "./HierarchicalOperationalBindings";
 
 import * as DirectoryAbstractService from "./DirectoryAbstractService";
 import {
+    CommonResultsSeq,
+    securityError,
+    SecurityParameters,
+    _decode_CommonResultsSeq,
+    _encode_CommonResultsSeq,
+    _decode_SecurityParameters,
+    _encode_SecurityParameters
+} from "./DirectoryAbstractService";
+export {
     CommonResultsSeq,
     securityError,
     SecurityParameters,
@@ -44,9 +71,23 @@ import {
     _decode_AccessPoint,
     _encode_AccessPoint
 } from "./DistributedOperations";
+export {
+    AccessPoint,
+    dSABind,
+    _decode_AccessPoint,
+    _encode_AccessPoint
+} from "./DistributedOperations";
 
 import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
 import {
+    id_err_operationalBindingError,
+    id_op_establishOperationalBinding,
+    id_op_modifyOperationalBinding,
+    id_op_terminateOperationalBinding,
+    OPERATION,
+    ERROR
+} from "./CommonProtocolSpecification";
+export {
     id_err_operationalBindingError,
     id_op_establishOperationalBinding,
     id_op_modifyOperationalBinding,
@@ -59,9 +100,15 @@ import * as DirectoryOSIProtocols from "./DirectoryOSIProtocols";
 import {
     APPLICATION_CONTEXT
 } from "./DirectoryOSIProtocols";
+export {
+    APPLICATION_CONTEXT
+} from "./DirectoryOSIProtocols";
 
 import * as DirectoryShadowAbstractService from "./DirectoryShadowAbstractService";
 import {
+    shadowOperationalBinding
+} from "./DirectoryShadowAbstractService";
+export {
     shadowOperationalBinding
 } from "./DirectoryShadowAbstractService";
 
@@ -90,14 +137,14 @@ export class OperationalBindingID {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("version", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OperationalBindingID = function (el: asn1.ASN1Element): OperationalBindingID {
@@ -195,14 +242,14 @@ export class Validity {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("validFrom", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("validUntil", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Validity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Validity: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Validity: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Validity: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Validity = function (el: asn1.ASN1Element): Validity {
@@ -252,7 +299,7 @@ export class EstablishOperationalBindingArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bindingID", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("accessPoint", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -261,10 +308,10 @@ const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentDa
     new __utils.ComponentSpec("valid", true, __utils.hasTag(asn1.ASN1TagClass.context, 7), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EstablishOperationalBindingArgumentData = function (el: asn1.ASN1Element): EstablishOperationalBindingArgumentData {
@@ -358,19 +405,19 @@ export class EstablishOperationalBindingResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bindingID", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("accessPoint", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("initiator", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EstablishOperationalBindingResultData = function (el: asn1.ASN1Element): EstablishOperationalBindingResultData {
@@ -495,14 +542,14 @@ export class ModifiedValidity {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("validFrom", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("validUntil", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifiedValidity = function (el: asn1.ASN1Element): ModifiedValidity {
@@ -553,7 +600,7 @@ export class ModifyOperationalBindingArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bindingID", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("accessPoint", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -563,10 +610,10 @@ const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData:
     new __utils.ComponentSpec("valid", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 9), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyOperationalBindingArgumentData = function (el: asn1.ASN1Element): ModifyOperationalBindingArgumentData {
@@ -646,19 +693,19 @@ export class ModifyOperationalBindingResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("newBindingID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("newAgreement", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("valid", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyOperationalBindingResultData = function (el: asn1.ASN1Element): ModifyOperationalBindingResultData {
@@ -764,17 +811,17 @@ export class TerminateOperationalBindingArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bindingID", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("initiator", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("terminateAt", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TerminateOperationalBindingArgumentData = function (el: asn1.ASN1Element): TerminateOperationalBindingArgumentData {
@@ -841,18 +888,18 @@ export class TerminateOperationalBindingResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bindingID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("bindingType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("terminateAt", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TerminateOperationalBindingResultData = function (el: asn1.ASN1Element): TerminateOperationalBindingResultData {
@@ -972,19 +1019,19 @@ export class OpBindingErrorParam {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bindingType", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("agreementProposal", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("retryAt", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     /* FIXME: performer COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_OpBindingErrorParam = function (el: asn1.ASN1Element): OpBindingErrorParam {

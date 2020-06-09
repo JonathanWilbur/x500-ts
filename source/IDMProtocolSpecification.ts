@@ -10,9 +10,21 @@ import {
     directoryIDMProtocols,
     enhancedSecurity
 } from "./UsefulDefinitions";
+export {
+    certificateExtensions,
+    commonProtocolSpecification,
+    directoryAbstractService,
+    directoryIDMProtocols,
+    enhancedSecurity
+} from "./UsefulDefinitions";
 
 import * as CertificateExtensions from "./CertificateExtensions";
 import {
+    GeneralName,
+    _decode_GeneralName,
+    _encode_GeneralName
+} from "./CertificateExtensions";
+export {
     GeneralName,
     _decode_GeneralName,
     _encode_GeneralName
@@ -30,9 +42,23 @@ import {
     _decode_Versions,
     _encode_Versions
 } from "./DirectoryAbstractService";
+export {
+    SecurityProblem,
+    ServiceProblem,
+    Versions,
+    _decode_SecurityProblem,
+    _encode_SecurityProblem,
+    _decode_ServiceProblem,
+    _encode_ServiceProblem,
+    _decode_Versions,
+    _encode_Versions
+} from "./DirectoryAbstractService";
 
 import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
 import {
+    OPERATION
+} from "./CommonProtocolSpecification";
+export {
     OPERATION
 } from "./CommonProtocolSpecification";
 
@@ -55,16 +81,16 @@ export class IdmBind {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_IdmBind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IdmBind: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocolID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("callingAETitle", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("calledAETitle", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("argument", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IdmBind: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IdmBind: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IdmBind: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IdmBind: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IdmBind = function (el: asn1.ASN1Element): IdmBind {
@@ -118,15 +144,15 @@ export class IdmBindResult {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocolID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("respondingAETitle", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IdmBindResult: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IdmBindResult = function (el: asn1.ASN1Element): IdmBindResult {
@@ -186,16 +212,16 @@ export class IdmBindError {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_IdmBindError: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IdmBindError: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protocolID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("respondingAETitle", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("aETitleError", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("error", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IdmBindError: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IdmBindError: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IdmBindError: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IdmBindError: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IdmBindError = function (el: asn1.ASN1Element): IdmBindError {
@@ -249,15 +275,15 @@ export class Request {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Request: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Request: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("opcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("argument", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Request: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Request: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Request: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Request: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Request = function (el: asn1.ASN1Element): Request {
@@ -303,15 +329,15 @@ export class IdmResult {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_IdmResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IdmResult: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("opcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IdmResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IdmResult: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IdmResult: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IdmResult: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IdmResult = function (el: asn1.ASN1Element): IdmResult {
@@ -357,15 +383,15 @@ export class Error {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Error: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Error: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("errcode", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("error", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Error: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Error: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Error: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Error: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Error = function (el: asn1.ASN1Element): Error {
@@ -443,14 +469,14 @@ export class IdmReject {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_IdmReject: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IdmReject: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("reason", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IdmReject: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IdmReject: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IdmReject: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IdmReject: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IdmReject = function (el: asn1.ASN1Element): IdmReject {

@@ -6,9 +6,17 @@ import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     opBindingManagement
 } from "./UsefulDefinitions";
+export {
+    opBindingManagement
+} from "./UsefulDefinitions";
 
 import * as OperationalBindingManagement from "./OperationalBindingManagement";
 import {
+    establishOperationalBinding,
+    modifyOperationalBinding,
+    terminateOperationalBinding
+} from "./OperationalBindingManagement";
+export {
     establishOperationalBinding,
     modifyOperationalBinding,
     terminateOperationalBinding

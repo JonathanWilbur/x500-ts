@@ -14,6 +14,17 @@ import {
     selectedAttributeTypes,
     passwordPolicy
 } from "./UsefulDefinitions";
+export {
+    authenticationFramework,
+    certificateExtensions,
+    id,
+    id_nf,
+    id_oc,
+    informationFramework,
+    objectClass,
+    selectedAttributeTypes,
+    passwordPolicy
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
@@ -23,9 +34,65 @@ import {
     OBJECT_CLASS,
     top
 } from "./InformationFramework";
+export {
+    alias,
+    ATTRIBUTE,
+    NAME_FORM,
+    OBJECT_CLASS,
+    top
+} from "./InformationFramework";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    businessCategory,
+    commonName,
+    contentUrl,
+    countryName,
+    description,
+    destinationIndicator,
+    dmdName,
+    epc,
+    epcInUrn,
+    facsimileTelephoneNumber,
+    internationalISDNNumber,
+    knowledgeInformation,
+    localityName,
+    member,
+    oidC,
+    oidC1,
+    oidC2,
+    organizationalUnitName,
+    organizationName,
+    owner,
+    physicalDeliveryOfficeName,
+    postalAddress,
+    postalCode,
+    postOfficeBox,
+    preferredDeliveryMethod,
+    presentationAddress,
+    registeredAddress,
+    roleOccupant,
+    searchGuide,
+    seeAlso,
+    serialNumber,
+    stateOrProvinceName,
+    streetAddress,
+    supportedApplicationContext,
+    surname,
+    tagAfi,
+    tagLocation,
+    tagOid,
+    telephoneNumber,
+    telexNumber,
+    title,
+    uii,
+    uiiFormat,
+    uiiInUrn,
+    uniqueMember,
+    urnC,
+    x121Address
+} from "./SelectedAttributeTypes";
+export {
     businessCategory,
     commonName,
     contentUrl,
@@ -86,9 +153,22 @@ import {
     userCertificate,
     userPassword
 } from "./AuthenticationFramework";
+export {
+    authorityRevocationList,
+    cACertificate,
+    certificateRevocationList,
+    crossCertificatePair,
+    deltaRevocationList,
+    supportedAlgorithms,
+    userCertificate,
+    userPassword
+} from "./AuthenticationFramework";
 
 import * as PasswordPolicy from "./PasswordPolicy";
 import {
+    userPwd
+} from "./PasswordPolicy";
+export {
     userPwd
 } from "./PasswordPolicy";
 

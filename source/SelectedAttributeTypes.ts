@@ -24,9 +24,59 @@ import {
     serviceAdministration,
     passwordPolicy
 } from "./UsefulDefinitions";
+export {
+    authenticationFramework,
+    certificateExtensions,
+    directoryAbstractService,
+    id_at,
+    id_avc,
+    id,
+    id_asx,
+    id_cat,
+    id_coat,
+    id_lmr,
+    id_lsx,
+    id_mr,
+    id_not,
+    id_pr,
+    informationFramework,
+    pkiPmiExternalDataTypes,
+    schemaAdministration,
+    serviceAdministration,
+    passwordPolicy
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    AttributeType,
+    AttributeValueAssertion,
+    CONTEXT,
+    ContextAssertion,
+    DistinguishedName,
+    distinguishedNameMatch,
+    MATCHING_RULE,
+    OBJECT_CLASS,
+    objectIdentifierMatch,
+    SubtreeSpecification,
+    SupportedAttributes,
+    SYNTAX_NAME,
+    Attribute,
+    MAPPING_BASED_MATCHING,
+    _decode_AttributeType,
+    _encode_AttributeType,
+    _decode_AttributeValueAssertion,
+    _encode_AttributeValueAssertion,
+    _decode_ContextAssertion,
+    _encode_ContextAssertion,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName,
+    _decode_SubtreeSpecification,
+    _encode_SubtreeSpecification,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     AttributeType,
     AttributeValueAssertion,
@@ -68,9 +118,43 @@ import {
     _decode_MRMapping,
     _encode_MRMapping
 } from "./ServiceAdministration";
+export {
+    AttributeCombination,
+    ContextCombination,
+    MRMapping,
+    _decode_AttributeCombination,
+    _encode_AttributeCombination,
+    _decode_ContextCombination,
+    _encode_ContextCombination,
+    _decode_MRMapping,
+    _encode_MRMapping
+} from "./ServiceAdministration";
 
 import * as SchemaAdministration from "./SchemaAdministration";
 import {
+    AttributeTypeDescription,
+    DITContentRuleDescription,
+    DITStructureRuleDescription,
+    MatchingRuleDescription,
+    MatchingRuleUseDescription,
+    NameFormDescription,
+    ObjectClassDescription,
+    _decode_AttributeTypeDescription,
+    _encode_AttributeTypeDescription,
+    _decode_DITContentRuleDescription,
+    _encode_DITContentRuleDescription,
+    _decode_DITStructureRuleDescription,
+    _encode_DITStructureRuleDescription,
+    _decode_MatchingRuleDescription,
+    _encode_MatchingRuleDescription,
+    _decode_MatchingRuleUseDescription,
+    _encode_MatchingRuleUseDescription,
+    _decode_NameFormDescription,
+    _encode_NameFormDescription,
+    _decode_ObjectClassDescription,
+    _encode_ObjectClassDescription
+} from "./SchemaAdministration";
+export {
     AttributeTypeDescription,
     DITContentRuleDescription,
     DITStructureRuleDescription,
@@ -113,9 +197,32 @@ import {
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier
 } from "./AuthenticationFramework";
+export {
+    Certificate,
+    CertificateList,
+    CertificatePair,
+    SupportedAlgorithm,
+    SupportedAlgorithms,
+    AlgorithmIdentifier,
+    _decode_Certificate,
+    _encode_Certificate,
+    _decode_CertificateList,
+    _encode_CertificateList,
+    _decode_CertificatePair,
+    _encode_CertificatePair,
+    _decode_SupportedAlgorithm,
+    _encode_SupportedAlgorithm,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier
+} from "./AuthenticationFramework";
 
 import * as PkiPmiExternalDataTypes from "./PkiPmiExternalDataTypes";
 import {
+    G3FacsimileNonBasicParameters,
+    _decode_G3FacsimileNonBasicParameters,
+    _encode_G3FacsimileNonBasicParameters
+} from "./PkiPmiExternalDataTypes";
+export {
     G3FacsimileNonBasicParameters,
     _decode_G3FacsimileNonBasicParameters,
     _encode_G3FacsimileNonBasicParameters
@@ -136,9 +243,34 @@ import {
     _decode_ServiceControlOptions,
     _encode_ServiceControlOptions
 } from "./DirectoryAbstractService";
+export {
+    FilterItem,
+    HierarchySelections,
+    SearchControlOptions,
+    ServiceControlOptions,
+    _decode_FilterItem,
+    _encode_FilterItem,
+    _decode_HierarchySelections,
+    _encode_HierarchySelections,
+    _decode_SearchControlOptions,
+    _encode_SearchControlOptions,
+    _decode_ServiceControlOptions,
+    _encode_ServiceControlOptions
+} from "./DirectoryAbstractService";
 
 import * as PasswordPolicy from "./PasswordPolicy";
 import {
+    PwdAlphabet,
+    PwdVocabulary,
+    UserPwd,
+    _decode_PwdAlphabet,
+    _encode_PwdAlphabet,
+    _decode_PwdVocabulary,
+    _encode_PwdVocabulary,
+    _decode_UserPwd,
+    _encode_UserPwd
+} from "./PasswordPolicy";
+export {
     PwdAlphabet,
     PwdVocabulary,
     UserPwd,
@@ -216,14 +348,14 @@ export class UUIDPair {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_UUIDPair: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UUIDPair: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("issuerUUID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined),
     new __utils.ComponentSpec("subjectUUID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UUIDPair: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UUIDPair: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UUIDPair: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UUIDPair: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UUIDPair = function (el: asn1.ASN1Element): UUIDPair {
@@ -313,15 +445,15 @@ export class UtmCoordinates {
         readonly northing: asn1.NumericString
     ) {}
 }
-const _root_component_type_list_1_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("zone", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("easting", false, __utils.hasTag(asn1.ASN1TagClass.universal, 18), undefined, undefined),
     new __utils.ComponentSpec("northing", false, __utils.hasTag(asn1.ASN1TagClass.universal, 18), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UtmCoordinates = function (el: asn1.ASN1Element): UtmCoordinates {
@@ -425,14 +557,14 @@ export class Guide {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Guide: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Guide: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("objectClass", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("criteria", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Guide: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Guide: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Guide: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Guide: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Guide = function (el: asn1.ASN1Element): Guide {
@@ -491,15 +623,15 @@ export class EnhancedGuide {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("objectClass", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("criteria", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("subset", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EnhancedGuide = function (el: asn1.ASN1Element): EnhancedGuide {
@@ -602,15 +734,15 @@ export class TelexNumber {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TelexNumber: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TelexNumber: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("telexNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("countryCode", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("answerback", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TelexNumber: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TelexNumber: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TelexNumber: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TelexNumber: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TelexNumber = function (el: asn1.ASN1Element): TelexNumber {
@@ -670,14 +802,14 @@ export class FacsimileTelephoneNumber {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("telephoneNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 19), undefined, undefined),
     new __utils.ComponentSpec("parameters", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_FacsimileTelephoneNumber = function (el: asn1.ASN1Element): FacsimileTelephoneNumber {
@@ -803,16 +935,16 @@ export class PresentationAddress {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("pSelector", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("sSelector", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("tSelector", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("nAddresses", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PresentationAddress: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PresentationAddress = function (el: asn1.ASN1Element): PresentationAddress {
@@ -868,14 +1000,14 @@ export class ProtocolInformation {
         readonly profiles: asn1.OBJECT_IDENTIFIER[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("nAddress", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined),
     new __utils.ComponentSpec("profiles", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ProtocolInformation = function (el: asn1.ASN1Element): ProtocolInformation {
@@ -925,14 +1057,14 @@ export class NameAndOptionalUID {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("dn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("uid", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_NameAndOptionalUID = function (el: asn1.ASN1Element): NameAndOptionalUID {
@@ -1000,9 +1132,12 @@ export enum UiiFormat_subset {
     oneLevel = 1,
     wholeSubtree = 2,
 }
-export const baseObject: UiiFormat_subset = 0;
-export const oneLevel: UiiFormat_subset = 1;
-export const wholeSubtree: UiiFormat_subset = 2;
+export const UiiFormat_subset_baseObject: UiiFormat_subset = UiiFormat_subset.baseObject; /* LONG_NAMED_ENUMERATED_VALUE */
+export const baseObject: UiiFormat_subset = UiiFormat_subset.baseObject; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const UiiFormat_subset_oneLevel: UiiFormat_subset = UiiFormat_subset.oneLevel; /* LONG_NAMED_ENUMERATED_VALUE */
+export const oneLevel: UiiFormat_subset = UiiFormat_subset.oneLevel; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const UiiFormat_subset_wholeSubtree: UiiFormat_subset = UiiFormat_subset.wholeSubtree; /* LONG_NAMED_ENUMERATED_VALUE */
+export const wholeSubtree: UiiFormat_subset = UiiFormat_subset.wholeSubtree; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_UiiFormat_subset = __utils._decodeEnumerated;
 export const _encode_UiiFormat_subset = __utils._encodeEnumerated;
 
@@ -1013,14 +1148,14 @@ export class UiiItem {
         readonly length: asn1.INTEGER | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UiiItem: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UiiItem: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("length", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UiiItem: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UiiItem: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UiiItem: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UiiItem: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
@@ -1095,15 +1230,15 @@ export class UiiFormat {
         readonly next: UiiFormat_next
     ) {}
 }
-const _root_component_type_list_1_spec_for_UiiFormat: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UiiFormat: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("baseObject", true, __utils.hasTag(asn1.ASN1TagClass.universal, 12), undefined, undefined),
     new __utils.ComponentSpec("subset", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("next", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UiiFormat: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UiiFormat: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UiiFormat: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UiiFormat: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UiiFormat = function (el: asn1.ASN1Element): UiiFormat {
@@ -1172,9 +1307,12 @@ export enum EpcFormat_fields_Item_result {
     numeric = 1,
     alpha7bits = 2,
 }
-export const numericPad: EpcFormat_fields_Item_result = 0;
-export const numeric: EpcFormat_fields_Item_result = 1;
-export const alpha7bits: EpcFormat_fields_Item_result = 2;
+export const EpcFormat_fields_Item_result_numericPad: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.numericPad; /* LONG_NAMED_ENUMERATED_VALUE */
+export const numericPad: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.numericPad; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const EpcFormat_fields_Item_result_numeric: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.numeric; /* LONG_NAMED_ENUMERATED_VALUE */
+export const numeric: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.numeric; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const EpcFormat_fields_Item_result_alpha7bits: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.alpha7bits; /* LONG_NAMED_ENUMERATED_VALUE */
+export const alpha7bits: EpcFormat_fields_Item_result = EpcFormat_fields_Item_result.alpha7bits; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_EpcFormat_fields_Item_result = __utils._decodeEnumerated;
 export const _encode_EpcFormat_fields_Item_result = __utils._encodeEnumerated;
 
@@ -1186,15 +1324,15 @@ export class EpcFormat_fields_Item {
         readonly result: EpcFormat_fields_Item_result | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("bits", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("charField", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("result", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EpcFormat_fields_Item = function (el: asn1.ASN1Element): EpcFormat_fields_Item {
@@ -1241,16 +1379,16 @@ export class EpcFormat {
         readonly urnPrefix: asn1.UTF8String | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_EpcFormat: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EpcFormat: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("fields", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("digitShift", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("checkCalc", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("urnPrefix", true, __utils.hasTag(asn1.ASN1TagClass.universal, 12), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EpcFormat: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EpcFormat: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EpcFormat: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EpcFormat: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EpcFormat = function (el: asn1.ASN1Element): EpcFormat {
@@ -1334,14 +1472,14 @@ export class MultipleMatchingLocalities {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("matchingRuleUsed", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("attributeList", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_MultipleMatchingLocalities = function (el: asn1.ASN1Element): MultipleMatchingLocalities {
@@ -1419,14 +1557,14 @@ export class PwdResponse {
         readonly error: PwdResponse_error | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_PwdResponse: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PwdResponse: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("warning", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("error", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PwdResponse: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PwdResponse: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PwdResponse: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PwdResponse: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PwdResponse = function (el: asn1.ASN1Element): PwdResponse {
@@ -1778,14 +1916,14 @@ export class TimeSpecification_time_absolute {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("startTime", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("endTime", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TimeSpecification_time_absolute = function (el: asn1.ASN1Element): TimeSpecification_time_absolute {
@@ -1831,15 +1969,15 @@ export class DayTime {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("hour", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("minute", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("second", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DayTime: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DayTime: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DayTime: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DayTime: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DayTime = function (el: asn1.ASN1Element): DayTime {
@@ -1888,14 +2026,14 @@ export class DayTimeBand {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("startDayTime", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("endDayTime", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DayTimeBand = function (el: asn1.ASN1Element): DayTimeBand {
@@ -1961,13 +2099,20 @@ export enum NamedDay_intNamedDays {
     friday = 6,
     saturday = 7,
 }
-export const sunday: NamedDay_intNamedDays = 1;
-export const monday: NamedDay_intNamedDays = 2;
-export const tuesday: NamedDay_intNamedDays = 3;
-export const wednesday: NamedDay_intNamedDays = 4;
-export const thursday: NamedDay_intNamedDays = 5;
-export const friday: NamedDay_intNamedDays = 6;
-export const saturday: NamedDay_intNamedDays = 7;
+export const NamedDay_intNamedDays_sunday: NamedDay_intNamedDays = NamedDay_intNamedDays.sunday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const sunday: NamedDay_intNamedDays = NamedDay_intNamedDays.sunday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_monday: NamedDay_intNamedDays = NamedDay_intNamedDays.monday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const monday: NamedDay_intNamedDays = NamedDay_intNamedDays.monday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_tuesday: NamedDay_intNamedDays = NamedDay_intNamedDays.tuesday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const tuesday: NamedDay_intNamedDays = NamedDay_intNamedDays.tuesday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_wednesday: NamedDay_intNamedDays = NamedDay_intNamedDays.wednesday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const wednesday: NamedDay_intNamedDays = NamedDay_intNamedDays.wednesday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_thursday: NamedDay_intNamedDays = NamedDay_intNamedDays.thursday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const thursday: NamedDay_intNamedDays = NamedDay_intNamedDays.thursday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_friday: NamedDay_intNamedDays = NamedDay_intNamedDays.friday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const friday: NamedDay_intNamedDays = NamedDay_intNamedDays.friday; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const NamedDay_intNamedDays_saturday: NamedDay_intNamedDays = NamedDay_intNamedDays.saturday; /* LONG_NAMED_ENUMERATED_VALUE */
+export const saturday: NamedDay_intNamedDays = NamedDay_intNamedDays.saturday; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_NamedDay_intNamedDays = __utils._decodeEnumerated;
 export const _encode_NamedDay_intNamedDays = __utils._encodeEnumerated;
 
@@ -2131,17 +2276,17 @@ export class Period {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Period: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Period: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("timesOfDay", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("days", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("weeks", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("months", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("years", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Period: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Period: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Period: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Period: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Period = function (el: asn1.ASN1Element): Period {
@@ -2217,15 +2362,15 @@ export class TimeSpecification {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("time", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("notThisTime", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined),
     new __utils.ComponentSpec("timeZone", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TimeSpecification = function (el: asn1.ASN1Element): TimeSpecification {
@@ -2275,15 +2420,15 @@ export class TimeAssertion_between {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("startTime", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("endTime", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("entirely", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TimeAssertion_between = function (el: asn1.ASN1Element): TimeAssertion_between {

@@ -6,6 +6,9 @@ import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     id_ob
 } from "./UsefulDefinitions";
+export {
+    id_ob
+} from "./UsefulDefinitions";
 
 
 const itu_t: number = 0;

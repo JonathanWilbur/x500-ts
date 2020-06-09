@@ -10,9 +10,40 @@ import {
     informationFramework,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    directoryAbstractService,
+    id_aca,
+    id_acScheme,
+    informationFramework,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    AttributeType,
+    AttributeTypeAndValue,
+    ContextAssertion,
+    DistinguishedName,
+    MATCHING_RULE,
+    objectIdentifierMatch,
+    Refinement,
+    SubtreeSpecification,
+    SupportedAttributes,
+    _decode_AttributeType,
+    _encode_AttributeType,
+    _decode_AttributeTypeAndValue,
+    _encode_AttributeTypeAndValue,
+    _decode_ContextAssertion,
+    _encode_ContextAssertion,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName,
+    _decode_Refinement,
+    _encode_Refinement,
+    _decode_SubtreeSpecification,
+    _encode_SubtreeSpecification
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     AttributeType,
     AttributeTypeAndValue,
@@ -43,9 +74,26 @@ import {
     _decode_Filter,
     _encode_Filter
 } from "./DirectoryAbstractService";
+export {
+    Filter,
+    _decode_Filter,
+    _encode_Filter
+} from "./DirectoryAbstractService";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    directoryStringFirstComponentMatch,
+    NameAndOptionalUID,
+    UnboundedDirectoryString,
+    UniqueIdentifier,
+    _decode_NameAndOptionalUID,
+    _encode_NameAndOptionalUID,
+    _decode_UnboundedDirectoryString,
+    _encode_UnboundedDirectoryString,
+    _decode_UniqueIdentifier,
+    _encode_UniqueIdentifier
+} from "./SelectedAttributeTypes";
+export {
     directoryStringFirstComponentMatch,
     NameAndOptionalUID,
     UnboundedDirectoryString,
@@ -92,15 +140,15 @@ export class AuthenticationLevel_basicLevels {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("level", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("localQualifier", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("signed", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AuthenticationLevel_basicLevels = function (el: asn1.ASN1Element): AuthenticationLevel_basicLevels {
@@ -163,14 +211,14 @@ export class MaxValueCount {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("maxCount", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_MaxValueCount = function (el: asn1.ASN1Element): MaxValueCount {
@@ -210,14 +258,14 @@ export class RestrictedValue {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("valuesIn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RestrictedValue = function (el: asn1.ASN1Element): RestrictedValue {
@@ -268,7 +316,7 @@ export class ProtectedItems {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("entry", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("allUserAttributeTypes", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("attributeType", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -283,10 +331,10 @@ const _root_component_type_list_1_spec_for_ProtectedItems: __utils.ComponentSpec
     new __utils.ComponentSpec("contexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 11), undefined, undefined),
     new __utils.ComponentSpec("classes", true, __utils.hasTag(asn1.ASN1TagClass.context, 12), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ProtectedItems = function (el: asn1.ASN1Element): ProtectedItems {
@@ -378,17 +426,17 @@ export class UserClasses {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_UserClasses: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UserClasses: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("allUsers", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("thisEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("userGroup", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("subtree", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UserClasses: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UserClasses: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UserClasses: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UserClasses: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UserClasses = function (el: asn1.ASN1Element): UserClasses {
@@ -503,15 +551,15 @@ export class ItemPermission {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ItemPermission: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ItemPermission: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("precedence", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("userClasses", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("grantsAndDenials", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ItemPermission: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ItemPermission: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ItemPermission: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ItemPermission: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ItemPermission = function (el: asn1.ASN1Element): ItemPermission {
@@ -560,14 +608,14 @@ export class ACIItem_itemOrUserFirst_itemFirst {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("protectedItems", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("itemPermissions", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ACIItem_itemOrUserFirst_itemFirst = function (el: asn1.ASN1Element): ACIItem_itemOrUserFirst_itemFirst {
@@ -608,15 +656,15 @@ export class UserPermission {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_UserPermission: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UserPermission: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("precedence", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("protectedItems", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("grantsAndDenials", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UserPermission: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UserPermission: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UserPermission: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UserPermission: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UserPermission = function (el: asn1.ASN1Element): UserPermission {
@@ -665,14 +713,14 @@ export class ACIItem_itemOrUserFirst_userFirst {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("userClasses", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("userPermissions", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ACIItem_itemOrUserFirst_userFirst = function (el: asn1.ASN1Element): ACIItem_itemOrUserFirst_userFirst {
@@ -728,16 +776,16 @@ export class ACIItem {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("identificationTag", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("precedence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("authenticationLevel", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("itemOrUserFirst", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ACIItem: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ACIItem: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ACIItem: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ACIItem: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ACIItem = function (el: asn1.ASN1Element): ACIItem {

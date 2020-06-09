@@ -11,6 +11,14 @@ import {
     iDMProtocolSpecification,
     opBindingManagement
 } from "./UsefulDefinitions";
+export {
+    directoryAbstractService,
+    distributedOperations,
+    directoryShadowAbstractService,
+    id_idm,
+    iDMProtocolSpecification,
+    opBindingManagement
+} from "./UsefulDefinitions";
 
 import * as OperationalBindingManagement from "./OperationalBindingManagement";
 import {
@@ -19,9 +27,29 @@ import {
     modifyOperationalBinding,
     terminateOperationalBinding
 } from "./OperationalBindingManagement";
+export {
+    dSAOperationalBindingManagementBind,
+    establishOperationalBinding,
+    modifyOperationalBinding,
+    terminateOperationalBinding
+} from "./OperationalBindingManagement";
 
 import * as DirectoryAbstractService from "./DirectoryAbstractService";
 import {
+    abandon,
+    addEntry,
+    administerPassword,
+    changePassword,
+    compare,
+    directoryBind,
+    list,
+    modifyDN,
+    modifyEntry,
+    read,
+    removeEntry,
+    search
+} from "./DirectoryAbstractService";
+export {
     abandon,
     addEntry,
     administerPassword,
@@ -53,6 +81,22 @@ import {
     chainedSearch,
     dSABind
 } from "./DistributedOperations";
+export {
+    chainedAbandon,
+    chainedAddEntry,
+    chainedAdministerPassword,
+    chainedChangePassword,
+    chainedCompare,
+    chainedLdapTransport,
+    chainedLinkedLDAP,
+    chainedList,
+    chainedModifyDN,
+    chainedModifyEntry,
+    chainedRead,
+    chainedRemoveEntry,
+    chainedSearch,
+    dSABind
+} from "./DistributedOperations";
 
 import * as IDMProtocolSpecification from "./IDMProtocolSpecification";
 import {
@@ -61,9 +105,21 @@ import {
     _decode_IDM_PDU,
     _encode_IDM_PDU
 } from "./IDMProtocolSpecification";
+export {
+    IDM_PDU,
+    IDM_PROTOCOL,
+    _decode_IDM_PDU,
+    _encode_IDM_PDU
+} from "./IDMProtocolSpecification";
 
 import * as DirectoryShadowAbstractService from "./DirectoryShadowAbstractService";
 import {
+    coordinateShadowUpdate,
+    dSAShadowBind,
+    requestShadowUpdate,
+    updateShadow
+} from "./DirectoryShadowAbstractService";
+export {
     coordinateShadowUpdate,
     dSAShadowBind,
     requestShadowUpdate,

@@ -14,9 +14,39 @@ import {
     enhancedSecurity,
     opBindingManagement
 } from "./UsefulDefinitions";
+export {
+    commonProtocolSpecification,
+    directoryAbstractService,
+    directoryOperationalBindingTypes,
+    informationFramework,
+    directoryOSIProtocols,
+    distributedOperations,
+    dsaOperationalAttributeTypes,
+    enhancedSecurity,
+    opBindingManagement
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    AttributeType,
+    CONTEXT,
+    DistinguishedName,
+    RelativeDistinguishedName,
+    SubtreeSpecification,
+    SupportedAttributes,
+    Attribute,
+    _decode_AttributeType,
+    _encode_AttributeType,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName,
+    _decode_RelativeDistinguishedName,
+    _encode_RelativeDistinguishedName,
+    _decode_SubtreeSpecification,
+    _encode_SubtreeSpecification,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     AttributeType,
     CONTEXT,
     DistinguishedName,
@@ -43,6 +73,12 @@ import {
     _decode_OperationalBindingID,
     _encode_OperationalBindingID
 } from "./OperationalBindingManagement";
+export {
+    OPERATIONAL_BINDING,
+    OperationalBindingID,
+    _decode_OperationalBindingID,
+    _encode_OperationalBindingID
+} from "./OperationalBindingManagement";
 
 import * as DSAOperationalAttributeTypes from "./DSAOperationalAttributeTypes";
 import {
@@ -53,9 +89,25 @@ import {
     _decode_SupplierAndConsumers,
     _encode_SupplierAndConsumers
 } from "./DSAOperationalAttributeTypes";
+export {
+    DSEType,
+    SupplierAndConsumers,
+    _decode_DSEType,
+    _encode_DSEType,
+    _decode_SupplierAndConsumers,
+    _encode_SupplierAndConsumers
+} from "./DSAOperationalAttributeTypes";
 
 import * as EnhancedSecurity from "./EnhancedSecurity";
 import {
+    OPTIONALLY_PROTECTED,
+    OPTIONALLY_PROTECTED_SEQ,
+    _get_decoder_for_OPTIONALLY_PROTECTED,
+    _get_encoder_for_OPTIONALLY_PROTECTED,
+    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
+    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
+} from "./EnhancedSecurity";
+export {
     OPTIONALLY_PROTECTED,
     OPTIONALLY_PROTECTED_SEQ,
     _get_decoder_for_OPTIONALLY_PROTECTED,
@@ -79,9 +131,29 @@ import {
     _decode_SecurityParameters,
     _encode_SecurityParameters
 } from "./DirectoryAbstractService";
+export {
+    CommonResultsSeq,
+    ContextSelection,
+    EntryModification,
+    SecurityParameters,
+    _decode_CommonResultsSeq,
+    _encode_CommonResultsSeq,
+    _decode_ContextSelection,
+    _encode_ContextSelection,
+    _decode_EntryModification,
+    _encode_EntryModification,
+    _decode_SecurityParameters,
+    _encode_SecurityParameters
+} from "./DirectoryAbstractService";
 
 import * as DistributedOperations from "./DistributedOperations";
 import {
+    AccessPoint,
+    dSABind,
+    _decode_AccessPoint,
+    _encode_AccessPoint
+} from "./DistributedOperations";
+export {
     AccessPoint,
     dSABind,
     _decode_AccessPoint,
@@ -92,15 +164,30 @@ import * as DirectoryOperationalBindingTypes from "./DirectoryOperationalBinding
 import {
     id_op_binding_shadow
 } from "./DirectoryOperationalBindingTypes";
+export {
+    id_op_binding_shadow
+} from "./DirectoryOperationalBindingTypes";
 
 import * as DirectoryOSIProtocols from "./DirectoryOSIProtocols";
 import {
     shadowConsumerInitiatedAC,
     shadowSupplierInitiatedAC
 } from "./DirectoryOSIProtocols";
+export {
+    shadowConsumerInitiatedAC,
+    shadowSupplierInitiatedAC
+} from "./DirectoryOSIProtocols";
 
 import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
 import {
+    ERROR,
+    OPERATION,
+    id_errcode_shadowError,
+    id_opcode_coordinateShadowUpdate,
+    id_opcode_requestShadowUpdate,
+    id_opcode_updateShadow
+} from "./CommonProtocolSpecification";
+export {
     ERROR,
     OPERATION,
     id_errcode_shadowError,
@@ -127,13 +214,13 @@ export class ModificationParameter {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("secondaryShadows", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModificationParameter: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModificationParameter = function (el: asn1.ASN1Element): ModificationParameter {
@@ -168,14 +255,14 @@ export class AreaSpecification {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("contextPrefix", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("replicationArea", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AreaSpecification: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AreaSpecification = function (el: asn1.ASN1Element): AreaSpecification {
@@ -236,14 +323,14 @@ export class ClassAttributeSelection {
         readonly classAttributes: ClassAttributes | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("class", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("classAttributes", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ClassAttributeSelection: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ClassAttributeSelection = function (el: asn1.ASN1Element): ClassAttributeSelection {
@@ -288,9 +375,12 @@ export enum Knowledge_knowledgeType {
     shadow = 1,
     both = 2,
 }
-export const master: Knowledge_knowledgeType = 0;
-export const shadow: Knowledge_knowledgeType = 1;
-export const both: Knowledge_knowledgeType = 2;
+export const Knowledge_knowledgeType_master: Knowledge_knowledgeType = Knowledge_knowledgeType.master; /* LONG_NAMED_ENUMERATED_VALUE */
+export const master: Knowledge_knowledgeType = Knowledge_knowledgeType.master; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const Knowledge_knowledgeType_shadow: Knowledge_knowledgeType = Knowledge_knowledgeType.shadow; /* LONG_NAMED_ENUMERATED_VALUE */
+export const shadow: Knowledge_knowledgeType = Knowledge_knowledgeType.shadow; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const Knowledge_knowledgeType_both: Knowledge_knowledgeType = Knowledge_knowledgeType.both; /* LONG_NAMED_ENUMERATED_VALUE */
+export const both: Knowledge_knowledgeType = Knowledge_knowledgeType.both; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_Knowledge_knowledgeType = __utils._decodeEnumerated;
 export const _encode_Knowledge_knowledgeType = __utils._encodeEnumerated;
 
@@ -302,14 +392,14 @@ export class Knowledge {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Knowledge: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Knowledge: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("knowledgeType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("extendedKnowledge", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Knowledge: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Knowledge: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Knowledge: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Knowledge: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Knowledge = function (el: asn1.ASN1Element): Knowledge {
@@ -371,7 +461,7 @@ export class UnitOfReplication {
         readonly supplyContexts: UnitOfReplication_supplyContexts | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("area", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("attributes", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("knowledge", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
@@ -379,10 +469,10 @@ const _root_component_type_list_1_spec_for_UnitOfReplication: __utils.ComponentS
     new __utils.ComponentSpec("contextSelection", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("supplyContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UnitOfReplication: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UnitOfReplication = function (el: asn1.ASN1Element): UnitOfReplication {
@@ -446,15 +536,15 @@ export class PeriodicStrategy {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("beginTime", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("windowSize", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("updateInterval", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PeriodicStrategy: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PeriodicStrategy = function (el: asn1.ASN1Element): PeriodicStrategy {
@@ -503,14 +593,14 @@ export class SchedulingParameters {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("periodic", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("othertimes", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SchedulingParameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SchedulingParameters = function (el: asn1.ASN1Element): SchedulingParameters {
@@ -589,16 +679,16 @@ export class ShadowingAgreementInfo {
         readonly secondaryShadows: asn1.BOOLEAN | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("shadowSubject", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("updateMode", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("master", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("secondaryShadows", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ShadowingAgreementInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ShadowingAgreementInfo = function (el: asn1.ASN1Element): ShadowingAgreementInfo {
@@ -686,16 +776,16 @@ export class CoordinateShadowUpdateArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("updateStrategy", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CoordinateShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CoordinateShadowUpdateArgumentData = __utils._decode_implicit<CoordinateShadowUpdateArgumentData>(() => function (el: asn1.ASN1Element): CoordinateShadowUpdateArgumentData {
@@ -754,14 +844,14 @@ export class CoordinateShadowUpdateResultData {
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
-const _root_component_type_list_1_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
     /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */
 ];
-const _extension_additions_list_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CoordinateShadowUpdateResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CoordinateShadowUpdateResultData = __utils._decode_implicit<CoordinateShadowUpdateResultData>(() => function (el: asn1.ASN1Element): CoordinateShadowUpdateResultData {
@@ -853,16 +943,16 @@ export class RequestShadowUpdateArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("requestedStrategy", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RequestShadowUpdateArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RequestShadowUpdateArgumentData = __utils._decode_implicit<RequestShadowUpdateArgumentData>(() => function (el: asn1.ASN1Element): RequestShadowUpdateArgumentData {
@@ -921,14 +1011,14 @@ export class RequestShadowUpdateResultData {
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
-const _root_component_type_list_1_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
     /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */
 ];
-const _extension_additions_list_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RequestShadowUpdateResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RequestShadowUpdateResultData = __utils._decode_implicit<RequestShadowUpdateResultData>(() => function (el: asn1.ASN1Element): RequestShadowUpdateResultData {
@@ -995,14 +1085,14 @@ export class UpdateWindow {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("start", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("stop", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UpdateWindow: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UpdateWindow = function (el: asn1.ASN1Element): UpdateWindow {
@@ -1050,17 +1140,17 @@ export class SDSEContent {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SDSEContent: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SDSEContent: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("sDSEType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("subComplete", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("attComplete", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("attributes", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("attValIncomplete", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SDSEContent: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SDSEContent: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SDSEContent: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SDSEContent: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SDSEContent = function (el: asn1.ASN1Element): SDSEContent {
@@ -1118,15 +1208,15 @@ export class Subtree {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Subtree: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Subtree: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("sDSE", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("subtree", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Subtree: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Subtree: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Subtree: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Subtree: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Subtree = function (el: asn1.ASN1Element): Subtree {
@@ -1175,14 +1265,14 @@ export class TotalRefresh {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("sDSE", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("subtree", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TotalRefresh: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TotalRefresh = function (el: asn1.ASN1Element): TotalRefresh {
@@ -1257,7 +1347,7 @@ export class ContentChange {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ContentChange: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ContentChange: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rename", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("attributeChanges", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("sDSEType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
@@ -1265,10 +1355,10 @@ const _root_component_type_list_1_spec_for_ContentChange: __utils.ComponentSpec[
     new __utils.ComponentSpec("attComplete", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("attValIncomplete", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ContentChange: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ContentChange: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ContentChange: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ContentChange: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ContentChange = function (el: asn1.ASN1Element): ContentChange {
@@ -1346,14 +1436,14 @@ export class SubordinateChanges {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subordinate", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("changes", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SubordinateChanges: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SubordinateChanges = function (el: asn1.ASN1Element): SubordinateChanges {
@@ -1392,14 +1482,14 @@ export class IncrementalStepRefresh {
         readonly subordinateUpdates: SubordinateChanges[] | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("sDSEChanges", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("subordinateUpdates", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_IncrementalStepRefresh: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_IncrementalStepRefresh = function (el: asn1.ASN1Element): IncrementalStepRefresh {
@@ -1469,17 +1559,17 @@ export class UpdateShadowArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("updateTime", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("updateWindow", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("updatedInfo", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UpdateShadowArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UpdateShadowArgumentData = __utils._decode_implicit<UpdateShadowArgumentData>(() => function (el: asn1.ASN1Element): UpdateShadowArgumentData {
@@ -1542,14 +1632,14 @@ export class UpdateShadowResultData {
         readonly _componentsOf_CommonResultsSeq: CommonResultsSeq
     ) {}
 }
-const _root_component_type_list_1_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
     /* TODO: COULD_NOT_COMPILE_COMPONENTS_OF DefinedType */
 ];
-const _extension_additions_list_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UpdateShadowResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UpdateShadowResultData = __utils._decode_implicit<UpdateShadowResultData>(() => function (el: asn1.ASN1Element): UpdateShadowResultData {
@@ -1648,18 +1738,18 @@ export class ShadowErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("lastUpdate", true, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("updateWindow", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ShadowErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ShadowErrorData = function (el: asn1.ASN1Element): ShadowErrorData {

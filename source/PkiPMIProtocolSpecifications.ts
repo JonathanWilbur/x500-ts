@@ -12,9 +12,28 @@ import {
     pkiPmiWrapper,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    attributeCertificateDefinitions,
+    authenticationFramework,
+    certificateExtensions,
+    id_cmsct,
+    informationFramework,
+    pkiPmiWrapper,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    Name,
+    SupportedAttributes,
+    Attribute,
+    _decode_Name,
+    _encode_Name,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     Name,
     SupportedAttributes,
@@ -65,9 +84,56 @@ import {
     _decode_SIGNATURE,
     _encode_SIGNATURE
 } from "./AuthenticationFramework";
+export {
+    ALGORITHM,
+    Certificate,
+    CertificateList,
+    CertificateSerialNumber,
+    CertAVL,
+    PKCertIdentifier,
+    TBSCertAVL,
+    Version,
+    AvlSerialNumber,
+    PkiPath,
+    AlgorithmIdentifier,
+    ENCRYPTED_HASH,
+    SIGNATURE,
+    _decode_Certificate,
+    _encode_Certificate,
+    _decode_CertificateList,
+    _encode_CertificateList,
+    _decode_CertificateSerialNumber,
+    _encode_CertificateSerialNumber,
+    _decode_CertAVL,
+    _encode_CertAVL,
+    _decode_PKCertIdentifier,
+    _encode_PKCertIdentifier,
+    _decode_TBSCertAVL,
+    _encode_TBSCertAVL,
+    _decode_Version,
+    _encode_Version,
+    _decode_AvlSerialNumber,
+    _encode_AvlSerialNumber,
+    _decode_PkiPath,
+    _encode_PkiPath,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier,
+    _get_decoder_for_ENCRYPTED_HASH,
+    _get_encoder_for_ENCRYPTED_HASH,
+    _decode_SIGNATURE,
+    _encode_SIGNATURE
+} from "./AuthenticationFramework";
 
 import * as CertificateExtensions from "./CertificateExtensions";
 import {
+    CRLReason,
+    SubjectKeyIdentifier,
+    _decode_CRLReason,
+    _encode_CRLReason,
+    _decode_SubjectKeyIdentifier,
+    _encode_SubjectKeyIdentifier
+} from "./CertificateExtensions";
+export {
     CRLReason,
     SubjectKeyIdentifier,
     _decode_CRLReason,
@@ -82,6 +148,11 @@ import {
     _decode_AttributeCertificate,
     _encode_AttributeCertificate
 } from "./AttributeCertificateDefinitions";
+export {
+    AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate
+} from "./AttributeCertificateDefinitions";
 
 import * as PkiPmiWrapper from "./PkiPmiWrapper";
 import {
@@ -90,9 +161,19 @@ import {
     _decode_PkiWaError,
     _encode_PkiWaError
 } from "./PkiPmiWrapper";
+export {
+    PkiWaError,
+    WRAPPED_PDU,
+    _decode_PkiWaError,
+    _encode_PkiWaError
+} from "./PkiPmiWrapper";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    objectIdentifierMatch,
+    octetStringMatch
+} from "./SelectedAttributeTypes";
+export {
     objectIdentifierMatch,
     octetStringMatch
 } from "./SelectedAttributeTypes";
@@ -133,15 +214,15 @@ export class AVMPcommonComponents {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AVMPcommonComponents: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AVMPcommonComponents = function (el: asn1.ASN1Element): AVMPcommonComponents {
@@ -191,15 +272,15 @@ export class CertReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReq = function (el: asn1.ASN1Element): CertReq {
@@ -249,13 +330,13 @@ export class CertOK {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertOK: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("dhCert", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertOK: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertOK: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertOK: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertOK = function (el: asn1.ASN1Element): CertOK {
@@ -358,14 +439,14 @@ export class CertErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("notOK", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("note", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertErr = function (el: asn1.ASN1Element): CertErr {
@@ -426,16 +507,16 @@ export class CertRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertRsp = function (el: asn1.ASN1Element): CertRsp {
@@ -492,16 +573,16 @@ export class AddAvlReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certlist", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddAvlReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddAvlReq = function (el: asn1.ASN1Element): AddAvlReq {
@@ -555,13 +636,13 @@ export class AddAvlOK {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ok", false, __utils.hasTag(asn1.ASN1TagClass.universal, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddAvlOK: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddAvlOK = function (el: asn1.ASN1Element): AddAvlOK {
@@ -595,13 +676,13 @@ export class AddAvlErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("notOK", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddAvlErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddAvlErr = function (el: asn1.ASN1Element): AddAvlErr {
@@ -652,16 +733,16 @@ export class AddAvlRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddAvlRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddAvlRsp = function (el: asn1.ASN1Element): AddAvlRsp {
@@ -719,17 +800,17 @@ export class ReplaceAvlReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("old", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("new", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ReplaceAvlReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ReplaceAvlReq = function (el: asn1.ASN1Element): ReplaceAvlReq {
@@ -787,13 +868,13 @@ export class RepAvlOK {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ok", false, __utils.hasTag(asn1.ASN1TagClass.universal, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RepAvlOK: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RepAvlOK = function (el: asn1.ASN1Element): RepAvlOK {
@@ -827,13 +908,13 @@ export class RepAvlErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("notOK", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RepAvlErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RepAvlErr = function (el: asn1.ASN1Element): RepAvlErr {
@@ -884,16 +965,16 @@ export class ReplaceAvlRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ReplaceAvlRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ReplaceAvlRsp = function (el: asn1.ASN1Element): ReplaceAvlRsp {
@@ -950,16 +1031,16 @@ export class DeleteAvlReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("avl-Id", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DeleteAvlReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DeleteAvlReq = function (el: asn1.ASN1Element): DeleteAvlReq {
@@ -1013,13 +1094,13 @@ export class DelAvlOK {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ok", false, __utils.hasTag(asn1.ASN1TagClass.universal, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DelAvlOK: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DelAvlOK = function (el: asn1.ASN1Element): DelAvlOK {
@@ -1053,13 +1134,13 @@ export class DelAvlErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("notOK", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DelAvlErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DelAvlErr = function (el: asn1.ASN1Element): DelAvlErr {
@@ -1110,16 +1191,16 @@ export class DeleteAvlRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DeleteAvlRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DeleteAvlRsp = function (el: asn1.ASN1Element): DeleteAvlRsp {
@@ -1176,16 +1257,16 @@ export class RejectAVL {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RejectAVL: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RejectAVL: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("timeStamp", false, __utils.hasTag(asn1.ASN1TagClass.universal, 24), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("reason", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RejectAVL: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RejectAVL: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RejectAVL: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RejectAVL: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RejectAVL = function (el: asn1.ASN1Element): RejectAVL {
@@ -1256,14 +1337,14 @@ export class CASPcommonComponents {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CASPcommonComponents: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CASPcommonComponents = function (el: asn1.ASN1Element): CASPcommonComponents {
@@ -1308,14 +1389,14 @@ export class CertSubscribeReq_certs_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subject", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeReq_certs_Item = function (el: asn1.ASN1Element): CertSubscribeReq_certs_Item {
@@ -1356,15 +1437,15 @@ export class CertSubscribeReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certs", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeReq = function (el: asn1.ASN1Element): CertSubscribeReq {
@@ -1429,15 +1510,15 @@ export class CertSubscribeOK_Item_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("cert", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("status", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("revokeReason", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeOK_Item_ok = function (el: asn1.ASN1Element): CertSubscribeOK_Item_ok {
@@ -1494,13 +1575,13 @@ export class CertSubscribeOK_Item_not_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("status", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeOK_Item_not_ok = function (el: asn1.ASN1Element): CertSubscribeOK_Item_not_ok {
@@ -1576,13 +1657,13 @@ export class CertSubscribeErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("code", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeErr = function (el: asn1.ASN1Element): CertSubscribeErr {
@@ -1632,15 +1713,15 @@ export class CertSubscribeRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertSubscribeRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertSubscribeRsp = function (el: asn1.ASN1Element): CertSubscribeRsp {
@@ -1691,14 +1772,14 @@ export class CertUnsubscribeReq_certs_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subject", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeReq_certs_Item = function (el: asn1.ASN1Element): CertUnsubscribeReq_certs_Item {
@@ -1739,15 +1820,15 @@ export class CertUnsubscribeReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certs", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeReq = function (el: asn1.ASN1Element): CertUnsubscribeReq {
@@ -1798,14 +1879,14 @@ export class CertUnsubscribeOK_Item_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subject", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeOK_Item_ok = function (el: asn1.ASN1Element): CertUnsubscribeOK_Item_ok {
@@ -1844,13 +1925,13 @@ export class CertUnsubscribeOK_Item_not_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("status", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeOK_Item_not_ok = function (el: asn1.ASN1Element): CertUnsubscribeOK_Item_not_ok {
@@ -1903,13 +1984,13 @@ export class CertUnsubscribeErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("code", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeErr = function (el: asn1.ASN1Element): CertUnsubscribeErr {
@@ -1959,15 +2040,15 @@ export class CertUnsubscribeRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUnsubscribeRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUnsubscribeRsp = function (el: asn1.ASN1Element): CertUnsubscribeRsp {
@@ -2018,14 +2099,14 @@ export class CertReplaceReq_certs_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("old", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("new", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceReq_certs_Item = function (el: asn1.ASN1Element): CertReplaceReq_certs_Item {
@@ -2066,15 +2147,15 @@ export class CertReplaceReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certs", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceReq = function (el: asn1.ASN1Element): CertReplaceReq {
@@ -2125,14 +2206,14 @@ export class CertReplaceOK_Item_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("issuer", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceOK_Item_ok = function (el: asn1.ASN1Element): CertReplaceOK_Item_ok {
@@ -2171,13 +2252,13 @@ export class CertReplaceOK_Item_not_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("status", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceOK_Item_not_ok = function (el: asn1.ASN1Element): CertReplaceOK_Item_not_ok {
@@ -2273,13 +2354,13 @@ export class CertReplaceErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("code", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceErr = function (el: asn1.ASN1Element): CertReplaceErr {
@@ -2329,15 +2410,15 @@ export class CertReplaceRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertReplaceRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertReplaceRsp = function (el: asn1.ASN1Element): CertReplaceRsp {
@@ -2389,15 +2470,15 @@ export class CertUpdateReq_certs_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subject", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certStatus", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateReq_certs_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateReq_certs_Item = function (el: asn1.ASN1Element): CertUpdateReq_certs_Item {
@@ -2443,15 +2524,15 @@ export class CertUpdateReq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("certs", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateReq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateReq = function (el: asn1.ASN1Element): CertUpdateReq {
@@ -2502,14 +2583,14 @@ export class CertUpdateOK_Item_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subject", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateOK_Item_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateOK_Item_ok = function (el: asn1.ASN1Element): CertUpdateOK_Item_ok {
@@ -2548,13 +2629,13 @@ export class CertUpdateOK_Item_not_ok {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("status", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateOK_Item_not_ok: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateOK_Item_not_ok = function (el: asn1.ASN1Element): CertUpdateOK_Item_not_ok {
@@ -2607,13 +2688,13 @@ export class CertUpdateErr {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("code", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateErr: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateErr = function (el: asn1.ASN1Element): CertUpdateErr {
@@ -2663,15 +2744,15 @@ export class CertUpdateRsp {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("result", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertUpdateRsp: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertUpdateRsp = function (el: asn1.ASN1Element): CertUpdateRsp {
@@ -2723,15 +2804,15 @@ export class RejectCAsubscribe {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("sequence", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("reason", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RejectCAsubscribe: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RejectCAsubscribe = function (el: asn1.ASN1Element): RejectCAsubscribe {
@@ -2896,16 +2977,16 @@ export class TBOK {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TBOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TBOK: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("levelOfAssurance", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("confidenceLevel", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("validationTime", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("info", true, __utils.hasTag(asn1.ASN1TagClass.universal, 12), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TBOK: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TBOK: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TBOK: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TBOK: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TBOK = function (el: asn1.ASN1Element): TBOK {
@@ -2981,14 +3062,14 @@ export class TBerror {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TBerror: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TBerror: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("code", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("diagnostic", true, __utils.hasTag(asn1.ASN1TagClass.universal, 12), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TBerror: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TBerror: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TBerror: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TBerror: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TBerror = function (el: asn1.ASN1Element): TBerror {

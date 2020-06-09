@@ -8,9 +8,32 @@ import {
     _decode_Name,
     _encode_Name
 } from "./InformationFramework";
+export {
+    Name,
+    _decode_Name,
+    _encode_Name
+} from "./InformationFramework";
 
 import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
+    Certificate,
+    CertificateList,
+    CertificatePair,
+    SupportedAlgorithms,
+    Validity,
+    AlgorithmIdentifier,
+    _decode_Certificate,
+    _encode_Certificate,
+    _decode_CertificateList,
+    _encode_CertificateList,
+    _decode_CertificatePair,
+    _encode_CertificatePair,
+    _decode_Validity,
+    _encode_Validity,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier
+} from "./AuthenticationFramework";
+export {
     Certificate,
     CertificateList,
     CertificatePair,
@@ -104,7 +127,7 @@ export class Context_Data {
         readonly owf_alg: OWF_Algs
     ) {}
 }
-const _root_component_type_list_1_spec_for_Context_Data: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Context_Data: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("channelId", true, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined),
     new __utils.ComponentSpec("seq-number", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("options", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
@@ -112,10 +135,10 @@ const _root_component_type_list_1_spec_for_Context_Data: __utils.ComponentSpec[]
     new __utils.ComponentSpec("intg-alg", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("owf-alg", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Context_Data: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Context_Data: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Context_Data: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Context_Data: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Context_Data = function (el: asn1.ASN1Element): Context_Data {
@@ -187,7 +210,7 @@ export class Req_contents {
         readonly key_src_bind: asn1.OCTET_STRING | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Req_contents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Req_contents: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("pvno", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
@@ -201,10 +224,10 @@ const _root_component_type_list_1_spec_for_Req_contents: __utils.ComponentSpec[]
     new __utils.ComponentSpec("key-estb-req", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("key-src-bind", true, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Req_contents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Req_contents: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Req_contents: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Req_contents: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Req_contents = function (el: asn1.ASN1Element): Req_contents {
@@ -291,15 +314,15 @@ export class REQ_TOKEN {
         readonly req_integrity: Integrity
     ) {}
 }
-const _root_component_type_list_1_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("req-contents", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("algId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("req-integrity", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_REQ_TOKEN: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_REQ_TOKEN = function (el: asn1.ASN1Element): REQ_TOKEN {
@@ -345,17 +368,17 @@ export class CertificationPath {
         readonly theCACertificates: CertificatePair[] | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertificationPath: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertificationPath: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("userKeyId", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("userCertif", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("verifKeyId", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("userVerifCertif", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("theCACertificates", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertificationPath: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertificationPath: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertificationPath = function (el: asn1.ASN1Element): CertificationPath {
@@ -408,14 +431,14 @@ export class CertificationData {
         readonly certificateRevocationList: CertificateList | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_CertificationData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CertificationData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certificationPath", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("certificateRevocationList", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CertificationData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CertificationData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CertificationData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CertificationData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CertificationData = function (el: asn1.ASN1Element): CertificationData {
@@ -456,14 +479,14 @@ export class AuthorizationData_Item {
         readonly ad_data: asn1.OCTET_STRING
     ) {}
 }
-const _root_component_type_list_1_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ad-type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("ad-data", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AuthorizationData_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AuthorizationData_Item = function (el: asn1.ASN1Element): AuthorizationData_Item {
@@ -507,15 +530,15 @@ export class SPKM_REQ {
         readonly auth_data: AuthorizationData | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("requestToken", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("certif-data", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("auth-data", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_REQ: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_REQ = function (el: asn1.ASN1Element): SPKM_REQ {
@@ -570,7 +593,7 @@ export class Rep_ti_contents {
         readonly key_estb_str: asn1.BIT_STRING | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("pvno", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
@@ -584,10 +607,10 @@ const _root_component_type_list_1_spec_for_Rep_ti_contents: __utils.ComponentSpe
     new __utils.ComponentSpec("key-estb-id", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("key-estb-str", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Rep_ti_contents: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Rep_ti_contents = function (el: asn1.ASN1Element): Rep_ti_contents {
@@ -669,15 +692,15 @@ export class REP_TI_TOKEN {
         readonly rep_ti_integ: Integrity
     ) {}
 }
-const _root_component_type_list_1_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rep-ti-contents", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("algId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("rep-ti-integ", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_REP_TI_TOKEN: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_REP_TI_TOKEN = function (el: asn1.ASN1Element): REP_TI_TOKEN {
@@ -720,14 +743,14 @@ export class SPKM_REP_TI {
         readonly certif_data: CertificationData | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("responseToken", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("certif-data", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_REP_TI: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_REP_TI = function (el: asn1.ASN1Element): SPKM_REP_TI {
@@ -773,7 +796,7 @@ export class REP_IT_TOKEN {
         readonly key_estb_rep: asn1.BIT_STRING | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("randSrc", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
@@ -782,10 +805,10 @@ const _root_component_type_list_1_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[]
     new __utils.ComponentSpec("src-name", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("key-estb-rep", true, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_REP_IT_TOKEN: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_REP_IT_TOKEN = function (el: asn1.ASN1Element): REP_IT_TOKEN {
@@ -847,15 +870,15 @@ export class SPKM_REP_IT {
         readonly rep_it_integ: Integrity
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("responseToken", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("algId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("rep-it-integ", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_REP_IT: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_REP_IT = function (el: asn1.ASN1Element): SPKM_REP_IT {
@@ -898,14 +921,14 @@ export class ERROR_TOKEN {
         readonly context_id: Random_Integer
     ) {}
 }
-const _root_component_type_list_1_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ERROR_TOKEN: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ERROR_TOKEN = function (el: asn1.ASN1Element): ERROR_TOKEN {
@@ -944,15 +967,15 @@ export class SPKM_ERROR {
         readonly integrity: Integrity
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("errorToken", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("algId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("integrity", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_ERROR: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_ERROR = function (el: asn1.ASN1Element): SPKM_ERROR {
@@ -995,14 +1018,14 @@ export class SeqNum {
         readonly dir_ind: asn1.BOOLEAN
     ) {}
 }
-const _root_component_type_list_1_spec_for_SeqNum: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SeqNum: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("num", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("dir-ind", false, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SeqNum: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SeqNum: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SeqNum: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SeqNum: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SeqNum = function (el: asn1.ASN1Element): SeqNum {
@@ -1042,16 +1065,16 @@ export class Mic_Header {
         readonly snd_seq: SeqNum | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Mic_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Mic_Header: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("int-alg", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("snd-seq", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Mic_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Mic_Header: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Mic_Header: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Mic_Header: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Mic_Header = function (el: asn1.ASN1Element): Mic_Header {
@@ -1100,14 +1123,14 @@ export class SPKM_MIC {
         readonly int_cksum: asn1.BIT_STRING
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mic-header", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("int-cksum", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_MIC: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_MIC = function (el: asn1.ASN1Element): SPKM_MIC {
@@ -1161,17 +1184,17 @@ export class Wrap_Header {
         readonly snd_seq: SeqNum | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("int-alg", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("conf-alg", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("snd-seq", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Wrap_Header: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Wrap_Header = function (el: asn1.ASN1Element): Wrap_Header {
@@ -1224,14 +1247,14 @@ export class Wrap_Body {
         readonly data: asn1.BIT_STRING
     ) {}
 }
-const _root_component_type_list_1_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("int-cksum", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("data", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Wrap_Body: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Wrap_Body = function (el: asn1.ASN1Element): Wrap_Body {
@@ -1269,14 +1292,14 @@ export class SPKM_WRAP {
         readonly wrap_body: Wrap_Body
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("wrap-header", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("wrap-body", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_WRAP: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_WRAP = function (el: asn1.ASN1Element): SPKM_WRAP {
@@ -1316,16 +1339,16 @@ export class Del_Header {
         readonly snd_seq: SeqNum | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_Del_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Del_Header: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("tok-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("context-id", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("int-alg", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("snd-seq", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Del_Header: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Del_Header: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Del_Header: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Del_Header: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Del_Header = function (el: asn1.ASN1Element): Del_Header {
@@ -1374,14 +1397,14 @@ export class SPKM_DEL {
         readonly int_cksum: asn1.BIT_STRING
     ) {}
 }
-const _root_component_type_list_1_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("del-header", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("int-cksum", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SPKM_DEL: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SPKM_DEL = function (el: asn1.ASN1Element): SPKM_DEL {
@@ -1447,14 +1470,14 @@ export class InitialContextToken {
         readonly innerContextToken: SPKMInnerContextToken
     ) {}
 }
-const _root_component_type_list_1_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("thisMech", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("innerContextToken", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_InitialContextToken: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_InitialContextToken = __utils._decode_implicit<InitialContextToken>(() => function (el: asn1.ASN1Element): InitialContextToken {

@@ -15,6 +15,18 @@ import {
     opBindingManagement,
     oSIProtocolSpecification
 } from "./UsefulDefinitions";
+export {
+    commonProtocolSpecification,
+    directoryAbstractService,
+    distributedOperations,
+    directoryShadowAbstractService,
+    id_ac,
+    id_as,
+    id_idm,
+    iDMProtocolSpecification,
+    opBindingManagement,
+    oSIProtocolSpecification
+} from "./UsefulDefinitions";
 
 import * as OperationalBindingManagement from "./OperationalBindingManagement";
 import {
@@ -23,9 +35,29 @@ import {
     modifyOperationalBinding,
     terminateOperationalBinding
 } from "./OperationalBindingManagement";
+export {
+    dSAOperationalBindingManagementBind,
+    establishOperationalBinding,
+    modifyOperationalBinding,
+    terminateOperationalBinding
+} from "./OperationalBindingManagement";
 
 import * as DirectoryAbstractService from "./DirectoryAbstractService";
 import {
+    abandon,
+    addEntry,
+    administerPassword,
+    changePassword,
+    compare,
+    directoryBind,
+    list,
+    modifyDN,
+    modifyEntry,
+    read,
+    removeEntry,
+    search
+} from "./DirectoryAbstractService";
+export {
     abandon,
     addEntry,
     administerPassword,
@@ -57,9 +89,28 @@ import {
     chainedSearch,
     dSABind
 } from "./DistributedOperations";
+export {
+    chainedAbandon,
+    chainedAddEntry,
+    chainedAdministerPassword,
+    chainedChangePassword,
+    chainedCompare,
+    chainedLdapTransport,
+    chainedLinkedLDAP,
+    chainedList,
+    chainedModifyDN,
+    chainedModifyEntry,
+    chainedRead,
+    chainedRemoveEntry,
+    chainedSearch,
+    dSABind
+} from "./DistributedOperations";
 
 import * as CommonProtocolSpecification from "./CommonProtocolSpecification";
 import {
+    OPERATION
+} from "./CommonProtocolSpecification";
+export {
     OPERATION
 } from "./CommonProtocolSpecification";
 
@@ -69,9 +120,20 @@ import {
     _decode_OSI_PDU,
     _encode_OSI_PDU
 } from "./OSIProtocolSpecification";
+export {
+    OSI_PDU,
+    _decode_OSI_PDU,
+    _encode_OSI_PDU
+} from "./OSIProtocolSpecification";
 
 import * as DirectoryShadowAbstractService from "./DirectoryShadowAbstractService";
 import {
+    coordinateShadowUpdate,
+    dSAShadowBind,
+    requestShadowUpdate,
+    updateShadow
+} from "./DirectoryShadowAbstractService";
+export {
     coordinateShadowUpdate,
     dSAShadowBind,
     requestShadowUpdate,

@@ -11,6 +11,14 @@ import {
     opBindingManagement,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    distributedOperations,
+    id_doa,
+    id_kmr,
+    informationFramework,
+    opBindingManagement,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
@@ -20,9 +28,21 @@ import {
     _decode_Name,
     _encode_Name
 } from "./InformationFramework";
+export {
+    ATTRIBUTE,
+    MATCHING_RULE,
+    Name,
+    _decode_Name,
+    _encode_Name
+} from "./InformationFramework";
 
 import * as OperationalBindingManagement from "./OperationalBindingManagement";
 import {
+    OperationalBindingID,
+    _decode_OperationalBindingID,
+    _encode_OperationalBindingID
+} from "./OperationalBindingManagement";
+export {
     OperationalBindingID,
     _decode_OperationalBindingID,
     _encode_OperationalBindingID
@@ -40,9 +60,24 @@ import {
     _decode_MasterAndShadowAccessPoints,
     _encode_MasterAndShadowAccessPoints
 } from "./DistributedOperations";
+export {
+    AccessPoint,
+    DitBridgeKnowledge,
+    MasterAndShadowAccessPoints,
+    _decode_AccessPoint,
+    _encode_AccessPoint,
+    _decode_DitBridgeKnowledge,
+    _encode_DitBridgeKnowledge,
+    _decode_MasterAndShadowAccessPoints,
+    _encode_MasterAndShadowAccessPoints
+} from "./DistributedOperations";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    bitStringMatch,
+    directoryStringFirstComponentMatch
+} from "./SelectedAttributeTypes";
+export {
     bitStringMatch,
     directoryStringFirstComponentMatch
 } from "./SelectedAttributeTypes";
@@ -115,16 +150,16 @@ export class SupplierOrConsumer {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ae-title", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("protocolInformation", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SupplierOrConsumer: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SupplierOrConsumer = function (el: asn1.ASN1Element): SupplierOrConsumer {
@@ -181,7 +216,7 @@ export class SupplierInformation {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ae-title", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("protocolInformation", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -189,10 +224,10 @@ const _root_component_type_list_1_spec_for_SupplierInformation: __utils.Componen
     new __utils.ComponentSpec("supplier-is-master", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
     new __utils.ComponentSpec("non-supplying-master", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SupplierInformation: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SupplierInformation = function (el: asn1.ASN1Element): SupplierInformation {
@@ -264,16 +299,16 @@ export class SupplierAndConsumers {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ae-title", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: address COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("protocolInformation", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("consumers", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SupplierAndConsumers: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SupplierAndConsumers = function (el: asn1.ASN1Element): SupplierAndConsumers {

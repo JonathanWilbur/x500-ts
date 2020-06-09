@@ -17,9 +17,61 @@ import {
     serviceAdministration,
     passwordPolicy
 } from "./UsefulDefinitions";
+export {
+    attributeCertificateDefinitions,
+    authenticationFramework,
+    basicAccessControl,
+    commonProtocolSpecification,
+    directoryShadowAbstractService,
+    distributedOperations,
+    enhancedSecurity,
+    id_at,
+    informationFramework,
+    selectedAttributeTypes,
+    serviceAdministration,
+    passwordPolicy
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    AttributeType,
+    AttributeTypeAndValue,
+    AttributeTypeAssertion,
+    AttributeValue,
+    AttributeValueAssertion,
+    CONTEXT,
+    ContextAssertion,
+    DistinguishedName,
+    MATCHING_RULE,
+    Name,
+    OBJECT_CLASS,
+    RelativeDistinguishedName,
+    SupportedAttributes,
+    SupportedContexts,
+    Attribute,
+    _decode_AttributeType,
+    _encode_AttributeType,
+    _decode_AttributeTypeAndValue,
+    _encode_AttributeTypeAndValue,
+    _decode_AttributeTypeAssertion,
+    _encode_AttributeTypeAssertion,
+    _decode_AttributeValue,
+    _encode_AttributeValue,
+    _decode_AttributeValueAssertion,
+    _encode_AttributeValueAssertion,
+    _decode_ContextAssertion,
+    _encode_ContextAssertion,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName,
+    _decode_Name,
+    _encode_Name,
+    _decode_RelativeDistinguishedName,
+    _encode_RelativeDistinguishedName,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     AttributeType,
     AttributeTypeAndValue,
@@ -64,6 +116,11 @@ import {
     _decode_RelaxationPolicy,
     _encode_RelaxationPolicy
 } from "./ServiceAdministration";
+export {
+    RelaxationPolicy,
+    _decode_RelaxationPolicy,
+    _encode_RelaxationPolicy
+} from "./ServiceAdministration";
 
 import * as EnhancedSecurity from "./EnhancedSecurity";
 import {
@@ -74,9 +131,34 @@ import {
     _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
 } from "./EnhancedSecurity";
+export {
+    OPTIONALLY_PROTECTED,
+    OPTIONALLY_PROTECTED_SEQ,
+    _get_decoder_for_OPTIONALLY_PROTECTED,
+    _get_encoder_for_OPTIONALLY_PROTECTED,
+    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
+    _get_encoder_for_OPTIONALLY_PROTECTED_SEQ
+} from "./EnhancedSecurity";
 
 import * as DistributedOperations from "./DistributedOperations";
 import {
+    AccessPoint,
+    ContinuationReference,
+    Exclusions,
+    OperationProgress,
+    ReferenceType,
+    _decode_AccessPoint,
+    _encode_AccessPoint,
+    _decode_ContinuationReference,
+    _encode_ContinuationReference,
+    _decode_Exclusions,
+    _encode_Exclusions,
+    _decode_OperationProgress,
+    _encode_OperationProgress,
+    _decode_ReferenceType,
+    _encode_ReferenceType
+} from "./DistributedOperations";
+export {
     AccessPoint,
     ContinuationReference,
     Exclusions,
@@ -126,9 +208,48 @@ import {
     _decode_InvokeId,
     _encode_InvokeId
 } from "./CommonProtocolSpecification";
+export {
+    Code,
+    ERROR,
+    id_errcode_abandoned,
+    id_errcode_abandonFailed,
+    id_errcode_attributeError,
+    id_errcode_nameError,
+    id_errcode_referral,
+    id_errcode_securityError,
+    id_errcode_serviceError,
+    id_errcode_updateError,
+    id_opcode_abandon,
+    id_opcode_addEntry,
+    id_opcode_administerPassword,
+    id_opcode_compare,
+    id_opcode_changePassword,
+    id_opcode_ldapTransport,
+    id_opcode_linkedLDAP,
+    id_opcode_list,
+    id_opcode_modifyDN,
+    id_opcode_modifyEntry,
+    id_opcode_read,
+    id_opcode_removeEntry,
+    id_opcode_search,
+    InvokeId,
+    OPERATION,
+    _decode_Code,
+    _encode_Code,
+    _decode_InvokeId,
+    _encode_InvokeId
+} from "./CommonProtocolSpecification";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    UnboundedDirectoryString,
+    DirectoryString,
+    _decode_UnboundedDirectoryString,
+    _encode_UnboundedDirectoryString,
+    _decode_DirectoryString,
+    _encode_DirectoryString
+} from "./SelectedAttributeTypes";
+export {
     UnboundedDirectoryString,
     DirectoryString,
     _decode_UnboundedDirectoryString,
@@ -156,9 +277,32 @@ import {
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED
 } from "./AuthenticationFramework";
+export {
+    CertificationPath,
+    SupportedAlgorithms,
+    AlgorithmIdentifier,
+    ENCRYPTED,
+    HASH,
+    SIGNED,
+    _decode_CertificationPath,
+    _encode_CertificationPath,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier,
+    _get_decoder_for_ENCRYPTED,
+    _get_encoder_for_ENCRYPTED,
+    _get_decoder_for_HASH,
+    _get_encoder_for_HASH,
+    _get_decoder_for_SIGNED,
+    _get_encoder_for_SIGNED
+} from "./AuthenticationFramework";
 
 import * as PasswordPolicy from "./PasswordPolicy";
 import {
+    UserPwd,
+    _decode_UserPwd,
+    _encode_UserPwd
+} from "./PasswordPolicy";
+export {
     UserPwd,
     _decode_UserPwd,
     _encode_UserPwd
@@ -170,9 +314,19 @@ import {
     _decode_AttributeCertificationPath,
     _encode_AttributeCertificationPath
 } from "./AttributeCertificateDefinitions";
+export {
+    AttributeCertificationPath,
+    _decode_AttributeCertificationPath,
+    _encode_AttributeCertificationPath
+} from "./AttributeCertificateDefinitions";
 
 import * as DirectoryShadowAbstractService from "./DirectoryShadowAbstractService";
 import {
+    AgreementID,
+    _decode_AgreementID,
+    _encode_AgreementID
+} from "./DirectoryShadowAbstractService";
+export {
     AgreementID,
     _decode_AgreementID,
     _encode_AgreementID
@@ -190,9 +344,25 @@ import {
     _decode_SPKM_REQ,
     _encode_SPKM_REQ
 } from "./SpkmGssTokens";
+export {
+    SPKM_ERROR,
+    SPKM_REP_TI,
+    SPKM_REQ,
+    _decode_SPKM_ERROR,
+    _encode_SPKM_ERROR,
+    _decode_SPKM_REP_TI,
+    _encode_SPKM_REP_TI,
+    _decode_SPKM_REQ,
+    _encode_SPKM_REQ
+} from "./SpkmGssTokens";
 
 import * as Lightweight_Directory_Access_Protocol_V3 from "./Lightweight-Directory-Access-Protocol-V3";
 import {
+    LDAPMessage,
+    _decode_LDAPMessage,
+    _encode_LDAPMessage
+} from "./Lightweight-Directory-Access-Protocol-V3";
+export {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage
@@ -244,16 +414,16 @@ export class SimpleCredentials_validity {
         readonly random2: asn1.BIT_STRING | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("time1", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("time2", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("random1", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("random2", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SimpleCredentials_validity: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SimpleCredentials_validity = function (el: asn1.ASN1Element): SimpleCredentials_validity {
@@ -319,15 +489,15 @@ export class SimpleCredentials {
         readonly password: SimpleCredentials_password | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("validity", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("password", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SimpleCredentials: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SimpleCredentials = function (el: asn1.ASN1Element): SimpleCredentials {
@@ -390,17 +560,17 @@ export class TokenContent {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TokenContent: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TokenContent: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("name", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("time", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("random", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("response", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TokenContent: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TokenContent: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TokenContent: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TokenContent: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TokenContent = function (el: asn1.ASN1Element): TokenContent {
@@ -464,16 +634,16 @@ export class StrongCredentials {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("bind-token", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("attributeCertificationPath", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_StrongCredentials: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_StrongCredentials = function (el: asn1.ASN1Element): StrongCredentials {
@@ -543,15 +713,15 @@ export class SaslCredentials {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mechanism", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("saslAbort", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SaslCredentials: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SaslCredentials = function (el: asn1.ASN1Element): SaslCredentials {
@@ -632,14 +802,14 @@ export class DirectoryBindArgument {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("versions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DirectoryBindArgument: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DirectoryBindArgument = function (el: asn1.ASN1Element): DirectoryBindArgument {
@@ -706,14 +876,14 @@ export class PwdResponseValue {
         readonly error: PwdResponseValue_error | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("warning", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("error", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PwdResponseValue: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PwdResponseValue = function (el: asn1.ASN1Element): PwdResponseValue {
@@ -756,14 +926,14 @@ export class DirectoryBindResult {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("credentials", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("versions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DirectoryBindResult: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("pwdResponseValue", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
 export const _decode_DirectoryBindResult = function (el: asn1.ASN1Element): DirectoryBindResult {
@@ -872,14 +1042,14 @@ export class TypeAndContextAssertion {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("contextAssertions", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TypeAndContextAssertion: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TypeAndContextAssertion = function (el: asn1.ASN1Element): TypeAndContextAssertion {
@@ -944,14 +1114,14 @@ export class FamilyReturn {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("memberSelect", false, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined),
     new __utils.ComponentSpec("familySelect", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_FamilyReturn: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_FamilyReturn = function (el: asn1.ASN1Element): FamilyReturn {
@@ -999,7 +1169,7 @@ export class EntryInformationSelection {
         readonly familyReturn: FamilyReturn | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("attributes", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("infoTypes", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("extraAttributes", true, __utils.hasAnyTag, undefined, undefined),
@@ -1007,10 +1177,10 @@ const _root_component_type_list_1_spec_for_EntryInformationSelection: __utils.Co
     new __utils.ComponentSpec("returnContexts", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined),
     new __utils.ComponentSpec("familyReturn", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EntryInformationSelection: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EntryInformationSelection = function (el: asn1.ASN1Element): EntryInformationSelection {
@@ -1123,14 +1293,14 @@ export class ServiceControls_manageDSAITPlaneRef {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("dsaName", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("agreementID", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ServiceControls_manageDSAITPlaneRef: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ServiceControls_manageDSAITPlaneRef = function (el: asn1.ASN1Element): ServiceControls_manageDSAITPlaneRef {
@@ -1177,7 +1347,7 @@ export class ServiceControls {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ServiceControls: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ServiceControls: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("options", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("priority", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("timeLimit", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -1188,10 +1358,10 @@ const _root_component_type_list_1_spec_for_ServiceControls: __utils.ComponentSpe
     new __utils.ComponentSpec("serviceType", true, __utils.hasTag(asn1.ASN1TagClass.context, 7), undefined, undefined),
     new __utils.ComponentSpec("userClass", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ServiceControls: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ServiceControls: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ServiceControls: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ServiceControls: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ServiceControls = function (el: asn1.ASN1Element): ServiceControls {
@@ -1288,7 +1458,7 @@ export class SecurityParameters {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("certification-path", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("name", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("time", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -1298,10 +1468,10 @@ const _root_component_type_list_1_spec_for_SecurityParameters: __utils.Component
     new __utils.ComponentSpec("errorProtection", true, __utils.hasTag(asn1.ASN1TagClass.context, 8), undefined, undefined),
     new __utils.ComponentSpec("errorCode", true, __utils.hasTag(asn1.ASN1TagClass.context, 9), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SecurityParameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SecurityParameters = function (el: asn1.ASN1Element): SecurityParameters {
@@ -1393,7 +1563,7 @@ export class CommonArguments {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -1407,10 +1577,10 @@ const _root_component_type_list_1_spec_for_CommonArguments: __utils.ComponentSpe
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CommonArguments: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CommonArguments: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CommonArguments: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CommonArguments: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CommonArguments = function (el: asn1.ASN1Element): CommonArguments {
@@ -1508,12 +1678,12 @@ export class ReadArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("selection", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("modifyRightsRequest", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -1527,7 +1697,7 @@ const _root_component_type_list_2_spec_for_ReadArgumentData: __utils.ComponentSp
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ReadArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ReadArgumentData = function (el: asn1.ASN1Element): ReadArgumentData {
@@ -1649,7 +1819,7 @@ export class EntryInformation {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EntryInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EntryInformation: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("name", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined),
     new __utils.ComponentSpec("information", true, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
@@ -1657,10 +1827,10 @@ const _root_component_type_list_1_spec_for_EntryInformation: __utils.ComponentSp
     new __utils.ComponentSpec("partialName", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
     new __utils.ComponentSpec("derivedEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EntryInformation: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EntryInformation: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EntryInformation: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EntryInformation: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EntryInformation = function (el: asn1.ASN1Element): EntryInformation {
@@ -1751,14 +1921,14 @@ export class ModifyRights_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("item", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("permission", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyRights_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyRights_Item = function (el: asn1.ASN1Element): ModifyRights_Item {
@@ -1805,16 +1975,16 @@ export class CommonResults {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CommonResults: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CommonResults: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CommonResults: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CommonResults: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CommonResults: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CommonResults: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CommonResults = function (el: asn1.ASN1Element): CommonResults {
@@ -1871,17 +2041,17 @@ export class ReadResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ReadResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ReadResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("entry", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("modifyRights", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ReadResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ReadResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ReadResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ReadResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ReadResultData = function (el: asn1.ASN1Element): ReadResultData {
@@ -1963,11 +2133,11 @@ export class CompareArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("purported", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -1981,7 +2151,7 @@ const _root_component_type_list_2_spec_for_CompareArgumentData: __utils.Componen
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CompareArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CompareArgumentData = function (el: asn1.ASN1Element): CompareArgumentData {
@@ -2087,19 +2257,19 @@ export class CompareResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_CompareResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CompareResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("matched", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("matchedSubtype", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CompareResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CompareResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_CompareResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CompareResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CompareResultData = function (el: asn1.ASN1Element): CompareResultData {
@@ -2176,13 +2346,13 @@ export class AbandonArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AbandonArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AbandonArgumentData = function (el: asn1.ASN1Element): AbandonArgumentData {
@@ -2224,16 +2394,16 @@ export class CommonResultsSeq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CommonResultsSeq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CommonResultsSeq = function (el: asn1.ASN1Element): CommonResultsSeq {
@@ -2289,16 +2459,16 @@ export class AbandonResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("invokeID", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AbandonResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AbandonResultData = function (el: asn1.ASN1Element): AbandonResultData {
@@ -2373,14 +2543,14 @@ export class SortKey {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SortKey: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SortKey: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("orderingRule", true, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SortKey: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SortKey: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SortKey: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SortKey: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SortKey = function (el: asn1.ASN1Element): SortKey {
@@ -2428,17 +2598,17 @@ export class PagedResultsRequest_newRequest {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("pageSize", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("sortKeys", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("reverse", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("unmerged", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("pageNumber", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PagedResultsRequest_newRequest: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PagedResultsRequest_newRequest = function (el: asn1.ASN1Element): PagedResultsRequest_newRequest {
@@ -2525,12 +2695,12 @@ export class ListArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("pagedResults", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("listFamily", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -2544,7 +2714,7 @@ const _root_component_type_list_2_spec_for_ListArgumentData: __utils.ComponentSp
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ListArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ListArgumentData = function (el: asn1.ASN1Element): ListArgumentData {
@@ -2681,14 +2851,14 @@ export class FilterItem_substrings {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("strings", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_FilterItem_substrings: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_FilterItem_substrings = function (el: asn1.ASN1Element): FilterItem_substrings {
@@ -2730,16 +2900,16 @@ export class MatchingRuleAssertion {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("matchingRule", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("type", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("matchValue", false, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined),
     new __utils.ComponentSpec("dnAttributes", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_MatchingRuleAssertion: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_MatchingRuleAssertion = function (el: asn1.ASN1Element): MatchingRuleAssertion {
@@ -2921,15 +3091,15 @@ export class JoinAttPair {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("baseAtt", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("joinAtt", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("joinContext", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_JoinAttPair: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_JoinAttPair = function (el: asn1.ASN1Element): JoinAttPair {
@@ -2982,7 +3152,7 @@ export class JoinArgument {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_JoinArgument: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_JoinArgument: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("joinBaseObject", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("domainLocalID", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("joinSubset", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -2990,10 +3160,10 @@ const _root_component_type_list_1_spec_for_JoinArgument: __utils.ComponentSpec[]
     new __utils.ComponentSpec("joinAttributes", true, __utils.hasTag(asn1.ASN1TagClass.context, 4), undefined, undefined),
     new __utils.ComponentSpec("joinSelection", false, __utils.hasTag(asn1.ASN1TagClass.context, 5), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_JoinArgument: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_JoinArgument: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_JoinArgument: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_JoinArgument: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_JoinArgument = function (el: asn1.ASN1Element): JoinArgument {
@@ -3052,9 +3222,12 @@ export enum SearchArgumentData_joinType {
     leftOuterJoin = 1,
     fullOuterJoin = 2,
 }
-export const innerJoin: SearchArgumentData_joinType = 0;
-export const leftOuterJoin: SearchArgumentData_joinType = 1;
-export const fullOuterJoin: SearchArgumentData_joinType = 2;
+export const SearchArgumentData_joinType_innerJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.innerJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const innerJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.innerJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const SearchArgumentData_joinType_leftOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.leftOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const leftOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.leftOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+export const SearchArgumentData_joinType_fullOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.fullOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
+export const fullOuterJoin: SearchArgumentData_joinType = SearchArgumentData_joinType.fullOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_SearchArgumentData_joinType = __utils._decodeEnumerated;
 export const _encode_SearchArgumentData_joinType = __utils._encodeEnumerated;
 
@@ -3091,7 +3264,7 @@ export class SearchArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("baseObject", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("subset", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("filter", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -3108,7 +3281,7 @@ const _root_component_type_list_1_spec_for_SearchArgumentData: __utils.Component
     new __utils.ComponentSpec("joinArguments", true, __utils.hasTag(asn1.ASN1TagClass.context, 13), undefined, undefined),
     new __utils.ComponentSpec("joinType", true, __utils.hasTag(asn1.ASN1TagClass.context, 14), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -3122,7 +3295,7 @@ const _root_component_type_list_2_spec_for_SearchArgumentData: __utils.Component
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SearchArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SearchArgumentData = function (el: asn1.ASN1Element): SearchArgumentData {
@@ -3289,12 +3462,12 @@ export class AddEntryArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("entry", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("targetSystem", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -3308,7 +3481,7 @@ const _root_component_type_list_2_spec_for_AddEntryArgumentData: __utils.Compone
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddEntryArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddEntryArgumentData = function (el: asn1.ASN1Element): AddEntryArgumentData {
@@ -3414,16 +3587,16 @@ export class AddEntryResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
     
 ];
-const _root_component_type_list_2_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AddEntryResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AddEntryResultData = function (el: asn1.ASN1Element): AddEntryResultData {
@@ -3503,10 +3676,10 @@ export class RemoveEntryArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -3520,7 +3693,7 @@ const _root_component_type_list_2_spec_for_RemoveEntryArgumentData: __utils.Comp
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RemoveEntryArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RemoveEntryArgumentData = function (el: asn1.ASN1Element): RemoveEntryArgumentData {
@@ -3618,16 +3791,16 @@ export class RemoveEntryResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
     
 ];
-const _root_component_type_list_2_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_RemoveEntryResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_RemoveEntryResultData = function (el: asn1.ASN1Element): RemoveEntryResultData {
@@ -3738,12 +3911,12 @@ export class ModifyEntryArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("changes", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("selection", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -3757,7 +3930,7 @@ const _root_component_type_list_2_spec_for_ModifyEntryArgumentData: __utils.Comp
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyEntryArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyEntryArgumentData = function (el: asn1.ASN1Element): ModifyEntryArgumentData {
@@ -3864,16 +4037,16 @@ export class ModifyEntryResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("entry", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyEntryResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyEntryResultData = function (el: asn1.ASN1Element): ModifyEntryResultData {
@@ -3962,13 +4135,13 @@ export class ModifyDNArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("newRDN", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("deleteOldRDN", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("newSuperior", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -3982,7 +4155,7 @@ const _root_component_type_list_2_spec_for_ModifyDNArgumentData: __utils.Compone
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyDNArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyDNArgumentData = function (el: asn1.ASN1Element): ModifyDNArgumentData {
@@ -4093,16 +4266,16 @@ export class ModifyDNResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("newRDN", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ModifyDNResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ModifyDNResultData = function (el: asn1.ASN1Element): ModifyDNResultData {
@@ -4178,15 +4351,15 @@ export class ChangePasswordArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: oldPwd COULD_NOT_RESOLVE_TYPE_DEF */,
     /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
 ];
-const _root_component_type_list_2_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ChangePasswordArgumentData = function (el: asn1.ASN1Element): ChangePasswordArgumentData {
@@ -4238,16 +4411,16 @@ export class ChangePasswordResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
     
 ];
-const _root_component_type_list_2_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ChangePasswordResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ChangePasswordResultData = function (el: asn1.ASN1Element): ChangePasswordResultData {
@@ -4316,14 +4489,14 @@ export class AdministerPasswordArgumentData {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
 ];
-const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AdministerPasswordArgumentData = function (el: asn1.ASN1Element): AdministerPasswordArgumentData {
@@ -4370,16 +4543,16 @@ export class AdministerPasswordResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
     
 ];
-const _root_component_type_list_2_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AdministerPasswordResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AdministerPasswordResultData = function (el: asn1.ASN1Element): AdministerPasswordResultData {
@@ -4463,7 +4636,7 @@ export class CommonArgumentsSeq {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -4477,10 +4650,10 @@ const _root_component_type_list_1_spec_for_CommonArgumentsSeq: __utils.Component
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_CommonArgumentsSeq: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_CommonArgumentsSeq = function (el: asn1.ASN1Element): CommonArgumentsSeq {
@@ -4578,12 +4751,12 @@ export class LdapArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     /* FIXME: ldapMessage COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("linkId", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -4597,7 +4770,7 @@ const _root_component_type_list_2_spec_for_LdapArgumentData: __utils.ComponentSp
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_LdapArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_LdapArgumentData = function (el: asn1.ASN1Element): LdapArgumentData {
@@ -4705,17 +4878,17 @@ export class LdapResultData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_LdapResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_LdapResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("ldapMessages", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("returnToClient", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_LdapResultData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_LdapResultData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_LdapResultData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_LdapResultData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_LdapResultData = function (el: asn1.ASN1Element): LdapResultData {
@@ -4799,13 +4972,13 @@ export class LinkedArgumentData {
         readonly familyGrouping: FamilyGrouping | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     /* FIXME: ldapMessage COULD_NOT_RESOLVE_TYPE_DEF */,
     new __utils.ComponentSpec("linkId", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("returnToClient", true, __utils.hasTag(asn1.ASN1TagClass.universal, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("serviceControls", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("requestor", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
@@ -4819,7 +4992,7 @@ const _root_component_type_list_2_spec_for_LinkedArgumentData: __utils.Component
     new __utils.ComponentSpec("operationContexts", true, __utils.hasTag(asn1.ASN1TagClass.context, 20), undefined, undefined),
     new __utils.ComponentSpec("familyGrouping", true, __utils.hasTag(asn1.ASN1TagClass.context, 19), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_LinkedArgumentData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_LinkedArgumentData = function (el: asn1.ASN1Element): LinkedArgumentData {
@@ -4930,7 +5103,8 @@ export const _encode_LinkedResult = __utils._encodeNull;
 export enum AbandonedProblem {
     pagingAbandoned = 0,
 }
-export const pagingAbandoned: AbandonedProblem = 0;
+export const AbandonedProblem_pagingAbandoned: AbandonedProblem = AbandonedProblem.pagingAbandoned; /* LONG_NAMED_ENUMERATED_VALUE */
+export const pagingAbandoned: AbandonedProblem = AbandonedProblem.pagingAbandoned; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_AbandonedProblem = __utils._decodeEnumerated;
 export const _encode_AbandonedProblem = __utils._encodeEnumerated;
 
@@ -4945,16 +5119,16 @@ export class AbandonedData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AbandonedData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AbandonedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", true, __utils.hasTag(asn1.ASN1TagClass.universal, 10), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AbandonedData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AbandonedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AbandonedData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AbandonedData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AbandonedData = function (el: asn1.ASN1Element): AbandonedData {
@@ -5030,17 +5204,17 @@ export class AbandonFailedData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("operation", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AbandonFailedData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AbandonFailedData = function (el: asn1.ASN1Element): AbandonFailedData {
@@ -5125,15 +5299,15 @@ export class AttributeErrorData_problems_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("value", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AttributeErrorData_problems_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AttributeErrorData_problems_Item = function (el: asn1.ASN1Element): AttributeErrorData_problems_Item {
@@ -5186,17 +5360,17 @@ export class AttributeErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("problems", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_AttributeErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_AttributeErrorData = function (el: asn1.ASN1Element): AttributeErrorData {
@@ -5278,17 +5452,17 @@ export class NameErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_NameErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_NameErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("matched", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_NameErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_NameErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_NameErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_NameErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_NameErrorData = function (el: asn1.ASN1Element): NameErrorData {
@@ -5356,16 +5530,16 @@ export class ReferralData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ReferralData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ReferralData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("candidate", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ReferralData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ReferralData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ReferralData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ReferralData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ReferralData = function (el: asn1.ASN1Element): ReferralData {
@@ -5453,14 +5627,14 @@ export class EncPwdInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithms", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("pwdQualityRule", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EncPwdInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EncPwdInfo = function (el: asn1.ASN1Element): EncPwdInfo {
@@ -5510,18 +5684,18 @@ export class SecurityErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("spkmInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("encPwdInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SecurityErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SecurityErrorData = function (el: asn1.ASN1Element): SecurityErrorData {
@@ -5634,16 +5808,16 @@ export class ServiceErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ServiceErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ServiceErrorData = function (el: asn1.ASN1Element): ServiceErrorData {
@@ -5757,17 +5931,17 @@ export class UpdateErrorData {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("problem", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("attributeInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_UpdateErrorData: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_UpdateErrorData = function (el: asn1.ASN1Element): UpdateErrorData {
@@ -5849,15 +6023,15 @@ export class FamilyEntry {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("information", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("family-info", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_FamilyEntry: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_FamilyEntry = function (el: asn1.ASN1Element): FamilyEntry {
@@ -5906,14 +6080,14 @@ export class FamilyEntries {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("family-class", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("familyEntries", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_FamilyEntries: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_FamilyEntries = function (el: asn1.ASN1Element): FamilyEntries {
@@ -5954,15 +6128,15 @@ export class ListResultData_listInfo_subordinates_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined),
     new __utils.ComponentSpec("aliasEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("fromEntry", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ListResultData_listInfo_subordinates_Item = function (el: asn1.ASN1Element): ListResultData_listInfo_subordinates_Item {
@@ -6044,7 +6218,7 @@ export class PartialOutcomeQualifier {
         readonly entryCount: PartialOutcomeQualifier_entryCount | undefined
     ) {}
 }
-const _root_component_type_list_1_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("limitProblem", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("unexplored", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("unavailableCriticalExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
@@ -6054,10 +6228,10 @@ const _root_component_type_list_1_spec_for_PartialOutcomeQualifier: __utils.Comp
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 6), undefined, undefined),
     new __utils.ComponentSpec("entryCount", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_PartialOutcomeQualifier: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_PartialOutcomeQualifier = function (el: asn1.ASN1Element): PartialOutcomeQualifier {
@@ -6128,18 +6302,18 @@ export class ListResultData_listInfo {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("subordinates", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("partialOutcomeQualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ListResultData_listInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ListResultData_listInfo = function (el: asn1.ASN1Element): ListResultData_listInfo {
@@ -6231,19 +6405,19 @@ export class SearchResultData_searchInfo {
         readonly notification: Attribute[] | undefined /* REPLICATED_COMPONENT */
     ) {}
 }
-const _root_component_type_list_1_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("name", true, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("entries", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("partialOutcomeQualifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("altMatching", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("securityParameters", true, __utils.hasTag(asn1.ASN1TagClass.context, 30), undefined, undefined),
     new __utils.ComponentSpec("performer", true, __utils.hasTag(asn1.ASN1TagClass.context, 29), undefined, undefined),
     new __utils.ComponentSpec("aliasDereferenced", true, __utils.hasTag(asn1.ASN1TagClass.context, 28), undefined, undefined),
     new __utils.ComponentSpec("notification", true, __utils.hasTag(asn1.ASN1TagClass.context, 27), undefined, undefined)
 ];
-const _extension_additions_list_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SearchResultData_searchInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SearchResultData_searchInfo = function (el: asn1.ASN1Element): SearchResultData_searchInfo {

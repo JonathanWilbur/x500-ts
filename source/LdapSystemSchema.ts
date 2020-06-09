@@ -10,9 +10,23 @@ import {
     informationFramework,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    directoryAbstractService,
+    id_lat,
+    id_oat,
+    informationFramework,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    DistinguishedName,
+    SYNTAX_NAME,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     DistinguishedName,
     SYNTAX_NAME,
@@ -24,9 +38,27 @@ import * as DirectoryAbstractService from "./DirectoryAbstractService";
 import {
     ub_saslMechanism
 } from "./DirectoryAbstractService";
+export {
+    ub_saslMechanism
+} from "./DirectoryAbstractService";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    directoryString,
+    dn,
+    ia5String,
+    integer,
+    ldapSyntaxDescription,
+    objectIdentifierFirstComponentMatch,
+    oid,
+    UnboundedDirectoryString,
+    DirectoryString,
+    _decode_UnboundedDirectoryString,
+    _encode_UnboundedDirectoryString,
+    _decode_DirectoryString,
+    _encode_DirectoryString
+} from "./SelectedAttributeTypes";
+export {
     directoryString,
     dn,
     ia5String,
@@ -73,14 +105,14 @@ export class LdapSyntaxDescription {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("identifier", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("description", true, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_LdapSyntaxDescription = function (el: asn1.ASN1Element): LdapSyntaxDescription {

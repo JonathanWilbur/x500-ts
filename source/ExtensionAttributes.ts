@@ -11,9 +11,21 @@ import {
     id_ce,
     informationFramework
 } from "./UsefulDefinitions";
+export {
+    attributeCertificateDefinitions,
+    authenticationFramework,
+    certificateExtensions,
+    extensionAttributes,
+    id_ce,
+    informationFramework
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    SYNTAX_NAME
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     SYNTAX_NAME
 } from "./InformationFramework";
@@ -22,9 +34,46 @@ import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
     EXTENSION
 } from "./AuthenticationFramework";
+export {
+    EXTENSION
+} from "./AuthenticationFramework";
 
 import * as CertificateExtensions from "./CertificateExtensions";
 import {
+    aAissuingDistributionPoint,
+    authorityKeyIdentifier,
+    authorizationValidation,
+    baseUpdateTime,
+    basicConstraints,
+    certificateIssuer,
+    certificatePolicies,
+    cRLDistributionPoints,
+    cRLNumber,
+    cRLStreamIdentifier,
+    deltaCRLIndicator,
+    deltaInfo,
+    expiredCertsOnCRL,
+    extKeyUsage,
+    freshestCRL,
+    holdInstructionCode,
+    invalidityDate,
+    issuerAltName,
+    issuingDistributionPoint,
+    keyUsage,
+    nameConstraints,
+    orderedList,
+    policyConstraints,
+    policyMappings,
+    privateKeyUsagePeriod,
+    reasonCode,
+    revokedGroups,
+    statusReferrals,
+    subjectAltName,
+    subjectDirectoryAttributes,
+    subjectKeyIdentifier,
+    toBeRevoked
+} from "./CertificateExtensions";
+export {
     aAissuingDistributionPoint,
     authorityKeyIdentifier,
     authorizationValidation,
@@ -81,6 +130,27 @@ import {
     timeSpecification,
     userNotice
 } from "./AttributeCertificateDefinitions";
+export {
+    acceptableCertPolicies,
+    acceptablePrivilegePolicies,
+    allowedAttributeAssignments,
+    attributeDescriptor,
+    attributeMappings,
+    authorityAttributeIdentifier,
+    basicAttConstraints,
+    delegatedNameConstraints,
+    groupAC,
+    holderNameConstraints,
+    issuedOnBehalfOf,
+    noAssertion,
+    noRevAvail,
+    roleSpecCertIdentifier,
+    singleUse,
+    sOAIdentifier,
+    targetingInformation,
+    timeSpecification,
+    userNotice
+} from "./AttributeCertificateDefinitions";
 
 
 const itu_t: number = 0;
@@ -98,15 +168,15 @@ export class ExtensionAttribute_value_Item {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("mandatory", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("critical", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("ext", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ExtensionAttribute_value_Item = function (el: asn1.ASN1Element): ExtensionAttribute_value_Item {
@@ -155,14 +225,14 @@ export class ExtensionAttribute {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("type", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("value", false, __utils.hasTag(asn1.ASN1TagClass.universal, 17), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ExtensionAttribute = function (el: asn1.ASN1Element): ExtensionAttribute {

@@ -7,9 +7,21 @@ import {
     algorithm,
     authenticationFramework
 } from "./UsefulDefinitions";
+export {
+    algorithm,
+    authenticationFramework
+} from "./UsefulDefinitions";
 
 import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
+    ALGORITHM,
+    SupportedAlgorithms,
+    SupportedCurves,
+    AlgorithmIdentifier,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier
+} from "./AuthenticationFramework";
+export {
     ALGORITHM,
     SupportedAlgorithms,
     SupportedCurves,
@@ -532,15 +544,15 @@ export class DSS_Parms {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("p", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("q", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("g", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DSS_Parms: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DSS_Parms = function (el: asn1.ASN1Element): DSS_Parms {
@@ -593,14 +605,14 @@ export class ValidationParms {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_ValidationParms: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_ValidationParms: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("seed", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined),
     new __utils.ComponentSpec("pgenCounter", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_ValidationParms: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_ValidationParms: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_ValidationParms: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_ValidationParms: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_ValidationParms = function (el: asn1.ASN1Element): ValidationParms {
@@ -643,17 +655,17 @@ export class DomainParameters {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_DomainParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_DomainParameters: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("p", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("g", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("q", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("j", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("validationParms", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_DomainParameters: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_DomainParameters: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_DomainParameters: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_DomainParameters: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_DomainParameters = function (el: asn1.ASN1Element): DomainParameters {

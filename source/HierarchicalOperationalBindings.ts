@@ -10,9 +10,28 @@ import {
     informationFramework,
     opBindingManagement
 } from "./UsefulDefinitions";
+export {
+    directoryOperationalBindingTypes,
+    directoryOSIProtocols,
+    distributedOperations,
+    informationFramework,
+    opBindingManagement
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    DistinguishedName,
+    RelativeDistinguishedName,
+    SupportedAttributes,
+    Attribute,
+    _decode_DistinguishedName,
+    _encode_DistinguishedName,
+    _decode_RelativeDistinguishedName,
+    _encode_RelativeDistinguishedName,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     DistinguishedName,
     RelativeDistinguishedName,
     SupportedAttributes,
@@ -29,9 +48,17 @@ import * as OperationalBindingManagement from "./OperationalBindingManagement";
 import {
     OPERATIONAL_BINDING
 } from "./OperationalBindingManagement";
+export {
+    OPERATIONAL_BINDING
+} from "./OperationalBindingManagement";
 
 import * as DistributedOperations from "./DistributedOperations";
 import {
+    MasterAndShadowAccessPoints,
+    _decode_MasterAndShadowAccessPoints,
+    _encode_MasterAndShadowAccessPoints
+} from "./DistributedOperations";
+export {
     MasterAndShadowAccessPoints,
     _decode_MasterAndShadowAccessPoints,
     _encode_MasterAndShadowAccessPoints
@@ -41,9 +68,16 @@ import * as DirectoryOSIProtocols from "./DirectoryOSIProtocols";
 import {
     directorySystemAC
 } from "./DirectoryOSIProtocols";
+export {
+    directorySystemAC
+} from "./DirectoryOSIProtocols";
 
 import * as DirectoryOperationalBindingTypes from "./DirectoryOperationalBindingTypes";
 import {
+    id_op_binding_hierarchical,
+    id_op_binding_non_specific_hierarchical
+} from "./DirectoryOperationalBindingTypes";
+export {
     id_op_binding_hierarchical,
     id_op_binding_non_specific_hierarchical
 } from "./DirectoryOperationalBindingTypes";
@@ -63,14 +97,14 @@ export class HierarchicalAgreement {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("immediateSuperior", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_HierarchicalAgreement: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_HierarchicalAgreement = function (el: asn1.ASN1Element): HierarchicalAgreement {
@@ -110,14 +144,14 @@ export class SubentryInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("info", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SubentryInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SubentryInfo = function (el: asn1.ASN1Element): SubentryInfo {
@@ -159,16 +193,16 @@ export class SubordinateToSuperior {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("accessPoints", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("alias", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("entryInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("subentries", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SubordinateToSuperior: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SubordinateToSuperior = function (el: asn1.ASN1Element): SubordinateToSuperior {
@@ -223,16 +257,16 @@ export class Vertex {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_Vertex: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_Vertex: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("rdn", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("admPointInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("subentries", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined),
     new __utils.ComponentSpec("accessPoints", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_Vertex: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_Vertex: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_Vertex: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_Vertex: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_Vertex = function (el: asn1.ASN1Element): Vertex {
@@ -291,15 +325,15 @@ export class SuperiorToSubordinate {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("contextPrefixInfo", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("entryInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("immediateSuperiorInfo", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SuperiorToSubordinate: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SuperiorToSubordinate = function (el: asn1.ASN1Element): SuperiorToSubordinate {
@@ -352,13 +386,13 @@ export class NonSpecificHierarchicalAgreement {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("immediateSuperior", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_NonSpecificHierarchicalAgreement: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_NonSpecificHierarchicalAgreement = function (el: asn1.ASN1Element): NonSpecificHierarchicalAgreement {
@@ -398,14 +432,14 @@ export class NHOBSubordinateToSuperior {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("accessPoints", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("subentries", true, __utils.hasTag(asn1.ASN1TagClass.context, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_NHOBSubordinateToSuperior: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_NHOBSubordinateToSuperior = function (el: asn1.ASN1Element): NHOBSubordinateToSuperior {

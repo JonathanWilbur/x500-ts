@@ -11,9 +11,26 @@ import {
     informationFramework,
     selectedAttributeTypes
 } from "./UsefulDefinitions";
+export {
+    attributeCertificateDefinitions,
+    authenticationFramework,
+    certificateExtensions,
+    id_cmsct,
+    informationFramework,
+    selectedAttributeTypes
+} from "./UsefulDefinitions";
 
 import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
+    Name,
+    Attribute,
+    _decode_Name,
+    _encode_Name,
+    _decode_Attribute,
+    _encode_Attribute
+} from "./InformationFramework";
+export {
     ATTRIBUTE,
     Name,
     Attribute,
@@ -66,9 +83,59 @@ import {
     _decode_SIGNATURE,
     _encode_SIGNATURE
 } from "./AuthenticationFramework";
+export {
+    ALGORITHM,
+    Certificate,
+    CertificateList,
+    CertificateSerialNumber,
+    CertAVL,
+    PKCertIdentifier,
+    TBSCertAVL,
+    Version,
+    AvlSerialNumber,
+    PkiPath,
+    SIGNED,
+    AlgorithmIdentifier,
+    ENCRYPTED_HASH,
+    SIGNATURE,
+    _decode_Certificate,
+    _encode_Certificate,
+    _decode_CertificateList,
+    _encode_CertificateList,
+    _decode_CertificateSerialNumber,
+    _encode_CertificateSerialNumber,
+    _decode_CertAVL,
+    _encode_CertAVL,
+    _decode_PKCertIdentifier,
+    _encode_PKCertIdentifier,
+    _decode_TBSCertAVL,
+    _encode_TBSCertAVL,
+    _decode_Version,
+    _encode_Version,
+    _decode_AvlSerialNumber,
+    _encode_AvlSerialNumber,
+    _decode_PkiPath,
+    _encode_PkiPath,
+    _get_decoder_for_SIGNED,
+    _get_encoder_for_SIGNED,
+    _decode_AlgorithmIdentifier,
+    _encode_AlgorithmIdentifier,
+    _get_decoder_for_ENCRYPTED_HASH,
+    _get_encoder_for_ENCRYPTED_HASH,
+    _decode_SIGNATURE,
+    _encode_SIGNATURE
+} from "./AuthenticationFramework";
 
 import * as CertificateExtensions from "./CertificateExtensions";
 import {
+    CRLReason,
+    SubjectKeyIdentifier,
+    _decode_CRLReason,
+    _encode_CRLReason,
+    _decode_SubjectKeyIdentifier,
+    _encode_SubjectKeyIdentifier
+} from "./CertificateExtensions";
+export {
     CRLReason,
     SubjectKeyIdentifier,
     _decode_CRLReason,
@@ -83,9 +150,18 @@ import {
     _decode_AttributeCertificate,
     _encode_AttributeCertificate
 } from "./AttributeCertificateDefinitions";
+export {
+    AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate
+} from "./AttributeCertificateDefinitions";
 
 import * as SelectedAttributeTypes from "./SelectedAttributeTypes";
 import {
+    objectIdentifierMatch,
+    octetStringMatch
+} from "./SelectedAttributeTypes";
+export {
     objectIdentifierMatch,
     octetStringMatch
 } from "./SelectedAttributeTypes";
@@ -112,14 +188,14 @@ export class WrappedPDUInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("pduType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("pduInfo", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_WrappedPDUInfo = function (el: asn1.ASN1Element): WrappedPDUInfo {
@@ -165,15 +241,15 @@ export class SenderStaticInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("issuer", false, __utils.hasAnyTag, undefined, undefined),
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("partyAinfo", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SenderStaticInfo = function (el: asn1.ASN1Element): SenderStaticInfo {
@@ -218,14 +294,14 @@ export class SenderDhPublicKey {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("publicKey", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_SenderDhPublicKey = function (el: asn1.ASN1Element): SenderDhPublicKey {
@@ -279,14 +355,14 @@ export class KeyAgreement_keyEncryptionAlgorithm {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("parameters", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_KeyAgreement_keyEncryptionAlgorithm = function (el: asn1.ASN1Element): KeyAgreement_keyEncryptionAlgorithm {
@@ -326,14 +402,14 @@ export class KeyAgreement {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("senderDhInfo", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("keyEncryptionAlgorithm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_KeyAgreement = function (el: asn1.ASN1Element): KeyAgreement {
@@ -377,14 +453,14 @@ export class EncryptedPduInfo_pduEncryptionAlgorithm {
         readonly parameter: asn1.ASN1Element
     ) {}
 }
-const _root_component_type_list_1_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("algorithm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("parameter", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EncryptedPduInfo_pduEncryptionAlgorithm = function (el: asn1.ASN1Element): EncryptedPduInfo_pduEncryptionAlgorithm {
@@ -430,16 +506,16 @@ export class EncryptedPduInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("pduType", false, __utils.hasTag(asn1.ASN1TagClass.universal, 6), undefined, undefined),
     new __utils.ComponentSpec("encryptedKey", true, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined),
     new __utils.ComponentSpec("pduEncryptionAlgorithm", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("encryptedPdu", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EncryptedPduInfo = function (el: asn1.ASN1Element): EncryptedPduInfo {
@@ -492,14 +568,14 @@ export class EncryptedInfo {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("keyAgreement", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("encryptedPduInfo", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_EncryptedInfo = function (el: asn1.ASN1Element): EncryptedInfo {
@@ -556,17 +632,17 @@ export class TBSPDU_wrapper {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[]
     ) {}
 }
-const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
+export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("version", true, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined),
     new __utils.ComponentSpec("signatureAlgorithm", false, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined),
     new __utils.ComponentSpec("certPath", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
     new __utils.ComponentSpec("signedAttrs", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
     new __utils.ComponentSpec("conf", false, __utils.hasAnyTag, undefined, undefined)
 ];
-const _root_component_type_list_2_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
+export const _root_component_type_list_2_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
     
 ];
-const _extension_additions_list_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
+export const _extension_additions_list_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
     
 ];
 export const _decode_TBSPDU_wrapper = function (el: asn1.ASN1Element): TBSPDU_wrapper {

@@ -4,12 +4,5 @@
 * Copyright Year: 2020
 * License: [MIT License](https://mit-license.org/)
 
-Be sure to correct information in:
-
-- `package.json`
-- `webpack.config.js`
-- `Jenkinsfile` (Specifically, the `url` for the Git repository.)
-- `./test/testpage.html`
-- `Dockerfile`
-- `docker-compose.yaml`
-
+This is based off of the 2016 X.500-series publications. The 2019 versions are
+only for paying ITU members, which I am not.
