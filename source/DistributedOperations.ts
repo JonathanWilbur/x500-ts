@@ -1,7 +1,23 @@
 
-// DistributedOperations
+/*
+    BEGIN_MODULE DistributedOperations
+    OID: joint-iso-itu-t.ds.module.distributedOperations.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     basicAccessControl,
@@ -203,16 +219,9 @@ export {
 } from "./SelectedAttributeTypes";
 
 
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
-
 // TODO: ObjectAssignment: dsaReferral
 
-export type OperationProgress_nameResolutionPhase = asn1.ENUMERATED
+export type OperationProgress_nameResolutionPhase = asn1.ENUMERATED;
 export const OperationProgress_nameResolutionPhase_notStarted: OperationProgress_nameResolutionPhase = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const notStarted: OperationProgress_nameResolutionPhase = OperationProgress_nameResolutionPhase_notStarted; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const OperationProgress_nameResolutionPhase_proceeding: OperationProgress_nameResolutionPhase = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -275,7 +284,7 @@ export const _encode_OperationProgress = function (value: OperationProgress, elG
 };
 
 
-export type ReferenceType = asn1.ENUMERATED
+export type ReferenceType = asn1.ENUMERATED;
 export const ReferenceType_superior: ReferenceType = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const superior: ReferenceType = ReferenceType_superior; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const ReferenceType_subordinate: ReferenceType = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -356,7 +365,7 @@ export const _encode_AccessPoint = function (value: AccessPoint, elGetter: __uti
 };
 
 
-export type MasterOrShadowAccessPoint_category = asn1.ENUMERATED
+export type MasterOrShadowAccessPoint_category = asn1.ENUMERATED;
 export const MasterOrShadowAccessPoint_category_master: MasterOrShadowAccessPoint_category = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const master: MasterOrShadowAccessPoint_category = MasterOrShadowAccessPoint_category_master; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const MasterOrShadowAccessPoint_category_shadow: MasterOrShadowAccessPoint_category = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1235,3 +1244,4 @@ export const _encode_DSABindResult = _encode_DSABindArgument;
 
 // TODO: ObjectAssignment: chainedLinkedLDAP
 
+/* END_MODULE DistributedOperations */

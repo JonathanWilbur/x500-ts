@@ -1,7 +1,23 @@
 
-// CertificateExtensions
+/*
+    BEGIN_MODULE CertificateExtensions
+    OID: joint-iso-itu-t.ds.module.certificateExtensions.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     id_at,
@@ -124,13 +140,6 @@ export {
     _encode_ORAddress
 } from "./PkiPmiExternalDataTypes";
 
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectAssignment: authorityKeyIdentifier
 
@@ -1081,7 +1090,7 @@ export const _encode_StatusReferrals = __utils._encodeSequenceOf<StatusReferral>
 
 // TODO: ObjectAssignment: orderedList
 
-export type OrderedListSyntax = asn1.ENUMERATED
+export type OrderedListSyntax = asn1.ENUMERATED;
 export const OrderedListSyntax_ascSerialNum: OrderedListSyntax = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const ascSerialNum: OrderedListSyntax = OrderedListSyntax_ascSerialNum; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const OrderedListSyntax_ascRevDate: OrderedListSyntax = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1146,7 +1155,7 @@ export const _encode_DeltaInformation = function (value: DeltaInformation, elGet
 
 // TODO: ObjectAssignment: toBeRevoked
 
-export type CRLReason = asn1.ENUMERATED
+export type CRLReason = asn1.ENUMERATED;
 export const CRLReason_unspecified: CRLReason = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const unspecified: CRLReason = CRLReason_unspecified; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CRLReason_keyCompromise: CRLReason = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1897,7 +1906,7 @@ export const _decode_KeyUsage = __utils._decodeBitString;
 export const _encode_KeyUsage = __utils._encodeBitString;
 
 
-export type AltNameType_builtinNameForm = asn1.ENUMERATED
+export type AltNameType_builtinNameForm = asn1.ENUMERATED;
 export const AltNameType_builtinNameForm_rfc822Name: AltNameType_builtinNameForm = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const rfc822Name: AltNameType_builtinNameForm = AltNameType_builtinNameForm_rfc822Name; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AltNameType_builtinNameForm_dNSName: AltNameType_builtinNameForm = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -2806,3 +2815,4 @@ export const id_ldx_algorithmIdentifier: asn1.OBJECT_IDENTIFIER = new asn1.Objec
     7,
 ], id_ldx);
 
+/* END_MODULE CertificateExtensions */

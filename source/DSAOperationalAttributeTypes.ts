@@ -1,4 +1,12 @@
-// DSAOperationalAttributeTypes
+/*
+    BEGIN_MODULE DSAOperationalAttributeTypes
+    OID: joint-iso-itu-t.ds.module.dsaOperationalAttributeTypes.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     AccessPoint,
@@ -48,13 +56,6 @@ export {
     opBindingManagement,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectAssignment: dseType
 
@@ -665,3 +666,5 @@ export const id_kmr_supplierConsumersMatch: asn1.OBJECT_IDENTIFIER = new asn1.Ob
     [3],
     id_kmr
 );
+
+/* END_MODULE DSAOperationalAttributeTypes */

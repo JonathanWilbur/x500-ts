@@ -1,4 +1,12 @@
-// IDMProtocolSpecification
+/*
+    BEGIN_MODULE IDMProtocolSpecification
+    OID: joint-iso-itu-t.ds.module.iDMProtocolSpecification.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     GeneralName,
@@ -30,13 +38,6 @@ export {
     directoryIDMProtocols,
     enhancedSecurity,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectClassAssignment: IDM-PROTOCOL
 
@@ -928,3 +929,5 @@ export const _encode_IDM_PDU = __utils._encode_choice<IDM_PDU>(
     },
     __utils.BER
 );
+
+/* END_MODULE IDMProtocolSpecification */

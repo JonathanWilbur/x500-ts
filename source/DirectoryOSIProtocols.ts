@@ -1,4 +1,12 @@
-// DirectoryOSIProtocols
+/*
+    BEGIN_MODULE DirectoryOSIProtocols
+    OID: joint-iso-itu-t.ds.module.directoryOSIProtocols.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     OSI_PDU,
@@ -6,6 +14,7 @@ import {
     _encode_OSI_PDU,
 } from "./OSIProtocolSpecification";
 import { id_ac, id_as } from "./UsefulDefinitions";
+import { joint_iso_itu_t } from "./__utils";
 export { OPERATION } from "./CommonProtocolSpecification";
 export {
     abandon,
@@ -66,13 +75,6 @@ export {
     opBindingManagement,
     oSIProtocolSpecification,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectClassAssignment: APPLICATION-CONTEXT
 
@@ -182,3 +184,5 @@ export const id_ac_shadowConsumerInitiatedAsynchronousAC: asn1.OBJECT_IDENTIFIER
     [9],
     id_ac
 );
+
+/* END_MODULE DirectoryOSIProtocols */

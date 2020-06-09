@@ -1,4 +1,12 @@
-// SpkmGssTokens
+/*
+    BEGIN_MODULE SpkmGssTokens
+    OID: iso.identified-organization.dod.internet.security.mechanisms.spkm.spkmGssTokens
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     AlgorithmIdentifier,
@@ -24,7 +32,6 @@ export {
     Certificate,
     CertificateList,
     CertificatePair,
-    SupportedAlgorithms,
     Validity,
     _decode_AlgorithmIdentifier,
     _decode_Certificate,
@@ -38,13 +45,6 @@ export {
     _encode_Validity,
 } from "./AuthenticationFramework";
 export { Name, _decode_Name, _encode_Name } from "./InformationFramework";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export type MechType = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
 export const _decode_MechType = __utils._decodeObjectIdentifier;
@@ -2655,3 +2655,5 @@ export const spkm_2: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier([
     /* spkm */ 1,
     /* spkm-2 */ 2,
 ]);
+
+/* END_MODULE SpkmGssTokens */

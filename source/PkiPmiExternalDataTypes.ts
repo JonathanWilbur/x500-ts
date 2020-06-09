@@ -1,4 +1,12 @@
-// PkiPmiExternalDataTypes
+/*
+    BEGIN_MODULE PkiPmiExternalDataTypes
+    OID: joint-iso-itu-t.ds.module.pkiPmiExternalDataTypes.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     GeneralName,
@@ -29,13 +37,6 @@ export {
     intSecurity,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export type DisplayText =
     | { visibleString: asn1.VisibleString }
@@ -2234,3 +2235,5 @@ export const ub_domain_name_length: asn1.INTEGER = 16;
 export const ub_country_name_alpha_length: asn1.INTEGER = 2;
 
 export const ub_country_name_numeric_length: asn1.INTEGER = 3;
+
+/* END_MODULE PkiPmiExternalDataTypes */

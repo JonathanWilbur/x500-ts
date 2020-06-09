@@ -1,4 +1,12 @@
-// ExtensionAttributes
+/*
+    BEGIN_MODULE ExtensionAttributes
+    OID: joint-iso-itu-t.ds.module.extensionAttributes.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import { id_ce } from "./UsefulDefinitions";
 import * as __utils from "./__utils";
@@ -67,13 +75,6 @@ export {
     id_ce,
     informationFramework,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export class ExtensionAttribute_value_Item {
     constructor(
@@ -913,3 +914,5 @@ export const id_asx_authorizationValidation: asn1.OBJECT_IDENTIFIER = new asn1.O
     [70, 2],
     id_ce
 );
+
+/* END_MODULE ExtensionAttributes */

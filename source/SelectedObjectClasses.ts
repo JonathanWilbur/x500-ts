@@ -1,73 +1,14 @@
-// SelectedObjectClasses
+/*
+    BEGIN_MODULE SelectedObjectClasses
+    OID: joint-iso-itu-t.ds.module.selectedObjectClasses.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import { id, id_nf, id_oc } from "./UsefulDefinitions";
-export {
-    authorityRevocationList,
-    cACertificate,
-    certificateRevocationList,
-    crossCertificatePair,
-    deltaRevocationList,
-    supportedAlgorithms,
-    userCertificate,
-    userPassword,
-} from "./AuthenticationFramework";
-export {
-    alias,
-    ATTRIBUTE,
-    NAME_FORM,
-    OBJECT_CLASS,
-    top,
-} from "./InformationFramework";
-export { userPwd } from "./PasswordPolicy";
-export {
-    businessCategory,
-    commonName,
-    contentUrl,
-    countryName,
-    description,
-    destinationIndicator,
-    dmdName,
-    epc,
-    epcInUrn,
-    facsimileTelephoneNumber,
-    internationalISDNNumber,
-    knowledgeInformation,
-    localityName,
-    member,
-    oidC,
-    oidC1,
-    oidC2,
-    organizationalUnitName,
-    organizationName,
-    owner,
-    physicalDeliveryOfficeName,
-    postalAddress,
-    postalCode,
-    postOfficeBox,
-    preferredDeliveryMethod,
-    presentationAddress,
-    registeredAddress,
-    roleOccupant,
-    searchGuide,
-    seeAlso,
-    serialNumber,
-    stateOrProvinceName,
-    streetAddress,
-    supportedApplicationContext,
-    surname,
-    tagAfi,
-    tagLocation,
-    tagOid,
-    telephoneNumber,
-    telexNumber,
-    title,
-    uii,
-    uiiFormat,
-    uiiInUrn,
-    uniqueMember,
-    urnC,
-    x121Address,
-} from "./SelectedAttributeTypes";
 export {
     authenticationFramework,
     certificateExtensions,
@@ -79,13 +20,6 @@ export {
     passwordPolicy,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectSetAssignment: TelecommunicationAttributeSet
 
@@ -451,3 +385,5 @@ export const id_oidArcNf: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
     [6],
     id
 );
+
+/* END_MODULE SelectedObjectClasses */

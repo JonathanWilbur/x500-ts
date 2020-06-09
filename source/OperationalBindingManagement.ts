@@ -1,7 +1,23 @@
 
-// OperationalBindingManagement
+/*
+    BEGIN_MODULE OperationalBindingManagement
+    OID: joint-iso-itu-t.ds.module.opBindingManagement.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     directoryAbstractService,
@@ -112,13 +128,6 @@ export {
     shadowOperationalBinding
 } from "./DirectoryShadowAbstractService";
 
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectAssignment: dSAOperationalBindingManagementBind
 
@@ -975,7 +984,7 @@ export const _encode_TerminateOperationalBindingResult = __utils._encode_choice<
 
 // TODO: ObjectAssignment: operationalBindingError
 
-export type OpBindingErrorParam_problem = asn1.ENUMERATED
+export type OpBindingErrorParam_problem = asn1.ENUMERATED;
 export const OpBindingErrorParam_problem_invalidID: OpBindingErrorParam_problem = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const invalidID: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidID; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const OpBindingErrorParam_problem_duplicateID: OpBindingErrorParam_problem = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1095,3 +1104,4 @@ export const _encode_OpBindingErrorParam = function (value: OpBindingErrorParam,
 };
 
 
+/* END_MODULE OperationalBindingManagement */

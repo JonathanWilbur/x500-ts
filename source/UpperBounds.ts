@@ -1,12 +1,13 @@
-// UpperBounds
+/*
+    BEGIN_MODULE UpperBounds
+    OID: joint-iso-itu-t.ds.module.upperBounds.7
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export const ub_answerback: asn1.INTEGER = 8;
 
@@ -85,3 +86,5 @@ export const ub_title: asn1.INTEGER = 64;
 export const ub_user_password: asn1.INTEGER = 128;
 
 export const ub_x121_address: asn1.INTEGER = 15;
+
+/* END_MODULE UpperBounds */

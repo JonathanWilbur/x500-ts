@@ -1,4 +1,12 @@
-// DirectoryIDMProtocols
+/*
+    BEGIN_MODULE DirectoryIDMProtocols
+    OID: joint-iso-itu-t.ds.module.directoryIDMProtocols.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     IDM_PDU,
@@ -63,13 +71,6 @@ export {
     opBindingManagement,
 } from "./UsefulDefinitions";
 
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
-
 // TODO: ObjectAssignment: dap-ip
 
 export type DAP_IDM_PDUs = IDM_PDU; // DefinedType
@@ -113,3 +114,5 @@ export const id_idm_dop: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
     [3],
     id_idm
 );
+
+/* END_MODULE DirectoryIDMProtocols */

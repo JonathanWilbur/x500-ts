@@ -1,7 +1,23 @@
 
-// AuthenticationFramework
+/*
+    BEGIN_MODULE AuthenticationFramework
+    OID: joint-iso-itu-t.ds.module.authenticationFramework.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     basicAccessControl,
@@ -199,13 +215,6 @@ export {
 } from "./CertificateExtensions";
 
 
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
-
 export type ENCRYPTED<ToBeEnciphered> = asn1.BIT_STRING;
 export const _get_decoder_for_ENCRYPTED = function <ToBeEnciphered>(_decode_ToBeEnciphered: __utils.ASN1Decoder<ToBeEnciphered>) {
 return __utils._decodeBitString
@@ -256,10 +265,10 @@ export const _root_component_type_list_1_spec_for_AlgorithmIdentifier: __utils.C
     new __utils.ComponentSpec("parameters", true, __utils.hasAnyTag, undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_AlgorithmIdentifier: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_AlgorithmIdentifier: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_AlgorithmIdentifier = function (el: asn1.ASN1Element): AlgorithmIdentifier {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -308,10 +317,10 @@ export const _root_component_type_list_1_spec_for_SIGNATURE: __utils.ComponentSp
     new __utils.ComponentSpec("signature", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_SIGNATURE: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_SIGNATURE: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_SIGNATURE = function (el: asn1.ASN1Element): SIGNATURE {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -357,10 +366,10 @@ export const _root_component_type_list_1_spec_for_SIGNED: __utils.ComponentSpec[
     new __utils.ComponentSpec("signature", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_SIGNED: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_SIGNED: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _get_decoder_for_SIGNED = function <ToBeSigned>(_decode_ToBeSigned: __utils.ASN1Decoder<ToBeSigned>) {
 return function (el: asn1.ASN1Element): SIGNED<ToBeSigned> {
@@ -446,10 +455,10 @@ export const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpe
     new __utils.ComponentSpec("notAfter", false, __utils.hasAnyTag, undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_Validity: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_Validity: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_Validity = function (el: asn1.ASN1Element): Validity {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -498,10 +507,10 @@ export const _root_component_type_list_1_spec_for_SubjectPublicKeyInfo: __utils.
     new __utils.ComponentSpec("subjectPublicKey", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_SubjectPublicKeyInfo: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_SubjectPublicKeyInfo: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_SubjectPublicKeyInfo = function (el: asn1.ASN1Element): SubjectPublicKeyInfo {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -547,10 +556,10 @@ export const _root_component_type_list_1_spec_for_Extension: __utils.ComponentSp
     new __utils.ComponentSpec("extnValue", false, __utils.hasTag(asn1.ASN1TagClass.universal, 4), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_Extension: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_Extension: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_Extension = function (el: asn1.ASN1Element): Extension {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -622,7 +631,7 @@ export const _root_component_type_list_1_spec_for_TBSCertificate: __utils.Compon
     new __utils.ComponentSpec("issuerUniqueIdentifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_TBSCertificate: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_TBSCertificate: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("subjectUniqueIdentifier", true, __utils.hasTag(asn1.ASN1TagClass.context, 2), 0, 2),
@@ -724,10 +733,10 @@ export const _root_component_type_list_1_spec_for_Certificates: __utils.Componen
     new __utils.ComponentSpec("certificationPath", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_Certificates: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_Certificates: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_Certificates = function (el: asn1.ASN1Element): Certificates {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -776,10 +785,10 @@ export const _root_component_type_list_1_spec_for_CertificatePair: __utils.Compo
     new __utils.ComponentSpec("issuedByThisCA", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_CertificatePair: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_CertificatePair: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_CertificatePair = function (el: asn1.ASN1Element): CertificatePair {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -828,10 +837,10 @@ export const _root_component_type_list_1_spec_for_CertificationPath: __utils.Com
     new __utils.ComponentSpec("theCACertificates", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_CertificationPath: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_CertificationPath = function (el: asn1.ASN1Element): CertificationPath {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -887,10 +896,10 @@ export const _root_component_type_list_1_spec_for_CertificateListContent_revoked
     new __utils.ComponentSpec("crlEntryExtensions", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_CertificateListContent_revokedCertificates_Item: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_CertificateListContent_revokedCertificates_Item: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_CertificateListContent_revokedCertificates_Item = function (el: asn1.ASN1Element): CertificateListContent_revokedCertificates_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -955,7 +964,7 @@ export const _root_component_type_list_2_spec_for_CertificateListContent: __util
     new __utils.ComponentSpec("crlExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined)
 ];
 export const _extension_additions_list_spec_for_CertificateListContent: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_CertificateListContent = function (el: asn1.ASN1Element): CertificateListContent {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1036,10 +1045,10 @@ export const _root_component_type_list_1_spec_for_IssuerSerialNumber: __utils.Co
     new __utils.ComponentSpec("serialNumber", false, __utils.hasTag(asn1.ASN1TagClass.universal, 2), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_IssuerSerialNumber: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_IssuerSerialNumber: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_IssuerSerialNumber = function (el: asn1.ASN1Element): IssuerSerialNumber {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -1083,10 +1092,10 @@ export const _root_component_type_list_1_spec_for_FINGERPRINT: __utils.Component
     new __utils.ComponentSpec("fingerprint", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_FINGERPRINT: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_FINGERPRINT: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _get_decoder_for_FINGERPRINT = function <ToBeFingerprinted>(_decode_ToBeFingerprinted: __utils.ASN1Decoder<ToBeFingerprinted>) {
 return function <ToBeFingerprinted>(el: asn1.ASN1Element): FINGERPRINT<ToBeFingerprinted> {
@@ -1165,10 +1174,10 @@ export const _root_component_type_list_1_spec_for_ScopeRestriction: __utils.Comp
     new __utils.ComponentSpec("restriction", false, __utils.hasAnyTag, undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_ScopeRestriction: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_ScopeRestriction: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_ScopeRestriction = function (el: asn1.ASN1Element): ScopeRestriction {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -1219,10 +1228,10 @@ export const _root_component_type_list_1_spec_for_TBSCertAVL_entries_Item: __uti
     new __utils.ComponentSpec("entryExtensions", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_TBSCertAVL_entries_Item: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_TBSCertAVL_entries_Item: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_TBSCertAVL_entries_Item = function (el: asn1.ASN1Element): TBSCertAVL_entries_Item {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1287,7 +1296,7 @@ export const _root_component_type_list_2_spec_for_TBSCertAVL: __utils.ComponentS
     new __utils.ComponentSpec("avlExtensions", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 export const _extension_additions_list_spec_for_TBSCertAVL: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_TBSCertAVL = function (el: asn1.ASN1Element): TBSCertAVL {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1406,10 +1415,10 @@ export const _root_component_type_list_1_spec_for_SupportedAlgorithm: __utils.Co
     new __utils.ComponentSpec("intendedCertificatePolicies", true, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_SupportedAlgorithm: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_SupportedAlgorithm: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_SupportedAlgorithm = function (el: asn1.ASN1Element): SupportedAlgorithm {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1475,10 +1484,10 @@ export const _root_component_type_list_1_spec_for_HASH: __utils.ComponentSpec[] 
     new __utils.ComponentSpec("hashValue", false, __utils.hasTag(asn1.ASN1TagClass.universal, 3), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_HASH: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_HASH: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _get_decoder_for_HASH = function <ToBeHashed>(_decode_ToBeHashed: __utils.ASN1Decoder<ToBeHashed>) {
 return function <ToBeHashed>(el: asn1.ASN1Element): HASH<ToBeHashed> {
@@ -1531,10 +1540,10 @@ export const _root_component_type_list_1_spec_for_InfoSyntax_pointer: __utils.Co
     new __utils.ComponentSpec("hash", true, __utils.hasTag(asn1.ASN1TagClass.universal, 16), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_InfoSyntax_pointer: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_InfoSyntax_pointer: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_InfoSyntax_pointer = function (el: asn1.ASN1Element): InfoSyntax_pointer {
     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -1576,8 +1585,12 @@ export type InfoSyntax =
     | { pointer: InfoSyntax_pointer }
     | asn1.ASN1Element;
 export const _decode_InfoSyntax = __utils._decode_extensible_choice<InfoSyntax>({
-    /* NO_TAG_OR_TAG_CLASS */: [ "content", _decode_UnboundedDirectoryString ],
-    "UNIVERSAL 16": [ "pointer", _decode_InfoSyntax_pointer ]
+    "UNIVERSAL 16": [ "pointer", _decode_InfoSyntax_pointer ],
+    "UNIVERSAL 12": [ "content", _decode_UnboundedDirectoryString ], // utf8String
+    "UNIVERSAL 19": [ "content", _decode_UnboundedDirectoryString ], // printableString
+    "UNIVERSAL 20": [ "content", _decode_UnboundedDirectoryString ], // teletexString
+    "UNIVERSAL 28": [ "content", _decode_UnboundedDirectoryString ], // universalString
+    "UNIVERSAL 30": [ "content", _decode_UnboundedDirectoryString ], // bmpString
 });
 export const _encode_InfoSyntax = __utils._encode_choice<InfoSyntax>({
     "content": _encode_UnboundedDirectoryString,
@@ -1597,10 +1610,10 @@ export const _root_component_type_list_1_spec_for_PolicySyntax: __utils.Componen
     new __utils.ComponentSpec("policySyntax", false, __utils.hasAnyTag, undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_PolicySyntax: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _extension_additions_list_spec_for_PolicySyntax: __utils.ComponentSpec[] = [
-    
+
 ];
 export const _decode_PolicySyntax = function (el: asn1.ASN1Element): PolicySyntax {
     const sequence: asn1.ASN1Element[] = el.sequence;
@@ -1740,3 +1753,4 @@ export const id_protRestrict: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier
     1,
 ], id_avr);
 
+/* END_MODULE AuthenticationFramework */

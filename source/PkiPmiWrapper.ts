@@ -1,4 +1,12 @@
-// PkiPmiWrapper
+/*
+    BEGIN_MODULE PkiPmiWrapper
+    OID: joint-iso-itu-t.ds.module.pkiPmiWrapper.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     AttributeCertificate,
@@ -107,13 +115,6 @@ export {
     informationFramework,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectClassAssignment: WRAPPED-PDU
 
@@ -1095,3 +1096,5 @@ export const PkiWaError_decryptionFailed: PkiWaError = 18; /* LONG_NAMED_ENUMERA
 export const decryptionFailed: PkiWaError = PkiWaError_decryptionFailed; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const _decode_PkiWaError = __utils._decodeEnumerated;
 export const _encode_PkiWaError = __utils._encodeEnumerated;
+
+/* END_MODULE PkiPmiWrapper */

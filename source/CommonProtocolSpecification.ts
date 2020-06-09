@@ -1,4 +1,12 @@
-// CommonProtocolSpecification
+/*
+    BEGIN_MODULE CommonProtocolSpecification
+    OID: joint-iso-itu-t.ds.module.commonProtocolSpecification.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
 export {
@@ -7,13 +15,6 @@ export {
     terminateOperationalBinding,
 } from "./OperationalBindingManagement";
 export { opBindingManagement } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export type Code =
     | { local: asn1.INTEGER }
@@ -114,3 +115,5 @@ export const id_err_operationalBindingError: Code = { local: 100 };
 // TODO: ObjectSetAssignment: DOP-Invokable
 
 // TODO: ObjectSetAssignment: DOP-Returnable
+
+/* END_MODULE CommonProtocolSpecification */

@@ -58,6 +58,15 @@ this issue, and hence made the necessary code changes, was `Refinement` in
 `InformationFramework`.
 */
 
+// CONSTANTS
+
+export const itu_t: number = 0;
+export const itu_r: number = 0;
+export const ccitt: number = 0;
+export const iso: number = 1;
+export const joint_iso_itu_t: number = 2;
+export const joint_iso_ccitt: number = 2;
+
 // COMMON
 
 export interface ASN1ElementGetter<T> {

@@ -1,4 +1,12 @@
-// AttributeCertificateDefinitions
+/*
+    BEGIN_MODULE AttributeCertificateDefinitions
+    OID: joint-iso-itu-t.ds.module.attributeCertificateDefinitions.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     AlgorithmIdentifier,
@@ -145,13 +153,6 @@ export {
     pkiPmiExternalDataTypes,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export type AttCertVersion = asn1.INTEGER;
 export const AttCertVersion_v2: AttCertVersion = 1; /* LONG_NAMED_INTEGER_VALUE */
@@ -3319,3 +3320,5 @@ export const id_mr_dualStringMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIden
     [69],
     id_mr
 );
+
+/* END_MODULE AttributeCertificateDefinitions */

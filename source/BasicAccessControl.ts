@@ -1,4 +1,12 @@
-// BasicAccessControl
+/*
+    BEGIN_MODULE BasicAccessControl
+    OID: joint-iso-itu-t.ds.module.basicAccessControl.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import {
     Filter,
@@ -80,13 +88,6 @@ export {
     informationFramework,
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectAssignment: accessControlScheme
 
@@ -1546,3 +1547,5 @@ export const rule_and_simple_access_control: asn1.OBJECT_IDENTIFIER = new asn1.O
     [5],
     id_acScheme
 );
+
+/* END_MODULE BasicAccessControl */

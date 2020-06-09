@@ -1,7 +1,23 @@
 
-// DirectoryAbstractService
+/*
+    BEGIN_MODULE DirectoryAbstractService
+    OID: joint-iso-itu-t.ds.module.directoryAbstractService.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     attributeCertificateDefinitions,
@@ -368,13 +384,6 @@ export {
     _encode_LDAPMessage
 } from "./Lightweight-Directory-Access-Protocol-V3";
 
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 // TODO: ObjectAssignment: family-information
 
@@ -861,7 +870,7 @@ export const _encode_PwdResponseValue_warning = __utils._encode_choice<PwdRespon
 }, __utils.BER);
 
 
-export type PwdResponseValue_error = asn1.ENUMERATED
+export type PwdResponseValue_error = asn1.ENUMERATED;
 export const PwdResponseValue_error_passwordExpired: PwdResponseValue_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const passwordExpired: PwdResponseValue_error = PwdResponseValue_error_passwordExpired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const PwdResponseValue_error_changeAfterReset: PwdResponseValue_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1096,7 +1105,7 @@ export const _encode_ContextSelection = __utils._encode_choice<ContextSelection>
 }, __utils.BER);
 
 
-export type FamilyReturn_memberSelect = asn1.ENUMERATED
+export type FamilyReturn_memberSelect = asn1.ENUMERATED;
 export const FamilyReturn_memberSelect_contributingEntriesOnly: FamilyReturn_memberSelect = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const contributingEntriesOnly: FamilyReturn_memberSelect = FamilyReturn_memberSelect_contributingEntriesOnly; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const FamilyReturn_memberSelect_participatingEntriesOnly: FamilyReturn_memberSelect = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -1533,7 +1542,7 @@ export const _encode_SecurityParameters = function (value: SecurityParameters, e
 };
 
 
-export type FamilyGrouping = asn1.ENUMERATED
+export type FamilyGrouping = asn1.ENUMERATED;
 export const FamilyGrouping_entryOnly: FamilyGrouping = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const entryOnly: FamilyGrouping = FamilyGrouping_entryOnly; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const FamilyGrouping_compoundEntry: FamilyGrouping = 2; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -3067,7 +3076,7 @@ export const _decode_DomainLocalID = _decode_UnboundedDirectoryString;
 export const _encode_DomainLocalID = _encode_UnboundedDirectoryString;
 
 
-export type JoinArgument_joinSubset = asn1.ENUMERATED
+export type JoinArgument_joinSubset = asn1.ENUMERATED;
 export const JoinArgument_joinSubset_baseObject: JoinArgument_joinSubset = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const baseObject: JoinArgument_joinSubset = JoinArgument_joinSubset_baseObject; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const JoinArgument_joinSubset_oneLevel: JoinArgument_joinSubset = 1; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -4353,8 +4362,8 @@ export class ChangePasswordArgumentData {
 }
 export const _root_component_type_list_1_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: oldPwd COULD_NOT_RESOLVE_TYPE_DEF */,
-    /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec("oldPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined),
+    new __utils.ComponentSpec("newPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 2), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_ChangePasswordArgumentData: __utils.ComponentSpec[] = [
     
@@ -4491,7 +4500,7 @@ export class AdministerPasswordArgumentData {
 }
 export const _root_component_type_list_1_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec("object", false, __utils.hasTag(asn1.ASN1TagClass.context, 0), undefined, undefined),
-    /* FIXME: newPwd COULD_NOT_RESOLVE_TYPE_DEF */
+    new __utils.ComponentSpec("newPwd", false, __utils.hasTag(asn1.ASN1TagClass.context, 1), undefined, undefined)
 ];
 export const _root_component_type_list_2_spec_for_AdministerPasswordArgumentData: __utils.ComponentSpec[] = [
     
@@ -6500,3 +6509,4 @@ export const _decode_SearchResult = _get_decoder_for_OPTIONALLY_PROTECTED<Search
 export const _encode_SearchResult = _get_encoder_for_OPTIONALLY_PROTECTED<SearchResultData>(_encode_SearchResultData);
 
 
+/* END_MODULE DirectoryAbstractService */

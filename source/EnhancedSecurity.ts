@@ -1,7 +1,23 @@
 
-// EnhancedSecurity
+/*
+    BEGIN_MODULE EnhancedSecurity
+    OID: joint-iso-itu-t.ds.modules.enhancedSecurity.8
+    IRI: undefined
+    EXTENSIBLE: false
+    ENCODINGREF: undefined
+    FILE: undefined
+    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
+*/
 import * as asn1 from "asn1-ts";
 import * as __utils from "./__utils";
+import {
+    itu_t,
+    itu_r,
+    ccitt,
+    iso,
+    joint_iso_itu_t,
+    joint_iso_ccitt,
+} from "./__utils";
 import * as UsefulDefinitions from "./UsefulDefinitions";
 import {
     authenticationFramework,
@@ -114,13 +130,6 @@ export {
     _encode_KeyIdentifier
 } from "./CertificateExtensions";
 
-
-const itu_t: number = 0;
-const itu_r: number = 0;
-const ccitt: number = 0;
-const iso: number = 1;
-const joint_iso_itu_t: number = 2;
-const joint_iso_ccitt: number = 2;
 
 export type OPTIONALLY_PROTECTED<Type> =
     { unsigned: Type }
@@ -818,3 +827,4 @@ export const id_avc_attributeValueIntegrityInfoContext: asn1.OBJECT_IDENTIFIER =
     4,
 ], id_avc);
 
+/* END_MODULE EnhancedSecurity */
