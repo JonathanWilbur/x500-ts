@@ -49,7 +49,7 @@
         "CRL"
     ],
     "license": "MIT",
-    "main": "./dist/index.js",
+    "main": "./dist/node/index.js",
     "name": "x500-ts",
     "scripts": {
         "benchmark": "node ./test/benchmark.js",
@@ -63,8 +63,8 @@
         "prettify": "npx prettier './source/**/*.ts' --write",
         "test": "npx jest --ci --reporters=default --reporters=jest-junit --coverage"
     },
-    "types": "./dist/index.d.ts",
-    "version": "0.8.0",
+    "types": "./dist/node/index.d.ts",
+    "version": "0.8.1",
     "dependencies": {
         "asn1-ts": "^3.3.0"
     }
