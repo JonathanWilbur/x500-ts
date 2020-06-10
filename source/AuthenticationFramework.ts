@@ -433,9 +433,9 @@ export const v3: Version = Version_v3; /* SHORT_NAMED_INTEGER_VALUE */
 export const _decode_Version = __utils._decodeInteger;
 export const _encode_Version = __utils._encodeInteger;
 
-export type CertificateSerialNumber = asn1.INTEGER;
-export const _decode_CertificateSerialNumber = __utils._decodeInteger;
-export const _encode_CertificateSerialNumber = __utils._encodeInteger;
+export type CertificateSerialNumber = asn1.OCTET_STRING; // This needs to be an OCTET STRING, because it can be large.
+export const _decode_CertificateSerialNumber = __utils._decodeOctetString;
+export const _encode_CertificateSerialNumber = __utils._encodeOctetString;
 
 export type Time =
     | { utcTime: asn1.UTCTime }
