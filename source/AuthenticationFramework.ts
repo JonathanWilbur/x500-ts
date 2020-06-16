@@ -497,7 +497,7 @@ export function _encode_Version(
     return _cached_encoder_for_Version(value, elGetter);
 }
 
-export type CertificateSerialNumber = asn1.INTEGER;
+export type CertificateSerialNumber = asn1.OCTET_STRING;
 let _cached_decoder_for_CertificateSerialNumber: __utils.ASN1Decoder<
     CertificateSerialNumber
 > | null = null;
@@ -506,7 +506,7 @@ let _cached_encoder_for_CertificateSerialNumber: __utils.ASN1Encoder<
 > | null = null;
 export function _decode_CertificateSerialNumber(el: asn1.ASN1Element) {
     if (!_cached_decoder_for_CertificateSerialNumber) {
-        _cached_decoder_for_CertificateSerialNumber = __utils._decodeInteger;
+        _cached_decoder_for_CertificateSerialNumber = __utils._decodeBigInt;
     }
     return _cached_decoder_for_CertificateSerialNumber(el);
 }
@@ -515,7 +515,7 @@ export function _encode_CertificateSerialNumber(
     elGetter: __utils.ASN1Encoder<CertificateSerialNumber>
 ) {
     if (!_cached_encoder_for_CertificateSerialNumber) {
-        _cached_encoder_for_CertificateSerialNumber = __utils._encodeInteger;
+        _cached_encoder_for_CertificateSerialNumber = __utils._encodeBigInt;
     }
     return _cached_encoder_for_CertificateSerialNumber(value, elGetter);
 }
@@ -2008,7 +2008,7 @@ export function _encode_CertificateList(
     return _cached_encoder_for_CertificateList(value, elGetter);
 }
 
-export type AvlSerialNumber = asn1.INTEGER;
+export type AvlSerialNumber = asn1.OCTET_STRING;
 let _cached_decoder_for_AvlSerialNumber: __utils.ASN1Decoder<
     AvlSerialNumber
 > | null = null;
@@ -2017,7 +2017,7 @@ let _cached_encoder_for_AvlSerialNumber: __utils.ASN1Encoder<
 > | null = null;
 export function _decode_AvlSerialNumber(el: asn1.ASN1Element) {
     if (!_cached_decoder_for_AvlSerialNumber) {
-        _cached_decoder_for_AvlSerialNumber = __utils._decodeInteger;
+        _cached_decoder_for_AvlSerialNumber = __utils._decodeBigInt;
     }
     return _cached_decoder_for_AvlSerialNumber(el);
 }
@@ -2026,7 +2026,7 @@ export function _encode_AvlSerialNumber(
     elGetter: __utils.ASN1Encoder<AvlSerialNumber>
 ) {
     if (!_cached_encoder_for_AvlSerialNumber) {
-        _cached_encoder_for_AvlSerialNumber = __utils._encodeInteger;
+        _cached_encoder_for_AvlSerialNumber = __utils._encodeBigInt;
     }
     return _cached_encoder_for_AvlSerialNumber(value, elGetter);
 }

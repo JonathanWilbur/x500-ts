@@ -1472,3 +1472,20 @@ export function _encodeSetOf<T>(
         return el;
     };
 }
+
+export const _encodeBigInt: ASN1Encoder<OCTET_STRING> = (
+    value: OCTET_STRING,
+    elGetter: ASN1Encoder<OCTET_STRING>
+) => {
+    const el: ASN1Element = elGetter(value, elGetter);
+    el.octetString = value;
+    el.tagClass = ASN1TagClass.universal;
+    el.tagNumber = ASN1UniversalType.integer;
+    return el;
+};
+
+export const _decodeBigInt: ASN1Decoder<OCTET_STRING> = (
+    el: ASN1Element
+): OCTET_STRING => {
+    return el.octetString;
+};

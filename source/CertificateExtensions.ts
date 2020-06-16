@@ -1577,9 +1577,9 @@ export function _encode_ReasonFlags(
 
 export class NumberRange {
     constructor(
-        readonly startingNumber: asn1.INTEGER | undefined,
-        readonly endingNumber: asn1.INTEGER | undefined,
-        readonly modulus: asn1.INTEGER | undefined,
+        readonly startingNumber: asn1.OCTET_STRING | undefined,
+        readonly endingNumber: asn1.OCTET_STRING | undefined,
+        readonly modulus: asn1.OCTET_STRING | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
 }
@@ -1620,25 +1620,25 @@ export function _decode_NumberRange(el: asn1.ASN1Element) {
             el: asn1.ASN1Element
         ): NumberRange {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let startingNumber: asn1.OPTIONAL<asn1.INTEGER>;
-            let endingNumber: asn1.OPTIONAL<asn1.INTEGER>;
-            let modulus: asn1.OPTIONAL<asn1.INTEGER>;
+            let startingNumber: asn1.OPTIONAL<asn1.OCTET_STRING>;
+            let endingNumber: asn1.OPTIONAL<asn1.OCTET_STRING>;
+            let modulus: asn1.OPTIONAL<asn1.OCTET_STRING>;
             let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
             const callbacks: __utils.DecodingMap = {
                 startingNumber: (_el: asn1.ASN1Element): void => {
-                    startingNumber = __utils._decode_implicit<asn1.INTEGER>(
-                        () => __utils._decodeInteger
+                    startingNumber = __utils._decode_implicit<asn1.OCTET_STRING>(
+                        () => __utils._decodeBigInt
                     )(_el);
                 },
                 endingNumber: (_el: asn1.ASN1Element): void => {
-                    endingNumber = __utils._decode_implicit<asn1.INTEGER>(
-                        () => __utils._decodeInteger
+                    endingNumber = __utils._decode_implicit<asn1.OCTET_STRING>(
+                        () => __utils._decodeBigInt
                     )(_el);
                 },
                 modulus: (_el: asn1.ASN1Element): void => {
-                    modulus = __utils._decodeInteger(_el);
+                    modulus = __utils._decodeBigInt(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -1680,7 +1680,7 @@ export function _encode_NumberRange(
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       0,
-                                      () => __utils._encodeInteger,
+                                      () => __utils._encodeOctetString,
                                       __utils.BER
                                   )(value.startingNumber, __utils.BER),
                             /* IF_ABSENT  */ value.endingNumber === undefined
@@ -1688,12 +1688,12 @@ export function _encode_NumberRange(
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
-                                      () => __utils._encodeInteger,
+                                      () => __utils._encodeOctetString,
                                       __utils.BER
                                   )(value.endingNumber, __utils.BER),
                             /* IF_ABSENT  */ value.modulus === undefined
                                 ? undefined
-                                : __utils._encodeInteger(
+                                : __utils._encodeOctetString(
                                       value.modulus,
                                       __utils.BER
                                   ),
@@ -1712,7 +1712,7 @@ export function _encode_NumberRange(
     return _cached_encoder_for_NumberRange(value, elGetter);
 }
 
-export type CRLStreamIdentifier = asn1.INTEGER;
+export type CRLStreamIdentifier = asn1.OCTET_STRING;
 let _cached_decoder_for_CRLStreamIdentifier: __utils.ASN1Decoder<
     CRLStreamIdentifier
 > | null = null;
@@ -1721,7 +1721,7 @@ let _cached_encoder_for_CRLStreamIdentifier: __utils.ASN1Encoder<
 > | null = null;
 export function _decode_CRLStreamIdentifier(el: asn1.ASN1Element) {
     if (!_cached_decoder_for_CRLStreamIdentifier) {
-        _cached_decoder_for_CRLStreamIdentifier = __utils._decodeInteger;
+        _cached_decoder_for_CRLStreamIdentifier = __utils._decodeOctetString;
     }
     return _cached_decoder_for_CRLStreamIdentifier(el);
 }
@@ -1730,7 +1730,7 @@ export function _encode_CRLStreamIdentifier(
     elGetter: __utils.ASN1Encoder<CRLStreamIdentifier>
 ) {
     if (!_cached_encoder_for_CRLStreamIdentifier) {
-        _cached_encoder_for_CRLStreamIdentifier = __utils._encodeInteger;
+        _cached_encoder_for_CRLStreamIdentifier = __utils._encodeOctetString;
     }
     return _cached_encoder_for_CRLStreamIdentifier(value, elGetter);
 }
