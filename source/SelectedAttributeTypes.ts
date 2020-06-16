@@ -66,8 +66,45 @@ export {
 export {
     FilterItem,
     HierarchySelections,
+    HierarchySelections_all as all /* IMPORTED_BIT */,
+    HierarchySelections_children as children /* IMPORTED_BIT */,
+    HierarchySelections_hierarchy as hierarchy /* IMPORTED_BIT */,
+    HierarchySelections_parent as parent /* IMPORTED_BIT */,
+    HierarchySelections_self as self /* IMPORTED_BIT */,
+    HierarchySelections_siblingChildren as siblingChildren /* IMPORTED_BIT */,
+    HierarchySelections_siblings as siblings /* IMPORTED_BIT */,
+    HierarchySelections_siblingSubtree as siblingSubtree /* IMPORTED_BIT */,
+    HierarchySelections_subtree as subtree /* IMPORTED_BIT */,
+    HierarchySelections_top as top /* IMPORTED_BIT */,
     SearchControlOptions,
+    SearchControlOptions_checkOverspecified as checkOverspecified /* IMPORTED_BIT */,
+    SearchControlOptions_dnAttribute as dnAttribute /* IMPORTED_BIT */,
+    SearchControlOptions_entryCount as entryCount /* IMPORTED_BIT */,
+    SearchControlOptions_includeAllAreas as includeAllAreas /* IMPORTED_BIT */,
+    SearchControlOptions_matchedValuesOnly as matchedValuesOnly /* IMPORTED_BIT */,
+    SearchControlOptions_matchOnResidualName as matchOnResidualName /* IMPORTED_BIT */,
+    SearchControlOptions_noSystemRelaxation as noSystemRelaxation /* IMPORTED_BIT */,
+    SearchControlOptions_performExactly as performExactly /* IMPORTED_BIT */,
+    SearchControlOptions_searchAliases as searchAliases /* IMPORTED_BIT */,
+    SearchControlOptions_searchFamily as searchFamily /* IMPORTED_BIT */,
+    SearchControlOptions_separateFamilyMembers as separateFamilyMembers /* IMPORTED_BIT */,
+    SearchControlOptions_useSubset as useSubset /* IMPORTED_BIT */,
     ServiceControlOptions,
+    ServiceControlOptions_allowWriteableCopy as allowWriteableCopy /* IMPORTED_BIT */,
+    ServiceControlOptions_chainingProhibited as chainingProhibited /* IMPORTED_BIT */,
+    ServiceControlOptions_copyShallDo as copyShallDo /* IMPORTED_BIT */,
+    ServiceControlOptions_countFamily as countFamily /* IMPORTED_BIT */,
+    ServiceControlOptions_dontDereferenceAliases as dontDereferenceAliases /* IMPORTED_BIT */,
+    ServiceControlOptions_dontMatchFriends as dontMatchFriends /* IMPORTED_BIT */,
+    ServiceControlOptions_dontSelectFriends as dontSelectFriends /* IMPORTED_BIT */,
+    ServiceControlOptions_dontUseCopy as dontUseCopy /* IMPORTED_BIT */,
+    ServiceControlOptions_localScope as localScope /* IMPORTED_BIT */,
+    ServiceControlOptions_manageDSAIT as manageDSAIT /* IMPORTED_BIT */,
+    ServiceControlOptions_noSubtypeMatch as noSubtypeMatch /* IMPORTED_BIT */,
+    ServiceControlOptions_noSubtypeSelection as noSubtypeSelection /* IMPORTED_BIT */,
+    ServiceControlOptions_partialNameResolution as partialNameResolution /* IMPORTED_BIT */,
+    ServiceControlOptions_preferChaining as preferChaining /* IMPORTED_BIT */,
+    ServiceControlOptions_subentries as subentries /* IMPORTED_BIT */,
     _decode_FilterItem,
     _decode_HierarchySelections,
     _decode_SearchControlOptions,
@@ -100,6 +137,9 @@ export {
 export {
     PwdAlphabet,
     PwdVocabulary,
+    PwdVocabulary_noDictionaryWords as noDictionaryWords /* IMPORTED_BIT */,
+    PwdVocabulary_noGeographicalNames as noGeographicalNames /* IMPORTED_BIT */,
+    PwdVocabulary_noPersonNames as noPersonNames /* IMPORTED_BIT */,
     UserPwd,
     _decode_PwdAlphabet,
     _decode_PwdVocabulary,
@@ -110,6 +150,30 @@ export {
 } from "./PasswordPolicy";
 export {
     G3FacsimileNonBasicParameters,
+    G3FacsimileNonBasicParameters_a3_width as a3_width /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_b4_length as b4_length /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_b4_width as b4_width /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_bft as bft /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_character_mode as character_mode /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_dtm as dtm /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_edi as edi /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_fine_resolution as fine_resolution /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_full_colour as full_colour /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_jpeg as jpeg /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_mixed_mode as mixed_mode /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_preferred_huffmann as preferred_huffmann /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_processable_mode_26 as processable_mode_26 /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_resolution_300x300 as resolution_300x300 /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_resolution_400x400 as resolution_400x400 /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_resolution_8x15 as resolution_8x15 /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_resolution_type as resolution_type /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_t6_coding as t6_coding /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_twelve_bits as twelve_bits /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_two_dimensional as two_dimensional /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_uncompressed as uncompressed /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_unlimited_length as unlimited_length /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_width_middle_1216_of_1728 as width_middle_1216_of_1728 /* IMPORTED_BIT */,
+    G3FacsimileNonBasicParameters_width_middle_864_of_1728 as width_middle_864_of_1728 /* IMPORTED_BIT */,
     _decode_G3FacsimileNonBasicParameters,
     _encode_G3FacsimileNonBasicParameters,
 } from "./PkiPmiExternalDataTypes";
@@ -170,30 +234,51 @@ export {
 } from "./UsefulDefinitions";
 
 export type DirectoryString =
-    | { teletexString: asn1.TeletexString }
-    | { printableString: asn1.PrintableString }
-    | { bmpString: asn1.BMPString }
-    | { universalString: asn1.UniversalString }
-    | { uTF8String: asn1.UTF8String };
-export const _decode_DirectoryString = __utils._decode_inextensible_choice<
+    | { teletexString: asn1.TeletexString } /* CHOICE_ALT_ROOT */
+    | { printableString: asn1.PrintableString } /* CHOICE_ALT_ROOT */
+    | { bmpString: asn1.BMPString } /* CHOICE_ALT_ROOT */
+    | { universalString: asn1.UniversalString } /* CHOICE_ALT_ROOT */
+    | { uTF8String: asn1.UTF8String } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_DirectoryString: __utils.ASN1Decoder<
     DirectoryString
->({
-    "UNIVERSAL 20": ["teletexString", __utils._decodeTeletexString],
-    "UNIVERSAL 19": ["printableString", __utils._decodePrintableString],
-    "UNIVERSAL 30": ["bmpString", __utils._decodeBMPString],
-    "UNIVERSAL 28": ["universalString", __utils._decodeUniversalString],
-    "UNIVERSAL 12": ["uTF8String", __utils._decodeUTF8String],
-});
-export const _encode_DirectoryString = __utils._encode_choice<DirectoryString>(
-    {
-        teletexString: __utils._encodeTeletexString,
-        printableString: __utils._encodePrintableString,
-        bmpString: __utils._encodeBMPString,
-        universalString: __utils._encodeUniversalString,
-        uTF8String: __utils._encodeUTF8String,
-    },
-    __utils.BER
-);
+> | null = null;
+let _cached_encoder_for_DirectoryString: __utils.ASN1Encoder<
+    DirectoryString
+> | null = null;
+export function _decode_DirectoryString(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_DirectoryString) {
+        _cached_decoder_for_DirectoryString = __utils._decode_inextensible_choice<
+            DirectoryString
+        >({
+            "UNIVERSAL 20": ["teletexString", __utils._decodeTeletexString],
+            "UNIVERSAL 19": ["printableString", __utils._decodePrintableString],
+            "UNIVERSAL 30": ["bmpString", __utils._decodeBMPString],
+            "UNIVERSAL 28": ["universalString", __utils._decodeUniversalString],
+            "UNIVERSAL 12": ["uTF8String", __utils._decodeUTF8String],
+        });
+    }
+    return _cached_decoder_for_DirectoryString(el);
+}
+export function _encode_DirectoryString(
+    value: DirectoryString,
+    elGetter: __utils.ASN1Encoder<DirectoryString>
+) {
+    if (!_cached_encoder_for_DirectoryString) {
+        _cached_encoder_for_DirectoryString = __utils._encode_choice<
+            DirectoryString
+        >(
+            {
+                teletexString: __utils._encodeTeletexString,
+                printableString: __utils._encodePrintableString,
+                bmpString: __utils._encodeBMPString,
+                universalString: __utils._encodeUniversalString,
+                uTF8String: __utils._encodeUTF8String,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_DirectoryString(value, elGetter);
+}
 
 // TODO: ObjectAssignment: knowledgeInformation
 
@@ -220,8 +305,20 @@ export const _encode_DirectoryString = __utils._encode_choice<DirectoryString>(
 // TODO: ObjectAssignment: uUIDPair
 
 export type UUID = asn1.OCTET_STRING; // OctetStringType
-export const _decode_UUID = __utils._decodeOctetString;
-export const _encode_UUID = __utils._encodeOctetString;
+let _cached_decoder_for_UUID: __utils.ASN1Decoder<UUID> | null = null;
+let _cached_encoder_for_UUID: __utils.ASN1Encoder<UUID> | null = null;
+export function _decode_UUID(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UUID) {
+        _cached_decoder_for_UUID = __utils._decodeOctetString;
+    }
+    return _cached_decoder_for_UUID(el);
+}
+export function _encode_UUID(value: UUID, elGetter: __utils.ASN1Encoder<UUID>) {
+    if (!_cached_encoder_for_UUID) {
+        _cached_encoder_for_UUID = __utils._encodeOctetString;
+    }
+    return _cached_encoder_for_UUID(value, elGetter);
+}
 
 export class UUIDPair {
     constructor(
@@ -248,53 +345,69 @@ export const _root_component_type_list_1_spec_for_UUIDPair: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_UUIDPair: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UUIDPair: __utils.ComponentSpec[] = [];
-
-export const _decode_UUIDPair = function (el: asn1.ASN1Element): UUIDPair {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "UUIDPair contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_UUIDPair: __utils.ASN1Decoder<UUIDPair> | null = null;
+let _cached_encoder_for_UUIDPair: __utils.ASN1Encoder<UUIDPair> | null = null;
+export function _decode_UUIDPair(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UUIDPair) {
+        _cached_decoder_for_UUIDPair = function (
+            el: asn1.ASN1Element
+        ): UUIDPair {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "UUIDPair contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "issuerUUID";
+            sequence[1].name = "subjectUUID";
+            let issuerUUID!: UUID;
+            let subjectUUID!: UUID;
+            issuerUUID = _decode_UUID(sequence[0]);
+            subjectUUID = _decode_UUID(sequence[1]);
+            // TODO: Validate values.
+            return new UUIDPair(issuerUUID, subjectUUID, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "issuerUUID";
-    sequence[1].name = "subjectUUID";
-    let issuerUUID!: UUID;
-    let subjectUUID!: UUID;
-    issuerUUID = _decode_UUID(sequence[0]);
-    subjectUUID = _decode_UUID(sequence[1]);
-    // TODO: Validate values.
-    return new UUIDPair(issuerUUID, subjectUUID, sequence.slice(2));
-};
-export const _encode_UUIDPair = function (
+    return _cached_decoder_for_UUIDPair(el);
+}
+export function _encode_UUIDPair(
     value: UUIDPair,
     elGetter: __utils.ASN1Encoder<UUIDPair>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_UUID(
-                        value.issuerUUID,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_UUID(
-                        value.subjectUUID,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UUIDPair) {
+        _cached_encoder_for_UUIDPair = function (
+            value: UUIDPair,
+            elGetter: __utils.ASN1Encoder<UUIDPair>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_UUID(
+                                value.issuerUUID,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_UUID(
+                                value.subjectUUID,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UUIDPair(value, elGetter);
+}
 
 // TODO: ObjectAssignment: uri
 
@@ -305,26 +418,102 @@ export const _encode_UUIDPair = function (
 // TODO: ObjectAssignment: dnsName
 
 export type DomainName = asn1.UTF8String; // UTF8String
-export const _decode_DomainName = __utils._decodeUTF8String;
-export const _encode_DomainName = __utils._encodeUTF8String;
+let _cached_decoder_for_DomainName: __utils.ASN1Decoder<
+    DomainName
+> | null = null;
+let _cached_encoder_for_DomainName: __utils.ASN1Encoder<
+    DomainName
+> | null = null;
+export function _decode_DomainName(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_DomainName) {
+        _cached_decoder_for_DomainName = __utils._decodeUTF8String;
+    }
+    return _cached_decoder_for_DomainName(el);
+}
+export function _encode_DomainName(
+    value: DomainName,
+    elGetter: __utils.ASN1Encoder<DomainName>
+) {
+    if (!_cached_encoder_for_DomainName) {
+        _cached_encoder_for_DomainName = __utils._encodeUTF8String;
+    }
+    return _cached_encoder_for_DomainName(value, elGetter);
+}
 
 // TODO: ObjectAssignment: countryName
 
 export type CountryName = asn1.PrintableString; // PrintableString
-export const _decode_CountryName = __utils._decodePrintableString;
-export const _encode_CountryName = __utils._encodePrintableString;
+let _cached_decoder_for_CountryName: __utils.ASN1Decoder<
+    CountryName
+> | null = null;
+let _cached_encoder_for_CountryName: __utils.ASN1Encoder<
+    CountryName
+> | null = null;
+export function _decode_CountryName(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CountryName) {
+        _cached_decoder_for_CountryName = __utils._decodePrintableString;
+    }
+    return _cached_decoder_for_CountryName(el);
+}
+export function _encode_CountryName(
+    value: CountryName,
+    elGetter: __utils.ASN1Encoder<CountryName>
+) {
+    if (!_cached_encoder_for_CountryName) {
+        _cached_encoder_for_CountryName = __utils._encodePrintableString;
+    }
+    return _cached_encoder_for_CountryName(value, elGetter);
+}
 
 // TODO: ObjectAssignment: countryCode3c
 
 export type CountryCode3c = asn1.PrintableString; // PrintableString
-export const _decode_CountryCode3c = __utils._decodePrintableString;
-export const _encode_CountryCode3c = __utils._encodePrintableString;
+let _cached_decoder_for_CountryCode3c: __utils.ASN1Decoder<
+    CountryCode3c
+> | null = null;
+let _cached_encoder_for_CountryCode3c: __utils.ASN1Encoder<
+    CountryCode3c
+> | null = null;
+export function _decode_CountryCode3c(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CountryCode3c) {
+        _cached_decoder_for_CountryCode3c = __utils._decodePrintableString;
+    }
+    return _cached_decoder_for_CountryCode3c(el);
+}
+export function _encode_CountryCode3c(
+    value: CountryCode3c,
+    elGetter: __utils.ASN1Encoder<CountryCode3c>
+) {
+    if (!_cached_encoder_for_CountryCode3c) {
+        _cached_encoder_for_CountryCode3c = __utils._encodePrintableString;
+    }
+    return _cached_encoder_for_CountryCode3c(value, elGetter);
+}
 
 // TODO: ObjectAssignment: countryCode3n
 
 export type CountryCode3n = asn1.NumericString; // NumericString
-export const _decode_CountryCode3n = __utils._decodeNumericString;
-export const _encode_CountryCode3n = __utils._encodeNumericString;
+let _cached_decoder_for_CountryCode3n: __utils.ASN1Decoder<
+    CountryCode3n
+> | null = null;
+let _cached_encoder_for_CountryCode3n: __utils.ASN1Encoder<
+    CountryCode3n
+> | null = null;
+export function _decode_CountryCode3n(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CountryCode3n) {
+        _cached_decoder_for_CountryCode3n = __utils._decodeNumericString;
+    }
+    return _cached_decoder_for_CountryCode3n(el);
+}
+export function _encode_CountryCode3n(
+    value: CountryCode3n,
+    elGetter: __utils.ASN1Encoder<CountryCode3n>
+) {
+    if (!_cached_encoder_for_CountryCode3n) {
+        _cached_encoder_for_CountryCode3n = __utils._encodeNumericString;
+    }
+    return _cached_encoder_for_CountryCode3n(value, elGetter);
+}
 
 // TODO: ObjectAssignment: localityName
 
@@ -374,57 +563,75 @@ export const _root_component_type_list_1_spec_for_UtmCoordinates: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UtmCoordinates: __utils.ComponentSpec[] = [];
-
-export const _decode_UtmCoordinates = function (
-    el: asn1.ASN1Element
-): UtmCoordinates {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 3) {
-        throw new asn1.ASN1ConstructionError(
-            "UtmCoordinates contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_UtmCoordinates: __utils.ASN1Decoder<
+    UtmCoordinates
+> | null = null;
+let _cached_encoder_for_UtmCoordinates: __utils.ASN1Encoder<
+    UtmCoordinates
+> | null = null;
+export function _decode_UtmCoordinates(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UtmCoordinates) {
+        _cached_decoder_for_UtmCoordinates = function (
+            el: asn1.ASN1Element
+        ): UtmCoordinates {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 3) {
+                throw new asn1.ASN1ConstructionError(
+                    "UtmCoordinates contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "zone";
+            sequence[1].name = "easting";
+            sequence[2].name = "northing";
+            let zone!: asn1.PrintableString;
+            let easting!: asn1.NumericString;
+            let northing!: asn1.NumericString;
+            zone = __utils._decodePrintableString(sequence[0]);
+            easting = __utils._decodeNumericString(sequence[1]);
+            northing = __utils._decodeNumericString(sequence[2]);
+            // TODO: Validate values.
+            return new UtmCoordinates(zone, easting, northing);
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "zone";
-    sequence[1].name = "easting";
-    sequence[2].name = "northing";
-    let zone!: asn1.PrintableString;
-    let easting!: asn1.NumericString;
-    let northing!: asn1.NumericString;
-    zone = __utils._decodePrintableString(sequence[0]);
-    easting = __utils._decodeNumericString(sequence[1]);
-    northing = __utils._decodeNumericString(sequence[2]);
-    // TODO: Validate values.
-    return new UtmCoordinates(zone, easting, northing);
-};
-export const _encode_UtmCoordinates = function (
+    return _cached_decoder_for_UtmCoordinates(el);
+}
+export function _encode_UtmCoordinates(
     value: UtmCoordinates,
     elGetter: __utils.ASN1Encoder<UtmCoordinates>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* REQUIRED   */ __utils._encodePrintableString(
-                    value.zone,
-                    __utils.BER
-                ),
-                /* REQUIRED   */ __utils._encodeNumericString(
-                    value.easting,
-                    __utils.BER
-                ),
-                /* REQUIRED   */ __utils._encodeNumericString(
-                    value.northing,
-                    __utils.BER
-                ),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UtmCoordinates) {
+        _cached_encoder_for_UtmCoordinates = function (
+            value: UtmCoordinates,
+            elGetter: __utils.ASN1Encoder<UtmCoordinates>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ __utils._encodePrintableString(
+                            value.zone,
+                            __utils.BER
+                        ),
+                        /* REQUIRED   */ __utils._encodeNumericString(
+                            value.easting,
+                            __utils.BER
+                        ),
+                        /* REQUIRED   */ __utils._encodeNumericString(
+                            value.northing,
+                            __utils.BER
+                        ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UtmCoordinates(value, elGetter);
+}
 
 // TODO: ObjectAssignment: organizationName
 
@@ -443,138 +650,186 @@ export const _encode_UtmCoordinates = function (
 // TODO: ObjectAssignment: searchGuide
 
 export type CriteriaItem =
-    | { equality: AttributeType }
-    | { substrings: AttributeType }
-    | { greaterOrEqual: AttributeType }
-    | { lessOrEqual: AttributeType }
-    | { approximateMatch: AttributeType }
-    | asn1.ASN1Element;
-export const _decode_CriteriaItem = __utils._decode_extensible_choice<
+    | { equality: AttributeType } /* CHOICE_ALT_ROOT */
+    | { substrings: AttributeType } /* CHOICE_ALT_ROOT */
+    | { greaterOrEqual: AttributeType } /* CHOICE_ALT_ROOT */
+    | { lessOrEqual: AttributeType } /* CHOICE_ALT_ROOT */
+    | { approximateMatch: AttributeType } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_CriteriaItem: __utils.ASN1Decoder<
     CriteriaItem
->({
-    "CONTEXT 0": [
-        "equality",
-        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
-    ],
-    "CONTEXT 1": [
-        "substrings",
-        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
-    ],
-    "CONTEXT 2": [
-        "greaterOrEqual",
-        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
-    ],
-    "CONTEXT 3": [
-        "lessOrEqual",
-        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
-    ],
-    "CONTEXT 4": [
-        "approximateMatch",
-        __utils._decode_explicit<AttributeType>(() => _decode_AttributeType),
-    ],
-});
-export const _encode_CriteriaItem = __utils._encode_choice<CriteriaItem>(
-    {
-        equality: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_AttributeType,
+> | null = null;
+let _cached_encoder_for_CriteriaItem: __utils.ASN1Encoder<
+    CriteriaItem
+> | null = null;
+export function _decode_CriteriaItem(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CriteriaItem) {
+        _cached_decoder_for_CriteriaItem = __utils._decode_extensible_choice<
+            CriteriaItem
+        >({
+            "CONTEXT 0": [
+                "equality",
+                __utils._decode_explicit<AttributeType>(
+                    () => _decode_AttributeType
+                ),
+            ],
+            "CONTEXT 1": [
+                "substrings",
+                __utils._decode_explicit<AttributeType>(
+                    () => _decode_AttributeType
+                ),
+            ],
+            "CONTEXT 2": [
+                "greaterOrEqual",
+                __utils._decode_explicit<AttributeType>(
+                    () => _decode_AttributeType
+                ),
+            ],
+            "CONTEXT 3": [
+                "lessOrEqual",
+                __utils._decode_explicit<AttributeType>(
+                    () => _decode_AttributeType
+                ),
+            ],
+            "CONTEXT 4": [
+                "approximateMatch",
+                __utils._decode_explicit<AttributeType>(
+                    () => _decode_AttributeType
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_CriteriaItem(el);
+}
+export function _encode_CriteriaItem(
+    value: CriteriaItem,
+    elGetter: __utils.ASN1Encoder<CriteriaItem>
+) {
+    if (!_cached_encoder_for_CriteriaItem) {
+        _cached_encoder_for_CriteriaItem = __utils._encode_choice<CriteriaItem>(
+            {
+                equality: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+                substrings: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+                greaterOrEqual: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+                lessOrEqual: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    3,
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+                approximateMatch: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    4,
+                    () => _encode_AttributeType,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        substrings: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => _encode_AttributeType,
-            __utils.BER
-        ),
-        greaterOrEqual: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () => _encode_AttributeType,
-            __utils.BER
-        ),
-        lessOrEqual: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            3,
-            () => _encode_AttributeType,
-            __utils.BER
-        ),
-        approximateMatch: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            4,
-            () => _encode_AttributeType,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_CriteriaItem(value, elGetter);
+}
 
 /* TODO: CHECK_RECURSIVE_DEFINITION */
 export type Criteria =
-    | { type_: CriteriaItem }
-    | { and: Criteria[] }
-    | { or: Criteria[] }
-    | { not: Criteria }
-    | asn1.ASN1Element;
-export const _decode_Criteria = __utils._decode_extensible_choice<Criteria>({
-    "CONTEXT 0": [
-        "type_",
-        __utils._decode_explicit<CriteriaItem>(() => _decode_CriteriaItem),
-    ],
-    "CONTEXT 1": [
-        "and",
-        __utils._decode_explicit<Criteria[]>(() =>
-            __utils._decodeSetOf<Criteria>(() => _decode_Criteria)
-        ),
-    ],
-    "CONTEXT 2": [
-        "or",
-        __utils._decode_explicit<Criteria[]>(() =>
-            __utils._decodeSetOf<Criteria>(() => _decode_Criteria)
-        ),
-    ],
-    "CONTEXT 3": [
-        "not",
-        __utils._decode_explicit<Criteria>(() => _decode_Criteria),
-    ],
-});
-export const _encode_Criteria = __utils._encode_choice<Criteria>(
-    {
-        type_: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_CriteriaItem,
-            __utils.BER
-        ),
-        and: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () =>
-                __utils._encodeSetOf<Criteria>(
+    | { type_: CriteriaItem } /* CHOICE_ALT_ROOT */
+    | { and: Criteria[] } /* CHOICE_ALT_ROOT */
+    | { or: Criteria[] } /* CHOICE_ALT_ROOT */
+    | { not: Criteria } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Criteria: __utils.ASN1Decoder<Criteria> | null = null;
+let _cached_encoder_for_Criteria: __utils.ASN1Encoder<Criteria> | null = null;
+export function _decode_Criteria(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Criteria) {
+        _cached_decoder_for_Criteria = __utils._decode_extensible_choice<
+            Criteria
+        >({
+            "CONTEXT 0": [
+                "type_",
+                __utils._decode_explicit<CriteriaItem>(
+                    () => _decode_CriteriaItem
+                ),
+            ],
+            "CONTEXT 1": [
+                "and",
+                __utils._decode_explicit<Criteria[]>(() =>
+                    __utils._decodeSetOf<Criteria>(() => _decode_Criteria)
+                ),
+            ],
+            "CONTEXT 2": [
+                "or",
+                __utils._decode_explicit<Criteria[]>(() =>
+                    __utils._decodeSetOf<Criteria>(() => _decode_Criteria)
+                ),
+            ],
+            "CONTEXT 3": [
+                "not",
+                __utils._decode_explicit<Criteria>(() => _decode_Criteria),
+            ],
+        });
+    }
+    return _cached_decoder_for_Criteria(el);
+}
+export function _encode_Criteria(
+    value: Criteria,
+    elGetter: __utils.ASN1Encoder<Criteria>
+) {
+    if (!_cached_encoder_for_Criteria) {
+        _cached_encoder_for_Criteria = __utils._encode_choice<Criteria>(
+            {
+                type_: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_CriteriaItem,
+                    __utils.BER
+                ),
+                and: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () =>
+                        __utils._encodeSetOf<Criteria>(
+                            () => _encode_Criteria,
+                            __utils.BER
+                        ),
+                    __utils.BER
+                ),
+                or: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () =>
+                        __utils._encodeSetOf<Criteria>(
+                            () => _encode_Criteria,
+                            __utils.BER
+                        ),
+                    __utils.BER
+                ),
+                not: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    3,
                     () => _encode_Criteria,
                     __utils.BER
                 ),
+            },
             __utils.BER
-        ),
-        or: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () =>
-                __utils._encodeSetOf<Criteria>(
-                    () => _encode_Criteria,
-                    __utils.BER
-                ),
-            __utils.BER
-        ),
-        not: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            3,
-            () => _encode_Criteria,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_Criteria(value, elGetter);
+}
 
 export class Guide {
     constructor(
@@ -601,76 +856,90 @@ export const _root_component_type_list_1_spec_for_Guide: __utils.ComponentSpec[]
 ];
 export const _root_component_type_list_2_spec_for_Guide: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Guide: __utils.ComponentSpec[] = [];
-
-export const _decode_Guide = function (el: asn1.ASN1Element): Guide {
-    /* START_OF_SET_COMPONENT_DECLARATIONS */
-    let objectClass: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
-    let criteria!: Criteria;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SET_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        objectClass: (_el: asn1.ASN1Element): void => {
-            objectClass = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(
-                () => __utils._decodeObjectIdentifier
-            )(_el);
-        },
-        criteria: (_el: asn1.ASN1Element): void => {
-            criteria = __utils._decode_explicit<Criteria>(
-                () => _decode_Criteria
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_set(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_Guide,
-        _extension_additions_list_spec_for_Guide,
-        _root_component_type_list_2_spec_for_Guide,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new Guide(
-        /* SET_CONSTRUCTOR_CALL */ objectClass,
-        criteria,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_Guide = function (
+let _cached_decoder_for_Guide: __utils.ASN1Decoder<Guide> | null = null;
+let _cached_encoder_for_Guide: __utils.ASN1Encoder<Guide> | null = null;
+export function _decode_Guide(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Guide) {
+        _cached_decoder_for_Guide = function (el: asn1.ASN1Element): Guide {
+            /* START_OF_SET_COMPONENT_DECLARATIONS */
+            let objectClass: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
+            let criteria!: Criteria;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SET_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                objectClass: (_el: asn1.ASN1Element): void => {
+                    objectClass = __utils._decode_explicit<
+                        asn1.OBJECT_IDENTIFIER
+                    >(() => __utils._decodeObjectIdentifier)(_el);
+                },
+                criteria: (_el: asn1.ASN1Element): void => {
+                    criteria = __utils._decode_explicit<Criteria>(
+                        () => _decode_Criteria
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_set(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_Guide,
+                _extension_additions_list_spec_for_Guide,
+                _root_component_type_list_2_spec_for_Guide,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new Guide(
+                /* SET_CONSTRUCTOR_CALL */ objectClass,
+                criteria,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_Guide(el);
+}
+export function _encode_Guide(
     value: Guide,
     elGetter: __utils.ASN1Encoder<Guide>
-): asn1.ASN1Element {
-    return __utils._encodeSet(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.objectClass === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeObjectIdentifier,
-                              __utils.BER
-                          )(value.objectClass, __utils.BER),
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        1,
-                        () => _encode_Criteria,
-                        __utils.BER
-                    )(value.criteria, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_Guide) {
+        _cached_encoder_for_Guide = function (
+            value: Guide,
+            elGetter: __utils.ASN1Encoder<Guide>
+        ): asn1.ASN1Element {
+            return __utils._encodeSet(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.objectClass === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeObjectIdentifier,
+                                      __utils.BER
+                                  )(value.objectClass, __utils.BER),
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                1,
+                                () => _encode_Criteria,
+                                __utils.BER
+                            )(value.criteria, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_Guide(value, elGetter);
+}
 
 // TODO: ObjectAssignment: enhancedSearchGuide
 
@@ -678,8 +947,27 @@ export type EnhancedGuide_subset = asn1.INTEGER;
 export const EnhancedGuide_subset_baseObject: EnhancedGuide_subset = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const EnhancedGuide_subset_oneLevel: EnhancedGuide_subset = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const EnhancedGuide_subset_wholeSubtree: EnhancedGuide_subset = 2; /* LONG_NAMED_INTEGER_VALUE */
-export const _decode_EnhancedGuide_subset = __utils._decodeInteger;
-export const _encode_EnhancedGuide_subset = __utils._encodeInteger;
+let _cached_decoder_for_EnhancedGuide_subset: __utils.ASN1Decoder<
+    EnhancedGuide_subset
+> | null = null;
+let _cached_encoder_for_EnhancedGuide_subset: __utils.ASN1Encoder<
+    EnhancedGuide_subset
+> | null = null;
+export function _decode_EnhancedGuide_subset(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EnhancedGuide_subset) {
+        _cached_decoder_for_EnhancedGuide_subset = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_EnhancedGuide_subset(el);
+}
+export function _encode_EnhancedGuide_subset(
+    value: EnhancedGuide_subset,
+    elGetter: __utils.ASN1Encoder<EnhancedGuide_subset>
+) {
+    if (!_cached_encoder_for_EnhancedGuide_subset) {
+        _cached_encoder_for_EnhancedGuide_subset = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_EnhancedGuide_subset(value, elGetter);
+}
 
 export class EnhancedGuide {
     constructor(
@@ -688,6 +976,9 @@ export class EnhancedGuide {
         readonly subset: EnhancedGuide_subset | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_subset() {
+        return EnhancedGuide_subset_oneLevel;
+    }
 }
 export const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -714,135 +1005,192 @@ export const _root_component_type_list_1_spec_for_EnhancedGuide: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EnhancedGuide: __utils.ComponentSpec[] = [];
-export const _default_value_for_EnhancedGuide__subset = EnhancedGuide_subset_oneLevel;
-export const _decode_EnhancedGuide = function (
-    el: asn1.ASN1Element
-): EnhancedGuide {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let objectClass!: asn1.OBJECT_IDENTIFIER;
-    let criteria!: Criteria;
-    let subset: asn1.OPTIONAL<EnhancedGuide_subset> = _default_value_for_EnhancedGuide__subset;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        objectClass: (_el: asn1.ASN1Element): void => {
-            objectClass = __utils._decode_explicit<asn1.OBJECT_IDENTIFIER>(
-                () => __utils._decodeObjectIdentifier
-            )(_el);
-        },
-        criteria: (_el: asn1.ASN1Element): void => {
-            criteria = __utils._decode_explicit<Criteria>(
-                () => _decode_Criteria
-            )(_el);
-        },
-        subset: (_el: asn1.ASN1Element): void => {
-            subset = __utils._decode_explicit<EnhancedGuide_subset>(
-                () => _decode_EnhancedGuide_subset
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_EnhancedGuide,
-        _extension_additions_list_spec_for_EnhancedGuide,
-        _root_component_type_list_2_spec_for_EnhancedGuide,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new EnhancedGuide(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ objectClass,
-        criteria,
-        subset,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_EnhancedGuide = function (
+let _cached_decoder_for_EnhancedGuide: __utils.ASN1Decoder<
+    EnhancedGuide
+> | null = null;
+let _cached_encoder_for_EnhancedGuide: __utils.ASN1Encoder<
+    EnhancedGuide
+> | null = null;
+export function _decode_EnhancedGuide(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EnhancedGuide) {
+        _cached_decoder_for_EnhancedGuide = function (
+            el: asn1.ASN1Element
+        ): EnhancedGuide {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let objectClass!: asn1.OBJECT_IDENTIFIER;
+            let criteria!: Criteria;
+            let subset: asn1.OPTIONAL<EnhancedGuide_subset> =
+                EnhancedGuide._default_value_for_subset;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                objectClass: (_el: asn1.ASN1Element): void => {
+                    objectClass = __utils._decode_explicit<
+                        asn1.OBJECT_IDENTIFIER
+                    >(() => __utils._decodeObjectIdentifier)(_el);
+                },
+                criteria: (_el: asn1.ASN1Element): void => {
+                    criteria = __utils._decode_explicit<Criteria>(
+                        () => _decode_Criteria
+                    )(_el);
+                },
+                subset: (_el: asn1.ASN1Element): void => {
+                    subset = __utils._decode_explicit<EnhancedGuide_subset>(
+                        () => _decode_EnhancedGuide_subset
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_EnhancedGuide,
+                _extension_additions_list_spec_for_EnhancedGuide,
+                _root_component_type_list_2_spec_for_EnhancedGuide,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new EnhancedGuide(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ objectClass,
+                criteria,
+                subset,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_EnhancedGuide(el);
+}
+export function _encode_EnhancedGuide(
     value: EnhancedGuide,
     elGetter: __utils.ASN1Encoder<EnhancedGuide>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        0,
-                        () => __utils._encodeObjectIdentifier,
-                        __utils.BER
-                    )(value.objectClass, __utils.BER),
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        1,
-                        () => _encode_Criteria,
-                        __utils.BER
-                    )(value.criteria, __utils.BER),
-                    /* IF_DEFAULT */ value.subset === undefined ||
-                    __utils.deepEq(
-                        value.subset,
-                        _default_value_for_EnhancedGuide__subset
+) {
+    if (!_cached_encoder_for_EnhancedGuide) {
+        _cached_encoder_for_EnhancedGuide = function (
+            value: EnhancedGuide,
+            elGetter: __utils.ASN1Encoder<EnhancedGuide>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                0,
+                                () => __utils._encodeObjectIdentifier,
+                                __utils.BER
+                            )(value.objectClass, __utils.BER),
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                1,
+                                () => _encode_Criteria,
+                                __utils.BER
+                            )(value.criteria, __utils.BER),
+                            /* IF_DEFAULT */ value.subset === undefined ||
+                            __utils.deepEq(
+                                value.subset,
+                                EnhancedGuide._default_value_for_subset
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () => _encode_EnhancedGuide_subset,
+                                      __utils.BER
+                                  )(value.subset, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () => _encode_EnhancedGuide_subset,
-                              __utils.BER
-                          )(value.subset, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_EnhancedGuide(value, elGetter);
+}
 
 // TODO: ObjectAssignment: businessCategory
 
 // TODO: ObjectAssignment: postalAddress
 
 export type UnboundedDirectoryString =
-    | { teletexString: asn1.TeletexString }
-    | { printableString: asn1.PrintableString }
-    | { bmpString: asn1.BMPString }
-    | { universalString: asn1.UniversalString }
-    | { uTF8String: asn1.UTF8String };
-export const _decode_UnboundedDirectoryString = __utils._decode_inextensible_choice<
+    | { teletexString: asn1.TeletexString } /* CHOICE_ALT_ROOT */
+    | { printableString: asn1.PrintableString } /* CHOICE_ALT_ROOT */
+    | { bmpString: asn1.BMPString } /* CHOICE_ALT_ROOT */
+    | { universalString: asn1.UniversalString } /* CHOICE_ALT_ROOT */
+    | { uTF8String: asn1.UTF8String } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_UnboundedDirectoryString: __utils.ASN1Decoder<
     UnboundedDirectoryString
->({
-    "UNIVERSAL 20": ["teletexString", __utils._decodeTeletexString],
-    "UNIVERSAL 19": ["printableString", __utils._decodePrintableString],
-    "UNIVERSAL 30": ["bmpString", __utils._decodeBMPString],
-    "UNIVERSAL 28": ["universalString", __utils._decodeUniversalString],
-    "UNIVERSAL 12": ["uTF8String", __utils._decodeUTF8String],
-});
-export const _encode_UnboundedDirectoryString = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_UnboundedDirectoryString: __utils.ASN1Encoder<
     UnboundedDirectoryString
->(
-    {
-        teletexString: __utils._encodeTeletexString,
-        printableString: __utils._encodePrintableString,
-        bmpString: __utils._encodeBMPString,
-        universalString: __utils._encodeUniversalString,
-        uTF8String: __utils._encodeUTF8String,
-    },
-    __utils.BER
-);
+> | null = null;
+export function _decode_UnboundedDirectoryString(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UnboundedDirectoryString) {
+        _cached_decoder_for_UnboundedDirectoryString = __utils._decode_inextensible_choice<
+            UnboundedDirectoryString
+        >({
+            "UNIVERSAL 20": ["teletexString", __utils._decodeTeletexString],
+            "UNIVERSAL 19": ["printableString", __utils._decodePrintableString],
+            "UNIVERSAL 30": ["bmpString", __utils._decodeBMPString],
+            "UNIVERSAL 28": ["universalString", __utils._decodeUniversalString],
+            "UNIVERSAL 12": ["uTF8String", __utils._decodeUTF8String],
+        });
+    }
+    return _cached_decoder_for_UnboundedDirectoryString(el);
+}
+export function _encode_UnboundedDirectoryString(
+    value: UnboundedDirectoryString,
+    elGetter: __utils.ASN1Encoder<UnboundedDirectoryString>
+) {
+    if (!_cached_encoder_for_UnboundedDirectoryString) {
+        _cached_encoder_for_UnboundedDirectoryString = __utils._encode_choice<
+            UnboundedDirectoryString
+        >(
+            {
+                teletexString: __utils._encodeTeletexString,
+                printableString: __utils._encodePrintableString,
+                bmpString: __utils._encodeBMPString,
+                universalString: __utils._encodeUniversalString,
+                uTF8String: __utils._encodeUTF8String,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_UnboundedDirectoryString(value, elGetter);
+}
 
 export type PostalAddress = UnboundedDirectoryString[]; // SequenceOfType
-export const _decode_PostalAddress = __utils._decodeSequenceOf<
-    UnboundedDirectoryString
->(() => _decode_UnboundedDirectoryString);
-export const _encode_PostalAddress = __utils._encodeSequenceOf<
-    UnboundedDirectoryString
->(() => _encode_UnboundedDirectoryString, __utils.BER);
+let _cached_decoder_for_PostalAddress: __utils.ASN1Decoder<
+    PostalAddress
+> | null = null;
+let _cached_encoder_for_PostalAddress: __utils.ASN1Encoder<
+    PostalAddress
+> | null = null;
+export function _decode_PostalAddress(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PostalAddress) {
+        _cached_decoder_for_PostalAddress = __utils._decodeSequenceOf<
+            UnboundedDirectoryString
+        >(() => _decode_UnboundedDirectoryString);
+    }
+    return _cached_decoder_for_PostalAddress(el);
+}
+export function _encode_PostalAddress(
+    value: PostalAddress,
+    elGetter: __utils.ASN1Encoder<PostalAddress>
+) {
+    if (!_cached_encoder_for_PostalAddress) {
+        _cached_encoder_for_PostalAddress = __utils._encodeSequenceOf<
+            UnboundedDirectoryString
+        >(() => _encode_UnboundedDirectoryString, __utils.BER);
+    }
+    return _cached_encoder_for_PostalAddress(value, elGetter);
+}
 
 // TODO: ObjectAssignment: collectivePostalAddress
 
@@ -899,67 +1247,85 @@ export const _root_component_type_list_1_spec_for_TelexNumber: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_TelexNumber: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TelexNumber: __utils.ComponentSpec[] = [];
-
-export const _decode_TelexNumber = function (
-    el: asn1.ASN1Element
-): TelexNumber {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 3) {
-        throw new asn1.ASN1ConstructionError(
-            "TelexNumber contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_TelexNumber: __utils.ASN1Decoder<
+    TelexNumber
+> | null = null;
+let _cached_encoder_for_TelexNumber: __utils.ASN1Encoder<
+    TelexNumber
+> | null = null;
+export function _decode_TelexNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TelexNumber) {
+        _cached_decoder_for_TelexNumber = function (
+            el: asn1.ASN1Element
+        ): TelexNumber {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 3) {
+                throw new asn1.ASN1ConstructionError(
+                    "TelexNumber contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "telexNumber";
+            sequence[1].name = "countryCode";
+            sequence[2].name = "answerback";
+            let telexNumber!: asn1.PrintableString;
+            let countryCode!: asn1.PrintableString;
+            let answerback!: asn1.PrintableString;
+            telexNumber = __utils._decodePrintableString(sequence[0]);
+            countryCode = __utils._decodePrintableString(sequence[1]);
+            answerback = __utils._decodePrintableString(sequence[2]);
+            // TODO: Validate values.
+            return new TelexNumber(
+                telexNumber,
+                countryCode,
+                answerback,
+                sequence.slice(3)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "telexNumber";
-    sequence[1].name = "countryCode";
-    sequence[2].name = "answerback";
-    let telexNumber!: asn1.PrintableString;
-    let countryCode!: asn1.PrintableString;
-    let answerback!: asn1.PrintableString;
-    telexNumber = __utils._decodePrintableString(sequence[0]);
-    countryCode = __utils._decodePrintableString(sequence[1]);
-    answerback = __utils._decodePrintableString(sequence[2]);
-    // TODO: Validate values.
-    return new TelexNumber(
-        telexNumber,
-        countryCode,
-        answerback,
-        sequence.slice(3)
-    );
-};
-export const _encode_TelexNumber = function (
+    return _cached_decoder_for_TelexNumber(el);
+}
+export function _encode_TelexNumber(
     value: TelexNumber,
     elGetter: __utils.ASN1Encoder<TelexNumber>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodePrintableString(
-                        value.telexNumber,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodePrintableString(
-                        value.countryCode,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodePrintableString(
-                        value.answerback,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_TelexNumber) {
+        _cached_encoder_for_TelexNumber = function (
+            value: TelexNumber,
+            elGetter: __utils.ASN1Encoder<TelexNumber>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodePrintableString(
+                                value.telexNumber,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodePrintableString(
+                                value.countryCode,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodePrintableString(
+                                value.answerback,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TelexNumber(value, elGetter);
+}
 
 export const ub_telex_number: asn1.INTEGER = 14;
 
@@ -972,8 +1338,27 @@ export const ub_answerback: asn1.INTEGER = 8;
 // TODO: ObjectAssignment: facsimileTelephoneNumber
 
 export type TelephoneNumber = asn1.PrintableString; // PrintableString
-export const _decode_TelephoneNumber = __utils._decodePrintableString;
-export const _encode_TelephoneNumber = __utils._encodePrintableString;
+let _cached_decoder_for_TelephoneNumber: __utils.ASN1Decoder<
+    TelephoneNumber
+> | null = null;
+let _cached_encoder_for_TelephoneNumber: __utils.ASN1Encoder<
+    TelephoneNumber
+> | null = null;
+export function _decode_TelephoneNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TelephoneNumber) {
+        _cached_decoder_for_TelephoneNumber = __utils._decodePrintableString;
+    }
+    return _cached_decoder_for_TelephoneNumber(el);
+}
+export function _encode_TelephoneNumber(
+    value: TelephoneNumber,
+    elGetter: __utils.ASN1Encoder<TelephoneNumber>
+) {
+    if (!_cached_encoder_for_TelephoneNumber) {
+        _cached_encoder_for_TelephoneNumber = __utils._encodePrintableString;
+    }
+    return _cached_encoder_for_TelephoneNumber(value, elGetter);
+}
 
 export class FacsimileTelephoneNumber {
     constructor(
@@ -1000,86 +1385,144 @@ export const _root_component_type_list_1_spec_for_FacsimileTelephoneNumber: __ut
 ];
 export const _root_component_type_list_2_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_FacsimileTelephoneNumber: __utils.ComponentSpec[] = [];
-
-export const _decode_FacsimileTelephoneNumber = function (
-    el: asn1.ASN1Element
-): FacsimileTelephoneNumber {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let telephoneNumber!: TelephoneNumber;
-    let parameters: asn1.OPTIONAL<G3FacsimileNonBasicParameters>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        telephoneNumber: (_el: asn1.ASN1Element): void => {
-            telephoneNumber = _decode_TelephoneNumber(_el);
-        },
-        parameters: (_el: asn1.ASN1Element): void => {
-            parameters = _decode_G3FacsimileNonBasicParameters(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_FacsimileTelephoneNumber,
-        _extension_additions_list_spec_for_FacsimileTelephoneNumber,
-        _root_component_type_list_2_spec_for_FacsimileTelephoneNumber,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new FacsimileTelephoneNumber(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ telephoneNumber,
-        parameters,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_FacsimileTelephoneNumber = function (
+let _cached_decoder_for_FacsimileTelephoneNumber: __utils.ASN1Decoder<
+    FacsimileTelephoneNumber
+> | null = null;
+let _cached_encoder_for_FacsimileTelephoneNumber: __utils.ASN1Encoder<
+    FacsimileTelephoneNumber
+> | null = null;
+export function _decode_FacsimileTelephoneNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_FacsimileTelephoneNumber) {
+        _cached_decoder_for_FacsimileTelephoneNumber = function (
+            el: asn1.ASN1Element
+        ): FacsimileTelephoneNumber {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let telephoneNumber!: TelephoneNumber;
+            let parameters: asn1.OPTIONAL<G3FacsimileNonBasicParameters>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                telephoneNumber: (_el: asn1.ASN1Element): void => {
+                    telephoneNumber = _decode_TelephoneNumber(_el);
+                },
+                parameters: (_el: asn1.ASN1Element): void => {
+                    parameters = _decode_G3FacsimileNonBasicParameters(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_FacsimileTelephoneNumber,
+                _extension_additions_list_spec_for_FacsimileTelephoneNumber,
+                _root_component_type_list_2_spec_for_FacsimileTelephoneNumber,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new FacsimileTelephoneNumber(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ telephoneNumber,
+                parameters,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_FacsimileTelephoneNumber(el);
+}
+export function _encode_FacsimileTelephoneNumber(
     value: FacsimileTelephoneNumber,
     elGetter: __utils.ASN1Encoder<FacsimileTelephoneNumber>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_TelephoneNumber(
-                        value.telephoneNumber,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.parameters === undefined
-                        ? undefined
-                        : _encode_G3FacsimileNonBasicParameters(
-                              value.parameters,
-                              __utils.BER
-                          ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_FacsimileTelephoneNumber) {
+        _cached_encoder_for_FacsimileTelephoneNumber = function (
+            value: FacsimileTelephoneNumber,
+            elGetter: __utils.ASN1Encoder<FacsimileTelephoneNumber>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_TelephoneNumber(
+                                value.telephoneNumber,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.parameters === undefined
+                                ? undefined
+                                : _encode_G3FacsimileNonBasicParameters(
+                                      value.parameters,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_FacsimileTelephoneNumber(value, elGetter);
+}
 
 // TODO: ObjectAssignment: collectiveFacsimileTelephoneNumber
 
 // TODO: ObjectAssignment: x121Address
 
 export type X121Address = asn1.NumericString; // NumericString
-export const _decode_X121Address = __utils._decodeNumericString;
-export const _encode_X121Address = __utils._encodeNumericString;
+let _cached_decoder_for_X121Address: __utils.ASN1Decoder<
+    X121Address
+> | null = null;
+let _cached_encoder_for_X121Address: __utils.ASN1Encoder<
+    X121Address
+> | null = null;
+export function _decode_X121Address(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_X121Address) {
+        _cached_decoder_for_X121Address = __utils._decodeNumericString;
+    }
+    return _cached_decoder_for_X121Address(el);
+}
+export function _encode_X121Address(
+    value: X121Address,
+    elGetter: __utils.ASN1Encoder<X121Address>
+) {
+    if (!_cached_encoder_for_X121Address) {
+        _cached_encoder_for_X121Address = __utils._encodeNumericString;
+    }
+    return _cached_encoder_for_X121Address(value, elGetter);
+}
 
 export const ub_x121_address: asn1.INTEGER = 15;
 
 // TODO: ObjectAssignment: internationalISDNNumber
 
 export type InternationalISDNNumber = asn1.NumericString; // NumericString
-export const _decode_InternationalISDNNumber = __utils._decodeNumericString;
-export const _encode_InternationalISDNNumber = __utils._encodeNumericString;
+let _cached_decoder_for_InternationalISDNNumber: __utils.ASN1Decoder<
+    InternationalISDNNumber
+> | null = null;
+let _cached_encoder_for_InternationalISDNNumber: __utils.ASN1Encoder<
+    InternationalISDNNumber
+> | null = null;
+export function _decode_InternationalISDNNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_InternationalISDNNumber) {
+        _cached_decoder_for_InternationalISDNNumber =
+            __utils._decodeNumericString;
+    }
+    return _cached_decoder_for_InternationalISDNNumber(el);
+}
+export function _encode_InternationalISDNNumber(
+    value: InternationalISDNNumber,
+    elGetter: __utils.ASN1Encoder<InternationalISDNNumber>
+) {
+    if (!_cached_encoder_for_InternationalISDNNumber) {
+        _cached_encoder_for_InternationalISDNNumber =
+            __utils._encodeNumericString;
+    }
+    return _cached_encoder_for_InternationalISDNNumber(value, elGetter);
+}
 
 export const ub_international_isdn_number: asn1.INTEGER = 16;
 
@@ -1090,20 +1533,83 @@ export const ub_international_isdn_number: asn1.INTEGER = 16;
 // TODO: ObjectAssignment: destinationIndicator
 
 export type DestinationIndicator = asn1.PrintableString; // PrintableString
-export const _decode_DestinationIndicator = __utils._decodePrintableString;
-export const _encode_DestinationIndicator = __utils._encodePrintableString;
+let _cached_decoder_for_DestinationIndicator: __utils.ASN1Decoder<
+    DestinationIndicator
+> | null = null;
+let _cached_encoder_for_DestinationIndicator: __utils.ASN1Encoder<
+    DestinationIndicator
+> | null = null;
+export function _decode_DestinationIndicator(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_DestinationIndicator) {
+        _cached_decoder_for_DestinationIndicator =
+            __utils._decodePrintableString;
+    }
+    return _cached_decoder_for_DestinationIndicator(el);
+}
+export function _encode_DestinationIndicator(
+    value: DestinationIndicator,
+    elGetter: __utils.ASN1Encoder<DestinationIndicator>
+) {
+    if (!_cached_encoder_for_DestinationIndicator) {
+        _cached_encoder_for_DestinationIndicator =
+            __utils._encodePrintableString;
+    }
+    return _cached_encoder_for_DestinationIndicator(value, elGetter);
+}
 
 // TODO: ObjectAssignment: communicationsService
 
 export type CommunicationsService = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
-export const _decode_CommunicationsService = __utils._decodeObjectIdentifier;
-export const _encode_CommunicationsService = __utils._encodeObjectIdentifier;
+let _cached_decoder_for_CommunicationsService: __utils.ASN1Decoder<
+    CommunicationsService
+> | null = null;
+let _cached_encoder_for_CommunicationsService: __utils.ASN1Encoder<
+    CommunicationsService
+> | null = null;
+export function _decode_CommunicationsService(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CommunicationsService) {
+        _cached_decoder_for_CommunicationsService =
+            __utils._decodeObjectIdentifier;
+    }
+    return _cached_decoder_for_CommunicationsService(el);
+}
+export function _encode_CommunicationsService(
+    value: CommunicationsService,
+    elGetter: __utils.ASN1Encoder<CommunicationsService>
+) {
+    if (!_cached_encoder_for_CommunicationsService) {
+        _cached_encoder_for_CommunicationsService =
+            __utils._encodeObjectIdentifier;
+    }
+    return _cached_encoder_for_CommunicationsService(value, elGetter);
+}
 
 // TODO: ObjectAssignment: communicationsNetwork
 
 export type CommunicationsNetwork = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
-export const _decode_CommunicationsNetwork = __utils._decodeObjectIdentifier;
-export const _encode_CommunicationsNetwork = __utils._encodeObjectIdentifier;
+let _cached_decoder_for_CommunicationsNetwork: __utils.ASN1Decoder<
+    CommunicationsNetwork
+> | null = null;
+let _cached_encoder_for_CommunicationsNetwork: __utils.ASN1Encoder<
+    CommunicationsNetwork
+> | null = null;
+export function _decode_CommunicationsNetwork(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CommunicationsNetwork) {
+        _cached_decoder_for_CommunicationsNetwork =
+            __utils._decodeObjectIdentifier;
+    }
+    return _cached_decoder_for_CommunicationsNetwork(el);
+}
+export function _encode_CommunicationsNetwork(
+    value: CommunicationsNetwork,
+    elGetter: __utils.ASN1Encoder<CommunicationsNetwork>
+) {
+    if (!_cached_encoder_for_CommunicationsNetwork) {
+        _cached_encoder_for_CommunicationsNetwork =
+            __utils._encodeObjectIdentifier;
+    }
+    return _cached_encoder_for_CommunicationsNetwork(value, elGetter);
+}
 
 // TODO: ObjectAssignment: preferredDeliveryMethod
 
@@ -1128,16 +1634,56 @@ export const PreferredDeliveryMethod_Item_videotex_delivery: PreferredDeliveryMe
 export const videotex_delivery: PreferredDeliveryMethod_Item = PreferredDeliveryMethod_Item_videotex_delivery; /* SHORT_NAMED_INTEGER_VALUE */
 export const PreferredDeliveryMethod_Item_telephone_delivery: PreferredDeliveryMethod_Item = 9; /* LONG_NAMED_INTEGER_VALUE */
 export const telephone_delivery: PreferredDeliveryMethod_Item = PreferredDeliveryMethod_Item_telephone_delivery; /* SHORT_NAMED_INTEGER_VALUE */
-export const _decode_PreferredDeliveryMethod_Item = __utils._decodeInteger;
-export const _encode_PreferredDeliveryMethod_Item = __utils._encodeInteger;
+let _cached_decoder_for_PreferredDeliveryMethod_Item: __utils.ASN1Decoder<
+    PreferredDeliveryMethod_Item
+> | null = null;
+let _cached_encoder_for_PreferredDeliveryMethod_Item: __utils.ASN1Encoder<
+    PreferredDeliveryMethod_Item
+> | null = null;
+export function _decode_PreferredDeliveryMethod_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PreferredDeliveryMethod_Item) {
+        _cached_decoder_for_PreferredDeliveryMethod_Item =
+            __utils._decodeInteger;
+    }
+    return _cached_decoder_for_PreferredDeliveryMethod_Item(el);
+}
+export function _encode_PreferredDeliveryMethod_Item(
+    value: PreferredDeliveryMethod_Item,
+    elGetter: __utils.ASN1Encoder<PreferredDeliveryMethod_Item>
+) {
+    if (!_cached_encoder_for_PreferredDeliveryMethod_Item) {
+        _cached_encoder_for_PreferredDeliveryMethod_Item =
+            __utils._encodeInteger;
+    }
+    return _cached_encoder_for_PreferredDeliveryMethod_Item(value, elGetter);
+}
 
 export type PreferredDeliveryMethod = PreferredDeliveryMethod_Item[]; // SequenceOfType
-export const _decode_PreferredDeliveryMethod = __utils._decodeSequenceOf<
-    PreferredDeliveryMethod_Item
->(() => _decode_PreferredDeliveryMethod_Item);
-export const _encode_PreferredDeliveryMethod = __utils._encodeSequenceOf<
-    PreferredDeliveryMethod_Item
->(() => _encode_PreferredDeliveryMethod_Item, __utils.BER);
+let _cached_decoder_for_PreferredDeliveryMethod: __utils.ASN1Decoder<
+    PreferredDeliveryMethod
+> | null = null;
+let _cached_encoder_for_PreferredDeliveryMethod: __utils.ASN1Encoder<
+    PreferredDeliveryMethod
+> | null = null;
+export function _decode_PreferredDeliveryMethod(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PreferredDeliveryMethod) {
+        _cached_decoder_for_PreferredDeliveryMethod = __utils._decodeSequenceOf<
+            PreferredDeliveryMethod_Item
+        >(() => _decode_PreferredDeliveryMethod_Item);
+    }
+    return _cached_decoder_for_PreferredDeliveryMethod(el);
+}
+export function _encode_PreferredDeliveryMethod(
+    value: PreferredDeliveryMethod,
+    elGetter: __utils.ASN1Encoder<PreferredDeliveryMethod>
+) {
+    if (!_cached_encoder_for_PreferredDeliveryMethod) {
+        _cached_encoder_for_PreferredDeliveryMethod = __utils._encodeSequenceOf<
+            PreferredDeliveryMethod_Item
+        >(() => _encode_PreferredDeliveryMethod_Item, __utils.BER);
+    }
+    return _cached_encoder_for_PreferredDeliveryMethod(value, elGetter);
+}
 
 // TODO: ObjectAssignment: presentationAddress
 
@@ -1182,114 +1728,133 @@ export const _root_component_type_list_1_spec_for_PresentationAddress: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_PresentationAddress: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PresentationAddress: __utils.ComponentSpec[] = [];
-
-export const _decode_PresentationAddress = function (
-    el: asn1.ASN1Element
-): PresentationAddress {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let pSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
-    let sSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
-    let tSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
-    let nAddresses!: asn1.OCTET_STRING[];
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        pSelector: (_el: asn1.ASN1Element): void => {
-            pSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
-                () => __utils._decodeOctetString
-            )(_el);
-        },
-        sSelector: (_el: asn1.ASN1Element): void => {
-            sSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
-                () => __utils._decodeOctetString
-            )(_el);
-        },
-        tSelector: (_el: asn1.ASN1Element): void => {
-            tSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
-                () => __utils._decodeOctetString
-            )(_el);
-        },
-        nAddresses: (_el: asn1.ASN1Element): void => {
-            nAddresses = __utils._decode_explicit<asn1.OCTET_STRING[]>(() =>
-                __utils._decodeSetOf<asn1.OCTET_STRING>(
-                    () => __utils._decodeOctetString
-                )
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_PresentationAddress,
-        _extension_additions_list_spec_for_PresentationAddress,
-        _root_component_type_list_2_spec_for_PresentationAddress,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new PresentationAddress(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ pSelector,
-        sSelector,
-        tSelector,
-        nAddresses,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_PresentationAddress = function (
+let _cached_decoder_for_PresentationAddress: __utils.ASN1Decoder<
+    PresentationAddress
+> | null = null;
+let _cached_encoder_for_PresentationAddress: __utils.ASN1Encoder<
+    PresentationAddress
+> | null = null;
+export function _decode_PresentationAddress(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PresentationAddress) {
+        _cached_decoder_for_PresentationAddress = function (
+            el: asn1.ASN1Element
+        ): PresentationAddress {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let pSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
+            let sSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
+            let tSelector: asn1.OPTIONAL<asn1.OCTET_STRING>;
+            let nAddresses!: asn1.OCTET_STRING[];
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                pSelector: (_el: asn1.ASN1Element): void => {
+                    pSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
+                        () => __utils._decodeOctetString
+                    )(_el);
+                },
+                sSelector: (_el: asn1.ASN1Element): void => {
+                    sSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
+                        () => __utils._decodeOctetString
+                    )(_el);
+                },
+                tSelector: (_el: asn1.ASN1Element): void => {
+                    tSelector = __utils._decode_explicit<asn1.OCTET_STRING>(
+                        () => __utils._decodeOctetString
+                    )(_el);
+                },
+                nAddresses: (_el: asn1.ASN1Element): void => {
+                    nAddresses = __utils._decode_explicit<asn1.OCTET_STRING[]>(
+                        () =>
+                            __utils._decodeSetOf<asn1.OCTET_STRING>(
+                                () => __utils._decodeOctetString
+                            )
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_PresentationAddress,
+                _extension_additions_list_spec_for_PresentationAddress,
+                _root_component_type_list_2_spec_for_PresentationAddress,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new PresentationAddress(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ pSelector,
+                sSelector,
+                tSelector,
+                nAddresses,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_PresentationAddress(el);
+}
+export function _encode_PresentationAddress(
     value: PresentationAddress,
     elGetter: __utils.ASN1Encoder<PresentationAddress>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.pSelector === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeOctetString,
-                              __utils.BER
-                          )(value.pSelector, __utils.BER),
-                    /* IF_ABSENT  */ value.sSelector === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeOctetString,
-                              __utils.BER
-                          )(value.sSelector, __utils.BER),
-                    /* IF_ABSENT  */ value.tSelector === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () => __utils._encodeOctetString,
-                              __utils.BER
-                          )(value.tSelector, __utils.BER),
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        3,
-                        () =>
-                            __utils._encodeSetOf<asn1.OCTET_STRING>(
-                                () => __utils._encodeOctetString,
+) {
+    if (!_cached_encoder_for_PresentationAddress) {
+        _cached_encoder_for_PresentationAddress = function (
+            value: PresentationAddress,
+            elGetter: __utils.ASN1Encoder<PresentationAddress>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.pSelector === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeOctetString,
+                                      __utils.BER
+                                  )(value.pSelector, __utils.BER),
+                            /* IF_ABSENT  */ value.sSelector === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeOctetString,
+                                      __utils.BER
+                                  )(value.sSelector, __utils.BER),
+                            /* IF_ABSENT  */ value.tSelector === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () => __utils._encodeOctetString,
+                                      __utils.BER
+                                  )(value.tSelector, __utils.BER),
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                3,
+                                () =>
+                                    __utils._encodeSetOf<asn1.OCTET_STRING>(
+                                        () => __utils._encodeOctetString,
+                                        __utils.BER
+                                    ),
                                 __utils.BER
-                            ),
-                        __utils.BER
-                    )(value.nAddresses, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                            )(value.nAddresses, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_PresentationAddress(value, elGetter);
+}
 
 // TODO: ObjectAssignment: supportedApplicationContext
 
@@ -1319,52 +1884,72 @@ export const _root_component_type_list_1_spec_for_ProtocolInformation: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ProtocolInformation: __utils.ComponentSpec[] = [];
-
-export const _decode_ProtocolInformation = function (
-    el: asn1.ASN1Element
-): ProtocolInformation {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "ProtocolInformation contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_ProtocolInformation: __utils.ASN1Decoder<
+    ProtocolInformation
+> | null = null;
+let _cached_encoder_for_ProtocolInformation: __utils.ASN1Encoder<
+    ProtocolInformation
+> | null = null;
+export function _decode_ProtocolInformation(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ProtocolInformation) {
+        _cached_decoder_for_ProtocolInformation = function (
+            el: asn1.ASN1Element
+        ): ProtocolInformation {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "ProtocolInformation contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "nAddress";
+            sequence[1].name = "profiles";
+            let nAddress!: asn1.OCTET_STRING;
+            let profiles!: asn1.OBJECT_IDENTIFIER[];
+            nAddress = __utils._decodeOctetString(sequence[0]);
+            profiles = __utils._decodeSetOf<asn1.OBJECT_IDENTIFIER>(
+                () => __utils._decodeObjectIdentifier
+            )(sequence[1]);
+            // TODO: Validate values.
+            return new ProtocolInformation(nAddress, profiles);
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "nAddress";
-    sequence[1].name = "profiles";
-    let nAddress!: asn1.OCTET_STRING;
-    let profiles!: asn1.OBJECT_IDENTIFIER[];
-    nAddress = __utils._decodeOctetString(sequence[0]);
-    profiles = __utils._decodeSetOf<asn1.OBJECT_IDENTIFIER>(
-        () => __utils._decodeObjectIdentifier
-    )(sequence[1]);
-    // TODO: Validate values.
-    return new ProtocolInformation(nAddress, profiles);
-};
-export const _encode_ProtocolInformation = function (
+    return _cached_decoder_for_ProtocolInformation(el);
+}
+export function _encode_ProtocolInformation(
     value: ProtocolInformation,
     elGetter: __utils.ASN1Encoder<ProtocolInformation>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* REQUIRED   */ __utils._encodeOctetString(
-                    value.nAddress,
-                    __utils.BER
-                ),
-                /* REQUIRED   */ __utils._encodeSetOf<asn1.OBJECT_IDENTIFIER>(
-                    () => __utils._encodeObjectIdentifier,
-                    __utils.BER
-                )(value.profiles, __utils.BER),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_ProtocolInformation) {
+        _cached_encoder_for_ProtocolInformation = function (
+            value: ProtocolInformation,
+            elGetter: __utils.ASN1Encoder<ProtocolInformation>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ __utils._encodeOctetString(
+                            value.nAddress,
+                            __utils.BER
+                        ),
+                        /* REQUIRED   */ __utils._encodeSetOf<
+                            asn1.OBJECT_IDENTIFIER
+                        >(() => __utils._encodeObjectIdentifier, __utils.BER)(
+                            value.profiles,
+                            __utils.BER
+                        ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ProtocolInformation(value, elGetter);
+}
 
 // TODO: ObjectAssignment: distinguishedName
 
@@ -1373,8 +1958,27 @@ export const _encode_ProtocolInformation = function (
 // TODO: ObjectAssignment: uniqueMember
 
 export type UniqueIdentifier = asn1.BIT_STRING;
-export const _decode_UniqueIdentifier = __utils._decodeBitString;
-export const _encode_UniqueIdentifier = __utils._encodeBitString;
+let _cached_decoder_for_UniqueIdentifier: __utils.ASN1Decoder<
+    UniqueIdentifier
+> | null = null;
+let _cached_encoder_for_UniqueIdentifier: __utils.ASN1Encoder<
+    UniqueIdentifier
+> | null = null;
+export function _decode_UniqueIdentifier(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UniqueIdentifier) {
+        _cached_decoder_for_UniqueIdentifier = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_UniqueIdentifier(el);
+}
+export function _encode_UniqueIdentifier(
+    value: UniqueIdentifier,
+    elGetter: __utils.ASN1Encoder<UniqueIdentifier>
+) {
+    if (!_cached_encoder_for_UniqueIdentifier) {
+        _cached_encoder_for_UniqueIdentifier = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_UniqueIdentifier(value, elGetter);
+}
 
 export class NameAndOptionalUID {
     constructor(
@@ -1401,67 +2005,88 @@ export const _root_component_type_list_1_spec_for_NameAndOptionalUID: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_NameAndOptionalUID: __utils.ComponentSpec[] = [];
-
-export const _decode_NameAndOptionalUID = function (
-    el: asn1.ASN1Element
-): NameAndOptionalUID {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let dn!: DistinguishedName;
-    let uid: asn1.OPTIONAL<UniqueIdentifier>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        dn: (_el: asn1.ASN1Element): void => {
-            dn = _decode_DistinguishedName(_el);
-        },
-        uid: (_el: asn1.ASN1Element): void => {
-            uid = _decode_UniqueIdentifier(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_NameAndOptionalUID,
-        _extension_additions_list_spec_for_NameAndOptionalUID,
-        _root_component_type_list_2_spec_for_NameAndOptionalUID,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new NameAndOptionalUID(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ dn,
-        uid,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_NameAndOptionalUID = function (
+let _cached_decoder_for_NameAndOptionalUID: __utils.ASN1Decoder<
+    NameAndOptionalUID
+> | null = null;
+let _cached_encoder_for_NameAndOptionalUID: __utils.ASN1Encoder<
+    NameAndOptionalUID
+> | null = null;
+export function _decode_NameAndOptionalUID(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_NameAndOptionalUID) {
+        _cached_decoder_for_NameAndOptionalUID = function (
+            el: asn1.ASN1Element
+        ): NameAndOptionalUID {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let dn!: DistinguishedName;
+            let uid: asn1.OPTIONAL<UniqueIdentifier>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                dn: (_el: asn1.ASN1Element): void => {
+                    dn = _decode_DistinguishedName(_el);
+                },
+                uid: (_el: asn1.ASN1Element): void => {
+                    uid = _decode_UniqueIdentifier(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_NameAndOptionalUID,
+                _extension_additions_list_spec_for_NameAndOptionalUID,
+                _root_component_type_list_2_spec_for_NameAndOptionalUID,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new NameAndOptionalUID(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ dn,
+                uid,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_NameAndOptionalUID(el);
+}
+export function _encode_NameAndOptionalUID(
     value: NameAndOptionalUID,
     elGetter: __utils.ASN1Encoder<NameAndOptionalUID>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_DistinguishedName(
-                        value.dn,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.uid === undefined
-                        ? undefined
-                        : _encode_UniqueIdentifier(value.uid, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_NameAndOptionalUID) {
+        _cached_encoder_for_NameAndOptionalUID = function (
+            value: NameAndOptionalUID,
+            elGetter: __utils.ASN1Encoder<NameAndOptionalUID>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_DistinguishedName(
+                                value.dn,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.uid === undefined
+                                ? undefined
+                                : _encode_UniqueIdentifier(
+                                      value.uid,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_NameAndOptionalUID(value, elGetter);
+}
 
 // TODO: ObjectAssignment: owner
 
@@ -1484,8 +2109,20 @@ export const _encode_NameAndOptionalUID = function (
 // TODO: ObjectAssignment: uiiFormat
 
 export type URI = asn1.UTF8String; // UTF8String
-export const _decode_URI = __utils._decodeUTF8String;
-export const _encode_URI = __utils._encodeUTF8String;
+let _cached_decoder_for_URI: __utils.ASN1Decoder<URI> | null = null;
+let _cached_encoder_for_URI: __utils.ASN1Encoder<URI> | null = null;
+export function _decode_URI(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_URI) {
+        _cached_decoder_for_URI = __utils._decodeUTF8String;
+    }
+    return _cached_decoder_for_URI(el);
+}
+export function _encode_URI(value: URI, elGetter: __utils.ASN1Encoder<URI>) {
+    if (!_cached_encoder_for_URI) {
+        _cached_encoder_for_URI = __utils._encodeUTF8String;
+    }
+    return _cached_encoder_for_URI(value, elGetter);
+}
 
 export enum UiiFormat_subset {
     baseObject = 0,
@@ -1498,8 +2135,27 @@ export const UiiFormat_subset_oneLevel: UiiFormat_subset =
     UiiFormat_subset.oneLevel; /* LONG_NAMED_ENUMERATED_VALUE */
 export const UiiFormat_subset_wholeSubtree: UiiFormat_subset =
     UiiFormat_subset.wholeSubtree; /* LONG_NAMED_ENUMERATED_VALUE */
-export const _decode_UiiFormat_subset = __utils._decodeEnumerated;
-export const _encode_UiiFormat_subset = __utils._encodeEnumerated;
+let _cached_decoder_for_UiiFormat_subset: __utils.ASN1Decoder<
+    UiiFormat_subset
+> | null = null;
+let _cached_encoder_for_UiiFormat_subset: __utils.ASN1Encoder<
+    UiiFormat_subset
+> | null = null;
+export function _decode_UiiFormat_subset(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UiiFormat_subset) {
+        _cached_decoder_for_UiiFormat_subset = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_UiiFormat_subset(el);
+}
+export function _encode_UiiFormat_subset(
+    value: UiiFormat_subset,
+    elGetter: __utils.ASN1Encoder<UiiFormat_subset>
+) {
+    if (!_cached_encoder_for_UiiFormat_subset) {
+        _cached_encoder_for_UiiFormat_subset = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_UiiFormat_subset(value, elGetter);
+}
 
 export class UiiItem {
     constructor(
@@ -1525,139 +2181,191 @@ export const _root_component_type_list_1_spec_for_UiiItem: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_UiiItem: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UiiItem: __utils.ComponentSpec[] = [];
-
-export const _decode_UiiItem = function (el: asn1.ASN1Element): UiiItem {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let type_!: asn1.OBJECT_IDENTIFIER;
-    let length: asn1.OPTIONAL<asn1.INTEGER>;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        type: (_el: asn1.ASN1Element): void => {
-            type_ = __utils._decodeObjectIdentifier(_el);
-        },
-        length: (_el: asn1.ASN1Element): void => {
-            length = __utils._decodeInteger(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_UiiItem,
-        _extension_additions_list_spec_for_UiiItem,
-        _root_component_type_list_2_spec_for_UiiItem,
-        undefined
-    );
-    return new UiiItem(/* SEQUENCE_CONSTRUCTOR_CALL */ type_, length);
-};
-export const _encode_UiiItem = function (
+let _cached_decoder_for_UiiItem: __utils.ASN1Decoder<UiiItem> | null = null;
+let _cached_encoder_for_UiiItem: __utils.ASN1Encoder<UiiItem> | null = null;
+export function _decode_UiiItem(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UiiItem) {
+        _cached_decoder_for_UiiItem = function (el: asn1.ASN1Element): UiiItem {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let type_!: asn1.OBJECT_IDENTIFIER;
+            let length: asn1.OPTIONAL<asn1.INTEGER>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                type: (_el: asn1.ASN1Element): void => {
+                    type_ = __utils._decodeObjectIdentifier(_el);
+                },
+                length: (_el: asn1.ASN1Element): void => {
+                    length = __utils._decodeInteger(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_UiiItem,
+                _extension_additions_list_spec_for_UiiItem,
+                _root_component_type_list_2_spec_for_UiiItem,
+                undefined
+            );
+            return new UiiItem(/* SEQUENCE_CONSTRUCTOR_CALL */ type_, length);
+        };
+    }
+    return _cached_decoder_for_UiiItem(el);
+}
+export function _encode_UiiItem(
     value: UiiItem,
     elGetter: __utils.ASN1Encoder<UiiItem>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                    value.type_,
-                    __utils.BER
-                ),
-                /* IF_ABSENT  */ value.length === undefined
-                    ? undefined
-                    : __utils._encodeInteger(value.length, __utils.BER),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UiiItem) {
+        _cached_encoder_for_UiiItem = function (
+            value: UiiItem,
+            elGetter: __utils.ASN1Encoder<UiiItem>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                            value.type_,
+                            __utils.BER
+                        ),
+                        /* IF_ABSENT  */ value.length === undefined
+                            ? undefined
+                            : __utils._encodeInteger(value.length, __utils.BER),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UiiItem(value, elGetter);
+}
 
 /* TODO: CHECK_RECURSIVE_DEFINITION */
 export type UiiFilter =
-    | { item: UiiItem }
-    | { and: UiiFilter[] }
-    | { or: UiiFilter[] }
-    | { not: UiiFilter };
-export const _decode_UiiFilter = __utils._decode_inextensible_choice<UiiFilter>(
-    {
-        "CONTEXT 0": [
-            "item",
-            __utils._decode_explicit<UiiItem>(() => _decode_UiiItem),
-        ],
-        "CONTEXT 1": [
-            "and",
-            __utils._decode_explicit<UiiFilter[]>(() =>
-                __utils._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
-            ),
-        ],
-        "CONTEXT 2": [
-            "or",
-            __utils._decode_explicit<UiiFilter[]>(() =>
-                __utils._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
-            ),
-        ],
-        "CONTEXT 3": [
-            "not",
-            __utils._decode_explicit<UiiFilter>(() => _decode_UiiFilter),
-        ],
+    | { item: UiiItem } /* CHOICE_ALT_ROOT */
+    | { and: UiiFilter[] } /* CHOICE_ALT_ROOT */
+    | { or: UiiFilter[] } /* CHOICE_ALT_ROOT */
+    | { not: UiiFilter } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_UiiFilter: __utils.ASN1Decoder<UiiFilter> | null = null;
+let _cached_encoder_for_UiiFilter: __utils.ASN1Encoder<UiiFilter> | null = null;
+export function _decode_UiiFilter(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UiiFilter) {
+        _cached_decoder_for_UiiFilter = __utils._decode_inextensible_choice<
+            UiiFilter
+        >({
+            "CONTEXT 0": [
+                "item",
+                __utils._decode_explicit<UiiItem>(() => _decode_UiiItem),
+            ],
+            "CONTEXT 1": [
+                "and",
+                __utils._decode_explicit<UiiFilter[]>(() =>
+                    __utils._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
+                ),
+            ],
+            "CONTEXT 2": [
+                "or",
+                __utils._decode_explicit<UiiFilter[]>(() =>
+                    __utils._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
+                ),
+            ],
+            "CONTEXT 3": [
+                "not",
+                __utils._decode_explicit<UiiFilter>(() => _decode_UiiFilter),
+            ],
+        });
     }
-);
-export const _encode_UiiFilter = __utils._encode_choice<UiiFilter>(
-    {
-        item: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_UiiItem,
-            __utils.BER
-        ),
-        and: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () =>
-                __utils._encodeSetOf<UiiFilter>(
+    return _cached_decoder_for_UiiFilter(el);
+}
+export function _encode_UiiFilter(
+    value: UiiFilter,
+    elGetter: __utils.ASN1Encoder<UiiFilter>
+) {
+    if (!_cached_encoder_for_UiiFilter) {
+        _cached_encoder_for_UiiFilter = __utils._encode_choice<UiiFilter>(
+            {
+                item: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_UiiItem,
+                    __utils.BER
+                ),
+                and: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () =>
+                        __utils._encodeSetOf<UiiFilter>(
+                            () => _encode_UiiFilter,
+                            __utils.BER
+                        ),
+                    __utils.BER
+                ),
+                or: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () =>
+                        __utils._encodeSetOf<UiiFilter>(
+                            () => _encode_UiiFilter,
+                            __utils.BER
+                        ),
+                    __utils.BER
+                ),
+                not: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    3,
                     () => _encode_UiiFilter,
                     __utils.BER
                 ),
+            },
             __utils.BER
-        ),
-        or: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () =>
-                __utils._encodeSetOf<UiiFilter>(
-                    () => _encode_UiiFilter,
-                    __utils.BER
-                ),
-            __utils.BER
-        ),
-        not: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            3,
-            () => _encode_UiiFilter,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_UiiFilter(value, elGetter);
+}
 
-export type UiiFormat_next = { length: asn1.INTEGER } | { filter: UiiFilter };
-export const _decode_UiiFormat_next = __utils._decode_inextensible_choice<
+export type UiiFormat_next =
+    | { length: asn1.INTEGER } /* CHOICE_ALT_ROOT */
+    | { filter: UiiFilter } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_UiiFormat_next: __utils.ASN1Decoder<
     UiiFormat_next
->({
-    "UNIVERSAL 2": ["length", __utils._decodeInteger],
-    "CONTEXT 0": ["filter", _decode_UiiFilter],
-    "CONTEXT 1": ["filter", _decode_UiiFilter],
-    "CONTEXT 2": ["filter", _decode_UiiFilter],
-    "CONTEXT 3": ["filter", _decode_UiiFilter],
-});
-export const _encode_UiiFormat_next = __utils._encode_choice<UiiFormat_next>(
-    {
-        length: __utils._encodeInteger,
-        filter: _encode_UiiFilter,
-    },
-    __utils.BER
-);
+> | null = null;
+let _cached_encoder_for_UiiFormat_next: __utils.ASN1Encoder<
+    UiiFormat_next
+> | null = null;
+export function _decode_UiiFormat_next(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UiiFormat_next) {
+        _cached_decoder_for_UiiFormat_next = __utils._decode_inextensible_choice<
+            UiiFormat_next
+        >({
+            "UNIVERSAL 2": ["length", __utils._decodeInteger],
+            "CONTEXT 0": ["filter", _decode_UiiFilter],
+            "CONTEXT 1": ["filter", _decode_UiiFilter],
+            "CONTEXT 2": ["filter", _decode_UiiFilter],
+            "CONTEXT 3": ["filter", _decode_UiiFilter],
+        });
+    }
+    return _cached_decoder_for_UiiFormat_next(el);
+}
+export function _encode_UiiFormat_next(
+    value: UiiFormat_next,
+    elGetter: __utils.ASN1Encoder<UiiFormat_next>
+) {
+    if (!_cached_encoder_for_UiiFormat_next) {
+        _cached_encoder_for_UiiFormat_next = __utils._encode_choice<
+            UiiFormat_next
+        >(
+            {
+                length: __utils._encodeInteger,
+                filter: _encode_UiiFilter,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_UiiFormat_next(value, elGetter);
+}
 
 export class UiiFormat {
     constructor(
@@ -1665,6 +2373,9 @@ export class UiiFormat {
         readonly subset: UiiFormat_subset | undefined,
         readonly next: UiiFormat_next
     ) {}
+    public static get _default_value_for_subset() {
+        return UiiFormat_subset_baseObject;
+    }
 }
 export const _root_component_type_list_1_spec_for_UiiFormat: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -1691,68 +2402,88 @@ export const _root_component_type_list_1_spec_for_UiiFormat: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_UiiFormat: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UiiFormat: __utils.ComponentSpec[] = [];
-export const _default_value_for_UiiFormat__subset = UiiFormat_subset_baseObject;
-export const _decode_UiiFormat = function (el: asn1.ASN1Element): UiiFormat {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let baseObject: asn1.OPTIONAL<URI>;
-    let subset: asn1.OPTIONAL<UiiFormat_subset> = _default_value_for_UiiFormat__subset;
-    let next!: UiiFormat_next;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        baseObject: (_el: asn1.ASN1Element): void => {
-            baseObject = _decode_URI(_el);
-        },
-        subset: (_el: asn1.ASN1Element): void => {
-            subset = _decode_UiiFormat_subset(_el);
-        },
-        next: (_el: asn1.ASN1Element): void => {
-            next = _decode_UiiFormat_next(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_UiiFormat,
-        _extension_additions_list_spec_for_UiiFormat,
-        _root_component_type_list_2_spec_for_UiiFormat,
-        undefined
-    );
-    return new UiiFormat(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ baseObject,
-        subset,
-        next
-    );
-};
-export const _encode_UiiFormat = function (
+let _cached_decoder_for_UiiFormat: __utils.ASN1Decoder<UiiFormat> | null = null;
+let _cached_encoder_for_UiiFormat: __utils.ASN1Encoder<UiiFormat> | null = null;
+export function _decode_UiiFormat(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UiiFormat) {
+        _cached_decoder_for_UiiFormat = function (
+            el: asn1.ASN1Element
+        ): UiiFormat {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let baseObject: asn1.OPTIONAL<URI>;
+            let subset: asn1.OPTIONAL<UiiFormat_subset> =
+                UiiFormat._default_value_for_subset;
+            let next!: UiiFormat_next;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                baseObject: (_el: asn1.ASN1Element): void => {
+                    baseObject = _decode_URI(_el);
+                },
+                subset: (_el: asn1.ASN1Element): void => {
+                    subset = _decode_UiiFormat_subset(_el);
+                },
+                next: (_el: asn1.ASN1Element): void => {
+                    next = _decode_UiiFormat_next(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_UiiFormat,
+                _extension_additions_list_spec_for_UiiFormat,
+                _root_component_type_list_2_spec_for_UiiFormat,
+                undefined
+            );
+            return new UiiFormat(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ baseObject,
+                subset,
+                next
+            );
+        };
+    }
+    return _cached_decoder_for_UiiFormat(el);
+}
+export function _encode_UiiFormat(
     value: UiiFormat,
     elGetter: __utils.ASN1Encoder<UiiFormat>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* IF_ABSENT  */ value.baseObject === undefined
-                    ? undefined
-                    : _encode_URI(value.baseObject, __utils.BER),
-                /* IF_DEFAULT */ value.subset === undefined ||
-                __utils.deepEq(
-                    value.subset,
-                    _default_value_for_UiiFormat__subset
-                )
-                    ? undefined
-                    : _encode_UiiFormat_subset(value.subset, __utils.BER),
-                /* REQUIRED   */ _encode_UiiFormat_next(
-                    value.next,
-                    __utils.BER
-                ),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UiiFormat) {
+        _cached_encoder_for_UiiFormat = function (
+            value: UiiFormat,
+            elGetter: __utils.ASN1Encoder<UiiFormat>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* IF_ABSENT  */ value.baseObject === undefined
+                            ? undefined
+                            : _encode_URI(value.baseObject, __utils.BER),
+                        /* IF_DEFAULT */ value.subset === undefined ||
+                        __utils.deepEq(
+                            value.subset,
+                            UiiFormat._default_value_for_subset
+                        )
+                            ? undefined
+                            : _encode_UiiFormat_subset(
+                                  value.subset,
+                                  __utils.BER
+                              ),
+                        /* REQUIRED   */ _encode_UiiFormat_next(
+                            value.next,
+                            __utils.BER
+                        ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UiiFormat(value, elGetter);
+}
 
 // TODO: ObjectAssignment: uiiInUrn
 
@@ -1767,39 +2498,62 @@ export const _encode_UiiFormat = function (
 // TODO: ObjectAssignment: epcFormat
 
 export type EpcFormat_fields_Item_charField =
-    | { characters: asn1.INTEGER }
-    | { maxValue: asn1.INTEGER };
-export const _decode_EpcFormat_fields_Item_charField = __utils._decode_inextensible_choice<
+    | { characters: asn1.INTEGER } /* CHOICE_ALT_ROOT */
+    | { maxValue: asn1.INTEGER } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_EpcFormat_fields_Item_charField: __utils.ASN1Decoder<
     EpcFormat_fields_Item_charField
->({
-    "CONTEXT 0": [
-        "characters",
-        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-    "CONTEXT 1": [
-        "maxValue",
-        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-});
-export const _encode_EpcFormat_fields_Item_charField = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_EpcFormat_fields_Item_charField: __utils.ASN1Encoder<
     EpcFormat_fields_Item_charField
->(
-    {
-        characters: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => __utils._encodeInteger,
+> | null = null;
+export function _decode_EpcFormat_fields_Item_charField(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EpcFormat_fields_Item_charField) {
+        _cached_decoder_for_EpcFormat_fields_Item_charField = __utils._decode_inextensible_choice<
+            EpcFormat_fields_Item_charField
+        >({
+            "CONTEXT 0": [
+                "characters",
+                __utils._decode_explicit<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+            "CONTEXT 1": [
+                "maxValue",
+                __utils._decode_explicit<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_EpcFormat_fields_Item_charField(el);
+}
+export function _encode_EpcFormat_fields_Item_charField(
+    value: EpcFormat_fields_Item_charField,
+    elGetter: __utils.ASN1Encoder<EpcFormat_fields_Item_charField>
+) {
+    if (!_cached_encoder_for_EpcFormat_fields_Item_charField) {
+        _cached_encoder_for_EpcFormat_fields_Item_charField = __utils._encode_choice<
+            EpcFormat_fields_Item_charField
+        >(
+            {
+                characters: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+                maxValue: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        maxValue: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => __utils._encodeInteger,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_EpcFormat_fields_Item_charField(value, elGetter);
+}
 
 export enum EpcFormat_fields_Item_result {
     numericPad = 0,
@@ -1818,8 +2572,29 @@ export const EpcFormat_fields_Item_result_alpha7bits: EpcFormat_fields_Item_resu
     EpcFormat_fields_Item_result.alpha7bits; /* LONG_NAMED_ENUMERATED_VALUE */
 export const alpha7bits: EpcFormat_fields_Item_result =
     EpcFormat_fields_Item_result.alpha7bits; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_EpcFormat_fields_Item_result = __utils._decodeEnumerated;
-export const _encode_EpcFormat_fields_Item_result = __utils._encodeEnumerated;
+let _cached_decoder_for_EpcFormat_fields_Item_result: __utils.ASN1Decoder<
+    EpcFormat_fields_Item_result
+> | null = null;
+let _cached_encoder_for_EpcFormat_fields_Item_result: __utils.ASN1Encoder<
+    EpcFormat_fields_Item_result
+> | null = null;
+export function _decode_EpcFormat_fields_Item_result(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EpcFormat_fields_Item_result) {
+        _cached_decoder_for_EpcFormat_fields_Item_result =
+            __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_EpcFormat_fields_Item_result(el);
+}
+export function _encode_EpcFormat_fields_Item_result(
+    value: EpcFormat_fields_Item_result,
+    elGetter: __utils.ASN1Encoder<EpcFormat_fields_Item_result>
+) {
+    if (!_cached_encoder_for_EpcFormat_fields_Item_result) {
+        _cached_encoder_for_EpcFormat_fields_Item_result =
+            __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_EpcFormat_fields_Item_result(value, elGetter);
+}
 
 export class EpcFormat_fields_Item {
     constructor(
@@ -1827,6 +2602,9 @@ export class EpcFormat_fields_Item {
         readonly charField: EpcFormat_fields_Item_charField,
         readonly result: EpcFormat_fields_Item_result | undefined
     ) {}
+    public static get _default_value_for_result() {
+        return numericPad;
+    }
 }
 export const _root_component_type_list_1_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -1853,74 +2631,93 @@ export const _root_component_type_list_1_spec_for_EpcFormat_fields_Item: __utils
 ];
 export const _root_component_type_list_2_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EpcFormat_fields_Item: __utils.ComponentSpec[] = [];
-export const _default_value_for_EpcFormat_fields_Item__result = numericPad;
-export const _decode_EpcFormat_fields_Item = function (
-    el: asn1.ASN1Element
-): EpcFormat_fields_Item {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let bits!: asn1.INTEGER;
-    let charField!: EpcFormat_fields_Item_charField;
-    let result: asn1.OPTIONAL<EpcFormat_fields_Item_result> = _default_value_for_EpcFormat_fields_Item__result;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        bits: (_el: asn1.ASN1Element): void => {
-            bits = __utils._decodeInteger(_el);
-        },
-        charField: (_el: asn1.ASN1Element): void => {
-            charField = _decode_EpcFormat_fields_Item_charField(_el);
-        },
-        result: (_el: asn1.ASN1Element): void => {
-            result = _decode_EpcFormat_fields_Item_result(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_EpcFormat_fields_Item,
-        _extension_additions_list_spec_for_EpcFormat_fields_Item,
-        _root_component_type_list_2_spec_for_EpcFormat_fields_Item,
-        undefined
-    );
-    return new EpcFormat_fields_Item(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ bits,
-        charField,
-        result
-    );
-};
-export const _encode_EpcFormat_fields_Item = function (
+let _cached_decoder_for_EpcFormat_fields_Item: __utils.ASN1Decoder<
+    EpcFormat_fields_Item
+> | null = null;
+let _cached_encoder_for_EpcFormat_fields_Item: __utils.ASN1Encoder<
+    EpcFormat_fields_Item
+> | null = null;
+export function _decode_EpcFormat_fields_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EpcFormat_fields_Item) {
+        _cached_decoder_for_EpcFormat_fields_Item = function (
+            el: asn1.ASN1Element
+        ): EpcFormat_fields_Item {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let bits!: asn1.INTEGER;
+            let charField!: EpcFormat_fields_Item_charField;
+            let result: asn1.OPTIONAL<EpcFormat_fields_Item_result> =
+                EpcFormat_fields_Item._default_value_for_result;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                bits: (_el: asn1.ASN1Element): void => {
+                    bits = __utils._decodeInteger(_el);
+                },
+                charField: (_el: asn1.ASN1Element): void => {
+                    charField = _decode_EpcFormat_fields_Item_charField(_el);
+                },
+                result: (_el: asn1.ASN1Element): void => {
+                    result = _decode_EpcFormat_fields_Item_result(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_EpcFormat_fields_Item,
+                _extension_additions_list_spec_for_EpcFormat_fields_Item,
+                _root_component_type_list_2_spec_for_EpcFormat_fields_Item,
+                undefined
+            );
+            return new EpcFormat_fields_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bits,
+                charField,
+                result
+            );
+        };
+    }
+    return _cached_decoder_for_EpcFormat_fields_Item(el);
+}
+export function _encode_EpcFormat_fields_Item(
     value: EpcFormat_fields_Item,
     elGetter: __utils.ASN1Encoder<EpcFormat_fields_Item>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* REQUIRED   */ __utils._encodeInteger(
-                    value.bits,
-                    __utils.BER
-                ),
-                /* REQUIRED   */ _encode_EpcFormat_fields_Item_charField(
-                    value.charField,
-                    __utils.BER
-                ),
-                /* IF_DEFAULT */ value.result === undefined ||
-                __utils.deepEq(
-                    value.result,
-                    _default_value_for_EpcFormat_fields_Item__result
-                )
-                    ? undefined
-                    : _encode_EpcFormat_fields_Item_result(
-                          value.result,
-                          __utils.BER
-                      ),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_EpcFormat_fields_Item) {
+        _cached_encoder_for_EpcFormat_fields_Item = function (
+            value: EpcFormat_fields_Item,
+            elGetter: __utils.ASN1Encoder<EpcFormat_fields_Item>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ __utils._encodeInteger(
+                            value.bits,
+                            __utils.BER
+                        ),
+                        /* REQUIRED   */ _encode_EpcFormat_fields_Item_charField(
+                            value.charField,
+                            __utils.BER
+                        ),
+                        /* IF_DEFAULT */ value.result === undefined ||
+                        __utils.deepEq(
+                            value.result,
+                            EpcFormat_fields_Item._default_value_for_result
+                        )
+                            ? undefined
+                            : _encode_EpcFormat_fields_Item_result(
+                                  value.result,
+                                  __utils.BER
+                              ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_EpcFormat_fields_Item(value, elGetter);
+}
 
 export class EpcFormat {
     constructor(
@@ -1962,90 +2759,109 @@ export const _root_component_type_list_1_spec_for_EpcFormat: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_EpcFormat: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_EpcFormat: __utils.ComponentSpec[] = [];
-
-export const _decode_EpcFormat = function (el: asn1.ASN1Element): EpcFormat {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let fields!: EpcFormat_fields_Item[];
-    let digitShift: asn1.OPTIONAL<asn1.INTEGER>;
-    let checkCalc: asn1.OPTIONAL<asn1.INTEGER>;
-    let urnPrefix: asn1.OPTIONAL<asn1.UTF8String>;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        fields: (_el: asn1.ASN1Element): void => {
-            fields = __utils._decodeSequenceOf<EpcFormat_fields_Item>(
-                () => _decode_EpcFormat_fields_Item
-            )(_el);
-        },
-        digitShift: (_el: asn1.ASN1Element): void => {
-            digitShift = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-        checkCalc: (_el: asn1.ASN1Element): void => {
-            checkCalc = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-        urnPrefix: (_el: asn1.ASN1Element): void => {
-            urnPrefix = __utils._decodeUTF8String(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_EpcFormat,
-        _extension_additions_list_spec_for_EpcFormat,
-        _root_component_type_list_2_spec_for_EpcFormat,
-        undefined
-    );
-    return new EpcFormat(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ fields,
-        digitShift,
-        checkCalc,
-        urnPrefix
-    );
-};
-export const _encode_EpcFormat = function (
+let _cached_decoder_for_EpcFormat: __utils.ASN1Decoder<EpcFormat> | null = null;
+let _cached_encoder_for_EpcFormat: __utils.ASN1Encoder<EpcFormat> | null = null;
+export function _decode_EpcFormat(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_EpcFormat) {
+        _cached_decoder_for_EpcFormat = function (
+            el: asn1.ASN1Element
+        ): EpcFormat {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let fields!: EpcFormat_fields_Item[];
+            let digitShift: asn1.OPTIONAL<asn1.INTEGER>;
+            let checkCalc: asn1.OPTIONAL<asn1.INTEGER>;
+            let urnPrefix: asn1.OPTIONAL<asn1.UTF8String>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                fields: (_el: asn1.ASN1Element): void => {
+                    fields = __utils._decodeSequenceOf<EpcFormat_fields_Item>(
+                        () => _decode_EpcFormat_fields_Item
+                    )(_el);
+                },
+                digitShift: (_el: asn1.ASN1Element): void => {
+                    digitShift = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+                checkCalc: (_el: asn1.ASN1Element): void => {
+                    checkCalc = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+                urnPrefix: (_el: asn1.ASN1Element): void => {
+                    urnPrefix = __utils._decodeUTF8String(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_EpcFormat,
+                _extension_additions_list_spec_for_EpcFormat,
+                _root_component_type_list_2_spec_for_EpcFormat,
+                undefined
+            );
+            return new EpcFormat(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ fields,
+                digitShift,
+                checkCalc,
+                urnPrefix
+            );
+        };
+    }
+    return _cached_decoder_for_EpcFormat(el);
+}
+export function _encode_EpcFormat(
     value: EpcFormat,
     elGetter: __utils.ASN1Encoder<EpcFormat>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* REQUIRED   */ __utils._encodeSequenceOf<
-                    EpcFormat_fields_Item
-                >(() => _encode_EpcFormat_fields_Item, __utils.BER)(
-                    value.fields,
-                    __utils.BER
-                ),
-                /* IF_ABSENT  */ value.digitShift === undefined
-                    ? undefined
-                    : __utils._encode_explicit(
-                          asn1.ASN1TagClass.context,
-                          0,
-                          () => __utils._encodeInteger,
-                          __utils.BER
-                      )(value.digitShift, __utils.BER),
-                /* IF_ABSENT  */ value.checkCalc === undefined
-                    ? undefined
-                    : __utils._encode_explicit(
-                          asn1.ASN1TagClass.context,
-                          1,
-                          () => __utils._encodeInteger,
-                          __utils.BER
-                      )(value.checkCalc, __utils.BER),
-                /* IF_ABSENT  */ value.urnPrefix === undefined
-                    ? undefined
-                    : __utils._encodeUTF8String(value.urnPrefix, __utils.BER),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_EpcFormat) {
+        _cached_encoder_for_EpcFormat = function (
+            value: EpcFormat,
+            elGetter: __utils.ASN1Encoder<EpcFormat>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ __utils._encodeSequenceOf<
+                            EpcFormat_fields_Item
+                        >(() => _encode_EpcFormat_fields_Item, __utils.BER)(
+                            value.fields,
+                            __utils.BER
+                        ),
+                        /* IF_ABSENT  */ value.digitShift === undefined
+                            ? undefined
+                            : __utils._encode_explicit(
+                                  asn1.ASN1TagClass.context,
+                                  0,
+                                  () => __utils._encodeInteger,
+                                  __utils.BER
+                              )(value.digitShift, __utils.BER),
+                        /* IF_ABSENT  */ value.checkCalc === undefined
+                            ? undefined
+                            : __utils._encode_explicit(
+                                  asn1.ASN1TagClass.context,
+                                  1,
+                                  () => __utils._encodeInteger,
+                                  __utils.BER
+                              )(value.checkCalc, __utils.BER),
+                        /* IF_ABSENT  */ value.urnPrefix === undefined
+                            ? undefined
+                            : __utils._encodeUTF8String(
+                                  value.urnPrefix,
+                                  __utils.BER
+                              ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_EpcFormat(value, elGetter);
+}
 
 // TODO: ObjectAssignment: epcInUrn
 
@@ -2106,133 +2922,213 @@ export const _root_component_type_list_1_spec_for_MultipleMatchingLocalities: __
 ];
 export const _root_component_type_list_2_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MultipleMatchingLocalities: __utils.ComponentSpec[] = [];
-
-export const _decode_MultipleMatchingLocalities = function (
-    el: asn1.ASN1Element
-): MultipleMatchingLocalities {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let matchingRuleUsed: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
-    let attributeList!: AttributeValueAssertion[];
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        matchingRuleUsed: (_el: asn1.ASN1Element): void => {
-            matchingRuleUsed = __utils._decodeObjectIdentifier(_el);
-        },
-        attributeList: (_el: asn1.ASN1Element): void => {
-            attributeList = __utils._decodeSequenceOf<AttributeValueAssertion>(
-                () => _decode_AttributeValueAssertion
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_MultipleMatchingLocalities,
-        _extension_additions_list_spec_for_MultipleMatchingLocalities,
-        _root_component_type_list_2_spec_for_MultipleMatchingLocalities,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new MultipleMatchingLocalities(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ matchingRuleUsed,
-        attributeList,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_MultipleMatchingLocalities = function (
+let _cached_decoder_for_MultipleMatchingLocalities: __utils.ASN1Decoder<
+    MultipleMatchingLocalities
+> | null = null;
+let _cached_encoder_for_MultipleMatchingLocalities: __utils.ASN1Encoder<
+    MultipleMatchingLocalities
+> | null = null;
+export function _decode_MultipleMatchingLocalities(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_MultipleMatchingLocalities) {
+        _cached_decoder_for_MultipleMatchingLocalities = function (
+            el: asn1.ASN1Element
+        ): MultipleMatchingLocalities {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let matchingRuleUsed: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
+            let attributeList!: AttributeValueAssertion[];
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                matchingRuleUsed: (_el: asn1.ASN1Element): void => {
+                    matchingRuleUsed = __utils._decodeObjectIdentifier(_el);
+                },
+                attributeList: (_el: asn1.ASN1Element): void => {
+                    attributeList = __utils._decodeSequenceOf<
+                        AttributeValueAssertion
+                    >(() => _decode_AttributeValueAssertion)(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_MultipleMatchingLocalities,
+                _extension_additions_list_spec_for_MultipleMatchingLocalities,
+                _root_component_type_list_2_spec_for_MultipleMatchingLocalities,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new MultipleMatchingLocalities(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ matchingRuleUsed,
+                attributeList,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_MultipleMatchingLocalities(el);
+}
+export function _encode_MultipleMatchingLocalities(
     value: MultipleMatchingLocalities,
     elGetter: __utils.ASN1Encoder<MultipleMatchingLocalities>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.matchingRuleUsed === undefined
-                        ? undefined
-                        : __utils._encodeObjectIdentifier(
-                              value.matchingRuleUsed,
-                              __utils.BER
-                          ),
-                    /* REQUIRED   */ __utils._encodeSequenceOf<
-                        AttributeValueAssertion
-                    >(() => _encode_AttributeValueAssertion, __utils.BER)(
-                        value.attributeList,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_MultipleMatchingLocalities) {
+        _cached_encoder_for_MultipleMatchingLocalities = function (
+            value: MultipleMatchingLocalities,
+            elGetter: __utils.ASN1Encoder<MultipleMatchingLocalities>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.matchingRuleUsed ===
+                            undefined
+                                ? undefined
+                                : __utils._encodeObjectIdentifier(
+                                      value.matchingRuleUsed,
+                                      __utils.BER
+                                  ),
+                            /* REQUIRED   */ __utils._encodeSequenceOf<
+                                AttributeValueAssertion
+                            >(
+                                () => _encode_AttributeValueAssertion,
+                                __utils.BER
+                            )(value.attributeList, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_MultipleMatchingLocalities(value, elGetter);
+}
 
 // TODO: ObjectAssignment: proposedRelaxation
 
 export type MRMappings = MRMapping[]; // SequenceOfType
-export const _decode_MRMappings = __utils._decodeSequenceOf<MRMapping>(
-    () => _decode_MRMapping
-);
-export const _encode_MRMappings = __utils._encodeSequenceOf<MRMapping>(
-    () => _encode_MRMapping,
-    __utils.BER
-);
+let _cached_decoder_for_MRMappings: __utils.ASN1Decoder<
+    MRMappings
+> | null = null;
+let _cached_encoder_for_MRMappings: __utils.ASN1Encoder<
+    MRMappings
+> | null = null;
+export function _decode_MRMappings(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_MRMappings) {
+        _cached_decoder_for_MRMappings = __utils._decodeSequenceOf<MRMapping>(
+            () => _decode_MRMapping
+        );
+    }
+    return _cached_decoder_for_MRMappings(el);
+}
+export function _encode_MRMappings(
+    value: MRMappings,
+    elGetter: __utils.ASN1Encoder<MRMappings>
+) {
+    if (!_cached_encoder_for_MRMappings) {
+        _cached_encoder_for_MRMappings = __utils._encodeSequenceOf<MRMapping>(
+            () => _encode_MRMapping,
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_MRMappings(value, elGetter);
+}
 
 // TODO: ObjectAssignment: appliedRelaxation
 
 // TODO: ObjectAssignment: pwdResponseValue
 
 export type PwdResponse_warning =
-    | { timeleft: asn1.INTEGER }
-    | { graceRemaining: asn1.INTEGER }
-    | asn1.ASN1Element;
-export const _decode_PwdResponse_warning = __utils._decode_extensible_choice<
+    | { timeleft: asn1.INTEGER } /* CHOICE_ALT_ROOT */
+    | { graceRemaining: asn1.INTEGER } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_PwdResponse_warning: __utils.ASN1Decoder<
     PwdResponse_warning
->({
-    "CONTEXT 0": [
-        "timeleft",
-        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-    "CONTEXT 1": [
-        "graceRemaining",
-        __utils._decode_explicit<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-});
-export const _encode_PwdResponse_warning = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_PwdResponse_warning: __utils.ASN1Encoder<
     PwdResponse_warning
->(
-    {
-        timeleft: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => __utils._encodeInteger,
+> | null = null;
+export function _decode_PwdResponse_warning(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdResponse_warning) {
+        _cached_decoder_for_PwdResponse_warning = __utils._decode_extensible_choice<
+            PwdResponse_warning
+        >({
+            "CONTEXT 0": [
+                "timeleft",
+                __utils._decode_explicit<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+            "CONTEXT 1": [
+                "graceRemaining",
+                __utils._decode_explicit<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_PwdResponse_warning(el);
+}
+export function _encode_PwdResponse_warning(
+    value: PwdResponse_warning,
+    elGetter: __utils.ASN1Encoder<PwdResponse_warning>
+) {
+    if (!_cached_encoder_for_PwdResponse_warning) {
+        _cached_encoder_for_PwdResponse_warning = __utils._encode_choice<
+            PwdResponse_warning
+        >(
+            {
+                timeleft: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+                graceRemaining: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        graceRemaining: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => __utils._encodeInteger,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_PwdResponse_warning(value, elGetter);
+}
 
 export type PwdResponse_error = asn1.ENUMERATED;
 export const PwdResponse_error_passwordExpired: PwdResponse_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 export const passwordExpired: PwdResponse_error = PwdResponse_error_passwordExpired; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const PwdResponse_error_changeAfterReset: PwdResponse_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const changeAfterReset: PwdResponse_error = PwdResponse_error_changeAfterReset; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_PwdResponse_error = __utils._decodeEnumerated;
-export const _encode_PwdResponse_error = __utils._encodeEnumerated;
+let _cached_decoder_for_PwdResponse_error: __utils.ASN1Decoder<
+    PwdResponse_error
+> | null = null;
+let _cached_encoder_for_PwdResponse_error: __utils.ASN1Encoder<
+    PwdResponse_error
+> | null = null;
+export function _decode_PwdResponse_error(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdResponse_error) {
+        _cached_decoder_for_PwdResponse_error = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_PwdResponse_error(el);
+}
+export function _encode_PwdResponse_error(
+    value: PwdResponse_error,
+    elGetter: __utils.ASN1Encoder<PwdResponse_error>
+) {
+    if (!_cached_encoder_for_PwdResponse_error) {
+        _cached_encoder_for_PwdResponse_error = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_PwdResponse_error(value, elGetter);
+}
 
 export class PwdResponse {
     constructor(
@@ -2258,54 +3154,81 @@ export const _root_component_type_list_1_spec_for_PwdResponse: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_PwdResponse: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PwdResponse: __utils.ComponentSpec[] = [];
-
-export const _decode_PwdResponse = function (
-    el: asn1.ASN1Element
-): PwdResponse {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let warning: asn1.OPTIONAL<PwdResponse_warning>;
-    let error: asn1.OPTIONAL<PwdResponse_error>;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        warning: (_el: asn1.ASN1Element): void => {
-            warning = _decode_PwdResponse_warning(_el);
-        },
-        error: (_el: asn1.ASN1Element): void => {
-            error = _decode_PwdResponse_error(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_PwdResponse,
-        _extension_additions_list_spec_for_PwdResponse,
-        _root_component_type_list_2_spec_for_PwdResponse,
-        undefined
-    );
-    return new PwdResponse(/* SEQUENCE_CONSTRUCTOR_CALL */ warning, error);
-};
-export const _encode_PwdResponse = function (
+let _cached_decoder_for_PwdResponse: __utils.ASN1Decoder<
+    PwdResponse
+> | null = null;
+let _cached_encoder_for_PwdResponse: __utils.ASN1Encoder<
+    PwdResponse
+> | null = null;
+export function _decode_PwdResponse(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdResponse) {
+        _cached_decoder_for_PwdResponse = function (
+            el: asn1.ASN1Element
+        ): PwdResponse {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let warning: asn1.OPTIONAL<PwdResponse_warning>;
+            let error: asn1.OPTIONAL<PwdResponse_error>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                warning: (_el: asn1.ASN1Element): void => {
+                    warning = _decode_PwdResponse_warning(_el);
+                },
+                error: (_el: asn1.ASN1Element): void => {
+                    error = _decode_PwdResponse_error(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_PwdResponse,
+                _extension_additions_list_spec_for_PwdResponse,
+                _root_component_type_list_2_spec_for_PwdResponse,
+                undefined
+            );
+            return new PwdResponse(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ warning,
+                error
+            );
+        };
+    }
+    return _cached_decoder_for_PwdResponse(el);
+}
+export function _encode_PwdResponse(
     value: PwdResponse,
     elGetter: __utils.ASN1Encoder<PwdResponse>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat([
-                /* IF_ABSENT  */ value.warning === undefined
-                    ? undefined
-                    : _encode_PwdResponse_warning(value.warning, __utils.BER),
-                /* IF_ABSENT  */ value.error === undefined
-                    ? undefined
-                    : _encode_PwdResponse_error(value.error, __utils.BER),
-            ])
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_PwdResponse) {
+        _cached_encoder_for_PwdResponse = function (
+            value: PwdResponse,
+            elGetter: __utils.ASN1Encoder<PwdResponse>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat([
+                        /* IF_ABSENT  */ value.warning === undefined
+                            ? undefined
+                            : _encode_PwdResponse_warning(
+                                  value.warning,
+                                  __utils.BER
+                              ),
+                        /* IF_ABSENT  */ value.error === undefined
+                            ? undefined
+                            : _encode_PwdResponse_error(
+                                  value.error,
+                                  __utils.BER
+                              ),
+                    ])
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_PwdResponse(value, elGetter);
+}
 
 // TODO: ObjectAssignment: ldapDiagnosticMsg
 
@@ -2326,68 +3249,106 @@ export const _encode_PwdResponse = function (
 // TODO: ObjectAssignment: caseIgnoreSubstringsMatch
 
 export type SubstringAssertion_Item =
-    | { initial: UnboundedDirectoryString }
-    | { any_: UnboundedDirectoryString }
-    | { final: UnboundedDirectoryString }
-    | { control: Attribute }
-    | asn1.ASN1Element;
-export const _decode_SubstringAssertion_Item = __utils._decode_extensible_choice<
+    | { initial: UnboundedDirectoryString } /* CHOICE_ALT_ROOT */
+    | { any_: UnboundedDirectoryString } /* CHOICE_ALT_ROOT */
+    | { final: UnboundedDirectoryString } /* CHOICE_ALT_ROOT */
+    | { control: Attribute } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_SubstringAssertion_Item: __utils.ASN1Decoder<
     SubstringAssertion_Item
->({
-    "CONTEXT 0": [
-        "initial",
-        __utils._decode_explicit<UnboundedDirectoryString>(
-            () => _decode_UnboundedDirectoryString
-        ),
-    ],
-    "CONTEXT 1": [
-        "any_",
-        __utils._decode_explicit<UnboundedDirectoryString>(
-            () => _decode_UnboundedDirectoryString
-        ),
-    ],
-    "CONTEXT 2": [
-        "final",
-        __utils._decode_explicit<UnboundedDirectoryString>(
-            () => _decode_UnboundedDirectoryString
-        ),
-    ],
-    "UNIVERSAL 16": ["control", _decode_Attribute],
-});
-export const _encode_SubstringAssertion_Item = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_SubstringAssertion_Item: __utils.ASN1Encoder<
     SubstringAssertion_Item
->(
-    {
-        initial: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_UnboundedDirectoryString,
+> | null = null;
+export function _decode_SubstringAssertion_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SubstringAssertion_Item) {
+        _cached_decoder_for_SubstringAssertion_Item = __utils._decode_extensible_choice<
+            SubstringAssertion_Item
+        >({
+            "CONTEXT 0": [
+                "initial",
+                __utils._decode_explicit<UnboundedDirectoryString>(
+                    () => _decode_UnboundedDirectoryString
+                ),
+            ],
+            "CONTEXT 1": [
+                "any_",
+                __utils._decode_explicit<UnboundedDirectoryString>(
+                    () => _decode_UnboundedDirectoryString
+                ),
+            ],
+            "CONTEXT 2": [
+                "final",
+                __utils._decode_explicit<UnboundedDirectoryString>(
+                    () => _decode_UnboundedDirectoryString
+                ),
+            ],
+            "UNIVERSAL 16": ["control", _decode_Attribute],
+        });
+    }
+    return _cached_decoder_for_SubstringAssertion_Item(el);
+}
+export function _encode_SubstringAssertion_Item(
+    value: SubstringAssertion_Item,
+    elGetter: __utils.ASN1Encoder<SubstringAssertion_Item>
+) {
+    if (!_cached_encoder_for_SubstringAssertion_Item) {
+        _cached_encoder_for_SubstringAssertion_Item = __utils._encode_choice<
+            SubstringAssertion_Item
+        >(
+            {
+                initial: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_UnboundedDirectoryString,
+                    __utils.BER
+                ),
+                any_: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => _encode_UnboundedDirectoryString,
+                    __utils.BER
+                ),
+                final: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () => _encode_UnboundedDirectoryString,
+                    __utils.BER
+                ),
+                control: _encode_Attribute,
+            },
             __utils.BER
-        ),
-        any_: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => _encode_UnboundedDirectoryString,
-            __utils.BER
-        ),
-        final: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () => _encode_UnboundedDirectoryString,
-            __utils.BER
-        ),
-        control: _encode_Attribute,
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_SubstringAssertion_Item(value, elGetter);
+}
 
 export type SubstringAssertion = SubstringAssertion_Item[]; // SequenceOfType
-export const _decode_SubstringAssertion = __utils._decodeSequenceOf<
-    SubstringAssertion_Item
->(() => _decode_SubstringAssertion_Item);
-export const _encode_SubstringAssertion = __utils._encodeSequenceOf<
-    SubstringAssertion_Item
->(() => _encode_SubstringAssertion_Item, __utils.BER);
+let _cached_decoder_for_SubstringAssertion: __utils.ASN1Decoder<
+    SubstringAssertion
+> | null = null;
+let _cached_encoder_for_SubstringAssertion: __utils.ASN1Encoder<
+    SubstringAssertion
+> | null = null;
+export function _decode_SubstringAssertion(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SubstringAssertion) {
+        _cached_decoder_for_SubstringAssertion = __utils._decodeSequenceOf<
+            SubstringAssertion_Item
+        >(() => _decode_SubstringAssertion_Item);
+    }
+    return _cached_decoder_for_SubstringAssertion(el);
+}
+export function _encode_SubstringAssertion(
+    value: SubstringAssertion,
+    elGetter: __utils.ASN1Encoder<SubstringAssertion>
+) {
+    if (!_cached_encoder_for_SubstringAssertion) {
+        _cached_encoder_for_SubstringAssertion = __utils._encodeSequenceOf<
+            SubstringAssertion_Item
+        >(() => _encode_SubstringAssertion_Item, __utils.BER);
+    }
+    return _cached_encoder_for_SubstringAssertion(value, elGetter);
+}
 
 // TODO: ObjectAssignment: numericStringMatch
 
@@ -2398,12 +3359,31 @@ export const _encode_SubstringAssertion = __utils._encodeSequenceOf<
 // TODO: ObjectAssignment: caseIgnoreListMatch
 
 export type CaseIgnoreList = UnboundedDirectoryString[]; // SequenceOfType
-export const _decode_CaseIgnoreList = __utils._decodeSequenceOf<
-    UnboundedDirectoryString
->(() => _decode_UnboundedDirectoryString);
-export const _encode_CaseIgnoreList = __utils._encodeSequenceOf<
-    UnboundedDirectoryString
->(() => _encode_UnboundedDirectoryString, __utils.BER);
+let _cached_decoder_for_CaseIgnoreList: __utils.ASN1Decoder<
+    CaseIgnoreList
+> | null = null;
+let _cached_encoder_for_CaseIgnoreList: __utils.ASN1Encoder<
+    CaseIgnoreList
+> | null = null;
+export function _decode_CaseIgnoreList(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CaseIgnoreList) {
+        _cached_decoder_for_CaseIgnoreList = __utils._decodeSequenceOf<
+            UnboundedDirectoryString
+        >(() => _decode_UnboundedDirectoryString);
+    }
+    return _cached_decoder_for_CaseIgnoreList(el);
+}
+export function _encode_CaseIgnoreList(
+    value: CaseIgnoreList,
+    elGetter: __utils.ASN1Encoder<CaseIgnoreList>
+) {
+    if (!_cached_encoder_for_CaseIgnoreList) {
+        _cached_encoder_for_CaseIgnoreList = __utils._encodeSequenceOf<
+            UnboundedDirectoryString
+        >(() => _encode_UnboundedDirectoryString, __utils.BER);
+    }
+    return _cached_encoder_for_CaseIgnoreList(value, elGetter);
+}
 
 // TODO: ObjectAssignment: caseIgnoreListSubstringsMatch
 
@@ -2424,65 +3404,103 @@ export const _encode_CaseIgnoreList = __utils._encodeSequenceOf<
 // TODO: ObjectAssignment: octetStringSubstringsMatch
 
 export type OctetSubstringAssertion_Item =
-    | { initial: asn1.OCTET_STRING }
-    | { any_: asn1.OCTET_STRING }
-    | { final: asn1.OCTET_STRING }
-    | asn1.ASN1Element;
-export const _decode_OctetSubstringAssertion_Item = __utils._decode_extensible_choice<
+    | { initial: asn1.OCTET_STRING } /* CHOICE_ALT_ROOT */
+    | { any_: asn1.OCTET_STRING } /* CHOICE_ALT_ROOT */
+    | { final: asn1.OCTET_STRING } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_OctetSubstringAssertion_Item: __utils.ASN1Decoder<
     OctetSubstringAssertion_Item
->({
-    "CONTEXT 0": [
-        "initial",
-        __utils._decode_explicit<asn1.OCTET_STRING>(
-            () => __utils._decodeOctetString
-        ),
-    ],
-    "CONTEXT 1": [
-        "any_",
-        __utils._decode_explicit<asn1.OCTET_STRING>(
-            () => __utils._decodeOctetString
-        ),
-    ],
-    "CONTEXT 2": [
-        "final",
-        __utils._decode_explicit<asn1.OCTET_STRING>(
-            () => __utils._decodeOctetString
-        ),
-    ],
-});
-export const _encode_OctetSubstringAssertion_Item = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_OctetSubstringAssertion_Item: __utils.ASN1Encoder<
     OctetSubstringAssertion_Item
->(
-    {
-        initial: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => __utils._encodeOctetString,
+> | null = null;
+export function _decode_OctetSubstringAssertion_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_OctetSubstringAssertion_Item) {
+        _cached_decoder_for_OctetSubstringAssertion_Item = __utils._decode_extensible_choice<
+            OctetSubstringAssertion_Item
+        >({
+            "CONTEXT 0": [
+                "initial",
+                __utils._decode_explicit<asn1.OCTET_STRING>(
+                    () => __utils._decodeOctetString
+                ),
+            ],
+            "CONTEXT 1": [
+                "any_",
+                __utils._decode_explicit<asn1.OCTET_STRING>(
+                    () => __utils._decodeOctetString
+                ),
+            ],
+            "CONTEXT 2": [
+                "final",
+                __utils._decode_explicit<asn1.OCTET_STRING>(
+                    () => __utils._decodeOctetString
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_OctetSubstringAssertion_Item(el);
+}
+export function _encode_OctetSubstringAssertion_Item(
+    value: OctetSubstringAssertion_Item,
+    elGetter: __utils.ASN1Encoder<OctetSubstringAssertion_Item>
+) {
+    if (!_cached_encoder_for_OctetSubstringAssertion_Item) {
+        _cached_encoder_for_OctetSubstringAssertion_Item = __utils._encode_choice<
+            OctetSubstringAssertion_Item
+        >(
+            {
+                initial: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => __utils._encodeOctetString,
+                    __utils.BER
+                ),
+                any_: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => __utils._encodeOctetString,
+                    __utils.BER
+                ),
+                final: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () => __utils._encodeOctetString,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        any_: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => __utils._encodeOctetString,
-            __utils.BER
-        ),
-        final: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () => __utils._encodeOctetString,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_OctetSubstringAssertion_Item(value, elGetter);
+}
 
 export type OctetSubstringAssertion = OctetSubstringAssertion_Item[]; // SequenceOfType
-export const _decode_OctetSubstringAssertion = __utils._decodeSequenceOf<
-    OctetSubstringAssertion_Item
->(() => _decode_OctetSubstringAssertion_Item);
-export const _encode_OctetSubstringAssertion = __utils._encodeSequenceOf<
-    OctetSubstringAssertion_Item
->(() => _encode_OctetSubstringAssertion_Item, __utils.BER);
+let _cached_decoder_for_OctetSubstringAssertion: __utils.ASN1Decoder<
+    OctetSubstringAssertion
+> | null = null;
+let _cached_encoder_for_OctetSubstringAssertion: __utils.ASN1Encoder<
+    OctetSubstringAssertion
+> | null = null;
+export function _decode_OctetSubstringAssertion(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_OctetSubstringAssertion) {
+        _cached_decoder_for_OctetSubstringAssertion = __utils._decodeSequenceOf<
+            OctetSubstringAssertion_Item
+        >(() => _decode_OctetSubstringAssertion_Item);
+    }
+    return _cached_decoder_for_OctetSubstringAssertion(el);
+}
+export function _encode_OctetSubstringAssertion(
+    value: OctetSubstringAssertion,
+    elGetter: __utils.ASN1Encoder<OctetSubstringAssertion>
+) {
+    if (!_cached_encoder_for_OctetSubstringAssertion) {
+        _cached_encoder_for_OctetSubstringAssertion = __utils._encodeSequenceOf<
+            OctetSubstringAssertion_Item
+        >(() => _encode_OctetSubstringAssertion_Item, __utils.BER);
+    }
+    return _cached_encoder_for_OctetSubstringAssertion(value, elGetter);
+}
 
 // TODO: ObjectAssignment: telephoneNumberMatch
 
@@ -2537,8 +3555,27 @@ export const SequenceMatchType_sequencePermutationAndDeletion: SequenceMatchType
 export const sequencePermutationAndDeletion: SequenceMatchType = SequenceMatchType_sequencePermutationAndDeletion; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const SequenceMatchType_sequenceProviderDefined: SequenceMatchType = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 export const sequenceProviderDefined: SequenceMatchType = SequenceMatchType_sequenceProviderDefined; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_SequenceMatchType = __utils._decodeEnumerated;
-export const _encode_SequenceMatchType = __utils._encodeEnumerated;
+let _cached_decoder_for_SequenceMatchType: __utils.ASN1Decoder<
+    SequenceMatchType
+> | null = null;
+let _cached_encoder_for_SequenceMatchType: __utils.ASN1Encoder<
+    SequenceMatchType
+> | null = null;
+export function _decode_SequenceMatchType(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SequenceMatchType) {
+        _cached_decoder_for_SequenceMatchType = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_SequenceMatchType(el);
+}
+export function _encode_SequenceMatchType(
+    value: SequenceMatchType,
+    elGetter: __utils.ASN1Encoder<SequenceMatchType>
+) {
+    if (!_cached_encoder_for_SequenceMatchType) {
+        _cached_encoder_for_SequenceMatchType = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_SequenceMatchType(value, elGetter);
+}
 
 // TODO: ObjectAssignment: wordMatchTypes
 
@@ -2551,8 +3588,27 @@ export const WordMatchTypes_wordPhonetic: WordMatchTypes = 2; /* LONG_NAMED_ENUM
 export const wordPhonetic: WordMatchTypes = WordMatchTypes_wordPhonetic; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const WordMatchTypes_wordProviderDefined: WordMatchTypes = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 export const wordProviderDefined: WordMatchTypes = WordMatchTypes_wordProviderDefined; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_WordMatchTypes = __utils._decodeEnumerated;
-export const _encode_WordMatchTypes = __utils._encodeEnumerated;
+let _cached_decoder_for_WordMatchTypes: __utils.ASN1Decoder<
+    WordMatchTypes
+> | null = null;
+let _cached_encoder_for_WordMatchTypes: __utils.ASN1Encoder<
+    WordMatchTypes
+> | null = null;
+export function _decode_WordMatchTypes(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_WordMatchTypes) {
+        _cached_decoder_for_WordMatchTypes = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_WordMatchTypes(el);
+}
+export function _encode_WordMatchTypes(
+    value: WordMatchTypes,
+    elGetter: __utils.ASN1Encoder<WordMatchTypes>
+) {
+    if (!_cached_encoder_for_WordMatchTypes) {
+        _cached_encoder_for_WordMatchTypes = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_WordMatchTypes(value, elGetter);
+}
 
 // TODO: ObjectAssignment: characterMatchTypes
 
@@ -2563,8 +3619,27 @@ export const CharacterMatchTypes_characterCaseIgnore: CharacterMatchTypes = 1; /
 export const characterCaseIgnore: CharacterMatchTypes = CharacterMatchTypes_characterCaseIgnore; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const CharacterMatchTypes_characterMapped: CharacterMatchTypes = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 export const characterMapped: CharacterMatchTypes = CharacterMatchTypes_characterMapped; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_CharacterMatchTypes = __utils._decodeEnumerated;
-export const _encode_CharacterMatchTypes = __utils._encodeEnumerated;
+let _cached_decoder_for_CharacterMatchTypes: __utils.ASN1Decoder<
+    CharacterMatchTypes
+> | null = null;
+let _cached_encoder_for_CharacterMatchTypes: __utils.ASN1Encoder<
+    CharacterMatchTypes
+> | null = null;
+export function _decode_CharacterMatchTypes(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CharacterMatchTypes) {
+        _cached_decoder_for_CharacterMatchTypes = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_CharacterMatchTypes(el);
+}
+export function _encode_CharacterMatchTypes(
+    value: CharacterMatchTypes,
+    elGetter: __utils.ASN1Encoder<CharacterMatchTypes>
+) {
+    if (!_cached_encoder_for_CharacterMatchTypes) {
+        _cached_encoder_for_CharacterMatchTypes = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_CharacterMatchTypes(value, elGetter);
+}
 
 // TODO: ObjectAssignment: selectedContexts
 
@@ -2575,13 +3650,31 @@ export const _encode_CharacterMatchTypes = __utils._encodeEnumerated;
 // TODO: ObjectAssignment: nullMatch
 
 export type ZonalSelect = AttributeType[]; // SequenceOfType
-export const _decode_ZonalSelect = __utils._decodeSequenceOf<AttributeType>(
-    () => _decode_AttributeType
-);
-export const _encode_ZonalSelect = __utils._encodeSequenceOf<AttributeType>(
-    () => _encode_AttributeType,
-    __utils.BER
-);
+let _cached_decoder_for_ZonalSelect: __utils.ASN1Decoder<
+    ZonalSelect
+> | null = null;
+let _cached_encoder_for_ZonalSelect: __utils.ASN1Encoder<
+    ZonalSelect
+> | null = null;
+export function _decode_ZonalSelect(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ZonalSelect) {
+        _cached_decoder_for_ZonalSelect = __utils._decodeSequenceOf<
+            AttributeType
+        >(() => _decode_AttributeType);
+    }
+    return _cached_decoder_for_ZonalSelect(el);
+}
+export function _encode_ZonalSelect(
+    value: ZonalSelect,
+    elGetter: __utils.ASN1Encoder<ZonalSelect>
+) {
+    if (!_cached_encoder_for_ZonalSelect) {
+        _cached_encoder_for_ZonalSelect = __utils._encodeSequenceOf<
+            AttributeType
+        >(() => _encode_AttributeType, __utils.BER);
+    }
+    return _cached_encoder_for_ZonalSelect(value, elGetter);
+}
 
 export type ZonalResult = asn1.ENUMERATED;
 export const ZonalResult_cannot_select_mapping: ZonalResult = 0; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -2590,8 +3683,27 @@ export const ZonalResult_zero_mappings: ZonalResult = 2; /* LONG_NAMED_ENUMERATE
 export const zero_mappings: ZonalResult = ZonalResult_zero_mappings; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const ZonalResult_multiple_mappings: ZonalResult = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 export const multiple_mappings: ZonalResult = ZonalResult_multiple_mappings; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_ZonalResult = __utils._decodeEnumerated;
-export const _encode_ZonalResult = __utils._encodeEnumerated;
+let _cached_decoder_for_ZonalResult: __utils.ASN1Decoder<
+    ZonalResult
+> | null = null;
+let _cached_encoder_for_ZonalResult: __utils.ASN1Encoder<
+    ZonalResult
+> | null = null;
+export function _decode_ZonalResult(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ZonalResult) {
+        _cached_decoder_for_ZonalResult = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_ZonalResult(el);
+}
+export function _encode_ZonalResult(
+    value: ZonalResult,
+    elGetter: __utils.ASN1Encoder<ZonalResult>
+) {
+    if (!_cached_encoder_for_ZonalResult) {
+        _cached_encoder_for_ZonalResult = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_ZonalResult(value, elGetter);
+}
 
 // TODO: ObjectClassAssignment: ZONAL-MATCHING
 
@@ -2692,8 +3804,29 @@ export const _encode_ZonalResult = __utils._encodeEnumerated;
 // TODO: ObjectAssignment: languageContext
 
 export type LanguageContextSyntax = asn1.PrintableString; // PrintableString
-export const _decode_LanguageContextSyntax = __utils._decodePrintableString;
-export const _encode_LanguageContextSyntax = __utils._encodePrintableString;
+let _cached_decoder_for_LanguageContextSyntax: __utils.ASN1Decoder<
+    LanguageContextSyntax
+> | null = null;
+let _cached_encoder_for_LanguageContextSyntax: __utils.ASN1Encoder<
+    LanguageContextSyntax
+> | null = null;
+export function _decode_LanguageContextSyntax(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_LanguageContextSyntax) {
+        _cached_decoder_for_LanguageContextSyntax =
+            __utils._decodePrintableString;
+    }
+    return _cached_decoder_for_LanguageContextSyntax(el);
+}
+export function _encode_LanguageContextSyntax(
+    value: LanguageContextSyntax,
+    elGetter: __utils.ASN1Encoder<LanguageContextSyntax>
+) {
+    if (!_cached_encoder_for_LanguageContextSyntax) {
+        _cached_encoder_for_LanguageContextSyntax =
+            __utils._encodePrintableString;
+    }
+    return _cached_encoder_for_LanguageContextSyntax(value, elGetter);
+}
 
 // TODO: ObjectAssignment: temporalContext
 
@@ -2722,80 +3855,98 @@ export const _root_component_type_list_1_spec_for_TimeSpecification_time_absolut
 ];
 export const _root_component_type_list_2_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeSpecification_time_absolute: __utils.ComponentSpec[] = [];
-
-export const _decode_TimeSpecification_time_absolute = function (
-    el: asn1.ASN1Element
-): TimeSpecification_time_absolute {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let startTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
-    let endTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        startTime: (_el: asn1.ASN1Element): void => {
-            startTime = __utils._decode_explicit<asn1.GeneralizedTime>(
-                () => __utils._decodeGeneralizedTime
-            )(_el);
-        },
-        endTime: (_el: asn1.ASN1Element): void => {
-            endTime = __utils._decode_explicit<asn1.GeneralizedTime>(
-                () => __utils._decodeGeneralizedTime
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TimeSpecification_time_absolute,
-        _extension_additions_list_spec_for_TimeSpecification_time_absolute,
-        _root_component_type_list_2_spec_for_TimeSpecification_time_absolute,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TimeSpecification_time_absolute(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
-        endTime,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_TimeSpecification_time_absolute = function (
+let _cached_decoder_for_TimeSpecification_time_absolute: __utils.ASN1Decoder<
+    TimeSpecification_time_absolute
+> | null = null;
+let _cached_encoder_for_TimeSpecification_time_absolute: __utils.ASN1Encoder<
+    TimeSpecification_time_absolute
+> | null = null;
+export function _decode_TimeSpecification_time_absolute(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeSpecification_time_absolute) {
+        _cached_decoder_for_TimeSpecification_time_absolute = function (
+            el: asn1.ASN1Element
+        ): TimeSpecification_time_absolute {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let startTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
+            let endTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                startTime: (_el: asn1.ASN1Element): void => {
+                    startTime = __utils._decode_explicit<asn1.GeneralizedTime>(
+                        () => __utils._decodeGeneralizedTime
+                    )(_el);
+                },
+                endTime: (_el: asn1.ASN1Element): void => {
+                    endTime = __utils._decode_explicit<asn1.GeneralizedTime>(
+                        () => __utils._decodeGeneralizedTime
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TimeSpecification_time_absolute,
+                _extension_additions_list_spec_for_TimeSpecification_time_absolute,
+                _root_component_type_list_2_spec_for_TimeSpecification_time_absolute,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TimeSpecification_time_absolute(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
+                endTime,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TimeSpecification_time_absolute(el);
+}
+export function _encode_TimeSpecification_time_absolute(
     value: TimeSpecification_time_absolute,
     elGetter: __utils.ASN1Encoder<TimeSpecification_time_absolute>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.startTime === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeGeneralizedTime,
-                              __utils.BER
-                          )(value.startTime, __utils.BER),
-                    /* IF_ABSENT  */ value.endTime === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeGeneralizedTime,
-                              __utils.BER
-                          )(value.endTime, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_TimeSpecification_time_absolute) {
+        _cached_encoder_for_TimeSpecification_time_absolute = function (
+            value: TimeSpecification_time_absolute,
+            elGetter: __utils.ASN1Encoder<TimeSpecification_time_absolute>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.startTime === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeGeneralizedTime,
+                                      __utils.BER
+                                  )(value.startTime, __utils.BER),
+                            /* IF_ABSENT  */ value.endTime === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeGeneralizedTime,
+                                      __utils.BER
+                                  )(value.endTime, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TimeSpecification_time_absolute(value, elGetter);
+}
 
 export class DayTime {
     constructor(
@@ -2804,6 +3955,12 @@ export class DayTime {
         readonly second: asn1.INTEGER | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_minute() {
+        return 0;
+    }
+    public static get _default_value_for_second() {
+        return 0;
+    }
 }
 export const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -2830,100 +3987,115 @@ export const _root_component_type_list_1_spec_for_DayTime: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_DayTime: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DayTime: __utils.ComponentSpec[] = [];
-export const _default_value_for_DayTime__minute = 0;
-export const _default_value_for_DayTime__second = 0;
-export const _decode_DayTime = function (el: asn1.ASN1Element): DayTime {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let hour!: asn1.INTEGER;
-    let minute: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_DayTime__minute;
-    let second: asn1.OPTIONAL<asn1.INTEGER> = _default_value_for_DayTime__second;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        hour: (_el: asn1.ASN1Element): void => {
-            hour = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-        minute: (_el: asn1.ASN1Element): void => {
-            minute = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-        second: (_el: asn1.ASN1Element): void => {
-            second = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_DayTime,
-        _extension_additions_list_spec_for_DayTime,
-        _root_component_type_list_2_spec_for_DayTime,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new DayTime(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ hour,
-        minute,
-        second,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_DayTime = function (
+let _cached_decoder_for_DayTime: __utils.ASN1Decoder<DayTime> | null = null;
+let _cached_encoder_for_DayTime: __utils.ASN1Encoder<DayTime> | null = null;
+export function _decode_DayTime(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_DayTime) {
+        _cached_decoder_for_DayTime = function (el: asn1.ASN1Element): DayTime {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let hour!: asn1.INTEGER;
+            let minute: asn1.OPTIONAL<asn1.INTEGER> =
+                DayTime._default_value_for_minute;
+            let second: asn1.OPTIONAL<asn1.INTEGER> =
+                DayTime._default_value_for_second;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                hour: (_el: asn1.ASN1Element): void => {
+                    hour = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+                minute: (_el: asn1.ASN1Element): void => {
+                    minute = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+                second: (_el: asn1.ASN1Element): void => {
+                    second = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_DayTime,
+                _extension_additions_list_spec_for_DayTime,
+                _root_component_type_list_2_spec_for_DayTime,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new DayTime(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ hour,
+                minute,
+                second,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_DayTime(el);
+}
+export function _encode_DayTime(
     value: DayTime,
     elGetter: __utils.ASN1Encoder<DayTime>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        0,
-                        () => __utils._encodeInteger,
-                        __utils.BER
-                    )(value.hour, __utils.BER),
-                    /* IF_DEFAULT */ value.minute === undefined ||
-                    __utils.deepEq(
-                        value.minute,
-                        _default_value_for_DayTime__minute
+) {
+    if (!_cached_encoder_for_DayTime) {
+        _cached_encoder_for_DayTime = function (
+            value: DayTime,
+            elGetter: __utils.ASN1Encoder<DayTime>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                0,
+                                () => __utils._encodeInteger,
+                                __utils.BER
+                            )(value.hour, __utils.BER),
+                            /* IF_DEFAULT */ value.minute === undefined ||
+                            __utils.deepEq(
+                                value.minute,
+                                DayTime._default_value_for_minute
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeInteger,
+                                      __utils.BER
+                                  )(value.minute, __utils.BER),
+                            /* IF_DEFAULT */ value.second === undefined ||
+                            __utils.deepEq(
+                                value.second,
+                                DayTime._default_value_for_second
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () => __utils._encodeInteger,
+                                      __utils.BER
+                                  )(value.second, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeInteger,
-                              __utils.BER
-                          )(value.minute, __utils.BER),
-                    /* IF_DEFAULT */ value.second === undefined ||
-                    __utils.deepEq(
-                        value.second,
-                        _default_value_for_DayTime__second
-                    )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () => __utils._encodeInteger,
-                              __utils.BER
-                          )(value.second, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_DayTime(value, elGetter);
+}
 
 export class DayTimeBand {
     constructor(
@@ -2931,6 +4103,12 @@ export class DayTimeBand {
         readonly endDayTime: DayTime | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_startDayTime() {
+        return new DayTime(0, undefined, undefined);
+    }
+    public static get _default_value_for_endDayTime() {
+        return new DayTime(23, 59, 59);
+    }
 }
 export const _root_component_type_list_1_spec_for_DayTimeBand: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -2950,97 +4128,108 @@ export const _root_component_type_list_1_spec_for_DayTimeBand: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_DayTimeBand: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_DayTimeBand: __utils.ComponentSpec[] = [];
-export const _default_value_for_DayTimeBand__startDayTime = new DayTime(
-    0,
-    undefined,
-    undefined
-);
-export const _default_value_for_DayTimeBand__endDayTime = new DayTime(
-    23,
-    59,
-    59
-);
-export const _decode_DayTimeBand = function (
-    el: asn1.ASN1Element
-): DayTimeBand {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let startDayTime: asn1.OPTIONAL<DayTime> = _default_value_for_DayTimeBand__startDayTime;
-    let endDayTime: asn1.OPTIONAL<DayTime> = _default_value_for_DayTimeBand__endDayTime;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        startDayTime: (_el: asn1.ASN1Element): void => {
-            startDayTime = __utils._decode_explicit<DayTime>(
-                () => _decode_DayTime
-            )(_el);
-        },
-        endDayTime: (_el: asn1.ASN1Element): void => {
-            endDayTime = __utils._decode_explicit<DayTime>(
-                () => _decode_DayTime
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_DayTimeBand,
-        _extension_additions_list_spec_for_DayTimeBand,
-        _root_component_type_list_2_spec_for_DayTimeBand,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new DayTimeBand(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ startDayTime,
-        endDayTime,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_DayTimeBand = function (
+let _cached_decoder_for_DayTimeBand: __utils.ASN1Decoder<
+    DayTimeBand
+> | null = null;
+let _cached_encoder_for_DayTimeBand: __utils.ASN1Encoder<
+    DayTimeBand
+> | null = null;
+export function _decode_DayTimeBand(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_DayTimeBand) {
+        _cached_decoder_for_DayTimeBand = function (
+            el: asn1.ASN1Element
+        ): DayTimeBand {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let startDayTime: asn1.OPTIONAL<DayTime> =
+                DayTimeBand._default_value_for_startDayTime;
+            let endDayTime: asn1.OPTIONAL<DayTime> =
+                DayTimeBand._default_value_for_endDayTime;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                startDayTime: (_el: asn1.ASN1Element): void => {
+                    startDayTime = __utils._decode_explicit<DayTime>(
+                        () => _decode_DayTime
+                    )(_el);
+                },
+                endDayTime: (_el: asn1.ASN1Element): void => {
+                    endDayTime = __utils._decode_explicit<DayTime>(
+                        () => _decode_DayTime
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_DayTimeBand,
+                _extension_additions_list_spec_for_DayTimeBand,
+                _root_component_type_list_2_spec_for_DayTimeBand,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new DayTimeBand(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startDayTime,
+                endDayTime,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_DayTimeBand(el);
+}
+export function _encode_DayTimeBand(
     value: DayTimeBand,
     elGetter: __utils.ASN1Encoder<DayTimeBand>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_DEFAULT */ value.startDayTime === undefined ||
-                    __utils.deepEq(
-                        value.startDayTime,
-                        _default_value_for_DayTimeBand__startDayTime
+) {
+    if (!_cached_encoder_for_DayTimeBand) {
+        _cached_encoder_for_DayTimeBand = function (
+            value: DayTimeBand,
+            elGetter: __utils.ASN1Encoder<DayTimeBand>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_DEFAULT */ value.startDayTime === undefined ||
+                            __utils.deepEq(
+                                value.startDayTime,
+                                DayTimeBand._default_value_for_startDayTime
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_DayTime,
+                                      __utils.BER
+                                  )(value.startDayTime, __utils.BER),
+                            /* IF_DEFAULT */ value.endDayTime === undefined ||
+                            __utils.deepEq(
+                                value.endDayTime,
+                                DayTimeBand._default_value_for_endDayTime
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_DayTime,
+                                      __utils.BER
+                                  )(value.endDayTime, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_DayTime,
-                              __utils.BER
-                          )(value.startDayTime, __utils.BER),
-                    /* IF_DEFAULT */ value.endDayTime === undefined ||
-                    __utils.deepEq(
-                        value.endDayTime,
-                        _default_value_for_DayTimeBand__endDayTime
-                    )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_DayTime,
-                              __utils.BER
-                          )(value.endDayTime, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_DayTimeBand(value, elGetter);
+}
 
 export type Period_days_bitDay = asn1.BIT_STRING;
 export const Period_days_bitDay_sunday: number = 0; /* LONG_NAMED_BIT */
@@ -3050,8 +4239,27 @@ export const Period_days_bitDay_wednesday: number = 3; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_thursday: number = 4; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_friday: number = 5; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_saturday: number = 6; /* LONG_NAMED_BIT */
-export const _decode_Period_days_bitDay = __utils._decodeBitString;
-export const _encode_Period_days_bitDay = __utils._encodeBitString;
+let _cached_decoder_for_Period_days_bitDay: __utils.ASN1Decoder<
+    Period_days_bitDay
+> | null = null;
+let _cached_encoder_for_Period_days_bitDay: __utils.ASN1Encoder<
+    Period_days_bitDay
+> | null = null;
+export function _decode_Period_days_bitDay(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_days_bitDay) {
+        _cached_decoder_for_Period_days_bitDay = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_Period_days_bitDay(el);
+}
+export function _encode_Period_days_bitDay(
+    value: Period_days_bitDay,
+    elGetter: __utils.ASN1Encoder<Period_days_bitDay>
+) {
+    if (!_cached_encoder_for_Period_days_bitDay) {
+        _cached_encoder_for_Period_days_bitDay = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_Period_days_bitDay(value, elGetter);
+}
 
 export enum NamedDay_intNamedDays {
     sunday = 1,
@@ -3076,129 +4284,229 @@ export const NamedDay_intNamedDays_friday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.friday; /* LONG_NAMED_ENUMERATED_VALUE */
 export const NamedDay_intNamedDays_saturday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.saturday; /* LONG_NAMED_ENUMERATED_VALUE */
-export const _decode_NamedDay_intNamedDays = __utils._decodeEnumerated;
-export const _encode_NamedDay_intNamedDays = __utils._encodeEnumerated;
+let _cached_decoder_for_NamedDay_intNamedDays: __utils.ASN1Decoder<
+    NamedDay_intNamedDays
+> | null = null;
+let _cached_encoder_for_NamedDay_intNamedDays: __utils.ASN1Encoder<
+    NamedDay_intNamedDays
+> | null = null;
+export function _decode_NamedDay_intNamedDays(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_NamedDay_intNamedDays) {
+        _cached_decoder_for_NamedDay_intNamedDays = __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_NamedDay_intNamedDays(el);
+}
+export function _encode_NamedDay_intNamedDays(
+    value: NamedDay_intNamedDays,
+    elGetter: __utils.ASN1Encoder<NamedDay_intNamedDays>
+) {
+    if (!_cached_encoder_for_NamedDay_intNamedDays) {
+        _cached_encoder_for_NamedDay_intNamedDays = __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_NamedDay_intNamedDays(value, elGetter);
+}
 
 export type NamedDay_bitNamedDays = asn1.BIT_STRING;
 export const NamedDay_bitNamedDays_sunday: number = 0; /* LONG_NAMED_BIT */
+export const sunday: number = NamedDay_bitNamedDays_sunday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_monday: number = 1; /* LONG_NAMED_BIT */
+export const monday: number = NamedDay_bitNamedDays_monday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_tuesday: number = 2; /* LONG_NAMED_BIT */
+export const tuesday: number = NamedDay_bitNamedDays_tuesday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_wednesday: number = 3; /* LONG_NAMED_BIT */
+export const wednesday: number = NamedDay_bitNamedDays_wednesday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_thursday: number = 4; /* LONG_NAMED_BIT */
+export const thursday: number = NamedDay_bitNamedDays_thursday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_friday: number = 5; /* LONG_NAMED_BIT */
+export const friday: number = NamedDay_bitNamedDays_friday; /* SHORT_NAMED_BIT */
 export const NamedDay_bitNamedDays_saturday: number = 6; /* LONG_NAMED_BIT */
-export const _decode_NamedDay_bitNamedDays = __utils._decodeBitString;
-export const _encode_NamedDay_bitNamedDays = __utils._encodeBitString;
+export const saturday: number = NamedDay_bitNamedDays_saturday; /* SHORT_NAMED_BIT */
+let _cached_decoder_for_NamedDay_bitNamedDays: __utils.ASN1Decoder<
+    NamedDay_bitNamedDays
+> | null = null;
+let _cached_encoder_for_NamedDay_bitNamedDays: __utils.ASN1Encoder<
+    NamedDay_bitNamedDays
+> | null = null;
+export function _decode_NamedDay_bitNamedDays(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_NamedDay_bitNamedDays) {
+        _cached_decoder_for_NamedDay_bitNamedDays = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_NamedDay_bitNamedDays(el);
+}
+export function _encode_NamedDay_bitNamedDays(
+    value: NamedDay_bitNamedDays,
+    elGetter: __utils.ASN1Encoder<NamedDay_bitNamedDays>
+) {
+    if (!_cached_encoder_for_NamedDay_bitNamedDays) {
+        _cached_encoder_for_NamedDay_bitNamedDays = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_NamedDay_bitNamedDays(value, elGetter);
+}
 
 export type NamedDay =
-    | { intNamedDays: NamedDay_intNamedDays }
-    | { bitNamedDays: NamedDay_bitNamedDays };
-export const _decode_NamedDay = __utils._decode_inextensible_choice<NamedDay>({
-    "UNIVERSAL 10": ["intNamedDays", _decode_NamedDay_intNamedDays],
-    "UNIVERSAL 3": ["bitNamedDays", _decode_NamedDay_bitNamedDays],
-});
-export const _encode_NamedDay = __utils._encode_choice<NamedDay>(
-    {
-        intNamedDays: _encode_NamedDay_intNamedDays,
-        bitNamedDays: _encode_NamedDay_bitNamedDays,
-    },
-    __utils.BER
-);
+    | { intNamedDays: NamedDay_intNamedDays } /* CHOICE_ALT_ROOT */
+    | { bitNamedDays: NamedDay_bitNamedDays } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_NamedDay: __utils.ASN1Decoder<NamedDay> | null = null;
+let _cached_encoder_for_NamedDay: __utils.ASN1Encoder<NamedDay> | null = null;
+export function _decode_NamedDay(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_NamedDay) {
+        _cached_decoder_for_NamedDay = __utils._decode_inextensible_choice<
+            NamedDay
+        >({
+            "UNIVERSAL 10": ["intNamedDays", _decode_NamedDay_intNamedDays],
+            "UNIVERSAL 3": ["bitNamedDays", _decode_NamedDay_bitNamedDays],
+        });
+    }
+    return _cached_decoder_for_NamedDay(el);
+}
+export function _encode_NamedDay(
+    value: NamedDay,
+    elGetter: __utils.ASN1Encoder<NamedDay>
+) {
+    if (!_cached_encoder_for_NamedDay) {
+        _cached_encoder_for_NamedDay = __utils._encode_choice<NamedDay>(
+            {
+                intNamedDays: _encode_NamedDay_intNamedDays,
+                bitNamedDays: _encode_NamedDay_bitNamedDays,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_NamedDay(value, elGetter);
+}
 
 export type XDayOf =
-    | { first: NamedDay }
-    | { second: NamedDay }
-    | { third: NamedDay }
-    | { fourth: NamedDay }
-    | { fifth: NamedDay };
-export const _decode_XDayOf = __utils._decode_inextensible_choice<XDayOf>({
-    "CONTEXT 1": [
-        "first",
-        __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
-    ],
-    "CONTEXT 2": [
-        "second",
-        __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
-    ],
-    "CONTEXT 3": [
-        "third",
-        __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
-    ],
-    "CONTEXT 4": [
-        "fourth",
-        __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
-    ],
-    "CONTEXT 5": [
-        "fifth",
-        __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
-    ],
-});
-export const _encode_XDayOf = __utils._encode_choice<XDayOf>(
-    {
-        first: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => _encode_NamedDay,
+    | { first: NamedDay } /* CHOICE_ALT_ROOT */
+    | { second: NamedDay } /* CHOICE_ALT_ROOT */
+    | { third: NamedDay } /* CHOICE_ALT_ROOT */
+    | { fourth: NamedDay } /* CHOICE_ALT_ROOT */
+    | { fifth: NamedDay } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_XDayOf: __utils.ASN1Decoder<XDayOf> | null = null;
+let _cached_encoder_for_XDayOf: __utils.ASN1Encoder<XDayOf> | null = null;
+export function _decode_XDayOf(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_XDayOf) {
+        _cached_decoder_for_XDayOf = __utils._decode_inextensible_choice<
+            XDayOf
+        >({
+            "CONTEXT 1": [
+                "first",
+                __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
+            ],
+            "CONTEXT 2": [
+                "second",
+                __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
+            ],
+            "CONTEXT 3": [
+                "third",
+                __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
+            ],
+            "CONTEXT 4": [
+                "fourth",
+                __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
+            ],
+            "CONTEXT 5": [
+                "fifth",
+                __utils._decode_explicit<NamedDay>(() => _decode_NamedDay),
+            ],
+        });
+    }
+    return _cached_decoder_for_XDayOf(el);
+}
+export function _encode_XDayOf(
+    value: XDayOf,
+    elGetter: __utils.ASN1Encoder<XDayOf>
+) {
+    if (!_cached_encoder_for_XDayOf) {
+        _cached_encoder_for_XDayOf = __utils._encode_choice<XDayOf>(
+            {
+                first: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => _encode_NamedDay,
+                    __utils.BER
+                ),
+                second: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    2,
+                    () => _encode_NamedDay,
+                    __utils.BER
+                ),
+                third: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    3,
+                    () => _encode_NamedDay,
+                    __utils.BER
+                ),
+                fourth: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    4,
+                    () => _encode_NamedDay,
+                    __utils.BER
+                ),
+                fifth: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    5,
+                    () => _encode_NamedDay,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        second: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            2,
-            () => _encode_NamedDay,
-            __utils.BER
-        ),
-        third: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            3,
-            () => _encode_NamedDay,
-            __utils.BER
-        ),
-        fourth: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            4,
-            () => _encode_NamedDay,
-            __utils.BER
-        ),
-        fifth: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            5,
-            () => _encode_NamedDay,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_XDayOf(value, elGetter);
+}
 
 export type Period_days =
-    | { intDay: asn1.INTEGER[] }
-    | { bitDay: Period_days_bitDay }
-    | { dayOf: XDayOf }
-    | asn1.ASN1Element;
-export const _decode_Period_days = __utils._decode_extensible_choice<
+    | { intDay: asn1.INTEGER[] } /* CHOICE_ALT_ROOT */
+    | { bitDay: Period_days_bitDay } /* CHOICE_ALT_ROOT */
+    | { dayOf: XDayOf } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Period_days: __utils.ASN1Decoder<
     Period_days
->({
-    "UNIVERSAL 17": [
-        "intDay",
-        __utils._decodeSetOf<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-    "UNIVERSAL 3": ["bitDay", _decode_Period_days_bitDay],
-    "CONTEXT 1": ["dayOf", _decode_XDayOf],
-    "CONTEXT 2": ["dayOf", _decode_XDayOf],
-    "CONTEXT 3": ["dayOf", _decode_XDayOf],
-    "CONTEXT 4": ["dayOf", _decode_XDayOf],
-    "CONTEXT 5": ["dayOf", _decode_XDayOf],
-});
-export const _encode_Period_days = __utils._encode_choice<Period_days>(
-    {
-        intDay: __utils._encodeSetOf<asn1.INTEGER>(
-            () => __utils._encodeInteger,
+> | null = null;
+let _cached_encoder_for_Period_days: __utils.ASN1Encoder<
+    Period_days
+> | null = null;
+export function _decode_Period_days(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_days) {
+        _cached_decoder_for_Period_days = __utils._decode_extensible_choice<
+            Period_days
+        >({
+            "UNIVERSAL 17": [
+                "intDay",
+                __utils._decodeSetOf<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+            "UNIVERSAL 3": ["bitDay", _decode_Period_days_bitDay],
+            "CONTEXT 1": ["dayOf", _decode_XDayOf],
+            "CONTEXT 2": ["dayOf", _decode_XDayOf],
+            "CONTEXT 3": ["dayOf", _decode_XDayOf],
+            "CONTEXT 4": ["dayOf", _decode_XDayOf],
+            "CONTEXT 5": ["dayOf", _decode_XDayOf],
+        });
+    }
+    return _cached_decoder_for_Period_days(el);
+}
+export function _encode_Period_days(
+    value: Period_days,
+    elGetter: __utils.ASN1Encoder<Period_days>
+) {
+    if (!_cached_encoder_for_Period_days) {
+        _cached_encoder_for_Period_days = __utils._encode_choice<Period_days>(
+            {
+                intDay: __utils._encodeSetOf<asn1.INTEGER>(
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+                bitDay: _encode_Period_days_bitDay,
+                dayOf: _encode_XDayOf,
+            },
             __utils.BER
-        ),
-        bitDay: _encode_Period_days_bitDay,
-        dayOf: _encode_XDayOf,
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_Period_days(value, elGetter);
+}
 
 export type Period_weeks_bitWeek = asn1.BIT_STRING;
 export const Period_weeks_bitWeek_week1: number = 0; /* LONG_NAMED_BIT */
@@ -3211,35 +4519,75 @@ export const Period_weeks_bitWeek_week4: number = 3; /* LONG_NAMED_BIT */
 export const week4: number = Period_weeks_bitWeek_week4; /* SHORT_NAMED_BIT */
 export const Period_weeks_bitWeek_week5: number = 4; /* LONG_NAMED_BIT */
 export const week5: number = Period_weeks_bitWeek_week5; /* SHORT_NAMED_BIT */
-export const _decode_Period_weeks_bitWeek = __utils._decodeBitString;
-export const _encode_Period_weeks_bitWeek = __utils._encodeBitString;
+let _cached_decoder_for_Period_weeks_bitWeek: __utils.ASN1Decoder<
+    Period_weeks_bitWeek
+> | null = null;
+let _cached_encoder_for_Period_weeks_bitWeek: __utils.ASN1Encoder<
+    Period_weeks_bitWeek
+> | null = null;
+export function _decode_Period_weeks_bitWeek(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_weeks_bitWeek) {
+        _cached_decoder_for_Period_weeks_bitWeek = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_Period_weeks_bitWeek(el);
+}
+export function _encode_Period_weeks_bitWeek(
+    value: Period_weeks_bitWeek,
+    elGetter: __utils.ASN1Encoder<Period_weeks_bitWeek>
+) {
+    if (!_cached_encoder_for_Period_weeks_bitWeek) {
+        _cached_encoder_for_Period_weeks_bitWeek = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_Period_weeks_bitWeek(value, elGetter);
+}
 
 export type Period_weeks =
-    | { allWeeks: asn1.NULL }
-    | { intWeek: asn1.INTEGER[] }
-    | { bitWeek: Period_weeks_bitWeek }
-    | asn1.ASN1Element;
-export const _decode_Period_weeks = __utils._decode_extensible_choice<
+    | { allWeeks: asn1.NULL } /* CHOICE_ALT_ROOT */
+    | { intWeek: asn1.INTEGER[] } /* CHOICE_ALT_ROOT */
+    | { bitWeek: Period_weeks_bitWeek } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Period_weeks: __utils.ASN1Decoder<
     Period_weeks
->({
-    "UNIVERSAL 5": ["allWeeks", __utils._decodeNull],
-    "UNIVERSAL 17": [
-        "intWeek",
-        __utils._decodeSetOf<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-    "UNIVERSAL 3": ["bitWeek", _decode_Period_weeks_bitWeek],
-});
-export const _encode_Period_weeks = __utils._encode_choice<Period_weeks>(
-    {
-        allWeeks: __utils._encodeNull,
-        intWeek: __utils._encodeSetOf<asn1.INTEGER>(
-            () => __utils._encodeInteger,
+> | null = null;
+let _cached_encoder_for_Period_weeks: __utils.ASN1Encoder<
+    Period_weeks
+> | null = null;
+export function _decode_Period_weeks(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_weeks) {
+        _cached_decoder_for_Period_weeks = __utils._decode_extensible_choice<
+            Period_weeks
+        >({
+            "UNIVERSAL 5": ["allWeeks", __utils._decodeNull],
+            "UNIVERSAL 17": [
+                "intWeek",
+                __utils._decodeSetOf<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+            "UNIVERSAL 3": ["bitWeek", _decode_Period_weeks_bitWeek],
+        });
+    }
+    return _cached_decoder_for_Period_weeks(el);
+}
+export function _encode_Period_weeks(
+    value: Period_weeks,
+    elGetter: __utils.ASN1Encoder<Period_weeks>
+) {
+    if (!_cached_encoder_for_Period_weeks) {
+        _cached_encoder_for_Period_weeks = __utils._encode_choice<Period_weeks>(
+            {
+                allWeeks: __utils._encodeNull,
+                intWeek: __utils._encodeSetOf<asn1.INTEGER>(
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+                bitWeek: _encode_Period_weeks_bitWeek,
+            },
             __utils.BER
-        ),
-        bitWeek: _encode_Period_weeks_bitWeek,
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_Period_weeks(value, elGetter);
+}
 
 export type Period_months_bitMonth = asn1.BIT_STRING;
 export const Period_months_bitMonth_january: number = 0; /* LONG_NAMED_BIT */
@@ -3266,35 +4614,77 @@ export const Period_months_bitMonth_november: number = 10; /* LONG_NAMED_BIT */
 export const november: number = Period_months_bitMonth_november; /* SHORT_NAMED_BIT */
 export const Period_months_bitMonth_december: number = 11; /* LONG_NAMED_BIT */
 export const december: number = Period_months_bitMonth_december; /* SHORT_NAMED_BIT */
-export const _decode_Period_months_bitMonth = __utils._decodeBitString;
-export const _encode_Period_months_bitMonth = __utils._encodeBitString;
+let _cached_decoder_for_Period_months_bitMonth: __utils.ASN1Decoder<
+    Period_months_bitMonth
+> | null = null;
+let _cached_encoder_for_Period_months_bitMonth: __utils.ASN1Encoder<
+    Period_months_bitMonth
+> | null = null;
+export function _decode_Period_months_bitMonth(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_months_bitMonth) {
+        _cached_decoder_for_Period_months_bitMonth = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_Period_months_bitMonth(el);
+}
+export function _encode_Period_months_bitMonth(
+    value: Period_months_bitMonth,
+    elGetter: __utils.ASN1Encoder<Period_months_bitMonth>
+) {
+    if (!_cached_encoder_for_Period_months_bitMonth) {
+        _cached_encoder_for_Period_months_bitMonth = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_Period_months_bitMonth(value, elGetter);
+}
 
 export type Period_months =
-    | { allMonths: asn1.NULL }
-    | { intMonth: asn1.INTEGER[] }
-    | { bitMonth: Period_months_bitMonth }
-    | asn1.ASN1Element;
-export const _decode_Period_months = __utils._decode_extensible_choice<
+    | { allMonths: asn1.NULL } /* CHOICE_ALT_ROOT */
+    | { intMonth: asn1.INTEGER[] } /* CHOICE_ALT_ROOT */
+    | { bitMonth: Period_months_bitMonth } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Period_months: __utils.ASN1Decoder<
     Period_months
->({
-    "UNIVERSAL 5": ["allMonths", __utils._decodeNull],
-    "UNIVERSAL 17": [
-        "intMonth",
-        __utils._decodeSetOf<asn1.INTEGER>(() => __utils._decodeInteger),
-    ],
-    "UNIVERSAL 3": ["bitMonth", _decode_Period_months_bitMonth],
-});
-export const _encode_Period_months = __utils._encode_choice<Period_months>(
-    {
-        allMonths: __utils._encodeNull,
-        intMonth: __utils._encodeSetOf<asn1.INTEGER>(
-            () => __utils._encodeInteger,
+> | null = null;
+let _cached_encoder_for_Period_months: __utils.ASN1Encoder<
+    Period_months
+> | null = null;
+export function _decode_Period_months(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period_months) {
+        _cached_decoder_for_Period_months = __utils._decode_extensible_choice<
+            Period_months
+        >({
+            "UNIVERSAL 5": ["allMonths", __utils._decodeNull],
+            "UNIVERSAL 17": [
+                "intMonth",
+                __utils._decodeSetOf<asn1.INTEGER>(
+                    () => __utils._decodeInteger
+                ),
+            ],
+            "UNIVERSAL 3": ["bitMonth", _decode_Period_months_bitMonth],
+        });
+    }
+    return _cached_decoder_for_Period_months(el);
+}
+export function _encode_Period_months(
+    value: Period_months,
+    elGetter: __utils.ASN1Encoder<Period_months>
+) {
+    if (!_cached_encoder_for_Period_months) {
+        _cached_encoder_for_Period_months = __utils._encode_choice<
+            Period_months
+        >(
+            {
+                allMonths: __utils._encodeNull,
+                intMonth: __utils._encodeSetOf<asn1.INTEGER>(
+                    () => __utils._encodeInteger,
+                    __utils.BER
+                ),
+                bitMonth: _encode_Period_months_bitMonth,
+            },
             __utils.BER
-        ),
-        bitMonth: _encode_Period_months_bitMonth,
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_Period_months(value, elGetter);
+}
 
 export class Period {
     constructor(
@@ -3345,160 +4735,215 @@ export const _root_component_type_list_1_spec_for_Period: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_Period: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Period: __utils.ComponentSpec[] = [];
-
-export const _decode_Period = function (el: asn1.ASN1Element): Period {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let timesOfDay: asn1.OPTIONAL<DayTimeBand[]>;
-    let days: asn1.OPTIONAL<Period_days>;
-    let weeks: asn1.OPTIONAL<Period_weeks>;
-    let months: asn1.OPTIONAL<Period_months>;
-    let years: asn1.OPTIONAL<asn1.INTEGER[]>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        timesOfDay: (_el: asn1.ASN1Element): void => {
-            timesOfDay = __utils._decode_explicit<DayTimeBand[]>(() =>
-                __utils._decodeSetOf<DayTimeBand>(() => _decode_DayTimeBand)
-            )(_el);
-        },
-        days: (_el: asn1.ASN1Element): void => {
-            days = __utils._decode_explicit<Period_days>(
-                () => _decode_Period_days
-            )(_el);
-        },
-        weeks: (_el: asn1.ASN1Element): void => {
-            weeks = __utils._decode_explicit<Period_weeks>(
-                () => _decode_Period_weeks
-            )(_el);
-        },
-        months: (_el: asn1.ASN1Element): void => {
-            months = __utils._decode_explicit<Period_months>(
-                () => _decode_Period_months
-            )(_el);
-        },
-        years: (_el: asn1.ASN1Element): void => {
-            years = __utils._decode_explicit<asn1.INTEGER[]>(() =>
-                __utils._decodeSetOf<asn1.INTEGER>(() => __utils._decodeInteger)
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_Period,
-        _extension_additions_list_spec_for_Period,
-        _root_component_type_list_2_spec_for_Period,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new Period(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ timesOfDay,
-        days,
-        weeks,
-        months,
-        years,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_Period = function (
+let _cached_decoder_for_Period: __utils.ASN1Decoder<Period> | null = null;
+let _cached_encoder_for_Period: __utils.ASN1Encoder<Period> | null = null;
+export function _decode_Period(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Period) {
+        _cached_decoder_for_Period = function (el: asn1.ASN1Element): Period {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let timesOfDay: asn1.OPTIONAL<DayTimeBand[]>;
+            let days: asn1.OPTIONAL<Period_days>;
+            let weeks: asn1.OPTIONAL<Period_weeks>;
+            let months: asn1.OPTIONAL<Period_months>;
+            let years: asn1.OPTIONAL<asn1.INTEGER[]>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                timesOfDay: (_el: asn1.ASN1Element): void => {
+                    timesOfDay = __utils._decode_explicit<DayTimeBand[]>(() =>
+                        __utils._decodeSetOf<DayTimeBand>(
+                            () => _decode_DayTimeBand
+                        )
+                    )(_el);
+                },
+                days: (_el: asn1.ASN1Element): void => {
+                    days = __utils._decode_explicit<Period_days>(
+                        () => _decode_Period_days
+                    )(_el);
+                },
+                weeks: (_el: asn1.ASN1Element): void => {
+                    weeks = __utils._decode_explicit<Period_weeks>(
+                        () => _decode_Period_weeks
+                    )(_el);
+                },
+                months: (_el: asn1.ASN1Element): void => {
+                    months = __utils._decode_explicit<Period_months>(
+                        () => _decode_Period_months
+                    )(_el);
+                },
+                years: (_el: asn1.ASN1Element): void => {
+                    years = __utils._decode_explicit<asn1.INTEGER[]>(() =>
+                        __utils._decodeSetOf<asn1.INTEGER>(
+                            () => __utils._decodeInteger
+                        )
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_Period,
+                _extension_additions_list_spec_for_Period,
+                _root_component_type_list_2_spec_for_Period,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new Period(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ timesOfDay,
+                days,
+                weeks,
+                months,
+                years,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_Period(el);
+}
+export function _encode_Period(
     value: Period,
     elGetter: __utils.ASN1Encoder<Period>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.timesOfDay === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () =>
-                                  __utils._encodeSetOf<DayTimeBand>(
-                                      () => _encode_DayTimeBand,
+) {
+    if (!_cached_encoder_for_Period) {
+        _cached_encoder_for_Period = function (
+            value: Period,
+            elGetter: __utils.ASN1Encoder<Period>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.timesOfDay === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () =>
+                                          __utils._encodeSetOf<DayTimeBand>(
+                                              () => _encode_DayTimeBand,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.timesOfDay, __utils.BER),
-                    /* IF_ABSENT  */ value.days === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_Period_days,
-                              __utils.BER
-                          )(value.days, __utils.BER),
-                    /* IF_ABSENT  */ value.weeks === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () => _encode_Period_weeks,
-                              __utils.BER
-                          )(value.weeks, __utils.BER),
-                    /* IF_ABSENT  */ value.months === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              3,
-                              () => _encode_Period_months,
-                              __utils.BER
-                          )(value.months, __utils.BER),
-                    /* IF_ABSENT  */ value.years === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              4,
-                              () =>
-                                  __utils._encodeSetOf<asn1.INTEGER>(
-                                      () => __utils._encodeInteger,
+                                  )(value.timesOfDay, __utils.BER),
+                            /* IF_ABSENT  */ value.days === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_Period_days,
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.years, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                                  )(value.days, __utils.BER),
+                            /* IF_ABSENT  */ value.weeks === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () => _encode_Period_weeks,
+                                      __utils.BER
+                                  )(value.weeks, __utils.BER),
+                            /* IF_ABSENT  */ value.months === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      3,
+                                      () => _encode_Period_months,
+                                      __utils.BER
+                                  )(value.months, __utils.BER),
+                            /* IF_ABSENT  */ value.years === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      4,
+                                      () =>
+                                          __utils._encodeSetOf<asn1.INTEGER>(
+                                              () => __utils._encodeInteger,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.years, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_Period(value, elGetter);
+}
 
 export type TimeSpecification_time =
-    | { absolute: TimeSpecification_time_absolute }
-    | { periodic: Period[] };
-export const _decode_TimeSpecification_time = __utils._decode_inextensible_choice<
+    | { absolute: TimeSpecification_time_absolute } /* CHOICE_ALT_ROOT */
+    | { periodic: Period[] } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_TimeSpecification_time: __utils.ASN1Decoder<
     TimeSpecification_time
->({
-    "UNIVERSAL 16": ["absolute", _decode_TimeSpecification_time_absolute],
-    "UNIVERSAL 17": [
-        "periodic",
-        __utils._decodeSetOf<Period>(() => _decode_Period),
-    ],
-});
-export const _encode_TimeSpecification_time = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_TimeSpecification_time: __utils.ASN1Encoder<
     TimeSpecification_time
->(
-    {
-        absolute: _encode_TimeSpecification_time_absolute,
-        periodic: __utils._encodeSetOf<Period>(
-            () => _encode_Period,
+> | null = null;
+export function _decode_TimeSpecification_time(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeSpecification_time) {
+        _cached_decoder_for_TimeSpecification_time = __utils._decode_inextensible_choice<
+            TimeSpecification_time
+        >({
+            "UNIVERSAL 16": [
+                "absolute",
+                _decode_TimeSpecification_time_absolute,
+            ],
+            "UNIVERSAL 17": [
+                "periodic",
+                __utils._decodeSetOf<Period>(() => _decode_Period),
+            ],
+        });
+    }
+    return _cached_decoder_for_TimeSpecification_time(el);
+}
+export function _encode_TimeSpecification_time(
+    value: TimeSpecification_time,
+    elGetter: __utils.ASN1Encoder<TimeSpecification_time>
+) {
+    if (!_cached_encoder_for_TimeSpecification_time) {
+        _cached_encoder_for_TimeSpecification_time = __utils._encode_choice<
+            TimeSpecification_time
+        >(
+            {
+                absolute: _encode_TimeSpecification_time_absolute,
+                periodic: __utils._encodeSetOf<Period>(
+                    () => _encode_Period,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_TimeSpecification_time(value, elGetter);
+}
 
 export type TimeZone = asn1.INTEGER;
-export const _decode_TimeZone = __utils._decodeInteger;
-export const _encode_TimeZone = __utils._encodeInteger;
+let _cached_decoder_for_TimeZone: __utils.ASN1Decoder<TimeZone> | null = null;
+let _cached_encoder_for_TimeZone: __utils.ASN1Encoder<TimeZone> | null = null;
+export function _decode_TimeZone(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeZone) {
+        _cached_decoder_for_TimeZone = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_TimeZone(el);
+}
+export function _encode_TimeZone(
+    value: TimeZone,
+    elGetter: __utils.ASN1Encoder<TimeZone>
+) {
+    if (!_cached_encoder_for_TimeZone) {
+        _cached_encoder_for_TimeZone = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_TimeZone(value, elGetter);
+}
 
 export class TimeSpecification {
     constructor(
@@ -3507,6 +4952,9 @@ export class TimeSpecification {
         readonly timeZone: TimeZone | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_notThisTime() {
+        return false;
+    }
 }
 export const _root_component_type_list_1_spec_for_TimeSpecification: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -3533,82 +4981,101 @@ export const _root_component_type_list_1_spec_for_TimeSpecification: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_TimeSpecification: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeSpecification: __utils.ComponentSpec[] = [];
-export const _default_value_for_TimeSpecification__notThisTime = false;
-export const _decode_TimeSpecification = function (
-    el: asn1.ASN1Element
-): TimeSpecification {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let time!: TimeSpecification_time;
-    let notThisTime: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_TimeSpecification__notThisTime;
-    let timeZone: asn1.OPTIONAL<TimeZone>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        time: (_el: asn1.ASN1Element): void => {
-            time = _decode_TimeSpecification_time(_el);
-        },
-        notThisTime: (_el: asn1.ASN1Element): void => {
-            notThisTime = __utils._decodeBoolean(_el);
-        },
-        timeZone: (_el: asn1.ASN1Element): void => {
-            timeZone = _decode_TimeZone(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TimeSpecification,
-        _extension_additions_list_spec_for_TimeSpecification,
-        _root_component_type_list_2_spec_for_TimeSpecification,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TimeSpecification(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ time,
-        notThisTime,
-        timeZone,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_TimeSpecification = function (
+let _cached_decoder_for_TimeSpecification: __utils.ASN1Decoder<
+    TimeSpecification
+> | null = null;
+let _cached_encoder_for_TimeSpecification: __utils.ASN1Encoder<
+    TimeSpecification
+> | null = null;
+export function _decode_TimeSpecification(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeSpecification) {
+        _cached_decoder_for_TimeSpecification = function (
+            el: asn1.ASN1Element
+        ): TimeSpecification {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let time!: TimeSpecification_time;
+            let notThisTime: asn1.OPTIONAL<asn1.BOOLEAN> =
+                TimeSpecification._default_value_for_notThisTime;
+            let timeZone: asn1.OPTIONAL<TimeZone>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                time: (_el: asn1.ASN1Element): void => {
+                    time = _decode_TimeSpecification_time(_el);
+                },
+                notThisTime: (_el: asn1.ASN1Element): void => {
+                    notThisTime = __utils._decodeBoolean(_el);
+                },
+                timeZone: (_el: asn1.ASN1Element): void => {
+                    timeZone = _decode_TimeZone(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TimeSpecification,
+                _extension_additions_list_spec_for_TimeSpecification,
+                _root_component_type_list_2_spec_for_TimeSpecification,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TimeSpecification(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ time,
+                notThisTime,
+                timeZone,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TimeSpecification(el);
+}
+export function _encode_TimeSpecification(
     value: TimeSpecification,
     elGetter: __utils.ASN1Encoder<TimeSpecification>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_TimeSpecification_time(
-                        value.time,
-                        __utils.BER
-                    ),
-                    /* IF_DEFAULT */ value.notThisTime === undefined ||
-                    __utils.deepEq(
-                        value.notThisTime,
-                        _default_value_for_TimeSpecification__notThisTime
+) {
+    if (!_cached_encoder_for_TimeSpecification) {
+        _cached_encoder_for_TimeSpecification = function (
+            value: TimeSpecification,
+            elGetter: __utils.ASN1Encoder<TimeSpecification>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_TimeSpecification_time(
+                                value.time,
+                                __utils.BER
+                            ),
+                            /* IF_DEFAULT */ value.notThisTime === undefined ||
+                            __utils.deepEq(
+                                value.notThisTime,
+                                TimeSpecification._default_value_for_notThisTime
+                            )
+                                ? undefined
+                                : __utils._encodeBoolean(
+                                      value.notThisTime,
+                                      __utils.BER
+                                  ),
+                            /* IF_ABSENT  */ value.timeZone === undefined
+                                ? undefined
+                                : _encode_TimeZone(value.timeZone, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encodeBoolean(
-                              value.notThisTime,
-                              __utils.BER
-                          ),
-                    /* IF_ABSENT  */ value.timeZone === undefined
-                        ? undefined
-                        : _encode_TimeZone(value.timeZone, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TimeSpecification(value, elGetter);
+}
 
 export class TimeAssertion_between {
     constructor(
@@ -3617,6 +5084,9 @@ export class TimeAssertion_between {
         readonly entirely: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_entirely() {
+        return false;
+    }
 }
 export const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -3643,147 +5113,228 @@ export const _root_component_type_list_1_spec_for_TimeAssertion_between: __utils
 ];
 export const _root_component_type_list_2_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TimeAssertion_between: __utils.ComponentSpec[] = [];
-export const _default_value_for_TimeAssertion_between__entirely = false;
-export const _decode_TimeAssertion_between = function (
-    el: asn1.ASN1Element
-): TimeAssertion_between {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let startTime!: asn1.GeneralizedTime;
-    let endTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
-    let entirely: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_TimeAssertion_between__entirely;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        startTime: (_el: asn1.ASN1Element): void => {
-            startTime = __utils._decode_explicit<asn1.GeneralizedTime>(
-                () => __utils._decodeGeneralizedTime
-            )(_el);
-        },
-        endTime: (_el: asn1.ASN1Element): void => {
-            endTime = __utils._decode_explicit<asn1.GeneralizedTime>(
-                () => __utils._decodeGeneralizedTime
-            )(_el);
-        },
-        entirely: (_el: asn1.ASN1Element): void => {
-            entirely = __utils._decodeBoolean(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TimeAssertion_between,
-        _extension_additions_list_spec_for_TimeAssertion_between,
-        _root_component_type_list_2_spec_for_TimeAssertion_between,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TimeAssertion_between(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
-        endTime,
-        entirely,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_TimeAssertion_between = function (
+let _cached_decoder_for_TimeAssertion_between: __utils.ASN1Decoder<
+    TimeAssertion_between
+> | null = null;
+let _cached_encoder_for_TimeAssertion_between: __utils.ASN1Encoder<
+    TimeAssertion_between
+> | null = null;
+export function _decode_TimeAssertion_between(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeAssertion_between) {
+        _cached_decoder_for_TimeAssertion_between = function (
+            el: asn1.ASN1Element
+        ): TimeAssertion_between {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let startTime!: asn1.GeneralizedTime;
+            let endTime: asn1.OPTIONAL<asn1.GeneralizedTime>;
+            let entirely: asn1.OPTIONAL<asn1.BOOLEAN> =
+                TimeAssertion_between._default_value_for_entirely;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                startTime: (_el: asn1.ASN1Element): void => {
+                    startTime = __utils._decode_explicit<asn1.GeneralizedTime>(
+                        () => __utils._decodeGeneralizedTime
+                    )(_el);
+                },
+                endTime: (_el: asn1.ASN1Element): void => {
+                    endTime = __utils._decode_explicit<asn1.GeneralizedTime>(
+                        () => __utils._decodeGeneralizedTime
+                    )(_el);
+                },
+                entirely: (_el: asn1.ASN1Element): void => {
+                    entirely = __utils._decodeBoolean(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TimeAssertion_between,
+                _extension_additions_list_spec_for_TimeAssertion_between,
+                _root_component_type_list_2_spec_for_TimeAssertion_between,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TimeAssertion_between(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
+                endTime,
+                entirely,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TimeAssertion_between(el);
+}
+export function _encode_TimeAssertion_between(
     value: TimeAssertion_between,
     elGetter: __utils.ASN1Encoder<TimeAssertion_between>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        0,
-                        () => __utils._encodeGeneralizedTime,
-                        __utils.BER
-                    )(value.startTime, __utils.BER),
-                    /* IF_ABSENT  */ value.endTime === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeGeneralizedTime,
-                              __utils.BER
-                          )(value.endTime, __utils.BER),
-                    /* IF_DEFAULT */ value.entirely === undefined ||
-                    __utils.deepEq(
-                        value.entirely,
-                        _default_value_for_TimeAssertion_between__entirely
+) {
+    if (!_cached_encoder_for_TimeAssertion_between) {
+        _cached_encoder_for_TimeAssertion_between = function (
+            value: TimeAssertion_between,
+            elGetter: __utils.ASN1Encoder<TimeAssertion_between>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                0,
+                                () => __utils._encodeGeneralizedTime,
+                                __utils.BER
+                            )(value.startTime, __utils.BER),
+                            /* IF_ABSENT  */ value.endTime === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeGeneralizedTime,
+                                      __utils.BER
+                                  )(value.endTime, __utils.BER),
+                            /* IF_DEFAULT */ value.entirely === undefined ||
+                            __utils.deepEq(
+                                value.entirely,
+                                TimeAssertion_between._default_value_for_entirely
+                            )
+                                ? undefined
+                                : __utils._encodeBoolean(
+                                      value.entirely,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encodeBoolean(value.entirely, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TimeAssertion_between(value, elGetter);
+}
 
 export type TimeAssertion =
-    | { now: asn1.NULL }
-    | { at: asn1.GeneralizedTime }
-    | { between: TimeAssertion_between }
-    | asn1.ASN1Element;
-export const _decode_TimeAssertion = __utils._decode_extensible_choice<
+    | { now: asn1.NULL } /* CHOICE_ALT_ROOT */
+    | { at: asn1.GeneralizedTime } /* CHOICE_ALT_ROOT */
+    | { between: TimeAssertion_between } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_TimeAssertion: __utils.ASN1Decoder<
     TimeAssertion
->({
-    "UNIVERSAL 5": ["now", __utils._decodeNull],
-    "UNIVERSAL 24": ["at", __utils._decodeGeneralizedTime],
-    "UNIVERSAL 16": ["between", _decode_TimeAssertion_between],
-});
-export const _encode_TimeAssertion = __utils._encode_choice<TimeAssertion>(
-    {
-        now: __utils._encodeNull,
-        at: __utils._encodeGeneralizedTime,
-        between: _encode_TimeAssertion_between,
-    },
-    __utils.BER
-);
+> | null = null;
+let _cached_encoder_for_TimeAssertion: __utils.ASN1Encoder<
+    TimeAssertion
+> | null = null;
+export function _decode_TimeAssertion(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TimeAssertion) {
+        _cached_decoder_for_TimeAssertion = __utils._decode_extensible_choice<
+            TimeAssertion
+        >({
+            "UNIVERSAL 5": ["now", __utils._decodeNull],
+            "UNIVERSAL 24": ["at", __utils._decodeGeneralizedTime],
+            "UNIVERSAL 16": ["between", _decode_TimeAssertion_between],
+        });
+    }
+    return _cached_decoder_for_TimeAssertion(el);
+}
+export function _encode_TimeAssertion(
+    value: TimeAssertion,
+    elGetter: __utils.ASN1Encoder<TimeAssertion>
+) {
+    if (!_cached_encoder_for_TimeAssertion) {
+        _cached_encoder_for_TimeAssertion = __utils._encode_choice<
+            TimeAssertion
+        >(
+            {
+                now: __utils._encodeNull,
+                at: __utils._encodeGeneralizedTime,
+                between: _encode_TimeAssertion_between,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_TimeAssertion(value, elGetter);
+}
 
 // TODO: ObjectAssignment: localeContext
 
 export type LocaleContextSyntax =
-    | { localeID1: asn1.OBJECT_IDENTIFIER }
-    | { localeID2: UnboundedDirectoryString }
-    | asn1.ASN1Element;
-export const _decode_LocaleContextSyntax = __utils._decode_extensible_choice<
+    | { localeID1: asn1.OBJECT_IDENTIFIER } /* CHOICE_ALT_ROOT */
+    | { localeID2: UnboundedDirectoryString } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_LocaleContextSyntax: __utils.ASN1Decoder<
     LocaleContextSyntax
->({
-    "UNIVERSAL 6": ["localeID1", __utils._decodeObjectIdentifier],
-    "UNIVERSAL 12": ["localeID2", _decode_UnboundedDirectoryString], // utf8String
-    "UNIVERSAL 19": ["localeID2", _decode_UnboundedDirectoryString], // printableString
-    "UNIVERSAL 20": ["localeID2", _decode_UnboundedDirectoryString], // teletexString
-    "UNIVERSAL 28": ["localeID2", _decode_UnboundedDirectoryString], // universalString
-    "UNIVERSAL 30": ["localeID2", _decode_UnboundedDirectoryString], // bmpString
-});
-export const _encode_LocaleContextSyntax = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_LocaleContextSyntax: __utils.ASN1Encoder<
     LocaleContextSyntax
->(
-    {
-        localeID1: __utils._encodeObjectIdentifier,
-        localeID2: _encode_UnboundedDirectoryString,
-    },
-    __utils.BER
-);
+> | null = null;
+export function _decode_LocaleContextSyntax(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_LocaleContextSyntax) {
+        _cached_decoder_for_LocaleContextSyntax = __utils._decode_extensible_choice<
+            LocaleContextSyntax
+        >({
+            "UNIVERSAL 6": ["localeID1", __utils._decodeObjectIdentifier],
+            "UNIVERSAL 20": ["localeID2", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 19": ["localeID2", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 30": ["localeID2", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 28": ["localeID2", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 12": ["localeID2", _decode_UnboundedDirectoryString],
+        });
+    }
+    return _cached_decoder_for_LocaleContextSyntax(el);
+}
+export function _encode_LocaleContextSyntax(
+    value: LocaleContextSyntax,
+    elGetter: __utils.ASN1Encoder<LocaleContextSyntax>
+) {
+    if (!_cached_encoder_for_LocaleContextSyntax) {
+        _cached_encoder_for_LocaleContextSyntax = __utils._encode_choice<
+            LocaleContextSyntax
+        >(
+            {
+                localeID1: __utils._encodeObjectIdentifier,
+                localeID2: _encode_UnboundedDirectoryString,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_LocaleContextSyntax(value, elGetter);
+}
 
 // TODO: ObjectAssignment: ldapAttributeOptionContext
 
 export type AttributeOptionList = asn1.UTF8String[]; // SequenceOfType
-export const _decode_AttributeOptionList = __utils._decodeSequenceOf<
-    asn1.UTF8String
->(() => __utils._decodeUTF8String);
-export const _encode_AttributeOptionList = __utils._encodeSequenceOf<
-    asn1.UTF8String
->(() => __utils._encodeUTF8String, __utils.BER);
+let _cached_decoder_for_AttributeOptionList: __utils.ASN1Decoder<
+    AttributeOptionList
+> | null = null;
+let _cached_encoder_for_AttributeOptionList: __utils.ASN1Encoder<
+    AttributeOptionList
+> | null = null;
+export function _decode_AttributeOptionList(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_AttributeOptionList) {
+        _cached_decoder_for_AttributeOptionList = __utils._decodeSequenceOf<
+            asn1.UTF8String
+        >(() => __utils._decodeUTF8String);
+    }
+    return _cached_decoder_for_AttributeOptionList(el);
+}
+export function _encode_AttributeOptionList(
+    value: AttributeOptionList,
+    elGetter: __utils.ASN1Encoder<AttributeOptionList>
+) {
+    if (!_cached_encoder_for_AttributeOptionList) {
+        _cached_encoder_for_AttributeOptionList = __utils._encodeSequenceOf<
+            asn1.UTF8String
+        >(() => __utils._encodeUTF8String, __utils.BER);
+    }
+    return _cached_encoder_for_AttributeOptionList(value, elGetter);
+}
 
 export const id_at_knowledgeInformation: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
     [2],

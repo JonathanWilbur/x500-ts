@@ -78,70 +78,88 @@ export const _root_component_type_list_1_spec_for_LdapSyntaxDescription: __utils
 ];
 export const _root_component_type_list_2_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_LdapSyntaxDescription: __utils.ComponentSpec[] = [];
-
-export const _decode_LdapSyntaxDescription = function (
-    el: asn1.ASN1Element
-): LdapSyntaxDescription {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let identifier!: asn1.OBJECT_IDENTIFIER;
-    let description: asn1.OPTIONAL<UnboundedDirectoryString>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        identifier: (_el: asn1.ASN1Element): void => {
-            identifier = __utils._decodeObjectIdentifier(_el);
-        },
-        description: (_el: asn1.ASN1Element): void => {
-            description = _decode_UnboundedDirectoryString(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_LdapSyntaxDescription,
-        _extension_additions_list_spec_for_LdapSyntaxDescription,
-        _root_component_type_list_2_spec_for_LdapSyntaxDescription,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new LdapSyntaxDescription(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
-        description,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_LdapSyntaxDescription = function (
+let _cached_decoder_for_LdapSyntaxDescription: __utils.ASN1Decoder<
+    LdapSyntaxDescription
+> | null = null;
+let _cached_encoder_for_LdapSyntaxDescription: __utils.ASN1Encoder<
+    LdapSyntaxDescription
+> | null = null;
+export function _decode_LdapSyntaxDescription(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_LdapSyntaxDescription) {
+        _cached_decoder_for_LdapSyntaxDescription = function (
+            el: asn1.ASN1Element
+        ): LdapSyntaxDescription {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let identifier!: asn1.OBJECT_IDENTIFIER;
+            let description: asn1.OPTIONAL<UnboundedDirectoryString>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                identifier: (_el: asn1.ASN1Element): void => {
+                    identifier = __utils._decodeObjectIdentifier(_el);
+                },
+                description: (_el: asn1.ASN1Element): void => {
+                    description = _decode_UnboundedDirectoryString(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_LdapSyntaxDescription,
+                _extension_additions_list_spec_for_LdapSyntaxDescription,
+                _root_component_type_list_2_spec_for_LdapSyntaxDescription,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new LdapSyntaxDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
+                description,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_LdapSyntaxDescription(el);
+}
+export function _encode_LdapSyntaxDescription(
     value: LdapSyntaxDescription,
     elGetter: __utils.ASN1Encoder<LdapSyntaxDescription>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                        value.identifier,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.description === undefined
-                        ? undefined
-                        : _encode_UnboundedDirectoryString(
-                              value.description,
-                              __utils.BER
-                          ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_LdapSyntaxDescription) {
+        _cached_encoder_for_LdapSyntaxDescription = function (
+            value: LdapSyntaxDescription,
+            elGetter: __utils.ASN1Encoder<LdapSyntaxDescription>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                                value.identifier,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.description === undefined
+                                ? undefined
+                                : _encode_UnboundedDirectoryString(
+                                      value.description,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_LdapSyntaxDescription(value, elGetter);
+}
 
 export const id_lat_namingContexts: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
     [5],

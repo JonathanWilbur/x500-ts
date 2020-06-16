@@ -12,8 +12,20 @@ import * as __utils from "./__utils";
 import { joint_iso_itu_t } from "./__utils";
 
 export type ID = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
-export const _decode_ID = __utils._decodeObjectIdentifier;
-export const _encode_ID = __utils._encodeObjectIdentifier;
+let _cached_decoder_for_ID: __utils.ASN1Decoder<ID> | null = null;
+let _cached_encoder_for_ID: __utils.ASN1Encoder<ID> | null = null;
+export function _decode_ID(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ID) {
+        _cached_decoder_for_ID = __utils._decodeObjectIdentifier;
+    }
+    return _cached_decoder_for_ID(el);
+}
+export function _encode_ID(value: ID, elGetter: __utils.ASN1Encoder<ID>) {
+    if (!_cached_encoder_for_ID) {
+        _cached_encoder_for_ID = __utils._encodeObjectIdentifier;
+    }
+    return _cached_encoder_for_ID(value, elGetter);
+}
 
 export const ds: ID = new asn1.ObjectIdentifier([/* ds */ 5], joint_iso_itu_t);
 

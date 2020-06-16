@@ -52,6 +52,15 @@ export {
     CertPolicyId,
     GeneralNames,
     KeyUsage,
+    KeyUsage_contentCommitment as contentCommitment /* IMPORTED_BIT */,
+    KeyUsage_cRLSign as cRLSign /* IMPORTED_BIT */,
+    KeyUsage_dataEncipherment as dataEncipherment /* IMPORTED_BIT */,
+    KeyUsage_decipherOnly as decipherOnly /* IMPORTED_BIT */,
+    KeyUsage_digitalSignature as digitalSignature /* IMPORTED_BIT */,
+    KeyUsage_encipherOnly as encipherOnly /* IMPORTED_BIT */,
+    KeyUsage_keyAgreement as keyAgreement /* IMPORTED_BIT */,
+    KeyUsage_keyCertSign as keyCertSign /* IMPORTED_BIT */,
+    KeyUsage_keyEncipherment as keyEncipherment /* IMPORTED_BIT */,
     _decode_CertificateAssertion,
     _decode_CertificateExactAssertion,
     _decode_CertificateListAssertion,
@@ -110,28 +119,28 @@ export {
 } from "./UsefulDefinitions";
 
 export type ENCRYPTED<ToBeEnciphered> = asn1.BIT_STRING;
-export const _get_decoder_for_ENCRYPTED = function <ToBeEnciphered>(
+export function _get_decoder_for_ENCRYPTED<ToBeEnciphered>(
     _decode_ToBeEnciphered: __utils.ASN1Decoder<ToBeEnciphered>
 ) {
     return __utils._decodeBitString;
-};
-export const _get_encoder_for_ENCRYPTED = function <ToBeEnciphered>(
+}
+export function _get_encoder_for_ENCRYPTED<ToBeEnciphered>(
     _encode_ToBeEnciphered: __utils.ASN1Encoder<ToBeEnciphered>
 ) {
     return __utils._encodeBitString;
-};
+}
 
 export type ENCRYPTED_HASH<ToBeSigned> = asn1.BIT_STRING;
-export const _get_decoder_for_ENCRYPTED_HASH = function <ToBeSigned>(
+export function _get_decoder_for_ENCRYPTED_HASH<ToBeSigned>(
     _decode_ToBeSigned: __utils.ASN1Decoder<ToBeSigned>
 ) {
     return __utils._decodeBitString;
-};
-export const _get_encoder_for_ENCRYPTED_HASH = function <ToBeSigned>(
+}
+export function _get_encoder_for_ENCRYPTED_HASH<ToBeSigned>(
     _encode_ToBeSigned: __utils.ASN1Encoder<ToBeSigned>
 ) {
     return __utils._encodeBitString;
-};
+}
 
 // TODO: ObjectSetAssignment: SupportedAlgorithms
 
@@ -177,67 +186,88 @@ export const _root_component_type_list_1_spec_for_AlgorithmIdentifier: __utils.C
 ];
 export const _root_component_type_list_2_spec_for_AlgorithmIdentifier: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AlgorithmIdentifier: __utils.ComponentSpec[] = [];
-
-export const _decode_AlgorithmIdentifier = function (
-    el: asn1.ASN1Element
-): AlgorithmIdentifier {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let algorithm!: asn1.OBJECT_IDENTIFIER;
-    let parameters: asn1.OPTIONAL<asn1.ASN1Element>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        algorithm: (_el: asn1.ASN1Element): void => {
-            algorithm = __utils._decodeObjectIdentifier(_el);
-        },
-        parameters: (_el: asn1.ASN1Element): void => {
-            parameters = __utils._decodeAny(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_AlgorithmIdentifier,
-        _extension_additions_list_spec_for_AlgorithmIdentifier,
-        _root_component_type_list_2_spec_for_AlgorithmIdentifier,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new AlgorithmIdentifier(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
-        parameters,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_AlgorithmIdentifier = function (
+let _cached_decoder_for_AlgorithmIdentifier: __utils.ASN1Decoder<
+    AlgorithmIdentifier
+> | null = null;
+let _cached_encoder_for_AlgorithmIdentifier: __utils.ASN1Encoder<
+    AlgorithmIdentifier
+> | null = null;
+export function _decode_AlgorithmIdentifier(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_AlgorithmIdentifier) {
+        _cached_decoder_for_AlgorithmIdentifier = function (
+            el: asn1.ASN1Element
+        ): AlgorithmIdentifier {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let algorithm!: asn1.OBJECT_IDENTIFIER;
+            let parameters: asn1.OPTIONAL<asn1.ASN1Element>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                algorithm: (_el: asn1.ASN1Element): void => {
+                    algorithm = __utils._decodeObjectIdentifier(_el);
+                },
+                parameters: (_el: asn1.ASN1Element): void => {
+                    parameters = __utils._decodeAny(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_AlgorithmIdentifier,
+                _extension_additions_list_spec_for_AlgorithmIdentifier,
+                _root_component_type_list_2_spec_for_AlgorithmIdentifier,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new AlgorithmIdentifier(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
+                parameters,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_AlgorithmIdentifier(el);
+}
+export function _encode_AlgorithmIdentifier(
     value: AlgorithmIdentifier,
     elGetter: __utils.ASN1Encoder<AlgorithmIdentifier>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                        value.algorithm,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.parameters === undefined
-                        ? undefined
-                        : __utils._encodeAny(value.parameters, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_AlgorithmIdentifier) {
+        _cached_encoder_for_AlgorithmIdentifier = function (
+            value: AlgorithmIdentifier,
+            elGetter: __utils.ASN1Encoder<AlgorithmIdentifier>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                                value.algorithm,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.parameters === undefined
+                                ? undefined
+                                : __utils._encodeAny(
+                                      value.parameters,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_AlgorithmIdentifier(value, elGetter);
+}
 
 export class SIGNATURE {
     constructor(
@@ -264,53 +294,73 @@ export const _root_component_type_list_1_spec_for_SIGNATURE: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_SIGNATURE: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SIGNATURE: __utils.ComponentSpec[] = [];
-
-export const _decode_SIGNATURE = function (el: asn1.ASN1Element): SIGNATURE {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "SIGNATURE contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_SIGNATURE: __utils.ASN1Decoder<SIGNATURE> | null = null;
+let _cached_encoder_for_SIGNATURE: __utils.ASN1Encoder<SIGNATURE> | null = null;
+export function _decode_SIGNATURE(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SIGNATURE) {
+        _cached_decoder_for_SIGNATURE = function (
+            el: asn1.ASN1Element
+        ): SIGNATURE {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "SIGNATURE contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "algorithmIdentifier";
+            sequence[1].name = "signature";
+            let algorithmIdentifier!: AlgorithmIdentifier;
+            let signature!: asn1.BIT_STRING;
+            algorithmIdentifier = _decode_AlgorithmIdentifier(sequence[0]);
+            signature = __utils._decodeBitString(sequence[1]);
+            // TODO: Validate values.
+            return new SIGNATURE(
+                algorithmIdentifier,
+                signature,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "algorithmIdentifier";
-    sequence[1].name = "signature";
-    let algorithmIdentifier!: AlgorithmIdentifier;
-    let signature!: asn1.BIT_STRING;
-    algorithmIdentifier = _decode_AlgorithmIdentifier(sequence[0]);
-    signature = __utils._decodeBitString(sequence[1]);
-    // TODO: Validate values.
-    return new SIGNATURE(algorithmIdentifier, signature, sequence.slice(2));
-};
-export const _encode_SIGNATURE = function (
+    return _cached_decoder_for_SIGNATURE(el);
+}
+export function _encode_SIGNATURE(
     value: SIGNATURE,
     elGetter: __utils.ASN1Encoder<SIGNATURE>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.algorithmIdentifier,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeBitString(
-                        value.signature,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_SIGNATURE) {
+        _cached_encoder_for_SIGNATURE = function (
+            value: SIGNATURE,
+            elGetter: __utils.ASN1Encoder<SIGNATURE>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.algorithmIdentifier,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeBitString(
+                                value.signature,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_SIGNATURE(value, elGetter);
+}
 
 export class SIGNED<ToBeSigned> {
     constructor(
@@ -345,8 +395,7 @@ export const _root_component_type_list_1_spec_for_SIGNED: __utils.ComponentSpec[
 ];
 export const _root_component_type_list_2_spec_for_SIGNED: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SIGNED: __utils.ComponentSpec[] = [];
-
-export const _get_decoder_for_SIGNED = function <ToBeSigned>(
+export function _get_decoder_for_SIGNED<ToBeSigned>(
     _decode_ToBeSigned: __utils.ASN1Decoder<ToBeSigned>
 ) {
     return function (el: asn1.ASN1Element): SIGNED<ToBeSigned> {
@@ -386,8 +435,8 @@ export const _get_decoder_for_SIGNED = function <ToBeSigned>(
             _unrecognizedExtensionsList
         );
     };
-};
-export const _get_encoder_for_SIGNED = function <ToBeSigned>(
+}
+export function _get_encoder_for_SIGNED<ToBeSigned>(
     _encode_ToBeSigned: __utils.ASN1Encoder<ToBeSigned>
 ) {
     return function (
@@ -421,7 +470,7 @@ export const _get_encoder_for_SIGNED = function <ToBeSigned>(
             __utils.BER
         );
     };
-};
+}
 
 export type Version = asn1.INTEGER;
 export const Version_v1: Version = 0; /* LONG_NAMED_INTEGER_VALUE */
@@ -430,27 +479,73 @@ export const Version_v2: Version = 1; /* LONG_NAMED_INTEGER_VALUE */
 export const v2: Version = Version_v2; /* SHORT_NAMED_INTEGER_VALUE */
 export const Version_v3: Version = 2; /* LONG_NAMED_INTEGER_VALUE */
 export const v3: Version = Version_v3; /* SHORT_NAMED_INTEGER_VALUE */
-export const _decode_Version = __utils._decodeInteger;
-export const _encode_Version = __utils._encodeInteger;
+let _cached_decoder_for_Version: __utils.ASN1Decoder<Version> | null = null;
+let _cached_encoder_for_Version: __utils.ASN1Encoder<Version> | null = null;
+export function _decode_Version(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Version) {
+        _cached_decoder_for_Version = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_Version(el);
+}
+export function _encode_Version(
+    value: Version,
+    elGetter: __utils.ASN1Encoder<Version>
+) {
+    if (!_cached_encoder_for_Version) {
+        _cached_encoder_for_Version = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_Version(value, elGetter);
+}
 
-export type CertificateSerialNumber = asn1.OCTET_STRING; // This needs to be an OCTET STRING, because it can be large.
-export const _decode_CertificateSerialNumber = __utils._decodeOctetString;
-export const _encode_CertificateSerialNumber = __utils._encodeOctetString;
+export type CertificateSerialNumber = asn1.INTEGER;
+let _cached_decoder_for_CertificateSerialNumber: __utils.ASN1Decoder<
+    CertificateSerialNumber
+> | null = null;
+let _cached_encoder_for_CertificateSerialNumber: __utils.ASN1Encoder<
+    CertificateSerialNumber
+> | null = null;
+export function _decode_CertificateSerialNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertificateSerialNumber) {
+        _cached_decoder_for_CertificateSerialNumber = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_CertificateSerialNumber(el);
+}
+export function _encode_CertificateSerialNumber(
+    value: CertificateSerialNumber,
+    elGetter: __utils.ASN1Encoder<CertificateSerialNumber>
+) {
+    if (!_cached_encoder_for_CertificateSerialNumber) {
+        _cached_encoder_for_CertificateSerialNumber = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_CertificateSerialNumber(value, elGetter);
+}
 
 export type Time =
-    | { utcTime: asn1.UTCTime }
-    | { generalizedTime: asn1.GeneralizedTime };
-export const _decode_Time = __utils._decode_inextensible_choice<Time>({
-    "UNIVERSAL 23": ["utcTime", __utils._decodeUTCTime],
-    "UNIVERSAL 24": ["generalizedTime", __utils._decodeGeneralizedTime],
-});
-export const _encode_Time = __utils._encode_choice<Time>(
-    {
-        utcTime: __utils._encodeUTCTime,
-        generalizedTime: __utils._encodeGeneralizedTime,
-    },
-    __utils.BER
-);
+    | { utcTime: asn1.UTCTime } /* CHOICE_ALT_ROOT */
+    | { generalizedTime: asn1.GeneralizedTime } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_Time: __utils.ASN1Decoder<Time> | null = null;
+let _cached_encoder_for_Time: __utils.ASN1Encoder<Time> | null = null;
+export function _decode_Time(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Time) {
+        _cached_decoder_for_Time = __utils._decode_inextensible_choice<Time>({
+            "UNIVERSAL 23": ["utcTime", __utils._decodeUTCTime],
+            "UNIVERSAL 24": ["generalizedTime", __utils._decodeGeneralizedTime],
+        });
+    }
+    return _cached_decoder_for_Time(el);
+}
+export function _encode_Time(value: Time, elGetter: __utils.ASN1Encoder<Time>) {
+    if (!_cached_encoder_for_Time) {
+        _cached_encoder_for_Time = __utils._encode_choice<Time>(
+            {
+                utcTime: __utils._encodeUTCTime,
+                generalizedTime: __utils._encodeGeneralizedTime,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_Time(value, elGetter);
+}
 
 export class Validity {
     constructor(
@@ -477,51 +572,88 @@ export const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpe
 ];
 export const _root_component_type_list_2_spec_for_Validity: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Validity: __utils.ComponentSpec[] = [];
-
-export const _decode_Validity = function (el: asn1.ASN1Element): Validity {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "Validity contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_Validity: __utils.ASN1Decoder<Validity> | null = null;
+let _cached_encoder_for_Validity: __utils.ASN1Encoder<Validity> | null = null;
+export function _decode_Validity(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Validity) {
+        _cached_decoder_for_Validity = function (
+            el: asn1.ASN1Element
+        ): Validity {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "Validity contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "notBefore";
+            sequence[1].name = "notAfter";
+            let notBefore!: Time;
+            let notAfter!: Time;
+            notBefore = _decode_Time(sequence[0]);
+            notAfter = _decode_Time(sequence[1]);
+            // TODO: Validate values.
+            return new Validity(notBefore, notAfter, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "notBefore";
-    sequence[1].name = "notAfter";
-    let notBefore!: Time;
-    let notAfter!: Time;
-    notBefore = _decode_Time(sequence[0]);
-    notAfter = _decode_Time(sequence[1]);
-    // TODO: Validate values.
-    return new Validity(notBefore, notAfter, sequence.slice(2));
-};
-export const _encode_Validity = function (
+    return _cached_decoder_for_Validity(el);
+}
+export function _encode_Validity(
     value: Validity,
     elGetter: __utils.ASN1Encoder<Validity>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_Time(value.notBefore, __utils.BER),
-                    /* REQUIRED   */ _encode_Time(value.notAfter, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_Validity) {
+        _cached_encoder_for_Validity = function (
+            value: Validity,
+            elGetter: __utils.ASN1Encoder<Validity>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_Time(
+                                value.notBefore,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Time(
+                                value.notAfter,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_Validity(value, elGetter);
+}
 
 export type PublicKey = asn1.BIT_STRING;
-export const _decode_PublicKey = __utils._decodeBitString;
-export const _encode_PublicKey = __utils._encodeBitString;
+let _cached_decoder_for_PublicKey: __utils.ASN1Decoder<PublicKey> | null = null;
+let _cached_encoder_for_PublicKey: __utils.ASN1Encoder<PublicKey> | null = null;
+export function _decode_PublicKey(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PublicKey) {
+        _cached_decoder_for_PublicKey = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_PublicKey(el);
+}
+export function _encode_PublicKey(
+    value: PublicKey,
+    elGetter: __utils.ASN1Encoder<PublicKey>
+) {
+    if (!_cached_encoder_for_PublicKey) {
+        _cached_encoder_for_PublicKey = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_PublicKey(value, elGetter);
+}
 
 export class SubjectPublicKeyInfo {
     constructor(
@@ -548,59 +680,77 @@ export const _root_component_type_list_1_spec_for_SubjectPublicKeyInfo: __utils.
 ];
 export const _root_component_type_list_2_spec_for_SubjectPublicKeyInfo: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SubjectPublicKeyInfo: __utils.ComponentSpec[] = [];
-
-export const _decode_SubjectPublicKeyInfo = function (
-    el: asn1.ASN1Element
-): SubjectPublicKeyInfo {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "SubjectPublicKeyInfo contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_SubjectPublicKeyInfo: __utils.ASN1Decoder<
+    SubjectPublicKeyInfo
+> | null = null;
+let _cached_encoder_for_SubjectPublicKeyInfo: __utils.ASN1Encoder<
+    SubjectPublicKeyInfo
+> | null = null;
+export function _decode_SubjectPublicKeyInfo(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SubjectPublicKeyInfo) {
+        _cached_decoder_for_SubjectPublicKeyInfo = function (
+            el: asn1.ASN1Element
+        ): SubjectPublicKeyInfo {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "SubjectPublicKeyInfo contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "algorithm";
+            sequence[1].name = "subjectPublicKey";
+            let algorithm!: AlgorithmIdentifier;
+            let subjectPublicKey!: PublicKey;
+            algorithm = _decode_AlgorithmIdentifier(sequence[0]);
+            subjectPublicKey = _decode_PublicKey(sequence[1]);
+            // TODO: Validate values.
+            return new SubjectPublicKeyInfo(
+                algorithm,
+                subjectPublicKey,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "algorithm";
-    sequence[1].name = "subjectPublicKey";
-    let algorithm!: AlgorithmIdentifier;
-    let subjectPublicKey!: PublicKey;
-    algorithm = _decode_AlgorithmIdentifier(sequence[0]);
-    subjectPublicKey = _decode_PublicKey(sequence[1]);
-    // TODO: Validate values.
-    return new SubjectPublicKeyInfo(
-        algorithm,
-        subjectPublicKey,
-        sequence.slice(2)
-    );
-};
-export const _encode_SubjectPublicKeyInfo = function (
+    return _cached_decoder_for_SubjectPublicKeyInfo(el);
+}
+export function _encode_SubjectPublicKeyInfo(
     value: SubjectPublicKeyInfo,
     elGetter: __utils.ASN1Encoder<SubjectPublicKeyInfo>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.algorithm,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_PublicKey(
-                        value.subjectPublicKey,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_SubjectPublicKeyInfo) {
+        _cached_encoder_for_SubjectPublicKeyInfo = function (
+            value: SubjectPublicKeyInfo,
+            elGetter: __utils.ASN1Encoder<SubjectPublicKeyInfo>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.algorithm,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_PublicKey(
+                                value.subjectPublicKey,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_SubjectPublicKeyInfo(value, elGetter);
+}
 
 export class Extension {
     constructor(
@@ -609,6 +759,9 @@ export class Extension {
         readonly extnValue: asn1.OCTET_STRING,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_critical() {
+        return false;
+    }
 }
 export const _root_component_type_list_1_spec_for_Extension: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -635,87 +788,126 @@ export const _root_component_type_list_1_spec_for_Extension: __utils.ComponentSp
 ];
 export const _root_component_type_list_2_spec_for_Extension: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Extension: __utils.ComponentSpec[] = [];
-export const _default_value_for_Extension__critical = false;
-export const _decode_Extension = function (el: asn1.ASN1Element): Extension {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let extnId!: asn1.OBJECT_IDENTIFIER;
-    let critical: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_Extension__critical;
-    let extnValue!: asn1.OCTET_STRING;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        extnId: (_el: asn1.ASN1Element): void => {
-            extnId = __utils._decodeObjectIdentifier(_el);
-        },
-        critical: (_el: asn1.ASN1Element): void => {
-            critical = __utils._decodeBoolean(_el);
-        },
-        extnValue: (_el: asn1.ASN1Element): void => {
-            extnValue = __utils._decodeOctetString(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_Extension,
-        _extension_additions_list_spec_for_Extension,
-        _root_component_type_list_2_spec_for_Extension,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new Extension(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ extnId,
-        critical,
-        extnValue,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_Extension = function (
+let _cached_decoder_for_Extension: __utils.ASN1Decoder<Extension> | null = null;
+let _cached_encoder_for_Extension: __utils.ASN1Encoder<Extension> | null = null;
+export function _decode_Extension(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Extension) {
+        _cached_decoder_for_Extension = function (
+            el: asn1.ASN1Element
+        ): Extension {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let extnId!: asn1.OBJECT_IDENTIFIER;
+            let critical: asn1.OPTIONAL<asn1.BOOLEAN> =
+                Extension._default_value_for_critical;
+            let extnValue!: asn1.OCTET_STRING;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                extnId: (_el: asn1.ASN1Element): void => {
+                    extnId = __utils._decodeObjectIdentifier(_el);
+                },
+                critical: (_el: asn1.ASN1Element): void => {
+                    critical = __utils._decodeBoolean(_el);
+                },
+                extnValue: (_el: asn1.ASN1Element): void => {
+                    extnValue = __utils._decodeOctetString(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_Extension,
+                _extension_additions_list_spec_for_Extension,
+                _root_component_type_list_2_spec_for_Extension,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new Extension(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ extnId,
+                critical,
+                extnValue,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_Extension(el);
+}
+export function _encode_Extension(
     value: Extension,
     elGetter: __utils.ASN1Encoder<Extension>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                        value.extnId,
-                        __utils.BER
-                    ),
-                    /* IF_DEFAULT */ value.critical === undefined ||
-                    __utils.deepEq(
-                        value.critical,
-                        _default_value_for_Extension__critical
+) {
+    if (!_cached_encoder_for_Extension) {
+        _cached_encoder_for_Extension = function (
+            value: Extension,
+            elGetter: __utils.ASN1Encoder<Extension>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                                value.extnId,
+                                __utils.BER
+                            ),
+                            /* IF_DEFAULT */ value.critical === undefined ||
+                            __utils.deepEq(
+                                value.critical,
+                                Extension._default_value_for_critical
+                            )
+                                ? undefined
+                                : __utils._encodeBoolean(
+                                      value.critical,
+                                      __utils.BER
+                                  ),
+                            /* REQUIRED   */ __utils._encodeOctetString(
+                                value.extnValue,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encodeBoolean(value.critical, __utils.BER),
-                    /* REQUIRED   */ __utils._encodeOctetString(
-                        value.extnValue,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_Extension(value, elGetter);
+}
 
 export type Extensions = Extension[]; // SequenceOfType
-export const _decode_Extensions = __utils._decodeSequenceOf<Extension>(
-    () => _decode_Extension
-);
-export const _encode_Extensions = __utils._encodeSequenceOf<Extension>(
-    () => _encode_Extension,
-    __utils.BER
-);
+let _cached_decoder_for_Extensions: __utils.ASN1Decoder<
+    Extensions
+> | null = null;
+let _cached_encoder_for_Extensions: __utils.ASN1Encoder<
+    Extensions
+> | null = null;
+export function _decode_Extensions(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Extensions) {
+        _cached_decoder_for_Extensions = __utils._decodeSequenceOf<Extension>(
+            () => _decode_Extension
+        );
+    }
+    return _cached_decoder_for_Extensions(el);
+}
+export function _encode_Extensions(
+    value: Extensions,
+    elGetter: __utils.ASN1Encoder<Extensions>
+) {
+    if (!_cached_encoder_for_Extensions) {
+        _cached_encoder_for_Extensions = __utils._encodeSequenceOf<Extension>(
+            () => _encode_Extension,
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_Extensions(value, elGetter);
+}
 
 export class TBSCertificate {
     constructor(
@@ -731,6 +923,9 @@ export class TBSCertificate {
         readonly extensions: Extensions | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_version() {
+        return v1;
+    }
 }
 export const _root_component_type_list_1_spec_for_TBSCertificate: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -807,189 +1002,272 @@ export const _extension_additions_list_spec_for_TBSCertificate: __utils.Componen
         3
     ),
 ];
-export const _default_value_for_TBSCertificate__version = v1;
-export const _decode_TBSCertificate = function (
-    el: asn1.ASN1Element
-): TBSCertificate {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<Version> = _default_value_for_TBSCertificate__version;
-    let serialNumber!: CertificateSerialNumber;
-    let signature!: AlgorithmIdentifier;
-    let issuer!: Name;
-    let validity!: Validity;
-    let subject!: Name;
-    let subjectPublicKeyInfo!: SubjectPublicKeyInfo;
-    let issuerUniqueIdentifier: asn1.OPTIONAL<UniqueIdentifier>;
-    let subjectUniqueIdentifier: asn1.OPTIONAL<UniqueIdentifier>; // Only present in version 2 and higher.
-    let extensions: asn1.OPTIONAL<Extensions>; // Only present in version 3 and higher.
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        version: (_el: asn1.ASN1Element): void => {
-            version = __utils._decode_explicit<Version>(() => _decode_Version)(
-                _el
+let _cached_decoder_for_TBSCertificate: __utils.ASN1Decoder<
+    TBSCertificate
+> | null = null;
+let _cached_encoder_for_TBSCertificate: __utils.ASN1Encoder<
+    TBSCertificate
+> | null = null;
+export function _decode_TBSCertificate(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TBSCertificate) {
+        _cached_decoder_for_TBSCertificate = function (
+            el: asn1.ASN1Element
+        ): TBSCertificate {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let version: asn1.OPTIONAL<Version> =
+                TBSCertificate._default_value_for_version;
+            let serialNumber!: CertificateSerialNumber;
+            let signature!: AlgorithmIdentifier;
+            let issuer!: Name;
+            let validity!: Validity;
+            let subject!: Name;
+            let subjectPublicKeyInfo!: SubjectPublicKeyInfo;
+            let issuerUniqueIdentifier: asn1.OPTIONAL<UniqueIdentifier>;
+            let subjectUniqueIdentifier: asn1.OPTIONAL<UniqueIdentifier>; // Only present in version 2 and higher.
+            let extensions: asn1.OPTIONAL<Extensions>; // Only present in version 3 and higher.
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                version: (_el: asn1.ASN1Element): void => {
+                    version = __utils._decode_explicit<Version>(
+                        () => _decode_Version
+                    )(_el);
+                },
+                serialNumber: (_el: asn1.ASN1Element): void => {
+                    serialNumber = _decode_CertificateSerialNumber(_el);
+                },
+                signature: (_el: asn1.ASN1Element): void => {
+                    signature = _decode_AlgorithmIdentifier(_el);
+                },
+                issuer: (_el: asn1.ASN1Element): void => {
+                    issuer = _decode_Name(_el);
+                },
+                validity: (_el: asn1.ASN1Element): void => {
+                    validity = _decode_Validity(_el);
+                },
+                subject: (_el: asn1.ASN1Element): void => {
+                    subject = _decode_Name(_el);
+                },
+                subjectPublicKeyInfo: (_el: asn1.ASN1Element): void => {
+                    subjectPublicKeyInfo = _decode_SubjectPublicKeyInfo(_el);
+                },
+                issuerUniqueIdentifier: (_el: asn1.ASN1Element): void => {
+                    issuerUniqueIdentifier = __utils._decode_explicit<
+                        UniqueIdentifier
+                    >(() => _decode_UniqueIdentifier)(_el);
+                },
+                subjectUniqueIdentifier: (_el: asn1.ASN1Element): void => {
+                    subjectUniqueIdentifier = __utils._decode_explicit<
+                        UniqueIdentifier
+                    >(() => _decode_UniqueIdentifier)(_el);
+                },
+                extensions: (_el: asn1.ASN1Element): void => {
+                    extensions = __utils._decode_explicit<Extensions>(
+                        () => _decode_Extensions
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TBSCertificate,
+                _extension_additions_list_spec_for_TBSCertificate,
+                _root_component_type_list_2_spec_for_TBSCertificate,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
             );
-        },
-        serialNumber: (_el: asn1.ASN1Element): void => {
-            serialNumber = _decode_CertificateSerialNumber(_el);
-        },
-        signature: (_el: asn1.ASN1Element): void => {
-            signature = _decode_AlgorithmIdentifier(_el);
-        },
-        issuer: (_el: asn1.ASN1Element): void => {
-            issuer = _decode_Name(_el);
-        },
-        validity: (_el: asn1.ASN1Element): void => {
-            validity = _decode_Validity(_el);
-        },
-        subject: (_el: asn1.ASN1Element): void => {
-            subject = _decode_Name(_el);
-        },
-        subjectPublicKeyInfo: (_el: asn1.ASN1Element): void => {
-            subjectPublicKeyInfo = _decode_SubjectPublicKeyInfo(_el);
-        },
-        issuerUniqueIdentifier: (_el: asn1.ASN1Element): void => {
-            issuerUniqueIdentifier = __utils._decode_explicit<UniqueIdentifier>(
-                () => _decode_UniqueIdentifier
-            )(_el);
-        },
-        subjectUniqueIdentifier: (_el: asn1.ASN1Element): void => {
-            subjectUniqueIdentifier = __utils._decode_explicit<
-                UniqueIdentifier
-            >(() => _decode_UniqueIdentifier)(_el);
-        },
-        extensions: (_el: asn1.ASN1Element): void => {
-            extensions = __utils._decode_explicit<Extensions>(
-                () => _decode_Extensions
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TBSCertificate,
-        _extension_additions_list_spec_for_TBSCertificate,
-        _root_component_type_list_2_spec_for_TBSCertificate,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TBSCertificate(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
-        serialNumber,
-        signature,
-        issuer,
-        validity,
-        subject,
-        subjectPublicKeyInfo,
-        issuerUniqueIdentifier,
-        subjectUniqueIdentifier,
-        extensions,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_TBSCertificate = function (
+            return new TBSCertificate(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+                serialNumber,
+                signature,
+                issuer,
+                validity,
+                subject,
+                subjectPublicKeyInfo,
+                issuerUniqueIdentifier,
+                subjectUniqueIdentifier,
+                extensions,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TBSCertificate(el);
+}
+export function _encode_TBSCertificate(
     value: TBSCertificate,
     elGetter: __utils.ASN1Encoder<TBSCertificate>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_DEFAULT */ value.version === undefined ||
-                    __utils.deepEq(
-                        value.version,
-                        _default_value_for_TBSCertificate__version
+) {
+    if (!_cached_encoder_for_TBSCertificate) {
+        _cached_encoder_for_TBSCertificate = function (
+            value: TBSCertificate,
+            elGetter: __utils.ASN1Encoder<TBSCertificate>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_DEFAULT */ value.version === undefined ||
+                            __utils.deepEq(
+                                value.version,
+                                TBSCertificate._default_value_for_version
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_Version,
+                                      __utils.BER
+                                  )(value.version, __utils.BER),
+                            /* REQUIRED   */ _encode_CertificateSerialNumber(
+                                value.serialNumber,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.signature,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Name(
+                                value.issuer,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Validity(
+                                value.validity,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Name(
+                                value.subject,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_SubjectPublicKeyInfo(
+                                value.subjectPublicKeyInfo,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.issuerUniqueIdentifier ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_UniqueIdentifier,
+                                      __utils.BER
+                                  )(value.issuerUniqueIdentifier, __utils.BER),
+                        ],
+                        [
+                            /* IF_ABSENT  */ value.subjectUniqueIdentifier ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () => _encode_UniqueIdentifier,
+                                      __utils.BER
+                                  )(value.subjectUniqueIdentifier, __utils.BER),
+                            /* IF_ABSENT  */ value.extensions === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      3,
+                                      () => _encode_Extensions,
+                                      __utils.BER
+                                  )(value.extensions, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_Version,
-                              __utils.BER
-                          )(value.version, __utils.BER),
-                    /* REQUIRED   */ _encode_CertificateSerialNumber(
-                        value.serialNumber,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.signature,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
-                    /* REQUIRED   */ _encode_Validity(
-                        value.validity,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Name(value.subject, __utils.BER),
-                    /* REQUIRED   */ _encode_SubjectPublicKeyInfo(
-                        value.subjectPublicKeyInfo,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.issuerUniqueIdentifier === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_UniqueIdentifier,
-                              __utils.BER
-                          )(value.issuerUniqueIdentifier, __utils.BER),
-                ],
-                [
-                    /* IF_ABSENT  */ value.subjectUniqueIdentifier === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () => _encode_UniqueIdentifier,
-                              __utils.BER
-                          )(value.subjectUniqueIdentifier, __utils.BER),
-                    /* IF_ABSENT  */ value.extensions === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              3,
-                              () => _encode_Extensions,
-                              __utils.BER
-                          )(value.extensions, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TBSCertificate(value, elGetter);
+}
 
 export type Certificate = SIGNED<TBSCertificate>; // DefinedType
-export const _decode_Certificate = _get_decoder_for_SIGNED<TBSCertificate>(
-    _decode_TBSCertificate
-);
-export const _encode_Certificate = _get_encoder_for_SIGNED<TBSCertificate>(
-    _encode_TBSCertificate
-);
+let _cached_decoder_for_Certificate: __utils.ASN1Decoder<
+    Certificate
+> | null = null;
+let _cached_encoder_for_Certificate: __utils.ASN1Encoder<
+    Certificate
+> | null = null;
+export function _decode_Certificate(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Certificate) {
+        _cached_decoder_for_Certificate = _get_decoder_for_SIGNED<
+            TBSCertificate
+        >(_decode_TBSCertificate);
+    }
+    return _cached_decoder_for_Certificate(el);
+}
+export function _encode_Certificate(
+    value: Certificate,
+    elGetter: __utils.ASN1Encoder<Certificate>
+) {
+    if (!_cached_encoder_for_Certificate) {
+        _cached_encoder_for_Certificate = _get_encoder_for_SIGNED<
+            TBSCertificate
+        >(_encode_TBSCertificate);
+    }
+    return _cached_encoder_for_Certificate(value, elGetter);
+}
 
 export type CrossCertificates = Certificate[]; // SetOfType
-export const _decode_CrossCertificates = __utils._decodeSetOf<Certificate>(
-    () => _decode_Certificate
-);
-export const _encode_CrossCertificates = __utils._encodeSetOf<Certificate>(
-    () => _encode_Certificate,
-    __utils.BER
-);
+let _cached_decoder_for_CrossCertificates: __utils.ASN1Decoder<
+    CrossCertificates
+> | null = null;
+let _cached_encoder_for_CrossCertificates: __utils.ASN1Encoder<
+    CrossCertificates
+> | null = null;
+export function _decode_CrossCertificates(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CrossCertificates) {
+        _cached_decoder_for_CrossCertificates = __utils._decodeSetOf<
+            Certificate
+        >(() => _decode_Certificate);
+    }
+    return _cached_decoder_for_CrossCertificates(el);
+}
+export function _encode_CrossCertificates(
+    value: CrossCertificates,
+    elGetter: __utils.ASN1Encoder<CrossCertificates>
+) {
+    if (!_cached_encoder_for_CrossCertificates) {
+        _cached_encoder_for_CrossCertificates = __utils._encodeSetOf<
+            Certificate
+        >(() => _encode_Certificate, __utils.BER);
+    }
+    return _cached_encoder_for_CrossCertificates(value, elGetter);
+}
 
 export type ForwardCertificationPath = CrossCertificates[]; // SequenceOfType
-export const _decode_ForwardCertificationPath = __utils._decodeSequenceOf<
-    CrossCertificates
->(() => _decode_CrossCertificates);
-export const _encode_ForwardCertificationPath = __utils._encodeSequenceOf<
-    CrossCertificates
->(() => _encode_CrossCertificates, __utils.BER);
+let _cached_decoder_for_ForwardCertificationPath: __utils.ASN1Decoder<
+    ForwardCertificationPath
+> | null = null;
+let _cached_encoder_for_ForwardCertificationPath: __utils.ASN1Encoder<
+    ForwardCertificationPath
+> | null = null;
+export function _decode_ForwardCertificationPath(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ForwardCertificationPath) {
+        _cached_decoder_for_ForwardCertificationPath = __utils._decodeSequenceOf<
+            CrossCertificates
+        >(() => _decode_CrossCertificates);
+    }
+    return _cached_decoder_for_ForwardCertificationPath(el);
+}
+export function _encode_ForwardCertificationPath(
+    value: ForwardCertificationPath,
+    elGetter: __utils.ASN1Encoder<ForwardCertificationPath>
+) {
+    if (!_cached_encoder_for_ForwardCertificationPath) {
+        _cached_encoder_for_ForwardCertificationPath = __utils._encodeSequenceOf<
+            CrossCertificates
+        >(() => _encode_CrossCertificates, __utils.BER);
+    }
+    return _cached_encoder_for_ForwardCertificationPath(value, elGetter);
+}
 
 export class Certificates {
     constructor(
@@ -1016,70 +1294,89 @@ export const _root_component_type_list_1_spec_for_Certificates: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_Certificates: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_Certificates: __utils.ComponentSpec[] = [];
-
-export const _decode_Certificates = function (
-    el: asn1.ASN1Element
-): Certificates {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let userCertificate!: Certificate;
-    let certificationPath: asn1.OPTIONAL<ForwardCertificationPath>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        userCertificate: (_el: asn1.ASN1Element): void => {
-            userCertificate = _decode_Certificate(_el);
-        },
-        certificationPath: (_el: asn1.ASN1Element): void => {
-            certificationPath = _decode_ForwardCertificationPath(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_Certificates,
-        _extension_additions_list_spec_for_Certificates,
-        _root_component_type_list_2_spec_for_Certificates,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new Certificates(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
-        certificationPath,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_Certificates = function (
+let _cached_decoder_for_Certificates: __utils.ASN1Decoder<
+    Certificates
+> | null = null;
+let _cached_encoder_for_Certificates: __utils.ASN1Encoder<
+    Certificates
+> | null = null;
+export function _decode_Certificates(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Certificates) {
+        _cached_decoder_for_Certificates = function (
+            el: asn1.ASN1Element
+        ): Certificates {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let userCertificate!: Certificate;
+            let certificationPath: asn1.OPTIONAL<ForwardCertificationPath>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                userCertificate: (_el: asn1.ASN1Element): void => {
+                    userCertificate = _decode_Certificate(_el);
+                },
+                certificationPath: (_el: asn1.ASN1Element): void => {
+                    certificationPath = _decode_ForwardCertificationPath(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_Certificates,
+                _extension_additions_list_spec_for_Certificates,
+                _root_component_type_list_2_spec_for_Certificates,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new Certificates(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
+                certificationPath,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_Certificates(el);
+}
+export function _encode_Certificates(
     value: Certificates,
     elGetter: __utils.ASN1Encoder<Certificates>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_Certificate(
-                        value.userCertificate,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.certificationPath === undefined
-                        ? undefined
-                        : _encode_ForwardCertificationPath(
-                              value.certificationPath,
-                              __utils.BER
-                          ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_Certificates) {
+        _cached_encoder_for_Certificates = function (
+            value: Certificates,
+            elGetter: __utils.ASN1Encoder<Certificates>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_Certificate(
+                                value.userCertificate,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.certificationPath ===
+                            undefined
+                                ? undefined
+                                : _encode_ForwardCertificationPath(
+                                      value.certificationPath,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_Certificates(value, elGetter);
+}
 
 export class CertificatePair {
     constructor(
@@ -1106,80 +1403,98 @@ export const _root_component_type_list_1_spec_for_CertificatePair: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_CertificatePair: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertificatePair: __utils.ComponentSpec[] = [];
-
-export const _decode_CertificatePair = function (
-    el: asn1.ASN1Element
-): CertificatePair {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let issuedToThisCA: asn1.OPTIONAL<Certificate>;
-    let issuedByThisCA: asn1.OPTIONAL<Certificate>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        issuedToThisCA: (_el: asn1.ASN1Element): void => {
-            issuedToThisCA = __utils._decode_explicit<Certificate>(
-                () => _decode_Certificate
-            )(_el);
-        },
-        issuedByThisCA: (_el: asn1.ASN1Element): void => {
-            issuedByThisCA = __utils._decode_explicit<Certificate>(
-                () => _decode_Certificate
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_CertificatePair,
-        _extension_additions_list_spec_for_CertificatePair,
-        _root_component_type_list_2_spec_for_CertificatePair,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new CertificatePair(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCA,
-        issuedByThisCA,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_CertificatePair = function (
+let _cached_decoder_for_CertificatePair: __utils.ASN1Decoder<
+    CertificatePair
+> | null = null;
+let _cached_encoder_for_CertificatePair: __utils.ASN1Encoder<
+    CertificatePair
+> | null = null;
+export function _decode_CertificatePair(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertificatePair) {
+        _cached_decoder_for_CertificatePair = function (
+            el: asn1.ASN1Element
+        ): CertificatePair {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let issuedToThisCA: asn1.OPTIONAL<Certificate>;
+            let issuedByThisCA: asn1.OPTIONAL<Certificate>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                issuedToThisCA: (_el: asn1.ASN1Element): void => {
+                    issuedToThisCA = __utils._decode_explicit<Certificate>(
+                        () => _decode_Certificate
+                    )(_el);
+                },
+                issuedByThisCA: (_el: asn1.ASN1Element): void => {
+                    issuedByThisCA = __utils._decode_explicit<Certificate>(
+                        () => _decode_Certificate
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_CertificatePair,
+                _extension_additions_list_spec_for_CertificatePair,
+                _root_component_type_list_2_spec_for_CertificatePair,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new CertificatePair(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCA,
+                issuedByThisCA,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_CertificatePair(el);
+}
+export function _encode_CertificatePair(
     value: CertificatePair,
     elGetter: __utils.ASN1Encoder<CertificatePair>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.issuedToThisCA === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_Certificate,
-                              __utils.BER
-                          )(value.issuedToThisCA, __utils.BER),
-                    /* IF_ABSENT  */ value.issuedByThisCA === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_Certificate,
-                              __utils.BER
-                          )(value.issuedByThisCA, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_CertificatePair) {
+        _cached_encoder_for_CertificatePair = function (
+            value: CertificatePair,
+            elGetter: __utils.ASN1Encoder<CertificatePair>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.issuedToThisCA === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_Certificate,
+                                      __utils.BER
+                                  )(value.issuedToThisCA, __utils.BER),
+                            /* IF_ABSENT  */ value.issuedByThisCA === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_Certificate,
+                                      __utils.BER
+                                  )(value.issuedByThisCA, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_CertificatePair(value, elGetter);
+}
 
 export class CertificationPath {
     constructor(
@@ -1206,81 +1521,115 @@ export const _root_component_type_list_1_spec_for_CertificationPath: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_CertificationPath: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertificationPath: __utils.ComponentSpec[] = [];
-
-export const _decode_CertificationPath = function (
-    el: asn1.ASN1Element
-): CertificationPath {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let userCertificate!: Certificate;
-    let theCACertificates: asn1.OPTIONAL<CertificatePair[]>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        userCertificate: (_el: asn1.ASN1Element): void => {
-            userCertificate = _decode_Certificate(_el);
-        },
-        theCACertificates: (_el: asn1.ASN1Element): void => {
-            theCACertificates = __utils._decodeSequenceOf<CertificatePair>(
-                () => _decode_CertificatePair
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_CertificationPath,
-        _extension_additions_list_spec_for_CertificationPath,
-        _root_component_type_list_2_spec_for_CertificationPath,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new CertificationPath(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
-        theCACertificates,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_CertificationPath = function (
+let _cached_decoder_for_CertificationPath: __utils.ASN1Decoder<
+    CertificationPath
+> | null = null;
+let _cached_encoder_for_CertificationPath: __utils.ASN1Encoder<
+    CertificationPath
+> | null = null;
+export function _decode_CertificationPath(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertificationPath) {
+        _cached_decoder_for_CertificationPath = function (
+            el: asn1.ASN1Element
+        ): CertificationPath {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let userCertificate!: Certificate;
+            let theCACertificates: asn1.OPTIONAL<CertificatePair[]>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                userCertificate: (_el: asn1.ASN1Element): void => {
+                    userCertificate = _decode_Certificate(_el);
+                },
+                theCACertificates: (_el: asn1.ASN1Element): void => {
+                    theCACertificates = __utils._decodeSequenceOf<
+                        CertificatePair
+                    >(() => _decode_CertificatePair)(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_CertificationPath,
+                _extension_additions_list_spec_for_CertificationPath,
+                _root_component_type_list_2_spec_for_CertificationPath,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new CertificationPath(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
+                theCACertificates,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_CertificationPath(el);
+}
+export function _encode_CertificationPath(
     value: CertificationPath,
     elGetter: __utils.ASN1Encoder<CertificationPath>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_Certificate(
-                        value.userCertificate,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.theCACertificates === undefined
-                        ? undefined
-                        : __utils._encodeSequenceOf<CertificatePair>(
-                              () => _encode_CertificatePair,
-                              __utils.BER
-                          )(value.theCACertificates, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_CertificationPath) {
+        _cached_encoder_for_CertificationPath = function (
+            value: CertificationPath,
+            elGetter: __utils.ASN1Encoder<CertificationPath>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_Certificate(
+                                value.userCertificate,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.theCACertificates ===
+                            undefined
+                                ? undefined
+                                : __utils._encodeSequenceOf<CertificatePair>(
+                                      () => _encode_CertificatePair,
+                                      __utils.BER
+                                  )(value.theCACertificates, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_CertificationPath(value, elGetter);
+}
 
 export type PkiPath = Certificate[]; // SequenceOfType
-export const _decode_PkiPath = __utils._decodeSequenceOf<Certificate>(
-    () => _decode_Certificate
-);
-export const _encode_PkiPath = __utils._encodeSequenceOf<Certificate>(
-    () => _encode_Certificate,
-    __utils.BER
-);
+let _cached_decoder_for_PkiPath: __utils.ASN1Decoder<PkiPath> | null = null;
+let _cached_encoder_for_PkiPath: __utils.ASN1Encoder<PkiPath> | null = null;
+export function _decode_PkiPath(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PkiPath) {
+        _cached_decoder_for_PkiPath = __utils._decodeSequenceOf<Certificate>(
+            () => _decode_Certificate
+        );
+    }
+    return _cached_decoder_for_PkiPath(el);
+}
+export function _encode_PkiPath(
+    value: PkiPath,
+    elGetter: __utils.ASN1Encoder<PkiPath>
+) {
+    if (!_cached_encoder_for_PkiPath) {
+        _cached_encoder_for_PkiPath = __utils._encodeSequenceOf<Certificate>(
+            () => _encode_Certificate,
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_PkiPath(value, elGetter);
+}
 
 export class CertificateListContent_revokedCertificates_Item {
     constructor(
@@ -1315,81 +1664,109 @@ export const _root_component_type_list_1_spec_for_CertificateListContent_revoked
 ];
 export const _root_component_type_list_2_spec_for_CertificateListContent_revokedCertificates_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_CertificateListContent_revokedCertificates_Item: __utils.ComponentSpec[] = [];
-
-export const _decode_CertificateListContent_revokedCertificates_Item = function (
+let _cached_decoder_for_CertificateListContent_revokedCertificates_Item: __utils.ASN1Decoder<
+    CertificateListContent_revokedCertificates_Item
+> | null = null;
+let _cached_encoder_for_CertificateListContent_revokedCertificates_Item: __utils.ASN1Encoder<
+    CertificateListContent_revokedCertificates_Item
+> | null = null;
+export function _decode_CertificateListContent_revokedCertificates_Item(
     el: asn1.ASN1Element
-): CertificateListContent_revokedCertificates_Item {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let serialNumber!: CertificateSerialNumber;
-    let revocationDate!: Time;
-    let crlEntryExtensions: asn1.OPTIONAL<Extensions>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        serialNumber: (_el: asn1.ASN1Element): void => {
-            serialNumber = _decode_CertificateSerialNumber(_el);
-        },
-        revocationDate: (_el: asn1.ASN1Element): void => {
-            revocationDate = _decode_Time(_el);
-        },
-        crlEntryExtensions: (_el: asn1.ASN1Element): void => {
-            crlEntryExtensions = _decode_Extensions(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_CertificateListContent_revokedCertificates_Item,
-        _extension_additions_list_spec_for_CertificateListContent_revokedCertificates_Item,
-        _root_component_type_list_2_spec_for_CertificateListContent_revokedCertificates_Item,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
+) {
+    if (!_cached_decoder_for_CertificateListContent_revokedCertificates_Item) {
+        _cached_decoder_for_CertificateListContent_revokedCertificates_Item = function (
+            el: asn1.ASN1Element
+        ): CertificateListContent_revokedCertificates_Item {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let serialNumber!: CertificateSerialNumber;
+            let revocationDate!: Time;
+            let crlEntryExtensions: asn1.OPTIONAL<Extensions>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                serialNumber: (_el: asn1.ASN1Element): void => {
+                    serialNumber = _decode_CertificateSerialNumber(_el);
+                },
+                revocationDate: (_el: asn1.ASN1Element): void => {
+                    revocationDate = _decode_Time(_el);
+                },
+                crlEntryExtensions: (_el: asn1.ASN1Element): void => {
+                    crlEntryExtensions = _decode_Extensions(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_CertificateListContent_revokedCertificates_Item,
+                _extension_additions_list_spec_for_CertificateListContent_revokedCertificates_Item,
+                _root_component_type_list_2_spec_for_CertificateListContent_revokedCertificates_Item,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new CertificateListContent_revokedCertificates_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
+                revocationDate,
+                crlEntryExtensions,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_CertificateListContent_revokedCertificates_Item(
+        el
     );
-    return new CertificateListContent_revokedCertificates_Item(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
-        revocationDate,
-        crlEntryExtensions,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_CertificateListContent_revokedCertificates_Item = function (
+}
+export function _encode_CertificateListContent_revokedCertificates_Item(
     value: CertificateListContent_revokedCertificates_Item,
     elGetter: __utils.ASN1Encoder<
         CertificateListContent_revokedCertificates_Item
     >
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_CertificateSerialNumber(
-                        value.serialNumber,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Time(
-                        value.revocationDate,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.crlEntryExtensions === undefined
-                        ? undefined
-                        : _encode_Extensions(
-                              value.crlEntryExtensions,
-                              __utils.BER
-                          ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
+) {
+    if (!_cached_encoder_for_CertificateListContent_revokedCertificates_Item) {
+        _cached_encoder_for_CertificateListContent_revokedCertificates_Item = function (
+            value: CertificateListContent_revokedCertificates_Item,
+            elGetter: __utils.ASN1Encoder<
+                CertificateListContent_revokedCertificates_Item
+            >
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_CertificateSerialNumber(
+                                value.serialNumber,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Time(
+                                value.revocationDate,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.crlEntryExtensions ===
+                            undefined
+                                ? undefined
+                                : _encode_Extensions(
+                                      value.crlEntryExtensions,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_CertificateListContent_revokedCertificates_Item(
+        value,
+        elGetter
     );
-};
+}
 
 export class CertificateListContent {
     constructor(
@@ -1459,139 +1836,200 @@ export const _root_component_type_list_2_spec_for_CertificateListContent: __util
     ),
 ];
 export const _extension_additions_list_spec_for_CertificateListContent: __utils.ComponentSpec[] = [];
-
-export const _decode_CertificateListContent = function (
-    el: asn1.ASN1Element
-): CertificateListContent {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<Version>;
-    let signature!: AlgorithmIdentifier;
-    let issuer!: Name;
-    let thisUpdate!: Time;
-    let nextUpdate: asn1.OPTIONAL<Time>;
-    let revokedCertificates: asn1.OPTIONAL<
-        CertificateListContent_revokedCertificates_Item[]
-    >;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    let crlExtensions: asn1.OPTIONAL<Extensions>;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        version: (_el: asn1.ASN1Element): void => {
-            version = _decode_Version(_el);
-        },
-        signature: (_el: asn1.ASN1Element): void => {
-            signature = _decode_AlgorithmIdentifier(_el);
-        },
-        issuer: (_el: asn1.ASN1Element): void => {
-            issuer = _decode_Name(_el);
-        },
-        thisUpdate: (_el: asn1.ASN1Element): void => {
-            thisUpdate = _decode_Time(_el);
-        },
-        nextUpdate: (_el: asn1.ASN1Element): void => {
-            nextUpdate = _decode_Time(_el);
-        },
-        revokedCertificates: (_el: asn1.ASN1Element): void => {
-            revokedCertificates = __utils._decodeSequenceOf<
-                CertificateListContent_revokedCertificates_Item
-            >(() => _decode_CertificateListContent_revokedCertificates_Item)(
-                _el
+let _cached_decoder_for_CertificateListContent: __utils.ASN1Decoder<
+    CertificateListContent
+> | null = null;
+let _cached_encoder_for_CertificateListContent: __utils.ASN1Encoder<
+    CertificateListContent
+> | null = null;
+export function _decode_CertificateListContent(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertificateListContent) {
+        _cached_decoder_for_CertificateListContent = function (
+            el: asn1.ASN1Element
+        ): CertificateListContent {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let version: asn1.OPTIONAL<Version>;
+            let signature!: AlgorithmIdentifier;
+            let issuer!: Name;
+            let thisUpdate!: Time;
+            let nextUpdate: asn1.OPTIONAL<Time>;
+            let revokedCertificates: asn1.OPTIONAL<
+                CertificateListContent_revokedCertificates_Item[]
+            >;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let crlExtensions: asn1.OPTIONAL<Extensions>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                version: (_el: asn1.ASN1Element): void => {
+                    version = _decode_Version(_el);
+                },
+                signature: (_el: asn1.ASN1Element): void => {
+                    signature = _decode_AlgorithmIdentifier(_el);
+                },
+                issuer: (_el: asn1.ASN1Element): void => {
+                    issuer = _decode_Name(_el);
+                },
+                thisUpdate: (_el: asn1.ASN1Element): void => {
+                    thisUpdate = _decode_Time(_el);
+                },
+                nextUpdate: (_el: asn1.ASN1Element): void => {
+                    nextUpdate = _decode_Time(_el);
+                },
+                revokedCertificates: (_el: asn1.ASN1Element): void => {
+                    revokedCertificates = __utils._decodeSequenceOf<
+                        CertificateListContent_revokedCertificates_Item
+                    >(
+                        () =>
+                            _decode_CertificateListContent_revokedCertificates_Item
+                    )(_el);
+                },
+                crlExtensions: (_el: asn1.ASN1Element): void => {
+                    crlExtensions = __utils._decode_explicit<Extensions>(
+                        () => _decode_Extensions
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_CertificateListContent,
+                _extension_additions_list_spec_for_CertificateListContent,
+                _root_component_type_list_2_spec_for_CertificateListContent,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
             );
-        },
-        crlExtensions: (_el: asn1.ASN1Element): void => {
-            crlExtensions = __utils._decode_explicit<Extensions>(
-                () => _decode_Extensions
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_CertificateListContent,
-        _extension_additions_list_spec_for_CertificateListContent,
-        _root_component_type_list_2_spec_for_CertificateListContent,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new CertificateListContent(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
-        signature,
-        issuer,
-        thisUpdate,
-        nextUpdate,
-        revokedCertificates,
-        _unrecognizedExtensionsList,
-        crlExtensions
-    );
-};
-export const _encode_CertificateListContent = function (
+            return new CertificateListContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+                signature,
+                issuer,
+                thisUpdate,
+                nextUpdate,
+                revokedCertificates,
+                _unrecognizedExtensionsList,
+                crlExtensions
+            );
+        };
+    }
+    return _cached_decoder_for_CertificateListContent(el);
+}
+export function _encode_CertificateListContent(
     value: CertificateListContent,
     elGetter: __utils.ASN1Encoder<CertificateListContent>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.version === undefined
-                        ? undefined
-                        : _encode_Version(value.version, __utils.BER),
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.signature,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
-                    /* REQUIRED   */ _encode_Time(
-                        value.thisUpdate,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.nextUpdate === undefined
-                        ? undefined
-                        : _encode_Time(value.nextUpdate, __utils.BER),
-                    /* IF_ABSENT  */ value.revokedCertificates === undefined
-                        ? undefined
-                        : __utils._encodeSequenceOf<
-                              CertificateListContent_revokedCertificates_Item
-                          >(
-                              () =>
-                                  _encode_CertificateListContent_revokedCertificates_Item,
-                              __utils.BER
-                          )(value.revokedCertificates, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : [],
-                [
-                    /* IF_ABSENT  */ value.crlExtensions === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_Extensions,
-                              __utils.BER
-                          )(value.crlExtensions, __utils.BER),
-                ]
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_CertificateListContent) {
+        _cached_encoder_for_CertificateListContent = function (
+            value: CertificateListContent,
+            elGetter: __utils.ASN1Encoder<CertificateListContent>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.version === undefined
+                                ? undefined
+                                : _encode_Version(value.version, __utils.BER),
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.signature,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Name(
+                                value.issuer,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Time(
+                                value.thisUpdate,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.nextUpdate === undefined
+                                ? undefined
+                                : _encode_Time(value.nextUpdate, __utils.BER),
+                            /* IF_ABSENT  */ value.revokedCertificates ===
+                            undefined
+                                ? undefined
+                                : __utils._encodeSequenceOf<
+                                      CertificateListContent_revokedCertificates_Item
+                                  >(
+                                      () =>
+                                          _encode_CertificateListContent_revokedCertificates_Item,
+                                      __utils.BER
+                                  )(value.revokedCertificates, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : [],
+                        [
+                            /* IF_ABSENT  */ value.crlExtensions === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_Extensions,
+                                      __utils.BER
+                                  )(value.crlExtensions, __utils.BER),
+                        ]
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_CertificateListContent(value, elGetter);
+}
 
 export type CertificateList = SIGNED<CertificateListContent>; // DefinedType
-export const _decode_CertificateList = _get_decoder_for_SIGNED<
-    CertificateListContent
->(_decode_CertificateListContent);
-export const _encode_CertificateList = _get_encoder_for_SIGNED<
-    CertificateListContent
->(_encode_CertificateListContent);
+let _cached_decoder_for_CertificateList: __utils.ASN1Decoder<
+    CertificateList
+> | null = null;
+let _cached_encoder_for_CertificateList: __utils.ASN1Encoder<
+    CertificateList
+> | null = null;
+export function _decode_CertificateList(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertificateList) {
+        _cached_decoder_for_CertificateList = _get_decoder_for_SIGNED<
+            CertificateListContent
+        >(_decode_CertificateListContent);
+    }
+    return _cached_decoder_for_CertificateList(el);
+}
+export function _encode_CertificateList(
+    value: CertificateList,
+    elGetter: __utils.ASN1Encoder<CertificateList>
+) {
+    if (!_cached_encoder_for_CertificateList) {
+        _cached_encoder_for_CertificateList = _get_encoder_for_SIGNED<
+            CertificateListContent
+        >(_encode_CertificateListContent);
+    }
+    return _cached_encoder_for_CertificateList(value, elGetter);
+}
 
 export type AvlSerialNumber = asn1.INTEGER;
-export const _decode_AvlSerialNumber = __utils._decodeInteger;
-export const _encode_AvlSerialNumber = __utils._encodeInteger;
+let _cached_decoder_for_AvlSerialNumber: __utils.ASN1Decoder<
+    AvlSerialNumber
+> | null = null;
+let _cached_encoder_for_AvlSerialNumber: __utils.ASN1Encoder<
+    AvlSerialNumber
+> | null = null;
+export function _decode_AvlSerialNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_AvlSerialNumber) {
+        _cached_decoder_for_AvlSerialNumber = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_AvlSerialNumber(el);
+}
+export function _encode_AvlSerialNumber(
+    value: AvlSerialNumber,
+    elGetter: __utils.ASN1Encoder<AvlSerialNumber>
+) {
+    if (!_cached_encoder_for_AvlSerialNumber) {
+        _cached_encoder_for_AvlSerialNumber = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_AvlSerialNumber(value, elGetter);
+}
 
 export class IssuerSerialNumber {
     constructor(
@@ -1618,52 +2056,77 @@ export const _root_component_type_list_1_spec_for_IssuerSerialNumber: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_IssuerSerialNumber: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_IssuerSerialNumber: __utils.ComponentSpec[] = [];
-
-export const _decode_IssuerSerialNumber = function (
-    el: asn1.ASN1Element
-): IssuerSerialNumber {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "IssuerSerialNumber contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_IssuerSerialNumber: __utils.ASN1Decoder<
+    IssuerSerialNumber
+> | null = null;
+let _cached_encoder_for_IssuerSerialNumber: __utils.ASN1Encoder<
+    IssuerSerialNumber
+> | null = null;
+export function _decode_IssuerSerialNumber(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_IssuerSerialNumber) {
+        _cached_decoder_for_IssuerSerialNumber = function (
+            el: asn1.ASN1Element
+        ): IssuerSerialNumber {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "IssuerSerialNumber contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "issuer";
+            sequence[1].name = "serialNumber";
+            let issuer!: Name;
+            let serialNumber!: CertificateSerialNumber;
+            issuer = _decode_Name(sequence[0]);
+            serialNumber = _decode_CertificateSerialNumber(sequence[1]);
+            // TODO: Validate values.
+            return new IssuerSerialNumber(
+                issuer,
+                serialNumber,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "issuer";
-    sequence[1].name = "serialNumber";
-    let issuer!: Name;
-    let serialNumber!: CertificateSerialNumber;
-    issuer = _decode_Name(sequence[0]);
-    serialNumber = _decode_CertificateSerialNumber(sequence[1]);
-    // TODO: Validate values.
-    return new IssuerSerialNumber(issuer, serialNumber, sequence.slice(2));
-};
-export const _encode_IssuerSerialNumber = function (
+    return _cached_decoder_for_IssuerSerialNumber(el);
+}
+export function _encode_IssuerSerialNumber(
     value: IssuerSerialNumber,
     elGetter: __utils.ASN1Encoder<IssuerSerialNumber>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
-                    /* REQUIRED   */ _encode_CertificateSerialNumber(
-                        value.serialNumber,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_IssuerSerialNumber) {
+        _cached_encoder_for_IssuerSerialNumber = function (
+            value: IssuerSerialNumber,
+            elGetter: __utils.ASN1Encoder<IssuerSerialNumber>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_Name(
+                                value.issuer,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_CertificateSerialNumber(
+                                value.serialNumber,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_IssuerSerialNumber(value, elGetter);
+}
 
 export class FINGERPRINT<ToBeFingerprinted> {
     constructor(
@@ -1690,8 +2153,7 @@ export const _root_component_type_list_1_spec_for_FINGERPRINT: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_FINGERPRINT: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_FINGERPRINT: __utils.ComponentSpec[] = [];
-
-export const _get_decoder_for_FINGERPRINT = function <ToBeFingerprinted>(
+export function _get_decoder_for_FINGERPRINT<ToBeFingerprinted>(
     _decode_ToBeFingerprinted: __utils.ASN1Decoder<ToBeFingerprinted>
 ) {
     return function <ToBeFingerprinted>(
@@ -1719,8 +2181,8 @@ export const _get_decoder_for_FINGERPRINT = function <ToBeFingerprinted>(
             sequence.slice(2)
         );
     };
-};
-export const _get_encoder_for_FINGERPRINT = function <ToBeFingerprinted>(
+}
+export function _get_encoder_for_FINGERPRINT<ToBeFingerprinted>(
     _encode_ToBeFingerprinted: __utils.ASN1Encoder<ToBeFingerprinted>
 ) {
     return function (
@@ -1750,81 +2212,126 @@ export const _get_encoder_for_FINGERPRINT = function <ToBeFingerprinted>(
             __utils.BER
         );
     };
-};
+}
 
 export type PKCertIdentifier =
-    | { issuerSerialNumber: IssuerSerialNumber }
-    | { fingerprintPKC: FINGERPRINT<Certificate> }
-    | { fingerprintPK: FINGERPRINT<PublicKey> }
-    | asn1.ASN1Element;
-export const _decode_PKCertIdentifier = __utils._decode_extensible_choice<
+    | { issuerSerialNumber: IssuerSerialNumber } /* CHOICE_ALT_ROOT */
+    | { fingerprintPKC: FINGERPRINT<Certificate> } /* CHOICE_ALT_ROOT */
+    | { fingerprintPK: FINGERPRINT<PublicKey> } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_PKCertIdentifier: __utils.ASN1Decoder<
     PKCertIdentifier
->({
-    "UNIVERSAL 16": ["issuerSerialNumber", _decode_IssuerSerialNumber],
-    "CONTEXT 0": [
-        "fingerprintPKC",
-        __utils._decode_explicit<FINGERPRINT<Certificate>>(() =>
-            _get_decoder_for_FINGERPRINT<Certificate>(_decode_Certificate)
-        ),
-    ],
-    "CONTEXT 1": [
-        "fingerprintPK",
-        __utils._decode_explicit<FINGERPRINT<PublicKey>>(() =>
-            _get_decoder_for_FINGERPRINT<PublicKey>(_decode_PublicKey)
-        ),
-    ],
-});
-export const _encode_PKCertIdentifier = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_PKCertIdentifier: __utils.ASN1Encoder<
     PKCertIdentifier
->(
-    {
-        issuerSerialNumber: _encode_IssuerSerialNumber,
-        fingerprintPKC: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () =>
-                _get_encoder_for_FINGERPRINT<Certificate>(_encode_Certificate),
+> | null = null;
+export function _decode_PKCertIdentifier(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PKCertIdentifier) {
+        _cached_decoder_for_PKCertIdentifier = __utils._decode_extensible_choice<
+            PKCertIdentifier
+        >({
+            "UNIVERSAL 16": ["issuerSerialNumber", _decode_IssuerSerialNumber],
+            "CONTEXT 0": [
+                "fingerprintPKC",
+                __utils._decode_explicit<FINGERPRINT<Certificate>>(() =>
+                    _get_decoder_for_FINGERPRINT<Certificate>(
+                        _decode_Certificate
+                    )
+                ),
+            ],
+            "CONTEXT 1": [
+                "fingerprintPK",
+                __utils._decode_explicit<FINGERPRINT<PublicKey>>(() =>
+                    _get_decoder_for_FINGERPRINT<PublicKey>(_decode_PublicKey)
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_PKCertIdentifier(el);
+}
+export function _encode_PKCertIdentifier(
+    value: PKCertIdentifier,
+    elGetter: __utils.ASN1Encoder<PKCertIdentifier>
+) {
+    if (!_cached_encoder_for_PKCertIdentifier) {
+        _cached_encoder_for_PKCertIdentifier = __utils._encode_choice<
+            PKCertIdentifier
+        >(
+            {
+                issuerSerialNumber: _encode_IssuerSerialNumber,
+                fingerprintPKC: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () =>
+                        _get_encoder_for_FINGERPRINT<Certificate>(
+                            _encode_Certificate
+                        ),
+                    __utils.BER
+                ),
+                fingerprintPK: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () =>
+                        _get_encoder_for_FINGERPRINT<PublicKey>(
+                            _encode_PublicKey
+                        ),
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        fingerprintPK: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => _get_encoder_for_FINGERPRINT<PublicKey>(_encode_PublicKey),
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_PKCertIdentifier(value, elGetter);
+}
 
 export type TBSCertAVL_entries_Item_idType =
-    | { certIdentifier: PKCertIdentifier }
-    | { entityGroup: DistinguishedName }
-    | asn1.ASN1Element;
-export const _decode_TBSCertAVL_entries_Item_idType = __utils._decode_extensible_choice<
+    | { certIdentifier: PKCertIdentifier } /* CHOICE_ALT_ROOT */
+    | { entityGroup: DistinguishedName } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_TBSCertAVL_entries_Item_idType: __utils.ASN1Decoder<
     TBSCertAVL_entries_Item_idType
->({
-    "CONTEXT 0": [
-        "certIdentifier",
-        __utils._decode_explicit<PKCertIdentifier>(
-            () => _decode_PKCertIdentifier
-        ),
-    ],
-    "UNIVERSAL 16": ["entityGroup", _decode_DistinguishedName],
-});
-export const _encode_TBSCertAVL_entries_Item_idType = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_TBSCertAVL_entries_Item_idType: __utils.ASN1Encoder<
     TBSCertAVL_entries_Item_idType
->(
-    {
-        certIdentifier: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_PKCertIdentifier,
+> | null = null;
+export function _decode_TBSCertAVL_entries_Item_idType(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TBSCertAVL_entries_Item_idType) {
+        _cached_decoder_for_TBSCertAVL_entries_Item_idType = __utils._decode_extensible_choice<
+            TBSCertAVL_entries_Item_idType
+        >({
+            "CONTEXT 0": [
+                "certIdentifier",
+                __utils._decode_explicit<PKCertIdentifier>(
+                    () => _decode_PKCertIdentifier
+                ),
+            ],
+            "UNIVERSAL 16": ["entityGroup", _decode_DistinguishedName],
+        });
+    }
+    return _cached_decoder_for_TBSCertAVL_entries_Item_idType(el);
+}
+export function _encode_TBSCertAVL_entries_Item_idType(
+    value: TBSCertAVL_entries_Item_idType,
+    elGetter: __utils.ASN1Encoder<TBSCertAVL_entries_Item_idType>
+) {
+    if (!_cached_encoder_for_TBSCertAVL_entries_Item_idType) {
+        _cached_encoder_for_TBSCertAVL_entries_Item_idType = __utils._encode_choice<
+            TBSCertAVL_entries_Item_idType
+        >(
+            {
+                certIdentifier: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_PKCertIdentifier,
+                    __utils.BER
+                ),
+                entityGroup: _encode_DistinguishedName,
+            },
             __utils.BER
-        ),
-        entityGroup: _encode_DistinguishedName,
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_TBSCertAVL_entries_Item_idType(value, elGetter);
+}
 
 export class ScopeRestriction {
     constructor(
@@ -1851,63 +2358,100 @@ export const _root_component_type_list_1_spec_for_ScopeRestriction: __utils.Comp
 ];
 export const _root_component_type_list_2_spec_for_ScopeRestriction: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ScopeRestriction: __utils.ComponentSpec[] = [];
-
-export const _decode_ScopeRestriction = function (
-    el: asn1.ASN1Element
-): ScopeRestriction {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "ScopeRestriction contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_ScopeRestriction: __utils.ASN1Decoder<
+    ScopeRestriction
+> | null = null;
+let _cached_encoder_for_ScopeRestriction: __utils.ASN1Encoder<
+    ScopeRestriction
+> | null = null;
+export function _decode_ScopeRestriction(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ScopeRestriction) {
+        _cached_decoder_for_ScopeRestriction = function (
+            el: asn1.ASN1Element
+        ): ScopeRestriction {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "ScopeRestriction contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "id";
+            sequence[1].name = "restriction";
+            let id!: asn1.OBJECT_IDENTIFIER;
+            let restriction!: asn1.ASN1Element;
+            id = __utils._decodeObjectIdentifier(sequence[0]);
+            restriction = __utils._decodeAny(sequence[1]);
+            // TODO: Validate values.
+            return new ScopeRestriction(id, restriction, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "id";
-    sequence[1].name = "restriction";
-    let id!: asn1.OBJECT_IDENTIFIER;
-    let restriction!: asn1.ASN1Element;
-    id = __utils._decodeObjectIdentifier(sequence[0]);
-    restriction = __utils._decodeAny(sequence[1]);
-    // TODO: Validate values.
-    return new ScopeRestriction(id, restriction, sequence.slice(2));
-};
-export const _encode_ScopeRestriction = function (
+    return _cached_decoder_for_ScopeRestriction(el);
+}
+export function _encode_ScopeRestriction(
     value: ScopeRestriction,
     elGetter: __utils.ASN1Encoder<ScopeRestriction>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                        value.id,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeAny(
-                        value.restriction,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_ScopeRestriction) {
+        _cached_encoder_for_ScopeRestriction = function (
+            value: ScopeRestriction,
+            elGetter: __utils.ASN1Encoder<ScopeRestriction>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                                value.id,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeAny(
+                                value.restriction,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ScopeRestriction(value, elGetter);
+}
 
 export type ScopeRestrictions = ScopeRestriction[]; // SequenceOfType
-export const _decode_ScopeRestrictions = __utils._decodeSequenceOf<
-    ScopeRestriction
->(() => _decode_ScopeRestriction);
-export const _encode_ScopeRestrictions = __utils._encodeSequenceOf<
-    ScopeRestriction
->(() => _encode_ScopeRestriction, __utils.BER);
+let _cached_decoder_for_ScopeRestrictions: __utils.ASN1Decoder<
+    ScopeRestrictions
+> | null = null;
+let _cached_encoder_for_ScopeRestrictions: __utils.ASN1Encoder<
+    ScopeRestrictions
+> | null = null;
+export function _decode_ScopeRestrictions(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ScopeRestrictions) {
+        _cached_decoder_for_ScopeRestrictions = __utils._decodeSequenceOf<
+            ScopeRestriction
+        >(() => _decode_ScopeRestriction);
+    }
+    return _cached_decoder_for_ScopeRestrictions(el);
+}
+export function _encode_ScopeRestrictions(
+    value: ScopeRestrictions,
+    elGetter: __utils.ASN1Encoder<ScopeRestrictions>
+) {
+    if (!_cached_encoder_for_ScopeRestrictions) {
+        _cached_encoder_for_ScopeRestrictions = __utils._encodeSequenceOf<
+            ScopeRestriction
+        >(() => _encode_ScopeRestriction, __utils.BER);
+    }
+    return _cached_encoder_for_ScopeRestrictions(value, elGetter);
+}
 
 export class TBSCertAVL_entries_Item {
     constructor(
@@ -1942,89 +2486,107 @@ export const _root_component_type_list_1_spec_for_TBSCertAVL_entries_Item: __uti
 ];
 export const _root_component_type_list_2_spec_for_TBSCertAVL_entries_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_TBSCertAVL_entries_Item: __utils.ComponentSpec[] = [];
-
-export const _decode_TBSCertAVL_entries_Item = function (
-    el: asn1.ASN1Element
-): TBSCertAVL_entries_Item {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let idType!: TBSCertAVL_entries_Item_idType;
-    let scope: asn1.OPTIONAL<ScopeRestrictions>;
-    let entryExtensions: asn1.OPTIONAL<Extensions>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        idType: (_el: asn1.ASN1Element): void => {
-            idType = _decode_TBSCertAVL_entries_Item_idType(_el);
-        },
-        scope: (_el: asn1.ASN1Element): void => {
-            scope = __utils._decode_explicit<ScopeRestrictions>(
-                () => _decode_ScopeRestrictions
-            )(_el);
-        },
-        entryExtensions: (_el: asn1.ASN1Element): void => {
-            entryExtensions = __utils._decode_explicit<Extensions>(
-                () => _decode_Extensions
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TBSCertAVL_entries_Item,
-        _extension_additions_list_spec_for_TBSCertAVL_entries_Item,
-        _root_component_type_list_2_spec_for_TBSCertAVL_entries_Item,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TBSCertAVL_entries_Item(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ idType,
-        scope,
-        entryExtensions,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_TBSCertAVL_entries_Item = function (
+let _cached_decoder_for_TBSCertAVL_entries_Item: __utils.ASN1Decoder<
+    TBSCertAVL_entries_Item
+> | null = null;
+let _cached_encoder_for_TBSCertAVL_entries_Item: __utils.ASN1Encoder<
+    TBSCertAVL_entries_Item
+> | null = null;
+export function _decode_TBSCertAVL_entries_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TBSCertAVL_entries_Item) {
+        _cached_decoder_for_TBSCertAVL_entries_Item = function (
+            el: asn1.ASN1Element
+        ): TBSCertAVL_entries_Item {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let idType!: TBSCertAVL_entries_Item_idType;
+            let scope: asn1.OPTIONAL<ScopeRestrictions>;
+            let entryExtensions: asn1.OPTIONAL<Extensions>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                idType: (_el: asn1.ASN1Element): void => {
+                    idType = _decode_TBSCertAVL_entries_Item_idType(_el);
+                },
+                scope: (_el: asn1.ASN1Element): void => {
+                    scope = __utils._decode_explicit<ScopeRestrictions>(
+                        () => _decode_ScopeRestrictions
+                    )(_el);
+                },
+                entryExtensions: (_el: asn1.ASN1Element): void => {
+                    entryExtensions = __utils._decode_explicit<Extensions>(
+                        () => _decode_Extensions
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TBSCertAVL_entries_Item,
+                _extension_additions_list_spec_for_TBSCertAVL_entries_Item,
+                _root_component_type_list_2_spec_for_TBSCertAVL_entries_Item,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TBSCertAVL_entries_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ idType,
+                scope,
+                entryExtensions,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TBSCertAVL_entries_Item(el);
+}
+export function _encode_TBSCertAVL_entries_Item(
     value: TBSCertAVL_entries_Item,
     elGetter: __utils.ASN1Encoder<TBSCertAVL_entries_Item>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_TBSCertAVL_entries_Item_idType(
-                        value.idType,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.scope === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_ScopeRestrictions,
-                              __utils.BER
-                          )(value.scope, __utils.BER),
-                    /* IF_ABSENT  */ value.entryExtensions === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_Extensions,
-                              __utils.BER
-                          )(value.entryExtensions, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_TBSCertAVL_entries_Item) {
+        _cached_encoder_for_TBSCertAVL_entries_Item = function (
+            value: TBSCertAVL_entries_Item,
+            elGetter: __utils.ASN1Encoder<TBSCertAVL_entries_Item>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_TBSCertAVL_entries_Item_idType(
+                                value.idType,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.scope === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_ScopeRestrictions,
+                                      __utils.BER
+                                  )(value.scope, __utils.BER),
+                            /* IF_ABSENT  */ value.entryExtensions === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_Extensions,
+                                      __utils.BER
+                                  )(value.entryExtensions, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TBSCertAVL_entries_Item(value, elGetter);
+}
 
 export class TBSCertAVL {
     constructor(
@@ -2037,6 +2599,9 @@ export class TBSCertAVL {
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
         readonly avlExtensions: Extensions | undefined
     ) {}
+    public static get _default_value_for_version() {
+        return v1;
+    }
 }
 export const _root_component_type_list_1_spec_for_TBSCertAVL: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -2092,133 +2657,175 @@ export const _root_component_type_list_2_spec_for_TBSCertAVL: __utils.ComponentS
     ),
 ];
 export const _extension_additions_list_spec_for_TBSCertAVL: __utils.ComponentSpec[] = [];
-export const _default_value_for_TBSCertAVL__version = v1;
-export const _decode_TBSCertAVL = function (el: asn1.ASN1Element): TBSCertAVL {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let version: asn1.OPTIONAL<Version> = _default_value_for_TBSCertAVL__version;
-    let serialNumber: asn1.OPTIONAL<AvlSerialNumber>;
-    let signature!: AlgorithmIdentifier;
-    let issuer!: Name;
-    let constrained!: asn1.BOOLEAN;
-    let entries!: TBSCertAVL_entries_Item[];
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    let avlExtensions: asn1.OPTIONAL<Extensions>;
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        version: (_el: asn1.ASN1Element): void => {
-            version = __utils._decode_explicit<Version>(() => _decode_Version)(
-                _el
+let _cached_decoder_for_TBSCertAVL: __utils.ASN1Decoder<
+    TBSCertAVL
+> | null = null;
+let _cached_encoder_for_TBSCertAVL: __utils.ASN1Encoder<
+    TBSCertAVL
+> | null = null;
+export function _decode_TBSCertAVL(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_TBSCertAVL) {
+        _cached_decoder_for_TBSCertAVL = function (
+            el: asn1.ASN1Element
+        ): TBSCertAVL {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let version: asn1.OPTIONAL<Version> =
+                TBSCertAVL._default_value_for_version;
+            let serialNumber: asn1.OPTIONAL<AvlSerialNumber>;
+            let signature!: AlgorithmIdentifier;
+            let issuer!: Name;
+            let constrained!: asn1.BOOLEAN;
+            let entries!: TBSCertAVL_entries_Item[];
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let avlExtensions: asn1.OPTIONAL<Extensions>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                version: (_el: asn1.ASN1Element): void => {
+                    version = __utils._decode_explicit<Version>(
+                        () => _decode_Version
+                    )(_el);
+                },
+                serialNumber: (_el: asn1.ASN1Element): void => {
+                    serialNumber = _decode_AvlSerialNumber(_el);
+                },
+                signature: (_el: asn1.ASN1Element): void => {
+                    signature = _decode_AlgorithmIdentifier(_el);
+                },
+                issuer: (_el: asn1.ASN1Element): void => {
+                    issuer = _decode_Name(_el);
+                },
+                constrained: (_el: asn1.ASN1Element): void => {
+                    constrained = __utils._decodeBoolean(_el);
+                },
+                entries: (_el: asn1.ASN1Element): void => {
+                    entries = __utils._decodeSequenceOf<
+                        TBSCertAVL_entries_Item
+                    >(() => _decode_TBSCertAVL_entries_Item)(_el);
+                },
+                avlExtensions: (_el: asn1.ASN1Element): void => {
+                    avlExtensions = _decode_Extensions(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TBSCertAVL,
+                _extension_additions_list_spec_for_TBSCertAVL,
+                _root_component_type_list_2_spec_for_TBSCertAVL,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
             );
-        },
-        serialNumber: (_el: asn1.ASN1Element): void => {
-            serialNumber = _decode_AvlSerialNumber(_el);
-        },
-        signature: (_el: asn1.ASN1Element): void => {
-            signature = _decode_AlgorithmIdentifier(_el);
-        },
-        issuer: (_el: asn1.ASN1Element): void => {
-            issuer = _decode_Name(_el);
-        },
-        constrained: (_el: asn1.ASN1Element): void => {
-            constrained = __utils._decodeBoolean(_el);
-        },
-        entries: (_el: asn1.ASN1Element): void => {
-            entries = __utils._decodeSequenceOf<TBSCertAVL_entries_Item>(
-                () => _decode_TBSCertAVL_entries_Item
-            )(_el);
-        },
-        avlExtensions: (_el: asn1.ASN1Element): void => {
-            avlExtensions = _decode_Extensions(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_TBSCertAVL,
-        _extension_additions_list_spec_for_TBSCertAVL,
-        _root_component_type_list_2_spec_for_TBSCertAVL,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new TBSCertAVL(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ version,
-        serialNumber,
-        signature,
-        issuer,
-        constrained,
-        entries,
-        _unrecognizedExtensionsList,
-        avlExtensions
-    );
-};
-export const _encode_TBSCertAVL = function (
+            return new TBSCertAVL(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
+                serialNumber,
+                signature,
+                issuer,
+                constrained,
+                entries,
+                _unrecognizedExtensionsList,
+                avlExtensions
+            );
+        };
+    }
+    return _cached_decoder_for_TBSCertAVL(el);
+}
+export function _encode_TBSCertAVL(
     value: TBSCertAVL,
     elGetter: __utils.ASN1Encoder<TBSCertAVL>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_DEFAULT */ value.version === undefined ||
-                    __utils.deepEq(
-                        value.version,
-                        _default_value_for_TBSCertAVL__version
+) {
+    if (!_cached_encoder_for_TBSCertAVL) {
+        _cached_encoder_for_TBSCertAVL = function (
+            value: TBSCertAVL,
+            elGetter: __utils.ASN1Encoder<TBSCertAVL>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_DEFAULT */ value.version === undefined ||
+                            __utils.deepEq(
+                                value.version,
+                                TBSCertAVL._default_value_for_version
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_Version,
+                                      __utils.BER
+                                  )(value.version, __utils.BER),
+                            /* IF_ABSENT  */ value.serialNumber === undefined
+                                ? undefined
+                                : _encode_AvlSerialNumber(
+                                      value.serialNumber,
+                                      __utils.BER
+                                  ),
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.signature,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Name(
+                                value.issuer,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeBoolean(
+                                value.constrained,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeSequenceOf<
+                                TBSCertAVL_entries_Item
+                            >(
+                                () => _encode_TBSCertAVL_entries_Item,
+                                __utils.BER
+                            )(value.entries, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : [],
+                        [
+                            /* IF_ABSENT  */ value.avlExtensions === undefined
+                                ? undefined
+                                : _encode_Extensions(
+                                      value.avlExtensions,
+                                      __utils.BER
+                                  ),
+                        ]
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_Version,
-                              __utils.BER
-                          )(value.version, __utils.BER),
-                    /* IF_ABSENT  */ value.serialNumber === undefined
-                        ? undefined
-                        : _encode_AvlSerialNumber(
-                              value.serialNumber,
-                              __utils.BER
-                          ),
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.signature,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Name(value.issuer, __utils.BER),
-                    /* REQUIRED   */ __utils._encodeBoolean(
-                        value.constrained,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeSequenceOf<
-                        TBSCertAVL_entries_Item
-                    >(() => _encode_TBSCertAVL_entries_Item, __utils.BER)(
-                        value.entries,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : [],
-                [
-                    /* IF_ABSENT  */ value.avlExtensions === undefined
-                        ? undefined
-                        : _encode_Extensions(value.avlExtensions, __utils.BER),
-                ]
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TBSCertAVL(value, elGetter);
+}
 
 export type CertAVL = SIGNED<TBSCertAVL>; // DefinedType
-export const _decode_CertAVL = _get_decoder_for_SIGNED<TBSCertAVL>(
-    _decode_TBSCertAVL
-);
-export const _encode_CertAVL = _get_encoder_for_SIGNED<TBSCertAVL>(
-    _encode_TBSCertAVL
-);
+let _cached_decoder_for_CertAVL: __utils.ASN1Decoder<CertAVL> | null = null;
+let _cached_encoder_for_CertAVL: __utils.ASN1Encoder<CertAVL> | null = null;
+export function _decode_CertAVL(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_CertAVL) {
+        _cached_decoder_for_CertAVL = _get_decoder_for_SIGNED<TBSCertAVL>(
+            _decode_TBSCertAVL
+        );
+    }
+    return _cached_decoder_for_CertAVL(el);
+}
+export function _encode_CertAVL(
+    value: CertAVL,
+    elGetter: __utils.ASN1Encoder<CertAVL>
+) {
+    if (!_cached_encoder_for_CertAVL) {
+        _cached_encoder_for_CertAVL = _get_encoder_for_SIGNED<TBSCertAVL>(
+            _encode_TBSCertAVL
+        );
+    }
+    return _cached_encoder_for_CertAVL(value, elGetter);
+}
 
 // TODO: ObjectClassAssignment: SCOPE-RESTRICTION
 
@@ -2227,12 +2834,31 @@ export const _encode_CertAVL = _get_encoder_for_SIGNED<TBSCertAVL>(
 // TODO: ObjectAssignment: protRestrict
 
 export type ProtRestriction = asn1.OBJECT_IDENTIFIER[]; // SequenceOfType
-export const _decode_ProtRestriction = __utils._decodeSequenceOf<
-    asn1.OBJECT_IDENTIFIER
->(() => __utils._decodeObjectIdentifier);
-export const _encode_ProtRestriction = __utils._encodeSequenceOf<
-    asn1.OBJECT_IDENTIFIER
->(() => __utils._encodeObjectIdentifier, __utils.BER);
+let _cached_decoder_for_ProtRestriction: __utils.ASN1Decoder<
+    ProtRestriction
+> | null = null;
+let _cached_encoder_for_ProtRestriction: __utils.ASN1Encoder<
+    ProtRestriction
+> | null = null;
+export function _decode_ProtRestriction(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ProtRestriction) {
+        _cached_decoder_for_ProtRestriction = __utils._decodeSequenceOf<
+            asn1.OBJECT_IDENTIFIER
+        >(() => __utils._decodeObjectIdentifier);
+    }
+    return _cached_decoder_for_ProtRestriction(el);
+}
+export function _encode_ProtRestriction(
+    value: ProtRestriction,
+    elGetter: __utils.ASN1Encoder<ProtRestriction>
+) {
+    if (!_cached_encoder_for_ProtRestriction) {
+        _cached_encoder_for_ProtRestriction = __utils._encodeSequenceOf<
+            asn1.OBJECT_IDENTIFIER
+        >(() => __utils._encodeObjectIdentifier, __utils.BER);
+    }
+    return _cached_encoder_for_ProtRestriction(value, elGetter);
+}
 
 // TODO: ObjectAssignment: pkiUser
 
@@ -2299,90 +2925,111 @@ export const _root_component_type_list_1_spec_for_SupportedAlgorithm: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_SupportedAlgorithm: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_SupportedAlgorithm: __utils.ComponentSpec[] = [];
-
-export const _decode_SupportedAlgorithm = function (
-    el: asn1.ASN1Element
-): SupportedAlgorithm {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let algorithmIdentifier!: AlgorithmIdentifier;
-    let intendedUsage: asn1.OPTIONAL<KeyUsage>;
-    let intendedCertificatePolicies: asn1.OPTIONAL<CertificatePoliciesSyntax>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        algorithmIdentifier: (_el: asn1.ASN1Element): void => {
-            algorithmIdentifier = _decode_AlgorithmIdentifier(_el);
-        },
-        intendedUsage: (_el: asn1.ASN1Element): void => {
-            intendedUsage = __utils._decode_explicit<KeyUsage>(
-                () => _decode_KeyUsage
-            )(_el);
-        },
-        intendedCertificatePolicies: (_el: asn1.ASN1Element): void => {
-            intendedCertificatePolicies = __utils._decode_explicit<
-                CertificatePoliciesSyntax
-            >(() => _decode_CertificatePoliciesSyntax)(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_SupportedAlgorithm,
-        _extension_additions_list_spec_for_SupportedAlgorithm,
-        _root_component_type_list_2_spec_for_SupportedAlgorithm,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new SupportedAlgorithm(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ algorithmIdentifier,
-        intendedUsage,
-        intendedCertificatePolicies,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_SupportedAlgorithm = function (
+let _cached_decoder_for_SupportedAlgorithm: __utils.ASN1Decoder<
+    SupportedAlgorithm
+> | null = null;
+let _cached_encoder_for_SupportedAlgorithm: __utils.ASN1Encoder<
+    SupportedAlgorithm
+> | null = null;
+export function _decode_SupportedAlgorithm(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_SupportedAlgorithm) {
+        _cached_decoder_for_SupportedAlgorithm = function (
+            el: asn1.ASN1Element
+        ): SupportedAlgorithm {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let algorithmIdentifier!: AlgorithmIdentifier;
+            let intendedUsage: asn1.OPTIONAL<KeyUsage>;
+            let intendedCertificatePolicies: asn1.OPTIONAL<CertificatePoliciesSyntax>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                algorithmIdentifier: (_el: asn1.ASN1Element): void => {
+                    algorithmIdentifier = _decode_AlgorithmIdentifier(_el);
+                },
+                intendedUsage: (_el: asn1.ASN1Element): void => {
+                    intendedUsage = __utils._decode_explicit<KeyUsage>(
+                        () => _decode_KeyUsage
+                    )(_el);
+                },
+                intendedCertificatePolicies: (_el: asn1.ASN1Element): void => {
+                    intendedCertificatePolicies = __utils._decode_explicit<
+                        CertificatePoliciesSyntax
+                    >(() => _decode_CertificatePoliciesSyntax)(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_SupportedAlgorithm,
+                _extension_additions_list_spec_for_SupportedAlgorithm,
+                _root_component_type_list_2_spec_for_SupportedAlgorithm,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new SupportedAlgorithm(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithmIdentifier,
+                intendedUsage,
+                intendedCertificatePolicies,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_SupportedAlgorithm(el);
+}
+export function _encode_SupportedAlgorithm(
     value: SupportedAlgorithm,
     elGetter: __utils.ASN1Encoder<SupportedAlgorithm>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.algorithmIdentifier,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.intendedUsage === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => _encode_KeyUsage,
-                              __utils.BER
-                          )(value.intendedUsage, __utils.BER),
-                    /* IF_ABSENT  */ value.intendedCertificatePolicies ===
-                    undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => _encode_CertificatePoliciesSyntax,
-                              __utils.BER
-                          )(value.intendedCertificatePolicies, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_SupportedAlgorithm) {
+        _cached_encoder_for_SupportedAlgorithm = function (
+            value: SupportedAlgorithm,
+            elGetter: __utils.ASN1Encoder<SupportedAlgorithm>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.algorithmIdentifier,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.intendedUsage === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => _encode_KeyUsage,
+                                      __utils.BER
+                                  )(value.intendedUsage, __utils.BER),
+                            /* IF_ABSENT  */ value.intendedCertificatePolicies ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => _encode_CertificatePoliciesSyntax,
+                                      __utils.BER
+                                  )(
+                                      value.intendedCertificatePolicies,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_SupportedAlgorithm(value, elGetter);
+}
 
 // TODO: ObjectAssignment: certificationPracticeStmt
 
@@ -2393,8 +3040,23 @@ export const _encode_SupportedAlgorithm = function (
 // TODO: ObjectAssignment: certificatePolicy
 
 export type PolicyID = CertPolicyId; // DefinedType
-export const _decode_PolicyID = _decode_CertPolicyId;
-export const _encode_PolicyID = _encode_CertPolicyId;
+let _cached_decoder_for_PolicyID: __utils.ASN1Decoder<PolicyID> | null = null;
+let _cached_encoder_for_PolicyID: __utils.ASN1Encoder<PolicyID> | null = null;
+export function _decode_PolicyID(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PolicyID) {
+        _cached_decoder_for_PolicyID = _decode_CertPolicyId;
+    }
+    return _cached_decoder_for_PolicyID(el);
+}
+export function _encode_PolicyID(
+    value: PolicyID,
+    elGetter: __utils.ASN1Encoder<PolicyID>
+) {
+    if (!_cached_encoder_for_PolicyID) {
+        _cached_encoder_for_PolicyID = _encode_CertPolicyId;
+    }
+    return _cached_encoder_for_PolicyID(value, elGetter);
+}
 
 export class HASH<ToBeHashed> {
     constructor(
@@ -2421,8 +3083,7 @@ export const _root_component_type_list_1_spec_for_HASH: __utils.ComponentSpec[] 
 ];
 export const _root_component_type_list_2_spec_for_HASH: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_HASH: __utils.ComponentSpec[] = [];
-
-export const _get_decoder_for_HASH = function <ToBeHashed>(
+export function _get_decoder_for_HASH<ToBeHashed>(
     _decode_ToBeHashed: __utils.ASN1Decoder<ToBeHashed>
 ) {
     return function <ToBeHashed>(el: asn1.ASN1Element): HASH<ToBeHashed> {
@@ -2448,8 +3109,8 @@ export const _get_decoder_for_HASH = function <ToBeHashed>(
             sequence.slice(2)
         );
     };
-};
-export const _get_encoder_for_HASH = function <ToBeHashed>(
+}
+export function _get_encoder_for_HASH<ToBeHashed>(
     _encode_ToBeHashed: __utils.ASN1Encoder<ToBeHashed>
 ) {
     return function (
@@ -2479,11 +3140,30 @@ export const _get_encoder_for_HASH = function <ToBeHashed>(
             __utils.BER
         );
     };
-};
+}
 
 export type HashedPolicyInfo = asn1.ASN1Element; // ObjectClassFieldType
-export const _decode_HashedPolicyInfo = __utils._decodeAny;
-export const _encode_HashedPolicyInfo = __utils._encodeAny;
+let _cached_decoder_for_HashedPolicyInfo: __utils.ASN1Decoder<
+    HashedPolicyInfo
+> | null = null;
+let _cached_encoder_for_HashedPolicyInfo: __utils.ASN1Encoder<
+    HashedPolicyInfo
+> | null = null;
+export function _decode_HashedPolicyInfo(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_HashedPolicyInfo) {
+        _cached_decoder_for_HashedPolicyInfo = __utils._decodeAny;
+    }
+    return _cached_decoder_for_HashedPolicyInfo(el);
+}
+export function _encode_HashedPolicyInfo(
+    value: HashedPolicyInfo,
+    elGetter: __utils.ASN1Encoder<HashedPolicyInfo>
+) {
+    if (!_cached_encoder_for_HashedPolicyInfo) {
+        _cached_encoder_for_HashedPolicyInfo = __utils._encodeAny;
+    }
+    return _cached_encoder_for_HashedPolicyInfo(value, elGetter);
+}
 
 export class InfoSyntax_pointer {
     constructor(
@@ -2510,93 +3190,130 @@ export const _root_component_type_list_1_spec_for_InfoSyntax_pointer: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_InfoSyntax_pointer: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_InfoSyntax_pointer: __utils.ComponentSpec[] = [];
-
-export const _decode_InfoSyntax_pointer = function (
-    el: asn1.ASN1Element
-): InfoSyntax_pointer {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let name!: GeneralNames;
-    let hash: asn1.OPTIONAL<HASH<HashedPolicyInfo>>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        name: (_el: asn1.ASN1Element): void => {
-            name = _decode_GeneralNames(_el);
-        },
-        hash: (_el: asn1.ASN1Element): void => {
-            hash = _get_decoder_for_HASH<HashedPolicyInfo>(
-                _decode_HashedPolicyInfo
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_InfoSyntax_pointer,
-        _extension_additions_list_spec_for_InfoSyntax_pointer,
-        _root_component_type_list_2_spec_for_InfoSyntax_pointer,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new InfoSyntax_pointer(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ name,
-        hash,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_InfoSyntax_pointer = function (
+let _cached_decoder_for_InfoSyntax_pointer: __utils.ASN1Decoder<
+    InfoSyntax_pointer
+> | null = null;
+let _cached_encoder_for_InfoSyntax_pointer: __utils.ASN1Encoder<
+    InfoSyntax_pointer
+> | null = null;
+export function _decode_InfoSyntax_pointer(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_InfoSyntax_pointer) {
+        _cached_decoder_for_InfoSyntax_pointer = function (
+            el: asn1.ASN1Element
+        ): InfoSyntax_pointer {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let name!: GeneralNames;
+            let hash: asn1.OPTIONAL<HASH<HashedPolicyInfo>>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                name: (_el: asn1.ASN1Element): void => {
+                    name = _decode_GeneralNames(_el);
+                },
+                hash: (_el: asn1.ASN1Element): void => {
+                    hash = _get_decoder_for_HASH<HashedPolicyInfo>(
+                        _decode_HashedPolicyInfo
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_InfoSyntax_pointer,
+                _extension_additions_list_spec_for_InfoSyntax_pointer,
+                _root_component_type_list_2_spec_for_InfoSyntax_pointer,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new InfoSyntax_pointer(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ name,
+                hash,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_InfoSyntax_pointer(el);
+}
+export function _encode_InfoSyntax_pointer(
     value: InfoSyntax_pointer,
     elGetter: __utils.ASN1Encoder<InfoSyntax_pointer>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_GeneralNames(
-                        value.name,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.hash === undefined
-                        ? undefined
-                        : _get_encoder_for_HASH<HashedPolicyInfo>(
-                              _encode_HashedPolicyInfo
-                          )(value.hash, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_InfoSyntax_pointer) {
+        _cached_encoder_for_InfoSyntax_pointer = function (
+            value: InfoSyntax_pointer,
+            elGetter: __utils.ASN1Encoder<InfoSyntax_pointer>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_GeneralNames(
+                                value.name,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.hash === undefined
+                                ? undefined
+                                : _get_encoder_for_HASH<HashedPolicyInfo>(
+                                      _encode_HashedPolicyInfo
+                                  )(value.hash, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_InfoSyntax_pointer(value, elGetter);
+}
 
 export type InfoSyntax =
-    | { content: UnboundedDirectoryString }
-    | { pointer: InfoSyntax_pointer }
-    | asn1.ASN1Element;
-export const _decode_InfoSyntax = __utils._decode_extensible_choice<InfoSyntax>(
-    {
-        "UNIVERSAL 12": ["content", _decode_UnboundedDirectoryString], // utf8String
-        "UNIVERSAL 19": ["content", _decode_UnboundedDirectoryString], // printableString
-        "UNIVERSAL 20": ["content", _decode_UnboundedDirectoryString], // teletexString
-        "UNIVERSAL 28": ["content", _decode_UnboundedDirectoryString], // universalString
-        "UNIVERSAL 30": ["content", _decode_UnboundedDirectoryString], // bmpString
-        "UNIVERSAL 16": ["pointer", _decode_InfoSyntax_pointer],
+    | { content: UnboundedDirectoryString } /* CHOICE_ALT_ROOT */
+    | { pointer: InfoSyntax_pointer } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_InfoSyntax: __utils.ASN1Decoder<
+    InfoSyntax
+> | null = null;
+let _cached_encoder_for_InfoSyntax: __utils.ASN1Encoder<
+    InfoSyntax
+> | null = null;
+export function _decode_InfoSyntax(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_InfoSyntax) {
+        _cached_decoder_for_InfoSyntax = __utils._decode_extensible_choice<
+            InfoSyntax
+        >({
+            "UNIVERSAL 20": ["content", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 19": ["content", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 30": ["content", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 28": ["content", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 12": ["content", _decode_UnboundedDirectoryString],
+            "UNIVERSAL 16": ["pointer", _decode_InfoSyntax_pointer],
+        });
     }
-);
-export const _encode_InfoSyntax = __utils._encode_choice<InfoSyntax>(
-    {
-        content: _encode_UnboundedDirectoryString,
-        pointer: _encode_InfoSyntax_pointer,
-    },
-    __utils.BER
-);
+    return _cached_decoder_for_InfoSyntax(el);
+}
+export function _encode_InfoSyntax(
+    value: InfoSyntax,
+    elGetter: __utils.ASN1Encoder<InfoSyntax>
+) {
+    if (!_cached_encoder_for_InfoSyntax) {
+        _cached_encoder_for_InfoSyntax = __utils._encode_choice<InfoSyntax>(
+            {
+                content: _encode_UnboundedDirectoryString,
+                pointer: _encode_InfoSyntax_pointer,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_InfoSyntax(value, elGetter);
+}
 
 export class PolicySyntax {
     constructor(
@@ -2623,55 +3340,77 @@ export const _root_component_type_list_1_spec_for_PolicySyntax: __utils.Componen
 ];
 export const _root_component_type_list_2_spec_for_PolicySyntax: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_PolicySyntax: __utils.ComponentSpec[] = [];
-
-export const _decode_PolicySyntax = function (
-    el: asn1.ASN1Element
-): PolicySyntax {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "PolicySyntax contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_PolicySyntax: __utils.ASN1Decoder<
+    PolicySyntax
+> | null = null;
+let _cached_encoder_for_PolicySyntax: __utils.ASN1Encoder<
+    PolicySyntax
+> | null = null;
+export function _decode_PolicySyntax(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PolicySyntax) {
+        _cached_decoder_for_PolicySyntax = function (
+            el: asn1.ASN1Element
+        ): PolicySyntax {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "PolicySyntax contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "policyIdentifier";
+            sequence[1].name = "policySyntax";
+            let policyIdentifier!: PolicyID;
+            let policySyntax!: InfoSyntax;
+            policyIdentifier = _decode_PolicyID(sequence[0]);
+            policySyntax = _decode_InfoSyntax(sequence[1]);
+            // TODO: Validate values.
+            return new PolicySyntax(
+                policyIdentifier,
+                policySyntax,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "policyIdentifier";
-    sequence[1].name = "policySyntax";
-    let policyIdentifier!: PolicyID;
-    let policySyntax!: InfoSyntax;
-    policyIdentifier = _decode_PolicyID(sequence[0]);
-    policySyntax = _decode_InfoSyntax(sequence[1]);
-    // TODO: Validate values.
-    return new PolicySyntax(policyIdentifier, policySyntax, sequence.slice(2));
-};
-export const _encode_PolicySyntax = function (
+    return _cached_decoder_for_PolicySyntax(el);
+}
+export function _encode_PolicySyntax(
     value: PolicySyntax,
     elGetter: __utils.ASN1Encoder<PolicySyntax>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_PolicyID(
-                        value.policyIdentifier,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_InfoSyntax(
-                        value.policySyntax,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_PolicySyntax) {
+        _cached_encoder_for_PolicySyntax = function (
+            value: PolicySyntax,
+            elGetter: __utils.ASN1Encoder<PolicySyntax>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_PolicyID(
+                                value.policyIdentifier,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_InfoSyntax(
+                                value.policySyntax,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_PolicySyntax(value, elGetter);
+}
 
 // TODO: ObjectAssignment: pkiPath
 

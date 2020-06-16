@@ -1375,13 +1375,18 @@ export function _decode_inextensible_choice<T>(
         string,
         [AllUnionMemberKeys<T>, ASN1Decoder<T[AllUnionMemberKeys<T>]>]
     >,
-    anythingElseHandler?: DecodingCallback
+    anythingElseHandler?: [
+        AllUnionMemberKeys<T>,
+        ASN1Decoder<T[AllUnionMemberKeys<T>]>
+    ]
 ): ASN1Decoder<InextensibleChoice<T>> {
     return function (el: ASN1Element): InextensibleChoice<T> {
         const result = choices[`${tagClassName(el.tagClass)} ${el.tagNumber}`];
         if (!result) {
             if (anythingElseHandler) {
-                anythingElseHandler(el, el.name);
+                const ret: T = {} as T;
+                ret[anythingElseHandler[0]] = anythingElseHandler[1](el);
+                return ret;
             } else {
                 throw new Error(
                     `Unrecognized CHOICE tag '${tagClassName(el.tagClass)} ${
@@ -1393,7 +1398,7 @@ export function _decode_inextensible_choice<T>(
         const [name, decoder] = result;
         const ret: T = {} as T;
         ret[name] = decoder(el);
-        return ret as T;
+        return ret;
     };
 }
 

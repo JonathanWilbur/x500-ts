@@ -26,6 +26,12 @@ export class ExtensionAttribute_value_Item {
         readonly ext: asn1.ASN1Element,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_mandatory() {
+        return false;
+    }
+    public static get _default_value_for_critical() {
+        return false;
+    }
 }
 export const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -52,102 +58,121 @@ export const _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item:
 ];
 export const _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtensionAttribute_value_Item: __utils.ComponentSpec[] = [];
-export const _default_value_for_ExtensionAttribute_value_Item__mandatory = false;
-export const _default_value_for_ExtensionAttribute_value_Item__critical = false;
-export const _decode_ExtensionAttribute_value_Item = function (
-    el: asn1.ASN1Element
-): ExtensionAttribute_value_Item {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let mandatory: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ExtensionAttribute_value_Item__mandatory;
-    let critical: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_ExtensionAttribute_value_Item__critical;
-    let ext!: asn1.ASN1Element;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        mandatory: (_el: asn1.ASN1Element): void => {
-            mandatory = __utils._decode_explicit<asn1.BOOLEAN>(
-                () => __utils._decodeBoolean
-            )(_el);
-        },
-        critical: (_el: asn1.ASN1Element): void => {
-            critical = __utils._decode_explicit<asn1.BOOLEAN>(
-                () => __utils._decodeBoolean
-            )(_el);
-        },
-        ext: (_el: asn1.ASN1Element): void => {
-            ext = __utils._decode_explicit<asn1.ASN1Element>(
-                () => __utils._decodeAny
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item,
-        _extension_additions_list_spec_for_ExtensionAttribute_value_Item,
-        _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new ExtensionAttribute_value_Item(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
-        critical,
-        ext,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_ExtensionAttribute_value_Item = function (
+let _cached_decoder_for_ExtensionAttribute_value_Item: __utils.ASN1Decoder<
+    ExtensionAttribute_value_Item
+> | null = null;
+let _cached_encoder_for_ExtensionAttribute_value_Item: __utils.ASN1Encoder<
+    ExtensionAttribute_value_Item
+> | null = null;
+export function _decode_ExtensionAttribute_value_Item(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ExtensionAttribute_value_Item) {
+        _cached_decoder_for_ExtensionAttribute_value_Item = function (
+            el: asn1.ASN1Element
+        ): ExtensionAttribute_value_Item {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let mandatory: asn1.OPTIONAL<asn1.BOOLEAN> =
+                ExtensionAttribute_value_Item._default_value_for_mandatory;
+            let critical: asn1.OPTIONAL<asn1.BOOLEAN> =
+                ExtensionAttribute_value_Item._default_value_for_critical;
+            let ext!: asn1.ASN1Element;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                mandatory: (_el: asn1.ASN1Element): void => {
+                    mandatory = __utils._decode_explicit<asn1.BOOLEAN>(
+                        () => __utils._decodeBoolean
+                    )(_el);
+                },
+                critical: (_el: asn1.ASN1Element): void => {
+                    critical = __utils._decode_explicit<asn1.BOOLEAN>(
+                        () => __utils._decodeBoolean
+                    )(_el);
+                },
+                ext: (_el: asn1.ASN1Element): void => {
+                    ext = __utils._decode_explicit<asn1.ASN1Element>(
+                        () => __utils._decodeAny
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ExtensionAttribute_value_Item,
+                _extension_additions_list_spec_for_ExtensionAttribute_value_Item,
+                _root_component_type_list_2_spec_for_ExtensionAttribute_value_Item,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ExtensionAttribute_value_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
+                critical,
+                ext,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_ExtensionAttribute_value_Item(el);
+}
+export function _encode_ExtensionAttribute_value_Item(
     value: ExtensionAttribute_value_Item,
     elGetter: __utils.ASN1Encoder<ExtensionAttribute_value_Item>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_DEFAULT */ value.mandatory === undefined ||
-                    __utils.deepEq(
-                        value.mandatory,
-                        _default_value_for_ExtensionAttribute_value_Item__mandatory
+) {
+    if (!_cached_encoder_for_ExtensionAttribute_value_Item) {
+        _cached_encoder_for_ExtensionAttribute_value_Item = function (
+            value: ExtensionAttribute_value_Item,
+            elGetter: __utils.ASN1Encoder<ExtensionAttribute_value_Item>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_DEFAULT */ value.mandatory === undefined ||
+                            __utils.deepEq(
+                                value.mandatory,
+                                ExtensionAttribute_value_Item._default_value_for_mandatory
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeBoolean,
+                                      __utils.BER
+                                  )(value.mandatory, __utils.BER),
+                            /* IF_DEFAULT */ value.critical === undefined ||
+                            __utils.deepEq(
+                                value.critical,
+                                ExtensionAttribute_value_Item._default_value_for_critical
+                            )
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeBoolean,
+                                      __utils.BER
+                                  )(value.critical, __utils.BER),
+                            /* REQUIRED   */ __utils._encode_explicit(
+                                asn1.ASN1TagClass.context,
+                                2,
+                                () => __utils._encodeAny,
+                                __utils.BER
+                            )(value.ext, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeBoolean,
-                              __utils.BER
-                          )(value.mandatory, __utils.BER),
-                    /* IF_DEFAULT */ value.critical === undefined ||
-                    __utils.deepEq(
-                        value.critical,
-                        _default_value_for_ExtensionAttribute_value_Item__critical
-                    )
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeBoolean,
-                              __utils.BER
-                          )(value.critical, __utils.BER),
-                    /* REQUIRED   */ __utils._encode_explicit(
-                        asn1.ASN1TagClass.context,
-                        2,
-                        () => __utils._encodeAny,
-                        __utils.BER
-                    )(value.ext, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ExtensionAttribute_value_Item(value, elGetter);
+}
 
 export class ExtensionAttribute {
     constructor(
@@ -174,59 +199,77 @@ export const _root_component_type_list_1_spec_for_ExtensionAttribute: __utils.Co
 ];
 export const _root_component_type_list_2_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ExtensionAttribute: __utils.ComponentSpec[] = [];
-
-export const _decode_ExtensionAttribute = function (
-    el: asn1.ASN1Element
-): ExtensionAttribute {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "ExtensionAttribute contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_ExtensionAttribute: __utils.ASN1Decoder<
+    ExtensionAttribute
+> | null = null;
+let _cached_encoder_for_ExtensionAttribute: __utils.ASN1Encoder<
+    ExtensionAttribute
+> | null = null;
+export function _decode_ExtensionAttribute(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ExtensionAttribute) {
+        _cached_decoder_for_ExtensionAttribute = function (
+            el: asn1.ASN1Element
+        ): ExtensionAttribute {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "ExtensionAttribute contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "type";
+            sequence[1].name = "value";
+            let type_!: asn1.OBJECT_IDENTIFIER;
+            let value!: ExtensionAttribute_value_Item[];
+            type_ = __utils._decodeObjectIdentifier(sequence[0]);
+            value = __utils._decodeSetOf<ExtensionAttribute_value_Item>(
+                () => _decode_ExtensionAttribute_value_Item
+            )(sequence[1]);
+            // TODO: Validate values.
+            return new ExtensionAttribute(type_, value, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "type";
-    sequence[1].name = "value";
-    let type_!: asn1.OBJECT_IDENTIFIER;
-    let value!: ExtensionAttribute_value_Item[];
-    type_ = __utils._decodeObjectIdentifier(sequence[0]);
-    value = __utils._decodeSetOf<ExtensionAttribute_value_Item>(
-        () => _decode_ExtensionAttribute_value_Item
-    )(sequence[1]);
-    // TODO: Validate values.
-    return new ExtensionAttribute(type_, value, sequence.slice(2));
-};
-export const _encode_ExtensionAttribute = function (
+    return _cached_decoder_for_ExtensionAttribute(el);
+}
+export function _encode_ExtensionAttribute(
     value: ExtensionAttribute,
     elGetter: __utils.ASN1Encoder<ExtensionAttribute>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                        value.type_,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeSetOf<
-                        ExtensionAttribute_value_Item
-                    >(() => _encode_ExtensionAttribute_value_Item, __utils.BER)(
-                        value.value,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_ExtensionAttribute) {
+        _cached_encoder_for_ExtensionAttribute = function (
+            value: ExtensionAttribute,
+            elGetter: __utils.ASN1Encoder<ExtensionAttribute>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                                value.type_,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeSetOf<
+                                ExtensionAttribute_value_Item
+                            >(
+                                () => _encode_ExtensionAttribute_value_Item,
+                                __utils.BER
+                            )(value.value, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ExtensionAttribute(value, elGetter);
+}
 
 // TODO: ObjectAssignment: extensionSyntax
 

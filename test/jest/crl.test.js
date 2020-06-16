@@ -1,4 +1,4 @@
-const x509 = require("../../dist/index.js");
+const x509 = require("../../dist/node/index.js");
 const asn1 = require("asn1-ts");
 
 describe("Certificate Revocation List", () => {

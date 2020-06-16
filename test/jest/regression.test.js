@@ -2,7 +2,7 @@
  * These tests are based off of issues reported on
  * https://github.com/JonathanWilbur/x509-ts/issues.
  */
-const x509 = require("../../dist/index.js");
+const x509 = require("../../dist/node/index.js");
 const asn1 = require("asn1-ts");
 
 describe("Issue #1 - TBSCertificate.toElement() adding subject and issuer", () => {

@@ -55,75 +55,110 @@ export const _root_component_type_list_1_spec_for_UserPwd_encrypted: __utils.Com
 ];
 export const _root_component_type_list_2_spec_for_UserPwd_encrypted: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserPwd_encrypted: __utils.ComponentSpec[] = [];
-
-export const _decode_UserPwd_encrypted = function (
-    el: asn1.ASN1Element
-): UserPwd_encrypted {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "UserPwd-encrypted contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_UserPwd_encrypted: __utils.ASN1Decoder<
+    UserPwd_encrypted
+> | null = null;
+let _cached_encoder_for_UserPwd_encrypted: __utils.ASN1Encoder<
+    UserPwd_encrypted
+> | null = null;
+export function _decode_UserPwd_encrypted(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UserPwd_encrypted) {
+        _cached_decoder_for_UserPwd_encrypted = function (
+            el: asn1.ASN1Element
+        ): UserPwd_encrypted {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "UserPwd-encrypted contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "algorithmIdentifier";
+            sequence[1].name = "encryptedString";
+            let algorithmIdentifier!: AlgorithmIdentifier;
+            let encryptedString!: asn1.OCTET_STRING;
+            algorithmIdentifier = _decode_AlgorithmIdentifier(sequence[0]);
+            encryptedString = __utils._decodeOctetString(sequence[1]);
+            // TODO: Validate values.
+            return new UserPwd_encrypted(
+                algorithmIdentifier,
+                encryptedString,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "algorithmIdentifier";
-    sequence[1].name = "encryptedString";
-    let algorithmIdentifier!: AlgorithmIdentifier;
-    let encryptedString!: asn1.OCTET_STRING;
-    algorithmIdentifier = _decode_AlgorithmIdentifier(sequence[0]);
-    encryptedString = __utils._decodeOctetString(sequence[1]);
-    // TODO: Validate values.
-    return new UserPwd_encrypted(
-        algorithmIdentifier,
-        encryptedString,
-        sequence.slice(2)
-    );
-};
-export const _encode_UserPwd_encrypted = function (
+    return _cached_decoder_for_UserPwd_encrypted(el);
+}
+export function _encode_UserPwd_encrypted(
     value: UserPwd_encrypted,
     elGetter: __utils.ASN1Encoder<UserPwd_encrypted>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AlgorithmIdentifier(
-                        value.algorithmIdentifier,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeOctetString(
-                        value.encryptedString,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UserPwd_encrypted) {
+        _cached_encoder_for_UserPwd_encrypted = function (
+            value: UserPwd_encrypted,
+            elGetter: __utils.ASN1Encoder<UserPwd_encrypted>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AlgorithmIdentifier(
+                                value.algorithmIdentifier,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeOctetString(
+                                value.encryptedString,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UserPwd_encrypted(value, elGetter);
+}
 
 export type UserPwd =
-    | { clear: asn1.UTF8String }
-    | { encrypted: UserPwd_encrypted }
-    | asn1.ASN1Element;
-export const _decode_UserPwd = __utils._decode_extensible_choice<UserPwd>({
-    "UNIVERSAL 12": ["clear", __utils._decodeUTF8String],
-    "UNIVERSAL 16": ["encrypted", _decode_UserPwd_encrypted],
-});
-export const _encode_UserPwd = __utils._encode_choice<UserPwd>(
-    {
-        clear: __utils._encodeUTF8String,
-        encrypted: _encode_UserPwd_encrypted,
-    },
-    __utils.BER
-);
+    | { clear: asn1.UTF8String } /* CHOICE_ALT_ROOT */
+    | { encrypted: UserPwd_encrypted } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_UserPwd: __utils.ASN1Decoder<UserPwd> | null = null;
+let _cached_encoder_for_UserPwd: __utils.ASN1Encoder<UserPwd> | null = null;
+export function _decode_UserPwd(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UserPwd) {
+        _cached_decoder_for_UserPwd = __utils._decode_extensible_choice<
+            UserPwd
+        >({
+            "UNIVERSAL 12": ["clear", __utils._decodeUTF8String],
+            "UNIVERSAL 16": ["encrypted", _decode_UserPwd_encrypted],
+        });
+    }
+    return _cached_decoder_for_UserPwd(el);
+}
+export function _encode_UserPwd(
+    value: UserPwd,
+    elGetter: __utils.ASN1Encoder<UserPwd>
+) {
+    if (!_cached_encoder_for_UserPwd) {
+        _cached_encoder_for_UserPwd = __utils._encode_choice<UserPwd>(
+            {
+                clear: __utils._encodeUTF8String,
+                encrypted: _encode_UserPwd_encrypted,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_UserPwd(value, elGetter);
+}
 
 // TODO: ObjectAssignment: pwdStartTime
 
@@ -179,19 +214,56 @@ export const PwdVocabulary_noPersonNames: number = 1; /* LONG_NAMED_BIT */
 export const noPersonNames: number = PwdVocabulary_noPersonNames; /* SHORT_NAMED_BIT */
 export const PwdVocabulary_noGeographicalNames: number = 2; /* LONG_NAMED_BIT */
 export const noGeographicalNames: number = PwdVocabulary_noGeographicalNames; /* SHORT_NAMED_BIT */
-export const _decode_PwdVocabulary = __utils._decodeBitString;
-export const _encode_PwdVocabulary = __utils._encodeBitString;
+let _cached_decoder_for_PwdVocabulary: __utils.ASN1Decoder<
+    PwdVocabulary
+> | null = null;
+let _cached_encoder_for_PwdVocabulary: __utils.ASN1Encoder<
+    PwdVocabulary
+> | null = null;
+export function _decode_PwdVocabulary(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdVocabulary) {
+        _cached_decoder_for_PwdVocabulary = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_PwdVocabulary(el);
+}
+export function _encode_PwdVocabulary(
+    value: PwdVocabulary,
+    elGetter: __utils.ASN1Encoder<PwdVocabulary>
+) {
+    if (!_cached_encoder_for_PwdVocabulary) {
+        _cached_encoder_for_PwdVocabulary = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_PwdVocabulary(value, elGetter);
+}
 
 // TODO: ObjectAssignment: pwdAlphabet
 
 export type PwdAlphabet = asn1.UTF8String[]; // SequenceOfType
-export const _decode_PwdAlphabet = __utils._decodeSequenceOf<asn1.UTF8String>(
-    () => __utils._decodeUTF8String
-);
-export const _encode_PwdAlphabet = __utils._encodeSequenceOf<asn1.UTF8String>(
-    () => __utils._encodeUTF8String,
-    __utils.BER
-);
+let _cached_decoder_for_PwdAlphabet: __utils.ASN1Decoder<
+    PwdAlphabet
+> | null = null;
+let _cached_encoder_for_PwdAlphabet: __utils.ASN1Encoder<
+    PwdAlphabet
+> | null = null;
+export function _decode_PwdAlphabet(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdAlphabet) {
+        _cached_decoder_for_PwdAlphabet = __utils._decodeSequenceOf<
+            asn1.UTF8String
+        >(() => __utils._decodeUTF8String);
+    }
+    return _cached_decoder_for_PwdAlphabet(el);
+}
+export function _encode_PwdAlphabet(
+    value: PwdAlphabet,
+    elGetter: __utils.ASN1Encoder<PwdAlphabet>
+) {
+    if (!_cached_encoder_for_PwdAlphabet) {
+        _cached_encoder_for_PwdAlphabet = __utils._encodeSequenceOf<
+            asn1.UTF8String
+        >(() => __utils._encodeUTF8String, __utils.BER);
+    }
+    return _cached_encoder_for_PwdAlphabet(value, elGetter);
+}
 
 // TODO: ObjectAssignment: pwdDictionaries
 
@@ -216,8 +288,23 @@ export const _encode_PwdAlphabet = __utils._encodeSequenceOf<asn1.UTF8String>(
 // TODO: ObjectAssignment: pwdEncAlg
 
 export type PwdEncAlg = AlgorithmIdentifier; // DefinedType
-export const _decode_PwdEncAlg = _decode_AlgorithmIdentifier;
-export const _encode_PwdEncAlg = _encode_AlgorithmIdentifier;
+let _cached_decoder_for_PwdEncAlg: __utils.ASN1Decoder<PwdEncAlg> | null = null;
+let _cached_encoder_for_PwdEncAlg: __utils.ASN1Encoder<PwdEncAlg> | null = null;
+export function _decode_PwdEncAlg(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_PwdEncAlg) {
+        _cached_decoder_for_PwdEncAlg = _decode_AlgorithmIdentifier;
+    }
+    return _cached_decoder_for_PwdEncAlg(el);
+}
+export function _encode_PwdEncAlg(
+    value: PwdEncAlg,
+    elGetter: __utils.ASN1Encoder<PwdEncAlg>
+) {
+    if (!_cached_encoder_for_PwdEncAlg) {
+        _cached_encoder_for_PwdEncAlg = _encode_AlgorithmIdentifier;
+    }
+    return _cached_encoder_for_PwdEncAlg(value, elGetter);
+}
 
 // TODO: ObjectAssignment: userPwdMatch
 

@@ -87,8 +87,27 @@ export {
 // TODO: ObjectAssignment: accessControlScheme
 
 export type Precedence = asn1.INTEGER;
-export const _decode_Precedence = __utils._decodeInteger;
-export const _encode_Precedence = __utils._encodeInteger;
+let _cached_decoder_for_Precedence: __utils.ASN1Decoder<
+    Precedence
+> | null = null;
+let _cached_encoder_for_Precedence: __utils.ASN1Encoder<
+    Precedence
+> | null = null;
+export function _decode_Precedence(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_Precedence) {
+        _cached_decoder_for_Precedence = __utils._decodeInteger;
+    }
+    return _cached_decoder_for_Precedence(el);
+}
+export function _encode_Precedence(
+    value: Precedence,
+    elGetter: __utils.ASN1Encoder<Precedence>
+) {
+    if (!_cached_encoder_for_Precedence) {
+        _cached_encoder_for_Precedence = __utils._encodeInteger;
+    }
+    return _cached_encoder_for_Precedence(value, elGetter);
+}
 
 export type AuthenticationLevel_basicLevels_level = asn1.ENUMERATED;
 export const AuthenticationLevel_basicLevels_level_none: AuthenticationLevel_basicLevels_level = 0; /* LONG_NAMED_ENUMERATED_VALUE */
@@ -97,10 +116,34 @@ export const AuthenticationLevel_basicLevels_level_simple: AuthenticationLevel_b
 export const simple: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_simple; /* SHORT_NAMED_ENUMERATED_VALUE */
 export const AuthenticationLevel_basicLevels_level_strong: AuthenticationLevel_basicLevels_level = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 export const strong: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_strong; /* SHORT_NAMED_ENUMERATED_VALUE */
-export const _decode_AuthenticationLevel_basicLevels_level =
-    __utils._decodeEnumerated;
-export const _encode_AuthenticationLevel_basicLevels_level =
-    __utils._encodeEnumerated;
+let _cached_decoder_for_AuthenticationLevel_basicLevels_level: __utils.ASN1Decoder<
+    AuthenticationLevel_basicLevels_level
+> | null = null;
+let _cached_encoder_for_AuthenticationLevel_basicLevels_level: __utils.ASN1Encoder<
+    AuthenticationLevel_basicLevels_level
+> | null = null;
+export function _decode_AuthenticationLevel_basicLevels_level(
+    el: asn1.ASN1Element
+) {
+    if (!_cached_decoder_for_AuthenticationLevel_basicLevels_level) {
+        _cached_decoder_for_AuthenticationLevel_basicLevels_level =
+            __utils._decodeEnumerated;
+    }
+    return _cached_decoder_for_AuthenticationLevel_basicLevels_level(el);
+}
+export function _encode_AuthenticationLevel_basicLevels_level(
+    value: AuthenticationLevel_basicLevels_level,
+    elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels_level>
+) {
+    if (!_cached_encoder_for_AuthenticationLevel_basicLevels_level) {
+        _cached_encoder_for_AuthenticationLevel_basicLevels_level =
+            __utils._encodeEnumerated;
+    }
+    return _cached_encoder_for_AuthenticationLevel_basicLevels_level(
+        value,
+        elGetter
+    );
+}
 
 export class AuthenticationLevel_basicLevels {
     constructor(
@@ -109,6 +152,9 @@ export class AuthenticationLevel_basicLevels {
         readonly signed: asn1.BOOLEAN | undefined,
         readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
     ) {}
+    public static get _default_value_for_signed() {
+        return false;
+    }
 }
 export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
     new __utils.ComponentSpec(
@@ -135,102 +181,146 @@ export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevel
 ];
 export const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
-export const _default_value_for_AuthenticationLevel_basicLevels__signed = false;
-export const _decode_AuthenticationLevel_basicLevels = function (
-    el: asn1.ASN1Element
-): AuthenticationLevel_basicLevels {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let level!: AuthenticationLevel_basicLevels_level;
-    let localQualifier: asn1.OPTIONAL<asn1.INTEGER>;
-    let signed: asn1.OPTIONAL<asn1.BOOLEAN> = _default_value_for_AuthenticationLevel_basicLevels__signed;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        level: (_el: asn1.ASN1Element): void => {
-            level = _decode_AuthenticationLevel_basicLevels_level(_el);
-        },
-        localQualifier: (_el: asn1.ASN1Element): void => {
-            localQualifier = __utils._decodeInteger(_el);
-        },
-        signed: (_el: asn1.ASN1Element): void => {
-            signed = __utils._decodeBoolean(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels,
-        _extension_additions_list_spec_for_AuthenticationLevel_basicLevels,
-        _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new AuthenticationLevel_basicLevels(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ level,
-        localQualifier,
-        signed,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_AuthenticationLevel_basicLevels = function (
+let _cached_decoder_for_AuthenticationLevel_basicLevels: __utils.ASN1Decoder<
+    AuthenticationLevel_basicLevels
+> | null = null;
+let _cached_encoder_for_AuthenticationLevel_basicLevels: __utils.ASN1Encoder<
+    AuthenticationLevel_basicLevels
+> | null = null;
+export function _decode_AuthenticationLevel_basicLevels(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_AuthenticationLevel_basicLevels) {
+        _cached_decoder_for_AuthenticationLevel_basicLevels = function (
+            el: asn1.ASN1Element
+        ): AuthenticationLevel_basicLevels {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let level!: AuthenticationLevel_basicLevels_level;
+            let localQualifier: asn1.OPTIONAL<asn1.INTEGER>;
+            let signed: asn1.OPTIONAL<asn1.BOOLEAN> =
+                AuthenticationLevel_basicLevels._default_value_for_signed;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                level: (_el: asn1.ASN1Element): void => {
+                    level = _decode_AuthenticationLevel_basicLevels_level(_el);
+                },
+                localQualifier: (_el: asn1.ASN1Element): void => {
+                    localQualifier = __utils._decodeInteger(_el);
+                },
+                signed: (_el: asn1.ASN1Element): void => {
+                    signed = __utils._decodeBoolean(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels,
+                _extension_additions_list_spec_for_AuthenticationLevel_basicLevels,
+                _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new AuthenticationLevel_basicLevels(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ level,
+                localQualifier,
+                signed,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_AuthenticationLevel_basicLevels(el);
+}
+export function _encode_AuthenticationLevel_basicLevels(
     value: AuthenticationLevel_basicLevels,
     elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AuthenticationLevel_basicLevels_level(
-                        value.level,
-                        __utils.BER
-                    ),
-                    /* IF_ABSENT  */ value.localQualifier === undefined
-                        ? undefined
-                        : __utils._encodeInteger(
-                              value.localQualifier,
-                              __utils.BER
-                          ),
-                    /* IF_DEFAULT */ value.signed === undefined ||
-                    __utils.deepEq(
-                        value.signed,
-                        _default_value_for_AuthenticationLevel_basicLevels__signed
+) {
+    if (!_cached_encoder_for_AuthenticationLevel_basicLevels) {
+        _cached_encoder_for_AuthenticationLevel_basicLevels = function (
+            value: AuthenticationLevel_basicLevels,
+            elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AuthenticationLevel_basicLevels_level(
+                                value.level,
+                                __utils.BER
+                            ),
+                            /* IF_ABSENT  */ value.localQualifier === undefined
+                                ? undefined
+                                : __utils._encodeInteger(
+                                      value.localQualifier,
+                                      __utils.BER
+                                  ),
+                            /* IF_DEFAULT */ value.signed === undefined ||
+                            __utils.deepEq(
+                                value.signed,
+                                AuthenticationLevel_basicLevels._default_value_for_signed
+                            )
+                                ? undefined
+                                : __utils._encodeBoolean(
+                                      value.signed,
+                                      __utils.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
                     )
-                        ? undefined
-                        : __utils._encodeBoolean(value.signed, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_AuthenticationLevel_basicLevels(value, elGetter);
+}
 
 export type AuthenticationLevel =
-    | { basicLevels: AuthenticationLevel_basicLevels }
-    | { other: asn1.EXTERNAL }
-    | asn1.ASN1Element;
-export const _decode_AuthenticationLevel = __utils._decode_extensible_choice<
+    | { basicLevels: AuthenticationLevel_basicLevels } /* CHOICE_ALT_ROOT */
+    | { other: asn1.EXTERNAL } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_AuthenticationLevel: __utils.ASN1Decoder<
     AuthenticationLevel
->({
-    "UNIVERSAL 16": ["basicLevels", _decode_AuthenticationLevel_basicLevels],
-    "UNIVERSAL 8": ["other", __utils._decodeExternal],
-});
-export const _encode_AuthenticationLevel = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_AuthenticationLevel: __utils.ASN1Encoder<
     AuthenticationLevel
->(
-    {
-        basicLevels: _encode_AuthenticationLevel_basicLevels,
-        other: __utils._encodeExternal,
-    },
-    __utils.BER
-);
+> | null = null;
+export function _decode_AuthenticationLevel(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_AuthenticationLevel) {
+        _cached_decoder_for_AuthenticationLevel = __utils._decode_extensible_choice<
+            AuthenticationLevel
+        >({
+            "UNIVERSAL 16": [
+                "basicLevels",
+                _decode_AuthenticationLevel_basicLevels,
+            ],
+            "UNIVERSAL 8": ["other", __utils._decodeExternal],
+        });
+    }
+    return _cached_decoder_for_AuthenticationLevel(el);
+}
+export function _encode_AuthenticationLevel(
+    value: AuthenticationLevel,
+    elGetter: __utils.ASN1Encoder<AuthenticationLevel>
+) {
+    if (!_cached_encoder_for_AuthenticationLevel) {
+        _cached_encoder_for_AuthenticationLevel = __utils._encode_choice<
+            AuthenticationLevel
+        >(
+            {
+                basicLevels: _encode_AuthenticationLevel_basicLevels,
+                other: __utils._encodeExternal,
+            },
+            __utils.BER
+        );
+    }
+    return _cached_encoder_for_AuthenticationLevel(value, elGetter);
+}
 
 export class MaxValueCount {
     constructor(
@@ -257,55 +347,73 @@ export const _root_component_type_list_1_spec_for_MaxValueCount: __utils.Compone
 ];
 export const _root_component_type_list_2_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
-
-export const _decode_MaxValueCount = function (
-    el: asn1.ASN1Element
-): MaxValueCount {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "MaxValueCount contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_MaxValueCount: __utils.ASN1Decoder<
+    MaxValueCount
+> | null = null;
+let _cached_encoder_for_MaxValueCount: __utils.ASN1Encoder<
+    MaxValueCount
+> | null = null;
+export function _decode_MaxValueCount(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_MaxValueCount) {
+        _cached_decoder_for_MaxValueCount = function (
+            el: asn1.ASN1Element
+        ): MaxValueCount {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "MaxValueCount contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "type";
+            sequence[1].name = "maxCount";
+            let type_!: AttributeType;
+            let maxCount!: asn1.INTEGER;
+            type_ = _decode_AttributeType(sequence[0]);
+            maxCount = __utils._decodeInteger(sequence[1]);
+            // TODO: Validate values.
+            return new MaxValueCount(type_, maxCount, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "type";
-    sequence[1].name = "maxCount";
-    let type_!: AttributeType;
-    let maxCount!: asn1.INTEGER;
-    type_ = _decode_AttributeType(sequence[0]);
-    maxCount = __utils._decodeInteger(sequence[1]);
-    // TODO: Validate values.
-    return new MaxValueCount(type_, maxCount, sequence.slice(2));
-};
-export const _encode_MaxValueCount = function (
+    return _cached_decoder_for_MaxValueCount(el);
+}
+export function _encode_MaxValueCount(
     value: MaxValueCount,
     elGetter: __utils.ASN1Encoder<MaxValueCount>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AttributeType(
-                        value.type_,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeInteger(
-                        value.maxCount,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_MaxValueCount) {
+        _cached_encoder_for_MaxValueCount = function (
+            value: MaxValueCount,
+            elGetter: __utils.ASN1Encoder<MaxValueCount>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AttributeType(
+                                value.type_,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeInteger(
+                                value.maxCount,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_MaxValueCount(value, elGetter);
+}
 
 export class RestrictedValue {
     constructor(
@@ -332,55 +440,73 @@ export const _root_component_type_list_1_spec_for_RestrictedValue: __utils.Compo
 ];
 export const _root_component_type_list_2_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
-
-export const _decode_RestrictedValue = function (
-    el: asn1.ASN1Element
-): RestrictedValue {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "RestrictedValue contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_RestrictedValue: __utils.ASN1Decoder<
+    RestrictedValue
+> | null = null;
+let _cached_encoder_for_RestrictedValue: __utils.ASN1Encoder<
+    RestrictedValue
+> | null = null;
+export function _decode_RestrictedValue(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_RestrictedValue) {
+        _cached_decoder_for_RestrictedValue = function (
+            el: asn1.ASN1Element
+        ): RestrictedValue {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "RestrictedValue contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "type";
+            sequence[1].name = "valuesIn";
+            let type_!: AttributeType;
+            let valuesIn!: AttributeType;
+            type_ = _decode_AttributeType(sequence[0]);
+            valuesIn = _decode_AttributeType(sequence[1]);
+            // TODO: Validate values.
+            return new RestrictedValue(type_, valuesIn, sequence.slice(2));
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "type";
-    sequence[1].name = "valuesIn";
-    let type_!: AttributeType;
-    let valuesIn!: AttributeType;
-    type_ = _decode_AttributeType(sequence[0]);
-    valuesIn = _decode_AttributeType(sequence[1]);
-    // TODO: Validate values.
-    return new RestrictedValue(type_, valuesIn, sequence.slice(2));
-};
-export const _encode_RestrictedValue = function (
+    return _cached_decoder_for_RestrictedValue(el);
+}
+export function _encode_RestrictedValue(
     value: RestrictedValue,
     elGetter: __utils.ASN1Encoder<RestrictedValue>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_AttributeType(
-                        value.type_,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_AttributeType(
-                        value.valuesIn,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_RestrictedValue) {
+        _cached_encoder_for_RestrictedValue = function (
+            value: RestrictedValue,
+            elGetter: __utils.ASN1Encoder<RestrictedValue>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_AttributeType(
+                                value.type_,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_AttributeType(
+                                value.valuesIn,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_RestrictedValue(value, elGetter);
+}
 
 export class ProtectedItems {
     constructor(
@@ -495,281 +621,326 @@ export const _root_component_type_list_1_spec_for_ProtectedItems: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
-
-export const _decode_ProtectedItems = function (
-    el: asn1.ASN1Element
-): ProtectedItems {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let entry: asn1.OPTIONAL<asn1.NULL>;
-    let allUserAttributeTypes: asn1.OPTIONAL<asn1.NULL>;
-    let attributeType: asn1.OPTIONAL<AttributeType[]>;
-    let allAttributeValues: asn1.OPTIONAL<AttributeType[]>;
-    let allUserAttributeTypesAndValues: asn1.OPTIONAL<asn1.NULL>;
-    let attributeValue: asn1.OPTIONAL<AttributeTypeAndValue[]>;
-    let selfValue: asn1.OPTIONAL<AttributeType[]>;
-    let rangeOfValues: asn1.OPTIONAL<Filter>;
-    let maxValueCount: asn1.OPTIONAL<MaxValueCount[]>;
-    let maxImmSub: asn1.OPTIONAL<asn1.INTEGER>;
-    let restrictedBy: asn1.OPTIONAL<RestrictedValue[]>;
-    let contexts: asn1.OPTIONAL<ContextAssertion[]>;
-    let classes: asn1.OPTIONAL<Refinement>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        entry: (_el: asn1.ASN1Element): void => {
-            entry = __utils._decode_explicit<asn1.NULL>(
-                () => __utils._decodeNull
-            )(_el);
-        },
-        allUserAttributeTypes: (_el: asn1.ASN1Element): void => {
-            allUserAttributeTypes = __utils._decode_explicit<asn1.NULL>(
-                () => __utils._decodeNull
-            )(_el);
-        },
-        attributeType: (_el: asn1.ASN1Element): void => {
-            attributeType = __utils._decode_explicit<AttributeType[]>(() =>
-                __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)
-            )(_el);
-        },
-        allAttributeValues: (_el: asn1.ASN1Element): void => {
-            allAttributeValues = __utils._decode_explicit<AttributeType[]>(() =>
-                __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)
-            )(_el);
-        },
-        allUserAttributeTypesAndValues: (_el: asn1.ASN1Element): void => {
-            allUserAttributeTypesAndValues = __utils._decode_explicit<
-                asn1.NULL
-            >(() => __utils._decodeNull)(_el);
-        },
-        attributeValue: (_el: asn1.ASN1Element): void => {
-            attributeValue = __utils._decode_explicit<AttributeTypeAndValue[]>(
-                () =>
-                    __utils._decodeSetOf<AttributeTypeAndValue>(
-                        () => _decode_AttributeTypeAndValue
-                    )
-            )(_el);
-        },
-        selfValue: (_el: asn1.ASN1Element): void => {
-            selfValue = __utils._decode_explicit<AttributeType[]>(() =>
-                __utils._decodeSetOf<AttributeType>(() => _decode_AttributeType)
-            )(_el);
-        },
-        rangeOfValues: (_el: asn1.ASN1Element): void => {
-            rangeOfValues = __utils._decode_explicit<Filter>(
-                () => _decode_Filter
-            )(_el);
-        },
-        maxValueCount: (_el: asn1.ASN1Element): void => {
-            maxValueCount = __utils._decode_explicit<MaxValueCount[]>(() =>
-                __utils._decodeSetOf<MaxValueCount>(() => _decode_MaxValueCount)
-            )(_el);
-        },
-        maxImmSub: (_el: asn1.ASN1Element): void => {
-            maxImmSub = __utils._decode_explicit<asn1.INTEGER>(
-                () => __utils._decodeInteger
-            )(_el);
-        },
-        restrictedBy: (_el: asn1.ASN1Element): void => {
-            restrictedBy = __utils._decode_explicit<RestrictedValue[]>(() =>
-                __utils._decodeSetOf<RestrictedValue>(
-                    () => _decode_RestrictedValue
-                )
-            )(_el);
-        },
-        contexts: (_el: asn1.ASN1Element): void => {
-            contexts = __utils._decode_explicit<ContextAssertion[]>(() =>
-                __utils._decodeSetOf<ContextAssertion>(
-                    () => _decode_ContextAssertion
-                )
-            )(_el);
-        },
-        classes: (_el: asn1.ASN1Element): void => {
-            classes = __utils._decode_explicit<Refinement>(
-                () => _decode_Refinement
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_ProtectedItems,
-        _extension_additions_list_spec_for_ProtectedItems,
-        _root_component_type_list_2_spec_for_ProtectedItems,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new ProtectedItems(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ entry,
-        allUserAttributeTypes,
-        attributeType,
-        allAttributeValues,
-        allUserAttributeTypesAndValues,
-        attributeValue,
-        selfValue,
-        rangeOfValues,
-        maxValueCount,
-        maxImmSub,
-        restrictedBy,
-        contexts,
-        classes,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_ProtectedItems = function (
+let _cached_decoder_for_ProtectedItems: __utils.ASN1Decoder<
+    ProtectedItems
+> | null = null;
+let _cached_encoder_for_ProtectedItems: __utils.ASN1Encoder<
+    ProtectedItems
+> | null = null;
+export function _decode_ProtectedItems(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ProtectedItems) {
+        _cached_decoder_for_ProtectedItems = function (
+            el: asn1.ASN1Element
+        ): ProtectedItems {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let entry: asn1.OPTIONAL<asn1.NULL>;
+            let allUserAttributeTypes: asn1.OPTIONAL<asn1.NULL>;
+            let attributeType: asn1.OPTIONAL<AttributeType[]>;
+            let allAttributeValues: asn1.OPTIONAL<AttributeType[]>;
+            let allUserAttributeTypesAndValues: asn1.OPTIONAL<asn1.NULL>;
+            let attributeValue: asn1.OPTIONAL<AttributeTypeAndValue[]>;
+            let selfValue: asn1.OPTIONAL<AttributeType[]>;
+            let rangeOfValues: asn1.OPTIONAL<Filter>;
+            let maxValueCount: asn1.OPTIONAL<MaxValueCount[]>;
+            let maxImmSub: asn1.OPTIONAL<asn1.INTEGER>;
+            let restrictedBy: asn1.OPTIONAL<RestrictedValue[]>;
+            let contexts: asn1.OPTIONAL<ContextAssertion[]>;
+            let classes: asn1.OPTIONAL<Refinement>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                entry: (_el: asn1.ASN1Element): void => {
+                    entry = __utils._decode_explicit<asn1.NULL>(
+                        () => __utils._decodeNull
+                    )(_el);
+                },
+                allUserAttributeTypes: (_el: asn1.ASN1Element): void => {
+                    allUserAttributeTypes = __utils._decode_explicit<asn1.NULL>(
+                        () => __utils._decodeNull
+                    )(_el);
+                },
+                attributeType: (_el: asn1.ASN1Element): void => {
+                    attributeType = __utils._decode_explicit<AttributeType[]>(
+                        () =>
+                            __utils._decodeSetOf<AttributeType>(
+                                () => _decode_AttributeType
+                            )
+                    )(_el);
+                },
+                allAttributeValues: (_el: asn1.ASN1Element): void => {
+                    allAttributeValues = __utils._decode_explicit<
+                        AttributeType[]
+                    >(() =>
+                        __utils._decodeSetOf<AttributeType>(
+                            () => _decode_AttributeType
+                        )
+                    )(_el);
+                },
+                allUserAttributeTypesAndValues: (
+                    _el: asn1.ASN1Element
+                ): void => {
+                    allUserAttributeTypesAndValues = __utils._decode_explicit<
+                        asn1.NULL
+                    >(() => __utils._decodeNull)(_el);
+                },
+                attributeValue: (_el: asn1.ASN1Element): void => {
+                    attributeValue = __utils._decode_explicit<
+                        AttributeTypeAndValue[]
+                    >(() =>
+                        __utils._decodeSetOf<AttributeTypeAndValue>(
+                            () => _decode_AttributeTypeAndValue
+                        )
+                    )(_el);
+                },
+                selfValue: (_el: asn1.ASN1Element): void => {
+                    selfValue = __utils._decode_explicit<AttributeType[]>(() =>
+                        __utils._decodeSetOf<AttributeType>(
+                            () => _decode_AttributeType
+                        )
+                    )(_el);
+                },
+                rangeOfValues: (_el: asn1.ASN1Element): void => {
+                    rangeOfValues = __utils._decode_explicit<Filter>(
+                        () => _decode_Filter
+                    )(_el);
+                },
+                maxValueCount: (_el: asn1.ASN1Element): void => {
+                    maxValueCount = __utils._decode_explicit<MaxValueCount[]>(
+                        () =>
+                            __utils._decodeSetOf<MaxValueCount>(
+                                () => _decode_MaxValueCount
+                            )
+                    )(_el);
+                },
+                maxImmSub: (_el: asn1.ASN1Element): void => {
+                    maxImmSub = __utils._decode_explicit<asn1.INTEGER>(
+                        () => __utils._decodeInteger
+                    )(_el);
+                },
+                restrictedBy: (_el: asn1.ASN1Element): void => {
+                    restrictedBy = __utils._decode_explicit<RestrictedValue[]>(
+                        () =>
+                            __utils._decodeSetOf<RestrictedValue>(
+                                () => _decode_RestrictedValue
+                            )
+                    )(_el);
+                },
+                contexts: (_el: asn1.ASN1Element): void => {
+                    contexts = __utils._decode_explicit<ContextAssertion[]>(
+                        () =>
+                            __utils._decodeSetOf<ContextAssertion>(
+                                () => _decode_ContextAssertion
+                            )
+                    )(_el);
+                },
+                classes: (_el: asn1.ASN1Element): void => {
+                    classes = __utils._decode_explicit<Refinement>(
+                        () => _decode_Refinement
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ProtectedItems,
+                _extension_additions_list_spec_for_ProtectedItems,
+                _root_component_type_list_2_spec_for_ProtectedItems,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ProtectedItems(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ entry,
+                allUserAttributeTypes,
+                attributeType,
+                allAttributeValues,
+                allUserAttributeTypesAndValues,
+                attributeValue,
+                selfValue,
+                rangeOfValues,
+                maxValueCount,
+                maxImmSub,
+                restrictedBy,
+                contexts,
+                classes,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_ProtectedItems(el);
+}
+export function _encode_ProtectedItems(
     value: ProtectedItems,
     elGetter: __utils.ASN1Encoder<ProtectedItems>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.entry === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeNull,
-                              __utils.BER
-                          )(value.entry, __utils.BER),
-                    /* IF_ABSENT  */ value.allUserAttributeTypes === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeNull,
-                              __utils.BER
-                          )(value.allUserAttributeTypes, __utils.BER),
-                    /* IF_ABSENT  */ value.attributeType === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () =>
-                                  __utils._encodeSetOf<AttributeType>(
-                                      () => _encode_AttributeType,
+) {
+    if (!_cached_encoder_for_ProtectedItems) {
+        _cached_encoder_for_ProtectedItems = function (
+            value: ProtectedItems,
+            elGetter: __utils.ASN1Encoder<ProtectedItems>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.entry === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeNull,
+                                      __utils.BER
+                                  )(value.entry, __utils.BER),
+                            /* IF_ABSENT  */ value.allUserAttributeTypes ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeNull,
+                                      __utils.BER
+                                  )(value.allUserAttributeTypes, __utils.BER),
+                            /* IF_ABSENT  */ value.attributeType === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () =>
+                                          __utils._encodeSetOf<AttributeType>(
+                                              () => _encode_AttributeType,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.attributeType, __utils.BER),
+                            /* IF_ABSENT  */ value.allAttributeValues ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      3,
+                                      () =>
+                                          __utils._encodeSetOf<AttributeType>(
+                                              () => _encode_AttributeType,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.allAttributeValues, __utils.BER),
+                            /* IF_ABSENT  */ value.allUserAttributeTypesAndValues ===
+                            undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      4,
+                                      () => __utils._encodeNull,
+                                      __utils.BER
+                                  )(
+                                      value.allUserAttributeTypesAndValues,
                                       __utils.BER
                                   ),
-                              __utils.BER
-                          )(value.attributeType, __utils.BER),
-                    /* IF_ABSENT  */ value.allAttributeValues === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              3,
-                              () =>
-                                  __utils._encodeSetOf<AttributeType>(
-                                      () => _encode_AttributeType,
+                            /* IF_ABSENT  */ value.attributeValue === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      5,
+                                      () =>
+                                          __utils._encodeSetOf<
+                                              AttributeTypeAndValue
+                                          >(
+                                              () =>
+                                                  _encode_AttributeTypeAndValue,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.allAttributeValues, __utils.BER),
-                    /* IF_ABSENT  */ value.allUserAttributeTypesAndValues ===
-                    undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              4,
-                              () => __utils._encodeNull,
-                              __utils.BER
-                          )(value.allUserAttributeTypesAndValues, __utils.BER),
-                    /* IF_ABSENT  */ value.attributeValue === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              5,
-                              () =>
-                                  __utils._encodeSetOf<AttributeTypeAndValue>(
-                                      () => _encode_AttributeTypeAndValue,
+                                  )(value.attributeValue, __utils.BER),
+                            /* IF_ABSENT  */ value.selfValue === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      6,
+                                      () =>
+                                          __utils._encodeSetOf<AttributeType>(
+                                              () => _encode_AttributeType,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.attributeValue, __utils.BER),
-                    /* IF_ABSENT  */ value.selfValue === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              6,
-                              () =>
-                                  __utils._encodeSetOf<AttributeType>(
-                                      () => _encode_AttributeType,
+                                  )(value.selfValue, __utils.BER),
+                            /* IF_ABSENT  */ value.rangeOfValues === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      7,
+                                      () => _encode_Filter,
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.selfValue, __utils.BER),
-                    /* IF_ABSENT  */ value.rangeOfValues === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              7,
-                              () => _encode_Filter,
-                              __utils.BER
-                          )(value.rangeOfValues, __utils.BER),
-                    /* IF_ABSENT  */ value.maxValueCount === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              8,
-                              () =>
-                                  __utils._encodeSetOf<MaxValueCount>(
-                                      () => _encode_MaxValueCount,
+                                  )(value.rangeOfValues, __utils.BER),
+                            /* IF_ABSENT  */ value.maxValueCount === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      8,
+                                      () =>
+                                          __utils._encodeSetOf<MaxValueCount>(
+                                              () => _encode_MaxValueCount,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.maxValueCount, __utils.BER),
-                    /* IF_ABSENT  */ value.maxImmSub === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              9,
-                              () => __utils._encodeInteger,
-                              __utils.BER
-                          )(value.maxImmSub, __utils.BER),
-                    /* IF_ABSENT  */ value.restrictedBy === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              10,
-                              () =>
-                                  __utils._encodeSetOf<RestrictedValue>(
-                                      () => _encode_RestrictedValue,
+                                  )(value.maxValueCount, __utils.BER),
+                            /* IF_ABSENT  */ value.maxImmSub === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      9,
+                                      () => __utils._encodeInteger,
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.restrictedBy, __utils.BER),
-                    /* IF_ABSENT  */ value.contexts === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              11,
-                              () =>
-                                  __utils._encodeSetOf<ContextAssertion>(
-                                      () => _encode_ContextAssertion,
+                                  )(value.maxImmSub, __utils.BER),
+                            /* IF_ABSENT  */ value.restrictedBy === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      10,
+                                      () =>
+                                          __utils._encodeSetOf<RestrictedValue>(
+                                              () => _encode_RestrictedValue,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.contexts, __utils.BER),
-                    /* IF_ABSENT  */ value.classes === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              12,
-                              () => _encode_Refinement,
-                              __utils.BER
-                          )(value.classes, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                                  )(value.restrictedBy, __utils.BER),
+                            /* IF_ABSENT  */ value.contexts === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      11,
+                                      () =>
+                                          __utils._encodeSetOf<
+                                              ContextAssertion
+                                          >(
+                                              () => _encode_ContextAssertion,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.contexts, __utils.BER),
+                            /* IF_ABSENT  */ value.classes === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      12,
+                                      () => _encode_Refinement,
+                                      __utils.BER
+                                  )(value.classes, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ProtectedItems(value, elGetter);
+}
 
 export class UserClasses {
     constructor(
@@ -820,143 +991,170 @@ export const _root_component_type_list_1_spec_for_UserClasses: __utils.Component
 ];
 export const _root_component_type_list_2_spec_for_UserClasses: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserClasses: __utils.ComponentSpec[] = [];
-
-export const _decode_UserClasses = function (
-    el: asn1.ASN1Element
-): UserClasses {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let allUsers: asn1.OPTIONAL<asn1.NULL>;
-    let thisEntry: asn1.OPTIONAL<asn1.NULL>;
-    let name: asn1.OPTIONAL<NameAndOptionalUID[]>;
-    let userGroup: asn1.OPTIONAL<NameAndOptionalUID[]>;
-    let subtree: asn1.OPTIONAL<SubtreeSpecification[]>;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        allUsers: (_el: asn1.ASN1Element): void => {
-            allUsers = __utils._decode_explicit<asn1.NULL>(
-                () => __utils._decodeNull
-            )(_el);
-        },
-        thisEntry: (_el: asn1.ASN1Element): void => {
-            thisEntry = __utils._decode_explicit<asn1.NULL>(
-                () => __utils._decodeNull
-            )(_el);
-        },
-        name: (_el: asn1.ASN1Element): void => {
-            name = __utils._decode_explicit<NameAndOptionalUID[]>(() =>
-                __utils._decodeSetOf<NameAndOptionalUID>(
-                    () => _decode_NameAndOptionalUID
-                )
-            )(_el);
-        },
-        userGroup: (_el: asn1.ASN1Element): void => {
-            userGroup = __utils._decode_explicit<NameAndOptionalUID[]>(() =>
-                __utils._decodeSetOf<NameAndOptionalUID>(
-                    () => _decode_NameAndOptionalUID
-                )
-            )(_el);
-        },
-        subtree: (_el: asn1.ASN1Element): void => {
-            subtree = __utils._decode_explicit<SubtreeSpecification[]>(() =>
-                __utils._decodeSetOf<SubtreeSpecification>(
-                    () => _decode_SubtreeSpecification
-                )
-            )(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_UserClasses,
-        _extension_additions_list_spec_for_UserClasses,
-        _root_component_type_list_2_spec_for_UserClasses,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new UserClasses(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ allUsers,
-        thisEntry,
-        name,
-        userGroup,
-        subtree,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_UserClasses = function (
+let _cached_decoder_for_UserClasses: __utils.ASN1Decoder<
+    UserClasses
+> | null = null;
+let _cached_encoder_for_UserClasses: __utils.ASN1Encoder<
+    UserClasses
+> | null = null;
+export function _decode_UserClasses(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UserClasses) {
+        _cached_decoder_for_UserClasses = function (
+            el: asn1.ASN1Element
+        ): UserClasses {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let allUsers: asn1.OPTIONAL<asn1.NULL>;
+            let thisEntry: asn1.OPTIONAL<asn1.NULL>;
+            let name: asn1.OPTIONAL<NameAndOptionalUID[]>;
+            let userGroup: asn1.OPTIONAL<NameAndOptionalUID[]>;
+            let subtree: asn1.OPTIONAL<SubtreeSpecification[]>;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                allUsers: (_el: asn1.ASN1Element): void => {
+                    allUsers = __utils._decode_explicit<asn1.NULL>(
+                        () => __utils._decodeNull
+                    )(_el);
+                },
+                thisEntry: (_el: asn1.ASN1Element): void => {
+                    thisEntry = __utils._decode_explicit<asn1.NULL>(
+                        () => __utils._decodeNull
+                    )(_el);
+                },
+                name: (_el: asn1.ASN1Element): void => {
+                    name = __utils._decode_explicit<NameAndOptionalUID[]>(() =>
+                        __utils._decodeSetOf<NameAndOptionalUID>(
+                            () => _decode_NameAndOptionalUID
+                        )
+                    )(_el);
+                },
+                userGroup: (_el: asn1.ASN1Element): void => {
+                    userGroup = __utils._decode_explicit<NameAndOptionalUID[]>(
+                        () =>
+                            __utils._decodeSetOf<NameAndOptionalUID>(
+                                () => _decode_NameAndOptionalUID
+                            )
+                    )(_el);
+                },
+                subtree: (_el: asn1.ASN1Element): void => {
+                    subtree = __utils._decode_explicit<SubtreeSpecification[]>(
+                        () =>
+                            __utils._decodeSetOf<SubtreeSpecification>(
+                                () => _decode_SubtreeSpecification
+                            )
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_UserClasses,
+                _extension_additions_list_spec_for_UserClasses,
+                _root_component_type_list_2_spec_for_UserClasses,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new UserClasses(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ allUsers,
+                thisEntry,
+                name,
+                userGroup,
+                subtree,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_UserClasses(el);
+}
+export function _encode_UserClasses(
     value: UserClasses,
     elGetter: __utils.ASN1Encoder<UserClasses>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.allUsers === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              0,
-                              () => __utils._encodeNull,
-                              __utils.BER
-                          )(value.allUsers, __utils.BER),
-                    /* IF_ABSENT  */ value.thisEntry === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              1,
-                              () => __utils._encodeNull,
-                              __utils.BER
-                          )(value.thisEntry, __utils.BER),
-                    /* IF_ABSENT  */ value.name === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              2,
-                              () =>
-                                  __utils._encodeSetOf<NameAndOptionalUID>(
-                                      () => _encode_NameAndOptionalUID,
+) {
+    if (!_cached_encoder_for_UserClasses) {
+        _cached_encoder_for_UserClasses = function (
+            value: UserClasses,
+            elGetter: __utils.ASN1Encoder<UserClasses>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.allUsers === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      0,
+                                      () => __utils._encodeNull,
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.name, __utils.BER),
-                    /* IF_ABSENT  */ value.userGroup === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              3,
-                              () =>
-                                  __utils._encodeSetOf<NameAndOptionalUID>(
-                                      () => _encode_NameAndOptionalUID,
+                                  )(value.allUsers, __utils.BER),
+                            /* IF_ABSENT  */ value.thisEntry === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      1,
+                                      () => __utils._encodeNull,
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.userGroup, __utils.BER),
-                    /* IF_ABSENT  */ value.subtree === undefined
-                        ? undefined
-                        : __utils._encode_explicit(
-                              asn1.ASN1TagClass.context,
-                              4,
-                              () =>
-                                  __utils._encodeSetOf<SubtreeSpecification>(
-                                      () => _encode_SubtreeSpecification,
+                                  )(value.thisEntry, __utils.BER),
+                            /* IF_ABSENT  */ value.name === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      2,
+                                      () =>
+                                          __utils._encodeSetOf<
+                                              NameAndOptionalUID
+                                          >(
+                                              () => _encode_NameAndOptionalUID,
+                                              __utils.BER
+                                          ),
                                       __utils.BER
-                                  ),
-                              __utils.BER
-                          )(value.subtree, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+                                  )(value.name, __utils.BER),
+                            /* IF_ABSENT  */ value.userGroup === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      3,
+                                      () =>
+                                          __utils._encodeSetOf<
+                                              NameAndOptionalUID
+                                          >(
+                                              () => _encode_NameAndOptionalUID,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.userGroup, __utils.BER),
+                            /* IF_ABSENT  */ value.subtree === undefined
+                                ? undefined
+                                : __utils._encode_explicit(
+                                      asn1.ASN1TagClass.context,
+                                      4,
+                                      () =>
+                                          __utils._encodeSetOf<
+                                              SubtreeSpecification
+                                          >(
+                                              () =>
+                                                  _encode_SubtreeSpecification,
+                                              __utils.BER
+                                          ),
+                                      __utils.BER
+                                  )(value.subtree, __utils.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UserClasses(value, elGetter);
+}
 
 export type GrantsAndDenials = asn1.BIT_STRING;
 export const GrantsAndDenials_grantAdd: number = 0; /* LONG_NAMED_BIT */
@@ -1011,8 +1209,27 @@ export const GrantsAndDenials_grantInvoke: number = 24; /* LONG_NAMED_BIT */
 export const grantInvoke: number = GrantsAndDenials_grantInvoke; /* SHORT_NAMED_BIT */
 export const GrantsAndDenials_denyInvoke: number = 25; /* LONG_NAMED_BIT */
 export const denyInvoke: number = GrantsAndDenials_denyInvoke; /* SHORT_NAMED_BIT */
-export const _decode_GrantsAndDenials = __utils._decodeBitString;
-export const _encode_GrantsAndDenials = __utils._encodeBitString;
+let _cached_decoder_for_GrantsAndDenials: __utils.ASN1Decoder<
+    GrantsAndDenials
+> | null = null;
+let _cached_encoder_for_GrantsAndDenials: __utils.ASN1Encoder<
+    GrantsAndDenials
+> | null = null;
+export function _decode_GrantsAndDenials(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_GrantsAndDenials) {
+        _cached_decoder_for_GrantsAndDenials = __utils._decodeBitString;
+    }
+    return _cached_decoder_for_GrantsAndDenials(el);
+}
+export function _encode_GrantsAndDenials(
+    value: GrantsAndDenials,
+    elGetter: __utils.ASN1Encoder<GrantsAndDenials>
+) {
+    if (!_cached_encoder_for_GrantsAndDenials) {
+        _cached_encoder_for_GrantsAndDenials = __utils._encodeBitString;
+    }
+    return _cached_encoder_for_GrantsAndDenials(value, elGetter);
+}
 
 export class ItemPermission {
     constructor(
@@ -1047,76 +1264,97 @@ export const _root_component_type_list_1_spec_for_ItemPermission: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
-
-export const _decode_ItemPermission = function (
-    el: asn1.ASN1Element
-): ItemPermission {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let precedence: asn1.OPTIONAL<Precedence>;
-    let userClasses!: UserClasses;
-    let grantsAndDenials!: GrantsAndDenials;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        precedence: (_el: asn1.ASN1Element): void => {
-            precedence = _decode_Precedence(_el);
-        },
-        userClasses: (_el: asn1.ASN1Element): void => {
-            userClasses = _decode_UserClasses(_el);
-        },
-        grantsAndDenials: (_el: asn1.ASN1Element): void => {
-            grantsAndDenials = _decode_GrantsAndDenials(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_ItemPermission,
-        _extension_additions_list_spec_for_ItemPermission,
-        _root_component_type_list_2_spec_for_ItemPermission,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new ItemPermission(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
-        userClasses,
-        grantsAndDenials,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_ItemPermission = function (
+let _cached_decoder_for_ItemPermission: __utils.ASN1Decoder<
+    ItemPermission
+> | null = null;
+let _cached_encoder_for_ItemPermission: __utils.ASN1Encoder<
+    ItemPermission
+> | null = null;
+export function _decode_ItemPermission(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ItemPermission) {
+        _cached_decoder_for_ItemPermission = function (
+            el: asn1.ASN1Element
+        ): ItemPermission {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let precedence: asn1.OPTIONAL<Precedence>;
+            let userClasses!: UserClasses;
+            let grantsAndDenials!: GrantsAndDenials;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                precedence: (_el: asn1.ASN1Element): void => {
+                    precedence = _decode_Precedence(_el);
+                },
+                userClasses: (_el: asn1.ASN1Element): void => {
+                    userClasses = _decode_UserClasses(_el);
+                },
+                grantsAndDenials: (_el: asn1.ASN1Element): void => {
+                    grantsAndDenials = _decode_GrantsAndDenials(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ItemPermission,
+                _extension_additions_list_spec_for_ItemPermission,
+                _root_component_type_list_2_spec_for_ItemPermission,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ItemPermission(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
+                userClasses,
+                grantsAndDenials,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_ItemPermission(el);
+}
+export function _encode_ItemPermission(
     value: ItemPermission,
     elGetter: __utils.ASN1Encoder<ItemPermission>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.precedence === undefined
-                        ? undefined
-                        : _encode_Precedence(value.precedence, __utils.BER),
-                    /* REQUIRED   */ _encode_UserClasses(
-                        value.userClasses,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_GrantsAndDenials(
-                        value.grantsAndDenials,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_ItemPermission) {
+        _cached_encoder_for_ItemPermission = function (
+            value: ItemPermission,
+            elGetter: __utils.ASN1Encoder<ItemPermission>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.precedence === undefined
+                                ? undefined
+                                : _encode_Precedence(
+                                      value.precedence,
+                                      __utils.BER
+                                  ),
+                            /* REQUIRED   */ _encode_UserClasses(
+                                value.userClasses,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_GrantsAndDenials(
+                                value.grantsAndDenials,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ItemPermission(value, elGetter);
+}
 
 export class ACIItem_itemOrUserFirst_itemFirst {
     constructor(
@@ -1143,61 +1381,86 @@ export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFi
 ];
 export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
-
-export const _decode_ACIItem_itemOrUserFirst_itemFirst = function (
+let _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ASN1Decoder<
+    ACIItem_itemOrUserFirst_itemFirst
+> | null = null;
+let _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ASN1Encoder<
+    ACIItem_itemOrUserFirst_itemFirst
+> | null = null;
+export function _decode_ACIItem_itemOrUserFirst_itemFirst(
     el: asn1.ASN1Element
-): ACIItem_itemOrUserFirst_itemFirst {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "ACIItem-itemOrUserFirst-itemFirst contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+) {
+    if (!_cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst) {
+        _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst = function (
+            el: asn1.ASN1Element
+        ): ACIItem_itemOrUserFirst_itemFirst {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "ACIItem-itemOrUserFirst-itemFirst contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "protectedItems";
+            sequence[1].name = "itemPermissions";
+            let protectedItems!: ProtectedItems;
+            let itemPermissions!: ItemPermission[];
+            protectedItems = _decode_ProtectedItems(sequence[0]);
+            itemPermissions = __utils._decodeSetOf<ItemPermission>(
+                () => _decode_ItemPermission
+            )(sequence[1]);
+            // TODO: Validate values.
+            return new ACIItem_itemOrUserFirst_itemFirst(
+                protectedItems,
+                itemPermissions,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "protectedItems";
-    sequence[1].name = "itemPermissions";
-    let protectedItems!: ProtectedItems;
-    let itemPermissions!: ItemPermission[];
-    protectedItems = _decode_ProtectedItems(sequence[0]);
-    itemPermissions = __utils._decodeSetOf<ItemPermission>(
-        () => _decode_ItemPermission
-    )(sequence[1]);
-    // TODO: Validate values.
-    return new ACIItem_itemOrUserFirst_itemFirst(
-        protectedItems,
-        itemPermissions,
-        sequence.slice(2)
-    );
-};
-export const _encode_ACIItem_itemOrUserFirst_itemFirst = function (
+    return _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst(el);
+}
+export function _encode_ACIItem_itemOrUserFirst_itemFirst(
     value: ACIItem_itemOrUserFirst_itemFirst,
     elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_ProtectedItems(
-                        value.protectedItems,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeSetOf<ItemPermission>(
-                        () => _encode_ItemPermission,
-                        __utils.BER
-                    )(value.itemPermissions, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
+) {
+    if (!_cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst) {
+        _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst = function (
+            value: ACIItem_itemOrUserFirst_itemFirst,
+            elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_ProtectedItems(
+                                value.protectedItems,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeSetOf<
+                                ItemPermission
+                            >(() => _encode_ItemPermission, __utils.BER)(
+                                value.itemPermissions,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst(
+        value,
+        elGetter
     );
-};
+}
 
 export class UserPermission {
     constructor(
@@ -1232,76 +1495,97 @@ export const _root_component_type_list_1_spec_for_UserPermission: __utils.Compon
 ];
 export const _root_component_type_list_2_spec_for_UserPermission: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_UserPermission: __utils.ComponentSpec[] = [];
-
-export const _decode_UserPermission = function (
-    el: asn1.ASN1Element
-): UserPermission {
-    /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    let precedence: asn1.OPTIONAL<Precedence>;
-    let protectedItems!: ProtectedItems;
-    let grantsAndDenials!: GrantsAndDenials;
-    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-    /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-    /* START_OF_CALLBACKS_MAP */
-    const callbacks: __utils.DecodingMap = {
-        precedence: (_el: asn1.ASN1Element): void => {
-            precedence = _decode_Precedence(_el);
-        },
-        protectedItems: (_el: asn1.ASN1Element): void => {
-            protectedItems = _decode_ProtectedItems(_el);
-        },
-        grantsAndDenials: (_el: asn1.ASN1Element): void => {
-            grantsAndDenials = _decode_GrantsAndDenials(_el);
-        },
-    };
-    /* END_OF_CALLBACKS_MAP */
-    __utils._parse_sequence(
-        el,
-        callbacks,
-        _root_component_type_list_1_spec_for_UserPermission,
-        _extension_additions_list_spec_for_UserPermission,
-        _root_component_type_list_2_spec_for_UserPermission,
-        (ext: asn1.ASN1Element): void => {
-            _unrecognizedExtensionsList.push(ext);
-        }
-    );
-    return new UserPermission(
-        /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
-        protectedItems,
-        grantsAndDenials,
-        _unrecognizedExtensionsList
-    );
-};
-export const _encode_UserPermission = function (
+let _cached_decoder_for_UserPermission: __utils.ASN1Decoder<
+    UserPermission
+> | null = null;
+let _cached_encoder_for_UserPermission: __utils.ASN1Encoder<
+    UserPermission
+> | null = null;
+export function _decode_UserPermission(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_UserPermission) {
+        _cached_decoder_for_UserPermission = function (
+            el: asn1.ASN1Element
+        ): UserPermission {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let precedence: asn1.OPTIONAL<Precedence>;
+            let protectedItems!: ProtectedItems;
+            let grantsAndDenials!: GrantsAndDenials;
+            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: __utils.DecodingMap = {
+                precedence: (_el: asn1.ASN1Element): void => {
+                    precedence = _decode_Precedence(_el);
+                },
+                protectedItems: (_el: asn1.ASN1Element): void => {
+                    protectedItems = _decode_ProtectedItems(_el);
+                },
+                grantsAndDenials: (_el: asn1.ASN1Element): void => {
+                    grantsAndDenials = _decode_GrantsAndDenials(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            __utils._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_UserPermission,
+                _extension_additions_list_spec_for_UserPermission,
+                _root_component_type_list_2_spec_for_UserPermission,
+                (ext: asn1.ASN1Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new UserPermission(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
+                protectedItems,
+                grantsAndDenials,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_UserPermission(el);
+}
+export function _encode_UserPermission(
     value: UserPermission,
     elGetter: __utils.ASN1Encoder<UserPermission>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* IF_ABSENT  */ value.precedence === undefined
-                        ? undefined
-                        : _encode_Precedence(value.precedence, __utils.BER),
-                    /* REQUIRED   */ _encode_ProtectedItems(
-                        value.protectedItems,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_GrantsAndDenials(
-                        value.grantsAndDenials,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_UserPermission) {
+        _cached_encoder_for_UserPermission = function (
+            value: UserPermission,
+            elGetter: __utils.ASN1Encoder<UserPermission>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_ABSENT  */ value.precedence === undefined
+                                ? undefined
+                                : _encode_Precedence(
+                                      value.precedence,
+                                      __utils.BER
+                                  ),
+                            /* REQUIRED   */ _encode_ProtectedItems(
+                                value.protectedItems,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_GrantsAndDenials(
+                                value.grantsAndDenials,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UserPermission(value, elGetter);
+}
 
 export class ACIItem_itemOrUserFirst_userFirst {
     constructor(
@@ -1328,101 +1612,145 @@ export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFi
 ];
 export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
-
-export const _decode_ACIItem_itemOrUserFirst_userFirst = function (
+let _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst: __utils.ASN1Decoder<
+    ACIItem_itemOrUserFirst_userFirst
+> | null = null;
+let _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst: __utils.ASN1Encoder<
+    ACIItem_itemOrUserFirst_userFirst
+> | null = null;
+export function _decode_ACIItem_itemOrUserFirst_userFirst(
     el: asn1.ASN1Element
-): ACIItem_itemOrUserFirst_userFirst {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 2) {
-        throw new asn1.ASN1ConstructionError(
-            "ACIItem-itemOrUserFirst-userFirst contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+) {
+    if (!_cached_decoder_for_ACIItem_itemOrUserFirst_userFirst) {
+        _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst = function (
+            el: asn1.ASN1Element
+        ): ACIItem_itemOrUserFirst_userFirst {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new asn1.ASN1ConstructionError(
+                    "ACIItem-itemOrUserFirst-userFirst contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "userClasses";
+            sequence[1].name = "userPermissions";
+            let userClasses!: UserClasses;
+            let userPermissions!: UserPermission[];
+            userClasses = _decode_UserClasses(sequence[0]);
+            userPermissions = __utils._decodeSetOf<UserPermission>(
+                () => _decode_UserPermission
+            )(sequence[1]);
+            // TODO: Validate values.
+            return new ACIItem_itemOrUserFirst_userFirst(
+                userClasses,
+                userPermissions,
+                sequence.slice(2)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "userClasses";
-    sequence[1].name = "userPermissions";
-    let userClasses!: UserClasses;
-    let userPermissions!: UserPermission[];
-    userClasses = _decode_UserClasses(sequence[0]);
-    userPermissions = __utils._decodeSetOf<UserPermission>(
-        () => _decode_UserPermission
-    )(sequence[1]);
-    // TODO: Validate values.
-    return new ACIItem_itemOrUserFirst_userFirst(
-        userClasses,
-        userPermissions,
-        sequence.slice(2)
-    );
-};
-export const _encode_ACIItem_itemOrUserFirst_userFirst = function (
+    return _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst(el);
+}
+export function _encode_ACIItem_itemOrUserFirst_userFirst(
     value: ACIItem_itemOrUserFirst_userFirst,
     elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_UserClasses(
-                        value.userClasses,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ __utils._encodeSetOf<UserPermission>(
-                        () => _encode_UserPermission,
-                        __utils.BER
-                    )(value.userPermissions, __utils.BER),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
+) {
+    if (!_cached_encoder_for_ACIItem_itemOrUserFirst_userFirst) {
+        _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst = function (
+            value: ACIItem_itemOrUserFirst_userFirst,
+            elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_UserClasses(
+                                value.userClasses,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ __utils._encodeSetOf<
+                                UserPermission
+                            >(() => _encode_UserPermission, __utils.BER)(
+                                value.userPermissions,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst(
+        value,
+        elGetter
     );
-};
+}
 
 export type ACIItem_itemOrUserFirst =
-    | { itemFirst: ACIItem_itemOrUserFirst_itemFirst }
-    | { userFirst: ACIItem_itemOrUserFirst_userFirst }
-    | asn1.ASN1Element;
-export const _decode_ACIItem_itemOrUserFirst = __utils._decode_extensible_choice<
+    | { itemFirst: ACIItem_itemOrUserFirst_itemFirst } /* CHOICE_ALT_ROOT */
+    | { userFirst: ACIItem_itemOrUserFirst_userFirst } /* CHOICE_ALT_ROOT */
+    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_ACIItem_itemOrUserFirst: __utils.ASN1Decoder<
     ACIItem_itemOrUserFirst
->({
-    "CONTEXT 0": [
-        "itemFirst",
-        __utils._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
-            () => _decode_ACIItem_itemOrUserFirst_itemFirst
-        ),
-    ],
-    "CONTEXT 1": [
-        "userFirst",
-        __utils._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
-            () => _decode_ACIItem_itemOrUserFirst_userFirst
-        ),
-    ],
-});
-export const _encode_ACIItem_itemOrUserFirst = __utils._encode_choice<
+> | null = null;
+let _cached_encoder_for_ACIItem_itemOrUserFirst: __utils.ASN1Encoder<
     ACIItem_itemOrUserFirst
->(
-    {
-        itemFirst: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            0,
-            () => _encode_ACIItem_itemOrUserFirst_itemFirst,
+> | null = null;
+export function _decode_ACIItem_itemOrUserFirst(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ACIItem_itemOrUserFirst) {
+        _cached_decoder_for_ACIItem_itemOrUserFirst = __utils._decode_extensible_choice<
+            ACIItem_itemOrUserFirst
+        >({
+            "CONTEXT 0": [
+                "itemFirst",
+                __utils._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
+                    () => _decode_ACIItem_itemOrUserFirst_itemFirst
+                ),
+            ],
+            "CONTEXT 1": [
+                "userFirst",
+                __utils._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
+                    () => _decode_ACIItem_itemOrUserFirst_userFirst
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_ACIItem_itemOrUserFirst(el);
+}
+export function _encode_ACIItem_itemOrUserFirst(
+    value: ACIItem_itemOrUserFirst,
+    elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst>
+) {
+    if (!_cached_encoder_for_ACIItem_itemOrUserFirst) {
+        _cached_encoder_for_ACIItem_itemOrUserFirst = __utils._encode_choice<
+            ACIItem_itemOrUserFirst
+        >(
+            {
+                itemFirst: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    0,
+                    () => _encode_ACIItem_itemOrUserFirst_itemFirst,
+                    __utils.BER
+                ),
+                userFirst: __utils._encode_explicit(
+                    asn1.ASN1TagClass.context,
+                    1,
+                    () => _encode_ACIItem_itemOrUserFirst_userFirst,
+                    __utils.BER
+                ),
+            },
             __utils.BER
-        ),
-        userFirst: __utils._encode_explicit(
-            asn1.ASN1TagClass.context,
-            1,
-            () => _encode_ACIItem_itemOrUserFirst_userFirst,
-            __utils.BER
-        ),
-    },
-    __utils.BER
-);
+        );
+    }
+    return _cached_encoder_for_ACIItem_itemOrUserFirst(value, elGetter);
+}
 
 export class ACIItem {
     constructor(
@@ -1465,73 +1793,87 @@ export const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec
 ];
 export const _root_component_type_list_2_spec_for_ACIItem: __utils.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_ACIItem: __utils.ComponentSpec[] = [];
-
-export const _decode_ACIItem = function (el: asn1.ASN1Element): ACIItem {
-    const sequence: asn1.ASN1Element[] = el.sequence;
-    if (sequence.length < 4) {
-        throw new asn1.ASN1ConstructionError(
-            "ACIItem contained only " +
-                sequence.length.toString() +
-                " elements."
-        );
+let _cached_decoder_for_ACIItem: __utils.ASN1Decoder<ACIItem> | null = null;
+let _cached_encoder_for_ACIItem: __utils.ASN1Encoder<ACIItem> | null = null;
+export function _decode_ACIItem(el: asn1.ASN1Element) {
+    if (!_cached_decoder_for_ACIItem) {
+        _cached_decoder_for_ACIItem = function (el: asn1.ASN1Element): ACIItem {
+            const sequence: asn1.ASN1Element[] = el.sequence;
+            if (sequence.length < 4) {
+                throw new asn1.ASN1ConstructionError(
+                    "ACIItem contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            // TODO: Validate tags.
+            sequence[0].name = "identificationTag";
+            sequence[1].name = "precedence";
+            sequence[2].name = "authenticationLevel";
+            sequence[3].name = "itemOrUserFirst";
+            let identificationTag!: UnboundedDirectoryString;
+            let precedence!: Precedence;
+            let authenticationLevel!: AuthenticationLevel;
+            let itemOrUserFirst!: ACIItem_itemOrUserFirst;
+            identificationTag = _decode_UnboundedDirectoryString(sequence[0]);
+            precedence = _decode_Precedence(sequence[1]);
+            authenticationLevel = _decode_AuthenticationLevel(sequence[2]);
+            itemOrUserFirst = _decode_ACIItem_itemOrUserFirst(sequence[3]);
+            // TODO: Validate values.
+            return new ACIItem(
+                identificationTag,
+                precedence,
+                authenticationLevel,
+                itemOrUserFirst,
+                sequence.slice(4)
+            );
+        };
     }
-    // TODO: Validate tags.
-    sequence[0].name = "identificationTag";
-    sequence[1].name = "precedence";
-    sequence[2].name = "authenticationLevel";
-    sequence[3].name = "itemOrUserFirst";
-    let identificationTag!: UnboundedDirectoryString;
-    let precedence!: Precedence;
-    let authenticationLevel!: AuthenticationLevel;
-    let itemOrUserFirst!: ACIItem_itemOrUserFirst;
-    identificationTag = _decode_UnboundedDirectoryString(sequence[0]);
-    precedence = _decode_Precedence(sequence[1]);
-    authenticationLevel = _decode_AuthenticationLevel(sequence[2]);
-    itemOrUserFirst = _decode_ACIItem_itemOrUserFirst(sequence[3]);
-    // TODO: Validate values.
-    return new ACIItem(
-        identificationTag,
-        precedence,
-        authenticationLevel,
-        itemOrUserFirst,
-        sequence.slice(4)
-    );
-};
-export const _encode_ACIItem = function (
+    return _cached_decoder_for_ACIItem(el);
+}
+export function _encode_ACIItem(
     value: ACIItem,
     elGetter: __utils.ASN1Encoder<ACIItem>
-): asn1.ASN1Element {
-    return __utils._encodeSequence(
-        ([] as (asn1.ASN1Element | undefined)[])
-            .concat(
-                [
-                    /* REQUIRED   */ _encode_UnboundedDirectoryString(
-                        value.identificationTag,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_Precedence(
-                        value.precedence,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_AuthenticationLevel(
-                        value.authenticationLevel,
-                        __utils.BER
-                    ),
-                    /* REQUIRED   */ _encode_ACIItem_itemOrUserFirst(
-                        value.itemOrUserFirst,
-                        __utils.BER
-                    ),
-                ],
-                value._unrecognizedExtensionsList
-                    ? value._unrecognizedExtensionsList
-                    : []
-            )
-            .filter(
-                (c: asn1.ASN1Element | undefined): boolean => !!c
-            ) as asn1.ASN1Element[],
-        __utils.BER
-    );
-};
+) {
+    if (!_cached_encoder_for_ACIItem) {
+        _cached_encoder_for_ACIItem = function (
+            value: ACIItem,
+            elGetter: __utils.ASN1Encoder<ACIItem>
+        ): asn1.ASN1Element {
+            return __utils._encodeSequence(
+                ([] as (asn1.ASN1Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_UnboundedDirectoryString(
+                                value.identificationTag,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_Precedence(
+                                value.precedence,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_AuthenticationLevel(
+                                value.authenticationLevel,
+                                __utils.BER
+                            ),
+                            /* REQUIRED   */ _encode_ACIItem_itemOrUserFirst(
+                                value.itemOrUserFirst,
+                                __utils.BER
+                            ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter(
+                        (c: asn1.ASN1Element | undefined): boolean => !!c
+                    ) as asn1.ASN1Element[],
+                __utils.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ACIItem(value, elGetter);
+}
 
 // TODO: ObjectAssignment: prescriptiveACI
 
