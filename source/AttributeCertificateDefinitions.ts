@@ -267,17 +267,17 @@ export function _encode_IssuerSerial(
                         [
                             /* REQUIRED   */ _encode_GeneralNames(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serial,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.issuerUID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUID,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -287,7 +287,7 @@ export function _encode_IssuerSerial(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -453,22 +453,22 @@ export function _encode_ObjectDigestInfo(
                         [
                             /* REQUIRED   */ _encode_ObjectDigestInfo_digestedObjectType(
                                 value.digestedObjectType,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.otherObjectTypeID ===
                             undefined
                                 ? undefined
                                 : __utils._encodeObjectIdentifier(
                                       value.otherObjectTypeID,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.digestAlgorithm,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeBitString(
                                 value.objectDigest,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -478,7 +478,7 @@ export function _encode_ObjectDigestInfo(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -581,29 +581,29 @@ export function _encode_Holder(
                                   asn1.ASN1TagClass.context,
                                   0,
                                   () => _encode_IssuerSerial,
-                                  __utils.BER
-                              )(value.baseCertificateID, __utils.BER),
+                                  __utils.DER
+                              )(value.baseCertificateID, __utils.DER),
                         /* IF_ABSENT  */ value.entityName === undefined
                             ? undefined
                             : __utils._encode_implicit(
                                   asn1.ASN1TagClass.context,
                                   1,
                                   () => _encode_GeneralNames,
-                                  __utils.BER
-                              )(value.entityName, __utils.BER),
+                                  __utils.DER
+                              )(value.entityName, __utils.DER),
                         /* IF_ABSENT  */ value.objectDigestInfo === undefined
                             ? undefined
                             : __utils._encode_implicit(
                                   asn1.ASN1TagClass.context,
                                   2,
                                   () => _encode_ObjectDigestInfo,
-                                  __utils.BER
-                              )(value.objectDigestInfo, __utils.BER),
+                                  __utils.DER
+                              )(value.objectDigestInfo, __utils.DER),
                     ])
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -722,7 +722,7 @@ export function _encode_AttCertIssuer(
                                         ? undefined
                                         : _encode_GeneralNames(
                                               value.issuerName,
-                                              __utils.BER
+                                              __utils.DER
                                           ),
                                     /* IF_ABSENT  */ value.baseCertificateID ===
                                     undefined
@@ -731,10 +731,10 @@ export function _encode_AttCertIssuer(
                                               asn1.ASN1TagClass.context,
                                               0,
                                               () => _encode_IssuerSerial,
-                                              __utils.BER
+                                              __utils.DER
                                           )(
                                               value.baseCertificateID,
-                                              __utils.BER
+                                              __utils.DER
                                           ),
                                     /* IF_ABSENT  */ value.objectDigestInfo ===
                                     undefined
@@ -743,10 +743,10 @@ export function _encode_AttCertIssuer(
                                               asn1.ASN1TagClass.context,
                                               1,
                                               () => _encode_ObjectDigestInfo,
-                                              __utils.BER
+                                              __utils.DER
                                           )(
                                               value.objectDigestInfo,
-                                              __utils.BER
+                                              __utils.DER
                                           ),
                                 ],
                                 value._unrecognizedExtensionsList
@@ -757,10 +757,10 @@ export function _encode_AttCertIssuer(
                                 (c: asn1.ASN1Element | undefined): boolean =>
                                     !!c
                             ) as asn1.ASN1Element[],
-                        __utils.BER
+                        __utils.DER
                     );
                 },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_AttCertIssuer(value, elGetter);
@@ -842,11 +842,11 @@ export function _encode_AttCertValidityPeriod(
                         [
                             /* REQUIRED   */ __utils._encodeGeneralizedTime(
                                 value.notBeforeTime,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeGeneralizedTime(
                                 value.notAfterTime,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -856,7 +856,7 @@ export function _encode_AttCertValidityPeriod(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1042,39 +1042,39 @@ export function _encode_TBSAttributeCertificate(
                         [
                             /* REQUIRED   */ _encode_AttCertVersion(
                                 value.version,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Holder(
                                 value.holder,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_AttCertValidityPeriod(
                                 value.attrCertValidityPeriod,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeSequenceOf<
                                 Attribute
-                            >(() => _encode_Attribute, __utils.BER)(
+                            >(() => _encode_Attribute, __utils.DER)(
                                 value.attributes,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.issuerUniqueID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUniqueID,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -1085,14 +1085,14 @@ export function _encode_TBSAttributeCertificate(
                                 ? undefined
                                 : _encode_Extensions(
                                       value.extensions,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ]
                     )
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1219,8 +1219,8 @@ export function _encode_ACPathData(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Certificate,
-                                      __utils.BER
-                                  )(value.certificate, __utils.BER),
+                                      __utils.DER
+                                  )(value.certificate, __utils.DER),
                             /* IF_ABSENT  */ value.attributeCertificate ===
                             undefined
                                 ? undefined
@@ -1228,8 +1228,8 @@ export function _encode_ACPathData(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_AttributeCertificate,
-                                      __utils.BER
-                                  )(value.attributeCertificate, __utils.BER),
+                                      __utils.DER
+                                  )(value.attributeCertificate, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1238,7 +1238,7 @@ export function _encode_ACPathData(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1332,14 +1332,14 @@ export function _encode_AttributeCertificationPath(
                         [
                             /* REQUIRED   */ _encode_AttributeCertificate(
                                 value.attributeCertificate,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.acPath === undefined
                                 ? undefined
                                 : __utils._encodeSequenceOf<ACPathData>(
                                       () => _encode_ACPathData,
-                                      __utils.BER
-                                  )(value.acPath, __utils.BER),
+                                      __utils.DER
+                                  )(value.acPath, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1348,7 +1348,7 @@ export function _encode_AttributeCertificationPath(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1450,14 +1450,14 @@ export function _encode_RoleSyntax(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_GeneralNames,
-                                      __utils.BER
-                                  )(value.roleAuthority, __utils.BER),
+                                      __utils.DER
+                                  )(value.roleAuthority, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.BER
-                            )(value.roleName, __utils.BER),
+                                __utils.DER
+                            )(value.roleName, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1466,7 +1466,7 @@ export function _encode_RoleSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1555,14 +1555,14 @@ export function _encode_DualStringSyntax(
                                 asn1.ASN1TagClass.context,
                                 0,
                                 () => _encode_UnboundedDirectoryString,
-                                __utils.BER
-                            )(value.operation, __utils.BER),
+                                __utils.DER
+                            )(value.operation, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_UnboundedDirectoryString,
-                                __utils.BER
-                            )(value.object, __utils.BER),
+                                __utils.DER
+                            )(value.object, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1571,7 +1571,7 @@ export function _encode_DualStringSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1678,25 +1678,25 @@ export function _encode_TargetCert(
                     .concat([
                         /* REQUIRED   */ _encode_IssuerSerial(
                             value.targetCertificate,
-                            __utils.BER
+                            __utils.DER
                         ),
                         /* IF_ABSENT  */ value.targetName === undefined
                             ? undefined
                             : _encode_GeneralName(
                                   value.targetName,
-                                  __utils.BER
+                                  __utils.DER
                               ),
                         /* IF_ABSENT  */ value.certDigestInfo === undefined
                             ? undefined
                             : _encode_ObjectDigestInfo(
                                   value.certDigestInfo,
-                                  __utils.BER
+                                  __utils.DER
                               ),
                     ])
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1744,22 +1744,22 @@ export function _encode_Target(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_GeneralName,
-                    __utils.BER
+                    __utils.DER
                 ),
                 targetGroup: __utils._encode_implicit(
                     asn1.ASN1TagClass.context,
                     1,
                     () => _encode_GeneralName,
-                    __utils.BER
+                    __utils.DER
                 ),
                 targetCert: __utils._encode_implicit(
                     asn1.ASN1TagClass.context,
                     2,
                     () => _encode_TargetCert,
-                    __utils.BER
+                    __utils.DER
                 ),
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_Target(value, elGetter);
@@ -1783,7 +1783,7 @@ export function _encode_Targets(
     if (!_cached_encoder_for_Targets) {
         _cached_encoder_for_Targets = __utils._encodeSequenceOf<Target>(
             () => _encode_Target,
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_Targets(value, elGetter);
@@ -1840,7 +1840,7 @@ export function _encode_AcceptablePrivilegePoliciesSyntax(
     if (!_cached_encoder_for_AcceptablePrivilegePoliciesSyntax) {
         _cached_encoder_for_AcceptablePrivilegePoliciesSyntax = __utils._encodeSequenceOf<
             PrivilegePolicy
-        >(() => _encode_PrivilegePolicy, __utils.BER);
+        >(() => _encode_PrivilegePolicy, __utils.DER);
     }
     return _cached_encoder_for_AcceptablePrivilegePoliciesSyntax(
         value,
@@ -2007,11 +2007,11 @@ export function _encode_PrivilegePolicyIdentifier(
                         [
                             /* REQUIRED   */ _encode_PrivilegePolicy(
                                 value.privilegePolicy,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_InfoSyntax(
                                 value.privPolSyntax,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -2021,7 +2021,7 @@ export function _encode_PrivilegePolicyIdentifier(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2156,11 +2156,11 @@ export function _encode_AttributeDescriptorSyntax(
                         [
                             /* REQUIRED   */ _encode_AttributeIdentifier(
                                 value.identifier,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeOctetString(
                                 value.attributeSyntax,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.name === undefined
                                 ? undefined
@@ -2168,19 +2168,19 @@ export function _encode_AttributeDescriptorSyntax(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_AttributeName,
-                                      __utils.BER
-                                  )(value.name, __utils.BER),
+                                      __utils.DER
+                                  )(value.name, __utils.DER),
                             /* IF_ABSENT  */ value.description === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_AttributeDescription,
-                                      __utils.BER
-                                  )(value.description, __utils.BER),
+                                      __utils.DER
+                                  )(value.description, __utils.DER),
                             /* REQUIRED   */ _encode_PrivilegePolicyIdentifier(
                                 value.dominationRule,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -2190,7 +2190,7 @@ export function _encode_AttributeDescriptorSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2324,14 +2324,14 @@ export function _encode_RoleSpecCertIdentifier(
                                 asn1.ASN1TagClass.context,
                                 0,
                                 () => _encode_GeneralName,
-                                __utils.BER
-                            )(value.roleName, __utils.BER),
+                                __utils.DER
+                            )(value.roleName, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.BER
-                            )(value.roleCertIssuer, __utils.BER),
+                                __utils.DER
+                            )(value.roleCertIssuer, __utils.DER),
                             /* IF_ABSENT  */ value.roleCertSerialNumber ===
                             undefined
                                 ? undefined
@@ -2339,16 +2339,16 @@ export function _encode_RoleSpecCertIdentifier(
                                       asn1.ASN1TagClass.context,
                                       2,
                                       () => _encode_CertificateSerialNumber,
-                                      __utils.BER
-                                  )(value.roleCertSerialNumber, __utils.BER),
+                                      __utils.DER
+                                  )(value.roleCertSerialNumber, __utils.DER),
                             /* IF_ABSENT  */ value.roleCertLocator === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       3,
                                       () => _encode_GeneralNames,
-                                      __utils.BER
-                                  )(value.roleCertLocator, __utils.BER),
+                                      __utils.DER
+                                  )(value.roleCertLocator, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -2357,7 +2357,7 @@ export function _encode_RoleSpecCertIdentifier(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2386,7 +2386,7 @@ export function _encode_RoleSpecCertIdentifierSyntax(
     if (!_cached_encoder_for_RoleSpecCertIdentifierSyntax) {
         _cached_encoder_for_RoleSpecCertIdentifierSyntax = __utils._encodeSequenceOf<
             RoleSpecCertIdentifier
-        >(() => _encode_RoleSpecCertIdentifier, __utils.BER);
+        >(() => _encode_RoleSpecCertIdentifier, __utils.DER);
     }
     return _cached_encoder_for_RoleSpecCertIdentifierSyntax(value, elGetter);
 }
@@ -2490,14 +2490,14 @@ export function _encode_BasicAttConstraintsSyntax(
                                 ? undefined
                                 : __utils._encodeBoolean(
                                       value.authority,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                             /* IF_ABSENT  */ value.pathLenConstraint ===
                             undefined
                                 ? undefined
                                 : __utils._encodeInteger(
                                       value.pathLenConstraint,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -2507,7 +2507,7 @@ export function _encode_BasicAttConstraintsSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2567,7 +2567,7 @@ export function _encode_AcceptableCertPoliciesSyntax(
     if (!_cached_encoder_for_AcceptableCertPoliciesSyntax) {
         _cached_encoder_for_AcceptableCertPoliciesSyntax = __utils._encodeSequenceOf<
             CertPolicyId
-        >(() => _encode_CertPolicyId, __utils.BER);
+        >(() => _encode_CertPolicyId, __utils.DER);
     }
     return _cached_encoder_for_AcceptableCertPoliciesSyntax(value, elGetter);
 }
@@ -2619,7 +2619,7 @@ export function _encode_AuthorityAttributeIdentifierSyntax(
     if (!_cached_encoder_for_AuthorityAttributeIdentifierSyntax) {
         _cached_encoder_for_AuthorityAttributeIdentifierSyntax = __utils._encodeSequenceOf<
             AuthAttId
-        >(() => _encode_AuthAttId, __utils.BER);
+        >(() => _encode_AuthAttId, __utils.DER);
     }
     return _cached_encoder_for_AuthorityAttributeIdentifierSyntax(
         value,
@@ -2685,16 +2685,16 @@ export function _encode_AllowedAttributeAssignments_Item_attributes_Item(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_AttributeType,
-                    __utils.BER
+                    __utils.DER
                 ),
                 attributeTypeandValues: __utils._encode_implicit(
                     asn1.ASN1TagClass.context,
                     1,
                     () => _encode_Attribute,
-                    __utils.BER
+                    __utils.DER
                 ),
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item(
@@ -2797,16 +2797,16 @@ export function _encode_AllowedAttributeAssignments_Item(
                                     >(
                                         () =>
                                             _encode_AllowedAttributeAssignments_Item_attributes_Item,
-                                        __utils.BER
+                                        __utils.DER
                                     ),
-                                __utils.BER
-                            )(value.attributes, __utils.BER),
+                                __utils.DER
+                            )(value.attributes, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.BER
-                            )(value.holderDomain, __utils.BER),
+                                __utils.DER
+                            )(value.holderDomain, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -2815,7 +2815,7 @@ export function _encode_AllowedAttributeAssignments_Item(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2847,7 +2847,7 @@ export function _encode_AllowedAttributeAssignments(
     if (!_cached_encoder_for_AllowedAttributeAssignments) {
         _cached_encoder_for_AllowedAttributeAssignments = __utils._encodeSetOf<
             AllowedAttributeAssignments_Item
-        >(() => _encode_AllowedAttributeAssignments_Item, __utils.BER);
+        >(() => _encode_AllowedAttributeAssignments_Item, __utils.DER);
     }
     return _cached_encoder_for_AllowedAttributeAssignments(value, elGetter);
 }
@@ -2938,14 +2938,14 @@ export function _encode_AttributeMappings_Item_typeMappings(
                                 asn1.ASN1TagClass.context,
                                 0,
                                 () => _encode_AttributeType,
-                                __utils.BER
-                            )(value.local, __utils.BER),
+                                __utils.DER
+                            )(value.local, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_AttributeType,
-                                __utils.BER
-                            )(value.remote, __utils.BER),
+                                __utils.DER
+                            )(value.remote, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -2954,7 +2954,7 @@ export function _encode_AttributeMappings_Item_typeMappings(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3050,14 +3050,14 @@ export function _encode_AttributeMappings_Item_typeValueMappings(
                                 asn1.ASN1TagClass.context,
                                 0,
                                 () => _encode_AttributeTypeAndValue,
-                                __utils.BER
-                            )(value.local, __utils.BER),
+                                __utils.DER
+                            )(value.local, __utils.DER),
                             /* REQUIRED   */ __utils._encode_implicit(
                                 asn1.ASN1TagClass.context,
                                 1,
                                 () => _encode_AttributeTypeAndValue,
-                                __utils.BER
-                            )(value.remote, __utils.BER),
+                                __utils.DER
+                            )(value.remote, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3066,7 +3066,7 @@ export function _encode_AttributeMappings_Item_typeValueMappings(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3123,16 +3123,16 @@ export function _encode_AttributeMappings_Item(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_AttributeMappings_Item_typeMappings,
-                    __utils.BER
+                    __utils.DER
                 ),
                 typeValueMappings: __utils._encode_implicit(
                     asn1.ASN1TagClass.context,
                     1,
                     () => _encode_AttributeMappings_Item_typeValueMappings,
-                    __utils.BER
+                    __utils.DER
                 ),
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_AttributeMappings_Item(value, elGetter);
@@ -3160,7 +3160,7 @@ export function _encode_AttributeMappings(
     if (!_cached_encoder_for_AttributeMappings) {
         _cached_encoder_for_AttributeMappings = __utils._encodeSetOf<
             AttributeMappings_Item
-        >(() => _encode_AttributeMappings_Item, __utils.BER);
+        >(() => _encode_AttributeMappings_Item, __utils.DER);
     }
     return _cached_encoder_for_AttributeMappings(value, elGetter);
 }
@@ -3296,7 +3296,7 @@ export function _encode_GeneralSubtree(
                         [
                             /* REQUIRED   */ _encode_GeneralName(
                                 value.base,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_DEFAULT */ value.minimum === undefined ||
                             __utils.deepEq(
@@ -3308,16 +3308,16 @@ export function _encode_GeneralSubtree(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_BaseDistance,
-                                      __utils.BER
-                                  )(value.minimum, __utils.BER),
+                                      __utils.DER
+                                  )(value.minimum, __utils.DER),
                             /* IF_ABSENT  */ value.maximum === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_BaseDistance,
-                                      __utils.BER
-                                  )(value.maximum, __utils.BER),
+                                      __utils.DER
+                                  )(value.maximum, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3326,7 +3326,7 @@ export function _encode_GeneralSubtree(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3355,7 +3355,7 @@ export function _encode_GeneralSubtrees(
     if (!_cached_encoder_for_GeneralSubtrees) {
         _cached_encoder_for_GeneralSubtrees = __utils._encodeSequenceOf<
             GeneralSubtree
-        >(() => _encode_GeneralSubtree, __utils.BER);
+        >(() => _encode_GeneralSubtree, __utils.DER);
     }
     return _cached_encoder_for_GeneralSubtrees(value, elGetter);
 }
@@ -3451,8 +3451,8 @@ export function _encode_HolderNameConstraintsSyntax(
                                 asn1.ASN1TagClass.context,
                                 0,
                                 () => _encode_GeneralSubtrees,
-                                __utils.BER
-                            )(value.permittedSubtrees, __utils.BER),
+                                __utils.DER
+                            )(value.permittedSubtrees, __utils.DER),
                             /* IF_ABSENT  */ value.excludedSubtrees ===
                             undefined
                                 ? undefined
@@ -3460,8 +3460,8 @@ export function _encode_HolderNameConstraintsSyntax(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_GeneralSubtrees,
-                                      __utils.BER
-                                  )(value.excludedSubtrees, __utils.BER),
+                                      __utils.DER
+                                  )(value.excludedSubtrees, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3470,7 +3470,7 @@ export function _encode_HolderNameConstraintsSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3527,7 +3527,7 @@ export function _encode_AttCertPath(
     if (!_cached_encoder_for_AttCertPath) {
         _cached_encoder_for_AttCertPath = __utils._encodeSequenceOf<
             AttributeCertificate
-        >(() => _encode_AttributeCertificate, __utils.BER);
+        >(() => _encode_AttributeCertificate, __utils.DER);
     }
     return _cached_encoder_for_AttCertPath(value, elGetter);
 }
@@ -3618,11 +3618,11 @@ export function _encode_AttributeCertificateExactAssertion(
                         [
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -3632,7 +3632,7 @@ export function _encode_AttributeCertificateExactAssertion(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3690,16 +3690,16 @@ export function _encode_AttributeCertificateAssertion_holder(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_IssuerSerial,
-                    __utils.BER
+                    __utils.DER
                 ),
                 holderName: __utils._encode_implicit(
                     asn1.ASN1TagClass.context,
                     1,
                     () => _encode_GeneralNames,
-                    __utils.BER
+                    __utils.DER
                 ),
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_AttributeCertificateAssertion_holder(
@@ -3834,24 +3834,24 @@ export function _encode_AttributeCertificateAssertion(
                                       0,
                                       () =>
                                           _encode_AttributeCertificateAssertion_holder,
-                                      __utils.BER
-                                  )(value.holder, __utils.BER),
+                                      __utils.DER
+                                  )(value.holder, __utils.DER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_GeneralNames,
-                                      __utils.BER
-                                  )(value.issuer, __utils.BER),
+                                      __utils.DER
+                                  )(value.issuer, __utils.DER),
                             /* IF_ABSENT  */ value.attCertValidity === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       2,
                                       () => __utils._encodeGeneralizedTime,
-                                      __utils.BER
-                                  )(value.attCertValidity, __utils.BER),
+                                      __utils.DER
+                                  )(value.attCertValidity, __utils.DER),
                             /* IF_ABSENT  */ value.attType === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
@@ -3860,10 +3860,10 @@ export function _encode_AttributeCertificateAssertion(
                                       () =>
                                           __utils._encodeSetOf<AttributeType>(
                                               () => _encode_AttributeType,
-                                              __utils.BER
+                                              __utils.DER
                                           ),
-                                      __utils.BER
-                                  )(value.attType, __utils.BER),
+                                      __utils.DER
+                                  )(value.attType, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3872,7 +3872,7 @@ export function _encode_AttributeCertificateAssertion(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3974,16 +3974,16 @@ export function _encode_HolderIssuerAssertion(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Holder,
-                                      __utils.BER
-                                  )(value.holder, __utils.BER),
+                                      __utils.DER
+                                  )(value.holder, __utils.DER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
                                 : __utils._encode_implicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_AttCertIssuer,
-                                      __utils.BER
-                                  )(value.issuer, __utils.BER),
+                                      __utils.DER
+                                  )(value.issuer, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3992,7 +3992,7 @@ export function _encode_HolderIssuerAssertion(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -4077,11 +4077,11 @@ export function _encode_DelMatchSyntax(
                         [
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.firstIssuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Holder(
                                 value.lastHolder,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -4091,7 +4091,7 @@ export function _encode_DelMatchSyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }

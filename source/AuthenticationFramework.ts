@@ -246,13 +246,13 @@ export function _encode_AlgorithmIdentifier(
                         [
                             /* REQUIRED   */ __utils._encodeObjectIdentifier(
                                 value.algorithm,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.parameters === undefined
                                 ? undefined
                                 : __utils._encodeAny(
                                       value.parameters,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -262,7 +262,7 @@ export function _encode_AlgorithmIdentifier(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -341,11 +341,11 @@ export function _encode_SIGNATURE(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.algorithmIdentifier,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeBitString(
                                 value.signature,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -355,7 +355,7 @@ export function _encode_SIGNATURE(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -449,15 +449,15 @@ export function _get_encoder_for_SIGNED<ToBeSigned>(
                     [
                         /* REQUIRED   */ _encode_ToBeSigned(
                             value.toBeSigned,
-                            __utils.BER
+                            __utils.DER
                         ),
                         /* REQUIRED   */ _encode_AlgorithmIdentifier(
                             value.algorithmIdentifier,
-                            __utils.BER
+                            __utils.DER
                         ),
                         /* REQUIRED   */ __utils._encodeBitString(
                             value.signature,
-                            __utils.BER
+                            __utils.DER
                         ),
                     ],
                     value._unrecognizedExtensionsList
@@ -467,7 +467,7 @@ export function _get_encoder_for_SIGNED<ToBeSigned>(
                 .filter(
                     (c: asn1.ASN1Element | undefined): boolean => !!c
                 ) as asn1.ASN1Element[],
-            __utils.BER
+            __utils.DER
         );
     };
 }
@@ -541,7 +541,7 @@ export function _encode_Time(value: Time, elGetter: __utils.ASN1Encoder<Time>) {
                 utcTime: __utils._encodeUTCTime,
                 generalizedTime: __utils._encodeGeneralizedTime,
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_Time(value, elGetter);
@@ -615,11 +615,11 @@ export function _encode_Validity(
                         [
                             /* REQUIRED   */ _encode_Time(
                                 value.notBefore,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Time(
                                 value.notAfter,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -629,7 +629,7 @@ export function _encode_Validity(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -731,11 +731,11 @@ export function _encode_SubjectPublicKeyInfo(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.algorithm,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_PublicKey(
                                 value.subjectPublicKey,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -745,7 +745,7 @@ export function _encode_SubjectPublicKeyInfo(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -850,7 +850,7 @@ export function _encode_Extension(
                         [
                             /* REQUIRED   */ __utils._encodeObjectIdentifier(
                                 value.extnId,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_DEFAULT */ value.critical === undefined ||
                             __utils.deepEq(
@@ -860,11 +860,11 @@ export function _encode_Extension(
                                 ? undefined
                                 : __utils._encodeBoolean(
                                       value.critical,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                             /* REQUIRED   */ __utils._encodeOctetString(
                                 value.extnValue,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -874,7 +874,7 @@ export function _encode_Extension(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -903,7 +903,7 @@ export function _encode_Extensions(
     if (!_cached_encoder_for_Extensions) {
         _cached_encoder_for_Extensions = __utils._encodeSequenceOf<Extension>(
             () => _encode_Extension,
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_Extensions(value, elGetter);
@@ -1119,31 +1119,31 @@ export function _encode_TBSCertificate(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Version,
-                                      __utils.BER
-                                  )(value.version, __utils.BER),
+                                      __utils.DER
+                                  )(value.version, __utils.DER),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Name(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Validity(
                                 value.validity,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Name(
                                 value.subject,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_SubjectPublicKeyInfo(
                                 value.subjectPublicKeyInfo,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.issuerUniqueIdentifier ===
                             undefined
@@ -1152,8 +1152,8 @@ export function _encode_TBSCertificate(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_UniqueIdentifier,
-                                      __utils.BER
-                                  )(value.issuerUniqueIdentifier, __utils.BER),
+                                      __utils.DER
+                                  )(value.issuerUniqueIdentifier, __utils.DER),
                         ],
                         [
                             /* IF_ABSENT  */ value.subjectUniqueIdentifier ===
@@ -1163,16 +1163,16 @@ export function _encode_TBSCertificate(
                                       asn1.ASN1TagClass.context,
                                       2,
                                       () => _encode_UniqueIdentifier,
-                                      __utils.BER
-                                  )(value.subjectUniqueIdentifier, __utils.BER),
+                                      __utils.DER
+                                  )(value.subjectUniqueIdentifier, __utils.DER),
                             /* IF_ABSENT  */ value.extensions === undefined
                                 ? undefined
                                 : __utils._encode_explicit(
                                       asn1.ASN1TagClass.context,
                                       3,
                                       () => _encode_Extensions,
-                                      __utils.BER
-                                  )(value.extensions, __utils.BER),
+                                      __utils.DER
+                                  )(value.extensions, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1181,7 +1181,7 @@ export function _encode_TBSCertificate(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1237,7 +1237,7 @@ export function _encode_CrossCertificates(
     if (!_cached_encoder_for_CrossCertificates) {
         _cached_encoder_for_CrossCertificates = __utils._encodeSetOf<
             Certificate
-        >(() => _encode_Certificate, __utils.BER);
+        >(() => _encode_Certificate, __utils.DER);
     }
     return _cached_encoder_for_CrossCertificates(value, elGetter);
 }
@@ -1264,7 +1264,7 @@ export function _encode_ForwardCertificationPath(
     if (!_cached_encoder_for_ForwardCertificationPath) {
         _cached_encoder_for_ForwardCertificationPath = __utils._encodeSequenceOf<
             CrossCertificates
-        >(() => _encode_CrossCertificates, __utils.BER);
+        >(() => _encode_CrossCertificates, __utils.DER);
     }
     return _cached_encoder_for_ForwardCertificationPath(value, elGetter);
 }
@@ -1354,14 +1354,14 @@ export function _encode_Certificates(
                         [
                             /* REQUIRED   */ _encode_Certificate(
                                 value.userCertificate,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.certificationPath ===
                             undefined
                                 ? undefined
                                 : _encode_ForwardCertificationPath(
                                       value.certificationPath,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -1371,7 +1371,7 @@ export function _encode_Certificates(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1471,16 +1471,16 @@ export function _encode_CertificatePair(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Certificate,
-                                      __utils.BER
-                                  )(value.issuedToThisCA, __utils.BER),
+                                      __utils.DER
+                                  )(value.issuedToThisCA, __utils.DER),
                             /* IF_ABSENT  */ value.issuedByThisCA === undefined
                                 ? undefined
                                 : __utils._encode_explicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_Certificate,
-                                      __utils.BER
-                                  )(value.issuedByThisCA, __utils.BER),
+                                      __utils.DER
+                                  )(value.issuedByThisCA, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1489,7 +1489,7 @@ export function _encode_CertificatePair(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1583,15 +1583,15 @@ export function _encode_CertificationPath(
                         [
                             /* REQUIRED   */ _encode_Certificate(
                                 value.userCertificate,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.theCACertificates ===
                             undefined
                                 ? undefined
                                 : __utils._encodeSequenceOf<CertificatePair>(
                                       () => _encode_CertificatePair,
-                                      __utils.BER
-                                  )(value.theCACertificates, __utils.BER),
+                                      __utils.DER
+                                  )(value.theCACertificates, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1600,7 +1600,7 @@ export function _encode_CertificationPath(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1625,7 +1625,7 @@ export function _encode_PkiPath(
     if (!_cached_encoder_for_PkiPath) {
         _cached_encoder_for_PkiPath = __utils._encodeSequenceOf<Certificate>(
             () => _encode_Certificate,
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_PkiPath(value, elGetter);
@@ -1737,18 +1737,18 @@ export function _encode_CertificateListContent_revokedCertificates_Item(
                         [
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Time(
                                 value.revocationDate,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.crlEntryExtensions ===
                             undefined
                                 ? undefined
                                 : _encode_Extensions(
                                       value.crlEntryExtensions,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -1758,7 +1758,7 @@ export function _encode_CertificateListContent_revokedCertificates_Item(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -1930,22 +1930,22 @@ export function _encode_CertificateListContent(
                         [
                             /* IF_ABSENT  */ value.version === undefined
                                 ? undefined
-                                : _encode_Version(value.version, __utils.BER),
+                                : _encode_Version(value.version, __utils.DER),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Name(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Time(
                                 value.thisUpdate,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.nextUpdate === undefined
                                 ? undefined
-                                : _encode_Time(value.nextUpdate, __utils.BER),
+                                : _encode_Time(value.nextUpdate, __utils.DER),
                             /* IF_ABSENT  */ value.revokedCertificates ===
                             undefined
                                 ? undefined
@@ -1954,8 +1954,8 @@ export function _encode_CertificateListContent(
                                   >(
                                       () =>
                                           _encode_CertificateListContent_revokedCertificates_Item,
-                                      __utils.BER
-                                  )(value.revokedCertificates, __utils.BER),
+                                      __utils.DER
+                                  )(value.revokedCertificates, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -1967,14 +1967,14 @@ export function _encode_CertificateListContent(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Extensions,
-                                      __utils.BER
-                                  )(value.crlExtensions, __utils.BER),
+                                      __utils.DER
+                                  )(value.crlExtensions, __utils.DER),
                         ]
                     )
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2107,11 +2107,11 @@ export function _encode_IssuerSerialNumber(
                         [
                             /* REQUIRED   */ _encode_Name(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -2121,7 +2121,7 @@ export function _encode_IssuerSerialNumber(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2195,11 +2195,11 @@ export function _get_encoder_for_FINGERPRINT<ToBeFingerprinted>(
                     [
                         /* REQUIRED   */ _encode_AlgorithmIdentifier(
                             value.algorithmIdentifier,
-                            __utils.BER
+                            __utils.DER
                         ),
                         /* REQUIRED   */ __utils._encodeBitString(
                             value.fingerprint,
-                            __utils.BER
+                            __utils.DER
                         ),
                     ],
                     value._unrecognizedExtensionsList
@@ -2209,7 +2209,7 @@ export function _get_encoder_for_FINGERPRINT<ToBeFingerprinted>(
                 .filter(
                     (c: asn1.ASN1Element | undefined): boolean => !!c
                 ) as asn1.ASN1Element[],
-            __utils.BER
+            __utils.DER
         );
     };
 }
@@ -2266,7 +2266,7 @@ export function _encode_PKCertIdentifier(
                         _get_encoder_for_FINGERPRINT<Certificate>(
                             _encode_Certificate
                         ),
-                    __utils.BER
+                    __utils.DER
                 ),
                 fingerprintPK: __utils._encode_explicit(
                     asn1.ASN1TagClass.context,
@@ -2275,10 +2275,10 @@ export function _encode_PKCertIdentifier(
                         _get_encoder_for_FINGERPRINT<PublicKey>(
                             _encode_PublicKey
                         ),
-                    __utils.BER
+                    __utils.DER
                 ),
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_PKCertIdentifier(value, elGetter);
@@ -2323,11 +2323,11 @@ export function _encode_TBSCertAVL_entries_Item_idType(
                     asn1.ASN1TagClass.context,
                     0,
                     () => _encode_PKCertIdentifier,
-                    __utils.BER
+                    __utils.DER
                 ),
                 entityGroup: _encode_DistinguishedName,
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_TBSCertAVL_entries_Item_idType(value, elGetter);
@@ -2405,11 +2405,11 @@ export function _encode_ScopeRestriction(
                         [
                             /* REQUIRED   */ __utils._encodeObjectIdentifier(
                                 value.id,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeAny(
                                 value.restriction,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -2419,7 +2419,7 @@ export function _encode_ScopeRestriction(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2448,7 +2448,7 @@ export function _encode_ScopeRestrictions(
     if (!_cached_encoder_for_ScopeRestrictions) {
         _cached_encoder_for_ScopeRestrictions = __utils._encodeSequenceOf<
             ScopeRestriction
-        >(() => _encode_ScopeRestriction, __utils.BER);
+        >(() => _encode_ScopeRestriction, __utils.DER);
     }
     return _cached_encoder_for_ScopeRestrictions(value, elGetter);
 }
@@ -2555,7 +2555,7 @@ export function _encode_TBSCertAVL_entries_Item(
                         [
                             /* REQUIRED   */ _encode_TBSCertAVL_entries_Item_idType(
                                 value.idType,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.scope === undefined
                                 ? undefined
@@ -2563,16 +2563,16 @@ export function _encode_TBSCertAVL_entries_Item(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_ScopeRestrictions,
-                                      __utils.BER
-                                  )(value.scope, __utils.BER),
+                                      __utils.DER
+                                  )(value.scope, __utils.DER),
                             /* IF_ABSENT  */ value.entryExtensions === undefined
                                 ? undefined
                                 : __utils._encode_explicit(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_Extensions,
-                                      __utils.BER
-                                  )(value.entryExtensions, __utils.BER),
+                                      __utils.DER
+                                  )(value.entryExtensions, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -2581,7 +2581,7 @@ export function _encode_TBSCertAVL_entries_Item(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2755,32 +2755,32 @@ export function _encode_TBSCertAVL(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_Version,
-                                      __utils.BER
-                                  )(value.version, __utils.BER),
+                                      __utils.DER
+                                  )(value.version, __utils.DER),
                             /* IF_ABSENT  */ value.serialNumber === undefined
                                 ? undefined
                                 : _encode_AvlSerialNumber(
                                       value.serialNumber,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_Name(
                                 value.issuer,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeBoolean(
                                 value.constrained,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ __utils._encodeSequenceOf<
                                 TBSCertAVL_entries_Item
                             >(
                                 () => _encode_TBSCertAVL_entries_Item,
-                                __utils.BER
-                            )(value.entries, __utils.BER),
+                                __utils.DER
+                            )(value.entries, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -2790,14 +2790,14 @@ export function _encode_TBSCertAVL(
                                 ? undefined
                                 : _encode_Extensions(
                                       value.avlExtensions,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ]
                     )
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -2855,7 +2855,7 @@ export function _encode_ProtRestriction(
     if (!_cached_encoder_for_ProtRestriction) {
         _cached_encoder_for_ProtRestriction = __utils._encodeSequenceOf<
             asn1.OBJECT_IDENTIFIER
-        >(() => __utils._encodeObjectIdentifier, __utils.BER);
+        >(() => __utils._encodeObjectIdentifier, __utils.DER);
     }
     return _cached_encoder_for_ProtRestriction(value, elGetter);
 }
@@ -2994,7 +2994,7 @@ export function _encode_SupportedAlgorithm(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.algorithmIdentifier,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.intendedUsage === undefined
                                 ? undefined
@@ -3002,8 +3002,8 @@ export function _encode_SupportedAlgorithm(
                                       asn1.ASN1TagClass.context,
                                       0,
                                       () => _encode_KeyUsage,
-                                      __utils.BER
-                                  )(value.intendedUsage, __utils.BER),
+                                      __utils.DER
+                                  )(value.intendedUsage, __utils.DER),
                             /* IF_ABSENT  */ value.intendedCertificatePolicies ===
                             undefined
                                 ? undefined
@@ -3011,10 +3011,10 @@ export function _encode_SupportedAlgorithm(
                                       asn1.ASN1TagClass.context,
                                       1,
                                       () => _encode_CertificatePoliciesSyntax,
-                                      __utils.BER
+                                      __utils.DER
                                   )(
                                       value.intendedCertificatePolicies,
-                                      __utils.BER
+                                      __utils.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -3024,7 +3024,7 @@ export function _encode_SupportedAlgorithm(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3123,11 +3123,11 @@ export function _get_encoder_for_HASH<ToBeHashed>(
                     [
                         /* REQUIRED   */ _encode_AlgorithmIdentifier(
                             value.algorithmIdentifier,
-                            __utils.BER
+                            __utils.DER
                         ),
                         /* REQUIRED   */ __utils._encodeBitString(
                             value.hashValue,
-                            __utils.BER
+                            __utils.DER
                         ),
                     ],
                     value._unrecognizedExtensionsList
@@ -3137,7 +3137,7 @@ export function _get_encoder_for_HASH<ToBeHashed>(
                 .filter(
                     (c: asn1.ASN1Element | undefined): boolean => !!c
                 ) as asn1.ASN1Element[],
-            __utils.BER
+            __utils.DER
         );
     };
 }
@@ -3252,13 +3252,13 @@ export function _encode_InfoSyntax_pointer(
                         [
                             /* REQUIRED   */ _encode_GeneralNames(
                                 value.name,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* IF_ABSENT  */ value.hash === undefined
                                 ? undefined
                                 : _get_encoder_for_HASH<HashedPolicyInfo>(
                                       _encode_HashedPolicyInfo
-                                  )(value.hash, __utils.BER),
+                                  )(value.hash, __utils.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3267,7 +3267,7 @@ export function _encode_InfoSyntax_pointer(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }
@@ -3309,7 +3309,7 @@ export function _encode_InfoSyntax(
                 content: _encode_UnboundedDirectoryString,
                 pointer: _encode_InfoSyntax_pointer,
             },
-            __utils.BER
+            __utils.DER
         );
     }
     return _cached_encoder_for_InfoSyntax(value, elGetter);
@@ -3391,11 +3391,11 @@ export function _encode_PolicySyntax(
                         [
                             /* REQUIRED   */ _encode_PolicyID(
                                 value.policyIdentifier,
-                                __utils.BER
+                                __utils.DER
                             ),
                             /* REQUIRED   */ _encode_InfoSyntax(
                                 value.policySyntax,
-                                __utils.BER
+                                __utils.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -3405,7 +3405,7 @@ export function _encode_PolicySyntax(
                     .filter(
                         (c: asn1.ASN1Element | undefined): boolean => !!c
                     ) as asn1.ASN1Element[],
-                __utils.BER
+                __utils.DER
             );
         };
     }

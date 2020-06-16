@@ -65,7 +65,7 @@
         "test": "npx jest --ci --reporters=default --reporters=jest-junit --coverage"
     },
     "types": "./dist/node/index.d.ts",
-    "version": "0.10.0",
+    "version": "0.11.0",
     "dependencies": {
         "asn1-ts": "^3.3.0"
     }
