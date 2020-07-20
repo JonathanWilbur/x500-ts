@@ -29,7 +29,17 @@ describe("Stringifiers", () => {
         ]
     ];
 
+    const gn = {
+        directoryName: {
+            rdnSequence: dn,
+        },
+    };
+
     test("can stringify a DN", () => {
         expect(x500.stringifiers.rdnSequenceToString(dn)).toBe("gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
+    });
+
+    test("can stringify a GeneralName", () => {
+        expect(x500.stringifiers.generalNameToString(gn)).toBe("directoryName:gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
     });
 });
