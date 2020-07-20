@@ -32,3 +32,4 @@ export * as SpkmGssTokens from "./SpkmGssTokens";
 export * as UpperBounds from "./UpperBounds";
 export * as UsefulDefinitions from "./UsefulDefinitions";
 export * as stringifiers from "./stringifiers";
+export * as comparators from "./comparators";
