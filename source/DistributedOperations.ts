@@ -5049,12 +5049,6 @@ export const dsaReferral: ERROR = {
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
 };
 
-// FIXME: PARAMETERIZATION_UNSUPPORTED chained
-
-export class chained_ArgumentType<T extends OPERATION> {
-    constructor(readonly) {}
-}
-
 /**
  * @summary Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
  * @description
@@ -5451,27 +5445,29 @@ export function _encode_Chained_ResultType_OPTIONALLY_PROTECTED_Parameter1(
     );
 }
 
-// TODO:
-// SET {
-//     chainedArgument      ChainingArguments,
-//     argument        [0]  operation.&ArgumentType }
 
-// TODO:
-// SET {
-//     chainedResult        ChainingResults,
-//     result          [0]  operation.&ResultType}}
 
-// chained{OPERATION:operation} OPERATION ::= {
-//     ARGUMENT             OPTIONALLY-PROTECTED {SET {
-//       chainedArgument      ChainingArguments,
-//       argument        [0]  operation.&ArgumentType } }
-//     RESULT OPTIONALLY-PROTECTED {SET {
-//       chainedResult        ChainingResults,
-//       result          [0]  operation.&ResultType}}
-//     ERRORS
-//       {operation.&Errors EXCEPT referral | dsaReferral}
-//     CODE                 operation.&operationCode }
-
+/**
+ * @summary chained
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * chained{OPERATION:operation} OPERATION ::= {
+ *     ARGUMENT             OPTIONALLY-PROTECTED {SET {
+ *       chainedArgument      ChainingArguments,
+ *       argument        [0]  operation.&ArgumentType } }
+ *     RESULT OPTIONALLY-PROTECTED {SET {
+ *       chainedResult        ChainingResults,
+ *       result          [0]  operation.&ResultType}}
+ *     ERRORS
+ *       {operation.&Errors EXCEPT referral | dsaReferral}
+ *     CODE                 operation.&operationCode }
+ * ```
+ *
+ * @function
+ */
 const chained = (
     operation: OPERATION
 ): OPERATION<

@@ -524,7 +524,6 @@ export function _encode_ContextProfile(
     return _cached_encoder_for_ContextProfile(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary ContextCombination
  * @description
@@ -1317,7 +1316,6 @@ export function _encode_RequestAttribute(
     return _cached_encoder_for_RequestAttribute(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary AttributeCombination
  * @description

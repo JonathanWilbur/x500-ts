@@ -118,6 +118,10 @@ export {
     _encode_SecurityParameters,
 } from "./DirectoryAbstractService";
 export { id_op_binding_shadow } from "./DirectoryOperationalBindingTypes";
+import {
+    shadowConsumerInitiatedAC,
+    shadowSupplierInitiatedAC,
+} from "./DirectoryOSIProtocols";
 export {
     shadowConsumerInitiatedAC,
     shadowSupplierInitiatedAC,
@@ -2538,58 +2542,6 @@ export const shadowOperationalBinding_roleB: OP_BIND_ROLE = {
     "&TerminateParam": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
 };
 
-/**
- * @summary shadowOperationalBinding
- * @description
- *
- * ### ASN.1 Definition:
- *
- * ```asn1
- * shadowOperationalBinding OPERATIONAL-BINDING ::= {
- *   AGREEMENT             ShadowingAgreementInfo
- *   APPLICATION CONTEXTS
- *     {{shadowSupplierInitiatedAC
- *       APPLIES TO  {All-operations-supplier-initiated}} |
- *     {shadowConsumerInitiatedAC
- *       APPLIES TO  {All-operations-consumer-initiated}}}
- *   ASYMMETRIC
- *     ROLE-A { -- shadow supplier role
- *       ESTABLISHMENT-INITIATOR  TRUE
- *       ESTABLISHMENT-PARAMETER  NULL
- *       MODIFICATION-INITIATOR   TRUE
- *       TERMINATION-INITIATOR    TRUE }
- *     ROLE-B { -- shadow consumer role
- *       ESTABLISHMENT-INITIATOR  TRUE
- *       ESTABLISHMENT-PARAMETER  NULL
- *       MODIFICATION-INITIATOR   TRUE
- *       MODIFICATION-PARAMETER   ModificationParameter
- *       TERMINATION-INITIATOR    TRUE}
- *   ID                    id-op-binding-shadow }
- * ```
- *
- * @constant
- * @type {OPERATIONAL_BINDING}
- * @implements {OPERATIONAL_BINDING}
- */
-export const shadowOperationalBinding: OPERATIONAL_BINDING = {
-    class: "OPERATIONAL-BINDING",
-    decoderFor: {
-        "&Agreement": _decode_ShadowingAgreementInfo,
-    },
-    encoderFor: {
-        "&Agreement": _encode_ShadowingAgreementInfo,
-    },
-    "&Cooperation": [
-        ,
-        ,/* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
-    /* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
-    ] /* OBJECT_FIELD_SETTING */,
-    "&roleA": shadowOperationalBinding_roleA /* OBJECT_FIELD_SETTING */,
-    "&roleB": shadowOperationalBinding_roleB /* OBJECT_FIELD_SETTING */,
-    "&id": id_op_binding_shadow /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
-    "&Agreement": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
-};
-
 export type AgreementID<> = OperationalBindingID; // DefinedType
 let _cached_decoder_for_AgreementID: $.ASN1Decoder<AgreementID> | null = null;
 let _cached_encoder_for_AgreementID: $.ASN1Encoder<AgreementID> | null = null;
@@ -4074,7 +4026,6 @@ export function _encode_SDSEContent(
     return _cached_encoder_for_SDSEContent(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary Subtree
  * @description
@@ -7348,6 +7299,77 @@ export const All_operations_supplier_initiated: OPERATION[] = [
     coordinateShadowUpdate,
     updateShadow,
 ];
+
+/**
+ * @summary shadowOperationalBinding
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * shadowOperationalBinding OPERATIONAL-BINDING ::= {
+ *   AGREEMENT             ShadowingAgreementInfo
+ *   APPLICATION CONTEXTS
+ *     {{shadowSupplierInitiatedAC
+ *       APPLIES TO  {All-operations-supplier-initiated}} |
+ *     {shadowConsumerInitiatedAC
+ *       APPLIES TO  {All-operations-consumer-initiated}}}
+ *   ASYMMETRIC
+ *     ROLE-A { -- shadow supplier role
+ *       ESTABLISHMENT-INITIATOR  TRUE
+ *       ESTABLISHMENT-PARAMETER  NULL
+ *       MODIFICATION-INITIATOR   TRUE
+ *       TERMINATION-INITIATOR    TRUE }
+ *     ROLE-B { -- shadow consumer role
+ *       ESTABLISHMENT-INITIATOR  TRUE
+ *       ESTABLISHMENT-PARAMETER  NULL
+ *       MODIFICATION-INITIATOR   TRUE
+ *       MODIFICATION-PARAMETER   ModificationParameter
+ *       TERMINATION-INITIATOR    TRUE}
+ *   ID                    id-op-binding-shadow }
+ * ```
+ *
+ * @constant
+ * @type {OPERATIONAL_BINDING}
+ * @implements {OPERATIONAL_BINDING}
+ */
+export const shadowOperationalBinding: OPERATIONAL_BINDING = {
+    class: "OPERATIONAL-BINDING",
+    decoderFor: {
+        "&Agreement": _decode_ShadowingAgreementInfo,
+    },
+    encoderFor: {
+        "&Agreement": _encode_ShadowingAgreementInfo,
+    },
+    "&Cooperation": [
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {
+
+            },
+            encoderFor: {
+
+            },
+            "&applContext": shadowSupplierInitiatedAC,
+            "&Operations": All_operations_supplier_initiated,
+        },
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {
+
+            },
+            encoderFor: {
+
+            },
+            "&applContext": shadowConsumerInitiatedAC,
+            "&Operations": All_operations_consumer_initiated,
+        },
+    ] /* OBJECT_FIELD_SETTING */,
+    "&roleA": shadowOperationalBinding_roleA /* OBJECT_FIELD_SETTING */,
+    "&roleB": shadowOperationalBinding_roleB /* OBJECT_FIELD_SETTING */,
+    "&id": id_op_binding_shadow /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Agreement": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
 /**
  * @summary ShadowProblem

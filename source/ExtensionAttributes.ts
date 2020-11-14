@@ -85,7 +85,10 @@ import {
     toBeRevoked,
 } from "./CertificateExtensions";
 import * as InformationFramework from "./InformationFramework";
-import { ATTRIBUTE } from "./InformationFramework";
+import {
+    ATTRIBUTE,
+    SYNTAX_NAME,
+} from "./InformationFramework";
 import { id_ce } from "./UsefulDefinitions";
 export {
     acceptableCertPolicies,
@@ -108,6 +111,7 @@ export {
     timeSpecification,
     userNotice,
 } from "./AttributeCertificateDefinitions";
+import { EXTENSION } from "./AuthenticationFramework";
 export { EXTENSION } from "./AuthenticationFramework";
 export {
     aAissuingDistributionPoint,
@@ -856,7 +860,41 @@ export function _encode_extensionSyntax_Type(
     return _cached_encoder_for_extensionSyntax_Type(value, elGetter);
 }
 
-// FIXME: PARAMETERIZATION_UNSUPPORTED extensionSyntax
+
+/**
+ * @summary extensionSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * extensionSyntax {EXTENSION:extension-attribute} SYNTAX-NAME ::= {
+ *     LDAP-DESC         extension-attribute.&ldap-description
+ *     DIRECTORY SYNTAX  SEQUENCE {
+ *       mandatory    [0]  BOOLEAN DEFAULT FALSE,
+ *       critical     [1]  BOOLEAN DEFAULT FALSE,
+ *       ext          [2]  extension-attribute.&ExtnType,
+ *       ... }
+ *     ID                extension-attribute.&id }
+ * ```
+ *
+ * @function
+ */
+export function extensionSyntax (extension_attribute: EXTENSION): SYNTAX_NAME {
+    return {
+        class: "SYNTAX-NAME",
+        decoderFor: {
+            "&Type": extension_attribute.decoderFor["&ExtnType"],
+        },
+        encoderFor: {
+            "&Type": extension_attribute.encoderFor["&ExtnType"],
+        },
+        // "&ldapDesc": extension_attribute[""] NOTE: This is an error in the original ASN.1.
+        "&Type": extension_attribute["&ExtnType"],
+        "&id": extension_attribute["&id"],
+    };
+}
+
 
 /**
  * @summary id_asx_authorityKeyIdentifier

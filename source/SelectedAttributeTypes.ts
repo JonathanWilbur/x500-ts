@@ -3862,7 +3862,6 @@ export function _encode_CriteriaItem(
     return _cached_encoder_for_CriteriaItem(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary Criteria
  * @description
@@ -9696,7 +9695,6 @@ export function _encode_UiiItem(
     return _cached_encoder_for_UiiItem(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary UiiFilter
  * @description

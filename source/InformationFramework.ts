@@ -4477,7 +4477,6 @@ export function _encode_ChopSpecification(
     return _cached_encoder_for_ChopSpecification(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary Refinement
  * @description
@@ -4900,7 +4899,19 @@ export function _encode_SubtreeSpecification(
                                       $.BER
                                   )(value.base, $.BER),
                             ,
-                            /* FIXME: specificExclusions COULD_NOT_COMPILE_TYPE_ENCODER */ /* IF_DEFAULT */ value.minimum ===
+                            /* IF_ABSENT */ (value.specificExclusions === undefined)
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      1,
+                                      () => $._encodeSetOf<ChopSpecification_specificExclusions_Item>(
+                                          () => _encode_ChopSpecification_specificExclusions_Item,
+                                          $.BER,
+                                        ),
+                                      $.BER
+                                  )(value.base, $.BER),
+                            ,
+                            /* IF_DEFAULT */ value.minimum ===
                                 undefined ||
                             $.deepEq(
                                 value.minimum,

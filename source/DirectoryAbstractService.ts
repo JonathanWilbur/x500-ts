@@ -17278,7 +17278,6 @@ export function _encode_FilterItem(
     return _cached_encoder_for_FilterItem(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary Filter
  * @description

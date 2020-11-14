@@ -2644,7 +2644,6 @@ export function _encode_MatchingRuleAssertion(
     return _cached_encoder_for_MatchingRuleAssertion(value, elGetter);
 }
 
-/* TODO: CHECK_RECURSIVE_DEFINITION */
 /**
  * @summary Filter
  * @description
