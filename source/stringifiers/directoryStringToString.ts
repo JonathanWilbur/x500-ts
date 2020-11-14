@@ -1,6 +1,5 @@
 import { UnboundedDirectoryString } from "../SelectedAttributeTypes";
 
-
 // export type UnboundedDirectoryString =
 //     | { teletexString: asn1.TeletexString } /* CHOICE_ALT_ROOT */
 //     | { printableString: asn1.PrintableString } /* CHOICE_ALT_ROOT */
@@ -8,8 +7,9 @@ import { UnboundedDirectoryString } from "../SelectedAttributeTypes";
 //     | { universalString: asn1.UniversalString } /* CHOICE_ALT_ROOT */
 //     | { uTF8String: asn1.UTF8String } /* CHOICE_ALT_ROOT */;
 
-export default
-function directoryStringToString (ds: UnboundedDirectoryString): string {
+export default function directoryStringToString(
+    ds: UnboundedDirectoryString
+): string {
     if ("teletexString" in ds) {
         return "[Cannot display TeletexString]";
     } else if ("printableString" in ds) {

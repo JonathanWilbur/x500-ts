@@ -1,22 +1,48 @@
-/*
-    BEGIN_MODULE BasicAccessControl
-    OID: joint-iso-itu-t.ds.module.basicAccessControl.8
-    IRI: undefined
-    EXTENSIBLE: false
-    ENCODINGREF: undefined
-    FILE: undefined
-    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
-*/
-import * as asn1 from "asn1-ts";
+/**
+ * @module BasicAccessControl
+ * @summary The ASN.1 module `BasicAccessControl`.
+ * @description
+ *
+ * OID: joint-iso-itu-t.ds.module.basicAccessControl.9
+ * IRI: undefined
+ * EXTENSIBLE: false
+ * ENCODINGREF: undefined
+ * FILE: undefined
+ *
+ * This file was compiled by Wildboar Software's ASN.1 Compiler.
+ *
+ * @see {@link https://wildboarsoftware.com|Wildboar Software's Website}
+ * /
+
+
+/* eslint-disable */
+import {
+    ASN1ConstructionError as _ConstructionError,
+    ASN1Element as _Element,
+    ASN1TagClass as _TagClass,
+    BIT_STRING,
+    BOOLEAN,
+    ENUMERATED,
+    EXTERNAL,
+    INTEGER,
+    NULL,
+    ObjectIdentifier as _OID,
+    OBJECT_IDENTIFIER,
+    OPTIONAL,
+} from "asn1-ts";
+import * as $ from "asn1-ts/dist/node/functional";
 import {
     Filter,
     _decode_Filter,
     _encode_Filter,
 } from "./DirectoryAbstractService";
+import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
     AttributeType,
     AttributeTypeAndValue,
     ContextAssertion,
+    objectIdentifierMatch,
     Refinement,
     SubtreeSpecification,
     _decode_AttributeType,
@@ -31,6 +57,7 @@ import {
     _encode_SubtreeSpecification,
 } from "./InformationFramework";
 import {
+    directoryStringFirstComponentMatch,
     NameAndOptionalUID,
     UnboundedDirectoryString,
     _decode_NameAndOptionalUID,
@@ -39,19 +66,22 @@ import {
     _encode_UnboundedDirectoryString,
 } from "./SelectedAttributeTypes";
 import { id_aca, id_acScheme } from "./UsefulDefinitions";
-import * as __utils from "./__utils";
 export {
     Filter,
     _decode_Filter,
     _encode_Filter,
 } from "./DirectoryAbstractService";
 export {
+    ATTRIBUTE,
     AttributeType,
     AttributeTypeAndValue,
     ContextAssertion,
     DistinguishedName,
+    MATCHING_RULE,
+    objectIdentifierMatch,
     Refinement,
     SubtreeSpecification,
+    SupportedAttributes,
     _decode_AttributeType,
     _decode_AttributeTypeAndValue,
     _decode_ContextAssertion,
@@ -66,6 +96,7 @@ export {
     _encode_SubtreeSpecification,
 } from "./InformationFramework";
 export {
+    directoryStringFirstComponentMatch,
     NameAndOptionalUID,
     UnboundedDirectoryString,
     UniqueIdentifier,
@@ -76,68 +107,180 @@ export {
     _encode_UnboundedDirectoryString,
     _encode_UniqueIdentifier,
 } from "./SelectedAttributeTypes";
-export {
-    directoryAbstractService,
-    id_aca,
-    id_acScheme,
-    informationFramework,
-    selectedAttributeTypes,
-} from "./UsefulDefinitions";
+export { id_aca, id_acScheme } from "./UsefulDefinitions";
 
-// TODO: ObjectAssignment: accessControlScheme
+/**
+ * @summary id_aca_accessControlScheme
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-aca-accessControlScheme     OBJECT IDENTIFIER ::= {id-aca 1}
+ * ```
+ *
+ * @constant
+ */
+export const id_aca_accessControlScheme: OBJECT_IDENTIFIER = new _OID(
+    [1],
+    id_aca
+);
 
-export type Precedence = asn1.INTEGER;
-let _cached_decoder_for_Precedence: __utils.ASN1Decoder<
-    Precedence
-> | null = null;
-let _cached_encoder_for_Precedence: __utils.ASN1Encoder<
-    Precedence
-> | null = null;
-export function _decode_Precedence(el: asn1.ASN1Element) {
+/**
+ * @summary accessControlScheme
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * accessControlScheme ATTRIBUTE ::= {
+ *   WITH SYNTAX             OBJECT IDENTIFIER
+ *   EQUALITY MATCHING RULE  objectIdentifierMatch
+ *   SINGLE VALUE            TRUE
+ *   USAGE                   directoryOperation
+ *   ID                      id-aca-accessControlScheme }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const accessControlScheme: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": $._decodeObjectIdentifier,
+    },
+    encoderFor: {
+        "&Type": $._encodeObjectIdentifier,
+    },
+    "&equality-match": objectIdentifierMatch /* OBJECT_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&id": id_aca_accessControlScheme /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary Precedence
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Precedence  ::=  INTEGER(0..255,...)
+ * ```
+ */
+export type Precedence = INTEGER;
+let _cached_decoder_for_Precedence: $.ASN1Decoder<Precedence> | null = null;
+let _cached_encoder_for_Precedence: $.ASN1Encoder<Precedence> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Precedence
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Precedence} The decoded data structure.
+ */
+export function _decode_Precedence(el: _Element) {
     if (!_cached_decoder_for_Precedence) {
-        _cached_decoder_for_Precedence = __utils._decodeInteger;
+        _cached_decoder_for_Precedence = $._decodeInteger;
     }
     return _cached_decoder_for_Precedence(el);
 }
+/**
+ * @summary Encodes a(n) Precedence into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Precedence, encoded as an ASN.1 Element.
+ */
 export function _encode_Precedence(
     value: Precedence,
-    elGetter: __utils.ASN1Encoder<Precedence>
+    elGetter: $.ASN1Encoder<Precedence>
 ) {
     if (!_cached_encoder_for_Precedence) {
-        _cached_encoder_for_Precedence = __utils._encodeInteger;
+        _cached_encoder_for_Precedence = $._encodeInteger;
     }
     return _cached_encoder_for_Precedence(value, elGetter);
 }
 
-export type AuthenticationLevel_basicLevels_level = asn1.ENUMERATED;
+/**
+ * @summary AuthenticationLevel_basicLevels_level
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AuthenticationLevel-basicLevels-level ::= ENUMERATED { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @enum {number}
+ */
+export enum _enum_for_AuthenticationLevel_basicLevels_level {
+    none = 0,
+    simple = 1,
+    strong = 2,
+}
+/**
+ * @summary AuthenticationLevel_basicLevels_level
+ */
+export type AuthenticationLevel_basicLevels_level =
+    | _enum_for_AuthenticationLevel_basicLevels_level
+    | ENUMERATED;
+/**
+ * @summary AuthenticationLevel_basicLevels_level_none
+ * @constant
+ * @type {number}
+ */
 export const AuthenticationLevel_basicLevels_level_none: AuthenticationLevel_basicLevels_level = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const none: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_none; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary AuthenticationLevel_basicLevels_level_simple
+ * @constant
+ * @type {number}
+ */
 export const AuthenticationLevel_basicLevels_level_simple: AuthenticationLevel_basicLevels_level = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const simple: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_simple; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary AuthenticationLevel_basicLevels_level_strong
+ * @constant
+ * @type {number}
+ */
 export const AuthenticationLevel_basicLevels_level_strong: AuthenticationLevel_basicLevels_level = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const strong: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_strong; /* SHORT_NAMED_ENUMERATED_VALUE */
-let _cached_decoder_for_AuthenticationLevel_basicLevels_level: __utils.ASN1Decoder<
+let _cached_decoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Decoder<
     AuthenticationLevel_basicLevels_level
 > | null = null;
-let _cached_encoder_for_AuthenticationLevel_basicLevels_level: __utils.ASN1Encoder<
+let _cached_encoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Encoder<
     AuthenticationLevel_basicLevels_level
 > | null = null;
-export function _decode_AuthenticationLevel_basicLevels_level(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AuthenticationLevel_basicLevels_level
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AuthenticationLevel_basicLevels_level} The decoded data structure.
+ */
+export function _decode_AuthenticationLevel_basicLevels_level(el: _Element) {
     if (!_cached_decoder_for_AuthenticationLevel_basicLevels_level) {
         _cached_decoder_for_AuthenticationLevel_basicLevels_level =
-            __utils._decodeEnumerated;
+            $._decodeEnumerated;
     }
     return _cached_decoder_for_AuthenticationLevel_basicLevels_level(el);
 }
+/**
+ * @summary Encodes a(n) AuthenticationLevel_basicLevels_level into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AuthenticationLevel_basicLevels_level, encoded as an ASN.1 Element.
+ */
 export function _encode_AuthenticationLevel_basicLevels_level(
     value: AuthenticationLevel_basicLevels_level,
-    elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels_level>
+    elGetter: $.ASN1Encoder<AuthenticationLevel_basicLevels_level>
 ) {
     if (!_cached_encoder_for_AuthenticationLevel_basicLevels_level) {
         _cached_encoder_for_AuthenticationLevel_basicLevels_level =
-            __utils._encodeEnumerated;
+            $._encodeEnumerated;
     }
     return _cached_encoder_for_AuthenticationLevel_basicLevels_level(
         value,
@@ -145,80 +288,183 @@ export function _encode_AuthenticationLevel_basicLevels_level(
     );
 }
 
+/**
+ * @summary AuthenticationLevel_basicLevels
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AuthenticationLevel-basicLevels ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class AuthenticationLevel_basicLevels {
     constructor(
+        /**
+         * @summary `level`.
+         * @public
+         * @readonly
+         */
         readonly level: AuthenticationLevel_basicLevels_level,
-        readonly localQualifier: asn1.INTEGER | undefined,
-        readonly signed: asn1.BOOLEAN | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `localQualifier`.
+         * @public
+         * @readonly
+         */
+        readonly localQualifier: OPTIONAL<INTEGER>,
+        /**
+         * @summary `signed`.
+         * @public
+         * @readonly
+         */
+        readonly signed: OPTIONAL<BOOLEAN>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AuthenticationLevel_basicLevels
+     * @description
+     *
+     * This takes an `object` and converts it to a `AuthenticationLevel_basicLevels`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AuthenticationLevel_basicLevels`.
+     * @returns {AuthenticationLevel_basicLevels}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AuthenticationLevel_basicLevels]: AuthenticationLevel_basicLevels[_K];
+            }
+        >
+    ): AuthenticationLevel_basicLevels {
+        return new AuthenticationLevel_basicLevels(
+            _o.level,
+            _o.localQualifier,
+            _o.signed,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `signed`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_signed() {
         return false;
     }
+    /**
+     * @summary The enum used as the type of the component `level`
+     * @public
+     * @static
+     */
+
+    public static _enum_for_level = _enum_for_AuthenticationLevel_basicLevels_level;
 }
-export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AuthenticationLevel_basicLevels
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "level",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 10),
+        $.hasTag(_TagClass.universal, 10),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "localQualifier",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "signed",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        $.hasTag(_TagClass.universal, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AuthenticationLevel_basicLevels: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AuthenticationLevel_basicLevels
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AuthenticationLevel_basicLevels
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels: $.ComponentSpec[] = [];
+let _cached_decoder_for_AuthenticationLevel_basicLevels: $.ASN1Decoder<
     AuthenticationLevel_basicLevels
 > | null = null;
-let _cached_encoder_for_AuthenticationLevel_basicLevels: __utils.ASN1Encoder<
+let _cached_encoder_for_AuthenticationLevel_basicLevels: $.ASN1Encoder<
     AuthenticationLevel_basicLevels
 > | null = null;
-export function _decode_AuthenticationLevel_basicLevels(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AuthenticationLevel_basicLevels
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AuthenticationLevel_basicLevels} The decoded data structure.
+ */
+export function _decode_AuthenticationLevel_basicLevels(el: _Element) {
     if (!_cached_decoder_for_AuthenticationLevel_basicLevels) {
         _cached_decoder_for_AuthenticationLevel_basicLevels = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AuthenticationLevel_basicLevels {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let level!: AuthenticationLevel_basicLevels_level;
-            let localQualifier: asn1.OPTIONAL<asn1.INTEGER>;
-            let signed: asn1.OPTIONAL<asn1.BOOLEAN> =
+            let localQualifier: OPTIONAL<INTEGER>;
+            let signed: OPTIONAL<BOOLEAN> =
                 AuthenticationLevel_basicLevels._default_value_for_signed;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                level: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                level: (_el: _Element): void => {
                     level = _decode_AuthenticationLevel_basicLevels_level(_el);
                 },
-                localQualifier: (_el: asn1.ASN1Element): void => {
-                    localQualifier = __utils._decodeInteger(_el);
+                localQualifier: (_el: _Element): void => {
+                    localQualifier = $._decodeInteger(_el);
                 },
-                signed: (_el: asn1.ASN1Element): void => {
-                    signed = __utils._decodeBoolean(_el);
+                signed: (_el: _Element): void => {
+                    signed = $._decodeBoolean(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_AuthenticationLevel_basicLevels,
                 _extension_additions_list_spec_for_AuthenticationLevel_basicLevels,
                 _root_component_type_list_2_spec_for_AuthenticationLevel_basicLevels,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -232,522 +478,878 @@ export function _decode_AuthenticationLevel_basicLevels(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AuthenticationLevel_basicLevels(el);
 }
+/**
+ * @summary Encodes a(n) AuthenticationLevel_basicLevels into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AuthenticationLevel_basicLevels, encoded as an ASN.1 Element.
+ */
 export function _encode_AuthenticationLevel_basicLevels(
     value: AuthenticationLevel_basicLevels,
-    elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels>
+    elGetter: $.ASN1Encoder<AuthenticationLevel_basicLevels>
 ) {
     if (!_cached_encoder_for_AuthenticationLevel_basicLevels) {
         _cached_encoder_for_AuthenticationLevel_basicLevels = function (
             value: AuthenticationLevel_basicLevels,
-            elGetter: __utils.ASN1Encoder<AuthenticationLevel_basicLevels>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AuthenticationLevel_basicLevels>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AuthenticationLevel_basicLevels_level(
                                 value.level,
-                                __utils.BER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.localQualifier === undefined
                                 ? undefined
-                                : __utils._encodeInteger(
-                                      value.localQualifier,
-                                      __utils.BER
-                                  ),
+                                : $._encodeInteger(value.localQualifier, $.BER),
                             /* IF_DEFAULT */ value.signed === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.signed,
                                 AuthenticationLevel_basicLevels._default_value_for_signed
                             )
                                 ? undefined
-                                : __utils._encodeBoolean(
-                                      value.signed,
-                                      __utils.BER
-                                  ),
+                                : $._encodeBoolean(value.signed, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_AuthenticationLevel_basicLevels(value, elGetter);
 }
 
+/**
+ * @summary AuthenticationLevel
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AuthenticationLevel  ::=  CHOICE {
+ *   basicLevels     SEQUENCE {
+ *     level           ENUMERATED {none(0), simple(1), strong(2),...},
+ *     localQualifier  INTEGER OPTIONAL,
+ *     signed          BOOLEAN DEFAULT FALSE,
+ *     ...},
+ *   other           EXTERNAL,
+ *   ... }
+ * ```
+ */
 export type AuthenticationLevel =
     | { basicLevels: AuthenticationLevel_basicLevels } /* CHOICE_ALT_ROOT */
-    | { other: asn1.EXTERNAL } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_AuthenticationLevel: __utils.ASN1Decoder<
+    | { other: EXTERNAL } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_AuthenticationLevel: $.ASN1Decoder<
     AuthenticationLevel
 > | null = null;
-let _cached_encoder_for_AuthenticationLevel: __utils.ASN1Encoder<
+let _cached_encoder_for_AuthenticationLevel: $.ASN1Encoder<
     AuthenticationLevel
 > | null = null;
-export function _decode_AuthenticationLevel(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AuthenticationLevel
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AuthenticationLevel} The decoded data structure.
+ */
+export function _decode_AuthenticationLevel(el: _Element) {
     if (!_cached_decoder_for_AuthenticationLevel) {
-        _cached_decoder_for_AuthenticationLevel = __utils._decode_extensible_choice<
+        _cached_decoder_for_AuthenticationLevel = $._decode_extensible_choice<
             AuthenticationLevel
         >({
             "UNIVERSAL 16": [
                 "basicLevels",
                 _decode_AuthenticationLevel_basicLevels,
             ],
-            "UNIVERSAL 8": ["other", __utils._decodeExternal],
+            "UNIVERSAL 8": ["other", $._decodeExternal],
         });
     }
     return _cached_decoder_for_AuthenticationLevel(el);
 }
+/**
+ * @summary Encodes a(n) AuthenticationLevel into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AuthenticationLevel, encoded as an ASN.1 Element.
+ */
 export function _encode_AuthenticationLevel(
     value: AuthenticationLevel,
-    elGetter: __utils.ASN1Encoder<AuthenticationLevel>
+    elGetter: $.ASN1Encoder<AuthenticationLevel>
 ) {
     if (!_cached_encoder_for_AuthenticationLevel) {
-        _cached_encoder_for_AuthenticationLevel = __utils._encode_choice<
+        _cached_encoder_for_AuthenticationLevel = $._encode_choice<
             AuthenticationLevel
         >(
             {
                 basicLevels: _encode_AuthenticationLevel_basicLevels,
-                other: __utils._encodeExternal,
+                other: $._encodeExternal,
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_AuthenticationLevel(value, elGetter);
 }
 
+/**
+ * @summary MaxValueCount
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * MaxValueCount ::= SEQUENCE {
+ *   type      AttributeType,
+ *   maxCount  INTEGER,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class MaxValueCount {
     constructor(
+        /**
+         * @summary `type_`.
+         * @public
+         * @readonly
+         */
         readonly type_: AttributeType,
-        readonly maxCount: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `maxCount`.
+         * @public
+         * @readonly
+         */
+        readonly maxCount: INTEGER,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a MaxValueCount
+     * @description
+     *
+     * This takes an `object` and converts it to a `MaxValueCount`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `MaxValueCount`.
+     * @returns {MaxValueCount}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof MaxValueCount]: MaxValueCount[_K] }>
+    ): MaxValueCount {
+        return new MaxValueCount(
+            _o.type_,
+            _o.maxCount,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_MaxValueCount: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of MaxValueCount
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_MaxValueCount: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "type",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "maxCount",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_MaxValueCount: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_MaxValueCount: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of MaxValueCount
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_MaxValueCount: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of MaxValueCount
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_MaxValueCount: $.ComponentSpec[] = [];
+let _cached_decoder_for_MaxValueCount: $.ASN1Decoder<
     MaxValueCount
 > | null = null;
-let _cached_encoder_for_MaxValueCount: __utils.ASN1Encoder<
+let _cached_encoder_for_MaxValueCount: $.ASN1Encoder<
     MaxValueCount
 > | null = null;
-export function _decode_MaxValueCount(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) MaxValueCount
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {MaxValueCount} The decoded data structure.
+ */
+export function _decode_MaxValueCount(el: _Element) {
     if (!_cached_decoder_for_MaxValueCount) {
         _cached_decoder_for_MaxValueCount = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): MaxValueCount {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "MaxValueCount contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "type";
             sequence[1].name = "maxCount";
             let type_!: AttributeType;
-            let maxCount!: asn1.INTEGER;
+            let maxCount!: INTEGER;
             type_ = _decode_AttributeType(sequence[0]);
-            maxCount = __utils._decodeInteger(sequence[1]);
-            // TODO: Validate values.
+            maxCount = $._decodeInteger(sequence[1]);
             return new MaxValueCount(type_, maxCount, sequence.slice(2));
         };
     }
     return _cached_decoder_for_MaxValueCount(el);
 }
+/**
+ * @summary Encodes a(n) MaxValueCount into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The MaxValueCount, encoded as an ASN.1 Element.
+ */
 export function _encode_MaxValueCount(
     value: MaxValueCount,
-    elGetter: __utils.ASN1Encoder<MaxValueCount>
+    elGetter: $.ASN1Encoder<MaxValueCount>
 ) {
     if (!_cached_encoder_for_MaxValueCount) {
         _cached_encoder_for_MaxValueCount = function (
             value: MaxValueCount,
-            elGetter: __utils.ASN1Encoder<MaxValueCount>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<MaxValueCount>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttributeType(
                                 value.type_,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeInteger(
+                            /* REQUIRED   */ $._encodeInteger(
                                 value.maxCount,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_MaxValueCount(value, elGetter);
 }
 
+/**
+ * @summary RestrictedValue
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * RestrictedValue ::= SEQUENCE {
+ *   type      AttributeType,
+ *   valuesIn  AttributeType,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class RestrictedValue {
     constructor(
+        /**
+         * @summary `type_`.
+         * @public
+         * @readonly
+         */
         readonly type_: AttributeType,
+        /**
+         * @summary `valuesIn`.
+         * @public
+         * @readonly
+         */
         readonly valuesIn: AttributeType,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a RestrictedValue
+     * @description
+     *
+     * This takes an `object` and converts it to a `RestrictedValue`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `RestrictedValue`.
+     * @returns {RestrictedValue}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof RestrictedValue]: RestrictedValue[_K] }>
+    ): RestrictedValue {
+        return new RestrictedValue(
+            _o.type_,
+            _o.valuesIn,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_RestrictedValue: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of RestrictedValue
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_RestrictedValue: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "type",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "valuesIn",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_RestrictedValue: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_RestrictedValue: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of RestrictedValue
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_RestrictedValue: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of RestrictedValue
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_RestrictedValue: $.ComponentSpec[] = [];
+let _cached_decoder_for_RestrictedValue: $.ASN1Decoder<
     RestrictedValue
 > | null = null;
-let _cached_encoder_for_RestrictedValue: __utils.ASN1Encoder<
+let _cached_encoder_for_RestrictedValue: $.ASN1Encoder<
     RestrictedValue
 > | null = null;
-export function _decode_RestrictedValue(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) RestrictedValue
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {RestrictedValue} The decoded data structure.
+ */
+export function _decode_RestrictedValue(el: _Element) {
     if (!_cached_decoder_for_RestrictedValue) {
         _cached_decoder_for_RestrictedValue = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): RestrictedValue {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "RestrictedValue contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "type";
             sequence[1].name = "valuesIn";
             let type_!: AttributeType;
             let valuesIn!: AttributeType;
             type_ = _decode_AttributeType(sequence[0]);
             valuesIn = _decode_AttributeType(sequence[1]);
-            // TODO: Validate values.
             return new RestrictedValue(type_, valuesIn, sequence.slice(2));
         };
     }
     return _cached_decoder_for_RestrictedValue(el);
 }
+/**
+ * @summary Encodes a(n) RestrictedValue into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The RestrictedValue, encoded as an ASN.1 Element.
+ */
 export function _encode_RestrictedValue(
     value: RestrictedValue,
-    elGetter: __utils.ASN1Encoder<RestrictedValue>
+    elGetter: $.ASN1Encoder<RestrictedValue>
 ) {
     if (!_cached_encoder_for_RestrictedValue) {
         _cached_encoder_for_RestrictedValue = function (
             value: RestrictedValue,
-            elGetter: __utils.ASN1Encoder<RestrictedValue>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<RestrictedValue>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttributeType(
                                 value.type_,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AttributeType(
                                 value.valuesIn,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_RestrictedValue(value, elGetter);
 }
 
+/**
+ * @summary ProtectedItems
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ProtectedItems ::= SEQUENCE {
+ *   entry                          [0]  NULL OPTIONAL,
+ *   allUserAttributeTypes          [1]  NULL OPTIONAL,
+ *   attributeType                  [2]  SET SIZE (1..MAX) OF AttributeType
+ *                                         OPTIONAL,
+ *   allAttributeValues             [3]  SET SIZE (1..MAX) OF AttributeType
+ *                                         OPTIONAL,
+ *   allUserAttributeTypesAndValues [4]  NULL OPTIONAL,
+ *   attributeValue                 [5]  SET SIZE (1..MAX) OF AttributeTypeAndValue
+ *                                         OPTIONAL,
+ *   selfValue                      [6]  SET SIZE (1..MAX) OF AttributeType
+ *                                         OPTIONAL,
+ *   rangeOfValues                  [7]  Filter OPTIONAL,
+ *   maxValueCount                  [8]  SET SIZE (1..MAX) OF MaxValueCount
+ *                                         OPTIONAL,
+ *   maxImmSub                      [9]  INTEGER OPTIONAL,
+ *   restrictedBy                   [10] SET SIZE (1..MAX) OF RestrictedValue
+ *                                         OPTIONAL,
+ *   contexts                       [11] SET SIZE (1..MAX) OF ContextAssertion
+ *                                         OPTIONAL,
+ *   classes                        [12] Refinement OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class ProtectedItems {
     constructor(
-        readonly entry: asn1.NULL | undefined,
-        readonly allUserAttributeTypes: asn1.NULL | undefined,
-        readonly attributeType: AttributeType[] | undefined,
-        readonly allAttributeValues: AttributeType[] | undefined,
-        readonly allUserAttributeTypesAndValues: asn1.NULL | undefined,
-        readonly attributeValue: AttributeTypeAndValue[] | undefined,
-        readonly selfValue: AttributeType[] | undefined,
-        readonly rangeOfValues: Filter | undefined,
-        readonly maxValueCount: MaxValueCount[] | undefined,
-        readonly maxImmSub: asn1.INTEGER | undefined,
-        readonly restrictedBy: RestrictedValue[] | undefined,
-        readonly contexts: ContextAssertion[] | undefined,
-        readonly classes: Refinement | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `entry`.
+         * @public
+         * @readonly
+         */
+        readonly entry: OPTIONAL<NULL>,
+        /**
+         * @summary `allUserAttributeTypes`.
+         * @public
+         * @readonly
+         */
+        readonly allUserAttributeTypes: OPTIONAL<NULL>,
+        /**
+         * @summary `attributeType`.
+         * @public
+         * @readonly
+         */
+        readonly attributeType: OPTIONAL<AttributeType[]>,
+        /**
+         * @summary `allAttributeValues`.
+         * @public
+         * @readonly
+         */
+        readonly allAttributeValues: OPTIONAL<AttributeType[]>,
+        /**
+         * @summary `allUserAttributeTypesAndValues`.
+         * @public
+         * @readonly
+         */
+        readonly allUserAttributeTypesAndValues: OPTIONAL<NULL>,
+        /**
+         * @summary `attributeValue`.
+         * @public
+         * @readonly
+         */
+        readonly attributeValue: OPTIONAL<AttributeTypeAndValue[]>,
+        /**
+         * @summary `selfValue`.
+         * @public
+         * @readonly
+         */
+        readonly selfValue: OPTIONAL<AttributeType[]>,
+        /**
+         * @summary `rangeOfValues`.
+         * @public
+         * @readonly
+         */
+        readonly rangeOfValues: OPTIONAL<Filter>,
+        /**
+         * @summary `maxValueCount`.
+         * @public
+         * @readonly
+         */
+        readonly maxValueCount: OPTIONAL<MaxValueCount[]>,
+        /**
+         * @summary `maxImmSub`.
+         * @public
+         * @readonly
+         */
+        readonly maxImmSub: OPTIONAL<INTEGER>,
+        /**
+         * @summary `restrictedBy`.
+         * @public
+         * @readonly
+         */
+        readonly restrictedBy: OPTIONAL<RestrictedValue[]>,
+        /**
+         * @summary `contexts`.
+         * @public
+         * @readonly
+         */
+        readonly contexts: OPTIONAL<ContextAssertion[]>,
+        /**
+         * @summary `classes`.
+         * @public
+         * @readonly
+         */
+        readonly classes: OPTIONAL<Refinement>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ProtectedItems
+     * @description
+     *
+     * This takes an `object` and converts it to a `ProtectedItems`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ProtectedItems`.
+     * @returns {ProtectedItems}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ProtectedItems]: ProtectedItems[_K] }>
+    ): ProtectedItems {
+        return new ProtectedItems(
+            _o.entry,
+            _o.allUserAttributeTypes,
+            _o.attributeType,
+            _o.allAttributeValues,
+            _o.allUserAttributeTypesAndValues,
+            _o.attributeValue,
+            _o.selfValue,
+            _o.rangeOfValues,
+            _o.maxValueCount,
+            _o.maxImmSub,
+            _o.restrictedBy,
+            _o.contexts,
+            _o.classes,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ProtectedItems: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ProtectedItems
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ProtectedItems: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "entry",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "allUserAttributeTypes",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attributeType",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "allAttributeValues",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        $.hasTag(_TagClass.context, 3),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "allUserAttributeTypesAndValues",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        $.hasTag(_TagClass.context, 4),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attributeValue",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 5),
+        $.hasTag(_TagClass.context, 5),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "selfValue",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        $.hasTag(_TagClass.context, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "rangeOfValues",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 7),
+        $.hasTag(_TagClass.context, 7),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "maxValueCount",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 8),
+        $.hasTag(_TagClass.context, 8),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "maxImmSub",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 9),
+        $.hasTag(_TagClass.context, 9),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "restrictedBy",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 10),
+        $.hasTag(_TagClass.context, 10),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "contexts",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 11),
+        $.hasTag(_TagClass.context, 11),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "classes",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 12),
+        $.hasTag(_TagClass.context, 12),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ProtectedItems: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ProtectedItems: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of ProtectedItems
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ProtectedItems: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ProtectedItems
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ProtectedItems: $.ComponentSpec[] = [];
+let _cached_decoder_for_ProtectedItems: $.ASN1Decoder<
     ProtectedItems
 > | null = null;
-let _cached_encoder_for_ProtectedItems: __utils.ASN1Encoder<
+let _cached_encoder_for_ProtectedItems: $.ASN1Encoder<
     ProtectedItems
 > | null = null;
-export function _decode_ProtectedItems(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ProtectedItems
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ProtectedItems} The decoded data structure.
+ */
+export function _decode_ProtectedItems(el: _Element) {
     if (!_cached_decoder_for_ProtectedItems) {
         _cached_decoder_for_ProtectedItems = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): ProtectedItems {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let entry: asn1.OPTIONAL<asn1.NULL>;
-            let allUserAttributeTypes: asn1.OPTIONAL<asn1.NULL>;
-            let attributeType: asn1.OPTIONAL<AttributeType[]>;
-            let allAttributeValues: asn1.OPTIONAL<AttributeType[]>;
-            let allUserAttributeTypesAndValues: asn1.OPTIONAL<asn1.NULL>;
-            let attributeValue: asn1.OPTIONAL<AttributeTypeAndValue[]>;
-            let selfValue: asn1.OPTIONAL<AttributeType[]>;
-            let rangeOfValues: asn1.OPTIONAL<Filter>;
-            let maxValueCount: asn1.OPTIONAL<MaxValueCount[]>;
-            let maxImmSub: asn1.OPTIONAL<asn1.INTEGER>;
-            let restrictedBy: asn1.OPTIONAL<RestrictedValue[]>;
-            let contexts: asn1.OPTIONAL<ContextAssertion[]>;
-            let classes: asn1.OPTIONAL<Refinement>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let entry: OPTIONAL<NULL>;
+            let allUserAttributeTypes: OPTIONAL<NULL>;
+            let attributeType: OPTIONAL<AttributeType[]>;
+            let allAttributeValues: OPTIONAL<AttributeType[]>;
+            let allUserAttributeTypesAndValues: OPTIONAL<NULL>;
+            let attributeValue: OPTIONAL<AttributeTypeAndValue[]>;
+            let selfValue: OPTIONAL<AttributeType[]>;
+            let rangeOfValues: OPTIONAL<Filter>;
+            let maxValueCount: OPTIONAL<MaxValueCount[]>;
+            let maxImmSub: OPTIONAL<INTEGER>;
+            let restrictedBy: OPTIONAL<RestrictedValue[]>;
+            let contexts: OPTIONAL<ContextAssertion[]>;
+            let classes: OPTIONAL<Refinement>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                entry: (_el: asn1.ASN1Element): void => {
-                    entry = __utils._decode_explicit<asn1.NULL>(
-                        () => __utils._decodeNull
+            const callbacks: $.DecodingMap = {
+                entry: (_el: _Element): void => {
+                    entry = $._decode_explicit<NULL>(() => $._decodeNull)(_el);
+                },
+                allUserAttributeTypes: (_el: _Element): void => {
+                    allUserAttributeTypes = $._decode_explicit<NULL>(
+                        () => $._decodeNull
                     )(_el);
                 },
-                allUserAttributeTypes: (_el: asn1.ASN1Element): void => {
-                    allUserAttributeTypes = __utils._decode_explicit<asn1.NULL>(
-                        () => __utils._decodeNull
+                attributeType: (_el: _Element): void => {
+                    attributeType = $._decode_explicit<AttributeType[]>(() =>
+                        $._decodeSetOf<AttributeType>(
+                            () => _decode_AttributeType
+                        )
                     )(_el);
                 },
-                attributeType: (_el: asn1.ASN1Element): void => {
-                    attributeType = __utils._decode_explicit<AttributeType[]>(
+                allAttributeValues: (_el: _Element): void => {
+                    allAttributeValues = $._decode_explicit<AttributeType[]>(
                         () =>
-                            __utils._decodeSetOf<AttributeType>(
+                            $._decodeSetOf<AttributeType>(
                                 () => _decode_AttributeType
                             )
                     )(_el);
                 },
-                allAttributeValues: (_el: asn1.ASN1Element): void => {
-                    allAttributeValues = __utils._decode_explicit<
-                        AttributeType[]
-                    >(() =>
-                        __utils._decodeSetOf<AttributeType>(
-                            () => _decode_AttributeType
-                        )
+                allUserAttributeTypesAndValues: (_el: _Element): void => {
+                    allUserAttributeTypesAndValues = $._decode_explicit<NULL>(
+                        () => $._decodeNull
                     )(_el);
                 },
-                allUserAttributeTypesAndValues: (
-                    _el: asn1.ASN1Element
-                ): void => {
-                    allUserAttributeTypesAndValues = __utils._decode_explicit<
-                        asn1.NULL
-                    >(() => __utils._decodeNull)(_el);
-                },
-                attributeValue: (_el: asn1.ASN1Element): void => {
-                    attributeValue = __utils._decode_explicit<
+                attributeValue: (_el: _Element): void => {
+                    attributeValue = $._decode_explicit<
                         AttributeTypeAndValue[]
                     >(() =>
-                        __utils._decodeSetOf<AttributeTypeAndValue>(
+                        $._decodeSetOf<AttributeTypeAndValue>(
                             () => _decode_AttributeTypeAndValue
                         )
                     )(_el);
                 },
-                selfValue: (_el: asn1.ASN1Element): void => {
-                    selfValue = __utils._decode_explicit<AttributeType[]>(() =>
-                        __utils._decodeSetOf<AttributeType>(
+                selfValue: (_el: _Element): void => {
+                    selfValue = $._decode_explicit<AttributeType[]>(() =>
+                        $._decodeSetOf<AttributeType>(
                             () => _decode_AttributeType
                         )
                     )(_el);
                 },
-                rangeOfValues: (_el: asn1.ASN1Element): void => {
-                    rangeOfValues = __utils._decode_explicit<Filter>(
+                rangeOfValues: (_el: _Element): void => {
+                    rangeOfValues = $._decode_explicit<Filter>(
                         () => _decode_Filter
                     )(_el);
                 },
-                maxValueCount: (_el: asn1.ASN1Element): void => {
-                    maxValueCount = __utils._decode_explicit<MaxValueCount[]>(
-                        () =>
-                            __utils._decodeSetOf<MaxValueCount>(
-                                () => _decode_MaxValueCount
-                            )
+                maxValueCount: (_el: _Element): void => {
+                    maxValueCount = $._decode_explicit<MaxValueCount[]>(() =>
+                        $._decodeSetOf<MaxValueCount>(
+                            () => _decode_MaxValueCount
+                        )
                     )(_el);
                 },
-                maxImmSub: (_el: asn1.ASN1Element): void => {
-                    maxImmSub = __utils._decode_explicit<asn1.INTEGER>(
-                        () => __utils._decodeInteger
+                maxImmSub: (_el: _Element): void => {
+                    maxImmSub = $._decode_explicit<INTEGER>(
+                        () => $._decodeInteger
                     )(_el);
                 },
-                restrictedBy: (_el: asn1.ASN1Element): void => {
-                    restrictedBy = __utils._decode_explicit<RestrictedValue[]>(
-                        () =>
-                            __utils._decodeSetOf<RestrictedValue>(
-                                () => _decode_RestrictedValue
-                            )
+                restrictedBy: (_el: _Element): void => {
+                    restrictedBy = $._decode_explicit<RestrictedValue[]>(() =>
+                        $._decodeSetOf<RestrictedValue>(
+                            () => _decode_RestrictedValue
+                        )
                     )(_el);
                 },
-                contexts: (_el: asn1.ASN1Element): void => {
-                    contexts = __utils._decode_explicit<ContextAssertion[]>(
-                        () =>
-                            __utils._decodeSetOf<ContextAssertion>(
-                                () => _decode_ContextAssertion
-                            )
+                contexts: (_el: _Element): void => {
+                    contexts = $._decode_explicit<ContextAssertion[]>(() =>
+                        $._decodeSetOf<ContextAssertion>(
+                            () => _decode_ContextAssertion
+                        )
                     )(_el);
                 },
-                classes: (_el: asn1.ASN1Element): void => {
-                    classes = __utils._decode_explicit<Refinement>(
+                classes: (_el: _Element): void => {
+                    classes = $._decode_explicit<Refinement>(
                         () => _decode_Refinement
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_ProtectedItems,
                 _extension_additions_list_spec_for_ProtectedItems,
                 _root_component_type_list_2_spec_for_ProtectedItems,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -771,289 +1373,387 @@ export function _decode_ProtectedItems(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ProtectedItems(el);
 }
+/**
+ * @summary Encodes a(n) ProtectedItems into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ProtectedItems, encoded as an ASN.1 Element.
+ */
 export function _encode_ProtectedItems(
     value: ProtectedItems,
-    elGetter: __utils.ASN1Encoder<ProtectedItems>
+    elGetter: $.ASN1Encoder<ProtectedItems>
 ) {
     if (!_cached_encoder_for_ProtectedItems) {
         _cached_encoder_for_ProtectedItems = function (
             value: ProtectedItems,
-            elGetter: __utils.ASN1Encoder<ProtectedItems>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ProtectedItems>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.entry === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       0,
-                                      () => __utils._encodeNull,
-                                      __utils.BER
-                                  )(value.entry, __utils.BER),
+                                      () => $._encodeNull,
+                                      $.BER
+                                  )(value.entry, $.BER),
                             /* IF_ABSENT  */ value.allUserAttributeTypes ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
-                                      () => __utils._encodeNull,
-                                      __utils.BER
-                                  )(value.allUserAttributeTypes, __utils.BER),
+                                      () => $._encodeNull,
+                                      $.BER
+                                  )(value.allUserAttributeTypes, $.BER),
                             /* IF_ABSENT  */ value.attributeType === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       2,
                                       () =>
-                                          __utils._encodeSetOf<AttributeType>(
+                                          $._encodeSetOf<AttributeType>(
                                               () => _encode_AttributeType,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.attributeType, __utils.BER),
+                                      $.BER
+                                  )(value.attributeType, $.BER),
                             /* IF_ABSENT  */ value.allAttributeValues ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       3,
                                       () =>
-                                          __utils._encodeSetOf<AttributeType>(
+                                          $._encodeSetOf<AttributeType>(
                                               () => _encode_AttributeType,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.allAttributeValues, __utils.BER),
+                                      $.BER
+                                  )(value.allAttributeValues, $.BER),
                             /* IF_ABSENT  */ value.allUserAttributeTypesAndValues ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       4,
-                                      () => __utils._encodeNull,
-                                      __utils.BER
+                                      () => $._encodeNull,
+                                      $.BER
                                   )(
                                       value.allUserAttributeTypesAndValues,
-                                      __utils.BER
+                                      $.BER
                                   ),
                             /* IF_ABSENT  */ value.attributeValue === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       5,
                                       () =>
-                                          __utils._encodeSetOf<
-                                              AttributeTypeAndValue
-                                          >(
+                                          $._encodeSetOf<AttributeTypeAndValue>(
                                               () =>
                                                   _encode_AttributeTypeAndValue,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.attributeValue, __utils.BER),
+                                      $.BER
+                                  )(value.attributeValue, $.BER),
                             /* IF_ABSENT  */ value.selfValue === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       6,
                                       () =>
-                                          __utils._encodeSetOf<AttributeType>(
+                                          $._encodeSetOf<AttributeType>(
                                               () => _encode_AttributeType,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.selfValue, __utils.BER),
+                                      $.BER
+                                  )(value.selfValue, $.BER),
                             /* IF_ABSENT  */ value.rangeOfValues === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       7,
                                       () => _encode_Filter,
-                                      __utils.BER
-                                  )(value.rangeOfValues, __utils.BER),
+                                      $.BER
+                                  )(value.rangeOfValues, $.BER),
                             /* IF_ABSENT  */ value.maxValueCount === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       8,
                                       () =>
-                                          __utils._encodeSetOf<MaxValueCount>(
+                                          $._encodeSetOf<MaxValueCount>(
                                               () => _encode_MaxValueCount,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.maxValueCount, __utils.BER),
+                                      $.BER
+                                  )(value.maxValueCount, $.BER),
                             /* IF_ABSENT  */ value.maxImmSub === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       9,
-                                      () => __utils._encodeInteger,
-                                      __utils.BER
-                                  )(value.maxImmSub, __utils.BER),
+                                      () => $._encodeInteger,
+                                      $.BER
+                                  )(value.maxImmSub, $.BER),
                             /* IF_ABSENT  */ value.restrictedBy === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       10,
                                       () =>
-                                          __utils._encodeSetOf<RestrictedValue>(
+                                          $._encodeSetOf<RestrictedValue>(
                                               () => _encode_RestrictedValue,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.restrictedBy, __utils.BER),
+                                      $.BER
+                                  )(value.restrictedBy, $.BER),
                             /* IF_ABSENT  */ value.contexts === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       11,
                                       () =>
-                                          __utils._encodeSetOf<
-                                              ContextAssertion
-                                          >(
+                                          $._encodeSetOf<ContextAssertion>(
                                               () => _encode_ContextAssertion,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.contexts, __utils.BER),
+                                      $.BER
+                                  )(value.contexts, $.BER),
                             /* IF_ABSENT  */ value.classes === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       12,
                                       () => _encode_Refinement,
-                                      __utils.BER
-                                  )(value.classes, __utils.BER),
+                                      $.BER
+                                  )(value.classes, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_ProtectedItems(value, elGetter);
 }
 
+/**
+ * @summary UserClasses
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * UserClasses ::= SEQUENCE {
+ *   allUsers   [0]  NULL                                      OPTIONAL,
+ *   thisEntry  [1]  NULL                                      OPTIONAL,
+ *   name       [2]  SET SIZE (1..MAX) OF NameAndOptionalUID   OPTIONAL,
+ *   userGroup  [3]  SET SIZE (1..MAX) OF NameAndOptionalUID   OPTIONAL,
+ *                   -- dn component shall be the name of an
+ *                   -- entry of GroupOfUniqueNames
+ *   subtree    [4]  SET SIZE (1..MAX) OF SubtreeSpecification OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class UserClasses {
     constructor(
-        readonly allUsers: asn1.NULL | undefined,
-        readonly thisEntry: asn1.NULL | undefined,
-        readonly name: NameAndOptionalUID[] | undefined,
-        readonly userGroup: NameAndOptionalUID[] | undefined,
-        readonly subtree: SubtreeSpecification[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `allUsers`.
+         * @public
+         * @readonly
+         */
+        readonly allUsers: OPTIONAL<NULL>,
+        /**
+         * @summary `thisEntry`.
+         * @public
+         * @readonly
+         */
+        readonly thisEntry: OPTIONAL<NULL>,
+        /**
+         * @summary `name`.
+         * @public
+         * @readonly
+         */
+        readonly name: OPTIONAL<NameAndOptionalUID[]>,
+        /**
+         * @summary `userGroup`.
+         * @public
+         * @readonly
+         */
+        readonly userGroup: OPTIONAL<NameAndOptionalUID[]>,
+        /**
+         * @summary `subtree`.
+         * @public
+         * @readonly
+         */
+        readonly subtree: OPTIONAL<SubtreeSpecification[]>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a UserClasses
+     * @description
+     *
+     * This takes an `object` and converts it to a `UserClasses`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `UserClasses`.
+     * @returns {UserClasses}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof UserClasses]: UserClasses[_K] }>
+    ): UserClasses {
+        return new UserClasses(
+            _o.allUsers,
+            _o.thisEntry,
+            _o.name,
+            _o.userGroup,
+            _o.subtree,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_UserClasses: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of UserClasses
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_UserClasses: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "allUsers",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "thisEntry",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "name",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "userGroup",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        $.hasTag(_TagClass.context, 3),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "subtree",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 4),
+        $.hasTag(_TagClass.context, 4),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_UserClasses: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_UserClasses: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_UserClasses: __utils.ASN1Decoder<
-    UserClasses
-> | null = null;
-let _cached_encoder_for_UserClasses: __utils.ASN1Encoder<
-    UserClasses
-> | null = null;
-export function _decode_UserClasses(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of UserClasses
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_UserClasses: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of UserClasses
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_UserClasses: $.ComponentSpec[] = [];
+let _cached_decoder_for_UserClasses: $.ASN1Decoder<UserClasses> | null = null;
+let _cached_encoder_for_UserClasses: $.ASN1Encoder<UserClasses> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) UserClasses
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {UserClasses} The decoded data structure.
+ */
+export function _decode_UserClasses(el: _Element) {
     if (!_cached_decoder_for_UserClasses) {
-        _cached_decoder_for_UserClasses = function (
-            el: asn1.ASN1Element
-        ): UserClasses {
+        _cached_decoder_for_UserClasses = function (el: _Element): UserClasses {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let allUsers: asn1.OPTIONAL<asn1.NULL>;
-            let thisEntry: asn1.OPTIONAL<asn1.NULL>;
-            let name: asn1.OPTIONAL<NameAndOptionalUID[]>;
-            let userGroup: asn1.OPTIONAL<NameAndOptionalUID[]>;
-            let subtree: asn1.OPTIONAL<SubtreeSpecification[]>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let allUsers: OPTIONAL<NULL>;
+            let thisEntry: OPTIONAL<NULL>;
+            let name: OPTIONAL<NameAndOptionalUID[]>;
+            let userGroup: OPTIONAL<NameAndOptionalUID[]>;
+            let subtree: OPTIONAL<SubtreeSpecification[]>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                allUsers: (_el: asn1.ASN1Element): void => {
-                    allUsers = __utils._decode_explicit<asn1.NULL>(
-                        () => __utils._decodeNull
-                    )(_el);
+            const callbacks: $.DecodingMap = {
+                allUsers: (_el: _Element): void => {
+                    allUsers = $._decode_explicit<NULL>(() => $._decodeNull)(
+                        _el
+                    );
                 },
-                thisEntry: (_el: asn1.ASN1Element): void => {
-                    thisEntry = __utils._decode_explicit<asn1.NULL>(
-                        () => __utils._decodeNull
-                    )(_el);
+                thisEntry: (_el: _Element): void => {
+                    thisEntry = $._decode_explicit<NULL>(() => $._decodeNull)(
+                        _el
+                    );
                 },
-                name: (_el: asn1.ASN1Element): void => {
-                    name = __utils._decode_explicit<NameAndOptionalUID[]>(() =>
-                        __utils._decodeSetOf<NameAndOptionalUID>(
+                name: (_el: _Element): void => {
+                    name = $._decode_explicit<NameAndOptionalUID[]>(() =>
+                        $._decodeSetOf<NameAndOptionalUID>(
                             () => _decode_NameAndOptionalUID
                         )
                     )(_el);
                 },
-                userGroup: (_el: asn1.ASN1Element): void => {
-                    userGroup = __utils._decode_explicit<NameAndOptionalUID[]>(
-                        () =>
-                            __utils._decodeSetOf<NameAndOptionalUID>(
-                                () => _decode_NameAndOptionalUID
-                            )
+                userGroup: (_el: _Element): void => {
+                    userGroup = $._decode_explicit<NameAndOptionalUID[]>(() =>
+                        $._decodeSetOf<NameAndOptionalUID>(
+                            () => _decode_NameAndOptionalUID
+                        )
                     )(_el);
                 },
-                subtree: (_el: asn1.ASN1Element): void => {
-                    subtree = __utils._decode_explicit<SubtreeSpecification[]>(
-                        () =>
-                            __utils._decodeSetOf<SubtreeSpecification>(
-                                () => _decode_SubtreeSpecification
-                            )
+                subtree: (_el: _Element): void => {
+                    subtree = $._decode_explicit<SubtreeSpecification[]>(() =>
+                        $._decodeSetOf<SubtreeSpecification>(
+                            () => _decode_SubtreeSpecification
+                        )
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_UserClasses,
                 _extension_additions_list_spec_for_UserClasses,
                 _root_component_type_list_2_spec_for_UserClasses,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1069,238 +1769,460 @@ export function _decode_UserClasses(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_UserClasses(el);
 }
+/**
+ * @summary Encodes a(n) UserClasses into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The UserClasses, encoded as an ASN.1 Element.
+ */
 export function _encode_UserClasses(
     value: UserClasses,
-    elGetter: __utils.ASN1Encoder<UserClasses>
+    elGetter: $.ASN1Encoder<UserClasses>
 ) {
     if (!_cached_encoder_for_UserClasses) {
         _cached_encoder_for_UserClasses = function (
             value: UserClasses,
-            elGetter: __utils.ASN1Encoder<UserClasses>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<UserClasses>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.allUsers === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       0,
-                                      () => __utils._encodeNull,
-                                      __utils.BER
-                                  )(value.allUsers, __utils.BER),
+                                      () => $._encodeNull,
+                                      $.BER
+                                  )(value.allUsers, $.BER),
                             /* IF_ABSENT  */ value.thisEntry === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
-                                      () => __utils._encodeNull,
-                                      __utils.BER
-                                  )(value.thisEntry, __utils.BER),
+                                      () => $._encodeNull,
+                                      $.BER
+                                  )(value.thisEntry, $.BER),
                             /* IF_ABSENT  */ value.name === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       2,
                                       () =>
-                                          __utils._encodeSetOf<
-                                              NameAndOptionalUID
-                                          >(
+                                          $._encodeSetOf<NameAndOptionalUID>(
                                               () => _encode_NameAndOptionalUID,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.name, __utils.BER),
+                                      $.BER
+                                  )(value.name, $.BER),
                             /* IF_ABSENT  */ value.userGroup === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       3,
                                       () =>
-                                          __utils._encodeSetOf<
-                                              NameAndOptionalUID
-                                          >(
+                                          $._encodeSetOf<NameAndOptionalUID>(
                                               () => _encode_NameAndOptionalUID,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.userGroup, __utils.BER),
+                                      $.BER
+                                  )(value.userGroup, $.BER),
                             /* IF_ABSENT  */ value.subtree === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       4,
                                       () =>
-                                          __utils._encodeSetOf<
-                                              SubtreeSpecification
-                                          >(
+                                          $._encodeSetOf<SubtreeSpecification>(
                                               () =>
                                                   _encode_SubtreeSpecification,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.subtree, __utils.BER),
+                                      $.BER
+                                  )(value.subtree, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_UserClasses(value, elGetter);
 }
 
-export type GrantsAndDenials = asn1.BIT_STRING;
+/**
+ * @summary GrantsAndDenials
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * GrantsAndDenials  ::=  BIT STRING {
+ *   -- permissions that may be used in conjunction
+ *   -- with any component of ProtectedItems
+ *   grantAdd             (0),
+ *   denyAdd              (1),
+ *   grantDiscloseOnError (2),
+ *   denyDiscloseOnError  (3),
+ *   grantRead            (4),
+ *   denyRead             (5),
+ *   grantRemove          (6),
+ *   denyRemove           (7),
+ *   -- permissions that may be used only in conjunction
+ *   -- with the entry component
+ *   grantBrowse          (8),
+ *   denyBrowse           (9),
+ *   grantExport          (10),
+ *   denyExport           (11),
+ *   grantImport          (12),
+ *   denyImport           (13),
+ *   grantModify          (14),
+ *   denyModify           (15),
+ *   grantRename          (16),
+ *   denyRename           (17),
+ *   grantReturnDN        (18),
+ *   denyReturnDN         (19),
+ *   -- permissions that may be used in conjunction
+ *   -- with any component, except entry, of ProtectedItems
+ *   grantCompare         (20),
+ *   denyCompare          (21),
+ *   grantFilterMatch     (22),
+ *   denyFilterMatch      (23),
+ *   grantInvoke          (24),
+ *   denyInvoke           (25) }
+ * ```
+ */
+export type GrantsAndDenials = BIT_STRING;
+/**
+ * @summary GrantsAndDenials_grantAdd
+ * @constant
+ */
 export const GrantsAndDenials_grantAdd: number = 0; /* LONG_NAMED_BIT */
-export const grantAdd: number = GrantsAndDenials_grantAdd; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyAdd
+ * @constant
+ */
 export const GrantsAndDenials_denyAdd: number = 1; /* LONG_NAMED_BIT */
-export const denyAdd: number = GrantsAndDenials_denyAdd; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantDiscloseOnError
+ * @constant
+ */
 export const GrantsAndDenials_grantDiscloseOnError: number = 2; /* LONG_NAMED_BIT */
-export const grantDiscloseOnError: number = GrantsAndDenials_grantDiscloseOnError; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyDiscloseOnError
+ * @constant
+ */
 export const GrantsAndDenials_denyDiscloseOnError: number = 3; /* LONG_NAMED_BIT */
-export const denyDiscloseOnError: number = GrantsAndDenials_denyDiscloseOnError; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantRead
+ * @constant
+ */
 export const GrantsAndDenials_grantRead: number = 4; /* LONG_NAMED_BIT */
-export const grantRead: number = GrantsAndDenials_grantRead; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyRead
+ * @constant
+ */
 export const GrantsAndDenials_denyRead: number = 5; /* LONG_NAMED_BIT */
-export const denyRead: number = GrantsAndDenials_denyRead; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantRemove
+ * @constant
+ */
 export const GrantsAndDenials_grantRemove: number = 6; /* LONG_NAMED_BIT */
-export const grantRemove: number = GrantsAndDenials_grantRemove; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyRemove
+ * @constant
+ */
 export const GrantsAndDenials_denyRemove: number = 7; /* LONG_NAMED_BIT */
-export const denyRemove: number = GrantsAndDenials_denyRemove; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantBrowse
+ * @constant
+ */
 export const GrantsAndDenials_grantBrowse: number = 8; /* LONG_NAMED_BIT */
-export const grantBrowse: number = GrantsAndDenials_grantBrowse; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyBrowse
+ * @constant
+ */
 export const GrantsAndDenials_denyBrowse: number = 9; /* LONG_NAMED_BIT */
-export const denyBrowse: number = GrantsAndDenials_denyBrowse; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantExport
+ * @constant
+ */
 export const GrantsAndDenials_grantExport: number = 10; /* LONG_NAMED_BIT */
-export const grantExport: number = GrantsAndDenials_grantExport; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyExport
+ * @constant
+ */
 export const GrantsAndDenials_denyExport: number = 11; /* LONG_NAMED_BIT */
-export const denyExport: number = GrantsAndDenials_denyExport; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantImport
+ * @constant
+ */
 export const GrantsAndDenials_grantImport: number = 12; /* LONG_NAMED_BIT */
-export const grantImport: number = GrantsAndDenials_grantImport; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyImport
+ * @constant
+ */
 export const GrantsAndDenials_denyImport: number = 13; /* LONG_NAMED_BIT */
-export const denyImport: number = GrantsAndDenials_denyImport; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantModify
+ * @constant
+ */
 export const GrantsAndDenials_grantModify: number = 14; /* LONG_NAMED_BIT */
-export const grantModify: number = GrantsAndDenials_grantModify; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyModify
+ * @constant
+ */
 export const GrantsAndDenials_denyModify: number = 15; /* LONG_NAMED_BIT */
-export const denyModify: number = GrantsAndDenials_denyModify; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantRename
+ * @constant
+ */
 export const GrantsAndDenials_grantRename: number = 16; /* LONG_NAMED_BIT */
-export const grantRename: number = GrantsAndDenials_grantRename; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyRename
+ * @constant
+ */
 export const GrantsAndDenials_denyRename: number = 17; /* LONG_NAMED_BIT */
-export const denyRename: number = GrantsAndDenials_denyRename; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantReturnDN
+ * @constant
+ */
 export const GrantsAndDenials_grantReturnDN: number = 18; /* LONG_NAMED_BIT */
-export const grantReturnDN: number = GrantsAndDenials_grantReturnDN; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyReturnDN
+ * @constant
+ */
 export const GrantsAndDenials_denyReturnDN: number = 19; /* LONG_NAMED_BIT */
-export const denyReturnDN: number = GrantsAndDenials_denyReturnDN; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantCompare
+ * @constant
+ */
 export const GrantsAndDenials_grantCompare: number = 20; /* LONG_NAMED_BIT */
-export const grantCompare: number = GrantsAndDenials_grantCompare; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyCompare
+ * @constant
+ */
 export const GrantsAndDenials_denyCompare: number = 21; /* LONG_NAMED_BIT */
-export const denyCompare: number = GrantsAndDenials_denyCompare; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantFilterMatch
+ * @constant
+ */
 export const GrantsAndDenials_grantFilterMatch: number = 22; /* LONG_NAMED_BIT */
-export const grantFilterMatch: number = GrantsAndDenials_grantFilterMatch; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyFilterMatch
+ * @constant
+ */
 export const GrantsAndDenials_denyFilterMatch: number = 23; /* LONG_NAMED_BIT */
-export const denyFilterMatch: number = GrantsAndDenials_denyFilterMatch; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_grantInvoke
+ * @constant
+ */
 export const GrantsAndDenials_grantInvoke: number = 24; /* LONG_NAMED_BIT */
-export const grantInvoke: number = GrantsAndDenials_grantInvoke; /* SHORT_NAMED_BIT */
+/**
+ * @summary GrantsAndDenials_denyInvoke
+ * @constant
+ */
 export const GrantsAndDenials_denyInvoke: number = 25; /* LONG_NAMED_BIT */
-export const denyInvoke: number = GrantsAndDenials_denyInvoke; /* SHORT_NAMED_BIT */
-let _cached_decoder_for_GrantsAndDenials: __utils.ASN1Decoder<
+let _cached_decoder_for_GrantsAndDenials: $.ASN1Decoder<
     GrantsAndDenials
 > | null = null;
-let _cached_encoder_for_GrantsAndDenials: __utils.ASN1Encoder<
+let _cached_encoder_for_GrantsAndDenials: $.ASN1Encoder<
     GrantsAndDenials
 > | null = null;
-export function _decode_GrantsAndDenials(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) GrantsAndDenials
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {GrantsAndDenials} The decoded data structure.
+ */
+export function _decode_GrantsAndDenials(el: _Element) {
     if (!_cached_decoder_for_GrantsAndDenials) {
-        _cached_decoder_for_GrantsAndDenials = __utils._decodeBitString;
+        _cached_decoder_for_GrantsAndDenials = $._decodeBitString;
     }
     return _cached_decoder_for_GrantsAndDenials(el);
 }
+/**
+ * @summary Encodes a(n) GrantsAndDenials into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The GrantsAndDenials, encoded as an ASN.1 Element.
+ */
 export function _encode_GrantsAndDenials(
     value: GrantsAndDenials,
-    elGetter: __utils.ASN1Encoder<GrantsAndDenials>
+    elGetter: $.ASN1Encoder<GrantsAndDenials>
 ) {
     if (!_cached_encoder_for_GrantsAndDenials) {
-        _cached_encoder_for_GrantsAndDenials = __utils._encodeBitString;
+        _cached_encoder_for_GrantsAndDenials = $._encodeBitString;
     }
     return _cached_encoder_for_GrantsAndDenials(value, elGetter);
 }
 
+/**
+ * @summary ItemPermission
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ItemPermission ::= SEQUENCE {
+ *   precedence        Precedence OPTIONAL,
+ *              -- defaults to precedence in ACIItem
+ *   userClasses       UserClasses,
+ *   grantsAndDenials  GrantsAndDenials,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class ItemPermission {
     constructor(
-        readonly precedence: Precedence | undefined,
+        /**
+         * @summary `precedence`.
+         * @public
+         * @readonly
+         */
+        readonly precedence: OPTIONAL<Precedence>,
+        /**
+         * @summary `userClasses`.
+         * @public
+         * @readonly
+         */
         readonly userClasses: UserClasses,
+        /**
+         * @summary `grantsAndDenials`.
+         * @public
+         * @readonly
+         */
         readonly grantsAndDenials: GrantsAndDenials,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ItemPermission
+     * @description
+     *
+     * This takes an `object` and converts it to a `ItemPermission`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ItemPermission`.
+     * @returns {ItemPermission}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ItemPermission]: ItemPermission[_K] }>
+    ): ItemPermission {
+        return new ItemPermission(
+            _o.precedence,
+            _o.userClasses,
+            _o.grantsAndDenials,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ItemPermission: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ItemPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ItemPermission: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "precedence",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "userClasses",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "grantsAndDenials",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ItemPermission: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ItemPermission: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of ItemPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ItemPermission: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ItemPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ItemPermission: $.ComponentSpec[] = [];
+let _cached_decoder_for_ItemPermission: $.ASN1Decoder<
     ItemPermission
 > | null = null;
-let _cached_encoder_for_ItemPermission: __utils.ASN1Encoder<
+let _cached_encoder_for_ItemPermission: $.ASN1Encoder<
     ItemPermission
 > | null = null;
-export function _decode_ItemPermission(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ItemPermission
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ItemPermission} The decoded data structure.
+ */
+export function _decode_ItemPermission(el: _Element) {
     if (!_cached_decoder_for_ItemPermission) {
         _cached_decoder_for_ItemPermission = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): ItemPermission {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let precedence: asn1.OPTIONAL<Precedence>;
+            let precedence: OPTIONAL<Precedence>;
             let userClasses!: UserClasses;
             let grantsAndDenials!: GrantsAndDenials;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                precedence: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                precedence: (_el: _Element): void => {
                     precedence = _decode_Precedence(_el);
                 },
-                userClasses: (_el: asn1.ASN1Element): void => {
+                userClasses: (_el: _Element): void => {
                     userClasses = _decode_UserClasses(_el);
                 },
-                grantsAndDenials: (_el: asn1.ASN1Element): void => {
+                grantsAndDenials: (_el: _Element): void => {
                     grantsAndDenials = _decode_GrantsAndDenials(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_ItemPermission,
                 _extension_additions_list_spec_for_ItemPermission,
                 _root_component_type_list_2_spec_for_ItemPermission,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1314,104 +2236,185 @@ export function _decode_ItemPermission(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ItemPermission(el);
 }
+/**
+ * @summary Encodes a(n) ItemPermission into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ItemPermission, encoded as an ASN.1 Element.
+ */
 export function _encode_ItemPermission(
     value: ItemPermission,
-    elGetter: __utils.ASN1Encoder<ItemPermission>
+    elGetter: $.ASN1Encoder<ItemPermission>
 ) {
     if (!_cached_encoder_for_ItemPermission) {
         _cached_encoder_for_ItemPermission = function (
             value: ItemPermission,
-            elGetter: __utils.ASN1Encoder<ItemPermission>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ItemPermission>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.precedence === undefined
                                 ? undefined
-                                : _encode_Precedence(
-                                      value.precedence,
-                                      __utils.BER
-                                  ),
+                                : _encode_Precedence(value.precedence, $.BER),
                             /* REQUIRED   */ _encode_UserClasses(
                                 value.userClasses,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_GrantsAndDenials(
                                 value.grantsAndDenials,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_ItemPermission(value, elGetter);
 }
 
+/**
+ * @summary ACIItem_itemOrUserFirst_itemFirst
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ACIItem-itemOrUserFirst-itemFirst ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class ACIItem_itemOrUserFirst_itemFirst {
     constructor(
+        /**
+         * @summary `protectedItems`.
+         * @public
+         * @readonly
+         */
         readonly protectedItems: ProtectedItems,
+        /**
+         * @summary `itemPermissions`.
+         * @public
+         * @readonly
+         */
         readonly itemPermissions: ItemPermission[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ACIItem_itemOrUserFirst_itemFirst
+     * @description
+     *
+     * This takes an `object` and converts it to a `ACIItem_itemOrUserFirst_itemFirst`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ACIItem_itemOrUserFirst_itemFirst`.
+     * @returns {ACIItem_itemOrUserFirst_itemFirst}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof ACIItem_itemOrUserFirst_itemFirst]: ACIItem_itemOrUserFirst_itemFirst[_K];
+            }
+        >
+    ): ACIItem_itemOrUserFirst_itemFirst {
+        return new ACIItem_itemOrUserFirst_itemFirst(
+            _o.protectedItems,
+            _o.itemPermissions,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ACIItem_itemOrUserFirst_itemFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_itemFirst: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "protectedItems",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "itemPermissions",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        $.hasTag(_TagClass.universal, 17),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of ACIItem_itemOrUserFirst_itemFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_itemFirst: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ACIItem_itemOrUserFirst_itemFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst: $.ComponentSpec[] = [];
+let _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Decoder<
     ACIItem_itemOrUserFirst_itemFirst
 > | null = null;
-let _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst: __utils.ASN1Encoder<
+let _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Encoder<
     ACIItem_itemOrUserFirst_itemFirst
 > | null = null;
-export function _decode_ACIItem_itemOrUserFirst_itemFirst(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ACIItem_itemOrUserFirst_itemFirst
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ACIItem_itemOrUserFirst_itemFirst} The decoded data structure.
+ */
+export function _decode_ACIItem_itemOrUserFirst_itemFirst(el: _Element) {
     if (!_cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst) {
         _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): ACIItem_itemOrUserFirst_itemFirst {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "ACIItem-itemOrUserFirst-itemFirst contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "protectedItems";
             sequence[1].name = "itemPermissions";
             let protectedItems!: ProtectedItems;
             let itemPermissions!: ItemPermission[];
             protectedItems = _decode_ProtectedItems(sequence[0]);
-            itemPermissions = __utils._decodeSetOf<ItemPermission>(
+            itemPermissions = $._decodeSetOf<ItemPermission>(
                 () => _decode_ItemPermission
             )(sequence[1]);
-            // TODO: Validate values.
             return new ACIItem_itemOrUserFirst_itemFirst(
                 protectedItems,
                 itemPermissions,
@@ -1421,38 +2424,41 @@ export function _decode_ACIItem_itemOrUserFirst_itemFirst(
     }
     return _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst(el);
 }
+/**
+ * @summary Encodes a(n) ACIItem_itemOrUserFirst_itemFirst into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ACIItem_itemOrUserFirst_itemFirst, encoded as an ASN.1 Element.
+ */
 export function _encode_ACIItem_itemOrUserFirst_itemFirst(
     value: ACIItem_itemOrUserFirst_itemFirst,
-    elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
+    elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
 ) {
     if (!_cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst) {
         _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst = function (
             value: ACIItem_itemOrUserFirst_itemFirst,
-            elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_ProtectedItems(
                                 value.protectedItems,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeSetOf<
-                                ItemPermission
-                            >(() => _encode_ItemPermission, __utils.BER)(
-                                value.itemPermissions,
-                                __utils.BER
-                            ),
+                            /* REQUIRED   */ $._encodeSetOf<ItemPermission>(
+                                () => _encode_ItemPermission,
+                                $.BER
+                            )(value.itemPermissions, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -1462,76 +2468,166 @@ export function _encode_ACIItem_itemOrUserFirst_itemFirst(
     );
 }
 
+/**
+ * @summary UserPermission
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * UserPermission ::= SEQUENCE {
+ *   precedence        Precedence OPTIONAL,
+ *              -- defaults to precedence in ACIItem
+ *   protectedItems    ProtectedItems,
+ *   grantsAndDenials  GrantsAndDenials,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class UserPermission {
     constructor(
-        readonly precedence: Precedence | undefined,
+        /**
+         * @summary `precedence`.
+         * @public
+         * @readonly
+         */
+        readonly precedence: OPTIONAL<Precedence>,
+        /**
+         * @summary `protectedItems`.
+         * @public
+         * @readonly
+         */
         readonly protectedItems: ProtectedItems,
+        /**
+         * @summary `grantsAndDenials`.
+         * @public
+         * @readonly
+         */
         readonly grantsAndDenials: GrantsAndDenials,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a UserPermission
+     * @description
+     *
+     * This takes an `object` and converts it to a `UserPermission`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `UserPermission`.
+     * @returns {UserPermission}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof UserPermission]: UserPermission[_K] }>
+    ): UserPermission {
+        return new UserPermission(
+            _o.precedence,
+            _o.protectedItems,
+            _o.grantsAndDenials,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_UserPermission: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of UserPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_UserPermission: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "precedence",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "protectedItems",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "grantsAndDenials",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_UserPermission: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_UserPermission: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_UserPermission: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of UserPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_UserPermission: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of UserPermission
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_UserPermission: $.ComponentSpec[] = [];
+let _cached_decoder_for_UserPermission: $.ASN1Decoder<
     UserPermission
 > | null = null;
-let _cached_encoder_for_UserPermission: __utils.ASN1Encoder<
+let _cached_encoder_for_UserPermission: $.ASN1Encoder<
     UserPermission
 > | null = null;
-export function _decode_UserPermission(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) UserPermission
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {UserPermission} The decoded data structure.
+ */
+export function _decode_UserPermission(el: _Element) {
     if (!_cached_decoder_for_UserPermission) {
         _cached_decoder_for_UserPermission = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): UserPermission {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let precedence: asn1.OPTIONAL<Precedence>;
+            let precedence: OPTIONAL<Precedence>;
             let protectedItems!: ProtectedItems;
             let grantsAndDenials!: GrantsAndDenials;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                precedence: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                precedence: (_el: _Element): void => {
                     precedence = _decode_Precedence(_el);
                 },
-                protectedItems: (_el: asn1.ASN1Element): void => {
+                protectedItems: (_el: _Element): void => {
                     protectedItems = _decode_ProtectedItems(_el);
                 },
-                grantsAndDenials: (_el: asn1.ASN1Element): void => {
+                grantsAndDenials: (_el: _Element): void => {
                     grantsAndDenials = _decode_GrantsAndDenials(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_UserPermission,
                 _extension_additions_list_spec_for_UserPermission,
                 _root_component_type_list_2_spec_for_UserPermission,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1545,104 +2641,185 @@ export function _decode_UserPermission(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_UserPermission(el);
 }
+/**
+ * @summary Encodes a(n) UserPermission into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The UserPermission, encoded as an ASN.1 Element.
+ */
 export function _encode_UserPermission(
     value: UserPermission,
-    elGetter: __utils.ASN1Encoder<UserPermission>
+    elGetter: $.ASN1Encoder<UserPermission>
 ) {
     if (!_cached_encoder_for_UserPermission) {
         _cached_encoder_for_UserPermission = function (
             value: UserPermission,
-            elGetter: __utils.ASN1Encoder<UserPermission>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<UserPermission>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.precedence === undefined
                                 ? undefined
-                                : _encode_Precedence(
-                                      value.precedence,
-                                      __utils.BER
-                                  ),
+                                : _encode_Precedence(value.precedence, $.BER),
                             /* REQUIRED   */ _encode_ProtectedItems(
                                 value.protectedItems,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_GrantsAndDenials(
                                 value.grantsAndDenials,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_UserPermission(value, elGetter);
 }
 
+/**
+ * @summary ACIItem_itemOrUserFirst_userFirst
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ACIItem-itemOrUserFirst-userFirst ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class ACIItem_itemOrUserFirst_userFirst {
     constructor(
+        /**
+         * @summary `userClasses`.
+         * @public
+         * @readonly
+         */
         readonly userClasses: UserClasses,
+        /**
+         * @summary `userPermissions`.
+         * @public
+         * @readonly
+         */
         readonly userPermissions: UserPermission[],
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ACIItem_itemOrUserFirst_userFirst
+     * @description
+     *
+     * This takes an `object` and converts it to a `ACIItem_itemOrUserFirst_userFirst`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ACIItem_itemOrUserFirst_userFirst`.
+     * @returns {ACIItem_itemOrUserFirst_userFirst}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof ACIItem_itemOrUserFirst_userFirst]: ACIItem_itemOrUserFirst_userFirst[_K];
+            }
+        >
+    ): ACIItem_itemOrUserFirst_userFirst {
+        return new ACIItem_itemOrUserFirst_userFirst(
+            _o.userClasses,
+            _o.userPermissions,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ACIItem_itemOrUserFirst_userFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ACIItem_itemOrUserFirst_userFirst: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "userClasses",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "userPermissions",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 17),
+        $.hasTag(_TagClass.universal, 17),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of ACIItem_itemOrUserFirst_userFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ACIItem_itemOrUserFirst_userFirst: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ACIItem_itemOrUserFirst_userFirst
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_userFirst: $.ComponentSpec[] = [];
+let _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst: $.ASN1Decoder<
     ACIItem_itemOrUserFirst_userFirst
 > | null = null;
-let _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst: __utils.ASN1Encoder<
+let _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst: $.ASN1Encoder<
     ACIItem_itemOrUserFirst_userFirst
 > | null = null;
-export function _decode_ACIItem_itemOrUserFirst_userFirst(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ACIItem_itemOrUserFirst_userFirst
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ACIItem_itemOrUserFirst_userFirst} The decoded data structure.
+ */
+export function _decode_ACIItem_itemOrUserFirst_userFirst(el: _Element) {
     if (!_cached_decoder_for_ACIItem_itemOrUserFirst_userFirst) {
         _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): ACIItem_itemOrUserFirst_userFirst {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "ACIItem-itemOrUserFirst-userFirst contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "userClasses";
             sequence[1].name = "userPermissions";
             let userClasses!: UserClasses;
             let userPermissions!: UserPermission[];
             userClasses = _decode_UserClasses(sequence[0]);
-            userPermissions = __utils._decodeSetOf<UserPermission>(
+            userPermissions = $._decodeSetOf<UserPermission>(
                 () => _decode_UserPermission
             )(sequence[1]);
-            // TODO: Validate values.
             return new ACIItem_itemOrUserFirst_userFirst(
                 userClasses,
                 userPermissions,
@@ -1652,38 +2829,41 @@ export function _decode_ACIItem_itemOrUserFirst_userFirst(
     }
     return _cached_decoder_for_ACIItem_itemOrUserFirst_userFirst(el);
 }
+/**
+ * @summary Encodes a(n) ACIItem_itemOrUserFirst_userFirst into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ACIItem_itemOrUserFirst_userFirst, encoded as an ASN.1 Element.
+ */
 export function _encode_ACIItem_itemOrUserFirst_userFirst(
     value: ACIItem_itemOrUserFirst_userFirst,
-    elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
+    elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
 ) {
     if (!_cached_encoder_for_ACIItem_itemOrUserFirst_userFirst) {
         _cached_encoder_for_ACIItem_itemOrUserFirst_userFirst = function (
             value: ACIItem_itemOrUserFirst_userFirst,
-            elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst_userFirst>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_UserClasses(
                                 value.userClasses,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeSetOf<
-                                UserPermission
-                            >(() => _encode_UserPermission, __utils.BER)(
-                                value.userPermissions,
-                                __utils.BER
-                            ),
+                            /* REQUIRED   */ $._encodeSetOf<UserPermission>(
+                                () => _encode_UserPermission,
+                                $.BER
+                            )(value.userPermissions, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -1693,30 +2873,46 @@ export function _encode_ACIItem_itemOrUserFirst_userFirst(
     );
 }
 
+/**
+ * @summary ACIItem_itemOrUserFirst
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ACIItem-itemOrUserFirst ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type ACIItem_itemOrUserFirst =
     | { itemFirst: ACIItem_itemOrUserFirst_itemFirst } /* CHOICE_ALT_ROOT */
     | { userFirst: ACIItem_itemOrUserFirst_userFirst } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_ACIItem_itemOrUserFirst: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_ACIItem_itemOrUserFirst: $.ASN1Decoder<
     ACIItem_itemOrUserFirst
 > | null = null;
-let _cached_encoder_for_ACIItem_itemOrUserFirst: __utils.ASN1Encoder<
+let _cached_encoder_for_ACIItem_itemOrUserFirst: $.ASN1Encoder<
     ACIItem_itemOrUserFirst
 > | null = null;
-export function _decode_ACIItem_itemOrUserFirst(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ACIItem_itemOrUserFirst
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ACIItem_itemOrUserFirst} The decoded data structure.
+ */
+export function _decode_ACIItem_itemOrUserFirst(el: _Element) {
     if (!_cached_decoder_for_ACIItem_itemOrUserFirst) {
-        _cached_decoder_for_ACIItem_itemOrUserFirst = __utils._decode_extensible_choice<
+        _cached_decoder_for_ACIItem_itemOrUserFirst = $._decode_extensible_choice<
             ACIItem_itemOrUserFirst
         >({
             "CONTEXT 0": [
                 "itemFirst",
-                __utils._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
+                $._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
                     () => _decode_ACIItem_itemOrUserFirst_itemFirst
                 ),
             ],
             "CONTEXT 1": [
                 "userFirst",
-                __utils._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
+                $._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
                     () => _decode_ACIItem_itemOrUserFirst_userFirst
                 ),
             ],
@@ -1724,89 +2920,200 @@ export function _decode_ACIItem_itemOrUserFirst(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ACIItem_itemOrUserFirst(el);
 }
+/**
+ * @summary Encodes a(n) ACIItem_itemOrUserFirst into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ACIItem_itemOrUserFirst, encoded as an ASN.1 Element.
+ */
 export function _encode_ACIItem_itemOrUserFirst(
     value: ACIItem_itemOrUserFirst,
-    elGetter: __utils.ASN1Encoder<ACIItem_itemOrUserFirst>
+    elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst>
 ) {
     if (!_cached_encoder_for_ACIItem_itemOrUserFirst) {
-        _cached_encoder_for_ACIItem_itemOrUserFirst = __utils._encode_choice<
+        _cached_encoder_for_ACIItem_itemOrUserFirst = $._encode_choice<
             ACIItem_itemOrUserFirst
         >(
             {
-                itemFirst: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                itemFirst: $._encode_explicit(
+                    _TagClass.context,
                     0,
                     () => _encode_ACIItem_itemOrUserFirst_itemFirst,
-                    __utils.BER
+                    $.BER
                 ),
-                userFirst: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                userFirst: $._encode_explicit(
+                    _TagClass.context,
                     1,
                     () => _encode_ACIItem_itemOrUserFirst_userFirst,
-                    __utils.BER
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_ACIItem_itemOrUserFirst(value, elGetter);
 }
 
+/**
+ * @summary ACIItem
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ACIItem ::= SEQUENCE {
+ *   identificationTag    UnboundedDirectoryString,
+ *   precedence           Precedence,
+ *   authenticationLevel  AuthenticationLevel,
+ *   itemOrUserFirst      CHOICE {
+ *     itemFirst       [0]  SEQUENCE {
+ *       protectedItems       ProtectedItems,
+ *       itemPermissions      SET OF ItemPermission,
+ *       ...},
+ *     userFirst       [1]  SEQUENCE {
+ *       userClasses          UserClasses,
+ *       userPermissions      SET OF UserPermission,
+ *       ...},
+ *     ...},
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class ACIItem {
     constructor(
+        /**
+         * @summary `identificationTag`.
+         * @public
+         * @readonly
+         */
         readonly identificationTag: UnboundedDirectoryString,
+        /**
+         * @summary `precedence`.
+         * @public
+         * @readonly
+         */
         readonly precedence: Precedence,
+        /**
+         * @summary `authenticationLevel`.
+         * @public
+         * @readonly
+         */
         readonly authenticationLevel: AuthenticationLevel,
+        /**
+         * @summary `itemOrUserFirst`.
+         * @public
+         * @readonly
+         */
         readonly itemOrUserFirst: ACIItem_itemOrUserFirst,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ACIItem
+     * @description
+     *
+     * This takes an `object` and converts it to a `ACIItem`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ACIItem`.
+     * @returns {ACIItem}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ACIItem]: ACIItem[_K] }>
+    ): ACIItem {
+        return new ACIItem(
+            _o.identificationTag,
+            _o.precedence,
+            _o.authenticationLevel,
+            _o.itemOrUserFirst,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ACIItem: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ACIItem
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ACIItem: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "identificationTag",
         false,
-        __utils.hasAnyTag,
+        $.hasAnyTag,
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "precedence",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "authenticationLevel",
         false,
-        __utils.hasAnyTag,
+        $.hasAnyTag,
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "itemOrUserFirst",
         false,
-        __utils.hasAnyTag,
+        $.hasAnyTag,
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ACIItem: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ACIItem: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ACIItem: __utils.ASN1Decoder<ACIItem> | null = null;
-let _cached_encoder_for_ACIItem: __utils.ASN1Encoder<ACIItem> | null = null;
-export function _decode_ACIItem(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of ACIItem
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ACIItem: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ACIItem
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ACIItem: $.ComponentSpec[] = [];
+let _cached_decoder_for_ACIItem: $.ASN1Decoder<ACIItem> | null = null;
+let _cached_encoder_for_ACIItem: $.ASN1Encoder<ACIItem> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ACIItem
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ACIItem} The decoded data structure.
+ */
+export function _decode_ACIItem(el: _Element) {
     if (!_cached_decoder_for_ACIItem) {
-        _cached_decoder_for_ACIItem = function (el: asn1.ASN1Element): ACIItem {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+        _cached_decoder_for_ACIItem = function (el: _Element): ACIItem {
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 4) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "ACIItem contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "identificationTag";
             sequence[1].name = "precedence";
             sequence[2].name = "authenticationLevel";
@@ -1819,7 +3126,6 @@ export function _decode_ACIItem(el: asn1.ASN1Element) {
             precedence = _decode_Precedence(sequence[1]);
             authenticationLevel = _decode_AuthenticationLevel(sequence[2]);
             itemOrUserFirst = _decode_ACIItem_itemOrUserFirst(sequence[3]);
-            // TODO: Validate values.
             return new ACIItem(
                 identificationTag,
                 precedence,
@@ -1831,99 +3137,295 @@ export function _decode_ACIItem(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ACIItem(el);
 }
+/**
+ * @summary Encodes a(n) ACIItem into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ACIItem, encoded as an ASN.1 Element.
+ */
 export function _encode_ACIItem(
     value: ACIItem,
-    elGetter: __utils.ASN1Encoder<ACIItem>
+    elGetter: $.ASN1Encoder<ACIItem>
 ) {
     if (!_cached_encoder_for_ACIItem) {
         _cached_encoder_for_ACIItem = function (
             value: ACIItem,
-            elGetter: __utils.ASN1Encoder<ACIItem>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ACIItem>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_UnboundedDirectoryString(
                                 value.identificationTag,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_Precedence(
                                 value.precedence,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AuthenticationLevel(
                                 value.authenticationLevel,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_ACIItem_itemOrUserFirst(
                                 value.itemOrUserFirst,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_ACIItem(value, elGetter);
 }
 
-// TODO: ObjectAssignment: prescriptiveACI
+/**
+ * @summary id_aca_prescriptiveACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-aca-prescriptiveACI         OBJECT IDENTIFIER ::= {id-aca 4}
+ * ```
+ *
+ * @constant
+ */
+export const id_aca_prescriptiveACI: OBJECT_IDENTIFIER = new _OID([4], id_aca);
 
-// TODO: ObjectAssignment: entryACI
+/**
+ * @summary prescriptiveACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * prescriptiveACI ATTRIBUTE ::= {
+ *   WITH SYNTAX             ACIItem
+ *   EQUALITY MATCHING RULE  directoryStringFirstComponentMatch
+ *   USAGE                   directoryOperation
+ *   ID                      id-aca-prescriptiveACI }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const prescriptiveACI: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_ACIItem,
+    },
+    encoderFor: {
+        "&Type": _encode_ACIItem,
+    },
+    "&equality-match": directoryStringFirstComponentMatch /* OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&id": id_aca_prescriptiveACI /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: subentryACI
+/**
+ * @summary id_aca_entryACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-aca-entryACI                OBJECT IDENTIFIER ::= {id-aca 5}
+ * ```
+ *
+ * @constant
+ */
+export const id_aca_entryACI: OBJECT_IDENTIFIER = new _OID([5], id_aca);
 
-export const id_aca_accessControlScheme: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [1],
-    id_aca
-);
+/**
+ * @summary entryACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * entryACI ATTRIBUTE ::= {
+ *   WITH SYNTAX             ACIItem
+ *   EQUALITY MATCHING RULE  directoryStringFirstComponentMatch
+ *   USAGE                   directoryOperation
+ *   ID                      id-aca-entryACI }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const entryACI: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_ACIItem,
+    },
+    encoderFor: {
+        "&Type": _encode_ACIItem,
+    },
+    "&equality-match": directoryStringFirstComponentMatch /* OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&id": id_aca_entryACI /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
-export const id_aca_prescriptiveACI: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [4],
-    id_aca
-);
+/**
+ * @summary id_aca_subentryACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-aca-subentryACI             OBJECT IDENTIFIER ::= {id-aca 6}
+ * ```
+ *
+ * @constant
+ */
+export const id_aca_subentryACI: OBJECT_IDENTIFIER = new _OID([6], id_aca);
 
-export const id_aca_entryACI: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [5],
-    id_aca
-);
+/**
+ * @summary subentryACI
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * subentryACI ATTRIBUTE ::= {
+ *   WITH SYNTAX             ACIItem
+ *   EQUALITY MATCHING RULE  directoryStringFirstComponentMatch
+ *   USAGE                   directoryOperation
+ *   ID                      id-aca-subentryACI }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const subentryACI: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_ACIItem,
+    },
+    encoderFor: {
+        "&Type": _encode_ACIItem,
+    },
+    "&equality-match": directoryStringFirstComponentMatch /* OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&id": id_aca_subentryACI /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
-export const id_aca_subentryACI: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [6],
-    id_aca
-);
-
-export const basicAccessControlScheme: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary basicAccessControlScheme
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * basicAccessControlScheme       OBJECT IDENTIFIER ::= {id-acScheme 1}
+ * ```
+ *
+ * @constant
+ */
+export const basicAccessControlScheme: OBJECT_IDENTIFIER = new _OID(
     [1],
     id_acScheme
 );
 
-export const simplifiedAccessControlScheme: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary simplifiedAccessControlScheme
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * simplifiedAccessControlScheme  OBJECT IDENTIFIER ::= {id-acScheme 2}
+ * ```
+ *
+ * @constant
+ */
+export const simplifiedAccessControlScheme: OBJECT_IDENTIFIER = new _OID(
     [2],
     id_acScheme
 );
 
-export const rule_based_access_control: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary rule_based_access_control
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * rule-based-access-control      OBJECT IDENTIFIER ::= {id-acScheme 3}
+ * ```
+ *
+ * @constant
+ */
+export const rule_based_access_control: OBJECT_IDENTIFIER = new _OID(
     [3],
     id_acScheme
 );
 
-export const rule_and_basic_access_control: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary rule_and_basic_access_control
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * rule-and-basic-access-control  OBJECT IDENTIFIER ::= {id-acScheme 4}
+ * ```
+ *
+ * @constant
+ */
+export const rule_and_basic_access_control: OBJECT_IDENTIFIER = new _OID(
     [4],
     id_acScheme
 );
 
-export const rule_and_simple_access_control: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary rule_and_simple_access_control
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * rule-and-simple-access-control OBJECT IDENTIFIER ::= {id-acScheme 5}
+ * ```
+ *
+ * @constant
+ */
+export const rule_and_simple_access_control: OBJECT_IDENTIFIER = new _OID(
     [5],
     id_acScheme
 );
 
 /* END_MODULE BasicAccessControl */
+/* eslint-enable */

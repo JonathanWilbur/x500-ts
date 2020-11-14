@@ -1,20 +1,54 @@
-/*
-    BEGIN_MODULE OperationalBindingManagement
-    OID: joint-iso-itu-t.ds.module.opBindingManagement.8
-    IRI: undefined
-    EXTENSIBLE: false
-    ENCODINGREF: undefined
-    FILE: undefined
-    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
-*/
-import * as asn1 from "asn1-ts";
+/**
+ * @module OperationalBindingManagement
+ * @summary The ASN.1 module `OperationalBindingManagement`.
+ * @description
+ *
+ * OID: joint-iso-itu-t.ds.module.opBindingManagement.9
+ * IRI: undefined
+ * EXTENSIBLE: false
+ * ENCODINGREF: undefined
+ * FILE: undefined
+ *
+ * This file was compiled by Wildboar Software's ASN.1 Compiler.
+ *
+ * @see {@link https://wildboarsoftware.com|Wildboar Software's Website}
+ * /
+
+
+/* eslint-disable */
 import {
+    ASN1ConstructionError as _ConstructionError,
+    ASN1Element as _Element,
+    ASN1TagClass as _TagClass,
+    BOOLEAN,
+    ENUMERATED,
+    GeneralizedTime,
+    INTEGER,
+    NULL,
+    OBJECT_IDENTIFIER,
+    OPTIONAL,
+    UTCTime,
+} from "asn1-ts";
+import * as $ from "asn1-ts/dist/node/functional";
+import {
+    ERROR,
+    id_err_operationalBindingError,
+    id_op_establishOperationalBinding,
+    id_op_modifyOperationalBinding,
+    id_op_terminateOperationalBinding,
+    OPERATION,
+} from "./CommonProtocolSpecification";
+import {
+    securityError,
     SecurityParameters,
     _decode_SecurityParameters,
     _encode_SecurityParameters,
 } from "./DirectoryAbstractService";
+import { APPLICATION_CONTEXT } from "./DirectoryOSIProtocols";
+import { shadowOperationalBinding } from "./DirectoryShadowAbstractService";
 import {
     AccessPoint,
+    dSABind,
     _decode_AccessPoint,
     _encode_AccessPoint,
 } from "./DistributedOperations";
@@ -23,6 +57,10 @@ import {
     _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
 } from "./EnhancedSecurity";
+import {
+    hierarchicalOperationalBinding,
+    nonSpecificHierarchicalOperationalBinding,
+} from "./HierarchicalOperationalBindings";
 import {
     Attribute,
     DistinguishedName,
@@ -31,23 +69,28 @@ import {
     _encode_Attribute,
     _encode_DistinguishedName,
 } from "./InformationFramework";
-import * as __utils from "./__utils";
 export {
+    ERROR,
     id_err_operationalBindingError,
     id_op_establishOperationalBinding,
     id_op_modifyOperationalBinding,
     id_op_terminateOperationalBinding,
+    OPERATION,
 } from "./CommonProtocolSpecification";
 export {
     CommonResultsSeq,
+    securityError,
     SecurityParameters,
     _decode_CommonResultsSeq,
     _decode_SecurityParameters,
     _encode_CommonResultsSeq,
     _encode_SecurityParameters,
 } from "./DirectoryAbstractService";
+export { APPLICATION_CONTEXT } from "./DirectoryOSIProtocols";
+export { shadowOperationalBinding } from "./DirectoryShadowAbstractService";
 export {
     AccessPoint,
+    dSABind,
     _decode_AccessPoint,
     _encode_AccessPoint,
 } from "./DistributedOperations";
@@ -57,77 +100,412 @@ export {
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
 } from "./EnhancedSecurity";
 export {
-    commonProtocolSpecification,
-    directoryAbstractService,
-    directoryOSIProtocols,
-    directoryShadowAbstractService,
-    distributedOperations,
-    enhancedSecurity,
-    hierarchicalOperationalBindings,
-} from "./UsefulDefinitions";
+    hierarchicalOperationalBinding,
+    nonSpecificHierarchicalOperationalBinding,
+} from "./HierarchicalOperationalBindings";
+export {
+    Attribute,
+    DistinguishedName,
+    _decode_Attribute,
+    _decode_DistinguishedName,
+    _encode_Attribute,
+    _encode_DistinguishedName,
+} from "./InformationFramework";
 
-// TODO: ObjectAssignment: dSAOperationalBindingManagementBind
+/**
+ * @summary dSAOperationalBindingManagementBind
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * dSAOperationalBindingManagementBind OPERATION ::= dSABind
+ * ```
+ *
+ * @constant
+ * @type {OPERATION}
+ * @implements {OPERATION}
+ */
+export const dSAOperationalBindingManagementBind: OPERATION = dSABind;
 
-// TODO: ObjectClassAssignment: OP-BINDING-COOP
+/**
+ * @summary OP_BINDING_COOP
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OP-BINDING-COOP ::= CLASS {
+ *   &applContext  APPLICATION-CONTEXT,
+ *   &Operations   OPERATION OPTIONAL }
+ * WITH SYNTAX {
+ *                 &applContext
+ *   [APPLIES TO   &Operations] }
+ * ```
+ *
+ * @interface
+ */
+export interface OP_BINDING_COOP {
+    /**
+     * @summary A fixed string that can be used for external programs to determine the object class of this object.
+     */
+    class: "OP-BINDING-COOP";
+    /**
+     * @summary A map of type fields to their corresponding decoders.
+     */
+    decoderFor: Partial<
+        {
+            // For decoding types supplied in type fields
+            [_K in keyof OP_BINDING_COOP]: $.ASN1Decoder<OP_BINDING_COOP[_K]>;
+        }
+    >;
+    /**
+     * @summary A map of type fields to their corresponding encoders.
+     */
+    encoderFor: Partial<
+        {
+            // For encoding types supplied in type fields
+            [_K in keyof OP_BINDING_COOP]: $.ASN1Encoder<OP_BINDING_COOP[_K]>;
+        }
+    >;
+    /**
+     * @summary &applContext
+     */
+    "&applContext"?: APPLICATION_CONTEXT;
+    /**
+     * @summary &Operations
+     */
+    "&Operations"?: OPERATION[];
+}
 
-// TODO: ObjectClassAssignment: OP-BIND-ROLE
+/**
+ * @summary OP_BIND_ROLE
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OP-BIND-ROLE ::= CLASS {
+ *   &establish                BOOLEAN DEFAULT FALSE,
+ *   &EstablishParam,
+ *   &modify                   BOOLEAN DEFAULT FALSE,
+ *   &ModifyParam              OPTIONAL,
+ *   &terminate                BOOLEAN DEFAULT FALSE,
+ *   &TerminateParam           OPTIONAL }
+ * WITH SYNTAX {
+ *   [ESTABLISHMENT-INITIATOR  &establish]
+ *   ESTABLISHMENT-PARAMETER   &EstablishParam
+ *   [MODIFICATION-INITIATOR   &modify]
+ *   [MODIFICATION-PARAMETER   &ModifyParam]
+ *   [TERMINATION-INITIATOR    &terminate]
+ *   [TERMINATION-PARAMETER    &TerminateParam] }
+ * ```
+ *
+ * @interface
+ */
+export interface OP_BIND_ROLE<
+    EstablishParam = any /* OBJECT_CLASS_TYPE_FIELD_PARAMETER */,
+    ModifyParam = any /* OBJECT_CLASS_TYPE_FIELD_PARAMETER */,
+    TerminateParam = any /* OBJECT_CLASS_TYPE_FIELD_PARAMETER */
+> {
+    /**
+     * @summary A fixed string that can be used for external programs to determine the object class of this object.
+     */
+    class: "OP-BIND-ROLE";
+    /**
+     * @summary A map of type fields to their corresponding decoders.
+     */
+    decoderFor: Partial<
+        {
+            // For decoding types supplied in type fields
+            [_K in keyof OP_BIND_ROLE<
+                EstablishParam,
+                ModifyParam,
+                TerminateParam
+            >]: $.ASN1Decoder<
+                OP_BIND_ROLE<EstablishParam, ModifyParam, TerminateParam>[_K]
+            >;
+        }
+    >;
+    /**
+     * @summary A map of type fields to their corresponding encoders.
+     */
+    encoderFor: Partial<
+        {
+            // For encoding types supplied in type fields
+            [_K in keyof OP_BIND_ROLE<
+                EstablishParam,
+                ModifyParam,
+                TerminateParam
+            >]: $.ASN1Encoder<
+                OP_BIND_ROLE<EstablishParam, ModifyParam, TerminateParam>[_K]
+            >;
+        }
+    >;
+    /**
+     * @summary &establish
+     */
+    "&establish"?: BOOLEAN;
+    /**
+     * @summary &EstablishParam
+     */
+    "&EstablishParam": EstablishParam;
+    /**
+     * @summary &modify
+     */
+    "&modify"?: BOOLEAN;
+    /**
+     * @summary &ModifyParam
+     */
+    "&ModifyParam": ModifyParam;
+    /**
+     * @summary &terminate
+     */
+    "&terminate"?: BOOLEAN;
+    /**
+     * @summary &TerminateParam
+     */
+    "&TerminateParam": TerminateParam;
+}
 
-// TODO: ObjectClassAssignment: OPERATIONAL-BINDING
+/**
+ * @summary OPERATIONAL_BINDING
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OPERATIONAL-BINDING ::= CLASS {
+ *   &Agreement           ,
+ *   &Cooperation         OP-BINDING-COOP,
+ *   &both                OP-BIND-ROLE OPTIONAL,
+ *   &roleA               OP-BIND-ROLE OPTIONAL,
+ *   &roleB               OP-BIND-ROLE OPTIONAL,
+ *   &id                  OBJECT IDENTIFIER UNIQUE }
+ * WITH SYNTAX {
+ *   AGREEMENT            &Agreement
+ *   APPLICATION CONTEXTS &Cooperation
+ *   [SYMMETRIC           &both]
+ *   [ASYMMETRIC
+ *     [ROLE-A              &roleA]
+ *     [ROLE-B              &roleB]]
+ *   ID                   &id }
+ * ```
+ *
+ * @interface
+ */
+export interface OPERATIONAL_BINDING<
+    Agreement = any /* OBJECT_CLASS_TYPE_FIELD_PARAMETER */
+> {
+    /**
+     * @summary A fixed string that can be used for external programs to determine the object class of this object.
+     */
+    class: "OPERATIONAL-BINDING";
+    /**
+     * @summary A map of type fields to their corresponding decoders.
+     */
+    decoderFor: Partial<
+        {
+            // For decoding types supplied in type fields
+            [_K in keyof OPERATIONAL_BINDING<Agreement>]: $.ASN1Decoder<
+                OPERATIONAL_BINDING<Agreement>[_K]
+            >;
+        }
+    >;
+    /**
+     * @summary A map of type fields to their corresponding encoders.
+     */
+    encoderFor: Partial<
+        {
+            // For encoding types supplied in type fields
+            [_K in keyof OPERATIONAL_BINDING<Agreement>]: $.ASN1Encoder<
+                OPERATIONAL_BINDING<Agreement>[_K]
+            >;
+        }
+    >;
+    /**
+     * @summary &Agreement
+     */
+    "&Agreement": Agreement;
+    /**
+     * @summary &Cooperation
+     */
+    "&Cooperation"?: OP_BINDING_COOP[];
+    /**
+     * @summary &both
+     */
+    "&both"?: OP_BIND_ROLE;
+    /**
+     * @summary &roleA
+     */
+    "&roleA"?: OP_BIND_ROLE;
+    /**
+     * @summary &roleB
+     */
+    "&roleB"?: OP_BIND_ROLE;
+    /**
+     * @summary &id
+     */
+    "&id"?: OBJECT_IDENTIFIER;
+}
 
-// TODO: ObjectAssignment: establishOperationalBinding
+/**
+ * @summary OpBindingSet
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OpBindingSet OPERATIONAL-BINDING ::= {
+ *   shadowOperationalBinding |
+ *   hierarchicalOperationalBinding |
+ *   nonSpecificHierarchicalOperationalBinding }
+ * ```
+ *
+ * @constant
+ * @type {OPERATIONAL_BINDING[]}
+ *
+ */
+export const OpBindingSet: OPERATIONAL_BINDING[] = [
+    shadowOperationalBinding,
+    hierarchicalOperationalBinding,
+    nonSpecificHierarchicalOperationalBinding,
+];
 
+/**
+ * @summary OperationalBindingID
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OperationalBindingID ::= SEQUENCE {
+ *   identifier  INTEGER,
+ *   version     INTEGER,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class OperationalBindingID {
     constructor(
-        readonly identifier: asn1.INTEGER,
-        readonly version: asn1.INTEGER,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `identifier`.
+         * @public
+         * @readonly
+         */
+        readonly identifier: INTEGER,
+        /**
+         * @summary `version`.
+         * @public
+         * @readonly
+         */
+        readonly version: INTEGER,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a OperationalBindingID
+     * @description
+     *
+     * This takes an `object` and converts it to a `OperationalBindingID`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `OperationalBindingID`.
+     * @returns {OperationalBindingID}
+     */
+    public static _from_object(
+        _o: Partial<
+            { [_K in keyof OperationalBindingID]: OperationalBindingID[_K] }
+        >
+    ): OperationalBindingID {
+        return new OperationalBindingID(
+            _o.identifier,
+            _o.version,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of OperationalBindingID
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_OperationalBindingID: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "identifier",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "version",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_OperationalBindingID: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_OperationalBindingID: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of OperationalBindingID
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_OperationalBindingID: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of OperationalBindingID
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_OperationalBindingID: $.ComponentSpec[] = [];
+let _cached_decoder_for_OperationalBindingID: $.ASN1Decoder<
     OperationalBindingID
 > | null = null;
-let _cached_encoder_for_OperationalBindingID: __utils.ASN1Encoder<
+let _cached_encoder_for_OperationalBindingID: $.ASN1Encoder<
     OperationalBindingID
 > | null = null;
-export function _decode_OperationalBindingID(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) OperationalBindingID
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {OperationalBindingID} The decoded data structure.
+ */
+export function _decode_OperationalBindingID(el: _Element) {
     if (!_cached_decoder_for_OperationalBindingID) {
         _cached_decoder_for_OperationalBindingID = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): OperationalBindingID {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "OperationalBindingID contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "identifier";
             sequence[1].name = "version";
-            let identifier!: asn1.INTEGER;
-            let version!: asn1.INTEGER;
-            identifier = __utils._decodeInteger(sequence[0]);
-            version = __utils._decodeInteger(sequence[1]);
-            // TODO: Validate values.
+            let identifier!: INTEGER;
+            let version!: INTEGER;
+            identifier = $._decodeInteger(sequence[0]);
+            version = $._decodeInteger(sequence[1]);
             return new OperationalBindingID(
                 identifier,
                 version,
@@ -137,78 +515,93 @@ export function _decode_OperationalBindingID(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_OperationalBindingID(el);
 }
+/**
+ * @summary Encodes a(n) OperationalBindingID into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The OperationalBindingID, encoded as an ASN.1 Element.
+ */
 export function _encode_OperationalBindingID(
     value: OperationalBindingID,
-    elGetter: __utils.ASN1Encoder<OperationalBindingID>
+    elGetter: $.ASN1Encoder<OperationalBindingID>
 ) {
     if (!_cached_encoder_for_OperationalBindingID) {
         _cached_encoder_for_OperationalBindingID = function (
             value: OperationalBindingID,
-            elGetter: __utils.ASN1Encoder<OperationalBindingID>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<OperationalBindingID>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encodeInteger(
+                            /* REQUIRED   */ $._encodeInteger(
                                 value.identifier,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeInteger(
+                            /* REQUIRED   */ $._encodeInteger(
                                 value.version,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_OperationalBindingID(value, elGetter);
 }
 
+/**
+ * @summary EstablishOperationalBindingArgumentData_initiator
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EstablishOperationalBindingArgumentData-initiator ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type EstablishOperationalBindingArgumentData_initiator =
-    | { symmetric: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleA_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleB_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */;
-let _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator: __utils.ASN1Decoder<
+    | { symmetric: _Element } /* CHOICE_ALT_ROOT */
+    | { roleA_initiates: _Element } /* CHOICE_ALT_ROOT */
+    | { roleB_initiates: _Element } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Decoder<
     EstablishOperationalBindingArgumentData_initiator
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Encoder<
     EstablishOperationalBindingArgumentData_initiator
 > | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingArgumentData_initiator
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingArgumentData_initiator} The decoded data structure.
+ */
 export function _decode_EstablishOperationalBindingArgumentData_initiator(
-    el: asn1.ASN1Element
+    el: _Element
 ) {
     if (
         !_cached_decoder_for_EstablishOperationalBindingArgumentData_initiator
     ) {
-        _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator = __utils._decode_inextensible_choice<
+        _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<
             EstablishOperationalBindingArgumentData_initiator
         >({
             "CONTEXT 3": [
                 "symmetric",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
             "CONTEXT 4": [
                 "roleA_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
             "CONTEXT 5": [
                 "roleB_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
         });
     }
@@ -216,39 +609,44 @@ export function _decode_EstablishOperationalBindingArgumentData_initiator(
         el
     );
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingArgumentData_initiator into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingArgumentData_initiator, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingArgumentData_initiator(
     value: EstablishOperationalBindingArgumentData_initiator,
-    elGetter: __utils.ASN1Encoder<
-        EstablishOperationalBindingArgumentData_initiator
-    >
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingArgumentData_initiator>
 ) {
     if (
         !_cached_encoder_for_EstablishOperationalBindingArgumentData_initiator
     ) {
-        _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator = __utils._encode_choice<
+        _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator = $._encode_choice<
             EstablishOperationalBindingArgumentData_initiator
         >(
             {
-                symmetric: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                symmetric: $._encode_explicit(
+                    _TagClass.context,
                     3,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
-                roleA_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                roleA_initiates: $._encode_explicit(
+                    _TagClass.context,
                     4,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
-                roleB_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                roleB_initiates: $._encode_explicit(
+                    _TagClass.context,
                     5,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator(
@@ -257,210 +655,372 @@ export function _encode_EstablishOperationalBindingArgumentData_initiator(
     );
 }
 
+/**
+ * @summary Time
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Time  ::=  CHOICE {
+ *   utcTime          UTCTime,
+ *   generalizedTime  GeneralizedTime,
+ *   ... }
+ * ```
+ */
 export type Time =
-    | { utcTime: asn1.UTCTime } /* CHOICE_ALT_ROOT */
-    | { generalizedTime: asn1.GeneralizedTime } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_Time: __utils.ASN1Decoder<Time> | null = null;
-let _cached_encoder_for_Time: __utils.ASN1Encoder<Time> | null = null;
-export function _decode_Time(el: asn1.ASN1Element) {
+    | { utcTime: UTCTime } /* CHOICE_ALT_ROOT */
+    | { generalizedTime: GeneralizedTime } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Time: $.ASN1Decoder<Time> | null = null;
+let _cached_encoder_for_Time: $.ASN1Encoder<Time> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Time
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Time} The decoded data structure.
+ */
+export function _decode_Time(el: _Element) {
     if (!_cached_decoder_for_Time) {
-        _cached_decoder_for_Time = __utils._decode_extensible_choice<Time>({
-            "UNIVERSAL 23": ["utcTime", __utils._decodeUTCTime],
-            "UNIVERSAL 24": ["generalizedTime", __utils._decodeGeneralizedTime],
+        _cached_decoder_for_Time = $._decode_extensible_choice<Time>({
+            "UNIVERSAL 23": ["utcTime", $._decodeUTCTime],
+            "UNIVERSAL 24": ["generalizedTime", $._decodeGeneralizedTime],
         });
     }
     return _cached_decoder_for_Time(el);
 }
-export function _encode_Time(value: Time, elGetter: __utils.ASN1Encoder<Time>) {
+/**
+ * @summary Encodes a(n) Time into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Time, encoded as an ASN.1 Element.
+ */
+export function _encode_Time(value: Time, elGetter: $.ASN1Encoder<Time>) {
     if (!_cached_encoder_for_Time) {
-        _cached_encoder_for_Time = __utils._encode_choice<Time>(
+        _cached_encoder_for_Time = $._encode_choice<Time>(
             {
-                utcTime: __utils._encodeUTCTime,
-                generalizedTime: __utils._encodeGeneralizedTime,
+                utcTime: $._encodeUTCTime,
+                generalizedTime: $._encodeGeneralizedTime,
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_Time(value, elGetter);
 }
 
+/**
+ * @summary Validity_validFrom
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Validity-validFrom ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type Validity_validFrom =
-    | { now: asn1.NULL } /* CHOICE_ALT_ROOT */
+    | { now: NULL } /* CHOICE_ALT_ROOT */
     | { time: Time } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_Validity_validFrom: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Validity_validFrom: $.ASN1Decoder<
     Validity_validFrom
 > | null = null;
-let _cached_encoder_for_Validity_validFrom: __utils.ASN1Encoder<
+let _cached_encoder_for_Validity_validFrom: $.ASN1Encoder<
     Validity_validFrom
 > | null = null;
-export function _decode_Validity_validFrom(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) Validity_validFrom
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Validity_validFrom} The decoded data structure.
+ */
+export function _decode_Validity_validFrom(el: _Element) {
     if (!_cached_decoder_for_Validity_validFrom) {
-        _cached_decoder_for_Validity_validFrom = __utils._decode_extensible_choice<
+        _cached_decoder_for_Validity_validFrom = $._decode_extensible_choice<
             Validity_validFrom
         >({
-            "CONTEXT 0": [
-                "now",
-                __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
-            ],
-            "CONTEXT 1": [
-                "time",
-                __utils._decode_explicit<Time>(() => _decode_Time),
-            ],
+            "CONTEXT 0": ["now", $._decode_explicit<NULL>(() => $._decodeNull)],
+            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
         });
     }
     return _cached_decoder_for_Validity_validFrom(el);
 }
+/**
+ * @summary Encodes a(n) Validity_validFrom into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Validity_validFrom, encoded as an ASN.1 Element.
+ */
 export function _encode_Validity_validFrom(
     value: Validity_validFrom,
-    elGetter: __utils.ASN1Encoder<Validity_validFrom>
+    elGetter: $.ASN1Encoder<Validity_validFrom>
 ) {
     if (!_cached_encoder_for_Validity_validFrom) {
-        _cached_encoder_for_Validity_validFrom = __utils._encode_choice<
+        _cached_encoder_for_Validity_validFrom = $._encode_choice<
             Validity_validFrom
         >(
             {
-                now: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                now: $._encode_explicit(
+                    _TagClass.context,
                     0,
-                    () => __utils._encodeNull,
-                    __utils.BER
+                    () => $._encodeNull,
+                    $.BER
                 ),
-                time: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                time: $._encode_explicit(
+                    _TagClass.context,
                     1,
                     () => _encode_Time,
-                    __utils.BER
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_Validity_validFrom(value, elGetter);
 }
 
+/**
+ * @summary Validity_validUntil
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Validity-validUntil ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type Validity_validUntil =
-    | { explicitTermination: asn1.NULL } /* CHOICE_ALT_ROOT */
+    | { explicitTermination: NULL } /* CHOICE_ALT_ROOT */
     | { time: Time } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_Validity_validUntil: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Validity_validUntil: $.ASN1Decoder<
     Validity_validUntil
 > | null = null;
-let _cached_encoder_for_Validity_validUntil: __utils.ASN1Encoder<
+let _cached_encoder_for_Validity_validUntil: $.ASN1Encoder<
     Validity_validUntil
 > | null = null;
-export function _decode_Validity_validUntil(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) Validity_validUntil
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Validity_validUntil} The decoded data structure.
+ */
+export function _decode_Validity_validUntil(el: _Element) {
     if (!_cached_decoder_for_Validity_validUntil) {
-        _cached_decoder_for_Validity_validUntil = __utils._decode_extensible_choice<
+        _cached_decoder_for_Validity_validUntil = $._decode_extensible_choice<
             Validity_validUntil
         >({
             "CONTEXT 0": [
                 "explicitTermination",
-                __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
+                $._decode_explicit<NULL>(() => $._decodeNull),
             ],
-            "CONTEXT 1": [
-                "time",
-                __utils._decode_explicit<Time>(() => _decode_Time),
-            ],
+            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
         });
     }
     return _cached_decoder_for_Validity_validUntil(el);
 }
+/**
+ * @summary Encodes a(n) Validity_validUntil into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Validity_validUntil, encoded as an ASN.1 Element.
+ */
 export function _encode_Validity_validUntil(
     value: Validity_validUntil,
-    elGetter: __utils.ASN1Encoder<Validity_validUntil>
+    elGetter: $.ASN1Encoder<Validity_validUntil>
 ) {
     if (!_cached_encoder_for_Validity_validUntil) {
-        _cached_encoder_for_Validity_validUntil = __utils._encode_choice<
+        _cached_encoder_for_Validity_validUntil = $._encode_choice<
             Validity_validUntil
         >(
             {
-                explicitTermination: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                explicitTermination: $._encode_explicit(
+                    _TagClass.context,
                     0,
-                    () => __utils._encodeNull,
-                    __utils.BER
+                    () => $._encodeNull,
+                    $.BER
                 ),
-                time: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                time: $._encode_explicit(
+                    _TagClass.context,
                     1,
                     () => _encode_Time,
-                    __utils.BER
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_Validity_validUntil(value, elGetter);
 }
 
+/**
+ * @summary Validity
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Validity ::= SEQUENCE {
+ *   validFrom            [0]  CHOICE {
+ *     now                  [0]  NULL,
+ *     time                 [1]  Time,
+ *     ...} DEFAULT now:NULL,
+ *   validUntil           [1]  CHOICE {
+ *     explicitTermination  [0]  NULL,
+ *     time                 [1]  Time,
+ *     ... } DEFAULT explicitTermination:NULL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class Validity {
     constructor(
-        readonly validFrom: Validity_validFrom | undefined,
-        readonly validUntil: Validity_validUntil | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `validFrom`.
+         * @public
+         * @readonly
+         */
+        readonly validFrom: OPTIONAL<Validity_validFrom>,
+        /**
+         * @summary `validUntil`.
+         * @public
+         * @readonly
+         */
+        readonly validUntil: OPTIONAL<Validity_validUntil>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a Validity
+     * @description
+     *
+     * This takes an `object` and converts it to a `Validity`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `Validity`.
+     * @returns {Validity}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof Validity]: Validity[_K] }>
+    ): Validity {
+        return new Validity(
+            _o.validFrom,
+            _o.validUntil,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `validFrom`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_validFrom() {
         return { now: null };
     }
+    /**
+     * @summary Getter that returns the default value for `validUntil`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_validUntil() {
         return { explicitTermination: null };
     }
 }
-export const _root_component_type_list_1_spec_for_Validity: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of Validity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_Validity: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "validFrom",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "validUntil",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_Validity: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_Validity: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_Validity: __utils.ASN1Decoder<Validity> | null = null;
-let _cached_encoder_for_Validity: __utils.ASN1Encoder<Validity> | null = null;
-export function _decode_Validity(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of Validity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_Validity: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of Validity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_Validity: $.ComponentSpec[] = [];
+let _cached_decoder_for_Validity: $.ASN1Decoder<Validity> | null = null;
+let _cached_encoder_for_Validity: $.ASN1Encoder<Validity> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Validity
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Validity} The decoded data structure.
+ */
+export function _decode_Validity(el: _Element) {
     if (!_cached_decoder_for_Validity) {
-        _cached_decoder_for_Validity = function (
-            el: asn1.ASN1Element
-        ): Validity {
+        _cached_decoder_for_Validity = function (el: _Element): Validity {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let validFrom: asn1.OPTIONAL<Validity_validFrom> =
+            let validFrom: OPTIONAL<Validity_validFrom> =
                 Validity._default_value_for_validFrom;
-            let validUntil: asn1.OPTIONAL<Validity_validUntil> =
+            let validUntil: OPTIONAL<Validity_validUntil> =
                 Validity._default_value_for_validUntil;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                validFrom: (_el: asn1.ASN1Element): void => {
-                    validFrom = __utils._decode_explicit<Validity_validFrom>(
+            const callbacks: $.DecodingMap = {
+                validFrom: (_el: _Element): void => {
+                    validFrom = $._decode_explicit<Validity_validFrom>(
                         () => _decode_Validity_validFrom
                     )(_el);
                 },
-                validUntil: (_el: asn1.ASN1Element): void => {
-                    validUntil = __utils._decode_explicit<Validity_validUntil>(
+                validUntil: (_el: _Element): void => {
+                    validUntil = $._decode_explicit<Validity_validUntil>(
                         () => _decode_Validity_validUntil
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_Validity,
                 _extension_additions_list_spec_for_Validity,
                 _root_component_type_list_2_spec_for_Validity,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -473,196 +1033,329 @@ export function _decode_Validity(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_Validity(el);
 }
+/**
+ * @summary Encodes a(n) Validity into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Validity, encoded as an ASN.1 Element.
+ */
 export function _encode_Validity(
     value: Validity,
-    elGetter: __utils.ASN1Encoder<Validity>
+    elGetter: $.ASN1Encoder<Validity>
 ) {
     if (!_cached_encoder_for_Validity) {
         _cached_encoder_for_Validity = function (
             value: Validity,
-            elGetter: __utils.ASN1Encoder<Validity>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<Validity>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_DEFAULT */ value.validFrom === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.validFrom,
                                 Validity._default_value_for_validFrom
                             )
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_Validity_validFrom,
-                                      __utils.BER
-                                  )(value.validFrom, __utils.BER),
+                                      $.BER
+                                  )(value.validFrom, $.BER),
                             /* IF_DEFAULT */ value.validUntil === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.validUntil,
                                 Validity._default_value_for_validUntil
                             )
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_Validity_validUntil,
-                                      __utils.BER
-                                  )(value.validUntil, __utils.BER),
+                                      $.BER
+                                  )(value.validUntil, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_Validity(value, elGetter);
 }
 
+/**
+ * @summary EstablishOperationalBindingArgumentData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EstablishOperationalBindingArgumentData ::= SEQUENCE {
+ *   bindingType        [0]  OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *   bindingID          [1]  OperationalBindingID OPTIONAL,
+ *   accessPoint        [2]  AccessPoint,
+ *                -- symmetric, Role A initiates, or Role B initiates
+ *   initiator               CHOICE {
+ *     symmetric          [3]  OPERATIONAL-BINDING.&both.&EstablishParam
+ *                             ({OpBindingSet}{@bindingType}),
+ *     roleA-initiates    [4]  OPERATIONAL-BINDING.&roleA.&EstablishParam
+ *                             ({OpBindingSet}{@bindingType}),
+ *     roleB-initiates    [5]  OPERATIONAL-BINDING.&roleB.&EstablishParam
+ *                               ({OpBindingSet}{@bindingType})},
+ *   agreement          [6]  OPERATIONAL-BINDING.&Agreement
+ *                             ({OpBindingSet}{@bindingType}),
+ *   valid              [7]  Validity DEFAULT {},
+ *   securityParameters [8]  SecurityParameters OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class EstablishOperationalBindingArgumentData {
     constructor(
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly bindingID: OperationalBindingID | undefined,
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `bindingID`.
+         * @public
+         * @readonly
+         */
+        readonly bindingID: OPTIONAL<OperationalBindingID>,
+        /**
+         * @summary `accessPoint`.
+         * @public
+         * @readonly
+         */
         readonly accessPoint: AccessPoint,
+        /**
+         * @summary `initiator`.
+         * @public
+         * @readonly
+         */
         readonly initiator: EstablishOperationalBindingArgumentData_initiator,
-        readonly agreement: asn1.ASN1Element,
-        readonly valid: Validity | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `agreement`.
+         * @public
+         * @readonly
+         */
+        readonly agreement: _Element,
+        /**
+         * @summary `valid`.
+         * @public
+         * @readonly
+         */
+        readonly valid: OPTIONAL<Validity>,
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<SecurityParameters>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a EstablishOperationalBindingArgumentData
+     * @description
+     *
+     * This takes an `object` and converts it to a `EstablishOperationalBindingArgumentData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `EstablishOperationalBindingArgumentData`.
+     * @returns {EstablishOperationalBindingArgumentData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof EstablishOperationalBindingArgumentData]: EstablishOperationalBindingArgumentData[_K];
+            }
+        >
+    ): EstablishOperationalBindingArgumentData {
+        return new EstablishOperationalBindingArgumentData(
+            _o.bindingType,
+            _o.bindingID,
+            _o.accessPoint,
+            _o.initiator,
+            _o.agreement,
+            _o.valid,
+            _o.securityParameters,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `valid`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_valid() {
-        return new Validity(undefined, undefined);
+        return Validity._from_object({});
     }
 }
-export const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of EstablishOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "bindingType",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "bindingID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "accessPoint",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "initiator",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec("initiator", false, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
         "agreement",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 6),
+        $.hasTag(_TagClass.context, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "valid",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 7),
+        $.hasTag(_TagClass.context, 7),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "securityParameters",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 8),
+        $.hasTag(_TagClass.context, 8),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_EstablishOperationalBindingArgumentData: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of EstablishOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_EstablishOperationalBindingArgumentData: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of EstablishOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData: $.ComponentSpec[] = [];
+let _cached_decoder_for_EstablishOperationalBindingArgumentData: $.ASN1Decoder<
     EstablishOperationalBindingArgumentData
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingArgumentData: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingArgumentData: $.ASN1Encoder<
     EstablishOperationalBindingArgumentData
 > | null = null;
-export function _decode_EstablishOperationalBindingArgumentData(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingArgumentData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingArgumentData} The decoded data structure.
+ */
+export function _decode_EstablishOperationalBindingArgumentData(el: _Element) {
     if (!_cached_decoder_for_EstablishOperationalBindingArgumentData) {
         _cached_decoder_for_EstablishOperationalBindingArgumentData = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): EstablishOperationalBindingArgumentData {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let bindingID: asn1.OPTIONAL<OperationalBindingID>;
+            let bindingType!: OBJECT_IDENTIFIER;
+            let bindingID: OPTIONAL<OperationalBindingID>;
             let accessPoint!: AccessPoint;
             let initiator!: EstablishOperationalBindingArgumentData_initiator;
-            let agreement!: asn1.ASN1Element;
-            let valid: asn1.OPTIONAL<Validity> =
+            let agreement!: _Element;
+            let valid: OPTIONAL<Validity> =
                 EstablishOperationalBindingArgumentData._default_value_for_valid;
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decode_explicit<
-                        asn1.OBJECT_IDENTIFIER
-                    >(() => __utils._decodeObjectIdentifier)(_el);
+            const callbacks: $.DecodingMap = {
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
                 },
-                bindingID: (_el: asn1.ASN1Element): void => {
-                    bindingID = __utils._decode_explicit<OperationalBindingID>(
+                bindingID: (_el: _Element): void => {
+                    bindingID = $._decode_explicit<OperationalBindingID>(
                         () => _decode_OperationalBindingID
                     )(_el);
                 },
-                accessPoint: (_el: asn1.ASN1Element): void => {
-                    accessPoint = __utils._decode_explicit<AccessPoint>(
+                accessPoint: (_el: _Element): void => {
+                    accessPoint = $._decode_explicit<AccessPoint>(
                         () => _decode_AccessPoint
                     )(_el);
                 },
-                initiator: (_el: asn1.ASN1Element): void => {
+                initiator: (_el: _Element): void => {
                     initiator = _decode_EstablishOperationalBindingArgumentData_initiator(
                         _el
                     );
                 },
-                agreement: (_el: asn1.ASN1Element): void => {
-                    agreement = __utils._decode_explicit<asn1.ASN1Element>(
-                        () => __utils._decodeAny
+                agreement: (_el: _Element): void => {
+                    agreement = $._decode_explicit<_Element>(
+                        () => $._decodeAny
                     )(_el);
                 },
-                valid: (_el: asn1.ASN1Element): void => {
-                    valid = __utils._decode_explicit<Validity>(
+                valid: (_el: _Element): void => {
+                    valid = $._decode_explicit<Validity>(
                         () => _decode_Validity
                     )(_el);
                 },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_EstablishOperationalBindingArgumentData,
                 _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData,
                 _root_component_type_list_2_spec_for_EstablishOperationalBindingArgumentData,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -680,81 +1373,84 @@ export function _decode_EstablishOperationalBindingArgumentData(
     }
     return _cached_decoder_for_EstablishOperationalBindingArgumentData(el);
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingArgumentData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingArgumentData, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingArgumentData(
     value: EstablishOperationalBindingArgumentData,
-    elGetter: __utils.ASN1Encoder<EstablishOperationalBindingArgumentData>
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingArgumentData>
 ) {
     if (!_cached_encoder_for_EstablishOperationalBindingArgumentData) {
         _cached_encoder_for_EstablishOperationalBindingArgumentData = function (
             value: EstablishOperationalBindingArgumentData,
-            elGetter: __utils.ASN1Encoder<
-                EstablishOperationalBindingArgumentData
-            >
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<EstablishOperationalBindingArgumentData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
-                                () => __utils._encodeObjectIdentifier,
-                                __utils.BER
-                            )(value.bindingType, __utils.BER),
+                                () => $._encodeObjectIdentifier,
+                                $.BER
+                            )(value.bindingType, $.BER),
                             /* IF_ABSENT  */ value.bindingID === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_OperationalBindingID,
-                                      __utils.BER
-                                  )(value.bindingID, __utils.BER),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                                      $.BER
+                                  )(value.bindingID, $.BER),
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 2,
                                 () => _encode_AccessPoint,
-                                __utils.BER
-                            )(value.accessPoint, __utils.BER),
+                                $.BER
+                            )(value.accessPoint, $.BER),
                             /* REQUIRED   */ _encode_EstablishOperationalBindingArgumentData_initiator(
                                 value.initiator,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 6,
-                                () => __utils._encodeAny,
-                                __utils.BER
-                            )(value.agreement, __utils.BER),
+                                () => $._encodeAny,
+                                $.BER
+                            )(value.agreement, $.BER),
                             /* IF_DEFAULT */ value.valid === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.valid,
                                 EstablishOperationalBindingArgumentData._default_value_for_valid
                             )
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       7,
                                       () => _encode_Validity,
-                                      __utils.BER
-                                  )(value.valid, __utils.BER),
+                                      $.BER
+                                  )(value.valid, $.BER),
                             /* IF_ABSENT  */ value.securityParameters ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       8,
                                       () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -764,18 +1460,22 @@ export function _encode_EstablishOperationalBindingArgumentData(
     );
 }
 
-export type EstablishOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<
+export type EstablishOperationalBindingArgument<> = OPTIONALLY_PROTECTED_SEQ<
     EstablishOperationalBindingArgumentData
 >; // DefinedType
-let _cached_decoder_for_EstablishOperationalBindingArgument: __utils.ASN1Decoder<
+let _cached_decoder_for_EstablishOperationalBindingArgument: $.ASN1Decoder<
     EstablishOperationalBindingArgument
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingArgument: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingArgument: $.ASN1Encoder<
     EstablishOperationalBindingArgument
 > | null = null;
-export function _decode_EstablishOperationalBindingArgument(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingArgument
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingArgument} The decoded data structure.
+ */
+export function _decode_EstablishOperationalBindingArgument(el: _Element) {
     if (!_cached_decoder_for_EstablishOperationalBindingArgument) {
         _cached_decoder_for_EstablishOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
             EstablishOperationalBindingArgumentData
@@ -783,9 +1483,16 @@ export function _decode_EstablishOperationalBindingArgument(
     }
     return _cached_decoder_for_EstablishOperationalBindingArgument(el);
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingArgument into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingArgument, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingArgument(
     value: EstablishOperationalBindingArgument,
-    elGetter: __utils.ASN1Encoder<EstablishOperationalBindingArgument>
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingArgument>
 ) {
     if (!_cached_encoder_for_EstablishOperationalBindingArgument) {
         _cached_encoder_for_EstablishOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
@@ -798,42 +1505,50 @@ export function _encode_EstablishOperationalBindingArgument(
     );
 }
 
-// TODO: ObjectSetAssignment: OpBindingSet
-
+/**
+ * @summary EstablishOperationalBindingResultData_initiator
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EstablishOperationalBindingResultData-initiator ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type EstablishOperationalBindingResultData_initiator =
-    | { symmetric: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleA_replies: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleB_replies: asn1.ASN1Element } /* CHOICE_ALT_ROOT */;
-let _cached_decoder_for_EstablishOperationalBindingResultData_initiator: __utils.ASN1Decoder<
+    | { symmetric: _Element } /* CHOICE_ALT_ROOT */
+    | { roleA_replies: _Element } /* CHOICE_ALT_ROOT */
+    | { roleB_replies: _Element } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_EstablishOperationalBindingResultData_initiator: $.ASN1Decoder<
     EstablishOperationalBindingResultData_initiator
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingResultData_initiator: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingResultData_initiator: $.ASN1Encoder<
     EstablishOperationalBindingResultData_initiator
 > | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingResultData_initiator
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingResultData_initiator} The decoded data structure.
+ */
 export function _decode_EstablishOperationalBindingResultData_initiator(
-    el: asn1.ASN1Element
+    el: _Element
 ) {
     if (!_cached_decoder_for_EstablishOperationalBindingResultData_initiator) {
-        _cached_decoder_for_EstablishOperationalBindingResultData_initiator = __utils._decode_inextensible_choice<
+        _cached_decoder_for_EstablishOperationalBindingResultData_initiator = $._decode_inextensible_choice<
             EstablishOperationalBindingResultData_initiator
         >({
             "CONTEXT 3": [
                 "symmetric",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
             "CONTEXT 4": [
                 "roleA_replies",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
             "CONTEXT 5": [
                 "roleB_replies",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
+                $._decode_explicit<_Element>(() => $._decodeAny),
             ],
         });
     }
@@ -841,37 +1556,42 @@ export function _decode_EstablishOperationalBindingResultData_initiator(
         el
     );
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingResultData_initiator into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingResultData_initiator, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingResultData_initiator(
     value: EstablishOperationalBindingResultData_initiator,
-    elGetter: __utils.ASN1Encoder<
-        EstablishOperationalBindingResultData_initiator
-    >
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingResultData_initiator>
 ) {
     if (!_cached_encoder_for_EstablishOperationalBindingResultData_initiator) {
-        _cached_encoder_for_EstablishOperationalBindingResultData_initiator = __utils._encode_choice<
+        _cached_encoder_for_EstablishOperationalBindingResultData_initiator = $._encode_choice<
             EstablishOperationalBindingResultData_initiator
         >(
             {
-                symmetric: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                symmetric: $._encode_explicit(
+                    _TagClass.context,
                     3,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
-                roleA_replies: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                roleA_replies: $._encode_explicit(
+                    _TagClass.context,
                     4,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
-                roleB_replies: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                roleB_replies: $._encode_explicit(
+                    _TagClass.context,
                     5,
-                    () => __utils._encodeAny,
-                    __utils.BER
+                    () => $._encodeAny,
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_EstablishOperationalBindingResultData_initiator(
@@ -880,169 +1600,297 @@ export function _encode_EstablishOperationalBindingResultData_initiator(
     );
 }
 
+/**
+ * @summary EstablishOperationalBindingResultData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EstablishOperationalBindingResultData ::= SEQUENCE {
+ *   bindingType   [0]  OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *   bindingID     [1]  OperationalBindingID OPTIONAL,
+ *   accessPoint   [2]  AccessPoint,
+ *   -- symmetric, Role A replies, or Role B replies
+ *   initiator          CHOICE {
+ *     symmetric     [3]  OPERATIONAL-BINDING.&both.&EstablishParam
+ *                          ({OpBindingSet}{@bindingType}),
+ *     roleA-replies [4]  OPERATIONAL-BINDING.&roleA.&EstablishParam
+ *                          ({OpBindingSet}{@bindingType}),
+ *     roleB-replies [5]  OPERATIONAL-BINDING.&roleB.&EstablishParam
+ *                          ({OpBindingSet}{@bindingType})},
+ *   ...,
+ *   ...,
+ *   COMPONENTS OF      CommonResultsSeq }
+ * ```
+ *
+ * @class
+ */
 export class EstablishOperationalBindingResultData {
     constructor(
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly bindingID: OperationalBindingID | undefined,
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `bindingID`.
+         * @public
+         * @readonly
+         */
+        readonly bindingID: OPTIONAL<OperationalBindingID>,
+        /**
+         * @summary `accessPoint`.
+         * @public
+         * @readonly
+         */
         readonly accessPoint: AccessPoint,
+        /**
+         * @summary `initiator`.
+         * @public
+         * @readonly
+         */
         readonly initiator: EstablishOperationalBindingResultData_initiator,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters:
-            | SecurityParameters
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly performer:
-            | DistinguishedName
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced:
-            | asn1.BOOLEAN
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly notification:
-            | Attribute[]
-            | undefined /* REPLICATED_COMPONENT */
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<
+            SecurityParameters
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `performer`.
+         * @public
+         * @readonly
+         */
+        readonly performer: OPTIONAL<
+            DistinguishedName
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `aliasDereferenced`.
+         * @public
+         * @readonly
+         */
+        readonly aliasDereferenced: OPTIONAL<
+            BOOLEAN
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `notification`.
+         * @public
+         * @readonly
+         */
+        readonly notification: OPTIONAL<Attribute[]> /* REPLICATED_COMPONENT */
     ) {}
+
+    /**
+     * @summary Restructures an object into a EstablishOperationalBindingResultData
+     * @description
+     *
+     * This takes an `object` and converts it to a `EstablishOperationalBindingResultData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `EstablishOperationalBindingResultData`.
+     * @returns {EstablishOperationalBindingResultData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof EstablishOperationalBindingResultData]: EstablishOperationalBindingResultData[_K];
+            }
+        >
+    ): EstablishOperationalBindingResultData {
+        return new EstablishOperationalBindingResultData(
+            _o.bindingType,
+            _o.bindingID,
+            _o.accessPoint,
+            _o.initiator,
+            _o._unrecognizedExtensionsList,
+            _o.securityParameters,
+            _o.performer,
+            _o.aliasDereferenced,
+            _o.notification
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `aliasDereferenced`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_aliasDereferenced() {
         return false;
     }
 }
-export const _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of EstablishOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "bindingType",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "bindingID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "accessPoint",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "initiator",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
+    new $.ComponentSpec("initiator", false, $.hasAnyTag, undefined, undefined),
 ];
-export const _root_component_type_list_2_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Trailing Root Component Types of EstablishOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_EstablishOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "securityParameters",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        $.hasTag(_TagClass.context, 30),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "performer",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        $.hasTag(_TagClass.context, 29),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "aliasDereferenced",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        $.hasTag(_TagClass.context, 28),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "notification",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        $.hasTag(_TagClass.context, 27),
         undefined,
         undefined
     ),
 ];
-export const _extension_additions_list_spec_for_EstablishOperationalBindingResultData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_EstablishOperationalBindingResultData: __utils.ASN1Decoder<
+/**
+ * @summary The Extension Addition Component Types of EstablishOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_EstablishOperationalBindingResultData: $.ComponentSpec[] = [];
+let _cached_decoder_for_EstablishOperationalBindingResultData: $.ASN1Decoder<
     EstablishOperationalBindingResultData
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingResultData: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingResultData: $.ASN1Encoder<
     EstablishOperationalBindingResultData
 > | null = null;
-export function _decode_EstablishOperationalBindingResultData(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingResultData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingResultData} The decoded data structure.
+ */
+export function _decode_EstablishOperationalBindingResultData(el: _Element) {
     if (!_cached_decoder_for_EstablishOperationalBindingResultData) {
         _cached_decoder_for_EstablishOperationalBindingResultData = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): EstablishOperationalBindingResultData {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let bindingID: asn1.OPTIONAL<OperationalBindingID>;
+            let bindingType!: OBJECT_IDENTIFIER;
+            let bindingID: OPTIONAL<OperationalBindingID>;
             let accessPoint!: AccessPoint;
             let initiator!: EstablishOperationalBindingResultData_initiator;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let performer: asn1.OPTIONAL<DistinguishedName>;
-            let aliasDereferenced: asn1.OPTIONAL<asn1.BOOLEAN> =
+            let _unrecognizedExtensionsList: _Element[] = [];
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let performer: OPTIONAL<DistinguishedName>;
+            let aliasDereferenced: OPTIONAL<BOOLEAN> =
                 EstablishOperationalBindingResultData._default_value_for_aliasDereferenced;
-            let notification: asn1.OPTIONAL<Attribute[]>;
+            let notification: OPTIONAL<Attribute[]>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decode_explicit<
-                        asn1.OBJECT_IDENTIFIER
-                    >(() => __utils._decodeObjectIdentifier)(_el);
+            const callbacks: $.DecodingMap = {
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
                 },
-                bindingID: (_el: asn1.ASN1Element): void => {
-                    bindingID = __utils._decode_explicit<OperationalBindingID>(
+                bindingID: (_el: _Element): void => {
+                    bindingID = $._decode_explicit<OperationalBindingID>(
                         () => _decode_OperationalBindingID
                     )(_el);
                 },
-                accessPoint: (_el: asn1.ASN1Element): void => {
-                    accessPoint = __utils._decode_explicit<AccessPoint>(
+                accessPoint: (_el: _Element): void => {
+                    accessPoint = $._decode_explicit<AccessPoint>(
                         () => _decode_AccessPoint
                     )(_el);
                 },
-                initiator: (_el: asn1.ASN1Element): void => {
+                initiator: (_el: _Element): void => {
                     initiator = _decode_EstablishOperationalBindingResultData_initiator(
                         _el
                     );
                 },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
                 },
-                performer: (_el: asn1.ASN1Element): void => {
-                    performer = __utils._decode_explicit<DistinguishedName>(
+                performer: (_el: _Element): void => {
+                    performer = $._decode_explicit<DistinguishedName>(
                         () => _decode_DistinguishedName
                     )(_el);
                 },
-                aliasDereferenced: (_el: asn1.ASN1Element): void => {
-                    aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
-                        () => __utils._decodeBoolean
+                aliasDereferenced: (_el: _Element): void => {
+                    aliasDereferenced = $._decode_explicit<BOOLEAN>(
+                        () => $._decodeBoolean
                     )(_el);
                 },
-                notification: (_el: asn1.ASN1Element): void => {
-                    notification = __utils._decode_explicit<Attribute[]>(() =>
-                        __utils._decodeSequenceOf<Attribute>(
-                            () => _decode_Attribute
-                        )
+                notification: (_el: _Element): void => {
+                    notification = $._decode_explicit<Attribute[]>(() =>
+                        $._decodeSequenceOf<Attribute>(() => _decode_Attribute)
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_EstablishOperationalBindingResultData,
                 _extension_additions_list_spec_for_EstablishOperationalBindingResultData,
                 _root_component_type_list_2_spec_for_EstablishOperationalBindingResultData,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1061,42 +1909,49 @@ export function _decode_EstablishOperationalBindingResultData(
     }
     return _cached_decoder_for_EstablishOperationalBindingResultData(el);
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingResultData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingResultData, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingResultData(
     value: EstablishOperationalBindingResultData,
-    elGetter: __utils.ASN1Encoder<EstablishOperationalBindingResultData>
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingResultData>
 ) {
     if (!_cached_encoder_for_EstablishOperationalBindingResultData) {
         _cached_encoder_for_EstablishOperationalBindingResultData = function (
             value: EstablishOperationalBindingResultData,
-            elGetter: __utils.ASN1Encoder<EstablishOperationalBindingResultData>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<EstablishOperationalBindingResultData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
-                                () => __utils._encodeObjectIdentifier,
-                                __utils.BER
-                            )(value.bindingType, __utils.BER),
+                                () => $._encodeObjectIdentifier,
+                                $.BER
+                            )(value.bindingType, $.BER),
                             /* IF_ABSENT  */ value.bindingID === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_OperationalBindingID,
-                                      __utils.BER
-                                  )(value.bindingID, __utils.BER),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                                      $.BER
+                                  )(value.bindingID, $.BER),
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 2,
                                 () => _encode_AccessPoint,
-                                __utils.BER
-                            )(value.accessPoint, __utils.BER),
+                                $.BER
+                            )(value.accessPoint, $.BER),
                             /* REQUIRED   */ _encode_EstablishOperationalBindingResultData_initiator(
                                 value.initiator,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -1106,51 +1961,49 @@ export function _encode_EstablishOperationalBindingResultData(
                             /* IF_ABSENT  */ value.securityParameters ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       30,
                                       () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
                             /* IF_ABSENT  */ value.performer === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       29,
                                       () => _encode_DistinguishedName,
-                                      __utils.BER
-                                  )(value.performer, __utils.BER),
+                                      $.BER
+                                  )(value.performer, $.BER),
                             /* IF_DEFAULT */ value.aliasDereferenced ===
                                 undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.aliasDereferenced,
                                 EstablishOperationalBindingResultData._default_value_for_aliasDereferenced
                             )
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       28,
-                                      () => __utils._encodeBoolean,
-                                      __utils.BER
-                                  )(value.aliasDereferenced, __utils.BER),
+                                      () => $._encodeBoolean,
+                                      $.BER
+                                  )(value.aliasDereferenced, $.BER),
                             /* IF_ABSENT  */ value.notification === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       27,
                                       () =>
-                                          __utils._encodeSequenceOf<Attribute>(
+                                          $._encodeSequenceOf<Attribute>(
                                               () => _encode_Attribute,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.notification, __utils.BER),
+                                      $.BER
+                                  )(value.notification, $.BER),
                         ]
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -1160,18 +2013,22 @@ export function _encode_EstablishOperationalBindingResultData(
     );
 }
 
-export type EstablishOperationalBindingResult = OPTIONALLY_PROTECTED_SEQ<
+export type EstablishOperationalBindingResult<> = OPTIONALLY_PROTECTED_SEQ<
     EstablishOperationalBindingResultData
 >; // DefinedType
-let _cached_decoder_for_EstablishOperationalBindingResult: __utils.ASN1Decoder<
+let _cached_decoder_for_EstablishOperationalBindingResult: $.ASN1Decoder<
     EstablishOperationalBindingResult
 > | null = null;
-let _cached_encoder_for_EstablishOperationalBindingResult: __utils.ASN1Encoder<
+let _cached_encoder_for_EstablishOperationalBindingResult: $.ASN1Encoder<
     EstablishOperationalBindingResult
 > | null = null;
-export function _decode_EstablishOperationalBindingResult(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EstablishOperationalBindingResult
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EstablishOperationalBindingResult} The decoded data structure.
+ */
+export function _decode_EstablishOperationalBindingResult(el: _Element) {
     if (!_cached_decoder_for_EstablishOperationalBindingResult) {
         _cached_decoder_for_EstablishOperationalBindingResult = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
             EstablishOperationalBindingResultData
@@ -1179,9 +2036,16 @@ export function _decode_EstablishOperationalBindingResult(
     }
     return _cached_decoder_for_EstablishOperationalBindingResult(el);
 }
+/**
+ * @summary Encodes a(n) EstablishOperationalBindingResult into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EstablishOperationalBindingResult, encoded as an ASN.1 Element.
+ */
 export function _encode_EstablishOperationalBindingResult(
     value: EstablishOperationalBindingResult,
-    elGetter: __utils.ASN1Encoder<EstablishOperationalBindingResult>
+    elGetter: $.ASN1Encoder<EstablishOperationalBindingResult>
 ) {
     if (!_cached_encoder_for_EstablishOperationalBindingResult) {
         _cached_encoder_for_EstablishOperationalBindingResult = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
@@ -1194,1795 +2058,460 @@ export function _encode_EstablishOperationalBindingResult(
     );
 }
 
-// TODO: ObjectAssignment: modifyOperationalBinding
-
-export type ModifyOperationalBindingArgumentData_initiator =
-    | { symmetric: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleA_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleB_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */;
-let _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator: __utils.ASN1Decoder<
-    ModifyOperationalBindingArgumentData_initiator
-> | null = null;
-let _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator: __utils.ASN1Encoder<
-    ModifyOperationalBindingArgumentData_initiator
-> | null = null;
-export function _decode_ModifyOperationalBindingArgumentData_initiator(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_ModifyOperationalBindingArgumentData_initiator) {
-        _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator = __utils._decode_inextensible_choice<
-            ModifyOperationalBindingArgumentData_initiator
-        >({
-            "CONTEXT 3": [
-                "symmetric",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-            "CONTEXT 4": [
-                "roleA_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-            "CONTEXT 5": [
-                "roleB_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-        });
-    }
-    return _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator(
-        el
-    );
+/**
+ * @summary OpBindingErrorParam_problem
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OpBindingErrorParam-problem ::= ENUMERATED { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @enum {number}
+ */
+export enum _enum_for_OpBindingErrorParam_problem {
+    invalidID = 0,
+    duplicateID = 1,
+    unsupportedBindingType = 2,
+    notAllowedForRole = 3,
+    parametersMissing = 4,
+    roleAssignment = 5,
+    invalidStartTime = 6,
+    invalidEndTime = 7,
+    invalidAgreement = 8,
+    currentlyNotDecidable = 9,
+    modificationNotAllowed = 10,
+    invalidBindingType = 11,
+    invalidNewID = 12,
 }
-export function _encode_ModifyOperationalBindingArgumentData_initiator(
-    value: ModifyOperationalBindingArgumentData_initiator,
-    elGetter: __utils.ASN1Encoder<
-        ModifyOperationalBindingArgumentData_initiator
-    >
-) {
-    if (!_cached_encoder_for_ModifyOperationalBindingArgumentData_initiator) {
-        _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator = __utils._encode_choice<
-            ModifyOperationalBindingArgumentData_initiator
-        >(
-            {
-                symmetric: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    3,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-                roleA_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    4,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-                roleB_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    5,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator(
-        value,
-        elGetter
-    );
-}
-
-export type ModifiedValidity_validFrom =
-    | { now: asn1.NULL } /* CHOICE_ALT_ROOT */
-    | { time: Time } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_ModifiedValidity_validFrom: __utils.ASN1Decoder<
-    ModifiedValidity_validFrom
-> | null = null;
-let _cached_encoder_for_ModifiedValidity_validFrom: __utils.ASN1Encoder<
-    ModifiedValidity_validFrom
-> | null = null;
-export function _decode_ModifiedValidity_validFrom(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_ModifiedValidity_validFrom) {
-        _cached_decoder_for_ModifiedValidity_validFrom = __utils._decode_extensible_choice<
-            ModifiedValidity_validFrom
-        >({
-            "CONTEXT 0": [
-                "now",
-                __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
-            ],
-            "CONTEXT 1": [
-                "time",
-                __utils._decode_explicit<Time>(() => _decode_Time),
-            ],
-        });
-    }
-    return _cached_decoder_for_ModifiedValidity_validFrom(el);
-}
-export function _encode_ModifiedValidity_validFrom(
-    value: ModifiedValidity_validFrom,
-    elGetter: __utils.ASN1Encoder<ModifiedValidity_validFrom>
-) {
-    if (!_cached_encoder_for_ModifiedValidity_validFrom) {
-        _cached_encoder_for_ModifiedValidity_validFrom = __utils._encode_choice<
-            ModifiedValidity_validFrom
-        >(
-            {
-                now: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    0,
-                    () => __utils._encodeNull,
-                    __utils.BER
-                ),
-                time: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    1,
-                    () => _encode_Time,
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_ModifiedValidity_validFrom(value, elGetter);
-}
-
-export type ModifiedValidity_validUntil =
-    | { explicitTermination: asn1.NULL } /* CHOICE_ALT_ROOT */
-    | { time: Time } /* CHOICE_ALT_ROOT */
-    | { unchanged: asn1.NULL } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_ModifiedValidity_validUntil: __utils.ASN1Decoder<
-    ModifiedValidity_validUntil
-> | null = null;
-let _cached_encoder_for_ModifiedValidity_validUntil: __utils.ASN1Encoder<
-    ModifiedValidity_validUntil
-> | null = null;
-export function _decode_ModifiedValidity_validUntil(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_ModifiedValidity_validUntil) {
-        _cached_decoder_for_ModifiedValidity_validUntil = __utils._decode_extensible_choice<
-            ModifiedValidity_validUntil
-        >({
-            "CONTEXT 0": [
-                "explicitTermination",
-                __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
-            ],
-            "CONTEXT 1": [
-                "time",
-                __utils._decode_explicit<Time>(() => _decode_Time),
-            ],
-            "CONTEXT 2": [
-                "unchanged",
-                __utils._decode_explicit<asn1.NULL>(() => __utils._decodeNull),
-            ],
-        });
-    }
-    return _cached_decoder_for_ModifiedValidity_validUntil(el);
-}
-export function _encode_ModifiedValidity_validUntil(
-    value: ModifiedValidity_validUntil,
-    elGetter: __utils.ASN1Encoder<ModifiedValidity_validUntil>
-) {
-    if (!_cached_encoder_for_ModifiedValidity_validUntil) {
-        _cached_encoder_for_ModifiedValidity_validUntil = __utils._encode_choice<
-            ModifiedValidity_validUntil
-        >(
-            {
-                explicitTermination: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    0,
-                    () => __utils._encodeNull,
-                    __utils.BER
-                ),
-                time: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    1,
-                    () => _encode_Time,
-                    __utils.BER
-                ),
-                unchanged: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    2,
-                    () => __utils._encodeNull,
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_ModifiedValidity_validUntil(value, elGetter);
-}
-
-export class ModifiedValidity {
-    constructor(
-        readonly validFrom: ModifiedValidity_validFrom | undefined,
-        readonly validUntil: ModifiedValidity_validUntil | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
-    ) {}
-    public static get _default_value_for_validFrom() {
-        return { now: null };
-    }
-    public static get _default_value_for_validUntil() {
-        return { unchanged: null };
-    }
-}
-export const _root_component_type_list_1_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "validFrom",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "validUntil",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
-        undefined,
-        undefined
-    ),
-];
-export const _root_component_type_list_2_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ModifiedValidity: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ModifiedValidity: __utils.ASN1Decoder<
-    ModifiedValidity
-> | null = null;
-let _cached_encoder_for_ModifiedValidity: __utils.ASN1Encoder<
-    ModifiedValidity
-> | null = null;
-export function _decode_ModifiedValidity(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_ModifiedValidity) {
-        _cached_decoder_for_ModifiedValidity = function (
-            el: asn1.ASN1Element
-        ): ModifiedValidity {
-            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let validFrom: asn1.OPTIONAL<ModifiedValidity_validFrom> =
-                ModifiedValidity._default_value_for_validFrom;
-            let validUntil: asn1.OPTIONAL<ModifiedValidity_validUntil> =
-                ModifiedValidity._default_value_for_validUntil;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                validFrom: (_el: asn1.ASN1Element): void => {
-                    validFrom = __utils._decode_explicit<
-                        ModifiedValidity_validFrom
-                    >(() => _decode_ModifiedValidity_validFrom)(_el);
-                },
-                validUntil: (_el: asn1.ASN1Element): void => {
-                    validUntil = __utils._decode_explicit<
-                        ModifiedValidity_validUntil
-                    >(() => _decode_ModifiedValidity_validUntil)(_el);
-                },
-            };
-            /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
-                el,
-                callbacks,
-                _root_component_type_list_1_spec_for_ModifiedValidity,
-                _extension_additions_list_spec_for_ModifiedValidity,
-                _root_component_type_list_2_spec_for_ModifiedValidity,
-                (ext: asn1.ASN1Element): void => {
-                    _unrecognizedExtensionsList.push(ext);
-                }
-            );
-            return new ModifiedValidity(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
-                validUntil,
-                _unrecognizedExtensionsList
-            );
-        };
-    }
-    return _cached_decoder_for_ModifiedValidity(el);
-}
-export function _encode_ModifiedValidity(
-    value: ModifiedValidity,
-    elGetter: __utils.ASN1Encoder<ModifiedValidity>
-) {
-    if (!_cached_encoder_for_ModifiedValidity) {
-        _cached_encoder_for_ModifiedValidity = function (
-            value: ModifiedValidity,
-            elGetter: __utils.ASN1Encoder<ModifiedValidity>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
-                    .concat(
-                        [
-                            /* IF_DEFAULT */ value.validFrom === undefined ||
-                            __utils.deepEq(
-                                value.validFrom,
-                                ModifiedValidity._default_value_for_validFrom
-                            )
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      0,
-                                      () => _encode_ModifiedValidity_validFrom,
-                                      __utils.BER
-                                  )(value.validFrom, __utils.BER),
-                            /* IF_DEFAULT */ value.validUntil === undefined ||
-                            __utils.deepEq(
-                                value.validUntil,
-                                ModifiedValidity._default_value_for_validUntil
-                            )
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      1,
-                                      () => _encode_ModifiedValidity_validUntil,
-                                      __utils.BER
-                                  )(value.validUntil, __utils.BER),
-                        ],
-                        value._unrecognizedExtensionsList
-                            ? value._unrecognizedExtensionsList
-                            : []
-                    )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
-            );
-        };
-    }
-    return _cached_encoder_for_ModifiedValidity(value, elGetter);
-}
-
-export class ModifyOperationalBindingArgumentData {
-    constructor(
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly bindingID: OperationalBindingID,
-        readonly accessPoint: AccessPoint | undefined,
-        readonly initiator:
-            | ModifyOperationalBindingArgumentData_initiator
-            | undefined,
-        readonly newBindingID: OperationalBindingID,
-        readonly newAgreement: asn1.ASN1Element | undefined,
-        readonly valid: ModifiedValidity | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
-    ) {}
-}
-export const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "bindingType",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "bindingID",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "accessPoint",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "initiator",
-        true,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "newBindingID",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 6),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "newAgreement",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 7),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "valid",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 8),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "securityParameters",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 9),
-        undefined,
-        undefined
-    ),
-];
-export const _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ModifyOperationalBindingArgumentData: __utils.ASN1Decoder<
-    ModifyOperationalBindingArgumentData
-> | null = null;
-let _cached_encoder_for_ModifyOperationalBindingArgumentData: __utils.ASN1Encoder<
-    ModifyOperationalBindingArgumentData
-> | null = null;
-export function _decode_ModifyOperationalBindingArgumentData(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_ModifyOperationalBindingArgumentData) {
-        _cached_decoder_for_ModifyOperationalBindingArgumentData = function (
-            el: asn1.ASN1Element
-        ): ModifyOperationalBindingArgumentData {
-            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let bindingID!: OperationalBindingID;
-            let accessPoint: asn1.OPTIONAL<AccessPoint>;
-            let initiator: asn1.OPTIONAL<ModifyOperationalBindingArgumentData_initiator>;
-            let newBindingID!: OperationalBindingID;
-            let newAgreement: asn1.OPTIONAL<asn1.ASN1Element>;
-            let valid: asn1.OPTIONAL<ModifiedValidity>;
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decode_explicit<
-                        asn1.OBJECT_IDENTIFIER
-                    >(() => __utils._decodeObjectIdentifier)(_el);
-                },
-                bindingID: (_el: asn1.ASN1Element): void => {
-                    bindingID = __utils._decode_explicit<OperationalBindingID>(
-                        () => _decode_OperationalBindingID
-                    )(_el);
-                },
-                accessPoint: (_el: asn1.ASN1Element): void => {
-                    accessPoint = __utils._decode_explicit<AccessPoint>(
-                        () => _decode_AccessPoint
-                    )(_el);
-                },
-                initiator: (_el: asn1.ASN1Element): void => {
-                    initiator = _decode_ModifyOperationalBindingArgumentData_initiator(
-                        _el
-                    );
-                },
-                newBindingID: (_el: asn1.ASN1Element): void => {
-                    newBindingID = __utils._decode_explicit<
-                        OperationalBindingID
-                    >(() => _decode_OperationalBindingID)(_el);
-                },
-                newAgreement: (_el: asn1.ASN1Element): void => {
-                    newAgreement = __utils._decode_explicit<asn1.ASN1Element>(
-                        () => __utils._decodeAny
-                    )(_el);
-                },
-                valid: (_el: asn1.ASN1Element): void => {
-                    valid = __utils._decode_explicit<ModifiedValidity>(
-                        () => _decode_ModifiedValidity
-                    )(_el);
-                },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
-                },
-            };
-            /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
-                el,
-                callbacks,
-                _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData,
-                _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData,
-                _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData,
-                (ext: asn1.ASN1Element): void => {
-                    _unrecognizedExtensionsList.push(ext);
-                }
-            );
-            return new ModifyOperationalBindingArgumentData(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
-                bindingID,
-                accessPoint,
-                initiator,
-                newBindingID,
-                newAgreement,
-                valid,
-                securityParameters,
-                _unrecognizedExtensionsList
-            );
-        };
-    }
-    return _cached_decoder_for_ModifyOperationalBindingArgumentData(el);
-}
-export function _encode_ModifyOperationalBindingArgumentData(
-    value: ModifyOperationalBindingArgumentData,
-    elGetter: __utils.ASN1Encoder<ModifyOperationalBindingArgumentData>
-) {
-    if (!_cached_encoder_for_ModifyOperationalBindingArgumentData) {
-        _cached_encoder_for_ModifyOperationalBindingArgumentData = function (
-            value: ModifyOperationalBindingArgumentData,
-            elGetter: __utils.ASN1Encoder<ModifyOperationalBindingArgumentData>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
-                    .concat(
-                        [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
-                                0,
-                                () => __utils._encodeObjectIdentifier,
-                                __utils.BER
-                            )(value.bindingType, __utils.BER),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
-                                1,
-                                () => _encode_OperationalBindingID,
-                                __utils.BER
-                            )(value.bindingID, __utils.BER),
-                            /* IF_ABSENT  */ value.accessPoint === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      2,
-                                      () => _encode_AccessPoint,
-                                      __utils.BER
-                                  )(value.accessPoint, __utils.BER),
-                            /* IF_ABSENT  */ value.initiator === undefined
-                                ? undefined
-                                : _encode_ModifyOperationalBindingArgumentData_initiator(
-                                      value.initiator,
-                                      __utils.BER
-                                  ),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
-                                6,
-                                () => _encode_OperationalBindingID,
-                                __utils.BER
-                            )(value.newBindingID, __utils.BER),
-                            /* IF_ABSENT  */ value.newAgreement === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      7,
-                                      () => __utils._encodeAny,
-                                      __utils.BER
-                                  )(value.newAgreement, __utils.BER),
-                            /* IF_ABSENT  */ value.valid === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      8,
-                                      () => _encode_ModifiedValidity,
-                                      __utils.BER
-                                  )(value.valid, __utils.BER),
-                            /* IF_ABSENT  */ value.securityParameters ===
-                            undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      9,
-                                      () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
-                        ],
-                        value._unrecognizedExtensionsList
-                            ? value._unrecognizedExtensionsList
-                            : []
-                    )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
-            );
-        };
-    }
-    return _cached_encoder_for_ModifyOperationalBindingArgumentData(
-        value,
-        elGetter
-    );
-}
-
-export type ModifyOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<
-    ModifyOperationalBindingArgumentData
->; // DefinedType
-let _cached_decoder_for_ModifyOperationalBindingArgument: __utils.ASN1Decoder<
-    ModifyOperationalBindingArgument
-> | null = null;
-let _cached_encoder_for_ModifyOperationalBindingArgument: __utils.ASN1Encoder<
-    ModifyOperationalBindingArgument
-> | null = null;
-export function _decode_ModifyOperationalBindingArgument(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_ModifyOperationalBindingArgument) {
-        _cached_decoder_for_ModifyOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ModifyOperationalBindingArgumentData
-        >(_decode_ModifyOperationalBindingArgumentData);
-    }
-    return _cached_decoder_for_ModifyOperationalBindingArgument(el);
-}
-export function _encode_ModifyOperationalBindingArgument(
-    value: ModifyOperationalBindingArgument,
-    elGetter: __utils.ASN1Encoder<ModifyOperationalBindingArgument>
-) {
-    if (!_cached_encoder_for_ModifyOperationalBindingArgument) {
-        _cached_encoder_for_ModifyOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ModifyOperationalBindingArgumentData
-        >(_encode_ModifyOperationalBindingArgumentData);
-    }
-    return _cached_encoder_for_ModifyOperationalBindingArgument(
-        value,
-        elGetter
-    );
-}
-
-export class ModifyOperationalBindingResultData {
-    constructor(
-        readonly newBindingID: OperationalBindingID,
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly newAgreement: asn1.ASN1Element,
-        readonly valid: Validity | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters:
-            | SecurityParameters
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly performer:
-            | DistinguishedName
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced:
-            | asn1.BOOLEAN
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly notification:
-            | Attribute[]
-            | undefined /* REPLICATED_COMPONENT */
-    ) {}
-    public static get _default_value_for_aliasDereferenced() {
-        return false;
-    }
-}
-export const _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "newBindingID",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "bindingType",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "newAgreement",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "valid",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
-        undefined,
-        undefined
-    ),
-];
-export const _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "securityParameters",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 30),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "performer",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 29),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "aliasDereferenced",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 28),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "notification",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 27),
-        undefined,
-        undefined
-    ),
-];
-export const _extension_additions_list_spec_for_ModifyOperationalBindingResultData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ModifyOperationalBindingResultData: __utils.ASN1Decoder<
-    ModifyOperationalBindingResultData
-> | null = null;
-let _cached_encoder_for_ModifyOperationalBindingResultData: __utils.ASN1Encoder<
-    ModifyOperationalBindingResultData
-> | null = null;
-export function _decode_ModifyOperationalBindingResultData(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_ModifyOperationalBindingResultData) {
-        _cached_decoder_for_ModifyOperationalBindingResultData = function (
-            el: asn1.ASN1Element
-        ): ModifyOperationalBindingResultData {
-            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let newBindingID!: OperationalBindingID;
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let newAgreement!: asn1.ASN1Element;
-            let valid: asn1.OPTIONAL<Validity>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let performer: asn1.OPTIONAL<DistinguishedName>;
-            let aliasDereferenced: asn1.OPTIONAL<asn1.BOOLEAN> =
-                ModifyOperationalBindingResultData._default_value_for_aliasDereferenced;
-            let notification: asn1.OPTIONAL<Attribute[]>;
-            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                newBindingID: (_el: asn1.ASN1Element): void => {
-                    newBindingID = _decode_OperationalBindingID(_el);
-                },
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decodeObjectIdentifier(_el);
-                },
-                newAgreement: (_el: asn1.ASN1Element): void => {
-                    newAgreement = __utils._decodeAny(_el);
-                },
-                valid: (_el: asn1.ASN1Element): void => {
-                    valid = _decode_Validity(_el);
-                },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
-                },
-                performer: (_el: asn1.ASN1Element): void => {
-                    performer = __utils._decode_explicit<DistinguishedName>(
-                        () => _decode_DistinguishedName
-                    )(_el);
-                },
-                aliasDereferenced: (_el: asn1.ASN1Element): void => {
-                    aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
-                        () => __utils._decodeBoolean
-                    )(_el);
-                },
-                notification: (_el: asn1.ASN1Element): void => {
-                    notification = __utils._decode_explicit<Attribute[]>(() =>
-                        __utils._decodeSequenceOf<Attribute>(
-                            () => _decode_Attribute
-                        )
-                    )(_el);
-                },
-            };
-            /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
-                el,
-                callbacks,
-                _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData,
-                _extension_additions_list_spec_for_ModifyOperationalBindingResultData,
-                _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData,
-                (ext: asn1.ASN1Element): void => {
-                    _unrecognizedExtensionsList.push(ext);
-                }
-            );
-            return new ModifyOperationalBindingResultData(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ newBindingID,
-                bindingType,
-                newAgreement,
-                valid,
-                _unrecognizedExtensionsList,
-                securityParameters,
-                performer,
-                aliasDereferenced,
-                notification
-            );
-        };
-    }
-    return _cached_decoder_for_ModifyOperationalBindingResultData(el);
-}
-export function _encode_ModifyOperationalBindingResultData(
-    value: ModifyOperationalBindingResultData,
-    elGetter: __utils.ASN1Encoder<ModifyOperationalBindingResultData>
-) {
-    if (!_cached_encoder_for_ModifyOperationalBindingResultData) {
-        _cached_encoder_for_ModifyOperationalBindingResultData = function (
-            value: ModifyOperationalBindingResultData,
-            elGetter: __utils.ASN1Encoder<ModifyOperationalBindingResultData>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
-                    .concat(
-                        [
-                            /* REQUIRED   */ _encode_OperationalBindingID(
-                                value.newBindingID,
-                                __utils.BER
-                            ),
-                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                                value.bindingType,
-                                __utils.BER
-                            ),
-                            /* REQUIRED   */ __utils._encodeAny(
-                                value.newAgreement,
-                                __utils.BER
-                            ),
-                            /* IF_ABSENT  */ value.valid === undefined
-                                ? undefined
-                                : _encode_Validity(value.valid, __utils.BER),
-                        ],
-                        value._unrecognizedExtensionsList
-                            ? value._unrecognizedExtensionsList
-                            : [],
-                        [
-                            /* IF_ABSENT  */ value.securityParameters ===
-                            undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      30,
-                                      () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
-                            /* IF_ABSENT  */ value.performer === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      29,
-                                      () => _encode_DistinguishedName,
-                                      __utils.BER
-                                  )(value.performer, __utils.BER),
-                            /* IF_DEFAULT */ value.aliasDereferenced ===
-                                undefined ||
-                            __utils.deepEq(
-                                value.aliasDereferenced,
-                                ModifyOperationalBindingResultData._default_value_for_aliasDereferenced
-                            )
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      28,
-                                      () => __utils._encodeBoolean,
-                                      __utils.BER
-                                  )(value.aliasDereferenced, __utils.BER),
-                            /* IF_ABSENT  */ value.notification === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      27,
-                                      () =>
-                                          __utils._encodeSequenceOf<Attribute>(
-                                              () => _encode_Attribute,
-                                              __utils.BER
-                                          ),
-                                      __utils.BER
-                                  )(value.notification, __utils.BER),
-                        ]
-                    )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
-            );
-        };
-    }
-    return _cached_encoder_for_ModifyOperationalBindingResultData(
-        value,
-        elGetter
-    );
-}
-
-export type ModifyOperationalBindingResult =
-    | { null_: asn1.NULL } /* CHOICE_ALT_ROOT */
-    | {
-          protected_: OPTIONALLY_PROTECTED_SEQ<
-              ModifyOperationalBindingResultData
-          >;
-      } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_ModifyOperationalBindingResult: __utils.ASN1Decoder<
-    ModifyOperationalBindingResult
-> | null = null;
-let _cached_encoder_for_ModifyOperationalBindingResult: __utils.ASN1Encoder<
-    ModifyOperationalBindingResult
-> | null = null;
-export function _decode_ModifyOperationalBindingResult(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_ModifyOperationalBindingResult) {
-        _cached_decoder_for_ModifyOperationalBindingResult = __utils._decode_extensible_choice<
-            ModifyOperationalBindingResult
-        >({
-            "UNIVERSAL 5": ["null_", __utils._decodeNull],
-            "CONTEXT 1": [
-                "protected_",
-                __utils._decode_explicit<
-                    OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>
-                >(() =>
-                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                        ModifyOperationalBindingResultData
-                    >(_decode_ModifyOperationalBindingResultData)
-                ),
-            ],
-        });
-    }
-    return _cached_decoder_for_ModifyOperationalBindingResult(el);
-}
-export function _encode_ModifyOperationalBindingResult(
-    value: ModifyOperationalBindingResult,
-    elGetter: __utils.ASN1Encoder<ModifyOperationalBindingResult>
-) {
-    if (!_cached_encoder_for_ModifyOperationalBindingResult) {
-        _cached_encoder_for_ModifyOperationalBindingResult = __utils._encode_choice<
-            ModifyOperationalBindingResult
-        >(
-            {
-                null_: __utils._encodeNull,
-                protected_: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    1,
-                    () =>
-                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                            ModifyOperationalBindingResultData
-                        >(_encode_ModifyOperationalBindingResultData),
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_ModifyOperationalBindingResult(value, elGetter);
-}
-
-// TODO: ObjectAssignment: terminateOperationalBinding
-
-export type TerminateOperationalBindingArgumentData_initiator =
-    | { symmetric: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleA_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */
-    | { roleB_initiates: asn1.ASN1Element } /* CHOICE_ALT_ROOT */;
-let _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator: __utils.ASN1Decoder<
-    TerminateOperationalBindingArgumentData_initiator
-> | null = null;
-let _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator: __utils.ASN1Encoder<
-    TerminateOperationalBindingArgumentData_initiator
-> | null = null;
-export function _decode_TerminateOperationalBindingArgumentData_initiator(
-    el: asn1.ASN1Element
-) {
-    if (
-        !_cached_decoder_for_TerminateOperationalBindingArgumentData_initiator
-    ) {
-        _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator = __utils._decode_inextensible_choice<
-            TerminateOperationalBindingArgumentData_initiator
-        >({
-            "CONTEXT 2": [
-                "symmetric",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-            "CONTEXT 3": [
-                "roleA_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-            "CONTEXT 4": [
-                "roleB_initiates",
-                __utils._decode_explicit<asn1.ASN1Element>(
-                    () => __utils._decodeAny
-                ),
-            ],
-        });
-    }
-    return _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator(
-        el
-    );
-}
-export function _encode_TerminateOperationalBindingArgumentData_initiator(
-    value: TerminateOperationalBindingArgumentData_initiator,
-    elGetter: __utils.ASN1Encoder<
-        TerminateOperationalBindingArgumentData_initiator
-    >
-) {
-    if (
-        !_cached_encoder_for_TerminateOperationalBindingArgumentData_initiator
-    ) {
-        _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator = __utils._encode_choice<
-            TerminateOperationalBindingArgumentData_initiator
-        >(
-            {
-                symmetric: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    2,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-                roleA_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    3,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-                roleB_initiates: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    4,
-                    () => __utils._encodeAny,
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator(
-        value,
-        elGetter
-    );
-}
-
-export class TerminateOperationalBindingArgumentData {
-    constructor(
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly bindingID: OperationalBindingID,
-        readonly initiator:
-            | TerminateOperationalBindingArgumentData_initiator
-            | undefined,
-        readonly terminateAt: Time | undefined,
-        readonly securityParameters: SecurityParameters | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
-    ) {}
-}
-export const _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "bindingType",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "bindingID",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "initiator",
-        true,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "terminateAt",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 5),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "securityParameters",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 6),
-        undefined,
-        undefined
-    ),
-];
-export const _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_TerminateOperationalBindingArgumentData: __utils.ASN1Decoder<
-    TerminateOperationalBindingArgumentData
-> | null = null;
-let _cached_encoder_for_TerminateOperationalBindingArgumentData: __utils.ASN1Encoder<
-    TerminateOperationalBindingArgumentData
-> | null = null;
-export function _decode_TerminateOperationalBindingArgumentData(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_TerminateOperationalBindingArgumentData) {
-        _cached_decoder_for_TerminateOperationalBindingArgumentData = function (
-            el: asn1.ASN1Element
-        ): TerminateOperationalBindingArgumentData {
-            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let bindingID!: OperationalBindingID;
-            let initiator: asn1.OPTIONAL<TerminateOperationalBindingArgumentData_initiator>;
-            let terminateAt: asn1.OPTIONAL<Time>;
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decode_explicit<
-                        asn1.OBJECT_IDENTIFIER
-                    >(() => __utils._decodeObjectIdentifier)(_el);
-                },
-                bindingID: (_el: asn1.ASN1Element): void => {
-                    bindingID = __utils._decode_explicit<OperationalBindingID>(
-                        () => _decode_OperationalBindingID
-                    )(_el);
-                },
-                initiator: (_el: asn1.ASN1Element): void => {
-                    initiator = _decode_TerminateOperationalBindingArgumentData_initiator(
-                        _el
-                    );
-                },
-                terminateAt: (_el: asn1.ASN1Element): void => {
-                    terminateAt = __utils._decode_explicit<Time>(
-                        () => _decode_Time
-                    )(_el);
-                },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
-                },
-            };
-            /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
-                el,
-                callbacks,
-                _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData,
-                _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData,
-                _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData,
-                (ext: asn1.ASN1Element): void => {
-                    _unrecognizedExtensionsList.push(ext);
-                }
-            );
-            return new TerminateOperationalBindingArgumentData(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
-                bindingID,
-                initiator,
-                terminateAt,
-                securityParameters,
-                _unrecognizedExtensionsList
-            );
-        };
-    }
-    return _cached_decoder_for_TerminateOperationalBindingArgumentData(el);
-}
-export function _encode_TerminateOperationalBindingArgumentData(
-    value: TerminateOperationalBindingArgumentData,
-    elGetter: __utils.ASN1Encoder<TerminateOperationalBindingArgumentData>
-) {
-    if (!_cached_encoder_for_TerminateOperationalBindingArgumentData) {
-        _cached_encoder_for_TerminateOperationalBindingArgumentData = function (
-            value: TerminateOperationalBindingArgumentData,
-            elGetter: __utils.ASN1Encoder<
-                TerminateOperationalBindingArgumentData
-            >
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
-                    .concat(
-                        [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
-                                0,
-                                () => __utils._encodeObjectIdentifier,
-                                __utils.BER
-                            )(value.bindingType, __utils.BER),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
-                                1,
-                                () => _encode_OperationalBindingID,
-                                __utils.BER
-                            )(value.bindingID, __utils.BER),
-                            /* IF_ABSENT  */ value.initiator === undefined
-                                ? undefined
-                                : _encode_TerminateOperationalBindingArgumentData_initiator(
-                                      value.initiator,
-                                      __utils.BER
-                                  ),
-                            /* IF_ABSENT  */ value.terminateAt === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      5,
-                                      () => _encode_Time,
-                                      __utils.BER
-                                  )(value.terminateAt, __utils.BER),
-                            /* IF_ABSENT  */ value.securityParameters ===
-                            undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      6,
-                                      () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
-                        ],
-                        value._unrecognizedExtensionsList
-                            ? value._unrecognizedExtensionsList
-                            : []
-                    )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
-            );
-        };
-    }
-    return _cached_encoder_for_TerminateOperationalBindingArgumentData(
-        value,
-        elGetter
-    );
-}
-
-export type TerminateOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<
-    TerminateOperationalBindingArgumentData
->; // DefinedType
-let _cached_decoder_for_TerminateOperationalBindingArgument: __utils.ASN1Decoder<
-    TerminateOperationalBindingArgument
-> | null = null;
-let _cached_encoder_for_TerminateOperationalBindingArgument: __utils.ASN1Encoder<
-    TerminateOperationalBindingArgument
-> | null = null;
-export function _decode_TerminateOperationalBindingArgument(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_TerminateOperationalBindingArgument) {
-        _cached_decoder_for_TerminateOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            TerminateOperationalBindingArgumentData
-        >(_decode_TerminateOperationalBindingArgumentData);
-    }
-    return _cached_decoder_for_TerminateOperationalBindingArgument(el);
-}
-export function _encode_TerminateOperationalBindingArgument(
-    value: TerminateOperationalBindingArgument,
-    elGetter: __utils.ASN1Encoder<TerminateOperationalBindingArgument>
-) {
-    if (!_cached_encoder_for_TerminateOperationalBindingArgument) {
-        _cached_encoder_for_TerminateOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            TerminateOperationalBindingArgumentData
-        >(_encode_TerminateOperationalBindingArgumentData);
-    }
-    return _cached_encoder_for_TerminateOperationalBindingArgument(
-        value,
-        elGetter
-    );
-}
-
-export class TerminateOperationalBindingResultData {
-    constructor(
-        readonly bindingID: OperationalBindingID,
-        readonly bindingType: asn1.OBJECT_IDENTIFIER,
-        readonly terminateAt: asn1.GeneralizedTime | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters:
-            | SecurityParameters
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly performer:
-            | DistinguishedName
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced:
-            | asn1.BOOLEAN
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly notification:
-            | Attribute[]
-            | undefined /* REPLICATED_COMPONENT */
-    ) {}
-    public static get _default_value_for_aliasDereferenced() {
-        return false;
-    }
-}
-export const _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "bindingID",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "bindingType",
-        false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "terminateAt",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 24),
-        undefined,
-        undefined
-    ),
-];
-export const _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "securityParameters",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 30),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "performer",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 29),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "aliasDereferenced",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 28),
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
-        "notification",
-        true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 27),
-        undefined,
-        undefined
-    ),
-];
-export const _extension_additions_list_spec_for_TerminateOperationalBindingResultData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_TerminateOperationalBindingResultData: __utils.ASN1Decoder<
-    TerminateOperationalBindingResultData
-> | null = null;
-let _cached_encoder_for_TerminateOperationalBindingResultData: __utils.ASN1Encoder<
-    TerminateOperationalBindingResultData
-> | null = null;
-export function _decode_TerminateOperationalBindingResultData(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_TerminateOperationalBindingResultData) {
-        _cached_decoder_for_TerminateOperationalBindingResultData = function (
-            el: asn1.ASN1Element
-        ): TerminateOperationalBindingResultData {
-            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let bindingID!: OperationalBindingID;
-            let bindingType!: asn1.OBJECT_IDENTIFIER;
-            let terminateAt: asn1.OPTIONAL<asn1.GeneralizedTime>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let performer: asn1.OPTIONAL<DistinguishedName>;
-            let aliasDereferenced: asn1.OPTIONAL<asn1.BOOLEAN> =
-                TerminateOperationalBindingResultData._default_value_for_aliasDereferenced;
-            let notification: asn1.OPTIONAL<Attribute[]>;
-            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                bindingID: (_el: asn1.ASN1Element): void => {
-                    bindingID = _decode_OperationalBindingID(_el);
-                },
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decodeObjectIdentifier(_el);
-                },
-                terminateAt: (_el: asn1.ASN1Element): void => {
-                    terminateAt = __utils._decodeGeneralizedTime(_el);
-                },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
-                },
-                performer: (_el: asn1.ASN1Element): void => {
-                    performer = __utils._decode_explicit<DistinguishedName>(
-                        () => _decode_DistinguishedName
-                    )(_el);
-                },
-                aliasDereferenced: (_el: asn1.ASN1Element): void => {
-                    aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
-                        () => __utils._decodeBoolean
-                    )(_el);
-                },
-                notification: (_el: asn1.ASN1Element): void => {
-                    notification = __utils._decode_explicit<Attribute[]>(() =>
-                        __utils._decodeSequenceOf<Attribute>(
-                            () => _decode_Attribute
-                        )
-                    )(_el);
-                },
-            };
-            /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
-                el,
-                callbacks,
-                _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData,
-                _extension_additions_list_spec_for_TerminateOperationalBindingResultData,
-                _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData,
-                (ext: asn1.ASN1Element): void => {
-                    _unrecognizedExtensionsList.push(ext);
-                }
-            );
-            return new TerminateOperationalBindingResultData(
-                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingID,
-                bindingType,
-                terminateAt,
-                _unrecognizedExtensionsList,
-                securityParameters,
-                performer,
-                aliasDereferenced,
-                notification
-            );
-        };
-    }
-    return _cached_decoder_for_TerminateOperationalBindingResultData(el);
-}
-export function _encode_TerminateOperationalBindingResultData(
-    value: TerminateOperationalBindingResultData,
-    elGetter: __utils.ASN1Encoder<TerminateOperationalBindingResultData>
-) {
-    if (!_cached_encoder_for_TerminateOperationalBindingResultData) {
-        _cached_encoder_for_TerminateOperationalBindingResultData = function (
-            value: TerminateOperationalBindingResultData,
-            elGetter: __utils.ASN1Encoder<TerminateOperationalBindingResultData>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
-                    .concat(
-                        [
-                            /* REQUIRED   */ _encode_OperationalBindingID(
-                                value.bindingID,
-                                __utils.BER
-                            ),
-                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
-                                value.bindingType,
-                                __utils.BER
-                            ),
-                            /* IF_ABSENT  */ value.terminateAt === undefined
-                                ? undefined
-                                : __utils._encodeGeneralizedTime(
-                                      value.terminateAt,
-                                      __utils.BER
-                                  ),
-                        ],
-                        value._unrecognizedExtensionsList
-                            ? value._unrecognizedExtensionsList
-                            : [],
-                        [
-                            /* IF_ABSENT  */ value.securityParameters ===
-                            undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      30,
-                                      () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
-                            /* IF_ABSENT  */ value.performer === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      29,
-                                      () => _encode_DistinguishedName,
-                                      __utils.BER
-                                  )(value.performer, __utils.BER),
-                            /* IF_DEFAULT */ value.aliasDereferenced ===
-                                undefined ||
-                            __utils.deepEq(
-                                value.aliasDereferenced,
-                                TerminateOperationalBindingResultData._default_value_for_aliasDereferenced
-                            )
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      28,
-                                      () => __utils._encodeBoolean,
-                                      __utils.BER
-                                  )(value.aliasDereferenced, __utils.BER),
-                            /* IF_ABSENT  */ value.notification === undefined
-                                ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
-                                      27,
-                                      () =>
-                                          __utils._encodeSequenceOf<Attribute>(
-                                              () => _encode_Attribute,
-                                              __utils.BER
-                                          ),
-                                      __utils.BER
-                                  )(value.notification, __utils.BER),
-                        ]
-                    )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
-            );
-        };
-    }
-    return _cached_encoder_for_TerminateOperationalBindingResultData(
-        value,
-        elGetter
-    );
-}
-
-export type TerminateOperationalBindingResult =
-    | { null_: asn1.NULL } /* CHOICE_ALT_ROOT */
-    | {
-          protected_: OPTIONALLY_PROTECTED_SEQ<
-              TerminateOperationalBindingResultData
-          >;
-      } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_TerminateOperationalBindingResult: __utils.ASN1Decoder<
-    TerminateOperationalBindingResult
-> | null = null;
-let _cached_encoder_for_TerminateOperationalBindingResult: __utils.ASN1Encoder<
-    TerminateOperationalBindingResult
-> | null = null;
-export function _decode_TerminateOperationalBindingResult(
-    el: asn1.ASN1Element
-) {
-    if (!_cached_decoder_for_TerminateOperationalBindingResult) {
-        _cached_decoder_for_TerminateOperationalBindingResult = __utils._decode_extensible_choice<
-            TerminateOperationalBindingResult
-        >({
-            "UNIVERSAL 5": ["null_", __utils._decodeNull],
-            "CONTEXT 1": [
-                "protected_",
-                __utils._decode_explicit<
-                    OPTIONALLY_PROTECTED_SEQ<
-                        TerminateOperationalBindingResultData
-                    >
-                >(() =>
-                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                        TerminateOperationalBindingResultData
-                    >(_decode_TerminateOperationalBindingResultData)
-                ),
-            ],
-        });
-    }
-    return _cached_decoder_for_TerminateOperationalBindingResult(el);
-}
-export function _encode_TerminateOperationalBindingResult(
-    value: TerminateOperationalBindingResult,
-    elGetter: __utils.ASN1Encoder<TerminateOperationalBindingResult>
-) {
-    if (!_cached_encoder_for_TerminateOperationalBindingResult) {
-        _cached_encoder_for_TerminateOperationalBindingResult = __utils._encode_choice<
-            TerminateOperationalBindingResult
-        >(
-            {
-                null_: __utils._encodeNull,
-                protected_: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
-                    1,
-                    () =>
-                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                            TerminateOperationalBindingResultData
-                        >(_encode_TerminateOperationalBindingResultData),
-                    __utils.BER
-                ),
-            },
-            __utils.BER
-        );
-    }
-    return _cached_encoder_for_TerminateOperationalBindingResult(
-        value,
-        elGetter
-    );
-}
-
-// TODO: ObjectAssignment: operationalBindingError
-
-export type OpBindingErrorParam_problem = asn1.ENUMERATED;
+/**
+ * @summary OpBindingErrorParam_problem
+ */
+export type OpBindingErrorParam_problem =
+    | _enum_for_OpBindingErrorParam_problem
+    | ENUMERATED;
+/**
+ * @summary OpBindingErrorParam_problem_invalidID
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidID: OpBindingErrorParam_problem = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidID: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidID; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_duplicateID
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_duplicateID: OpBindingErrorParam_problem = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const duplicateID: OpBindingErrorParam_problem = OpBindingErrorParam_problem_duplicateID; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_unsupportedBindingType
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_unsupportedBindingType: OpBindingErrorParam_problem = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedBindingType: OpBindingErrorParam_problem = OpBindingErrorParam_problem_unsupportedBindingType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_notAllowedForRole
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_notAllowedForRole: OpBindingErrorParam_problem = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const notAllowedForRole: OpBindingErrorParam_problem = OpBindingErrorParam_problem_notAllowedForRole; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_parametersMissing
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_parametersMissing: OpBindingErrorParam_problem = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const parametersMissing: OpBindingErrorParam_problem = OpBindingErrorParam_problem_parametersMissing; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_roleAssignment
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_roleAssignment: OpBindingErrorParam_problem = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const roleAssignment: OpBindingErrorParam_problem = OpBindingErrorParam_problem_roleAssignment; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_invalidStartTime
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidStartTime: OpBindingErrorParam_problem = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidStartTime: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidStartTime; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_invalidEndTime
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidEndTime: OpBindingErrorParam_problem = 7; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidEndTime: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidEndTime; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_invalidAgreement
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidAgreement: OpBindingErrorParam_problem = 8; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidAgreement: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidAgreement; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_currentlyNotDecidable
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_currentlyNotDecidable: OpBindingErrorParam_problem = 9; /* LONG_NAMED_ENUMERATED_VALUE */
-export const currentlyNotDecidable: OpBindingErrorParam_problem = OpBindingErrorParam_problem_currentlyNotDecidable; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_modificationNotAllowed
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_modificationNotAllowed: OpBindingErrorParam_problem = 10; /* LONG_NAMED_ENUMERATED_VALUE */
-export const modificationNotAllowed: OpBindingErrorParam_problem = OpBindingErrorParam_problem_modificationNotAllowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_invalidBindingType
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidBindingType: OpBindingErrorParam_problem = 11; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidBindingType: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidBindingType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary OpBindingErrorParam_problem_invalidNewID
+ * @constant
+ * @type {number}
+ */
 export const OpBindingErrorParam_problem_invalidNewID: OpBindingErrorParam_problem = 12; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidNewID: OpBindingErrorParam_problem = OpBindingErrorParam_problem_invalidNewID; /* SHORT_NAMED_ENUMERATED_VALUE */
-let _cached_decoder_for_OpBindingErrorParam_problem: __utils.ASN1Decoder<
+let _cached_decoder_for_OpBindingErrorParam_problem: $.ASN1Decoder<
     OpBindingErrorParam_problem
 > | null = null;
-let _cached_encoder_for_OpBindingErrorParam_problem: __utils.ASN1Encoder<
+let _cached_encoder_for_OpBindingErrorParam_problem: $.ASN1Encoder<
     OpBindingErrorParam_problem
 > | null = null;
-export function _decode_OpBindingErrorParam_problem(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) OpBindingErrorParam_problem
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {OpBindingErrorParam_problem} The decoded data structure.
+ */
+export function _decode_OpBindingErrorParam_problem(el: _Element) {
     if (!_cached_decoder_for_OpBindingErrorParam_problem) {
-        _cached_decoder_for_OpBindingErrorParam_problem =
-            __utils._decodeEnumerated;
+        _cached_decoder_for_OpBindingErrorParam_problem = $._decodeEnumerated;
     }
     return _cached_decoder_for_OpBindingErrorParam_problem(el);
 }
+/**
+ * @summary Encodes a(n) OpBindingErrorParam_problem into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The OpBindingErrorParam_problem, encoded as an ASN.1 Element.
+ */
 export function _encode_OpBindingErrorParam_problem(
     value: OpBindingErrorParam_problem,
-    elGetter: __utils.ASN1Encoder<OpBindingErrorParam_problem>
+    elGetter: $.ASN1Encoder<OpBindingErrorParam_problem>
 ) {
     if (!_cached_encoder_for_OpBindingErrorParam_problem) {
-        _cached_encoder_for_OpBindingErrorParam_problem =
-            __utils._encodeEnumerated;
+        _cached_encoder_for_OpBindingErrorParam_problem = $._encodeEnumerated;
     }
     return _cached_encoder_for_OpBindingErrorParam_problem(value, elGetter);
 }
 
+/**
+ * @summary OpBindingErrorParam
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * OpBindingErrorParam ::= SEQUENCE {
+ *   problem            [0]  ENUMERATED {
+ *     invalidID              (0),
+ *     duplicateID            (1),
+ *     unsupportedBindingType (2),
+ *     notAllowedForRole      (3),
+ *     parametersMissing      (4),
+ *     roleAssignment         (5),
+ *     invalidStartTime       (6),
+ *     invalidEndTime         (7),
+ *     invalidAgreement       (8),
+ *     currentlyNotDecidable  (9),
+ *     modificationNotAllowed (10),
+ *     invalidBindingType     (11),
+ *     invalidNewID           (12),
+ *     ... },
+ *   bindingType        [1]  OPERATIONAL-BINDING.&id({OpBindingSet}) OPTIONAL,
+ *   agreementProposal  [2]  OPERATIONAL-BINDING.&Agreement
+ *                           ({OpBindingSet}{@bindingType}) OPTIONAL,
+ *   retryAt            [3]  Time OPTIONAL,
+ *   ...,
+ *   ...,
+ *   COMPONENTS OF           CommonResultsSeq }
+ * ```
+ *
+ * @class
+ */
 export class OpBindingErrorParam {
     constructor(
+        /**
+         * @summary `problem`.
+         * @public
+         * @readonly
+         */
         readonly problem: OpBindingErrorParam_problem,
-        readonly bindingType: asn1.OBJECT_IDENTIFIER | undefined,
-        readonly agreementProposal: asn1.ASN1Element | undefined,
-        readonly retryAt: Time | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly securityParameters:
-            | SecurityParameters
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly performer:
-            | DistinguishedName
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly aliasDereferenced:
-            | asn1.BOOLEAN
-            | undefined /* REPLICATED_COMPONENT */,
-        readonly notification:
-            | Attribute[]
-            | undefined /* REPLICATED_COMPONENT */
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OPTIONAL<OBJECT_IDENTIFIER>,
+        /**
+         * @summary `agreementProposal`.
+         * @public
+         * @readonly
+         */
+        readonly agreementProposal: OPTIONAL<_Element>,
+        /**
+         * @summary `retryAt`.
+         * @public
+         * @readonly
+         */
+        readonly retryAt: OPTIONAL<Time>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<
+            SecurityParameters
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `performer`.
+         * @public
+         * @readonly
+         */
+        readonly performer: OPTIONAL<
+            DistinguishedName
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `aliasDereferenced`.
+         * @public
+         * @readonly
+         */
+        readonly aliasDereferenced: OPTIONAL<
+            BOOLEAN
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `notification`.
+         * @public
+         * @readonly
+         */
+        readonly notification: OPTIONAL<Attribute[]> /* REPLICATED_COMPONENT */
     ) {}
+
+    /**
+     * @summary Restructures an object into a OpBindingErrorParam
+     * @description
+     *
+     * This takes an `object` and converts it to a `OpBindingErrorParam`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `OpBindingErrorParam`.
+     * @returns {OpBindingErrorParam}
+     */
+    public static _from_object(
+        _o: Partial<
+            { [_K in keyof OpBindingErrorParam]: OpBindingErrorParam[_K] }
+        >
+    ): OpBindingErrorParam {
+        return new OpBindingErrorParam(
+            _o.problem,
+            _o.bindingType,
+            _o.agreementProposal,
+            _o.retryAt,
+            _o._unrecognizedExtensionsList,
+            _o.securityParameters,
+            _o.performer,
+            _o.aliasDereferenced,
+            _o.notification
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `aliasDereferenced`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_aliasDereferenced() {
         return false;
     }
+    /**
+     * @summary The enum used as the type of the component `problem`
+     * @public
+     * @static
+     */
+
+    public static _enum_for_problem = _enum_for_OpBindingErrorParam_problem;
 }
-export const _root_component_type_list_1_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of OpBindingErrorParam
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_OpBindingErrorParam: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "problem",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "bindingType",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "agreementProposal",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "retryAt",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        $.hasTag(_TagClass.context, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Trailing Root Component Types of OpBindingErrorParam
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_OpBindingErrorParam: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "securityParameters",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 30),
+        $.hasTag(_TagClass.context, 30),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "performer",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 29),
+        $.hasTag(_TagClass.context, 29),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "aliasDereferenced",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 28),
+        $.hasTag(_TagClass.context, 28),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "notification",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 27),
+        $.hasTag(_TagClass.context, 27),
         undefined,
         undefined
     ),
 ];
-export const _extension_additions_list_spec_for_OpBindingErrorParam: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_OpBindingErrorParam: __utils.ASN1Decoder<
+/**
+ * @summary The Extension Addition Component Types of OpBindingErrorParam
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_OpBindingErrorParam: $.ComponentSpec[] = [];
+let _cached_decoder_for_OpBindingErrorParam: $.ASN1Decoder<
     OpBindingErrorParam
 > | null = null;
-let _cached_encoder_for_OpBindingErrorParam: __utils.ASN1Encoder<
+let _cached_encoder_for_OpBindingErrorParam: $.ASN1Encoder<
     OpBindingErrorParam
 > | null = null;
-export function _decode_OpBindingErrorParam(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) OpBindingErrorParam
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {OpBindingErrorParam} The decoded data structure.
+ */
+export function _decode_OpBindingErrorParam(el: _Element) {
     if (!_cached_decoder_for_OpBindingErrorParam) {
         _cached_decoder_for_OpBindingErrorParam = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): OpBindingErrorParam {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let problem!: OpBindingErrorParam_problem;
-            let bindingType: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
-            let agreementProposal: asn1.OPTIONAL<asn1.ASN1Element>;
-            let retryAt: asn1.OPTIONAL<Time>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            let securityParameters: asn1.OPTIONAL<SecurityParameters>;
-            let performer: asn1.OPTIONAL<DistinguishedName>;
-            let aliasDereferenced: asn1.OPTIONAL<asn1.BOOLEAN> =
+            let bindingType: OPTIONAL<OBJECT_IDENTIFIER>;
+            let agreementProposal: OPTIONAL<_Element>;
+            let retryAt: OPTIONAL<Time>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let performer: OPTIONAL<DistinguishedName>;
+            let aliasDereferenced: OPTIONAL<BOOLEAN> =
                 OpBindingErrorParam._default_value_for_aliasDereferenced;
-            let notification: asn1.OPTIONAL<Attribute[]>;
+            let notification: OPTIONAL<Attribute[]>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                problem: (_el: asn1.ASN1Element): void => {
-                    problem = __utils._decode_explicit<
-                        OpBindingErrorParam_problem
-                    >(() => _decode_OpBindingErrorParam_problem)(_el);
-                },
-                bindingType: (_el: asn1.ASN1Element): void => {
-                    bindingType = __utils._decode_explicit<
-                        asn1.OBJECT_IDENTIFIER
-                    >(() => __utils._decodeObjectIdentifier)(_el);
-                },
-                agreementProposal: (_el: asn1.ASN1Element): void => {
-                    agreementProposal = __utils._decode_explicit<
-                        asn1.ASN1Element
-                    >(() => __utils._decodeAny)(_el);
-                },
-                retryAt: (_el: asn1.ASN1Element): void => {
-                    retryAt = __utils._decode_explicit<Time>(
-                        () => _decode_Time
+            const callbacks: $.DecodingMap = {
+                problem: (_el: _Element): void => {
+                    problem = $._decode_explicit<OpBindingErrorParam_problem>(
+                        () => _decode_OpBindingErrorParam_problem
                     )(_el);
                 },
-                securityParameters: (_el: asn1.ASN1Element): void => {
-                    securityParameters = __utils._decode_explicit<
-                        SecurityParameters
-                    >(() => _decode_SecurityParameters)(_el);
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
                 },
-                performer: (_el: asn1.ASN1Element): void => {
-                    performer = __utils._decode_explicit<DistinguishedName>(
+                agreementProposal: (_el: _Element): void => {
+                    agreementProposal = $._decode_explicit<_Element>(
+                        () => $._decodeAny
+                    )(_el);
+                },
+                retryAt: (_el: _Element): void => {
+                    retryAt = $._decode_explicit<Time>(() => _decode_Time)(_el);
+                },
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
+                },
+                performer: (_el: _Element): void => {
+                    performer = $._decode_explicit<DistinguishedName>(
                         () => _decode_DistinguishedName
                     )(_el);
                 },
-                aliasDereferenced: (_el: asn1.ASN1Element): void => {
-                    aliasDereferenced = __utils._decode_explicit<asn1.BOOLEAN>(
-                        () => __utils._decodeBoolean
+                aliasDereferenced: (_el: _Element): void => {
+                    aliasDereferenced = $._decode_explicit<BOOLEAN>(
+                        () => $._decodeBoolean
                     )(_el);
                 },
-                notification: (_el: asn1.ASN1Element): void => {
-                    notification = __utils._decode_explicit<Attribute[]>(() =>
-                        __utils._decodeSequenceOf<Attribute>(
-                            () => _decode_Attribute
-                        )
+                notification: (_el: _Element): void => {
+                    notification = $._decode_explicit<Attribute[]>(() =>
+                        $._decodeSequenceOf<Attribute>(() => _decode_Attribute)
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_OpBindingErrorParam,
                 _extension_additions_list_spec_for_OpBindingErrorParam,
                 _root_component_type_list_2_spec_for_OpBindingErrorParam,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -3001,50 +2530,57 @@ export function _decode_OpBindingErrorParam(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_OpBindingErrorParam(el);
 }
+/**
+ * @summary Encodes a(n) OpBindingErrorParam into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The OpBindingErrorParam, encoded as an ASN.1 Element.
+ */
 export function _encode_OpBindingErrorParam(
     value: OpBindingErrorParam,
-    elGetter: __utils.ASN1Encoder<OpBindingErrorParam>
+    elGetter: $.ASN1Encoder<OpBindingErrorParam>
 ) {
     if (!_cached_encoder_for_OpBindingErrorParam) {
         _cached_encoder_for_OpBindingErrorParam = function (
             value: OpBindingErrorParam,
-            elGetter: __utils.ASN1Encoder<OpBindingErrorParam>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<OpBindingErrorParam>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_OpBindingErrorParam_problem,
-                                __utils.BER
-                            )(value.problem, __utils.BER),
+                                $.BER
+                            )(value.problem, $.BER),
                             /* IF_ABSENT  */ value.bindingType === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
-                                      () => __utils._encodeObjectIdentifier,
-                                      __utils.BER
-                                  )(value.bindingType, __utils.BER),
+                                      () => $._encodeObjectIdentifier,
+                                      $.BER
+                                  )(value.bindingType, $.BER),
                             /* IF_ABSENT  */ value.agreementProposal ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       2,
-                                      () => __utils._encodeAny,
-                                      __utils.BER
-                                  )(value.agreementProposal, __utils.BER),
+                                      () => $._encodeAny,
+                                      $.BER
+                                  )(value.agreementProposal, $.BER),
                             /* IF_ABSENT  */ value.retryAt === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       3,
                                       () => _encode_Time,
-                                      __utils.BER
-                                  )(value.retryAt, __utils.BER),
+                                      $.BER
+                                  )(value.retryAt, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -3053,55 +2589,2516 @@ export function _encode_OpBindingErrorParam(
                             /* IF_ABSENT  */ value.securityParameters ===
                             undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       30,
                                       () => _encode_SecurityParameters,
-                                      __utils.BER
-                                  )(value.securityParameters, __utils.BER),
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
                             /* IF_ABSENT  */ value.performer === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       29,
                                       () => _encode_DistinguishedName,
-                                      __utils.BER
-                                  )(value.performer, __utils.BER),
+                                      $.BER
+                                  )(value.performer, $.BER),
                             /* IF_DEFAULT */ value.aliasDereferenced ===
                                 undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.aliasDereferenced,
                                 OpBindingErrorParam._default_value_for_aliasDereferenced
                             )
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       28,
-                                      () => __utils._encodeBoolean,
-                                      __utils.BER
-                                  )(value.aliasDereferenced, __utils.BER),
+                                      () => $._encodeBoolean,
+                                      $.BER
+                                  )(value.aliasDereferenced, $.BER),
                             /* IF_ABSENT  */ value.notification === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       27,
                                       () =>
-                                          __utils._encodeSequenceOf<Attribute>(
+                                          $._encodeSequenceOf<Attribute>(
                                               () => _encode_Attribute,
-                                              __utils.BER
+                                              $.BER
                                           ),
-                                      __utils.BER
-                                  )(value.notification, __utils.BER),
+                                      $.BER
+                                  )(value.notification, $.BER),
                         ]
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_OpBindingErrorParam(value, elGetter);
 }
 
+/**
+ * @summary operationalBindingError
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * operationalBindingError ERROR ::= {
+ *   PARAMETER OPTIONALLY-PROTECTED-SEQ  {OpBindingErrorParam}
+ *   CODE      id-err-operationalBindingError }
+ * ```
+ *
+ * @constant
+ * @type {ERROR}
+ * @implements {ERROR}
+ */
+export const operationalBindingError: ERROR = {
+    class: "ERROR",
+    decoderFor: {
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+            OpBindingErrorParam
+        >(_decode_OpBindingErrorParam),
+    },
+    encoderFor: {
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            OpBindingErrorParam
+        >(_encode_OpBindingErrorParam),
+    },
+    "&errorCode": id_err_operationalBindingError /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary establishOperationalBinding
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * establishOperationalBinding OPERATION ::= {
+ *   ARGUMENT   EstablishOperationalBindingArgument
+ *   RESULT     EstablishOperationalBindingResult
+ *   ERRORS     {operationalBindingError | securityError}
+ *   CODE       id-op-establishOperationalBinding }
+ * ```
+ *
+ * @constant
+ * @type {OPERATION}
+ * @implements {OPERATION}
+ */
+export const establishOperationalBinding: OPERATION = {
+    class: "OPERATION",
+    decoderFor: {
+        "&ArgumentType": _decode_EstablishOperationalBindingArgument,
+        "&ResultType": _decode_EstablishOperationalBindingResult,
+    },
+    encoderFor: {
+        "&ArgumentType": _encode_EstablishOperationalBindingArgument,
+        "&ResultType": _encode_EstablishOperationalBindingResult,
+    },
+    "&Errors": [
+        operationalBindingError,
+        securityError,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&operationCode": id_op_establishOperationalBinding /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ArgumentType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&ResultType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary ModifyOperationalBindingArgumentData_initiator
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifyOperationalBindingArgumentData-initiator ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
+export type ModifyOperationalBindingArgumentData_initiator =
+    | { symmetric: _Element } /* CHOICE_ALT_ROOT */
+    | { roleA_initiates: _Element } /* CHOICE_ALT_ROOT */
+    | { roleB_initiates: _Element } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Decoder<
+    ModifyOperationalBindingArgumentData_initiator
+> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Encoder<
+    ModifyOperationalBindingArgumentData_initiator
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifyOperationalBindingArgumentData_initiator
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifyOperationalBindingArgumentData_initiator} The decoded data structure.
+ */
+export function _decode_ModifyOperationalBindingArgumentData_initiator(
+    el: _Element
+) {
+    if (!_cached_decoder_for_ModifyOperationalBindingArgumentData_initiator) {
+        _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<
+            ModifyOperationalBindingArgumentData_initiator
+        >({
+            "CONTEXT 3": [
+                "symmetric",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+            "CONTEXT 4": [
+                "roleA_initiates",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+            "CONTEXT 5": [
+                "roleB_initiates",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+        });
+    }
+    return _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator(
+        el
+    );
+}
+/**
+ * @summary Encodes a(n) ModifyOperationalBindingArgumentData_initiator into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifyOperationalBindingArgumentData_initiator, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifyOperationalBindingArgumentData_initiator(
+    value: ModifyOperationalBindingArgumentData_initiator,
+    elGetter: $.ASN1Encoder<ModifyOperationalBindingArgumentData_initiator>
+) {
+    if (!_cached_encoder_for_ModifyOperationalBindingArgumentData_initiator) {
+        _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator = $._encode_choice<
+            ModifyOperationalBindingArgumentData_initiator
+        >(
+            {
+                symmetric: $._encode_explicit(
+                    _TagClass.context,
+                    3,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+                roleA_initiates: $._encode_explicit(
+                    _TagClass.context,
+                    4,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+                roleB_initiates: $._encode_explicit(
+                    _TagClass.context,
+                    5,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary ModifiedValidity_validFrom
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifiedValidity-validFrom ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
+export type ModifiedValidity_validFrom =
+    | { now: NULL } /* CHOICE_ALT_ROOT */
+    | { time: Time } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_ModifiedValidity_validFrom: $.ASN1Decoder<
+    ModifiedValidity_validFrom
+> | null = null;
+let _cached_encoder_for_ModifiedValidity_validFrom: $.ASN1Encoder<
+    ModifiedValidity_validFrom
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifiedValidity_validFrom
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifiedValidity_validFrom} The decoded data structure.
+ */
+export function _decode_ModifiedValidity_validFrom(el: _Element) {
+    if (!_cached_decoder_for_ModifiedValidity_validFrom) {
+        _cached_decoder_for_ModifiedValidity_validFrom = $._decode_extensible_choice<
+            ModifiedValidity_validFrom
+        >({
+            "CONTEXT 0": ["now", $._decode_explicit<NULL>(() => $._decodeNull)],
+            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
+        });
+    }
+    return _cached_decoder_for_ModifiedValidity_validFrom(el);
+}
+/**
+ * @summary Encodes a(n) ModifiedValidity_validFrom into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifiedValidity_validFrom, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifiedValidity_validFrom(
+    value: ModifiedValidity_validFrom,
+    elGetter: $.ASN1Encoder<ModifiedValidity_validFrom>
+) {
+    if (!_cached_encoder_for_ModifiedValidity_validFrom) {
+        _cached_encoder_for_ModifiedValidity_validFrom = $._encode_choice<
+            ModifiedValidity_validFrom
+        >(
+            {
+                now: $._encode_explicit(
+                    _TagClass.context,
+                    0,
+                    () => $._encodeNull,
+                    $.BER
+                ),
+                time: $._encode_explicit(
+                    _TagClass.context,
+                    1,
+                    () => _encode_Time,
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_ModifiedValidity_validFrom(value, elGetter);
+}
+
+/**
+ * @summary ModifiedValidity_validUntil
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifiedValidity-validUntil ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
+export type ModifiedValidity_validUntil =
+    | { explicitTermination: NULL } /* CHOICE_ALT_ROOT */
+    | { time: Time } /* CHOICE_ALT_ROOT */
+    | { unchanged: NULL } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_ModifiedValidity_validUntil: $.ASN1Decoder<
+    ModifiedValidity_validUntil
+> | null = null;
+let _cached_encoder_for_ModifiedValidity_validUntil: $.ASN1Encoder<
+    ModifiedValidity_validUntil
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifiedValidity_validUntil
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifiedValidity_validUntil} The decoded data structure.
+ */
+export function _decode_ModifiedValidity_validUntil(el: _Element) {
+    if (!_cached_decoder_for_ModifiedValidity_validUntil) {
+        _cached_decoder_for_ModifiedValidity_validUntil = $._decode_extensible_choice<
+            ModifiedValidity_validUntil
+        >({
+            "CONTEXT 0": [
+                "explicitTermination",
+                $._decode_explicit<NULL>(() => $._decodeNull),
+            ],
+            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
+            "CONTEXT 2": [
+                "unchanged",
+                $._decode_explicit<NULL>(() => $._decodeNull),
+            ],
+        });
+    }
+    return _cached_decoder_for_ModifiedValidity_validUntil(el);
+}
+/**
+ * @summary Encodes a(n) ModifiedValidity_validUntil into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifiedValidity_validUntil, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifiedValidity_validUntil(
+    value: ModifiedValidity_validUntil,
+    elGetter: $.ASN1Encoder<ModifiedValidity_validUntil>
+) {
+    if (!_cached_encoder_for_ModifiedValidity_validUntil) {
+        _cached_encoder_for_ModifiedValidity_validUntil = $._encode_choice<
+            ModifiedValidity_validUntil
+        >(
+            {
+                explicitTermination: $._encode_explicit(
+                    _TagClass.context,
+                    0,
+                    () => $._encodeNull,
+                    $.BER
+                ),
+                time: $._encode_explicit(
+                    _TagClass.context,
+                    1,
+                    () => _encode_Time,
+                    $.BER
+                ),
+                unchanged: $._encode_explicit(
+                    _TagClass.context,
+                    2,
+                    () => $._encodeNull,
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_ModifiedValidity_validUntil(value, elGetter);
+}
+
+/**
+ * @summary ModifiedValidity
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifiedValidity ::= SEQUENCE {
+ *   validFrom            [0]  CHOICE {
+ *     now                  [0]  NULL,
+ *     time                 [1]  Time,
+ *     ...} DEFAULT now:NULL,
+ *   validUntil           [1]  CHOICE {
+ *     explicitTermination  [0]  NULL,
+ *     time                 [1]  Time,
+ *     unchanged            [2]  NULL,
+ *     ... } DEFAULT unchanged:NULL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
+export class ModifiedValidity {
+    constructor(
+        /**
+         * @summary `validFrom`.
+         * @public
+         * @readonly
+         */
+        readonly validFrom: OPTIONAL<ModifiedValidity_validFrom>,
+        /**
+         * @summary `validUntil`.
+         * @public
+         * @readonly
+         */
+        readonly validUntil: OPTIONAL<ModifiedValidity_validUntil>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
+    ) {}
+
+    /**
+     * @summary Restructures an object into a ModifiedValidity
+     * @description
+     *
+     * This takes an `object` and converts it to a `ModifiedValidity`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ModifiedValidity`.
+     * @returns {ModifiedValidity}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ModifiedValidity]: ModifiedValidity[_K] }>
+    ): ModifiedValidity {
+        return new ModifiedValidity(
+            _o.validFrom,
+            _o.validUntil,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `validFrom`.
+     * @public
+     * @static
+     * @method
+     */
+    public static get _default_value_for_validFrom() {
+        return { now: null };
+    }
+    /**
+     * @summary Getter that returns the default value for `validUntil`.
+     * @public
+     * @static
+     * @method
+     */
+    public static get _default_value_for_validUntil() {
+        return { unchanged: null };
+    }
+}
+/**
+ * @summary The Leading Root Component Types of ModifiedValidity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ModifiedValidity: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "validFrom",
+        true,
+        $.hasTag(_TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "validUntil",
+        true,
+        $.hasTag(_TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of ModifiedValidity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ModifiedValidity: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ModifiedValidity
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ModifiedValidity: $.ComponentSpec[] = [];
+let _cached_decoder_for_ModifiedValidity: $.ASN1Decoder<
+    ModifiedValidity
+> | null = null;
+let _cached_encoder_for_ModifiedValidity: $.ASN1Encoder<
+    ModifiedValidity
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifiedValidity
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifiedValidity} The decoded data structure.
+ */
+export function _decode_ModifiedValidity(el: _Element) {
+    if (!_cached_decoder_for_ModifiedValidity) {
+        _cached_decoder_for_ModifiedValidity = function (
+            el: _Element
+        ): ModifiedValidity {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let validFrom: OPTIONAL<ModifiedValidity_validFrom> =
+                ModifiedValidity._default_value_for_validFrom;
+            let validUntil: OPTIONAL<ModifiedValidity_validUntil> =
+                ModifiedValidity._default_value_for_validUntil;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                validFrom: (_el: _Element): void => {
+                    validFrom = $._decode_explicit<ModifiedValidity_validFrom>(
+                        () => _decode_ModifiedValidity_validFrom
+                    )(_el);
+                },
+                validUntil: (_el: _Element): void => {
+                    validUntil = $._decode_explicit<
+                        ModifiedValidity_validUntil
+                    >(() => _decode_ModifiedValidity_validUntil)(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ModifiedValidity,
+                _extension_additions_list_spec_for_ModifiedValidity,
+                _root_component_type_list_2_spec_for_ModifiedValidity,
+                (ext: _Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ModifiedValidity(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
+                validUntil,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_ModifiedValidity(el);
+}
+/**
+ * @summary Encodes a(n) ModifiedValidity into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifiedValidity, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifiedValidity(
+    value: ModifiedValidity,
+    elGetter: $.ASN1Encoder<ModifiedValidity>
+) {
+    if (!_cached_encoder_for_ModifiedValidity) {
+        _cached_encoder_for_ModifiedValidity = function (
+            value: ModifiedValidity,
+            elGetter: $.ASN1Encoder<ModifiedValidity>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat(
+                        [
+                            /* IF_DEFAULT */ value.validFrom === undefined ||
+                            $.deepEq(
+                                value.validFrom,
+                                ModifiedValidity._default_value_for_validFrom
+                            )
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      0,
+                                      () => _encode_ModifiedValidity_validFrom,
+                                      $.BER
+                                  )(value.validFrom, $.BER),
+                            /* IF_DEFAULT */ value.validUntil === undefined ||
+                            $.deepEq(
+                                value.validUntil,
+                                ModifiedValidity._default_value_for_validUntil
+                            )
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      1,
+                                      () => _encode_ModifiedValidity_validUntil,
+                                      $.BER
+                                  )(value.validUntil, $.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ModifiedValidity(value, elGetter);
+}
+
+/**
+ * @summary ModifyOperationalBindingArgumentData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifyOperationalBindingArgumentData ::= SEQUENCE {
+ *   bindingType       [0]  OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *   bindingID         [1]  OperationalBindingID,
+ *   accessPoint       [2]  AccessPoint OPTIONAL,
+ *   -- symmetric, Role A initiates, or Role B initiates
+ *   initiator              CHOICE {
+ *     symmetric         [3]  OPERATIONAL-BINDING.&both.&ModifyParam
+ *                           ({OpBindingSet}{@bindingType}),
+ *     roleA-initiates   [4]  OPERATIONAL-BINDING.&roleA.&ModifyParam
+ *                           ({OpBindingSet}{@bindingType}),
+ *     roleB-initiates   [5]  OPERATIONAL-BINDING.&roleB.&ModifyParam
+ *                           ({OpBindingSet}{@bindingType})} OPTIONAL,
+ *   newBindingID      [6]  OperationalBindingID,
+ *   newAgreement      [7]  OPERATIONAL-BINDING.&Agreement
+ *                        ({OpBindingSet}{@bindingType}) OPTIONAL,
+ *   valid               [8]  ModifiedValidity OPTIONAL,
+ *   securityParameters  [9]  SecurityParameters OPTIONAL,
+ *   ...}
+ * ```
+ *
+ * @class
+ */
+export class ModifyOperationalBindingArgumentData {
+    constructor(
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `bindingID`.
+         * @public
+         * @readonly
+         */
+        readonly bindingID: OperationalBindingID,
+        /**
+         * @summary `accessPoint`.
+         * @public
+         * @readonly
+         */
+        readonly accessPoint: OPTIONAL<AccessPoint>,
+        /**
+         * @summary `initiator`.
+         * @public
+         * @readonly
+         */
+        readonly initiator: OPTIONAL<
+            ModifyOperationalBindingArgumentData_initiator
+        >,
+        /**
+         * @summary `newBindingID`.
+         * @public
+         * @readonly
+         */
+        readonly newBindingID: OperationalBindingID,
+        /**
+         * @summary `newAgreement`.
+         * @public
+         * @readonly
+         */
+        readonly newAgreement: OPTIONAL<_Element>,
+        /**
+         * @summary `valid`.
+         * @public
+         * @readonly
+         */
+        readonly valid: OPTIONAL<ModifiedValidity>,
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<SecurityParameters>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
+    ) {}
+
+    /**
+     * @summary Restructures an object into a ModifyOperationalBindingArgumentData
+     * @description
+     *
+     * This takes an `object` and converts it to a `ModifyOperationalBindingArgumentData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ModifyOperationalBindingArgumentData`.
+     * @returns {ModifyOperationalBindingArgumentData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof ModifyOperationalBindingArgumentData]: ModifyOperationalBindingArgumentData[_K];
+            }
+        >
+    ): ModifyOperationalBindingArgumentData {
+        return new ModifyOperationalBindingArgumentData(
+            _o.bindingType,
+            _o.bindingID,
+            _o.accessPoint,
+            _o.initiator,
+            _o.newBindingID,
+            _o.newAgreement,
+            _o.valid,
+            _o.securityParameters,
+            _o._unrecognizedExtensionsList
+        );
+    }
+}
+/**
+ * @summary The Leading Root Component Types of ModifyOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "bindingType",
+        false,
+        $.hasTag(_TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "bindingID",
+        false,
+        $.hasTag(_TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "accessPoint",
+        true,
+        $.hasTag(_TagClass.context, 2),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec("initiator", true, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
+        "newBindingID",
+        false,
+        $.hasTag(_TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "newAgreement",
+        true,
+        $.hasTag(_TagClass.context, 7),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "valid",
+        true,
+        $.hasTag(_TagClass.context, 8),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "securityParameters",
+        true,
+        $.hasTag(_TagClass.context, 9),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of ModifyOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ModifyOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData: $.ComponentSpec[] = [];
+let _cached_decoder_for_ModifyOperationalBindingArgumentData: $.ASN1Decoder<
+    ModifyOperationalBindingArgumentData
+> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgumentData: $.ASN1Encoder<
+    ModifyOperationalBindingArgumentData
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifyOperationalBindingArgumentData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifyOperationalBindingArgumentData} The decoded data structure.
+ */
+export function _decode_ModifyOperationalBindingArgumentData(el: _Element) {
+    if (!_cached_decoder_for_ModifyOperationalBindingArgumentData) {
+        _cached_decoder_for_ModifyOperationalBindingArgumentData = function (
+            el: _Element
+        ): ModifyOperationalBindingArgumentData {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let bindingType!: OBJECT_IDENTIFIER;
+            let bindingID!: OperationalBindingID;
+            let accessPoint: OPTIONAL<AccessPoint>;
+            let initiator: OPTIONAL<ModifyOperationalBindingArgumentData_initiator>;
+            let newBindingID!: OperationalBindingID;
+            let newAgreement: OPTIONAL<_Element>;
+            let valid: OPTIONAL<ModifiedValidity>;
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
+                },
+                bindingID: (_el: _Element): void => {
+                    bindingID = $._decode_explicit<OperationalBindingID>(
+                        () => _decode_OperationalBindingID
+                    )(_el);
+                },
+                accessPoint: (_el: _Element): void => {
+                    accessPoint = $._decode_explicit<AccessPoint>(
+                        () => _decode_AccessPoint
+                    )(_el);
+                },
+                initiator: (_el: _Element): void => {
+                    initiator = _decode_ModifyOperationalBindingArgumentData_initiator(
+                        _el
+                    );
+                },
+                newBindingID: (_el: _Element): void => {
+                    newBindingID = $._decode_explicit<OperationalBindingID>(
+                        () => _decode_OperationalBindingID
+                    )(_el);
+                },
+                newAgreement: (_el: _Element): void => {
+                    newAgreement = $._decode_explicit<_Element>(
+                        () => $._decodeAny
+                    )(_el);
+                },
+                valid: (_el: _Element): void => {
+                    valid = $._decode_explicit<ModifiedValidity>(
+                        () => _decode_ModifiedValidity
+                    )(_el);
+                },
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ModifyOperationalBindingArgumentData,
+                _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData,
+                _root_component_type_list_2_spec_for_ModifyOperationalBindingArgumentData,
+                (ext: _Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ModifyOperationalBindingArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
+                bindingID,
+                accessPoint,
+                initiator,
+                newBindingID,
+                newAgreement,
+                valid,
+                securityParameters,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_ModifyOperationalBindingArgumentData(el);
+}
+/**
+ * @summary Encodes a(n) ModifyOperationalBindingArgumentData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifyOperationalBindingArgumentData, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifyOperationalBindingArgumentData(
+    value: ModifyOperationalBindingArgumentData,
+    elGetter: $.ASN1Encoder<ModifyOperationalBindingArgumentData>
+) {
+    if (!_cached_encoder_for_ModifyOperationalBindingArgumentData) {
+        _cached_encoder_for_ModifyOperationalBindingArgumentData = function (
+            value: ModifyOperationalBindingArgumentData,
+            elGetter: $.ASN1Encoder<ModifyOperationalBindingArgumentData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
+                                0,
+                                () => $._encodeObjectIdentifier,
+                                $.BER
+                            )(value.bindingType, $.BER),
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
+                                1,
+                                () => _encode_OperationalBindingID,
+                                $.BER
+                            )(value.bindingID, $.BER),
+                            /* IF_ABSENT  */ value.accessPoint === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      2,
+                                      () => _encode_AccessPoint,
+                                      $.BER
+                                  )(value.accessPoint, $.BER),
+                            /* IF_ABSENT  */ value.initiator === undefined
+                                ? undefined
+                                : _encode_ModifyOperationalBindingArgumentData_initiator(
+                                      value.initiator,
+                                      $.BER
+                                  ),
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
+                                6,
+                                () => _encode_OperationalBindingID,
+                                $.BER
+                            )(value.newBindingID, $.BER),
+                            /* IF_ABSENT  */ value.newAgreement === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      7,
+                                      () => $._encodeAny,
+                                      $.BER
+                                  )(value.newAgreement, $.BER),
+                            /* IF_ABSENT  */ value.valid === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      8,
+                                      () => _encode_ModifiedValidity,
+                                      $.BER
+                                  )(value.valid, $.BER),
+                            /* IF_ABSENT  */ value.securityParameters ===
+                            undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      9,
+                                      () => _encode_SecurityParameters,
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ModifyOperationalBindingArgumentData(
+        value,
+        elGetter
+    );
+}
+
+export type ModifyOperationalBindingArgument<> = OPTIONALLY_PROTECTED_SEQ<
+    ModifyOperationalBindingArgumentData
+>; // DefinedType
+let _cached_decoder_for_ModifyOperationalBindingArgument: $.ASN1Decoder<
+    ModifyOperationalBindingArgument
+> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgument: $.ASN1Encoder<
+    ModifyOperationalBindingArgument
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifyOperationalBindingArgument
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifyOperationalBindingArgument} The decoded data structure.
+ */
+export function _decode_ModifyOperationalBindingArgument(el: _Element) {
+    if (!_cached_decoder_for_ModifyOperationalBindingArgument) {
+        _cached_decoder_for_ModifyOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+            ModifyOperationalBindingArgumentData
+        >(_decode_ModifyOperationalBindingArgumentData);
+    }
+    return _cached_decoder_for_ModifyOperationalBindingArgument(el);
+}
+/**
+ * @summary Encodes a(n) ModifyOperationalBindingArgument into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifyOperationalBindingArgument, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifyOperationalBindingArgument(
+    value: ModifyOperationalBindingArgument,
+    elGetter: $.ASN1Encoder<ModifyOperationalBindingArgument>
+) {
+    if (!_cached_encoder_for_ModifyOperationalBindingArgument) {
+        _cached_encoder_for_ModifyOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            ModifyOperationalBindingArgumentData
+        >(_encode_ModifyOperationalBindingArgumentData);
+    }
+    return _cached_encoder_for_ModifyOperationalBindingArgument(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary ModifyOperationalBindingResultData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifyOperationalBindingResultData ::= SEQUENCE {
+ *     newBindingID    OperationalBindingID,
+ *     bindingType     OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *     newAgreement    OPERATIONAL-BINDING.&Agreement ({OpBindingSet}{@.bindingType}),
+ *     valid           Validity OPTIONAL,
+ *     ...,
+ *     ...,
+ *     COMPONENTS OF   CommonResultsSeq
+ *     }
+ * ```
+ *
+ * @class
+ */
+export class ModifyOperationalBindingResultData {
+    constructor(
+        /**
+         * @summary `newBindingID`.
+         * @public
+         * @readonly
+         */
+        readonly newBindingID: OperationalBindingID,
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `newAgreement`.
+         * @public
+         * @readonly
+         */
+        readonly newAgreement: _Element,
+        /**
+         * @summary `valid`.
+         * @public
+         * @readonly
+         */
+        readonly valid: OPTIONAL<Validity>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<
+            SecurityParameters
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `performer`.
+         * @public
+         * @readonly
+         */
+        readonly performer: OPTIONAL<
+            DistinguishedName
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `aliasDereferenced`.
+         * @public
+         * @readonly
+         */
+        readonly aliasDereferenced: OPTIONAL<
+            BOOLEAN
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `notification`.
+         * @public
+         * @readonly
+         */
+        readonly notification: OPTIONAL<Attribute[]> /* REPLICATED_COMPONENT */
+    ) {}
+
+    /**
+     * @summary Restructures an object into a ModifyOperationalBindingResultData
+     * @description
+     *
+     * This takes an `object` and converts it to a `ModifyOperationalBindingResultData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ModifyOperationalBindingResultData`.
+     * @returns {ModifyOperationalBindingResultData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof ModifyOperationalBindingResultData]: ModifyOperationalBindingResultData[_K];
+            }
+        >
+    ): ModifyOperationalBindingResultData {
+        return new ModifyOperationalBindingResultData(
+            _o.newBindingID,
+            _o.bindingType,
+            _o.newAgreement,
+            _o.valid,
+            _o._unrecognizedExtensionsList,
+            _o.securityParameters,
+            _o.performer,
+            _o.aliasDereferenced,
+            _o.notification
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `aliasDereferenced`.
+     * @public
+     * @static
+     * @method
+     */
+    public static get _default_value_for_aliasDereferenced() {
+        return false;
+    }
+}
+/**
+ * @summary The Leading Root Component Types of ModifyOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "newBindingID",
+        false,
+        $.hasTag(_TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "bindingType",
+        false,
+        $.hasTag(_TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "newAgreement",
+        false,
+        $.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "valid",
+        true,
+        $.hasTag(_TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of ModifyOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "securityParameters",
+        true,
+        $.hasTag(_TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "performer",
+        true,
+        $.hasTag(_TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        $.hasTag(_TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "notification",
+        true,
+        $.hasTag(_TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Extension Addition Component Types of ModifyOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ModifyOperationalBindingResultData: $.ComponentSpec[] = [];
+let _cached_decoder_for_ModifyOperationalBindingResultData: $.ASN1Decoder<
+    ModifyOperationalBindingResultData
+> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingResultData: $.ASN1Encoder<
+    ModifyOperationalBindingResultData
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifyOperationalBindingResultData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifyOperationalBindingResultData} The decoded data structure.
+ */
+export function _decode_ModifyOperationalBindingResultData(el: _Element) {
+    if (!_cached_decoder_for_ModifyOperationalBindingResultData) {
+        _cached_decoder_for_ModifyOperationalBindingResultData = function (
+            el: _Element
+        ): ModifyOperationalBindingResultData {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let newBindingID!: OperationalBindingID;
+            let bindingType!: OBJECT_IDENTIFIER;
+            let newAgreement!: _Element;
+            let valid: OPTIONAL<Validity>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let performer: OPTIONAL<DistinguishedName>;
+            let aliasDereferenced: OPTIONAL<BOOLEAN> =
+                ModifyOperationalBindingResultData._default_value_for_aliasDereferenced;
+            let notification: OPTIONAL<Attribute[]>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                newBindingID: (_el: _Element): void => {
+                    newBindingID = _decode_OperationalBindingID(_el);
+                },
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decodeObjectIdentifier(_el);
+                },
+                newAgreement: (_el: _Element): void => {
+                    newAgreement = $._decodeAny(_el);
+                },
+                valid: (_el: _Element): void => {
+                    valid = _decode_Validity(_el);
+                },
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
+                },
+                performer: (_el: _Element): void => {
+                    performer = $._decode_explicit<DistinguishedName>(
+                        () => _decode_DistinguishedName
+                    )(_el);
+                },
+                aliasDereferenced: (_el: _Element): void => {
+                    aliasDereferenced = $._decode_explicit<BOOLEAN>(
+                        () => $._decodeBoolean
+                    )(_el);
+                },
+                notification: (_el: _Element): void => {
+                    notification = $._decode_explicit<Attribute[]>(() =>
+                        $._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_ModifyOperationalBindingResultData,
+                _extension_additions_list_spec_for_ModifyOperationalBindingResultData,
+                _root_component_type_list_2_spec_for_ModifyOperationalBindingResultData,
+                (ext: _Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new ModifyOperationalBindingResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ newBindingID,
+                bindingType,
+                newAgreement,
+                valid,
+                _unrecognizedExtensionsList,
+                securityParameters,
+                performer,
+                aliasDereferenced,
+                notification
+            );
+        };
+    }
+    return _cached_decoder_for_ModifyOperationalBindingResultData(el);
+}
+/**
+ * @summary Encodes a(n) ModifyOperationalBindingResultData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifyOperationalBindingResultData, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifyOperationalBindingResultData(
+    value: ModifyOperationalBindingResultData,
+    elGetter: $.ASN1Encoder<ModifyOperationalBindingResultData>
+) {
+    if (!_cached_encoder_for_ModifyOperationalBindingResultData) {
+        _cached_encoder_for_ModifyOperationalBindingResultData = function (
+            value: ModifyOperationalBindingResultData,
+            elGetter: $.ASN1Encoder<ModifyOperationalBindingResultData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_OperationalBindingID(
+                                value.newBindingID,
+                                $.BER
+                            ),
+                            /* REQUIRED   */ $._encodeObjectIdentifier(
+                                value.bindingType,
+                                $.BER
+                            ),
+                            /* REQUIRED   */ $._encodeAny(
+                                value.newAgreement,
+                                $.BER
+                            ),
+                            /* IF_ABSENT  */ value.valid === undefined
+                                ? undefined
+                                : _encode_Validity(value.valid, $.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : [],
+                        [
+                            /* IF_ABSENT  */ value.securityParameters ===
+                            undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      30,
+                                      () => _encode_SecurityParameters,
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
+                            /* IF_ABSENT  */ value.performer === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      29,
+                                      () => _encode_DistinguishedName,
+                                      $.BER
+                                  )(value.performer, $.BER),
+                            /* IF_DEFAULT */ value.aliasDereferenced ===
+                                undefined ||
+                            $.deepEq(
+                                value.aliasDereferenced,
+                                ModifyOperationalBindingResultData._default_value_for_aliasDereferenced
+                            )
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      28,
+                                      () => $._encodeBoolean,
+                                      $.BER
+                                  )(value.aliasDereferenced, $.BER),
+                            /* IF_ABSENT  */ value.notification === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      27,
+                                      () =>
+                                          $._encodeSequenceOf<Attribute>(
+                                              () => _encode_Attribute,
+                                              $.BER
+                                          ),
+                                      $.BER
+                                  )(value.notification, $.BER),
+                        ]
+                    )
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_ModifyOperationalBindingResultData(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary ModifyOperationalBindingResult
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ModifyOperationalBindingResult  ::=  CHOICE {
+ *   null            NULL,
+ *   protected  [1]  OPTIONALLY-PROTECTED-SEQ{ ModifyOperationalBindingResultData },
+ *   ... }
+ * ```
+ */
+export type ModifyOperationalBindingResult =
+    | { null_: NULL } /* CHOICE_ALT_ROOT */
+    | {
+          protected_: OPTIONALLY_PROTECTED_SEQ<
+              ModifyOperationalBindingResultData
+          >;
+      } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_ModifyOperationalBindingResult: $.ASN1Decoder<
+    ModifyOperationalBindingResult
+> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingResult: $.ASN1Encoder<
+    ModifyOperationalBindingResult
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ModifyOperationalBindingResult
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ModifyOperationalBindingResult} The decoded data structure.
+ */
+export function _decode_ModifyOperationalBindingResult(el: _Element) {
+    if (!_cached_decoder_for_ModifyOperationalBindingResult) {
+        _cached_decoder_for_ModifyOperationalBindingResult = $._decode_extensible_choice<
+            ModifyOperationalBindingResult
+        >({
+            "UNIVERSAL 5": ["null_", $._decodeNull],
+            "CONTEXT 1": [
+                "protected_",
+                $._decode_explicit<
+                    OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingResultData>
+                >(() =>
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+                        ModifyOperationalBindingResultData
+                    >(_decode_ModifyOperationalBindingResultData)
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_ModifyOperationalBindingResult(el);
+}
+/**
+ * @summary Encodes a(n) ModifyOperationalBindingResult into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ModifyOperationalBindingResult, encoded as an ASN.1 Element.
+ */
+export function _encode_ModifyOperationalBindingResult(
+    value: ModifyOperationalBindingResult,
+    elGetter: $.ASN1Encoder<ModifyOperationalBindingResult>
+) {
+    if (!_cached_encoder_for_ModifyOperationalBindingResult) {
+        _cached_encoder_for_ModifyOperationalBindingResult = $._encode_choice<
+            ModifyOperationalBindingResult
+        >(
+            {
+                null_: $._encodeNull,
+                protected_: $._encode_explicit(
+                    _TagClass.context,
+                    1,
+                    () =>
+                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+                            ModifyOperationalBindingResultData
+                        >(_encode_ModifyOperationalBindingResultData),
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_ModifyOperationalBindingResult(value, elGetter);
+}
+
+/**
+ * @summary modifyOperationalBinding
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * modifyOperationalBinding OPERATION ::= {
+ *   ARGUMENT  ModifyOperationalBindingArgument
+ *   RESULT    ModifyOperationalBindingResult
+ *   ERRORS    {operationalBindingError | securityError}
+ *   CODE      id-op-modifyOperationalBinding }
+ * ```
+ *
+ * @constant
+ * @type {OPERATION}
+ * @implements {OPERATION}
+ */
+export const modifyOperationalBinding: OPERATION = {
+    class: "OPERATION",
+    decoderFor: {
+        "&ArgumentType": _decode_ModifyOperationalBindingArgument,
+        "&ResultType": _decode_ModifyOperationalBindingResult,
+    },
+    encoderFor: {
+        "&ArgumentType": _encode_ModifyOperationalBindingArgument,
+        "&ResultType": _encode_ModifyOperationalBindingResult,
+    },
+    "&Errors": [
+        operationalBindingError,
+        securityError,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&operationCode": id_op_modifyOperationalBinding /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ArgumentType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&ResultType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary TerminateOperationalBindingArgumentData_initiator
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TerminateOperationalBindingArgumentData-initiator ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
+export type TerminateOperationalBindingArgumentData_initiator =
+    | { symmetric: _Element } /* CHOICE_ALT_ROOT */
+    | { roleA_initiates: _Element } /* CHOICE_ALT_ROOT */
+    | { roleB_initiates: _Element } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator: $.ASN1Decoder<
+    TerminateOperationalBindingArgumentData_initiator
+> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator: $.ASN1Encoder<
+    TerminateOperationalBindingArgumentData_initiator
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TerminateOperationalBindingArgumentData_initiator
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TerminateOperationalBindingArgumentData_initiator} The decoded data structure.
+ */
+export function _decode_TerminateOperationalBindingArgumentData_initiator(
+    el: _Element
+) {
+    if (
+        !_cached_decoder_for_TerminateOperationalBindingArgumentData_initiator
+    ) {
+        _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<
+            TerminateOperationalBindingArgumentData_initiator
+        >({
+            "CONTEXT 2": [
+                "symmetric",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+            "CONTEXT 3": [
+                "roleA_initiates",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+            "CONTEXT 4": [
+                "roleB_initiates",
+                $._decode_explicit<_Element>(() => $._decodeAny),
+            ],
+        });
+    }
+    return _cached_decoder_for_TerminateOperationalBindingArgumentData_initiator(
+        el
+    );
+}
+/**
+ * @summary Encodes a(n) TerminateOperationalBindingArgumentData_initiator into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TerminateOperationalBindingArgumentData_initiator, encoded as an ASN.1 Element.
+ */
+export function _encode_TerminateOperationalBindingArgumentData_initiator(
+    value: TerminateOperationalBindingArgumentData_initiator,
+    elGetter: $.ASN1Encoder<TerminateOperationalBindingArgumentData_initiator>
+) {
+    if (
+        !_cached_encoder_for_TerminateOperationalBindingArgumentData_initiator
+    ) {
+        _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator = $._encode_choice<
+            TerminateOperationalBindingArgumentData_initiator
+        >(
+            {
+                symmetric: $._encode_explicit(
+                    _TagClass.context,
+                    2,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+                roleA_initiates: $._encode_explicit(
+                    _TagClass.context,
+                    3,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+                roleB_initiates: $._encode_explicit(
+                    _TagClass.context,
+                    4,
+                    () => $._encodeAny,
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_TerminateOperationalBindingArgumentData_initiator(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary TerminateOperationalBindingArgumentData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TerminateOperationalBindingArgumentData ::= SEQUENCE {
+ *   bindingType         [0]  OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *   bindingID           [1]  OperationalBindingID,
+ *   -- symmetric, Role A initiates, or Role B initiates
+ *   initiator                CHOICE {
+ *     symmetric           [2]  OPERATIONAL-BINDING.&both.&TerminateParam
+ *                             ({OpBindingSet}{@bindingType}),
+ *     roleA-initiates     [3]  OPERATIONAL-BINDING.&roleA.&TerminateParam
+ *                             ({OpBindingSet}{@bindingType}),
+ *     roleB-initiates     [4]  OPERATIONAL-BINDING.&roleB.&TerminateParam
+ *                             ({OpBindingSet}{@bindingType})} OPTIONAL,
+ *   terminateAt         [5]  Time OPTIONAL,
+ *   securityParameters  [6]  SecurityParameters OPTIONAL,
+ *   ...}
+ * ```
+ *
+ * @class
+ */
+export class TerminateOperationalBindingArgumentData {
+    constructor(
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `bindingID`.
+         * @public
+         * @readonly
+         */
+        readonly bindingID: OperationalBindingID,
+        /**
+         * @summary `initiator`.
+         * @public
+         * @readonly
+         */
+        readonly initiator: OPTIONAL<
+            TerminateOperationalBindingArgumentData_initiator
+        >,
+        /**
+         * @summary `terminateAt`.
+         * @public
+         * @readonly
+         */
+        readonly terminateAt: OPTIONAL<Time>,
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<SecurityParameters>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
+    ) {}
+
+    /**
+     * @summary Restructures an object into a TerminateOperationalBindingArgumentData
+     * @description
+     *
+     * This takes an `object` and converts it to a `TerminateOperationalBindingArgumentData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `TerminateOperationalBindingArgumentData`.
+     * @returns {TerminateOperationalBindingArgumentData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof TerminateOperationalBindingArgumentData]: TerminateOperationalBindingArgumentData[_K];
+            }
+        >
+    ): TerminateOperationalBindingArgumentData {
+        return new TerminateOperationalBindingArgumentData(
+            _o.bindingType,
+            _o.bindingID,
+            _o.initiator,
+            _o.terminateAt,
+            _o.securityParameters,
+            _o._unrecognizedExtensionsList
+        );
+    }
+}
+/**
+ * @summary The Leading Root Component Types of TerminateOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "bindingType",
+        false,
+        $.hasTag(_TagClass.context, 0),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "bindingID",
+        false,
+        $.hasTag(_TagClass.context, 1),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec("initiator", true, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
+        "terminateAt",
+        true,
+        $.hasTag(_TagClass.context, 5),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "securityParameters",
+        true,
+        $.hasTag(_TagClass.context, 6),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of TerminateOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of TerminateOperationalBindingArgumentData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData: $.ComponentSpec[] = [];
+let _cached_decoder_for_TerminateOperationalBindingArgumentData: $.ASN1Decoder<
+    TerminateOperationalBindingArgumentData
+> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingArgumentData: $.ASN1Encoder<
+    TerminateOperationalBindingArgumentData
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TerminateOperationalBindingArgumentData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TerminateOperationalBindingArgumentData} The decoded data structure.
+ */
+export function _decode_TerminateOperationalBindingArgumentData(el: _Element) {
+    if (!_cached_decoder_for_TerminateOperationalBindingArgumentData) {
+        _cached_decoder_for_TerminateOperationalBindingArgumentData = function (
+            el: _Element
+        ): TerminateOperationalBindingArgumentData {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let bindingType!: OBJECT_IDENTIFIER;
+            let bindingID!: OperationalBindingID;
+            let initiator: OPTIONAL<TerminateOperationalBindingArgumentData_initiator>;
+            let terminateAt: OPTIONAL<Time>;
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
+                },
+                bindingID: (_el: _Element): void => {
+                    bindingID = $._decode_explicit<OperationalBindingID>(
+                        () => _decode_OperationalBindingID
+                    )(_el);
+                },
+                initiator: (_el: _Element): void => {
+                    initiator = _decode_TerminateOperationalBindingArgumentData_initiator(
+                        _el
+                    );
+                },
+                terminateAt: (_el: _Element): void => {
+                    terminateAt = $._decode_explicit<Time>(() => _decode_Time)(
+                        _el
+                    );
+                },
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TerminateOperationalBindingArgumentData,
+                _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData,
+                _root_component_type_list_2_spec_for_TerminateOperationalBindingArgumentData,
+                (ext: _Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TerminateOperationalBindingArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
+                bindingID,
+                initiator,
+                terminateAt,
+                securityParameters,
+                _unrecognizedExtensionsList
+            );
+        };
+    }
+    return _cached_decoder_for_TerminateOperationalBindingArgumentData(el);
+}
+/**
+ * @summary Encodes a(n) TerminateOperationalBindingArgumentData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TerminateOperationalBindingArgumentData, encoded as an ASN.1 Element.
+ */
+export function _encode_TerminateOperationalBindingArgumentData(
+    value: TerminateOperationalBindingArgumentData,
+    elGetter: $.ASN1Encoder<TerminateOperationalBindingArgumentData>
+) {
+    if (!_cached_encoder_for_TerminateOperationalBindingArgumentData) {
+        _cached_encoder_for_TerminateOperationalBindingArgumentData = function (
+            value: TerminateOperationalBindingArgumentData,
+            elGetter: $.ASN1Encoder<TerminateOperationalBindingArgumentData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
+                                0,
+                                () => $._encodeObjectIdentifier,
+                                $.BER
+                            )(value.bindingType, $.BER),
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
+                                1,
+                                () => _encode_OperationalBindingID,
+                                $.BER
+                            )(value.bindingID, $.BER),
+                            /* IF_ABSENT  */ value.initiator === undefined
+                                ? undefined
+                                : _encode_TerminateOperationalBindingArgumentData_initiator(
+                                      value.initiator,
+                                      $.BER
+                                  ),
+                            /* IF_ABSENT  */ value.terminateAt === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      5,
+                                      () => _encode_Time,
+                                      $.BER
+                                  )(value.terminateAt, $.BER),
+                            /* IF_ABSENT  */ value.securityParameters ===
+                            undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      6,
+                                      () => _encode_SecurityParameters,
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : []
+                    )
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TerminateOperationalBindingArgumentData(
+        value,
+        elGetter
+    );
+}
+
+export type TerminateOperationalBindingArgument<> = OPTIONALLY_PROTECTED_SEQ<
+    TerminateOperationalBindingArgumentData
+>; // DefinedType
+let _cached_decoder_for_TerminateOperationalBindingArgument: $.ASN1Decoder<
+    TerminateOperationalBindingArgument
+> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingArgument: $.ASN1Encoder<
+    TerminateOperationalBindingArgument
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TerminateOperationalBindingArgument
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TerminateOperationalBindingArgument} The decoded data structure.
+ */
+export function _decode_TerminateOperationalBindingArgument(el: _Element) {
+    if (!_cached_decoder_for_TerminateOperationalBindingArgument) {
+        _cached_decoder_for_TerminateOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+            TerminateOperationalBindingArgumentData
+        >(_decode_TerminateOperationalBindingArgumentData);
+    }
+    return _cached_decoder_for_TerminateOperationalBindingArgument(el);
+}
+/**
+ * @summary Encodes a(n) TerminateOperationalBindingArgument into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TerminateOperationalBindingArgument, encoded as an ASN.1 Element.
+ */
+export function _encode_TerminateOperationalBindingArgument(
+    value: TerminateOperationalBindingArgument,
+    elGetter: $.ASN1Encoder<TerminateOperationalBindingArgument>
+) {
+    if (!_cached_encoder_for_TerminateOperationalBindingArgument) {
+        _cached_encoder_for_TerminateOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+            TerminateOperationalBindingArgumentData
+        >(_encode_TerminateOperationalBindingArgumentData);
+    }
+    return _cached_encoder_for_TerminateOperationalBindingArgument(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary TerminateOperationalBindingResultData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TerminateOperationalBindingResultData ::= SEQUENCE {
+ *   bindingID       OperationalBindingID,
+ *   bindingType     OPERATIONAL-BINDING.&id({OpBindingSet}),
+ *   terminateAt     GeneralizedTime OPTIONAL,
+ *   ...,
+ *   ...,
+ *   COMPONENTS OF   CommonResultsSeq }
+ * ```
+ *
+ * @class
+ */
+export class TerminateOperationalBindingResultData {
+    constructor(
+        /**
+         * @summary `bindingID`.
+         * @public
+         * @readonly
+         */
+        readonly bindingID: OperationalBindingID,
+        /**
+         * @summary `bindingType`.
+         * @public
+         * @readonly
+         */
+        readonly bindingType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `terminateAt`.
+         * @public
+         * @readonly
+         */
+        readonly terminateAt: OPTIONAL<GeneralizedTime>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `securityParameters`.
+         * @public
+         * @readonly
+         */
+        readonly securityParameters: OPTIONAL<
+            SecurityParameters
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `performer`.
+         * @public
+         * @readonly
+         */
+        readonly performer: OPTIONAL<
+            DistinguishedName
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `aliasDereferenced`.
+         * @public
+         * @readonly
+         */
+        readonly aliasDereferenced: OPTIONAL<
+            BOOLEAN
+        > /* REPLICATED_COMPONENT */,
+        /**
+         * @summary `notification`.
+         * @public
+         * @readonly
+         */
+        readonly notification: OPTIONAL<Attribute[]> /* REPLICATED_COMPONENT */
+    ) {}
+
+    /**
+     * @summary Restructures an object into a TerminateOperationalBindingResultData
+     * @description
+     *
+     * This takes an `object` and converts it to a `TerminateOperationalBindingResultData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `TerminateOperationalBindingResultData`.
+     * @returns {TerminateOperationalBindingResultData}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof TerminateOperationalBindingResultData]: TerminateOperationalBindingResultData[_K];
+            }
+        >
+    ): TerminateOperationalBindingResultData {
+        return new TerminateOperationalBindingResultData(
+            _o.bindingID,
+            _o.bindingType,
+            _o.terminateAt,
+            _o._unrecognizedExtensionsList,
+            _o.securityParameters,
+            _o.performer,
+            _o.aliasDereferenced,
+            _o.notification
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `aliasDereferenced`.
+     * @public
+     * @static
+     * @method
+     */
+    public static get _default_value_for_aliasDereferenced() {
+        return false;
+    }
+}
+/**
+ * @summary The Leading Root Component Types of TerminateOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "bindingID",
+        false,
+        $.hasTag(_TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "bindingType",
+        false,
+        $.hasTag(_TagClass.universal, 6),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "terminateAt",
+        true,
+        $.hasTag(_TagClass.universal, 24),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of TerminateOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "securityParameters",
+        true,
+        $.hasTag(_TagClass.context, 30),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "performer",
+        true,
+        $.hasTag(_TagClass.context, 29),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "aliasDereferenced",
+        true,
+        $.hasTag(_TagClass.context, 28),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "notification",
+        true,
+        $.hasTag(_TagClass.context, 27),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Extension Addition Component Types of TerminateOperationalBindingResultData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_TerminateOperationalBindingResultData: $.ComponentSpec[] = [];
+let _cached_decoder_for_TerminateOperationalBindingResultData: $.ASN1Decoder<
+    TerminateOperationalBindingResultData
+> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingResultData: $.ASN1Encoder<
+    TerminateOperationalBindingResultData
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TerminateOperationalBindingResultData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TerminateOperationalBindingResultData} The decoded data structure.
+ */
+export function _decode_TerminateOperationalBindingResultData(el: _Element) {
+    if (!_cached_decoder_for_TerminateOperationalBindingResultData) {
+        _cached_decoder_for_TerminateOperationalBindingResultData = function (
+            el: _Element
+        ): TerminateOperationalBindingResultData {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let bindingID!: OperationalBindingID;
+            let bindingType!: OBJECT_IDENTIFIER;
+            let terminateAt: OPTIONAL<GeneralizedTime>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            let securityParameters: OPTIONAL<SecurityParameters>;
+            let performer: OPTIONAL<DistinguishedName>;
+            let aliasDereferenced: OPTIONAL<BOOLEAN> =
+                TerminateOperationalBindingResultData._default_value_for_aliasDereferenced;
+            let notification: OPTIONAL<Attribute[]>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                bindingID: (_el: _Element): void => {
+                    bindingID = _decode_OperationalBindingID(_el);
+                },
+                bindingType: (_el: _Element): void => {
+                    bindingType = $._decodeObjectIdentifier(_el);
+                },
+                terminateAt: (_el: _Element): void => {
+                    terminateAt = $._decodeGeneralizedTime(_el);
+                },
+                securityParameters: (_el: _Element): void => {
+                    securityParameters = $._decode_explicit<SecurityParameters>(
+                        () => _decode_SecurityParameters
+                    )(_el);
+                },
+                performer: (_el: _Element): void => {
+                    performer = $._decode_explicit<DistinguishedName>(
+                        () => _decode_DistinguishedName
+                    )(_el);
+                },
+                aliasDereferenced: (_el: _Element): void => {
+                    aliasDereferenced = $._decode_explicit<BOOLEAN>(
+                        () => $._decodeBoolean
+                    )(_el);
+                },
+                notification: (_el: _Element): void => {
+                    notification = $._decode_explicit<Attribute[]>(() =>
+                        $._decodeSequenceOf<Attribute>(() => _decode_Attribute)
+                    )(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_TerminateOperationalBindingResultData,
+                _extension_additions_list_spec_for_TerminateOperationalBindingResultData,
+                _root_component_type_list_2_spec_for_TerminateOperationalBindingResultData,
+                (ext: _Element): void => {
+                    _unrecognizedExtensionsList.push(ext);
+                }
+            );
+            return new TerminateOperationalBindingResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingID,
+                bindingType,
+                terminateAt,
+                _unrecognizedExtensionsList,
+                securityParameters,
+                performer,
+                aliasDereferenced,
+                notification
+            );
+        };
+    }
+    return _cached_decoder_for_TerminateOperationalBindingResultData(el);
+}
+/**
+ * @summary Encodes a(n) TerminateOperationalBindingResultData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TerminateOperationalBindingResultData, encoded as an ASN.1 Element.
+ */
+export function _encode_TerminateOperationalBindingResultData(
+    value: TerminateOperationalBindingResultData,
+    elGetter: $.ASN1Encoder<TerminateOperationalBindingResultData>
+) {
+    if (!_cached_encoder_for_TerminateOperationalBindingResultData) {
+        _cached_encoder_for_TerminateOperationalBindingResultData = function (
+            value: TerminateOperationalBindingResultData,
+            elGetter: $.ASN1Encoder<TerminateOperationalBindingResultData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat(
+                        [
+                            /* REQUIRED   */ _encode_OperationalBindingID(
+                                value.bindingID,
+                                $.BER
+                            ),
+                            /* REQUIRED   */ $._encodeObjectIdentifier(
+                                value.bindingType,
+                                $.BER
+                            ),
+                            /* IF_ABSENT  */ value.terminateAt === undefined
+                                ? undefined
+                                : $._encodeGeneralizedTime(
+                                      value.terminateAt,
+                                      $.BER
+                                  ),
+                        ],
+                        value._unrecognizedExtensionsList
+                            ? value._unrecognizedExtensionsList
+                            : [],
+                        [
+                            /* IF_ABSENT  */ value.securityParameters ===
+                            undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      30,
+                                      () => _encode_SecurityParameters,
+                                      $.BER
+                                  )(value.securityParameters, $.BER),
+                            /* IF_ABSENT  */ value.performer === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      29,
+                                      () => _encode_DistinguishedName,
+                                      $.BER
+                                  )(value.performer, $.BER),
+                            /* IF_DEFAULT */ value.aliasDereferenced ===
+                                undefined ||
+                            $.deepEq(
+                                value.aliasDereferenced,
+                                TerminateOperationalBindingResultData._default_value_for_aliasDereferenced
+                            )
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      28,
+                                      () => $._encodeBoolean,
+                                      $.BER
+                                  )(value.aliasDereferenced, $.BER),
+                            /* IF_ABSENT  */ value.notification === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      27,
+                                      () =>
+                                          $._encodeSequenceOf<Attribute>(
+                                              () => _encode_Attribute,
+                                              $.BER
+                                          ),
+                                      $.BER
+                                  )(value.notification, $.BER),
+                        ]
+                    )
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_TerminateOperationalBindingResultData(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary TerminateOperationalBindingResult
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TerminateOperationalBindingResult  ::=  CHOICE {
+ *   null            NULL,
+ *   protected  [1]  OPTIONALLY-PROTECTED-SEQ{ TerminateOperationalBindingResultData },
+ *   ... }
+ * ```
+ */
+export type TerminateOperationalBindingResult =
+    | { null_: NULL } /* CHOICE_ALT_ROOT */
+    | {
+          protected_: OPTIONALLY_PROTECTED_SEQ<
+              TerminateOperationalBindingResultData
+          >;
+      } /* CHOICE_ALT_ROOT */
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_TerminateOperationalBindingResult: $.ASN1Decoder<
+    TerminateOperationalBindingResult
+> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingResult: $.ASN1Encoder<
+    TerminateOperationalBindingResult
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TerminateOperationalBindingResult
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TerminateOperationalBindingResult} The decoded data structure.
+ */
+export function _decode_TerminateOperationalBindingResult(el: _Element) {
+    if (!_cached_decoder_for_TerminateOperationalBindingResult) {
+        _cached_decoder_for_TerminateOperationalBindingResult = $._decode_extensible_choice<
+            TerminateOperationalBindingResult
+        >({
+            "UNIVERSAL 5": ["null_", $._decodeNull],
+            "CONTEXT 1": [
+                "protected_",
+                $._decode_explicit<
+                    OPTIONALLY_PROTECTED_SEQ<
+                        TerminateOperationalBindingResultData
+                    >
+                >(() =>
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
+                        TerminateOperationalBindingResultData
+                    >(_decode_TerminateOperationalBindingResultData)
+                ),
+            ],
+        });
+    }
+    return _cached_decoder_for_TerminateOperationalBindingResult(el);
+}
+/**
+ * @summary Encodes a(n) TerminateOperationalBindingResult into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TerminateOperationalBindingResult, encoded as an ASN.1 Element.
+ */
+export function _encode_TerminateOperationalBindingResult(
+    value: TerminateOperationalBindingResult,
+    elGetter: $.ASN1Encoder<TerminateOperationalBindingResult>
+) {
+    if (!_cached_encoder_for_TerminateOperationalBindingResult) {
+        _cached_encoder_for_TerminateOperationalBindingResult = $._encode_choice<
+            TerminateOperationalBindingResult
+        >(
+            {
+                null_: $._encodeNull,
+                protected_: $._encode_explicit(
+                    _TagClass.context,
+                    1,
+                    () =>
+                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
+                            TerminateOperationalBindingResultData
+                        >(_encode_TerminateOperationalBindingResultData),
+                    $.BER
+                ),
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_TerminateOperationalBindingResult(
+        value,
+        elGetter
+    );
+}
+
+/**
+ * @summary terminateOperationalBinding
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * terminateOperationalBinding OPERATION ::= {
+ *   ARGUMENT  TerminateOperationalBindingArgument
+ *   RESULT    TerminateOperationalBindingResult
+ *   ERRORS    {operationalBindingError | securityError}
+ *   CODE      id-op-terminateOperationalBinding }
+ * ```
+ *
+ * @constant
+ * @type {OPERATION}
+ * @implements {OPERATION}
+ */
+export const terminateOperationalBinding: OPERATION = {
+    class: "OPERATION",
+    decoderFor: {
+        "&ArgumentType": _decode_TerminateOperationalBindingArgument,
+        "&ResultType": _decode_TerminateOperationalBindingResult,
+    },
+    encoderFor: {
+        "&ArgumentType": _encode_TerminateOperationalBindingArgument,
+        "&ResultType": _encode_TerminateOperationalBindingResult,
+    },
+    "&Errors": [
+        operationalBindingError,
+        securityError,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&operationCode": id_op_terminateOperationalBinding /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ArgumentType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&ResultType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
 /* END_MODULE OperationalBindingManagement */
+/* eslint-enable */

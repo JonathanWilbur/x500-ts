@@ -13,8 +13,7 @@ import nameToString from "./nameToString";
 //     registeredID               [8]  OBJECT IDENTIFIER,
 //     ... }
 
-export default
-function generalNameToString (gn: GeneralName): string {
+export default function generalNameToString(gn: GeneralName): string {
     const key = Object.keys(gn)[0];
     if ("otherName" in gn) {
         return `${key}:[Cannot display other name]`;

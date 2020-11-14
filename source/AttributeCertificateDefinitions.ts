@@ -1,73 +1,113 @@
-/*
-    BEGIN_MODULE AttributeCertificateDefinitions
-    OID: joint-iso-itu-t.ds.module.attributeCertificateDefinitions.8
-    IRI: undefined
-    EXTENSIBLE: false
-    ENCODINGREF: undefined
-    FILE: undefined
-    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
-*/
-import * as asn1 from "asn1-ts";
+/**
+ * @module AttributeCertificateDefinitions
+ * @summary The ASN.1 module `AttributeCertificateDefinitions`.
+ * @description
+ *
+ * OID: joint-iso-itu-t.ds.module.attributeCertificateDefinitions.9
+ * IRI: undefined
+ * EXTENSIBLE: false
+ * ENCODINGREF: undefined
+ * FILE: undefined
+ *
+ * This file was compiled by Wildboar Software's ASN.1 Compiler.
+ *
+ * @see {@link https://wildboarsoftware.com|Wildboar Software's Website}
+ * /
+
+
+/* eslint-disable */
+import {
+    ASN1ConstructionError as _ConstructionError,
+    ASN1Element as _Element,
+    ASN1TagClass as _TagClass,
+    BIT_STRING,
+    BMPString,
+    BOOLEAN,
+    GeneralizedTime,
+    INTEGER,
+    ObjectIdentifier as _OID,
+    OBJECT_IDENTIFIER,
+    OCTET_STRING,
+    OPTIONAL,
+    UTF8String,
+    VisibleString,
+} from "asn1-ts";
+import * as $ from "asn1-ts/dist/node/functional";
 import {
     AlgorithmIdentifier,
     Certificate,
     CertificateSerialNumber,
+    EXTENSION,
     Extensions,
     InfoSyntax,
     SIGNED,
+    x509CertificateList,
     _decode_AlgorithmIdentifier,
     _decode_Certificate,
+    _decode_CertificateList,
     _decode_CertificateSerialNumber,
     _decode_Extensions,
     _decode_InfoSyntax,
+    _decode_PolicySyntax,
     _encode_AlgorithmIdentifier,
     _encode_Certificate,
+    _encode_CertificateList,
     _encode_CertificateSerialNumber,
     _encode_Extensions,
     _encode_InfoSyntax,
+    _encode_PolicySyntax,
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
 } from "./AuthenticationFramework";
 import {
-    AttributeTypeAndValue,
-    _decode_AttributeTypeAndValue,
-    _encode_AttributeTypeAndValue,
-} from "./BasicAccessControl";
-import {
+    certificateListExactMatch,
     GeneralName,
     GeneralNames,
     _decode_GeneralName,
     _decode_GeneralNames,
+    _decode_NameConstraintsSyntax,
     _encode_GeneralName,
     _encode_GeneralNames,
+    _encode_NameConstraintsSyntax,
 } from "./CertificateExtensions";
+import * as InformationFramework from "./InformationFramework";
 import {
+    ATTRIBUTE,
     Attribute,
     AttributeType,
+    AttributeTypeAndValue,
+    MATCHING_RULE,
+    OBJECT_CLASS,
     _decode_Attribute,
     _decode_AttributeType,
+    _decode_AttributeTypeAndValue,
     _encode_Attribute,
     _encode_AttributeType,
+    _encode_AttributeTypeAndValue,
 } from "./InformationFramework";
 import {
     UnboundedDirectoryString,
     UniqueIdentifier,
+    _decode_TimeSpecification,
     _decode_UnboundedDirectoryString,
     _decode_UniqueIdentifier,
+    _encode_TimeSpecification,
     _encode_UnboundedDirectoryString,
     _encode_UniqueIdentifier,
 } from "./SelectedAttributeTypes";
 import { id_at, id_ce, id_mr, id_oc } from "./UsefulDefinitions";
-import * as __utils from "./__utils";
 export {
     AlgorithmIdentifier,
     Certificate,
     CertificateList,
     CertificateSerialNumber,
+    EXTENSION,
     Extensions,
     InfoSyntax,
     PolicySyntax,
     SIGNED,
+    SupportedAlgorithms,
+    x509CertificateList,
     _decode_AlgorithmIdentifier,
     _decode_Certificate,
     _decode_CertificateList,
@@ -86,11 +126,7 @@ export {
     _get_encoder_for_SIGNED,
 } from "./AuthenticationFramework";
 export {
-    AttributeTypeAndValue,
-    _decode_AttributeTypeAndValue,
-    _encode_AttributeTypeAndValue,
-} from "./BasicAccessControl";
-export {
+    certificateListExactMatch,
     GeneralName,
     GeneralNames,
     NameConstraintsSyntax,
@@ -102,24 +138,28 @@ export {
     _encode_NameConstraintsSyntax,
 } from "./CertificateExtensions";
 export {
+    ATTRIBUTE,
     Attribute,
     AttributeType,
+    AttributeTypeAndValue,
+    MATCHING_RULE,
     Name,
+    OBJECT_CLASS,
     RelativeDistinguishedName,
+    SupportedAttributes,
+    SYNTAX_NAME,
+    top,
     _decode_Attribute,
     _decode_AttributeType,
+    _decode_AttributeTypeAndValue,
     _decode_Name,
     _decode_RelativeDistinguishedName,
     _encode_Attribute,
     _encode_AttributeType,
+    _encode_AttributeTypeAndValue,
     _encode_Name,
     _encode_RelativeDistinguishedName,
 } from "./InformationFramework";
-export {
-    UserNotice,
-    _decode_UserNotice,
-    _encode_UserNotice,
-} from "./PkiPmiExternalDataTypes";
 export {
     TimeSpecification,
     UnboundedDirectoryString,
@@ -131,114 +171,215 @@ export {
     _encode_UnboundedDirectoryString,
     _encode_UniqueIdentifier,
 } from "./SelectedAttributeTypes";
-export {
-    authenticationFramework,
-    basicAccessControl,
-    certificateExtensions,
-    id_at,
-    id_ce,
-    id_mr,
-    id_oc,
-    informationFramework,
-    pkiPmiExternalDataTypes,
-    selectedAttributeTypes,
-} from "./UsefulDefinitions";
+export { id_at, id_ce, id_mr, id_oc } from "./UsefulDefinitions";
 
-export type AttCertVersion = asn1.INTEGER;
+/**
+ * @summary AttCertVersion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttCertVersion  ::=  INTEGER {v2(1)}
+ * ```
+ */
+export type AttCertVersion = INTEGER;
+/**
+ * @summary AttCertVersion_v2
+ * @constant
+ * @type {number}
+ */
 export const AttCertVersion_v2: AttCertVersion = 1; /* LONG_NAMED_INTEGER_VALUE */
-export const v2: AttCertVersion = AttCertVersion_v2; /* SHORT_NAMED_INTEGER_VALUE */
-let _cached_decoder_for_AttCertVersion: __utils.ASN1Decoder<
+let _cached_decoder_for_AttCertVersion: $.ASN1Decoder<
     AttCertVersion
 > | null = null;
-let _cached_encoder_for_AttCertVersion: __utils.ASN1Encoder<
+let _cached_encoder_for_AttCertVersion: $.ASN1Encoder<
     AttCertVersion
 > | null = null;
-export function _decode_AttCertVersion(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttCertVersion
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttCertVersion} The decoded data structure.
+ */
+export function _decode_AttCertVersion(el: _Element) {
     if (!_cached_decoder_for_AttCertVersion) {
-        _cached_decoder_for_AttCertVersion = __utils._decodeInteger;
+        _cached_decoder_for_AttCertVersion = $._decodeInteger;
     }
     return _cached_decoder_for_AttCertVersion(el);
 }
+/**
+ * @summary Encodes a(n) AttCertVersion into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttCertVersion, encoded as an ASN.1 Element.
+ */
 export function _encode_AttCertVersion(
     value: AttCertVersion,
-    elGetter: __utils.ASN1Encoder<AttCertVersion>
+    elGetter: $.ASN1Encoder<AttCertVersion>
 ) {
     if (!_cached_encoder_for_AttCertVersion) {
-        _cached_encoder_for_AttCertVersion = __utils._encodeInteger;
+        _cached_encoder_for_AttCertVersion = $._encodeInteger;
     }
     return _cached_encoder_for_AttCertVersion(value, elGetter);
 }
 
+/**
+ * @summary IssuerSerial
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * IssuerSerial ::= SEQUENCE {
+ *   issuer     GeneralNames,
+ *   serial     CertificateSerialNumber,
+ *   issuerUID  UniqueIdentifier OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class IssuerSerial {
     constructor(
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
         readonly issuer: GeneralNames,
+        /**
+         * @summary `serial`.
+         * @public
+         * @readonly
+         */
         readonly serial: CertificateSerialNumber,
-        readonly issuerUID: UniqueIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `issuerUID`.
+         * @public
+         * @readonly
+         */
+        readonly issuerUID: OPTIONAL<UniqueIdentifier>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a IssuerSerial
+     * @description
+     *
+     * This takes an `object` and converts it to a `IssuerSerial`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `IssuerSerial`.
+     * @returns {IssuerSerial}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof IssuerSerial]: IssuerSerial[_K] }>
+    ): IssuerSerial {
+        return new IssuerSerial(
+            _o.issuer,
+            _o.serial,
+            _o.issuerUID,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_IssuerSerial: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of IssuerSerial
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_IssuerSerial: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "issuer",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "serial",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuerUID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_IssuerSerial: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_IssuerSerial: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_IssuerSerial: __utils.ASN1Decoder<
-    IssuerSerial
-> | null = null;
-let _cached_encoder_for_IssuerSerial: __utils.ASN1Encoder<
-    IssuerSerial
-> | null = null;
-export function _decode_IssuerSerial(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of IssuerSerial
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_IssuerSerial: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of IssuerSerial
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_IssuerSerial: $.ComponentSpec[] = [];
+let _cached_decoder_for_IssuerSerial: $.ASN1Decoder<IssuerSerial> | null = null;
+let _cached_encoder_for_IssuerSerial: $.ASN1Encoder<IssuerSerial> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) IssuerSerial
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {IssuerSerial} The decoded data structure.
+ */
+export function _decode_IssuerSerial(el: _Element) {
     if (!_cached_decoder_for_IssuerSerial) {
         _cached_decoder_for_IssuerSerial = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): IssuerSerial {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let issuer!: GeneralNames;
             let serial!: CertificateSerialNumber;
-            let issuerUID: asn1.OPTIONAL<UniqueIdentifier>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let issuerUID: OPTIONAL<UniqueIdentifier>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                issuer: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                issuer: (_el: _Element): void => {
                     issuer = _decode_GeneralNames(_el);
                 },
-                serial: (_el: asn1.ASN1Element): void => {
+                serial: (_el: _Element): void => {
                     serial = _decode_CertificateSerialNumber(_el);
                 },
-                issuerUID: (_el: asn1.ASN1Element): void => {
+                issuerUID: (_el: _Element): void => {
                     issuerUID = _decode_UniqueIdentifier(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_IssuerSerial,
                 _extension_additions_list_spec_for_IssuerSerial,
                 _root_component_type_list_2_spec_for_IssuerSerial,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -252,87 +393,133 @@ export function _decode_IssuerSerial(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_IssuerSerial(el);
 }
+/**
+ * @summary Encodes a(n) IssuerSerial into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The IssuerSerial, encoded as an ASN.1 Element.
+ */
 export function _encode_IssuerSerial(
     value: IssuerSerial,
-    elGetter: __utils.ASN1Encoder<IssuerSerial>
+    elGetter: $.ASN1Encoder<IssuerSerial>
 ) {
     if (!_cached_encoder_for_IssuerSerial) {
         _cached_encoder_for_IssuerSerial = function (
             value: IssuerSerial,
-            elGetter: __utils.ASN1Encoder<IssuerSerial>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<IssuerSerial>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_GeneralNames(
                                 value.issuer,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serial,
-                                __utils.DER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.issuerUID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUID,
-                                      __utils.DER
+                                      $.BER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_IssuerSerial(value, elGetter);
 }
 
-export enum ObjectDigestInfo_digestedObjectType {
+/**
+ * @summary ObjectDigestInfo_digestedObjectType
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ObjectDigestInfo-digestedObjectType ::= ENUMERATED { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @enum {number}
+ */
+export enum _enum_for_ObjectDigestInfo_digestedObjectType {
     publicKey = 0,
     publicKeyCert = 1,
     otherObjectTypes = 2,
 }
+/**
+ * @summary ObjectDigestInfo_digestedObjectType
+ */
+export type ObjectDigestInfo_digestedObjectType = _enum_for_ObjectDigestInfo_digestedObjectType;
+/**
+ * @summary ObjectDigestInfo_digestedObjectType
+ * @constant
+ */
+export const ObjectDigestInfo_digestedObjectType = _enum_for_ObjectDigestInfo_digestedObjectType;
+/**
+ * @summary ObjectDigestInfo_digestedObjectType_publicKey
+ * @constant
+ * @type {number}
+ */
 export const ObjectDigestInfo_digestedObjectType_publicKey: ObjectDigestInfo_digestedObjectType =
     ObjectDigestInfo_digestedObjectType.publicKey; /* LONG_NAMED_ENUMERATED_VALUE */
-export const publicKey: ObjectDigestInfo_digestedObjectType =
-    ObjectDigestInfo_digestedObjectType.publicKey; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary ObjectDigestInfo_digestedObjectType_publicKeyCert
+ * @constant
+ * @type {number}
+ */
 export const ObjectDigestInfo_digestedObjectType_publicKeyCert: ObjectDigestInfo_digestedObjectType =
     ObjectDigestInfo_digestedObjectType.publicKeyCert; /* LONG_NAMED_ENUMERATED_VALUE */
-export const publicKeyCert: ObjectDigestInfo_digestedObjectType =
-    ObjectDigestInfo_digestedObjectType.publicKeyCert; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary ObjectDigestInfo_digestedObjectType_otherObjectTypes
+ * @constant
+ * @type {number}
+ */
 export const ObjectDigestInfo_digestedObjectType_otherObjectTypes: ObjectDigestInfo_digestedObjectType =
     ObjectDigestInfo_digestedObjectType.otherObjectTypes; /* LONG_NAMED_ENUMERATED_VALUE */
-export const otherObjectTypes: ObjectDigestInfo_digestedObjectType =
-    ObjectDigestInfo_digestedObjectType.otherObjectTypes; /* SHORT_NAMED_ENUMERATED_VALUE */
-let _cached_decoder_for_ObjectDigestInfo_digestedObjectType: __utils.ASN1Decoder<
+let _cached_decoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Decoder<
     ObjectDigestInfo_digestedObjectType
 > | null = null;
-let _cached_encoder_for_ObjectDigestInfo_digestedObjectType: __utils.ASN1Encoder<
+let _cached_encoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Encoder<
     ObjectDigestInfo_digestedObjectType
 > | null = null;
-export function _decode_ObjectDigestInfo_digestedObjectType(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ObjectDigestInfo_digestedObjectType
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ObjectDigestInfo_digestedObjectType} The decoded data structure.
+ */
+export function _decode_ObjectDigestInfo_digestedObjectType(el: _Element) {
     if (!_cached_decoder_for_ObjectDigestInfo_digestedObjectType) {
         _cached_decoder_for_ObjectDigestInfo_digestedObjectType =
-            __utils._decodeEnumerated;
+            $._decodeEnumerated;
     }
     return _cached_decoder_for_ObjectDigestInfo_digestedObjectType(el);
 }
+/**
+ * @summary Encodes a(n) ObjectDigestInfo_digestedObjectType into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ObjectDigestInfo_digestedObjectType, encoded as an ASN.1 Element.
+ */
 export function _encode_ObjectDigestInfo_digestedObjectType(
     value: ObjectDigestInfo_digestedObjectType,
-    elGetter: __utils.ASN1Encoder<ObjectDigestInfo_digestedObjectType>
+    elGetter: $.ASN1Encoder<ObjectDigestInfo_digestedObjectType>
 ) {
     if (!_cached_encoder_for_ObjectDigestInfo_digestedObjectType) {
         _cached_encoder_for_ObjectDigestInfo_digestedObjectType =
-            __utils._encodeEnumerated;
+            $._encodeEnumerated;
     }
     return _cached_encoder_for_ObjectDigestInfo_digestedObjectType(
         value,
@@ -340,90 +527,197 @@ export function _encode_ObjectDigestInfo_digestedObjectType(
     );
 }
 
+/**
+ * @summary ObjectDigestInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ObjectDigestInfo ::= SEQUENCE {
+ *   digestedObjectType   ENUMERATED {
+ *     publicKey        (0),
+ *     publicKeyCert    (1),
+ *     otherObjectTypes (2)},
+ *   otherObjectTypeID   OBJECT IDENTIFIER OPTIONAL,
+ *   digestAlgorithm     AlgorithmIdentifier{{SupportedAlgorithms}},
+ *   objectDigest        BIT STRING,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class ObjectDigestInfo {
     constructor(
+        /**
+         * @summary `digestedObjectType`.
+         * @public
+         * @readonly
+         */
         readonly digestedObjectType: ObjectDigestInfo_digestedObjectType,
-        readonly otherObjectTypeID: asn1.OBJECT_IDENTIFIER | undefined,
+        /**
+         * @summary `otherObjectTypeID`.
+         * @public
+         * @readonly
+         */
+        readonly otherObjectTypeID: OPTIONAL<OBJECT_IDENTIFIER>,
+        /**
+         * @summary `digestAlgorithm`.
+         * @public
+         * @readonly
+         */
         readonly digestAlgorithm: AlgorithmIdentifier,
-        readonly objectDigest: asn1.BIT_STRING,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `objectDigest`.
+         * @public
+         * @readonly
+         */
+        readonly objectDigest: BIT_STRING,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ObjectDigestInfo
+     * @description
+     *
+     * This takes an `object` and converts it to a `ObjectDigestInfo`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ObjectDigestInfo`.
+     * @returns {ObjectDigestInfo}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ObjectDigestInfo]: ObjectDigestInfo[_K] }>
+    ): ObjectDigestInfo {
+        return new ObjectDigestInfo(
+            _o.digestedObjectType,
+            _o.otherObjectTypeID,
+            _o.digestAlgorithm,
+            _o.objectDigest,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary The enum used as the type of the component `digestedObjectType`
+     * @public
+     * @static
+     */
+
+    public static _enum_for_digestedObjectType = _enum_for_ObjectDigestInfo_digestedObjectType;
 }
-export const _root_component_type_list_1_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ObjectDigestInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ObjectDigestInfo: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "digestedObjectType",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 10),
+        $.hasTag(_TagClass.universal, 10),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "otherObjectTypeID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "digestAlgorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "objectDigest",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ObjectDigestInfo: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ObjectDigestInfo: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of ObjectDigestInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ObjectDigestInfo: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ObjectDigestInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ObjectDigestInfo: $.ComponentSpec[] = [];
+let _cached_decoder_for_ObjectDigestInfo: $.ASN1Decoder<
     ObjectDigestInfo
 > | null = null;
-let _cached_encoder_for_ObjectDigestInfo: __utils.ASN1Encoder<
+let _cached_encoder_for_ObjectDigestInfo: $.ASN1Encoder<
     ObjectDigestInfo
 > | null = null;
-export function _decode_ObjectDigestInfo(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) ObjectDigestInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ObjectDigestInfo} The decoded data structure.
+ */
+export function _decode_ObjectDigestInfo(el: _Element) {
     if (!_cached_decoder_for_ObjectDigestInfo) {
         _cached_decoder_for_ObjectDigestInfo = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): ObjectDigestInfo {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let digestedObjectType!: ObjectDigestInfo_digestedObjectType;
-            let otherObjectTypeID: asn1.OPTIONAL<asn1.OBJECT_IDENTIFIER>;
+            let otherObjectTypeID: OPTIONAL<OBJECT_IDENTIFIER>;
             let digestAlgorithm!: AlgorithmIdentifier;
-            let objectDigest!: asn1.BIT_STRING;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let objectDigest!: BIT_STRING;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                digestedObjectType: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                digestedObjectType: (_el: _Element): void => {
                     digestedObjectType = _decode_ObjectDigestInfo_digestedObjectType(
                         _el
                     );
                 },
-                otherObjectTypeID: (_el: asn1.ASN1Element): void => {
-                    otherObjectTypeID = __utils._decodeObjectIdentifier(_el);
+                otherObjectTypeID: (_el: _Element): void => {
+                    otherObjectTypeID = $._decodeObjectIdentifier(_el);
                 },
-                digestAlgorithm: (_el: asn1.ASN1Element): void => {
+                digestAlgorithm: (_el: _Element): void => {
                     digestAlgorithm = _decode_AlgorithmIdentifier(_el);
                 },
-                objectDigest: (_el: asn1.ASN1Element): void => {
-                    objectDigest = __utils._decodeBitString(_el);
+                objectDigest: (_el: _Element): void => {
+                    objectDigest = $._decodeBitString(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_ObjectDigestInfo,
                 _extension_additions_list_spec_for_ObjectDigestInfo,
                 _root_component_type_list_2_spec_for_ObjectDigestInfo,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -438,115 +732,205 @@ export function _decode_ObjectDigestInfo(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ObjectDigestInfo(el);
 }
+/**
+ * @summary Encodes a(n) ObjectDigestInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ObjectDigestInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_ObjectDigestInfo(
     value: ObjectDigestInfo,
-    elGetter: __utils.ASN1Encoder<ObjectDigestInfo>
+    elGetter: $.ASN1Encoder<ObjectDigestInfo>
 ) {
     if (!_cached_encoder_for_ObjectDigestInfo) {
         _cached_encoder_for_ObjectDigestInfo = function (
             value: ObjectDigestInfo,
-            elGetter: __utils.ASN1Encoder<ObjectDigestInfo>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ObjectDigestInfo>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_ObjectDigestInfo_digestedObjectType(
                                 value.digestedObjectType,
-                                __utils.DER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.otherObjectTypeID ===
                             undefined
                                 ? undefined
-                                : __utils._encodeObjectIdentifier(
+                                : $._encodeObjectIdentifier(
                                       value.otherObjectTypeID,
-                                      __utils.DER
+                                      $.BER
                                   ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.digestAlgorithm,
-                                __utils.DER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeBitString(
+                            /* REQUIRED   */ $._encodeBitString(
                                 value.objectDigest,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_ObjectDigestInfo(value, elGetter);
 }
 
+/**
+ * @summary Holder
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Holder ::= SEQUENCE {
+ *   baseCertificateID  [0]  IssuerSerial OPTIONAL,
+ *   entityName         [1]  GeneralNames OPTIONAL,
+ *   objectDigestInfo   [2]  ObjectDigestInfo OPTIONAL }
+ *   (WITH COMPONENTS {..., baseCertificateID  PRESENT } |
+ *    WITH COMPONENTS {..., entityName  PRESENT } |
+ *    WITH COMPONENTS {..., objectDigestInfo  PRESENT } )
+ * ```
+ *
+ * @class
+ */
 export class Holder {
     constructor(
-        readonly baseCertificateID: IssuerSerial | undefined,
-        readonly entityName: GeneralNames | undefined,
-        readonly objectDigestInfo: ObjectDigestInfo | undefined
+        /**
+         * @summary `baseCertificateID`.
+         * @public
+         * @readonly
+         */
+        readonly baseCertificateID: OPTIONAL<IssuerSerial>,
+        /**
+         * @summary `entityName`.
+         * @public
+         * @readonly
+         */
+        readonly entityName: OPTIONAL<GeneralNames>,
+        /**
+         * @summary `objectDigestInfo`.
+         * @public
+         * @readonly
+         */
+        readonly objectDigestInfo: OPTIONAL<ObjectDigestInfo>
     ) {}
+
+    /**
+     * @summary Restructures an object into a Holder
+     * @description
+     *
+     * This takes an `object` and converts it to a `Holder`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `Holder`.
+     * @returns {Holder}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof Holder]: Holder[_K] }>
+    ): Holder {
+        return new Holder(
+            _o.baseCertificateID,
+            _o.entityName,
+            _o.objectDigestInfo
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_Holder: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of Holder
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_Holder: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "baseCertificateID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "entityName",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "objectDigestInfo",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_Holder: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_Holder: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_Holder: __utils.ASN1Decoder<Holder> | null = null;
-let _cached_encoder_for_Holder: __utils.ASN1Encoder<Holder> | null = null;
-export function _decode_Holder(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of Holder
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_Holder: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of Holder
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_Holder: $.ComponentSpec[] = [];
+let _cached_decoder_for_Holder: $.ASN1Decoder<Holder> | null = null;
+let _cached_encoder_for_Holder: $.ASN1Encoder<Holder> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Holder
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Holder} The decoded data structure.
+ */
+export function _decode_Holder(el: _Element) {
     if (!_cached_decoder_for_Holder) {
-        _cached_decoder_for_Holder = function (el: asn1.ASN1Element): Holder {
+        _cached_decoder_for_Holder = function (el: _Element): Holder {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let baseCertificateID: asn1.OPTIONAL<IssuerSerial>;
-            let entityName: asn1.OPTIONAL<GeneralNames>;
-            let objectDigestInfo: asn1.OPTIONAL<ObjectDigestInfo>;
+            let baseCertificateID: OPTIONAL<IssuerSerial>;
+            let entityName: OPTIONAL<GeneralNames>;
+            let objectDigestInfo: OPTIONAL<ObjectDigestInfo>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                baseCertificateID: (_el: asn1.ASN1Element): void => {
-                    baseCertificateID = __utils._decode_implicit<IssuerSerial>(
+            const callbacks: $.DecodingMap = {
+                baseCertificateID: (_el: _Element): void => {
+                    baseCertificateID = $._decode_implicit<IssuerSerial>(
                         () => _decode_IssuerSerial
                     )(_el);
                 },
-                entityName: (_el: asn1.ASN1Element): void => {
-                    entityName = __utils._decode_implicit<GeneralNames>(
+                entityName: (_el: _Element): void => {
+                    entityName = $._decode_implicit<GeneralNames>(
                         () => _decode_GeneralNames
                     )(_el);
                 },
-                objectDigestInfo: (_el: asn1.ASN1Element): void => {
-                    objectDigestInfo = __utils._decode_implicit<
-                        ObjectDigestInfo
-                    >(() => _decode_ObjectDigestInfo)(_el);
+                objectDigestInfo: (_el: _Element): void => {
+                    objectDigestInfo = $._decode_implicit<ObjectDigestInfo>(
+                        () => _decode_ObjectDigestInfo
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_Holder,
@@ -563,129 +947,221 @@ export function _decode_Holder(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_Holder(el);
 }
-export function _encode_Holder(
-    value: Holder,
-    elGetter: __utils.ASN1Encoder<Holder>
-) {
+/**
+ * @summary Encodes a(n) Holder into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Holder, encoded as an ASN.1 Element.
+ */
+export function _encode_Holder(value: Holder, elGetter: $.ASN1Encoder<Holder>) {
     if (!_cached_encoder_for_Holder) {
         _cached_encoder_for_Holder = function (
             value: Holder,
-            elGetter: __utils.ASN1Encoder<Holder>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<Holder>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat([
                         /* IF_ABSENT  */ value.baseCertificateID === undefined
                             ? undefined
-                            : __utils._encode_implicit(
-                                  asn1.ASN1TagClass.context,
+                            : $._encode_implicit(
+                                  _TagClass.context,
                                   0,
                                   () => _encode_IssuerSerial,
-                                  __utils.DER
-                              )(value.baseCertificateID, __utils.DER),
+                                  $.BER
+                              )(value.baseCertificateID, $.BER),
                         /* IF_ABSENT  */ value.entityName === undefined
                             ? undefined
-                            : __utils._encode_implicit(
-                                  asn1.ASN1TagClass.context,
+                            : $._encode_implicit(
+                                  _TagClass.context,
                                   1,
                                   () => _encode_GeneralNames,
-                                  __utils.DER
-                              )(value.entityName, __utils.DER),
+                                  $.BER
+                              )(value.entityName, $.BER),
                         /* IF_ABSENT  */ value.objectDigestInfo === undefined
                             ? undefined
-                            : __utils._encode_implicit(
-                                  asn1.ASN1TagClass.context,
+                            : $._encode_implicit(
+                                  _TagClass.context,
                                   2,
                                   () => _encode_ObjectDigestInfo,
-                                  __utils.DER
-                              )(value.objectDigestInfo, __utils.DER),
+                                  $.BER
+                              )(value.objectDigestInfo, $.BER),
                     ])
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_Holder(value, elGetter);
 }
 
+/**
+ * @summary AttCertIssuer
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttCertIssuer ::= [0]  SEQUENCE {
+ *   issuerName              GeneralNames OPTIONAL,
+ *   baseCertificateID  [0]  IssuerSerial OPTIONAL,
+ *   objectDigestInfo   [1]  ObjectDigestInfo OPTIONAL,
+ *   ... }
+ *   (WITH COMPONENTS {..., issuerName  PRESENT } |
+ *    WITH COMPONENTS {..., baseCertificateID  PRESENT } |
+ *    WITH COMPONENTS {..., objectDigestInfo  PRESENT } )
+ * ```
+ *
+ * @class
+ */
 export class AttCertIssuer {
     constructor(
-        readonly issuerName: GeneralNames | undefined,
-        readonly baseCertificateID: IssuerSerial | undefined,
-        readonly objectDigestInfo: ObjectDigestInfo | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `issuerName`.
+         * @public
+         * @readonly
+         */
+        readonly issuerName: OPTIONAL<GeneralNames>,
+        /**
+         * @summary `baseCertificateID`.
+         * @public
+         * @readonly
+         */
+        readonly baseCertificateID: OPTIONAL<IssuerSerial>,
+        /**
+         * @summary `objectDigestInfo`.
+         * @public
+         * @readonly
+         */
+        readonly objectDigestInfo: OPTIONAL<ObjectDigestInfo>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttCertIssuer
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttCertIssuer`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttCertIssuer`.
+     * @returns {AttCertIssuer}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof AttCertIssuer]: AttCertIssuer[_K] }>
+    ): AttCertIssuer {
+        return new AttCertIssuer(
+            _o.issuerName,
+            _o.baseCertificateID,
+            _o.objectDigestInfo,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttCertIssuer
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttCertIssuer: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "issuerName",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "baseCertificateID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "objectDigestInfo",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttCertIssuer: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttCertIssuer: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttCertIssuer
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttCertIssuer: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttCertIssuer
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttCertIssuer: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttCertIssuer: $.ASN1Decoder<
     AttCertIssuer
 > | null = null;
-let _cached_encoder_for_AttCertIssuer: __utils.ASN1Encoder<
+let _cached_encoder_for_AttCertIssuer: $.ASN1Encoder<
     AttCertIssuer
 > | null = null;
-export function _decode_AttCertIssuer(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttCertIssuer
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttCertIssuer} The decoded data structure.
+ */
+export function _decode_AttCertIssuer(el: _Element) {
     if (!_cached_decoder_for_AttCertIssuer) {
-        _cached_decoder_for_AttCertIssuer = __utils._decode_implicit<
-            AttCertIssuer
-        >(
+        _cached_decoder_for_AttCertIssuer = $._decode_implicit<AttCertIssuer>(
             () =>
-                function (el: asn1.ASN1Element): AttCertIssuer {
+                function (el: _Element): AttCertIssuer {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-                    let issuerName: asn1.OPTIONAL<GeneralNames>;
-                    let baseCertificateID: asn1.OPTIONAL<IssuerSerial>;
-                    let objectDigestInfo: asn1.OPTIONAL<ObjectDigestInfo>;
-                    let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+                    let issuerName: OPTIONAL<GeneralNames>;
+                    let baseCertificateID: OPTIONAL<IssuerSerial>;
+                    let objectDigestInfo: OPTIONAL<ObjectDigestInfo>;
+                    let _unrecognizedExtensionsList: _Element[] = [];
                     /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
                     /* START_OF_CALLBACKS_MAP */
-                    const callbacks: __utils.DecodingMap = {
-                        issuerName: (_el: asn1.ASN1Element): void => {
+                    const callbacks: $.DecodingMap = {
+                        issuerName: (_el: _Element): void => {
                             issuerName = _decode_GeneralNames(_el);
                         },
-                        baseCertificateID: (_el: asn1.ASN1Element): void => {
-                            baseCertificateID = __utils._decode_implicit<
+                        baseCertificateID: (_el: _Element): void => {
+                            baseCertificateID = $._decode_implicit<
                                 IssuerSerial
                             >(() => _decode_IssuerSerial)(_el);
                         },
-                        objectDigestInfo: (_el: asn1.ASN1Element): void => {
-                            objectDigestInfo = __utils._decode_implicit<
+                        objectDigestInfo: (_el: _Element): void => {
+                            objectDigestInfo = $._decode_implicit<
                                 ObjectDigestInfo
                             >(() => _decode_ObjectDigestInfo)(_el);
                         },
                     };
                     /* END_OF_CALLBACKS_MAP */
-                    __utils._parse_sequence(
+                    $._parse_sequence(
                         el,
                         callbacks,
                         _root_component_type_list_1_spec_for_AttCertIssuer,
                         _extension_additions_list_spec_for_AttCertIssuer,
                         _root_component_type_list_2_spec_for_AttCertIssuer,
-                        (ext: asn1.ASN1Element): void => {
+                        (ext: _Element): void => {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
@@ -700,21 +1176,28 @@ export function _decode_AttCertIssuer(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttCertIssuer(el);
 }
+/**
+ * @summary Encodes a(n) AttCertIssuer into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttCertIssuer, encoded as an ASN.1 Element.
+ */
 export function _encode_AttCertIssuer(
     value: AttCertIssuer,
-    elGetter: __utils.ASN1Encoder<AttCertIssuer>
+    elGetter: $.ASN1Encoder<AttCertIssuer>
 ) {
     if (!_cached_encoder_for_AttCertIssuer) {
-        _cached_encoder_for_AttCertIssuer = __utils._encode_implicit(
-            asn1.ASN1TagClass.context,
+        _cached_encoder_for_AttCertIssuer = $._encode_implicit(
+            _TagClass.context,
             0,
             () =>
                 function (
                     value: AttCertIssuer,
-                    elGetter: __utils.ASN1Encoder<AttCertIssuer>
-                ): asn1.ASN1Element {
-                    return __utils._encodeSequence(
-                        ([] as (asn1.ASN1Element | undefined)[])
+                    elGetter: $.ASN1Encoder<AttCertIssuer>
+                ): _Element {
+                    return $._encodeSequence(
+                        ([] as (_Element | undefined)[])
                             .concat(
                                 [
                                     /* IF_ABSENT  */ value.issuerName ===
@@ -722,102 +1205,177 @@ export function _encode_AttCertIssuer(
                                         ? undefined
                                         : _encode_GeneralNames(
                                               value.issuerName,
-                                              __utils.DER
+                                              $.BER
                                           ),
                                     /* IF_ABSENT  */ value.baseCertificateID ===
                                     undefined
                                         ? undefined
-                                        : __utils._encode_implicit(
-                                              asn1.ASN1TagClass.context,
+                                        : $._encode_implicit(
+                                              _TagClass.context,
                                               0,
                                               () => _encode_IssuerSerial,
-                                              __utils.DER
-                                          )(
-                                              value.baseCertificateID,
-                                              __utils.DER
-                                          ),
+                                              $.BER
+                                          )(value.baseCertificateID, $.BER),
                                     /* IF_ABSENT  */ value.objectDigestInfo ===
                                     undefined
                                         ? undefined
-                                        : __utils._encode_implicit(
-                                              asn1.ASN1TagClass.context,
+                                        : $._encode_implicit(
+                                              _TagClass.context,
                                               1,
                                               () => _encode_ObjectDigestInfo,
-                                              __utils.DER
-                                          )(
-                                              value.objectDigestInfo,
-                                              __utils.DER
-                                          ),
+                                              $.BER
+                                          )(value.objectDigestInfo, $.BER),
                                 ],
                                 value._unrecognizedExtensionsList
                                     ? value._unrecognizedExtensionsList
                                     : []
                             )
                             .filter(
-                                (c: asn1.ASN1Element | undefined): boolean =>
-                                    !!c
-                            ) as asn1.ASN1Element[],
-                        __utils.DER
+                                (c: _Element | undefined): c is _Element => !!c
+                            ),
+                        $.BER
                     );
                 },
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_AttCertIssuer(value, elGetter);
 }
 
+/**
+ * @summary AttCertValidityPeriod
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttCertValidityPeriod ::= SEQUENCE {
+ *   notBeforeTime  GeneralizedTime,
+ *   notAfterTime   GeneralizedTime,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class AttCertValidityPeriod {
     constructor(
-        readonly notBeforeTime: asn1.GeneralizedTime,
-        readonly notAfterTime: asn1.GeneralizedTime,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `notBeforeTime`.
+         * @public
+         * @readonly
+         */
+        readonly notBeforeTime: GeneralizedTime,
+        /**
+         * @summary `notAfterTime`.
+         * @public
+         * @readonly
+         */
+        readonly notAfterTime: GeneralizedTime,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttCertValidityPeriod
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttCertValidityPeriod`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttCertValidityPeriod`.
+     * @returns {AttCertValidityPeriod}
+     */
+    public static _from_object(
+        _o: Partial<
+            { [_K in keyof AttCertValidityPeriod]: AttCertValidityPeriod[_K] }
+        >
+    ): AttCertValidityPeriod {
+        return new AttCertValidityPeriod(
+            _o.notBeforeTime,
+            _o.notAfterTime,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttCertValidityPeriod
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttCertValidityPeriod: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "notBeforeTime",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 24),
+        $.hasTag(_TagClass.universal, 24),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "notAfterTime",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 24),
+        $.hasTag(_TagClass.universal, 24),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttCertValidityPeriod: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttCertValidityPeriod: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttCertValidityPeriod
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttCertValidityPeriod: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttCertValidityPeriod
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttCertValidityPeriod: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttCertValidityPeriod: $.ASN1Decoder<
     AttCertValidityPeriod
 > | null = null;
-let _cached_encoder_for_AttCertValidityPeriod: __utils.ASN1Encoder<
+let _cached_encoder_for_AttCertValidityPeriod: $.ASN1Encoder<
     AttCertValidityPeriod
 > | null = null;
-export function _decode_AttCertValidityPeriod(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttCertValidityPeriod
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttCertValidityPeriod} The decoded data structure.
+ */
+export function _decode_AttCertValidityPeriod(el: _Element) {
     if (!_cached_decoder_for_AttCertValidityPeriod) {
         _cached_decoder_for_AttCertValidityPeriod = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttCertValidityPeriod {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "AttCertValidityPeriod contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "notBeforeTime";
             sequence[1].name = "notAfterTime";
-            let notBeforeTime!: asn1.GeneralizedTime;
-            let notAfterTime!: asn1.GeneralizedTime;
-            notBeforeTime = __utils._decodeGeneralizedTime(sequence[0]);
-            notAfterTime = __utils._decodeGeneralizedTime(sequence[1]);
-            // TODO: Validate values.
+            let notBeforeTime!: GeneralizedTime;
+            let notAfterTime!: GeneralizedTime;
+            notBeforeTime = $._decodeGeneralizedTime(sequence[0]);
+            notAfterTime = $._decodeGeneralizedTime(sequence[1]);
             return new AttCertValidityPeriod(
                 notBeforeTime,
                 notAfterTime,
@@ -827,134 +1385,276 @@ export function _decode_AttCertValidityPeriod(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttCertValidityPeriod(el);
 }
+/**
+ * @summary Encodes a(n) AttCertValidityPeriod into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttCertValidityPeriod, encoded as an ASN.1 Element.
+ */
 export function _encode_AttCertValidityPeriod(
     value: AttCertValidityPeriod,
-    elGetter: __utils.ASN1Encoder<AttCertValidityPeriod>
+    elGetter: $.ASN1Encoder<AttCertValidityPeriod>
 ) {
     if (!_cached_encoder_for_AttCertValidityPeriod) {
         _cached_encoder_for_AttCertValidityPeriod = function (
             value: AttCertValidityPeriod,
-            elGetter: __utils.ASN1Encoder<AttCertValidityPeriod>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttCertValidityPeriod>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encodeGeneralizedTime(
+                            /* REQUIRED   */ $._encodeGeneralizedTime(
                                 value.notBeforeTime,
-                                __utils.DER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeGeneralizedTime(
+                            /* REQUIRED   */ $._encodeGeneralizedTime(
                                 value.notAfterTime,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_AttCertValidityPeriod(value, elGetter);
 }
 
+/**
+ * @summary TBSAttributeCertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TBSAttributeCertificate ::= SEQUENCE {
+ *   version                 AttCertVersion, -- version is v2
+ *   holder                  Holder,
+ *   issuer                  AttCertIssuer,
+ *   signature               AlgorithmIdentifier{{SupportedAlgorithms}},
+ *   serialNumber            CertificateSerialNumber,
+ *   attrCertValidityPeriod  AttCertValidityPeriod,
+ *   attributes              SEQUENCE OF Attribute{{SupportedAttributes}},
+ *   issuerUniqueID          UniqueIdentifier OPTIONAL,
+ *   ...,
+ *   ...,
+ *   extensions              Extensions OPTIONAL
+ *  }  (CONSTRAINED BY { -- shall be DER encoded -- } )
+ * ```
+ *
+ * @class
+ */
 export class TBSAttributeCertificate {
     constructor(
+        /**
+         * @summary `version`.
+         * @public
+         * @readonly
+         */
         readonly version: AttCertVersion,
+        /**
+         * @summary `holder`.
+         * @public
+         * @readonly
+         */
         readonly holder: Holder,
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
         readonly issuer: AttCertIssuer,
+        /**
+         * @summary `signature`.
+         * @public
+         * @readonly
+         */
         readonly signature: AlgorithmIdentifier,
+        /**
+         * @summary `serialNumber`.
+         * @public
+         * @readonly
+         */
         readonly serialNumber: CertificateSerialNumber,
+        /**
+         * @summary `attrCertValidityPeriod`.
+         * @public
+         * @readonly
+         */
         readonly attrCertValidityPeriod: AttCertValidityPeriod,
+        /**
+         * @summary `attributes`.
+         * @public
+         * @readonly
+         */
         readonly attributes: Attribute[],
-        readonly issuerUniqueID: UniqueIdentifier | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = [],
-        readonly extensions: Extensions | undefined
+        /**
+         * @summary `issuerUniqueID`.
+         * @public
+         * @readonly
+         */
+        readonly issuerUniqueID: OPTIONAL<UniqueIdentifier>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `extensions`.
+         * @public
+         * @readonly
+         */
+        readonly extensions: OPTIONAL<Extensions>
     ) {}
+
+    /**
+     * @summary Restructures an object into a TBSAttributeCertificate
+     * @description
+     *
+     * This takes an `object` and converts it to a `TBSAttributeCertificate`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `TBSAttributeCertificate`.
+     * @returns {TBSAttributeCertificate}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof TBSAttributeCertificate]: TBSAttributeCertificate[_K];
+            }
+        >
+    ): TBSAttributeCertificate {
+        return new TBSAttributeCertificate(
+            _o.version,
+            _o.holder,
+            _o.issuer,
+            _o.signature,
+            _o.serialNumber,
+            _o.attrCertValidityPeriod,
+            _o.attributes,
+            _o.issuerUniqueID,
+            _o._unrecognizedExtensionsList,
+            _o.extensions
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_TBSAttributeCertificate: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of TBSAttributeCertificate
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_TBSAttributeCertificate: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "version",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "holder",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuer",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "signature",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "serialNumber",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attrCertValidityPeriod",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attributes",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuerUniqueID",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_TBSAttributeCertificate: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Trailing Root Component Types of TBSAttributeCertificate
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_TBSAttributeCertificate: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "extensions",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _extension_additions_list_spec_for_TBSAttributeCertificate: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_TBSAttributeCertificate: __utils.ASN1Decoder<
+/**
+ * @summary The Extension Addition Component Types of TBSAttributeCertificate
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_TBSAttributeCertificate: $.ComponentSpec[] = [];
+let _cached_decoder_for_TBSAttributeCertificate: $.ASN1Decoder<
     TBSAttributeCertificate
 > | null = null;
-let _cached_encoder_for_TBSAttributeCertificate: __utils.ASN1Encoder<
+let _cached_encoder_for_TBSAttributeCertificate: $.ASN1Encoder<
     TBSAttributeCertificate
 > | null = null;
-export function _decode_TBSAttributeCertificate(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) TBSAttributeCertificate
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TBSAttributeCertificate} The decoded data structure.
+ */
+export function _decode_TBSAttributeCertificate(el: _Element) {
     if (!_cached_decoder_for_TBSAttributeCertificate) {
         _cached_decoder_for_TBSAttributeCertificate = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): TBSAttributeCertificate {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let version!: AttCertVersion;
@@ -964,50 +1664,50 @@ export function _decode_TBSAttributeCertificate(el: asn1.ASN1Element) {
             let serialNumber!: CertificateSerialNumber;
             let attrCertValidityPeriod!: AttCertValidityPeriod;
             let attributes!: Attribute[];
-            let issuerUniqueID: asn1.OPTIONAL<UniqueIdentifier>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
-            let extensions: asn1.OPTIONAL<Extensions>;
+            let issuerUniqueID: OPTIONAL<UniqueIdentifier>;
+            let _unrecognizedExtensionsList: _Element[] = [];
+            let extensions: OPTIONAL<Extensions>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                version: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                version: (_el: _Element): void => {
                     version = _decode_AttCertVersion(_el);
                 },
-                holder: (_el: asn1.ASN1Element): void => {
+                holder: (_el: _Element): void => {
                     holder = _decode_Holder(_el);
                 },
-                issuer: (_el: asn1.ASN1Element): void => {
+                issuer: (_el: _Element): void => {
                     issuer = _decode_AttCertIssuer(_el);
                 },
-                signature: (_el: asn1.ASN1Element): void => {
+                signature: (_el: _Element): void => {
                     signature = _decode_AlgorithmIdentifier(_el);
                 },
-                serialNumber: (_el: asn1.ASN1Element): void => {
+                serialNumber: (_el: _Element): void => {
                     serialNumber = _decode_CertificateSerialNumber(_el);
                 },
-                attrCertValidityPeriod: (_el: asn1.ASN1Element): void => {
+                attrCertValidityPeriod: (_el: _Element): void => {
                     attrCertValidityPeriod = _decode_AttCertValidityPeriod(_el);
                 },
-                attributes: (_el: asn1.ASN1Element): void => {
-                    attributes = __utils._decodeSequenceOf<Attribute>(
+                attributes: (_el: _Element): void => {
+                    attributes = $._decodeSequenceOf<Attribute>(
                         () => _decode_Attribute
                     )(_el);
                 },
-                issuerUniqueID: (_el: asn1.ASN1Element): void => {
+                issuerUniqueID: (_el: _Element): void => {
                     issuerUniqueID = _decode_UniqueIdentifier(_el);
                 },
-                extensions: (_el: asn1.ASN1Element): void => {
+                extensions: (_el: _Element): void => {
                     extensions = _decode_Extensions(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_TBSAttributeCertificate,
                 _extension_additions_list_spec_for_TBSAttributeCertificate,
                 _root_component_type_list_2_spec_for_TBSAttributeCertificate,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1027,54 +1727,59 @@ export function _decode_TBSAttributeCertificate(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_TBSAttributeCertificate(el);
 }
+/**
+ * @summary Encodes a(n) TBSAttributeCertificate into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TBSAttributeCertificate, encoded as an ASN.1 Element.
+ */
 export function _encode_TBSAttributeCertificate(
     value: TBSAttributeCertificate,
-    elGetter: __utils.ASN1Encoder<TBSAttributeCertificate>
+    elGetter: $.ASN1Encoder<TBSAttributeCertificate>
 ) {
     if (!_cached_encoder_for_TBSAttributeCertificate) {
         _cached_encoder_for_TBSAttributeCertificate = function (
             value: TBSAttributeCertificate,
-            elGetter: __utils.ASN1Encoder<TBSAttributeCertificate>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<TBSAttributeCertificate>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttCertVersion(
                                 value.version,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_Holder(
                                 value.holder,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.issuer,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AttCertValidityPeriod(
                                 value.attrCertValidityPeriod,
-                                __utils.DER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeSequenceOf<
-                                Attribute
-                            >(() => _encode_Attribute, __utils.DER)(
-                                value.attributes,
-                                __utils.DER
-                            ),
+                            /* REQUIRED   */ $._encodeSequenceOf<Attribute>(
+                                () => _encode_Attribute,
+                                $.BER
+                            )(value.attributes, $.BER),
                             /* IF_ABSENT  */ value.issuerUniqueID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUniqueID,
-                                      __utils.DER
+                                      $.BER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -1083,30 +1788,31 @@ export function _encode_TBSAttributeCertificate(
                         [
                             /* IF_ABSENT  */ value.extensions === undefined
                                 ? undefined
-                                : _encode_Extensions(
-                                      value.extensions,
-                                      __utils.DER
-                                  ),
+                                : _encode_Extensions(value.extensions, $.BER),
                         ]
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_TBSAttributeCertificate(value, elGetter);
 }
 
-export type AttributeCertificate = SIGNED<TBSAttributeCertificate>; // DefinedType
-let _cached_decoder_for_AttributeCertificate: __utils.ASN1Decoder<
+export type AttributeCertificate<> = SIGNED<TBSAttributeCertificate>; // DefinedType
+let _cached_decoder_for_AttributeCertificate: $.ASN1Decoder<
     AttributeCertificate
 > | null = null;
-let _cached_encoder_for_AttributeCertificate: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificate: $.ASN1Encoder<
     AttributeCertificate
 > | null = null;
-export function _decode_AttributeCertificate(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificate
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificate} The decoded data structure.
+ */
+export function _decode_AttributeCertificate(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificate) {
         _cached_decoder_for_AttributeCertificate = _get_decoder_for_SIGNED<
             TBSAttributeCertificate
@@ -1114,9 +1820,16 @@ export function _decode_AttributeCertificate(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttributeCertificate(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificate into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificate, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificate(
     value: AttributeCertificate,
-    elGetter: __utils.ASN1Encoder<AttributeCertificate>
+    elGetter: $.ASN1Encoder<AttributeCertificate>
 ) {
     if (!_cached_encoder_for_AttributeCertificate) {
         _cached_encoder_for_AttributeCertificate = _get_encoder_for_SIGNED<
@@ -1126,68 +1839,144 @@ export function _encode_AttributeCertificate(
     return _cached_encoder_for_AttributeCertificate(value, elGetter);
 }
 
+/**
+ * @summary ACPathData
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * ACPathData ::= SEQUENCE {
+ *   certificate           [0]  Certificate OPTIONAL,
+ *   attributeCertificate  [1]  AttributeCertificate OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class ACPathData {
     constructor(
-        readonly certificate: Certificate | undefined,
-        readonly attributeCertificate: AttributeCertificate | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `certificate`.
+         * @public
+         * @readonly
+         */
+        readonly certificate: OPTIONAL<Certificate>,
+        /**
+         * @summary `attributeCertificate`.
+         * @public
+         * @readonly
+         */
+        readonly attributeCertificate: OPTIONAL<AttributeCertificate>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a ACPathData
+     * @description
+     *
+     * This takes an `object` and converts it to a `ACPathData`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `ACPathData`.
+     * @returns {ACPathData}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof ACPathData]: ACPathData[_K] }>
+    ): ACPathData {
+        return new ACPathData(
+            _o.certificate,
+            _o.attributeCertificate,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_ACPathData: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of ACPathData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_ACPathData: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "certificate",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attributeCertificate",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_ACPathData: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_ACPathData: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_ACPathData: __utils.ASN1Decoder<
-    ACPathData
-> | null = null;
-let _cached_encoder_for_ACPathData: __utils.ASN1Encoder<
-    ACPathData
-> | null = null;
-export function _decode_ACPathData(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of ACPathData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_ACPathData: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of ACPathData
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_ACPathData: $.ComponentSpec[] = [];
+let _cached_decoder_for_ACPathData: $.ASN1Decoder<ACPathData> | null = null;
+let _cached_encoder_for_ACPathData: $.ASN1Encoder<ACPathData> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) ACPathData
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {ACPathData} The decoded data structure.
+ */
+export function _decode_ACPathData(el: _Element) {
     if (!_cached_decoder_for_ACPathData) {
-        _cached_decoder_for_ACPathData = function (
-            el: asn1.ASN1Element
-        ): ACPathData {
+        _cached_decoder_for_ACPathData = function (el: _Element): ACPathData {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let certificate: asn1.OPTIONAL<Certificate>;
-            let attributeCertificate: asn1.OPTIONAL<AttributeCertificate>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let certificate: OPTIONAL<Certificate>;
+            let attributeCertificate: OPTIONAL<AttributeCertificate>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                certificate: (_el: asn1.ASN1Element): void => {
-                    certificate = __utils._decode_implicit<Certificate>(
+            const callbacks: $.DecodingMap = {
+                certificate: (_el: _Element): void => {
+                    certificate = $._decode_implicit<Certificate>(
                         () => _decode_Certificate
                     )(_el);
                 },
-                attributeCertificate: (_el: asn1.ASN1Element): void => {
-                    attributeCertificate = __utils._decode_implicit<
+                attributeCertificate: (_el: _Element): void => {
+                    attributeCertificate = $._decode_implicit<
                         AttributeCertificate
                     >(() => _decode_AttributeCertificate)(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_ACPathData,
                 _extension_additions_list_spec_for_ACPathData,
                 _root_component_type_list_2_spec_for_ACPathData,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1200,111 +1989,202 @@ export function _decode_ACPathData(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_ACPathData(el);
 }
+/**
+ * @summary Encodes a(n) ACPathData into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The ACPathData, encoded as an ASN.1 Element.
+ */
 export function _encode_ACPathData(
     value: ACPathData,
-    elGetter: __utils.ASN1Encoder<ACPathData>
+    elGetter: $.ASN1Encoder<ACPathData>
 ) {
     if (!_cached_encoder_for_ACPathData) {
         _cached_encoder_for_ACPathData = function (
             value: ACPathData,
-            elGetter: __utils.ASN1Encoder<ACPathData>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<ACPathData>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.certificate === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_Certificate,
-                                      __utils.DER
-                                  )(value.certificate, __utils.DER),
+                                      $.BER
+                                  )(value.certificate, $.BER),
                             /* IF_ABSENT  */ value.attributeCertificate ===
                             undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_AttributeCertificate,
-                                      __utils.DER
-                                  )(value.attributeCertificate, __utils.DER),
+                                      $.BER
+                                  )(value.attributeCertificate, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_ACPathData(value, elGetter);
 }
 
+/**
+ * @summary AttributeCertificationPath
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeCertificationPath ::= SEQUENCE {
+ *   attributeCertificate  AttributeCertificate,
+ *   acPath                SEQUENCE OF ACPathData OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class AttributeCertificationPath {
     constructor(
+        /**
+         * @summary `attributeCertificate`.
+         * @public
+         * @readonly
+         */
         readonly attributeCertificate: AttributeCertificate,
-        readonly acPath: ACPathData[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `acPath`.
+         * @public
+         * @readonly
+         */
+        readonly acPath: OPTIONAL<ACPathData[]>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeCertificationPath
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeCertificationPath`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeCertificationPath`.
+     * @returns {AttributeCertificationPath}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeCertificationPath]: AttributeCertificationPath[_K];
+            }
+        >
+    ): AttributeCertificationPath {
+        return new AttributeCertificationPath(
+            _o.attributeCertificate,
+            _o.acPath,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeCertificationPath
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeCertificationPath: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "attributeCertificate",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "acPath",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeCertificationPath: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeCertificationPath: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeCertificationPath
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeCertificationPath: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeCertificationPath
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeCertificationPath: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeCertificationPath: $.ASN1Decoder<
     AttributeCertificationPath
 > | null = null;
-let _cached_encoder_for_AttributeCertificationPath: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificationPath: $.ASN1Encoder<
     AttributeCertificationPath
 > | null = null;
-export function _decode_AttributeCertificationPath(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificationPath
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificationPath} The decoded data structure.
+ */
+export function _decode_AttributeCertificationPath(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificationPath) {
         _cached_decoder_for_AttributeCertificationPath = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeCertificationPath {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let attributeCertificate!: AttributeCertificate;
-            let acPath: asn1.OPTIONAL<ACPathData[]>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let acPath: OPTIONAL<ACPathData[]>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                attributeCertificate: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                attributeCertificate: (_el: _Element): void => {
                     attributeCertificate = _decode_AttributeCertificate(_el);
                 },
-                acPath: (_el: asn1.ASN1Element): void => {
-                    acPath = __utils._decodeSequenceOf<ACPathData>(
+                acPath: (_el: _Element): void => {
+                    acPath = $._decodeSequenceOf<ACPathData>(
                         () => _decode_ACPathData
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_AttributeCertificationPath,
                 _extension_additions_list_spec_for_AttributeCertificationPath,
                 _root_component_type_list_2_spec_for_AttributeCertificationPath,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1317,108 +2197,187 @@ export function _decode_AttributeCertificationPath(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttributeCertificationPath(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificationPath into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificationPath, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificationPath(
     value: AttributeCertificationPath,
-    elGetter: __utils.ASN1Encoder<AttributeCertificationPath>
+    elGetter: $.ASN1Encoder<AttributeCertificationPath>
 ) {
     if (!_cached_encoder_for_AttributeCertificationPath) {
         _cached_encoder_for_AttributeCertificationPath = function (
             value: AttributeCertificationPath,
-            elGetter: __utils.ASN1Encoder<AttributeCertificationPath>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeCertificationPath>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttributeCertificate(
                                 value.attributeCertificate,
-                                __utils.DER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.acPath === undefined
                                 ? undefined
-                                : __utils._encodeSequenceOf<ACPathData>(
+                                : $._encodeSequenceOf<ACPathData>(
                                       () => _encode_ACPathData,
-                                      __utils.DER
-                                  )(value.acPath, __utils.DER),
+                                      $.BER
+                                  )(value.acPath, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_AttributeCertificationPath(value, elGetter);
 }
 
-// TODO: ObjectAssignment: role
-
+/**
+ * @summary RoleSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * RoleSyntax ::= SEQUENCE {
+ *   roleAuthority  [0]  GeneralNames OPTIONAL,
+ *   roleName       [1]  GeneralName,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class RoleSyntax {
     constructor(
-        readonly roleAuthority: GeneralNames | undefined,
+        /**
+         * @summary `roleAuthority`.
+         * @public
+         * @readonly
+         */
+        readonly roleAuthority: OPTIONAL<GeneralNames>,
+        /**
+         * @summary `roleName`.
+         * @public
+         * @readonly
+         */
         readonly roleName: GeneralName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a RoleSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `RoleSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `RoleSyntax`.
+     * @returns {RoleSyntax}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof RoleSyntax]: RoleSyntax[_K] }>
+    ): RoleSyntax {
+        return new RoleSyntax(
+            _o.roleAuthority,
+            _o.roleName,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_RoleSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of RoleSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_RoleSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "roleAuthority",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "roleName",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_RoleSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_RoleSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_RoleSyntax: __utils.ASN1Decoder<
-    RoleSyntax
-> | null = null;
-let _cached_encoder_for_RoleSyntax: __utils.ASN1Encoder<
-    RoleSyntax
-> | null = null;
-export function _decode_RoleSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of RoleSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_RoleSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of RoleSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_RoleSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_RoleSyntax: $.ASN1Decoder<RoleSyntax> | null = null;
+let _cached_encoder_for_RoleSyntax: $.ASN1Encoder<RoleSyntax> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) RoleSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {RoleSyntax} The decoded data structure.
+ */
+export function _decode_RoleSyntax(el: _Element) {
     if (!_cached_decoder_for_RoleSyntax) {
-        _cached_decoder_for_RoleSyntax = function (
-            el: asn1.ASN1Element
-        ): RoleSyntax {
+        _cached_decoder_for_RoleSyntax = function (el: _Element): RoleSyntax {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let roleAuthority: asn1.OPTIONAL<GeneralNames>;
+            let roleAuthority: OPTIONAL<GeneralNames>;
             let roleName!: GeneralName;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                roleAuthority: (_el: asn1.ASN1Element): void => {
-                    roleAuthority = __utils._decode_implicit<GeneralNames>(
+            const callbacks: $.DecodingMap = {
+                roleAuthority: (_el: _Element): void => {
+                    roleAuthority = $._decode_implicit<GeneralNames>(
                         () => _decode_GeneralNames
                     )(_el);
                 },
-                roleName: (_el: asn1.ASN1Element): void => {
-                    roleName = __utils._decode_implicit<GeneralName>(
+                roleName: (_el: _Element): void => {
+                    roleName = $._decode_implicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_RoleSyntax,
                 _extension_additions_list_spec_for_RoleSyntax,
                 _root_component_type_list_2_spec_for_RoleSyntax,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1431,223 +2390,646 @@ export function _decode_RoleSyntax(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_RoleSyntax(el);
 }
+/**
+ * @summary Encodes a(n) RoleSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The RoleSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_RoleSyntax(
     value: RoleSyntax,
-    elGetter: __utils.ASN1Encoder<RoleSyntax>
+    elGetter: $.ASN1Encoder<RoleSyntax>
 ) {
     if (!_cached_encoder_for_RoleSyntax) {
         _cached_encoder_for_RoleSyntax = function (
             value: RoleSyntax,
-            elGetter: __utils.ASN1Encoder<RoleSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<RoleSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.roleAuthority === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_GeneralNames,
-                                      __utils.DER
-                                  )(value.roleAuthority, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                      $.BER
+                                  )(value.roleAuthority, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.DER
-                            )(value.roleName, __utils.DER),
+                                $.BER
+                            )(value.roleName, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_RoleSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: xmlPrivilegeInfo
+/**
+ * @summary id_at_role
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-role                               OBJECT IDENTIFIER ::= {id-at 72}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_role: OBJECT_IDENTIFIER = new _OID([72], id_at);
 
-// TODO: ObjectAssignment: permission
+/**
+ * @summary role
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * role ATTRIBUTE ::= {
+ *   WITH SYNTAX  RoleSyntax
+ *   ID           id-at-role }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const role: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_RoleSyntax,
+    },
+    encoderFor: {
+        "&Type": _encode_RoleSyntax,
+    },
+    "&id": id_at_role /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
+/**
+ * @summary id_at_xMLPrivilegeInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-xMLPrivilegeInfo                   OBJECT IDENTIFIER ::= {id-at 75}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_xMLPrivilegeInfo: OBJECT_IDENTIFIER = new _OID([75], id_at);
+
+/**
+ * @summary xmlPrivilegeInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * xmlPrivilegeInfo ATTRIBUTE ::= {
+ *   WITH SYNTAX  UTF8String --contains XML-encoded privilege information
+ *   ID           id-at-xMLPrivilegeInfo }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const xmlPrivilegeInfo: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": $._decodeUTF8String,
+    },
+    encoderFor: {
+        "&Type": $._encodeUTF8String,
+    },
+    "&id": id_at_xMLPrivilegeInfo /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary DualStringSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * DualStringSyntax ::= SEQUENCE {
+ *   operation  [0]  UnboundedDirectoryString,
+ *   object     [1]  UnboundedDirectoryString,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class DualStringSyntax {
     constructor(
+        /**
+         * @summary `operation`.
+         * @public
+         * @readonly
+         */
         readonly operation: UnboundedDirectoryString,
+        /**
+         * @summary `object`.
+         * @public
+         * @readonly
+         */
         readonly object: UnboundedDirectoryString,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a DualStringSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `DualStringSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `DualStringSyntax`.
+     * @returns {DualStringSyntax}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof DualStringSyntax]: DualStringSyntax[_K] }>
+    ): DualStringSyntax {
+        return new DualStringSyntax(
+            _o.operation,
+            _o.object,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of DualStringSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_DualStringSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "operation",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "object",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_DualStringSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_DualStringSyntax: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of DualStringSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_DualStringSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of DualStringSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_DualStringSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_DualStringSyntax: $.ASN1Decoder<
     DualStringSyntax
 > | null = null;
-let _cached_encoder_for_DualStringSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_DualStringSyntax: $.ASN1Encoder<
     DualStringSyntax
 > | null = null;
-export function _decode_DualStringSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) DualStringSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {DualStringSyntax} The decoded data structure.
+ */
+export function _decode_DualStringSyntax(el: _Element) {
     if (!_cached_decoder_for_DualStringSyntax) {
         _cached_decoder_for_DualStringSyntax = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): DualStringSyntax {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "DualStringSyntax contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "operation";
             sequence[1].name = "object";
             let operation!: UnboundedDirectoryString;
             let object!: UnboundedDirectoryString;
-            operation = __utils._decode_implicit<UnboundedDirectoryString>(
+            operation = $._decode_implicit<UnboundedDirectoryString>(
                 () => _decode_UnboundedDirectoryString
             )(sequence[0]);
-            object = __utils._decode_implicit<UnboundedDirectoryString>(
+            object = $._decode_implicit<UnboundedDirectoryString>(
                 () => _decode_UnboundedDirectoryString
             )(sequence[1]);
-            // TODO: Validate values.
             return new DualStringSyntax(operation, object, sequence.slice(2));
         };
     }
     return _cached_decoder_for_DualStringSyntax(el);
 }
+/**
+ * @summary Encodes a(n) DualStringSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The DualStringSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_DualStringSyntax(
     value: DualStringSyntax,
-    elGetter: __utils.ASN1Encoder<DualStringSyntax>
+    elGetter: $.ASN1Encoder<DualStringSyntax>
 ) {
     if (!_cached_encoder_for_DualStringSyntax) {
         _cached_encoder_for_DualStringSyntax = function (
             value: DualStringSyntax,
-            elGetter: __utils.ASN1Encoder<DualStringSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<DualStringSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_UnboundedDirectoryString,
-                                __utils.DER
-                            )(value.operation, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                $.BER
+                            )(value.operation, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_UnboundedDirectoryString,
-                                __utils.DER
-                            )(value.object, __utils.DER),
+                                $.BER
+                            )(value.object, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_DualStringSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: dualStringMatch
+/**
+ * @summary id_mr_dualStringMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-dualStringMatch                    OBJECT IDENTIFIER ::= {id-mr 69}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_dualStringMatch: OBJECT_IDENTIFIER = new _OID([69], id_mr);
 
-// TODO: ObjectAssignment: timeSpecification
+/**
+ * @summary dualStringMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * dualStringMatch MATCHING-RULE ::= {
+ *   SYNTAX  DualStringSyntax
+ *   ID      id-mr-dualStringMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const dualStringMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_DualStringSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_DualStringSyntax,
+    },
+    "&id": id_mr_dualStringMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: timeSpecificationMatch
+/**
+ * @summary id_at_permission
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-permission                         OBJECT IDENTIFIER ::= {id-at 82}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_permission: OBJECT_IDENTIFIER = new _OID([82], id_at);
 
-// TODO: ObjectAssignment: targetingInformation
+/**
+ * @summary permission
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * permission ATTRIBUTE ::= {
+ *   WITH SYNTAX             DualStringSyntax
+ *   EQUALITY MATCHING RULE  dualStringMatch
+ *   ID                      id-at-permission }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const permission: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_DualStringSyntax,
+    },
+    encoderFor: {
+        "&Type": _encode_DualStringSyntax,
+    },
+    "&equality-match": dualStringMatch /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_permission /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
+/**
+ * @summary id_ce_timeSpecification
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-timeSpecification                  OBJECT IDENTIFIER ::= {id-ce 43}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_timeSpecification: OBJECT_IDENTIFIER = new _OID([43], id_ce);
+
+/**
+ * @summary timeSpecification
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * timeSpecification EXTENSION ::= {
+ *   SYNTAX         TimeSpecification
+ *   IDENTIFIED BY  id-ce-timeSpecification }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const timeSpecification: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_TimeSpecification,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_TimeSpecification,
+    },
+    "&id": id_ce_timeSpecification /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_mr_timeSpecMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-timeSpecMatch                      OBJECT IDENTIFIER ::= {id-mr 57}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_timeSpecMatch: OBJECT_IDENTIFIER = new _OID([57], id_mr);
+
+/**
+ * @summary timeSpecificationMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * timeSpecificationMatch MATCHING-RULE ::= {
+ *   SYNTAX  TimeSpecification
+ *   ID      id-mr-timeSpecMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const timeSpecificationMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_TimeSpecification,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_TimeSpecification,
+    },
+    "&id": id_mr_timeSpecMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary TargetCert
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TargetCert ::= SEQUENCE {
+ *   targetCertificate  IssuerSerial,
+ *   targetName         GeneralName OPTIONAL,
+ *   certDigestInfo     ObjectDigestInfo OPTIONAL }
+ * ```
+ *
+ * @class
+ */
 export class TargetCert {
     constructor(
+        /**
+         * @summary `targetCertificate`.
+         * @public
+         * @readonly
+         */
         readonly targetCertificate: IssuerSerial,
-        readonly targetName: GeneralName | undefined,
-        readonly certDigestInfo: ObjectDigestInfo | undefined
+        /**
+         * @summary `targetName`.
+         * @public
+         * @readonly
+         */
+        readonly targetName: OPTIONAL<GeneralName>,
+        /**
+         * @summary `certDigestInfo`.
+         * @public
+         * @readonly
+         */
+        readonly certDigestInfo: OPTIONAL<ObjectDigestInfo>
     ) {}
+
+    /**
+     * @summary Restructures an object into a TargetCert
+     * @description
+     *
+     * This takes an `object` and converts it to a `TargetCert`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `TargetCert`.
+     * @returns {TargetCert}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof TargetCert]: TargetCert[_K] }>
+    ): TargetCert {
+        return new TargetCert(
+            _o.targetCertificate,
+            _o.targetName,
+            _o.certDigestInfo
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_TargetCert: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of TargetCert
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_TargetCert: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "targetCertificate",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "targetName",
-        true,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec("targetName", true, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
         "certDigestInfo",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_TargetCert: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_TargetCert: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_TargetCert: __utils.ASN1Decoder<
-    TargetCert
-> | null = null;
-let _cached_encoder_for_TargetCert: __utils.ASN1Encoder<
-    TargetCert
-> | null = null;
-export function _decode_TargetCert(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of TargetCert
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_TargetCert: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of TargetCert
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_TargetCert: $.ComponentSpec[] = [];
+let _cached_decoder_for_TargetCert: $.ASN1Decoder<TargetCert> | null = null;
+let _cached_encoder_for_TargetCert: $.ASN1Encoder<TargetCert> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) TargetCert
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TargetCert} The decoded data structure.
+ */
+export function _decode_TargetCert(el: _Element) {
     if (!_cached_decoder_for_TargetCert) {
-        _cached_decoder_for_TargetCert = function (
-            el: asn1.ASN1Element
-        ): TargetCert {
+        _cached_decoder_for_TargetCert = function (el: _Element): TargetCert {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let targetCertificate!: IssuerSerial;
-            let targetName: asn1.OPTIONAL<GeneralName>;
-            let certDigestInfo: asn1.OPTIONAL<ObjectDigestInfo>;
+            let targetName: OPTIONAL<GeneralName>;
+            let certDigestInfo: OPTIONAL<ObjectDigestInfo>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                targetCertificate: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                targetCertificate: (_el: _Element): void => {
                     targetCertificate = _decode_IssuerSerial(_el);
                 },
-                targetName: (_el: asn1.ASN1Element): void => {
+                targetName: (_el: _Element): void => {
                     targetName = _decode_GeneralName(_el);
                 },
-                certDigestInfo: (_el: asn1.ASN1Element): void => {
+                certDigestInfo: (_el: _Element): void => {
                     certDigestInfo = _decode_ObjectDigestInfo(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_TargetCert,
@@ -1664,183 +3046,718 @@ export function _decode_TargetCert(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_TargetCert(el);
 }
+/**
+ * @summary Encodes a(n) TargetCert into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TargetCert, encoded as an ASN.1 Element.
+ */
 export function _encode_TargetCert(
     value: TargetCert,
-    elGetter: __utils.ASN1Encoder<TargetCert>
+    elGetter: $.ASN1Encoder<TargetCert>
 ) {
     if (!_cached_encoder_for_TargetCert) {
         _cached_encoder_for_TargetCert = function (
             value: TargetCert,
-            elGetter: __utils.ASN1Encoder<TargetCert>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<TargetCert>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat([
                         /* REQUIRED   */ _encode_IssuerSerial(
                             value.targetCertificate,
-                            __utils.DER
+                            $.BER
                         ),
                         /* IF_ABSENT  */ value.targetName === undefined
                             ? undefined
-                            : _encode_GeneralName(
-                                  value.targetName,
-                                  __utils.DER
-                              ),
+                            : _encode_GeneralName(value.targetName, $.BER),
                         /* IF_ABSENT  */ value.certDigestInfo === undefined
                             ? undefined
                             : _encode_ObjectDigestInfo(
                                   value.certDigestInfo,
-                                  __utils.DER
+                                  $.BER
                               ),
                     ])
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_TargetCert(value, elGetter);
 }
 
+/**
+ * @summary Target
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * Target  ::=  CHOICE {
+ *   targetName   [0]  GeneralName,
+ *   targetGroup  [1]  GeneralName,
+ *   targetCert   [2]  TargetCert,
+ *   ... }
+ * ```
+ */
 export type Target =
     | { targetName: GeneralName } /* CHOICE_ALT_ROOT */
     | { targetGroup: GeneralName } /* CHOICE_ALT_ROOT */
     | { targetCert: TargetCert } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_Target: __utils.ASN1Decoder<Target> | null = null;
-let _cached_encoder_for_Target: __utils.ASN1Encoder<Target> | null = null;
-export function _decode_Target(el: asn1.ASN1Element) {
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_Target: $.ASN1Decoder<Target> | null = null;
+let _cached_encoder_for_Target: $.ASN1Encoder<Target> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Target
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Target} The decoded data structure.
+ */
+export function _decode_Target(el: _Element) {
     if (!_cached_decoder_for_Target) {
-        _cached_decoder_for_Target = __utils._decode_extensible_choice<Target>({
+        _cached_decoder_for_Target = $._decode_extensible_choice<Target>({
             "CONTEXT 0": [
                 "targetName",
-                __utils._decode_implicit<GeneralName>(
-                    () => _decode_GeneralName
-                ),
+                $._decode_implicit<GeneralName>(() => _decode_GeneralName),
             ],
             "CONTEXT 1": [
                 "targetGroup",
-                __utils._decode_implicit<GeneralName>(
-                    () => _decode_GeneralName
-                ),
+                $._decode_implicit<GeneralName>(() => _decode_GeneralName),
             ],
             "CONTEXT 2": [
                 "targetCert",
-                __utils._decode_implicit<TargetCert>(() => _decode_TargetCert),
+                $._decode_implicit<TargetCert>(() => _decode_TargetCert),
             ],
         });
     }
     return _cached_decoder_for_Target(el);
 }
-export function _encode_Target(
-    value: Target,
-    elGetter: __utils.ASN1Encoder<Target>
-) {
+/**
+ * @summary Encodes a(n) Target into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Target, encoded as an ASN.1 Element.
+ */
+export function _encode_Target(value: Target, elGetter: $.ASN1Encoder<Target>) {
     if (!_cached_encoder_for_Target) {
-        _cached_encoder_for_Target = __utils._encode_choice<Target>(
+        _cached_encoder_for_Target = $._encode_choice<Target>(
             {
-                targetName: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                targetName: $._encode_implicit(
+                    _TagClass.context,
                     0,
                     () => _encode_GeneralName,
-                    __utils.DER
+                    $.BER
                 ),
-                targetGroup: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                targetGroup: $._encode_implicit(
+                    _TagClass.context,
                     1,
                     () => _encode_GeneralName,
-                    __utils.DER
+                    $.BER
                 ),
-                targetCert: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                targetCert: $._encode_implicit(
+                    _TagClass.context,
                     2,
                     () => _encode_TargetCert,
-                    __utils.DER
+                    $.BER
                 ),
             },
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_Target(value, elGetter);
 }
 
-export type Targets = Target[]; // SequenceOfType
-let _cached_decoder_for_Targets: __utils.ASN1Decoder<Targets> | null = null;
-let _cached_encoder_for_Targets: __utils.ASN1Encoder<Targets> | null = null;
-export function _decode_Targets(el: asn1.ASN1Element) {
+export type Targets<> = Target[]; // SequenceOfType
+let _cached_decoder_for_Targets: $.ASN1Decoder<Targets> | null = null;
+let _cached_encoder_for_Targets: $.ASN1Encoder<Targets> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) Targets
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {Targets} The decoded data structure.
+ */
+export function _decode_Targets(el: _Element) {
     if (!_cached_decoder_for_Targets) {
-        _cached_decoder_for_Targets = __utils._decodeSequenceOf<Target>(
+        _cached_decoder_for_Targets = $._decodeSequenceOf<Target>(
             () => _decode_Target
         );
     }
     return _cached_decoder_for_Targets(el);
 }
+/**
+ * @summary Encodes a(n) Targets into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The Targets, encoded as an ASN.1 Element.
+ */
 export function _encode_Targets(
     value: Targets,
-    elGetter: __utils.ASN1Encoder<Targets>
+    elGetter: $.ASN1Encoder<Targets>
 ) {
     if (!_cached_encoder_for_Targets) {
-        _cached_encoder_for_Targets = __utils._encodeSequenceOf<Target>(
+        _cached_encoder_for_Targets = $._encodeSequenceOf<Target>(
             () => _encode_Target,
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_Targets(value, elGetter);
 }
 
-// TODO: ObjectAssignment: userNotice
+/**
+ * @summary id_ce_targetingInformation
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-targetingInformation               OBJECT IDENTIFIER ::= {id-ce 55}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_targetingInformation: OBJECT_IDENTIFIER = new _OID(
+    [55],
+    id_ce
+);
 
-// TODO: ObjectAssignment: acceptablePrivilegePolicies
+/**
+ * @summary targetingInformation
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * targetingInformation EXTENSION ::= {
+ *   SYNTAX         SEQUENCE SIZE (1..MAX) OF Targets
+ *   IDENTIFIED BY  id-ce-targetingInformation }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const targetingInformation: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeSequenceOf<Targets>(() => _decode_Targets),
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeSequenceOf<Targets>(() => _encode_Targets, $.BER),
+    },
+    "&id": id_ce_targetingInformation /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-export type PrivilegePolicy = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
-let _cached_decoder_for_PrivilegePolicy: __utils.ASN1Decoder<
+/**
+ * @summary DisplayText
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * DisplayText  ::=  CHOICE {
+ *   visibleString  VisibleString(SIZE (1..200)),
+ *   bmpString      BMPString(SIZE (1..200)),
+ *   utf8String     UTF8String(SIZE (1..200)) }
+ * ```
+ */
+export type DisplayText =
+    | { visibleString: VisibleString } /* CHOICE_ALT_ROOT */
+    | { bmpString: BMPString } /* CHOICE_ALT_ROOT */
+    | { utf8String: UTF8String } /* CHOICE_ALT_ROOT */;
+let _cached_decoder_for_DisplayText: $.ASN1Decoder<DisplayText> | null = null;
+let _cached_encoder_for_DisplayText: $.ASN1Encoder<DisplayText> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) DisplayText
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {DisplayText} The decoded data structure.
+ */
+export function _decode_DisplayText(el: _Element) {
+    if (!_cached_decoder_for_DisplayText) {
+        _cached_decoder_for_DisplayText = $._decode_inextensible_choice<
+            DisplayText
+        >({
+            "UNIVERSAL 26": ["visibleString", $._decodeVisibleString],
+            "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
+            "UNIVERSAL 12": ["utf8String", $._decodeUTF8String],
+        });
+    }
+    return _cached_decoder_for_DisplayText(el);
+}
+/**
+ * @summary Encodes a(n) DisplayText into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The DisplayText, encoded as an ASN.1 Element.
+ */
+export function _encode_DisplayText(
+    value: DisplayText,
+    elGetter: $.ASN1Encoder<DisplayText>
+) {
+    if (!_cached_encoder_for_DisplayText) {
+        _cached_encoder_for_DisplayText = $._encode_choice<DisplayText>(
+            {
+                visibleString: $._encodeVisibleString,
+                bmpString: $._encodeBMPString,
+                utf8String: $._encodeUTF8String,
+            },
+            $.BER
+        );
+    }
+    return _cached_encoder_for_DisplayText(value, elGetter);
+}
+
+/**
+ * @summary NoticeReference
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * NoticeReference ::= SEQUENCE {
+ *   organization   DisplayText,
+ *   noticeNumbers  SEQUENCE OF INTEGER }
+ * ```
+ *
+ * @class
+ */
+export class NoticeReference {
+    constructor(
+        /**
+         * @summary `organization`.
+         * @public
+         * @readonly
+         */
+        readonly organization: DisplayText,
+        /**
+         * @summary `noticeNumbers`.
+         * @public
+         * @readonly
+         */
+        readonly noticeNumbers: INTEGER[]
+    ) {}
+
+    /**
+     * @summary Restructures an object into a NoticeReference
+     * @description
+     *
+     * This takes an `object` and converts it to a `NoticeReference`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `NoticeReference`.
+     * @returns {NoticeReference}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof NoticeReference]: NoticeReference[_K] }>
+    ): NoticeReference {
+        return new NoticeReference(_o.organization, _o.noticeNumbers);
+    }
+}
+/**
+ * @summary The Leading Root Component Types of NoticeReference
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_NoticeReference: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "organization",
+        false,
+        $.hasAnyTag,
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "noticeNumbers",
+        false,
+        $.hasTag(_TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of NoticeReference
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_NoticeReference: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of NoticeReference
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_NoticeReference: $.ComponentSpec[] = [];
+let _cached_decoder_for_NoticeReference: $.ASN1Decoder<
+    NoticeReference
+> | null = null;
+let _cached_encoder_for_NoticeReference: $.ASN1Encoder<
+    NoticeReference
+> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) NoticeReference
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {NoticeReference} The decoded data structure.
+ */
+export function _decode_NoticeReference(el: _Element) {
+    if (!_cached_decoder_for_NoticeReference) {
+        _cached_decoder_for_NoticeReference = function (
+            el: _Element
+        ): NoticeReference {
+            const sequence: _Element[] = el.sequence;
+            if (sequence.length < 2) {
+                throw new _ConstructionError(
+                    "NoticeReference contained only " +
+                        sequence.length.toString() +
+                        " elements."
+                );
+            }
+            sequence[0].name = "organization";
+            sequence[1].name = "noticeNumbers";
+            let organization!: DisplayText;
+            let noticeNumbers!: INTEGER[];
+            organization = _decode_DisplayText(sequence[0]);
+            noticeNumbers = $._decodeSequenceOf<INTEGER>(
+                () => $._decodeInteger
+            )(sequence[1]);
+            return new NoticeReference(organization, noticeNumbers);
+        };
+    }
+    return _cached_decoder_for_NoticeReference(el);
+}
+/**
+ * @summary Encodes a(n) NoticeReference into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The NoticeReference, encoded as an ASN.1 Element.
+ */
+export function _encode_NoticeReference(
+    value: NoticeReference,
+    elGetter: $.ASN1Encoder<NoticeReference>
+) {
+    if (!_cached_encoder_for_NoticeReference) {
+        _cached_encoder_for_NoticeReference = function (
+            value: NoticeReference,
+            elGetter: $.ASN1Encoder<NoticeReference>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat([
+                        /* REQUIRED   */ _encode_DisplayText(
+                            value.organization,
+                            $.BER
+                        ),
+                        /* REQUIRED   */ $._encodeSequenceOf<INTEGER>(
+                            () => $._encodeInteger,
+                            $.BER
+                        )(value.noticeNumbers, $.BER),
+                    ])
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_NoticeReference(value, elGetter);
+}
+
+/**
+ * @summary UserNotice
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * UserNotice ::= SEQUENCE {
+ *   noticeRef     NoticeReference OPTIONAL,
+ *   explicitText  DisplayText OPTIONAL }
+ * ```
+ *
+ * @class
+ */
+export class UserNotice {
+    constructor(
+        /**
+         * @summary `noticeRef`.
+         * @public
+         * @readonly
+         */
+        readonly noticeRef: OPTIONAL<NoticeReference>,
+        /**
+         * @summary `explicitText`.
+         * @public
+         * @readonly
+         */
+        readonly explicitText: OPTIONAL<DisplayText>
+    ) {}
+
+    /**
+     * @summary Restructures an object into a UserNotice
+     * @description
+     *
+     * This takes an `object` and converts it to a `UserNotice`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `UserNotice`.
+     * @returns {UserNotice}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof UserNotice]: UserNotice[_K] }>
+    ): UserNotice {
+        return new UserNotice(_o.noticeRef, _o.explicitText);
+    }
+}
+/**
+ * @summary The Leading Root Component Types of UserNotice
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_UserNotice: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "noticeRef",
+        true,
+        $.hasTag(_TagClass.universal, 16),
+        undefined,
+        undefined
+    ),
+    new $.ComponentSpec(
+        "explicitText",
+        true,
+        $.hasAnyTag,
+        undefined,
+        undefined
+    ),
+];
+/**
+ * @summary The Trailing Root Component Types of UserNotice
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_UserNotice: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of UserNotice
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_UserNotice: $.ComponentSpec[] = [];
+let _cached_decoder_for_UserNotice: $.ASN1Decoder<UserNotice> | null = null;
+let _cached_encoder_for_UserNotice: $.ASN1Encoder<UserNotice> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) UserNotice
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {UserNotice} The decoded data structure.
+ */
+export function _decode_UserNotice(el: _Element) {
+    if (!_cached_decoder_for_UserNotice) {
+        _cached_decoder_for_UserNotice = function (el: _Element): UserNotice {
+            /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            let noticeRef: OPTIONAL<NoticeReference>;
+            let explicitText: OPTIONAL<DisplayText>;
+            /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
+            /* START_OF_CALLBACKS_MAP */
+            const callbacks: $.DecodingMap = {
+                noticeRef: (_el: _Element): void => {
+                    noticeRef = _decode_NoticeReference(_el);
+                },
+                explicitText: (_el: _Element): void => {
+                    explicitText = _decode_DisplayText(_el);
+                },
+            };
+            /* END_OF_CALLBACKS_MAP */
+            $._parse_sequence(
+                el,
+                callbacks,
+                _root_component_type_list_1_spec_for_UserNotice,
+                _extension_additions_list_spec_for_UserNotice,
+                _root_component_type_list_2_spec_for_UserNotice,
+                undefined
+            );
+            return new UserNotice(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ noticeRef,
+                explicitText
+            );
+        };
+    }
+    return _cached_decoder_for_UserNotice(el);
+}
+/**
+ * @summary Encodes a(n) UserNotice into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The UserNotice, encoded as an ASN.1 Element.
+ */
+export function _encode_UserNotice(
+    value: UserNotice,
+    elGetter: $.ASN1Encoder<UserNotice>
+) {
+    if (!_cached_encoder_for_UserNotice) {
+        _cached_encoder_for_UserNotice = function (
+            value: UserNotice,
+            elGetter: $.ASN1Encoder<UserNotice>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
+                    .concat([
+                        /* IF_ABSENT  */ value.noticeRef === undefined
+                            ? undefined
+                            : _encode_NoticeReference(value.noticeRef, $.BER),
+                        /* IF_ABSENT  */ value.explicitText === undefined
+                            ? undefined
+                            : _encode_DisplayText(value.explicitText, $.BER),
+                    ])
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
+            );
+        };
+    }
+    return _cached_encoder_for_UserNotice(value, elGetter);
+}
+
+/**
+ * @summary id_ce_userNotice
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-userNotice                         OBJECT IDENTIFIER ::= {id-ce 49}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_userNotice: OBJECT_IDENTIFIER = new _OID([49], id_ce);
+
+/**
+ * @summary userNotice
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * userNotice EXTENSION ::= {
+ *   SYNTAX         SEQUENCE SIZE (1..MAX) OF UserNotice
+ *   IDENTIFIED BY  id-ce-userNotice }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const userNotice: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeSequenceOf<UserNotice>(() => _decode_UserNotice),
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeSequenceOf<UserNotice>(
+            () => _encode_UserNotice,
+            $.BER
+        ),
+    },
+    "&id": id_ce_userNotice /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+export type PrivilegePolicy<> = OBJECT_IDENTIFIER; // ObjectIdentifierType
+let _cached_decoder_for_PrivilegePolicy: $.ASN1Decoder<
     PrivilegePolicy
 > | null = null;
-let _cached_encoder_for_PrivilegePolicy: __utils.ASN1Encoder<
+let _cached_encoder_for_PrivilegePolicy: $.ASN1Encoder<
     PrivilegePolicy
 > | null = null;
-export function _decode_PrivilegePolicy(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) PrivilegePolicy
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {PrivilegePolicy} The decoded data structure.
+ */
+export function _decode_PrivilegePolicy(el: _Element) {
     if (!_cached_decoder_for_PrivilegePolicy) {
-        _cached_decoder_for_PrivilegePolicy = __utils._decodeObjectIdentifier;
+        _cached_decoder_for_PrivilegePolicy = $._decodeObjectIdentifier;
     }
     return _cached_decoder_for_PrivilegePolicy(el);
 }
+/**
+ * @summary Encodes a(n) PrivilegePolicy into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The PrivilegePolicy, encoded as an ASN.1 Element.
+ */
 export function _encode_PrivilegePolicy(
     value: PrivilegePolicy,
-    elGetter: __utils.ASN1Encoder<PrivilegePolicy>
+    elGetter: $.ASN1Encoder<PrivilegePolicy>
 ) {
     if (!_cached_encoder_for_PrivilegePolicy) {
-        _cached_encoder_for_PrivilegePolicy = __utils._encodeObjectIdentifier;
+        _cached_encoder_for_PrivilegePolicy = $._encodeObjectIdentifier;
     }
     return _cached_encoder_for_PrivilegePolicy(value, elGetter);
 }
 
-export type AcceptablePrivilegePoliciesSyntax = PrivilegePolicy[]; // SequenceOfType
-let _cached_decoder_for_AcceptablePrivilegePoliciesSyntax: __utils.ASN1Decoder<
+export type AcceptablePrivilegePoliciesSyntax<> = PrivilegePolicy[]; // SequenceOfType
+let _cached_decoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Decoder<
     AcceptablePrivilegePoliciesSyntax
 > | null = null;
-let _cached_encoder_for_AcceptablePrivilegePoliciesSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Encoder<
     AcceptablePrivilegePoliciesSyntax
 > | null = null;
-export function _decode_AcceptablePrivilegePoliciesSyntax(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AcceptablePrivilegePoliciesSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AcceptablePrivilegePoliciesSyntax} The decoded data structure.
+ */
+export function _decode_AcceptablePrivilegePoliciesSyntax(el: _Element) {
     if (!_cached_decoder_for_AcceptablePrivilegePoliciesSyntax) {
-        _cached_decoder_for_AcceptablePrivilegePoliciesSyntax = __utils._decodeSequenceOf<
+        _cached_decoder_for_AcceptablePrivilegePoliciesSyntax = $._decodeSequenceOf<
             PrivilegePolicy
         >(() => _decode_PrivilegePolicy);
     }
     return _cached_decoder_for_AcceptablePrivilegePoliciesSyntax(el);
 }
+/**
+ * @summary Encodes a(n) AcceptablePrivilegePoliciesSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AcceptablePrivilegePoliciesSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_AcceptablePrivilegePoliciesSyntax(
     value: AcceptablePrivilegePoliciesSyntax,
-    elGetter: __utils.ASN1Encoder<AcceptablePrivilegePoliciesSyntax>
+    elGetter: $.ASN1Encoder<AcceptablePrivilegePoliciesSyntax>
 ) {
     if (!_cached_encoder_for_AcceptablePrivilegePoliciesSyntax) {
-        _cached_encoder_for_AcceptablePrivilegePoliciesSyntax = __utils._encodeSequenceOf<
+        _cached_encoder_for_AcceptablePrivilegePoliciesSyntax = $._encodeSequenceOf<
             PrivilegePolicy
-        >(() => _encode_PrivilegePolicy, __utils.DER);
+        >(() => _encode_PrivilegePolicy, $.BER);
     }
     return _cached_encoder_for_AcceptablePrivilegePoliciesSyntax(
         value,
@@ -1848,141 +3765,524 @@ export function _encode_AcceptablePrivilegePoliciesSyntax(
     );
 }
 
-// TODO: ObjectAssignment: singleUse
+/**
+ * @summary id_ce_acceptablePrivilegePolicies
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-acceptablePrivilegePolicies        OBJECT IDENTIFIER ::= {id-ce 57}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_acceptablePrivilegePolicies: OBJECT_IDENTIFIER = new _OID(
+    [57],
+    id_ce
+);
 
-// TODO: ObjectAssignment: groupAC
+/**
+ * @summary acceptablePrivilegePolicies
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * acceptablePrivilegePolicies EXTENSION ::= {
+ *   SYNTAX         AcceptablePrivilegePoliciesSyntax
+ *   IDENTIFIED BY  id-ce-acceptablePrivilegePolicies }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const acceptablePrivilegePolicies: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AcceptablePrivilegePoliciesSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AcceptablePrivilegePoliciesSyntax,
+    },
+    "&id": id_ce_acceptablePrivilegePolicies /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: noRevAvail
+/**
+ * @summary id_ce_singleUse
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-singleUse                          OBJECT IDENTIFIER ::= {id-ce 65}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_singleUse: OBJECT_IDENTIFIER = new _OID([65], id_ce);
 
-// TODO: ObjectAssignment: sOAIdentifier
+/**
+ * @summary singleUse
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * singleUse EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-singleUse }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const singleUse: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_singleUse /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: sOAIdentifierMatch
+/**
+ * @summary id_ce_groupAC
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-groupAC                            OBJECT IDENTIFIER ::= {id-ce 66}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_groupAC: OBJECT_IDENTIFIER = new _OID([66], id_ce);
 
-// TODO: ObjectAssignment: attributeDescriptor
+/**
+ * @summary groupAC
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * groupAC EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-groupAC }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const groupAC: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_groupAC /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-export type AttributeIdentifier = asn1.OBJECT_IDENTIFIER; // ObjectClassFieldType
-let _cached_decoder_for_AttributeIdentifier: __utils.ASN1Decoder<
+/**
+ * @summary id_ce_noRevAvail
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-noRevAvail                         OBJECT IDENTIFIER ::= {id-ce 56}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_noRevAvail: OBJECT_IDENTIFIER = new _OID([56], id_ce);
+
+/**
+ * @summary noRevAvail
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * noRevAvail EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-noRevAvail }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const noRevAvail: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_noRevAvail /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_ce_sOAIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-sOAIdentifier                      OBJECT IDENTIFIER ::= {id-ce 50}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_sOAIdentifier: OBJECT_IDENTIFIER = new _OID([50], id_ce);
+
+/**
+ * @summary sOAIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * sOAIdentifier EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-sOAIdentifier }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const sOAIdentifier: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_sOAIdentifier /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_mr_sOAIdentifierMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-sOAIdentifierMatch                 OBJECT IDENTIFIER ::= {id-mr 66}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_sOAIdentifierMatch: OBJECT_IDENTIFIER = new _OID(
+    [66],
+    id_mr
+);
+
+/**
+ * @summary sOAIdentifierMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * sOAIdentifierMatch MATCHING-RULE ::= {
+ *   SYNTAX  NULL
+ *   ID      id-mr-sOAIdentifierMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const sOAIdentifierMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": $._decodeNull,
+    },
+    encoderFor: {
+        "&AssertionType": $._encodeNull,
+    },
+    "&id": id_mr_sOAIdentifierMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary AttributeIDs
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeIDs ATTRIBUTE ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE[]}
+ *
+ */
+export const AttributeIDs: ATTRIBUTE[] = [];
+
+export type AttributeIdentifier<> = OBJECT_IDENTIFIER; // ObjectClassFieldType
+let _cached_decoder_for_AttributeIdentifier: $.ASN1Decoder<
     AttributeIdentifier
 > | null = null;
-let _cached_encoder_for_AttributeIdentifier: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeIdentifier: $.ASN1Encoder<
     AttributeIdentifier
 > | null = null;
-export function _decode_AttributeIdentifier(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeIdentifier
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeIdentifier} The decoded data structure.
+ */
+export function _decode_AttributeIdentifier(el: _Element) {
     if (!_cached_decoder_for_AttributeIdentifier) {
-        _cached_decoder_for_AttributeIdentifier =
-            __utils._decodeObjectIdentifier;
+        _cached_decoder_for_AttributeIdentifier = $._decodeObjectIdentifier;
     }
     return _cached_decoder_for_AttributeIdentifier(el);
 }
+/**
+ * @summary Encodes a(n) AttributeIdentifier into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeIdentifier, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeIdentifier(
     value: AttributeIdentifier,
-    elGetter: __utils.ASN1Encoder<AttributeIdentifier>
+    elGetter: $.ASN1Encoder<AttributeIdentifier>
 ) {
     if (!_cached_encoder_for_AttributeIdentifier) {
-        _cached_encoder_for_AttributeIdentifier =
-            __utils._encodeObjectIdentifier;
+        _cached_encoder_for_AttributeIdentifier = $._encodeObjectIdentifier;
     }
     return _cached_encoder_for_AttributeIdentifier(value, elGetter);
 }
 
-export type AttributeName = asn1.UTF8String; // UTF8String
-let _cached_decoder_for_AttributeName: __utils.ASN1Decoder<
+export type AttributeName<> = UTF8String; // UTF8String
+let _cached_decoder_for_AttributeName: $.ASN1Decoder<
     AttributeName
 > | null = null;
-let _cached_encoder_for_AttributeName: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeName: $.ASN1Encoder<
     AttributeName
 > | null = null;
-export function _decode_AttributeName(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeName
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeName} The decoded data structure.
+ */
+export function _decode_AttributeName(el: _Element) {
     if (!_cached_decoder_for_AttributeName) {
-        _cached_decoder_for_AttributeName = __utils._decodeUTF8String;
+        _cached_decoder_for_AttributeName = $._decodeUTF8String;
     }
     return _cached_decoder_for_AttributeName(el);
 }
+/**
+ * @summary Encodes a(n) AttributeName into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeName, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeName(
     value: AttributeName,
-    elGetter: __utils.ASN1Encoder<AttributeName>
+    elGetter: $.ASN1Encoder<AttributeName>
 ) {
     if (!_cached_encoder_for_AttributeName) {
-        _cached_encoder_for_AttributeName = __utils._encodeUTF8String;
+        _cached_encoder_for_AttributeName = $._encodeUTF8String;
     }
     return _cached_encoder_for_AttributeName(value, elGetter);
 }
 
-export type AttributeDescription = asn1.UTF8String; // UTF8String
-let _cached_decoder_for_AttributeDescription: __utils.ASN1Decoder<
+export type AttributeDescription<> = UTF8String; // UTF8String
+let _cached_decoder_for_AttributeDescription: $.ASN1Decoder<
     AttributeDescription
 > | null = null;
-let _cached_encoder_for_AttributeDescription: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeDescription: $.ASN1Encoder<
     AttributeDescription
 > | null = null;
-export function _decode_AttributeDescription(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeDescription
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeDescription} The decoded data structure.
+ */
+export function _decode_AttributeDescription(el: _Element) {
     if (!_cached_decoder_for_AttributeDescription) {
-        _cached_decoder_for_AttributeDescription = __utils._decodeUTF8String;
+        _cached_decoder_for_AttributeDescription = $._decodeUTF8String;
     }
     return _cached_decoder_for_AttributeDescription(el);
 }
+/**
+ * @summary Encodes a(n) AttributeDescription into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeDescription, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeDescription(
     value: AttributeDescription,
-    elGetter: __utils.ASN1Encoder<AttributeDescription>
+    elGetter: $.ASN1Encoder<AttributeDescription>
 ) {
     if (!_cached_encoder_for_AttributeDescription) {
-        _cached_encoder_for_AttributeDescription = __utils._encodeUTF8String;
+        _cached_encoder_for_AttributeDescription = $._encodeUTF8String;
     }
     return _cached_encoder_for_AttributeDescription(value, elGetter);
 }
 
+/**
+ * @summary PrivilegePolicyIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * PrivilegePolicyIdentifier ::= SEQUENCE {
+ *   privilegePolicy  PrivilegePolicy,
+ *   privPolSyntax    InfoSyntax,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class PrivilegePolicyIdentifier {
     constructor(
+        /**
+         * @summary `privilegePolicy`.
+         * @public
+         * @readonly
+         */
         readonly privilegePolicy: PrivilegePolicy,
+        /**
+         * @summary `privPolSyntax`.
+         * @public
+         * @readonly
+         */
         readonly privPolSyntax: InfoSyntax,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a PrivilegePolicyIdentifier
+     * @description
+     *
+     * This takes an `object` and converts it to a `PrivilegePolicyIdentifier`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `PrivilegePolicyIdentifier`.
+     * @returns {PrivilegePolicyIdentifier}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof PrivilegePolicyIdentifier]: PrivilegePolicyIdentifier[_K];
+            }
+        >
+    ): PrivilegePolicyIdentifier {
+        return new PrivilegePolicyIdentifier(
+            _o.privilegePolicy,
+            _o.privPolSyntax,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of PrivilegePolicyIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_PrivilegePolicyIdentifier: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "privilegePolicy",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "privPolSyntax",
         false,
-        __utils.hasAnyTag,
+        $.hasAnyTag,
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_PrivilegePolicyIdentifier: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_PrivilegePolicyIdentifier: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of PrivilegePolicyIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_PrivilegePolicyIdentifier: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of PrivilegePolicyIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_PrivilegePolicyIdentifier: $.ComponentSpec[] = [];
+let _cached_decoder_for_PrivilegePolicyIdentifier: $.ASN1Decoder<
     PrivilegePolicyIdentifier
 > | null = null;
-let _cached_encoder_for_PrivilegePolicyIdentifier: __utils.ASN1Encoder<
+let _cached_encoder_for_PrivilegePolicyIdentifier: $.ASN1Encoder<
     PrivilegePolicyIdentifier
 > | null = null;
-export function _decode_PrivilegePolicyIdentifier(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) PrivilegePolicyIdentifier
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {PrivilegePolicyIdentifier} The decoded data structure.
+ */
+export function _decode_PrivilegePolicyIdentifier(el: _Element) {
     if (!_cached_decoder_for_PrivilegePolicyIdentifier) {
         _cached_decoder_for_PrivilegePolicyIdentifier = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): PrivilegePolicyIdentifier {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "PrivilegePolicyIdentifier contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "privilegePolicy";
             sequence[1].name = "privPolSyntax";
             let privilegePolicy!: PrivilegePolicy;
             let privPolSyntax!: InfoSyntax;
             privilegePolicy = _decode_PrivilegePolicy(sequence[0]);
             privPolSyntax = _decode_InfoSyntax(sequence[1]);
-            // TODO: Validate values.
             return new PrivilegePolicyIdentifier(
                 privilegePolicy,
                 privPolSyntax,
@@ -1992,140 +4292,252 @@ export function _decode_PrivilegePolicyIdentifier(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_PrivilegePolicyIdentifier(el);
 }
+/**
+ * @summary Encodes a(n) PrivilegePolicyIdentifier into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The PrivilegePolicyIdentifier, encoded as an ASN.1 Element.
+ */
 export function _encode_PrivilegePolicyIdentifier(
     value: PrivilegePolicyIdentifier,
-    elGetter: __utils.ASN1Encoder<PrivilegePolicyIdentifier>
+    elGetter: $.ASN1Encoder<PrivilegePolicyIdentifier>
 ) {
     if (!_cached_encoder_for_PrivilegePolicyIdentifier) {
         _cached_encoder_for_PrivilegePolicyIdentifier = function (
             value: PrivilegePolicyIdentifier,
-            elGetter: __utils.ASN1Encoder<PrivilegePolicyIdentifier>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<PrivilegePolicyIdentifier>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_PrivilegePolicy(
                                 value.privilegePolicy,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_InfoSyntax(
                                 value.privPolSyntax,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_PrivilegePolicyIdentifier(value, elGetter);
 }
 
+/**
+ * @summary AttributeDescriptorSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeDescriptorSyntax ::= SEQUENCE {
+ *   identifier             AttributeIdentifier,
+ *   attributeSyntax        OCTET STRING(SIZE (1..MAX)),
+ *   name              [0]  AttributeName OPTIONAL,
+ *   description       [1]  AttributeDescription OPTIONAL,
+ *   dominationRule         PrivilegePolicyIdentifier,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class AttributeDescriptorSyntax {
     constructor(
+        /**
+         * @summary `identifier`.
+         * @public
+         * @readonly
+         */
         readonly identifier: AttributeIdentifier,
-        readonly attributeSyntax: asn1.OCTET_STRING,
-        readonly name: AttributeName | undefined,
-        readonly description: AttributeDescription | undefined,
+        /**
+         * @summary `attributeSyntax`.
+         * @public
+         * @readonly
+         */
+        readonly attributeSyntax: OCTET_STRING,
+        /**
+         * @summary `name`.
+         * @public
+         * @readonly
+         */
+        readonly name: OPTIONAL<AttributeName>,
+        /**
+         * @summary `description`.
+         * @public
+         * @readonly
+         */
+        readonly description: OPTIONAL<AttributeDescription>,
+        /**
+         * @summary `dominationRule`.
+         * @public
+         * @readonly
+         */
         readonly dominationRule: PrivilegePolicyIdentifier,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeDescriptorSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeDescriptorSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeDescriptorSyntax`.
+     * @returns {AttributeDescriptorSyntax}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeDescriptorSyntax]: AttributeDescriptorSyntax[_K];
+            }
+        >
+    ): AttributeDescriptorSyntax {
+        return new AttributeDescriptorSyntax(
+            _o.identifier,
+            _o.attributeSyntax,
+            _o.name,
+            _o.description,
+            _o.dominationRule,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeDescriptorSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeDescriptorSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "identifier",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attributeSyntax",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 4),
+        $.hasTag(_TagClass.universal, 4),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "name",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "description",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "dominationRule",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeDescriptorSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeDescriptorSyntax: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeDescriptorSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeDescriptorSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeDescriptorSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeDescriptorSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeDescriptorSyntax: $.ASN1Decoder<
     AttributeDescriptorSyntax
 > | null = null;
-let _cached_encoder_for_AttributeDescriptorSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeDescriptorSyntax: $.ASN1Encoder<
     AttributeDescriptorSyntax
 > | null = null;
-export function _decode_AttributeDescriptorSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeDescriptorSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeDescriptorSyntax} The decoded data structure.
+ */
+export function _decode_AttributeDescriptorSyntax(el: _Element) {
     if (!_cached_decoder_for_AttributeDescriptorSyntax) {
         _cached_decoder_for_AttributeDescriptorSyntax = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeDescriptorSyntax {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let identifier!: AttributeIdentifier;
-            let attributeSyntax!: asn1.OCTET_STRING;
-            let name: asn1.OPTIONAL<AttributeName>;
-            let description: asn1.OPTIONAL<AttributeDescription>;
+            let attributeSyntax!: OCTET_STRING;
+            let name: OPTIONAL<AttributeName>;
+            let description: OPTIONAL<AttributeDescription>;
             let dominationRule!: PrivilegePolicyIdentifier;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                identifier: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                identifier: (_el: _Element): void => {
                     identifier = _decode_AttributeIdentifier(_el);
                 },
-                attributeSyntax: (_el: asn1.ASN1Element): void => {
-                    attributeSyntax = __utils._decodeOctetString(_el);
+                attributeSyntax: (_el: _Element): void => {
+                    attributeSyntax = $._decodeOctetString(_el);
                 },
-                name: (_el: asn1.ASN1Element): void => {
-                    name = __utils._decode_implicit<AttributeName>(
+                name: (_el: _Element): void => {
+                    name = $._decode_implicit<AttributeName>(
                         () => _decode_AttributeName
                     )(_el);
                 },
-                description: (_el: asn1.ASN1Element): void => {
-                    description = __utils._decode_implicit<
-                        AttributeDescription
-                    >(() => _decode_AttributeDescription)(_el);
+                description: (_el: _Element): void => {
+                    description = $._decode_implicit<AttributeDescription>(
+                        () => _decode_AttributeDescription
+                    )(_el);
                 },
-                dominationRule: (_el: asn1.ASN1Element): void => {
+                dominationRule: (_el: _Element): void => {
                     dominationRule = _decode_PrivilegePolicyIdentifier(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_AttributeDescriptorSyntax,
                 _extension_additions_list_spec_for_AttributeDescriptorSyntax,
                 _root_component_type_list_2_spec_for_AttributeDescriptorSyntax,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -2141,158 +4553,328 @@ export function _decode_AttributeDescriptorSyntax(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttributeDescriptorSyntax(el);
 }
+/**
+ * @summary Encodes a(n) AttributeDescriptorSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeDescriptorSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeDescriptorSyntax(
     value: AttributeDescriptorSyntax,
-    elGetter: __utils.ASN1Encoder<AttributeDescriptorSyntax>
+    elGetter: $.ASN1Encoder<AttributeDescriptorSyntax>
 ) {
     if (!_cached_encoder_for_AttributeDescriptorSyntax) {
         _cached_encoder_for_AttributeDescriptorSyntax = function (
             value: AttributeDescriptorSyntax,
-            elGetter: __utils.ASN1Encoder<AttributeDescriptorSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeDescriptorSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttributeIdentifier(
                                 value.identifier,
-                                __utils.DER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeOctetString(
+                            /* REQUIRED   */ $._encodeOctetString(
                                 value.attributeSyntax,
-                                __utils.DER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.name === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_AttributeName,
-                                      __utils.DER
-                                  )(value.name, __utils.DER),
+                                      $.BER
+                                  )(value.name, $.BER),
                             /* IF_ABSENT  */ value.description === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_AttributeDescription,
-                                      __utils.DER
-                                  )(value.description, __utils.DER),
+                                      $.BER
+                                  )(value.description, $.BER),
                             /* REQUIRED   */ _encode_PrivilegePolicyIdentifier(
                                 value.dominationRule,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_AttributeDescriptorSyntax(value, elGetter);
 }
 
-// TODO: ObjectSetAssignment: AttributeIDs
+/**
+ * @summary attributeDescriptor
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeDescriptor EXTENSION ::= {
+ *   SYNTAX         AttributeDescriptorSyntax
+ *   IDENTIFIED BY  {id-ce-attributeDescriptor} }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const attributeDescriptor: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AttributeDescriptorSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AttributeDescriptorSyntax,
+    },
+    "&id": undefined,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: attDescriptor
+/**
+ * @summary id_mr_attDescriptorMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-attDescriptorMatch                 OBJECT IDENTIFIER ::= {id-mr 58}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_attDescriptorMatch: OBJECT_IDENTIFIER = new _OID(
+    [58],
+    id_mr
+);
 
-// TODO: ObjectAssignment: roleSpecCertIdentifier
+/**
+ * @summary attDescriptor
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attDescriptor MATCHING-RULE ::= {
+ *   SYNTAX  AttributeDescriptorSyntax
+ *   ID      id-mr-attDescriptorMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const attDescriptor: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_AttributeDescriptorSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_AttributeDescriptorSyntax,
+    },
+    "&id": id_mr_attDescriptorMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
+/**
+ * @summary RoleSpecCertIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * RoleSpecCertIdentifier ::= SEQUENCE {
+ *   roleName              [0]  GeneralName,
+ *   roleCertIssuer        [1]  GeneralName,
+ *   roleCertSerialNumber  [2]  CertificateSerialNumber OPTIONAL,
+ *   roleCertLocator       [3]  GeneralNames OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class RoleSpecCertIdentifier {
     constructor(
+        /**
+         * @summary `roleName`.
+         * @public
+         * @readonly
+         */
         readonly roleName: GeneralName,
+        /**
+         * @summary `roleCertIssuer`.
+         * @public
+         * @readonly
+         */
         readonly roleCertIssuer: GeneralName,
-        readonly roleCertSerialNumber: CertificateSerialNumber | undefined,
-        readonly roleCertLocator: GeneralNames | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `roleCertSerialNumber`.
+         * @public
+         * @readonly
+         */
+        readonly roleCertSerialNumber: OPTIONAL<CertificateSerialNumber>,
+        /**
+         * @summary `roleCertLocator`.
+         * @public
+         * @readonly
+         */
+        readonly roleCertLocator: OPTIONAL<GeneralNames>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a RoleSpecCertIdentifier
+     * @description
+     *
+     * This takes an `object` and converts it to a `RoleSpecCertIdentifier`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `RoleSpecCertIdentifier`.
+     * @returns {RoleSpecCertIdentifier}
+     */
+    public static _from_object(
+        _o: Partial<
+            { [_K in keyof RoleSpecCertIdentifier]: RoleSpecCertIdentifier[_K] }
+        >
+    ): RoleSpecCertIdentifier {
+        return new RoleSpecCertIdentifier(
+            _o.roleName,
+            _o.roleCertIssuer,
+            _o.roleCertSerialNumber,
+            _o.roleCertLocator,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of RoleSpecCertIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_RoleSpecCertIdentifier: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "roleName",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "roleCertIssuer",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "roleCertSerialNumber",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "roleCertLocator",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        $.hasTag(_TagClass.context, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_RoleSpecCertIdentifier: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_RoleSpecCertIdentifier: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of RoleSpecCertIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_RoleSpecCertIdentifier: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of RoleSpecCertIdentifier
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_RoleSpecCertIdentifier: $.ComponentSpec[] = [];
+let _cached_decoder_for_RoleSpecCertIdentifier: $.ASN1Decoder<
     RoleSpecCertIdentifier
 > | null = null;
-let _cached_encoder_for_RoleSpecCertIdentifier: __utils.ASN1Encoder<
+let _cached_encoder_for_RoleSpecCertIdentifier: $.ASN1Encoder<
     RoleSpecCertIdentifier
 > | null = null;
-export function _decode_RoleSpecCertIdentifier(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) RoleSpecCertIdentifier
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {RoleSpecCertIdentifier} The decoded data structure.
+ */
+export function _decode_RoleSpecCertIdentifier(el: _Element) {
     if (!_cached_decoder_for_RoleSpecCertIdentifier) {
         _cached_decoder_for_RoleSpecCertIdentifier = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): RoleSpecCertIdentifier {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let roleName!: GeneralName;
             let roleCertIssuer!: GeneralName;
-            let roleCertSerialNumber: asn1.OPTIONAL<CertificateSerialNumber>;
-            let roleCertLocator: asn1.OPTIONAL<GeneralNames>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let roleCertSerialNumber: OPTIONAL<CertificateSerialNumber>;
+            let roleCertLocator: OPTIONAL<GeneralNames>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                roleName: (_el: asn1.ASN1Element): void => {
-                    roleName = __utils._decode_implicit<GeneralName>(
+            const callbacks: $.DecodingMap = {
+                roleName: (_el: _Element): void => {
+                    roleName = $._decode_implicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
-                roleCertIssuer: (_el: asn1.ASN1Element): void => {
-                    roleCertIssuer = __utils._decode_implicit<GeneralName>(
+                roleCertIssuer: (_el: _Element): void => {
+                    roleCertIssuer = $._decode_implicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
-                roleCertSerialNumber: (_el: asn1.ASN1Element): void => {
-                    roleCertSerialNumber = __utils._decode_implicit<
+                roleCertSerialNumber: (_el: _Element): void => {
+                    roleCertSerialNumber = $._decode_implicit<
                         CertificateSerialNumber
                     >(() => _decode_CertificateSerialNumber)(_el);
                 },
-                roleCertLocator: (_el: asn1.ASN1Element): void => {
-                    roleCertLocator = __utils._decode_implicit<GeneralNames>(
+                roleCertLocator: (_el: _Element): void => {
+                    roleCertLocator = $._decode_implicit<GeneralNames>(
                         () => _decode_GeneralNames
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_RoleSpecCertIdentifier,
                 _extension_additions_list_spec_for_RoleSpecCertIdentifier,
                 _root_component_type_list_2_spec_for_RoleSpecCertIdentifier,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -2307,156 +4889,336 @@ export function _decode_RoleSpecCertIdentifier(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_RoleSpecCertIdentifier(el);
 }
+/**
+ * @summary Encodes a(n) RoleSpecCertIdentifier into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The RoleSpecCertIdentifier, encoded as an ASN.1 Element.
+ */
 export function _encode_RoleSpecCertIdentifier(
     value: RoleSpecCertIdentifier,
-    elGetter: __utils.ASN1Encoder<RoleSpecCertIdentifier>
+    elGetter: $.ASN1Encoder<RoleSpecCertIdentifier>
 ) {
     if (!_cached_encoder_for_RoleSpecCertIdentifier) {
         _cached_encoder_for_RoleSpecCertIdentifier = function (
             value: RoleSpecCertIdentifier,
-            elGetter: __utils.ASN1Encoder<RoleSpecCertIdentifier>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<RoleSpecCertIdentifier>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_GeneralName,
-                                __utils.DER
-                            )(value.roleName, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                $.BER
+                            )(value.roleName, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.DER
-                            )(value.roleCertIssuer, __utils.DER),
+                                $.BER
+                            )(value.roleCertIssuer, $.BER),
                             /* IF_ABSENT  */ value.roleCertSerialNumber ===
                             undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       2,
                                       () => _encode_CertificateSerialNumber,
-                                      __utils.DER
-                                  )(value.roleCertSerialNumber, __utils.DER),
+                                      $.BER
+                                  )(value.roleCertSerialNumber, $.BER),
                             /* IF_ABSENT  */ value.roleCertLocator === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       3,
                                       () => _encode_GeneralNames,
-                                      __utils.DER
-                                  )(value.roleCertLocator, __utils.DER),
+                                      $.BER
+                                  )(value.roleCertLocator, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_RoleSpecCertIdentifier(value, elGetter);
 }
 
-export type RoleSpecCertIdentifierSyntax = RoleSpecCertIdentifier[]; // SequenceOfType
-let _cached_decoder_for_RoleSpecCertIdentifierSyntax: __utils.ASN1Decoder<
+export type RoleSpecCertIdentifierSyntax<> = RoleSpecCertIdentifier[]; // SequenceOfType
+let _cached_decoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Decoder<
     RoleSpecCertIdentifierSyntax
 > | null = null;
-let _cached_encoder_for_RoleSpecCertIdentifierSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Encoder<
     RoleSpecCertIdentifierSyntax
 > | null = null;
-export function _decode_RoleSpecCertIdentifierSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) RoleSpecCertIdentifierSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {RoleSpecCertIdentifierSyntax} The decoded data structure.
+ */
+export function _decode_RoleSpecCertIdentifierSyntax(el: _Element) {
     if (!_cached_decoder_for_RoleSpecCertIdentifierSyntax) {
-        _cached_decoder_for_RoleSpecCertIdentifierSyntax = __utils._decodeSequenceOf<
+        _cached_decoder_for_RoleSpecCertIdentifierSyntax = $._decodeSequenceOf<
             RoleSpecCertIdentifier
         >(() => _decode_RoleSpecCertIdentifier);
     }
     return _cached_decoder_for_RoleSpecCertIdentifierSyntax(el);
 }
+/**
+ * @summary Encodes a(n) RoleSpecCertIdentifierSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The RoleSpecCertIdentifierSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_RoleSpecCertIdentifierSyntax(
     value: RoleSpecCertIdentifierSyntax,
-    elGetter: __utils.ASN1Encoder<RoleSpecCertIdentifierSyntax>
+    elGetter: $.ASN1Encoder<RoleSpecCertIdentifierSyntax>
 ) {
     if (!_cached_encoder_for_RoleSpecCertIdentifierSyntax) {
-        _cached_encoder_for_RoleSpecCertIdentifierSyntax = __utils._encodeSequenceOf<
+        _cached_encoder_for_RoleSpecCertIdentifierSyntax = $._encodeSequenceOf<
             RoleSpecCertIdentifier
-        >(() => _encode_RoleSpecCertIdentifier, __utils.DER);
+        >(() => _encode_RoleSpecCertIdentifier, $.BER);
     }
     return _cached_encoder_for_RoleSpecCertIdentifierSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: roleSpecCertIdMatch
+/**
+ * @summary roleSpecCertIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * roleSpecCertIdentifier EXTENSION ::= {
+ *   SYNTAX         RoleSpecCertIdentifierSyntax
+ *   IDENTIFIED BY  {id-ce-roleSpecCertIdentifier} }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const roleSpecCertIdentifier: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_RoleSpecCertIdentifierSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_RoleSpecCertIdentifierSyntax,
+    },
+    "&id": undefined,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: basicAttConstraints
+/**
+ * @summary id_mr_roleSpecCertIdMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-roleSpecCertIdMatch                OBJECT IDENTIFIER ::= {id-mr 54}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_roleSpecCertIdMatch: OBJECT_IDENTIFIER = new _OID(
+    [54],
+    id_mr
+);
 
+/**
+ * @summary roleSpecCertIdMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * roleSpecCertIdMatch MATCHING-RULE ::= {
+ *   SYNTAX  RoleSpecCertIdentifierSyntax
+ *   ID      id-mr-roleSpecCertIdMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const roleSpecCertIdMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_RoleSpecCertIdentifierSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_RoleSpecCertIdentifierSyntax,
+    },
+    "&id": id_mr_roleSpecCertIdMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary BasicAttConstraintsSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * BasicAttConstraintsSyntax ::= SEQUENCE {
+ *   authority          BOOLEAN DEFAULT FALSE,
+ *   pathLenConstraint  INTEGER(0..MAX) OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class BasicAttConstraintsSyntax {
     constructor(
-        readonly authority: asn1.BOOLEAN | undefined,
-        readonly pathLenConstraint: asn1.INTEGER | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `authority`.
+         * @public
+         * @readonly
+         */
+        readonly authority: OPTIONAL<BOOLEAN>,
+        /**
+         * @summary `pathLenConstraint`.
+         * @public
+         * @readonly
+         */
+        readonly pathLenConstraint: OPTIONAL<INTEGER>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a BasicAttConstraintsSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `BasicAttConstraintsSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `BasicAttConstraintsSyntax`.
+     * @returns {BasicAttConstraintsSyntax}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof BasicAttConstraintsSyntax]: BasicAttConstraintsSyntax[_K];
+            }
+        >
+    ): BasicAttConstraintsSyntax {
+        return new BasicAttConstraintsSyntax(
+            _o.authority,
+            _o.pathLenConstraint,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `authority`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_authority() {
         return false;
     }
 }
-export const _root_component_type_list_1_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of BasicAttConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_BasicAttConstraintsSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "authority",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 1),
+        $.hasTag(_TagClass.universal, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "pathLenConstraint",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_BasicAttConstraintsSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_BasicAttConstraintsSyntax: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of BasicAttConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_BasicAttConstraintsSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of BasicAttConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_BasicAttConstraintsSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_BasicAttConstraintsSyntax: $.ASN1Decoder<
     BasicAttConstraintsSyntax
 > | null = null;
-let _cached_encoder_for_BasicAttConstraintsSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_BasicAttConstraintsSyntax: $.ASN1Encoder<
     BasicAttConstraintsSyntax
 > | null = null;
-export function _decode_BasicAttConstraintsSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) BasicAttConstraintsSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {BasicAttConstraintsSyntax} The decoded data structure.
+ */
+export function _decode_BasicAttConstraintsSyntax(el: _Element) {
     if (!_cached_decoder_for_BasicAttConstraintsSyntax) {
         _cached_decoder_for_BasicAttConstraintsSyntax = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): BasicAttConstraintsSyntax {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let authority: asn1.OPTIONAL<asn1.BOOLEAN> =
+            let authority: OPTIONAL<BOOLEAN> =
                 BasicAttConstraintsSyntax._default_value_for_authority;
-            let pathLenConstraint: asn1.OPTIONAL<asn1.INTEGER>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let pathLenConstraint: OPTIONAL<INTEGER>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                authority: (_el: asn1.ASN1Element): void => {
-                    authority = __utils._decodeBoolean(_el);
+            const callbacks: $.DecodingMap = {
+                authority: (_el: _Element): void => {
+                    authority = $._decodeBoolean(_el);
                 },
-                pathLenConstraint: (_el: asn1.ASN1Element): void => {
-                    pathLenConstraint = __utils._decodeInteger(_el);
+                pathLenConstraint: (_el: _Element): void => {
+                    pathLenConstraint = $._decodeInteger(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_BasicAttConstraintsSyntax,
                 _extension_additions_list_spec_for_BasicAttConstraintsSyntax,
                 _root_component_type_list_2_spec_for_BasicAttConstraintsSyntax,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -2469,125 +5231,403 @@ export function _decode_BasicAttConstraintsSyntax(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_BasicAttConstraintsSyntax(el);
 }
+/**
+ * @summary Encodes a(n) BasicAttConstraintsSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The BasicAttConstraintsSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_BasicAttConstraintsSyntax(
     value: BasicAttConstraintsSyntax,
-    elGetter: __utils.ASN1Encoder<BasicAttConstraintsSyntax>
+    elGetter: $.ASN1Encoder<BasicAttConstraintsSyntax>
 ) {
     if (!_cached_encoder_for_BasicAttConstraintsSyntax) {
         _cached_encoder_for_BasicAttConstraintsSyntax = function (
             value: BasicAttConstraintsSyntax,
-            elGetter: __utils.ASN1Encoder<BasicAttConstraintsSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<BasicAttConstraintsSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_DEFAULT */ value.authority === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.authority,
                                 BasicAttConstraintsSyntax._default_value_for_authority
                             )
                                 ? undefined
-                                : __utils._encodeBoolean(
-                                      value.authority,
-                                      __utils.DER
-                                  ),
+                                : $._encodeBoolean(value.authority, $.BER),
                             /* IF_ABSENT  */ value.pathLenConstraint ===
                             undefined
                                 ? undefined
-                                : __utils._encodeInteger(
+                                : $._encodeInteger(
                                       value.pathLenConstraint,
-                                      __utils.DER
+                                      $.BER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_BasicAttConstraintsSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: basicAttConstraintsMatch
+/**
+ * @summary basicAttConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * basicAttConstraints EXTENSION ::= {
+ *   SYNTAX         BasicAttConstraintsSyntax
+ *   IDENTIFIED BY  {id-ce-basicAttConstraints} }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const basicAttConstraints: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_BasicAttConstraintsSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_BasicAttConstraintsSyntax,
+    },
+    "&id": undefined,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: delegatedNameConstraints
+/**
+ * @summary id_mr_basicAttConstraintsMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-basicAttConstraintsMatch           OBJECT IDENTIFIER ::= {id-mr 55}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_basicAttConstraintsMatch: OBJECT_IDENTIFIER = new _OID(
+    [55],
+    id_mr
+);
 
-// TODO: ObjectAssignment: delegatedNameConstraintsMatch
+/**
+ * @summary basicAttConstraintsMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * basicAttConstraintsMatch MATCHING-RULE ::= {
+ *   SYNTAX  BasicAttConstraintsSyntax
+ *   ID      id-mr-basicAttConstraintsMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const basicAttConstraintsMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_BasicAttConstraintsSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_BasicAttConstraintsSyntax,
+    },
+    "&id": id_mr_basicAttConstraintsMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: acceptableCertPolicies
+/**
+ * @summary id_ce_delegatedNameConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-delegatedNameConstraints           OBJECT IDENTIFIER ::= {id-ce 42}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_delegatedNameConstraints: OBJECT_IDENTIFIER = new _OID(
+    [42],
+    id_ce
+);
 
-export type CertPolicyId = asn1.OBJECT_IDENTIFIER; // ObjectIdentifierType
-let _cached_decoder_for_CertPolicyId: __utils.ASN1Decoder<
-    CertPolicyId
-> | null = null;
-let _cached_encoder_for_CertPolicyId: __utils.ASN1Encoder<
-    CertPolicyId
-> | null = null;
-export function _decode_CertPolicyId(el: asn1.ASN1Element) {
+/**
+ * @summary delegatedNameConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * delegatedNameConstraints EXTENSION ::= {
+ *   SYNTAX         NameConstraintsSyntax
+ *   IDENTIFIED BY  id-ce-delegatedNameConstraints }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const delegatedNameConstraints: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_NameConstraintsSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_NameConstraintsSyntax,
+    },
+    "&id": id_ce_delegatedNameConstraints /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_mr_delegatedNameConstraintsMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-delegatedNameConstraintsMatch      OBJECT IDENTIFIER ::= {id-mr 56}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_delegatedNameConstraintsMatch: OBJECT_IDENTIFIER = new _OID(
+    [56],
+    id_mr
+);
+
+/**
+ * @summary delegatedNameConstraintsMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * delegatedNameConstraintsMatch MATCHING-RULE ::= {
+ *   SYNTAX  NameConstraintsSyntax
+ *   ID      id-mr-delegatedNameConstraintsMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const delegatedNameConstraintsMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_NameConstraintsSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_NameConstraintsSyntax,
+    },
+    "&id": id_mr_delegatedNameConstraintsMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+export type CertPolicyId<> = OBJECT_IDENTIFIER; // ObjectIdentifierType
+let _cached_decoder_for_CertPolicyId: $.ASN1Decoder<CertPolicyId> | null = null;
+let _cached_encoder_for_CertPolicyId: $.ASN1Encoder<CertPolicyId> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) CertPolicyId
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {CertPolicyId} The decoded data structure.
+ */
+export function _decode_CertPolicyId(el: _Element) {
     if (!_cached_decoder_for_CertPolicyId) {
-        _cached_decoder_for_CertPolicyId = __utils._decodeObjectIdentifier;
+        _cached_decoder_for_CertPolicyId = $._decodeObjectIdentifier;
     }
     return _cached_decoder_for_CertPolicyId(el);
 }
+/**
+ * @summary Encodes a(n) CertPolicyId into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The CertPolicyId, encoded as an ASN.1 Element.
+ */
 export function _encode_CertPolicyId(
     value: CertPolicyId,
-    elGetter: __utils.ASN1Encoder<CertPolicyId>
+    elGetter: $.ASN1Encoder<CertPolicyId>
 ) {
     if (!_cached_encoder_for_CertPolicyId) {
-        _cached_encoder_for_CertPolicyId = __utils._encodeObjectIdentifier;
+        _cached_encoder_for_CertPolicyId = $._encodeObjectIdentifier;
     }
     return _cached_encoder_for_CertPolicyId(value, elGetter);
 }
 
-export type AcceptableCertPoliciesSyntax = CertPolicyId[]; // SequenceOfType
-let _cached_decoder_for_AcceptableCertPoliciesSyntax: __utils.ASN1Decoder<
+export type AcceptableCertPoliciesSyntax<> = CertPolicyId[]; // SequenceOfType
+let _cached_decoder_for_AcceptableCertPoliciesSyntax: $.ASN1Decoder<
     AcceptableCertPoliciesSyntax
 > | null = null;
-let _cached_encoder_for_AcceptableCertPoliciesSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_AcceptableCertPoliciesSyntax: $.ASN1Encoder<
     AcceptableCertPoliciesSyntax
 > | null = null;
-export function _decode_AcceptableCertPoliciesSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AcceptableCertPoliciesSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AcceptableCertPoliciesSyntax} The decoded data structure.
+ */
+export function _decode_AcceptableCertPoliciesSyntax(el: _Element) {
     if (!_cached_decoder_for_AcceptableCertPoliciesSyntax) {
-        _cached_decoder_for_AcceptableCertPoliciesSyntax = __utils._decodeSequenceOf<
+        _cached_decoder_for_AcceptableCertPoliciesSyntax = $._decodeSequenceOf<
             CertPolicyId
         >(() => _decode_CertPolicyId);
     }
     return _cached_decoder_for_AcceptableCertPoliciesSyntax(el);
 }
+/**
+ * @summary Encodes a(n) AcceptableCertPoliciesSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AcceptableCertPoliciesSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_AcceptableCertPoliciesSyntax(
     value: AcceptableCertPoliciesSyntax,
-    elGetter: __utils.ASN1Encoder<AcceptableCertPoliciesSyntax>
+    elGetter: $.ASN1Encoder<AcceptableCertPoliciesSyntax>
 ) {
     if (!_cached_encoder_for_AcceptableCertPoliciesSyntax) {
-        _cached_encoder_for_AcceptableCertPoliciesSyntax = __utils._encodeSequenceOf<
+        _cached_encoder_for_AcceptableCertPoliciesSyntax = $._encodeSequenceOf<
             CertPolicyId
-        >(() => _encode_CertPolicyId, __utils.DER);
+        >(() => _encode_CertPolicyId, $.BER);
     }
     return _cached_encoder_for_AcceptableCertPoliciesSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: acceptableCertPoliciesMatch
+/**
+ * @summary id_ce_acceptableCertPolicies
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-acceptableCertPolicies             OBJECT IDENTIFIER ::= {id-ce 52}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_acceptableCertPolicies: OBJECT_IDENTIFIER = new _OID(
+    [52],
+    id_ce
+);
 
-// TODO: ObjectAssignment: authorityAttributeIdentifier
+/**
+ * @summary acceptableCertPolicies
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * acceptableCertPolicies EXTENSION ::= {
+ *   SYNTAX         AcceptableCertPoliciesSyntax
+ *   IDENTIFIED BY  id-ce-acceptableCertPolicies }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const acceptableCertPolicies: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AcceptableCertPoliciesSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AcceptableCertPoliciesSyntax,
+    },
+    "&id": id_ce_acceptableCertPolicies /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-export type AuthAttId = IssuerSerial; // DefinedType
-let _cached_decoder_for_AuthAttId: __utils.ASN1Decoder<AuthAttId> | null = null;
-let _cached_encoder_for_AuthAttId: __utils.ASN1Encoder<AuthAttId> | null = null;
-export function _decode_AuthAttId(el: asn1.ASN1Element) {
+/**
+ * @summary id_mr_acceptableCertPoliciesMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-acceptableCertPoliciesMatch        OBJECT IDENTIFIER ::= {id-mr 59}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_acceptableCertPoliciesMatch: OBJECT_IDENTIFIER = new _OID(
+    [59],
+    id_mr
+);
+
+/**
+ * @summary acceptableCertPoliciesMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * acceptableCertPoliciesMatch MATCHING-RULE ::= {
+ *   SYNTAX  AcceptableCertPoliciesSyntax
+ *   ID      id-mr-acceptableCertPoliciesMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const acceptableCertPoliciesMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_AcceptableCertPoliciesSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_AcceptableCertPoliciesSyntax,
+    },
+    "&id": id_mr_acceptableCertPoliciesMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+export type AuthAttId<> = IssuerSerial; // DefinedType
+let _cached_decoder_for_AuthAttId: $.ASN1Decoder<AuthAttId> | null = null;
+let _cached_encoder_for_AuthAttId: $.ASN1Encoder<AuthAttId> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) AuthAttId
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AuthAttId} The decoded data structure.
+ */
+export function _decode_AuthAttId(el: _Element) {
     if (!_cached_decoder_for_AuthAttId) {
         _cached_decoder_for_AuthAttId = _decode_IssuerSerial;
     }
     return _cached_decoder_for_AuthAttId(el);
 }
+/**
+ * @summary Encodes a(n) AuthAttId into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AuthAttId, encoded as an ASN.1 Element.
+ */
 export function _encode_AuthAttId(
     value: AuthAttId,
-    elGetter: __utils.ASN1Encoder<AuthAttId>
+    elGetter: $.ASN1Encoder<AuthAttId>
 ) {
     if (!_cached_encoder_for_AuthAttId) {
         _cached_encoder_for_AuthAttId = _encode_IssuerSerial;
@@ -2595,31 +5635,42 @@ export function _encode_AuthAttId(
     return _cached_encoder_for_AuthAttId(value, elGetter);
 }
 
-export type AuthorityAttributeIdentifierSyntax = AuthAttId[]; // SequenceOfType
-let _cached_decoder_for_AuthorityAttributeIdentifierSyntax: __utils.ASN1Decoder<
+export type AuthorityAttributeIdentifierSyntax<> = AuthAttId[]; // SequenceOfType
+let _cached_decoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Decoder<
     AuthorityAttributeIdentifierSyntax
 > | null = null;
-let _cached_encoder_for_AuthorityAttributeIdentifierSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Encoder<
     AuthorityAttributeIdentifierSyntax
 > | null = null;
-export function _decode_AuthorityAttributeIdentifierSyntax(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AuthorityAttributeIdentifierSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AuthorityAttributeIdentifierSyntax} The decoded data structure.
+ */
+export function _decode_AuthorityAttributeIdentifierSyntax(el: _Element) {
     if (!_cached_decoder_for_AuthorityAttributeIdentifierSyntax) {
-        _cached_decoder_for_AuthorityAttributeIdentifierSyntax = __utils._decodeSequenceOf<
+        _cached_decoder_for_AuthorityAttributeIdentifierSyntax = $._decodeSequenceOf<
             AuthAttId
         >(() => _decode_AuthAttId);
     }
     return _cached_decoder_for_AuthorityAttributeIdentifierSyntax(el);
 }
+/**
+ * @summary Encodes a(n) AuthorityAttributeIdentifierSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AuthorityAttributeIdentifierSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_AuthorityAttributeIdentifierSyntax(
     value: AuthorityAttributeIdentifierSyntax,
-    elGetter: __utils.ASN1Encoder<AuthorityAttributeIdentifierSyntax>
+    elGetter: $.ASN1Encoder<AuthorityAttributeIdentifierSyntax>
 ) {
     if (!_cached_encoder_for_AuthorityAttributeIdentifierSyntax) {
-        _cached_encoder_for_AuthorityAttributeIdentifierSyntax = __utils._encodeSequenceOf<
+        _cached_encoder_for_AuthorityAttributeIdentifierSyntax = $._encodeSequenceOf<
             AuthAttId
-        >(() => _encode_AuthAttId, __utils.DER);
+        >(() => _encode_AuthAttId, $.BER);
     }
     return _cached_encoder_for_AuthorityAttributeIdentifierSyntax(
         value,
@@ -2627,42 +5678,242 @@ export function _encode_AuthorityAttributeIdentifierSyntax(
     );
 }
 
-// TODO: ObjectAssignment: authAttIdMatch
+/**
+ * @summary authorityAttributeIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * authorityAttributeIdentifier EXTENSION ::= {
+ *   SYNTAX         AuthorityAttributeIdentifierSyntax
+ *   IDENTIFIED BY  {id-ce-authorityAttributeIdentifier} }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const authorityAttributeIdentifier: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AuthorityAttributeIdentifierSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AuthorityAttributeIdentifierSyntax,
+    },
+    "&id": undefined,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: indirectIssuer
+/**
+ * @summary id_mr_authAttIdMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-authAttIdMatch                     OBJECT IDENTIFIER ::= {id-mr 53}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_authAttIdMatch: OBJECT_IDENTIFIER = new _OID([53], id_mr);
 
-// TODO: ObjectAssignment: issuedOnBehalfOf
+/**
+ * @summary authAttIdMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * authAttIdMatch MATCHING-RULE ::= {
+ *   SYNTAX  AuthorityAttributeIdentifierSyntax
+ *   ID      id-mr-authAttIdMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const authAttIdMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_AuthorityAttributeIdentifierSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_AuthorityAttributeIdentifierSyntax,
+    },
+    "&id": id_mr_authAttIdMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: noAssertion
+/**
+ * @summary id_ce_indirectIssuer
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-indirectIssuer                     OBJECT IDENTIFIER ::= {id-ce 61}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_indirectIssuer: OBJECT_IDENTIFIER = new _OID([61], id_ce);
 
-// TODO: ObjectAssignment: allowedAttributeAssignments
+/**
+ * @summary indirectIssuer
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * indirectIssuer EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-indirectIssuer }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const indirectIssuer: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_indirectIssuer /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
+/**
+ * @summary id_ce_issuedOnBehalfOf
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-issuedOnBehalfOf                   OBJECT IDENTIFIER ::= {id-ce 64}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_issuedOnBehalfOf: OBJECT_IDENTIFIER = new _OID([64], id_ce);
+
+/**
+ * @summary issuedOnBehalfOf
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * issuedOnBehalfOf EXTENSION ::= {
+ *   SYNTAX         GeneralName
+ *   IDENTIFIED BY  id-ce-issuedOnBehalfOf }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const issuedOnBehalfOf: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_GeneralName,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_GeneralName,
+    },
+    "&id": id_ce_issuedOnBehalfOf /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_ce_noAssertion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-noAssertion                        OBJECT IDENTIFIER ::= {id-ce 62}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_noAssertion: OBJECT_IDENTIFIER = new _OID([62], id_ce);
+
+/**
+ * @summary noAssertion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * noAssertion EXTENSION ::= {
+ *   SYNTAX         NULL
+ *   IDENTIFIED BY  id-ce-noAssertion }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const noAssertion: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": $._decodeNull,
+    },
+    encoderFor: {
+        "&ExtnType": $._encodeNull,
+    },
+    "&id": id_ce_noAssertion /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary AllowedAttributeAssignments_Item_attributes_Item
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AllowedAttributeAssignments-Item-attributes-Item ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type AllowedAttributeAssignments_Item_attributes_Item =
     | { attributeType: AttributeType } /* CHOICE_ALT_ROOT */
     | { attributeTypeandValues: Attribute } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Decoder<
     AllowedAttributeAssignments_Item_attributes_Item
 > | null = null;
-let _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item: __utils.ASN1Encoder<
+let _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Encoder<
     AllowedAttributeAssignments_Item_attributes_Item
 > | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) AllowedAttributeAssignments_Item_attributes_Item
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AllowedAttributeAssignments_Item_attributes_Item} The decoded data structure.
+ */
 export function _decode_AllowedAttributeAssignments_Item_attributes_Item(
-    el: asn1.ASN1Element
+    el: _Element
 ) {
     if (!_cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item) {
-        _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item = __utils._decode_extensible_choice<
+        _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._decode_extensible_choice<
             AllowedAttributeAssignments_Item_attributes_Item
         >({
             "CONTEXT 0": [
                 "attributeType",
-                __utils._decode_implicit<AttributeType>(
-                    () => _decode_AttributeType
-                ),
+                $._decode_implicit<AttributeType>(() => _decode_AttributeType),
             ],
             "CONTEXT 1": [
                 "attributeTypeandValues",
-                __utils._decode_implicit<Attribute>(() => _decode_Attribute),
+                $._decode_implicit<Attribute>(() => _decode_Attribute),
             ],
         });
     }
@@ -2670,31 +5921,36 @@ export function _decode_AllowedAttributeAssignments_Item_attributes_Item(
         el
     );
 }
+/**
+ * @summary Encodes a(n) AllowedAttributeAssignments_Item_attributes_Item into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AllowedAttributeAssignments_Item_attributes_Item, encoded as an ASN.1 Element.
+ */
 export function _encode_AllowedAttributeAssignments_Item_attributes_Item(
     value: AllowedAttributeAssignments_Item_attributes_Item,
-    elGetter: __utils.ASN1Encoder<
-        AllowedAttributeAssignments_Item_attributes_Item
-    >
+    elGetter: $.ASN1Encoder<AllowedAttributeAssignments_Item_attributes_Item>
 ) {
     if (!_cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item) {
-        _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item = __utils._encode_choice<
+        _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._encode_choice<
             AllowedAttributeAssignments_Item_attributes_Item
         >(
             {
-                attributeType: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                attributeType: $._encode_implicit(
+                    _TagClass.context,
                     0,
                     () => _encode_AttributeType,
-                    __utils.DER
+                    $.BER
                 ),
-                attributeTypeandValues: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                attributeTypeandValues: $._encode_implicit(
+                    _TagClass.context,
                     1,
                     () => _encode_Attribute,
-                    __utils.DER
+                    $.BER
                 ),
             },
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item(
@@ -2703,69 +5959,150 @@ export function _encode_AllowedAttributeAssignments_Item_attributes_Item(
     );
 }
 
+/**
+ * @summary AllowedAttributeAssignments_Item
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AllowedAttributeAssignments-Item ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class AllowedAttributeAssignments_Item {
     constructor(
+        /**
+         * @summary `attributes`.
+         * @public
+         * @readonly
+         */
         readonly attributes: AllowedAttributeAssignments_Item_attributes_Item[],
+        /**
+         * @summary `holderDomain`.
+         * @public
+         * @readonly
+         */
         readonly holderDomain: GeneralName,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AllowedAttributeAssignments_Item
+     * @description
+     *
+     * This takes an `object` and converts it to a `AllowedAttributeAssignments_Item`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AllowedAttributeAssignments_Item`.
+     * @returns {AllowedAttributeAssignments_Item}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AllowedAttributeAssignments_Item]: AllowedAttributeAssignments_Item[_K];
+            }
+        >
+    ): AllowedAttributeAssignments_Item {
+        return new AllowedAttributeAssignments_Item(
+            _o.attributes,
+            _o.holderDomain,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AllowedAttributeAssignments_Item
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AllowedAttributeAssignments_Item: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "attributes",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "holderDomain",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AllowedAttributeAssignments_Item: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AllowedAttributeAssignments_Item: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AllowedAttributeAssignments_Item
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AllowedAttributeAssignments_Item: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AllowedAttributeAssignments_Item
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AllowedAttributeAssignments_Item: $.ComponentSpec[] = [];
+let _cached_decoder_for_AllowedAttributeAssignments_Item: $.ASN1Decoder<
     AllowedAttributeAssignments_Item
 > | null = null;
-let _cached_encoder_for_AllowedAttributeAssignments_Item: __utils.ASN1Encoder<
+let _cached_encoder_for_AllowedAttributeAssignments_Item: $.ASN1Encoder<
     AllowedAttributeAssignments_Item
 > | null = null;
-export function _decode_AllowedAttributeAssignments_Item(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AllowedAttributeAssignments_Item
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AllowedAttributeAssignments_Item} The decoded data structure.
+ */
+export function _decode_AllowedAttributeAssignments_Item(el: _Element) {
     if (!_cached_decoder_for_AllowedAttributeAssignments_Item) {
         _cached_decoder_for_AllowedAttributeAssignments_Item = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AllowedAttributeAssignments_Item {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "AllowedAttributeAssignments-Item contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "attributes";
             sequence[1].name = "holderDomain";
             let attributes!: AllowedAttributeAssignments_Item_attributes_Item[];
             let holderDomain!: GeneralName;
-            attributes = __utils._decode_implicit<
+            attributes = $._decode_implicit<
                 AllowedAttributeAssignments_Item_attributes_Item[]
             >(() =>
-                __utils._decodeSetOf<
+                $._decodeSetOf<
                     AllowedAttributeAssignments_Item_attributes_Item
                 >(
                     () =>
                         _decode_AllowedAttributeAssignments_Item_attributes_Item
                 )
             )(sequence[0]);
-            holderDomain = __utils._decode_implicit<GeneralName>(
+            holderDomain = $._decode_implicit<GeneralName>(
                 () => _decode_GeneralName
             )(sequence[1]);
-            // TODO: Validate values.
             return new AllowedAttributeAssignments_Item(
                 attributes,
                 holderDomain,
@@ -2775,47 +6112,52 @@ export function _decode_AllowedAttributeAssignments_Item(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AllowedAttributeAssignments_Item(el);
 }
+/**
+ * @summary Encodes a(n) AllowedAttributeAssignments_Item into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AllowedAttributeAssignments_Item, encoded as an ASN.1 Element.
+ */
 export function _encode_AllowedAttributeAssignments_Item(
     value: AllowedAttributeAssignments_Item,
-    elGetter: __utils.ASN1Encoder<AllowedAttributeAssignments_Item>
+    elGetter: $.ASN1Encoder<AllowedAttributeAssignments_Item>
 ) {
     if (!_cached_encoder_for_AllowedAttributeAssignments_Item) {
         _cached_encoder_for_AllowedAttributeAssignments_Item = function (
             value: AllowedAttributeAssignments_Item,
-            elGetter: __utils.ASN1Encoder<AllowedAttributeAssignments_Item>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AllowedAttributeAssignments_Item>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () =>
-                                    __utils._encodeSetOf<
+                                    $._encodeSetOf<
                                         AllowedAttributeAssignments_Item_attributes_Item
                                     >(
                                         () =>
                                             _encode_AllowedAttributeAssignments_Item_attributes_Item,
-                                        __utils.DER
+                                        $.BER
                                     ),
-                                __utils.DER
-                            )(value.attributes, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                $.BER
+                            )(value.attributes, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,
-                                __utils.DER
-                            )(value.holderDomain, __utils.DER),
+                                $.BER
+                            )(value.holderDomain, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -2825,93 +6167,228 @@ export function _encode_AllowedAttributeAssignments_Item(
     );
 }
 
-export type AllowedAttributeAssignments = AllowedAttributeAssignments_Item[]; // SetOfType
-let _cached_decoder_for_AllowedAttributeAssignments: __utils.ASN1Decoder<
+export type AllowedAttributeAssignments<> = AllowedAttributeAssignments_Item[]; // SetOfType
+let _cached_decoder_for_AllowedAttributeAssignments: $.ASN1Decoder<
     AllowedAttributeAssignments
 > | null = null;
-let _cached_encoder_for_AllowedAttributeAssignments: __utils.ASN1Encoder<
+let _cached_encoder_for_AllowedAttributeAssignments: $.ASN1Encoder<
     AllowedAttributeAssignments
 > | null = null;
-export function _decode_AllowedAttributeAssignments(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AllowedAttributeAssignments
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AllowedAttributeAssignments} The decoded data structure.
+ */
+export function _decode_AllowedAttributeAssignments(el: _Element) {
     if (!_cached_decoder_for_AllowedAttributeAssignments) {
-        _cached_decoder_for_AllowedAttributeAssignments = __utils._decodeSetOf<
+        _cached_decoder_for_AllowedAttributeAssignments = $._decodeSetOf<
             AllowedAttributeAssignments_Item
         >(() => _decode_AllowedAttributeAssignments_Item);
     }
     return _cached_decoder_for_AllowedAttributeAssignments(el);
 }
+/**
+ * @summary Encodes a(n) AllowedAttributeAssignments into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AllowedAttributeAssignments, encoded as an ASN.1 Element.
+ */
 export function _encode_AllowedAttributeAssignments(
     value: AllowedAttributeAssignments,
-    elGetter: __utils.ASN1Encoder<AllowedAttributeAssignments>
+    elGetter: $.ASN1Encoder<AllowedAttributeAssignments>
 ) {
     if (!_cached_encoder_for_AllowedAttributeAssignments) {
-        _cached_encoder_for_AllowedAttributeAssignments = __utils._encodeSetOf<
+        _cached_encoder_for_AllowedAttributeAssignments = $._encodeSetOf<
             AllowedAttributeAssignments_Item
-        >(() => _encode_AllowedAttributeAssignments_Item, __utils.DER);
+        >(() => _encode_AllowedAttributeAssignments_Item, $.BER);
     }
     return _cached_encoder_for_AllowedAttributeAssignments(value, elGetter);
 }
 
-// TODO: ObjectAssignment: attributeMappings
+/**
+ * @summary id_ce_allowedAttributeAssignments
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-allowedAttributeAssignments        OBJECT IDENTIFIER ::= {id-ce 67}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_allowedAttributeAssignments: OBJECT_IDENTIFIER = new _OID(
+    [67],
+    id_ce
+);
 
+/**
+ * @summary allowedAttributeAssignments
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * allowedAttributeAssignments EXTENSION ::= {
+ *   SYNTAX         AllowedAttributeAssignments
+ *   IDENTIFIED BY  id-ce-allowedAttributeAssignments }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const allowedAttributeAssignments: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AllowedAttributeAssignments,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AllowedAttributeAssignments,
+    },
+    "&id": id_ce_allowedAttributeAssignments /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary AttributeMappings_Item_typeMappings
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeMappings-Item-typeMappings ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class AttributeMappings_Item_typeMappings {
     constructor(
+        /**
+         * @summary `local`.
+         * @public
+         * @readonly
+         */
         readonly local: AttributeType,
+        /**
+         * @summary `remote`.
+         * @public
+         * @readonly
+         */
         readonly remote: AttributeType,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeMappings_Item_typeMappings
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeMappings_Item_typeMappings`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeMappings_Item_typeMappings`.
+     * @returns {AttributeMappings_Item_typeMappings}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeMappings_Item_typeMappings]: AttributeMappings_Item_typeMappings[_K];
+            }
+        >
+    ): AttributeMappings_Item_typeMappings {
+        return new AttributeMappings_Item_typeMappings(
+            _o.local,
+            _o.remote,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeMappings_Item_typeMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeMappings: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "local",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "remote",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeMappings_Item_typeMappings: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeMappings_Item_typeMappings: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeMappings_Item_typeMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeMappings: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeMappings_Item_typeMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeMappings_Item_typeMappings: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeMappings_Item_typeMappings: $.ASN1Decoder<
     AttributeMappings_Item_typeMappings
 > | null = null;
-let _cached_encoder_for_AttributeMappings_Item_typeMappings: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeMappings_Item_typeMappings: $.ASN1Encoder<
     AttributeMappings_Item_typeMappings
 > | null = null;
-export function _decode_AttributeMappings_Item_typeMappings(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeMappings_Item_typeMappings
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeMappings_Item_typeMappings} The decoded data structure.
+ */
+export function _decode_AttributeMappings_Item_typeMappings(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings_Item_typeMappings) {
         _cached_decoder_for_AttributeMappings_Item_typeMappings = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeMappings_Item_typeMappings {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "AttributeMappings-Item-typeMappings contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "local";
             sequence[1].name = "remote";
             let local!: AttributeType;
             let remote!: AttributeType;
-            local = __utils._decode_implicit<AttributeType>(
+            local = $._decode_implicit<AttributeType>(
                 () => _decode_AttributeType
             )(sequence[0]);
-            remote = __utils._decode_implicit<AttributeType>(
+            remote = $._decode_implicit<AttributeType>(
                 () => _decode_AttributeType
             )(sequence[1]);
-            // TODO: Validate values.
             return new AttributeMappings_Item_typeMappings(
                 local,
                 remote,
@@ -2921,40 +6398,45 @@ export function _decode_AttributeMappings_Item_typeMappings(
     }
     return _cached_decoder_for_AttributeMappings_Item_typeMappings(el);
 }
+/**
+ * @summary Encodes a(n) AttributeMappings_Item_typeMappings into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeMappings_Item_typeMappings, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeMappings_Item_typeMappings(
     value: AttributeMappings_Item_typeMappings,
-    elGetter: __utils.ASN1Encoder<AttributeMappings_Item_typeMappings>
+    elGetter: $.ASN1Encoder<AttributeMappings_Item_typeMappings>
 ) {
     if (!_cached_encoder_for_AttributeMappings_Item_typeMappings) {
         _cached_encoder_for_AttributeMappings_Item_typeMappings = function (
             value: AttributeMappings_Item_typeMappings,
-            elGetter: __utils.ASN1Encoder<AttributeMappings_Item_typeMappings>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeMappings_Item_typeMappings>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_AttributeType,
-                                __utils.DER
-                            )(value.local, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                $.BER
+                            )(value.local, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_AttributeType,
-                                __utils.DER
-                            )(value.remote, __utils.DER),
+                                $.BER
+                            )(value.remote, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -2964,64 +6446,143 @@ export function _encode_AttributeMappings_Item_typeMappings(
     );
 }
 
+/**
+ * @summary AttributeMappings_Item_typeValueMappings
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeMappings-Item-typeValueMappings ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class AttributeMappings_Item_typeValueMappings {
     constructor(
+        /**
+         * @summary `local`.
+         * @public
+         * @readonly
+         */
         readonly local: AttributeTypeAndValue,
+        /**
+         * @summary `remote`.
+         * @public
+         * @readonly
+         */
         readonly remote: AttributeTypeAndValue,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeMappings_Item_typeValueMappings
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeMappings_Item_typeValueMappings`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeMappings_Item_typeValueMappings`.
+     * @returns {AttributeMappings_Item_typeValueMappings}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeMappings_Item_typeValueMappings]: AttributeMappings_Item_typeValueMappings[_K];
+            }
+        >
+    ): AttributeMappings_Item_typeValueMappings {
+        return new AttributeMappings_Item_typeValueMappings(
+            _o.local,
+            _o.remote,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeMappings_Item_typeValueMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeMappings_Item_typeValueMappings: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "local",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "remote",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeMappings_Item_typeValueMappings: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeMappings_Item_typeValueMappings: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeMappings_Item_typeValueMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeMappings_Item_typeValueMappings: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeMappings_Item_typeValueMappings
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeMappings_Item_typeValueMappings: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Decoder<
     AttributeMappings_Item_typeValueMappings
 > | null = null;
-let _cached_encoder_for_AttributeMappings_Item_typeValueMappings: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Encoder<
     AttributeMappings_Item_typeValueMappings
 > | null = null;
-export function _decode_AttributeMappings_Item_typeValueMappings(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeMappings_Item_typeValueMappings
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeMappings_Item_typeValueMappings} The decoded data structure.
+ */
+export function _decode_AttributeMappings_Item_typeValueMappings(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings_Item_typeValueMappings) {
         _cached_decoder_for_AttributeMappings_Item_typeValueMappings = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeMappings_Item_typeValueMappings {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "AttributeMappings-Item-typeValueMappings contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "local";
             sequence[1].name = "remote";
             let local!: AttributeTypeAndValue;
             let remote!: AttributeTypeAndValue;
-            local = __utils._decode_implicit<AttributeTypeAndValue>(
+            local = $._decode_implicit<AttributeTypeAndValue>(
                 () => _decode_AttributeTypeAndValue
             )(sequence[0]);
-            remote = __utils._decode_implicit<AttributeTypeAndValue>(
+            remote = $._decode_implicit<AttributeTypeAndValue>(
                 () => _decode_AttributeTypeAndValue
             )(sequence[1]);
-            // TODO: Validate values.
             return new AttributeMappings_Item_typeValueMappings(
                 local,
                 remote,
@@ -3031,42 +6592,45 @@ export function _decode_AttributeMappings_Item_typeValueMappings(
     }
     return _cached_decoder_for_AttributeMappings_Item_typeValueMappings(el);
 }
+/**
+ * @summary Encodes a(n) AttributeMappings_Item_typeValueMappings into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeMappings_Item_typeValueMappings, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeMappings_Item_typeValueMappings(
     value: AttributeMappings_Item_typeValueMappings,
-    elGetter: __utils.ASN1Encoder<AttributeMappings_Item_typeValueMappings>
+    elGetter: $.ASN1Encoder<AttributeMappings_Item_typeValueMappings>
 ) {
     if (!_cached_encoder_for_AttributeMappings_Item_typeValueMappings) {
         _cached_encoder_for_AttributeMappings_Item_typeValueMappings = function (
             value: AttributeMappings_Item_typeValueMappings,
-            elGetter: __utils.ASN1Encoder<
-                AttributeMappings_Item_typeValueMappings
-            >
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeMappings_Item_typeValueMappings>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_AttributeTypeAndValue,
-                                __utils.DER
-                            )(value.local, __utils.DER),
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                                $.BER
+                            )(value.local, $.BER),
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 1,
                                 () => _encode_AttributeTypeAndValue,
-                                __utils.DER
-                            )(value.remote, __utils.DER),
+                                $.BER
+                            )(value.remote, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -3076,6 +6640,16 @@ export function _encode_AttributeMappings_Item_typeValueMappings(
     );
 }
 
+/**
+ * @summary AttributeMappings_Item
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeMappings-Item ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type AttributeMappings_Item =
     | {
           typeMappings: AttributeMappings_Item_typeMappings;
@@ -3083,191 +6657,366 @@ export type AttributeMappings_Item =
     | {
           typeValueMappings: AttributeMappings_Item_typeValueMappings;
       } /* CHOICE_ALT_ROOT */;
-let _cached_decoder_for_AttributeMappings_Item: __utils.ASN1Decoder<
+let _cached_decoder_for_AttributeMappings_Item: $.ASN1Decoder<
     AttributeMappings_Item
 > | null = null;
-let _cached_encoder_for_AttributeMappings_Item: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeMappings_Item: $.ASN1Encoder<
     AttributeMappings_Item
 > | null = null;
-export function _decode_AttributeMappings_Item(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeMappings_Item
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeMappings_Item} The decoded data structure.
+ */
+export function _decode_AttributeMappings_Item(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings_Item) {
-        _cached_decoder_for_AttributeMappings_Item = __utils._decode_inextensible_choice<
+        _cached_decoder_for_AttributeMappings_Item = $._decode_inextensible_choice<
             AttributeMappings_Item
         >({
             "CONTEXT 0": [
                 "typeMappings",
-                __utils._decode_implicit<AttributeMappings_Item_typeMappings>(
+                $._decode_implicit<AttributeMappings_Item_typeMappings>(
                     () => _decode_AttributeMappings_Item_typeMappings
                 ),
             ],
             "CONTEXT 1": [
                 "typeValueMappings",
-                __utils._decode_implicit<
-                    AttributeMappings_Item_typeValueMappings
-                >(() => _decode_AttributeMappings_Item_typeValueMappings),
+                $._decode_implicit<AttributeMappings_Item_typeValueMappings>(
+                    () => _decode_AttributeMappings_Item_typeValueMappings
+                ),
             ],
         });
     }
     return _cached_decoder_for_AttributeMappings_Item(el);
 }
+/**
+ * @summary Encodes a(n) AttributeMappings_Item into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeMappings_Item, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeMappings_Item(
     value: AttributeMappings_Item,
-    elGetter: __utils.ASN1Encoder<AttributeMappings_Item>
+    elGetter: $.ASN1Encoder<AttributeMappings_Item>
 ) {
     if (!_cached_encoder_for_AttributeMappings_Item) {
-        _cached_encoder_for_AttributeMappings_Item = __utils._encode_choice<
+        _cached_encoder_for_AttributeMappings_Item = $._encode_choice<
             AttributeMappings_Item
         >(
             {
-                typeMappings: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                typeMappings: $._encode_implicit(
+                    _TagClass.context,
                     0,
                     () => _encode_AttributeMappings_Item_typeMappings,
-                    __utils.DER
+                    $.BER
                 ),
-                typeValueMappings: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                typeValueMappings: $._encode_implicit(
+                    _TagClass.context,
                     1,
                     () => _encode_AttributeMappings_Item_typeValueMappings,
-                    __utils.DER
+                    $.BER
                 ),
             },
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_AttributeMappings_Item(value, elGetter);
 }
 
-export type AttributeMappings = AttributeMappings_Item[]; // SetOfType
-let _cached_decoder_for_AttributeMappings: __utils.ASN1Decoder<
+export type AttributeMappings<> = AttributeMappings_Item[]; // SetOfType
+let _cached_decoder_for_AttributeMappings: $.ASN1Decoder<
     AttributeMappings
 > | null = null;
-let _cached_encoder_for_AttributeMappings: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeMappings: $.ASN1Encoder<
     AttributeMappings
 > | null = null;
-export function _decode_AttributeMappings(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeMappings
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeMappings} The decoded data structure.
+ */
+export function _decode_AttributeMappings(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings) {
-        _cached_decoder_for_AttributeMappings = __utils._decodeSetOf<
+        _cached_decoder_for_AttributeMappings = $._decodeSetOf<
             AttributeMappings_Item
         >(() => _decode_AttributeMappings_Item);
     }
     return _cached_decoder_for_AttributeMappings(el);
 }
+/**
+ * @summary Encodes a(n) AttributeMappings into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeMappings, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeMappings(
     value: AttributeMappings,
-    elGetter: __utils.ASN1Encoder<AttributeMappings>
+    elGetter: $.ASN1Encoder<AttributeMappings>
 ) {
     if (!_cached_encoder_for_AttributeMappings) {
-        _cached_encoder_for_AttributeMappings = __utils._encodeSetOf<
+        _cached_encoder_for_AttributeMappings = $._encodeSetOf<
             AttributeMappings_Item
-        >(() => _encode_AttributeMappings_Item, __utils.DER);
+        >(() => _encode_AttributeMappings_Item, $.BER);
     }
     return _cached_encoder_for_AttributeMappings(value, elGetter);
 }
 
-// TODO: ObjectAssignment: holderNameConstraints
+/**
+ * @summary id_ce_attributeMappings
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-attributeMappings                  OBJECT IDENTIFIER ::= {id-ce 68}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_attributeMappings: OBJECT_IDENTIFIER = new _OID([68], id_ce);
 
-export type BaseDistance = asn1.INTEGER;
-let _cached_decoder_for_BaseDistance: __utils.ASN1Decoder<
-    BaseDistance
-> | null = null;
-let _cached_encoder_for_BaseDistance: __utils.ASN1Encoder<
-    BaseDistance
-> | null = null;
-export function _decode_BaseDistance(el: asn1.ASN1Element) {
+/**
+ * @summary attributeMappings
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeMappings EXTENSION ::= {
+ *   SYNTAX         AttributeMappings
+ *   IDENTIFIED BY  id-ce-attributeMappings }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const attributeMappings: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_AttributeMappings,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_AttributeMappings,
+    },
+    "&id": id_ce_attributeMappings /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary BaseDistance
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * BaseDistance  ::=  INTEGER(0..MAX)
+ * ```
+ */
+export type BaseDistance = INTEGER;
+let _cached_decoder_for_BaseDistance: $.ASN1Decoder<BaseDistance> | null = null;
+let _cached_encoder_for_BaseDistance: $.ASN1Encoder<BaseDistance> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) BaseDistance
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {BaseDistance} The decoded data structure.
+ */
+export function _decode_BaseDistance(el: _Element) {
     if (!_cached_decoder_for_BaseDistance) {
-        _cached_decoder_for_BaseDistance = __utils._decodeInteger;
+        _cached_decoder_for_BaseDistance = $._decodeInteger;
     }
     return _cached_decoder_for_BaseDistance(el);
 }
+/**
+ * @summary Encodes a(n) BaseDistance into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The BaseDistance, encoded as an ASN.1 Element.
+ */
 export function _encode_BaseDistance(
     value: BaseDistance,
-    elGetter: __utils.ASN1Encoder<BaseDistance>
+    elGetter: $.ASN1Encoder<BaseDistance>
 ) {
     if (!_cached_encoder_for_BaseDistance) {
-        _cached_encoder_for_BaseDistance = __utils._encodeInteger;
+        _cached_encoder_for_BaseDistance = $._encodeInteger;
     }
     return _cached_encoder_for_BaseDistance(value, elGetter);
 }
 
+/**
+ * @summary GeneralSubtree
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * GeneralSubtree ::= SEQUENCE {
+ *   base          GeneralName,
+ *   minimum  [0]  BaseDistance DEFAULT 0,
+ *   maximum  [1]  BaseDistance OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class GeneralSubtree {
     constructor(
+        /**
+         * @summary `base`.
+         * @public
+         * @readonly
+         */
         readonly base: GeneralName,
-        readonly minimum: BaseDistance | undefined,
-        readonly maximum: BaseDistance | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `minimum`.
+         * @public
+         * @readonly
+         */
+        readonly minimum: OPTIONAL<BaseDistance>,
+        /**
+         * @summary `maximum`.
+         * @public
+         * @readonly
+         */
+        readonly maximum: OPTIONAL<BaseDistance>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a GeneralSubtree
+     * @description
+     *
+     * This takes an `object` and converts it to a `GeneralSubtree`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `GeneralSubtree`.
+     * @returns {GeneralSubtree}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof GeneralSubtree]: GeneralSubtree[_K] }>
+    ): GeneralSubtree {
+        return new GeneralSubtree(
+            _o.base,
+            _o.minimum,
+            _o.maximum,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `minimum`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_minimum() {
         return 0;
     }
 }
-export const _root_component_type_list_1_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "base",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of GeneralSubtree
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_GeneralSubtree: $.ComponentSpec[] = [
+    new $.ComponentSpec("base", false, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
         "minimum",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "maximum",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_GeneralSubtree: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_GeneralSubtree: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of GeneralSubtree
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_GeneralSubtree: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of GeneralSubtree
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_GeneralSubtree: $.ComponentSpec[] = [];
+let _cached_decoder_for_GeneralSubtree: $.ASN1Decoder<
     GeneralSubtree
 > | null = null;
-let _cached_encoder_for_GeneralSubtree: __utils.ASN1Encoder<
+let _cached_encoder_for_GeneralSubtree: $.ASN1Encoder<
     GeneralSubtree
 > | null = null;
-export function _decode_GeneralSubtree(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) GeneralSubtree
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {GeneralSubtree} The decoded data structure.
+ */
+export function _decode_GeneralSubtree(el: _Element) {
     if (!_cached_decoder_for_GeneralSubtree) {
         _cached_decoder_for_GeneralSubtree = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): GeneralSubtree {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let base!: GeneralName;
-            let minimum: asn1.OPTIONAL<BaseDistance> =
+            let minimum: OPTIONAL<BaseDistance> =
                 GeneralSubtree._default_value_for_minimum;
-            let maximum: asn1.OPTIONAL<BaseDistance>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let maximum: OPTIONAL<BaseDistance>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                base: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                base: (_el: _Element): void => {
                     base = _decode_GeneralName(_el);
                 },
-                minimum: (_el: asn1.ASN1Element): void => {
-                    minimum = __utils._decode_implicit<BaseDistance>(
+                minimum: (_el: _Element): void => {
+                    minimum = $._decode_implicit<BaseDistance>(
                         () => _decode_BaseDistance
                     )(_el);
                 },
-                maximum: (_el: asn1.ASN1Element): void => {
-                    maximum = __utils._decode_implicit<BaseDistance>(
+                maximum: (_el: _Element): void => {
+                    maximum = $._decode_implicit<BaseDistance>(
                         () => _decode_BaseDistance
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_GeneralSubtree,
                 _extension_additions_list_spec_for_GeneralSubtree,
                 _root_component_type_list_2_spec_for_GeneralSubtree,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -3281,147 +7030,251 @@ export function _decode_GeneralSubtree(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_GeneralSubtree(el);
 }
+/**
+ * @summary Encodes a(n) GeneralSubtree into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The GeneralSubtree, encoded as an ASN.1 Element.
+ */
 export function _encode_GeneralSubtree(
     value: GeneralSubtree,
-    elGetter: __utils.ASN1Encoder<GeneralSubtree>
+    elGetter: $.ASN1Encoder<GeneralSubtree>
 ) {
     if (!_cached_encoder_for_GeneralSubtree) {
         _cached_encoder_for_GeneralSubtree = function (
             value: GeneralSubtree,
-            elGetter: __utils.ASN1Encoder<GeneralSubtree>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<GeneralSubtree>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_GeneralName(
                                 value.base,
-                                __utils.DER
+                                $.BER
                             ),
                             /* IF_DEFAULT */ value.minimum === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.minimum,
                                 GeneralSubtree._default_value_for_minimum
                             )
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_BaseDistance,
-                                      __utils.DER
-                                  )(value.minimum, __utils.DER),
+                                      $.BER
+                                  )(value.minimum, $.BER),
                             /* IF_ABSENT  */ value.maximum === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_BaseDistance,
-                                      __utils.DER
-                                  )(value.maximum, __utils.DER),
+                                      $.BER
+                                  )(value.maximum, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_GeneralSubtree(value, elGetter);
 }
 
-export type GeneralSubtrees = GeneralSubtree[]; // SequenceOfType
-let _cached_decoder_for_GeneralSubtrees: __utils.ASN1Decoder<
+export type GeneralSubtrees<> = GeneralSubtree[]; // SequenceOfType
+let _cached_decoder_for_GeneralSubtrees: $.ASN1Decoder<
     GeneralSubtrees
 > | null = null;
-let _cached_encoder_for_GeneralSubtrees: __utils.ASN1Encoder<
+let _cached_encoder_for_GeneralSubtrees: $.ASN1Encoder<
     GeneralSubtrees
 > | null = null;
-export function _decode_GeneralSubtrees(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) GeneralSubtrees
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {GeneralSubtrees} The decoded data structure.
+ */
+export function _decode_GeneralSubtrees(el: _Element) {
     if (!_cached_decoder_for_GeneralSubtrees) {
-        _cached_decoder_for_GeneralSubtrees = __utils._decodeSequenceOf<
+        _cached_decoder_for_GeneralSubtrees = $._decodeSequenceOf<
             GeneralSubtree
         >(() => _decode_GeneralSubtree);
     }
     return _cached_decoder_for_GeneralSubtrees(el);
 }
+/**
+ * @summary Encodes a(n) GeneralSubtrees into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The GeneralSubtrees, encoded as an ASN.1 Element.
+ */
 export function _encode_GeneralSubtrees(
     value: GeneralSubtrees,
-    elGetter: __utils.ASN1Encoder<GeneralSubtrees>
+    elGetter: $.ASN1Encoder<GeneralSubtrees>
 ) {
     if (!_cached_encoder_for_GeneralSubtrees) {
-        _cached_encoder_for_GeneralSubtrees = __utils._encodeSequenceOf<
+        _cached_encoder_for_GeneralSubtrees = $._encodeSequenceOf<
             GeneralSubtree
-        >(() => _encode_GeneralSubtree, __utils.DER);
+        >(() => _encode_GeneralSubtree, $.BER);
     }
     return _cached_encoder_for_GeneralSubtrees(value, elGetter);
 }
 
+/**
+ * @summary HolderNameConstraintsSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * HolderNameConstraintsSyntax ::= SEQUENCE {
+ *   permittedSubtrees  [0]  GeneralSubtrees,
+ *   excludedSubtrees   [1]  GeneralSubtrees OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class HolderNameConstraintsSyntax {
     constructor(
+        /**
+         * @summary `permittedSubtrees`.
+         * @public
+         * @readonly
+         */
         readonly permittedSubtrees: GeneralSubtrees,
-        readonly excludedSubtrees: GeneralSubtrees | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `excludedSubtrees`.
+         * @public
+         * @readonly
+         */
+        readonly excludedSubtrees: OPTIONAL<GeneralSubtrees>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a HolderNameConstraintsSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `HolderNameConstraintsSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `HolderNameConstraintsSyntax`.
+     * @returns {HolderNameConstraintsSyntax}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof HolderNameConstraintsSyntax]: HolderNameConstraintsSyntax[_K];
+            }
+        >
+    ): HolderNameConstraintsSyntax {
+        return new HolderNameConstraintsSyntax(
+            _o.permittedSubtrees,
+            _o.excludedSubtrees,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of HolderNameConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_HolderNameConstraintsSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "permittedSubtrees",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "excludedSubtrees",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_HolderNameConstraintsSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_HolderNameConstraintsSyntax: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of HolderNameConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_HolderNameConstraintsSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of HolderNameConstraintsSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_HolderNameConstraintsSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_HolderNameConstraintsSyntax: $.ASN1Decoder<
     HolderNameConstraintsSyntax
 > | null = null;
-let _cached_encoder_for_HolderNameConstraintsSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_HolderNameConstraintsSyntax: $.ASN1Encoder<
     HolderNameConstraintsSyntax
 > | null = null;
-export function _decode_HolderNameConstraintsSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) HolderNameConstraintsSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {HolderNameConstraintsSyntax} The decoded data structure.
+ */
+export function _decode_HolderNameConstraintsSyntax(el: _Element) {
     if (!_cached_decoder_for_HolderNameConstraintsSyntax) {
         _cached_decoder_for_HolderNameConstraintsSyntax = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): HolderNameConstraintsSyntax {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let permittedSubtrees!: GeneralSubtrees;
-            let excludedSubtrees: asn1.OPTIONAL<GeneralSubtrees>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let excludedSubtrees: OPTIONAL<GeneralSubtrees>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                permittedSubtrees: (_el: asn1.ASN1Element): void => {
-                    permittedSubtrees = __utils._decode_implicit<
-                        GeneralSubtrees
-                    >(() => _decode_GeneralSubtrees)(_el);
+            const callbacks: $.DecodingMap = {
+                permittedSubtrees: (_el: _Element): void => {
+                    permittedSubtrees = $._decode_implicit<GeneralSubtrees>(
+                        () => _decode_GeneralSubtrees
+                    )(_el);
                 },
-                excludedSubtrees: (_el: asn1.ASN1Element): void => {
-                    excludedSubtrees = __utils._decode_implicit<
-                        GeneralSubtrees
-                    >(() => _decode_GeneralSubtrees)(_el);
+                excludedSubtrees: (_el: _Element): void => {
+                    excludedSubtrees = $._decode_implicit<GeneralSubtrees>(
+                        () => _decode_GeneralSubtrees
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_HolderNameConstraintsSyntax,
                 _extension_additions_list_spec_for_HolderNameConstraintsSyntax,
                 _root_component_type_list_2_spec_for_HolderNameConstraintsSyntax,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -3434,166 +7287,278 @@ export function _decode_HolderNameConstraintsSyntax(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_HolderNameConstraintsSyntax(el);
 }
+/**
+ * @summary Encodes a(n) HolderNameConstraintsSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The HolderNameConstraintsSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_HolderNameConstraintsSyntax(
     value: HolderNameConstraintsSyntax,
-    elGetter: __utils.ASN1Encoder<HolderNameConstraintsSyntax>
+    elGetter: $.ASN1Encoder<HolderNameConstraintsSyntax>
 ) {
     if (!_cached_encoder_for_HolderNameConstraintsSyntax) {
         _cached_encoder_for_HolderNameConstraintsSyntax = function (
             value: HolderNameConstraintsSyntax,
-            elGetter: __utils.ASN1Encoder<HolderNameConstraintsSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<HolderNameConstraintsSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_implicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_implicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_GeneralSubtrees,
-                                __utils.DER
-                            )(value.permittedSubtrees, __utils.DER),
+                                $.BER
+                            )(value.permittedSubtrees, $.BER),
                             /* IF_ABSENT  */ value.excludedSubtrees ===
                             undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_GeneralSubtrees,
-                                      __utils.DER
-                                  )(value.excludedSubtrees, __utils.DER),
+                                      $.BER
+                                  )(value.excludedSubtrees, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_HolderNameConstraintsSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: pmiUser
+/**
+ * @summary id_ce_holderNameConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-holderNameConstraints              OBJECT IDENTIFIER ::= {id-ce 69}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_holderNameConstraints: OBJECT_IDENTIFIER = new _OID(
+    [69],
+    id_ce
+);
 
-// TODO: ObjectAssignment: pmiAA
+/**
+ * @summary holderNameConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * holderNameConstraints EXTENSION ::= {
+ *   SYNTAX         HolderNameConstraintsSyntax
+ *   IDENTIFIED BY  id-ce-holderNameConstraints }
+ * ```
+ *
+ * @constant
+ * @type {EXTENSION}
+ * @implements {EXTENSION}
+ */
+export const holderNameConstraints: EXTENSION = {
+    class: "EXTENSION",
+    decoderFor: {
+        "&ExtnType": _decode_HolderNameConstraintsSyntax,
+    },
+    encoderFor: {
+        "&ExtnType": _encode_HolderNameConstraintsSyntax,
+    },
+    "&id": id_ce_holderNameConstraints /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&ExtnType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: pmiSOA
+/**
+ * @summary id_oc_pmiUser
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-pmiUser                            OBJECT IDENTIFIER ::= {id-oc 24}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_pmiUser: OBJECT_IDENTIFIER = new _OID([24], id_oc);
 
-// TODO: ObjectAssignment: attCertCRLDistributionPt
+/**
+ * @summary pmiUser
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * pmiUser OBJECT-CLASS ::= {
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {attributeCertificateAttribute}
+ *   ID           id-oc-pmiUser }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const pmiUser: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": undefined,
+    "&id": id_oc_pmiUser /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
 
-// TODO: ObjectAssignment: pmiDelegationPath
-
-// TODO: ObjectAssignment: privilegePolicy
-
-// TODO: ObjectAssignment: protectedPrivilegePolicy
-
-// TODO: ObjectAssignment: attributeCertificateAttribute
-
-// TODO: ObjectAssignment: aACertificate
-
-// TODO: ObjectAssignment: attributeDescriptorCertificate
-
-// TODO: ObjectAssignment: attributeCertificateRevocationList
-
-// TODO: ObjectAssignment: eeAttrCertificateRevocationList
-
-// TODO: ObjectAssignment: attributeAuthorityRevocationList
-
-// TODO: ObjectAssignment: delegationPath
-
-export type AttCertPath = AttributeCertificate[]; // SequenceOfType
-let _cached_decoder_for_AttCertPath: __utils.ASN1Decoder<
-    AttCertPath
-> | null = null;
-let _cached_encoder_for_AttCertPath: __utils.ASN1Encoder<
-    AttCertPath
-> | null = null;
-export function _decode_AttCertPath(el: asn1.ASN1Element) {
-    if (!_cached_decoder_for_AttCertPath) {
-        _cached_decoder_for_AttCertPath = __utils._decodeSequenceOf<
-            AttributeCertificate
-        >(() => _decode_AttributeCertificate);
-    }
-    return _cached_decoder_for_AttCertPath(el);
-}
-export function _encode_AttCertPath(
-    value: AttCertPath,
-    elGetter: __utils.ASN1Encoder<AttCertPath>
-) {
-    if (!_cached_encoder_for_AttCertPath) {
-        _cached_encoder_for_AttCertPath = __utils._encodeSequenceOf<
-            AttributeCertificate
-        >(() => _encode_AttributeCertificate, __utils.DER);
-    }
-    return _cached_encoder_for_AttCertPath(value, elGetter);
-}
-
-// TODO: ObjectAssignment: privPolicy
-
-// TODO: ObjectAssignment: protPrivPolicy
-
-// TODO: ObjectAssignment: xmlPrivPolicy
-
-// TODO: ObjectAssignment: attributeCertificateExactMatch
-
+/**
+ * @summary AttributeCertificateExactAssertion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeCertificateExactAssertion ::= SEQUENCE {
+ *   serialNumber  CertificateSerialNumber,
+ *   issuer        AttCertIssuer,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class AttributeCertificateExactAssertion {
     constructor(
+        /**
+         * @summary `serialNumber`.
+         * @public
+         * @readonly
+         */
         readonly serialNumber: CertificateSerialNumber,
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
         readonly issuer: AttCertIssuer,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeCertificateExactAssertion
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeCertificateExactAssertion`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeCertificateExactAssertion`.
+     * @returns {AttributeCertificateExactAssertion}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeCertificateExactAssertion]: AttributeCertificateExactAssertion[_K];
+            }
+        >
+    ): AttributeCertificateExactAssertion {
+        return new AttributeCertificateExactAssertion(
+            _o.serialNumber,
+            _o.issuer,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeCertificateExactAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeCertificateExactAssertion: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "serialNumber",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuer",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeCertificateExactAssertion: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeCertificateExactAssertion: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeCertificateExactAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeCertificateExactAssertion: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeCertificateExactAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeCertificateExactAssertion: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeCertificateExactAssertion: $.ASN1Decoder<
     AttributeCertificateExactAssertion
 > | null = null;
-let _cached_encoder_for_AttributeCertificateExactAssertion: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificateExactAssertion: $.ASN1Encoder<
     AttributeCertificateExactAssertion
 > | null = null;
-export function _decode_AttributeCertificateExactAssertion(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificateExactAssertion
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificateExactAssertion} The decoded data structure.
+ */
+export function _decode_AttributeCertificateExactAssertion(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificateExactAssertion) {
         _cached_decoder_for_AttributeCertificateExactAssertion = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeCertificateExactAssertion {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "AttributeCertificateExactAssertion contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "serialNumber";
             sequence[1].name = "issuer";
             let serialNumber!: CertificateSerialNumber;
             let issuer!: AttCertIssuer;
             serialNumber = _decode_CertificateSerialNumber(sequence[0]);
             issuer = _decode_AttCertIssuer(sequence[1]);
-            // TODO: Validate values.
             return new AttributeCertificateExactAssertion(
                 serialNumber,
                 issuer,
@@ -3603,36 +7568,41 @@ export function _decode_AttributeCertificateExactAssertion(
     }
     return _cached_decoder_for_AttributeCertificateExactAssertion(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificateExactAssertion into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificateExactAssertion, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificateExactAssertion(
     value: AttributeCertificateExactAssertion,
-    elGetter: __utils.ASN1Encoder<AttributeCertificateExactAssertion>
+    elGetter: $.ASN1Encoder<AttributeCertificateExactAssertion>
 ) {
     if (!_cached_encoder_for_AttributeCertificateExactAssertion) {
         _cached_encoder_for_AttributeCertificateExactAssertion = function (
             value: AttributeCertificateExactAssertion,
-            elGetter: __utils.ASN1Encoder<AttributeCertificateExactAssertion>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeCertificateExactAssertion>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.issuer,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -3642,64 +7612,986 @@ export function _encode_AttributeCertificateExactAssertion(
     );
 }
 
-// TODO: ObjectAssignment: attributeCertificateMatch
+/**
+ * @summary id_mr_attributeCertificateExactMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-attributeCertificateExactMatch     OBJECT IDENTIFIER ::= {id-mr 45}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_attributeCertificateExactMatch: OBJECT_IDENTIFIER = new _OID(
+    [45],
+    id_mr
+);
 
+/**
+ * @summary attributeCertificateExactMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeCertificateExactMatch MATCHING-RULE ::= {
+ *   SYNTAX  AttributeCertificateExactAssertion
+ *   ID      id-mr-attributeCertificateExactMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const attributeCertificateExactMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_AttributeCertificateExactAssertion,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_AttributeCertificateExactAssertion,
+    },
+    "&id": id_mr_attributeCertificateExactMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_aACertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-aACertificate                      OBJECT IDENTIFIER ::= {id-at 61}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_aACertificate: OBJECT_IDENTIFIER = new _OID([61], id_at);
+
+/**
+ * @summary aACertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * aACertificate ATTRIBUTE ::= {
+ *   WITH SYNTAX             AttributeCertificate
+ *   EQUALITY MATCHING RULE  attributeCertificateExactMatch
+ *   ID                      id-at-aACertificate }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const aACertificate: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_AttributeCertificate,
+    },
+    encoderFor: {
+        "&Type": _encode_AttributeCertificate,
+    },
+    "&equality-match": attributeCertificateExactMatch /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_aACertificate /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_attributeCertificateRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-attributeCertificateRevocationList OBJECT IDENTIFIER ::= {id-at 59}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_attributeCertificateRevocationList: OBJECT_IDENTIFIER = new _OID(
+    [59],
+    id_at
+);
+
+/**
+ * @summary attributeCertificateRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeCertificateRevocationList ATTRIBUTE ::= {
+ *   WITH SYNTAX             CertificateList
+ *   EQUALITY MATCHING RULE  certificateListExactMatch
+ *   LDAP-SYNTAX             x509CertificateList.&id
+ *   LDAP-NAME               {"AttrCertificateRevocationList"}
+ *   LDAP-DESC               "X.509 Attr certificate revocation list"
+ *   ID                      id-at-attributeCertificateRevocationList }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const attributeCertificateRevocationList: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_CertificateList,
+    },
+    encoderFor: {
+        "&Type": _encode_CertificateList,
+    },
+    "&equality-match": certificateListExactMatch /* OBJECT_FIELD_SETTING */,
+    "&ldapSyntax": x509CertificateList["&id"] /* OBJECT_FIELD_SETTING */,
+    "&ldapName": undefined,
+    "&ldapDesc":
+        "X.509 Attr certificate revocation list" /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_attributeCertificateRevocationList /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_eeAttrCertificateRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-eeAttrCertificateRevocationList    OBJECT IDENTIFIER ::= {id-at 102}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_eeAttrCertificateRevocationList: OBJECT_IDENTIFIER = new _OID(
+    [102],
+    id_at
+);
+
+/**
+ * @summary eeAttrCertificateRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * eeAttrCertificateRevocationList ATTRIBUTE ::= {
+ *   WITH SYNTAX             CertificateList
+ *   EQUALITY MATCHING RULE  certificateListExactMatch
+ *   LDAP-SYNTAX             x509CertificateList.&id
+ *   LDAP-NAME               {"EEAttrCertificateRevocationList"}
+ *   LDAP-DESC               "X.509 EEAttr certificate revocation list"
+ *   ID                      id-at-eeAttrCertificateRevocationList }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const eeAttrCertificateRevocationList: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_CertificateList,
+    },
+    encoderFor: {
+        "&Type": _encode_CertificateList,
+    },
+    "&equality-match": certificateListExactMatch /* OBJECT_FIELD_SETTING */,
+    "&ldapSyntax": x509CertificateList["&id"] /* OBJECT_FIELD_SETTING */,
+    "&ldapName": undefined,
+    "&ldapDesc":
+        "X.509 EEAttr certificate revocation list" /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_eeAttrCertificateRevocationList /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_attributeAuthorityRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-attributeAuthorityRevocationList   OBJECT IDENTIFIER ::= {id-at 63}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_attributeAuthorityRevocationList: OBJECT_IDENTIFIER = new _OID(
+    [63],
+    id_at
+);
+
+/**
+ * @summary attributeAuthorityRevocationList
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeAuthorityRevocationList ATTRIBUTE ::= {
+ *   WITH SYNTAX             CertificateList
+ *   EQUALITY MATCHING RULE  certificateListExactMatch
+ *   LDAP-SYNTAX             x509CertificateList.&id
+ *   LDAP-NAME               {"AACertificateRevocationList"}
+ *   LDAP-DESC               "X.509 AA certificate revocation list"
+ *   ID                      id-at-attributeAuthorityRevocationList }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const attributeAuthorityRevocationList: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_CertificateList,
+    },
+    encoderFor: {
+        "&Type": _encode_CertificateList,
+    },
+    "&equality-match": certificateListExactMatch /* OBJECT_FIELD_SETTING */,
+    "&ldapSyntax": x509CertificateList["&id"] /* OBJECT_FIELD_SETTING */,
+    "&ldapName": undefined,
+    "&ldapDesc":
+        "X.509 AA certificate revocation list" /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_attributeAuthorityRevocationList /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_pmiAA
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-pmiAA                              OBJECT IDENTIFIER ::= {id-oc 25}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_pmiAA: OBJECT_IDENTIFIER = new _OID([25], id_oc);
+
+/**
+ * @summary pmiAA
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * pmiAA OBJECT-CLASS ::= { -- a PMI AA
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {aACertificate |
+ *                 attributeCertificateRevocationList |
+ *                 eeAttrCertificateRevocationList |
+ *                 attributeAuthorityRevocationList}
+ *   ID           id-oc-pmiAA }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const pmiAA: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": [
+        aACertificate,
+        attributeCertificateRevocationList,
+        eeAttrCertificateRevocationList,
+        attributeAuthorityRevocationList,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&id": id_oc_pmiAA /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_attributeDescriptorCertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-attributeDescriptorCertificate     OBJECT IDENTIFIER ::= {id-at 62}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_attributeDescriptorCertificate: OBJECT_IDENTIFIER = new _OID(
+    [62],
+    id_at
+);
+
+/**
+ * @summary attributeDescriptorCertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeDescriptorCertificate ATTRIBUTE ::= {
+ *   WITH SYNTAX             AttributeCertificate
+ *   EQUALITY MATCHING RULE  attributeCertificateExactMatch
+ *   ID                      id-at-attributeDescriptorCertificate }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const attributeDescriptorCertificate: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_AttributeCertificate,
+    },
+    encoderFor: {
+        "&Type": _encode_AttributeCertificate,
+    },
+    "&equality-match": attributeCertificateExactMatch /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_attributeDescriptorCertificate /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_pmiSOA
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-pmiSOA                             OBJECT IDENTIFIER ::= {id-oc 26}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_pmiSOA: OBJECT_IDENTIFIER = new _OID([26], id_oc);
+
+/**
+ * @summary pmiSOA
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * pmiSOA OBJECT-CLASS ::= { -- a PMI Source of Authority
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {attributeCertificateRevocationList |
+ *                 eeAttrCertificateRevocationList |
+ *                 attributeAuthorityRevocationList |
+ *                 attributeDescriptorCertificate}
+ *   ID           id-oc-pmiSOA }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const pmiSOA: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": [
+        attributeCertificateRevocationList,
+        eeAttrCertificateRevocationList,
+        attributeAuthorityRevocationList,
+        attributeDescriptorCertificate,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&id": id_oc_pmiSOA /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_attCertCRLDistributionPts
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-attCertCRLDistributionPts          OBJECT IDENTIFIER ::= {id-oc 27}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_attCertCRLDistributionPts: OBJECT_IDENTIFIER = new _OID(
+    [27],
+    id_oc
+);
+
+/**
+ * @summary attCertCRLDistributionPt
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attCertCRLDistributionPt OBJECT-CLASS ::= {
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {attributeCertificateRevocationList |
+ *                 eeAttrCertificateRevocationList |
+ *                 attributeAuthorityRevocationList}
+ *   ID           id-oc-attCertCRLDistributionPts }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const attCertCRLDistributionPt: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": [
+        attributeCertificateRevocationList,
+        eeAttrCertificateRevocationList,
+        attributeAuthorityRevocationList,
+    ] /* OBJECT_FIELD_SETTING */,
+    "&id": id_oc_attCertCRLDistributionPts /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_pmiDelegationPath
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-pmiDelegationPath                  OBJECT IDENTIFIER ::= {id-oc 33}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_pmiDelegationPath: OBJECT_IDENTIFIER = new _OID([33], id_oc);
+
+/**
+ * @summary pmiDelegationPath
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * pmiDelegationPath OBJECT-CLASS ::= {
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {delegationPath}
+ *   ID           id-oc-pmiDelegationPath }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const pmiDelegationPath: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": undefined,
+    "&id": id_oc_pmiDelegationPath /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_privilegePolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-privilegePolicy                    OBJECT IDENTIFIER ::= {id-oc 32}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_privilegePolicy: OBJECT_IDENTIFIER = new _OID([32], id_oc);
+
+/**
+ * @summary privilegePolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * privilegePolicy OBJECT-CLASS ::= {
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {privPolicy}
+ *   ID           id-oc-privilegePolicy }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const privilegePolicy: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": undefined,
+    "&id": id_oc_privilegePolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_oc_protectedPrivilegePolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-oc-protectedPrivilegePolicy           OBJECT IDENTIFIER ::= {id-oc 34}
+ * ```
+ *
+ * @constant
+ */
+export const id_oc_protectedPrivilegePolicy: OBJECT_IDENTIFIER = new _OID(
+    [34],
+    id_oc
+);
+
+/**
+ * @summary protectedPrivilegePolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * protectedPrivilegePolicy OBJECT-CLASS ::= {
+ *   SUBCLASS OF  {top}
+ *   KIND         auxiliary
+ *   MAY CONTAIN  {protPrivPolicy}
+ *   ID           id-oc-protectedPrivilegePolicy }
+ * ```
+ *
+ * @constant
+ * @type {OBJECT_CLASS}
+ * @implements {OBJECT_CLASS}
+ */
+export const protectedPrivilegePolicy: OBJECT_CLASS = {
+    class: "OBJECT-CLASS",
+    decoderFor: {},
+    encoderFor: {},
+    "&Superclasses": undefined,
+    "&kind":
+        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": undefined,
+    "&id": id_oc_protectedPrivilegePolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_attributeCertificate
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-attributeCertificate               OBJECT IDENTIFIER ::= {id-at 58}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_attributeCertificate: OBJECT_IDENTIFIER = new _OID(
+    [58],
+    id_at
+);
+
+/**
+ * @summary attributeCertificateAttribute
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeCertificateAttribute ATTRIBUTE ::= {
+ *   WITH SYNTAX             AttributeCertificate
+ *   EQUALITY MATCHING RULE  attributeCertificateExactMatch
+ *   ID                      id-at-attributeCertificate }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const attributeCertificateAttribute: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_AttributeCertificate,
+    },
+    encoderFor: {
+        "&Type": _encode_AttributeCertificate,
+    },
+    "&equality-match": attributeCertificateExactMatch /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_attributeCertificate /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+export type AttCertPath<> = AttributeCertificate[]; // SequenceOfType
+let _cached_decoder_for_AttCertPath: $.ASN1Decoder<AttCertPath> | null = null;
+let _cached_encoder_for_AttCertPath: $.ASN1Encoder<AttCertPath> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttCertPath
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttCertPath} The decoded data structure.
+ */
+export function _decode_AttCertPath(el: _Element) {
+    if (!_cached_decoder_for_AttCertPath) {
+        _cached_decoder_for_AttCertPath = $._decodeSequenceOf<
+            AttributeCertificate
+        >(() => _decode_AttributeCertificate);
+    }
+    return _cached_decoder_for_AttCertPath(el);
+}
+/**
+ * @summary Encodes a(n) AttCertPath into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttCertPath, encoded as an ASN.1 Element.
+ */
+export function _encode_AttCertPath(
+    value: AttCertPath,
+    elGetter: $.ASN1Encoder<AttCertPath>
+) {
+    if (!_cached_encoder_for_AttCertPath) {
+        _cached_encoder_for_AttCertPath = $._encodeSequenceOf<
+            AttributeCertificate
+        >(() => _encode_AttributeCertificate, $.BER);
+    }
+    return _cached_encoder_for_AttCertPath(value, elGetter);
+}
+
+/**
+ * @summary id_at_delegationPath
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-delegationPath                     OBJECT IDENTIFIER ::= {id-at 73}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_delegationPath: OBJECT_IDENTIFIER = new _OID([73], id_at);
+
+/**
+ * @summary delegationPath
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * delegationPath ATTRIBUTE ::= {
+ *   WITH SYNTAX  AttCertPath
+ *   ID           id-at-delegationPath }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const delegationPath: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_AttCertPath,
+    },
+    encoderFor: {
+        "&Type": _encode_AttCertPath,
+    },
+    "&id": id_at_delegationPath /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_privPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-privPolicy                         OBJECT IDENTIFIER ::= {id-at 71}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_privPolicy: OBJECT_IDENTIFIER = new _OID([71], id_at);
+
+/**
+ * @summary privPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * privPolicy ATTRIBUTE ::= {
+ *   WITH SYNTAX  PolicySyntax
+ *   ID           id-at-privPolicy }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const privPolicy: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_PolicySyntax,
+    },
+    encoderFor: {
+        "&Type": _encode_PolicySyntax,
+    },
+    "&id": id_at_privPolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_protPrivPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-protPrivPolicy                     OBJECT IDENTIFIER ::= {id-at 74}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_protPrivPolicy: OBJECT_IDENTIFIER = new _OID([74], id_at);
+
+/**
+ * @summary protPrivPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * protPrivPolicy ATTRIBUTE ::= {
+ *   WITH SYNTAX             AttributeCertificate
+ *   EQUALITY MATCHING RULE  attributeCertificateExactMatch
+ *   ID                      id-at-protPrivPolicy }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const protPrivPolicy: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": _decode_AttributeCertificate,
+    },
+    encoderFor: {
+        "&Type": _encode_AttributeCertificate,
+    },
+    "&equality-match": attributeCertificateExactMatch /* OBJECT_FIELD_SETTING */,
+    "&id": id_at_protPrivPolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_at_xmlPrivPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-at-xmlPrivPolicy                      OBJECT IDENTIFIER ::= {id-at 76}
+ * ```
+ *
+ * @constant
+ */
+export const id_at_xmlPrivPolicy: OBJECT_IDENTIFIER = new _OID([76], id_at);
+
+/**
+ * @summary xmlPrivPolicy
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * xmlPrivPolicy ATTRIBUTE ::= {
+ *   WITH SYNTAX  UTF8String -- XML-encoded privilege policy information
+ *   ID           id-at-xmlPrivPolicy }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const xmlPrivPolicy: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": $._decodeUTF8String,
+    },
+    encoderFor: {
+        "&Type": $._encodeUTF8String,
+    },
+    "&id": id_at_xmlPrivPolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
+
+/**
+ * @summary AttributeCertificateAssertion_holder
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeCertificateAssertion-holder ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type AttributeCertificateAssertion_holder =
     | { baseCertificateID: IssuerSerial } /* CHOICE_ALT_ROOT */
     | { holderName: GeneralNames } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_AttributeCertificateAssertion_holder: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_AttributeCertificateAssertion_holder: $.ASN1Decoder<
     AttributeCertificateAssertion_holder
 > | null = null;
-let _cached_encoder_for_AttributeCertificateAssertion_holder: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificateAssertion_holder: $.ASN1Encoder<
     AttributeCertificateAssertion_holder
 > | null = null;
-export function _decode_AttributeCertificateAssertion_holder(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificateAssertion_holder
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificateAssertion_holder} The decoded data structure.
+ */
+export function _decode_AttributeCertificateAssertion_holder(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificateAssertion_holder) {
-        _cached_decoder_for_AttributeCertificateAssertion_holder = __utils._decode_extensible_choice<
+        _cached_decoder_for_AttributeCertificateAssertion_holder = $._decode_extensible_choice<
             AttributeCertificateAssertion_holder
         >({
             "CONTEXT 0": [
                 "baseCertificateID",
-                __utils._decode_implicit<IssuerSerial>(
-                    () => _decode_IssuerSerial
-                ),
+                $._decode_implicit<IssuerSerial>(() => _decode_IssuerSerial),
             ],
             "CONTEXT 1": [
                 "holderName",
-                __utils._decode_implicit<GeneralNames>(
-                    () => _decode_GeneralNames
-                ),
+                $._decode_implicit<GeneralNames>(() => _decode_GeneralNames),
             ],
         });
     }
     return _cached_decoder_for_AttributeCertificateAssertion_holder(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificateAssertion_holder into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificateAssertion_holder, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificateAssertion_holder(
     value: AttributeCertificateAssertion_holder,
-    elGetter: __utils.ASN1Encoder<AttributeCertificateAssertion_holder>
+    elGetter: $.ASN1Encoder<AttributeCertificateAssertion_holder>
 ) {
     if (!_cached_encoder_for_AttributeCertificateAssertion_holder) {
-        _cached_encoder_for_AttributeCertificateAssertion_holder = __utils._encode_choice<
+        _cached_encoder_for_AttributeCertificateAssertion_holder = $._encode_choice<
             AttributeCertificateAssertion_holder
         >(
             {
-                baseCertificateID: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                baseCertificateID: $._encode_implicit(
+                    _TagClass.context,
                     0,
                     () => _encode_IssuerSerial,
-                    __utils.DER
+                    $.BER
                 ),
-                holderName: __utils._encode_implicit(
-                    asn1.ASN1TagClass.context,
+                holderName: $._encode_implicit(
+                    _TagClass.context,
                     1,
                     () => _encode_GeneralNames,
-                    __utils.DER
+                    $.BER
                 ),
             },
-            __utils.DER
+            $.BER
         );
     }
     return _cached_encoder_for_AttributeCertificateAssertion_holder(
@@ -3708,98 +8600,201 @@ export function _encode_AttributeCertificateAssertion_holder(
     );
 }
 
+/**
+ * @summary AttributeCertificateAssertion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * AttributeCertificateAssertion ::= SEQUENCE {
+ *   holder             [0]  CHOICE {
+ *     baseCertificateID  [0]  IssuerSerial,
+ *     holderName         [1]  GeneralNames,
+ *     ...} OPTIONAL,
+ *   issuer             [1]  GeneralNames OPTIONAL,
+ *   attCertValidity    [2]  GeneralizedTime OPTIONAL,
+ *   attType            [3]  SET OF AttributeType OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class AttributeCertificateAssertion {
     constructor(
-        readonly holder: AttributeCertificateAssertion_holder | undefined,
-        readonly issuer: GeneralNames | undefined,
-        readonly attCertValidity: asn1.GeneralizedTime | undefined,
-        readonly attType: AttributeType[] | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `holder`.
+         * @public
+         * @readonly
+         */
+        readonly holder: OPTIONAL<AttributeCertificateAssertion_holder>,
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
+        readonly issuer: OPTIONAL<GeneralNames>,
+        /**
+         * @summary `attCertValidity`.
+         * @public
+         * @readonly
+         */
+        readonly attCertValidity: OPTIONAL<GeneralizedTime>,
+        /**
+         * @summary `attType`.
+         * @public
+         * @readonly
+         */
+        readonly attType: OPTIONAL<AttributeType[]>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a AttributeCertificateAssertion
+     * @description
+     *
+     * This takes an `object` and converts it to a `AttributeCertificateAssertion`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `AttributeCertificateAssertion`.
+     * @returns {AttributeCertificateAssertion}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof AttributeCertificateAssertion]: AttributeCertificateAssertion[_K];
+            }
+        >
+    ): AttributeCertificateAssertion {
+        return new AttributeCertificateAssertion(
+            _o.holder,
+            _o.issuer,
+            _o.attCertValidity,
+            _o.attType,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of AttributeCertificateAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_AttributeCertificateAssertion: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "holder",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuer",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attCertValidity",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 2),
+        $.hasTag(_TagClass.context, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "attType",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 3),
+        $.hasTag(_TagClass.context, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_AttributeCertificateAssertion: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_AttributeCertificateAssertion: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of AttributeCertificateAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_AttributeCertificateAssertion: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of AttributeCertificateAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_AttributeCertificateAssertion: $.ComponentSpec[] = [];
+let _cached_decoder_for_AttributeCertificateAssertion: $.ASN1Decoder<
     AttributeCertificateAssertion
 > | null = null;
-let _cached_encoder_for_AttributeCertificateAssertion: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificateAssertion: $.ASN1Encoder<
     AttributeCertificateAssertion
 > | null = null;
-export function _decode_AttributeCertificateAssertion(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificateAssertion
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificateAssertion} The decoded data structure.
+ */
+export function _decode_AttributeCertificateAssertion(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificateAssertion) {
         _cached_decoder_for_AttributeCertificateAssertion = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): AttributeCertificateAssertion {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let holder: asn1.OPTIONAL<AttributeCertificateAssertion_holder>;
-            let issuer: asn1.OPTIONAL<GeneralNames>;
-            let attCertValidity: asn1.OPTIONAL<asn1.GeneralizedTime>;
-            let attType: asn1.OPTIONAL<AttributeType[]>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let holder: OPTIONAL<AttributeCertificateAssertion_holder>;
+            let issuer: OPTIONAL<GeneralNames>;
+            let attCertValidity: OPTIONAL<GeneralizedTime>;
+            let attType: OPTIONAL<AttributeType[]>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                holder: (_el: asn1.ASN1Element): void => {
-                    holder = __utils._decode_implicit<
+            const callbacks: $.DecodingMap = {
+                holder: (_el: _Element): void => {
+                    holder = $._decode_implicit<
                         AttributeCertificateAssertion_holder
                     >(() => _decode_AttributeCertificateAssertion_holder)(_el);
                 },
-                issuer: (_el: asn1.ASN1Element): void => {
-                    issuer = __utils._decode_implicit<GeneralNames>(
+                issuer: (_el: _Element): void => {
+                    issuer = $._decode_implicit<GeneralNames>(
                         () => _decode_GeneralNames
                     )(_el);
                 },
-                attCertValidity: (_el: asn1.ASN1Element): void => {
-                    attCertValidity = __utils._decode_implicit<
-                        asn1.GeneralizedTime
-                    >(() => __utils._decodeGeneralizedTime)(_el);
+                attCertValidity: (_el: _Element): void => {
+                    attCertValidity = $._decode_implicit<GeneralizedTime>(
+                        () => $._decodeGeneralizedTime
+                    )(_el);
                 },
-                attType: (_el: asn1.ASN1Element): void => {
-                    attType = __utils._decode_implicit<AttributeType[]>(() =>
-                        __utils._decodeSetOf<AttributeType>(
+                attType: (_el: _Element): void => {
+                    attType = $._decode_implicit<AttributeType[]>(() =>
+                        $._decodeSetOf<AttributeType>(
                             () => _decode_AttributeType
                         )
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_AttributeCertificateAssertion,
                 _extension_additions_list_spec_for_AttributeCertificateAssertion,
                 _root_component_type_list_2_spec_for_AttributeCertificateAssertion,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -3814,135 +8809,267 @@ export function _decode_AttributeCertificateAssertion(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_AttributeCertificateAssertion(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificateAssertion into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificateAssertion, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificateAssertion(
     value: AttributeCertificateAssertion,
-    elGetter: __utils.ASN1Encoder<AttributeCertificateAssertion>
+    elGetter: $.ASN1Encoder<AttributeCertificateAssertion>
 ) {
     if (!_cached_encoder_for_AttributeCertificateAssertion) {
         _cached_encoder_for_AttributeCertificateAssertion = function (
             value: AttributeCertificateAssertion,
-            elGetter: __utils.ASN1Encoder<AttributeCertificateAssertion>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<AttributeCertificateAssertion>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.holder === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () =>
                                           _encode_AttributeCertificateAssertion_holder,
-                                      __utils.DER
-                                  )(value.holder, __utils.DER),
+                                      $.BER
+                                  )(value.holder, $.BER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_GeneralNames,
-                                      __utils.DER
-                                  )(value.issuer, __utils.DER),
+                                      $.BER
+                                  )(value.issuer, $.BER),
                             /* IF_ABSENT  */ value.attCertValidity === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       2,
-                                      () => __utils._encodeGeneralizedTime,
-                                      __utils.DER
-                                  )(value.attCertValidity, __utils.DER),
+                                      () => $._encodeGeneralizedTime,
+                                      $.BER
+                                  )(value.attCertValidity, $.BER),
                             /* IF_ABSENT  */ value.attType === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       3,
                                       () =>
-                                          __utils._encodeSetOf<AttributeType>(
+                                          $._encodeSetOf<AttributeType>(
                                               () => _encode_AttributeType,
-                                              __utils.DER
+                                              $.BER
                                           ),
-                                      __utils.DER
-                                  )(value.attType, __utils.DER),
+                                      $.BER
+                                  )(value.attType, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_AttributeCertificateAssertion(value, elGetter);
 }
 
-// TODO: ObjectAssignment: holderIssuerMatch
+/**
+ * @summary id_mr_attributeCertificateMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-attributeCertificateMatch          OBJECT IDENTIFIER ::= {id-mr 42}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_attributeCertificateMatch: OBJECT_IDENTIFIER = new _OID(
+    [42],
+    id_mr
+);
 
+/**
+ * @summary attributeCertificateMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * attributeCertificateMatch MATCHING-RULE ::= {
+ *   SYNTAX  AttributeCertificateAssertion
+ *   ID      id-mr-attributeCertificateMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const attributeCertificateMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_AttributeCertificateAssertion,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_AttributeCertificateAssertion,
+    },
+    "&id": id_mr_attributeCertificateMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary HolderIssuerAssertion
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * HolderIssuerAssertion ::= SEQUENCE {
+ *   holder  [0]  Holder OPTIONAL,
+ *   issuer  [1]  AttCertIssuer OPTIONAL,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class HolderIssuerAssertion {
     constructor(
-        readonly holder: Holder | undefined,
-        readonly issuer: AttCertIssuer | undefined,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `holder`.
+         * @public
+         * @readonly
+         */
+        readonly holder: OPTIONAL<Holder>,
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
+        readonly issuer: OPTIONAL<AttCertIssuer>,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a HolderIssuerAssertion
+     * @description
+     *
+     * This takes an `object` and converts it to a `HolderIssuerAssertion`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `HolderIssuerAssertion`.
+     * @returns {HolderIssuerAssertion}
+     */
+    public static _from_object(
+        _o: Partial<
+            { [_K in keyof HolderIssuerAssertion]: HolderIssuerAssertion[_K] }
+        >
+    ): HolderIssuerAssertion {
+        return new HolderIssuerAssertion(
+            _o.holder,
+            _o.issuer,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of HolderIssuerAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_HolderIssuerAssertion: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "holder",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "issuer",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_HolderIssuerAssertion: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_HolderIssuerAssertion: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of HolderIssuerAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_HolderIssuerAssertion: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of HolderIssuerAssertion
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_HolderIssuerAssertion: $.ComponentSpec[] = [];
+let _cached_decoder_for_HolderIssuerAssertion: $.ASN1Decoder<
     HolderIssuerAssertion
 > | null = null;
-let _cached_encoder_for_HolderIssuerAssertion: __utils.ASN1Encoder<
+let _cached_encoder_for_HolderIssuerAssertion: $.ASN1Encoder<
     HolderIssuerAssertion
 > | null = null;
-export function _decode_HolderIssuerAssertion(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) HolderIssuerAssertion
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {HolderIssuerAssertion} The decoded data structure.
+ */
+export function _decode_HolderIssuerAssertion(el: _Element) {
     if (!_cached_decoder_for_HolderIssuerAssertion) {
         _cached_decoder_for_HolderIssuerAssertion = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): HolderIssuerAssertion {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let holder: asn1.OPTIONAL<Holder>;
-            let issuer: asn1.OPTIONAL<AttCertIssuer>;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let holder: OPTIONAL<Holder>;
+            let issuer: OPTIONAL<AttCertIssuer>;
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                holder: (_el: asn1.ASN1Element): void => {
-                    holder = __utils._decode_implicit<Holder>(
-                        () => _decode_Holder
-                    )(_el);
+            const callbacks: $.DecodingMap = {
+                holder: (_el: _Element): void => {
+                    holder = $._decode_implicit<Holder>(() => _decode_Holder)(
+                        _el
+                    );
                 },
-                issuer: (_el: asn1.ASN1Element): void => {
-                    issuer = __utils._decode_implicit<AttCertIssuer>(
+                issuer: (_el: _Element): void => {
+                    issuer = $._decode_implicit<AttCertIssuer>(
                         () => _decode_AttCertIssuer
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_HolderIssuerAssertion,
                 _extension_additions_list_spec_for_HolderIssuerAssertion,
                 _root_component_type_list_2_spec_for_HolderIssuerAssertion,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -3955,104 +9082,229 @@ export function _decode_HolderIssuerAssertion(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_HolderIssuerAssertion(el);
 }
+/**
+ * @summary Encodes a(n) HolderIssuerAssertion into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The HolderIssuerAssertion, encoded as an ASN.1 Element.
+ */
 export function _encode_HolderIssuerAssertion(
     value: HolderIssuerAssertion,
-    elGetter: __utils.ASN1Encoder<HolderIssuerAssertion>
+    elGetter: $.ASN1Encoder<HolderIssuerAssertion>
 ) {
     if (!_cached_encoder_for_HolderIssuerAssertion) {
         _cached_encoder_for_HolderIssuerAssertion = function (
             value: HolderIssuerAssertion,
-            elGetter: __utils.ASN1Encoder<HolderIssuerAssertion>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<HolderIssuerAssertion>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_ABSENT  */ value.holder === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       0,
                                       () => _encode_Holder,
-                                      __utils.DER
-                                  )(value.holder, __utils.DER),
+                                      $.BER
+                                  )(value.holder, $.BER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
-                                : __utils._encode_implicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_implicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_AttCertIssuer,
-                                      __utils.DER
-                                  )(value.issuer, __utils.DER),
+                                      $.BER
+                                  )(value.issuer, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_HolderIssuerAssertion(value, elGetter);
 }
 
-// TODO: ObjectAssignment: delegationPathMatch
+/**
+ * @summary id_mr_holderIssuerMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-holderIssuerMatch                  OBJECT IDENTIFIER ::= {id-mr 46}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_holderIssuerMatch: OBJECT_IDENTIFIER = new _OID([46], id_mr);
 
+/**
+ * @summary holderIssuerMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * holderIssuerMatch MATCHING-RULE ::= {
+ *   SYNTAX  HolderIssuerAssertion
+ *   ID      id-mr-holderIssuerMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const holderIssuerMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_HolderIssuerAssertion,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_HolderIssuerAssertion,
+    },
+    "&id": id_mr_holderIssuerMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary DelMatchSyntax
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * DelMatchSyntax ::= SEQUENCE {
+ *   firstIssuer  AttCertIssuer,
+ *   lastHolder   Holder,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class DelMatchSyntax {
     constructor(
+        /**
+         * @summary `firstIssuer`.
+         * @public
+         * @readonly
+         */
         readonly firstIssuer: AttCertIssuer,
+        /**
+         * @summary `lastHolder`.
+         * @public
+         * @readonly
+         */
         readonly lastHolder: Holder,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a DelMatchSyntax
+     * @description
+     *
+     * This takes an `object` and converts it to a `DelMatchSyntax`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `DelMatchSyntax`.
+     * @returns {DelMatchSyntax}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof DelMatchSyntax]: DelMatchSyntax[_K] }>
+    ): DelMatchSyntax {
+        return new DelMatchSyntax(
+            _o.firstIssuer,
+            _o.lastHolder,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of DelMatchSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_DelMatchSyntax: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "firstIssuer",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "lastHolder",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_DelMatchSyntax: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_DelMatchSyntax: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of DelMatchSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_DelMatchSyntax: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of DelMatchSyntax
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_DelMatchSyntax: $.ComponentSpec[] = [];
+let _cached_decoder_for_DelMatchSyntax: $.ASN1Decoder<
     DelMatchSyntax
 > | null = null;
-let _cached_encoder_for_DelMatchSyntax: __utils.ASN1Encoder<
+let _cached_encoder_for_DelMatchSyntax: $.ASN1Encoder<
     DelMatchSyntax
 > | null = null;
-export function _decode_DelMatchSyntax(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) DelMatchSyntax
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {DelMatchSyntax} The decoded data structure.
+ */
+export function _decode_DelMatchSyntax(el: _Element) {
     if (!_cached_decoder_for_DelMatchSyntax) {
         _cached_decoder_for_DelMatchSyntax = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): DelMatchSyntax {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "DelMatchSyntax contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "firstIssuer";
             sequence[1].name = "lastHolder";
             let firstIssuer!: AttCertIssuer;
             let lastHolder!: Holder;
             firstIssuer = _decode_AttCertIssuer(sequence[0]);
             lastHolder = _decode_Holder(sequence[1]);
-            // TODO: Validate values.
             return new DelMatchSyntax(
                 firstIssuer,
                 lastHolder,
@@ -4062,312 +9314,204 @@ export function _decode_DelMatchSyntax(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_DelMatchSyntax(el);
 }
+/**
+ * @summary Encodes a(n) DelMatchSyntax into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The DelMatchSyntax, encoded as an ASN.1 Element.
+ */
 export function _encode_DelMatchSyntax(
     value: DelMatchSyntax,
-    elGetter: __utils.ASN1Encoder<DelMatchSyntax>
+    elGetter: $.ASN1Encoder<DelMatchSyntax>
 ) {
     if (!_cached_encoder_for_DelMatchSyntax) {
         _cached_encoder_for_DelMatchSyntax = function (
             value: DelMatchSyntax,
-            elGetter: __utils.ASN1Encoder<DelMatchSyntax>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<DelMatchSyntax>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.firstIssuer,
-                                __utils.DER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_Holder(
                                 value.lastHolder,
-                                __utils.DER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.DER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_DelMatchSyntax(value, elGetter);
 }
 
-// TODO: ObjectAssignment: extensionPresenceMatch
-
-export const id_oc_pmiUser: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [24],
-    id_oc
-);
-
-export const id_oc_pmiAA: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [25],
-    id_oc
-);
-
-export const id_oc_pmiSOA: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [26],
-    id_oc
-);
-
-export const id_oc_attCertCRLDistributionPts: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [27],
-    id_oc
-);
-
-export const id_oc_privilegePolicy: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [32],
-    id_oc
-);
-
-export const id_oc_pmiDelegationPath: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [33],
-    id_oc
-);
-
-export const id_oc_protectedPrivilegePolicy: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [34],
-    id_oc
-);
-
-export const id_at_attributeCertificate: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [58],
-    id_at
-);
-
-export const id_at_attributeCertificateRevocationList: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [59],
-    id_at
-);
-
-export const id_at_aACertificate: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary id_mr_delegationPathMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-delegationPathMatch                OBJECT IDENTIFIER ::= {id-mr 61}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_delegationPathMatch: OBJECT_IDENTIFIER = new _OID(
     [61],
-    id_at
+    id_mr
 );
 
-export const id_at_attributeDescriptorCertificate: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [62],
-    id_at
+/**
+ * @summary delegationPathMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * delegationPathMatch MATCHING-RULE ::= {
+ *   SYNTAX  DelMatchSyntax
+ *   ID      id-mr-delegationPathMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const delegationPathMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": _decode_DelMatchSyntax,
+    },
+    encoderFor: {
+        "&AssertionType": _encode_DelMatchSyntax,
+    },
+    "&id": id_mr_delegationPathMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
+
+/**
+ * @summary id_mr_extensionPresenceMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-mr-extensionPresenceMatch             OBJECT IDENTIFIER ::= {id-mr 67}
+ * ```
+ *
+ * @constant
+ */
+export const id_mr_extensionPresenceMatch: OBJECT_IDENTIFIER = new _OID(
+    [67],
+    id_mr
 );
 
-export const id_at_attributeAuthorityRevocationList: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [63],
-    id_at
-);
+/**
+ * @summary extensionPresenceMatch
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * extensionPresenceMatch MATCHING-RULE ::= {
+ *   SYNTAX  EXTENSION.&id
+ *   ID      id-mr-extensionPresenceMatch }
+ * ```
+ *
+ * @constant
+ * @type {MATCHING_RULE}
+ * @implements {MATCHING_RULE}
+ */
+export const extensionPresenceMatch: MATCHING_RULE = {
+    class: "MATCHING-RULE",
+    decoderFor: {
+        "&AssertionType": $._decodeObjectIdentifier,
+    },
+    encoderFor: {
+        "&AssertionType": $._encodeObjectIdentifier,
+    },
+    "&id": id_mr_extensionPresenceMatch /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&AssertionType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+};
 
-export const id_at_privPolicy: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [71],
-    id_at
-);
-
-export const id_at_role: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [72],
-    id_at
-);
-
-export const id_at_delegationPath: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [73],
-    id_at
-);
-
-export const id_at_protPrivPolicy: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [74],
-    id_at
-);
-
-export const id_at_xMLPrivilegeInfo: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [75],
-    id_at
-);
-
-export const id_at_xmlPrivPolicy: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [76],
-    id_at
-);
-
-export const id_at_permission: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [82],
-    id_at
-);
-
-export const id_at_eeAttrCertificateRevocationList: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [102],
-    id_at
-);
-
-export const id_ce_authorityAttributeIdentifier: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary id_ce_authorityAttributeIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-authorityAttributeIdentifier       OBJECT IDENTIFIER ::= {id-ce 38}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_authorityAttributeIdentifier: OBJECT_IDENTIFIER = new _OID(
     [38],
     id_ce
 );
 
-export const id_ce_roleSpecCertIdentifier: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary id_ce_roleSpecCertIdentifier
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-roleSpecCertIdentifier             OBJECT IDENTIFIER ::= {id-ce 39}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_roleSpecCertIdentifier: OBJECT_IDENTIFIER = new _OID(
     [39],
     id_ce
 );
 
-export const id_ce_basicAttConstraints: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary id_ce_basicAttConstraints
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-basicAttConstraints                OBJECT IDENTIFIER ::= {id-ce 41}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_basicAttConstraints: OBJECT_IDENTIFIER = new _OID(
     [41],
     id_ce
 );
 
-export const id_ce_delegatedNameConstraints: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [42],
-    id_ce
-);
-
-export const id_ce_timeSpecification: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [43],
-    id_ce
-);
-
-export const id_ce_attributeDescriptor: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
+/**
+ * @summary id_ce_attributeDescriptor
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-ce-attributeDescriptor                OBJECT IDENTIFIER ::= {id-ce 48}
+ * ```
+ *
+ * @constant
+ */
+export const id_ce_attributeDescriptor: OBJECT_IDENTIFIER = new _OID(
     [48],
     id_ce
 );
 
-export const id_ce_userNotice: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [49],
-    id_ce
-);
-
-export const id_ce_sOAIdentifier: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [50],
-    id_ce
-);
-
-export const id_ce_acceptableCertPolicies: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [52],
-    id_ce
-);
-
-export const id_ce_targetingInformation: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [55],
-    id_ce
-);
-
-export const id_ce_noRevAvail: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [56],
-    id_ce
-);
-
-export const id_ce_acceptablePrivilegePolicies: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [57],
-    id_ce
-);
-
-export const id_ce_indirectIssuer: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [61],
-    id_ce
-);
-
-export const id_ce_noAssertion: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [62],
-    id_ce
-);
-
-export const id_ce_issuedOnBehalfOf: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [64],
-    id_ce
-);
-
-export const id_ce_singleUse: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [65],
-    id_ce
-);
-
-export const id_ce_groupAC: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [66],
-    id_ce
-);
-
-export const id_ce_allowedAttributeAssignments: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [67],
-    id_ce
-);
-
-export const id_ce_attributeMappings: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [68],
-    id_ce
-);
-
-export const id_ce_holderNameConstraints: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [69],
-    id_ce
-);
-
-export const id_mr_attributeCertificateMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [42],
-    id_mr
-);
-
-export const id_mr_attributeCertificateExactMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [45],
-    id_mr
-);
-
-export const id_mr_holderIssuerMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [46],
-    id_mr
-);
-
-export const id_mr_authAttIdMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [53],
-    id_mr
-);
-
-export const id_mr_roleSpecCertIdMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [54],
-    id_mr
-);
-
-export const id_mr_basicAttConstraintsMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [55],
-    id_mr
-);
-
-export const id_mr_delegatedNameConstraintsMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [56],
-    id_mr
-);
-
-export const id_mr_timeSpecMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [57],
-    id_mr
-);
-
-export const id_mr_attDescriptorMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [58],
-    id_mr
-);
-
-export const id_mr_acceptableCertPoliciesMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [59],
-    id_mr
-);
-
-export const id_mr_delegationPathMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [61],
-    id_mr
-);
-
-export const id_mr_sOAIdentifierMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [66],
-    id_mr
-);
-
-export const id_mr_extensionPresenceMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [67],
-    id_mr
-);
-
-export const id_mr_dualStringMatch: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [69],
-    id_mr
-);
-
 /* END_MODULE AttributeCertificateDefinitions */
+/* eslint-enable */

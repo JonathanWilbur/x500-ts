@@ -1,8 +1,13 @@
-import { AttributeTypeAndValue, RelativeDistinguishedName } from "../InformationFramework";
+import {
+    AttributeTypeAndValue,
+    RelativeDistinguishedName,
+} from "../InformationFramework";
 import compareAttributeTypeAndValue from "./compareAttributeTypeAndValue";
 
-export default
-function compare (a: RelativeDistinguishedName, b: RelativeDistinguishedName): boolean {
+export default function compare(
+    a: RelativeDistinguishedName,
+    b: RelativeDistinguishedName
+): boolean {
     if (a.length !== b.length) {
         return false;
     }
@@ -12,11 +17,12 @@ function compare (a: RelativeDistinguishedName, b: RelativeDistinguishedName): b
     });
     for (let i = 0; i < a.length; i++) {
         const atav_b = b[i];
-        const atav_a: AttributeTypeAndValue | undefined = atavs[atav_b.type_.toString()];
+        const atav_a: AttributeTypeAndValue | undefined =
+            atavs[atav_b.type_.toString()];
         if (atav_a === undefined) {
             return false;
         }
-        if (!(compareAttributeTypeAndValue(atav_a, atav_b))) {
+        if (!compareAttributeTypeAndValue(atav_a, atav_b)) {
             return false;
         }
     }

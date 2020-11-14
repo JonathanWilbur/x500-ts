@@ -1,25 +1,47 @@
-/*
-    BEGIN_MODULE PkiPmiWrapper
-    OID: joint-iso-itu-t.ds.module.pkiPmiWrapper.8
-    IRI: undefined
-    EXTENSIBLE: false
-    ENCODINGREF: undefined
-    FILE: undefined
-    Produced by Jonathan M. Wilbur's <jonathan@wilbur.space> ASN.1 Compiler.
-*/
-import * as asn1 from "asn1-ts";
+/**
+ * @module PkiPmiWrapper
+ * @summary The ASN.1 module `PkiPmiWrapper`.
+ * @description
+ *
+ * OID: joint-iso-itu-t.ds.module.pkiPmiWrapper.8
+ * IRI: undefined
+ * EXTENSIBLE: false
+ * ENCODINGREF: undefined
+ * FILE: undefined
+ *
+ * This file was compiled by Wildboar Software's ASN.1 Compiler.
+ *
+ * @see {@link https://wildboarsoftware.com|Wildboar Software's Website}
+ * /
+
+
+/* eslint-disable */
+import {
+    ASN1ConstructionError as _ConstructionError,
+    ASN1Element as _Element,
+    ASN1TagClass as _TagClass,
+    BIT_STRING,
+    ENUMERATED,
+    ObjectIdentifier as _OID,
+    OBJECT_IDENTIFIER,
+    OCTET_STRING,
+    OPTIONAL,
+    TYPE_IDENTIFIER,
+} from "asn1-ts";
+import * as $ from "asn1-ts/dist/node/functional";
 import {
     AttributeCertificate,
     _decode_AttributeCertificate,
     _encode_AttributeCertificate,
 } from "./AttributeCertificateDefinitions";
+import * as AuthenticationFramework from "./AuthenticationFramework";
 import {
+    ALGORITHM,
     AlgorithmIdentifier,
     CertificateSerialNumber,
     PkiPath,
     SIGNED,
     Version,
-    Version_v1,
     _decode_AlgorithmIdentifier,
     _decode_CertificateSerialNumber,
     _decode_PkiPath,
@@ -31,21 +53,27 @@ import {
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
 } from "./AuthenticationFramework";
+import * as InformationFramework from "./InformationFramework";
 import {
     Attribute,
+    ATTRIBUTE,
     Name,
     _decode_Attribute,
     _decode_Name,
     _encode_Attribute,
     _encode_Name,
 } from "./InformationFramework";
-import * as __utils from "./__utils";
+import {
+    objectIdentifierMatch,
+    octetStringMatch,
+} from "./SelectedAttributeTypes";
 export {
     AttributeCertificate,
     _decode_AttributeCertificate,
     _encode_AttributeCertificate,
 } from "./AttributeCertificateDefinitions";
 export {
+    ALGORITHM,
     AlgorithmIdentifier,
     AvlSerialNumber,
     CertAVL,
@@ -59,6 +87,9 @@ export {
     SIGNED,
     TBSCertAVL,
     Version,
+    Version_v1 /* IMPORTED_NAMED_INTEGER */,
+    Version_v2 /* IMPORTED_NAMED_INTEGER */,
+    Version_v3 /* IMPORTED_NAMED_INTEGER */,
     _decode_AlgorithmIdentifier,
     _decode_AvlSerialNumber,
     _decode_CertAVL,
@@ -88,31 +119,37 @@ export {
 } from "./AuthenticationFramework";
 export {
     CRLReason,
-    CRLReason_aACompromise as aACompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_affiliationChanged as affiliationChanged /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_cACompromise as cACompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_certificateHold as certificateHold /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_cessationOfOperation as cessationOfOperation /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_keyCompromise as keyCompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_privilegeWithdrawn as privilegeWithdrawn /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_removeFromCRL as removeFromCRL /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_superseded as superseded /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_unspecified as unspecified /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_weakAlgorithmOrKey as weakAlgorithmOrKey /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_aACompromise /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_affiliationChanged /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_cACompromise /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_certificateHold /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_cessationOfOperation /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_keyCompromise /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_privilegeWithdrawn /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_removeFromCRL /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_superseded /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_unspecified /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_weakAlgorithmOrKey /* IMPORTED_ENUMERATION_ITEM */,
     SubjectKeyIdentifier,
     _decode_CRLReason,
     _decode_SubjectKeyIdentifier,
     _encode_CRLReason,
     _encode_SubjectKeyIdentifier,
+    _enum_for_CRLReason,
 } from "./CertificateExtensions";
 export {
     Attribute,
+    ATTRIBUTE,
     Name,
     _decode_Attribute,
     _decode_Name,
     _encode_Attribute,
     _encode_Name,
 } from "./InformationFramework";
+export {
+    objectIdentifierMatch,
+    octetStringMatch,
+} from "./SelectedAttributeTypes";
 export {
     attributeCertificateDefinitions,
     authenticationFramework,
@@ -122,205 +159,417 @@ export {
     selectedAttributeTypes,
 } from "./UsefulDefinitions";
 
-// TODO: ObjectClassAssignment: WRAPPED-PDU
-
-export type SignedAttributes = Attribute[]; // SetOfType
-let _cached_decoder_for_SignedAttributes: __utils.ASN1Decoder<
+export type SignedAttributes<> = Attribute[]; // SetOfType
+let _cached_decoder_for_SignedAttributes: $.ASN1Decoder<
     SignedAttributes
 > | null = null;
-let _cached_encoder_for_SignedAttributes: __utils.ASN1Encoder<
+let _cached_encoder_for_SignedAttributes: $.ASN1Encoder<
     SignedAttributes
 > | null = null;
-export function _decode_SignedAttributes(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) SignedAttributes
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {SignedAttributes} The decoded data structure.
+ */
+export function _decode_SignedAttributes(el: _Element) {
     if (!_cached_decoder_for_SignedAttributes) {
-        _cached_decoder_for_SignedAttributes = __utils._decodeSetOf<Attribute>(
+        _cached_decoder_for_SignedAttributes = $._decodeSetOf<Attribute>(
             () => _decode_Attribute
         );
     }
     return _cached_decoder_for_SignedAttributes(el);
 }
+/**
+ * @summary Encodes a(n) SignedAttributes into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The SignedAttributes, encoded as an ASN.1 Element.
+ */
 export function _encode_SignedAttributes(
     value: SignedAttributes,
-    elGetter: __utils.ASN1Encoder<SignedAttributes>
+    elGetter: $.ASN1Encoder<SignedAttributes>
 ) {
     if (!_cached_encoder_for_SignedAttributes) {
-        _cached_encoder_for_SignedAttributes = __utils._encodeSetOf<Attribute>(
+        _cached_encoder_for_SignedAttributes = $._encodeSetOf<Attribute>(
             () => _encode_Attribute,
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_SignedAttributes(value, elGetter);
 }
 
+/**
+ * @summary WRAPPED_PDU
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * WRAPPED-PDU ::= TYPE-IDENTIFIER
+ * ```
+ *
+ * @interface
+ */
+export type WRAPPED_PDU = TYPE_IDENTIFIER;
+
+/**
+ * @summary SupportedPduSet
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedPduSet WRAPPED-PDU ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {WRAPPED_PDU[]}
+ *
+ */
+export const SupportedPduSet: WRAPPED_PDU[] = [];
+
+/**
+ * @summary WrappedPDUInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * WrappedPDUInfo ::= SEQUENCE {
+ *   pduType      WRAPPED-PDU.&id ({SupportedPduSet}),
+ *   pduInfo      WRAPPED-PDU.&Type ({SupportedPduSet}{@pduType}),
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class WrappedPDUInfo {
     constructor(
-        readonly pduType: asn1.OBJECT_IDENTIFIER,
-        readonly pduInfo: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `pduType`.
+         * @public
+         * @readonly
+         */
+        readonly pduType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `pduInfo`.
+         * @public
+         * @readonly
+         */
+        readonly pduInfo: _Element,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a WrappedPDUInfo
+     * @description
+     *
+     * This takes an `object` and converts it to a `WrappedPDUInfo`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `WrappedPDUInfo`.
+     * @returns {WrappedPDUInfo}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof WrappedPDUInfo]: WrappedPDUInfo[_K] }>
+    ): WrappedPDUInfo {
+        return new WrappedPDUInfo(
+            _o.pduType,
+            _o.pduInfo,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of WrappedPDUInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_WrappedPDUInfo: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "pduType",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "pduInfo",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
+    new $.ComponentSpec("pduInfo", false, $.hasAnyTag, undefined, undefined),
 ];
-export const _root_component_type_list_2_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_WrappedPDUInfo: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_WrappedPDUInfo: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of WrappedPDUInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_WrappedPDUInfo: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of WrappedPDUInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_WrappedPDUInfo: $.ComponentSpec[] = [];
+let _cached_decoder_for_WrappedPDUInfo: $.ASN1Decoder<
     WrappedPDUInfo
 > | null = null;
-let _cached_encoder_for_WrappedPDUInfo: __utils.ASN1Encoder<
+let _cached_encoder_for_WrappedPDUInfo: $.ASN1Encoder<
     WrappedPDUInfo
 > | null = null;
-export function _decode_WrappedPDUInfo(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) WrappedPDUInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {WrappedPDUInfo} The decoded data structure.
+ */
+export function _decode_WrappedPDUInfo(el: _Element) {
     if (!_cached_decoder_for_WrappedPDUInfo) {
         _cached_decoder_for_WrappedPDUInfo = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): WrappedPDUInfo {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "WrappedPDUInfo contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "pduType";
             sequence[1].name = "pduInfo";
-            let pduType!: asn1.OBJECT_IDENTIFIER;
-            let pduInfo!: asn1.ASN1Element;
-            pduType = __utils._decodeObjectIdentifier(sequence[0]);
-            pduInfo = __utils._decodeAny(sequence[1]);
-            // TODO: Validate values.
+            let pduType!: OBJECT_IDENTIFIER;
+            let pduInfo!: _Element;
+            pduType = $._decodeObjectIdentifier(sequence[0]);
+            pduInfo = $._decodeAny(sequence[1]);
             return new WrappedPDUInfo(pduType, pduInfo, sequence.slice(2));
         };
     }
     return _cached_decoder_for_WrappedPDUInfo(el);
 }
+/**
+ * @summary Encodes a(n) WrappedPDUInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The WrappedPDUInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_WrappedPDUInfo(
     value: WrappedPDUInfo,
-    elGetter: __utils.ASN1Encoder<WrappedPDUInfo>
+    elGetter: $.ASN1Encoder<WrappedPDUInfo>
 ) {
     if (!_cached_encoder_for_WrappedPDUInfo) {
         _cached_encoder_for_WrappedPDUInfo = function (
             value: WrappedPDUInfo,
-            elGetter: __utils.ASN1Encoder<WrappedPDUInfo>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<WrappedPDUInfo>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                            /* REQUIRED   */ $._encodeObjectIdentifier(
                                 value.pduType,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeAny(
-                                value.pduInfo,
-                                __utils.BER
-                            ),
+                            /* REQUIRED   */ $._encodeAny(value.pduInfo, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_WrappedPDUInfo(value, elGetter);
 }
 
-export type UserKeyingMaterial = asn1.OCTET_STRING; // OctetStringType
-let _cached_decoder_for_UserKeyingMaterial: __utils.ASN1Decoder<
+export type UserKeyingMaterial<> = OCTET_STRING; // OctetStringType
+let _cached_decoder_for_UserKeyingMaterial: $.ASN1Decoder<
     UserKeyingMaterial
 > | null = null;
-let _cached_encoder_for_UserKeyingMaterial: __utils.ASN1Encoder<
+let _cached_encoder_for_UserKeyingMaterial: $.ASN1Encoder<
     UserKeyingMaterial
 > | null = null;
-export function _decode_UserKeyingMaterial(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) UserKeyingMaterial
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {UserKeyingMaterial} The decoded data structure.
+ */
+export function _decode_UserKeyingMaterial(el: _Element) {
     if (!_cached_decoder_for_UserKeyingMaterial) {
-        _cached_decoder_for_UserKeyingMaterial = __utils._decodeOctetString;
+        _cached_decoder_for_UserKeyingMaterial = $._decodeOctetString;
     }
     return _cached_decoder_for_UserKeyingMaterial(el);
 }
+/**
+ * @summary Encodes a(n) UserKeyingMaterial into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The UserKeyingMaterial, encoded as an ASN.1 Element.
+ */
 export function _encode_UserKeyingMaterial(
     value: UserKeyingMaterial,
-    elGetter: __utils.ASN1Encoder<UserKeyingMaterial>
+    elGetter: $.ASN1Encoder<UserKeyingMaterial>
 ) {
     if (!_cached_encoder_for_UserKeyingMaterial) {
-        _cached_encoder_for_UserKeyingMaterial = __utils._encodeOctetString;
+        _cached_encoder_for_UserKeyingMaterial = $._encodeOctetString;
     }
     return _cached_encoder_for_UserKeyingMaterial(value, elGetter);
 }
 
+/**
+ * @summary SenderStaticInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SenderStaticInfo ::= SEQUENCE {
+ *   issuer       Name,
+ *   serialNumber CertificateSerialNumber,
+ *   partyAinfo   UserKeyingMaterial,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class SenderStaticInfo {
     constructor(
+        /**
+         * @summary `issuer`.
+         * @public
+         * @readonly
+         */
         readonly issuer: Name,
+        /**
+         * @summary `serialNumber`.
+         * @public
+         * @readonly
+         */
         readonly serialNumber: CertificateSerialNumber,
+        /**
+         * @summary `partyAinfo`.
+         * @public
+         * @readonly
+         */
         readonly partyAinfo: UserKeyingMaterial,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a SenderStaticInfo
+     * @description
+     *
+     * This takes an `object` and converts it to a `SenderStaticInfo`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `SenderStaticInfo`.
+     * @returns {SenderStaticInfo}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof SenderStaticInfo]: SenderStaticInfo[_K] }>
+    ): SenderStaticInfo {
+        return new SenderStaticInfo(
+            _o.issuer,
+            _o.serialNumber,
+            _o.partyAinfo,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
-        "issuer",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of SenderStaticInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_SenderStaticInfo: $.ComponentSpec[] = [
+    new $.ComponentSpec("issuer", false, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
         "serialNumber",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "partyAinfo",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 4),
+        $.hasTag(_TagClass.universal, 4),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_SenderStaticInfo: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_SenderStaticInfo: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of SenderStaticInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_SenderStaticInfo: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of SenderStaticInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_SenderStaticInfo: $.ComponentSpec[] = [];
+let _cached_decoder_for_SenderStaticInfo: $.ASN1Decoder<
     SenderStaticInfo
 > | null = null;
-let _cached_encoder_for_SenderStaticInfo: __utils.ASN1Encoder<
+let _cached_encoder_for_SenderStaticInfo: $.ASN1Encoder<
     SenderStaticInfo
 > | null = null;
-export function _decode_SenderStaticInfo(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) SenderStaticInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {SenderStaticInfo} The decoded data structure.
+ */
+export function _decode_SenderStaticInfo(el: _Element) {
     if (!_cached_decoder_for_SenderStaticInfo) {
         _cached_decoder_for_SenderStaticInfo = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): SenderStaticInfo {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 3) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "SenderStaticInfo contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "issuer";
             sequence[1].name = "serialNumber";
             sequence[2].name = "partyAinfo";
@@ -330,7 +579,6 @@ export function _decode_SenderStaticInfo(el: asn1.ASN1Element) {
             issuer = _decode_Name(sequence[0]);
             serialNumber = _decode_CertificateSerialNumber(sequence[1]);
             partyAinfo = _decode_UserKeyingMaterial(sequence[2]);
-            // TODO: Validate values.
             return new SenderStaticInfo(
                 issuer,
                 serialNumber,
@@ -341,98 +589,180 @@ export function _decode_SenderStaticInfo(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_SenderStaticInfo(el);
 }
+/**
+ * @summary Encodes a(n) SenderStaticInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The SenderStaticInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_SenderStaticInfo(
     value: SenderStaticInfo,
-    elGetter: __utils.ASN1Encoder<SenderStaticInfo>
+    elGetter: $.ASN1Encoder<SenderStaticInfo>
 ) {
     if (!_cached_encoder_for_SenderStaticInfo) {
         _cached_encoder_for_SenderStaticInfo = function (
             value: SenderStaticInfo,
-            elGetter: __utils.ASN1Encoder<SenderStaticInfo>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<SenderStaticInfo>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ _encode_Name(
-                                value.issuer,
-                                __utils.BER
-                            ),
+                            /* REQUIRED   */ _encode_Name(value.issuer, $.BER),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_UserKeyingMaterial(
                                 value.partyAinfo,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_SenderStaticInfo(value, elGetter);
 }
 
+/**
+ * @summary SenderDhPublicKey
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SenderDhPublicKey ::= SEQUENCE {
+ *   algorithm   AlgorithmIdentifier {{SupportedDHPublicKeyAlgorithms}},
+ *   publicKey   BIT STRING,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class SenderDhPublicKey {
     constructor(
+        /**
+         * @summary `algorithm`.
+         * @public
+         * @readonly
+         */
         readonly algorithm: AlgorithmIdentifier,
-        readonly publicKey: asn1.BIT_STRING,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `publicKey`.
+         * @public
+         * @readonly
+         */
+        readonly publicKey: BIT_STRING,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a SenderDhPublicKey
+     * @description
+     *
+     * This takes an `object` and converts it to a `SenderDhPublicKey`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `SenderDhPublicKey`.
+     * @returns {SenderDhPublicKey}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof SenderDhPublicKey]: SenderDhPublicKey[_K] }>
+    ): SenderDhPublicKey {
+        return new SenderDhPublicKey(
+            _o.algorithm,
+            _o.publicKey,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of SenderDhPublicKey
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_SenderDhPublicKey: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "algorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "publicKey",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 3),
+        $.hasTag(_TagClass.universal, 3),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_SenderDhPublicKey: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_SenderDhPublicKey: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of SenderDhPublicKey
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_SenderDhPublicKey: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of SenderDhPublicKey
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_SenderDhPublicKey: $.ComponentSpec[] = [];
+let _cached_decoder_for_SenderDhPublicKey: $.ASN1Decoder<
     SenderDhPublicKey
 > | null = null;
-let _cached_encoder_for_SenderDhPublicKey: __utils.ASN1Encoder<
+let _cached_encoder_for_SenderDhPublicKey: $.ASN1Encoder<
     SenderDhPublicKey
 > | null = null;
-export function _decode_SenderDhPublicKey(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) SenderDhPublicKey
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {SenderDhPublicKey} The decoded data structure.
+ */
+export function _decode_SenderDhPublicKey(el: _Element) {
     if (!_cached_decoder_for_SenderDhPublicKey) {
         _cached_decoder_for_SenderDhPublicKey = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): SenderDhPublicKey {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "SenderDhPublicKey contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "algorithm";
             sequence[1].name = "publicKey";
             let algorithm!: AlgorithmIdentifier;
-            let publicKey!: asn1.BIT_STRING;
+            let publicKey!: BIT_STRING;
             algorithm = _decode_AlgorithmIdentifier(sequence[0]);
-            publicKey = __utils._decodeBitString(sequence[1]);
-            // TODO: Validate values.
+            publicKey = $._decodeBitString(sequence[1]);
             return new SenderDhPublicKey(
                 algorithm,
                 publicKey,
@@ -442,66 +772,86 @@ export function _decode_SenderDhPublicKey(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_SenderDhPublicKey(el);
 }
+/**
+ * @summary Encodes a(n) SenderDhPublicKey into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The SenderDhPublicKey, encoded as an ASN.1 Element.
+ */
 export function _encode_SenderDhPublicKey(
     value: SenderDhPublicKey,
-    elGetter: __utils.ASN1Encoder<SenderDhPublicKey>
+    elGetter: $.ASN1Encoder<SenderDhPublicKey>
 ) {
     if (!_cached_encoder_for_SenderDhPublicKey) {
         _cached_encoder_for_SenderDhPublicKey = function (
             value: SenderDhPublicKey,
-            elGetter: __utils.ASN1Encoder<SenderDhPublicKey>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<SenderDhPublicKey>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.algorithm,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeBitString(
+                            /* REQUIRED   */ $._encodeBitString(
                                 value.publicKey,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_SenderDhPublicKey(value, elGetter);
 }
 
+/**
+ * @summary SenderDhInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SenderDhInfo  ::=  CHOICE {
+ *   senderStaticInfo   [0] SenderStaticInfo,
+ *   senderDhPublicKey  [1] SenderDhPublicKey,
+ *   ... }
+ * ```
+ */
 export type SenderDhInfo =
     | { senderStaticInfo: SenderStaticInfo } /* CHOICE_ALT_ROOT */
     | { senderDhPublicKey: SenderDhPublicKey } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_SenderDhInfo: __utils.ASN1Decoder<
-    SenderDhInfo
-> | null = null;
-let _cached_encoder_for_SenderDhInfo: __utils.ASN1Encoder<
-    SenderDhInfo
-> | null = null;
-export function _decode_SenderDhInfo(el: asn1.ASN1Element) {
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_SenderDhInfo: $.ASN1Decoder<SenderDhInfo> | null = null;
+let _cached_encoder_for_SenderDhInfo: $.ASN1Encoder<SenderDhInfo> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) SenderDhInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {SenderDhInfo} The decoded data structure.
+ */
+export function _decode_SenderDhInfo(el: _Element) {
     if (!_cached_decoder_for_SenderDhInfo) {
-        _cached_decoder_for_SenderDhInfo = __utils._decode_extensible_choice<
+        _cached_decoder_for_SenderDhInfo = $._decode_extensible_choice<
             SenderDhInfo
         >({
             "CONTEXT 0": [
                 "senderStaticInfo",
-                __utils._decode_explicit<SenderStaticInfo>(
+                $._decode_explicit<SenderStaticInfo>(
                     () => _decode_SenderStaticInfo
                 ),
             ],
             "CONTEXT 1": [
                 "senderDhPublicKey",
-                __utils._decode_explicit<SenderDhPublicKey>(
+                $._decode_explicit<SenderDhPublicKey>(
                     () => _decode_SenderDhPublicKey
                 ),
             ],
@@ -509,86 +859,182 @@ export function _decode_SenderDhInfo(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_SenderDhInfo(el);
 }
+/**
+ * @summary Encodes a(n) SenderDhInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The SenderDhInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_SenderDhInfo(
     value: SenderDhInfo,
-    elGetter: __utils.ASN1Encoder<SenderDhInfo>
+    elGetter: $.ASN1Encoder<SenderDhInfo>
 ) {
     if (!_cached_encoder_for_SenderDhInfo) {
-        _cached_encoder_for_SenderDhInfo = __utils._encode_choice<SenderDhInfo>(
+        _cached_encoder_for_SenderDhInfo = $._encode_choice<SenderDhInfo>(
             {
-                senderStaticInfo: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                senderStaticInfo: $._encode_explicit(
+                    _TagClass.context,
                     0,
                     () => _encode_SenderStaticInfo,
-                    __utils.BER
+                    $.BER
                 ),
-                senderDhPublicKey: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                senderDhPublicKey: $._encode_explicit(
+                    _TagClass.context,
                     1,
                     () => _encode_SenderDhPublicKey,
-                    __utils.BER
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_SenderDhInfo(value, elGetter);
 }
 
+/**
+ * @summary SupportedKeyEncryptionAlgorithm
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedKeyEncryptionAlgorithm ALGORITHM ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ALGORITHM[]}
+ *
+ */
+export const SupportedKeyEncryptionAlgorithm: ALGORITHM[] = [];
+
+/**
+ * @summary KeyAgreement_keyEncryptionAlgorithm
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * KeyAgreement-keyEncryptionAlgorithm ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class KeyAgreement_keyEncryptionAlgorithm {
     constructor(
-        readonly algorithm: asn1.OBJECT_IDENTIFIER,
-        readonly parameters: asn1.ASN1Element,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary `algorithm`.
+         * @public
+         * @readonly
+         */
+        readonly algorithm: OBJECT_IDENTIFIER,
+        /**
+         * @summary `parameters`.
+         * @public
+         * @readonly
+         */
+        readonly parameters: _Element,
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a KeyAgreement_keyEncryptionAlgorithm
+     * @description
+     *
+     * This takes an `object` and converts it to a `KeyAgreement_keyEncryptionAlgorithm`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `KeyAgreement_keyEncryptionAlgorithm`.
+     * @returns {KeyAgreement_keyEncryptionAlgorithm}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof KeyAgreement_keyEncryptionAlgorithm]: KeyAgreement_keyEncryptionAlgorithm[_K];
+            }
+        >
+    ): KeyAgreement_keyEncryptionAlgorithm {
+        return new KeyAgreement_keyEncryptionAlgorithm(
+            _o.algorithm,
+            _o.parameters,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of KeyAgreement_keyEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_KeyAgreement_keyEncryptionAlgorithm: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "algorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "parameters",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
+    new $.ComponentSpec("parameters", false, $.hasAnyTag, undefined, undefined),
 ];
-export const _root_component_type_list_2_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of KeyAgreement_keyEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_KeyAgreement_keyEncryptionAlgorithm: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of KeyAgreement_keyEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm: $.ComponentSpec[] = [];
+let _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Decoder<
     KeyAgreement_keyEncryptionAlgorithm
 > | null = null;
-let _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm: __utils.ASN1Encoder<
+let _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Encoder<
     KeyAgreement_keyEncryptionAlgorithm
 > | null = null;
-export function _decode_KeyAgreement_keyEncryptionAlgorithm(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) KeyAgreement_keyEncryptionAlgorithm
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {KeyAgreement_keyEncryptionAlgorithm} The decoded data structure.
+ */
+export function _decode_KeyAgreement_keyEncryptionAlgorithm(el: _Element) {
     if (!_cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm) {
         _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): KeyAgreement_keyEncryptionAlgorithm {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "KeyAgreement-keyEncryptionAlgorithm contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "algorithm";
             sequence[1].name = "parameters";
-            let algorithm!: asn1.OBJECT_IDENTIFIER;
-            let parameters!: asn1.ASN1Element;
-            algorithm = __utils._decodeObjectIdentifier(sequence[0]);
-            parameters = __utils._decodeAny(sequence[1]);
-            // TODO: Validate values.
+            let algorithm!: OBJECT_IDENTIFIER;
+            let parameters!: _Element;
+            algorithm = $._decodeObjectIdentifier(sequence[0]);
+            parameters = $._decodeAny(sequence[1]);
             return new KeyAgreement_keyEncryptionAlgorithm(
                 algorithm,
                 parameters,
@@ -598,36 +1044,41 @@ export function _decode_KeyAgreement_keyEncryptionAlgorithm(
     }
     return _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm(el);
 }
+/**
+ * @summary Encodes a(n) KeyAgreement_keyEncryptionAlgorithm into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The KeyAgreement_keyEncryptionAlgorithm, encoded as an ASN.1 Element.
+ */
 export function _encode_KeyAgreement_keyEncryptionAlgorithm(
     value: KeyAgreement_keyEncryptionAlgorithm,
-    elGetter: __utils.ASN1Encoder<KeyAgreement_keyEncryptionAlgorithm>
+    elGetter: $.ASN1Encoder<KeyAgreement_keyEncryptionAlgorithm>
 ) {
     if (!_cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm) {
         _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm = function (
             value: KeyAgreement_keyEncryptionAlgorithm,
-            elGetter: __utils.ASN1Encoder<KeyAgreement_keyEncryptionAlgorithm>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<KeyAgreement_keyEncryptionAlgorithm>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                            /* REQUIRED   */ $._encodeObjectIdentifier(
                                 value.algorithm,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encodeAny(
+                            /* REQUIRED   */ $._encodeAny(
                                 value.parameters,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -637,62 +1088,141 @@ export function _encode_KeyAgreement_keyEncryptionAlgorithm(
     );
 }
 
+/**
+ * @summary KeyAgreement
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * KeyAgreement ::= SEQUENCE {
+ *   senderDhInfo       [0] SenderDhInfo,
+ *   keyEncryptionAlgorithm SEQUENCE {
+ *     algorithm    ALGORITHM.&id ({SupportedKeyEncryptionAlgorithm}),
+ *     parameters   ALGORITHM.&Type({SupportedKeyEncryptionAlgorithm}{@.algorithm}),
+ *     ... },
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class KeyAgreement {
     constructor(
+        /**
+         * @summary `senderDhInfo`.
+         * @public
+         * @readonly
+         */
         readonly senderDhInfo: SenderDhInfo,
+        /**
+         * @summary `keyEncryptionAlgorithm`.
+         * @public
+         * @readonly
+         */
         readonly keyEncryptionAlgorithm: KeyAgreement_keyEncryptionAlgorithm,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a KeyAgreement
+     * @description
+     *
+     * This takes an `object` and converts it to a `KeyAgreement`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `KeyAgreement`.
+     * @returns {KeyAgreement}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof KeyAgreement]: KeyAgreement[_K] }>
+    ): KeyAgreement {
+        return new KeyAgreement(
+            _o.senderDhInfo,
+            _o.keyEncryptionAlgorithm,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_KeyAgreement: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of KeyAgreement
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_KeyAgreement: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "senderDhInfo",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "keyEncryptionAlgorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_KeyAgreement: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_KeyAgreement: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_KeyAgreement: __utils.ASN1Decoder<
-    KeyAgreement
-> | null = null;
-let _cached_encoder_for_KeyAgreement: __utils.ASN1Encoder<
-    KeyAgreement
-> | null = null;
-export function _decode_KeyAgreement(el: asn1.ASN1Element) {
+/**
+ * @summary The Trailing Root Component Types of KeyAgreement
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_KeyAgreement: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of KeyAgreement
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_KeyAgreement: $.ComponentSpec[] = [];
+let _cached_decoder_for_KeyAgreement: $.ASN1Decoder<KeyAgreement> | null = null;
+let _cached_encoder_for_KeyAgreement: $.ASN1Encoder<KeyAgreement> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) KeyAgreement
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {KeyAgreement} The decoded data structure.
+ */
+export function _decode_KeyAgreement(el: _Element) {
     if (!_cached_decoder_for_KeyAgreement) {
         _cached_decoder_for_KeyAgreement = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): KeyAgreement {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "KeyAgreement contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "senderDhInfo";
             sequence[1].name = "keyEncryptionAlgorithm";
             let senderDhInfo!: SenderDhInfo;
             let keyEncryptionAlgorithm!: KeyAgreement_keyEncryptionAlgorithm;
-            senderDhInfo = __utils._decode_explicit<SenderDhInfo>(
+            senderDhInfo = $._decode_explicit<SenderDhInfo>(
                 () => _decode_SenderDhInfo
             )(sequence[0]);
             keyEncryptionAlgorithm = _decode_KeyAgreement_keyEncryptionAlgorithm(
                 sequence[1]
             );
-            // TODO: Validate values.
             return new KeyAgreement(
                 senderDhInfo,
                 keyEncryptionAlgorithm,
@@ -702,120 +1232,217 @@ export function _decode_KeyAgreement(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_KeyAgreement(el);
 }
+/**
+ * @summary Encodes a(n) KeyAgreement into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The KeyAgreement, encoded as an ASN.1 Element.
+ */
 export function _encode_KeyAgreement(
     value: KeyAgreement,
-    elGetter: __utils.ASN1Encoder<KeyAgreement>
+    elGetter: $.ASN1Encoder<KeyAgreement>
 ) {
     if (!_cached_encoder_for_KeyAgreement) {
         _cached_encoder_for_KeyAgreement = function (
             value: KeyAgreement,
-            elGetter: __utils.ASN1Encoder<KeyAgreement>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<KeyAgreement>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_SenderDhInfo,
-                                __utils.BER
-                            )(value.senderDhInfo, __utils.BER),
+                                $.BER
+                            )(value.senderDhInfo, $.BER),
                             /* REQUIRED   */ _encode_KeyAgreement_keyEncryptionAlgorithm(
                                 value.keyEncryptionAlgorithm,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_KeyAgreement(value, elGetter);
 }
 
-export type EncryptedKey = asn1.OCTET_STRING; // OctetStringType
-let _cached_decoder_for_EncryptedKey: __utils.ASN1Decoder<
-    EncryptedKey
-> | null = null;
-let _cached_encoder_for_EncryptedKey: __utils.ASN1Encoder<
-    EncryptedKey
-> | null = null;
-export function _decode_EncryptedKey(el: asn1.ASN1Element) {
+export type EncryptedKey<> = OCTET_STRING; // OctetStringType
+let _cached_decoder_for_EncryptedKey: $.ASN1Decoder<EncryptedKey> | null = null;
+let _cached_encoder_for_EncryptedKey: $.ASN1Encoder<EncryptedKey> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) EncryptedKey
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EncryptedKey} The decoded data structure.
+ */
+export function _decode_EncryptedKey(el: _Element) {
     if (!_cached_decoder_for_EncryptedKey) {
-        _cached_decoder_for_EncryptedKey = __utils._decodeOctetString;
+        _cached_decoder_for_EncryptedKey = $._decodeOctetString;
     }
     return _cached_decoder_for_EncryptedKey(el);
 }
+/**
+ * @summary Encodes a(n) EncryptedKey into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EncryptedKey, encoded as an ASN.1 Element.
+ */
 export function _encode_EncryptedKey(
     value: EncryptedKey,
-    elGetter: __utils.ASN1Encoder<EncryptedKey>
+    elGetter: $.ASN1Encoder<EncryptedKey>
 ) {
     if (!_cached_encoder_for_EncryptedKey) {
-        _cached_encoder_for_EncryptedKey = __utils._encodeOctetString;
+        _cached_encoder_for_EncryptedKey = $._encodeOctetString;
     }
     return _cached_encoder_for_EncryptedKey(value, elGetter);
 }
 
+/**
+ * @summary SymmetricEncryptionAlgorithms
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SymmetricEncryptionAlgorithms ALGORITHM ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ALGORITHM[]}
+ *
+ */
+export const SymmetricEncryptionAlgorithms: ALGORITHM[] = [];
+
+/**
+ * @summary EncryptedPduInfo_pduEncryptionAlgorithm
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EncryptedPduInfo-pduEncryptionAlgorithm ::= SEQUENCE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ *
+ * @class
+ */
 export class EncryptedPduInfo_pduEncryptionAlgorithm {
     constructor(
-        readonly algorithm: asn1.OBJECT_IDENTIFIER,
-        readonly parameter: asn1.ASN1Element
+        /**
+         * @summary `algorithm`.
+         * @public
+         * @readonly
+         */
+        readonly algorithm: OBJECT_IDENTIFIER,
+        /**
+         * @summary `parameter`.
+         * @public
+         * @readonly
+         */
+        readonly parameter: _Element
     ) {}
+
+    /**
+     * @summary Restructures an object into a EncryptedPduInfo_pduEncryptionAlgorithm
+     * @description
+     *
+     * This takes an `object` and converts it to a `EncryptedPduInfo_pduEncryptionAlgorithm`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `EncryptedPduInfo_pduEncryptionAlgorithm`.
+     * @returns {EncryptedPduInfo_pduEncryptionAlgorithm}
+     */
+    public static _from_object(
+        _o: Partial<
+            {
+                [_K in keyof EncryptedPduInfo_pduEncryptionAlgorithm]: EncryptedPduInfo_pduEncryptionAlgorithm[_K];
+            }
+        >
+    ): EncryptedPduInfo_pduEncryptionAlgorithm {
+        return new EncryptedPduInfo_pduEncryptionAlgorithm(
+            _o.algorithm,
+            _o.parameter
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of EncryptedPduInfo_pduEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "algorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "parameter",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
+    new $.ComponentSpec("parameter", false, $.hasAnyTag, undefined, undefined),
 ];
-export const _root_component_type_list_2_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of EncryptedPduInfo_pduEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of EncryptedPduInfo_pduEncryptionAlgorithm
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ComponentSpec[] = [];
+let _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Decoder<
     EncryptedPduInfo_pduEncryptionAlgorithm
 > | null = null;
-let _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: __utils.ASN1Encoder<
+let _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Encoder<
     EncryptedPduInfo_pduEncryptionAlgorithm
 > | null = null;
-export function _decode_EncryptedPduInfo_pduEncryptionAlgorithm(
-    el: asn1.ASN1Element
-) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EncryptedPduInfo_pduEncryptionAlgorithm
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EncryptedPduInfo_pduEncryptionAlgorithm} The decoded data structure.
+ */
+export function _decode_EncryptedPduInfo_pduEncryptionAlgorithm(el: _Element) {
     if (!_cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm) {
         _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): EncryptedPduInfo_pduEncryptionAlgorithm {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "EncryptedPduInfo-pduEncryptionAlgorithm contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "algorithm";
             sequence[1].name = "parameter";
-            let algorithm!: asn1.OBJECT_IDENTIFIER;
-            let parameter!: asn1.ASN1Element;
-            algorithm = __utils._decodeObjectIdentifier(sequence[0]);
-            parameter = __utils._decodeAny(sequence[1]);
-            // TODO: Validate values.
+            let algorithm!: OBJECT_IDENTIFIER;
+            let parameter!: _Element;
+            algorithm = $._decodeObjectIdentifier(sequence[0]);
+            parameter = $._decodeAny(sequence[1]);
             return new EncryptedPduInfo_pduEncryptionAlgorithm(
                 algorithm,
                 parameter
@@ -824,33 +1451,33 @@ export function _decode_EncryptedPduInfo_pduEncryptionAlgorithm(
     }
     return _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm(el);
 }
+/**
+ * @summary Encodes a(n) EncryptedPduInfo_pduEncryptionAlgorithm into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EncryptedPduInfo_pduEncryptionAlgorithm, encoded as an ASN.1 Element.
+ */
 export function _encode_EncryptedPduInfo_pduEncryptionAlgorithm(
     value: EncryptedPduInfo_pduEncryptionAlgorithm,
-    elGetter: __utils.ASN1Encoder<EncryptedPduInfo_pduEncryptionAlgorithm>
+    elGetter: $.ASN1Encoder<EncryptedPduInfo_pduEncryptionAlgorithm>
 ) {
     if (!_cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm) {
         _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm = function (
             value: EncryptedPduInfo_pduEncryptionAlgorithm,
-            elGetter: __utils.ASN1Encoder<
-                EncryptedPduInfo_pduEncryptionAlgorithm
-            >
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<EncryptedPduInfo_pduEncryptionAlgorithm>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                        /* REQUIRED   */ $._encodeObjectIdentifier(
                             value.algorithm,
-                            __utils.BER
+                            $.BER
                         ),
-                        /* REQUIRED   */ __utils._encodeAny(
-                            value.parameter,
-                            __utils.BER
-                        ),
+                        /* REQUIRED   */ $._encodeAny(value.parameter, $.BER),
                     ])
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
@@ -860,117 +1487,225 @@ export function _encode_EncryptedPduInfo_pduEncryptionAlgorithm(
     );
 }
 
-export type EncryptedPdu = asn1.OCTET_STRING; // OctetStringType
-let _cached_decoder_for_EncryptedPdu: __utils.ASN1Decoder<
-    EncryptedPdu
-> | null = null;
-let _cached_encoder_for_EncryptedPdu: __utils.ASN1Encoder<
-    EncryptedPdu
-> | null = null;
-export function _decode_EncryptedPdu(el: asn1.ASN1Element) {
+export type EncryptedPdu<> = OCTET_STRING; // OctetStringType
+let _cached_decoder_for_EncryptedPdu: $.ASN1Decoder<EncryptedPdu> | null = null;
+let _cached_encoder_for_EncryptedPdu: $.ASN1Encoder<EncryptedPdu> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) EncryptedPdu
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EncryptedPdu} The decoded data structure.
+ */
+export function _decode_EncryptedPdu(el: _Element) {
     if (!_cached_decoder_for_EncryptedPdu) {
-        _cached_decoder_for_EncryptedPdu = __utils._decodeOctetString;
+        _cached_decoder_for_EncryptedPdu = $._decodeOctetString;
     }
     return _cached_decoder_for_EncryptedPdu(el);
 }
+/**
+ * @summary Encodes a(n) EncryptedPdu into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EncryptedPdu, encoded as an ASN.1 Element.
+ */
 export function _encode_EncryptedPdu(
     value: EncryptedPdu,
-    elGetter: __utils.ASN1Encoder<EncryptedPdu>
+    elGetter: $.ASN1Encoder<EncryptedPdu>
 ) {
     if (!_cached_encoder_for_EncryptedPdu) {
-        _cached_encoder_for_EncryptedPdu = __utils._encodeOctetString;
+        _cached_encoder_for_EncryptedPdu = $._encodeOctetString;
     }
     return _cached_encoder_for_EncryptedPdu(value, elGetter);
 }
 
+/**
+ * @summary EncryptedPduInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EncryptedPduInfo ::= SEQUENCE {
+ *   pduType                 WRAPPED-PDU.&id ({SupportedPduSet}),
+ *   encryptedKey            EncryptedKey OPTIONAL,
+ *   pduEncryptionAlgorithm  SEQUENCE {
+ *     algorithm               ALGORITHM.&id ({SymmetricEncryptionAlgorithms}),
+ *     parameter               ALGORITHM.&Type
+ *                   ({SymmetricEncryptionAlgorithms}{@.algorithm})} OPTIONAL,
+ *   encryptedPdu        [0] EncryptedPdu,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class EncryptedPduInfo {
     constructor(
-        readonly pduType: asn1.OBJECT_IDENTIFIER,
-        readonly encryptedKey: EncryptedKey | undefined,
-        readonly pduEncryptionAlgorithm:
-            | EncryptedPduInfo_pduEncryptionAlgorithm
-            | undefined,
+        /**
+         * @summary `pduType`.
+         * @public
+         * @readonly
+         */
+        readonly pduType: OBJECT_IDENTIFIER,
+        /**
+         * @summary `encryptedKey`.
+         * @public
+         * @readonly
+         */
+        readonly encryptedKey: OPTIONAL<EncryptedKey>,
+        /**
+         * @summary `pduEncryptionAlgorithm`.
+         * @public
+         * @readonly
+         */
+        readonly pduEncryptionAlgorithm: OPTIONAL<
+            EncryptedPduInfo_pduEncryptionAlgorithm
+        >,
+        /**
+         * @summary `encryptedPdu`.
+         * @public
+         * @readonly
+         */
         readonly encryptedPdu: EncryptedPdu,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a EncryptedPduInfo
+     * @description
+     *
+     * This takes an `object` and converts it to a `EncryptedPduInfo`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `EncryptedPduInfo`.
+     * @returns {EncryptedPduInfo}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof EncryptedPduInfo]: EncryptedPduInfo[_K] }>
+    ): EncryptedPduInfo {
+        return new EncryptedPduInfo(
+            _o.pduType,
+            _o.encryptedKey,
+            _o.pduEncryptionAlgorithm,
+            _o.encryptedPdu,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of EncryptedPduInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_EncryptedPduInfo: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "pduType",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 6),
+        $.hasTag(_TagClass.universal, 6),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "encryptedKey",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 4),
+        $.hasTag(_TagClass.universal, 4),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "pduEncryptionAlgorithm",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "encryptedPdu",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_EncryptedPduInfo: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_EncryptedPduInfo: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of EncryptedPduInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_EncryptedPduInfo: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of EncryptedPduInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_EncryptedPduInfo: $.ComponentSpec[] = [];
+let _cached_decoder_for_EncryptedPduInfo: $.ASN1Decoder<
     EncryptedPduInfo
 > | null = null;
-let _cached_encoder_for_EncryptedPduInfo: __utils.ASN1Encoder<
+let _cached_encoder_for_EncryptedPduInfo: $.ASN1Encoder<
     EncryptedPduInfo
 > | null = null;
-export function _decode_EncryptedPduInfo(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EncryptedPduInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EncryptedPduInfo} The decoded data structure.
+ */
+export function _decode_EncryptedPduInfo(el: _Element) {
     if (!_cached_decoder_for_EncryptedPduInfo) {
         _cached_decoder_for_EncryptedPduInfo = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): EncryptedPduInfo {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let pduType!: asn1.OBJECT_IDENTIFIER;
-            let encryptedKey: asn1.OPTIONAL<EncryptedKey>;
-            let pduEncryptionAlgorithm: asn1.OPTIONAL<EncryptedPduInfo_pduEncryptionAlgorithm>;
+            let pduType!: OBJECT_IDENTIFIER;
+            let encryptedKey: OPTIONAL<EncryptedKey>;
+            let pduEncryptionAlgorithm: OPTIONAL<EncryptedPduInfo_pduEncryptionAlgorithm>;
             let encryptedPdu!: EncryptedPdu;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                pduType: (_el: asn1.ASN1Element): void => {
-                    pduType = __utils._decodeObjectIdentifier(_el);
+            const callbacks: $.DecodingMap = {
+                pduType: (_el: _Element): void => {
+                    pduType = $._decodeObjectIdentifier(_el);
                 },
-                encryptedKey: (_el: asn1.ASN1Element): void => {
+                encryptedKey: (_el: _Element): void => {
                     encryptedKey = _decode_EncryptedKey(_el);
                 },
-                pduEncryptionAlgorithm: (_el: asn1.ASN1Element): void => {
+                pduEncryptionAlgorithm: (_el: _Element): void => {
                     pduEncryptionAlgorithm = _decode_EncryptedPduInfo_pduEncryptionAlgorithm(
                         _el
                     );
                 },
-                encryptedPdu: (_el: asn1.ASN1Element): void => {
-                    encryptedPdu = __utils._decode_explicit<EncryptedPdu>(
+                encryptedPdu: (_el: _Element): void => {
+                    encryptedPdu = $._decode_explicit<EncryptedPdu>(
                         () => _decode_EncryptedPdu
                     )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_EncryptedPduInfo,
                 _extension_additions_list_spec_for_EncryptedPduInfo,
                 _root_component_type_list_2_spec_for_EncryptedPduInfo,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -985,109 +1720,194 @@ export function _decode_EncryptedPduInfo(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_EncryptedPduInfo(el);
 }
+/**
+ * @summary Encodes a(n) EncryptedPduInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EncryptedPduInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_EncryptedPduInfo(
     value: EncryptedPduInfo,
-    elGetter: __utils.ASN1Encoder<EncryptedPduInfo>
+    elGetter: $.ASN1Encoder<EncryptedPduInfo>
 ) {
     if (!_cached_encoder_for_EncryptedPduInfo) {
         _cached_encoder_for_EncryptedPduInfo = function (
             value: EncryptedPduInfo,
-            elGetter: __utils.ASN1Encoder<EncryptedPduInfo>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<EncryptedPduInfo>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ __utils._encodeObjectIdentifier(
+                            /* REQUIRED   */ $._encodeObjectIdentifier(
                                 value.pduType,
-                                __utils.BER
+                                $.BER
                             ),
                             /* IF_ABSENT  */ value.encryptedKey === undefined
                                 ? undefined
                                 : _encode_EncryptedKey(
                                       value.encryptedKey,
-                                      __utils.BER
+                                      $.BER
                                   ),
                             /* IF_ABSENT  */ value.pduEncryptionAlgorithm ===
                             undefined
                                 ? undefined
                                 : _encode_EncryptedPduInfo_pduEncryptionAlgorithm(
                                       value.pduEncryptionAlgorithm,
-                                      __utils.BER
+                                      $.BER
                                   ),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_EncryptedPdu,
-                                __utils.BER
-                            )(value.encryptedPdu, __utils.BER),
+                                $.BER
+                            )(value.encryptedPdu, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_EncryptedPduInfo(value, elGetter);
 }
 
+/**
+ * @summary EncryptedInfo
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * EncryptedInfo ::= SEQUENCE {
+ *   keyAgreement      KeyAgreement,
+ *   encryptedPduInfo  EncryptedPduInfo,
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class EncryptedInfo {
     constructor(
+        /**
+         * @summary `keyAgreement`.
+         * @public
+         * @readonly
+         */
         readonly keyAgreement: KeyAgreement,
+        /**
+         * @summary `encryptedPduInfo`.
+         * @public
+         * @readonly
+         */
         readonly encryptedPduInfo: EncryptedPduInfo,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a EncryptedInfo
+     * @description
+     *
+     * This takes an `object` and converts it to a `EncryptedInfo`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `EncryptedInfo`.
+     * @returns {EncryptedInfo}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof EncryptedInfo]: EncryptedInfo[_K] }>
+    ): EncryptedInfo {
+        return new EncryptedInfo(
+            _o.keyAgreement,
+            _o.encryptedPduInfo,
+            _o._unrecognizedExtensionsList
+        );
+    }
 }
-export const _root_component_type_list_1_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of EncryptedInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_EncryptedInfo: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "keyAgreement",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "encryptedPduInfo",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
 ];
-export const _root_component_type_list_2_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_EncryptedInfo: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_EncryptedInfo: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of EncryptedInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_EncryptedInfo: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of EncryptedInfo
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_EncryptedInfo: $.ComponentSpec[] = [];
+let _cached_decoder_for_EncryptedInfo: $.ASN1Decoder<
     EncryptedInfo
 > | null = null;
-let _cached_encoder_for_EncryptedInfo: __utils.ASN1Encoder<
+let _cached_encoder_for_EncryptedInfo: $.ASN1Encoder<
     EncryptedInfo
 > | null = null;
-export function _decode_EncryptedInfo(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) EncryptedInfo
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {EncryptedInfo} The decoded data structure.
+ */
+export function _decode_EncryptedInfo(el: _Element) {
     if (!_cached_decoder_for_EncryptedInfo) {
         _cached_decoder_for_EncryptedInfo = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): EncryptedInfo {
-            const sequence: asn1.ASN1Element[] = el.sequence;
+            const sequence: _Element[] = el.sequence;
             if (sequence.length < 2) {
-                throw new asn1.ASN1ConstructionError(
+                throw new _ConstructionError(
                     "EncryptedInfo contained only " +
                         sequence.length.toString() +
                         " elements."
                 );
             }
-            // TODO: Validate tags.
             sequence[0].name = "keyAgreement";
             sequence[1].name = "encryptedPduInfo";
             let keyAgreement!: KeyAgreement;
             let encryptedPduInfo!: EncryptedPduInfo;
             keyAgreement = _decode_KeyAgreement(sequence[0]);
             encryptedPduInfo = _decode_EncryptedPduInfo(sequence[1]);
-            // TODO: Validate values.
             return new EncryptedInfo(
                 keyAgreement,
                 encryptedPduInfo,
@@ -1097,203 +1917,336 @@ export function _decode_EncryptedInfo(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_EncryptedInfo(el);
 }
+/**
+ * @summary Encodes a(n) EncryptedInfo into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The EncryptedInfo, encoded as an ASN.1 Element.
+ */
 export function _encode_EncryptedInfo(
     value: EncryptedInfo,
-    elGetter: __utils.ASN1Encoder<EncryptedInfo>
+    elGetter: $.ASN1Encoder<EncryptedInfo>
 ) {
     if (!_cached_encoder_for_EncryptedInfo) {
         _cached_encoder_for_EncryptedInfo = function (
             value: EncryptedInfo,
-            elGetter: __utils.ASN1Encoder<EncryptedInfo>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<EncryptedInfo>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* REQUIRED   */ _encode_KeyAgreement(
                                 value.keyAgreement,
-                                __utils.BER
+                                $.BER
                             ),
                             /* REQUIRED   */ _encode_EncryptedPduInfo(
                                 value.encryptedPduInfo,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_EncryptedInfo(value, elGetter);
 }
 
+/**
+ * @summary TBSPDU_wrapper_conf
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TBSPDU-wrapper-conf ::= CHOICE { -- REMOVED_FROM_UNNESTING -- }
+ * ```
+ */
 export type TBSPDU_wrapper_conf =
     | { clear: WrappedPDUInfo } /* CHOICE_ALT_ROOT */
     | { protected_: EncryptedInfo } /* CHOICE_ALT_ROOT */
-    | asn1.ASN1Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
-let _cached_decoder_for_TBSPDU_wrapper_conf: __utils.ASN1Decoder<
+    | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
+let _cached_decoder_for_TBSPDU_wrapper_conf: $.ASN1Decoder<
     TBSPDU_wrapper_conf
 > | null = null;
-let _cached_encoder_for_TBSPDU_wrapper_conf: __utils.ASN1Encoder<
+let _cached_encoder_for_TBSPDU_wrapper_conf: $.ASN1Encoder<
     TBSPDU_wrapper_conf
 > | null = null;
-export function _decode_TBSPDU_wrapper_conf(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) TBSPDU_wrapper_conf
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TBSPDU_wrapper_conf} The decoded data structure.
+ */
+export function _decode_TBSPDU_wrapper_conf(el: _Element) {
     if (!_cached_decoder_for_TBSPDU_wrapper_conf) {
-        _cached_decoder_for_TBSPDU_wrapper_conf = __utils._decode_extensible_choice<
+        _cached_decoder_for_TBSPDU_wrapper_conf = $._decode_extensible_choice<
             TBSPDU_wrapper_conf
         >({
             "CONTEXT 2": [
                 "clear",
-                __utils._decode_explicit<WrappedPDUInfo>(
+                $._decode_explicit<WrappedPDUInfo>(
                     () => _decode_WrappedPDUInfo
                 ),
             ],
             "CONTEXT 3": [
                 "protected_",
-                __utils._decode_explicit<EncryptedInfo>(
-                    () => _decode_EncryptedInfo
-                ),
+                $._decode_explicit<EncryptedInfo>(() => _decode_EncryptedInfo),
             ],
         });
     }
     return _cached_decoder_for_TBSPDU_wrapper_conf(el);
 }
+/**
+ * @summary Encodes a(n) TBSPDU_wrapper_conf into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TBSPDU_wrapper_conf, encoded as an ASN.1 Element.
+ */
 export function _encode_TBSPDU_wrapper_conf(
     value: TBSPDU_wrapper_conf,
-    elGetter: __utils.ASN1Encoder<TBSPDU_wrapper_conf>
+    elGetter: $.ASN1Encoder<TBSPDU_wrapper_conf>
 ) {
     if (!_cached_encoder_for_TBSPDU_wrapper_conf) {
-        _cached_encoder_for_TBSPDU_wrapper_conf = __utils._encode_choice<
+        _cached_encoder_for_TBSPDU_wrapper_conf = $._encode_choice<
             TBSPDU_wrapper_conf
         >(
             {
-                clear: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                clear: $._encode_explicit(
+                    _TagClass.context,
                     2,
                     () => _encode_WrappedPDUInfo,
-                    __utils.BER
+                    $.BER
                 ),
-                protected_: __utils._encode_explicit(
-                    asn1.ASN1TagClass.context,
+                protected_: $._encode_explicit(
+                    _TagClass.context,
                     3,
                     () => _encode_EncryptedInfo,
-                    __utils.BER
+                    $.BER
                 ),
             },
-            __utils.BER
+            $.BER
         );
     }
     return _cached_encoder_for_TBSPDU_wrapper_conf(value, elGetter);
 }
 
+/**
+ * @summary TBSPDU_wrapper
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * TBSPDU-wrapper ::= SEQUENCE  {
+ *   version               Version DEFAULT v1,
+ *   signatureAlgorithm    AlgorithmIdentifier {{SupportedSignatureAlgorithms}},
+ *   certPath         [0]  IMPLICIT PkiPath,
+ *   signedAttrs      [1]  IMPLICIT SignedAttributes OPTIONAL,
+ *   conf                  CHOICE {
+ *     clear            [2]  WrappedPDUInfo,
+ *     protected        [3]  EncryptedInfo,
+ *    ... },
+ *   ... }
+ * ```
+ *
+ * @class
+ */
 export class TBSPDU_wrapper {
     constructor(
-        readonly version: Version | undefined,
+        /**
+         * @summary `version`.
+         * @public
+         * @readonly
+         */
+        readonly version: OPTIONAL<Version>,
+        /**
+         * @summary `signatureAlgorithm`.
+         * @public
+         * @readonly
+         */
         readonly signatureAlgorithm: AlgorithmIdentifier,
+        /**
+         * @summary `certPath`.
+         * @public
+         * @readonly
+         */
         readonly certPath: PkiPath,
-        readonly signedAttrs: SignedAttributes | undefined,
+        /**
+         * @summary `signedAttrs`.
+         * @public
+         * @readonly
+         */
+        readonly signedAttrs: OPTIONAL<SignedAttributes>,
+        /**
+         * @summary `conf`.
+         * @public
+         * @readonly
+         */
         readonly conf: TBSPDU_wrapper_conf,
-        readonly _unrecognizedExtensionsList: asn1.ASN1Element[] = []
+        /**
+         * @summary Extensions that are not recognized.
+         * @public
+         * @readonly
+         */
+        readonly _unrecognizedExtensionsList: _Element[] = []
     ) {}
+
+    /**
+     * @summary Restructures an object into a TBSPDU_wrapper
+     * @description
+     *
+     * This takes an `object` and converts it to a `TBSPDU_wrapper`.
+     *
+     * @public
+     * @static
+     * @method
+     * @param {Object} _o An object having all of the keys and values of a `TBSPDU_wrapper`.
+     * @returns {TBSPDU_wrapper}
+     */
+    public static _from_object(
+        _o: Partial<{ [_K in keyof TBSPDU_wrapper]: TBSPDU_wrapper[_K] }>
+    ): TBSPDU_wrapper {
+        return new TBSPDU_wrapper(
+            _o.version,
+            _o.signatureAlgorithm,
+            _o.certPath,
+            _o.signedAttrs,
+            _o.conf,
+            _o._unrecognizedExtensionsList
+        );
+    }
+
+    /**
+     * @summary Getter that returns the default value for `version`.
+     * @public
+     * @static
+     * @method
+     */
     public static get _default_value_for_version() {
-        return Version_v1;
+        return AuthenticationFramework.Version_v1;
     }
 }
-export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [
-    new __utils.ComponentSpec(
+/**
+ * @summary The Leading Root Component Types of TBSPDU_wrapper
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the leading root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_1_spec_for_TBSPDU_wrapper: $.ComponentSpec[] = [
+    new $.ComponentSpec(
         "version",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 2),
+        $.hasTag(_TagClass.universal, 2),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "signatureAlgorithm",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.universal, 16),
+        $.hasTag(_TagClass.universal, 16),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "certPath",
         false,
-        __utils.hasTag(asn1.ASN1TagClass.context, 0),
+        $.hasTag(_TagClass.context, 0),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
+    new $.ComponentSpec(
         "signedAttrs",
         true,
-        __utils.hasTag(asn1.ASN1TagClass.context, 1),
+        $.hasTag(_TagClass.context, 1),
         undefined,
         undefined
     ),
-    new __utils.ComponentSpec(
-        "conf",
-        false,
-        __utils.hasAnyTag,
-        undefined,
-        undefined
-    ),
+    new $.ComponentSpec("conf", false, $.hasAnyTag, undefined, undefined),
 ];
-export const _root_component_type_list_2_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
-export const _extension_additions_list_spec_for_TBSPDU_wrapper: __utils.ComponentSpec[] = [];
-let _cached_decoder_for_TBSPDU_wrapper: __utils.ASN1Decoder<
+/**
+ * @summary The Trailing Root Component Types of TBSPDU_wrapper
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the trailing root component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _root_component_type_list_2_spec_for_TBSPDU_wrapper: $.ComponentSpec[] = [];
+/**
+ * @summary The Extension Addition Component Types of TBSPDU_wrapper
+ * @description
+ *
+ * This is an array of `ComponentSpec`s that define how to decode the extension addition component type list of a SET or SEQUENCE.
+ *
+ * @constant
+ */
+export const _extension_additions_list_spec_for_TBSPDU_wrapper: $.ComponentSpec[] = [];
+let _cached_decoder_for_TBSPDU_wrapper: $.ASN1Decoder<
     TBSPDU_wrapper
 > | null = null;
-let _cached_encoder_for_TBSPDU_wrapper: __utils.ASN1Encoder<
+let _cached_encoder_for_TBSPDU_wrapper: $.ASN1Encoder<
     TBSPDU_wrapper
 > | null = null;
-export function _decode_TBSPDU_wrapper(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) TBSPDU_wrapper
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {TBSPDU_wrapper} The decoded data structure.
+ */
+export function _decode_TBSPDU_wrapper(el: _Element) {
     if (!_cached_decoder_for_TBSPDU_wrapper) {
         _cached_decoder_for_TBSPDU_wrapper = function (
-            el: asn1.ASN1Element
+            el: _Element
         ): TBSPDU_wrapper {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let version: asn1.OPTIONAL<Version> =
+            let version: OPTIONAL<Version> =
                 TBSPDU_wrapper._default_value_for_version;
             let signatureAlgorithm!: AlgorithmIdentifier;
             let certPath!: PkiPath;
-            let signedAttrs: asn1.OPTIONAL<SignedAttributes>;
+            let signedAttrs: OPTIONAL<SignedAttributes>;
             let conf!: TBSPDU_wrapper_conf;
-            let _unrecognizedExtensionsList: asn1.ASN1Element[] = [];
+            let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
-            const callbacks: __utils.DecodingMap = {
-                version: (_el: asn1.ASN1Element): void => {
+            const callbacks: $.DecodingMap = {
+                version: (_el: _Element): void => {
                     version = _decode_Version(_el);
                 },
-                signatureAlgorithm: (_el: asn1.ASN1Element): void => {
+                signatureAlgorithm: (_el: _Element): void => {
                     signatureAlgorithm = _decode_AlgorithmIdentifier(_el);
                 },
-                certPath: (_el: asn1.ASN1Element): void => {
-                    certPath = __utils._decode_explicit<PkiPath>(
+                certPath: (_el: _Element): void => {
+                    certPath = $._decode_explicit<PkiPath>(
                         () => _decode_PkiPath
                     )(_el);
                 },
-                signedAttrs: (_el: asn1.ASN1Element): void => {
-                    signedAttrs = __utils._decode_explicit<SignedAttributes>(
+                signedAttrs: (_el: _Element): void => {
+                    signedAttrs = $._decode_explicit<SignedAttributes>(
                         () => _decode_SignedAttributes
                     )(_el);
                 },
-                conf: (_el: asn1.ASN1Element): void => {
+                conf: (_el: _Element): void => {
                     conf = _decode_TBSPDU_wrapper_conf(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
-            __utils._parse_sequence(
+            $._parse_sequence(
                 el,
                 callbacks,
                 _root_component_type_list_1_spec_for_TBSPDU_wrapper,
                 _extension_additions_list_spec_for_TBSPDU_wrapper,
                 _root_component_type_list_2_spec_for_TBSPDU_wrapper,
-                (ext: asn1.ASN1Element): void => {
+                (ext: _Element): void => {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
@@ -1309,71 +2262,78 @@ export function _decode_TBSPDU_wrapper(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_TBSPDU_wrapper(el);
 }
+/**
+ * @summary Encodes a(n) TBSPDU_wrapper into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The TBSPDU_wrapper, encoded as an ASN.1 Element.
+ */
 export function _encode_TBSPDU_wrapper(
     value: TBSPDU_wrapper,
-    elGetter: __utils.ASN1Encoder<TBSPDU_wrapper>
+    elGetter: $.ASN1Encoder<TBSPDU_wrapper>
 ) {
     if (!_cached_encoder_for_TBSPDU_wrapper) {
         _cached_encoder_for_TBSPDU_wrapper = function (
             value: TBSPDU_wrapper,
-            elGetter: __utils.ASN1Encoder<TBSPDU_wrapper>
-        ): asn1.ASN1Element {
-            return __utils._encodeSequence(
-                ([] as (asn1.ASN1Element | undefined)[])
+            elGetter: $.ASN1Encoder<TBSPDU_wrapper>
+        ): _Element {
+            return $._encodeSequence(
+                ([] as (_Element | undefined)[])
                     .concat(
                         [
                             /* IF_DEFAULT */ value.version === undefined ||
-                            __utils.deepEq(
+                            $.deepEq(
                                 value.version,
                                 TBSPDU_wrapper._default_value_for_version
                             )
                                 ? undefined
-                                : _encode_Version(value.version, __utils.BER),
+                                : _encode_Version(value.version, $.BER),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signatureAlgorithm,
-                                __utils.BER
+                                $.BER
                             ),
-                            /* REQUIRED   */ __utils._encode_explicit(
-                                asn1.ASN1TagClass.context,
+                            /* REQUIRED   */ $._encode_explicit(
+                                _TagClass.context,
                                 0,
                                 () => _encode_PkiPath,
-                                __utils.BER
-                            )(value.certPath, __utils.BER),
+                                $.BER
+                            )(value.certPath, $.BER),
                             /* IF_ABSENT  */ value.signedAttrs === undefined
                                 ? undefined
-                                : __utils._encode_explicit(
-                                      asn1.ASN1TagClass.context,
+                                : $._encode_explicit(
+                                      _TagClass.context,
                                       1,
                                       () => _encode_SignedAttributes,
-                                      __utils.BER
-                                  )(value.signedAttrs, __utils.BER),
+                                      $.BER
+                                  )(value.signedAttrs, $.BER),
                             /* REQUIRED   */ _encode_TBSPDU_wrapper_conf(
                                 value.conf,
-                                __utils.BER
+                                $.BER
                             ),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
-                    .filter(
-                        (c: asn1.ASN1Element | undefined): boolean => !!c
-                    ) as asn1.ASN1Element[],
-                __utils.BER
+                    .filter((c: _Element | undefined): c is _Element => !!c),
+                $.BER
             );
         };
     }
     return _cached_encoder_for_TBSPDU_wrapper(value, elGetter);
 }
 
-export type PDU_wrapper = SIGNED<TBSPDU_wrapper>; // DefinedType
-let _cached_decoder_for_PDU_wrapper: __utils.ASN1Decoder<
-    PDU_wrapper
-> | null = null;
-let _cached_encoder_for_PDU_wrapper: __utils.ASN1Encoder<
-    PDU_wrapper
-> | null = null;
-export function _decode_PDU_wrapper(el: asn1.ASN1Element) {
+export type PDU_wrapper<> = SIGNED<TBSPDU_wrapper>; // DefinedType
+let _cached_decoder_for_PDU_wrapper: $.ASN1Decoder<PDU_wrapper> | null = null;
+let _cached_encoder_for_PDU_wrapper: $.ASN1Encoder<PDU_wrapper> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) PDU_wrapper
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {PDU_wrapper} The decoded data structure.
+ */
+export function _decode_PDU_wrapper(el: _Element) {
     if (!_cached_decoder_for_PDU_wrapper) {
         _cached_decoder_for_PDU_wrapper = _get_decoder_for_SIGNED<
             TBSPDU_wrapper
@@ -1381,9 +2341,16 @@ export function _decode_PDU_wrapper(el: asn1.ASN1Element) {
     }
     return _cached_decoder_for_PDU_wrapper(el);
 }
+/**
+ * @summary Encodes a(n) PDU_wrapper into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The PDU_wrapper, encoded as an ASN.1 Element.
+ */
 export function _encode_PDU_wrapper(
     value: PDU_wrapper,
-    elGetter: __utils.ASN1Encoder<PDU_wrapper>
+    elGetter: $.ASN1Encoder<PDU_wrapper>
 ) {
     if (!_cached_encoder_for_PDU_wrapper) {
         _cached_encoder_for_PDU_wrapper = _get_encoder_for_SIGNED<
@@ -1393,36 +2360,222 @@ export function _encode_PDU_wrapper(
     return _cached_encoder_for_PDU_wrapper(value, elGetter);
 }
 
-// TODO: ObjectSetAssignment: SupportedSignatureAlgorithms
+/**
+ * @summary SupportedSignatureAlgorithms
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedSignatureAlgorithms ALGORITHM ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ALGORITHM[]}
+ *
+ */
+export const SupportedSignatureAlgorithms: ALGORITHM[] = [];
 
-// TODO: ObjectSetAssignment: SupportedSignedAttributes
+/**
+ * @summary id_contentType
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-contentType OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9) 3 }
+ * ```
+ *
+ * @constant
+ */
+export const id_contentType: OBJECT_IDENTIFIER = new _OID([
+    /* iso */ 1,
+    /* member-body */ 2,
+    /* us */ 840,
+    /* rsadsi */ 113549,
+    /* pkcs */ 1,
+    /* pkcs9 */ 9,
+    3,
+]);
 
-// TODO: ObjectSetAssignment: SupportedPduSet
+/**
+ * @summary contentType
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * contentType ATTRIBUTE ::= {
+ *   WITH SYNTAX            WRAPPED-PDU.&id({SupportedPduSet})
+ *   EQUALITY MATCHING RULE objectIdentifierMatch
+ *   SINGLE VALUE           TRUE
+ *   ID                     id-contentType }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const contentType: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": $._decodeObjectIdentifier,
+    },
+    encoderFor: {
+        "&Type": $._encodeObjectIdentifier,
+    },
+    "&equality-match": objectIdentifierMatch /* OBJECT_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING */,
+    "&id": id_contentType /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
-// TODO: ObjectSetAssignment: SupportedKeyEncryptionAlgorithm
+/**
+ * @summary id_messageDigest
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * id-messageDigest OBJECT IDENTIFIER ::= { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs9(9) 4 }
+ * ```
+ *
+ * @constant
+ */
+export const id_messageDigest: OBJECT_IDENTIFIER = new _OID([
+    /* iso */ 1,
+    /* member-body */ 2,
+    /* us */ 840,
+    /* rsadsi */ 113549,
+    /* pkcs */ 1,
+    /* pkcs9 */ 9,
+    4,
+]);
 
-// TODO: ObjectSetAssignment: SupportedDHPublicKeyAlgorithms
+/**
+ * @summary messageDigest
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * messageDigest ATTRIBUTE ::= {
+ *   WITH SYNTAX            OCTET STRING
+ *   EQUALITY MATCHING RULE octetStringMatch
+ *   SINGLE VALUE           TRUE
+ *   ID                     id-messageDigest }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE}
+ * @implements {ATTRIBUTE}
+ */
+export const messageDigest: ATTRIBUTE = {
+    class: "ATTRIBUTE",
+    decoderFor: {
+        "&Type": $._decodeOctetString,
+    },
+    encoderFor: {
+        "&Type": $._encodeOctetString,
+    },
+    "&equality-match": octetStringMatch /* OBJECT_FIELD_SETTING */,
+    "&single-valued": false /* OBJECT_FIELD_SETTING */,
+    "&id": id_messageDigest /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
+    "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
+    "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage":
+        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+};
 
-// TODO: ObjectSetAssignment: SymmetricEncryptionAlgorithms
+/**
+ * @summary SupportedSignedAttributes
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedSignedAttributes ATTRIBUTE ::= { contentType | messageDigest }
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE[]}
+ *
+ */
+export const SupportedSignedAttributes: ATTRIBUTE[] = [
+    contentType,
+    messageDigest,
+];
 
-// TODO: ObjectSetAssignment: SupportedAttributes
+/**
+ * @summary SupportedDHPublicKeyAlgorithms
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedDHPublicKeyAlgorithms ALGORITHM ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ALGORITHM[]}
+ *
+ */
+export const SupportedDHPublicKeyAlgorithms: ALGORITHM[] = [];
 
-export type AttributeCertificateV2 = AttributeCertificate; // DefinedType
-let _cached_decoder_for_AttributeCertificateV2: __utils.ASN1Decoder<
+/**
+ * @summary SupportedAttributes
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * SupportedAttributes ATTRIBUTE ::= {...}
+ * ```
+ *
+ * @constant
+ * @type {ATTRIBUTE[]}
+ *
+ */
+export const SupportedAttributes: ATTRIBUTE[] = [];
+
+export type AttributeCertificateV2<> = AttributeCertificate; // DefinedType
+let _cached_decoder_for_AttributeCertificateV2: $.ASN1Decoder<
     AttributeCertificateV2
 > | null = null;
-let _cached_encoder_for_AttributeCertificateV2: __utils.ASN1Encoder<
+let _cached_encoder_for_AttributeCertificateV2: $.ASN1Encoder<
     AttributeCertificateV2
 > | null = null;
-export function _decode_AttributeCertificateV2(el: asn1.ASN1Element) {
+/**
+ * @summary Decodes an ASN.1 element into a(n) AttributeCertificateV2
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {AttributeCertificateV2} The decoded data structure.
+ */
+export function _decode_AttributeCertificateV2(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificateV2) {
         _cached_decoder_for_AttributeCertificateV2 = _decode_AttributeCertificate;
     }
     return _cached_decoder_for_AttributeCertificateV2(el);
 }
+/**
+ * @summary Encodes a(n) AttributeCertificateV2 into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The AttributeCertificateV2, encoded as an ASN.1 Element.
+ */
 export function _encode_AttributeCertificateV2(
     value: AttributeCertificateV2,
-    elGetter: __utils.ASN1Encoder<AttributeCertificateV2>
+    elGetter: $.ASN1Encoder<AttributeCertificateV2>
 ) {
     if (!_cached_encoder_for_AttributeCertificateV2) {
         _cached_encoder_for_AttributeCertificateV2 = _encode_AttributeCertificate;
@@ -1430,93 +2583,207 @@ export function _encode_AttributeCertificateV2(
     return _cached_encoder_for_AttributeCertificateV2(value, elGetter);
 }
 
-// TODO: ObjectAssignment: contentType
-
-export const id_contentType: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [
-        /* iso */ 1,
-        /* member-body */ 2,
-        /* us */ 840,
-        /* rsadsi */ 113549,
-        /* pkcs */ 1,
-        /* pkcs9 */ 9,
-        3,
-    ]
-);
-
-// TODO: ObjectAssignment: messageDigest
-
-export const id_messageDigest: asn1.OBJECT_IDENTIFIER = new asn1.ObjectIdentifier(
-    [
-        /* iso */ 1,
-        /* member-body */ 2,
-        /* us */ 840,
-        /* rsadsi */ 113549,
-        /* pkcs */ 1,
-        /* pkcs9 */ 9,
-        4,
-    ]
-);
-
-export type PkiWaError = asn1.ENUMERATED;
+/**
+ * @summary PkiWaError
+ * @description
+ *
+ * ### ASN.1 Definition:
+ *
+ * ```asn1
+ * PkiWaError ::= ENUMERATED {
+ *   unsupportedWrapperVersion           (0),
+ *   unsupportedSignatureAlgorithm       (1),
+ *   incompleteCertPath                  (2),
+ *   certificationPathFailure            (3),
+ *   invalidSignature                    (4),
+ *   missingMandatoryAttributes          (5),
+ *   unwantedAttribute                   (6),
+ *   unsupportedPduType                  (7),
+ *   unexpectedPduType                   (8),
+ *   invalidPduSyntax                    (9),
+ *   unknownDHpkCetificate               (10),
+ *   invalidKeyingMaterial               (11),
+ *   dhAlgorithmMismatch                 (12),
+ *   invalideDhPublickey                 (13),
+ *   unsupportedKeyWrappingAlgorithm     (14),
+ *   keyEncAlgorithmParametersMissing    (15),
+ *   keyEncAlgorithmParametersNotAllowed (16),
+ *   invalidParmsForSymEncryptAlgorithms (17),
+ *   decryptionFailed                    (18),
+ *   ... }
+ * ```
+ *
+ * @enum {number}
+ */
+export enum _enum_for_PkiWaError {
+    unsupportedWrapperVersion = 0,
+    unsupportedSignatureAlgorithm = 1,
+    incompleteCertPath = 2,
+    certificationPathFailure = 3,
+    invalidSignature = 4,
+    missingMandatoryAttributes = 5,
+    unwantedAttribute = 6,
+    unsupportedPduType = 7,
+    unexpectedPduType = 8,
+    invalidPduSyntax = 9,
+    unknownDHpkCetificate = 10,
+    invalidKeyingMaterial = 11,
+    dhAlgorithmMismatch = 12,
+    invalideDhPublickey = 13,
+    unsupportedKeyWrappingAlgorithm = 14,
+    keyEncAlgorithmParametersMissing = 15,
+    keyEncAlgorithmParametersNotAllowed = 16,
+    invalidParmsForSymEncryptAlgorithms = 17,
+    decryptionFailed = 18,
+}
+/**
+ * @summary PkiWaError
+ */
+export type PkiWaError = _enum_for_PkiWaError | ENUMERATED;
+/**
+ * @summary PkiWaError_unsupportedWrapperVersion
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unsupportedWrapperVersion: PkiWaError = 0; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedWrapperVersion: PkiWaError = PkiWaError_unsupportedWrapperVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unsupportedSignatureAlgorithm
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unsupportedSignatureAlgorithm: PkiWaError = 1; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedSignatureAlgorithm: PkiWaError = PkiWaError_unsupportedSignatureAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_incompleteCertPath
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_incompleteCertPath: PkiWaError = 2; /* LONG_NAMED_ENUMERATED_VALUE */
-export const incompleteCertPath: PkiWaError = PkiWaError_incompleteCertPath; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_certificationPathFailure
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_certificationPathFailure: PkiWaError = 3; /* LONG_NAMED_ENUMERATED_VALUE */
-export const certificationPathFailure: PkiWaError = PkiWaError_certificationPathFailure; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_invalidSignature
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_invalidSignature: PkiWaError = 4; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidSignature: PkiWaError = PkiWaError_invalidSignature; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_missingMandatoryAttributes
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_missingMandatoryAttributes: PkiWaError = 5; /* LONG_NAMED_ENUMERATED_VALUE */
-export const missingMandatoryAttributes: PkiWaError = PkiWaError_missingMandatoryAttributes; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unwantedAttribute
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unwantedAttribute: PkiWaError = 6; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unwantedAttribute: PkiWaError = PkiWaError_unwantedAttribute; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unsupportedPduType
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unsupportedPduType: PkiWaError = 7; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedPduType: PkiWaError = PkiWaError_unsupportedPduType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unexpectedPduType
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unexpectedPduType: PkiWaError = 8; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unexpectedPduType: PkiWaError = PkiWaError_unexpectedPduType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_invalidPduSyntax
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_invalidPduSyntax: PkiWaError = 9; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidPduSyntax: PkiWaError = PkiWaError_invalidPduSyntax; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unknownDHpkCetificate
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unknownDHpkCetificate: PkiWaError = 10; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unknownDHpkCetificate: PkiWaError = PkiWaError_unknownDHpkCetificate; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_invalidKeyingMaterial
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_invalidKeyingMaterial: PkiWaError = 11; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidKeyingMaterial: PkiWaError = PkiWaError_invalidKeyingMaterial; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_dhAlgorithmMismatch
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_dhAlgorithmMismatch: PkiWaError = 12; /* LONG_NAMED_ENUMERATED_VALUE */
-export const dhAlgorithmMismatch: PkiWaError = PkiWaError_dhAlgorithmMismatch; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_invalideDhPublickey
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_invalideDhPublickey: PkiWaError = 13; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalideDhPublickey: PkiWaError = PkiWaError_invalideDhPublickey; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_unsupportedKeyWrappingAlgorithm
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_unsupportedKeyWrappingAlgorithm: PkiWaError = 14; /* LONG_NAMED_ENUMERATED_VALUE */
-export const unsupportedKeyWrappingAlgorithm: PkiWaError = PkiWaError_unsupportedKeyWrappingAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_keyEncAlgorithmParametersMissing
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_keyEncAlgorithmParametersMissing: PkiWaError = 15; /* LONG_NAMED_ENUMERATED_VALUE */
-export const keyEncAlgorithmParametersMissing: PkiWaError = PkiWaError_keyEncAlgorithmParametersMissing; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_keyEncAlgorithmParametersNotAllowed
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_keyEncAlgorithmParametersNotAllowed: PkiWaError = 16; /* LONG_NAMED_ENUMERATED_VALUE */
-export const keyEncAlgorithmParametersNotAllowed: PkiWaError = PkiWaError_keyEncAlgorithmParametersNotAllowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_invalidParmsForSymEncryptAlgorithms
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_invalidParmsForSymEncryptAlgorithms: PkiWaError = 17; /* LONG_NAMED_ENUMERATED_VALUE */
-export const invalidParmsForSymEncryptAlgorithms: PkiWaError = PkiWaError_invalidParmsForSymEncryptAlgorithms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/**
+ * @summary PkiWaError_decryptionFailed
+ * @constant
+ * @type {number}
+ */
 export const PkiWaError_decryptionFailed: PkiWaError = 18; /* LONG_NAMED_ENUMERATED_VALUE */
-export const decryptionFailed: PkiWaError = PkiWaError_decryptionFailed; /* SHORT_NAMED_ENUMERATED_VALUE */
-let _cached_decoder_for_PkiWaError: __utils.ASN1Decoder<
-    PkiWaError
-> | null = null;
-let _cached_encoder_for_PkiWaError: __utils.ASN1Encoder<
-    PkiWaError
-> | null = null;
-export function _decode_PkiWaError(el: asn1.ASN1Element) {
+let _cached_decoder_for_PkiWaError: $.ASN1Decoder<PkiWaError> | null = null;
+let _cached_encoder_for_PkiWaError: $.ASN1Encoder<PkiWaError> | null = null;
+/**
+ * @summary Decodes an ASN.1 element into a(n) PkiWaError
+ * @function
+ * @param {_Element} el The element being decoded.
+ * @returns {PkiWaError} The decoded data structure.
+ */
+export function _decode_PkiWaError(el: _Element) {
     if (!_cached_decoder_for_PkiWaError) {
-        _cached_decoder_for_PkiWaError = __utils._decodeEnumerated;
+        _cached_decoder_for_PkiWaError = $._decodeEnumerated;
     }
     return _cached_decoder_for_PkiWaError(el);
 }
+/**
+ * @summary Encodes a(n) PkiWaError into an ASN.1 Element.
+ * @function
+ * @param {value} el The element being decoded.
+ * @param elGetter A function that can be used to get new ASN.1 elements.
+ * @returns {_Element} The PkiWaError, encoded as an ASN.1 Element.
+ */
 export function _encode_PkiWaError(
     value: PkiWaError,
-    elGetter: __utils.ASN1Encoder<PkiWaError>
+    elGetter: $.ASN1Encoder<PkiWaError>
 ) {
     if (!_cached_encoder_for_PkiWaError) {
-        _cached_encoder_for_PkiWaError = __utils._encodeEnumerated;
+        _cached_encoder_for_PkiWaError = $._encodeEnumerated;
     }
     return _cached_encoder_for_PkiWaError(value, elGetter);
 }
 
 /* END_MODULE PkiPmiWrapper */
+/* eslint-enable */
