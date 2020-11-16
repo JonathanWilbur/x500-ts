@@ -1,6 +1,6 @@
 import * as asn1 from "asn1-ts";
-import { AttributeTypeAndValue } from "../InformationFramework";
-import * as selat from "../SelectedAttributeTypes";
+import { AttributeTypeAndValue } from "../modules/InformationFramework";
+import * as selat from "../modules/SelectedAttributeTypes";
 import directoryStringToString from "./directoryStringToString";
 import oidToAttributeName from "./oidToAttributeName";
 

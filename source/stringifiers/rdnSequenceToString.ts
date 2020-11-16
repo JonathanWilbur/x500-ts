@@ -1,4 +1,4 @@
-import { RDNSequence } from "../InformationFramework";
+import { RDNSequence } from "../modules/InformationFramework";
 import relativeDistinguishedNameToString from "./relativeDistinguishedNameToString";
 
 export default function rdnSequenceToString(rdns: RDNSequence): string {

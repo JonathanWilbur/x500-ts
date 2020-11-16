@@ -1,4 +1,4 @@
-import { AttributeTypeAndValue } from "../InformationFramework";
+import { AttributeTypeAndValue } from "../modules/InformationFramework";
 
 export default function compare(
     a: AttributeTypeAndValue,

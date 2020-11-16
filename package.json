@@ -67,6 +67,7 @@
     "types": "./dist/node/index.d.ts",
     "version": "2.0.0",
     "dependencies": {
-        "asn1-ts": "^5.0.0"
+        "asn1-ts": "^5.0.0",
+        "madge": "^3.12.0"
     }
 }

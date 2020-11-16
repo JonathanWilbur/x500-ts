@@ -1,7 +1,7 @@
 import {
     AttributeTypeAndValue,
     RelativeDistinguishedName,
-} from "../InformationFramework";
+} from "../modules/InformationFramework";
 import compareAttributeTypeAndValue from "./compareAttributeTypeAndValue";
 
 export default function compare(

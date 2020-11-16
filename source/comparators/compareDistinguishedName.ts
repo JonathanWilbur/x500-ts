@@ -1,4 +1,4 @@
-import { DistinguishedName } from "../InformationFramework";
+import { DistinguishedName } from "../modules/InformationFramework";
 import compareRDNSequence from "./compareRDNSequence";
 
 export default function compare(

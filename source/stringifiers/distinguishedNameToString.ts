@@ -1,4 +1,4 @@
-import { DistinguishedName } from "../InformationFramework";
+import { DistinguishedName } from "../modules/InformationFramework";
 import rdnSequenceToString from "./rdnSequenceToString";
 
 export default function distinguishedNameToString(

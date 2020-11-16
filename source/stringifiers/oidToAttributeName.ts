@@ -1,4 +1,4 @@
-import * as selat from "../SelectedAttributeTypes";
+import * as selat from "../modules/SelectedAttributeTypes";
 
 const ret: Record<string, string> = {};
 // Recognized attributes sourced from https://tools.ietf.org/html/rfc5280#section-4.1.2.4.
