@@ -15,6 +15,7 @@ import { chainedRead } from "../DistributedOperations/chainedRead.oa";
 import { chainedRemoveEntry } from "../DistributedOperations/chainedRemoveEntry.oa";
 import { chainedSearch } from "../DistributedOperations/chainedSearch.oa";
 import { dSABind } from "../DistributedOperations/dSABind.oa";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { APPLICATION_CONTEXT } from "../DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 export { id_ac_directorySystemAC } from "../DirectoryOSIProtocols/id-ac-directorySystemAC.va";
 export { chainedAbandon } from "../DistributedOperations/chainedAbandon.oa";

@@ -9,22 +9,22 @@ import {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 import {
     AvlSerialNumber,
     _decode_AvlSerialNumber,
     _encode_AvlSerialNumber,
-} from "../PKI_Stub/AvlSerialNumber.ta";
+} from "../PKI-Stub/AvlSerialNumber.ta";
 export {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 export {
     AvlSerialNumber,
     _decode_AvlSerialNumber,
     _encode_AvlSerialNumber,
-} from "../PKI_Stub/AvlSerialNumber.ta";
+} from "../PKI-Stub/AvlSerialNumber.ta";
 
 /* START_OF_SYMBOL_DEFINITION DeleteAvlReq */
 /**

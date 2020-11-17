@@ -13,7 +13,7 @@ import {
 } from "../OSIProtocolSpecification/OsiBindResult-normal-mode-parameters-presentation-context-definition-result-list-Item.ta";
 import {
     OsiBindResult_normal_mode_parameters_protocol_version,
-    OsiBindResult_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_BIT */,
+    OsiBindResult_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_OsiBindResult_normal_mode_parameters_protocol_version,
     _encode_OsiBindResult_normal_mode_parameters_protocol_version,
 } from "../OSIProtocolSpecification/OsiBindResult-normal-mode-parameters-protocol-version.ta";
@@ -34,7 +34,8 @@ export {
 } from "../OSIProtocolSpecification/OsiBindResult-normal-mode-parameters-presentation-context-definition-result-list-Item.ta";
 export {
     OsiBindResult_normal_mode_parameters_protocol_version,
-    OsiBindResult_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_BIT */,
+    OsiBindResult_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_LONG_NAMED_BIT */,
+    version_1 /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_OsiBindResult_normal_mode_parameters_protocol_version,
     _encode_OsiBindResult_normal_mode_parameters_protocol_version,
 } from "../OSIProtocolSpecification/OsiBindResult-normal-mode-parameters-protocol-version.ta";

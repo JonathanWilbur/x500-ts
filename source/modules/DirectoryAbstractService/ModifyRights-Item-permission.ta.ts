@@ -24,6 +24,14 @@ export type ModifyRights_Item_permission = BIT_STRING;
 export const ModifyRights_Item_permission_add: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_add */
 
+/* START_OF_SYMBOL_DEFINITION add */
+/**
+ * @summary add
+ * @constant
+ */
+export const add: number = ModifyRights_Item_permission_add; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION add */
+
 /* START_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_remove */
 /**
  * @summary ModifyRights_Item_permission_remove
@@ -31,6 +39,14 @@ export const ModifyRights_Item_permission_add: number = 0; /* LONG_NAMED_BIT */
  */
 export const ModifyRights_Item_permission_remove: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_remove */
+
+/* START_OF_SYMBOL_DEFINITION remove */
+/**
+ * @summary remove
+ * @constant
+ */
+export const remove: number = ModifyRights_Item_permission_remove; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION remove */
 
 /* START_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_rename */
 /**
@@ -40,6 +56,14 @@ export const ModifyRights_Item_permission_remove: number = 1; /* LONG_NAMED_BIT 
 export const ModifyRights_Item_permission_rename: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_rename */
 
+/* START_OF_SYMBOL_DEFINITION rename */
+/**
+ * @summary rename
+ * @constant
+ */
+export const rename: number = ModifyRights_Item_permission_rename; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION rename */
+
 /* START_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_move */
 /**
  * @summary ModifyRights_Item_permission_move
@@ -47,6 +71,14 @@ export const ModifyRights_Item_permission_rename: number = 2; /* LONG_NAMED_BIT 
  */
 export const ModifyRights_Item_permission_move: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ModifyRights_Item_permission_move */
+
+/* START_OF_SYMBOL_DEFINITION move */
+/**
+ * @summary move
+ * @constant
+ */
+export const move: number = ModifyRights_Item_permission_move; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION move */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item_permission */
 let _cached_decoder_for_ModifyRights_Item_permission: $.ASN1Decoder<

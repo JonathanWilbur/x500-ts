@@ -5,17 +5,25 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { AttributeCertificate } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
-import { Certificate } from "../AuthenticationFramework/Certificate.ta";
+import {
+    AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
+} from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../AuthenticationFramework/Certificate.ta";
 export {
     AttributeCertificate,
-    _get_decoder_for_AttributeCertificate,
-    _get_encoder_for_AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
 } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION ACPathData */

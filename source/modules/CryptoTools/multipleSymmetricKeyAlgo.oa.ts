@@ -4,14 +4,14 @@ import {
     _decode_MultipleSymmetricKeyAlgo,
     _encode_MultipleSymmetricKeyAlgo,
 } from "../CryptoTools/MultipleSymmetricKeyAlgo.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export { id_algo_multipleSymmetricKeyAlgo } from "../CryptoTools/id-algo-multipleSymmetricKeyAlgo.va";
 export {
     MultipleSymmetricKeyAlgo,
     _decode_MultipleSymmetricKeyAlgo,
     _encode_MultipleSymmetricKeyAlgo,
 } from "../CryptoTools/MultipleSymmetricKeyAlgo.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION multipleSymmetricKeyAlgo */
 /**

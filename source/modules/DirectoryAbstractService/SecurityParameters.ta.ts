@@ -48,15 +48,15 @@ export {
 } from "../CommonProtocolSpecification/Code.ta";
 export {
     ErrorProtectionRequest,
-    ErrorProtectionRequest_none /* IMPORTED_NAMED_INTEGER */,
-    ErrorProtectionRequest_signed /* IMPORTED_NAMED_INTEGER */,
+    ErrorProtectionRequest_none /* IMPORTED_LONG_NAMED_INTEGER */,
+    ErrorProtectionRequest_signed /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_ErrorProtectionRequest,
     _encode_ErrorProtectionRequest,
 } from "../DirectoryAbstractService/ErrorProtectionRequest.ta";
 export {
     ProtectionRequest,
-    ProtectionRequest_none /* IMPORTED_NAMED_INTEGER */,
-    ProtectionRequest_signed /* IMPORTED_NAMED_INTEGER */,
+    ProtectionRequest_none /* IMPORTED_LONG_NAMED_INTEGER */,
+    ProtectionRequest_signed /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_ProtectionRequest,
     _encode_ProtectionRequest,
 } from "../DirectoryAbstractService/ProtectionRequest.ta";

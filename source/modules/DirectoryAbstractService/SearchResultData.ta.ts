@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { SearchResult } from "../DirectoryAbstractService/SearchResult.ta";
+import {
+    SearchResult,
+    _decode_SearchResult,
+    _encode_SearchResult,
+} from "../DirectoryAbstractService/SearchResult.ta";
 import {
     SearchResultData_searchInfo,
     _decode_SearchResultData_searchInfo,
@@ -9,8 +13,8 @@ import {
 } from "../DirectoryAbstractService/SearchResultData-searchInfo.ta";
 export {
     SearchResult,
-    _get_decoder_for_SearchResult,
-    _get_encoder_for_SearchResult,
+    _decode_SearchResult,
+    _encode_SearchResult,
 } from "../DirectoryAbstractService/SearchResult.ta";
 export {
     SearchResultData_searchInfo,

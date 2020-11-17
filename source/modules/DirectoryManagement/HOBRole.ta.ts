@@ -25,6 +25,15 @@ export type HOBRole = INTEGER;
 export const HOBRole_superior: HOBRole = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION HOBRole_superior */
 
+/* START_OF_SYMBOL_DEFINITION superior */
+/**
+ * @summary HOBRole_superior
+ * @constant
+ * @type {number}
+ */
+export const superior: HOBRole = HOBRole_superior; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION superior */
+
 /* START_OF_SYMBOL_DEFINITION HOBRole_subordinate */
 /**
  * @summary HOBRole_subordinate
@@ -33,6 +42,15 @@ export const HOBRole_superior: HOBRole = 0; /* LONG_NAMED_INTEGER_VALUE */
  */
 export const HOBRole_subordinate: HOBRole = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION HOBRole_subordinate */
+
+/* START_OF_SYMBOL_DEFINITION subordinate */
+/**
+ * @summary HOBRole_subordinate
+ * @constant
+ * @type {number}
+ */
+export const subordinate: HOBRole = HOBRole_subordinate; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION subordinate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HOBRole */
 let _cached_decoder_for_HOBRole: $.ASN1Decoder<HOBRole> | null = null;

@@ -5,6 +5,7 @@ import { dSAOperationalBindingManagementBind } from "../OperationalBindingManage
 import { establishOperationalBinding } from "../OperationalBindingManagement/establishOperationalBinding.oa";
 import { modifyOperationalBinding } from "../OperationalBindingManagement/modifyOperationalBinding.oa";
 import { terminateOperationalBinding } from "../OperationalBindingManagement/terminateOperationalBinding.oa";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { APPLICATION_CONTEXT } from "../DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 export { id_ac_directoryOperationalBindingManagementAC } from "../DirectoryOSIProtocols/id-ac-directoryOperationalBindingManagementAC.va";
 export { dSAOperationalBindingManagementBind } from "../OperationalBindingManagement/dSAOperationalBindingManagementBind.oa";

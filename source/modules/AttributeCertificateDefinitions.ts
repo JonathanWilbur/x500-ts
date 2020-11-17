@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { aACertificate } from "./AttributeCertificateDefinitions/aACertificate.oa";
 export { acceptableCertPolicies } from "./AttributeCertificateDefinitions/acceptableCertPolicies.oa";
 export { acceptableCertPoliciesMatch } from "./AttributeCertificateDefinitions/acceptableCertPoliciesMatch.oa";
@@ -440,3 +441,4 @@ export {
 } from "./AttributeCertificateDefinitions/UserNotice.ta";
 export { xmlPrivilegeInfo } from "./AttributeCertificateDefinitions/xmlPrivilegeInfo.oa";
 export { xmlPrivPolicy } from "./AttributeCertificateDefinitions/xmlPrivPolicy.oa";
+/* eslint-enable */

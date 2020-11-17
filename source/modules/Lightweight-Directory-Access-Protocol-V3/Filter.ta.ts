@@ -5,52 +5,42 @@ import {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 import {
     AttributeValueAssertion,
     _decode_AttributeValueAssertion,
     _encode_AttributeValueAssertion,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeValueAssertion.ta";
-import {
-    Filter,
-    _decode_Filter,
-    _encode_Filter,
-} from "../Lightweight_Directory_Access_Protocol_V3/Filter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeValueAssertion.ta";
 import {
     MatchingRuleAssertion,
     _decode_MatchingRuleAssertion,
     _encode_MatchingRuleAssertion,
-} from "../Lightweight_Directory_Access_Protocol_V3/MatchingRuleAssertion.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MatchingRuleAssertion.ta";
 import {
     SubstringFilter,
     _decode_SubstringFilter,
     _encode_SubstringFilter,
-} from "../Lightweight_Directory_Access_Protocol_V3/SubstringFilter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SubstringFilter.ta";
 export {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 export {
     AttributeValueAssertion,
     _decode_AttributeValueAssertion,
     _encode_AttributeValueAssertion,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeValueAssertion.ta";
-export {
-    Filter,
-    _decode_Filter,
-    _encode_Filter,
-} from "../Lightweight_Directory_Access_Protocol_V3/Filter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeValueAssertion.ta";
 export {
     MatchingRuleAssertion,
     _decode_MatchingRuleAssertion,
     _encode_MatchingRuleAssertion,
-} from "../Lightweight_Directory_Access_Protocol_V3/MatchingRuleAssertion.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MatchingRuleAssertion.ta";
 export {
     SubstringFilter,
     _decode_SubstringFilter,
     _encode_SubstringFilter,
-} from "../Lightweight_Directory_Access_Protocol_V3/SubstringFilter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SubstringFilter.ta";
 
 /* START_OF_SYMBOL_DEFINITION Filter */
 // TODO: CHECK_RECURSIVE_DEFINITION

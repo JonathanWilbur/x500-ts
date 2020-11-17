@@ -35,6 +35,15 @@ export type OperationProgress_nameResolutionPhase =
 export const OperationProgress_nameResolutionPhase_notStarted: OperationProgress_nameResolutionPhase = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION OperationProgress_nameResolutionPhase_notStarted */
 
+/* START_OF_SYMBOL_DEFINITION notStarted */
+/**
+ * @summary notStarted
+ * @constant
+ * @type {number}
+ */
+export const notStarted: OperationProgress_nameResolutionPhase = OperationProgress_nameResolutionPhase_notStarted; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION notStarted */
+
 /* START_OF_SYMBOL_DEFINITION OperationProgress_nameResolutionPhase_proceeding */
 /**
  * @summary OperationProgress_nameResolutionPhase_proceeding
@@ -44,6 +53,15 @@ export const OperationProgress_nameResolutionPhase_notStarted: OperationProgress
 export const OperationProgress_nameResolutionPhase_proceeding: OperationProgress_nameResolutionPhase = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION OperationProgress_nameResolutionPhase_proceeding */
 
+/* START_OF_SYMBOL_DEFINITION proceeding */
+/**
+ * @summary proceeding
+ * @constant
+ * @type {number}
+ */
+export const proceeding: OperationProgress_nameResolutionPhase = OperationProgress_nameResolutionPhase_proceeding; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION proceeding */
+
 /* START_OF_SYMBOL_DEFINITION OperationProgress_nameResolutionPhase_completed */
 /**
  * @summary OperationProgress_nameResolutionPhase_completed
@@ -52,6 +70,15 @@ export const OperationProgress_nameResolutionPhase_proceeding: OperationProgress
  */
 export const OperationProgress_nameResolutionPhase_completed: OperationProgress_nameResolutionPhase = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION OperationProgress_nameResolutionPhase_completed */
+
+/* START_OF_SYMBOL_DEFINITION completed */
+/**
+ * @summary completed
+ * @constant
+ * @type {number}
+ */
+export const completed: OperationProgress_nameResolutionPhase = OperationProgress_nameResolutionPhase_completed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION completed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationProgress_nameResolutionPhase */
 let _cached_decoder_for_OperationProgress_nameResolutionPhase: $.ASN1Decoder<

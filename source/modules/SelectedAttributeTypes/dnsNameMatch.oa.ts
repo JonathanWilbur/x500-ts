@@ -6,7 +6,9 @@ import {
     _encode_DomainName,
 } from "../SelectedAttributeTypes/DomainName.ta";
 import { id_mr_dnsNameMatch } from "../SelectedAttributeTypes/id-mr-dnsNameMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 export {
     DomainName,

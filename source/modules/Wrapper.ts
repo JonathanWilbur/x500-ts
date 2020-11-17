@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AadClient,
     _decode_AadClient,
@@ -302,7 +303,7 @@ export {
     _decode_Version,
     _encode_Version,
 } from "./Wrapper/Version.ta";
-export { TYPE_IDENTIFIER } from "./Wrapper/WRAPPED-PROT.oca";
+export { WRAPPED_PROT } from "./Wrapper/WRAPPED-PROT.oca";
 export {
     WrappedProt,
     _decode_WrappedProt,
@@ -358,3 +359,4 @@ export {
     _encode_WrpError,
     _enum_for_WrpError,
 } from "./Wrapper/WrpError.ta";
+/* eslint-enable */

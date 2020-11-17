@@ -5,7 +5,11 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { AVIHash } from "../EnhancedSecurity/AVIHash.ta";
+import {
+    AVIHash,
+    _decode_AVIHash,
+    _encode_AVIHash,
+} from "../EnhancedSecurity/AVIHash.ta";
 import {
     Signer,
     _decode_Signer,
@@ -13,8 +17,8 @@ import {
 } from "../EnhancedSecurity/Signer.ta";
 export {
     AVIHash,
-    _get_decoder_for_AVIHash,
-    _get_encoder_for_AVIHash,
+    _decode_AVIHash,
+    _encode_AVIHash,
 } from "../EnhancedSecurity/AVIHash.ta";
 export {
     Signer,

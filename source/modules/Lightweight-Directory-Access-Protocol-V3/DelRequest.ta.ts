@@ -5,12 +5,12 @@ import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 
 /* START_OF_SYMBOL_DEFINITION DelRequest */
 /**

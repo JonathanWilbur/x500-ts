@@ -12,7 +12,7 @@ import {
 } from "../PkiPMIProtocolSpecifications/CASPsequence.ta";
 import {
     CASPversion,
-    CASPversion_v1 /* IMPORTED_ENUMERATION_ITEM */,
+    CASPversion_v1 /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_CASPversion,
     _encode_CASPversion,
     _enum_for_CASPversion,
@@ -24,9 +24,12 @@ export {
 } from "../PkiPMIProtocolSpecifications/CASPsequence.ta";
 export {
     CASPversion,
-    CASPversion_v1 /* IMPORTED_ENUMERATION_ITEM */,
-    CASPversion_v2 /* IMPORTED_ENUMERATION_ITEM */,
-    CASPversion_v3 /* IMPORTED_ENUMERATION_ITEM */,
+    CASPversion_v1 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CASPversion_v2 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CASPversion_v3 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    v1 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    v2 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    v3 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CASPversion,
     _encode_CASPversion,
     _enum_for_CASPversion,

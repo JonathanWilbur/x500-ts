@@ -34,6 +34,15 @@ export type IdmBindError_aETitleError =
 export const IdmBindError_aETitleError_callingAETitleNotAccepted: IdmBindError_aETitleError = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmBindError_aETitleError_callingAETitleNotAccepted */
 
+/* START_OF_SYMBOL_DEFINITION callingAETitleNotAccepted */
+/**
+ * @summary callingAETitleNotAccepted
+ * @constant
+ * @type {number}
+ */
+export const callingAETitleNotAccepted: IdmBindError_aETitleError = IdmBindError_aETitleError_callingAETitleNotAccepted; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION callingAETitleNotAccepted */
+
 /* START_OF_SYMBOL_DEFINITION IdmBindError_aETitleError_calledAETitleNotRecognized */
 /**
  * @summary IdmBindError_aETitleError_calledAETitleNotRecognized
@@ -42,6 +51,15 @@ export const IdmBindError_aETitleError_callingAETitleNotAccepted: IdmBindError_a
  */
 export const IdmBindError_aETitleError_calledAETitleNotRecognized: IdmBindError_aETitleError = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmBindError_aETitleError_calledAETitleNotRecognized */
+
+/* START_OF_SYMBOL_DEFINITION calledAETitleNotRecognized */
+/**
+ * @summary calledAETitleNotRecognized
+ * @constant
+ * @type {number}
+ */
+export const calledAETitleNotRecognized: IdmBindError_aETitleError = IdmBindError_aETitleError_calledAETitleNotRecognized; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION calledAETitleNotRecognized */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmBindError_aETitleError */
 let _cached_decoder_for_IdmBindError_aETitleError: $.ASN1Decoder<

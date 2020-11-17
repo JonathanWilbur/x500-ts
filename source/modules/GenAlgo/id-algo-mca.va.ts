@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { ObjectIdentifier as _OID, OBJECT_IDENTIFIER } from "asn1-ts";
-import { id_algo } from "../PKI_Stub/id-algo.va";
-export { id_algo } from "../PKI_Stub/id-algo.va";
+import { id_algo } from "../PKI-Stub/id-algo.va";
+export { id_algo } from "../PKI-Stub/id-algo.va";
 
 /* START_OF_SYMBOL_DEFINITION id_algo_mca */
 /**

@@ -5,22 +5,22 @@ import {
     DelAvlErr,
     _decode_DelAvlErr,
     _encode_DelAvlErr,
-} from "../AVL_management/DelAvlErr.ta";
+} from "../AVL-management/DelAvlErr.ta";
 import {
     DelAvlOK,
     _decode_DelAvlOK,
     _encode_DelAvlOK,
-} from "../AVL_management/DelAvlOK.ta";
+} from "../AVL-management/DelAvlOK.ta";
 export {
     DelAvlErr,
     _decode_DelAvlErr,
     _encode_DelAvlErr,
-} from "../AVL_management/DelAvlErr.ta";
+} from "../AVL-management/DelAvlErr.ta";
 export {
     DelAvlOK,
     _decode_DelAvlOK,
     _encode_DelAvlOK,
-} from "../AVL_management/DelAvlOK.ta";
+} from "../AVL-management/DelAvlOK.ta";
 
 /* START_OF_SYMBOL_DEFINITION DeleteAvlRsp_result */
 /**

@@ -39,6 +39,15 @@ export type WordMatchTypes = _enum_for_WordMatchTypes | ENUMERATED;
 export const WordMatchTypes_wordExact: WordMatchTypes = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WordMatchTypes_wordExact */
 
+/* START_OF_SYMBOL_DEFINITION wordExact */
+/**
+ * @summary wordExact
+ * @constant
+ * @type {number}
+ */
+export const wordExact: WordMatchTypes = WordMatchTypes_wordExact; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wordExact */
+
 /* START_OF_SYMBOL_DEFINITION WordMatchTypes_wordTruncated */
 /**
  * @summary WordMatchTypes_wordTruncated
@@ -47,6 +56,15 @@ export const WordMatchTypes_wordExact: WordMatchTypes = 0; /* LONG_NAMED_ENUMERA
  */
 export const WordMatchTypes_wordTruncated: WordMatchTypes = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WordMatchTypes_wordTruncated */
+
+/* START_OF_SYMBOL_DEFINITION wordTruncated */
+/**
+ * @summary wordTruncated
+ * @constant
+ * @type {number}
+ */
+export const wordTruncated: WordMatchTypes = WordMatchTypes_wordTruncated; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wordTruncated */
 
 /* START_OF_SYMBOL_DEFINITION WordMatchTypes_wordPhonetic */
 /**
@@ -57,6 +75,15 @@ export const WordMatchTypes_wordTruncated: WordMatchTypes = 1; /* LONG_NAMED_ENU
 export const WordMatchTypes_wordPhonetic: WordMatchTypes = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WordMatchTypes_wordPhonetic */
 
+/* START_OF_SYMBOL_DEFINITION wordPhonetic */
+/**
+ * @summary wordPhonetic
+ * @constant
+ * @type {number}
+ */
+export const wordPhonetic: WordMatchTypes = WordMatchTypes_wordPhonetic; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wordPhonetic */
+
 /* START_OF_SYMBOL_DEFINITION WordMatchTypes_wordProviderDefined */
 /**
  * @summary WordMatchTypes_wordProviderDefined
@@ -65,6 +92,15 @@ export const WordMatchTypes_wordPhonetic: WordMatchTypes = 2; /* LONG_NAMED_ENUM
  */
 export const WordMatchTypes_wordProviderDefined: WordMatchTypes = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WordMatchTypes_wordProviderDefined */
+
+/* START_OF_SYMBOL_DEFINITION wordProviderDefined */
+/**
+ * @summary wordProviderDefined
+ * @constant
+ * @type {number}
+ */
+export const wordProviderDefined: WordMatchTypes = WordMatchTypes_wordProviderDefined; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wordProviderDefined */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_WordMatchTypes */
 let _cached_decoder_for_WordMatchTypes: $.ASN1Decoder<

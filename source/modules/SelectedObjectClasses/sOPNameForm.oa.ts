@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { id_nf_sOPNameForm } from "../SelectedObjectClasses/id-nf-sOPNameForm.va";
 import { locality } from "../SelectedObjectClasses/locality.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { id_nf_sOPNameForm } from "../SelectedObjectClasses/id-nf-sOPNameForm.va";
 export { locality } from "../SelectedObjectClasses/locality.oa";
 

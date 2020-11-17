@@ -8,12 +8,14 @@ import {
     _encode_Name,
 } from "../InformationFramework/Name.ta";
 export { id_kmr_masterShadowMatch } from "../DSAOperationalAttributeTypes/id-kmr-masterShadowMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export {
     Name,
     _decode_Name,
     _encode_Name,
 } from "../InformationFramework/Name.ta";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION masterAndShadowAccessPointsMatch */
 /**

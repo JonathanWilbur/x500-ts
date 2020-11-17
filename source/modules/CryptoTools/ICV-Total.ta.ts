@@ -10,12 +10,12 @@ import {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 export {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 
 /* START_OF_SYMBOL_DEFINITION ICV_Total */
 /**
@@ -177,12 +177,6 @@ export const _root_component_type_list_2_spec_for_ICV_Total: $.ComponentSpec[] =
 export const _extension_additions_list_spec_for_ICV_Total: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ICV_Total */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ICV_Total */
-let _cached_decoder_for_ICV_Total: $.ASN1Decoder<
-    ICV_Total<ToBeProtected>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ICV_Total */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_ICV_Total */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) ICV_Total
@@ -246,12 +240,6 @@ export function _get_decoder_for_ICV_Total<ToBeProtected>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ICV_Total */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ICV_Total */
-let _cached_encoder_for_ICV_Total: $.ASN1Encoder<
-    ICV_Total<ToBeProtected>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ICV_Total */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ICV_Total */
 /**

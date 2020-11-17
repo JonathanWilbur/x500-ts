@@ -17,7 +17,7 @@ export {
     _get_decoder_for_MULTY_SIGNED_parmeters_sign,
     _get_encoder_for_MULTY_SIGNED_parmeters_sign,
 } from "../CryptoTools/MULTY-SIGNED-parmeters-sign.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION MULTY_SIGNED */
 /**
@@ -145,12 +145,6 @@ export const _root_component_type_list_2_spec_for_MULTY_SIGNED: $.ComponentSpec[
 export const _extension_additions_list_spec_for_MULTY_SIGNED: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MULTY_SIGNED */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MULTY_SIGNED */
-let _cached_decoder_for_MULTY_SIGNED: $.ASN1Decoder<
-    MULTY_SIGNED<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MULTY_SIGNED */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_MULTY_SIGNED */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) MULTY_SIGNED
@@ -161,7 +155,7 @@ let _cached_decoder_for_MULTY_SIGNED: $.ASN1Decoder<
 export function _get_decoder_for_MULTY_SIGNED<ToBeSigned>(
     _decode_ToBeSigned: $.ASN1Decoder<ToBeSigned>
 ) {
-    return function <ToBeSigned>(el: _Element): MULTY_SIGNED<ToBeSigned> {
+    return function (el: _Element): MULTY_SIGNED<ToBeSigned> {
         const sequence: _Element[] = el.sequence;
         if (sequence.length < 3) {
             throw new _ConstructionError(
@@ -194,12 +188,6 @@ export function _get_decoder_for_MULTY_SIGNED<ToBeSigned>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_MULTY_SIGNED */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MULTY_SIGNED */
-let _cached_encoder_for_MULTY_SIGNED: $.ASN1Encoder<
-    MULTY_SIGNED<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MULTY_SIGNED */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_MULTY_SIGNED */
 /**

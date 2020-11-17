@@ -45,6 +45,15 @@ export type SignedData_error = _enum_for_SignedData_error | ENUMERATED;
 export const SignedData_error_noReason: SignedData_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_noReason */
 
+/* START_OF_SYMBOL_DEFINITION noReason */
+/**
+ * @summary noReason
+ * @constant
+ * @type {number}
+ */
+export const noReason: SignedData_error = SignedData_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION noReason */
+
 /* START_OF_SYMBOL_DEFINITION SignedData_error_signedDataContectTypeExpected */
 /**
  * @summary SignedData_error_signedDataContectTypeExpected
@@ -53,6 +62,15 @@ export const SignedData_error_noReason: SignedData_error = 0; /* LONG_NAMED_ENUM
  */
 export const SignedData_error_signedDataContectTypeExpected: SignedData_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_signedDataContectTypeExpected */
+
+/* START_OF_SYMBOL_DEFINITION signedDataContectTypeExpected */
+/**
+ * @summary signedDataContectTypeExpected
+ * @constant
+ * @type {number}
+ */
+export const signedDataContectTypeExpected: SignedData_error = SignedData_error_signedDataContectTypeExpected; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION signedDataContectTypeExpected */
 
 /* START_OF_SYMBOL_DEFINITION SignedData_error_wrongSignedDataVersion */
 /**
@@ -63,6 +81,15 @@ export const SignedData_error_signedDataContectTypeExpected: SignedData_error = 
 export const SignedData_error_wrongSignedDataVersion: SignedData_error = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_wrongSignedDataVersion */
 
+/* START_OF_SYMBOL_DEFINITION wrongSignedDataVersion */
+/**
+ * @summary wrongSignedDataVersion
+ * @constant
+ * @type {number}
+ */
+export const wrongSignedDataVersion: SignedData_error = SignedData_error_wrongSignedDataVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wrongSignedDataVersion */
+
 /* START_OF_SYMBOL_DEFINITION SignedData_error_missingContent */
 /**
  * @summary SignedData_error_missingContent
@@ -71,6 +98,15 @@ export const SignedData_error_wrongSignedDataVersion: SignedData_error = 2; /* L
  */
 export const SignedData_error_missingContent: SignedData_error = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_missingContent */
+
+/* START_OF_SYMBOL_DEFINITION missingContent */
+/**
+ * @summary missingContent
+ * @constant
+ * @type {number}
+ */
+export const missingContent: SignedData_error = SignedData_error_missingContent; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION missingContent */
 
 /* START_OF_SYMBOL_DEFINITION SignedData_error_missingContentComponent */
 /**
@@ -81,6 +117,15 @@ export const SignedData_error_missingContent: SignedData_error = 3; /* LONG_NAME
 export const SignedData_error_missingContentComponent: SignedData_error = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_missingContentComponent */
 
+/* START_OF_SYMBOL_DEFINITION missingContentComponent */
+/**
+ * @summary missingContentComponent
+ * @constant
+ * @type {number}
+ */
+export const missingContentComponent: SignedData_error = SignedData_error_missingContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION missingContentComponent */
+
 /* START_OF_SYMBOL_DEFINITION SignedData_error_invalidContentComponent */
 /**
  * @summary SignedData_error_invalidContentComponent
@@ -90,6 +135,15 @@ export const SignedData_error_missingContentComponent: SignedData_error = 4; /* 
 export const SignedData_error_invalidContentComponent: SignedData_error = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_invalidContentComponent */
 
+/* START_OF_SYMBOL_DEFINITION invalidContentComponent */
+/**
+ * @summary invalidContentComponent
+ * @constant
+ * @type {number}
+ */
+export const invalidContentComponent: SignedData_error = SignedData_error_invalidContentComponent; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidContentComponent */
+
 /* START_OF_SYMBOL_DEFINITION SignedData_error_unsupportedHashAlgorithm */
 /**
  * @summary SignedData_error_unsupportedHashAlgorithm
@@ -98,6 +152,15 @@ export const SignedData_error_invalidContentComponent: SignedData_error = 5; /* 
  */
 export const SignedData_error_unsupportedHashAlgorithm: SignedData_error = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SignedData_error_unsupportedHashAlgorithm */
+
+/* START_OF_SYMBOL_DEFINITION unsupportedHashAlgorithm */
+/**
+ * @summary unsupportedHashAlgorithm
+ * @constant
+ * @type {number}
+ */
+export const unsupportedHashAlgorithm: SignedData_error = SignedData_error_unsupportedHashAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedHashAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedData_error */
 let _cached_decoder_for_SignedData_error: $.ASN1Decoder<

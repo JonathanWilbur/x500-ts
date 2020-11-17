@@ -56,10 +56,13 @@ export {
     _encode_Time,
 } from "../AuthenticationFramework/Time.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v2 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v3 /* IMPORTED_SHORT_NAMED_INTEGER */,
     Version,
-    Version_v1 /* IMPORTED_NAMED_INTEGER */,
-    Version_v2 /* IMPORTED_NAMED_INTEGER */,
-    Version_v3 /* IMPORTED_NAMED_INTEGER */,
+    Version_v1 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v2 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v3 /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_Version,
     _encode_Version,
 } from "../AuthenticationFramework/Version.ta";

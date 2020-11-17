@@ -24,6 +24,14 @@ export type AssociationEstablishment = BIT_STRING;
 export const AssociationEstablishment_inward: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AssociationEstablishment_inward */
 
+/* START_OF_SYMBOL_DEFINITION inward */
+/**
+ * @summary inward
+ * @constant
+ */
+export const inward: number = AssociationEstablishment_inward; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION inward */
+
 /* START_OF_SYMBOL_DEFINITION AssociationEstablishment_outward */
 /**
  * @summary AssociationEstablishment_outward
@@ -31,6 +39,14 @@ export const AssociationEstablishment_inward: number = 0; /* LONG_NAMED_BIT */
  */
 export const AssociationEstablishment_outward: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AssociationEstablishment_outward */
+
+/* START_OF_SYMBOL_DEFINITION outward */
+/**
+ * @summary outward
+ * @constant
+ */
+export const outward: number = AssociationEstablishment_outward; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION outward */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AssociationEstablishment */
 let _cached_decoder_for_AssociationEstablishment: $.ASN1Decoder<

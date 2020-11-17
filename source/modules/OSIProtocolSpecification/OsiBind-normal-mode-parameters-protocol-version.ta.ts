@@ -24,6 +24,14 @@ export type OsiBind_normal_mode_parameters_protocol_version = BIT_STRING;
 export const OsiBind_normal_mode_parameters_protocol_version_version_1: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION OsiBind_normal_mode_parameters_protocol_version_version_1 */
 
+/* START_OF_SYMBOL_DEFINITION version_1 */
+/**
+ * @summary version_1
+ * @constant
+ */
+export const version_1: number = OsiBind_normal_mode_parameters_protocol_version_version_1; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION version_1 */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version */
 let _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version: $.ASN1Decoder<
     OsiBind_normal_mode_parameters_protocol_version

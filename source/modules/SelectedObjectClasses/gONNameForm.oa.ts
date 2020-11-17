@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { groupOfNames } from "../SelectedObjectClasses/groupOfNames.oa";
 import { id_nf_gONNameForm } from "../SelectedObjectClasses/id-nf-gONNameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { groupOfNames } from "../SelectedObjectClasses/groupOfNames.oa";
 export { id_nf_gONNameForm } from "../SelectedObjectClasses/id-nf-gONNameForm.va";
 

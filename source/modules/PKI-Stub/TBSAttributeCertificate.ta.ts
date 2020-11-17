@@ -9,85 +9,86 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     AttCertIssuer,
     _decode_AttCertIssuer,
     _encode_AttCertIssuer,
-} from "../PKI_Stub/AttCertIssuer.ta";
+} from "../PKI-Stub/AttCertIssuer.ta";
 import {
     AttCertValidityPeriod,
     _decode_AttCertValidityPeriod,
     _encode_AttCertValidityPeriod,
-} from "../PKI_Stub/AttCertValidityPeriod.ta";
+} from "../PKI-Stub/AttCertValidityPeriod.ta";
 import {
     AttCertVersion,
     _decode_AttCertVersion,
     _encode_AttCertVersion,
-} from "../PKI_Stub/AttCertVersion.ta";
+} from "../PKI-Stub/AttCertVersion.ta";
 import {
     Attribute,
     _decode_Attribute,
     _encode_Attribute,
-} from "../PKI_Stub/Attribute.ta";
+} from "../PKI-Stub/Attribute.ta";
 import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 import {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
-import { Holder, _decode_Holder, _encode_Holder } from "../PKI_Stub/Holder.ta";
+} from "../PKI-Stub/Extensions.ta";
+import { Holder, _decode_Holder, _encode_Holder } from "../PKI-Stub/Holder.ta";
 import {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     AttCertIssuer,
     _decode_AttCertIssuer,
     _encode_AttCertIssuer,
-} from "../PKI_Stub/AttCertIssuer.ta";
+} from "../PKI-Stub/AttCertIssuer.ta";
 export {
     AttCertValidityPeriod,
     _decode_AttCertValidityPeriod,
     _encode_AttCertValidityPeriod,
-} from "../PKI_Stub/AttCertValidityPeriod.ta";
+} from "../PKI-Stub/AttCertValidityPeriod.ta";
 export {
     AttCertVersion,
-    AttCertVersion_v2 /* IMPORTED_NAMED_INTEGER */,
+    AttCertVersion_v2 /* IMPORTED_LONG_NAMED_INTEGER */,
+    v2 /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_AttCertVersion,
     _encode_AttCertVersion,
-} from "../PKI_Stub/AttCertVersion.ta";
+} from "../PKI-Stub/AttCertVersion.ta";
 export {
     Attribute,
     _decode_Attribute,
     _encode_Attribute,
-} from "../PKI_Stub/Attribute.ta";
+} from "../PKI-Stub/Attribute.ta";
 export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 export {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
-export { Holder, _decode_Holder, _encode_Holder } from "../PKI_Stub/Holder.ta";
+} from "../PKI-Stub/Extensions.ta";
+export { Holder, _decode_Holder, _encode_Holder } from "../PKI-Stub/Holder.ta";
 export {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 
 /* START_OF_SYMBOL_DEFINITION TBSAttributeCertificate */
 /**

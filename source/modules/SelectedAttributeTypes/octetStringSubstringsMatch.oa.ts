@@ -5,7 +5,9 @@ import {
     _decode_OctetSubstringAssertion,
     _encode_OctetSubstringAssertion,
 } from "../SelectedAttributeTypes/OctetSubstringAssertion.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_octetStringSubstringsMatch } from "../SelectedAttributeTypes/id-mr-octetStringSubstringsMatch.va";
 export {
     OctetSubstringAssertion,

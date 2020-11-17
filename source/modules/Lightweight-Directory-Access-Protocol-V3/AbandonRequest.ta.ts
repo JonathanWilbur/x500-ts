@@ -5,12 +5,12 @@ import {
     MessageID,
     _decode_MessageID,
     _encode_MessageID,
-} from "../Lightweight_Directory_Access_Protocol_V3/MessageID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MessageID.ta";
 export {
     MessageID,
     _decode_MessageID,
     _encode_MessageID,
-} from "../Lightweight_Directory_Access_Protocol_V3/MessageID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MessageID.ta";
 
 /* START_OF_SYMBOL_DEFINITION AbandonRequest */
 /**

@@ -28,6 +28,15 @@ export type Associate_result = INTEGER;
 export const Associate_result_accepted: Associate_result = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_result_accepted */
 
+/* START_OF_SYMBOL_DEFINITION accepted */
+/**
+ * @summary Associate_result_accepted
+ * @constant
+ * @type {number}
+ */
+export const accepted: Associate_result = Associate_result_accepted; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION accepted */
+
 /* START_OF_SYMBOL_DEFINITION Associate_result_rejected_permanent */
 /**
  * @summary Associate_result_rejected_permanent
@@ -37,6 +46,15 @@ export const Associate_result_accepted: Associate_result = 0; /* LONG_NAMED_INTE
 export const Associate_result_rejected_permanent: Associate_result = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_result_rejected_permanent */
 
+/* START_OF_SYMBOL_DEFINITION rejected_permanent */
+/**
+ * @summary Associate_result_rejected_permanent
+ * @constant
+ * @type {number}
+ */
+export const rejected_permanent: Associate_result = Associate_result_rejected_permanent; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION rejected_permanent */
+
 /* START_OF_SYMBOL_DEFINITION Associate_result_rejected_transient */
 /**
  * @summary Associate_result_rejected_transient
@@ -45,6 +63,15 @@ export const Associate_result_rejected_permanent: Associate_result = 1; /* LONG_
  */
 export const Associate_result_rejected_transient: Associate_result = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_result_rejected_transient */
+
+/* START_OF_SYMBOL_DEFINITION rejected_transient */
+/**
+ * @summary Associate_result_rejected_transient
+ * @constant
+ * @type {number}
+ */
+export const rejected_transient: Associate_result = Associate_result_rejected_transient; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION rejected_transient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_result */
 let _cached_decoder_for_Associate_result: $.ASN1Decoder<

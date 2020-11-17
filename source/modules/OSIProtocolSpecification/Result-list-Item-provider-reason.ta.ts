@@ -25,6 +25,15 @@ export type Result_list_Item_provider_reason = INTEGER;
 export const Result_list_Item_provider_reason_reason_not_specified: Result_list_Item_provider_reason = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_list_Item_provider_reason_reason_not_specified */
 
+/* START_OF_SYMBOL_DEFINITION reason_not_specified */
+/**
+ * @summary Result_list_Item_provider_reason_reason_not_specified
+ * @constant
+ * @type {number}
+ */
+export const reason_not_specified: Result_list_Item_provider_reason = Result_list_Item_provider_reason_reason_not_specified; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION reason_not_specified */
+
 /* START_OF_SYMBOL_DEFINITION Result_list_Item_provider_reason_abstract_syntax_not_supported */
 /**
  * @summary Result_list_Item_provider_reason_abstract_syntax_not_supported
@@ -34,6 +43,15 @@ export const Result_list_Item_provider_reason_reason_not_specified: Result_list_
 export const Result_list_Item_provider_reason_abstract_syntax_not_supported: Result_list_Item_provider_reason = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_list_Item_provider_reason_abstract_syntax_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION abstract_syntax_not_supported */
+/**
+ * @summary Result_list_Item_provider_reason_abstract_syntax_not_supported
+ * @constant
+ * @type {number}
+ */
+export const abstract_syntax_not_supported: Result_list_Item_provider_reason = Result_list_Item_provider_reason_abstract_syntax_not_supported; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION abstract_syntax_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported */
 /**
  * @summary Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported
@@ -42,6 +60,15 @@ export const Result_list_Item_provider_reason_abstract_syntax_not_supported: Res
  */
 export const Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported: Result_list_Item_provider_reason = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported */
+
+/* START_OF_SYMBOL_DEFINITION proposed_transfer_syntaxes_not_supported */
+/**
+ * @summary Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported
+ * @constant
+ * @type {number}
+ */
+export const proposed_transfer_syntaxes_not_supported: Result_list_Item_provider_reason = Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION proposed_transfer_syntaxes_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Result_list_Item_provider_reason */
 let _cached_decoder_for_Result_list_Item_provider_reason: $.ASN1Decoder<

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AttribsHash,
     _decode_AttribsHash,
@@ -104,7 +105,7 @@ export {
     _decode_Scope,
     _encode_Scope,
 } from "./EnhancedSecurity/Scope.ta";
-export { TYPE_IDENTIFIER } from "./EnhancedSecurity/SECURITY-CATEGORY.oca";
+export { SECURITY_CATEGORY } from "./EnhancedSecurity/SECURITY-CATEGORY.oca";
 export {
     SecurityCategories,
     _decode_SecurityCategories,
@@ -179,3 +180,4 @@ export {
     _decode_ThisEntry,
     _encode_ThisEntry,
 } from "./EnhancedSecurity/ThisEntry.ta";
+/* eslint-enable */

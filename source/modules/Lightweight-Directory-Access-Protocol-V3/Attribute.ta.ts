@@ -5,12 +5,12 @@ import {
     PartialAttribute,
     _decode_PartialAttribute,
     _encode_PartialAttribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttribute.ta";
 export {
     PartialAttribute,
     _decode_PartialAttribute,
     _encode_PartialAttribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttribute.ta";
 
 /* START_OF_SYMBOL_DEFINITION Attribute */
 /**

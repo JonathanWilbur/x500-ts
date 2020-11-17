@@ -18,7 +18,7 @@ import {
 } from "../InformationFramework/RelativeDistinguishedName.ta";
 import {
     AARQ_apdu_protocol_version,
-    AARQ_apdu_protocol_version_version1 /* IMPORTED_BIT */,
+    AARQ_apdu_protocol_version_version1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_AARQ_apdu_protocol_version,
     _encode_AARQ_apdu_protocol_version,
 } from "../OSIProtocolSpecification/AARQ-apdu-protocol-version.ta";
@@ -59,7 +59,8 @@ export {
 } from "../InformationFramework/RelativeDistinguishedName.ta";
 export {
     AARQ_apdu_protocol_version,
-    AARQ_apdu_protocol_version_version1 /* IMPORTED_BIT */,
+    AARQ_apdu_protocol_version_version1 /* IMPORTED_LONG_NAMED_BIT */,
+    version1 /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_AARQ_apdu_protocol_version,
     _encode_AARQ_apdu_protocol_version,
 } from "../OSIProtocolSpecification/AARQ-apdu-protocol-version.ta";

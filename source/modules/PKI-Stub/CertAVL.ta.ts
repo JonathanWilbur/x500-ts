@@ -5,22 +5,22 @@ import {
     SIGNED,
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
-} from "../PKI_Stub/SIGNED.ta";
+} from "../PKI-Stub/SIGNED.ta";
 import {
     TBSCertAVL,
     _decode_TBSCertAVL,
     _encode_TBSCertAVL,
-} from "../PKI_Stub/TBSCertAVL.ta";
+} from "../PKI-Stub/TBSCertAVL.ta";
 export {
     SIGNED,
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
-} from "../PKI_Stub/SIGNED.ta";
+} from "../PKI-Stub/SIGNED.ta";
 export {
     TBSCertAVL,
     _decode_TBSCertAVL,
     _encode_TBSCertAVL,
-} from "../PKI_Stub/TBSCertAVL.ta";
+} from "../PKI-Stub/TBSCertAVL.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertAVL */
 /**

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { applEntityNameForm } from "./SelectedObjectClasses/applEntityNameForm.oa";
 export { applicationEntity } from "./SelectedObjectClasses/applicationEntity.oa";
 export { applicationProcess } from "./SelectedObjectClasses/applicationProcess.oa";
@@ -104,3 +105,4 @@ export { urnCNameForm } from "./SelectedObjectClasses/urnCNameForm.oa";
 export { urnCobj } from "./SelectedObjectClasses/urnCobj.oa";
 export { userPwdClass } from "./SelectedObjectClasses/userPwdClass.oa";
 export { userSecurityInformation } from "./SelectedObjectClasses/userSecurityInformation.oa";
+/* eslint-enable */

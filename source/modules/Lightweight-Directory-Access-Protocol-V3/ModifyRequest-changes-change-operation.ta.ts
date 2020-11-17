@@ -35,6 +35,15 @@ export type ModifyRequest_changes_change_operation =
 export const ModifyRequest_changes_change_operation_add: ModifyRequest_changes_change_operation = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ModifyRequest_changes_change_operation_add */
 
+/* START_OF_SYMBOL_DEFINITION add */
+/**
+ * @summary add
+ * @constant
+ * @type {number}
+ */
+export const add: ModifyRequest_changes_change_operation = ModifyRequest_changes_change_operation_add; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION add */
+
 /* START_OF_SYMBOL_DEFINITION ModifyRequest_changes_change_operation_delete_ */
 /**
  * @summary ModifyRequest_changes_change_operation_delete_
@@ -44,6 +53,15 @@ export const ModifyRequest_changes_change_operation_add: ModifyRequest_changes_c
 export const ModifyRequest_changes_change_operation_delete_: ModifyRequest_changes_change_operation = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ModifyRequest_changes_change_operation_delete_ */
 
+/* START_OF_SYMBOL_DEFINITION delete_ */
+/**
+ * @summary delete_
+ * @constant
+ * @type {number}
+ */
+export const delete_: ModifyRequest_changes_change_operation = ModifyRequest_changes_change_operation_delete_; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION delete_ */
+
 /* START_OF_SYMBOL_DEFINITION ModifyRequest_changes_change_operation_replace */
 /**
  * @summary ModifyRequest_changes_change_operation_replace
@@ -52,6 +70,15 @@ export const ModifyRequest_changes_change_operation_delete_: ModifyRequest_chang
  */
 export const ModifyRequest_changes_change_operation_replace: ModifyRequest_changes_change_operation = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ModifyRequest_changes_change_operation_replace */
+
+/* START_OF_SYMBOL_DEFINITION replace */
+/**
+ * @summary replace
+ * @constant
+ * @type {number}
+ */
+export const replace: ModifyRequest_changes_change_operation = ModifyRequest_changes_change_operation_replace; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION replace */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRequest_changes_change_operation */
 let _cached_decoder_for_ModifyRequest_changes_change_operation: $.ASN1Decoder<

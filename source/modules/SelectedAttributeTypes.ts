@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { appliedRelaxation } from "./SelectedAttributeTypes/appliedRelaxation.oa";
 export { approximateStringMatch } from "./SelectedAttributeTypes/approximateStringMatch.oa";
 export { attributeCombinations } from "./SelectedAttributeTypes/attributeCombinations.oa";
@@ -983,3 +984,4 @@ export {
     _decode_ZonalSelect,
     _encode_ZonalSelect,
 } from "./SelectedAttributeTypes/ZonalSelect.ta";
+/* eslint-enable */

@@ -10,32 +10,32 @@ import {
     AssertionValue,
     _decode_AssertionValue,
     _encode_AssertionValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AssertionValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AssertionValue.ta";
 import {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 import {
     MatchingRuleId,
     _decode_MatchingRuleId,
     _encode_MatchingRuleId,
-} from "../Lightweight_Directory_Access_Protocol_V3/MatchingRuleId.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MatchingRuleId.ta";
 export {
     AssertionValue,
     _decode_AssertionValue,
     _encode_AssertionValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AssertionValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AssertionValue.ta";
 export {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 export {
     MatchingRuleId,
     _decode_MatchingRuleId,
     _encode_MatchingRuleId,
-} from "../Lightweight_Directory_Access_Protocol_V3/MatchingRuleId.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MatchingRuleId.ta";
 
 /* START_OF_SYMBOL_DEFINITION MatchingRuleAssertion */
 /**

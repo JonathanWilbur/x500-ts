@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     Code,
     _decode_Code,
@@ -42,3 +43,4 @@ export {
     _encode_InvokeId,
 } from "./CommonProtocolSpecification/InvokeId.ta";
 export { OPERATION } from "./CommonProtocolSpecification/OPERATION.oca";
+/* eslint-enable */

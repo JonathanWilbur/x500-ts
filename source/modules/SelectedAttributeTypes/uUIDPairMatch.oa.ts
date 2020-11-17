@@ -5,7 +5,9 @@ import {
     _decode_UUIDPair,
     _encode_UUIDPair,
 } from "../SelectedAttributeTypes/UUIDPair.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_uuidpairmatch } from "../SelectedAttributeTypes/id-mr-uuidpairmatch.va";
 export {
     UUIDPair,

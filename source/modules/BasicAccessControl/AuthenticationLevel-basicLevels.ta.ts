@@ -15,9 +15,12 @@ import {
 } from "../BasicAccessControl/AuthenticationLevel-basicLevels-level.ta";
 export {
     AuthenticationLevel_basicLevels_level,
-    AuthenticationLevel_basicLevels_level_none /* IMPORTED_ENUMERATION_ITEM */,
-    AuthenticationLevel_basicLevels_level_simple /* IMPORTED_ENUMERATION_ITEM */,
-    AuthenticationLevel_basicLevels_level_strong /* IMPORTED_ENUMERATION_ITEM */,
+    AuthenticationLevel_basicLevels_level_none /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AuthenticationLevel_basicLevels_level_simple /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AuthenticationLevel_basicLevels_level_strong /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    none /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    simple /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    strong /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_AuthenticationLevel_basicLevels_level,
     _encode_AuthenticationLevel_basicLevels_level,
     _enum_for_AuthenticationLevel_basicLevels_level,

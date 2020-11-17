@@ -11,7 +11,9 @@ export {
     _decode_NameConstraintsSyntax,
     _encode_NameConstraintsSyntax,
 } from "../CertificateExtensions/NameConstraintsSyntax.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION delegatedNameConstraintsMatch */
 /**

@@ -5,12 +5,12 @@ import {
     PKCertIdentifier,
     _decode_PKCertIdentifier,
     _encode_PKCertIdentifier,
-} from "../PKI_Stub/PKCertIdentifier.ta";
+} from "../PKI-Stub/PKCertIdentifier.ta";
 export {
     PKCertIdentifier,
     _decode_PKCertIdentifier,
     _encode_PKCertIdentifier,
-} from "../PKI_Stub/PKCertIdentifier.ta";
+} from "../PKI-Stub/PKCertIdentifier.ta";
 
 /* START_OF_SYMBOL_DEFINITION TBrequest */
 /**

@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { applicationProcess } from "../SelectedObjectClasses/applicationProcess.oa";
 import { id_nf_applProcessNameForm } from "../SelectedObjectClasses/id-nf-applProcessNameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { applicationProcess } from "../SelectedObjectClasses/applicationProcess.oa";
 export { id_nf_applProcessNameForm } from "../SelectedObjectClasses/id-nf-applProcessNameForm.va";
 

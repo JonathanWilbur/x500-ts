@@ -5,22 +5,22 @@ import {
     RepAvlErr,
     _decode_RepAvlErr,
     _encode_RepAvlErr,
-} from "../AVL_management/RepAvlErr.ta";
+} from "../AVL-management/RepAvlErr.ta";
 import {
     RepAvlOK,
     _decode_RepAvlOK,
     _encode_RepAvlOK,
-} from "../AVL_management/RepAvlOK.ta";
+} from "../AVL-management/RepAvlOK.ta";
 export {
     RepAvlErr,
     _decode_RepAvlErr,
     _encode_RepAvlErr,
-} from "../AVL_management/RepAvlErr.ta";
+} from "../AVL-management/RepAvlErr.ta";
 export {
     RepAvlOK,
     _decode_RepAvlOK,
     _encode_RepAvlOK,
-} from "../AVL_management/RepAvlOK.ta";
+} from "../AVL-management/RepAvlOK.ta";
 
 /* START_OF_SYMBOL_DEFINITION ReplaceAvlRsp_result */
 /**

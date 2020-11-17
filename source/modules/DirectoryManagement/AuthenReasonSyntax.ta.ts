@@ -27,6 +27,15 @@ export type AuthenReasonSyntax = INTEGER;
 export const AuthenReasonSyntax_unknownUser: AuthenReasonSyntax = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenReasonSyntax_unknownUser */
 
+/* START_OF_SYMBOL_DEFINITION unknownUser */
+/**
+ * @summary AuthenReasonSyntax_unknownUser
+ * @constant
+ * @type {number}
+ */
+export const unknownUser: AuthenReasonSyntax = AuthenReasonSyntax_unknownUser; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownUser */
+
 /* START_OF_SYMBOL_DEFINITION AuthenReasonSyntax_incorrectPassword */
 /**
  * @summary AuthenReasonSyntax_incorrectPassword
@@ -35,6 +44,15 @@ export const AuthenReasonSyntax_unknownUser: AuthenReasonSyntax = 0; /* LONG_NAM
  */
 export const AuthenReasonSyntax_incorrectPassword: AuthenReasonSyntax = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenReasonSyntax_incorrectPassword */
+
+/* START_OF_SYMBOL_DEFINITION incorrectPassword */
+/**
+ * @summary AuthenReasonSyntax_incorrectPassword
+ * @constant
+ * @type {number}
+ */
+export const incorrectPassword: AuthenReasonSyntax = AuthenReasonSyntax_incorrectPassword; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION incorrectPassword */
 
 /* START_OF_SYMBOL_DEFINITION AuthenReasonSyntax_inaccessiblePassword */
 /**
@@ -45,6 +63,15 @@ export const AuthenReasonSyntax_incorrectPassword: AuthenReasonSyntax = 1; /* LO
 export const AuthenReasonSyntax_inaccessiblePassword: AuthenReasonSyntax = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenReasonSyntax_inaccessiblePassword */
 
+/* START_OF_SYMBOL_DEFINITION inaccessiblePassword */
+/**
+ * @summary AuthenReasonSyntax_inaccessiblePassword
+ * @constant
+ * @type {number}
+ */
+export const inaccessiblePassword: AuthenReasonSyntax = AuthenReasonSyntax_inaccessiblePassword; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION inaccessiblePassword */
+
 /* START_OF_SYMBOL_DEFINITION AuthenReasonSyntax_passwordVerificationLoop */
 /**
  * @summary AuthenReasonSyntax_passwordVerificationLoop
@@ -54,6 +81,15 @@ export const AuthenReasonSyntax_inaccessiblePassword: AuthenReasonSyntax = 2; /*
 export const AuthenReasonSyntax_passwordVerificationLoop: AuthenReasonSyntax = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenReasonSyntax_passwordVerificationLoop */
 
+/* START_OF_SYMBOL_DEFINITION passwordVerificationLoop */
+/**
+ * @summary AuthenReasonSyntax_passwordVerificationLoop
+ * @constant
+ * @type {number}
+ */
+export const passwordVerificationLoop: AuthenReasonSyntax = AuthenReasonSyntax_passwordVerificationLoop; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION passwordVerificationLoop */
+
 /* START_OF_SYMBOL_DEFINITION AuthenReasonSyntax_unrecognizedUser */
 /**
  * @summary AuthenReasonSyntax_unrecognizedUser
@@ -62,6 +98,15 @@ export const AuthenReasonSyntax_passwordVerificationLoop: AuthenReasonSyntax = 3
  */
 export const AuthenReasonSyntax_unrecognizedUser: AuthenReasonSyntax = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenReasonSyntax_unrecognizedUser */
+
+/* START_OF_SYMBOL_DEFINITION unrecognizedUser */
+/**
+ * @summary AuthenReasonSyntax_unrecognizedUser
+ * @constant
+ * @type {number}
+ */
+export const unrecognizedUser: AuthenReasonSyntax = AuthenReasonSyntax_unrecognizedUser; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unrecognizedUser */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenReasonSyntax */
 let _cached_decoder_for_AuthenReasonSyntax: $.ASN1Decoder<

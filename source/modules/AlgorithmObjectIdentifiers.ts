@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AES_InitializationVector,
     _decode_AES_InitializationVector,
@@ -204,3 +205,4 @@ export {
     _decode_X509Curves,
     _encode_X509Curves,
 } from "./AlgorithmObjectIdentifiers/X509Curves.vsa";
+/* eslint-enable */

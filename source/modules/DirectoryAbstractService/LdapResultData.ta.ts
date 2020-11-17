@@ -25,7 +25,7 @@ import {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
 export {
     CommonResultsSeq,
     _decode_CommonResultsSeq,
@@ -50,7 +50,7 @@ export {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
 
 /* START_OF_SYMBOL_DEFINITION LdapResultData */
 /**

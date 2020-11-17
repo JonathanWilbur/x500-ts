@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { accessControlSubentry } from "./InformationFramework/accessControlSubentry.oa";
 export { accessControlSubentryList } from "./InformationFramework/accessControlSubentryList.oa";
 export { administrativeRole } from "./InformationFramework/administrativeRole.oa";
@@ -300,3 +301,7 @@ export { SupportedAttributes } from "./InformationFramework/SupportedAttributes.
 export { SupportedContexts } from "./InformationFramework/SupportedContexts.osa";
 export { SYNTAX_NAME } from "./InformationFramework/SYNTAX-NAME.oca";
 export { top } from "./InformationFramework/top.oa";
+export { pwdHistory } from "./InformationFramework/pwdHistory.oa";
+export { pwdRecentlyExpired } from "./InformationFramework/pwdRecentlyExpired.oa";
+export { pwdHistoryMatch } from "./InformationFramework/pwdHistoryMatch.oa";
+/* eslint-enable */

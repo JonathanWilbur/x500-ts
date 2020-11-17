@@ -35,6 +35,15 @@ export type OrderedListSyntax = _enum_for_OrderedListSyntax | ENUMERATED;
 export const OrderedListSyntax_ascSerialNum: OrderedListSyntax = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION OrderedListSyntax_ascSerialNum */
 
+/* START_OF_SYMBOL_DEFINITION ascSerialNum */
+/**
+ * @summary ascSerialNum
+ * @constant
+ * @type {number}
+ */
+export const ascSerialNum: OrderedListSyntax = OrderedListSyntax_ascSerialNum; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION ascSerialNum */
+
 /* START_OF_SYMBOL_DEFINITION OrderedListSyntax_ascRevDate */
 /**
  * @summary OrderedListSyntax_ascRevDate
@@ -43,6 +52,15 @@ export const OrderedListSyntax_ascSerialNum: OrderedListSyntax = 0; /* LONG_NAME
  */
 export const OrderedListSyntax_ascRevDate: OrderedListSyntax = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION OrderedListSyntax_ascRevDate */
+
+/* START_OF_SYMBOL_DEFINITION ascRevDate */
+/**
+ * @summary ascRevDate
+ * @constant
+ * @type {number}
+ */
+export const ascRevDate: OrderedListSyntax = OrderedListSyntax_ascRevDate; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION ascRevDate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OrderedListSyntax */
 let _cached_decoder_for_OrderedListSyntax: $.ASN1Decoder<

@@ -33,6 +33,15 @@ export type InitializationRej_diag =
 export const InitializationRej_diag_unsupportedVersions: InitializationRej_diag = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION InitializationRej_diag_unsupportedVersions */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedVersions */
+/**
+ * @summary unsupportedVersions
+ * @constant
+ * @type {number}
+ */
+export const unsupportedVersions: InitializationRej_diag = InitializationRej_diag_unsupportedVersions; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedVersions */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationRej_diag */
 let _cached_decoder_for_InitializationRej_diag: $.ASN1Decoder<
     InitializationRej_diag

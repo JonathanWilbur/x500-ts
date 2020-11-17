@@ -7,9 +7,11 @@ import {
     _encode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
 } from "../DirectoryShadowAbstractService/RequestShadowUpdateArgumentData-requestedStrategy-standard.ta";
 export {
+    incremental /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     RequestShadowUpdateArgumentData_requestedStrategy_standard,
-    RequestShadowUpdateArgumentData_requestedStrategy_standard_incremental /* IMPORTED_ENUMERATION_ITEM */,
-    RequestShadowUpdateArgumentData_requestedStrategy_standard_total /* IMPORTED_ENUMERATION_ITEM */,
+    RequestShadowUpdateArgumentData_requestedStrategy_standard_incremental /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    RequestShadowUpdateArgumentData_requestedStrategy_standard_total /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    total /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
     _encode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
     _enum_for_RequestShadowUpdateArgumentData_requestedStrategy_standard,

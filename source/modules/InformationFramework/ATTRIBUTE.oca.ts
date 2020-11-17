@@ -1,16 +1,18 @@
 /* eslint-disable */
 import { BOOLEAN, OBJECT_IDENTIFIER, UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import { AttributeUsage } from "../InformationFramework/AttributeUsage.ta";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
-export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
     AttributeUsage,
-    AttributeUsage_directoryOperation /* IMPORTED_ENUMERATION_ITEM */,
-    AttributeUsage_distributedOperation /* IMPORTED_ENUMERATION_ITEM */,
-    AttributeUsage_dSAOperation /* IMPORTED_ENUMERATION_ITEM */,
-    AttributeUsage_userApplications /* IMPORTED_ENUMERATION_ITEM */,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_AttributeUsage,
     _encode_AttributeUsage,
     _enum_for_AttributeUsage,

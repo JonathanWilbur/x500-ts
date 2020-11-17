@@ -2,17 +2,27 @@
 import { id_opcode_administerPassword } from "../CommonProtocolSpecification/id-opcode-administerPassword.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_AdministerPasswordArgument,
+    _encode_AdministerPasswordArgument,
+} from "../DirectoryAbstractService/AdministerPasswordArgument.ta";
+import {
     _decode_AdministerPasswordResult,
     _encode_AdministerPasswordResult,
 } from "../DirectoryAbstractService/AdministerPasswordResult.ta";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_administerPassword } from "../CommonProtocolSpecification/id-opcode-administerPassword.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     AdministerPasswordArgument,
-    _get_decoder_for_AdministerPasswordArgument,
-    _get_encoder_for_AdministerPasswordArgument,
+    _decode_AdministerPasswordArgument,
+    _encode_AdministerPasswordArgument,
 } from "../DirectoryAbstractService/AdministerPasswordArgument.ta";
 export {
     AdministerPasswordResult,

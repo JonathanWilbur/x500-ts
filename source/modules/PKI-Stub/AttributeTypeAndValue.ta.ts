@@ -7,7 +7,7 @@ import {
     UTF8String,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-export { ATTRIBUTE } from "../PKI_Stub/ATTRIBUTE.oca";
+export { ATTRIBUTE } from "../PKI-Stub/ATTRIBUTE.oca";
 
 /* START_OF_SYMBOL_DEFINITION AttributeTypeAndValue */
 /**

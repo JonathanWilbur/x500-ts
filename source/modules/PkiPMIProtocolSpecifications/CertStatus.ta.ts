@@ -39,6 +39,15 @@ export type CertStatus = _enum_for_CertStatus | ENUMERATED;
 export const CertStatus_good: CertStatus = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CertStatus_good */
 
+/* START_OF_SYMBOL_DEFINITION good */
+/**
+ * @summary good
+ * @constant
+ * @type {number}
+ */
+export const good: CertStatus = CertStatus_good; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION good */
+
 /* START_OF_SYMBOL_DEFINITION CertStatus_revoked */
 /**
  * @summary CertStatus_revoked
@@ -47,6 +56,15 @@ export const CertStatus_good: CertStatus = 0; /* LONG_NAMED_ENUMERATED_VALUE */
  */
 export const CertStatus_revoked: CertStatus = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CertStatus_revoked */
+
+/* START_OF_SYMBOL_DEFINITION revoked */
+/**
+ * @summary revoked
+ * @constant
+ * @type {number}
+ */
+export const revoked: CertStatus = CertStatus_revoked; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION revoked */
 
 /* START_OF_SYMBOL_DEFINITION CertStatus_on_hold */
 /**
@@ -57,6 +75,15 @@ export const CertStatus_revoked: CertStatus = 1; /* LONG_NAMED_ENUMERATED_VALUE 
 export const CertStatus_on_hold: CertStatus = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CertStatus_on_hold */
 
+/* START_OF_SYMBOL_DEFINITION on_hold */
+/**
+ * @summary on_hold
+ * @constant
+ * @type {number}
+ */
+export const on_hold: CertStatus = CertStatus_on_hold; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION on_hold */
+
 /* START_OF_SYMBOL_DEFINITION CertStatus_expired */
 /**
  * @summary CertStatus_expired
@@ -65,6 +92,15 @@ export const CertStatus_on_hold: CertStatus = 2; /* LONG_NAMED_ENUMERATED_VALUE 
  */
 export const CertStatus_expired: CertStatus = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CertStatus_expired */
+
+/* START_OF_SYMBOL_DEFINITION expired */
+/**
+ * @summary expired
+ * @constant
+ * @type {number}
+ */
+export const expired: CertStatus = CertStatus_expired; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION expired */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertStatus */
 let _cached_decoder_for_CertStatus: $.ASN1Decoder<CertStatus> | null = null;

@@ -11,12 +11,12 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 import { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 import {
     DER_AttributeCertificate,
@@ -40,7 +40,7 @@ import {
 } from "../Wrapper/TimeStamp.ta";
 import {
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";
@@ -53,12 +53,12 @@ export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 export { SupportedProtSet } from "../ProtProtocols/SupportedProtSet.osa";
 export { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 export {
@@ -82,8 +82,9 @@ export {
     _encode_TimeStamp,
 } from "../Wrapper/TimeStamp.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_BIT */,
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";

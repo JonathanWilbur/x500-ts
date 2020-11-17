@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION SupportedPublicKeyAlgorithms */
 /**

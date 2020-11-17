@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AgreementID,
     _decode_AgreementID,
@@ -341,3 +342,4 @@ export {
     _root_component_type_list_1_spec_for_UpdateWindow,
     _root_component_type_list_2_spec_for_UpdateWindow,
 } from "./DirectoryShadowAbstractService/UpdateWindow.ta";
+/* eslint-enable */

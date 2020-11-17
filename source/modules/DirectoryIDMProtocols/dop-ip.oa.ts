@@ -5,6 +5,7 @@ import { dSAOperationalBindingManagementBind } from "../OperationalBindingManage
 import { establishOperationalBinding } from "../OperationalBindingManagement/establishOperationalBinding.oa";
 import { modifyOperationalBinding } from "../OperationalBindingManagement/modifyOperationalBinding.oa";
 import { terminateOperationalBinding } from "../OperationalBindingManagement/terminateOperationalBinding.oa";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { id_idm_dop } from "../DirectoryIDMProtocols/id-idm-dop.va";
 export { IDM_PROTOCOL } from "../IDMProtocolSpecification/IDM-PROTOCOL.oca";
 export { dSAOperationalBindingManagementBind } from "../OperationalBindingManagement/dSAOperationalBindingManagementBind.oa";

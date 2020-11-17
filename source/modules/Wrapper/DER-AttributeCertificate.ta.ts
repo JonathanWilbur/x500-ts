@@ -3,9 +3,9 @@ import { ASN1Element as _Element, OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 export {
     AttributeCertificate,
-    _get_decoder_for_AttributeCertificate,
-    _get_encoder_for_AttributeCertificate,
-} from "../PKI_Stub/AttributeCertificate.ta";
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
+} from "../PKI-Stub/AttributeCertificate.ta";
 export { der } from "../Wrapper/der.va";
 
 /* START_OF_SYMBOL_DEFINITION DER_AttributeCertificate */

@@ -5,12 +5,12 @@ import {
     AssertionValue,
     _decode_AssertionValue,
     _encode_AssertionValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AssertionValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AssertionValue.ta";
 export {
     AssertionValue,
     _decode_AssertionValue,
     _encode_AssertionValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AssertionValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AssertionValue.ta";
 
 /* START_OF_SYMBOL_DEFINITION SubstringFilter_substrings_substring */
 /**

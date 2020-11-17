@@ -2,17 +2,27 @@
 import { id_opcode_changePassword } from "../CommonProtocolSpecification/id-opcode-changePassword.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_ChangePasswordArgument,
+    _encode_ChangePasswordArgument,
+} from "../DirectoryAbstractService/ChangePasswordArgument.ta";
+import {
     _decode_ChangePasswordResult,
     _encode_ChangePasswordResult,
 } from "../DirectoryAbstractService/ChangePasswordResult.ta";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_changePassword } from "../CommonProtocolSpecification/id-opcode-changePassword.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     ChangePasswordArgument,
-    _get_decoder_for_ChangePasswordArgument,
-    _get_encoder_for_ChangePasswordArgument,
+    _decode_ChangePasswordArgument,
+    _encode_ChangePasswordArgument,
 } from "../DirectoryAbstractService/ChangePasswordArgument.ta";
 export {
     ChangePasswordResult,

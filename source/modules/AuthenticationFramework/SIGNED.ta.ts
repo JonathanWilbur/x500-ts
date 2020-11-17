@@ -143,10 +143,6 @@ export const _root_component_type_list_2_spec_for_SIGNED: $.ComponentSpec[] = []
 export const _extension_additions_list_spec_for_SIGNED: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SIGNED */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SIGNED */
-let _cached_decoder_for_SIGNED: $.ASN1Decoder<SIGNED<ToBeSigned>> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SIGNED */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_SIGNED */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) SIGNED
@@ -196,10 +192,6 @@ export function _get_decoder_for_SIGNED<ToBeSigned>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_SIGNED */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SIGNED */
-let _cached_encoder_for_SIGNED: $.ASN1Encoder<SIGNED<ToBeSigned>> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SIGNED */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_SIGNED */
 /**

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { ObjectIdentifier as _OID, OBJECT_IDENTIFIER } from "asn1-ts";
-import { id_wrprot } from "../PKI_Stub/id-wrprot.va";
-export { id_wrprot } from "../PKI_Stub/id-wrprot.va";
+import { id_wrprot } from "../PKI-Stub/id-wrprot.va";
+export { id_wrprot } from "../PKI-Stub/id-wrprot.va";
 
 /* START_OF_SYMBOL_DEFINITION id_avlprot */
 /**

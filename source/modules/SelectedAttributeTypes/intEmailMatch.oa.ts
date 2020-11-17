@@ -6,7 +6,9 @@ import {
     _decode_IntEmail,
     _encode_IntEmail,
 } from "../SelectedAttributeTypes/IntEmail.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 export { id_mr_intEmailMatch } from "../SelectedAttributeTypes/id-mr-intEmailMatch.va";
 export {

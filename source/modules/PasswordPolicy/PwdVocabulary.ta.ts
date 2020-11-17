@@ -27,6 +27,14 @@ export type PwdVocabulary = BIT_STRING;
 export const PwdVocabulary_noDictionaryWords: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION PwdVocabulary_noDictionaryWords */
 
+/* START_OF_SYMBOL_DEFINITION noDictionaryWords */
+/**
+ * @summary noDictionaryWords
+ * @constant
+ */
+export const noDictionaryWords: number = PwdVocabulary_noDictionaryWords; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION noDictionaryWords */
+
 /* START_OF_SYMBOL_DEFINITION PwdVocabulary_noPersonNames */
 /**
  * @summary PwdVocabulary_noPersonNames
@@ -35,6 +43,14 @@ export const PwdVocabulary_noDictionaryWords: number = 0; /* LONG_NAMED_BIT */
 export const PwdVocabulary_noPersonNames: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION PwdVocabulary_noPersonNames */
 
+/* START_OF_SYMBOL_DEFINITION noPersonNames */
+/**
+ * @summary noPersonNames
+ * @constant
+ */
+export const noPersonNames: number = PwdVocabulary_noPersonNames; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION noPersonNames */
+
 /* START_OF_SYMBOL_DEFINITION PwdVocabulary_noGeographicalNames */
 /**
  * @summary PwdVocabulary_noGeographicalNames
@@ -42,6 +58,14 @@ export const PwdVocabulary_noPersonNames: number = 1; /* LONG_NAMED_BIT */
  */
 export const PwdVocabulary_noGeographicalNames: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION PwdVocabulary_noGeographicalNames */
+
+/* START_OF_SYMBOL_DEFINITION noGeographicalNames */
+/**
+ * @summary noGeographicalNames
+ * @constant
+ */
+export const noGeographicalNames: number = PwdVocabulary_noGeographicalNames; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION noGeographicalNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdVocabulary */
 let _cached_decoder_for_PwdVocabulary: $.ASN1Decoder<

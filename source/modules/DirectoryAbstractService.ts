@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { abandon } from "./DirectoryAbstractService/abandon.oa";
 export {
     AbandonArgument,
@@ -1092,3 +1093,4 @@ export {
     _decode_Versions,
     _encode_Versions,
 } from "./DirectoryAbstractService/Versions.ta";
+/* eslint-enable */

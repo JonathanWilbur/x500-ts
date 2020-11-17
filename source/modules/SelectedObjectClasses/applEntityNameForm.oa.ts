@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { applicationEntity } from "../SelectedObjectClasses/applicationEntity.oa";
 import { id_nf_applEntityNameForm } from "../SelectedObjectClasses/id-nf-applEntityNameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { applicationEntity } from "../SelectedObjectClasses/applicationEntity.oa";
 export { id_nf_applEntityNameForm } from "../SelectedObjectClasses/id-nf-applEntityNameForm.va";
 

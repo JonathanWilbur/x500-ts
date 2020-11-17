@@ -5,12 +5,12 @@ import {
     RelativeDistinguishedName,
     _decode_RelativeDistinguishedName,
     _encode_RelativeDistinguishedName,
-} from "../PKI_Stub/RelativeDistinguishedName.ta";
+} from "../PKI-Stub/RelativeDistinguishedName.ta";
 export {
     RelativeDistinguishedName,
     _decode_RelativeDistinguishedName,
     _encode_RelativeDistinguishedName,
-} from "../PKI_Stub/RelativeDistinguishedName.ta";
+} from "../PKI-Stub/RelativeDistinguishedName.ta";
 
 /* START_OF_SYMBOL_DEFINITION RDNSequence */
 /**

@@ -11,7 +11,9 @@ export {
     _encode_AttributeDescriptorSyntax,
 } from "../AttributeCertificateDefinitions/AttributeDescriptorSyntax.ta";
 export { id_mr_attDescriptorMatch } from "../AttributeCertificateDefinitions/id-mr-attDescriptorMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION attDescriptor */
 /**

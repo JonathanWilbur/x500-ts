@@ -34,6 +34,15 @@ export type PwdResponseValue_error =
 export const PwdResponseValue_error_passwordExpired: PwdResponseValue_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PwdResponseValue_error_passwordExpired */
 
+/* START_OF_SYMBOL_DEFINITION passwordExpired */
+/**
+ * @summary passwordExpired
+ * @constant
+ * @type {number}
+ */
+export const passwordExpired: PwdResponseValue_error = PwdResponseValue_error_passwordExpired; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION passwordExpired */
+
 /* START_OF_SYMBOL_DEFINITION PwdResponseValue_error_changeAfterReset */
 /**
  * @summary PwdResponseValue_error_changeAfterReset
@@ -42,6 +51,15 @@ export const PwdResponseValue_error_passwordExpired: PwdResponseValue_error = 0;
  */
 export const PwdResponseValue_error_changeAfterReset: PwdResponseValue_error = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PwdResponseValue_error_changeAfterReset */
+
+/* START_OF_SYMBOL_DEFINITION changeAfterReset */
+/**
+ * @summary changeAfterReset
+ * @constant
+ * @type {number}
+ */
+export const changeAfterReset: PwdResponseValue_error = PwdResponseValue_error_changeAfterReset; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION changeAfterReset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue_error */
 let _cached_decoder_for_PwdResponseValue_error: $.ASN1Decoder<

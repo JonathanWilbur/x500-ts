@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AddAvlErr,
     _decode_AddAvlErr,
@@ -636,3 +637,4 @@ export {
     _decode_TBresponse,
     _encode_TBresponse,
 } from "./PkiPMIProtocolSpecifications/TBresponse.ta";
+/* eslint-enable */

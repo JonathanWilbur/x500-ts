@@ -8,9 +8,11 @@ import {
 export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 export { id_ce_orderedList } from "../CertificateExtensions/id-ce-orderedList.va";
 export {
+    ascRevDate /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ascSerialNum /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     OrderedListSyntax,
-    OrderedListSyntax_ascRevDate /* IMPORTED_ENUMERATION_ITEM */,
-    OrderedListSyntax_ascSerialNum /* IMPORTED_ENUMERATION_ITEM */,
+    OrderedListSyntax_ascRevDate /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    OrderedListSyntax_ascSerialNum /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_OrderedListSyntax,
     _encode_OrderedListSyntax,
     _enum_for_OrderedListSyntax,

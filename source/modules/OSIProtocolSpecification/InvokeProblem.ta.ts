@@ -30,6 +30,15 @@ export type InvokeProblem = INTEGER;
 export const InvokeProblem_duplicateInvocation: InvokeProblem = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION InvokeProblem_duplicateInvocation */
 
+/* START_OF_SYMBOL_DEFINITION duplicateInvocation */
+/**
+ * @summary InvokeProblem_duplicateInvocation
+ * @constant
+ * @type {number}
+ */
+export const duplicateInvocation: InvokeProblem = InvokeProblem_duplicateInvocation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION duplicateInvocation */
+
 /* START_OF_SYMBOL_DEFINITION InvokeProblem_unrecognizedOperation */
 /**
  * @summary InvokeProblem_unrecognizedOperation
@@ -38,6 +47,15 @@ export const InvokeProblem_duplicateInvocation: InvokeProblem = 0; /* LONG_NAMED
  */
 export const InvokeProblem_unrecognizedOperation: InvokeProblem = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION InvokeProblem_unrecognizedOperation */
+
+/* START_OF_SYMBOL_DEFINITION unrecognizedOperation */
+/**
+ * @summary InvokeProblem_unrecognizedOperation
+ * @constant
+ * @type {number}
+ */
+export const unrecognizedOperation: InvokeProblem = InvokeProblem_unrecognizedOperation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unrecognizedOperation */
 
 /* START_OF_SYMBOL_DEFINITION InvokeProblem_mistypedArgument */
 /**
@@ -48,6 +66,15 @@ export const InvokeProblem_unrecognizedOperation: InvokeProblem = 1; /* LONG_NAM
 export const InvokeProblem_mistypedArgument: InvokeProblem = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION InvokeProblem_mistypedArgument */
 
+/* START_OF_SYMBOL_DEFINITION mistypedArgument */
+/**
+ * @summary InvokeProblem_mistypedArgument
+ * @constant
+ * @type {number}
+ */
+export const mistypedArgument: InvokeProblem = InvokeProblem_mistypedArgument; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedArgument */
+
 /* START_OF_SYMBOL_DEFINITION InvokeProblem_resourceLimitation */
 /**
  * @summary InvokeProblem_resourceLimitation
@@ -57,6 +84,15 @@ export const InvokeProblem_mistypedArgument: InvokeProblem = 2; /* LONG_NAMED_IN
 export const InvokeProblem_resourceLimitation: InvokeProblem = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION InvokeProblem_resourceLimitation */
 
+/* START_OF_SYMBOL_DEFINITION resourceLimitation */
+/**
+ * @summary InvokeProblem_resourceLimitation
+ * @constant
+ * @type {number}
+ */
+export const resourceLimitation: InvokeProblem = InvokeProblem_resourceLimitation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION resourceLimitation */
+
 /* START_OF_SYMBOL_DEFINITION InvokeProblem_releaseInProgress */
 /**
  * @summary InvokeProblem_releaseInProgress
@@ -65,6 +101,15 @@ export const InvokeProblem_resourceLimitation: InvokeProblem = 3; /* LONG_NAMED_
  */
 export const InvokeProblem_releaseInProgress: InvokeProblem = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION InvokeProblem_releaseInProgress */
+
+/* START_OF_SYMBOL_DEFINITION releaseInProgress */
+/**
+ * @summary InvokeProblem_releaseInProgress
+ * @constant
+ * @type {number}
+ */
+export const releaseInProgress: InvokeProblem = InvokeProblem_releaseInProgress; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION releaseInProgress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InvokeProblem */
 let _cached_decoder_for_InvokeProblem: $.ASN1Decoder<

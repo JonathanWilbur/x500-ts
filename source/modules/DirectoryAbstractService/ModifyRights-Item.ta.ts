@@ -21,11 +21,15 @@ export {
     _encode_ModifyRights_Item_item,
 } from "../DirectoryAbstractService/ModifyRights-Item-item.ta";
 export {
+    add /* IMPORTED_SHORT_NAMED_BIT */,
     ModifyRights_Item_permission,
-    ModifyRights_Item_permission_add /* IMPORTED_BIT */,
-    ModifyRights_Item_permission_move /* IMPORTED_BIT */,
-    ModifyRights_Item_permission_remove /* IMPORTED_BIT */,
-    ModifyRights_Item_permission_rename /* IMPORTED_BIT */,
+    ModifyRights_Item_permission_add /* IMPORTED_LONG_NAMED_BIT */,
+    ModifyRights_Item_permission_move /* IMPORTED_LONG_NAMED_BIT */,
+    ModifyRights_Item_permission_remove /* IMPORTED_LONG_NAMED_BIT */,
+    ModifyRights_Item_permission_rename /* IMPORTED_LONG_NAMED_BIT */,
+    move /* IMPORTED_SHORT_NAMED_BIT */,
+    remove /* IMPORTED_SHORT_NAMED_BIT */,
+    rename /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_ModifyRights_Item_permission,
     _encode_ModifyRights_Item_permission,
 } from "../DirectoryAbstractService/ModifyRights-Item-permission.ta";

@@ -2,7 +2,9 @@
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_uTCTimeOrderingMatch } from "../SelectedAttributeTypes/id-mr-uTCTimeOrderingMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_uTCTimeOrderingMatch } from "../SelectedAttributeTypes/id-mr-uTCTimeOrderingMatch.va";
 
 /* START_OF_SYMBOL_DEFINITION uTCTimeOrderingMatch */

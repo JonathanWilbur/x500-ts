@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     DITcontext,
     _decode_DITcontext,
@@ -75,3 +76,4 @@ export {
     _root_component_type_list_1_spec_for_Vertex,
     _root_component_type_list_2_spec_for_Vertex,
 } from "./HierarchicalOperationalBindings/Vertex.ta";
+/* eslint-enable */

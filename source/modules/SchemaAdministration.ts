@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AttributeTypeDescription,
     _decode_AttributeTypeDescription,
@@ -144,3 +145,4 @@ export {
 } from "./SchemaAdministration/ObjectClassInformation.ta";
 export { structuralObjectClass } from "./SchemaAdministration/structuralObjectClass.oa";
 export { subschema } from "./SchemaAdministration/subschema.oa";
+/* eslint-enable */

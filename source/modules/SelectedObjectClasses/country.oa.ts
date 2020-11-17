@@ -1,9 +1,25 @@
 /* eslint-disable */
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { description } from "../SelectedAttributeTypes/description.oa";
 import { searchGuide } from "../SelectedAttributeTypes/searchGuide.oa";
 import { id_oc_country } from "../SelectedObjectClasses/id-oc-country.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { description } from "../SelectedAttributeTypes/description.oa";
 export { searchGuide } from "../SelectedAttributeTypes/searchGuide.oa";
 export { id_oc_country } from "../SelectedObjectClasses/id-oc-country.va";
@@ -41,8 +57,7 @@ export const country: OBJECT_CLASS = {
     ] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oc_country /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
-    "&kind":
-        InformationFramework.ObjectClassKind_structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&kind": structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION country */
 

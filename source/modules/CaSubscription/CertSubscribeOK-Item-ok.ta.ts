@@ -11,45 +11,64 @@ import {
     _encode_CertStatus,
     _enum_for_CertStatus,
 } from "../CaSubscription/CertStatus.ta";
-import { Certificate } from "../PKI_Stub/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 import {
     CRLReason,
     _decode_CRLReason,
     _encode_CRLReason,
     _enum_for_CRLReason,
-} from "../PKI_Stub/CRLReason.ta";
+} from "../PKI-Stub/CRLReason.ta";
 export {
     CertStatus,
-    CertStatus_expired /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_good /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_on_hold /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_revoked /* IMPORTED_ENUMERATION_ITEM */,
+    CertStatus_expired /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_good /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_on_hold /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_revoked /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    expired /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    good /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    on_hold /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    revoked /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CertStatus,
     _encode_CertStatus,
     _enum_for_CertStatus,
 } from "../CaSubscription/CertStatus.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
-} from "../PKI_Stub/Certificate.ta";
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 export {
+    aACompromise /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    affiliationChanged /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    cACompromise /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    certificateHold /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    cessationOfOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     CRLReason,
-    CRLReason_aACompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_affiliationChanged /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_cACompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_certificateHold /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_cessationOfOperation /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_keyCompromise /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_privilegeWithdrawn /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_removeFromCRL /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_superseded /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_unspecified /* IMPORTED_ENUMERATION_ITEM */,
-    CRLReason_weakAlgorithmOrKey /* IMPORTED_ENUMERATION_ITEM */,
+    CRLReason_aACompromise /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_affiliationChanged /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_cACompromise /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_certificateHold /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_cessationOfOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_keyCompromise /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_privilegeWithdrawn /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_removeFromCRL /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_superseded /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_unspecified /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CRLReason_weakAlgorithmOrKey /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    keyCompromise /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    privilegeWithdrawn /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    removeFromCRL /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    superseded /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    unspecified /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    weakAlgorithmOrKey /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CRLReason,
     _encode_CRLReason,
     _enum_for_CRLReason,
-} from "../PKI_Stub/CRLReason.ta";
+} from "../PKI-Stub/CRLReason.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertSubscribeOK_Item_ok */
 /**

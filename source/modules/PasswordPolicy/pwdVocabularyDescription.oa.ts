@@ -8,10 +8,13 @@ import {
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_asx_pwdVocabularyDescription } from "../PasswordPolicy/id-asx-pwdVocabularyDescription.va";
 export {
+    noDictionaryWords /* IMPORTED_SHORT_NAMED_BIT */,
+    noGeographicalNames /* IMPORTED_SHORT_NAMED_BIT */,
+    noPersonNames /* IMPORTED_SHORT_NAMED_BIT */,
     PwdVocabulary,
-    PwdVocabulary_noDictionaryWords /* IMPORTED_BIT */,
-    PwdVocabulary_noGeographicalNames /* IMPORTED_BIT */,
-    PwdVocabulary_noPersonNames /* IMPORTED_BIT */,
+    PwdVocabulary_noDictionaryWords /* IMPORTED_LONG_NAMED_BIT */,
+    PwdVocabulary_noGeographicalNames /* IMPORTED_LONG_NAMED_BIT */,
+    PwdVocabulary_noPersonNames /* IMPORTED_LONG_NAMED_BIT */,
     _decode_PwdVocabulary,
     _encode_PwdVocabulary,
 } from "../PasswordPolicy/PwdVocabulary.ta";

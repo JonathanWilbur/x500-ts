@@ -3,23 +3,37 @@ import { id_opcode_compare } from "../CommonProtocolSpecification/id-opcode-comp
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
+import {
+    _decode_CompareArgument,
+    _encode_CompareArgument,
+} from "../DirectoryAbstractService/CompareArgument.ta";
+import {
+    _decode_CompareResult,
+    _encode_CompareResult,
+} from "../DirectoryAbstractService/CompareResult.ta";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_compare } from "../CommonProtocolSpecification/id-opcode-compare.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 export { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 export {
     CompareArgument,
-    _get_decoder_for_CompareArgument,
-    _get_encoder_for_CompareArgument,
+    _decode_CompareArgument,
+    _encode_CompareArgument,
 } from "../DirectoryAbstractService/CompareArgument.ta";
 export {
     CompareResult,
-    _get_decoder_for_CompareResult,
-    _get_encoder_for_CompareResult,
+    _decode_CompareResult,
+    _encode_CompareResult,
 } from "../DirectoryAbstractService/CompareResult.ta";
 export { nameError } from "../DirectoryAbstractService/nameError.oa";
 export { referral } from "../DirectoryAbstractService/referral.oa";

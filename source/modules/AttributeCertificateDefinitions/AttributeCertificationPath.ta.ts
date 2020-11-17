@@ -10,7 +10,11 @@ import {
     _decode_ACPathData,
     _encode_ACPathData,
 } from "../AttributeCertificateDefinitions/ACPathData.ta";
-import { AttributeCertificate } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
+import {
+    AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
+} from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
 export {
     ACPathData,
     _decode_ACPathData,
@@ -18,8 +22,8 @@ export {
 } from "../AttributeCertificateDefinitions/ACPathData.ta";
 export {
     AttributeCertificate,
-    _get_decoder_for_AttributeCertificate,
-    _get_encoder_for_AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
 } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttributeCertificationPath */

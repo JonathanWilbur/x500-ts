@@ -5,12 +5,12 @@ import {
     GeneralName,
     _decode_GeneralName,
     _encode_GeneralName,
-} from "../PKI_Stub/GeneralName.ta";
+} from "../PKI-Stub/GeneralName.ta";
 export {
     GeneralName,
     _decode_GeneralName,
     _encode_GeneralName,
-} from "../PKI_Stub/GeneralName.ta";
+} from "../PKI-Stub/GeneralName.ta";
 
 /* START_OF_SYMBOL_DEFINITION GeneralNames */
 /**

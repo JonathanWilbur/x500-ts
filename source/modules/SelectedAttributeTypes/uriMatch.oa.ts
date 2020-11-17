@@ -3,7 +3,9 @@ import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import { id_mr_uriMatch } from "../SelectedAttributeTypes/id-mr-uriMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 export { id_mr_uriMatch } from "../SelectedAttributeTypes/id-mr-uriMatch.va";
 

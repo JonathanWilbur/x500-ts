@@ -2,15 +2,25 @@
 import { id_opcode_linkedLDAP } from "../CommonProtocolSpecification/id-opcode-linkedLDAP.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_LinkedArgument,
+    _encode_LinkedArgument,
+} from "../DirectoryAbstractService/LinkedArgument.ta";
+import {
     _decode_LinkedResult,
     _encode_LinkedResult,
 } from "../DirectoryAbstractService/LinkedResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_linkedLDAP } from "../CommonProtocolSpecification/id-opcode-linkedLDAP.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     LinkedArgument,
-    _get_decoder_for_LinkedArgument,
-    _get_encoder_for_LinkedArgument,
+    _decode_LinkedArgument,
+    _encode_LinkedArgument,
 } from "../DirectoryAbstractService/LinkedArgument.ta";
 export {
     LinkedResult,

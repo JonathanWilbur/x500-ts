@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AbandonRequest,
     _decode_AbandonRequest,
@@ -382,3 +383,4 @@ export {
     _decode_URI,
     _encode_URI,
 } from "./Lightweight-Directory-Access-Protocol-V3/URI.ta";
+/* eslint-enable */

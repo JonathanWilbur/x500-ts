@@ -15,6 +15,8 @@ export {
 } from "../HierarchicalOperationalBindings/HierarchicalAgreement.ta";
 export { hierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleA.oa";
 export { hierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleB.oa";
+export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
+export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
 export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION hierarchicalOperationalBinding */

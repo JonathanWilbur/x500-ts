@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     CASP_CertStatusCode,
     CASP_CertStatusCode_noReason,
@@ -348,3 +349,4 @@ export {
     _decode_InvokeID,
     _encode_InvokeID,
 } from "./CaSubscription/InvokeID.ta";
+/* eslint-enable */

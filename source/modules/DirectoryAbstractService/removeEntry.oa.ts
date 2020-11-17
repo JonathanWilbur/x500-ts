@@ -4,20 +4,30 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
 import {
+    _decode_RemoveEntryArgument,
+    _encode_RemoveEntryArgument,
+} from "../DirectoryAbstractService/RemoveEntryArgument.ta";
+import {
     _decode_RemoveEntryResult,
     _encode_RemoveEntryResult,
 } from "../DirectoryAbstractService/RemoveEntryResult.ta";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_removeEntry } from "../CommonProtocolSpecification/id-opcode-removeEntry.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { nameError } from "../DirectoryAbstractService/nameError.oa";
 export { referral } from "../DirectoryAbstractService/referral.oa";
 export {
     RemoveEntryArgument,
-    _get_decoder_for_RemoveEntryArgument,
-    _get_encoder_for_RemoveEntryArgument,
+    _decode_RemoveEntryArgument,
+    _encode_RemoveEntryArgument,
 } from "../DirectoryAbstractService/RemoveEntryArgument.ta";
 export {
     RemoveEntryResult,

@@ -40,6 +40,15 @@ export type UpdateProblem = INTEGER;
 export const UpdateProblem_namingViolation: UpdateProblem = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_namingViolation */
 
+/* START_OF_SYMBOL_DEFINITION namingViolation */
+/**
+ * @summary UpdateProblem_namingViolation
+ * @constant
+ * @type {number}
+ */
+export const namingViolation: UpdateProblem = UpdateProblem_namingViolation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION namingViolation */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_objectClassViolation */
 /**
  * @summary UpdateProblem_objectClassViolation
@@ -48,6 +57,15 @@ export const UpdateProblem_namingViolation: UpdateProblem = 1; /* LONG_NAMED_INT
  */
 export const UpdateProblem_objectClassViolation: UpdateProblem = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_objectClassViolation */
+
+/* START_OF_SYMBOL_DEFINITION objectClassViolation */
+/**
+ * @summary UpdateProblem_objectClassViolation
+ * @constant
+ * @type {number}
+ */
+export const objectClassViolation: UpdateProblem = UpdateProblem_objectClassViolation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION objectClassViolation */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_notAllowedOnNonLeaf */
 /**
@@ -58,6 +76,15 @@ export const UpdateProblem_objectClassViolation: UpdateProblem = 2; /* LONG_NAME
 export const UpdateProblem_notAllowedOnNonLeaf: UpdateProblem = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_notAllowedOnNonLeaf */
 
+/* START_OF_SYMBOL_DEFINITION notAllowedOnNonLeaf */
+/**
+ * @summary UpdateProblem_notAllowedOnNonLeaf
+ * @constant
+ * @type {number}
+ */
+export const notAllowedOnNonLeaf: UpdateProblem = UpdateProblem_notAllowedOnNonLeaf; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION notAllowedOnNonLeaf */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_notAllowedOnRDN */
 /**
  * @summary UpdateProblem_notAllowedOnRDN
@@ -66,6 +93,15 @@ export const UpdateProblem_notAllowedOnNonLeaf: UpdateProblem = 3; /* LONG_NAMED
  */
 export const UpdateProblem_notAllowedOnRDN: UpdateProblem = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_notAllowedOnRDN */
+
+/* START_OF_SYMBOL_DEFINITION notAllowedOnRDN */
+/**
+ * @summary UpdateProblem_notAllowedOnRDN
+ * @constant
+ * @type {number}
+ */
+export const notAllowedOnRDN: UpdateProblem = UpdateProblem_notAllowedOnRDN; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION notAllowedOnRDN */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_entryAlreadyExists */
 /**
@@ -76,6 +112,15 @@ export const UpdateProblem_notAllowedOnRDN: UpdateProblem = 4; /* LONG_NAMED_INT
 export const UpdateProblem_entryAlreadyExists: UpdateProblem = 5; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_entryAlreadyExists */
 
+/* START_OF_SYMBOL_DEFINITION entryAlreadyExists */
+/**
+ * @summary UpdateProblem_entryAlreadyExists
+ * @constant
+ * @type {number}
+ */
+export const entryAlreadyExists: UpdateProblem = UpdateProblem_entryAlreadyExists; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION entryAlreadyExists */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_affectsMultipleDSAs */
 /**
  * @summary UpdateProblem_affectsMultipleDSAs
@@ -84,6 +129,15 @@ export const UpdateProblem_entryAlreadyExists: UpdateProblem = 5; /* LONG_NAMED_
  */
 export const UpdateProblem_affectsMultipleDSAs: UpdateProblem = 6; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_affectsMultipleDSAs */
+
+/* START_OF_SYMBOL_DEFINITION affectsMultipleDSAs */
+/**
+ * @summary UpdateProblem_affectsMultipleDSAs
+ * @constant
+ * @type {number}
+ */
+export const affectsMultipleDSAs: UpdateProblem = UpdateProblem_affectsMultipleDSAs; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION affectsMultipleDSAs */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_objectClassModificationProhibited */
 /**
@@ -94,6 +148,15 @@ export const UpdateProblem_affectsMultipleDSAs: UpdateProblem = 6; /* LONG_NAMED
 export const UpdateProblem_objectClassModificationProhibited: UpdateProblem = 7; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_objectClassModificationProhibited */
 
+/* START_OF_SYMBOL_DEFINITION objectClassModificationProhibited */
+/**
+ * @summary UpdateProblem_objectClassModificationProhibited
+ * @constant
+ * @type {number}
+ */
+export const objectClassModificationProhibited: UpdateProblem = UpdateProblem_objectClassModificationProhibited; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION objectClassModificationProhibited */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_noSuchSuperior */
 /**
  * @summary UpdateProblem_noSuchSuperior
@@ -102,6 +165,15 @@ export const UpdateProblem_objectClassModificationProhibited: UpdateProblem = 7;
  */
 export const UpdateProblem_noSuchSuperior: UpdateProblem = 8; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_noSuchSuperior */
+
+/* START_OF_SYMBOL_DEFINITION noSuchSuperior */
+/**
+ * @summary UpdateProblem_noSuchSuperior
+ * @constant
+ * @type {number}
+ */
+export const noSuchSuperior: UpdateProblem = UpdateProblem_noSuchSuperior; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION noSuchSuperior */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_notAncestor */
 /**
@@ -112,6 +184,15 @@ export const UpdateProblem_noSuchSuperior: UpdateProblem = 8; /* LONG_NAMED_INTE
 export const UpdateProblem_notAncestor: UpdateProblem = 9; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_notAncestor */
 
+/* START_OF_SYMBOL_DEFINITION notAncestor */
+/**
+ * @summary UpdateProblem_notAncestor
+ * @constant
+ * @type {number}
+ */
+export const notAncestor: UpdateProblem = UpdateProblem_notAncestor; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION notAncestor */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_parentNotAncestor */
 /**
  * @summary UpdateProblem_parentNotAncestor
@@ -120,6 +201,15 @@ export const UpdateProblem_notAncestor: UpdateProblem = 9; /* LONG_NAMED_INTEGER
  */
 export const UpdateProblem_parentNotAncestor: UpdateProblem = 10; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_parentNotAncestor */
+
+/* START_OF_SYMBOL_DEFINITION parentNotAncestor */
+/**
+ * @summary UpdateProblem_parentNotAncestor
+ * @constant
+ * @type {number}
+ */
+export const parentNotAncestor: UpdateProblem = UpdateProblem_parentNotAncestor; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION parentNotAncestor */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_hierarchyRuleViolation */
 /**
@@ -130,6 +220,15 @@ export const UpdateProblem_parentNotAncestor: UpdateProblem = 10; /* LONG_NAMED_
 export const UpdateProblem_hierarchyRuleViolation: UpdateProblem = 11; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_hierarchyRuleViolation */
 
+/* START_OF_SYMBOL_DEFINITION hierarchyRuleViolation */
+/**
+ * @summary UpdateProblem_hierarchyRuleViolation
+ * @constant
+ * @type {number}
+ */
+export const hierarchyRuleViolation: UpdateProblem = UpdateProblem_hierarchyRuleViolation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION hierarchyRuleViolation */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_familyRuleViolation */
 /**
  * @summary UpdateProblem_familyRuleViolation
@@ -138,6 +237,15 @@ export const UpdateProblem_hierarchyRuleViolation: UpdateProblem = 11; /* LONG_N
  */
 export const UpdateProblem_familyRuleViolation: UpdateProblem = 12; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_familyRuleViolation */
+
+/* START_OF_SYMBOL_DEFINITION familyRuleViolation */
+/**
+ * @summary UpdateProblem_familyRuleViolation
+ * @constant
+ * @type {number}
+ */
+export const familyRuleViolation: UpdateProblem = UpdateProblem_familyRuleViolation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION familyRuleViolation */
 
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_insufficientPasswordQuality */
 /**
@@ -148,6 +256,15 @@ export const UpdateProblem_familyRuleViolation: UpdateProblem = 12; /* LONG_NAME
 export const UpdateProblem_insufficientPasswordQuality: UpdateProblem = 13; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_insufficientPasswordQuality */
 
+/* START_OF_SYMBOL_DEFINITION insufficientPasswordQuality */
+/**
+ * @summary UpdateProblem_insufficientPasswordQuality
+ * @constant
+ * @type {number}
+ */
+export const insufficientPasswordQuality: UpdateProblem = UpdateProblem_insufficientPasswordQuality; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION insufficientPasswordQuality */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_passwordInHistory */
 /**
  * @summary UpdateProblem_passwordInHistory
@@ -157,6 +274,15 @@ export const UpdateProblem_insufficientPasswordQuality: UpdateProblem = 13; /* L
 export const UpdateProblem_passwordInHistory: UpdateProblem = 14; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_passwordInHistory */
 
+/* START_OF_SYMBOL_DEFINITION passwordInHistory */
+/**
+ * @summary UpdateProblem_passwordInHistory
+ * @constant
+ * @type {number}
+ */
+export const passwordInHistory: UpdateProblem = UpdateProblem_passwordInHistory; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION passwordInHistory */
+
 /* START_OF_SYMBOL_DEFINITION UpdateProblem_noPasswordSlot */
 /**
  * @summary UpdateProblem_noPasswordSlot
@@ -165,6 +291,15 @@ export const UpdateProblem_passwordInHistory: UpdateProblem = 14; /* LONG_NAMED_
  */
 export const UpdateProblem_noPasswordSlot: UpdateProblem = 15; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION UpdateProblem_noPasswordSlot */
+
+/* START_OF_SYMBOL_DEFINITION noPasswordSlot */
+/**
+ * @summary UpdateProblem_noPasswordSlot
+ * @constant
+ * @type {number}
+ */
+export const noPasswordSlot: UpdateProblem = UpdateProblem_noPasswordSlot; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION noPasswordSlot */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateProblem */
 let _cached_decoder_for_UpdateProblem: $.ASN1Decoder<

@@ -6,7 +6,7 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION AlgorithmWithInvoke */
 /**

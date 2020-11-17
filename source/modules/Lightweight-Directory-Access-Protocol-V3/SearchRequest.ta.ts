@@ -11,63 +11,70 @@ import {
     AttributeSelection,
     _decode_AttributeSelection,
     _encode_AttributeSelection,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeSelection.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeSelection.ta";
 import {
     Filter,
     _decode_Filter,
     _encode_Filter,
-} from "../Lightweight_Directory_Access_Protocol_V3/Filter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Filter.ta";
 import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 import {
     SearchRequest_derefAliases,
     _decode_SearchRequest_derefAliases,
     _encode_SearchRequest_derefAliases,
     _enum_for_SearchRequest_derefAliases,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest-derefAliases.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest-derefAliases.ta";
 import {
     SearchRequest_scope,
     _decode_SearchRequest_scope,
     _encode_SearchRequest_scope,
     _enum_for_SearchRequest_scope,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest-scope.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest-scope.ta";
 export {
     AttributeSelection,
     _decode_AttributeSelection,
     _encode_AttributeSelection,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeSelection.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeSelection.ta";
 export {
     Filter,
     _decode_Filter,
     _encode_Filter,
-} from "../Lightweight_Directory_Access_Protocol_V3/Filter.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Filter.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
+    derefAlways /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    derefFindingBaseObj /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    derefInSearching /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    neverDerefAliases /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     SearchRequest_derefAliases,
-    SearchRequest_derefAliases_derefAlways /* IMPORTED_ENUMERATION_ITEM */,
-    SearchRequest_derefAliases_derefFindingBaseObj /* IMPORTED_ENUMERATION_ITEM */,
-    SearchRequest_derefAliases_derefInSearching /* IMPORTED_ENUMERATION_ITEM */,
-    SearchRequest_derefAliases_neverDerefAliases /* IMPORTED_ENUMERATION_ITEM */,
+    SearchRequest_derefAliases_derefAlways /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    SearchRequest_derefAliases_derefFindingBaseObj /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    SearchRequest_derefAliases_derefInSearching /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    SearchRequest_derefAliases_neverDerefAliases /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_SearchRequest_derefAliases,
     _encode_SearchRequest_derefAliases,
     _enum_for_SearchRequest_derefAliases,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest-derefAliases.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest-derefAliases.ta";
 export {
+    baseObject /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     SearchRequest_scope,
-    SearchRequest_scope_baseObject /* IMPORTED_ENUMERATION_ITEM */,
-    SearchRequest_scope_singleLevel /* IMPORTED_ENUMERATION_ITEM */,
-    SearchRequest_scope_wholeSubtree /* IMPORTED_ENUMERATION_ITEM */,
+    SearchRequest_scope_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    SearchRequest_scope_singleLevel /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    SearchRequest_scope_wholeSubtree /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    singleLevel /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    wholeSubtree /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_SearchRequest_scope,
     _encode_SearchRequest_scope,
     _enum_for_SearchRequest_scope,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest-scope.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest-scope.ta";
 
 /* START_OF_SYMBOL_DEFINITION SearchRequest */
 /**

@@ -43,6 +43,15 @@ export type SequenceMatchType = _enum_for_SequenceMatchType | ENUMERATED;
 export const SequenceMatchType_sequenceExact: SequenceMatchType = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceExact */
 
+/* START_OF_SYMBOL_DEFINITION sequenceExact */
+/**
+ * @summary sequenceExact
+ * @constant
+ * @type {number}
+ */
+export const sequenceExact: SequenceMatchType = SequenceMatchType_sequenceExact; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequenceExact */
+
 /* START_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceDeletion */
 /**
  * @summary SequenceMatchType_sequenceDeletion
@@ -51,6 +60,15 @@ export const SequenceMatchType_sequenceExact: SequenceMatchType = 0; /* LONG_NAM
  */
 export const SequenceMatchType_sequenceDeletion: SequenceMatchType = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceDeletion */
+
+/* START_OF_SYMBOL_DEFINITION sequenceDeletion */
+/**
+ * @summary sequenceDeletion
+ * @constant
+ * @type {number}
+ */
+export const sequenceDeletion: SequenceMatchType = SequenceMatchType_sequenceDeletion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequenceDeletion */
 
 /* START_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceRestrictedDeletion */
 /**
@@ -61,6 +79,15 @@ export const SequenceMatchType_sequenceDeletion: SequenceMatchType = 1; /* LONG_
 export const SequenceMatchType_sequenceRestrictedDeletion: SequenceMatchType = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceRestrictedDeletion */
 
+/* START_OF_SYMBOL_DEFINITION sequenceRestrictedDeletion */
+/**
+ * @summary sequenceRestrictedDeletion
+ * @constant
+ * @type {number}
+ */
+export const sequenceRestrictedDeletion: SequenceMatchType = SequenceMatchType_sequenceRestrictedDeletion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequenceRestrictedDeletion */
+
 /* START_OF_SYMBOL_DEFINITION SequenceMatchType_sequencePermutation */
 /**
  * @summary SequenceMatchType_sequencePermutation
@@ -69,6 +96,15 @@ export const SequenceMatchType_sequenceRestrictedDeletion: SequenceMatchType = 2
  */
 export const SequenceMatchType_sequencePermutation: SequenceMatchType = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequencePermutation */
+
+/* START_OF_SYMBOL_DEFINITION sequencePermutation */
+/**
+ * @summary sequencePermutation
+ * @constant
+ * @type {number}
+ */
+export const sequencePermutation: SequenceMatchType = SequenceMatchType_sequencePermutation; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequencePermutation */
 
 /* START_OF_SYMBOL_DEFINITION SequenceMatchType_sequencePermutationAndDeletion */
 /**
@@ -79,6 +115,15 @@ export const SequenceMatchType_sequencePermutation: SequenceMatchType = 3; /* LO
 export const SequenceMatchType_sequencePermutationAndDeletion: SequenceMatchType = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequencePermutationAndDeletion */
 
+/* START_OF_SYMBOL_DEFINITION sequencePermutationAndDeletion */
+/**
+ * @summary sequencePermutationAndDeletion
+ * @constant
+ * @type {number}
+ */
+export const sequencePermutationAndDeletion: SequenceMatchType = SequenceMatchType_sequencePermutationAndDeletion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequencePermutationAndDeletion */
+
 /* START_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceProviderDefined */
 /**
  * @summary SequenceMatchType_sequenceProviderDefined
@@ -87,6 +132,15 @@ export const SequenceMatchType_sequencePermutationAndDeletion: SequenceMatchType
  */
 export const SequenceMatchType_sequenceProviderDefined: SequenceMatchType = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SequenceMatchType_sequenceProviderDefined */
+
+/* START_OF_SYMBOL_DEFINITION sequenceProviderDefined */
+/**
+ * @summary sequenceProviderDefined
+ * @constant
+ * @type {number}
+ */
+export const sequenceProviderDefined: SequenceMatchType = SequenceMatchType_sequenceProviderDefined; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sequenceProviderDefined */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SequenceMatchType */
 let _cached_decoder_for_SequenceMatchType: $.ASN1Decoder<

@@ -24,6 +24,14 @@ export type RequestAuthenticationPolicy = BIT_STRING;
 export const RequestAuthenticationPolicy_none: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION RequestAuthenticationPolicy_none */
 
+/* START_OF_SYMBOL_DEFINITION none */
+/**
+ * @summary none
+ * @constant
+ */
+export const none: number = RequestAuthenticationPolicy_none; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION none */
+
 /* START_OF_SYMBOL_DEFINITION RequestAuthenticationPolicy_simpleName */
 /**
  * @summary RequestAuthenticationPolicy_simpleName
@@ -32,6 +40,14 @@ export const RequestAuthenticationPolicy_none: number = 0; /* LONG_NAMED_BIT */
 export const RequestAuthenticationPolicy_simpleName: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION RequestAuthenticationPolicy_simpleName */
 
+/* START_OF_SYMBOL_DEFINITION simpleName */
+/**
+ * @summary simpleName
+ * @constant
+ */
+export const simpleName: number = RequestAuthenticationPolicy_simpleName; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION simpleName */
+
 /* START_OF_SYMBOL_DEFINITION RequestAuthenticationPolicy_strong */
 /**
  * @summary RequestAuthenticationPolicy_strong
@@ -39,6 +55,14 @@ export const RequestAuthenticationPolicy_simpleName: number = 1; /* LONG_NAMED_B
  */
 export const RequestAuthenticationPolicy_strong: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION RequestAuthenticationPolicy_strong */
+
+/* START_OF_SYMBOL_DEFINITION strong */
+/**
+ * @summary strong
+ * @constant
+ */
+export const strong: number = RequestAuthenticationPolicy_strong; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION strong */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestAuthenticationPolicy */
 let _cached_decoder_for_RequestAuthenticationPolicy: $.ASN1Decoder<

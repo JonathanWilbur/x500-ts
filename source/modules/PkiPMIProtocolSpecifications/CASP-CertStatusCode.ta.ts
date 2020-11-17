@@ -35,6 +35,15 @@ export type CASP_CertStatusCode = _enum_for_CASP_CertStatusCode | ENUMERATED;
 export const CASP_CertStatusCode_noReason: CASP_CertStatusCode = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CASP_CertStatusCode_noReason */
 
+/* START_OF_SYMBOL_DEFINITION noReason */
+/**
+ * @summary noReason
+ * @constant
+ * @type {number}
+ */
+export const noReason: CASP_CertStatusCode = CASP_CertStatusCode_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION noReason */
+
 /* START_OF_SYMBOL_DEFINITION CASP_CertStatusCode_unknownCert */
 /**
  * @summary CASP_CertStatusCode_unknownCert
@@ -43,6 +52,15 @@ export const CASP_CertStatusCode_noReason: CASP_CertStatusCode = 1; /* LONG_NAME
  */
 export const CASP_CertStatusCode_unknownCert: CASP_CertStatusCode = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CASP_CertStatusCode_unknownCert */
+
+/* START_OF_SYMBOL_DEFINITION unknownCert */
+/**
+ * @summary unknownCert
+ * @constant
+ * @type {number}
+ */
+export const unknownCert: CASP_CertStatusCode = CASP_CertStatusCode_unknownCert; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownCert */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CASP_CertStatusCode */
 let _cached_decoder_for_CASP_CertStatusCode: $.ASN1Decoder<

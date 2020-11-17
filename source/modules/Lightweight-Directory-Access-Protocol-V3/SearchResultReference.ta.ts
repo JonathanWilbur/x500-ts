@@ -5,12 +5,12 @@ import {
     URI,
     _decode_URI,
     _encode_URI,
-} from "../Lightweight_Directory_Access_Protocol_V3/URI.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/URI.ta";
 export {
     URI,
     _decode_URI,
     _encode_URI,
-} from "../Lightweight_Directory_Access_Protocol_V3/URI.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/URI.ta";
 
 /* START_OF_SYMBOL_DEFINITION SearchResultReference */
 /**

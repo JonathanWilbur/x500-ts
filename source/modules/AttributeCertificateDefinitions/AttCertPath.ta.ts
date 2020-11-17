@@ -1,11 +1,15 @@
 /* eslint-disable */
 import { ASN1Element as _Element } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { AttributeCertificate } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
+import {
+    AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
+} from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
 export {
     AttributeCertificate,
-    _get_decoder_for_AttributeCertificate,
-    _get_encoder_for_AttributeCertificate,
+    _decode_AttributeCertificate,
+    _encode_AttributeCertificate,
 } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttCertPath */

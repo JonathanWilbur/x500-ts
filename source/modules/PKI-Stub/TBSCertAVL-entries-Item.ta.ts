@@ -9,22 +9,22 @@ import {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
+} from "../PKI-Stub/Extensions.ta";
 import {
     TBSCertAVL_entries_Item_idType,
     _decode_TBSCertAVL_entries_Item_idType,
     _encode_TBSCertAVL_entries_Item_idType,
-} from "../PKI_Stub/TBSCertAVL-entries-Item-idType.ta";
+} from "../PKI-Stub/TBSCertAVL-entries-Item-idType.ta";
 export {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
+} from "../PKI-Stub/Extensions.ta";
 export {
     TBSCertAVL_entries_Item_idType,
     _decode_TBSCertAVL_entries_Item_idType,
     _encode_TBSCertAVL_entries_Item_idType,
-} from "../PKI_Stub/TBSCertAVL-entries-Item-idType.ta";
+} from "../PKI-Stub/TBSCertAVL-entries-Item-idType.ta";
 
 /* START_OF_SYMBOL_DEFINITION TBSCertAVL_entries_Item */
 /**

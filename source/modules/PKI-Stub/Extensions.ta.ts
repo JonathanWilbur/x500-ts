@@ -5,12 +5,12 @@ import {
     Extension,
     _decode_Extension,
     _encode_Extension,
-} from "../PKI_Stub/Extension.ta";
+} from "../PKI-Stub/Extension.ta";
 export {
     Extension,
     _decode_Extension,
     _encode_Extension,
-} from "../PKI_Stub/Extension.ta";
+} from "../PKI-Stub/Extension.ta";
 
 /* START_OF_SYMBOL_DEFINITION Extensions */
 /**

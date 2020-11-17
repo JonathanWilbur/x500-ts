@@ -33,10 +33,14 @@ export {
 } from "../InformationFramework/Name.ta";
 export {
     CertStatus,
-    CertStatus_expired /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_good /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_on_hold /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_revoked /* IMPORTED_ENUMERATION_ITEM */,
+    CertStatus_expired /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_good /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_on_hold /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_revoked /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    expired /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    good /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    on_hold /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    revoked /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CertStatus,
     _encode_CertStatus,
     _enum_for_CertStatus,

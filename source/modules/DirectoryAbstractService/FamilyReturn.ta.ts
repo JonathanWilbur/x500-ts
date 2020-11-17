@@ -13,10 +13,13 @@ import {
     _enum_for_FamilyReturn_memberSelect,
 } from "../DirectoryAbstractService/FamilyReturn-memberSelect.ta";
 export {
+    compoundEntry /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    contributingEntriesOnly /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     FamilyReturn_memberSelect,
-    FamilyReturn_memberSelect_compoundEntry /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyReturn_memberSelect_contributingEntriesOnly /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyReturn_memberSelect_participatingEntriesOnly /* IMPORTED_ENUMERATION_ITEM */,
+    FamilyReturn_memberSelect_compoundEntry /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyReturn_memberSelect_contributingEntriesOnly /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyReturn_memberSelect_participatingEntriesOnly /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    participatingEntriesOnly /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_FamilyReturn_memberSelect,
     _encode_FamilyReturn_memberSelect,
     _enum_for_FamilyReturn_memberSelect,

@@ -40,6 +40,15 @@ export type AltNameType_builtinNameForm =
 export const AltNameType_builtinNameForm_rfc822Name: AltNameType_builtinNameForm = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_rfc822Name */
 
+/* START_OF_SYMBOL_DEFINITION rfc822Name */
+/**
+ * @summary rfc822Name
+ * @constant
+ * @type {number}
+ */
+export const rfc822Name: AltNameType_builtinNameForm = AltNameType_builtinNameForm_rfc822Name; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION rfc822Name */
+
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_dNSName */
 /**
  * @summary AltNameType_builtinNameForm_dNSName
@@ -48,6 +57,15 @@ export const AltNameType_builtinNameForm_rfc822Name: AltNameType_builtinNameForm
  */
 export const AltNameType_builtinNameForm_dNSName: AltNameType_builtinNameForm = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_dNSName */
+
+/* START_OF_SYMBOL_DEFINITION dNSName */
+/**
+ * @summary dNSName
+ * @constant
+ * @type {number}
+ */
+export const dNSName: AltNameType_builtinNameForm = AltNameType_builtinNameForm_dNSName; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dNSName */
 
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_x400Address */
 /**
@@ -58,6 +76,15 @@ export const AltNameType_builtinNameForm_dNSName: AltNameType_builtinNameForm = 
 export const AltNameType_builtinNameForm_x400Address: AltNameType_builtinNameForm = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_x400Address */
 
+/* START_OF_SYMBOL_DEFINITION x400Address */
+/**
+ * @summary x400Address
+ * @constant
+ * @type {number}
+ */
+export const x400Address: AltNameType_builtinNameForm = AltNameType_builtinNameForm_x400Address; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION x400Address */
+
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_directoryName */
 /**
  * @summary AltNameType_builtinNameForm_directoryName
@@ -66,6 +93,15 @@ export const AltNameType_builtinNameForm_x400Address: AltNameType_builtinNameFor
  */
 export const AltNameType_builtinNameForm_directoryName: AltNameType_builtinNameForm = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_directoryName */
+
+/* START_OF_SYMBOL_DEFINITION directoryName */
+/**
+ * @summary directoryName
+ * @constant
+ * @type {number}
+ */
+export const directoryName: AltNameType_builtinNameForm = AltNameType_builtinNameForm_directoryName; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION directoryName */
 
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_ediPartyName */
 /**
@@ -76,6 +112,15 @@ export const AltNameType_builtinNameForm_directoryName: AltNameType_builtinNameF
 export const AltNameType_builtinNameForm_ediPartyName: AltNameType_builtinNameForm = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_ediPartyName */
 
+/* START_OF_SYMBOL_DEFINITION ediPartyName */
+/**
+ * @summary ediPartyName
+ * @constant
+ * @type {number}
+ */
+export const ediPartyName: AltNameType_builtinNameForm = AltNameType_builtinNameForm_ediPartyName; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION ediPartyName */
+
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_uniformResourceIdentifier */
 /**
  * @summary AltNameType_builtinNameForm_uniformResourceIdentifier
@@ -84,6 +129,15 @@ export const AltNameType_builtinNameForm_ediPartyName: AltNameType_builtinNameFo
  */
 export const AltNameType_builtinNameForm_uniformResourceIdentifier: AltNameType_builtinNameForm = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_uniformResourceIdentifier */
+
+/* START_OF_SYMBOL_DEFINITION uniformResourceIdentifier */
+/**
+ * @summary uniformResourceIdentifier
+ * @constant
+ * @type {number}
+ */
+export const uniformResourceIdentifier: AltNameType_builtinNameForm = AltNameType_builtinNameForm_uniformResourceIdentifier; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION uniformResourceIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_iPAddress */
 /**
@@ -94,6 +148,15 @@ export const AltNameType_builtinNameForm_uniformResourceIdentifier: AltNameType_
 export const AltNameType_builtinNameForm_iPAddress: AltNameType_builtinNameForm = 7; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_iPAddress */
 
+/* START_OF_SYMBOL_DEFINITION iPAddress */
+/**
+ * @summary iPAddress
+ * @constant
+ * @type {number}
+ */
+export const iPAddress: AltNameType_builtinNameForm = AltNameType_builtinNameForm_iPAddress; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION iPAddress */
+
 /* START_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_registeredId */
 /**
  * @summary AltNameType_builtinNameForm_registeredId
@@ -102,6 +165,15 @@ export const AltNameType_builtinNameForm_iPAddress: AltNameType_builtinNameForm 
  */
 export const AltNameType_builtinNameForm_registeredId: AltNameType_builtinNameForm = 8; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AltNameType_builtinNameForm_registeredId */
+
+/* START_OF_SYMBOL_DEFINITION registeredId */
+/**
+ * @summary registeredId
+ * @constant
+ * @type {number}
+ */
+export const registeredId: AltNameType_builtinNameForm = AltNameType_builtinNameForm_registeredId; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION registeredId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AltNameType_builtinNameForm */
 let _cached_decoder_for_AltNameType_builtinNameForm: $.ASN1Decoder<

@@ -13,7 +13,7 @@ import {
 } from "../PkiPMIProtocolSpecifications/AVMPsequence.ta";
 import {
     AVMPversion,
-    AVMPversion_v1 /* IMPORTED_ENUMERATION_ITEM */,
+    AVMPversion_v1 /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_AVMPversion,
     _encode_AVMPversion,
     _enum_for_AVMPversion,
@@ -30,9 +30,12 @@ export {
 } from "../PkiPMIProtocolSpecifications/AVMPsequence.ta";
 export {
     AVMPversion,
-    AVMPversion_v1 /* IMPORTED_ENUMERATION_ITEM */,
-    AVMPversion_v2 /* IMPORTED_ENUMERATION_ITEM */,
-    AVMPversion_v3 /* IMPORTED_ENUMERATION_ITEM */,
+    AVMPversion_v1 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AVMPversion_v2 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AVMPversion_v3 /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    v1 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    v2 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    v3 /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_AVMPversion,
     _encode_AVMPversion,
     _enum_for_AVMPversion,

@@ -39,7 +39,7 @@ import {
 } from "../Wrapper/TimeStamp.ta";
 import {
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";
@@ -80,8 +80,9 @@ export {
     _encode_TimeStamp,
 } from "../Wrapper/TimeStamp.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_BIT */,
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";

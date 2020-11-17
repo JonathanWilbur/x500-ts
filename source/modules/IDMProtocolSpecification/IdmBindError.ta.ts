@@ -24,9 +24,11 @@ export {
 } from "../CertificateExtensions/GeneralName.ta";
 export { IDM_PROTOCOL } from "../IDMProtocolSpecification/IDM-PROTOCOL.oca";
 export {
+    calledAETitleNotRecognized /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    callingAETitleNotAccepted /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     IdmBindError_aETitleError,
-    IdmBindError_aETitleError_calledAETitleNotRecognized /* IMPORTED_ENUMERATION_ITEM */,
-    IdmBindError_aETitleError_callingAETitleNotAccepted /* IMPORTED_ENUMERATION_ITEM */,
+    IdmBindError_aETitleError_calledAETitleNotRecognized /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    IdmBindError_aETitleError_callingAETitleNotAccepted /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_IdmBindError_aETitleError,
     _encode_IdmBindError_aETitleError,
     _enum_for_IdmBindError_aETitleError,

@@ -9,22 +9,22 @@ import {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 import {
     AttributeValue,
     _decode_AttributeValue,
     _encode_AttributeValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeValue.ta";
 export {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 export {
     AttributeValue,
     _decode_AttributeValue,
     _encode_AttributeValue,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeValue.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeValue.ta";
 
 /* START_OF_SYMBOL_DEFINITION PartialAttribute */
 /**

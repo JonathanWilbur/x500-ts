@@ -43,6 +43,15 @@ export type ServiceProblem = INTEGER;
 export const ServiceProblem_busy: ServiceProblem = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_busy */
 
+/* START_OF_SYMBOL_DEFINITION busy */
+/**
+ * @summary ServiceProblem_busy
+ * @constant
+ * @type {number}
+ */
+export const busy: ServiceProblem = ServiceProblem_busy; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION busy */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_unavailable */
 /**
  * @summary ServiceProblem_unavailable
@@ -51,6 +60,15 @@ export const ServiceProblem_busy: ServiceProblem = 1; /* LONG_NAMED_INTEGER_VALU
  */
 export const ServiceProblem_unavailable: ServiceProblem = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_unavailable */
+
+/* START_OF_SYMBOL_DEFINITION unavailable */
+/**
+ * @summary ServiceProblem_unavailable
+ * @constant
+ * @type {number}
+ */
+export const unavailable: ServiceProblem = ServiceProblem_unavailable; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unavailable */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_unwillingToPerform */
 /**
@@ -61,6 +79,15 @@ export const ServiceProblem_unavailable: ServiceProblem = 2; /* LONG_NAMED_INTEG
 export const ServiceProblem_unwillingToPerform: ServiceProblem = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_unwillingToPerform */
 
+/* START_OF_SYMBOL_DEFINITION unwillingToPerform */
+/**
+ * @summary ServiceProblem_unwillingToPerform
+ * @constant
+ * @type {number}
+ */
+export const unwillingToPerform: ServiceProblem = ServiceProblem_unwillingToPerform; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unwillingToPerform */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_chainingRequired */
 /**
  * @summary ServiceProblem_chainingRequired
@@ -69,6 +96,15 @@ export const ServiceProblem_unwillingToPerform: ServiceProblem = 3; /* LONG_NAME
  */
 export const ServiceProblem_chainingRequired: ServiceProblem = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_chainingRequired */
+
+/* START_OF_SYMBOL_DEFINITION chainingRequired */
+/**
+ * @summary ServiceProblem_chainingRequired
+ * @constant
+ * @type {number}
+ */
+export const chainingRequired: ServiceProblem = ServiceProblem_chainingRequired; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION chainingRequired */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_unableToProceed */
 /**
@@ -79,6 +115,15 @@ export const ServiceProblem_chainingRequired: ServiceProblem = 4; /* LONG_NAMED_
 export const ServiceProblem_unableToProceed: ServiceProblem = 5; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_unableToProceed */
 
+/* START_OF_SYMBOL_DEFINITION unableToProceed */
+/**
+ * @summary ServiceProblem_unableToProceed
+ * @constant
+ * @type {number}
+ */
+export const unableToProceed: ServiceProblem = ServiceProblem_unableToProceed; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unableToProceed */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_invalidReference */
 /**
  * @summary ServiceProblem_invalidReference
@@ -87,6 +132,15 @@ export const ServiceProblem_unableToProceed: ServiceProblem = 5; /* LONG_NAMED_I
  */
 export const ServiceProblem_invalidReference: ServiceProblem = 6; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_invalidReference */
+
+/* START_OF_SYMBOL_DEFINITION invalidReference */
+/**
+ * @summary ServiceProblem_invalidReference
+ * @constant
+ * @type {number}
+ */
+export const invalidReference: ServiceProblem = ServiceProblem_invalidReference; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidReference */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_timeLimitExceeded */
 /**
@@ -97,6 +151,15 @@ export const ServiceProblem_invalidReference: ServiceProblem = 6; /* LONG_NAMED_
 export const ServiceProblem_timeLimitExceeded: ServiceProblem = 7; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_timeLimitExceeded */
 
+/* START_OF_SYMBOL_DEFINITION timeLimitExceeded */
+/**
+ * @summary ServiceProblem_timeLimitExceeded
+ * @constant
+ * @type {number}
+ */
+export const timeLimitExceeded: ServiceProblem = ServiceProblem_timeLimitExceeded; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION timeLimitExceeded */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_administrativeLimitExceeded */
 /**
  * @summary ServiceProblem_administrativeLimitExceeded
@@ -105,6 +168,15 @@ export const ServiceProblem_timeLimitExceeded: ServiceProblem = 7; /* LONG_NAMED
  */
 export const ServiceProblem_administrativeLimitExceeded: ServiceProblem = 8; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_administrativeLimitExceeded */
+
+/* START_OF_SYMBOL_DEFINITION administrativeLimitExceeded */
+/**
+ * @summary ServiceProblem_administrativeLimitExceeded
+ * @constant
+ * @type {number}
+ */
+export const administrativeLimitExceeded: ServiceProblem = ServiceProblem_administrativeLimitExceeded; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION administrativeLimitExceeded */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_loopDetected */
 /**
@@ -115,6 +187,15 @@ export const ServiceProblem_administrativeLimitExceeded: ServiceProblem = 8; /* 
 export const ServiceProblem_loopDetected: ServiceProblem = 9; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_loopDetected */
 
+/* START_OF_SYMBOL_DEFINITION loopDetected */
+/**
+ * @summary ServiceProblem_loopDetected
+ * @constant
+ * @type {number}
+ */
+export const loopDetected: ServiceProblem = ServiceProblem_loopDetected; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION loopDetected */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_unavailableCriticalExtension */
 /**
  * @summary ServiceProblem_unavailableCriticalExtension
@@ -123,6 +204,15 @@ export const ServiceProblem_loopDetected: ServiceProblem = 9; /* LONG_NAMED_INTE
  */
 export const ServiceProblem_unavailableCriticalExtension: ServiceProblem = 10; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_unavailableCriticalExtension */
+
+/* START_OF_SYMBOL_DEFINITION unavailableCriticalExtension */
+/**
+ * @summary ServiceProblem_unavailableCriticalExtension
+ * @constant
+ * @type {number}
+ */
+export const unavailableCriticalExtension: ServiceProblem = ServiceProblem_unavailableCriticalExtension; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unavailableCriticalExtension */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_outOfScope */
 /**
@@ -133,6 +223,15 @@ export const ServiceProblem_unavailableCriticalExtension: ServiceProblem = 10; /
 export const ServiceProblem_outOfScope: ServiceProblem = 11; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_outOfScope */
 
+/* START_OF_SYMBOL_DEFINITION outOfScope */
+/**
+ * @summary ServiceProblem_outOfScope
+ * @constant
+ * @type {number}
+ */
+export const outOfScope: ServiceProblem = ServiceProblem_outOfScope; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION outOfScope */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_ditError */
 /**
  * @summary ServiceProblem_ditError
@@ -141,6 +240,15 @@ export const ServiceProblem_outOfScope: ServiceProblem = 11; /* LONG_NAMED_INTEG
  */
 export const ServiceProblem_ditError: ServiceProblem = 12; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_ditError */
+
+/* START_OF_SYMBOL_DEFINITION ditError */
+/**
+ * @summary ServiceProblem_ditError
+ * @constant
+ * @type {number}
+ */
+export const ditError: ServiceProblem = ServiceProblem_ditError; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION ditError */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_invalidQueryReference */
 /**
@@ -151,6 +259,15 @@ export const ServiceProblem_ditError: ServiceProblem = 12; /* LONG_NAMED_INTEGER
 export const ServiceProblem_invalidQueryReference: ServiceProblem = 13; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_invalidQueryReference */
 
+/* START_OF_SYMBOL_DEFINITION invalidQueryReference */
+/**
+ * @summary ServiceProblem_invalidQueryReference
+ * @constant
+ * @type {number}
+ */
+export const invalidQueryReference: ServiceProblem = ServiceProblem_invalidQueryReference; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidQueryReference */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_requestedServiceNotAvailable */
 /**
  * @summary ServiceProblem_requestedServiceNotAvailable
@@ -159,6 +276,15 @@ export const ServiceProblem_invalidQueryReference: ServiceProblem = 13; /* LONG_
  */
 export const ServiceProblem_requestedServiceNotAvailable: ServiceProblem = 14; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_requestedServiceNotAvailable */
+
+/* START_OF_SYMBOL_DEFINITION requestedServiceNotAvailable */
+/**
+ * @summary ServiceProblem_requestedServiceNotAvailable
+ * @constant
+ * @type {number}
+ */
+export const requestedServiceNotAvailable: ServiceProblem = ServiceProblem_requestedServiceNotAvailable; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION requestedServiceNotAvailable */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_unsupportedMatchingUse */
 /**
@@ -169,6 +295,15 @@ export const ServiceProblem_requestedServiceNotAvailable: ServiceProblem = 14; /
 export const ServiceProblem_unsupportedMatchingUse: ServiceProblem = 15; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_unsupportedMatchingUse */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedMatchingUse */
+/**
+ * @summary ServiceProblem_unsupportedMatchingUse
+ * @constant
+ * @type {number}
+ */
+export const unsupportedMatchingUse: ServiceProblem = ServiceProblem_unsupportedMatchingUse; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedMatchingUse */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_ambiguousKeyAttributes */
 /**
  * @summary ServiceProblem_ambiguousKeyAttributes
@@ -177,6 +312,15 @@ export const ServiceProblem_unsupportedMatchingUse: ServiceProblem = 15; /* LONG
  */
 export const ServiceProblem_ambiguousKeyAttributes: ServiceProblem = 16; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_ambiguousKeyAttributes */
+
+/* START_OF_SYMBOL_DEFINITION ambiguousKeyAttributes */
+/**
+ * @summary ServiceProblem_ambiguousKeyAttributes
+ * @constant
+ * @type {number}
+ */
+export const ambiguousKeyAttributes: ServiceProblem = ServiceProblem_ambiguousKeyAttributes; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION ambiguousKeyAttributes */
 
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_saslBindInProgress */
 /**
@@ -187,6 +331,15 @@ export const ServiceProblem_ambiguousKeyAttributes: ServiceProblem = 16; /* LONG
 export const ServiceProblem_saslBindInProgress: ServiceProblem = 17; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_saslBindInProgress */
 
+/* START_OF_SYMBOL_DEFINITION saslBindInProgress */
+/**
+ * @summary ServiceProblem_saslBindInProgress
+ * @constant
+ * @type {number}
+ */
+export const saslBindInProgress: ServiceProblem = ServiceProblem_saslBindInProgress; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION saslBindInProgress */
+
 /* START_OF_SYMBOL_DEFINITION ServiceProblem_notSupportedByLDAP */
 /**
  * @summary ServiceProblem_notSupportedByLDAP
@@ -195,6 +348,15 @@ export const ServiceProblem_saslBindInProgress: ServiceProblem = 17; /* LONG_NAM
  */
 export const ServiceProblem_notSupportedByLDAP: ServiceProblem = 18; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceProblem_notSupportedByLDAP */
+
+/* START_OF_SYMBOL_DEFINITION notSupportedByLDAP */
+/**
+ * @summary ServiceProblem_notSupportedByLDAP
+ * @constant
+ * @type {number}
+ */
+export const notSupportedByLDAP: ServiceProblem = ServiceProblem_notSupportedByLDAP; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION notSupportedByLDAP */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceProblem */
 let _cached_decoder_for_ServiceProblem: $.ASN1Decoder<

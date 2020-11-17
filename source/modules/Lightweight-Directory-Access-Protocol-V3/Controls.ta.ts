@@ -5,12 +5,12 @@ import {
     Control,
     _decode_Control,
     _encode_Control,
-} from "../Lightweight_Directory_Access_Protocol_V3/Control.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Control.ta";
 export {
     Control,
     _decode_Control,
     _encode_Control,
-} from "../Lightweight_Directory_Access_Protocol_V3/Control.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Control.ta";
 
 /* START_OF_SYMBOL_DEFINITION Controls */
 /**

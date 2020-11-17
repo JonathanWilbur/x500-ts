@@ -25,6 +25,15 @@ export type EntryInformationSelection_infoTypes = INTEGER;
 export const EntryInformationSelection_infoTypes_attributeTypesOnly: EntryInformationSelection_infoTypes = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION EntryInformationSelection_infoTypes_attributeTypesOnly */
 
+/* START_OF_SYMBOL_DEFINITION attributeTypesOnly */
+/**
+ * @summary EntryInformationSelection_infoTypes_attributeTypesOnly
+ * @constant
+ * @type {number}
+ */
+export const attributeTypesOnly: EntryInformationSelection_infoTypes = EntryInformationSelection_infoTypes_attributeTypesOnly; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION attributeTypesOnly */
+
 /* START_OF_SYMBOL_DEFINITION EntryInformationSelection_infoTypes_attributeTypesAndValues */
 /**
  * @summary EntryInformationSelection_infoTypes_attributeTypesAndValues
@@ -33,6 +42,15 @@ export const EntryInformationSelection_infoTypes_attributeTypesOnly: EntryInform
  */
 export const EntryInformationSelection_infoTypes_attributeTypesAndValues: EntryInformationSelection_infoTypes = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION EntryInformationSelection_infoTypes_attributeTypesAndValues */
+
+/* START_OF_SYMBOL_DEFINITION attributeTypesAndValues */
+/**
+ * @summary EntryInformationSelection_infoTypes_attributeTypesAndValues
+ * @constant
+ * @type {number}
+ */
+export const attributeTypesAndValues: EntryInformationSelection_infoTypes = EntryInformationSelection_infoTypes_attributeTypesAndValues; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION attributeTypesAndValues */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection_infoTypes */
 let _cached_decoder_for_EntryInformationSelection_infoTypes: $.ASN1Decoder<

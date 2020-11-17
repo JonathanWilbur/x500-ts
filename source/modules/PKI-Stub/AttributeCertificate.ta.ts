@@ -5,22 +5,22 @@ import {
     SIGNED,
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
-} from "../PKI_Stub/SIGNED.ta";
+} from "../PKI-Stub/SIGNED.ta";
 import {
     TBSAttributeCertificate,
     _decode_TBSAttributeCertificate,
     _encode_TBSAttributeCertificate,
-} from "../PKI_Stub/TBSAttributeCertificate.ta";
+} from "../PKI-Stub/TBSAttributeCertificate.ta";
 export {
     SIGNED,
     _get_decoder_for_SIGNED,
     _get_encoder_for_SIGNED,
-} from "../PKI_Stub/SIGNED.ta";
+} from "../PKI-Stub/SIGNED.ta";
 export {
     TBSAttributeCertificate,
     _decode_TBSAttributeCertificate,
     _encode_TBSAttributeCertificate,
-} from "../PKI_Stub/TBSAttributeCertificate.ta";
+} from "../PKI-Stub/TBSAttributeCertificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttributeCertificate */
 /**

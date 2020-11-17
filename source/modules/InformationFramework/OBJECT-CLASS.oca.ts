@@ -2,15 +2,16 @@
 import { OBJECT_IDENTIFIER, UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
-import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import { ObjectClassKind } from "../InformationFramework/ObjectClassKind.ta";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
-export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     ObjectClassKind,
-    ObjectClassKind_abstract /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectClassKind_auxiliary /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectClassKind_structural /* IMPORTED_ENUMERATION_ITEM */,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ObjectClassKind,
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,

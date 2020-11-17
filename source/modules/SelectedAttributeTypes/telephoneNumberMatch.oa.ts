@@ -6,7 +6,9 @@ import {
     _decode_TelephoneNumber,
     _encode_TelephoneNumber,
 } from "../SelectedAttributeTypes/TelephoneNumber.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_telephoneNumberMatch } from "../SelectedAttributeTypes/id-mr-telephoneNumberMatch.va";
 export { telephoneNr } from "../SelectedAttributeTypes/telephoneNr.oa";
 export {

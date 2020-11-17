@@ -59,6 +59,16 @@ export const SearchRequest_derefAliases_neverDerefAliases: SearchRequest_derefAl
     SearchRequest_derefAliases.neverDerefAliases; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_neverDerefAliases */
 
+/* START_OF_SYMBOL_DEFINITION neverDerefAliases */
+/**
+ * @summary neverDerefAliases
+ * @constant
+ * @type {number}
+ */
+export const neverDerefAliases: SearchRequest_derefAliases =
+    SearchRequest_derefAliases.neverDerefAliases; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION neverDerefAliases */
+
 /* START_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefInSearching */
 /**
  * @summary SearchRequest_derefAliases_derefInSearching
@@ -68,6 +78,16 @@ export const SearchRequest_derefAliases_neverDerefAliases: SearchRequest_derefAl
 export const SearchRequest_derefAliases_derefInSearching: SearchRequest_derefAliases =
     SearchRequest_derefAliases.derefInSearching; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefInSearching */
+
+/* START_OF_SYMBOL_DEFINITION derefInSearching */
+/**
+ * @summary derefInSearching
+ * @constant
+ * @type {number}
+ */
+export const derefInSearching: SearchRequest_derefAliases =
+    SearchRequest_derefAliases.derefInSearching; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION derefInSearching */
 
 /* START_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefFindingBaseObj */
 /**
@@ -79,6 +99,16 @@ export const SearchRequest_derefAliases_derefFindingBaseObj: SearchRequest_deref
     SearchRequest_derefAliases.derefFindingBaseObj; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefFindingBaseObj */
 
+/* START_OF_SYMBOL_DEFINITION derefFindingBaseObj */
+/**
+ * @summary derefFindingBaseObj
+ * @constant
+ * @type {number}
+ */
+export const derefFindingBaseObj: SearchRequest_derefAliases =
+    SearchRequest_derefAliases.derefFindingBaseObj; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION derefFindingBaseObj */
+
 /* START_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefAlways */
 /**
  * @summary SearchRequest_derefAliases_derefAlways
@@ -88,6 +118,16 @@ export const SearchRequest_derefAliases_derefFindingBaseObj: SearchRequest_deref
 export const SearchRequest_derefAliases_derefAlways: SearchRequest_derefAliases =
     SearchRequest_derefAliases.derefAlways; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_derefAliases_derefAlways */
+
+/* START_OF_SYMBOL_DEFINITION derefAlways */
+/**
+ * @summary derefAlways
+ * @constant
+ * @type {number}
+ */
+export const derefAlways: SearchRequest_derefAliases =
+    SearchRequest_derefAliases.derefAlways; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION derefAlways */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_derefAliases */
 let _cached_decoder_for_SearchRequest_derefAliases: $.ASN1Decoder<

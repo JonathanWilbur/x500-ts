@@ -25,6 +25,15 @@ export type Release_request_reason = INTEGER;
 export const Release_request_reason_normal: Release_request_reason = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Release_request_reason_normal */
 
+/* START_OF_SYMBOL_DEFINITION normal */
+/**
+ * @summary Release_request_reason_normal
+ * @constant
+ * @type {number}
+ */
+export const normal: Release_request_reason = Release_request_reason_normal; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION normal */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Release_request_reason */
 let _cached_decoder_for_Release_request_reason: $.ASN1Decoder<
     Release_request_reason

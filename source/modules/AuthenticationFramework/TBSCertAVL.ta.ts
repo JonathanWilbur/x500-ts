@@ -27,8 +27,8 @@ import {
     _encode_TBSCertAVL_entries_Item,
 } from "../AuthenticationFramework/TBSCertAVL-entries-Item.ta";
 import {
+    v1 /* IMPORTED_SHORT_NAMED_INTEGER */,
     Version,
-    Version_v1 /* IMPORTED_NAMED_INTEGER */,
     _decode_Version,
     _encode_Version,
 } from "../AuthenticationFramework/Version.ta";
@@ -58,10 +58,13 @@ export {
     _encode_TBSCertAVL_entries_Item,
 } from "../AuthenticationFramework/TBSCertAVL-entries-Item.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v2 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v3 /* IMPORTED_SHORT_NAMED_INTEGER */,
     Version,
-    Version_v1 /* IMPORTED_NAMED_INTEGER */,
-    Version_v2 /* IMPORTED_NAMED_INTEGER */,
-    Version_v3 /* IMPORTED_NAMED_INTEGER */,
+    Version_v1 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v2 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v3 /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_Version,
     _encode_Version,
 } from "../AuthenticationFramework/Version.ta";
@@ -185,7 +188,7 @@ export class TBSCertAVL {
      * @method
      */
     public static get _default_value_for_version() {
-        return Version_v1;
+        return v1;
     }
 }
 /* END_OF_SYMBOL_DEFINITION TBSCertAVL */

@@ -1,6 +1,12 @@
 /* eslint-disable */
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { dSABind } from "../DistributedOperations/dSABind.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { dSABind } from "../DistributedOperations/dSABind.oa";
 

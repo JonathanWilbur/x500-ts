@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { id_nf_orgUnitNameForm } from "../SelectedObjectClasses/id-nf-orgUnitNameForm.va";
 import { organizationalUnit } from "../SelectedObjectClasses/organizationalUnit.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { id_nf_orgUnitNameForm } from "../SelectedObjectClasses/id-nf-orgUnitNameForm.va";
 export { organizationalUnit } from "../SelectedObjectClasses/organizationalUnit.oa";
 

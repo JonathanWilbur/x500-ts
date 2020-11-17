@@ -4,14 +4,14 @@ import {
     _decode_MultipleAuthenEncryptAlgo,
     _encode_MultipleAuthenEncryptAlgo,
 } from "../CryptoTools/MultipleAuthenEncryptAlgo.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export { id_algo_multipleAuthenEncryptAlgo } from "../CryptoTools/id-algo-multipleAuthenEncryptAlgo.va";
 export {
     MultipleAuthenEncryptAlgo,
     _decode_MultipleAuthenEncryptAlgo,
     _encode_MultipleAuthenEncryptAlgo,
 } from "../CryptoTools/MultipleAuthenEncryptAlgo.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION multipleAuthenEncryptAlgo */
 /**

@@ -24,6 +24,14 @@ export type Versions = BIT_STRING;
 export const Versions_v1: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Versions_v1 */
 
+/* START_OF_SYMBOL_DEFINITION v1 */
+/**
+ * @summary v1
+ * @constant
+ */
+export const v1: number = Versions_v1; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION v1 */
+
 /* START_OF_SYMBOL_DEFINITION Versions_v2 */
 /**
  * @summary Versions_v2
@@ -31,6 +39,14 @@ export const Versions_v1: number = 0; /* LONG_NAMED_BIT */
  */
 export const Versions_v2: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Versions_v2 */
+
+/* START_OF_SYMBOL_DEFINITION v2 */
+/**
+ * @summary v2
+ * @constant
+ */
+export const v2: number = Versions_v2; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION v2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Versions */
 let _cached_decoder_for_Versions: $.ASN1Decoder<Versions> | null = null;

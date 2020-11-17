@@ -130,12 +130,6 @@ export const _root_component_type_list_2_spec_for_FingerPrint: $.ComponentSpec[]
 export const _extension_additions_list_spec_for_FingerPrint: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_FingerPrint */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FingerPrint */
-let _cached_decoder_for_FingerPrint: $.ASN1Decoder<
-    FingerPrint<ToBeFingerprinted>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FingerPrint */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_FingerPrint */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) FingerPrint
@@ -171,12 +165,6 @@ export function _get_decoder_for_FingerPrint<ToBeFingerprinted>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_FingerPrint */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FingerPrint */
-let _cached_encoder_for_FingerPrint: $.ASN1Encoder<
-    FingerPrint<ToBeFingerprinted>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FingerPrint */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_FingerPrint */
 /**

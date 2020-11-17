@@ -15,7 +15,7 @@ import {
 } from "../DirectoryAbstractService/ContextSelection.ta";
 import {
     FamilyGrouping,
-    FamilyGrouping_entryOnly /* IMPORTED_ENUMERATION_ITEM */,
+    FamilyGrouping_entryOnly /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_FamilyGrouping,
     _encode_FamilyGrouping,
     _enum_for_FamilyGrouping,
@@ -60,7 +60,7 @@ import {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
 export {
     CommonArgumentsSeq,
     _decode_CommonArgumentsSeq,
@@ -72,11 +72,15 @@ export {
     _encode_ContextSelection,
 } from "../DirectoryAbstractService/ContextSelection.ta";
 export {
+    compoundEntry /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    entryOnly /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     FamilyGrouping,
-    FamilyGrouping_compoundEntry /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_entryOnly /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_multiStrand /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_strands /* IMPORTED_ENUMERATION_ITEM */,
+    FamilyGrouping_compoundEntry /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_entryOnly /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_multiStrand /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_strands /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    multiStrand /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    strands /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_FamilyGrouping,
     _encode_FamilyGrouping,
     _enum_for_FamilyGrouping,
@@ -107,16 +111,25 @@ export {
     _encode_OperationProgress,
 } from "../DistributedOperations/OperationProgress.ta";
 export {
+    cross /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ditBridge /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    immediateSuperior /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    master /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    nonSpecificSubordinate /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     ReferenceType,
-    ReferenceType_cross /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_ditBridge /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_immediateSuperior /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_master /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_nonSpecificSubordinate /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_self /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_subordinate /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_superior /* IMPORTED_ENUMERATION_ITEM */,
-    ReferenceType_supplier /* IMPORTED_ENUMERATION_ITEM */,
+    ReferenceType_cross /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_ditBridge /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_immediateSuperior /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_master /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_nonSpecificSubordinate /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_self /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_subordinate /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_superior /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ReferenceType_supplier /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    self /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    subordinate /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    superior /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    supplier /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ReferenceType,
     _encode_ReferenceType,
     _enum_for_ReferenceType,
@@ -130,7 +143,7 @@ export {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
 
 /* START_OF_SYMBOL_DEFINITION LdapArgumentData */
 /**

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { accessControlScheme } from "./BasicAccessControl/accessControlScheme.oa";
 export {
     ACIItem_itemOrUserFirst_itemFirst,
@@ -146,3 +147,4 @@ export {
     _root_component_type_list_1_spec_for_UserPermission,
     _root_component_type_list_2_spec_for_UserPermission,
 } from "./BasicAccessControl/UserPermission.ta";
+/* eslint-enable */

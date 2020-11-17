@@ -58,6 +58,16 @@ export const Knowledge_knowledgeType_master: Knowledge_knowledgeType =
     Knowledge_knowledgeType.master; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Knowledge_knowledgeType_master */
 
+/* START_OF_SYMBOL_DEFINITION master */
+/**
+ * @summary master
+ * @constant
+ * @type {number}
+ */
+export const master: Knowledge_knowledgeType =
+    Knowledge_knowledgeType.master; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION master */
+
 /* START_OF_SYMBOL_DEFINITION Knowledge_knowledgeType_shadow */
 /**
  * @summary Knowledge_knowledgeType_shadow
@@ -68,6 +78,16 @@ export const Knowledge_knowledgeType_shadow: Knowledge_knowledgeType =
     Knowledge_knowledgeType.shadow; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Knowledge_knowledgeType_shadow */
 
+/* START_OF_SYMBOL_DEFINITION shadow */
+/**
+ * @summary shadow
+ * @constant
+ * @type {number}
+ */
+export const shadow: Knowledge_knowledgeType =
+    Knowledge_knowledgeType.shadow; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION shadow */
+
 /* START_OF_SYMBOL_DEFINITION Knowledge_knowledgeType_both */
 /**
  * @summary Knowledge_knowledgeType_both
@@ -77,6 +97,16 @@ export const Knowledge_knowledgeType_shadow: Knowledge_knowledgeType =
 export const Knowledge_knowledgeType_both: Knowledge_knowledgeType =
     Knowledge_knowledgeType.both; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Knowledge_knowledgeType_both */
+
+/* START_OF_SYMBOL_DEFINITION both */
+/**
+ * @summary both
+ * @constant
+ * @type {number}
+ */
+export const both: Knowledge_knowledgeType =
+    Knowledge_knowledgeType.both; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION both */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Knowledge_knowledgeType */
 let _cached_decoder_for_Knowledge_knowledgeType: $.ASN1Decoder<

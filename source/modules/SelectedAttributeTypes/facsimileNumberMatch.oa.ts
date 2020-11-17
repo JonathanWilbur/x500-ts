@@ -5,7 +5,9 @@ import {
     _decode_TelephoneNumber,
     _encode_TelephoneNumber,
 } from "../SelectedAttributeTypes/TelephoneNumber.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_facsimileNumberMatch } from "../SelectedAttributeTypes/id-mr-facsimileNumberMatch.va";
 export {
     TelephoneNumber,

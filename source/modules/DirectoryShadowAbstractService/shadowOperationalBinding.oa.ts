@@ -8,8 +8,8 @@ import { shadowOperationalBinding_roleA } from "../DirectoryShadowAbstractServic
 import { shadowOperationalBinding_roleB } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleB.oa";
 import { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 export { id_op_binding_shadow } from "../DirectoryOperationalBindingTypes/id-op-binding-shadow.va";
-export { shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/shadowConsumerInitiatedAC.va";
-export { shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAC.va";
+export { shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/shadowConsumerInitiatedAC.oa";
+export { shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAC.oa";
 export {
     ShadowingAgreementInfo,
     _decode_ShadowingAgreementInfo,
@@ -17,6 +17,8 @@ export {
 } from "../DirectoryShadowAbstractService/ShadowingAgreementInfo.ta";
 export { shadowOperationalBinding_roleA } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleA.oa";
 export { shadowOperationalBinding_roleB } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleB.oa";
+export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
+export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
 export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION shadowOperationalBinding */

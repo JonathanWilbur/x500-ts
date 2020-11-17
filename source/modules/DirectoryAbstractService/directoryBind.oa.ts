@@ -8,6 +8,12 @@ import {
     _decode_DirectoryBindResult,
     _encode_DirectoryBindResult,
 } from "../DirectoryAbstractService/DirectoryBindResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     DirectoryBindArgument,

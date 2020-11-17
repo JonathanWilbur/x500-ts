@@ -13,7 +13,7 @@ import {
 } from "../SelectedAttributeTypes/EpcFormat-fields-Item-charField.ta";
 import {
     EpcFormat_fields_Item_result,
-    EpcFormat_fields_Item_result_numericPad /* IMPORTED_ENUMERATION_ITEM */,
+    EpcFormat_fields_Item_result_numericPad /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_EpcFormat_fields_Item_result,
     _encode_EpcFormat_fields_Item_result,
     _enum_for_EpcFormat_fields_Item_result,
@@ -24,10 +24,13 @@ export {
     _encode_EpcFormat_fields_Item_charField,
 } from "../SelectedAttributeTypes/EpcFormat-fields-Item-charField.ta";
 export {
+    alpha7bits /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     EpcFormat_fields_Item_result,
-    EpcFormat_fields_Item_result_alpha7bits /* IMPORTED_ENUMERATION_ITEM */,
-    EpcFormat_fields_Item_result_numeric /* IMPORTED_ENUMERATION_ITEM */,
-    EpcFormat_fields_Item_result_numericPad /* IMPORTED_ENUMERATION_ITEM */,
+    EpcFormat_fields_Item_result_alpha7bits /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    EpcFormat_fields_Item_result_numeric /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    EpcFormat_fields_Item_result_numericPad /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    numeric /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    numericPad /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_EpcFormat_fields_Item_result,
     _encode_EpcFormat_fields_Item_result,
     _enum_for_EpcFormat_fields_Item_result,

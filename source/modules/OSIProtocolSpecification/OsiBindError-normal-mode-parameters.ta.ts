@@ -8,7 +8,7 @@ import {
 import * as $ from "asn1-ts/dist/node/functional";
 import {
     OsiBindError_normal_mode_parameters_protocol_version,
-    OsiBindError_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_BIT */,
+    OsiBindError_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_OsiBindError_normal_mode_parameters_protocol_version,
     _encode_OsiBindError_normal_mode_parameters_protocol_version,
 } from "../OSIProtocolSpecification/OsiBindError-normal-mode-parameters-protocol-version.ta";
@@ -34,7 +34,8 @@ import {
 } from "../OSIProtocolSpecification/Result-list.ta";
 export {
     OsiBindError_normal_mode_parameters_protocol_version,
-    OsiBindError_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_BIT */,
+    OsiBindError_normal_mode_parameters_protocol_version_version_1 /* IMPORTED_LONG_NAMED_BIT */,
+    version_1 /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_OsiBindError_normal_mode_parameters_protocol_version,
     _encode_OsiBindError_normal_mode_parameters_protocol_version,
 } from "../OSIProtocolSpecification/OsiBindError-normal-mode-parameters-protocol-version.ta";
@@ -49,15 +50,23 @@ export {
     _encode_Presentation_selector,
 } from "../OSIProtocolSpecification/Presentation-selector.ta";
 export {
+    called_presentation_address_unknown /* IMPORTED_SHORT_NAMED_INTEGER */,
+    default_context_not_supported /* IMPORTED_SHORT_NAMED_INTEGER */,
+    local_limit_exceeded /* IMPORTED_SHORT_NAMED_INTEGER */,
+    no_PSAP_available /* IMPORTED_SHORT_NAMED_INTEGER */,
+    protocol_version_not_supported /* IMPORTED_SHORT_NAMED_INTEGER */,
     Provider_reason,
-    Provider_reason_called_presentation_address_unknown /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_default_context_not_supported /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_local_limit_exceeded /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_no_PSAP_available /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_protocol_version_not_supported /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_reason_not_specified /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_temporary_congestion /* IMPORTED_NAMED_INTEGER */,
-    Provider_reason_user_data_not_readable /* IMPORTED_NAMED_INTEGER */,
+    Provider_reason_called_presentation_address_unknown /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_default_context_not_supported /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_local_limit_exceeded /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_no_PSAP_available /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_protocol_version_not_supported /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_reason_not_specified /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_temporary_congestion /* IMPORTED_LONG_NAMED_INTEGER */,
+    Provider_reason_user_data_not_readable /* IMPORTED_LONG_NAMED_INTEGER */,
+    reason_not_specified /* IMPORTED_SHORT_NAMED_INTEGER */,
+    temporary_congestion /* IMPORTED_SHORT_NAMED_INTEGER */,
+    user_data_not_readable /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_Provider_reason,
     _encode_Provider_reason,
 } from "../OSIProtocolSpecification/Provider-reason.ta";

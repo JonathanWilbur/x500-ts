@@ -5,7 +5,7 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     TbsHandshakeAcc_encr_mode_non_aead,
     _decode_TbsHandshakeAcc_encr_mode_non_aead,
@@ -15,7 +15,7 @@ export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     TbsHandshakeAcc_encr_mode_non_aead,
     _decode_TbsHandshakeAcc_encr_mode_non_aead,

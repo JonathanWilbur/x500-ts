@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { ApplAbort } from "../Wrapper/ApplAbort.ta";
+import {
+    ApplAbort,
+    _decode_ApplAbort,
+    _encode_ApplAbort,
+} from "../Wrapper/ApplAbort.ta";
 import {
     DataTransferClient,
     _decode_DataTransferClient,
@@ -12,19 +16,55 @@ import {
     _decode_DataTransferServer,
     _encode_DataTransferServer,
 } from "../Wrapper/DataTransferServer.ta";
-import { DtSecAbort } from "../Wrapper/DtSecAbort.ta";
-import { HandshakeAcc } from "../Wrapper/HandshakeAcc.ta";
-import { HandshakeProAbort } from "../Wrapper/HandshakeProAbort.ta";
-import { HandshakeProRej } from "../Wrapper/HandshakeProRej.ta";
-import { HandshakeReq } from "../Wrapper/HandshakeReq.ta";
-import { HandshakeSecAbort } from "../Wrapper/HandshakeSecAbort.ta";
-import { HandshakeWrpRej } from "../Wrapper/HandshakeWrpRej.ta";
-import { ReleaseReq } from "../Wrapper/ReleaseReq.ta";
-import { ReleaseRsp } from "../Wrapper/ReleaseRsp.ta";
+import {
+    DtSecAbort,
+    _decode_DtSecAbort,
+    _encode_DtSecAbort,
+} from "../Wrapper/DtSecAbort.ta";
+import {
+    HandshakeAcc,
+    _decode_HandshakeAcc,
+    _encode_HandshakeAcc,
+} from "../Wrapper/HandshakeAcc.ta";
+import {
+    HandshakeProAbort,
+    _decode_HandshakeProAbort,
+    _encode_HandshakeProAbort,
+} from "../Wrapper/HandshakeProAbort.ta";
+import {
+    HandshakeProRej,
+    _decode_HandshakeProRej,
+    _encode_HandshakeProRej,
+} from "../Wrapper/HandshakeProRej.ta";
+import {
+    HandshakeReq,
+    _decode_HandshakeReq,
+    _encode_HandshakeReq,
+} from "../Wrapper/HandshakeReq.ta";
+import {
+    HandshakeSecAbort,
+    _decode_HandshakeSecAbort,
+    _encode_HandshakeSecAbort,
+} from "../Wrapper/HandshakeSecAbort.ta";
+import {
+    HandshakeWrpRej,
+    _decode_HandshakeWrpRej,
+    _encode_HandshakeWrpRej,
+} from "../Wrapper/HandshakeWrpRej.ta";
+import {
+    ReleaseReq,
+    _decode_ReleaseReq,
+    _encode_ReleaseReq,
+} from "../Wrapper/ReleaseReq.ta";
+import {
+    ReleaseRsp,
+    _decode_ReleaseRsp,
+    _encode_ReleaseRsp,
+} from "../Wrapper/ReleaseRsp.ta";
 export {
     ApplAbort,
-    _get_decoder_for_ApplAbort,
-    _get_encoder_for_ApplAbort,
+    _decode_ApplAbort,
+    _encode_ApplAbort,
 } from "../Wrapper/ApplAbort.ta";
 export {
     DataTransferClient,
@@ -38,48 +78,48 @@ export {
 } from "../Wrapper/DataTransferServer.ta";
 export {
     DtSecAbort,
-    _get_decoder_for_DtSecAbort,
-    _get_encoder_for_DtSecAbort,
+    _decode_DtSecAbort,
+    _encode_DtSecAbort,
 } from "../Wrapper/DtSecAbort.ta";
 export {
     HandshakeAcc,
-    _get_decoder_for_HandshakeAcc,
-    _get_encoder_for_HandshakeAcc,
+    _decode_HandshakeAcc,
+    _encode_HandshakeAcc,
 } from "../Wrapper/HandshakeAcc.ta";
 export {
     HandshakeProAbort,
-    _get_decoder_for_HandshakeProAbort,
-    _get_encoder_for_HandshakeProAbort,
+    _decode_HandshakeProAbort,
+    _encode_HandshakeProAbort,
 } from "../Wrapper/HandshakeProAbort.ta";
 export {
     HandshakeProRej,
-    _get_decoder_for_HandshakeProRej,
-    _get_encoder_for_HandshakeProRej,
+    _decode_HandshakeProRej,
+    _encode_HandshakeProRej,
 } from "../Wrapper/HandshakeProRej.ta";
 export {
     HandshakeReq,
-    _get_decoder_for_HandshakeReq,
-    _get_encoder_for_HandshakeReq,
+    _decode_HandshakeReq,
+    _encode_HandshakeReq,
 } from "../Wrapper/HandshakeReq.ta";
 export {
     HandshakeSecAbort,
-    _get_decoder_for_HandshakeSecAbort,
-    _get_encoder_for_HandshakeSecAbort,
+    _decode_HandshakeSecAbort,
+    _encode_HandshakeSecAbort,
 } from "../Wrapper/HandshakeSecAbort.ta";
 export {
     HandshakeWrpRej,
-    _get_decoder_for_HandshakeWrpRej,
-    _get_encoder_for_HandshakeWrpRej,
+    _decode_HandshakeWrpRej,
+    _encode_HandshakeWrpRej,
 } from "../Wrapper/HandshakeWrpRej.ta";
 export {
     ReleaseReq,
-    _get_decoder_for_ReleaseReq,
-    _get_encoder_for_ReleaseReq,
+    _decode_ReleaseReq,
+    _encode_ReleaseReq,
 } from "../Wrapper/ReleaseReq.ta";
 export {
     ReleaseRsp,
-    _get_decoder_for_ReleaseRsp,
-    _get_encoder_for_ReleaseRsp,
+    _decode_ReleaseRsp,
+    _encode_ReleaseRsp,
 } from "../Wrapper/ReleaseRsp.ta";
 
 /* START_OF_SYMBOL_DEFINITION WrapperPDU */

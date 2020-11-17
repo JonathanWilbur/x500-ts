@@ -8,7 +8,7 @@ import {
 import * as $ from "asn1-ts/dist/node/functional";
 import {
     Versions,
-    Versions_v1 /* IMPORTED_BIT */,
+    Versions_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Versions,
     _encode_Versions,
 } from "../DirectoryAbstractService/Versions.ta";
@@ -18,9 +18,11 @@ import {
     _encode_DSACredentials,
 } from "../DistributedOperations/DSACredentials.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_BIT */,
+    v2 /* IMPORTED_SHORT_NAMED_BIT */,
     Versions,
-    Versions_v1 /* IMPORTED_BIT */,
-    Versions_v2 /* IMPORTED_BIT */,
+    Versions_v1 /* IMPORTED_LONG_NAMED_BIT */,
+    Versions_v2 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Versions,
     _encode_Versions,
 } from "../DirectoryAbstractService/Versions.ta";

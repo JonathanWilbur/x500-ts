@@ -10,15 +10,17 @@ import {
     _decode_InitializationAbort_diag,
     _encode_InitializationAbort_diag,
     _enum_for_InitializationAbort_diag,
-} from "../AVL_management/InitializationAbort-diag.ta";
+} from "../AVL-management/InitializationAbort-diag.ta";
 export {
     InitializationAbort_diag,
-    InitializationAbort_diag_onlySingleVersionAllowed /* IMPORTED_ENUMERATION_ITEM */,
-    InitializationAbort_diag_unsupportedVersion /* IMPORTED_ENUMERATION_ITEM */,
+    InitializationAbort_diag_onlySingleVersionAllowed /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    InitializationAbort_diag_unsupportedVersion /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    onlySingleVersionAllowed /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    unsupportedVersion /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_InitializationAbort_diag,
     _encode_InitializationAbort_diag,
     _enum_for_InitializationAbort_diag,
-} from "../AVL_management/InitializationAbort-diag.ta";
+} from "../AVL-management/InitializationAbort-diag.ta";
 
 /* START_OF_SYMBOL_DEFINITION InitializationAbort */
 /**

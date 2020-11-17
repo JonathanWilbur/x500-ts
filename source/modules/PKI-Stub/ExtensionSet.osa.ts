@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { EXTENSION } from "../PKI_Stub/EXTENSION.oca";
-export { EXTENSION } from "../PKI_Stub/EXTENSION.oca";
+import { EXTENSION } from "../PKI-Stub/EXTENSION.oca";
+export { EXTENSION } from "../PKI-Stub/EXTENSION.oca";
 
 /* START_OF_SYMBOL_DEFINITION ExtensionSet */
 /**

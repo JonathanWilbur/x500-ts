@@ -6,7 +6,7 @@ import {
     _decode_OSI_PDU,
     _encode_OSI_PDU,
 } from "../OSIProtocolSpecification/OSI-PDU.ta";
-export { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.va";
+export { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.oa";
 export {
     OSI_PDU,
     _decode_OSI_PDU,

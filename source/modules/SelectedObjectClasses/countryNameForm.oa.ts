@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { country } from "../SelectedObjectClasses/country.oa";
 import { id_nf_countryNameForm } from "../SelectedObjectClasses/id-nf-countryNameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { country } from "../SelectedObjectClasses/country.oa";
 export { id_nf_countryNameForm } from "../SelectedObjectClasses/id-nf-countryNameForm.va";
 

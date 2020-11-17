@@ -5,12 +5,28 @@ import { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationL
 import { eepkCertificateRevocationList } from "../AuthenticationFramework/eepkCertificateRevocationList.oa";
 import { id_oc_cRLDistributionPoint } from "../AuthenticationFramework/id-oc-cRLDistributionPoint.va";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 export { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
 export { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
 export { eepkCertificateRevocationList } from "../AuthenticationFramework/eepkCertificateRevocationList.oa";
 export { id_oc_cRLDistributionPoint } from "../AuthenticationFramework/id-oc-cRLDistributionPoint.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 
 /* START_OF_SYMBOL_DEFINITION cRLDistributionPoint */
 /**
@@ -42,8 +58,7 @@ export const cRLDistributionPoint: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&Superclasses": undefined,
-    "&kind":
-        InformationFramework.ObjectClassKind_structural /* OBJECT_FIELD_SETTING */,
+    "&kind": structural /* OBJECT_FIELD_SETTING */,
     "&MandatoryAttributes": undefined,
     "&OptionalAttributes": [
         certificateRevocationList,

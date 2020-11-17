@@ -5,12 +5,16 @@ import {
     ASN1TagClass as _TagClass,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../PKI_Stub/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
-} from "../PKI_Stub/Certificate.ta";
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertOK */
 /**

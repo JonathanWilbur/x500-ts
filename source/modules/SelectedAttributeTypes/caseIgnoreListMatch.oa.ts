@@ -6,7 +6,9 @@ import {
 } from "../SelectedAttributeTypes/CaseIgnoreList.ta";
 import { id_mr_caseIgnoreListMatch } from "../SelectedAttributeTypes/id-mr-caseIgnoreListMatch.va";
 import { postalAddr } from "../SelectedAttributeTypes/postalAddr.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export {
     CaseIgnoreList,
     _decode_CaseIgnoreList,

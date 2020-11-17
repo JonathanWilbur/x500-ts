@@ -5,22 +5,26 @@ import {
     ASN1TagClass as _TagClass,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../PKI_Stub/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
-} from "../PKI_Stub/Certificate.ta";
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertReplaceReq_certs_Item */
 /**

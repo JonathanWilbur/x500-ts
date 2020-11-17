@@ -11,7 +11,9 @@ export {
     _encode_AttributeCertificateAssertion,
 } from "../AttributeCertificateDefinitions/AttributeCertificateAssertion.ta";
 export { id_mr_attributeCertificateMatch } from "../AttributeCertificateDefinitions/id-mr-attributeCertificateMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION attributeCertificateMatch */
 /**

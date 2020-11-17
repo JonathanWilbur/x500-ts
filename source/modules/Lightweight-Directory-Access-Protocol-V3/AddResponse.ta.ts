@@ -5,12 +5,12 @@ import {
     LDAPResult,
     _decode_LDAPResult,
     _encode_LDAPResult,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPResult.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPResult.ta";
 export {
     LDAPResult,
     _decode_LDAPResult,
     _encode_LDAPResult,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPResult.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPResult.ta";
 
 /* START_OF_SYMBOL_DEFINITION AddResponse */
 /**

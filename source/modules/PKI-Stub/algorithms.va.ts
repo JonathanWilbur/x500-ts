@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { ObjectIdentifier as _OID, OBJECT_IDENTIFIER } from "asn1-ts";
-import { ds } from "../PKI_Stub/ds.va";
-export { ds } from "../PKI_Stub/ds.va";
+import { ds } from "../PKI-Stub/ds.va";
+export { ds } from "../PKI-Stub/ds.va";
 
 /* START_OF_SYMBOL_DEFINITION algorithms */
 /**

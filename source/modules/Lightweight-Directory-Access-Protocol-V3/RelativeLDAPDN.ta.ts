@@ -5,12 +5,12 @@ import {
     LDAPString,
     _decode_LDAPString,
     _encode_LDAPString,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPString.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPString.ta";
 export {
     LDAPString,
     _decode_LDAPString,
     _encode_LDAPString,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPString.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPString.ta";
 
 /* START_OF_SYMBOL_DEFINITION RelativeLDAPDN */
 /**

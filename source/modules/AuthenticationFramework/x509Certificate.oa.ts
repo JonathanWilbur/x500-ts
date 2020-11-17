@@ -1,10 +1,14 @@
 /* eslint-disable */
+import {
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../AuthenticationFramework/Certificate.ta";
 import { id_lsx_x509Certificate } from "../AuthenticationFramework/id-lsx-x509Certificate.va";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
 export { id_lsx_x509Certificate } from "../AuthenticationFramework/id-lsx-x509Certificate.va";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";

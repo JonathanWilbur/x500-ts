@@ -28,6 +28,15 @@ export type AbandonProblem = INTEGER;
 export const AbandonProblem_noSuchOperation: AbandonProblem = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AbandonProblem_noSuchOperation */
 
+/* START_OF_SYMBOL_DEFINITION noSuchOperation */
+/**
+ * @summary AbandonProblem_noSuchOperation
+ * @constant
+ * @type {number}
+ */
+export const noSuchOperation: AbandonProblem = AbandonProblem_noSuchOperation; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION noSuchOperation */
+
 /* START_OF_SYMBOL_DEFINITION AbandonProblem_tooLate */
 /**
  * @summary AbandonProblem_tooLate
@@ -37,6 +46,15 @@ export const AbandonProblem_noSuchOperation: AbandonProblem = 1; /* LONG_NAMED_I
 export const AbandonProblem_tooLate: AbandonProblem = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AbandonProblem_tooLate */
 
+/* START_OF_SYMBOL_DEFINITION tooLate */
+/**
+ * @summary AbandonProblem_tooLate
+ * @constant
+ * @type {number}
+ */
+export const tooLate: AbandonProblem = AbandonProblem_tooLate; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION tooLate */
+
 /* START_OF_SYMBOL_DEFINITION AbandonProblem_cannotAbandon */
 /**
  * @summary AbandonProblem_cannotAbandon
@@ -45,6 +63,15 @@ export const AbandonProblem_tooLate: AbandonProblem = 2; /* LONG_NAMED_INTEGER_V
  */
 export const AbandonProblem_cannotAbandon: AbandonProblem = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AbandonProblem_cannotAbandon */
+
+/* START_OF_SYMBOL_DEFINITION cannotAbandon */
+/**
+ * @summary AbandonProblem_cannotAbandon
+ * @constant
+ * @type {number}
+ */
+export const cannotAbandon: AbandonProblem = AbandonProblem_cannotAbandon; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION cannotAbandon */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonProblem */
 let _cached_decoder_for_AbandonProblem: $.ASN1Decoder<

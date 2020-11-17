@@ -24,6 +24,14 @@ export type Period_weeks_bitWeek = BIT_STRING;
 export const Period_weeks_bitWeek_week1: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week1 */
 
+/* START_OF_SYMBOL_DEFINITION week1 */
+/**
+ * @summary week1
+ * @constant
+ */
+export const week1: number = Period_weeks_bitWeek_week1; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION week1 */
+
 /* START_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week2 */
 /**
  * @summary Period_weeks_bitWeek_week2
@@ -31,6 +39,14 @@ export const Period_weeks_bitWeek_week1: number = 0; /* LONG_NAMED_BIT */
  */
 export const Period_weeks_bitWeek_week2: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week2 */
+
+/* START_OF_SYMBOL_DEFINITION week2 */
+/**
+ * @summary week2
+ * @constant
+ */
+export const week2: number = Period_weeks_bitWeek_week2; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION week2 */
 
 /* START_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week3 */
 /**
@@ -40,6 +56,14 @@ export const Period_weeks_bitWeek_week2: number = 1; /* LONG_NAMED_BIT */
 export const Period_weeks_bitWeek_week3: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week3 */
 
+/* START_OF_SYMBOL_DEFINITION week3 */
+/**
+ * @summary week3
+ * @constant
+ */
+export const week3: number = Period_weeks_bitWeek_week3; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION week3 */
+
 /* START_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week4 */
 /**
  * @summary Period_weeks_bitWeek_week4
@@ -48,6 +72,14 @@ export const Period_weeks_bitWeek_week3: number = 2; /* LONG_NAMED_BIT */
 export const Period_weeks_bitWeek_week4: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week4 */
 
+/* START_OF_SYMBOL_DEFINITION week4 */
+/**
+ * @summary week4
+ * @constant
+ */
+export const week4: number = Period_weeks_bitWeek_week4; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION week4 */
+
 /* START_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week5 */
 /**
  * @summary Period_weeks_bitWeek_week5
@@ -55,6 +87,14 @@ export const Period_weeks_bitWeek_week4: number = 3; /* LONG_NAMED_BIT */
  */
 export const Period_weeks_bitWeek_week5: number = 4; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_weeks_bitWeek_week5 */
+
+/* START_OF_SYMBOL_DEFINITION week5 */
+/**
+ * @summary week5
+ * @constant
+ */
+export const week5: number = Period_weeks_bitWeek_week5; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION week5 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_weeks_bitWeek */
 let _cached_decoder_for_Period_weeks_bitWeek: $.ASN1Decoder<

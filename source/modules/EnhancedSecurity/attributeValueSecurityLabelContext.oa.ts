@@ -1,11 +1,15 @@
 /* eslint-disable */
 import { id_avc_attributeValueSecurityLabelContext } from "../EnhancedSecurity/id-avc-attributeValueSecurityLabelContext.va";
+import {
+    _decode_SignedSecurityLabel,
+    _encode_SignedSecurityLabel,
+} from "../EnhancedSecurity/SignedSecurityLabel.ta";
 import { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 export { id_avc_attributeValueSecurityLabelContext } from "../EnhancedSecurity/id-avc-attributeValueSecurityLabelContext.va";
 export {
     SignedSecurityLabel,
-    _get_decoder_for_SignedSecurityLabel,
-    _get_encoder_for_SignedSecurityLabel,
+    _decode_SignedSecurityLabel,
+    _encode_SignedSecurityLabel,
 } from "../EnhancedSecurity/SignedSecurityLabel.ta";
 export { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 

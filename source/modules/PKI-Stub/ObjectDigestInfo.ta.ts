@@ -11,27 +11,30 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     ObjectDigestInfo_digestedObjectType,
     _decode_ObjectDigestInfo_digestedObjectType,
     _encode_ObjectDigestInfo_digestedObjectType,
     _enum_for_ObjectDigestInfo_digestedObjectType,
-} from "../PKI_Stub/ObjectDigestInfo-digestedObjectType.ta";
+} from "../PKI-Stub/ObjectDigestInfo-digestedObjectType.ta";
 export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     ObjectDigestInfo_digestedObjectType,
-    ObjectDigestInfo_digestedObjectType_otherObjectTypes /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectDigestInfo_digestedObjectType_publicKey /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectDigestInfo_digestedObjectType_publicKeyCert /* IMPORTED_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_otherObjectTypes /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_publicKey /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_publicKeyCert /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    otherObjectTypes /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    publicKey /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    publicKeyCert /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ObjectDigestInfo_digestedObjectType,
     _encode_ObjectDigestInfo_digestedObjectType,
     _enum_for_ObjectDigestInfo_digestedObjectType,
-} from "../PKI_Stub/ObjectDigestInfo-digestedObjectType.ta";
+} from "../PKI-Stub/ObjectDigestInfo-digestedObjectType.ta";
 
 /* START_OF_SYMBOL_DEFINITION ObjectDigestInfo */
 /**

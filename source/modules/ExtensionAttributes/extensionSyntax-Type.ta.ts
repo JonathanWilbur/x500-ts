@@ -39,7 +39,7 @@ export class extensionSyntax_Type {
          * @public
          * @readonly
          */
-        readonly ext: extension_attribute["&ExtnType"],
+        readonly ext: _Element,
         /**
          * @summary Extensions that are not recognized.
          * @public
@@ -175,7 +175,7 @@ export function _decode_extensionSyntax_Type(el: _Element) {
                 extensionSyntax_Type._default_value_for_mandatory;
             let critical: OPTIONAL<BOOLEAN> =
                 extensionSyntax_Type._default_value_for_critical;
-            let ext!: extension_attribute["&ExtnType"];
+            let ext!: _Element;
             let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
@@ -191,8 +191,8 @@ export function _decode_extensionSyntax_Type(el: _Element) {
                     )(_el);
                 },
                 ext: (_el: _Element): void => {
-                    ext = $._decode_explicit<extension_attribute["&ExtnType"]>(
-                        () => extension_attribute.decoderFor["&ExtnType"]
+                    ext = $._decode_explicit<_Element>(
+                        () => $._decodeAny,
                     )(_el);
                 },
             };
@@ -274,7 +274,7 @@ export function _encode_extensionSyntax_Type(
                                 _TagClass.context,
                                 2,
                                 () =>
-                                    extension_attribute.encoderFor["&ExtnType"],
+                                    $._encodeAny,
                                 $.BER
                             )(value.ext, $.BER),
                         ],

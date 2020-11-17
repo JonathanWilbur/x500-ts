@@ -15,6 +15,7 @@ import { chainedRemoveEntry } from "../DistributedOperations/chainedRemoveEntry.
 import { chainedSearch } from "../DistributedOperations/chainedSearch.oa";
 import { dSABind } from "../DistributedOperations/dSABind.oa";
 import { IDM_PROTOCOL } from "../IDMProtocolSpecification/IDM-PROTOCOL.oca";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { id_idm_dsp } from "../DirectoryIDMProtocols/id-idm-dsp.va";
 export { chainedAbandon } from "../DistributedOperations/chainedAbandon.oa";
 export { chainedAddEntry } from "../DistributedOperations/chainedAddEntry.oa";

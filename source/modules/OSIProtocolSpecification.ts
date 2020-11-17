@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AARE_apdu_protocol_version,
     AARE_apdu_protocol_version_version1,
@@ -613,3 +614,4 @@ export {
     _decode_Transfer_syntax_name,
     _encode_Transfer_syntax_name,
 } from "./OSIProtocolSpecification/Transfer-syntax-name.ta";
+/* eslint-enable */

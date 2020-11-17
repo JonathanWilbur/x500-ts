@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { APPLICATION_CONTEXT } from "./DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 export {
     DAP_OSI_PDUs,
@@ -53,3 +54,4 @@ export {
     _decode_ShadowSupplierInitiatedDISP_OSI_PDUs,
     _encode_ShadowSupplierInitiatedDISP_OSI_PDUs,
 } from "./DirectoryOSIProtocols/ShadowSupplierInitiatedDISP-OSI-PDUs.ta";
+/* eslint-enable */

@@ -5,24 +5,34 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { abandonFailed } from "../DirectoryAbstractService/abandonFailed.oa";
 import {
+    _decode_LdapArgument,
+    _encode_LdapArgument,
+} from "../DirectoryAbstractService/LdapArgument.ta";
+import {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_ldapTransport } from "../CommonProtocolSpecification/id-opcode-ldapTransport.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 export { abandonFailed } from "../DirectoryAbstractService/abandonFailed.oa";
 export {
     LdapArgument,
-    _get_decoder_for_LdapArgument,
-    _get_encoder_for_LdapArgument,
+    _decode_LdapArgument,
+    _encode_LdapArgument,
 } from "../DirectoryAbstractService/LdapArgument.ta";
 export {
     LDAPMessage,
     _decode_LDAPMessage,
     _encode_LDAPMessage,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage.ta";
 
 /* START_OF_SYMBOL_DEFINITION ldapTransport */
 /**

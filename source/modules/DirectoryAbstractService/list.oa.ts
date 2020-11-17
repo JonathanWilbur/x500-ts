@@ -2,22 +2,36 @@
 import { id_opcode_list } from "../CommonProtocolSpecification/id-opcode-list.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
+import {
+    _decode_ListArgument,
+    _encode_ListArgument,
+} from "../DirectoryAbstractService/ListArgument.ta";
+import {
+    _decode_ListResult,
+    _encode_ListResult,
+} from "../DirectoryAbstractService/ListResult.ta";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_list } from "../CommonProtocolSpecification/id-opcode-list.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 export {
     ListArgument,
-    _get_decoder_for_ListArgument,
-    _get_encoder_for_ListArgument,
+    _decode_ListArgument,
+    _encode_ListArgument,
 } from "../DirectoryAbstractService/ListArgument.ta";
 export {
     ListResult,
-    _get_decoder_for_ListResult,
-    _get_encoder_for_ListResult,
+    _decode_ListResult,
+    _encode_ListResult,
 } from "../DirectoryAbstractService/ListResult.ta";
 export { nameError } from "../DirectoryAbstractService/nameError.oa";
 export { referral } from "../DirectoryAbstractService/referral.oa";

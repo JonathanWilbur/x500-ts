@@ -16,10 +16,13 @@ import {
     _encode_Transfer_syntax_name,
 } from "../OSIProtocolSpecification/Transfer-syntax-name.ta";
 export {
+    acceptance /* IMPORTED_SHORT_NAMED_INTEGER */,
+    provider_rejection /* IMPORTED_SHORT_NAMED_INTEGER */,
     Result,
-    Result_acceptance /* IMPORTED_NAMED_INTEGER */,
-    Result_provider_rejection /* IMPORTED_NAMED_INTEGER */,
-    Result_user_rejection /* IMPORTED_NAMED_INTEGER */,
+    Result_acceptance /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_provider_rejection /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_user_rejection /* IMPORTED_LONG_NAMED_INTEGER */,
+    user_rejection /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_Result,
     _encode_Result,
 } from "../OSIProtocolSpecification/Result.ta";

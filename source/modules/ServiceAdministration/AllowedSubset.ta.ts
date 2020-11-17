@@ -24,6 +24,14 @@ export type AllowedSubset = BIT_STRING;
 export const AllowedSubset_baseObject: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AllowedSubset_baseObject */
 
+/* START_OF_SYMBOL_DEFINITION baseObject */
+/**
+ * @summary baseObject
+ * @constant
+ */
+export const baseObject: number = AllowedSubset_baseObject; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION baseObject */
+
 /* START_OF_SYMBOL_DEFINITION AllowedSubset_oneLevel */
 /**
  * @summary AllowedSubset_oneLevel
@@ -32,6 +40,14 @@ export const AllowedSubset_baseObject: number = 0; /* LONG_NAMED_BIT */
 export const AllowedSubset_oneLevel: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AllowedSubset_oneLevel */
 
+/* START_OF_SYMBOL_DEFINITION oneLevel */
+/**
+ * @summary oneLevel
+ * @constant
+ */
+export const oneLevel: number = AllowedSubset_oneLevel; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION oneLevel */
+
 /* START_OF_SYMBOL_DEFINITION AllowedSubset_wholeSubtree */
 /**
  * @summary AllowedSubset_wholeSubtree
@@ -39,6 +55,14 @@ export const AllowedSubset_oneLevel: number = 1; /* LONG_NAMED_BIT */
  */
 export const AllowedSubset_wholeSubtree: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AllowedSubset_wholeSubtree */
+
+/* START_OF_SYMBOL_DEFINITION wholeSubtree */
+/**
+ * @summary wholeSubtree
+ * @constant
+ */
+export const wholeSubtree: number = AllowedSubset_wholeSubtree; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedSubset */
 let _cached_decoder_for_AllowedSubset: $.ASN1Decoder<

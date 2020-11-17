@@ -25,6 +25,15 @@ export type ServiceControls_priority = INTEGER;
 export const ServiceControls_priority_low: ServiceControls_priority = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceControls_priority_low */
 
+/* START_OF_SYMBOL_DEFINITION low */
+/**
+ * @summary ServiceControls_priority_low
+ * @constant
+ * @type {number}
+ */
+export const low: ServiceControls_priority = ServiceControls_priority_low; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION low */
+
 /* START_OF_SYMBOL_DEFINITION ServiceControls_priority_medium */
 /**
  * @summary ServiceControls_priority_medium
@@ -34,6 +43,15 @@ export const ServiceControls_priority_low: ServiceControls_priority = 0; /* LONG
 export const ServiceControls_priority_medium: ServiceControls_priority = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceControls_priority_medium */
 
+/* START_OF_SYMBOL_DEFINITION medium */
+/**
+ * @summary ServiceControls_priority_medium
+ * @constant
+ * @type {number}
+ */
+export const medium: ServiceControls_priority = ServiceControls_priority_medium; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION medium */
+
 /* START_OF_SYMBOL_DEFINITION ServiceControls_priority_high */
 /**
  * @summary ServiceControls_priority_high
@@ -42,6 +60,15 @@ export const ServiceControls_priority_medium: ServiceControls_priority = 1; /* L
  */
 export const ServiceControls_priority_high: ServiceControls_priority = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ServiceControls_priority_high */
+
+/* START_OF_SYMBOL_DEFINITION high */
+/**
+ * @summary ServiceControls_priority_high
+ * @constant
+ * @type {number}
+ */
+export const high: ServiceControls_priority = ServiceControls_priority_high; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION high */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls_priority */
 let _cached_decoder_for_ServiceControls_priority: $.ASN1Decoder<

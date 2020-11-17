@@ -1,8 +1,24 @@
 /* eslint-disable */
 import { id_oc_pkiCertPath } from "../AuthenticationFramework/id-oc-pkiCertPath.va";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { id_oc_pkiCertPath } from "../AuthenticationFramework/id-oc-pkiCertPath.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 
 /* START_OF_SYMBOL_DEFINITION pkiCertPath */
 /**
@@ -30,8 +46,7 @@ export const pkiCertPath: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&Superclasses": undefined,
-    "&kind":
-        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": undefined,
     "&ldapName": undefined,
     "&ldapDesc": "PKI Certification Path" /* OBJECT_FIELD_SETTING */,

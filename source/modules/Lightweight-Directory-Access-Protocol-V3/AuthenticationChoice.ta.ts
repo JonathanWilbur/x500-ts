@@ -9,12 +9,12 @@ import {
     SaslCredentials,
     _decode_SaslCredentials,
     _encode_SaslCredentials,
-} from "../Lightweight_Directory_Access_Protocol_V3/SaslCredentials.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SaslCredentials.ta";
 export {
     SaslCredentials,
     _decode_SaslCredentials,
     _encode_SaslCredentials,
-} from "../Lightweight_Directory_Access_Protocol_V3/SaslCredentials.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SaslCredentials.ta";
 
 /* START_OF_SYMBOL_DEFINITION AuthenticationChoice */
 /**

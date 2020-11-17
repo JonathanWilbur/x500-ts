@@ -25,6 +25,15 @@ export type ProtectionRequest = INTEGER;
 export const ProtectionRequest_none: ProtectionRequest = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ProtectionRequest_none */
 
+/* START_OF_SYMBOL_DEFINITION none */
+/**
+ * @summary ProtectionRequest_none
+ * @constant
+ * @type {number}
+ */
+export const none: ProtectionRequest = ProtectionRequest_none; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION none */
+
 /* START_OF_SYMBOL_DEFINITION ProtectionRequest_signed */
 /**
  * @summary ProtectionRequest_signed
@@ -33,6 +42,15 @@ export const ProtectionRequest_none: ProtectionRequest = 0; /* LONG_NAMED_INTEGE
  */
 export const ProtectionRequest_signed: ProtectionRequest = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ProtectionRequest_signed */
+
+/* START_OF_SYMBOL_DEFINITION signed */
+/**
+ * @summary ProtectionRequest_signed
+ * @constant
+ * @type {number}
+ */
+export const signed: ProtectionRequest = ProtectionRequest_signed; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION signed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ProtectionRequest */
 let _cached_decoder_for_ProtectionRequest: $.ASN1Decoder<

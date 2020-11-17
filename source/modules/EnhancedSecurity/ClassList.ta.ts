@@ -30,6 +30,14 @@ export type ClassList = BIT_STRING;
 export const ClassList_unmarked: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_unmarked */
 
+/* START_OF_SYMBOL_DEFINITION unmarked */
+/**
+ * @summary unmarked
+ * @constant
+ */
+export const unmarked: number = ClassList_unmarked; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION unmarked */
+
 /* START_OF_SYMBOL_DEFINITION ClassList_unclassified */
 /**
  * @summary ClassList_unclassified
@@ -37,6 +45,14 @@ export const ClassList_unmarked: number = 0; /* LONG_NAMED_BIT */
  */
 export const ClassList_unclassified: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_unclassified */
+
+/* START_OF_SYMBOL_DEFINITION unclassified */
+/**
+ * @summary unclassified
+ * @constant
+ */
+export const unclassified: number = ClassList_unclassified; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION unclassified */
 
 /* START_OF_SYMBOL_DEFINITION ClassList_restricted */
 /**
@@ -46,6 +62,14 @@ export const ClassList_unclassified: number = 1; /* LONG_NAMED_BIT */
 export const ClassList_restricted: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_restricted */
 
+/* START_OF_SYMBOL_DEFINITION restricted */
+/**
+ * @summary restricted
+ * @constant
+ */
+export const restricted: number = ClassList_restricted; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION restricted */
+
 /* START_OF_SYMBOL_DEFINITION ClassList_confidential */
 /**
  * @summary ClassList_confidential
@@ -53,6 +77,14 @@ export const ClassList_restricted: number = 2; /* LONG_NAMED_BIT */
  */
 export const ClassList_confidential: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_confidential */
+
+/* START_OF_SYMBOL_DEFINITION confidential */
+/**
+ * @summary confidential
+ * @constant
+ */
+export const confidential: number = ClassList_confidential; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION confidential */
 
 /* START_OF_SYMBOL_DEFINITION ClassList_secret */
 /**
@@ -62,6 +94,14 @@ export const ClassList_confidential: number = 3; /* LONG_NAMED_BIT */
 export const ClassList_secret: number = 4; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_secret */
 
+/* START_OF_SYMBOL_DEFINITION secret */
+/**
+ * @summary secret
+ * @constant
+ */
+export const secret: number = ClassList_secret; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION secret */
+
 /* START_OF_SYMBOL_DEFINITION ClassList_topSecret */
 /**
  * @summary ClassList_topSecret
@@ -69,6 +109,14 @@ export const ClassList_secret: number = 4; /* LONG_NAMED_BIT */
  */
 export const ClassList_topSecret: number = 5; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION ClassList_topSecret */
+
+/* START_OF_SYMBOL_DEFINITION topSecret */
+/**
+ * @summary topSecret
+ * @constant
+ */
+export const topSecret: number = ClassList_topSecret; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION topSecret */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ClassList */
 let _cached_decoder_for_ClassList: $.ASN1Decoder<ClassList> | null = null;

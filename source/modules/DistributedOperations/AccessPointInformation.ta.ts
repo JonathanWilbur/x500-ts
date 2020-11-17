@@ -13,7 +13,7 @@ import {
 } from "../DistributedOperations/MasterAndShadowAccessPoints.ta";
 import {
     MasterOrShadowAccessPoint_category,
-    MasterOrShadowAccessPoint_category_master /* IMPORTED_ENUMERATION_ITEM */,
+    MasterOrShadowAccessPoint_category_master /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_MasterOrShadowAccessPoint_category,
     _encode_MasterOrShadowAccessPoint_category,
     _enum_for_MasterOrShadowAccessPoint_category,
@@ -39,10 +39,13 @@ export {
     _encode_MasterAndShadowAccessPoints,
 } from "../DistributedOperations/MasterAndShadowAccessPoints.ta";
 export {
+    master /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     MasterOrShadowAccessPoint_category,
-    MasterOrShadowAccessPoint_category_master /* IMPORTED_ENUMERATION_ITEM */,
-    MasterOrShadowAccessPoint_category_shadow /* IMPORTED_ENUMERATION_ITEM */,
-    MasterOrShadowAccessPoint_category_writeableCopy /* IMPORTED_ENUMERATION_ITEM */,
+    MasterOrShadowAccessPoint_category_master /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    MasterOrShadowAccessPoint_category_shadow /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    MasterOrShadowAccessPoint_category_writeableCopy /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    shadow /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    writeableCopy /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_MasterOrShadowAccessPoint_category,
     _encode_MasterOrShadowAccessPoint_category,
     _enum_for_MasterOrShadowAccessPoint_category,

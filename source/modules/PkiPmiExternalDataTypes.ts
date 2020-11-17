@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AccessDescription,
     _decode_AccessDescription,
@@ -522,3 +523,4 @@ export {
     _decode_X121Address,
     _encode_X121Address,
 } from "./PkiPmiExternalDataTypes/X121Address.ta";
+/* eslint-enable */

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AAIssuingDistPointSyntax,
     _decode_AAIssuingDistPointSyntax,
@@ -458,8 +459,8 @@ export {
     _encode_OrderedListSyntax,
     _enum_for_OrderedListSyntax,
 } from "./CertificateExtensions/OrderedListSyntax.ta";
-export { TYPE_IDENTIFIER } from "./CertificateExtensions/OTHER-NAME.oca";
-export { TYPE_IDENTIFIER } from "./CertificateExtensions/OTHER-REFERRAL.oca";
+export { OTHER_NAME } from "./CertificateExtensions/OTHER-NAME.oca";
+export { OTHER_REFERRAL } from "./CertificateExtensions/OTHER-REFERRAL.oca";
 export {
     PerAuthorityScope,
     _decode_PerAuthorityScope,
@@ -623,3 +624,4 @@ export {
     _decode_ToBeRevokedSyntax,
     _encode_ToBeRevokedSyntax,
 } from "./CertificateExtensions/ToBeRevokedSyntax.ta";
+/* eslint-enable */

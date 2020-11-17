@@ -6,7 +6,7 @@ import {
     _decode_OSI_PDU,
     _encode_OSI_PDU,
 } from "../OSIProtocolSpecification/OSI-PDU.ta";
-export { shadowSupplierInitiatedAsynchronousAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAsynchronousAC.va";
+export { shadowSupplierInitiatedAsynchronousAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAsynchronousAC.oa";
 export {
     OSI_PDU,
     _decode_OSI_PDU,

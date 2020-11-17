@@ -8,6 +8,7 @@ import {
 import * as $ from "asn1-ts/dist/node/functional";
 import {
     ObjectClassKind,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_ObjectClassKind,
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
@@ -15,10 +16,13 @@ import {
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     ObjectClassKind,
-    ObjectClassKind_abstract /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectClassKind_auxiliary /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectClassKind_structural /* IMPORTED_ENUMERATION_ITEM */,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ObjectClassKind,
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
@@ -109,7 +113,7 @@ export class ObjectClassInformation {
      * @method
      */
     public static get _default_value_for_kind() {
-        return InformationFramework.ObjectClassKind_structural;
+        return ObjectClassKind_structural;
     }
     /**
      * @summary The enum used as the type of the component `kind`

@@ -9,12 +9,12 @@ import {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 export {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertReq */
 /**

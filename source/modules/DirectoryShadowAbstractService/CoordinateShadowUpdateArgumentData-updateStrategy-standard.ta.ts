@@ -35,6 +35,15 @@ export type CoordinateShadowUpdateArgumentData_updateStrategy_standard =
 export const CoordinateShadowUpdateArgumentData_updateStrategy_standard_noChanges: CoordinateShadowUpdateArgumentData_updateStrategy_standard = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy_standard_noChanges */
 
+/* START_OF_SYMBOL_DEFINITION noChanges */
+/**
+ * @summary noChanges
+ * @constant
+ * @type {number}
+ */
+export const noChanges: CoordinateShadowUpdateArgumentData_updateStrategy_standard = CoordinateShadowUpdateArgumentData_updateStrategy_standard_noChanges; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION noChanges */
+
 /* START_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremental */
 /**
  * @summary CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremental
@@ -44,6 +53,15 @@ export const CoordinateShadowUpdateArgumentData_updateStrategy_standard_noChange
 export const CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremental: CoordinateShadowUpdateArgumentData_updateStrategy_standard = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremental */
 
+/* START_OF_SYMBOL_DEFINITION incremental */
+/**
+ * @summary incremental
+ * @constant
+ * @type {number}
+ */
+export const incremental: CoordinateShadowUpdateArgumentData_updateStrategy_standard = CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremental; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION incremental */
+
 /* START_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy_standard_total */
 /**
  * @summary CoordinateShadowUpdateArgumentData_updateStrategy_standard_total
@@ -52,6 +70,15 @@ export const CoordinateShadowUpdateArgumentData_updateStrategy_standard_incremen
  */
 export const CoordinateShadowUpdateArgumentData_updateStrategy_standard_total: CoordinateShadowUpdateArgumentData_updateStrategy_standard = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy_standard_total */
+
+/* START_OF_SYMBOL_DEFINITION total */
+/**
+ * @summary total
+ * @constant
+ * @type {number}
+ */
+export const total: CoordinateShadowUpdateArgumentData_updateStrategy_standard = CoordinateShadowUpdateArgumentData_updateStrategy_standard_total; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION total */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
 let _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard: $.ASN1Decoder<

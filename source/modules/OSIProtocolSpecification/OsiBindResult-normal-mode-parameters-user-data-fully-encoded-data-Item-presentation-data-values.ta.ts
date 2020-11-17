@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-export { ABSTRACT_SYNTAX } from "../OSIProtocolSpecification/ABSTRACT-SYNTAX.oca";
 
 /* START_OF_SYMBOL_DEFINITION OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 /**

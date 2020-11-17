@@ -9,22 +9,22 @@ import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 import {
     ModifyRequest_changes_change,
     _decode_ModifyRequest_changes_change,
     _encode_ModifyRequest_changes_change,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest-changes-change.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest-changes-change.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
     ModifyRequest_changes_change,
     _decode_ModifyRequest_changes_change,
     _encode_ModifyRequest_changes_change,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest-changes-change.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest-changes-change.ta";
 
 /* START_OF_SYMBOL_DEFINITION ModifyRequest */
 /**

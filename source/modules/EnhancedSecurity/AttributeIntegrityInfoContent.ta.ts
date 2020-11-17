@@ -5,7 +5,11 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { AttribsHash } from "../EnhancedSecurity/AttribsHash.ta";
+import {
+    AttribsHash,
+    _decode_AttribsHash,
+    _encode_AttribsHash,
+} from "../EnhancedSecurity/AttribsHash.ta";
 import {
     Scope,
     _decode_Scope,
@@ -18,8 +22,8 @@ import {
 } from "../EnhancedSecurity/Signer.ta";
 export {
     AttribsHash,
-    _get_decoder_for_AttribsHash,
-    _get_encoder_for_AttribsHash,
+    _decode_AttribsHash,
+    _encode_AttribsHash,
 } from "../EnhancedSecurity/AttribsHash.ta";
 export {
     Scope,

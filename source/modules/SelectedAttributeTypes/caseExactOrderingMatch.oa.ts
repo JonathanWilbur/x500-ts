@@ -6,7 +6,9 @@ import {
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 export { id_mr_caseExactOrderingMatch } from "../SelectedAttributeTypes/id-mr-caseExactOrderingMatch.va";
 export {

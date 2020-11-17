@@ -8,11 +8,16 @@ import {
 } from "../SelectedAttributeTypes/Period-weeks-bitWeek.ta";
 export {
     Period_weeks_bitWeek,
-    Period_weeks_bitWeek_week1 /* IMPORTED_BIT */,
-    Period_weeks_bitWeek_week2 /* IMPORTED_BIT */,
-    Period_weeks_bitWeek_week3 /* IMPORTED_BIT */,
-    Period_weeks_bitWeek_week4 /* IMPORTED_BIT */,
-    Period_weeks_bitWeek_week5 /* IMPORTED_BIT */,
+    Period_weeks_bitWeek_week1 /* IMPORTED_LONG_NAMED_BIT */,
+    Period_weeks_bitWeek_week2 /* IMPORTED_LONG_NAMED_BIT */,
+    Period_weeks_bitWeek_week3 /* IMPORTED_LONG_NAMED_BIT */,
+    Period_weeks_bitWeek_week4 /* IMPORTED_LONG_NAMED_BIT */,
+    Period_weeks_bitWeek_week5 /* IMPORTED_LONG_NAMED_BIT */,
+    week1 /* IMPORTED_SHORT_NAMED_BIT */,
+    week2 /* IMPORTED_SHORT_NAMED_BIT */,
+    week3 /* IMPORTED_SHORT_NAMED_BIT */,
+    week4 /* IMPORTED_SHORT_NAMED_BIT */,
+    week5 /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_Period_weeks_bitWeek,
     _encode_Period_weeks_bitWeek,
 } from "../SelectedAttributeTypes/Period-weeks-bitWeek.ta";

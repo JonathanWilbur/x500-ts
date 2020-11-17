@@ -4,7 +4,9 @@ import { id_mr_extensionPresenceMatch } from "../AttributeCertificateDefinitions
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { id_mr_extensionPresenceMatch } from "../AttributeCertificateDefinitions/id-mr-extensionPresenceMatch.va";
 export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION extensionPresenceMatch */
 /**

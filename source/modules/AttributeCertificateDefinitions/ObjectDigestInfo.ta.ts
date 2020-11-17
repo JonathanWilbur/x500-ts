@@ -20,9 +20,12 @@ import {
 } from "../AuthenticationFramework/AlgorithmIdentifier.ta";
 export {
     ObjectDigestInfo_digestedObjectType,
-    ObjectDigestInfo_digestedObjectType_otherObjectTypes /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectDigestInfo_digestedObjectType_publicKey /* IMPORTED_ENUMERATION_ITEM */,
-    ObjectDigestInfo_digestedObjectType_publicKeyCert /* IMPORTED_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_otherObjectTypes /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_publicKey /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectDigestInfo_digestedObjectType_publicKeyCert /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    otherObjectTypes /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    publicKey /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    publicKeyCert /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ObjectDigestInfo_digestedObjectType,
     _encode_ObjectDigestInfo_digestedObjectType,
     _enum_for_ObjectDigestInfo_digestedObjectType,

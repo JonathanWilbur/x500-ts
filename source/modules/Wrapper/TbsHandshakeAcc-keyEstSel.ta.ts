@@ -5,12 +5,12 @@ import {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 export {
     AlgorithmWithInvoke,
     _decode_AlgorithmWithInvoke,
     _encode_AlgorithmWithInvoke,
-} from "../PKI_Stub/AlgorithmWithInvoke.ta";
+} from "../PKI-Stub/AlgorithmWithInvoke.ta";
 
 /* START_OF_SYMBOL_DEFINITION TbsHandshakeAcc_keyEstSel */
 /**

@@ -1,5 +1,8 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 import { id_at_x121Address } from "../SelectedAttributeTypes/id-at-x121Address.va";
 import { numericString } from "../SelectedAttributeTypes/numericString.oa";
 import { numericStringMatch } from "../SelectedAttributeTypes/numericStringMatch.oa";
@@ -9,6 +12,22 @@ import {
     _encode_X121Address,
 } from "../SelectedAttributeTypes/X121Address.ta";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_at_x121Address } from "../SelectedAttributeTypes/id-at-x121Address.va";
 export { numericString } from "../SelectedAttributeTypes/numericString.oa";
 export { numericStringMatch } from "../SelectedAttributeTypes/numericStringMatch.oa";
@@ -58,8 +77,7 @@ export const x121Address: ATTRIBUTE = {
     "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
-    "&usage":
-        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage": userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION x121Address */

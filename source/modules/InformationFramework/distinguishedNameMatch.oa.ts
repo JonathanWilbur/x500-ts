@@ -6,6 +6,7 @@ import {
 import { id_mr_distinguishedNameMatch } from "../InformationFramework/id-mr-distinguishedNameMatch.va";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { dn } from "../SelectedAttributeTypes/dn.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
     DistinguishedName,
     _decode_DistinguishedName,
@@ -13,6 +14,7 @@ export {
 } from "../InformationFramework/DistinguishedName.ta";
 export { id_mr_distinguishedNameMatch } from "../InformationFramework/id-mr-distinguishedNameMatch.va";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { dn } from "../SelectedAttributeTypes/dn.oa";
 
 /* START_OF_SYMBOL_DEFINITION distinguishedNameMatch */

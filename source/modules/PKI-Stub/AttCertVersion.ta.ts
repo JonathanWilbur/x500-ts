@@ -25,6 +25,15 @@ export type AttCertVersion = INTEGER;
 export const AttCertVersion_v2: AttCertVersion = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION AttCertVersion_v2 */
 
+/* START_OF_SYMBOL_DEFINITION v2 */
+/**
+ * @summary AttCertVersion_v2
+ * @constant
+ * @type {number}
+ */
+export const v2: AttCertVersion = AttCertVersion_v2; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION v2 */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertVersion */
 let _cached_decoder_for_AttCertVersion: $.ASN1Decoder<
     AttCertVersion

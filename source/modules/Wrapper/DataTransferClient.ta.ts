@@ -1,17 +1,25 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { DataTransferClientAE } from "../Wrapper/DataTransferClientAE.ta";
-import { DataTransferClientNEA } from "../Wrapper/DataTransferClientNEA.ta";
+import {
+    DataTransferClientAE,
+    _decode_DataTransferClientAE,
+    _encode_DataTransferClientAE,
+} from "../Wrapper/DataTransferClientAE.ta";
+import {
+    DataTransferClientNEA,
+    _decode_DataTransferClientNEA,
+    _encode_DataTransferClientNEA,
+} from "../Wrapper/DataTransferClientNEA.ta";
 export {
     DataTransferClientAE,
-    _get_decoder_for_DataTransferClientAE,
-    _get_encoder_for_DataTransferClientAE,
+    _decode_DataTransferClientAE,
+    _encode_DataTransferClientAE,
 } from "../Wrapper/DataTransferClientAE.ta";
 export {
     DataTransferClientNEA,
-    _get_decoder_for_DataTransferClientNEA,
-    _get_encoder_for_DataTransferClientNEA,
+    _decode_DataTransferClientNEA,
+    _encode_DataTransferClientNEA,
 } from "../Wrapper/DataTransferClientNEA.ta";
 
 /* START_OF_SYMBOL_DEFINITION DataTransferClient */

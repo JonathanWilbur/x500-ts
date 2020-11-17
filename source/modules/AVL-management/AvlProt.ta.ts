@@ -5,132 +5,132 @@ import {
     AbortAVL,
     _decode_AbortAVL,
     _encode_AbortAVL,
-} from "../AVL_management/AbortAVL.ta";
+} from "../AVL-management/AbortAVL.ta";
 import {
     AddAvlReq,
     _decode_AddAvlReq,
     _encode_AddAvlReq,
-} from "../AVL_management/AddAvlReq.ta";
+} from "../AVL-management/AddAvlReq.ta";
 import {
     AddAvlRsp,
     _decode_AddAvlRsp,
     _encode_AddAvlRsp,
-} from "../AVL_management/AddAvlRsp.ta";
+} from "../AVL-management/AddAvlRsp.ta";
 import {
     CertReq,
     _decode_CertReq,
     _encode_CertReq,
-} from "../AVL_management/CertReq.ta";
+} from "../AVL-management/CertReq.ta";
 import {
     CertRsp,
     _decode_CertRsp,
     _encode_CertRsp,
-} from "../AVL_management/CertRsp.ta";
+} from "../AVL-management/CertRsp.ta";
 import {
     DeleteAvlReq,
     _decode_DeleteAvlReq,
     _encode_DeleteAvlReq,
-} from "../AVL_management/DeleteAvlReq.ta";
+} from "../AVL-management/DeleteAvlReq.ta";
 import {
     DeleteAvlRsp,
     _decode_DeleteAvlRsp,
     _encode_DeleteAvlRsp,
-} from "../AVL_management/DeleteAvlRsp.ta";
+} from "../AVL-management/DeleteAvlRsp.ta";
 import {
     InitializationAbort,
     _decode_InitializationAbort,
     _encode_InitializationAbort,
-} from "../AVL_management/InitializationAbort.ta";
+} from "../AVL-management/InitializationAbort.ta";
 import {
     InitializationAcc,
     _decode_InitializationAcc,
     _encode_InitializationAcc,
-} from "../AVL_management/InitializationAcc.ta";
+} from "../AVL-management/InitializationAcc.ta";
 import {
     InitializationRec,
     _decode_InitializationRec,
     _encode_InitializationRec,
-} from "../AVL_management/InitializationRec.ta";
+} from "../AVL-management/InitializationRec.ta";
 import {
     InitializationRej,
     _decode_InitializationRej,
     _encode_InitializationRej,
-} from "../AVL_management/InitializationRej.ta";
+} from "../AVL-management/InitializationRej.ta";
 import {
     ReplaceAvlReq,
     _decode_ReplaceAvlReq,
     _encode_ReplaceAvlReq,
-} from "../AVL_management/ReplaceAvlReq.ta";
+} from "../AVL-management/ReplaceAvlReq.ta";
 import {
     ReplaceAvlRsp,
     _decode_ReplaceAvlRsp,
     _encode_ReplaceAvlRsp,
-} from "../AVL_management/ReplaceAvlRsp.ta";
+} from "../AVL-management/ReplaceAvlRsp.ta";
 export {
     AbortAVL,
     _decode_AbortAVL,
     _encode_AbortAVL,
-} from "../AVL_management/AbortAVL.ta";
+} from "../AVL-management/AbortAVL.ta";
 export {
     AddAvlReq,
     _decode_AddAvlReq,
     _encode_AddAvlReq,
-} from "../AVL_management/AddAvlReq.ta";
+} from "../AVL-management/AddAvlReq.ta";
 export {
     AddAvlRsp,
     _decode_AddAvlRsp,
     _encode_AddAvlRsp,
-} from "../AVL_management/AddAvlRsp.ta";
+} from "../AVL-management/AddAvlRsp.ta";
 export {
     CertReq,
     _decode_CertReq,
     _encode_CertReq,
-} from "../AVL_management/CertReq.ta";
+} from "../AVL-management/CertReq.ta";
 export {
     CertRsp,
     _decode_CertRsp,
     _encode_CertRsp,
-} from "../AVL_management/CertRsp.ta";
+} from "../AVL-management/CertRsp.ta";
 export {
     DeleteAvlReq,
     _decode_DeleteAvlReq,
     _encode_DeleteAvlReq,
-} from "../AVL_management/DeleteAvlReq.ta";
+} from "../AVL-management/DeleteAvlReq.ta";
 export {
     DeleteAvlRsp,
     _decode_DeleteAvlRsp,
     _encode_DeleteAvlRsp,
-} from "../AVL_management/DeleteAvlRsp.ta";
+} from "../AVL-management/DeleteAvlRsp.ta";
 export {
     InitializationAbort,
     _decode_InitializationAbort,
     _encode_InitializationAbort,
-} from "../AVL_management/InitializationAbort.ta";
+} from "../AVL-management/InitializationAbort.ta";
 export {
     InitializationAcc,
     _decode_InitializationAcc,
     _encode_InitializationAcc,
-} from "../AVL_management/InitializationAcc.ta";
+} from "../AVL-management/InitializationAcc.ta";
 export {
     InitializationRec,
     _decode_InitializationRec,
     _encode_InitializationRec,
-} from "../AVL_management/InitializationRec.ta";
+} from "../AVL-management/InitializationRec.ta";
 export {
     InitializationRej,
     _decode_InitializationRej,
     _encode_InitializationRej,
-} from "../AVL_management/InitializationRej.ta";
+} from "../AVL-management/InitializationRej.ta";
 export {
     ReplaceAvlReq,
     _decode_ReplaceAvlReq,
     _encode_ReplaceAvlReq,
-} from "../AVL_management/ReplaceAvlReq.ta";
+} from "../AVL-management/ReplaceAvlReq.ta";
 export {
     ReplaceAvlRsp,
     _decode_ReplaceAvlRsp,
     _encode_ReplaceAvlRsp,
-} from "../AVL_management/ReplaceAvlRsp.ta";
+} from "../AVL-management/ReplaceAvlRsp.ta";
 
 /* START_OF_SYMBOL_DEFINITION AvlProt */
 /**

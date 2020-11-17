@@ -1,11 +1,15 @@
 /* eslint-disable */
 import { ASN1Element as _Element } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../AuthenticationFramework/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../AuthenticationFramework/Certificate.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
 
 /* START_OF_SYMBOL_DEFINITION CrossCertificates */

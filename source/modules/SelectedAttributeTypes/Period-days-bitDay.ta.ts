@@ -24,6 +24,14 @@ export type Period_days_bitDay = BIT_STRING;
 export const Period_days_bitDay_sunday: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_sunday */
 
+/* START_OF_SYMBOL_DEFINITION sunday */
+/**
+ * @summary sunday
+ * @constant
+ */
+export const sunday: number = Period_days_bitDay_sunday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION sunday */
+
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_monday */
 /**
  * @summary Period_days_bitDay_monday
@@ -31,6 +39,14 @@ export const Period_days_bitDay_sunday: number = 0; /* LONG_NAMED_BIT */
  */
 export const Period_days_bitDay_monday: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_monday */
+
+/* START_OF_SYMBOL_DEFINITION monday */
+/**
+ * @summary monday
+ * @constant
+ */
+export const monday: number = Period_days_bitDay_monday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION monday */
 
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_tuesday */
 /**
@@ -40,6 +56,14 @@ export const Period_days_bitDay_monday: number = 1; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_tuesday: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_tuesday */
 
+/* START_OF_SYMBOL_DEFINITION tuesday */
+/**
+ * @summary tuesday
+ * @constant
+ */
+export const tuesday: number = Period_days_bitDay_tuesday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION tuesday */
+
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_wednesday */
 /**
  * @summary Period_days_bitDay_wednesday
@@ -47,6 +71,14 @@ export const Period_days_bitDay_tuesday: number = 2; /* LONG_NAMED_BIT */
  */
 export const Period_days_bitDay_wednesday: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_wednesday */
+
+/* START_OF_SYMBOL_DEFINITION wednesday */
+/**
+ * @summary wednesday
+ * @constant
+ */
+export const wednesday: number = Period_days_bitDay_wednesday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION wednesday */
 
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_thursday */
 /**
@@ -56,6 +88,14 @@ export const Period_days_bitDay_wednesday: number = 3; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_thursday: number = 4; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_thursday */
 
+/* START_OF_SYMBOL_DEFINITION thursday */
+/**
+ * @summary thursday
+ * @constant
+ */
+export const thursday: number = Period_days_bitDay_thursday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION thursday */
+
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_friday */
 /**
  * @summary Period_days_bitDay_friday
@@ -64,6 +104,14 @@ export const Period_days_bitDay_thursday: number = 4; /* LONG_NAMED_BIT */
 export const Period_days_bitDay_friday: number = 5; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_friday */
 
+/* START_OF_SYMBOL_DEFINITION friday */
+/**
+ * @summary friday
+ * @constant
+ */
+export const friday: number = Period_days_bitDay_friday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION friday */
+
 /* START_OF_SYMBOL_DEFINITION Period_days_bitDay_saturday */
 /**
  * @summary Period_days_bitDay_saturday
@@ -71,6 +119,14 @@ export const Period_days_bitDay_friday: number = 5; /* LONG_NAMED_BIT */
  */
 export const Period_days_bitDay_saturday: number = 6; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION Period_days_bitDay_saturday */
+
+/* START_OF_SYMBOL_DEFINITION saturday */
+/**
+ * @summary saturday
+ * @constant
+ */
+export const saturday: number = Period_days_bitDay_saturday; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION saturday */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_days_bitDay */
 let _cached_decoder_for_Period_days_bitDay: $.ASN1Decoder<

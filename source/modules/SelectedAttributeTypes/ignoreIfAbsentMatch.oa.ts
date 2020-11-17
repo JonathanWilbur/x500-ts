@@ -1,7 +1,9 @@
 /* eslint-disable */
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_ignoreIfAbsentMatch } from "../SelectedAttributeTypes/id-mr-ignoreIfAbsentMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_ignoreIfAbsentMatch } from "../SelectedAttributeTypes/id-mr-ignoreIfAbsentMatch.va";
 
 /* START_OF_SYMBOL_DEFINITION ignoreIfAbsentMatch */

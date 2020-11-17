@@ -5,7 +5,11 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../AuthenticationFramework/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../AuthenticationFramework/Certificate.ta";
 import {
     CertificatePair,
     _decode_CertificatePair,
@@ -13,8 +17,8 @@ import {
 } from "../AuthenticationFramework/CertificatePair.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
 export {
     CertificatePair,

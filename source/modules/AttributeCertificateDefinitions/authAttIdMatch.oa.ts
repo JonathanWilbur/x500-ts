@@ -11,7 +11,9 @@ export {
     _encode_AuthorityAttributeIdentifierSyntax,
 } from "../AttributeCertificateDefinitions/AuthorityAttributeIdentifierSyntax.ta";
 export { id_mr_authAttIdMatch } from "../AttributeCertificateDefinitions/id-mr-authAttIdMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION authAttIdMatch */
 /**

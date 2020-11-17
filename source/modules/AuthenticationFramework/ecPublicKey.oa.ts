@@ -4,14 +4,14 @@ import { id_ecPublicKey } from "../AuthenticationFramework/id-ecPublicKey.va";
 import {
     _decode_SupportedCurves,
     _encode_SupportedCurves,
-} from "../AuthenticationFramework/SupportedCurves.ta";
+} from "../AuthenticationFramework/SupportedCurves.vsa";
 export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
 export { id_ecPublicKey } from "../AuthenticationFramework/id-ecPublicKey.va";
 export {
     SupportedCurves,
     _decode_SupportedCurves,
     _encode_SupportedCurves,
-} from "../AuthenticationFramework/SupportedCurves.ta";
+} from "../AuthenticationFramework/SupportedCurves.vsa";
 
 /* START_OF_SYMBOL_DEFINITION ecPublicKey */
 /**

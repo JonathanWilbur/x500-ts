@@ -6,7 +6,7 @@ import {
     _decode_IDM_PDU,
     _encode_IDM_PDU,
 } from "../IDMProtocolSpecification/IDM-PDU.ta";
-export { dsp_ip } from "../DirectoryIDMProtocols/dsp-ip.va";
+export { dsp_ip } from "../DirectoryIDMProtocols/dsp-ip.oa";
 export {
     IDM_PDU,
     _decode_IDM_PDU,

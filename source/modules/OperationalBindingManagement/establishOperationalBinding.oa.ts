@@ -2,19 +2,33 @@
 import { id_op_establishOperationalBinding } from "../CommonProtocolSpecification/id-op-establishOperationalBinding.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
+import {
+    _decode_EstablishOperationalBindingArgument,
+    _encode_EstablishOperationalBindingArgument,
+} from "../OperationalBindingManagement/EstablishOperationalBindingArgument.ta";
+import {
+    _decode_EstablishOperationalBindingResult,
+    _encode_EstablishOperationalBindingResult,
+} from "../OperationalBindingManagement/EstablishOperationalBindingResult.ta";
 import { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_op_establishOperationalBinding } from "../CommonProtocolSpecification/id-op-establishOperationalBinding.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { securityError } from "../DirectoryAbstractService/securityError.oa";
 export {
     EstablishOperationalBindingArgument,
-    _get_decoder_for_EstablishOperationalBindingArgument,
-    _get_encoder_for_EstablishOperationalBindingArgument,
+    _decode_EstablishOperationalBindingArgument,
+    _encode_EstablishOperationalBindingArgument,
 } from "../OperationalBindingManagement/EstablishOperationalBindingArgument.ta";
 export {
     EstablishOperationalBindingResult,
-    _get_decoder_for_EstablishOperationalBindingResult,
-    _get_encoder_for_EstablishOperationalBindingResult,
+    _decode_EstablishOperationalBindingResult,
+    _encode_EstablishOperationalBindingResult,
 } from "../OperationalBindingManagement/EstablishOperationalBindingResult.ta";
 export { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
 

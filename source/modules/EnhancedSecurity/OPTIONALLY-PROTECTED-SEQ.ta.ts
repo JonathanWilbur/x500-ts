@@ -30,12 +30,6 @@ export type OPTIONALLY_PROTECTED_SEQ<Type> =
     | { signed: SIGNED<Type> } /* CHOICE_ALT_ROOT */;
 /* END_OF_SYMBOL_DEFINITION OPTIONALLY_PROTECTED_SEQ */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OPTIONALLY_PROTECTED_SEQ */
-let _cached_decoder_for_OPTIONALLY_PROTECTED_SEQ: $.ASN1Decoder<
-    OPTIONALLY_PROTECTED_SEQ<Type>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OPTIONALLY_PROTECTED_SEQ */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_OPTIONALLY_PROTECTED_SEQ */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) OPTIONALLY_PROTECTED_SEQ
@@ -57,12 +51,6 @@ export function _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<Type>(
     });
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_OPTIONALLY_PROTECTED_SEQ */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OPTIONALLY_PROTECTED_SEQ */
-let _cached_encoder_for_OPTIONALLY_PROTECTED_SEQ: $.ASN1Encoder<
-    OPTIONALLY_PROTECTED_SEQ<Type>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OPTIONALLY_PROTECTED_SEQ */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_OPTIONALLY_PROTECTED_SEQ */
 /**

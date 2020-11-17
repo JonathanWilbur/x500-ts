@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AuthorizationData_Item,
     _decode_AuthorizationData_Item,
@@ -253,3 +254,4 @@ export {
     _root_component_type_list_1_spec_for_Wrap_Header,
     _root_component_type_list_2_spec_for_Wrap_Header,
 } from "./SpkmGssTokens/Wrap-Header.ta";
+/* eslint-enable */

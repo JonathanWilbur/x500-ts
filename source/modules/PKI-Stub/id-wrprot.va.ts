@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { OBJECT_IDENTIFIER } from "asn1-ts";
-import { wrapperProtocolType } from "../PKI_Stub/wrapperProtocolType.va";
-export { wrapperProtocolType } from "../PKI_Stub/wrapperProtocolType.va";
+import { wrapperProtocolType } from "../PKI-Stub/wrapperProtocolType.va";
+export { wrapperProtocolType } from "../PKI-Stub/wrapperProtocolType.va";
 
 /* START_OF_SYMBOL_DEFINITION id_wrprot */
 /**

@@ -17,9 +17,11 @@ import {
     _encode_PwdResponse_warning,
 } from "../SelectedAttributeTypes/PwdResponse-warning.ta";
 export {
+    changeAfterReset /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    passwordExpired /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     PwdResponse_error,
-    PwdResponse_error_changeAfterReset /* IMPORTED_ENUMERATION_ITEM */,
-    PwdResponse_error_passwordExpired /* IMPORTED_ENUMERATION_ITEM */,
+    PwdResponse_error_changeAfterReset /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    PwdResponse_error_passwordExpired /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_PwdResponse_error,
     _encode_PwdResponse_error,
     _enum_for_PwdResponse_error,

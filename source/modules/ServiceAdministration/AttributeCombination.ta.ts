@@ -6,21 +6,11 @@ import {
     _decode_AttributeType,
     _encode_AttributeType,
 } from "../InformationFramework/AttributeType.ta";
-import {
-    AttributeCombination,
-    _decode_AttributeCombination,
-    _encode_AttributeCombination,
-} from "../ServiceAdministration/AttributeCombination.ta";
 export {
     AttributeType,
     _decode_AttributeType,
     _encode_AttributeType,
 } from "../InformationFramework/AttributeType.ta";
-export {
-    AttributeCombination,
-    _decode_AttributeCombination,
-    _encode_AttributeCombination,
-} from "../ServiceAdministration/AttributeCombination.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttributeCombination */
 // TODO: CHECK_RECURSIVE_DEFINITION

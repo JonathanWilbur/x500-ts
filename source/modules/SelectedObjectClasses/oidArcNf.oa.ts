@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { id_oidArcNf } from "../SelectedObjectClasses/id-oidArcNf.va";
 import { oidArc } from "../SelectedObjectClasses/oidArc.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { id_oidArcNf } from "../SelectedObjectClasses/id-oidArcNf.va";
 export { oidArc } from "../SelectedObjectClasses/oidArc.oa";
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { altServer } from "./LdapSystemSchema/altServer.oa";
 export { id_lat_altServer } from "./LdapSystemSchema/id-lat-altServer.va";
 export { id_lat_namingContexts } from "./LdapSystemSchema/id-lat-namingContexts.va";
@@ -22,3 +23,4 @@ export { supportedExtension } from "./LdapSystemSchema/supportedExtension.oa";
 export { supportedFeatures } from "./LdapSystemSchema/supportedFeatures.oa";
 export { supportedLDAPVersion } from "./LdapSystemSchema/supportedLDAPVersion.oa";
 export { supportedSASLMechanisms } from "./LdapSystemSchema/supportedSASLMechanisms.oa";
+/* eslint-enable */

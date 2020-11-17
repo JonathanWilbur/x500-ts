@@ -59,6 +59,16 @@ export const AbandonedProblem_pagingAbandoned: AbandonedProblem =
     AbandonedProblem.pagingAbandoned; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AbandonedProblem_pagingAbandoned */
 
+/* START_OF_SYMBOL_DEFINITION pagingAbandoned */
+/**
+ * @summary pagingAbandoned
+ * @constant
+ * @type {number}
+ */
+export const pagingAbandoned: AbandonedProblem =
+    AbandonedProblem.pagingAbandoned; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION pagingAbandoned */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonedProblem */
 let _cached_decoder_for_AbandonedProblem: $.ASN1Decoder<
     AbandonedProblem

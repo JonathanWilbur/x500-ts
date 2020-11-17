@@ -12,7 +12,7 @@ import {
 } from "../SelectedAttributeTypes/UiiFormat-next.ta";
 import {
     UiiFormat_subset,
-    UiiFormat_subset_baseObject /* IMPORTED_ENUMERATION_ITEM */,
+    UiiFormat_subset_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_UiiFormat_subset,
     _encode_UiiFormat_subset,
     _enum_for_UiiFormat_subset,
@@ -28,10 +28,13 @@ export {
     _encode_UiiFormat_next,
 } from "../SelectedAttributeTypes/UiiFormat-next.ta";
 export {
+    baseObject /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    oneLevel /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     UiiFormat_subset,
-    UiiFormat_subset_baseObject /* IMPORTED_ENUMERATION_ITEM */,
-    UiiFormat_subset_oneLevel /* IMPORTED_ENUMERATION_ITEM */,
-    UiiFormat_subset_wholeSubtree /* IMPORTED_ENUMERATION_ITEM */,
+    UiiFormat_subset_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    UiiFormat_subset_oneLevel /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    UiiFormat_subset_wholeSubtree /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    wholeSubtree /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_UiiFormat_subset,
     _encode_UiiFormat_subset,
     _enum_for_UiiFormat_subset,

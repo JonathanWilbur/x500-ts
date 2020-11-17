@@ -22,7 +22,7 @@ import {
 } from "../DirectoryAbstractService/Filter.ta";
 import {
     JoinArgument_joinSubset,
-    JoinArgument_joinSubset_baseObject /* IMPORTED_ENUMERATION_ITEM */,
+    JoinArgument_joinSubset_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_JoinArgument_joinSubset,
     _encode_JoinArgument_joinSubset,
     _enum_for_JoinArgument_joinSubset,
@@ -53,10 +53,13 @@ export {
     _encode_Filter,
 } from "../DirectoryAbstractService/Filter.ta";
 export {
+    baseObject /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     JoinArgument_joinSubset,
-    JoinArgument_joinSubset_baseObject /* IMPORTED_ENUMERATION_ITEM */,
-    JoinArgument_joinSubset_oneLevel /* IMPORTED_ENUMERATION_ITEM */,
-    JoinArgument_joinSubset_wholeSubtree /* IMPORTED_ENUMERATION_ITEM */,
+    JoinArgument_joinSubset_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    JoinArgument_joinSubset_oneLevel /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    JoinArgument_joinSubset_wholeSubtree /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    oneLevel /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    wholeSubtree /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_JoinArgument_joinSubset,
     _encode_JoinArgument_joinSubset,
     _enum_for_JoinArgument_joinSubset,

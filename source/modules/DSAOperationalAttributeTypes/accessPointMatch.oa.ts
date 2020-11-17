@@ -3,12 +3,14 @@ import { id_kmr_accessPointMatch } from "../DSAOperationalAttributeTypes/id-kmr-
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { _decode_Name, _encode_Name } from "../InformationFramework/Name.ta";
 export { id_kmr_accessPointMatch } from "../DSAOperationalAttributeTypes/id-kmr-accessPointMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export {
     Name,
     _decode_Name,
     _encode_Name,
 } from "../InformationFramework/Name.ta";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION accessPointMatch */
 /**

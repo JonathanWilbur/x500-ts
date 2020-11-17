@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { OBJECT_IDENTIFIER } from "asn1-ts";
-import { algorithms } from "../PKI_Stub/algorithms.va";
-export { algorithms } from "../PKI_Stub/algorithms.va";
+import { algorithms } from "../PKI-Stub/algorithms.va";
+export { algorithms } from "../PKI-Stub/algorithms.va";
 
 /* START_OF_SYMBOL_DEFINITION id_algo */
 /**

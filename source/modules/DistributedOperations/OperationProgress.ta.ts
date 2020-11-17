@@ -13,10 +13,13 @@ import {
     _enum_for_OperationProgress_nameResolutionPhase,
 } from "../DistributedOperations/OperationProgress-nameResolutionPhase.ta";
 export {
+    completed /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    notStarted /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     OperationProgress_nameResolutionPhase,
-    OperationProgress_nameResolutionPhase_completed /* IMPORTED_ENUMERATION_ITEM */,
-    OperationProgress_nameResolutionPhase_notStarted /* IMPORTED_ENUMERATION_ITEM */,
-    OperationProgress_nameResolutionPhase_proceeding /* IMPORTED_ENUMERATION_ITEM */,
+    OperationProgress_nameResolutionPhase_completed /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    OperationProgress_nameResolutionPhase_notStarted /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    OperationProgress_nameResolutionPhase_proceeding /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    proceeding /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_OperationProgress_nameResolutionPhase,
     _encode_OperationProgress_nameResolutionPhase,
     _enum_for_OperationProgress_nameResolutionPhase,

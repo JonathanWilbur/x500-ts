@@ -13,7 +13,9 @@ export {
 } from "../CertificateExtensions/CertificateListAssertion.ta";
 export { certListAssertion } from "../CertificateExtensions/certListAssertion.oa";
 export { id_mr_certificateListMatch } from "../CertificateExtensions/id-mr-certificateListMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION certificateListMatch */
 /**

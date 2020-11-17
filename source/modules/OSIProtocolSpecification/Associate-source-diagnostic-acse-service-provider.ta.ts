@@ -25,6 +25,15 @@ export type Associate_source_diagnostic_acse_service_provider = INTEGER;
 export const Associate_source_diagnostic_acse_service_provider_null_: Associate_source_diagnostic_acse_service_provider = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_source_diagnostic_acse_service_provider_null_ */
 
+/* START_OF_SYMBOL_DEFINITION null_ */
+/**
+ * @summary Associate_source_diagnostic_acse_service_provider_null_
+ * @constant
+ * @type {number}
+ */
+export const null_: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_null_; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION null_ */
+
 /* START_OF_SYMBOL_DEFINITION Associate_source_diagnostic_acse_service_provider_no_reason_given */
 /**
  * @summary Associate_source_diagnostic_acse_service_provider_no_reason_given
@@ -34,6 +43,15 @@ export const Associate_source_diagnostic_acse_service_provider_null_: Associate_
 export const Associate_source_diagnostic_acse_service_provider_no_reason_given: Associate_source_diagnostic_acse_service_provider = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_source_diagnostic_acse_service_provider_no_reason_given */
 
+/* START_OF_SYMBOL_DEFINITION no_reason_given */
+/**
+ * @summary Associate_source_diagnostic_acse_service_provider_no_reason_given
+ * @constant
+ * @type {number}
+ */
+export const no_reason_given: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_no_reason_given; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION no_reason_given */
+
 /* START_OF_SYMBOL_DEFINITION Associate_source_diagnostic_acse_service_provider_no_common_acse_version */
 /**
  * @summary Associate_source_diagnostic_acse_service_provider_no_common_acse_version
@@ -42,6 +60,15 @@ export const Associate_source_diagnostic_acse_service_provider_no_reason_given: 
  */
 export const Associate_source_diagnostic_acse_service_provider_no_common_acse_version: Associate_source_diagnostic_acse_service_provider = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Associate_source_diagnostic_acse_service_provider_no_common_acse_version */
+
+/* START_OF_SYMBOL_DEFINITION no_common_acse_version */
+/**
+ * @summary Associate_source_diagnostic_acse_service_provider_no_common_acse_version
+ * @constant
+ * @type {number}
+ */
+export const no_common_acse_version: Associate_source_diagnostic_acse_service_provider = Associate_source_diagnostic_acse_service_provider_no_common_acse_version; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION no_common_acse_version */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_source_diagnostic_acse_service_provider */
 let _cached_decoder_for_Associate_source_diagnostic_acse_service_provider: $.ASN1Decoder<

@@ -5,12 +5,12 @@ import {
     AttributeTypeAndValue,
     _decode_AttributeTypeAndValue,
     _encode_AttributeTypeAndValue,
-} from "../PKI_Stub/AttributeTypeAndValue.ta";
+} from "../PKI-Stub/AttributeTypeAndValue.ta";
 export {
     AttributeTypeAndValue,
     _decode_AttributeTypeAndValue,
     _encode_AttributeTypeAndValue,
-} from "../PKI_Stub/AttributeTypeAndValue.ta";
+} from "../PKI-Stub/AttributeTypeAndValue.ta";
 
 /* START_OF_SYMBOL_DEFINITION RelativeDistinguishedName */
 /**

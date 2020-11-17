@@ -6,7 +6,9 @@ import {
     _decode_SubstringAssertion,
     _encode_SubstringAssertion,
 } from "../SelectedAttributeTypes/SubstringAssertion.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_caseIgnoreSubstringsMatch } from "../SelectedAttributeTypes/id-mr-caseIgnoreSubstringsMatch.va";
 export { substringAssertion } from "../SelectedAttributeTypes/substringAssertion.oa";
 export {

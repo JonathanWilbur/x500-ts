@@ -9,22 +9,22 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     PublicKey,
     _decode_PublicKey,
     _encode_PublicKey,
-} from "../PKI_Stub/PublicKey.ta";
+} from "../PKI-Stub/PublicKey.ta";
 export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     PublicKey,
     _decode_PublicKey,
     _encode_PublicKey,
-} from "../PKI_Stub/PublicKey.ta";
+} from "../PKI-Stub/PublicKey.ta";
 
 /* START_OF_SYMBOL_DEFINITION SubjectPublicKeyInfo */
 /**

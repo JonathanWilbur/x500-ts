@@ -10,14 +10,15 @@ import {
     _decode_InitializationRej_diag,
     _encode_InitializationRej_diag,
     _enum_for_InitializationRej_diag,
-} from "../AVL_management/InitializationRej-diag.ta";
+} from "../AVL-management/InitializationRej-diag.ta";
 export {
     InitializationRej_diag,
-    InitializationRej_diag_unsupportedVersion /* IMPORTED_ENUMERATION_ITEM */,
+    InitializationRej_diag_unsupportedVersion /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    unsupportedVersion /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_InitializationRej_diag,
     _encode_InitializationRej_diag,
     _enum_for_InitializationRej_diag,
-} from "../AVL_management/InitializationRej-diag.ta";
+} from "../AVL-management/InitializationRej-diag.ta";
 
 /* START_OF_SYMBOL_DEFINITION InitializationRej */
 /**

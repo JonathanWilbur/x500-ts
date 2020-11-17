@@ -3,6 +3,10 @@ import { id_opcode_modifyEntry } from "../CommonProtocolSpecification/id-opcode-
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 import {
+    _decode_ModifyEntryArgument,
+    _encode_ModifyEntryArgument,
+} from "../DirectoryAbstractService/ModifyEntryArgument.ta";
+import {
     _decode_ModifyEntryResult,
     _encode_ModifyEntryResult,
 } from "../DirectoryAbstractService/ModifyEntryResult.ta";
@@ -11,13 +15,19 @@ import { referral } from "../DirectoryAbstractService/referral.oa";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_modifyEntry } from "../CommonProtocolSpecification/id-opcode-modifyEntry.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 export {
     ModifyEntryArgument,
-    _get_decoder_for_ModifyEntryArgument,
-    _get_encoder_for_ModifyEntryArgument,
+    _decode_ModifyEntryArgument,
+    _encode_ModifyEntryArgument,
 } from "../DirectoryAbstractService/ModifyEntryArgument.ta";
 export {
     ModifyEntryResult,

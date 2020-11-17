@@ -10,12 +10,12 @@ import {
     AlgoInvoke,
     _decode_AlgoInvoke,
     _encode_AlgoInvoke,
-} from "../PKI_Stub/AlgoInvoke.ta";
+} from "../PKI-Stub/AlgoInvoke.ta";
 export {
     AlgoInvoke,
     _decode_AlgoInvoke,
     _encode_AlgoInvoke,
-} from "../PKI_Stub/AlgoInvoke.ta";
+} from "../PKI-Stub/AlgoInvoke.ta";
 
 /* START_OF_SYMBOL_DEFINITION ICV_Invoke */
 /**
@@ -145,12 +145,6 @@ export const _root_component_type_list_2_spec_for_ICV_Invoke: $.ComponentSpec[] 
 export const _extension_additions_list_spec_for_ICV_Invoke: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ICV_Invoke */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ICV_Invoke */
-let _cached_decoder_for_ICV_Invoke: $.ASN1Decoder<
-    ICV_Invoke<ToBeProtected>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ICV_Invoke */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_ICV_Invoke */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) ICV_Invoke
@@ -203,11 +197,6 @@ export function _get_decoder_for_ICV_Invoke<ToBeProtected>(
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ICV_Invoke */
 
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ICV_Invoke */
-let _cached_encoder_for_ICV_Invoke: $.ASN1Encoder<
-    ICV_Invoke<ToBeProtected>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ICV_Invoke */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ICV_Invoke */
 /**

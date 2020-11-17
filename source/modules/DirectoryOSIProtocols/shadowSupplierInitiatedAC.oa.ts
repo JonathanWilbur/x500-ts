@@ -4,6 +4,7 @@ import { id_ac_shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/id-ac-
 import { coordinateShadowUpdate } from "../DirectoryShadowAbstractService/coordinateShadowUpdate.oa";
 import { dSAShadowBind } from "../DirectoryShadowAbstractService/dSAShadowBind.oa";
 import { updateShadow } from "../DirectoryShadowAbstractService/updateShadow.oa";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { APPLICATION_CONTEXT } from "../DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 export { id_ac_shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/id-ac-shadowSupplierInitiatedAC.va";
 export { coordinateShadowUpdate } from "../DirectoryShadowAbstractService/coordinateShadowUpdate.oa";

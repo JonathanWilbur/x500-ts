@@ -35,6 +35,15 @@ export type FamilyReturn_memberSelect =
 export const FamilyReturn_memberSelect_contributingEntriesOnly: FamilyReturn_memberSelect = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyReturn_memberSelect_contributingEntriesOnly */
 
+/* START_OF_SYMBOL_DEFINITION contributingEntriesOnly */
+/**
+ * @summary contributingEntriesOnly
+ * @constant
+ * @type {number}
+ */
+export const contributingEntriesOnly: FamilyReturn_memberSelect = FamilyReturn_memberSelect_contributingEntriesOnly; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION contributingEntriesOnly */
+
 /* START_OF_SYMBOL_DEFINITION FamilyReturn_memberSelect_participatingEntriesOnly */
 /**
  * @summary FamilyReturn_memberSelect_participatingEntriesOnly
@@ -44,6 +53,15 @@ export const FamilyReturn_memberSelect_contributingEntriesOnly: FamilyReturn_mem
 export const FamilyReturn_memberSelect_participatingEntriesOnly: FamilyReturn_memberSelect = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyReturn_memberSelect_participatingEntriesOnly */
 
+/* START_OF_SYMBOL_DEFINITION participatingEntriesOnly */
+/**
+ * @summary participatingEntriesOnly
+ * @constant
+ * @type {number}
+ */
+export const participatingEntriesOnly: FamilyReturn_memberSelect = FamilyReturn_memberSelect_participatingEntriesOnly; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION participatingEntriesOnly */
+
 /* START_OF_SYMBOL_DEFINITION FamilyReturn_memberSelect_compoundEntry */
 /**
  * @summary FamilyReturn_memberSelect_compoundEntry
@@ -52,6 +70,15 @@ export const FamilyReturn_memberSelect_participatingEntriesOnly: FamilyReturn_me
  */
 export const FamilyReturn_memberSelect_compoundEntry: FamilyReturn_memberSelect = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyReturn_memberSelect_compoundEntry */
+
+/* START_OF_SYMBOL_DEFINITION compoundEntry */
+/**
+ * @summary compoundEntry
+ * @constant
+ * @type {number}
+ */
+export const compoundEntry: FamilyReturn_memberSelect = FamilyReturn_memberSelect_compoundEntry; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION compoundEntry */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyReturn_memberSelect */
 let _cached_decoder_for_FamilyReturn_memberSelect: $.ASN1Decoder<

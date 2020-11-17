@@ -13,7 +13,9 @@ export {
 } from "../CertificateExtensions/CertificatePairExactAssertion.ta";
 export { certPairExactAssertion } from "../CertificateExtensions/certPairExactAssertion.oa";
 export { id_mr_certificatePairExactMatch } from "../CertificateExtensions/id-mr-certificatePairExactMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION certificatePairExactMatch */
 /**

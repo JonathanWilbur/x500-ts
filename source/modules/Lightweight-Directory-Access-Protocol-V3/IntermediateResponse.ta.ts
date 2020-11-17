@@ -10,12 +10,12 @@ import {
     LDAPOID,
     _decode_LDAPOID,
     _encode_LDAPOID,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPOID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPOID.ta";
 export {
     LDAPOID,
     _decode_LDAPOID,
     _encode_LDAPOID,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPOID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPOID.ta";
 
 /* START_OF_SYMBOL_DEFINITION IntermediateResponse */
 /**

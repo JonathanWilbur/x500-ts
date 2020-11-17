@@ -8,9 +8,9 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-export { der } from "../PKI_Stub/der.va";
-export { EXTENSION } from "../PKI_Stub/EXTENSION.oca";
-export { ExtensionSet } from "../PKI_Stub/ExtensionSet.osa";
+export { der } from "../PKI-Stub/der.va";
+export { EXTENSION } from "../PKI-Stub/EXTENSION.oca";
+export { ExtensionSet } from "../PKI-Stub/ExtensionSet.osa";
 
 /* START_OF_SYMBOL_DEFINITION Extension */
 /**

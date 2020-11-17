@@ -5,12 +5,12 @@ import {
     Attribute,
     _decode_Attribute,
     _encode_Attribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/Attribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Attribute.ta";
 export {
     Attribute,
     _decode_Attribute,
     _encode_Attribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/Attribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Attribute.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttributeList */
 /**

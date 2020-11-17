@@ -11,11 +11,6 @@ import {
     _encode_SDSEContent,
 } from "../DirectoryShadowAbstractService/SDSEContent.ta";
 import {
-    Subtree,
-    _decode_Subtree,
-    _encode_Subtree,
-} from "../DirectoryShadowAbstractService/Subtree.ta";
-import {
     RelativeDistinguishedName,
     _decode_RelativeDistinguishedName,
     _encode_RelativeDistinguishedName,
@@ -25,11 +20,6 @@ export {
     _decode_SDSEContent,
     _encode_SDSEContent,
 } from "../DirectoryShadowAbstractService/SDSEContent.ta";
-export {
-    Subtree,
-    _decode_Subtree,
-    _encode_Subtree,
-} from "../DirectoryShadowAbstractService/Subtree.ta";
 export {
     TotalRefresh,
     _decode_TotalRefresh,

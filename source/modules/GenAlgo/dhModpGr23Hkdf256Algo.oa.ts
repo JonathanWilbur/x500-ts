@@ -2,7 +2,7 @@
 import { _decode_Group23, _encode_Group23 } from "../GenAlgo/Group23.ta";
 import { id_algo_dhModpGr23Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr23Hkdf256Algo.va";
 import { _decode_Payload23, _encode_Payload23 } from "../GenAlgo/Payload23.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group23,
     _decode_Group23,
@@ -14,7 +14,7 @@ export {
     _decode_Payload23,
     _encode_Payload23,
 } from "../GenAlgo/Payload23.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION dhModpGr23Hkdf256Algo */
 /**

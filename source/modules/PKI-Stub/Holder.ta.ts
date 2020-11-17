@@ -9,32 +9,32 @@ import {
     GeneralNames,
     _decode_GeneralNames,
     _encode_GeneralNames,
-} from "../PKI_Stub/GeneralNames.ta";
+} from "../PKI-Stub/GeneralNames.ta";
 import {
     IssuerSerial,
     _decode_IssuerSerial,
     _encode_IssuerSerial,
-} from "../PKI_Stub/IssuerSerial.ta";
+} from "../PKI-Stub/IssuerSerial.ta";
 import {
     ObjectDigestInfo,
     _decode_ObjectDigestInfo,
     _encode_ObjectDigestInfo,
-} from "../PKI_Stub/ObjectDigestInfo.ta";
+} from "../PKI-Stub/ObjectDigestInfo.ta";
 export {
     GeneralNames,
     _decode_GeneralNames,
     _encode_GeneralNames,
-} from "../PKI_Stub/GeneralNames.ta";
+} from "../PKI-Stub/GeneralNames.ta";
 export {
     IssuerSerial,
     _decode_IssuerSerial,
     _encode_IssuerSerial,
-} from "../PKI_Stub/IssuerSerial.ta";
+} from "../PKI-Stub/IssuerSerial.ta";
 export {
     ObjectDigestInfo,
     _decode_ObjectDigestInfo,
     _encode_ObjectDigestInfo,
-} from "../PKI_Stub/ObjectDigestInfo.ta";
+} from "../PKI-Stub/ObjectDigestInfo.ta";
 
 /* START_OF_SYMBOL_DEFINITION Holder */
 /**

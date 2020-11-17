@@ -10,6 +10,11 @@ import {
     _decode_OpBindingErrorParam,
     _encode_OpBindingErrorParam,
 } from "../OperationalBindingManagement/OpBindingErrorParam.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
 export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_err_operationalBindingError } from "../CommonProtocolSpecification/id-err-operationalBindingError.va";
 export {

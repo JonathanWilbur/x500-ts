@@ -32,17 +32,19 @@ import {
     _decode_Attribute,
     _encode_Attribute,
 } from "../InformationFramework/Attribute.ta";
-export { ABSTRACT_SYNTAX } from "../DirectoryAbstractService/ABSTRACT-SYNTAX.oca";
 export {
     Filter,
     _decode_Filter,
     _encode_Filter,
 } from "../DirectoryAbstractService/Filter.ta";
 export {
+    administrativeLimitExceeded /* IMPORTED_SHORT_NAMED_INTEGER */,
     LimitProblem,
-    LimitProblem_administrativeLimitExceeded /* IMPORTED_NAMED_INTEGER */,
-    LimitProblem_sizeLimitExceeded /* IMPORTED_NAMED_INTEGER */,
-    LimitProblem_timeLimitExceeded /* IMPORTED_NAMED_INTEGER */,
+    LimitProblem_administrativeLimitExceeded /* IMPORTED_LONG_NAMED_INTEGER */,
+    LimitProblem_sizeLimitExceeded /* IMPORTED_LONG_NAMED_INTEGER */,
+    LimitProblem_timeLimitExceeded /* IMPORTED_LONG_NAMED_INTEGER */,
+    sizeLimitExceeded /* IMPORTED_SHORT_NAMED_INTEGER */,
+    timeLimitExceeded /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_LimitProblem,
     _encode_LimitProblem,
 } from "../DirectoryAbstractService/LimitProblem.ta";

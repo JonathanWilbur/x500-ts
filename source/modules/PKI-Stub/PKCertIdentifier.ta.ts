@@ -1,42 +1,46 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../PKI_Stub/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 import {
     FingerPrint,
     _get_decoder_for_FingerPrint,
     _get_encoder_for_FingerPrint,
-} from "../PKI_Stub/FingerPrint.ta";
+} from "../PKI-Stub/FingerPrint.ta";
 import {
     IssuerSerialNumber,
     _decode_IssuerSerialNumber,
     _encode_IssuerSerialNumber,
-} from "../PKI_Stub/IssuerSerialNumber.ta";
+} from "../PKI-Stub/IssuerSerialNumber.ta";
 import {
     PublicKey,
     _decode_PublicKey,
     _encode_PublicKey,
-} from "../PKI_Stub/PublicKey.ta";
+} from "../PKI-Stub/PublicKey.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
-} from "../PKI_Stub/Certificate.ta";
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../PKI-Stub/Certificate.ta";
 export {
     FingerPrint,
     _get_decoder_for_FingerPrint,
     _get_encoder_for_FingerPrint,
-} from "../PKI_Stub/FingerPrint.ta";
+} from "../PKI-Stub/FingerPrint.ta";
 export {
     IssuerSerialNumber,
     _decode_IssuerSerialNumber,
     _encode_IssuerSerialNumber,
-} from "../PKI_Stub/IssuerSerialNumber.ta";
+} from "../PKI-Stub/IssuerSerialNumber.ta";
 export {
     PublicKey,
     _decode_PublicKey,
     _encode_PublicKey,
-} from "../PKI_Stub/PublicKey.ta";
+} from "../PKI-Stub/PublicKey.ta";
 
 /* START_OF_SYMBOL_DEFINITION PKCertIdentifier */
 /**

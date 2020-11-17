@@ -39,6 +39,15 @@ export type AttributeUsage = _enum_for_AttributeUsage | ENUMERATED;
 export const AttributeUsage_userApplications: AttributeUsage = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AttributeUsage_userApplications */
 
+/* START_OF_SYMBOL_DEFINITION userApplications */
+/**
+ * @summary userApplications
+ * @constant
+ * @type {number}
+ */
+export const userApplications: AttributeUsage = AttributeUsage_userApplications; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION userApplications */
+
 /* START_OF_SYMBOL_DEFINITION AttributeUsage_directoryOperation */
 /**
  * @summary AttributeUsage_directoryOperation
@@ -47,6 +56,15 @@ export const AttributeUsage_userApplications: AttributeUsage = 0; /* LONG_NAMED_
  */
 export const AttributeUsage_directoryOperation: AttributeUsage = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AttributeUsage_directoryOperation */
+
+/* START_OF_SYMBOL_DEFINITION directoryOperation */
+/**
+ * @summary directoryOperation
+ * @constant
+ * @type {number}
+ */
+export const directoryOperation: AttributeUsage = AttributeUsage_directoryOperation; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION directoryOperation */
 
 /* START_OF_SYMBOL_DEFINITION AttributeUsage_distributedOperation */
 /**
@@ -57,6 +75,15 @@ export const AttributeUsage_directoryOperation: AttributeUsage = 1; /* LONG_NAME
 export const AttributeUsage_distributedOperation: AttributeUsage = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AttributeUsage_distributedOperation */
 
+/* START_OF_SYMBOL_DEFINITION distributedOperation */
+/**
+ * @summary distributedOperation
+ * @constant
+ * @type {number}
+ */
+export const distributedOperation: AttributeUsage = AttributeUsage_distributedOperation; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION distributedOperation */
+
 /* START_OF_SYMBOL_DEFINITION AttributeUsage_dSAOperation */
 /**
  * @summary AttributeUsage_dSAOperation
@@ -65,6 +92,15 @@ export const AttributeUsage_distributedOperation: AttributeUsage = 2; /* LONG_NA
  */
 export const AttributeUsage_dSAOperation: AttributeUsage = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AttributeUsage_dSAOperation */
+
+/* START_OF_SYMBOL_DEFINITION dSAOperation */
+/**
+ * @summary dSAOperation
+ * @constant
+ * @type {number}
+ */
+export const dSAOperation: AttributeUsage = AttributeUsage_dSAOperation; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dSAOperation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeUsage */
 let _cached_decoder_for_AttributeUsage: $.ASN1Decoder<

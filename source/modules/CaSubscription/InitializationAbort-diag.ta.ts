@@ -34,6 +34,15 @@ export type InitializationAbort_diag =
 export const InitializationAbort_diag_unsupportedVersion: InitializationAbort_diag = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION InitializationAbort_diag_unsupportedVersion */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedVersion */
+/**
+ * @summary unsupportedVersion
+ * @constant
+ * @type {number}
+ */
+export const unsupportedVersion: InitializationAbort_diag = InitializationAbort_diag_unsupportedVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedVersion */
+
 /* START_OF_SYMBOL_DEFINITION InitializationAbort_diag_onlySingleVersionAllowed */
 /**
  * @summary InitializationAbort_diag_onlySingleVersionAllowed
@@ -42,6 +51,15 @@ export const InitializationAbort_diag_unsupportedVersion: InitializationAbort_di
  */
 export const InitializationAbort_diag_onlySingleVersionAllowed: InitializationAbort_diag = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION InitializationAbort_diag_onlySingleVersionAllowed */
+
+/* START_OF_SYMBOL_DEFINITION onlySingleVersionAllowed */
+/**
+ * @summary onlySingleVersionAllowed
+ * @constant
+ * @type {number}
+ */
+export const onlySingleVersionAllowed: InitializationAbort_diag = InitializationAbort_diag_onlySingleVersionAllowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION onlySingleVersionAllowed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAbort_diag */
 let _cached_decoder_for_InitializationAbort_diag: $.ASN1Decoder<

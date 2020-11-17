@@ -3,7 +3,9 @@ import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_numericStringOrderingMatch } from "../SelectedAttributeTypes/id-mr-numericStringOrderingMatch.va";
 import { numericString } from "../SelectedAttributeTypes/numericString.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_numericStringOrderingMatch } from "../SelectedAttributeTypes/id-mr-numericStringOrderingMatch.va";
 export { numericString } from "../SelectedAttributeTypes/numericString.oa";
 

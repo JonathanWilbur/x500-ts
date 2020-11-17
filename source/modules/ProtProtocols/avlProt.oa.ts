@@ -1,12 +1,12 @@
 /* eslint-disable */
-import { _decode_AvlProt, _encode_AvlProt } from "../AVL_management/AvlProt.ta";
+import { _decode_AvlProt, _encode_AvlProt } from "../AVL-management/AvlProt.ta";
 import { id_avlprot } from "../ProtProtocols/id-avlprot.va";
 import { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
 export {
     AvlProt,
     _decode_AvlProt,
     _encode_AvlProt,
-} from "../AVL_management/AvlProt.ta";
+} from "../AVL-management/AvlProt.ta";
 export { id_avlprot } from "../ProtProtocols/id-avlprot.va";
 export { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
 

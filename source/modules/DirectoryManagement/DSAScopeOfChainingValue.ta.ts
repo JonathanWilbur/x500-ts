@@ -25,6 +25,15 @@ export type DSAScopeOfChainingValue = INTEGER;
 export const DSAScopeOfChainingValue_dmd: DSAScopeOfChainingValue = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfChainingValue_dmd */
 
+/* START_OF_SYMBOL_DEFINITION dmd */
+/**
+ * @summary DSAScopeOfChainingValue_dmd
+ * @constant
+ * @type {number}
+ */
+export const dmd: DSAScopeOfChainingValue = DSAScopeOfChainingValue_dmd; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION dmd */
+
 /* START_OF_SYMBOL_DEFINITION DSAScopeOfChainingValue_country */
 /**
  * @summary DSAScopeOfChainingValue_country
@@ -34,6 +43,15 @@ export const DSAScopeOfChainingValue_dmd: DSAScopeOfChainingValue = 0; /* LONG_N
 export const DSAScopeOfChainingValue_country: DSAScopeOfChainingValue = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfChainingValue_country */
 
+/* START_OF_SYMBOL_DEFINITION country */
+/**
+ * @summary DSAScopeOfChainingValue_country
+ * @constant
+ * @type {number}
+ */
+export const country: DSAScopeOfChainingValue = DSAScopeOfChainingValue_country; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION country */
+
 /* START_OF_SYMBOL_DEFINITION DSAScopeOfChainingValue_global */
 /**
  * @summary DSAScopeOfChainingValue_global
@@ -42,6 +60,15 @@ export const DSAScopeOfChainingValue_country: DSAScopeOfChainingValue = 1; /* LO
  */
 export const DSAScopeOfChainingValue_global: DSAScopeOfChainingValue = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfChainingValue_global */
+
+/* START_OF_SYMBOL_DEFINITION global */
+/**
+ * @summary DSAScopeOfChainingValue_global
+ * @constant
+ * @type {number}
+ */
+export const global: DSAScopeOfChainingValue = DSAScopeOfChainingValue_global; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION global */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfChainingValue */
 let _cached_decoder_for_DSAScopeOfChainingValue: $.ASN1Decoder<

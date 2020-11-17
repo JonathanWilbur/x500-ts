@@ -9,18 +9,22 @@ import {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
-import { CertAVL } from "../PKI_Stub/CertAVL.ta";
+} from "../AVL-management/InvokeID.ta";
+import {
+    CertAVL,
+    _decode_CertAVL,
+    _encode_CertAVL,
+} from "../PKI-Stub/CertAVL.ta";
 export {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 export {
     CertAVL,
-    _get_decoder_for_CertAVL,
-    _get_encoder_for_CertAVL,
-} from "../PKI_Stub/CertAVL.ta";
+    _decode_CertAVL,
+    _encode_CertAVL,
+} from "../PKI-Stub/CertAVL.ta";
 
 /* START_OF_SYMBOL_DEFINITION AddAvlReq */
 /**

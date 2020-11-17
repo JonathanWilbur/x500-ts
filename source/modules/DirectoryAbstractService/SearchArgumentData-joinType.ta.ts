@@ -58,6 +58,16 @@ export const SearchArgumentData_joinType_innerJoin: SearchArgumentData_joinType 
     SearchArgumentData_joinType.innerJoin; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchArgumentData_joinType_innerJoin */
 
+/* START_OF_SYMBOL_DEFINITION innerJoin */
+/**
+ * @summary innerJoin
+ * @constant
+ * @type {number}
+ */
+export const innerJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.innerJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION innerJoin */
+
 /* START_OF_SYMBOL_DEFINITION SearchArgumentData_joinType_leftOuterJoin */
 /**
  * @summary SearchArgumentData_joinType_leftOuterJoin
@@ -68,6 +78,16 @@ export const SearchArgumentData_joinType_leftOuterJoin: SearchArgumentData_joinT
     SearchArgumentData_joinType.leftOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchArgumentData_joinType_leftOuterJoin */
 
+/* START_OF_SYMBOL_DEFINITION leftOuterJoin */
+/**
+ * @summary leftOuterJoin
+ * @constant
+ * @type {number}
+ */
+export const leftOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.leftOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION leftOuterJoin */
+
 /* START_OF_SYMBOL_DEFINITION SearchArgumentData_joinType_fullOuterJoin */
 /**
  * @summary SearchArgumentData_joinType_fullOuterJoin
@@ -77,6 +97,16 @@ export const SearchArgumentData_joinType_leftOuterJoin: SearchArgumentData_joinT
 export const SearchArgumentData_joinType_fullOuterJoin: SearchArgumentData_joinType =
     SearchArgumentData_joinType.fullOuterJoin; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchArgumentData_joinType_fullOuterJoin */
+
+/* START_OF_SYMBOL_DEFINITION fullOuterJoin */
+/**
+ * @summary fullOuterJoin
+ * @constant
+ * @type {number}
+ */
+export const fullOuterJoin: SearchArgumentData_joinType =
+    SearchArgumentData_joinType.fullOuterJoin; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION fullOuterJoin */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData_joinType */
 let _cached_decoder_for_SearchArgumentData_joinType: $.ASN1Decoder<

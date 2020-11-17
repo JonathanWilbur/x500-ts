@@ -37,6 +37,15 @@ export type CharacterMatchTypes = _enum_for_CharacterMatchTypes | ENUMERATED;
 export const CharacterMatchTypes_characterExact: CharacterMatchTypes = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CharacterMatchTypes_characterExact */
 
+/* START_OF_SYMBOL_DEFINITION characterExact */
+/**
+ * @summary characterExact
+ * @constant
+ * @type {number}
+ */
+export const characterExact: CharacterMatchTypes = CharacterMatchTypes_characterExact; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION characterExact */
+
 /* START_OF_SYMBOL_DEFINITION CharacterMatchTypes_characterCaseIgnore */
 /**
  * @summary CharacterMatchTypes_characterCaseIgnore
@@ -46,6 +55,15 @@ export const CharacterMatchTypes_characterExact: CharacterMatchTypes = 0; /* LON
 export const CharacterMatchTypes_characterCaseIgnore: CharacterMatchTypes = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CharacterMatchTypes_characterCaseIgnore */
 
+/* START_OF_SYMBOL_DEFINITION characterCaseIgnore */
+/**
+ * @summary characterCaseIgnore
+ * @constant
+ * @type {number}
+ */
+export const characterCaseIgnore: CharacterMatchTypes = CharacterMatchTypes_characterCaseIgnore; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION characterCaseIgnore */
+
 /* START_OF_SYMBOL_DEFINITION CharacterMatchTypes_characterMapped */
 /**
  * @summary CharacterMatchTypes_characterMapped
@@ -54,6 +72,15 @@ export const CharacterMatchTypes_characterCaseIgnore: CharacterMatchTypes = 1; /
  */
 export const CharacterMatchTypes_characterMapped: CharacterMatchTypes = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CharacterMatchTypes_characterMapped */
+
+/* START_OF_SYMBOL_DEFINITION characterMapped */
+/**
+ * @summary characterMapped
+ * @constant
+ * @type {number}
+ */
+export const characterMapped: CharacterMatchTypes = CharacterMatchTypes_characterMapped; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION characterMapped */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CharacterMatchTypes */
 let _cached_decoder_for_CharacterMatchTypes: $.ASN1Decoder<

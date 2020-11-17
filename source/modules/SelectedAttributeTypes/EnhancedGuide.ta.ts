@@ -13,7 +13,7 @@ import {
 } from "../SelectedAttributeTypes/Criteria.ta";
 import {
     EnhancedGuide_subset,
-    EnhancedGuide_subset_oneLevel /* IMPORTED_NAMED_INTEGER */,
+    oneLevel /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_EnhancedGuide_subset,
     _encode_EnhancedGuide_subset,
 } from "../SelectedAttributeTypes/EnhancedGuide-subset.ta";
@@ -24,10 +24,13 @@ export {
     _encode_Criteria,
 } from "../SelectedAttributeTypes/Criteria.ta";
 export {
+    baseObject /* IMPORTED_SHORT_NAMED_INTEGER */,
     EnhancedGuide_subset,
-    EnhancedGuide_subset_baseObject /* IMPORTED_NAMED_INTEGER */,
-    EnhancedGuide_subset_oneLevel /* IMPORTED_NAMED_INTEGER */,
-    EnhancedGuide_subset_wholeSubtree /* IMPORTED_NAMED_INTEGER */,
+    EnhancedGuide_subset_baseObject /* IMPORTED_LONG_NAMED_INTEGER */,
+    EnhancedGuide_subset_oneLevel /* IMPORTED_LONG_NAMED_INTEGER */,
+    EnhancedGuide_subset_wholeSubtree /* IMPORTED_LONG_NAMED_INTEGER */,
+    oneLevel /* IMPORTED_SHORT_NAMED_INTEGER */,
+    wholeSubtree /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_EnhancedGuide_subset,
     _encode_EnhancedGuide_subset,
 } from "../SelectedAttributeTypes/EnhancedGuide-subset.ta";
@@ -110,7 +113,7 @@ export class EnhancedGuide {
      * @method
      */
     public static get _default_value_for_subset() {
-        return EnhancedGuide_subset_oneLevel;
+        return oneLevel;
     }
 }
 /* END_OF_SYMBOL_DEFINITION EnhancedGuide */

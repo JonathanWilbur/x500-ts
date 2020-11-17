@@ -13,6 +13,7 @@ import { removeEntry } from "../DirectoryAbstractService/removeEntry.oa";
 import { search } from "../DirectoryAbstractService/search.oa";
 import { APPLICATION_CONTEXT } from "../DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 import { id_ac_directoryAccessAC } from "../DirectoryOSIProtocols/id-ac-directoryAccessAC.va";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandon } from "../DirectoryAbstractService/abandon.oa";
 export { addEntry } from "../DirectoryAbstractService/addEntry.oa";
 export { administerPassword } from "../DirectoryAbstractService/administerPassword.oa";

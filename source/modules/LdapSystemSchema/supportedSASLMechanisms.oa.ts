@@ -1,5 +1,8 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 import { id_lat_supportedSASLMechanisms } from "../LdapSystemSchema/id-lat-supportedSASLMechanisms.va";
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import {
@@ -8,6 +11,22 @@ import {
 } from "../SelectedAttributeTypes/DirectoryString.ta";
 export { ub_saslMechanism } from "../DirectoryAbstractService/ub-saslMechanism.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_lat_supportedSASLMechanisms } from "../LdapSystemSchema/id-lat-supportedSASLMechanisms.va";
 export { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 export {
@@ -44,8 +63,7 @@ export const supportedSASLMechanisms: ATTRIBUTE = {
     encoderFor: {
         "&Type": _encode_DirectoryString,
     },
-    "&usage":
-        InformationFramework.AttributeUsage_dSAOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": dSAOperation /* OBJECT_FIELD_SETTING */,
     "&ldapSyntax": directoryString["&id"] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_lat_supportedSASLMechanisms /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

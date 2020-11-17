@@ -5,7 +5,11 @@ import {
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { CertificateList } from "../AuthenticationFramework/CertificateList.ta";
+import {
+    CertificateList,
+    _decode_CertificateList,
+    _encode_CertificateList,
+} from "../AuthenticationFramework/CertificateList.ta";
 import {
     CertificationPath,
     _decode_CertificationPath,
@@ -13,8 +17,8 @@ import {
 } from "../SpkmGssTokens/CertificationPath.ta";
 export {
     CertificateList,
-    _get_decoder_for_CertificateList,
-    _get_encoder_for_CertificateList,
+    _decode_CertificateList,
+    _encode_CertificateList,
 } from "../AuthenticationFramework/CertificateList.ta";
 export {
     CertificationPath,

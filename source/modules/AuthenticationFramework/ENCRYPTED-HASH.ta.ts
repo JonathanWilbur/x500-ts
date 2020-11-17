@@ -19,12 +19,6 @@ import * as $ from "asn1-ts/dist/node/functional";
 export type ENCRYPTED_HASH<ToBeSigned> = BIT_STRING;
 /* END_OF_SYMBOL_DEFINITION ENCRYPTED_HASH */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCRYPTED_HASH */
-let _cached_decoder_for_ENCRYPTED_HASH: $.ASN1Decoder<
-    ENCRYPTED_HASH<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCRYPTED_HASH */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_ENCRYPTED_HASH */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) ENCRYPTED_HASH
@@ -38,12 +32,6 @@ export function _get_decoder_for_ENCRYPTED_HASH<ToBeSigned>(
     return $._decodeBitString;
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ENCRYPTED_HASH */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCRYPTED_HASH */
-let _cached_encoder_for_ENCRYPTED_HASH: $.ASN1Encoder<
-    ENCRYPTED_HASH<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCRYPTED_HASH */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ENCRYPTED_HASH */
 /**

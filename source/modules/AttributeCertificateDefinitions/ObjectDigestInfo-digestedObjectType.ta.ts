@@ -58,6 +58,16 @@ export const ObjectDigestInfo_digestedObjectType_publicKey: ObjectDigestInfo_dig
     ObjectDigestInfo_digestedObjectType.publicKey; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectDigestInfo_digestedObjectType_publicKey */
 
+/* START_OF_SYMBOL_DEFINITION publicKey */
+/**
+ * @summary publicKey
+ * @constant
+ * @type {number}
+ */
+export const publicKey: ObjectDigestInfo_digestedObjectType =
+    ObjectDigestInfo_digestedObjectType.publicKey; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION publicKey */
+
 /* START_OF_SYMBOL_DEFINITION ObjectDigestInfo_digestedObjectType_publicKeyCert */
 /**
  * @summary ObjectDigestInfo_digestedObjectType_publicKeyCert
@@ -68,6 +78,16 @@ export const ObjectDigestInfo_digestedObjectType_publicKeyCert: ObjectDigestInfo
     ObjectDigestInfo_digestedObjectType.publicKeyCert; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectDigestInfo_digestedObjectType_publicKeyCert */
 
+/* START_OF_SYMBOL_DEFINITION publicKeyCert */
+/**
+ * @summary publicKeyCert
+ * @constant
+ * @type {number}
+ */
+export const publicKeyCert: ObjectDigestInfo_digestedObjectType =
+    ObjectDigestInfo_digestedObjectType.publicKeyCert; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION publicKeyCert */
+
 /* START_OF_SYMBOL_DEFINITION ObjectDigestInfo_digestedObjectType_otherObjectTypes */
 /**
  * @summary ObjectDigestInfo_digestedObjectType_otherObjectTypes
@@ -77,6 +97,16 @@ export const ObjectDigestInfo_digestedObjectType_publicKeyCert: ObjectDigestInfo
 export const ObjectDigestInfo_digestedObjectType_otherObjectTypes: ObjectDigestInfo_digestedObjectType =
     ObjectDigestInfo_digestedObjectType.otherObjectTypes; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectDigestInfo_digestedObjectType_otherObjectTypes */
+
+/* START_OF_SYMBOL_DEFINITION otherObjectTypes */
+/**
+ * @summary otherObjectTypes
+ * @constant
+ * @type {number}
+ */
+export const otherObjectTypes: ObjectDigestInfo_digestedObjectType =
+    ObjectDigestInfo_digestedObjectType.otherObjectTypes; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION otherObjectTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectDigestInfo_digestedObjectType */
 let _cached_decoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Decoder<

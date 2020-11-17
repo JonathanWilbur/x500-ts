@@ -1,10 +1,14 @@
 /* eslint-disable */
+import {
+    _decode_AttributeValueIntegrityInfo,
+    _encode_AttributeValueIntegrityInfo,
+} from "../EnhancedSecurity/AttributeValueIntegrityInfo.ta";
 import { id_avc_attributeValueIntegrityInfoContext } from "../EnhancedSecurity/id-avc-attributeValueIntegrityInfoContext.va";
 import { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 export {
     AttributeValueIntegrityInfo,
-    _get_decoder_for_AttributeValueIntegrityInfo,
-    _get_encoder_for_AttributeValueIntegrityInfo,
+    _decode_AttributeValueIntegrityInfo,
+    _encode_AttributeValueIntegrityInfo,
 } from "../EnhancedSecurity/AttributeValueIntegrityInfo.ta";
 export { id_avc_attributeValueIntegrityInfoContext } from "../EnhancedSecurity/id-avc-attributeValueIntegrityInfoContext.va";
 export { CONTEXT } from "../InformationFramework/CONTEXT.oca";

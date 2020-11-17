@@ -10,22 +10,22 @@ import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 import {
     RelativeLDAPDN,
     _decode_RelativeLDAPDN,
     _encode_RelativeLDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/RelativeLDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/RelativeLDAPDN.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
     RelativeLDAPDN,
     _decode_RelativeLDAPDN,
     _encode_RelativeLDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/RelativeLDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/RelativeLDAPDN.ta";
 
 /* START_OF_SYMBOL_DEFINITION ModifyDNRequest */
 /**

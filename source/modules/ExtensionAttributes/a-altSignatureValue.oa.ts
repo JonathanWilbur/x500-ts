@@ -3,10 +3,29 @@ import { altSignatureValue } from "../CertificateExtensions/altSignatureValue.oa
 import { id_asx_altSignatureValue } from "../ExtensionAttributes/id-asx-altSignatureValue.va";
 import { id_ce_a_altSignatureValue } from "../ExtensionAttributes/id-ce-a-altSignatureValue.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 export { altSignatureValue } from "../CertificateExtensions/altSignatureValue.oa";
 export { id_asx_altSignatureValue } from "../ExtensionAttributes/id-asx-altSignatureValue.va";
 export { id_ce_a_altSignatureValue } from "../ExtensionAttributes/id-ce-a-altSignatureValue.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION a_altSignatureValue */
 /**
@@ -43,8 +62,7 @@ export const a_altSignatureValue: ATTRIBUTE = {
     "&collective": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&dummy": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&no-user-modification": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
-    "&usage":
-        InformationFramework.AttributeUsage_userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&usage": userApplications /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
     "&obsolete": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION a_altSignatureValue */

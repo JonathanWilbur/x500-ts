@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { ALGORITHM } from "./AuthenticationFramework/ALGORITHM.oca";
 export {
     AlgorithmIdentifier,
@@ -211,7 +212,7 @@ export {
 } from "./AuthenticationFramework/PkiPath.ta";
 export { pkiUser } from "./AuthenticationFramework/pkiUser.oa";
 export { Policies } from "./AuthenticationFramework/Policies.osa";
-export { TYPE_IDENTIFIER } from "./AuthenticationFramework/POLICY.oca";
+export { POLICY } from "./AuthenticationFramework/POLICY.oca";
 export {
     PolicyID,
     _decode_PolicyID,
@@ -337,3 +338,4 @@ export { x509CertificateList } from "./AuthenticationFramework/x509CertificateLi
 export { x509CertificatePair } from "./AuthenticationFramework/x509CertificatePair.oa";
 export { x509SupportedAlgorithm } from "./AuthenticationFramework/x509SupportedAlgorithm.oa";
 export { x509SupportedPublicKeyAlgos } from "./AuthenticationFramework/x509SupportedPublicKeyAlgos.oa";
+/* eslint-enable */

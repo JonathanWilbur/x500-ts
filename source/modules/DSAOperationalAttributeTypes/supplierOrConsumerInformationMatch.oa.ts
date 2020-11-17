@@ -11,7 +11,9 @@ export {
     _decode_supplierOrConsumerInformationMatch_AssertionType,
     _encode_supplierOrConsumerInformationMatch_AssertionType,
 } from "../DSAOperationalAttributeTypes/supplierOrConsumerInformationMatch-AssertionType.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION supplierOrConsumerInformationMatch */
 /**

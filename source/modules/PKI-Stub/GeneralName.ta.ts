@@ -8,9 +8,9 @@ import {
     OCTET_STRING,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
-export { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
-export { OTHER_NAME } from "../PKI_Stub/OTHER-NAME.oca";
+import { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
+export { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
+export { OTHER_NAME } from "../PKI-Stub/OTHER-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION GeneralName */
 /**

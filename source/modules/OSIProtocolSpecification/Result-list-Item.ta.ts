@@ -21,18 +21,24 @@ import {
     _encode_Transfer_syntax_name,
 } from "../OSIProtocolSpecification/Transfer-syntax-name.ta";
 export {
+    abstract_syntax_not_supported /* IMPORTED_SHORT_NAMED_INTEGER */,
+    proposed_transfer_syntaxes_not_supported /* IMPORTED_SHORT_NAMED_INTEGER */,
+    reason_not_specified /* IMPORTED_SHORT_NAMED_INTEGER */,
     Result_list_Item_provider_reason,
-    Result_list_Item_provider_reason_abstract_syntax_not_supported /* IMPORTED_NAMED_INTEGER */,
-    Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported /* IMPORTED_NAMED_INTEGER */,
-    Result_list_Item_provider_reason_reason_not_specified /* IMPORTED_NAMED_INTEGER */,
+    Result_list_Item_provider_reason_abstract_syntax_not_supported /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_list_Item_provider_reason_proposed_transfer_syntaxes_not_supported /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_list_Item_provider_reason_reason_not_specified /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_Result_list_Item_provider_reason,
     _encode_Result_list_Item_provider_reason,
 } from "../OSIProtocolSpecification/Result-list-Item-provider-reason.ta";
 export {
+    acceptance /* IMPORTED_SHORT_NAMED_INTEGER */,
+    provider_rejection /* IMPORTED_SHORT_NAMED_INTEGER */,
     Result,
-    Result_acceptance /* IMPORTED_NAMED_INTEGER */,
-    Result_provider_rejection /* IMPORTED_NAMED_INTEGER */,
-    Result_user_rejection /* IMPORTED_NAMED_INTEGER */,
+    Result_acceptance /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_provider_rejection /* IMPORTED_LONG_NAMED_INTEGER */,
+    Result_user_rejection /* IMPORTED_LONG_NAMED_INTEGER */,
+    user_rejection /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_Result,
     _encode_Result,
 } from "../OSIProtocolSpecification/Result.ta";

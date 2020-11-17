@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { accessPointMatch } from "./DSAOperationalAttributeTypes/accessPointMatch.oa";
 export {
     ConsumerInformation,
@@ -84,3 +85,4 @@ export {
     _root_component_type_list_2_spec_for_supplierOrConsumerInformationMatch_AssertionType,
 } from "./DSAOperationalAttributeTypes/supplierOrConsumerInformationMatch-AssertionType.ta";
 export { supplierOrConsumerInformationMatch } from "./DSAOperationalAttributeTypes/supplierOrConsumerInformationMatch.oa";
+/* eslint-enable */

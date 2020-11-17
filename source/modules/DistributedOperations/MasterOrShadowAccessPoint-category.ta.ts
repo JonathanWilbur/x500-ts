@@ -35,6 +35,15 @@ export type MasterOrShadowAccessPoint_category =
 export const MasterOrShadowAccessPoint_category_master: MasterOrShadowAccessPoint_category = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION MasterOrShadowAccessPoint_category_master */
 
+/* START_OF_SYMBOL_DEFINITION master */
+/**
+ * @summary master
+ * @constant
+ * @type {number}
+ */
+export const master: MasterOrShadowAccessPoint_category = MasterOrShadowAccessPoint_category_master; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION master */
+
 /* START_OF_SYMBOL_DEFINITION MasterOrShadowAccessPoint_category_shadow */
 /**
  * @summary MasterOrShadowAccessPoint_category_shadow
@@ -44,6 +53,15 @@ export const MasterOrShadowAccessPoint_category_master: MasterOrShadowAccessPoin
 export const MasterOrShadowAccessPoint_category_shadow: MasterOrShadowAccessPoint_category = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION MasterOrShadowAccessPoint_category_shadow */
 
+/* START_OF_SYMBOL_DEFINITION shadow */
+/**
+ * @summary shadow
+ * @constant
+ * @type {number}
+ */
+export const shadow: MasterOrShadowAccessPoint_category = MasterOrShadowAccessPoint_category_shadow; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION shadow */
+
 /* START_OF_SYMBOL_DEFINITION MasterOrShadowAccessPoint_category_writeableCopy */
 /**
  * @summary MasterOrShadowAccessPoint_category_writeableCopy
@@ -52,6 +70,15 @@ export const MasterOrShadowAccessPoint_category_shadow: MasterOrShadowAccessPoin
  */
 export const MasterOrShadowAccessPoint_category_writeableCopy: MasterOrShadowAccessPoint_category = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION MasterOrShadowAccessPoint_category_writeableCopy */
+
+/* START_OF_SYMBOL_DEFINITION writeableCopy */
+/**
+ * @summary writeableCopy
+ * @constant
+ * @type {number}
+ */
+export const writeableCopy: MasterOrShadowAccessPoint_category = MasterOrShadowAccessPoint_category_writeableCopy; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION writeableCopy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterOrShadowAccessPoint_category */
 let _cached_decoder_for_MasterOrShadowAccessPoint_category: $.ASN1Decoder<

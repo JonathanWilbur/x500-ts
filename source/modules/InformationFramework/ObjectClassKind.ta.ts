@@ -67,6 +67,16 @@ export const ObjectClassKind_abstract: ObjectClassKind =
     ObjectClassKind.abstract; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectClassKind_abstract */
 
+/* START_OF_SYMBOL_DEFINITION abstract */
+/**
+ * @summary abstract
+ * @constant
+ * @type {number}
+ */
+export const abstract: ObjectClassKind =
+    ObjectClassKind.abstract; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION abstract */
+
 /* START_OF_SYMBOL_DEFINITION ObjectClassKind_structural */
 /**
  * @summary ObjectClassKind_structural
@@ -77,6 +87,16 @@ export const ObjectClassKind_structural: ObjectClassKind =
     ObjectClassKind.structural; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectClassKind_structural */
 
+/* START_OF_SYMBOL_DEFINITION structural */
+/**
+ * @summary structural
+ * @constant
+ * @type {number}
+ */
+export const structural: ObjectClassKind =
+    ObjectClassKind.structural; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION structural */
+
 /* START_OF_SYMBOL_DEFINITION ObjectClassKind_auxiliary */
 /**
  * @summary ObjectClassKind_auxiliary
@@ -86,6 +106,16 @@ export const ObjectClassKind_structural: ObjectClassKind =
 export const ObjectClassKind_auxiliary: ObjectClassKind =
     ObjectClassKind.auxiliary; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ObjectClassKind_auxiliary */
+
+/* START_OF_SYMBOL_DEFINITION auxiliary */
+/**
+ * @summary auxiliary
+ * @constant
+ * @type {number}
+ */
+export const auxiliary: ObjectClassKind =
+    ObjectClassKind.auxiliary; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION auxiliary */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectClassKind */
 let _cached_decoder_for_ObjectClassKind: $.ASN1Decoder<

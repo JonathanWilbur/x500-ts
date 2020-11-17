@@ -3,7 +3,9 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_userPwdMatch } from "../PasswordPolicy/id-mr-userPwdMatch.va";
 import { _decode_UserPwd, _encode_UserPwd } from "../PasswordPolicy/UserPwd.ta";
 import { userPwdDescription } from "../PasswordPolicy/userPwdDescription.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_userPwdMatch } from "../PasswordPolicy/id-mr-userPwdMatch.va";
 export {
     UserPwd,

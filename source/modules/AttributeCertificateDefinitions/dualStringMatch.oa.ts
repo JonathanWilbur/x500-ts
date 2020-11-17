@@ -11,7 +11,9 @@ export {
     _encode_DualStringSyntax,
 } from "../AttributeCertificateDefinitions/DualStringSyntax.ta";
 export { id_mr_dualStringMatch } from "../AttributeCertificateDefinitions/id-mr-dualStringMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION dualStringMatch */
 /**

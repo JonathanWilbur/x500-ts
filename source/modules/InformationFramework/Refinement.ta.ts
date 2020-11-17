@@ -5,17 +5,7 @@ import {
     OBJECT_IDENTIFIER,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import {
-    Refinement,
-    _decode_Refinement,
-    _encode_Refinement,
-} from "../InformationFramework/Refinement.ta";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
-export {
-    Refinement,
-    _decode_Refinement,
-    _encode_Refinement,
-} from "../InformationFramework/Refinement.ta";
 
 /* START_OF_SYMBOL_DEFINITION Refinement */
 // TODO: CHECK_RECURSIVE_DEFINITION

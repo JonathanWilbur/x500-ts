@@ -6,7 +6,7 @@ import {
     _decode_IDM_PDU,
     _encode_IDM_PDU,
 } from "../IDMProtocolSpecification/IDM-PDU.ta";
-export { dap_ip } from "../DirectoryIDMProtocols/dap-ip.va";
+export { dap_ip } from "../DirectoryIDMProtocols/dap-ip.oa";
 export {
     IDM_PDU,
     _decode_IDM_PDU,

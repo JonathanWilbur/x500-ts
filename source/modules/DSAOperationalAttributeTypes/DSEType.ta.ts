@@ -42,6 +42,14 @@ export type DSEType = BIT_STRING;
 export const DSEType_root: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_root */
 
+/* START_OF_SYMBOL_DEFINITION root */
+/**
+ * @summary root
+ * @constant
+ */
+export const root: number = DSEType_root; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION root */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_glue */
 /**
  * @summary DSEType_glue
@@ -49,6 +57,14 @@ export const DSEType_root: number = 0; /* LONG_NAMED_BIT */
  */
 export const DSEType_glue: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_glue */
+
+/* START_OF_SYMBOL_DEFINITION glue */
+/**
+ * @summary glue
+ * @constant
+ */
+export const glue: number = DSEType_glue; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION glue */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_cp */
 /**
@@ -58,6 +74,14 @@ export const DSEType_glue: number = 1; /* LONG_NAMED_BIT */
 export const DSEType_cp: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_cp */
 
+/* START_OF_SYMBOL_DEFINITION cp */
+/**
+ * @summary cp
+ * @constant
+ */
+export const cp: number = DSEType_cp; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION cp */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_entry */
 /**
  * @summary DSEType_entry
@@ -65,6 +89,14 @@ export const DSEType_cp: number = 2; /* LONG_NAMED_BIT */
  */
 export const DSEType_entry: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_entry */
+
+/* START_OF_SYMBOL_DEFINITION entry */
+/**
+ * @summary entry
+ * @constant
+ */
+export const entry: number = DSEType_entry; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION entry */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_alias */
 /**
@@ -74,6 +106,14 @@ export const DSEType_entry: number = 3; /* LONG_NAMED_BIT */
 export const DSEType_alias: number = 4; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_alias */
 
+/* START_OF_SYMBOL_DEFINITION alias */
+/**
+ * @summary alias
+ * @constant
+ */
+export const alias: number = DSEType_alias; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION alias */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_subr */
 /**
  * @summary DSEType_subr
@@ -81,6 +121,14 @@ export const DSEType_alias: number = 4; /* LONG_NAMED_BIT */
  */
 export const DSEType_subr: number = 5; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_subr */
+
+/* START_OF_SYMBOL_DEFINITION subr */
+/**
+ * @summary subr
+ * @constant
+ */
+export const subr: number = DSEType_subr; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION subr */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_nssr */
 /**
@@ -90,6 +138,14 @@ export const DSEType_subr: number = 5; /* LONG_NAMED_BIT */
 export const DSEType_nssr: number = 6; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_nssr */
 
+/* START_OF_SYMBOL_DEFINITION nssr */
+/**
+ * @summary nssr
+ * @constant
+ */
+export const nssr: number = DSEType_nssr; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION nssr */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_supr */
 /**
  * @summary DSEType_supr
@@ -97,6 +153,14 @@ export const DSEType_nssr: number = 6; /* LONG_NAMED_BIT */
  */
 export const DSEType_supr: number = 7; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_supr */
+
+/* START_OF_SYMBOL_DEFINITION supr */
+/**
+ * @summary supr
+ * @constant
+ */
+export const supr: number = DSEType_supr; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION supr */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_xr */
 /**
@@ -106,6 +170,14 @@ export const DSEType_supr: number = 7; /* LONG_NAMED_BIT */
 export const DSEType_xr: number = 8; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_xr */
 
+/* START_OF_SYMBOL_DEFINITION xr */
+/**
+ * @summary xr
+ * @constant
+ */
+export const xr: number = DSEType_xr; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION xr */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_admPoint */
 /**
  * @summary DSEType_admPoint
@@ -113,6 +185,14 @@ export const DSEType_xr: number = 8; /* LONG_NAMED_BIT */
  */
 export const DSEType_admPoint: number = 9; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_admPoint */
+
+/* START_OF_SYMBOL_DEFINITION admPoint */
+/**
+ * @summary admPoint
+ * @constant
+ */
+export const admPoint: number = DSEType_admPoint; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION admPoint */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_subentry */
 /**
@@ -122,6 +202,14 @@ export const DSEType_admPoint: number = 9; /* LONG_NAMED_BIT */
 export const DSEType_subentry: number = 10; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_subentry */
 
+/* START_OF_SYMBOL_DEFINITION subentry */
+/**
+ * @summary subentry
+ * @constant
+ */
+export const subentry: number = DSEType_subentry; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION subentry */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_shadow */
 /**
  * @summary DSEType_shadow
@@ -129,6 +217,14 @@ export const DSEType_subentry: number = 10; /* LONG_NAMED_BIT */
  */
 export const DSEType_shadow: number = 11; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_shadow */
+
+/* START_OF_SYMBOL_DEFINITION shadow */
+/**
+ * @summary shadow
+ * @constant
+ */
+export const shadow: number = DSEType_shadow; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION shadow */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_immSupr */
 /**
@@ -138,6 +234,14 @@ export const DSEType_shadow: number = 11; /* LONG_NAMED_BIT */
 export const DSEType_immSupr: number = 13; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_immSupr */
 
+/* START_OF_SYMBOL_DEFINITION immSupr */
+/**
+ * @summary immSupr
+ * @constant
+ */
+export const immSupr: number = DSEType_immSupr; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION immSupr */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_rhob */
 /**
  * @summary DSEType_rhob
@@ -145,6 +249,14 @@ export const DSEType_immSupr: number = 13; /* LONG_NAMED_BIT */
  */
 export const DSEType_rhob: number = 14; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_rhob */
+
+/* START_OF_SYMBOL_DEFINITION rhob */
+/**
+ * @summary rhob
+ * @constant
+ */
+export const rhob: number = DSEType_rhob; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION rhob */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_sa */
 /**
@@ -154,6 +266,14 @@ export const DSEType_rhob: number = 14; /* LONG_NAMED_BIT */
 export const DSEType_sa: number = 15; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_sa */
 
+/* START_OF_SYMBOL_DEFINITION sa */
+/**
+ * @summary sa
+ * @constant
+ */
+export const sa: number = DSEType_sa; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION sa */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_dsSubentry */
 /**
  * @summary DSEType_dsSubentry
@@ -161,6 +281,14 @@ export const DSEType_sa: number = 15; /* LONG_NAMED_BIT */
  */
 export const DSEType_dsSubentry: number = 16; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_dsSubentry */
+
+/* START_OF_SYMBOL_DEFINITION dsSubentry */
+/**
+ * @summary dsSubentry
+ * @constant
+ */
+export const dsSubentry: number = DSEType_dsSubentry; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION dsSubentry */
 
 /* START_OF_SYMBOL_DEFINITION DSEType_familyMember */
 /**
@@ -170,6 +298,14 @@ export const DSEType_dsSubentry: number = 16; /* LONG_NAMED_BIT */
 export const DSEType_familyMember: number = 17; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_familyMember */
 
+/* START_OF_SYMBOL_DEFINITION familyMember */
+/**
+ * @summary familyMember
+ * @constant
+ */
+export const familyMember: number = DSEType_familyMember; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION familyMember */
+
 /* START_OF_SYMBOL_DEFINITION DSEType_ditBridge */
 /**
  * @summary DSEType_ditBridge
@@ -177,6 +313,14 @@ export const DSEType_familyMember: number = 17; /* LONG_NAMED_BIT */
  */
 export const DSEType_ditBridge: number = 18; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION DSEType_ditBridge */
+
+/* START_OF_SYMBOL_DEFINITION ditBridge */
+/**
+ * @summary ditBridge
+ * @constant
+ */
+export const ditBridge: number = DSEType_ditBridge; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION ditBridge */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSEType */
 let _cached_decoder_for_DSEType: $.ASN1Decoder<DSEType> | null = null;

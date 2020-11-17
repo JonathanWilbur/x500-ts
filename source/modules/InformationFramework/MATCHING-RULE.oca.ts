@@ -2,9 +2,7 @@
 import { OBJECT_IDENTIFIER, UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
-import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
-export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION MATCHING_RULE */

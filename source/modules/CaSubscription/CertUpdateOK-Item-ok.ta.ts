@@ -9,14 +9,14 @@ import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
-import { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
+import { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
-export { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
+export { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertUpdateOK_Item_ok */
 /**

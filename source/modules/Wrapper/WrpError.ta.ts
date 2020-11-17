@@ -103,6 +103,15 @@ export type WrpError = _enum_for_WrpError | ENUMERATED;
 export const WrpError_protocol_error: WrpError = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_protocol_error */
 
+/* START_OF_SYMBOL_DEFINITION protocol_error */
+/**
+ * @summary protocol_error
+ * @constant
+ * @type {number}
+ */
+export const protocol_error: WrpError = WrpError_protocol_error; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION protocol_error */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_signatureAlgorithm */
 /**
  * @summary WrpError_invalid_signatureAlgorithm
@@ -111,6 +120,15 @@ export const WrpError_protocol_error: WrpError = 0; /* LONG_NAMED_ENUMERATED_VAL
  */
 export const WrpError_invalid_signatureAlgorithm: WrpError = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_signatureAlgorithm */
+
+/* START_OF_SYMBOL_DEFINITION invalid_signatureAlgorithm */
+/**
+ * @summary invalid_signatureAlgorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_signatureAlgorithm: WrpError = WrpError_invalid_signatureAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_signatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_unexpected_version */
 /**
@@ -121,6 +139,15 @@ export const WrpError_invalid_signatureAlgorithm: WrpError = 1; /* LONG_NAMED_EN
 export const WrpError_unexpected_version: WrpError = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_unexpected_version */
 
+/* START_OF_SYMBOL_DEFINITION unexpected_version */
+/**
+ * @summary unexpected_version
+ * @constant
+ * @type {number}
+ */
+export const unexpected_version: WrpError = WrpError_unexpected_version; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpected_version */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_protected_protocol_not_supported */
 /**
  * @summary WrpError_protected_protocol_not_supported
@@ -129,6 +156,15 @@ export const WrpError_unexpected_version: WrpError = 2; /* LONG_NAMED_ENUMERATED
  */
 export const WrpError_protected_protocol_not_supported: WrpError = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_protected_protocol_not_supported */
+
+/* START_OF_SYMBOL_DEFINITION protected_protocol_not_supported */
+/**
+ * @summary protected_protocol_not_supported
+ * @constant
+ * @type {number}
+ */
+export const protected_protocol_not_supported: WrpError = WrpError_protected_protocol_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION protected_protocol_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_duplicate_assoID */
 /**
@@ -139,6 +175,15 @@ export const WrpError_protected_protocol_not_supported: WrpError = 3; /* LONG_NA
 export const WrpError_duplicate_assoID: WrpError = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_duplicate_assoID */
 
+/* START_OF_SYMBOL_DEFINITION duplicate_assoID */
+/**
+ * @summary duplicate_assoID
+ * @constant
+ * @type {number}
+ */
+export const duplicate_assoID: WrpError = WrpError_duplicate_assoID; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION duplicate_assoID */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_time_value */
 /**
  * @summary WrpError_invalid_time_value
@@ -147,6 +192,15 @@ export const WrpError_duplicate_assoID: WrpError = 4; /* LONG_NAMED_ENUMERATED_V
  */
 export const WrpError_invalid_time_value: WrpError = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_time_value */
+
+/* START_OF_SYMBOL_DEFINITION invalid_time_value */
+/**
+ * @summary invalid_time_value
+ * @constant
+ * @type {number}
+ */
+export const invalid_time_value: WrpError = WrpError_invalid_time_value; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_time_value */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_key_estab_algorithm_not_supported */
 /**
@@ -157,6 +211,15 @@ export const WrpError_invalid_time_value: WrpError = 5; /* LONG_NAMED_ENUMERATED
 export const WrpError_key_estab_algorithm_not_supported: WrpError = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_key_estab_algorithm_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION key_estab_algorithm_not_supported */
+/**
+ * @summary key_estab_algorithm_not_supported
+ * @constant
+ * @type {number}
+ */
+export const key_estab_algorithm_not_supported: WrpError = WrpError_key_estab_algorithm_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION key_estab_algorithm_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_encr_mode_aead_not_supported */
 /**
  * @summary WrpError_encr_mode_aead_not_supported
@@ -165,6 +228,15 @@ export const WrpError_key_estab_algorithm_not_supported: WrpError = 6; /* LONG_N
  */
 export const WrpError_encr_mode_aead_not_supported: WrpError = 7; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_encr_mode_aead_not_supported */
+
+/* START_OF_SYMBOL_DEFINITION encr_mode_aead_not_supported */
+/**
+ * @summary encr_mode_aead_not_supported
+ * @constant
+ * @type {number}
+ */
+export const encr_mode_aead_not_supported: WrpError = WrpError_encr_mode_aead_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION encr_mode_aead_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_encryption_not_supported */
 /**
@@ -175,6 +247,15 @@ export const WrpError_encr_mode_aead_not_supported: WrpError = 7; /* LONG_NAMED_
 export const WrpError_encryption_not_supported: WrpError = 8; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_encryption_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION encryption_not_supported */
+/**
+ * @summary encryption_not_supported
+ * @constant
+ * @type {number}
+ */
+export const encryption_not_supported: WrpError = WrpError_encryption_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION encryption_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_encryption_required */
 /**
  * @summary WrpError_encryption_required
@@ -183,6 +264,15 @@ export const WrpError_encryption_not_supported: WrpError = 8; /* LONG_NAMED_ENUM
  */
 export const WrpError_encryption_required: WrpError = 9; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_encryption_required */
+
+/* START_OF_SYMBOL_DEFINITION encryption_required */
+/**
+ * @summary encryption_required
+ * @constant
+ * @type {number}
+ */
+export const encryption_required: WrpError = WrpError_encryption_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION encryption_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_aead_algorithms_not_supported */
 /**
@@ -193,6 +283,15 @@ export const WrpError_encryption_required: WrpError = 9; /* LONG_NAMED_ENUMERATE
 export const WrpError_aead_algorithms_not_supported: WrpError = 10; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_aead_algorithms_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION aead_algorithms_not_supported */
+/**
+ * @summary aead_algorithms_not_supported
+ * @constant
+ * @type {number}
+ */
+export const aead_algorithms_not_supported: WrpError = WrpError_aead_algorithms_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION aead_algorithms_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_aead_is_required */
 /**
  * @summary WrpError_aead_is_required
@@ -201,6 +300,15 @@ export const WrpError_aead_algorithms_not_supported: WrpError = 10; /* LONG_NAME
  */
 export const WrpError_aead_is_required: WrpError = 11; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_aead_is_required */
+
+/* START_OF_SYMBOL_DEFINITION aead_is_required */
+/**
+ * @summary aead_is_required
+ * @constant
+ * @type {number}
+ */
+export const aead_is_required: WrpError = WrpError_aead_is_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION aead_is_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_symmetricKey_algorithms_not_supported */
 /**
@@ -211,6 +319,15 @@ export const WrpError_aead_is_required: WrpError = 11; /* LONG_NAMED_ENUMERATED_
 export const WrpError_symmetricKey_algorithms_not_supported: WrpError = 12; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_symmetricKey_algorithms_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION symmetricKey_algorithms_not_supported */
+/**
+ * @summary symmetricKey_algorithms_not_supported
+ * @constant
+ * @type {number}
+ */
+export const symmetricKey_algorithms_not_supported: WrpError = WrpError_symmetricKey_algorithms_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION symmetricKey_algorithms_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_icv_algorithms_not_supported */
 /**
  * @summary WrpError_icv_algorithms_not_supported
@@ -219,6 +336,15 @@ export const WrpError_symmetricKey_algorithms_not_supported: WrpError = 12; /* L
  */
 export const WrpError_icv_algorithms_not_supported: WrpError = 13; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_icv_algorithms_not_supported */
+
+/* START_OF_SYMBOL_DEFINITION icv_algorithms_not_supported */
+/**
+ * @summary icv_algorithms_not_supported
+ * @constant
+ * @type {number}
+ */
+export const icv_algorithms_not_supported: WrpError = WrpError_icv_algorithms_not_supported; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION icv_algorithms_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_attribute_certificate */
 /**
@@ -229,6 +355,15 @@ export const WrpError_icv_algorithms_not_supported: WrpError = 13; /* LONG_NAMED
 export const WrpError_invalid_attribute_certificate: WrpError = 14; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_attribute_certificate */
 
+/* START_OF_SYMBOL_DEFINITION invalid_attribute_certificate */
+/**
+ * @summary invalid_attribute_certificate
+ * @constant
+ * @type {number}
+ */
+export const invalid_attribute_certificate: WrpError = WrpError_invalid_attribute_certificate; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_attribute_certificate */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_alt_signature_not_allowed */
 /**
  * @summary WrpError_alt_signature_not_allowed
@@ -237,6 +372,15 @@ export const WrpError_invalid_attribute_certificate: WrpError = 14; /* LONG_NAME
  */
 export const WrpError_alt_signature_not_allowed: WrpError = 15; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_alt_signature_not_allowed */
+
+/* START_OF_SYMBOL_DEFINITION alt_signature_not_allowed */
+/**
+ * @summary alt_signature_not_allowed
+ * @constant
+ * @type {number}
+ */
+export const alt_signature_not_allowed: WrpError = WrpError_alt_signature_not_allowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION alt_signature_not_allowed */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_only_one_version */
 /**
@@ -247,6 +391,15 @@ export const WrpError_alt_signature_not_allowed: WrpError = 15; /* LONG_NAMED_EN
 export const WrpError_only_one_version: WrpError = 16; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_only_one_version */
 
+/* START_OF_SYMBOL_DEFINITION only_one_version */
+/**
+ * @summary only_one_version
+ * @constant
+ * @type {number}
+ */
+export const only_one_version: WrpError = WrpError_only_one_version; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION only_one_version */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_key_estab_algorithm */
 /**
  * @summary WrpError_invalid_key_estab_algorithm
@@ -255,6 +408,15 @@ export const WrpError_only_one_version: WrpError = 16; /* LONG_NAMED_ENUMERATED_
  */
 export const WrpError_invalid_key_estab_algorithm: WrpError = 17; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_key_estab_algorithm */
+
+/* START_OF_SYMBOL_DEFINITION invalid_key_estab_algorithm */
+/**
+ * @summary invalid_key_estab_algorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_key_estab_algorithm: WrpError = WrpError_invalid_key_estab_algorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_key_estab_algorithm */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_alt_key_estab_algorithm */
 /**
@@ -265,6 +427,15 @@ export const WrpError_invalid_key_estab_algorithm: WrpError = 17; /* LONG_NAMED_
 export const WrpError_invalid_alt_key_estab_algorithm: WrpError = 18; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_alt_key_estab_algorithm */
 
+/* START_OF_SYMBOL_DEFINITION invalid_alt_key_estab_algorithm */
+/**
+ * @summary invalid_alt_key_estab_algorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_alt_key_estab_algorithm: WrpError = WrpError_invalid_alt_key_estab_algorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_alt_key_estab_algorithm */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_aead_algorithm */
 /**
  * @summary WrpError_invalid_aead_algorithm
@@ -273,6 +444,15 @@ export const WrpError_invalid_alt_key_estab_algorithm: WrpError = 18; /* LONG_NA
  */
 export const WrpError_invalid_aead_algorithm: WrpError = 19; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_aead_algorithm */
+
+/* START_OF_SYMBOL_DEFINITION invalid_aead_algorithm */
+/**
+ * @summary invalid_aead_algorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_aead_algorithm: WrpError = WrpError_invalid_aead_algorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_aead_algorithm */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_aead_not_allowed */
 /**
@@ -283,6 +463,15 @@ export const WrpError_invalid_aead_algorithm: WrpError = 19; /* LONG_NAMED_ENUME
 export const WrpError_aead_not_allowed: WrpError = 20; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_aead_not_allowed */
 
+/* START_OF_SYMBOL_DEFINITION aead_not_allowed */
+/**
+ * @summary aead_not_allowed
+ * @constant
+ * @type {number}
+ */
+export const aead_not_allowed: WrpError = WrpError_aead_not_allowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION aead_not_allowed */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_symmetricKey_algorithm */
 /**
  * @summary WrpError_invalid_symmetricKey_algorithm
@@ -291,6 +480,15 @@ export const WrpError_aead_not_allowed: WrpError = 20; /* LONG_NAMED_ENUMERATED_
  */
 export const WrpError_invalid_symmetricKey_algorithm: WrpError = 21; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_symmetricKey_algorithm */
+
+/* START_OF_SYMBOL_DEFINITION invalid_symmetricKey_algorithm */
+/**
+ * @summary invalid_symmetricKey_algorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_symmetricKey_algorithm: WrpError = WrpError_invalid_symmetricKey_algorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_symmetricKey_algorithm */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_icv_algorithm */
 /**
@@ -301,6 +499,15 @@ export const WrpError_invalid_symmetricKey_algorithm: WrpError = 21; /* LONG_NAM
 export const WrpError_invalid_icv_algorithm: WrpError = 22; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_icv_algorithm */
 
+/* START_OF_SYMBOL_DEFINITION invalid_icv_algorithm */
+/**
+ * @summary invalid_icv_algorithm
+ * @constant
+ * @type {number}
+ */
+export const invalid_icv_algorithm: WrpError = WrpError_invalid_icv_algorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_icv_algorithm */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_aead_algo_parms_required */
 /**
  * @summary WrpError_dynamic_aead_algo_parms_required
@@ -309,6 +516,15 @@ export const WrpError_invalid_icv_algorithm: WrpError = 22; /* LONG_NAMED_ENUMER
  */
 export const WrpError_dynamic_aead_algo_parms_required: WrpError = 23; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_aead_algo_parms_required */
+
+/* START_OF_SYMBOL_DEFINITION dynamic_aead_algo_parms_required */
+/**
+ * @summary dynamic_aead_algo_parms_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_aead_algo_parms_required: WrpError = WrpError_dynamic_aead_algo_parms_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_aead_algo_parms_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_aead_algo_parms */
 /**
@@ -319,6 +535,15 @@ export const WrpError_dynamic_aead_algo_parms_required: WrpError = 23; /* LONG_N
 export const WrpError_invalid_dynamic_aead_algo_parms: WrpError = 24; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_aead_algo_parms */
 
+/* START_OF_SYMBOL_DEFINITION invalid_dynamic_aead_algo_parms */
+/**
+ * @summary invalid_dynamic_aead_algo_parms
+ * @constant
+ * @type {number}
+ */
+export const invalid_dynamic_aead_algo_parms: WrpError = WrpError_invalid_dynamic_aead_algo_parms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_dynamic_aead_algo_parms */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_aead_algo_parms_not_required */
 /**
  * @summary WrpError_dynamic_aead_algo_parms_not_required
@@ -327,6 +552,15 @@ export const WrpError_invalid_dynamic_aead_algo_parms: WrpError = 24; /* LONG_NA
  */
 export const WrpError_dynamic_aead_algo_parms_not_required: WrpError = 25; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_aead_algo_parms_not_required */
+
+/* START_OF_SYMBOL_DEFINITION dynamic_aead_algo_parms_not_required */
+/**
+ * @summary dynamic_aead_algo_parms_not_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_aead_algo_parms_not_required: WrpError = WrpError_dynamic_aead_algo_parms_not_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_aead_algo_parms_not_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_symKey_algo_parms_required */
 /**
@@ -337,6 +571,15 @@ export const WrpError_dynamic_aead_algo_parms_not_required: WrpError = 25; /* LO
 export const WrpError_dynamic_symKey_algo_parms_required: WrpError = 26; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_symKey_algo_parms_required */
 
+/* START_OF_SYMBOL_DEFINITION dynamic_symKey_algo_parms_required */
+/**
+ * @summary dynamic_symKey_algo_parms_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_symKey_algo_parms_required: WrpError = WrpError_dynamic_symKey_algo_parms_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_symKey_algo_parms_required */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_symKey_algo_parms */
 /**
  * @summary WrpError_invalid_dynamic_symKey_algo_parms
@@ -345,6 +588,15 @@ export const WrpError_dynamic_symKey_algo_parms_required: WrpError = 26; /* LONG
  */
 export const WrpError_invalid_dynamic_symKey_algo_parms: WrpError = 27; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_symKey_algo_parms */
+
+/* START_OF_SYMBOL_DEFINITION invalid_dynamic_symKey_algo_parms */
+/**
+ * @summary invalid_dynamic_symKey_algo_parms
+ * @constant
+ * @type {number}
+ */
+export const invalid_dynamic_symKey_algo_parms: WrpError = WrpError_invalid_dynamic_symKey_algo_parms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_dynamic_symKey_algo_parms */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_symKey_algo_parms_not_required */
 /**
@@ -355,6 +607,15 @@ export const WrpError_invalid_dynamic_symKey_algo_parms: WrpError = 27; /* LONG_
 export const WrpError_dynamic_symKey_algo_parms_not_required: WrpError = 28; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_symKey_algo_parms_not_required */
 
+/* START_OF_SYMBOL_DEFINITION dynamic_symKey_algo_parms_not_required */
+/**
+ * @summary dynamic_symKey_algo_parms_not_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_symKey_algo_parms_not_required: WrpError = WrpError_dynamic_symKey_algo_parms_not_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_symKey_algo_parms_not_required */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_icv_algo_parms_required */
 /**
  * @summary WrpError_dynamic_icv_algo_parms_required
@@ -363,6 +624,15 @@ export const WrpError_dynamic_symKey_algo_parms_not_required: WrpError = 28; /* 
  */
 export const WrpError_dynamic_icv_algo_parms_required: WrpError = 29; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_icv_algo_parms_required */
+
+/* START_OF_SYMBOL_DEFINITION dynamic_icv_algo_parms_required */
+/**
+ * @summary dynamic_icv_algo_parms_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_icv_algo_parms_required: WrpError = WrpError_dynamic_icv_algo_parms_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_icv_algo_parms_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_icv_algo_parms */
 /**
@@ -373,6 +643,15 @@ export const WrpError_dynamic_icv_algo_parms_required: WrpError = 29; /* LONG_NA
 export const WrpError_invalid_dynamic_icv_algo_parms: WrpError = 30; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_icv_algo_parms */
 
+/* START_OF_SYMBOL_DEFINITION invalid_dynamic_icv_algo_parms */
+/**
+ * @summary invalid_dynamic_icv_algo_parms
+ * @constant
+ * @type {number}
+ */
+export const invalid_dynamic_icv_algo_parms: WrpError = WrpError_invalid_dynamic_icv_algo_parms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_dynamic_icv_algo_parms */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_dynamic_icv_algo_parms_not_required */
 /**
  * @summary WrpError_dynamic_icv_algo_parms_not_required
@@ -381,6 +660,15 @@ export const WrpError_invalid_dynamic_icv_algo_parms: WrpError = 30; /* LONG_NAM
  */
 export const WrpError_dynamic_icv_algo_parms_not_required: WrpError = 31; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_dynamic_icv_algo_parms_not_required */
+
+/* START_OF_SYMBOL_DEFINITION dynamic_icv_algo_parms_not_required */
+/**
+ * @summary dynamic_icv_algo_parms_not_required
+ * @constant
+ * @type {number}
+ */
+export const dynamic_icv_algo_parms_not_required: WrpError = WrpError_dynamic_icv_algo_parms_not_required; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dynamic_icv_algo_parms_not_required */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_unexpected_invokeID_received */
 /**
@@ -391,6 +679,15 @@ export const WrpError_dynamic_icv_algo_parms_not_required: WrpError = 31; /* LON
 export const WrpError_unexpected_invokeID_received: WrpError = 32; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_unexpected_invokeID_received */
 
+/* START_OF_SYMBOL_DEFINITION unexpected_invokeID_received */
+/**
+ * @summary unexpected_invokeID_received
+ * @constant
+ * @type {number}
+ */
+export const unexpected_invokeID_received: WrpError = WrpError_unexpected_invokeID_received; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpected_invokeID_received */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_rekey_out_of_sequence */
 /**
  * @summary WrpError_rekey_out_of_sequence
@@ -399,6 +696,15 @@ export const WrpError_unexpected_invokeID_received: WrpError = 32; /* LONG_NAMED
  */
 export const WrpError_rekey_out_of_sequence: WrpError = 33; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_rekey_out_of_sequence */
+
+/* START_OF_SYMBOL_DEFINITION rekey_out_of_sequence */
+/**
+ * @summary rekey_out_of_sequence
+ * @constant
+ * @type {number}
+ */
+export const rekey_out_of_sequence: WrpError = WrpError_rekey_out_of_sequence; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION rekey_out_of_sequence */
 
 /* START_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_keyEst_algo_parms */
 /**
@@ -409,6 +715,15 @@ export const WrpError_rekey_out_of_sequence: WrpError = 33; /* LONG_NAMED_ENUMER
 export const WrpError_invalid_dynamic_keyEst_algo_parms: WrpError = 34; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_invalid_dynamic_keyEst_algo_parms */
 
+/* START_OF_SYMBOL_DEFINITION invalid_dynamic_keyEst_algo_parms */
+/**
+ * @summary invalid_dynamic_keyEst_algo_parms
+ * @constant
+ * @type {number}
+ */
+export const invalid_dynamic_keyEst_algo_parms: WrpError = WrpError_invalid_dynamic_keyEst_algo_parms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_dynamic_keyEst_algo_parms */
+
 /* START_OF_SYMBOL_DEFINITION WrpError_changedKey_out_of_sequence */
 /**
  * @summary WrpError_changedKey_out_of_sequence
@@ -417,6 +732,15 @@ export const WrpError_invalid_dynamic_keyEst_algo_parms: WrpError = 34; /* LONG_
  */
 export const WrpError_changedKey_out_of_sequence: WrpError = 35; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION WrpError_changedKey_out_of_sequence */
+
+/* START_OF_SYMBOL_DEFINITION changedKey_out_of_sequence */
+/**
+ * @summary changedKey_out_of_sequence
+ * @constant
+ * @type {number}
+ */
+export const changedKey_out_of_sequence: WrpError = WrpError_changedKey_out_of_sequence; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION changedKey_out_of_sequence */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_WrpError */
 let _cached_decoder_for_WrpError: $.ASN1Decoder<WrpError> | null = null;

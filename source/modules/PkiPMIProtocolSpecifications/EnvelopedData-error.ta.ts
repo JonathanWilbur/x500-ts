@@ -33,6 +33,15 @@ export type EnvelopedData_error = _enum_for_EnvelopedData_error | ENUMERATED;
 export const EnvelopedData_error_noReason: EnvelopedData_error = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION EnvelopedData_error_noReason */
 
+/* START_OF_SYMBOL_DEFINITION noReason */
+/**
+ * @summary noReason
+ * @constant
+ * @type {number}
+ */
+export const noReason: EnvelopedData_error = EnvelopedData_error_noReason; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION noReason */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EnvelopedData_error */
 let _cached_decoder_for_EnvelopedData_error: $.ASN1Decoder<
     EnvelopedData_error

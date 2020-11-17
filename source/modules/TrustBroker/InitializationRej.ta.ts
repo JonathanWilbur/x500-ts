@@ -13,7 +13,8 @@ import {
 } from "../TrustBroker/InitializationRej-diag.ta";
 export {
     InitializationRej_diag,
-    InitializationRej_diag_unsupportedVersions /* IMPORTED_ENUMERATION_ITEM */,
+    InitializationRej_diag_unsupportedVersions /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    unsupportedVersions /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_InitializationRej_diag,
     _encode_InitializationRej_diag,
     _enum_for_InitializationRej_diag,

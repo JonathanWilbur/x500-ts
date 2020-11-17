@@ -9,7 +9,7 @@ import {
     AlgoInvoke,
     _decode_AlgoInvoke,
     _encode_AlgoInvoke,
-} from "../PKI_Stub/AlgoInvoke.ta";
+} from "../PKI-Stub/AlgoInvoke.ta";
 import { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 import {
     InvokeID,
@@ -30,7 +30,7 @@ export {
     AlgoInvoke,
     _decode_AlgoInvoke,
     _encode_AlgoInvoke,
-} from "../PKI_Stub/AlgoInvoke.ta";
+} from "../PKI-Stub/AlgoInvoke.ta";
 export { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 export {
     InvokeID,

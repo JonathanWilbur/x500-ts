@@ -9,32 +9,32 @@ import {
     Controls,
     _decode_Controls,
     _encode_Controls,
-} from "../Lightweight_Directory_Access_Protocol_V3/Controls.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Controls.ta";
 import {
     LDAPMessage_protocolOp,
     _decode_LDAPMessage_protocolOp,
     _encode_LDAPMessage_protocolOp,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage-protocolOp.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage-protocolOp.ta";
 import {
     MessageID,
     _decode_MessageID,
     _encode_MessageID,
-} from "../Lightweight_Directory_Access_Protocol_V3/MessageID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MessageID.ta";
 export {
     Controls,
     _decode_Controls,
     _encode_Controls,
-} from "../Lightweight_Directory_Access_Protocol_V3/Controls.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/Controls.ta";
 export {
     LDAPMessage_protocolOp,
     _decode_LDAPMessage_protocolOp,
     _encode_LDAPMessage_protocolOp,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPMessage-protocolOp.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPMessage-protocolOp.ta";
 export {
     MessageID,
     _decode_MessageID,
     _encode_MessageID,
-} from "../Lightweight_Directory_Access_Protocol_V3/MessageID.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/MessageID.ta";
 
 /* START_OF_SYMBOL_DEFINITION LDAPMessage */
 /**

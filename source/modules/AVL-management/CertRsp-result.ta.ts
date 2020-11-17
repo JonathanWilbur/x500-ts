@@ -5,22 +5,22 @@ import {
     CertErr,
     _decode_CertErr,
     _encode_CertErr,
-} from "../AVL_management/CertErr.ta";
+} from "../AVL-management/CertErr.ta";
 import {
     CertOK,
     _decode_CertOK,
     _encode_CertOK,
-} from "../AVL_management/CertOK.ta";
+} from "../AVL-management/CertOK.ta";
 export {
     CertErr,
     _decode_CertErr,
     _encode_CertErr,
-} from "../AVL_management/CertErr.ta";
+} from "../AVL-management/CertErr.ta";
 export {
     CertOK,
     _decode_CertOK,
     _encode_CertOK,
-} from "../AVL_management/CertOK.ta";
+} from "../AVL-management/CertOK.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertRsp_result */
 /**

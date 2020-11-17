@@ -36,6 +36,14 @@ export type SearchControlOptions = BIT_STRING;
 export const SearchControlOptions_searchAliases: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_searchAliases */
 
+/* START_OF_SYMBOL_DEFINITION searchAliases */
+/**
+ * @summary searchAliases
+ * @constant
+ */
+export const searchAliases: number = SearchControlOptions_searchAliases; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION searchAliases */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_matchedValuesOnly */
 /**
  * @summary SearchControlOptions_matchedValuesOnly
@@ -43,6 +51,14 @@ export const SearchControlOptions_searchAliases: number = 0; /* LONG_NAMED_BIT *
  */
 export const SearchControlOptions_matchedValuesOnly: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_matchedValuesOnly */
+
+/* START_OF_SYMBOL_DEFINITION matchedValuesOnly */
+/**
+ * @summary matchedValuesOnly
+ * @constant
+ */
+export const matchedValuesOnly: number = SearchControlOptions_matchedValuesOnly; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION matchedValuesOnly */
 
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_checkOverspecified */
 /**
@@ -52,6 +68,14 @@ export const SearchControlOptions_matchedValuesOnly: number = 1; /* LONG_NAMED_B
 export const SearchControlOptions_checkOverspecified: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_checkOverspecified */
 
+/* START_OF_SYMBOL_DEFINITION checkOverspecified */
+/**
+ * @summary checkOverspecified
+ * @constant
+ */
+export const checkOverspecified: number = SearchControlOptions_checkOverspecified; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION checkOverspecified */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_performExactly */
 /**
  * @summary SearchControlOptions_performExactly
@@ -59,6 +83,14 @@ export const SearchControlOptions_checkOverspecified: number = 2; /* LONG_NAMED_
  */
 export const SearchControlOptions_performExactly: number = 3; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_performExactly */
+
+/* START_OF_SYMBOL_DEFINITION performExactly */
+/**
+ * @summary performExactly
+ * @constant
+ */
+export const performExactly: number = SearchControlOptions_performExactly; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION performExactly */
 
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_includeAllAreas */
 /**
@@ -68,6 +100,14 @@ export const SearchControlOptions_performExactly: number = 3; /* LONG_NAMED_BIT 
 export const SearchControlOptions_includeAllAreas: number = 4; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_includeAllAreas */
 
+/* START_OF_SYMBOL_DEFINITION includeAllAreas */
+/**
+ * @summary includeAllAreas
+ * @constant
+ */
+export const includeAllAreas: number = SearchControlOptions_includeAllAreas; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION includeAllAreas */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_noSystemRelaxation */
 /**
  * @summary SearchControlOptions_noSystemRelaxation
@@ -75,6 +115,14 @@ export const SearchControlOptions_includeAllAreas: number = 4; /* LONG_NAMED_BIT
  */
 export const SearchControlOptions_noSystemRelaxation: number = 5; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_noSystemRelaxation */
+
+/* START_OF_SYMBOL_DEFINITION noSystemRelaxation */
+/**
+ * @summary noSystemRelaxation
+ * @constant
+ */
+export const noSystemRelaxation: number = SearchControlOptions_noSystemRelaxation; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION noSystemRelaxation */
 
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_dnAttribute */
 /**
@@ -84,6 +132,14 @@ export const SearchControlOptions_noSystemRelaxation: number = 5; /* LONG_NAMED_
 export const SearchControlOptions_dnAttribute: number = 6; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_dnAttribute */
 
+/* START_OF_SYMBOL_DEFINITION dnAttribute */
+/**
+ * @summary dnAttribute
+ * @constant
+ */
+export const dnAttribute: number = SearchControlOptions_dnAttribute; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION dnAttribute */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_matchOnResidualName */
 /**
  * @summary SearchControlOptions_matchOnResidualName
@@ -91,6 +147,14 @@ export const SearchControlOptions_dnAttribute: number = 6; /* LONG_NAMED_BIT */
  */
 export const SearchControlOptions_matchOnResidualName: number = 7; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_matchOnResidualName */
+
+/* START_OF_SYMBOL_DEFINITION matchOnResidualName */
+/**
+ * @summary matchOnResidualName
+ * @constant
+ */
+export const matchOnResidualName: number = SearchControlOptions_matchOnResidualName; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION matchOnResidualName */
 
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_entryCount */
 /**
@@ -100,6 +164,14 @@ export const SearchControlOptions_matchOnResidualName: number = 7; /* LONG_NAMED
 export const SearchControlOptions_entryCount: number = 8; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_entryCount */
 
+/* START_OF_SYMBOL_DEFINITION entryCount */
+/**
+ * @summary entryCount
+ * @constant
+ */
+export const entryCount: number = SearchControlOptions_entryCount; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION entryCount */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_useSubset */
 /**
  * @summary SearchControlOptions_useSubset
@@ -107,6 +179,14 @@ export const SearchControlOptions_entryCount: number = 8; /* LONG_NAMED_BIT */
  */
 export const SearchControlOptions_useSubset: number = 9; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_useSubset */
+
+/* START_OF_SYMBOL_DEFINITION useSubset */
+/**
+ * @summary useSubset
+ * @constant
+ */
+export const useSubset: number = SearchControlOptions_useSubset; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION useSubset */
 
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_separateFamilyMembers */
 /**
@@ -116,6 +196,14 @@ export const SearchControlOptions_useSubset: number = 9; /* LONG_NAMED_BIT */
 export const SearchControlOptions_separateFamilyMembers: number = 10; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_separateFamilyMembers */
 
+/* START_OF_SYMBOL_DEFINITION separateFamilyMembers */
+/**
+ * @summary separateFamilyMembers
+ * @constant
+ */
+export const separateFamilyMembers: number = SearchControlOptions_separateFamilyMembers; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION separateFamilyMembers */
+
 /* START_OF_SYMBOL_DEFINITION SearchControlOptions_searchFamily */
 /**
  * @summary SearchControlOptions_searchFamily
@@ -123,6 +211,14 @@ export const SearchControlOptions_separateFamilyMembers: number = 10; /* LONG_NA
  */
 export const SearchControlOptions_searchFamily: number = 11; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION SearchControlOptions_searchFamily */
+
+/* START_OF_SYMBOL_DEFINITION searchFamily */
+/**
+ * @summary searchFamily
+ * @constant
+ */
+export const searchFamily: number = SearchControlOptions_searchFamily; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION searchFamily */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchControlOptions */
 let _cached_decoder_for_SearchControlOptions: $.ASN1Decoder<

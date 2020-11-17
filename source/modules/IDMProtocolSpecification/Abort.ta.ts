@@ -45,6 +45,15 @@ export type Abort = _enum_for_Abort | ENUMERATED;
 export const Abort_mistypedPDU: Abort = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_mistypedPDU */
 
+/* START_OF_SYMBOL_DEFINITION mistypedPDU */
+/**
+ * @summary mistypedPDU
+ * @constant
+ * @type {number}
+ */
+export const mistypedPDU: Abort = Abort_mistypedPDU; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedPDU */
+
 /* START_OF_SYMBOL_DEFINITION Abort_unboundRequest */
 /**
  * @summary Abort_unboundRequest
@@ -53,6 +62,15 @@ export const Abort_mistypedPDU: Abort = 0; /* LONG_NAMED_ENUMERATED_VALUE */
  */
 export const Abort_unboundRequest: Abort = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_unboundRequest */
+
+/* START_OF_SYMBOL_DEFINITION unboundRequest */
+/**
+ * @summary unboundRequest
+ * @constant
+ * @type {number}
+ */
+export const unboundRequest: Abort = Abort_unboundRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unboundRequest */
 
 /* START_OF_SYMBOL_DEFINITION Abort_invalidPDU */
 /**
@@ -63,6 +81,15 @@ export const Abort_unboundRequest: Abort = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const Abort_invalidPDU: Abort = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_invalidPDU */
 
+/* START_OF_SYMBOL_DEFINITION invalidPDU */
+/**
+ * @summary invalidPDU
+ * @constant
+ * @type {number}
+ */
+export const invalidPDU: Abort = Abort_invalidPDU; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidPDU */
+
 /* START_OF_SYMBOL_DEFINITION Abort_resourceLimitation */
 /**
  * @summary Abort_resourceLimitation
@@ -71,6 +98,15 @@ export const Abort_invalidPDU: Abort = 2; /* LONG_NAMED_ENUMERATED_VALUE */
  */
 export const Abort_resourceLimitation: Abort = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_resourceLimitation */
+
+/* START_OF_SYMBOL_DEFINITION resourceLimitation */
+/**
+ * @summary resourceLimitation
+ * @constant
+ * @type {number}
+ */
+export const resourceLimitation: Abort = Abort_resourceLimitation; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION resourceLimitation */
 
 /* START_OF_SYMBOL_DEFINITION Abort_connectionFailed */
 /**
@@ -81,6 +117,15 @@ export const Abort_resourceLimitation: Abort = 3; /* LONG_NAMED_ENUMERATED_VALUE
 export const Abort_connectionFailed: Abort = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_connectionFailed */
 
+/* START_OF_SYMBOL_DEFINITION connectionFailed */
+/**
+ * @summary connectionFailed
+ * @constant
+ * @type {number}
+ */
+export const connectionFailed: Abort = Abort_connectionFailed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION connectionFailed */
+
 /* START_OF_SYMBOL_DEFINITION Abort_invalidProtocol */
 /**
  * @summary Abort_invalidProtocol
@@ -90,6 +135,15 @@ export const Abort_connectionFailed: Abort = 4; /* LONG_NAMED_ENUMERATED_VALUE *
 export const Abort_invalidProtocol: Abort = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_invalidProtocol */
 
+/* START_OF_SYMBOL_DEFINITION invalidProtocol */
+/**
+ * @summary invalidProtocol
+ * @constant
+ * @type {number}
+ */
+export const invalidProtocol: Abort = Abort_invalidProtocol; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidProtocol */
+
 /* START_OF_SYMBOL_DEFINITION Abort_reasonNotSpecified */
 /**
  * @summary Abort_reasonNotSpecified
@@ -98,6 +152,15 @@ export const Abort_invalidProtocol: Abort = 5; /* LONG_NAMED_ENUMERATED_VALUE */
  */
 export const Abort_reasonNotSpecified: Abort = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reasonNotSpecified */
+
+/* START_OF_SYMBOL_DEFINITION reasonNotSpecified */
+/**
+ * @summary reasonNotSpecified
+ * @constant
+ * @type {number}
+ */
+export const reasonNotSpecified: Abort = Abort_reasonNotSpecified; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION reasonNotSpecified */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Abort */
 let _cached_decoder_for_Abort: $.ASN1Decoder<Abort> | null = null;

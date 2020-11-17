@@ -2,20 +2,10 @@
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
-    Filter,
-    _decode_Filter,
-    _encode_Filter,
-} from "../DirectoryAbstractService/Filter.ta";
-import {
     FilterItem,
     _decode_FilterItem,
     _encode_FilterItem,
 } from "../DirectoryAbstractService/FilterItem.ta";
-export {
-    Filter,
-    _decode_Filter,
-    _encode_Filter,
-} from "../DirectoryAbstractService/Filter.ta";
 export {
     FilterItem,
     _decode_FilterItem,

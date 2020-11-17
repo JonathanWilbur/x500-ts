@@ -38,9 +38,12 @@ export {
 } from "../CommonProtocolSpecification/InvokeId.ta";
 export {
     AbandonProblem,
-    AbandonProblem_cannotAbandon /* IMPORTED_NAMED_INTEGER */,
-    AbandonProblem_noSuchOperation /* IMPORTED_NAMED_INTEGER */,
-    AbandonProblem_tooLate /* IMPORTED_NAMED_INTEGER */,
+    AbandonProblem_cannotAbandon /* IMPORTED_LONG_NAMED_INTEGER */,
+    AbandonProblem_noSuchOperation /* IMPORTED_LONG_NAMED_INTEGER */,
+    AbandonProblem_tooLate /* IMPORTED_LONG_NAMED_INTEGER */,
+    cannotAbandon /* IMPORTED_SHORT_NAMED_INTEGER */,
+    noSuchOperation /* IMPORTED_SHORT_NAMED_INTEGER */,
+    tooLate /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_AbandonProblem,
     _encode_AbandonProblem,
 } from "../DirectoryAbstractService/AbandonProblem.ta";

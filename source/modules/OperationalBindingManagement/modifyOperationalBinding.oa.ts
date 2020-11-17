@@ -3,17 +3,27 @@ import { id_op_modifyOperationalBinding } from "../CommonProtocolSpecification/i
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import {
+    _decode_ModifyOperationalBindingArgument,
+    _encode_ModifyOperationalBindingArgument,
+} from "../OperationalBindingManagement/ModifyOperationalBindingArgument.ta";
+import {
     _decode_ModifyOperationalBindingResult,
     _encode_ModifyOperationalBindingResult,
 } from "../OperationalBindingManagement/ModifyOperationalBindingResult.ta";
 import { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_op_modifyOperationalBinding } from "../CommonProtocolSpecification/id-op-modifyOperationalBinding.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { securityError } from "../DirectoryAbstractService/securityError.oa";
 export {
     ModifyOperationalBindingArgument,
-    _get_decoder_for_ModifyOperationalBindingArgument,
-    _get_encoder_for_ModifyOperationalBindingArgument,
+    _decode_ModifyOperationalBindingArgument,
+    _encode_ModifyOperationalBindingArgument,
 } from "../OperationalBindingManagement/ModifyOperationalBindingArgument.ta";
 export {
     ModifyOperationalBindingResult,

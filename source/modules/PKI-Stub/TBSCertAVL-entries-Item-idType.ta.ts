@@ -5,22 +5,22 @@ import {
     DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
-} from "../PKI_Stub/DistinguishedName.ta";
+} from "../PKI-Stub/DistinguishedName.ta";
 import {
     PKCertIdentifier,
     _decode_PKCertIdentifier,
     _encode_PKCertIdentifier,
-} from "../PKI_Stub/PKCertIdentifier.ta";
+} from "../PKI-Stub/PKCertIdentifier.ta";
 export {
     DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
-} from "../PKI_Stub/DistinguishedName.ta";
+} from "../PKI-Stub/DistinguishedName.ta";
 export {
     PKCertIdentifier,
     _decode_PKCertIdentifier,
     _encode_PKCertIdentifier,
-} from "../PKI_Stub/PKCertIdentifier.ta";
+} from "../PKI-Stub/PKCertIdentifier.ta";
 
 /* START_OF_SYMBOL_DEFINITION TBSCertAVL_entries_Item_idType */
 /**

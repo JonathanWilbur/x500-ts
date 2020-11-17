@@ -25,6 +25,15 @@ export type EnhancedGuide_subset = INTEGER;
 export const EnhancedGuide_subset_baseObject: EnhancedGuide_subset = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION EnhancedGuide_subset_baseObject */
 
+/* START_OF_SYMBOL_DEFINITION baseObject */
+/**
+ * @summary EnhancedGuide_subset_baseObject
+ * @constant
+ * @type {number}
+ */
+export const baseObject: EnhancedGuide_subset = EnhancedGuide_subset_baseObject; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION baseObject */
+
 /* START_OF_SYMBOL_DEFINITION EnhancedGuide_subset_oneLevel */
 /**
  * @summary EnhancedGuide_subset_oneLevel
@@ -34,6 +43,15 @@ export const EnhancedGuide_subset_baseObject: EnhancedGuide_subset = 0; /* LONG_
 export const EnhancedGuide_subset_oneLevel: EnhancedGuide_subset = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION EnhancedGuide_subset_oneLevel */
 
+/* START_OF_SYMBOL_DEFINITION oneLevel */
+/**
+ * @summary EnhancedGuide_subset_oneLevel
+ * @constant
+ * @type {number}
+ */
+export const oneLevel: EnhancedGuide_subset = EnhancedGuide_subset_oneLevel; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION oneLevel */
+
 /* START_OF_SYMBOL_DEFINITION EnhancedGuide_subset_wholeSubtree */
 /**
  * @summary EnhancedGuide_subset_wholeSubtree
@@ -42,6 +60,15 @@ export const EnhancedGuide_subset_oneLevel: EnhancedGuide_subset = 1; /* LONG_NA
  */
 export const EnhancedGuide_subset_wholeSubtree: EnhancedGuide_subset = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION EnhancedGuide_subset_wholeSubtree */
+
+/* START_OF_SYMBOL_DEFINITION wholeSubtree */
+/**
+ * @summary EnhancedGuide_subset_wholeSubtree
+ * @constant
+ * @type {number}
+ */
+export const wholeSubtree: EnhancedGuide_subset = EnhancedGuide_subset_wholeSubtree; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EnhancedGuide_subset */
 let _cached_decoder_for_EnhancedGuide_subset: $.ASN1Decoder<

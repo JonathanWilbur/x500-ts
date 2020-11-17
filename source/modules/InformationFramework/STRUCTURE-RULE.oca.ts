@@ -2,14 +2,12 @@
 import * as $ from "asn1-ts/dist/node/functional";
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { RuleIdentifier } from "../InformationFramework/RuleIdentifier.ta";
-import { STRUCTURE_RULE } from "../InformationFramework/STRUCTURE-RULE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export {
     RuleIdentifier,
     _decode_RuleIdentifier,
     _encode_RuleIdentifier,
 } from "../InformationFramework/RuleIdentifier.ta";
-export { STRUCTURE_RULE } from "../InformationFramework/STRUCTURE-RULE.oca";
 
 /* START_OF_SYMBOL_DEFINITION STRUCTURE_RULE */
 /**

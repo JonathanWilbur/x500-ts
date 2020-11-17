@@ -27,6 +27,14 @@ export type OnlyCertificateTypes = BIT_STRING;
 export const OnlyCertificateTypes_user: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION OnlyCertificateTypes_user */
 
+/* START_OF_SYMBOL_DEFINITION user */
+/**
+ * @summary user
+ * @constant
+ */
+export const user: number = OnlyCertificateTypes_user; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION user */
+
 /* START_OF_SYMBOL_DEFINITION OnlyCertificateTypes_authority */
 /**
  * @summary OnlyCertificateTypes_authority
@@ -35,6 +43,14 @@ export const OnlyCertificateTypes_user: number = 0; /* LONG_NAMED_BIT */
 export const OnlyCertificateTypes_authority: number = 1; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION OnlyCertificateTypes_authority */
 
+/* START_OF_SYMBOL_DEFINITION authority */
+/**
+ * @summary authority
+ * @constant
+ */
+export const authority: number = OnlyCertificateTypes_authority; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION authority */
+
 /* START_OF_SYMBOL_DEFINITION OnlyCertificateTypes_attribute */
 /**
  * @summary OnlyCertificateTypes_attribute
@@ -42,6 +58,14 @@ export const OnlyCertificateTypes_authority: number = 1; /* LONG_NAMED_BIT */
  */
 export const OnlyCertificateTypes_attribute: number = 2; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION OnlyCertificateTypes_attribute */
+
+/* START_OF_SYMBOL_DEFINITION attribute */
+/**
+ * @summary attribute
+ * @constant
+ */
+export const attribute: number = OnlyCertificateTypes_attribute; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION attribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OnlyCertificateTypes */
 let _cached_decoder_for_OnlyCertificateTypes: $.ASN1Decoder<

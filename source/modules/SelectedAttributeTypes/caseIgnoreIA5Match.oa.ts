@@ -3,7 +3,9 @@ import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { ia5String } from "../SelectedAttributeTypes/ia5String.oa";
 import { id_lmr_caseIgnoreIA5Match } from "../SelectedAttributeTypes/id-lmr-caseIgnoreIA5Match.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { ia5String } from "../SelectedAttributeTypes/ia5String.oa";
 export { id_lmr_caseIgnoreIA5Match } from "../SelectedAttributeTypes/id-lmr-caseIgnoreIA5Match.va";
 

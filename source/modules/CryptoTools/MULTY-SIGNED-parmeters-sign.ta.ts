@@ -10,12 +10,12 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 
 /* START_OF_SYMBOL_DEFINITION MULTY_SIGNED_parmeters_sign */
 /**
@@ -133,12 +133,6 @@ export const _root_component_type_list_2_spec_for_MULTY_SIGNED_parmeters_sign: $
 export const _extension_additions_list_spec_for_MULTY_SIGNED_parmeters_sign: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MULTY_SIGNED_parmeters_sign */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MULTY_SIGNED_parmeters_sign */
-let _cached_decoder_for_MULTY_SIGNED_parmeters_sign: $.ASN1Decoder<
-    MULTY_SIGNED_parmeters_sign<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MULTY_SIGNED_parmeters_sign */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_MULTY_SIGNED_parmeters_sign */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) MULTY_SIGNED_parmeters_sign
@@ -174,12 +168,6 @@ export function _get_decoder_for_MULTY_SIGNED_parmeters_sign<ToBeSigned>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_MULTY_SIGNED_parmeters_sign */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MULTY_SIGNED_parmeters_sign */
-let _cached_encoder_for_MULTY_SIGNED_parmeters_sign: $.ASN1Encoder<
-    MULTY_SIGNED_parmeters_sign<ToBeSigned>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MULTY_SIGNED_parmeters_sign */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_MULTY_SIGNED_parmeters_sign */
 /**

@@ -4,6 +4,7 @@ import { id_ac_shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/id-ac-
 import { dSAShadowBind } from "../DirectoryShadowAbstractService/dSAShadowBind.oa";
 import { requestShadowUpdate } from "../DirectoryShadowAbstractService/requestShadowUpdate.oa";
 import { updateShadow } from "../DirectoryShadowAbstractService/updateShadow.oa";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { APPLICATION_CONTEXT } from "../DirectoryOSIProtocols/APPLICATION-CONTEXT.oca";
 export { id_ac_shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/id-ac-shadowConsumerInitiatedAC.va";
 export { dSAShadowBind } from "../DirectoryShadowAbstractService/dSAShadowBind.oa";

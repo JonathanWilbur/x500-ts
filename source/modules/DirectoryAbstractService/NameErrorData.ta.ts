@@ -37,11 +37,15 @@ export {
     _encode_CommonResults,
 } from "../DirectoryAbstractService/CommonResults.ta";
 export {
+    aliasDereferencingProblem /* IMPORTED_SHORT_NAMED_INTEGER */,
+    aliasProblem /* IMPORTED_SHORT_NAMED_INTEGER */,
+    invalidAttributeSyntax /* IMPORTED_SHORT_NAMED_INTEGER */,
     NameProblem,
-    NameProblem_aliasDereferencingProblem /* IMPORTED_NAMED_INTEGER */,
-    NameProblem_aliasProblem /* IMPORTED_NAMED_INTEGER */,
-    NameProblem_invalidAttributeSyntax /* IMPORTED_NAMED_INTEGER */,
-    NameProblem_noSuchObject /* IMPORTED_NAMED_INTEGER */,
+    NameProblem_aliasDereferencingProblem /* IMPORTED_LONG_NAMED_INTEGER */,
+    NameProblem_aliasProblem /* IMPORTED_LONG_NAMED_INTEGER */,
+    NameProblem_invalidAttributeSyntax /* IMPORTED_LONG_NAMED_INTEGER */,
+    NameProblem_noSuchObject /* IMPORTED_LONG_NAMED_INTEGER */,
+    noSuchObject /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_NameProblem,
     _encode_NameProblem,
 } from "../DirectoryAbstractService/NameProblem.ta";

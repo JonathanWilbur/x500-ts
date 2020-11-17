@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { id_nf_personNameForm } from "../SelectedObjectClasses/id-nf-personNameForm.va";
 import { person } from "../SelectedObjectClasses/person.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { id_nf_personNameForm } from "../SelectedObjectClasses/id-nf-personNameForm.va";
 export { person } from "../SelectedObjectClasses/person.oa";
 

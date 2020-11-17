@@ -35,6 +35,15 @@ export type JoinArgument_joinSubset =
 export const JoinArgument_joinSubset_baseObject: JoinArgument_joinSubset = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION JoinArgument_joinSubset_baseObject */
 
+/* START_OF_SYMBOL_DEFINITION baseObject */
+/**
+ * @summary baseObject
+ * @constant
+ * @type {number}
+ */
+export const baseObject: JoinArgument_joinSubset = JoinArgument_joinSubset_baseObject; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION baseObject */
+
 /* START_OF_SYMBOL_DEFINITION JoinArgument_joinSubset_oneLevel */
 /**
  * @summary JoinArgument_joinSubset_oneLevel
@@ -44,6 +53,15 @@ export const JoinArgument_joinSubset_baseObject: JoinArgument_joinSubset = 0; /*
 export const JoinArgument_joinSubset_oneLevel: JoinArgument_joinSubset = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION JoinArgument_joinSubset_oneLevel */
 
+/* START_OF_SYMBOL_DEFINITION oneLevel */
+/**
+ * @summary oneLevel
+ * @constant
+ * @type {number}
+ */
+export const oneLevel: JoinArgument_joinSubset = JoinArgument_joinSubset_oneLevel; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION oneLevel */
+
 /* START_OF_SYMBOL_DEFINITION JoinArgument_joinSubset_wholeSubtree */
 /**
  * @summary JoinArgument_joinSubset_wholeSubtree
@@ -52,6 +70,15 @@ export const JoinArgument_joinSubset_oneLevel: JoinArgument_joinSubset = 1; /* L
  */
 export const JoinArgument_joinSubset_wholeSubtree: JoinArgument_joinSubset = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION JoinArgument_joinSubset_wholeSubtree */
+
+/* START_OF_SYMBOL_DEFINITION wholeSubtree */
+/**
+ * @summary wholeSubtree
+ * @constant
+ * @type {number}
+ */
+export const wholeSubtree: JoinArgument_joinSubset = JoinArgument_joinSubset_wholeSubtree; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_JoinArgument_joinSubset */
 let _cached_decoder_for_JoinArgument_joinSubset: $.ASN1Decoder<

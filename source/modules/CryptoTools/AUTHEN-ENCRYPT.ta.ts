@@ -114,12 +114,6 @@ export const _root_component_type_list_2_spec_for_AUTHEN_ENCRYPT: $.ComponentSpe
 export const _extension_additions_list_spec_for_AUTHEN_ENCRYPT: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AUTHEN_ENCRYPT */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AUTHEN_ENCRYPT */
-let _cached_decoder_for_AUTHEN_ENCRYPT: $.ASN1Decoder<
-    AUTHEN_ENCRYPT<ToBeAuth, ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AUTHEN_ENCRYPT */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_AUTHEN_ENCRYPT */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) AUTHEN_ENCRYPT
@@ -167,12 +161,6 @@ export function _get_decoder_for_AUTHEN_ENCRYPT<ToBeAuth, ToBeEnciphered>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_AUTHEN_ENCRYPT */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AUTHEN_ENCRYPT */
-let _cached_encoder_for_AUTHEN_ENCRYPT: $.ASN1Encoder<
-    AUTHEN_ENCRYPT<ToBeAuth, ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AUTHEN_ENCRYPT */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_AUTHEN_ENCRYPT */
 /**

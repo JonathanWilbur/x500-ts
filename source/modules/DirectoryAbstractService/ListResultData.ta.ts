@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { ListResult } from "../DirectoryAbstractService/ListResult.ta";
+import {
+    ListResult,
+    _decode_ListResult,
+    _encode_ListResult,
+} from "../DirectoryAbstractService/ListResult.ta";
 import {
     ListResultData_listInfo,
     _decode_ListResultData_listInfo,
@@ -9,8 +13,8 @@ import {
 } from "../DirectoryAbstractService/ListResultData-listInfo.ta";
 export {
     ListResult,
-    _get_decoder_for_ListResult,
-    _get_encoder_for_ListResult,
+    _decode_ListResult,
+    _encode_ListResult,
 } from "../DirectoryAbstractService/ListResult.ta";
 export {
     ListResultData_listInfo,

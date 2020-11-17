@@ -32,6 +32,15 @@ export type Abort_reason = INTEGER;
 export const Abort_reason_reason_not_specified: Abort_reason = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_reason_not_specified */
 
+/* START_OF_SYMBOL_DEFINITION reason_not_specified */
+/**
+ * @summary Abort_reason_reason_not_specified
+ * @constant
+ * @type {number}
+ */
+export const reason_not_specified: Abort_reason = Abort_reason_reason_not_specified; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION reason_not_specified */
+
 /* START_OF_SYMBOL_DEFINITION Abort_reason_unrecognized_ppdu */
 /**
  * @summary Abort_reason_unrecognized_ppdu
@@ -40,6 +49,15 @@ export const Abort_reason_reason_not_specified: Abort_reason = 0; /* LONG_NAMED_
  */
 export const Abort_reason_unrecognized_ppdu: Abort_reason = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_unrecognized_ppdu */
+
+/* START_OF_SYMBOL_DEFINITION unrecognized_ppdu */
+/**
+ * @summary Abort_reason_unrecognized_ppdu
+ * @constant
+ * @type {number}
+ */
+export const unrecognized_ppdu: Abort_reason = Abort_reason_unrecognized_ppdu; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unrecognized_ppdu */
 
 /* START_OF_SYMBOL_DEFINITION Abort_reason_unexpected_ppdu */
 /**
@@ -50,6 +68,15 @@ export const Abort_reason_unrecognized_ppdu: Abort_reason = 1; /* LONG_NAMED_INT
 export const Abort_reason_unexpected_ppdu: Abort_reason = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_unexpected_ppdu */
 
+/* START_OF_SYMBOL_DEFINITION unexpected_ppdu */
+/**
+ * @summary Abort_reason_unexpected_ppdu
+ * @constant
+ * @type {number}
+ */
+export const unexpected_ppdu: Abort_reason = Abort_reason_unexpected_ppdu; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpected_ppdu */
+
 /* START_OF_SYMBOL_DEFINITION Abort_reason_unexpected_session_service_primitive */
 /**
  * @summary Abort_reason_unexpected_session_service_primitive
@@ -58,6 +85,15 @@ export const Abort_reason_unexpected_ppdu: Abort_reason = 2; /* LONG_NAMED_INTEG
  */
 export const Abort_reason_unexpected_session_service_primitive: Abort_reason = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_unexpected_session_service_primitive */
+
+/* START_OF_SYMBOL_DEFINITION unexpected_session_service_primitive */
+/**
+ * @summary Abort_reason_unexpected_session_service_primitive
+ * @constant
+ * @type {number}
+ */
+export const unexpected_session_service_primitive: Abort_reason = Abort_reason_unexpected_session_service_primitive; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpected_session_service_primitive */
 
 /* START_OF_SYMBOL_DEFINITION Abort_reason_unrecognized_ppdu_parameter */
 /**
@@ -68,6 +104,15 @@ export const Abort_reason_unexpected_session_service_primitive: Abort_reason = 3
 export const Abort_reason_unrecognized_ppdu_parameter: Abort_reason = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_unrecognized_ppdu_parameter */
 
+/* START_OF_SYMBOL_DEFINITION unrecognized_ppdu_parameter */
+/**
+ * @summary Abort_reason_unrecognized_ppdu_parameter
+ * @constant
+ * @type {number}
+ */
+export const unrecognized_ppdu_parameter: Abort_reason = Abort_reason_unrecognized_ppdu_parameter; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unrecognized_ppdu_parameter */
+
 /* START_OF_SYMBOL_DEFINITION Abort_reason_unexpected_ppdu_parameter */
 /**
  * @summary Abort_reason_unexpected_ppdu_parameter
@@ -77,6 +122,15 @@ export const Abort_reason_unrecognized_ppdu_parameter: Abort_reason = 4; /* LONG
 export const Abort_reason_unexpected_ppdu_parameter: Abort_reason = 5; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_unexpected_ppdu_parameter */
 
+/* START_OF_SYMBOL_DEFINITION unexpected_ppdu_parameter */
+/**
+ * @summary Abort_reason_unexpected_ppdu_parameter
+ * @constant
+ * @type {number}
+ */
+export const unexpected_ppdu_parameter: Abort_reason = Abort_reason_unexpected_ppdu_parameter; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpected_ppdu_parameter */
+
 /* START_OF_SYMBOL_DEFINITION Abort_reason_invalid_ppdu_parameter_value */
 /**
  * @summary Abort_reason_invalid_ppdu_parameter_value
@@ -85,6 +139,15 @@ export const Abort_reason_unexpected_ppdu_parameter: Abort_reason = 5; /* LONG_N
  */
 export const Abort_reason_invalid_ppdu_parameter_value: Abort_reason = 6; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Abort_reason_invalid_ppdu_parameter_value */
+
+/* START_OF_SYMBOL_DEFINITION invalid_ppdu_parameter_value */
+/**
+ * @summary Abort_reason_invalid_ppdu_parameter_value
+ * @constant
+ * @type {number}
+ */
+export const invalid_ppdu_parameter_value: Abort_reason = Abort_reason_invalid_ppdu_parameter_value; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalid_ppdu_parameter_value */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Abort_reason */
 let _cached_decoder_for_Abort_reason: $.ASN1Decoder<Abort_reason> | null = null;

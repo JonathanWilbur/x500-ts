@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     InitializationAbort_diag,
     InitializationAbort_diag_onlySingleVersionAllowed,
@@ -91,3 +92,4 @@ export {
     _decode_TBresponse,
     _encode_TBresponse,
 } from "./TrustBroker/TBresponse.ta";
+/* eslint-enable */

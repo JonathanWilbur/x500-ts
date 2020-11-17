@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import { Certificate } from "../AuthenticationFramework/Certificate.ta";
+import {
+    Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
+} from "../AuthenticationFramework/Certificate.ta";
 import {
     FingerPrint,
     _get_decoder_for_FingerPrint,
@@ -19,8 +23,8 @@ import {
 } from "../AuthenticationFramework/PublicKey.ta";
 export {
     Certificate,
-    _get_decoder_for_Certificate,
-    _get_encoder_for_Certificate,
+    _decode_Certificate,
+    _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
 export {
     FingerPrint,

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AlgoInvoke,
     _decode_AlgoInvoke,
@@ -194,7 +195,7 @@ export {
     _root_component_type_list_1_spec_for_ObjectDigestInfo,
     _root_component_type_list_2_spec_for_ObjectDigestInfo,
 } from "./PKI-Stub/ObjectDigestInfo.ta";
-export { TYPE_IDENTIFIER } from "./PKI-Stub/OTHER-NAME.oca";
+export { OTHER_NAME } from "./PKI-Stub/OTHER-NAME.oca";
 export {
     PKCertIdentifier,
     _decode_PKCertIdentifier,
@@ -299,3 +300,4 @@ export {
     _encode_Version,
 } from "./PKI-Stub/Version.ta";
 export { wrapperProtocolType } from "./PKI-Stub/wrapperProtocolType.va";
+/* eslint-enable */

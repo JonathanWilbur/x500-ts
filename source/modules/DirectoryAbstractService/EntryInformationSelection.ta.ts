@@ -22,8 +22,8 @@ import {
     _encode_EntryInformationSelection_extraAttributes,
 } from "../DirectoryAbstractService/EntryInformationSelection-extraAttributes.ta";
 import {
+    attributeTypesAndValues /* IMPORTED_SHORT_NAMED_INTEGER */,
     EntryInformationSelection_infoTypes,
-    EntryInformationSelection_infoTypes_attributeTypesAndValues /* IMPORTED_NAMED_INTEGER */,
     _decode_EntryInformationSelection_infoTypes,
     _encode_EntryInformationSelection_infoTypes,
 } from "../DirectoryAbstractService/EntryInformationSelection-infoTypes.ta";
@@ -48,9 +48,11 @@ export {
     _encode_EntryInformationSelection_extraAttributes,
 } from "../DirectoryAbstractService/EntryInformationSelection-extraAttributes.ta";
 export {
+    attributeTypesAndValues /* IMPORTED_SHORT_NAMED_INTEGER */,
+    attributeTypesOnly /* IMPORTED_SHORT_NAMED_INTEGER */,
     EntryInformationSelection_infoTypes,
-    EntryInformationSelection_infoTypes_attributeTypesAndValues /* IMPORTED_NAMED_INTEGER */,
-    EntryInformationSelection_infoTypes_attributeTypesOnly /* IMPORTED_NAMED_INTEGER */,
+    EntryInformationSelection_infoTypes_attributeTypesAndValues /* IMPORTED_LONG_NAMED_INTEGER */,
+    EntryInformationSelection_infoTypes_attributeTypesOnly /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_EntryInformationSelection_infoTypes,
     _encode_EntryInformationSelection_infoTypes,
 } from "../DirectoryAbstractService/EntryInformationSelection-infoTypes.ta";
@@ -174,7 +176,7 @@ export class EntryInformationSelection {
      * @method
      */
     public static get _default_value_for_infoTypes() {
-        return EntryInformationSelection_infoTypes_attributeTypesAndValues;
+        return attributeTypesAndValues;
     }
     /**
      * @summary Getter that returns the default value for `returnContexts`.

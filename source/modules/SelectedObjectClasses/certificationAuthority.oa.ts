@@ -3,11 +3,27 @@ import { authorityRevocationList } from "../AuthenticationFramework/authorityRev
 import { cACertificate } from "../AuthenticationFramework/cACertificate.oa";
 import { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { id_oc_certificationAuthority } from "../SelectedObjectClasses/id-oc-certificationAuthority.va";
 export { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 export { cACertificate } from "../AuthenticationFramework/cACertificate.oa";
 export { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { id_oc_certificationAuthority } from "../SelectedObjectClasses/id-oc-certificationAuthority.va";
 
 /* START_OF_SYMBOL_DEFINITION certificationAuthority */
@@ -39,8 +55,7 @@ export const certificationAuthority: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&Superclasses": undefined,
-    "&kind":
-        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&MandatoryAttributes": [
         cACertificate,
         certificateRevocationList,

@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
+import {
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
@@ -9,12 +12,28 @@ import { id_oa_creatorsName } from "../InformationFramework/id-oa-creatorsName.v
 import { dn } from "../SelectedAttributeTypes/dn.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export {
     DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
 export { distinguishedNameMatch } from "../InformationFramework/distinguishedNameMatch.oa";
 export { id_oa_creatorsName } from "../InformationFramework/id-oa-creatorsName.va";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { dn } from "../SelectedAttributeTypes/dn.oa";
 
 /* START_OF_SYMBOL_DEFINITION creatorsName */
@@ -51,7 +70,7 @@ export const creatorsName: ATTRIBUTE = {
     "&equality-match": distinguishedNameMatch /* OBJECT_FIELD_SETTING */,
     "&single-valued": false /* OBJECT_FIELD_SETTING */,
     "&no-user-modification": false /* OBJECT_FIELD_SETTING */,
-    "&usage": AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": directoryOperation /* OBJECT_FIELD_SETTING */,
     "&ldapSyntax": dn["&id"] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oa_creatorsName /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

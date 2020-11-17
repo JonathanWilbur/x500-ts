@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AdministrationDomainName,
     _decode_AdministrationDomainName,
@@ -474,3 +475,4 @@ export {
     _decode_X121Address,
     _encode_X121Address,
 } from "./MTSAbstractService/X121Address.ta";
+/* eslint-enable */

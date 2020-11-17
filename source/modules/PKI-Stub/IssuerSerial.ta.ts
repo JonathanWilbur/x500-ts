@@ -9,32 +9,32 @@ import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 import {
     GeneralNames,
     _decode_GeneralNames,
     _encode_GeneralNames,
-} from "../PKI_Stub/GeneralNames.ta";
+} from "../PKI-Stub/GeneralNames.ta";
 import {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 export {
     GeneralNames,
     _decode_GeneralNames,
     _encode_GeneralNames,
-} from "../PKI_Stub/GeneralNames.ta";
+} from "../PKI-Stub/GeneralNames.ta";
 export {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 
 /* START_OF_SYMBOL_DEFINITION IssuerSerial */
 /**

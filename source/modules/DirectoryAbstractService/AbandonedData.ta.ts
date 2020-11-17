@@ -29,7 +29,8 @@ import {
 } from "../InformationFramework/DistinguishedName.ta";
 export {
     AbandonedProblem,
-    AbandonedProblem_pagingAbandoned /* IMPORTED_ENUMERATION_ITEM */,
+    AbandonedProblem_pagingAbandoned /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    pagingAbandoned /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_AbandonedProblem,
     _encode_AbandonedProblem,
     _enum_for_AbandonedProblem,

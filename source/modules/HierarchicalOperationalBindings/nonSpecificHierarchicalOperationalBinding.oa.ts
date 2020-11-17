@@ -15,6 +15,8 @@ export {
 } from "../HierarchicalOperationalBindings/NonSpecificHierarchicalAgreement.ta";
 export { nonSpecificHierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleA.oa";
 export { nonSpecificHierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleB.oa";
+export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
+export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
 export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION nonSpecificHierarchicalOperationalBinding */

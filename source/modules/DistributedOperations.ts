@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AccessPoint,
     _decode_AccessPoint,
@@ -194,3 +195,7 @@ export {
     _root_component_type_list_1_spec_for_TraceItem,
     _root_component_type_list_2_spec_for_TraceItem,
 } from "./DistributedOperations/TraceItem.ta";
+export {
+    chained,
+} from "./DistributedOperations/chained.oa";
+/* eslint-enable */

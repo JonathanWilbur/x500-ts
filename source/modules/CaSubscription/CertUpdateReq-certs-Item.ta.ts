@@ -15,14 +15,18 @@ import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
-import { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
+import { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 export {
     CertStatus,
-    CertStatus_expired /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_good /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_on_hold /* IMPORTED_ENUMERATION_ITEM */,
-    CertStatus_revoked /* IMPORTED_ENUMERATION_ITEM */,
+    CertStatus_expired /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_good /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_on_hold /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CertStatus_revoked /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    expired /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    good /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    on_hold /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    revoked /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CertStatus,
     _encode_CertStatus,
     _enum_for_CertStatus,
@@ -31,8 +35,8 @@ export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
-export { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
+export { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertUpdateReq_certs_Item */
 /**

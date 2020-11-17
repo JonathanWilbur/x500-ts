@@ -69,6 +69,15 @@ export type PkiWaError = _enum_for_PkiWaError | ENUMERATED;
 export const PkiWaError_unsupportedWrapperVersion: PkiWaError = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unsupportedWrapperVersion */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedWrapperVersion */
+/**
+ * @summary unsupportedWrapperVersion
+ * @constant
+ * @type {number}
+ */
+export const unsupportedWrapperVersion: PkiWaError = PkiWaError_unsupportedWrapperVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedWrapperVersion */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unsupportedSignatureAlgorithm */
 /**
  * @summary PkiWaError_unsupportedSignatureAlgorithm
@@ -77,6 +86,15 @@ export const PkiWaError_unsupportedWrapperVersion: PkiWaError = 0; /* LONG_NAMED
  */
 export const PkiWaError_unsupportedSignatureAlgorithm: PkiWaError = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unsupportedSignatureAlgorithm */
+
+/* START_OF_SYMBOL_DEFINITION unsupportedSignatureAlgorithm */
+/**
+ * @summary unsupportedSignatureAlgorithm
+ * @constant
+ * @type {number}
+ */
+export const unsupportedSignatureAlgorithm: PkiWaError = PkiWaError_unsupportedSignatureAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedSignatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_incompleteCertPath */
 /**
@@ -87,6 +105,15 @@ export const PkiWaError_unsupportedSignatureAlgorithm: PkiWaError = 1; /* LONG_N
 export const PkiWaError_incompleteCertPath: PkiWaError = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_incompleteCertPath */
 
+/* START_OF_SYMBOL_DEFINITION incompleteCertPath */
+/**
+ * @summary incompleteCertPath
+ * @constant
+ * @type {number}
+ */
+export const incompleteCertPath: PkiWaError = PkiWaError_incompleteCertPath; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION incompleteCertPath */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_certificationPathFailure */
 /**
  * @summary PkiWaError_certificationPathFailure
@@ -95,6 +122,15 @@ export const PkiWaError_incompleteCertPath: PkiWaError = 2; /* LONG_NAMED_ENUMER
  */
 export const PkiWaError_certificationPathFailure: PkiWaError = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_certificationPathFailure */
+
+/* START_OF_SYMBOL_DEFINITION certificationPathFailure */
+/**
+ * @summary certificationPathFailure
+ * @constant
+ * @type {number}
+ */
+export const certificationPathFailure: PkiWaError = PkiWaError_certificationPathFailure; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION certificationPathFailure */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_invalidSignature */
 /**
@@ -105,6 +141,15 @@ export const PkiWaError_certificationPathFailure: PkiWaError = 3; /* LONG_NAMED_
 export const PkiWaError_invalidSignature: PkiWaError = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_invalidSignature */
 
+/* START_OF_SYMBOL_DEFINITION invalidSignature */
+/**
+ * @summary invalidSignature
+ * @constant
+ * @type {number}
+ */
+export const invalidSignature: PkiWaError = PkiWaError_invalidSignature; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidSignature */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_missingMandatoryAttributes */
 /**
  * @summary PkiWaError_missingMandatoryAttributes
@@ -113,6 +158,15 @@ export const PkiWaError_invalidSignature: PkiWaError = 4; /* LONG_NAMED_ENUMERAT
  */
 export const PkiWaError_missingMandatoryAttributes: PkiWaError = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_missingMandatoryAttributes */
+
+/* START_OF_SYMBOL_DEFINITION missingMandatoryAttributes */
+/**
+ * @summary missingMandatoryAttributes
+ * @constant
+ * @type {number}
+ */
+export const missingMandatoryAttributes: PkiWaError = PkiWaError_missingMandatoryAttributes; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION missingMandatoryAttributes */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unwantedAttribute */
 /**
@@ -123,6 +177,15 @@ export const PkiWaError_missingMandatoryAttributes: PkiWaError = 5; /* LONG_NAME
 export const PkiWaError_unwantedAttribute: PkiWaError = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unwantedAttribute */
 
+/* START_OF_SYMBOL_DEFINITION unwantedAttribute */
+/**
+ * @summary unwantedAttribute
+ * @constant
+ * @type {number}
+ */
+export const unwantedAttribute: PkiWaError = PkiWaError_unwantedAttribute; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unwantedAttribute */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unsupportedPduType */
 /**
  * @summary PkiWaError_unsupportedPduType
@@ -131,6 +194,15 @@ export const PkiWaError_unwantedAttribute: PkiWaError = 6; /* LONG_NAMED_ENUMERA
  */
 export const PkiWaError_unsupportedPduType: PkiWaError = 7; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unsupportedPduType */
+
+/* START_OF_SYMBOL_DEFINITION unsupportedPduType */
+/**
+ * @summary unsupportedPduType
+ * @constant
+ * @type {number}
+ */
+export const unsupportedPduType: PkiWaError = PkiWaError_unsupportedPduType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedPduType */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unexpectedPduType */
 /**
@@ -141,6 +213,15 @@ export const PkiWaError_unsupportedPduType: PkiWaError = 7; /* LONG_NAMED_ENUMER
 export const PkiWaError_unexpectedPduType: PkiWaError = 8; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unexpectedPduType */
 
+/* START_OF_SYMBOL_DEFINITION unexpectedPduType */
+/**
+ * @summary unexpectedPduType
+ * @constant
+ * @type {number}
+ */
+export const unexpectedPduType: PkiWaError = PkiWaError_unexpectedPduType; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unexpectedPduType */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_invalidPduSyntax */
 /**
  * @summary PkiWaError_invalidPduSyntax
@@ -149,6 +230,15 @@ export const PkiWaError_unexpectedPduType: PkiWaError = 8; /* LONG_NAMED_ENUMERA
  */
 export const PkiWaError_invalidPduSyntax: PkiWaError = 9; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_invalidPduSyntax */
+
+/* START_OF_SYMBOL_DEFINITION invalidPduSyntax */
+/**
+ * @summary invalidPduSyntax
+ * @constant
+ * @type {number}
+ */
+export const invalidPduSyntax: PkiWaError = PkiWaError_invalidPduSyntax; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidPduSyntax */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unknownDHpkCetificate */
 /**
@@ -159,6 +249,15 @@ export const PkiWaError_invalidPduSyntax: PkiWaError = 9; /* LONG_NAMED_ENUMERAT
 export const PkiWaError_unknownDHpkCetificate: PkiWaError = 10; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unknownDHpkCetificate */
 
+/* START_OF_SYMBOL_DEFINITION unknownDHpkCetificate */
+/**
+ * @summary unknownDHpkCetificate
+ * @constant
+ * @type {number}
+ */
+export const unknownDHpkCetificate: PkiWaError = PkiWaError_unknownDHpkCetificate; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownDHpkCetificate */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_invalidKeyingMaterial */
 /**
  * @summary PkiWaError_invalidKeyingMaterial
@@ -167,6 +266,15 @@ export const PkiWaError_unknownDHpkCetificate: PkiWaError = 10; /* LONG_NAMED_EN
  */
 export const PkiWaError_invalidKeyingMaterial: PkiWaError = 11; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_invalidKeyingMaterial */
+
+/* START_OF_SYMBOL_DEFINITION invalidKeyingMaterial */
+/**
+ * @summary invalidKeyingMaterial
+ * @constant
+ * @type {number}
+ */
+export const invalidKeyingMaterial: PkiWaError = PkiWaError_invalidKeyingMaterial; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidKeyingMaterial */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_dhAlgorithmMismatch */
 /**
@@ -177,6 +285,15 @@ export const PkiWaError_invalidKeyingMaterial: PkiWaError = 11; /* LONG_NAMED_EN
 export const PkiWaError_dhAlgorithmMismatch: PkiWaError = 12; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_dhAlgorithmMismatch */
 
+/* START_OF_SYMBOL_DEFINITION dhAlgorithmMismatch */
+/**
+ * @summary dhAlgorithmMismatch
+ * @constant
+ * @type {number}
+ */
+export const dhAlgorithmMismatch: PkiWaError = PkiWaError_dhAlgorithmMismatch; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION dhAlgorithmMismatch */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_invalideDhPublickey */
 /**
  * @summary PkiWaError_invalideDhPublickey
@@ -185,6 +302,15 @@ export const PkiWaError_dhAlgorithmMismatch: PkiWaError = 12; /* LONG_NAMED_ENUM
  */
 export const PkiWaError_invalideDhPublickey: PkiWaError = 13; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_invalideDhPublickey */
+
+/* START_OF_SYMBOL_DEFINITION invalideDhPublickey */
+/**
+ * @summary invalideDhPublickey
+ * @constant
+ * @type {number}
+ */
+export const invalideDhPublickey: PkiWaError = PkiWaError_invalideDhPublickey; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalideDhPublickey */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_unsupportedKeyWrappingAlgorithm */
 /**
@@ -195,6 +321,15 @@ export const PkiWaError_invalideDhPublickey: PkiWaError = 13; /* LONG_NAMED_ENUM
 export const PkiWaError_unsupportedKeyWrappingAlgorithm: PkiWaError = 14; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_unsupportedKeyWrappingAlgorithm */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedKeyWrappingAlgorithm */
+/**
+ * @summary unsupportedKeyWrappingAlgorithm
+ * @constant
+ * @type {number}
+ */
+export const unsupportedKeyWrappingAlgorithm: PkiWaError = PkiWaError_unsupportedKeyWrappingAlgorithm; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedKeyWrappingAlgorithm */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_keyEncAlgorithmParametersMissing */
 /**
  * @summary PkiWaError_keyEncAlgorithmParametersMissing
@@ -203,6 +338,15 @@ export const PkiWaError_unsupportedKeyWrappingAlgorithm: PkiWaError = 14; /* LON
  */
 export const PkiWaError_keyEncAlgorithmParametersMissing: PkiWaError = 15; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_keyEncAlgorithmParametersMissing */
+
+/* START_OF_SYMBOL_DEFINITION keyEncAlgorithmParametersMissing */
+/**
+ * @summary keyEncAlgorithmParametersMissing
+ * @constant
+ * @type {number}
+ */
+export const keyEncAlgorithmParametersMissing: PkiWaError = PkiWaError_keyEncAlgorithmParametersMissing; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION keyEncAlgorithmParametersMissing */
 
 /* START_OF_SYMBOL_DEFINITION PkiWaError_keyEncAlgorithmParametersNotAllowed */
 /**
@@ -213,6 +357,15 @@ export const PkiWaError_keyEncAlgorithmParametersMissing: PkiWaError = 15; /* LO
 export const PkiWaError_keyEncAlgorithmParametersNotAllowed: PkiWaError = 16; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_keyEncAlgorithmParametersNotAllowed */
 
+/* START_OF_SYMBOL_DEFINITION keyEncAlgorithmParametersNotAllowed */
+/**
+ * @summary keyEncAlgorithmParametersNotAllowed
+ * @constant
+ * @type {number}
+ */
+export const keyEncAlgorithmParametersNotAllowed: PkiWaError = PkiWaError_keyEncAlgorithmParametersNotAllowed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION keyEncAlgorithmParametersNotAllowed */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_invalidParmsForSymEncryptAlgorithms */
 /**
  * @summary PkiWaError_invalidParmsForSymEncryptAlgorithms
@@ -222,6 +375,15 @@ export const PkiWaError_keyEncAlgorithmParametersNotAllowed: PkiWaError = 16; /*
 export const PkiWaError_invalidParmsForSymEncryptAlgorithms: PkiWaError = 17; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_invalidParmsForSymEncryptAlgorithms */
 
+/* START_OF_SYMBOL_DEFINITION invalidParmsForSymEncryptAlgorithms */
+/**
+ * @summary invalidParmsForSymEncryptAlgorithms
+ * @constant
+ * @type {number}
+ */
+export const invalidParmsForSymEncryptAlgorithms: PkiWaError = PkiWaError_invalidParmsForSymEncryptAlgorithms; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidParmsForSymEncryptAlgorithms */
+
 /* START_OF_SYMBOL_DEFINITION PkiWaError_decryptionFailed */
 /**
  * @summary PkiWaError_decryptionFailed
@@ -230,6 +392,15 @@ export const PkiWaError_invalidParmsForSymEncryptAlgorithms: PkiWaError = 17; /*
  */
 export const PkiWaError_decryptionFailed: PkiWaError = 18; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION PkiWaError_decryptionFailed */
+
+/* START_OF_SYMBOL_DEFINITION decryptionFailed */
+/**
+ * @summary decryptionFailed
+ * @constant
+ * @type {number}
+ */
+export const decryptionFailed: PkiWaError = PkiWaError_decryptionFailed; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION decryptionFailed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PkiWaError */
 let _cached_decoder_for_PkiWaError: $.ASN1Decoder<PkiWaError> | null = null;

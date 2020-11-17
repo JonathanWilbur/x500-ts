@@ -2,6 +2,10 @@
 import { id_opcode_addEntry } from "../CommonProtocolSpecification/id-opcode-addEntry.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_AddEntryArgument,
+    _encode_AddEntryArgument,
+} from "../DirectoryAbstractService/AddEntryArgument.ta";
+import {
     _decode_AddEntryResult,
     _encode_AddEntryResult,
 } from "../DirectoryAbstractService/AddEntryResult.ta";
@@ -11,12 +15,18 @@ import { referral } from "../DirectoryAbstractService/referral.oa";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_addEntry } from "../CommonProtocolSpecification/id-opcode-addEntry.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     AddEntryArgument,
-    _get_decoder_for_AddEntryArgument,
-    _get_encoder_for_AddEntryArgument,
+    _decode_AddEntryArgument,
+    _encode_AddEntryArgument,
 } from "../DirectoryAbstractService/AddEntryArgument.ta";
 export {
     AddEntryResult,

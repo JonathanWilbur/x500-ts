@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AllowedSubset,
     AllowedSubset_baseObject,
@@ -139,3 +140,4 @@ export {
     _root_component_type_list_2_spec_for_SearchRuleId,
 } from "./ServiceAdministration/SearchRuleId.ta";
 export { SupportedMatchingRestrictions } from "./ServiceAdministration/SupportedMatchingRestrictions.osa";
+/* eslint-enable */

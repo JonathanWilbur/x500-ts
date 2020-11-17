@@ -1,11 +1,27 @@
 /* eslint-disable */
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { contentUrl } from "../SelectedAttributeTypes/contentUrl.oa";
 import { epc } from "../SelectedAttributeTypes/epc.oa";
 import { epcInUrn } from "../SelectedAttributeTypes/epcInUrn.oa";
 import { tagLocation } from "../SelectedAttributeTypes/tagLocation.oa";
 import { id_oc_epcTagInfoObj } from "../SelectedObjectClasses/id-oc-epcTagInfoObj.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { contentUrl } from "../SelectedAttributeTypes/contentUrl.oa";
 export { epc } from "../SelectedAttributeTypes/epc.oa";
 export { epcInUrn } from "../SelectedAttributeTypes/epcInUrn.oa";
@@ -40,8 +56,7 @@ export const epcTagInfoObj: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&Superclasses": undefined,
-    "&kind":
-        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         epc,
         epcInUrn,

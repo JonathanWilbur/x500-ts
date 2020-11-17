@@ -11,7 +11,9 @@ export {
     _encode_DelMatchSyntax,
 } from "../AttributeCertificateDefinitions/DelMatchSyntax.ta";
 export { id_mr_delegationPathMatch } from "../AttributeCertificateDefinitions/id-mr-delegationPathMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION delegationPathMatch */
 /**

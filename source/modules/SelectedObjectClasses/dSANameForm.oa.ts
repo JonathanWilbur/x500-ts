@@ -2,7 +2,9 @@
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 import { dSA } from "../SelectedObjectClasses/dSA.oa";
 import { id_nf_dSANameForm } from "../SelectedObjectClasses/id-nf-dSANameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export { dSA } from "../SelectedObjectClasses/dSA.oa";
 export { id_nf_dSANameForm } from "../SelectedObjectClasses/id-nf-dSANameForm.va";
 

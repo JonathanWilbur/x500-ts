@@ -1,9 +1,28 @@
 /* eslint-disable */
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 import { id_oat_supportedFeatures } from "../LdapSystemSchema/id-oat-supportedFeatures.va";
 import { oid } from "../SelectedAttributeTypes/oid.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_oat_supportedFeatures } from "../LdapSystemSchema/id-oat-supportedFeatures.va";
 export { oid } from "../SelectedAttributeTypes/oid.oa";
 
@@ -35,8 +54,7 @@ export const supportedFeatures: ATTRIBUTE = {
     encoderFor: {
         "&Type": $._encodeObjectIdentifier,
     },
-    "&usage":
-        InformationFramework.AttributeUsage_dSAOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": dSAOperation /* OBJECT_FIELD_SETTING */,
     "&ldapSyntax": oid["&id"] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oat_supportedFeatures /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

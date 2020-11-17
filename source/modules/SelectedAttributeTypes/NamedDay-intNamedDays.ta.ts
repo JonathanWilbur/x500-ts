@@ -62,6 +62,16 @@ export const NamedDay_intNamedDays_sunday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.sunday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_sunday */
 
+/* START_OF_SYMBOL_DEFINITION sunday */
+/**
+ * @summary sunday
+ * @constant
+ * @type {number}
+ */
+export const sunday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.sunday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION sunday */
+
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_monday */
 /**
  * @summary NamedDay_intNamedDays_monday
@@ -71,6 +81,16 @@ export const NamedDay_intNamedDays_sunday: NamedDay_intNamedDays =
 export const NamedDay_intNamedDays_monday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.monday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_monday */
+
+/* START_OF_SYMBOL_DEFINITION monday */
+/**
+ * @summary monday
+ * @constant
+ * @type {number}
+ */
+export const monday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.monday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION monday */
 
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_tuesday */
 /**
@@ -82,6 +102,16 @@ export const NamedDay_intNamedDays_tuesday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.tuesday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_tuesday */
 
+/* START_OF_SYMBOL_DEFINITION tuesday */
+/**
+ * @summary tuesday
+ * @constant
+ * @type {number}
+ */
+export const tuesday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.tuesday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION tuesday */
+
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_wednesday */
 /**
  * @summary NamedDay_intNamedDays_wednesday
@@ -91,6 +121,16 @@ export const NamedDay_intNamedDays_tuesday: NamedDay_intNamedDays =
 export const NamedDay_intNamedDays_wednesday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.wednesday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_wednesday */
+
+/* START_OF_SYMBOL_DEFINITION wednesday */
+/**
+ * @summary wednesday
+ * @constant
+ * @type {number}
+ */
+export const wednesday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.wednesday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wednesday */
 
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_thursday */
 /**
@@ -102,6 +142,16 @@ export const NamedDay_intNamedDays_thursday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.thursday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_thursday */
 
+/* START_OF_SYMBOL_DEFINITION thursday */
+/**
+ * @summary thursday
+ * @constant
+ * @type {number}
+ */
+export const thursday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.thursday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION thursday */
+
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_friday */
 /**
  * @summary NamedDay_intNamedDays_friday
@@ -112,6 +162,16 @@ export const NamedDay_intNamedDays_friday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.friday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_friday */
 
+/* START_OF_SYMBOL_DEFINITION friday */
+/**
+ * @summary friday
+ * @constant
+ * @type {number}
+ */
+export const friday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.friday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION friday */
+
 /* START_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_saturday */
 /**
  * @summary NamedDay_intNamedDays_saturday
@@ -121,6 +181,16 @@ export const NamedDay_intNamedDays_friday: NamedDay_intNamedDays =
 export const NamedDay_intNamedDays_saturday: NamedDay_intNamedDays =
     NamedDay_intNamedDays.saturday; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION NamedDay_intNamedDays_saturday */
+
+/* START_OF_SYMBOL_DEFINITION saturday */
+/**
+ * @summary saturday
+ * @constant
+ * @type {number}
+ */
+export const saturday: NamedDay_intNamedDays =
+    NamedDay_intNamedDays.saturday; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION saturday */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NamedDay_intNamedDays */
 let _cached_decoder_for_NamedDay_intNamedDays: $.ASN1Decoder<

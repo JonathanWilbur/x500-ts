@@ -18,12 +18,6 @@ import * as $ from "asn1-ts/dist/node/functional";
 export type ENCIPHERED<ToBeEnciphered> = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION ENCIPHERED */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCIPHERED */
-let _cached_decoder_for_ENCIPHERED: $.ASN1Decoder<
-    ENCIPHERED<ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCIPHERED */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_ENCIPHERED */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) ENCIPHERED
@@ -37,12 +31,6 @@ export function _get_decoder_for_ENCIPHERED<ToBeEnciphered>(
     return $._decodeOctetString;
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ENCIPHERED */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCIPHERED */
-let _cached_encoder_for_ENCIPHERED: $.ASN1Encoder<
-    ENCIPHERED<ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCIPHERED */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ENCIPHERED */
 /**

@@ -18,7 +18,7 @@ import {
 } from "../InformationFramework/RelativeDistinguishedName.ta";
 import {
     AARE_apdu_protocol_version,
-    AARE_apdu_protocol_version_version1 /* IMPORTED_BIT */,
+    AARE_apdu_protocol_version_version1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_AARE_apdu_protocol_version,
     _encode_AARE_apdu_protocol_version,
 } from "../OSIProtocolSpecification/AARE-apdu-protocol-version.ta";
@@ -69,7 +69,8 @@ export {
 } from "../InformationFramework/RelativeDistinguishedName.ta";
 export {
     AARE_apdu_protocol_version,
-    AARE_apdu_protocol_version_version1 /* IMPORTED_BIT */,
+    AARE_apdu_protocol_version_version1 /* IMPORTED_LONG_NAMED_BIT */,
+    version1 /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_AARE_apdu_protocol_version,
     _encode_AARE_apdu_protocol_version,
 } from "../OSIProtocolSpecification/AARE-apdu-protocol-version.ta";
@@ -89,10 +90,13 @@ export {
     _encode_Application_context_name,
 } from "../OSIProtocolSpecification/Application-context-name.ta";
 export {
+    accepted /* IMPORTED_SHORT_NAMED_INTEGER */,
     Associate_result,
-    Associate_result_accepted /* IMPORTED_NAMED_INTEGER */,
-    Associate_result_rejected_permanent /* IMPORTED_NAMED_INTEGER */,
-    Associate_result_rejected_transient /* IMPORTED_NAMED_INTEGER */,
+    Associate_result_accepted /* IMPORTED_LONG_NAMED_INTEGER */,
+    Associate_result_rejected_permanent /* IMPORTED_LONG_NAMED_INTEGER */,
+    Associate_result_rejected_transient /* IMPORTED_LONG_NAMED_INTEGER */,
+    rejected_permanent /* IMPORTED_SHORT_NAMED_INTEGER */,
+    rejected_transient /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_Associate_result,
     _encode_Associate_result,
 } from "../OSIProtocolSpecification/Associate-result.ta";

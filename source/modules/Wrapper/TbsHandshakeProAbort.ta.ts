@@ -9,7 +9,7 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 import {
     DER_PkiPath,
@@ -30,7 +30,7 @@ export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 export {
     DER_PkiPath,

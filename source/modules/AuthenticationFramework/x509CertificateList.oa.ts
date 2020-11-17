@@ -1,10 +1,14 @@
 /* eslint-disable */
+import {
+    _decode_CertificateList,
+    _encode_CertificateList,
+} from "../AuthenticationFramework/CertificateList.ta";
 import { id_lsx_x509CertificateList } from "../AuthenticationFramework/id-lsx-x509CertificateList.va";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export {
     CertificateList,
-    _get_decoder_for_CertificateList,
-    _get_encoder_for_CertificateList,
+    _decode_CertificateList,
+    _encode_CertificateList,
 } from "../AuthenticationFramework/CertificateList.ta";
 export { id_lsx_x509CertificateList } from "../AuthenticationFramework/id-lsx-x509CertificateList.va";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";

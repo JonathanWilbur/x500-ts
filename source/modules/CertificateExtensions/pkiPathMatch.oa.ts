@@ -11,7 +11,9 @@ export {
     _decode_PkiPathMatchSyntax,
     _encode_PkiPathMatchSyntax,
 } from "../CertificateExtensions/PkiPathMatchSyntax.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION pkiPathMatch */
 /**

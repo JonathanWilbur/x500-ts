@@ -27,6 +27,15 @@ export type ResourceSyntax = INTEGER;
 export const ResourceSyntax_insufficientMemory: ResourceSyntax = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ResourceSyntax_insufficientMemory */
 
+/* START_OF_SYMBOL_DEFINITION insufficientMemory */
+/**
+ * @summary ResourceSyntax_insufficientMemory
+ * @constant
+ * @type {number}
+ */
+export const insufficientMemory: ResourceSyntax = ResourceSyntax_insufficientMemory; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION insufficientMemory */
+
 /* START_OF_SYMBOL_DEFINITION ResourceSyntax_insufficientAssociations */
 /**
  * @summary ResourceSyntax_insufficientAssociations
@@ -35,6 +44,15 @@ export const ResourceSyntax_insufficientMemory: ResourceSyntax = 0; /* LONG_NAME
  */
 export const ResourceSyntax_insufficientAssociations: ResourceSyntax = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ResourceSyntax_insufficientAssociations */
+
+/* START_OF_SYMBOL_DEFINITION insufficientAssociations */
+/**
+ * @summary ResourceSyntax_insufficientAssociations
+ * @constant
+ * @type {number}
+ */
+export const insufficientAssociations: ResourceSyntax = ResourceSyntax_insufficientAssociations; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION insufficientAssociations */
 
 /* START_OF_SYMBOL_DEFINITION ResourceSyntax_insufficientDiskSpace */
 /**
@@ -45,6 +63,15 @@ export const ResourceSyntax_insufficientAssociations: ResourceSyntax = 1; /* LON
 export const ResourceSyntax_insufficientDiskSpace: ResourceSyntax = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ResourceSyntax_insufficientDiskSpace */
 
+/* START_OF_SYMBOL_DEFINITION insufficientDiskSpace */
+/**
+ * @summary ResourceSyntax_insufficientDiskSpace
+ * @constant
+ * @type {number}
+ */
+export const insufficientDiskSpace: ResourceSyntax = ResourceSyntax_insufficientDiskSpace; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION insufficientDiskSpace */
+
 /* START_OF_SYMBOL_DEFINITION ResourceSyntax_miscellaneousResourceExhausted */
 /**
  * @summary ResourceSyntax_miscellaneousResourceExhausted
@@ -53,6 +80,15 @@ export const ResourceSyntax_insufficientDiskSpace: ResourceSyntax = 2; /* LONG_N
  */
 export const ResourceSyntax_miscellaneousResourceExhausted: ResourceSyntax = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ResourceSyntax_miscellaneousResourceExhausted */
+
+/* START_OF_SYMBOL_DEFINITION miscellaneousResourceExhausted */
+/**
+ * @summary ResourceSyntax_miscellaneousResourceExhausted
+ * @constant
+ * @type {number}
+ */
+export const miscellaneousResourceExhausted: ResourceSyntax = ResourceSyntax_miscellaneousResourceExhausted; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION miscellaneousResourceExhausted */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ResourceSyntax */
 let _cached_decoder_for_ResourceSyntax: $.ASN1Decoder<

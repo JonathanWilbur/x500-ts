@@ -5,6 +5,7 @@ import { dSAShadowBind } from "../DirectoryShadowAbstractService/dSAShadowBind.o
 import { requestShadowUpdate } from "../DirectoryShadowAbstractService/requestShadowUpdate.oa";
 import { updateShadow } from "../DirectoryShadowAbstractService/updateShadow.oa";
 import { IDM_PROTOCOL } from "../IDMProtocolSpecification/IDM-PROTOCOL.oca";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { id_idm_disp } from "../DirectoryIDMProtocols/id-idm-disp.va";
 export { coordinateShadowUpdate } from "../DirectoryShadowAbstractService/coordinateShadowUpdate.oa";
 export { dSAShadowBind } from "../DirectoryShadowAbstractService/dSAShadowBind.oa";

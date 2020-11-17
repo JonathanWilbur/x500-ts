@@ -24,6 +24,14 @@ export type AARQ_apdu_protocol_version = BIT_STRING;
 export const AARQ_apdu_protocol_version_version1: number = 0; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION AARQ_apdu_protocol_version_version1 */
 
+/* START_OF_SYMBOL_DEFINITION version1 */
+/**
+ * @summary version1
+ * @constant
+ */
+export const version1: number = AARQ_apdu_protocol_version_version1; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION version1 */
+
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AARQ_apdu_protocol_version */
 let _cached_decoder_for_AARQ_apdu_protocol_version: $.ASN1Decoder<
     AARQ_apdu_protocol_version

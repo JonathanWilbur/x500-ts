@@ -11,8 +11,9 @@ import {
     _encode_Release_request_reason,
 } from "../OSIProtocolSpecification/Release-request-reason.ta";
 export {
+    normal /* IMPORTED_SHORT_NAMED_INTEGER */,
     Release_request_reason,
-    Release_request_reason_normal /* IMPORTED_NAMED_INTEGER */,
+    Release_request_reason_normal /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_Release_request_reason,
     _encode_Release_request_reason,
 } from "../OSIProtocolSpecification/Release-request-reason.ta";

@@ -4,14 +4,14 @@ import {
     _decode_MultiplePublicKeyAlgo,
     _encode_MultiplePublicKeyAlgo,
 } from "../CryptoTools/MultiplePublicKeyAlgo.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export { id_algo_multiplePublicKeyAlgo } from "../CryptoTools/id-algo-multiplePublicKeyAlgo.va";
 export {
     MultiplePublicKeyAlgo,
     _decode_MultiplePublicKeyAlgo,
     _encode_MultiplePublicKeyAlgo,
 } from "../CryptoTools/MultiplePublicKeyAlgo.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION multiplePublicKeyAlgo */
 /**

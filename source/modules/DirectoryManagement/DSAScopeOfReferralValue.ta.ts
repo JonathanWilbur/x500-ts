@@ -25,6 +25,15 @@ export type DSAScopeOfReferralValue = INTEGER;
 export const DSAScopeOfReferralValue_dmd: DSAScopeOfReferralValue = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfReferralValue_dmd */
 
+/* START_OF_SYMBOL_DEFINITION dmd */
+/**
+ * @summary DSAScopeOfReferralValue_dmd
+ * @constant
+ * @type {number}
+ */
+export const dmd: DSAScopeOfReferralValue = DSAScopeOfReferralValue_dmd; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION dmd */
+
 /* START_OF_SYMBOL_DEFINITION DSAScopeOfReferralValue_country */
 /**
  * @summary DSAScopeOfReferralValue_country
@@ -34,6 +43,15 @@ export const DSAScopeOfReferralValue_dmd: DSAScopeOfReferralValue = 0; /* LONG_N
 export const DSAScopeOfReferralValue_country: DSAScopeOfReferralValue = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfReferralValue_country */
 
+/* START_OF_SYMBOL_DEFINITION country */
+/**
+ * @summary DSAScopeOfReferralValue_country
+ * @constant
+ * @type {number}
+ */
+export const country: DSAScopeOfReferralValue = DSAScopeOfReferralValue_country; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION country */
+
 /* START_OF_SYMBOL_DEFINITION DSAScopeOfReferralValue_global */
 /**
  * @summary DSAScopeOfReferralValue_global
@@ -42,6 +60,15 @@ export const DSAScopeOfReferralValue_country: DSAScopeOfReferralValue = 1; /* LO
  */
 export const DSAScopeOfReferralValue_global: DSAScopeOfReferralValue = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION DSAScopeOfReferralValue_global */
+
+/* START_OF_SYMBOL_DEFINITION global */
+/**
+ * @summary DSAScopeOfReferralValue_global
+ * @constant
+ * @type {number}
+ */
+export const global: DSAScopeOfReferralValue = DSAScopeOfReferralValue_global; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION global */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfReferralValue */
 let _cached_decoder_for_DSAScopeOfReferralValue: $.ASN1Decoder<

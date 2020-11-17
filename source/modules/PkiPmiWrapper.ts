@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     AttributeCertificateV2,
     _decode_AttributeCertificateV2,
@@ -138,7 +139,7 @@ export {
     _decode_UserKeyingMaterial,
     _encode_UserKeyingMaterial,
 } from "./PkiPmiWrapper/UserKeyingMaterial.ta";
-export { TYPE_IDENTIFIER } from "./PkiPmiWrapper/WRAPPED-PDU.oca";
+export { WRAPPED_PDU } from "./PkiPmiWrapper/WRAPPED-PDU.oca";
 export {
     WrappedPDUInfo,
     _decode_WrappedPDUInfo,
@@ -147,3 +148,4 @@ export {
     _root_component_type_list_1_spec_for_WrappedPDUInfo,
     _root_component_type_list_2_spec_for_WrappedPDUInfo,
 } from "./PkiPmiWrapper/WrappedPDUInfo.ta";
+/* eslint-enable */

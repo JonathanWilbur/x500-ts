@@ -6,7 +6,9 @@ import {
     _decode_NameAndOptionalUID,
     _encode_NameAndOptionalUID,
 } from "../SelectedAttributeTypes/NameAndOptionalUID.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_uniqueMemberMatch } from "../SelectedAttributeTypes/id-mr-uniqueMemberMatch.va";
 export { nameAndOptionalUID } from "../SelectedAttributeTypes/nameAndOptionalUID.oa";
 export {

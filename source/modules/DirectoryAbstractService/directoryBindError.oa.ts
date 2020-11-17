@@ -9,6 +9,11 @@ import {
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
 export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export {
     DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1,

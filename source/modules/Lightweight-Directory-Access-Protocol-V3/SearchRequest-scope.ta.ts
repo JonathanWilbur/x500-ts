@@ -33,6 +33,15 @@ export type SearchRequest_scope = _enum_for_SearchRequest_scope | ENUMERATED;
 export const SearchRequest_scope_baseObject: SearchRequest_scope = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_scope_baseObject */
 
+/* START_OF_SYMBOL_DEFINITION baseObject */
+/**
+ * @summary baseObject
+ * @constant
+ * @type {number}
+ */
+export const baseObject: SearchRequest_scope = SearchRequest_scope_baseObject; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION baseObject */
+
 /* START_OF_SYMBOL_DEFINITION SearchRequest_scope_singleLevel */
 /**
  * @summary SearchRequest_scope_singleLevel
@@ -42,6 +51,15 @@ export const SearchRequest_scope_baseObject: SearchRequest_scope = 0; /* LONG_NA
 export const SearchRequest_scope_singleLevel: SearchRequest_scope = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_scope_singleLevel */
 
+/* START_OF_SYMBOL_DEFINITION singleLevel */
+/**
+ * @summary singleLevel
+ * @constant
+ * @type {number}
+ */
+export const singleLevel: SearchRequest_scope = SearchRequest_scope_singleLevel; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION singleLevel */
+
 /* START_OF_SYMBOL_DEFINITION SearchRequest_scope_wholeSubtree */
 /**
  * @summary SearchRequest_scope_wholeSubtree
@@ -50,6 +68,15 @@ export const SearchRequest_scope_singleLevel: SearchRequest_scope = 1; /* LONG_N
  */
 export const SearchRequest_scope_wholeSubtree: SearchRequest_scope = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION SearchRequest_scope_wholeSubtree */
+
+/* START_OF_SYMBOL_DEFINITION wholeSubtree */
+/**
+ * @summary wholeSubtree
+ * @constant
+ * @type {number}
+ */
+export const wholeSubtree: SearchRequest_scope = SearchRequest_scope_wholeSubtree; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_scope */
 let _cached_decoder_for_SearchRequest_scope: $.ASN1Decoder<

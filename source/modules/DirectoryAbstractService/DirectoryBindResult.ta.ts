@@ -18,7 +18,7 @@ import {
 } from "../DirectoryAbstractService/PwdResponseValue.ta";
 import {
     Versions,
-    Versions_v1 /* IMPORTED_BIT */,
+    Versions_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Versions,
     _encode_Versions,
 } from "../DirectoryAbstractService/Versions.ta";
@@ -33,9 +33,11 @@ export {
     _encode_PwdResponseValue,
 } from "../DirectoryAbstractService/PwdResponseValue.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_BIT */,
+    v2 /* IMPORTED_SHORT_NAMED_BIT */,
     Versions,
-    Versions_v1 /* IMPORTED_BIT */,
-    Versions_v2 /* IMPORTED_BIT */,
+    Versions_v1 /* IMPORTED_LONG_NAMED_BIT */,
+    Versions_v2 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Versions,
     _encode_Versions,
 } from "../DirectoryAbstractService/Versions.ta";

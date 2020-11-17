@@ -9,22 +9,22 @@ import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 import {
     PartialAttributeList,
     _decode_PartialAttributeList,
     _encode_PartialAttributeList,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttributeList.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttributeList.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
     PartialAttributeList,
     _decode_PartialAttributeList,
     _encode_PartialAttributeList,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttributeList.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttributeList.ta";
 
 /* START_OF_SYMBOL_DEFINITION SearchResultEntry */
 /**

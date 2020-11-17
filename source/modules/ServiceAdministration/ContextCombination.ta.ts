@@ -5,18 +5,8 @@ import {
     OBJECT_IDENTIFIER,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
-import {
-    ContextCombination,
-    _decode_ContextCombination,
-    _encode_ContextCombination,
-} from "../ServiceAdministration/ContextCombination.ta";
 export { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 export { SupportedContexts } from "../InformationFramework/SupportedContexts.osa";
-export {
-    ContextCombination,
-    _decode_ContextCombination,
-    _encode_ContextCombination,
-} from "../ServiceAdministration/ContextCombination.ta";
 
 /* START_OF_SYMBOL_DEFINITION ContextCombination */
 // TODO: CHECK_RECURSIVE_DEFINITION

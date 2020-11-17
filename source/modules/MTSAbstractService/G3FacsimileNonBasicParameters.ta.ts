@@ -38,6 +38,14 @@ export type G3FacsimileNonBasicParameters = BIT_STRING;
 export const G3FacsimileNonBasicParameters_two_dimensional: number = 8; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_two_dimensional */
 
+/* START_OF_SYMBOL_DEFINITION two_dimensional */
+/**
+ * @summary two_dimensional
+ * @constant
+ */
+export const two_dimensional: number = G3FacsimileNonBasicParameters_two_dimensional; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION two_dimensional */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_fine_resolution */
 /**
  * @summary G3FacsimileNonBasicParameters_fine_resolution
@@ -45,6 +53,14 @@ export const G3FacsimileNonBasicParameters_two_dimensional: number = 8; /* LONG_
  */
 export const G3FacsimileNonBasicParameters_fine_resolution: number = 9; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_fine_resolution */
+
+/* START_OF_SYMBOL_DEFINITION fine_resolution */
+/**
+ * @summary fine_resolution
+ * @constant
+ */
+export const fine_resolution: number = G3FacsimileNonBasicParameters_fine_resolution; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION fine_resolution */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_unlimited_length */
 /**
@@ -54,6 +70,14 @@ export const G3FacsimileNonBasicParameters_fine_resolution: number = 9; /* LONG_
 export const G3FacsimileNonBasicParameters_unlimited_length: number = 20; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_unlimited_length */
 
+/* START_OF_SYMBOL_DEFINITION unlimited_length */
+/**
+ * @summary unlimited_length
+ * @constant
+ */
+export const unlimited_length: number = G3FacsimileNonBasicParameters_unlimited_length; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION unlimited_length */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_b4_length */
 /**
  * @summary G3FacsimileNonBasicParameters_b4_length
@@ -61,6 +85,14 @@ export const G3FacsimileNonBasicParameters_unlimited_length: number = 20; /* LON
  */
 export const G3FacsimileNonBasicParameters_b4_length: number = 21; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_b4_length */
+
+/* START_OF_SYMBOL_DEFINITION b4_length */
+/**
+ * @summary b4_length
+ * @constant
+ */
+export const b4_length: number = G3FacsimileNonBasicParameters_b4_length; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION b4_length */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_a3_width */
 /**
@@ -70,6 +102,14 @@ export const G3FacsimileNonBasicParameters_b4_length: number = 21; /* LONG_NAMED
 export const G3FacsimileNonBasicParameters_a3_width: number = 22; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_a3_width */
 
+/* START_OF_SYMBOL_DEFINITION a3_width */
+/**
+ * @summary a3_width
+ * @constant
+ */
+export const a3_width: number = G3FacsimileNonBasicParameters_a3_width; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION a3_width */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_b4_width */
 /**
  * @summary G3FacsimileNonBasicParameters_b4_width
@@ -77,6 +117,14 @@ export const G3FacsimileNonBasicParameters_a3_width: number = 22; /* LONG_NAMED_
  */
 export const G3FacsimileNonBasicParameters_b4_width: number = 23; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_b4_width */
+
+/* START_OF_SYMBOL_DEFINITION b4_width */
+/**
+ * @summary b4_width
+ * @constant
+ */
+export const b4_width: number = G3FacsimileNonBasicParameters_b4_width; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION b4_width */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_t6_coding */
 /**
@@ -86,6 +134,14 @@ export const G3FacsimileNonBasicParameters_b4_width: number = 23; /* LONG_NAMED_
 export const G3FacsimileNonBasicParameters_t6_coding: number = 25; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_t6_coding */
 
+/* START_OF_SYMBOL_DEFINITION t6_coding */
+/**
+ * @summary t6_coding
+ * @constant
+ */
+export const t6_coding: number = G3FacsimileNonBasicParameters_t6_coding; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION t6_coding */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_uncompressed */
 /**
  * @summary G3FacsimileNonBasicParameters_uncompressed
@@ -93,6 +149,14 @@ export const G3FacsimileNonBasicParameters_t6_coding: number = 25; /* LONG_NAMED
  */
 export const G3FacsimileNonBasicParameters_uncompressed: number = 30; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_uncompressed */
+
+/* START_OF_SYMBOL_DEFINITION uncompressed */
+/**
+ * @summary uncompressed
+ * @constant
+ */
+export const uncompressed: number = G3FacsimileNonBasicParameters_uncompressed; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION uncompressed */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_width_middle_864_of_1728 */
 /**
@@ -102,6 +166,14 @@ export const G3FacsimileNonBasicParameters_uncompressed: number = 30; /* LONG_NA
 export const G3FacsimileNonBasicParameters_width_middle_864_of_1728: number = 37; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_width_middle_864_of_1728 */
 
+/* START_OF_SYMBOL_DEFINITION width_middle_864_of_1728 */
+/**
+ * @summary width_middle_864_of_1728
+ * @constant
+ */
+export const width_middle_864_of_1728: number = G3FacsimileNonBasicParameters_width_middle_864_of_1728; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION width_middle_864_of_1728 */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_width_middle_1216_of_1728 */
 /**
  * @summary G3FacsimileNonBasicParameters_width_middle_1216_of_1728
@@ -109,6 +181,14 @@ export const G3FacsimileNonBasicParameters_width_middle_864_of_1728: number = 37
  */
 export const G3FacsimileNonBasicParameters_width_middle_1216_of_1728: number = 38; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_width_middle_1216_of_1728 */
+
+/* START_OF_SYMBOL_DEFINITION width_middle_1216_of_1728 */
+/**
+ * @summary width_middle_1216_of_1728
+ * @constant
+ */
+export const width_middle_1216_of_1728: number = G3FacsimileNonBasicParameters_width_middle_1216_of_1728; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION width_middle_1216_of_1728 */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_type */
 /**
@@ -118,6 +198,14 @@ export const G3FacsimileNonBasicParameters_width_middle_1216_of_1728: number = 3
 export const G3FacsimileNonBasicParameters_resolution_type: number = 44; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_type */
 
+/* START_OF_SYMBOL_DEFINITION resolution_type */
+/**
+ * @summary resolution_type
+ * @constant
+ */
+export const resolution_type: number = G3FacsimileNonBasicParameters_resolution_type; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION resolution_type */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_400x400 */
 /**
  * @summary G3FacsimileNonBasicParameters_resolution_400x400
@@ -125,6 +213,14 @@ export const G3FacsimileNonBasicParameters_resolution_type: number = 44; /* LONG
  */
 export const G3FacsimileNonBasicParameters_resolution_400x400: number = 45; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_400x400 */
+
+/* START_OF_SYMBOL_DEFINITION resolution_400x400 */
+/**
+ * @summary resolution_400x400
+ * @constant
+ */
+export const resolution_400x400: number = G3FacsimileNonBasicParameters_resolution_400x400; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION resolution_400x400 */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_300x300 */
 /**
@@ -134,6 +230,14 @@ export const G3FacsimileNonBasicParameters_resolution_400x400: number = 45; /* L
 export const G3FacsimileNonBasicParameters_resolution_300x300: number = 46; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_300x300 */
 
+/* START_OF_SYMBOL_DEFINITION resolution_300x300 */
+/**
+ * @summary resolution_300x300
+ * @constant
+ */
+export const resolution_300x300: number = G3FacsimileNonBasicParameters_resolution_300x300; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION resolution_300x300 */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_8x15 */
 /**
  * @summary G3FacsimileNonBasicParameters_resolution_8x15
@@ -141,6 +245,14 @@ export const G3FacsimileNonBasicParameters_resolution_300x300: number = 46; /* L
  */
 export const G3FacsimileNonBasicParameters_resolution_8x15: number = 47; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_resolution_8x15 */
+
+/* START_OF_SYMBOL_DEFINITION resolution_8x15 */
+/**
+ * @summary resolution_8x15
+ * @constant
+ */
+export const resolution_8x15: number = G3FacsimileNonBasicParameters_resolution_8x15; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION resolution_8x15 */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_edi */
 /**
@@ -150,6 +262,14 @@ export const G3FacsimileNonBasicParameters_resolution_8x15: number = 47; /* LONG
 export const G3FacsimileNonBasicParameters_edi: number = 49; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_edi */
 
+/* START_OF_SYMBOL_DEFINITION edi */
+/**
+ * @summary edi
+ * @constant
+ */
+export const edi: number = G3FacsimileNonBasicParameters_edi; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION edi */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_dtm */
 /**
  * @summary G3FacsimileNonBasicParameters_dtm
@@ -157,6 +277,14 @@ export const G3FacsimileNonBasicParameters_edi: number = 49; /* LONG_NAMED_BIT *
  */
 export const G3FacsimileNonBasicParameters_dtm: number = 50; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_dtm */
+
+/* START_OF_SYMBOL_DEFINITION dtm */
+/**
+ * @summary dtm
+ * @constant
+ */
+export const dtm: number = G3FacsimileNonBasicParameters_dtm; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION dtm */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_bft */
 /**
@@ -166,6 +294,14 @@ export const G3FacsimileNonBasicParameters_dtm: number = 50; /* LONG_NAMED_BIT *
 export const G3FacsimileNonBasicParameters_bft: number = 51; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_bft */
 
+/* START_OF_SYMBOL_DEFINITION bft */
+/**
+ * @summary bft
+ * @constant
+ */
+export const bft: number = G3FacsimileNonBasicParameters_bft; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION bft */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_mixed_mode */
 /**
  * @summary G3FacsimileNonBasicParameters_mixed_mode
@@ -173,6 +309,14 @@ export const G3FacsimileNonBasicParameters_bft: number = 51; /* LONG_NAMED_BIT *
  */
 export const G3FacsimileNonBasicParameters_mixed_mode: number = 58; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_mixed_mode */
+
+/* START_OF_SYMBOL_DEFINITION mixed_mode */
+/**
+ * @summary mixed_mode
+ * @constant
+ */
+export const mixed_mode: number = G3FacsimileNonBasicParameters_mixed_mode; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION mixed_mode */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_character_mode */
 /**
@@ -182,6 +326,14 @@ export const G3FacsimileNonBasicParameters_mixed_mode: number = 58; /* LONG_NAME
 export const G3FacsimileNonBasicParameters_character_mode: number = 60; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_character_mode */
 
+/* START_OF_SYMBOL_DEFINITION character_mode */
+/**
+ * @summary character_mode
+ * @constant
+ */
+export const character_mode: number = G3FacsimileNonBasicParameters_character_mode; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION character_mode */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_twelve_bits */
 /**
  * @summary G3FacsimileNonBasicParameters_twelve_bits
@@ -189,6 +341,14 @@ export const G3FacsimileNonBasicParameters_character_mode: number = 60; /* LONG_
  */
 export const G3FacsimileNonBasicParameters_twelve_bits: number = 65; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_twelve_bits */
+
+/* START_OF_SYMBOL_DEFINITION twelve_bits */
+/**
+ * @summary twelve_bits
+ * @constant
+ */
+export const twelve_bits: number = G3FacsimileNonBasicParameters_twelve_bits; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION twelve_bits */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_preferred_huffmann */
 /**
@@ -198,6 +358,14 @@ export const G3FacsimileNonBasicParameters_twelve_bits: number = 65; /* LONG_NAM
 export const G3FacsimileNonBasicParameters_preferred_huffmann: number = 66; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_preferred_huffmann */
 
+/* START_OF_SYMBOL_DEFINITION preferred_huffmann */
+/**
+ * @summary preferred_huffmann
+ * @constant
+ */
+export const preferred_huffmann: number = G3FacsimileNonBasicParameters_preferred_huffmann; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION preferred_huffmann */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_full_colour */
 /**
  * @summary G3FacsimileNonBasicParameters_full_colour
@@ -205,6 +373,14 @@ export const G3FacsimileNonBasicParameters_preferred_huffmann: number = 66; /* L
  */
 export const G3FacsimileNonBasicParameters_full_colour: number = 67; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_full_colour */
+
+/* START_OF_SYMBOL_DEFINITION full_colour */
+/**
+ * @summary full_colour
+ * @constant
+ */
+export const full_colour: number = G3FacsimileNonBasicParameters_full_colour; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION full_colour */
 
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_jpeg */
 /**
@@ -214,6 +390,14 @@ export const G3FacsimileNonBasicParameters_full_colour: number = 67; /* LONG_NAM
 export const G3FacsimileNonBasicParameters_jpeg: number = 68; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_jpeg */
 
+/* START_OF_SYMBOL_DEFINITION jpeg */
+/**
+ * @summary jpeg
+ * @constant
+ */
+export const jpeg: number = G3FacsimileNonBasicParameters_jpeg; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION jpeg */
+
 /* START_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_processable_mode_26 */
 /**
  * @summary G3FacsimileNonBasicParameters_processable_mode_26
@@ -221,6 +405,14 @@ export const G3FacsimileNonBasicParameters_jpeg: number = 68; /* LONG_NAMED_BIT 
  */
 export const G3FacsimileNonBasicParameters_processable_mode_26: number = 71; /* LONG_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION G3FacsimileNonBasicParameters_processable_mode_26 */
+
+/* START_OF_SYMBOL_DEFINITION processable_mode_26 */
+/**
+ * @summary processable_mode_26
+ * @constant
+ */
+export const processable_mode_26: number = G3FacsimileNonBasicParameters_processable_mode_26; /* SHORT_NAMED_BIT */
+/* END_OF_SYMBOL_DEFINITION processable_mode_26 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_G3FacsimileNonBasicParameters */
 let _cached_decoder_for_G3FacsimileNonBasicParameters: $.ASN1Decoder<

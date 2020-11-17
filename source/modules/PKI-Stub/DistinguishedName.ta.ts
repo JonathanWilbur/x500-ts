@@ -5,12 +5,12 @@ import {
     RDNSequence,
     _decode_RDNSequence,
     _encode_RDNSequence,
-} from "../PKI_Stub/RDNSequence.ta";
+} from "../PKI-Stub/RDNSequence.ta";
 export {
     RDNSequence,
     _decode_RDNSequence,
     _encode_RDNSequence,
-} from "../PKI_Stub/RDNSequence.ta";
+} from "../PKI-Stub/RDNSequence.ta";
 
 /* START_OF_SYMBOL_DEFINITION DistinguishedName */
 /**

@@ -9,22 +9,22 @@ import {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 import {
     ReplaceAvlRsp_result,
     _decode_ReplaceAvlRsp_result,
     _encode_ReplaceAvlRsp_result,
-} from "../AVL_management/ReplaceAvlRsp-result.ta";
+} from "../AVL-management/ReplaceAvlRsp-result.ta";
 export {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 export {
     ReplaceAvlRsp_result,
     _decode_ReplaceAvlRsp_result,
     _encode_ReplaceAvlRsp_result,
-} from "../AVL_management/ReplaceAvlRsp-result.ta";
+} from "../AVL-management/ReplaceAvlRsp-result.ta";
 
 /* START_OF_SYMBOL_DEFINITION ReplaceAvlRsp */
 /**

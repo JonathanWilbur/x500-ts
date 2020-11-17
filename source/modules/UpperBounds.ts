@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { ub_answerback } from "./UpperBounds/ub-answerback.va";
 export { ub_business_category } from "./UpperBounds/ub-business-category.va";
 export { ub_common_name } from "./UpperBounds/ub-common-name.va";
@@ -37,3 +38,4 @@ export { ub_telex_number } from "./UpperBounds/ub-telex-number.va";
 export { ub_title } from "./UpperBounds/ub-title.va";
 export { ub_user_password } from "./UpperBounds/ub-user-password.va";
 export { ub_x121_address } from "./UpperBounds/ub-x121-address.va";
+/* eslint-enable */

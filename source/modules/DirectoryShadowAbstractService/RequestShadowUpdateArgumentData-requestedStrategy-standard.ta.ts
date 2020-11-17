@@ -34,6 +34,15 @@ export type RequestShadowUpdateArgumentData_requestedStrategy_standard =
 export const RequestShadowUpdateArgumentData_requestedStrategy_standard_incremental: RequestShadowUpdateArgumentData_requestedStrategy_standard = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION RequestShadowUpdateArgumentData_requestedStrategy_standard_incremental */
 
+/* START_OF_SYMBOL_DEFINITION incremental */
+/**
+ * @summary incremental
+ * @constant
+ * @type {number}
+ */
+export const incremental: RequestShadowUpdateArgumentData_requestedStrategy_standard = RequestShadowUpdateArgumentData_requestedStrategy_standard_incremental; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION incremental */
+
 /* START_OF_SYMBOL_DEFINITION RequestShadowUpdateArgumentData_requestedStrategy_standard_total */
 /**
  * @summary RequestShadowUpdateArgumentData_requestedStrategy_standard_total
@@ -42,6 +51,15 @@ export const RequestShadowUpdateArgumentData_requestedStrategy_standard_incremen
  */
 export const RequestShadowUpdateArgumentData_requestedStrategy_standard_total: RequestShadowUpdateArgumentData_requestedStrategy_standard = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION RequestShadowUpdateArgumentData_requestedStrategy_standard_total */
+
+/* START_OF_SYMBOL_DEFINITION total */
+/**
+ * @summary total
+ * @constant
+ * @type {number}
+ */
+export const total: RequestShadowUpdateArgumentData_requestedStrategy_standard = RequestShadowUpdateArgumentData_requestedStrategy_standard_total; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION total */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard */
 let _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard: $.ASN1Decoder<

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export {
     DisplayText,
     _decode_DisplayText,
@@ -19,3 +20,4 @@ export {
     _root_component_type_list_1_spec_for_UserNotice,
     _root_component_type_list_2_spec_for_UserNotice,
 } from "./PKIX1Implicit93/UserNotice.ta";
+/* eslint-enable */

@@ -33,6 +33,15 @@ export type Event_identifier = INTEGER;
 export const Event_identifier_cp_PPDU: Event_identifier = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_cp_PPDU */
 
+/* START_OF_SYMBOL_DEFINITION cp_PPDU */
+/**
+ * @summary Event_identifier_cp_PPDU
+ * @constant
+ * @type {number}
+ */
+export const cp_PPDU: Event_identifier = Event_identifier_cp_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION cp_PPDU */
+
 /* START_OF_SYMBOL_DEFINITION Event_identifier_cpa_PPDU */
 /**
  * @summary Event_identifier_cpa_PPDU
@@ -41,6 +50,15 @@ export const Event_identifier_cp_PPDU: Event_identifier = 0; /* LONG_NAMED_INTEG
  */
 export const Event_identifier_cpa_PPDU: Event_identifier = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_cpa_PPDU */
+
+/* START_OF_SYMBOL_DEFINITION cpa_PPDU */
+/**
+ * @summary Event_identifier_cpa_PPDU
+ * @constant
+ * @type {number}
+ */
+export const cpa_PPDU: Event_identifier = Event_identifier_cpa_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION cpa_PPDU */
 
 /* START_OF_SYMBOL_DEFINITION Event_identifier_cpr_PPDU */
 /**
@@ -51,6 +69,15 @@ export const Event_identifier_cpa_PPDU: Event_identifier = 1; /* LONG_NAMED_INTE
 export const Event_identifier_cpr_PPDU: Event_identifier = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_cpr_PPDU */
 
+/* START_OF_SYMBOL_DEFINITION cpr_PPDU */
+/**
+ * @summary Event_identifier_cpr_PPDU
+ * @constant
+ * @type {number}
+ */
+export const cpr_PPDU: Event_identifier = Event_identifier_cpr_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION cpr_PPDU */
+
 /* START_OF_SYMBOL_DEFINITION Event_identifier_aru_PPDU */
 /**
  * @summary Event_identifier_aru_PPDU
@@ -59,6 +86,15 @@ export const Event_identifier_cpr_PPDU: Event_identifier = 2; /* LONG_NAMED_INTE
  */
 export const Event_identifier_aru_PPDU: Event_identifier = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_aru_PPDU */
+
+/* START_OF_SYMBOL_DEFINITION aru_PPDU */
+/**
+ * @summary Event_identifier_aru_PPDU
+ * @constant
+ * @type {number}
+ */
+export const aru_PPDU: Event_identifier = Event_identifier_aru_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION aru_PPDU */
 
 /* START_OF_SYMBOL_DEFINITION Event_identifier_arp_PPDU */
 /**
@@ -69,6 +105,15 @@ export const Event_identifier_aru_PPDU: Event_identifier = 3; /* LONG_NAMED_INTE
 export const Event_identifier_arp_PPDU: Event_identifier = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_arp_PPDU */
 
+/* START_OF_SYMBOL_DEFINITION arp_PPDU */
+/**
+ * @summary Event_identifier_arp_PPDU
+ * @constant
+ * @type {number}
+ */
+export const arp_PPDU: Event_identifier = Event_identifier_arp_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION arp_PPDU */
+
 /* START_OF_SYMBOL_DEFINITION Event_identifier_td_PPDU */
 /**
  * @summary Event_identifier_td_PPDU
@@ -77,6 +122,15 @@ export const Event_identifier_arp_PPDU: Event_identifier = 4; /* LONG_NAMED_INTE
  */
 export const Event_identifier_td_PPDU: Event_identifier = 7; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_td_PPDU */
+
+/* START_OF_SYMBOL_DEFINITION td_PPDU */
+/**
+ * @summary Event_identifier_td_PPDU
+ * @constant
+ * @type {number}
+ */
+export const td_PPDU: Event_identifier = Event_identifier_td_PPDU; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION td_PPDU */
 
 /* START_OF_SYMBOL_DEFINITION Event_identifier_s_release_indication */
 /**
@@ -87,6 +141,15 @@ export const Event_identifier_td_PPDU: Event_identifier = 7; /* LONG_NAMED_INTEG
 export const Event_identifier_s_release_indication: Event_identifier = 14; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_s_release_indication */
 
+/* START_OF_SYMBOL_DEFINITION s_release_indication */
+/**
+ * @summary Event_identifier_s_release_indication
+ * @constant
+ * @type {number}
+ */
+export const s_release_indication: Event_identifier = Event_identifier_s_release_indication; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION s_release_indication */
+
 /* START_OF_SYMBOL_DEFINITION Event_identifier_s_release_confirm */
 /**
  * @summary Event_identifier_s_release_confirm
@@ -95,6 +158,15 @@ export const Event_identifier_s_release_indication: Event_identifier = 14; /* LO
  */
 export const Event_identifier_s_release_confirm: Event_identifier = 15; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Event_identifier_s_release_confirm */
+
+/* START_OF_SYMBOL_DEFINITION s_release_confirm */
+/**
+ * @summary Event_identifier_s_release_confirm
+ * @constant
+ * @type {number}
+ */
+export const s_release_confirm: Event_identifier = Event_identifier_s_release_confirm; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION s_release_confirm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Event_identifier */
 let _cached_decoder_for_Event_identifier: $.ASN1Decoder<

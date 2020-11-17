@@ -1,6 +1,12 @@
 /* eslint-disable */
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandon } from "../DirectoryAbstractService/abandon.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandon } from "../DirectoryAbstractService/abandon.oa";
 

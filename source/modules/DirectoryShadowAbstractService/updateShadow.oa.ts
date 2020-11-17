@@ -2,15 +2,25 @@
 import { id_opcode_updateShadow } from "../CommonProtocolSpecification/id-opcode-updateShadow.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_UpdateShadowArgument,
+    _encode_UpdateShadowArgument,
+} from "../DirectoryShadowAbstractService/UpdateShadowArgument.ta";
+import {
     _decode_UpdateShadowResult,
     _encode_UpdateShadowResult,
 } from "../DirectoryShadowAbstractService/UpdateShadowResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_updateShadow } from "../CommonProtocolSpecification/id-opcode-updateShadow.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     UpdateShadowArgument,
-    _get_decoder_for_UpdateShadowArgument,
-    _get_encoder_for_UpdateShadowArgument,
+    _decode_UpdateShadowArgument,
+    _encode_UpdateShadowArgument,
 } from "../DirectoryShadowAbstractService/UpdateShadowArgument.ta";
 export {
     UpdateShadowResult,

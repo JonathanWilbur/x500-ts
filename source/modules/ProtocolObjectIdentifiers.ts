@@ -1,3 +1,4 @@
+/* eslint-disable */
 export { id_ac_directoryAccessAC } from "./ProtocolObjectIdentifiers/id-ac-directoryAccessAC.va";
 export { id_ac_directoryOperationalBindingManagementAC } from "./ProtocolObjectIdentifiers/id-ac-directoryOperationalBindingManagementAC.va";
 export { id_ac_directorySystemAC } from "./ProtocolObjectIdentifiers/id-ac-directorySystemAC.va";
@@ -41,3 +42,4 @@ export { id_rosObject_initiatingConsumerDSA } from "./ProtocolObjectIdentifiers/
 export { id_rosObject_initiatingSupplierDSA } from "./ProtocolObjectIdentifiers/id-rosObject-initiatingSupplierDSA.va";
 export { id_rosObject_respondingConsumerDSA } from "./ProtocolObjectIdentifiers/id-rosObject-respondingConsumerDSA.va";
 export { id_rosObject_respondingSupplierDSA } from "./ProtocolObjectIdentifiers/id-rosObject-respondingSupplierDSA.va";
+/* eslint-enable */

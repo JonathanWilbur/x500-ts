@@ -33,6 +33,15 @@ export type Provider_reason = INTEGER;
 export const Provider_reason_reason_not_specified: Provider_reason = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_reason_not_specified */
 
+/* START_OF_SYMBOL_DEFINITION reason_not_specified */
+/**
+ * @summary Provider_reason_reason_not_specified
+ * @constant
+ * @type {number}
+ */
+export const reason_not_specified: Provider_reason = Provider_reason_reason_not_specified; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION reason_not_specified */
+
 /* START_OF_SYMBOL_DEFINITION Provider_reason_temporary_congestion */
 /**
  * @summary Provider_reason_temporary_congestion
@@ -41,6 +50,15 @@ export const Provider_reason_reason_not_specified: Provider_reason = 0; /* LONG_
  */
 export const Provider_reason_temporary_congestion: Provider_reason = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_temporary_congestion */
+
+/* START_OF_SYMBOL_DEFINITION temporary_congestion */
+/**
+ * @summary Provider_reason_temporary_congestion
+ * @constant
+ * @type {number}
+ */
+export const temporary_congestion: Provider_reason = Provider_reason_temporary_congestion; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION temporary_congestion */
 
 /* START_OF_SYMBOL_DEFINITION Provider_reason_local_limit_exceeded */
 /**
@@ -51,6 +69,15 @@ export const Provider_reason_temporary_congestion: Provider_reason = 1; /* LONG_
 export const Provider_reason_local_limit_exceeded: Provider_reason = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_local_limit_exceeded */
 
+/* START_OF_SYMBOL_DEFINITION local_limit_exceeded */
+/**
+ * @summary Provider_reason_local_limit_exceeded
+ * @constant
+ * @type {number}
+ */
+export const local_limit_exceeded: Provider_reason = Provider_reason_local_limit_exceeded; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION local_limit_exceeded */
+
 /* START_OF_SYMBOL_DEFINITION Provider_reason_called_presentation_address_unknown */
 /**
  * @summary Provider_reason_called_presentation_address_unknown
@@ -59,6 +86,15 @@ export const Provider_reason_local_limit_exceeded: Provider_reason = 2; /* LONG_
  */
 export const Provider_reason_called_presentation_address_unknown: Provider_reason = 3; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_called_presentation_address_unknown */
+
+/* START_OF_SYMBOL_DEFINITION called_presentation_address_unknown */
+/**
+ * @summary Provider_reason_called_presentation_address_unknown
+ * @constant
+ * @type {number}
+ */
+export const called_presentation_address_unknown: Provider_reason = Provider_reason_called_presentation_address_unknown; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION called_presentation_address_unknown */
 
 /* START_OF_SYMBOL_DEFINITION Provider_reason_protocol_version_not_supported */
 /**
@@ -69,6 +105,15 @@ export const Provider_reason_called_presentation_address_unknown: Provider_reaso
 export const Provider_reason_protocol_version_not_supported: Provider_reason = 4; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_protocol_version_not_supported */
 
+/* START_OF_SYMBOL_DEFINITION protocol_version_not_supported */
+/**
+ * @summary Provider_reason_protocol_version_not_supported
+ * @constant
+ * @type {number}
+ */
+export const protocol_version_not_supported: Provider_reason = Provider_reason_protocol_version_not_supported; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION protocol_version_not_supported */
+
 /* START_OF_SYMBOL_DEFINITION Provider_reason_default_context_not_supported */
 /**
  * @summary Provider_reason_default_context_not_supported
@@ -77,6 +122,15 @@ export const Provider_reason_protocol_version_not_supported: Provider_reason = 4
  */
 export const Provider_reason_default_context_not_supported: Provider_reason = 5; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_default_context_not_supported */
+
+/* START_OF_SYMBOL_DEFINITION default_context_not_supported */
+/**
+ * @summary Provider_reason_default_context_not_supported
+ * @constant
+ * @type {number}
+ */
+export const default_context_not_supported: Provider_reason = Provider_reason_default_context_not_supported; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION default_context_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION Provider_reason_user_data_not_readable */
 /**
@@ -87,6 +141,15 @@ export const Provider_reason_default_context_not_supported: Provider_reason = 5;
 export const Provider_reason_user_data_not_readable: Provider_reason = 6; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_user_data_not_readable */
 
+/* START_OF_SYMBOL_DEFINITION user_data_not_readable */
+/**
+ * @summary Provider_reason_user_data_not_readable
+ * @constant
+ * @type {number}
+ */
+export const user_data_not_readable: Provider_reason = Provider_reason_user_data_not_readable; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION user_data_not_readable */
+
 /* START_OF_SYMBOL_DEFINITION Provider_reason_no_PSAP_available */
 /**
  * @summary Provider_reason_no_PSAP_available
@@ -95,6 +158,15 @@ export const Provider_reason_user_data_not_readable: Provider_reason = 6; /* LON
  */
 export const Provider_reason_no_PSAP_available: Provider_reason = 7; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Provider_reason_no_PSAP_available */
+
+/* START_OF_SYMBOL_DEFINITION no_PSAP_available */
+/**
+ * @summary Provider_reason_no_PSAP_available
+ * @constant
+ * @type {number}
+ */
+export const no_PSAP_available: Provider_reason = Provider_reason_no_PSAP_available; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION no_PSAP_available */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Provider_reason */
 let _cached_decoder_for_Provider_reason: $.ASN1Decoder<

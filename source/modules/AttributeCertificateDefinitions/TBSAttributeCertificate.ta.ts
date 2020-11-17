@@ -62,7 +62,8 @@ export {
 } from "../AttributeCertificateDefinitions/AttCertValidityPeriod.ta";
 export {
     AttCertVersion,
-    AttCertVersion_v2 /* IMPORTED_NAMED_INTEGER */,
+    AttCertVersion_v2 /* IMPORTED_LONG_NAMED_INTEGER */,
+    v2 /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_AttCertVersion,
     _encode_AttCertVersion,
 } from "../AttributeCertificateDefinitions/AttCertVersion.ta";

@@ -2,7 +2,7 @@
 import { _decode_Group14, _encode_Group14 } from "../GenAlgo/Group14.ta";
 import { id_algo_dhModpGr14Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr14Hkdf256Algo.va";
 import { _decode_Payload14, _encode_Payload14 } from "../GenAlgo/Payload14.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group14,
     _decode_Group14,
@@ -14,7 +14,7 @@ export {
     _decode_Payload14,
     _encode_Payload14,
 } from "../GenAlgo/Payload14.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION dhModpGr14Hkdf256Algo */
 /**

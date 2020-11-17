@@ -44,6 +44,15 @@ export type IdmReject_reason = _enum_for_IdmReject_reason | ENUMERATED;
 export const IdmReject_reason_mistypedPDU: IdmReject_reason = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedPDU */
 
+/* START_OF_SYMBOL_DEFINITION mistypedPDU */
+/**
+ * @summary mistypedPDU
+ * @constant
+ * @type {number}
+ */
+export const mistypedPDU: IdmReject_reason = IdmReject_reason_mistypedPDU; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedPDU */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_duplicateInvokeIDRequest */
 /**
  * @summary IdmReject_reason_duplicateInvokeIDRequest
@@ -52,6 +61,15 @@ export const IdmReject_reason_mistypedPDU: IdmReject_reason = 0; /* LONG_NAMED_E
  */
 export const IdmReject_reason_duplicateInvokeIDRequest: IdmReject_reason = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_duplicateInvokeIDRequest */
+
+/* START_OF_SYMBOL_DEFINITION duplicateInvokeIDRequest */
+/**
+ * @summary duplicateInvokeIDRequest
+ * @constant
+ * @type {number}
+ */
+export const duplicateInvokeIDRequest: IdmReject_reason = IdmReject_reason_duplicateInvokeIDRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION duplicateInvokeIDRequest */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unsupportedOperationRequest */
 /**
@@ -62,6 +80,15 @@ export const IdmReject_reason_duplicateInvokeIDRequest: IdmReject_reason = 1; /*
 export const IdmReject_reason_unsupportedOperationRequest: IdmReject_reason = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unsupportedOperationRequest */
 
+/* START_OF_SYMBOL_DEFINITION unsupportedOperationRequest */
+/**
+ * @summary unsupportedOperationRequest
+ * @constant
+ * @type {number}
+ */
+export const unsupportedOperationRequest: IdmReject_reason = IdmReject_reason_unsupportedOperationRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedOperationRequest */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unknownOperationRequest */
 /**
  * @summary IdmReject_reason_unknownOperationRequest
@@ -70,6 +97,15 @@ export const IdmReject_reason_unsupportedOperationRequest: IdmReject_reason = 2;
  */
 export const IdmReject_reason_unknownOperationRequest: IdmReject_reason = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unknownOperationRequest */
+
+/* START_OF_SYMBOL_DEFINITION unknownOperationRequest */
+/**
+ * @summary unknownOperationRequest
+ * @constant
+ * @type {number}
+ */
+export const unknownOperationRequest: IdmReject_reason = IdmReject_reason_unknownOperationRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownOperationRequest */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedArgumentRequest */
 /**
@@ -80,6 +116,15 @@ export const IdmReject_reason_unknownOperationRequest: IdmReject_reason = 3; /* 
 export const IdmReject_reason_mistypedArgumentRequest: IdmReject_reason = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedArgumentRequest */
 
+/* START_OF_SYMBOL_DEFINITION mistypedArgumentRequest */
+/**
+ * @summary mistypedArgumentRequest
+ * @constant
+ * @type {number}
+ */
+export const mistypedArgumentRequest: IdmReject_reason = IdmReject_reason_mistypedArgumentRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedArgumentRequest */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_resourceLimitationRequest */
 /**
  * @summary IdmReject_reason_resourceLimitationRequest
@@ -88,6 +133,15 @@ export const IdmReject_reason_mistypedArgumentRequest: IdmReject_reason = 4; /* 
  */
 export const IdmReject_reason_resourceLimitationRequest: IdmReject_reason = 5; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_resourceLimitationRequest */
+
+/* START_OF_SYMBOL_DEFINITION resourceLimitationRequest */
+/**
+ * @summary resourceLimitationRequest
+ * @constant
+ * @type {number}
+ */
+export const resourceLimitationRequest: IdmReject_reason = IdmReject_reason_resourceLimitationRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION resourceLimitationRequest */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unknownInvokeIDResult */
 /**
@@ -98,6 +152,15 @@ export const IdmReject_reason_resourceLimitationRequest: IdmReject_reason = 5; /
 export const IdmReject_reason_unknownInvokeIDResult: IdmReject_reason = 6; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unknownInvokeIDResult */
 
+/* START_OF_SYMBOL_DEFINITION unknownInvokeIDResult */
+/**
+ * @summary unknownInvokeIDResult
+ * @constant
+ * @type {number}
+ */
+export const unknownInvokeIDResult: IdmReject_reason = IdmReject_reason_unknownInvokeIDResult; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownInvokeIDResult */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedResultRequest */
 /**
  * @summary IdmReject_reason_mistypedResultRequest
@@ -106,6 +169,15 @@ export const IdmReject_reason_unknownInvokeIDResult: IdmReject_reason = 6; /* LO
  */
 export const IdmReject_reason_mistypedResultRequest: IdmReject_reason = 7; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedResultRequest */
+
+/* START_OF_SYMBOL_DEFINITION mistypedResultRequest */
+/**
+ * @summary mistypedResultRequest
+ * @constant
+ * @type {number}
+ */
+export const mistypedResultRequest: IdmReject_reason = IdmReject_reason_mistypedResultRequest; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedResultRequest */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unknownInvokeIDError */
 /**
@@ -116,6 +188,15 @@ export const IdmReject_reason_mistypedResultRequest: IdmReject_reason = 7; /* LO
 export const IdmReject_reason_unknownInvokeIDError: IdmReject_reason = 8; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unknownInvokeIDError */
 
+/* START_OF_SYMBOL_DEFINITION unknownInvokeIDError */
+/**
+ * @summary unknownInvokeIDError
+ * @constant
+ * @type {number}
+ */
+export const unknownInvokeIDError: IdmReject_reason = IdmReject_reason_unknownInvokeIDError; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownInvokeIDError */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unknownError */
 /**
  * @summary IdmReject_reason_unknownError
@@ -124,6 +205,15 @@ export const IdmReject_reason_unknownInvokeIDError: IdmReject_reason = 8; /* LON
  */
 export const IdmReject_reason_unknownError: IdmReject_reason = 9; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unknownError */
+
+/* START_OF_SYMBOL_DEFINITION unknownError */
+/**
+ * @summary unknownError
+ * @constant
+ * @type {number}
+ */
+export const unknownError: IdmReject_reason = IdmReject_reason_unknownError; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unknownError */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedParameterError */
 /**
@@ -134,6 +224,15 @@ export const IdmReject_reason_unknownError: IdmReject_reason = 9; /* LONG_NAMED_
 export const IdmReject_reason_mistypedParameterError: IdmReject_reason = 10; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_mistypedParameterError */
 
+/* START_OF_SYMBOL_DEFINITION mistypedParameterError */
+/**
+ * @summary mistypedParameterError
+ * @constant
+ * @type {number}
+ */
+export const mistypedParameterError: IdmReject_reason = IdmReject_reason_mistypedParameterError; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION mistypedParameterError */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unsupportedIdmVersion */
 /**
  * @summary IdmReject_reason_unsupportedIdmVersion
@@ -142,6 +241,15 @@ export const IdmReject_reason_mistypedParameterError: IdmReject_reason = 10; /* 
  */
 export const IdmReject_reason_unsupportedIdmVersion: IdmReject_reason = 11; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unsupportedIdmVersion */
+
+/* START_OF_SYMBOL_DEFINITION unsupportedIdmVersion */
+/**
+ * @summary unsupportedIdmVersion
+ * @constant
+ * @type {number}
+ */
+export const unsupportedIdmVersion: IdmReject_reason = IdmReject_reason_unsupportedIdmVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsupportedIdmVersion */
 
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_unsuitableIdmVersion */
 /**
@@ -152,6 +260,15 @@ export const IdmReject_reason_unsupportedIdmVersion: IdmReject_reason = 11; /* L
 export const IdmReject_reason_unsuitableIdmVersion: IdmReject_reason = 12; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_unsuitableIdmVersion */
 
+/* START_OF_SYMBOL_DEFINITION unsuitableIdmVersion */
+/**
+ * @summary unsuitableIdmVersion
+ * @constant
+ * @type {number}
+ */
+export const unsuitableIdmVersion: IdmReject_reason = IdmReject_reason_unsuitableIdmVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION unsuitableIdmVersion */
+
 /* START_OF_SYMBOL_DEFINITION IdmReject_reason_invalidIdmVersion */
 /**
  * @summary IdmReject_reason_invalidIdmVersion
@@ -160,6 +277,15 @@ export const IdmReject_reason_unsuitableIdmVersion: IdmReject_reason = 12; /* LO
  */
 export const IdmReject_reason_invalidIdmVersion: IdmReject_reason = 13; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION IdmReject_reason_invalidIdmVersion */
+
+/* START_OF_SYMBOL_DEFINITION invalidIdmVersion */
+/**
+ * @summary invalidIdmVersion
+ * @constant
+ * @type {number}
+ */
+export const invalidIdmVersion: IdmReject_reason = IdmReject_reason_invalidIdmVersion; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION invalidIdmVersion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmReject_reason */
 let _cached_decoder_for_IdmReject_reason: $.ASN1Decoder<

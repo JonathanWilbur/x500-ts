@@ -2,15 +2,25 @@
 import { id_opcode_coordinateShadowUpdate } from "../CommonProtocolSpecification/id-opcode-coordinateShadowUpdate.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_CoordinateShadowUpdateArgument,
+    _encode_CoordinateShadowUpdateArgument,
+} from "../DirectoryShadowAbstractService/CoordinateShadowUpdateArgument.ta";
+import {
     _decode_CoordinateShadowUpdateResult,
     _encode_CoordinateShadowUpdateResult,
 } from "../DirectoryShadowAbstractService/CoordinateShadowUpdateResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_coordinateShadowUpdate } from "../CommonProtocolSpecification/id-opcode-coordinateShadowUpdate.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     CoordinateShadowUpdateArgument,
-    _get_decoder_for_CoordinateShadowUpdateArgument,
-    _get_encoder_for_CoordinateShadowUpdateArgument,
+    _decode_CoordinateShadowUpdateArgument,
+    _encode_CoordinateShadowUpdateArgument,
 } from "../DirectoryShadowAbstractService/CoordinateShadowUpdateArgument.ta";
 export {
     CoordinateShadowUpdateResult,

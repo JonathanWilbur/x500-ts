@@ -1,5 +1,8 @@
 /* eslint-disable */
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { contentUrl } from "../SelectedAttributeTypes/contentUrl.oa";
 import { tagAfi } from "../SelectedAttributeTypes/tagAfi.oa";
 import { tagLocation } from "../SelectedAttributeTypes/tagLocation.oa";
@@ -7,7 +10,20 @@ import { tagOid } from "../SelectedAttributeTypes/tagOid.oa";
 import { uii } from "../SelectedAttributeTypes/uii.oa";
 import { uiiInUrn } from "../SelectedAttributeTypes/uiiInUrn.oa";
 import { id_oc_isoTagInfo } from "../SelectedObjectClasses/id-oc-isoTagInfo.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { contentUrl } from "../SelectedAttributeTypes/contentUrl.oa";
 export { tagAfi } from "../SelectedAttributeTypes/tagAfi.oa";
 export { tagLocation } from "../SelectedAttributeTypes/tagLocation.oa";
@@ -46,8 +62,7 @@ export const isoTagInfo: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&Superclasses": undefined,
-    "&kind":
-        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         tagOid,
         tagAfi,

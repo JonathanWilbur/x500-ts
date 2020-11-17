@@ -5,7 +5,9 @@ import {
     _decode_PresentationAddress,
     _encode_PresentationAddress,
 } from "../SelectedAttributeTypes/PresentationAddress.ta";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_presentationAddressMatch } from "../SelectedAttributeTypes/id-mr-presentationAddressMatch.va";
 export {
     PresentationAddress,

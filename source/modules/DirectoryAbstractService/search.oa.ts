@@ -5,8 +5,22 @@ import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
+import {
+    _decode_SearchArgument,
+    _encode_SearchArgument,
+} from "../DirectoryAbstractService/SearchArgument.ta";
+import {
+    _decode_SearchResult,
+    _encode_SearchResult,
+} from "../DirectoryAbstractService/SearchResult.ta";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_search } from "../CommonProtocolSpecification/id-opcode-search.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandoned } from "../DirectoryAbstractService/abandoned.oa";
@@ -15,13 +29,13 @@ export { nameError } from "../DirectoryAbstractService/nameError.oa";
 export { referral } from "../DirectoryAbstractService/referral.oa";
 export {
     SearchArgument,
-    _get_decoder_for_SearchArgument,
-    _get_encoder_for_SearchArgument,
+    _decode_SearchArgument,
+    _encode_SearchArgument,
 } from "../DirectoryAbstractService/SearchArgument.ta";
 export {
     SearchResult,
-    _get_decoder_for_SearchResult,
-    _get_encoder_for_SearchResult,
+    _decode_SearchResult,
+    _encode_SearchResult,
 } from "../DirectoryAbstractService/SearchResult.ta";
 export { securityError } from "../DirectoryAbstractService/securityError.oa";
 export { serviceError } from "../DirectoryAbstractService/serviceError.oa";

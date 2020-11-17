@@ -4,17 +4,27 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
 import {
+    _decode_TerminateOperationalBindingArgument,
+    _encode_TerminateOperationalBindingArgument,
+} from "../OperationalBindingManagement/TerminateOperationalBindingArgument.ta";
+import {
     _decode_TerminateOperationalBindingResult,
     _encode_TerminateOperationalBindingResult,
 } from "../OperationalBindingManagement/TerminateOperationalBindingResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_op_terminateOperationalBinding } from "../CommonProtocolSpecification/id-op-terminateOperationalBinding.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { securityError } from "../DirectoryAbstractService/securityError.oa";
 export { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
 export {
     TerminateOperationalBindingArgument,
-    _get_decoder_for_TerminateOperationalBindingArgument,
-    _get_encoder_for_TerminateOperationalBindingArgument,
+    _decode_TerminateOperationalBindingArgument,
+    _encode_TerminateOperationalBindingArgument,
 } from "../OperationalBindingManagement/TerminateOperationalBindingArgument.ta";
 export {
     TerminateOperationalBindingResult,

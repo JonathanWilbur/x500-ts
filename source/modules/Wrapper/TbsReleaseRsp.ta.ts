@@ -10,7 +10,7 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 import {
     DER_PkiPath,
@@ -24,7 +24,7 @@ import {
 } from "../Wrapper/TimeStamp.ta";
 import {
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";
@@ -32,7 +32,7 @@ export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export { AssoID, _decode_AssoID, _encode_AssoID } from "../Wrapper/AssoID.ta";
 export {
     DER_PkiPath,
@@ -45,8 +45,9 @@ export {
     _encode_TimeStamp,
 } from "../Wrapper/TimeStamp.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_BIT */,
     Version,
-    Version_v1 /* IMPORTED_BIT */,
+    Version_v1 /* IMPORTED_LONG_NAMED_BIT */,
     _decode_Version,
     _encode_Version,
 } from "../Wrapper/Version.ta";

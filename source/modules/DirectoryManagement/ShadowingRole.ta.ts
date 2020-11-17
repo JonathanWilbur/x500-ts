@@ -25,6 +25,15 @@ export type ShadowingRole = INTEGER;
 export const ShadowingRole_supplier: ShadowingRole = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ShadowingRole_supplier */
 
+/* START_OF_SYMBOL_DEFINITION supplier */
+/**
+ * @summary ShadowingRole_supplier
+ * @constant
+ * @type {number}
+ */
+export const supplier: ShadowingRole = ShadowingRole_supplier; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION supplier */
+
 /* START_OF_SYMBOL_DEFINITION ShadowingRole_consumer */
 /**
  * @summary ShadowingRole_consumer
@@ -33,6 +42,15 @@ export const ShadowingRole_supplier: ShadowingRole = 0; /* LONG_NAMED_INTEGER_VA
  */
 export const ShadowingRole_consumer: ShadowingRole = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ShadowingRole_consumer */
+
+/* START_OF_SYMBOL_DEFINITION consumer */
+/**
+ * @summary ShadowingRole_consumer
+ * @constant
+ * @type {number}
+ */
+export const consumer: ShadowingRole = ShadowingRole_consumer; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION consumer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowingRole */
 let _cached_decoder_for_ShadowingRole: $.ASN1Decoder<

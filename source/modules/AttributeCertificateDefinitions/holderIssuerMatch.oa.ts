@@ -11,7 +11,9 @@ export {
     _encode_HolderIssuerAssertion,
 } from "../AttributeCertificateDefinitions/HolderIssuerAssertion.ta";
 export { id_mr_holderIssuerMatch } from "../AttributeCertificateDefinitions/id-mr-holderIssuerMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION holderIssuerMatch */
 /**

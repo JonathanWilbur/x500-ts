@@ -2,20 +2,10 @@
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
-    Criteria,
-    _decode_Criteria,
-    _encode_Criteria,
-} from "../SelectedAttributeTypes/Criteria.ta";
-import {
     CriteriaItem,
     _decode_CriteriaItem,
     _encode_CriteriaItem,
 } from "../SelectedAttributeTypes/CriteriaItem.ta";
-export {
-    Criteria,
-    _decode_Criteria,
-    _encode_Criteria,
-} from "../SelectedAttributeTypes/Criteria.ta";
 export {
     CriteriaItem,
     _decode_CriteriaItem,

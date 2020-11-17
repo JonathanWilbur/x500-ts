@@ -17,9 +17,11 @@ import {
     _encode_PwdResponseValue_warning,
 } from "../DirectoryAbstractService/PwdResponseValue-warning.ta";
 export {
+    changeAfterReset /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    passwordExpired /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     PwdResponseValue_error,
-    PwdResponseValue_error_changeAfterReset /* IMPORTED_ENUMERATION_ITEM */,
-    PwdResponseValue_error_passwordExpired /* IMPORTED_ENUMERATION_ITEM */,
+    PwdResponseValue_error_changeAfterReset /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    PwdResponseValue_error_passwordExpired /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_PwdResponseValue_error,
     _encode_PwdResponseValue_error,
     _enum_for_PwdResponseValue_error,

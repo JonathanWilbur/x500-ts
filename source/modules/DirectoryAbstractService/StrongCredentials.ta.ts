@@ -15,7 +15,11 @@ import {
     _decode_CertificationPath,
     _encode_CertificationPath,
 } from "../AuthenticationFramework/CertificationPath.ta";
-import { Token } from "../DirectoryAbstractService/Token.ta";
+import {
+    Token,
+    _decode_Token,
+    _encode_Token,
+} from "../DirectoryAbstractService/Token.ta";
 import {
     DistinguishedName,
     _decode_DistinguishedName,
@@ -33,8 +37,8 @@ export {
 } from "../AuthenticationFramework/CertificationPath.ta";
 export {
     Token,
-    _get_decoder_for_Token,
-    _get_encoder_for_Token,
+    _decode_Token,
+    _encode_Token,
 } from "../DirectoryAbstractService/Token.ta";
 export {
     DistinguishedName,

@@ -9,22 +9,22 @@ import {
     AttributeList,
     _decode_AttributeList,
     _encode_AttributeList,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeList.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeList.ta";
 import {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 export {
     AttributeList,
     _decode_AttributeList,
     _encode_AttributeList,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeList.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeList.ta";
 export {
     LDAPDN,
     _decode_LDAPDN,
     _encode_LDAPDN,
-} from "../Lightweight_Directory_Access_Protocol_V3/LDAPDN.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/LDAPDN.ta";
 
 /* START_OF_SYMBOL_DEFINITION AddRequest */
 /**

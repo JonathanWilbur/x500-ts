@@ -13,6 +13,7 @@ import { removeEntry } from "../DirectoryAbstractService/removeEntry.oa";
 import { search } from "../DirectoryAbstractService/search.oa";
 import { id_idm_dap } from "../DirectoryIDMProtocols/id-idm-dap.va";
 import { IDM_PROTOCOL } from "../IDMProtocolSpecification/IDM-PROTOCOL.oca";
+export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export { abandon } from "../DirectoryAbstractService/abandon.oa";
 export { addEntry } from "../DirectoryAbstractService/addEntry.oa";
 export { administerPassword } from "../DirectoryAbstractService/administerPassword.oa";

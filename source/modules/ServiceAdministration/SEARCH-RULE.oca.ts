@@ -13,11 +13,15 @@ import { RelaxationPolicy } from "../ServiceAdministration/RelaxationPolicy.ta";
 import { REQUEST_ATTRIBUTE } from "../ServiceAdministration/REQUEST-ATTRIBUTE.oca";
 import { RESULT_ATTRIBUTE } from "../ServiceAdministration/RESULT-ATTRIBUTE.oca";
 export {
+    compoundEntry /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    entryOnly /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     FamilyGrouping,
-    FamilyGrouping_compoundEntry /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_entryOnly /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_multiStrand /* IMPORTED_ENUMERATION_ITEM */,
-    FamilyGrouping_strands /* IMPORTED_ENUMERATION_ITEM */,
+    FamilyGrouping_compoundEntry /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_entryOnly /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_multiStrand /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    FamilyGrouping_strands /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    multiStrand /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    strands /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_FamilyGrouping,
     _encode_FamilyGrouping,
     _enum_for_FamilyGrouping,
@@ -34,9 +38,9 @@ export {
 } from "../InformationFramework/AttributeType.ta";
 export {
     AllowedSubset,
-    AllowedSubset_baseObject /* IMPORTED_BIT */,
-    AllowedSubset_oneLevel /* IMPORTED_BIT */,
-    AllowedSubset_wholeSubtree /* IMPORTED_BIT */,
+    AllowedSubset_baseObject /* IMPORTED_LONG_NAMED_BIT */,
+    AllowedSubset_oneLevel /* IMPORTED_LONG_NAMED_BIT */,
+    AllowedSubset_wholeSubtree /* IMPORTED_LONG_NAMED_BIT */,
     _decode_AllowedSubset,
     _encode_AllowedSubset,
 } from "../ServiceAdministration/AllowedSubset.ta";
@@ -57,9 +61,9 @@ export {
 } from "../ServiceAdministration/EntryLimit.ta";
 export {
     ImposedSubset,
-    ImposedSubset_baseObject /* IMPORTED_ENUMERATION_ITEM */,
-    ImposedSubset_oneLevel /* IMPORTED_ENUMERATION_ITEM */,
-    ImposedSubset_wholeSubtree /* IMPORTED_ENUMERATION_ITEM */,
+    ImposedSubset_baseObject /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ImposedSubset_oneLevel /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ImposedSubset_wholeSubtree /* IMPORTED_LONG_ENUMERATION_ITEM */,
     _decode_ImposedSubset,
     _encode_ImposedSubset,
     _enum_for_ImposedSubset,

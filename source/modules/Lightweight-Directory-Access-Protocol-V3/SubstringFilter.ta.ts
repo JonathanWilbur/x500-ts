@@ -9,22 +9,22 @@ import {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 import {
     SubstringFilter_substrings_substring,
     _decode_SubstringFilter_substrings_substring,
     _encode_SubstringFilter_substrings_substring,
-} from "../Lightweight_Directory_Access_Protocol_V3/SubstringFilter-substrings-substring.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SubstringFilter-substrings-substring.ta";
 export {
     AttributeDescription,
     _decode_AttributeDescription,
     _encode_AttributeDescription,
-} from "../Lightweight_Directory_Access_Protocol_V3/AttributeDescription.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AttributeDescription.ta";
 export {
     SubstringFilter_substrings_substring,
     _decode_SubstringFilter_substrings_substring,
     _encode_SubstringFilter_substrings_substring,
-} from "../Lightweight_Directory_Access_Protocol_V3/SubstringFilter-substrings-substring.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SubstringFilter-substrings-substring.ta";
 
 /* START_OF_SYMBOL_DEFINITION SubstringFilter */
 /**

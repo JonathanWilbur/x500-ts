@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
+import {
     _decode_DITStructureRuleDescription,
     _encode_DITStructureRuleDescription,
 } from "../SchemaAdministration/DITStructureRuleDescription.ta";
@@ -8,6 +11,22 @@ import { id_soa_dITStructureRule } from "../SchemaAdministration/id-soa-dITStruc
 import { dITStructureRuleDescription } from "../SelectedAttributeTypes/dITStructureRuleDescription.oa";
 import { integerFirstComponentMatch } from "../SelectedAttributeTypes/integerFirstComponentMatch.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export {
     DITStructureRuleDescription,
     _decode_DITStructureRuleDescription,
@@ -47,8 +66,7 @@ export const dITStructureRules: ATTRIBUTE = {
         "&Type": _encode_DITStructureRuleDescription,
     },
     "&equality-match": integerFirstComponentMatch /* OBJECT_FIELD_SETTING */,
-    "&usage":
-        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": directoryOperation /* OBJECT_FIELD_SETTING */,
     "&ldapSyntax":
         dITStructureRuleDescription["&id"] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,

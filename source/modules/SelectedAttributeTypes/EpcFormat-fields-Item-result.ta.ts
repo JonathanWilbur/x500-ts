@@ -58,6 +58,16 @@ export const EpcFormat_fields_Item_result_numericPad: EpcFormat_fields_Item_resu
     EpcFormat_fields_Item_result.numericPad; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION EpcFormat_fields_Item_result_numericPad */
 
+/* START_OF_SYMBOL_DEFINITION numericPad */
+/**
+ * @summary numericPad
+ * @constant
+ * @type {number}
+ */
+export const numericPad: EpcFormat_fields_Item_result =
+    EpcFormat_fields_Item_result.numericPad; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION numericPad */
+
 /* START_OF_SYMBOL_DEFINITION EpcFormat_fields_Item_result_numeric */
 /**
  * @summary EpcFormat_fields_Item_result_numeric
@@ -68,6 +78,16 @@ export const EpcFormat_fields_Item_result_numeric: EpcFormat_fields_Item_result 
     EpcFormat_fields_Item_result.numeric; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION EpcFormat_fields_Item_result_numeric */
 
+/* START_OF_SYMBOL_DEFINITION numeric */
+/**
+ * @summary numeric
+ * @constant
+ * @type {number}
+ */
+export const numeric: EpcFormat_fields_Item_result =
+    EpcFormat_fields_Item_result.numeric; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION numeric */
+
 /* START_OF_SYMBOL_DEFINITION EpcFormat_fields_Item_result_alpha7bits */
 /**
  * @summary EpcFormat_fields_Item_result_alpha7bits
@@ -77,6 +97,16 @@ export const EpcFormat_fields_Item_result_numeric: EpcFormat_fields_Item_result 
 export const EpcFormat_fields_Item_result_alpha7bits: EpcFormat_fields_Item_result =
     EpcFormat_fields_Item_result.alpha7bits; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION EpcFormat_fields_Item_result_alpha7bits */
+
+/* START_OF_SYMBOL_DEFINITION alpha7bits */
+/**
+ * @summary alpha7bits
+ * @constant
+ * @type {number}
+ */
+export const alpha7bits: EpcFormat_fields_Item_result =
+    EpcFormat_fields_Item_result.alpha7bits; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION alpha7bits */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EpcFormat_fields_Item_result */
 let _cached_decoder_for_EpcFormat_fields_Item_result: $.ASN1Decoder<

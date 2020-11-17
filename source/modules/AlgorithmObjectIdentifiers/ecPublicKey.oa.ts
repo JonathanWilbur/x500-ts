@@ -3,14 +3,14 @@ import { id_ecPublicKey } from "../AlgorithmObjectIdentifiers/id-ecPublicKey.va"
 import {
     _decode_X509Curves,
     _encode_X509Curves,
-} from "../AlgorithmObjectIdentifiers/X509Curves.ta";
+} from "../AlgorithmObjectIdentifiers/X509Curves.vsa";
 import { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
 export { id_ecPublicKey } from "../AlgorithmObjectIdentifiers/id-ecPublicKey.va";
 export {
     X509Curves,
     _decode_X509Curves,
     _encode_X509Curves,
-} from "../AlgorithmObjectIdentifiers/X509Curves.ta";
+} from "../AlgorithmObjectIdentifiers/X509Curves.vsa";
 export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION ecPublicKey */

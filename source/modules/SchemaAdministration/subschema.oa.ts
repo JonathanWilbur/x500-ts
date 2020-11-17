@@ -1,5 +1,8 @@
 /* eslint-disable */
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { ldapSyntaxes } from "../LdapSystemSchema/ldapSyntaxes.oa";
 import { attributeTypes } from "../SchemaAdministration/attributeTypes.oa";
 import { contextTypes } from "../SchemaAdministration/contextTypes.oa";
@@ -12,7 +15,20 @@ import { matchingRules } from "../SchemaAdministration/matchingRules.oa";
 import { matchingRuleUse } from "../SchemaAdministration/matchingRuleUse.oa";
 import { nameForms } from "../SchemaAdministration/nameForms.oa";
 import { objectClasses } from "../SchemaAdministration/objectClasses.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { ldapSyntaxes } from "../LdapSystemSchema/ldapSyntaxes.oa";
 export { attributeTypes } from "../SchemaAdministration/attributeTypes.oa";
 export { contextTypes } from "../SchemaAdministration/contextTypes.oa";
@@ -59,8 +75,7 @@ export const subschema: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&kind":
-        InformationFramework.ObjectClassKind_auxiliary /* OBJECT_FIELD_SETTING */,
+    "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         dITStructureRules,
         nameForms,

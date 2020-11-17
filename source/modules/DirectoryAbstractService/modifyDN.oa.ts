@@ -2,6 +2,10 @@
 import { id_opcode_modifyDN } from "../CommonProtocolSpecification/id-opcode-modifyDN.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    _decode_ModifyDNArgument,
+    _encode_ModifyDNArgument,
+} from "../DirectoryAbstractService/ModifyDNArgument.ta";
+import {
     _decode_ModifyDNResult,
     _encode_ModifyDNResult,
 } from "../DirectoryAbstractService/ModifyDNResult.ta";
@@ -10,12 +14,18 @@ import { referral } from "../DirectoryAbstractService/referral.oa";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { serviceError } from "../DirectoryAbstractService/serviceError.oa";
 import { updateError } from "../DirectoryAbstractService/updateError.oa";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_modifyDN } from "../CommonProtocolSpecification/id-opcode-modifyDN.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     ModifyDNArgument,
-    _get_decoder_for_ModifyDNArgument,
-    _get_encoder_for_ModifyDNArgument,
+    _decode_ModifyDNArgument,
+    _encode_ModifyDNArgument,
 } from "../DirectoryAbstractService/ModifyDNArgument.ta";
 export {
     ModifyDNResult,

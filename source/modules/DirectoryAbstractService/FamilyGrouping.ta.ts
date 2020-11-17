@@ -39,6 +39,15 @@ export type FamilyGrouping = _enum_for_FamilyGrouping | ENUMERATED;
 export const FamilyGrouping_entryOnly: FamilyGrouping = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyGrouping_entryOnly */
 
+/* START_OF_SYMBOL_DEFINITION entryOnly */
+/**
+ * @summary entryOnly
+ * @constant
+ * @type {number}
+ */
+export const entryOnly: FamilyGrouping = FamilyGrouping_entryOnly; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION entryOnly */
+
 /* START_OF_SYMBOL_DEFINITION FamilyGrouping_compoundEntry */
 /**
  * @summary FamilyGrouping_compoundEntry
@@ -47,6 +56,15 @@ export const FamilyGrouping_entryOnly: FamilyGrouping = 1; /* LONG_NAMED_ENUMERA
  */
 export const FamilyGrouping_compoundEntry: FamilyGrouping = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyGrouping_compoundEntry */
+
+/* START_OF_SYMBOL_DEFINITION compoundEntry */
+/**
+ * @summary compoundEntry
+ * @constant
+ * @type {number}
+ */
+export const compoundEntry: FamilyGrouping = FamilyGrouping_compoundEntry; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION compoundEntry */
 
 /* START_OF_SYMBOL_DEFINITION FamilyGrouping_strands */
 /**
@@ -57,6 +75,15 @@ export const FamilyGrouping_compoundEntry: FamilyGrouping = 2; /* LONG_NAMED_ENU
 export const FamilyGrouping_strands: FamilyGrouping = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyGrouping_strands */
 
+/* START_OF_SYMBOL_DEFINITION strands */
+/**
+ * @summary strands
+ * @constant
+ * @type {number}
+ */
+export const strands: FamilyGrouping = FamilyGrouping_strands; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION strands */
+
 /* START_OF_SYMBOL_DEFINITION FamilyGrouping_multiStrand */
 /**
  * @summary FamilyGrouping_multiStrand
@@ -65,6 +92,15 @@ export const FamilyGrouping_strands: FamilyGrouping = 3; /* LONG_NAMED_ENUMERATE
  */
 export const FamilyGrouping_multiStrand: FamilyGrouping = 4; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION FamilyGrouping_multiStrand */
+
+/* START_OF_SYMBOL_DEFINITION multiStrand */
+/**
+ * @summary multiStrand
+ * @constant
+ * @type {number}
+ */
+export const multiStrand: FamilyGrouping = FamilyGrouping_multiStrand; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION multiStrand */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyGrouping */
 let _cached_decoder_for_FamilyGrouping: $.ASN1Decoder<

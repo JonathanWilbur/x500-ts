@@ -13,10 +13,13 @@ import {
     _enum_for_Knowledge_knowledgeType,
 } from "../DirectoryShadowAbstractService/Knowledge-knowledgeType.ta";
 export {
+    both /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     Knowledge_knowledgeType,
-    Knowledge_knowledgeType_both /* IMPORTED_ENUMERATION_ITEM */,
-    Knowledge_knowledgeType_master /* IMPORTED_ENUMERATION_ITEM */,
-    Knowledge_knowledgeType_shadow /* IMPORTED_ENUMERATION_ITEM */,
+    Knowledge_knowledgeType_both /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    Knowledge_knowledgeType_master /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    Knowledge_knowledgeType_shadow /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    master /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    shadow /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_Knowledge_knowledgeType,
     _encode_Knowledge_knowledgeType,
     _enum_for_Knowledge_knowledgeType,

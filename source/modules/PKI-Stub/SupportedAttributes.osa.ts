@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { ATTRIBUTE } from "../PKI_Stub/ATTRIBUTE.oca";
-export { ATTRIBUTE } from "../PKI_Stub/ATTRIBUTE.oca";
+import { ATTRIBUTE } from "../PKI-Stub/ATTRIBUTE.oca";
+export { ATTRIBUTE } from "../PKI-Stub/ATTRIBUTE.oca";
 
 /* START_OF_SYMBOL_DEFINITION SupportedAttributes */
 /**

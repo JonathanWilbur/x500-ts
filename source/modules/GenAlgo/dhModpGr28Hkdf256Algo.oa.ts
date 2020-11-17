@@ -2,7 +2,7 @@
 import { _decode_Group28, _encode_Group28 } from "../GenAlgo/Group28.ta";
 import { id_algo_dhModpGr28Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr28Hkdf256Algo.va";
 import { _decode_Payload28, _encode_Payload28 } from "../GenAlgo/Payload28.ta";
-import { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group28,
     _decode_Group28,
@@ -14,7 +14,7 @@ export {
     _decode_Payload28,
     _encode_Payload28,
 } from "../GenAlgo/Payload28.ta";
-export { ALGORITHM } from "../PKI_Stub/ALGORITHM.oca";
+export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 
 /* START_OF_SYMBOL_DEFINITION dhModpGr28Hkdf256Algo */
 /**

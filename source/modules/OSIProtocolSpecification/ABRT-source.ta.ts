@@ -27,6 +27,15 @@ export type ABRT_source = INTEGER;
 export const ABRT_source_acse_service_user: ABRT_source = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ABRT_source_acse_service_user */
 
+/* START_OF_SYMBOL_DEFINITION acse_service_user */
+/**
+ * @summary ABRT_source_acse_service_user
+ * @constant
+ * @type {number}
+ */
+export const acse_service_user: ABRT_source = ABRT_source_acse_service_user; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION acse_service_user */
+
 /* START_OF_SYMBOL_DEFINITION ABRT_source_acse_service_provider */
 /**
  * @summary ABRT_source_acse_service_provider
@@ -35,6 +44,15 @@ export const ABRT_source_acse_service_user: ABRT_source = 0; /* LONG_NAMED_INTEG
  */
 export const ABRT_source_acse_service_provider: ABRT_source = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION ABRT_source_acse_service_provider */
+
+/* START_OF_SYMBOL_DEFINITION acse_service_provider */
+/**
+ * @summary ABRT_source_acse_service_provider
+ * @constant
+ * @type {number}
+ */
+export const acse_service_provider: ABRT_source = ABRT_source_acse_service_provider; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION acse_service_provider */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ABRT_source */
 let _cached_decoder_for_ABRT_source: $.ASN1Decoder<ABRT_source> | null = null;

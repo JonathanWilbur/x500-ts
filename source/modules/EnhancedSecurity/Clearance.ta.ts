@@ -9,7 +9,7 @@ import {
 import * as $ from "asn1-ts/dist/node/functional";
 import {
     ClassList,
-    ClassList_unclassified /* IMPORTED_BIT */,
+    ClassList_unclassified /* IMPORTED_LONG_NAMED_BIT */,
     _decode_ClassList,
     _encode_ClassList,
 } from "../EnhancedSecurity/ClassList.ta";
@@ -20,12 +20,18 @@ import {
 } from "../EnhancedSecurity/SecurityCategory.ta";
 export {
     ClassList,
-    ClassList_confidential /* IMPORTED_BIT */,
-    ClassList_restricted /* IMPORTED_BIT */,
-    ClassList_secret /* IMPORTED_BIT */,
-    ClassList_topSecret /* IMPORTED_BIT */,
-    ClassList_unclassified /* IMPORTED_BIT */,
-    ClassList_unmarked /* IMPORTED_BIT */,
+    ClassList_confidential /* IMPORTED_LONG_NAMED_BIT */,
+    ClassList_restricted /* IMPORTED_LONG_NAMED_BIT */,
+    ClassList_secret /* IMPORTED_LONG_NAMED_BIT */,
+    ClassList_topSecret /* IMPORTED_LONG_NAMED_BIT */,
+    ClassList_unclassified /* IMPORTED_LONG_NAMED_BIT */,
+    ClassList_unmarked /* IMPORTED_LONG_NAMED_BIT */,
+    confidential /* IMPORTED_SHORT_NAMED_BIT */,
+    restricted /* IMPORTED_SHORT_NAMED_BIT */,
+    secret /* IMPORTED_SHORT_NAMED_BIT */,
+    topSecret /* IMPORTED_SHORT_NAMED_BIT */,
+    unclassified /* IMPORTED_SHORT_NAMED_BIT */,
+    unmarked /* IMPORTED_SHORT_NAMED_BIT */,
     _decode_ClassList,
     _encode_ClassList,
 } from "../EnhancedSecurity/ClassList.ta";

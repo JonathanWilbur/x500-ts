@@ -9,78 +9,81 @@ import {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 import {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 import {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
-import { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/Extensions.ta";
+import { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 import {
     SubjectPublicKeyInfo,
     _decode_SubjectPublicKeyInfo,
     _encode_SubjectPublicKeyInfo,
-} from "../PKI_Stub/SubjectPublicKeyInfo.ta";
+} from "../PKI-Stub/SubjectPublicKeyInfo.ta";
 import {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 import {
     Validity,
     _decode_Validity,
     _encode_Validity,
-} from "../PKI_Stub/Validity.ta";
+} from "../PKI-Stub/Validity.ta";
 import {
+    v1 /* IMPORTED_SHORT_NAMED_INTEGER */,
     Version,
-    Version_v1 /* IMPORTED_NAMED_INTEGER */,
     _decode_Version,
     _encode_Version,
-} from "../PKI_Stub/Version.ta";
+} from "../PKI-Stub/Version.ta";
 export {
     AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
-} from "../PKI_Stub/AlgorithmIdentifier.ta";
+} from "../PKI-Stub/AlgorithmIdentifier.ta";
 export {
     CertificateSerialNumber,
     _decode_CertificateSerialNumber,
     _encode_CertificateSerialNumber,
-} from "../PKI_Stub/CertificateSerialNumber.ta";
+} from "../PKI-Stub/CertificateSerialNumber.ta";
 export {
     Extensions,
     _decode_Extensions,
     _encode_Extensions,
-} from "../PKI_Stub/Extensions.ta";
-export { Name, _decode_Name, _encode_Name } from "../PKI_Stub/Name.ta";
+} from "../PKI-Stub/Extensions.ta";
+export { Name, _decode_Name, _encode_Name } from "../PKI-Stub/Name.ta";
 export {
     SubjectPublicKeyInfo,
     _decode_SubjectPublicKeyInfo,
     _encode_SubjectPublicKeyInfo,
-} from "../PKI_Stub/SubjectPublicKeyInfo.ta";
+} from "../PKI-Stub/SubjectPublicKeyInfo.ta";
 export {
     UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
-} from "../PKI_Stub/UniqueIdentifier.ta";
+} from "../PKI-Stub/UniqueIdentifier.ta";
 export {
     Validity,
     _decode_Validity,
     _encode_Validity,
-} from "../PKI_Stub/Validity.ta";
+} from "../PKI-Stub/Validity.ta";
 export {
+    v1 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v2 /* IMPORTED_SHORT_NAMED_INTEGER */,
+    v3 /* IMPORTED_SHORT_NAMED_INTEGER */,
     Version,
-    Version_v1 /* IMPORTED_NAMED_INTEGER */,
-    Version_v2 /* IMPORTED_NAMED_INTEGER */,
-    Version_v3 /* IMPORTED_NAMED_INTEGER */,
+    Version_v1 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v2 /* IMPORTED_LONG_NAMED_INTEGER */,
+    Version_v3 /* IMPORTED_LONG_NAMED_INTEGER */,
     _decode_Version,
     _encode_Version,
-} from "../PKI_Stub/Version.ta";
+} from "../PKI-Stub/Version.ta";
 
 /* START_OF_SYMBOL_DEFINITION TBSCertificate */
 /**
@@ -217,7 +220,7 @@ export class TBSCertificate {
      * @method
      */
     public static get _default_value_for_version() {
-        return Version_v1;
+        return v1;
     }
 }
 /* END_OF_SYMBOL_DEFINITION TBSCertificate */

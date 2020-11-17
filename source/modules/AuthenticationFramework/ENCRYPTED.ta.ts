@@ -18,12 +18,6 @@ import * as $ from "asn1-ts/dist/node/functional";
 export type ENCRYPTED<ToBeEnciphered> = BIT_STRING;
 /* END_OF_SYMBOL_DEFINITION ENCRYPTED */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCRYPTED */
-let _cached_decoder_for_ENCRYPTED: $.ASN1Decoder<
-    ENCRYPTED<ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ENCRYPTED */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_ENCRYPTED */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) ENCRYPTED
@@ -37,12 +31,6 @@ export function _get_decoder_for_ENCRYPTED<ToBeEnciphered>(
     return $._decodeBitString;
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ENCRYPTED */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCRYPTED */
-let _cached_encoder_for_ENCRYPTED: $.ASN1Encoder<
-    ENCRYPTED<ToBeEnciphered>
-> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ENCRYPTED */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ENCRYPTED */
 /**

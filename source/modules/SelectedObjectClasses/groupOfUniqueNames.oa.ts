@@ -1,5 +1,8 @@
 /* eslint-disable */
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+import {
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/ObjectClassKind.ta";
 import { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
 import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { description } from "../SelectedAttributeTypes/description.oa";
@@ -9,7 +12,20 @@ import { owner } from "../SelectedAttributeTypes/owner.oa";
 import { seeAlso } from "../SelectedAttributeTypes/seeAlso.oa";
 import { uniqueMember } from "../SelectedAttributeTypes/uniqueMember.oa";
 import { id_oc_groupOfUniqueNames } from "../SelectedObjectClasses/id-oc-groupOfUniqueNames.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export {
+    abstract /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    ObjectClassKind,
+    ObjectClassKind_abstract /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_auxiliary /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ObjectClassKind_structural /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_ObjectClassKind,
+    _encode_ObjectClassKind,
+    _enum_for_ObjectClassKind,
+} from "../InformationFramework/ObjectClassKind.ta";
 export { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
 export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { description } from "../SelectedAttributeTypes/description.oa";
@@ -65,8 +81,7 @@ export const groupOfUniqueNames: OBJECT_CLASS = {
     ] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oc_groupOfUniqueNames /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
-    "&kind":
-        InformationFramework.ObjectClassKind_structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
+    "&kind": structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION groupOfUniqueNames */
 

@@ -6,7 +6,9 @@ import {
     _encode_PwdEncAlg,
 } from "../PasswordPolicy/PwdEncAlg.ta";
 import { pwdEncAlgDescription } from "../PasswordPolicy/pwdEncAlgDescription.oa";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_mr_pwdEncAlgMatch } from "../PasswordPolicy/id-mr-pwdEncAlgMatch.va";
 export {
     PwdEncAlg,

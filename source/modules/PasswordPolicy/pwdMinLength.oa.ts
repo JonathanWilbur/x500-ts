@@ -1,10 +1,29 @@
 /* eslint-disable */
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 import { id_oa_pwdMinLength } from "../PasswordPolicy/id-oa-pwdMinLength.va";
 import { integer } from "../SelectedAttributeTypes/integer.oa";
 import { integerMatch } from "../SelectedAttributeTypes/integerMatch.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_oa_pwdMinLength } from "../PasswordPolicy/id-oa-pwdMinLength.va";
 export { integer } from "../SelectedAttributeTypes/integer.oa";
 export { integerMatch } from "../SelectedAttributeTypes/integerMatch.oa";
@@ -41,8 +60,7 @@ export const pwdMinLength: ATTRIBUTE = {
     },
     "&equality-match": integerMatch /* OBJECT_FIELD_SETTING */,
     "&single-valued": false /* OBJECT_FIELD_SETTING */,
-    "&usage":
-        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": directoryOperation /* OBJECT_FIELD_SETTING */,
     "&ldapSyntax": integer["&id"] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oa_pwdMinLength /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

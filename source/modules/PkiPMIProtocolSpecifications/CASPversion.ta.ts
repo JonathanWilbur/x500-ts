@@ -33,6 +33,15 @@ export type CASPversion = _enum_for_CASPversion | ENUMERATED;
 export const CASPversion_v1: CASPversion = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CASPversion_v1 */
 
+/* START_OF_SYMBOL_DEFINITION v1 */
+/**
+ * @summary v1
+ * @constant
+ * @type {number}
+ */
+export const v1: CASPversion = CASPversion_v1; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION v1 */
+
 /* START_OF_SYMBOL_DEFINITION CASPversion_v2 */
 /**
  * @summary CASPversion_v2
@@ -42,6 +51,15 @@ export const CASPversion_v1: CASPversion = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 export const CASPversion_v2: CASPversion = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CASPversion_v2 */
 
+/* START_OF_SYMBOL_DEFINITION v2 */
+/**
+ * @summary v2
+ * @constant
+ * @type {number}
+ */
+export const v2: CASPversion = CASPversion_v2; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION v2 */
+
 /* START_OF_SYMBOL_DEFINITION CASPversion_v3 */
 /**
  * @summary CASPversion_v3
@@ -50,6 +68,15 @@ export const CASPversion_v2: CASPversion = 2; /* LONG_NAMED_ENUMERATED_VALUE */
  */
 export const CASPversion_v3: CASPversion = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION CASPversion_v3 */
+
+/* START_OF_SYMBOL_DEFINITION v3 */
+/**
+ * @summary v3
+ * @constant
+ * @type {number}
+ */
+export const v3: CASPversion = CASPversion_v3; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION v3 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CASPversion */
 let _cached_decoder_for_CASPversion: $.ASN1Decoder<CASPversion> | null = null;

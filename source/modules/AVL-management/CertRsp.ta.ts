@@ -9,22 +9,22 @@ import {
     CertRsp_result,
     _decode_CertRsp_result,
     _encode_CertRsp_result,
-} from "../AVL_management/CertRsp-result.ta";
+} from "../AVL-management/CertRsp-result.ta";
 import {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 export {
     CertRsp_result,
     _decode_CertRsp_result,
     _encode_CertRsp_result,
-} from "../AVL_management/CertRsp-result.ta";
+} from "../AVL-management/CertRsp-result.ta";
 export {
     InvokeID,
     _decode_InvokeID,
     _encode_InvokeID,
-} from "../AVL_management/InvokeID.ta";
+} from "../AVL-management/InvokeID.ta";
 
 /* START_OF_SYMBOL_DEFINITION CertRsp */
 /**

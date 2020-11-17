@@ -5,6 +5,9 @@ import {
 } from "../BasicAccessControl/ACIItem.ta";
 import { id_aca_prescriptiveACI } from "../BasicAccessControl/id-aca-prescriptiveACI.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+import {
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+} from "../InformationFramework/AttributeUsage.ta";
 import { directoryStringFirstComponentMatch } from "../SelectedAttributeTypes/directoryStringFirstComponentMatch.oa";
 export {
     ACIItem,
@@ -13,6 +16,22 @@ export {
 } from "../BasicAccessControl/ACIItem.ta";
 export { id_aca_prescriptiveACI } from "../BasicAccessControl/id-aca-prescriptiveACI.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export {
+    AttributeUsage,
+    AttributeUsage_directoryOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_distributedOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_dSAOperation /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    AttributeUsage_userApplications /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    distributedOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    dSAOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    _decode_AttributeUsage,
+    _encode_AttributeUsage,
+    _enum_for_AttributeUsage,
+} from "../InformationFramework/AttributeUsage.ta";
+export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { directoryStringFirstComponentMatch } from "../SelectedAttributeTypes/directoryStringFirstComponentMatch.oa";
 
 /* START_OF_SYMBOL_DEFINITION prescriptiveACI */
@@ -43,8 +62,7 @@ export const prescriptiveACI: ATTRIBUTE = {
         "&Type": _encode_ACIItem,
     },
     "&equality-match": directoryStringFirstComponentMatch /* OBJECT_FIELD_SETTING */,
-    "&usage":
-        InformationFramework.AttributeUsage_directoryOperation /* OBJECT_FIELD_SETTING */,
+    "&usage": directoryOperation /* OBJECT_FIELD_SETTING */,
     "&id": id_aca_prescriptiveACI /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&Type": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
     "&single-valued": false /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,

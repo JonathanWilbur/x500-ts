@@ -5,22 +5,22 @@ import {
     AddAvlErr,
     _decode_AddAvlErr,
     _encode_AddAvlErr,
-} from "../AVL_management/AddAvlErr.ta";
+} from "../AVL-management/AddAvlErr.ta";
 import {
     AddAvlOK,
     _decode_AddAvlOK,
     _encode_AddAvlOK,
-} from "../AVL_management/AddAvlOK.ta";
+} from "../AVL-management/AddAvlOK.ta";
 export {
     AddAvlErr,
     _decode_AddAvlErr,
     _encode_AddAvlErr,
-} from "../AVL_management/AddAvlErr.ta";
+} from "../AVL-management/AddAvlErr.ta";
 export {
     AddAvlOK,
     _decode_AddAvlOK,
     _encode_AddAvlOK,
-} from "../AVL_management/AddAvlOK.ta";
+} from "../AVL-management/AddAvlOK.ta";
 
 /* START_OF_SYMBOL_DEFINITION AddAvlRsp_result */
 /**

@@ -6,7 +6,9 @@ import {
     _encode_TimeSpecification,
 } from "../SelectedAttributeTypes/TimeSpecification.ta";
 export { id_mr_timeSpecMatch } from "../AttributeCertificateDefinitions/id-mr-timeSpecMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export {
     TimeSpecification,
     _decode_TimeSpecification,

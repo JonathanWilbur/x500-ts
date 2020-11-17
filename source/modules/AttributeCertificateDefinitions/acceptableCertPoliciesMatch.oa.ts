@@ -11,7 +11,9 @@ export {
     _encode_AcceptableCertPoliciesSyntax,
 } from "../AttributeCertificateDefinitions/AcceptableCertPoliciesSyntax.ta";
 export { id_mr_acceptableCertPoliciesMatch } from "../AttributeCertificateDefinitions/id-mr-acceptableCertPoliciesMatch.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
+export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 
 /* START_OF_SYMBOL_DEFINITION acceptableCertPoliciesMatch */
 /**

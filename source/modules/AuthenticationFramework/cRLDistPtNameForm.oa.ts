@@ -4,7 +4,9 @@ import { id_nf_cRLDistPtNameForm } from "../AuthenticationFramework/id-nf-cRLDis
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { cRLDistributionPoint } from "../AuthenticationFramework/cRLDistributionPoint.oa";
 export { id_nf_cRLDistPtNameForm } from "../AuthenticationFramework/id-nf-cRLDistPtNameForm.va";
+export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 
 /* START_OF_SYMBOL_DEFINITION cRLDistPtNameForm */
 /**

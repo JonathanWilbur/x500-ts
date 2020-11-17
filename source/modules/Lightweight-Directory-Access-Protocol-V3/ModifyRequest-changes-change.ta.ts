@@ -10,26 +10,29 @@ import {
     _decode_ModifyRequest_changes_change_operation,
     _encode_ModifyRequest_changes_change_operation,
     _enum_for_ModifyRequest_changes_change_operation,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest-changes-change-operation.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest-changes-change-operation.ta";
 import {
     PartialAttribute,
     _decode_PartialAttribute,
     _encode_PartialAttribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttribute.ta";
 export {
+    add /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    delete_ /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     ModifyRequest_changes_change_operation,
-    ModifyRequest_changes_change_operation_add /* IMPORTED_ENUMERATION_ITEM */,
-    ModifyRequest_changes_change_operation_delete /* IMPORTED_ENUMERATION_ITEM */,
-    ModifyRequest_changes_change_operation_replace /* IMPORTED_ENUMERATION_ITEM */,
+    ModifyRequest_changes_change_operation_add /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ModifyRequest_changes_change_operation_delete_ /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    ModifyRequest_changes_change_operation_replace /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    replace /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_ModifyRequest_changes_change_operation,
     _encode_ModifyRequest_changes_change_operation,
     _enum_for_ModifyRequest_changes_change_operation,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest-changes-change-operation.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest-changes-change-operation.ta";
 export {
     PartialAttribute,
     _decode_PartialAttribute,
     _encode_PartialAttribute,
-} from "../Lightweight_Directory_Access_Protocol_V3/PartialAttribute.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/PartialAttribute.ta";
 
 /* START_OF_SYMBOL_DEFINITION ModifyRequest_changes_change */
 /**

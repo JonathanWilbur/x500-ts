@@ -132,10 +132,6 @@ export const _root_component_type_list_2_spec_for_HASH: $.ComponentSpec[] = [];
 export const _extension_additions_list_spec_for_HASH: $.ComponentSpec[] = [];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_HASH */
 
-/* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HASH */
-let _cached_decoder_for_HASH: $.ASN1Decoder<HASH<ToBeHashed>> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HASH */
-
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_HASH */
 /**
  * @summary Returns a function that will decode an ASN.1 element into a(n) HASH
@@ -169,10 +165,6 @@ export function _get_decoder_for_HASH<ToBeHashed>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_HASH */
-
-/* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HASH */
-let _cached_encoder_for_HASH: $.ASN1Encoder<HASH<ToBeHashed>> | null = null;
-/* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HASH */
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_HASH */
 /**

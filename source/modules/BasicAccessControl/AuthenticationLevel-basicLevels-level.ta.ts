@@ -35,6 +35,15 @@ export type AuthenticationLevel_basicLevels_level =
 export const AuthenticationLevel_basicLevels_level_none: AuthenticationLevel_basicLevels_level = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenticationLevel_basicLevels_level_none */
 
+/* START_OF_SYMBOL_DEFINITION none */
+/**
+ * @summary none
+ * @constant
+ * @type {number}
+ */
+export const none: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_none; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION none */
+
 /* START_OF_SYMBOL_DEFINITION AuthenticationLevel_basicLevels_level_simple */
 /**
  * @summary AuthenticationLevel_basicLevels_level_simple
@@ -44,6 +53,15 @@ export const AuthenticationLevel_basicLevels_level_none: AuthenticationLevel_bas
 export const AuthenticationLevel_basicLevels_level_simple: AuthenticationLevel_basicLevels_level = 1; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenticationLevel_basicLevels_level_simple */
 
+/* START_OF_SYMBOL_DEFINITION simple */
+/**
+ * @summary simple
+ * @constant
+ * @type {number}
+ */
+export const simple: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_simple; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION simple */
+
 /* START_OF_SYMBOL_DEFINITION AuthenticationLevel_basicLevels_level_strong */
 /**
  * @summary AuthenticationLevel_basicLevels_level_strong
@@ -52,6 +70,15 @@ export const AuthenticationLevel_basicLevels_level_simple: AuthenticationLevel_b
  */
 export const AuthenticationLevel_basicLevels_level_strong: AuthenticationLevel_basicLevels_level = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION AuthenticationLevel_basicLevels_level_strong */
+
+/* START_OF_SYMBOL_DEFINITION strong */
+/**
+ * @summary strong
+ * @constant
+ * @type {number}
+ */
+export const strong: AuthenticationLevel_basicLevels_level = AuthenticationLevel_basicLevels_level_strong; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION strong */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel_basicLevels_level */
 let _cached_decoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Decoder<

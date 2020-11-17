@@ -8,6 +8,12 @@ import {
     _decode_DSABindResult,
     _encode_DSABindResult,
 } from "../DistributedOperations/DSABindResult.ta";
+export {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 export {
     DSABindArgument,

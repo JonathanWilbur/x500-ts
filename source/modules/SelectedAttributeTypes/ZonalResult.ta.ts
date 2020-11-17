@@ -37,6 +37,15 @@ export type ZonalResult = _enum_for_ZonalResult | ENUMERATED;
 export const ZonalResult_cannot_select_mapping: ZonalResult = 0; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ZonalResult_cannot_select_mapping */
 
+/* START_OF_SYMBOL_DEFINITION cannot_select_mapping */
+/**
+ * @summary cannot_select_mapping
+ * @constant
+ * @type {number}
+ */
+export const cannot_select_mapping: ZonalResult = ZonalResult_cannot_select_mapping; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION cannot_select_mapping */
+
 /* START_OF_SYMBOL_DEFINITION ZonalResult_zero_mappings */
 /**
  * @summary ZonalResult_zero_mappings
@@ -46,6 +55,15 @@ export const ZonalResult_cannot_select_mapping: ZonalResult = 0; /* LONG_NAMED_E
 export const ZonalResult_zero_mappings: ZonalResult = 2; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ZonalResult_zero_mappings */
 
+/* START_OF_SYMBOL_DEFINITION zero_mappings */
+/**
+ * @summary zero_mappings
+ * @constant
+ * @type {number}
+ */
+export const zero_mappings: ZonalResult = ZonalResult_zero_mappings; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION zero_mappings */
+
 /* START_OF_SYMBOL_DEFINITION ZonalResult_multiple_mappings */
 /**
  * @summary ZonalResult_multiple_mappings
@@ -54,6 +72,15 @@ export const ZonalResult_zero_mappings: ZonalResult = 2; /* LONG_NAMED_ENUMERATE
  */
 export const ZonalResult_multiple_mappings: ZonalResult = 3; /* LONG_NAMED_ENUMERATED_VALUE */
 /* END_OF_SYMBOL_DEFINITION ZonalResult_multiple_mappings */
+
+/* START_OF_SYMBOL_DEFINITION multiple_mappings */
+/**
+ * @summary multiple_mappings
+ * @constant
+ * @type {number}
+ */
+export const multiple_mappings: ZonalResult = ZonalResult_multiple_mappings; /* SHORT_NAMED_ENUMERATED_VALUE */
+/* END_OF_SYMBOL_DEFINITION multiple_mappings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ZonalResult */
 let _cached_decoder_for_ZonalResult: $.ASN1Decoder<ZonalResult> | null = null;

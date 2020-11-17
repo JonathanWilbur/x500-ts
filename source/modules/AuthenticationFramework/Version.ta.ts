@@ -25,6 +25,15 @@ export type Version = INTEGER;
 export const Version_v1: Version = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Version_v1 */
 
+/* START_OF_SYMBOL_DEFINITION v1 */
+/**
+ * @summary Version_v1
+ * @constant
+ * @type {number}
+ */
+export const v1: Version = Version_v1; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION v1 */
+
 /* START_OF_SYMBOL_DEFINITION Version_v2 */
 /**
  * @summary Version_v2
@@ -34,6 +43,15 @@ export const Version_v1: Version = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const Version_v2: Version = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Version_v2 */
 
+/* START_OF_SYMBOL_DEFINITION v2 */
+/**
+ * @summary Version_v2
+ * @constant
+ * @type {number}
+ */
+export const v2: Version = Version_v2; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION v2 */
+
 /* START_OF_SYMBOL_DEFINITION Version_v3 */
 /**
  * @summary Version_v3
@@ -42,6 +60,15 @@ export const Version_v2: Version = 1; /* LONG_NAMED_INTEGER_VALUE */
  */
 export const Version_v3: Version = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Version_v3 */
+
+/* START_OF_SYMBOL_DEFINITION v3 */
+/**
+ * @summary Version_v3
+ * @constant
+ * @type {number}
+ */
+export const v3: Version = Version_v3; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION v3 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Version */
 let _cached_decoder_for_Version: $.ASN1Decoder<Version> | null = null;

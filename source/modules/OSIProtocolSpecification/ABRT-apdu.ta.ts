@@ -12,8 +12,10 @@ import {
 } from "../OSIProtocolSpecification/ABRT-source.ta";
 export {
     ABRT_source,
-    ABRT_source_acse_service_provider /* IMPORTED_NAMED_INTEGER */,
-    ABRT_source_acse_service_user /* IMPORTED_NAMED_INTEGER */,
+    ABRT_source_acse_service_provider /* IMPORTED_LONG_NAMED_INTEGER */,
+    ABRT_source_acse_service_user /* IMPORTED_LONG_NAMED_INTEGER */,
+    acse_service_provider /* IMPORTED_SHORT_NAMED_INTEGER */,
+    acse_service_user /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_ABRT_source,
     _encode_ABRT_source,
 } from "../OSIProtocolSpecification/ABRT-source.ta";

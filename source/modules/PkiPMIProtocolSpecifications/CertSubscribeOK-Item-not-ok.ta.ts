@@ -13,8 +13,10 @@ import {
 } from "../PkiPMIProtocolSpecifications/CASP-CertStatusCode.ta";
 export {
     CASP_CertStatusCode,
-    CASP_CertStatusCode_noReason /* IMPORTED_ENUMERATION_ITEM */,
-    CASP_CertStatusCode_unknownCert /* IMPORTED_ENUMERATION_ITEM */,
+    CASP_CertStatusCode_noReason /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    CASP_CertStatusCode_unknownCert /* IMPORTED_LONG_ENUMERATION_ITEM */,
+    noReason /* IMPORTED_SHORT_ENUMERATION_ITEM */,
+    unknownCert /* IMPORTED_SHORT_ENUMERATION_ITEM */,
     _decode_CASP_CertStatusCode,
     _encode_CASP_CertStatusCode,
     _enum_for_CASP_CertStatusCode,

@@ -2,20 +2,10 @@
 import { ASN1Element as _Element, ASN1TagClass as _TagClass } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
-    UiiFilter,
-    _decode_UiiFilter,
-    _encode_UiiFilter,
-} from "../SelectedAttributeTypes/UiiFilter.ta";
-import {
     UiiItem,
     _decode_UiiItem,
     _encode_UiiItem,
 } from "../SelectedAttributeTypes/UiiItem.ta";
-export {
-    UiiFilter,
-    _decode_UiiFilter,
-    _encode_UiiFilter,
-} from "../SelectedAttributeTypes/UiiFilter.ta";
 export {
     UiiItem,
     _decode_UiiItem,

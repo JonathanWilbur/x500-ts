@@ -28,6 +28,15 @@ export type Result = INTEGER;
 export const Result_acceptance: Result = 0; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_acceptance */
 
+/* START_OF_SYMBOL_DEFINITION acceptance */
+/**
+ * @summary Result_acceptance
+ * @constant
+ * @type {number}
+ */
+export const acceptance: Result = Result_acceptance; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION acceptance */
+
 /* START_OF_SYMBOL_DEFINITION Result_user_rejection */
 /**
  * @summary Result_user_rejection
@@ -37,6 +46,15 @@ export const Result_acceptance: Result = 0; /* LONG_NAMED_INTEGER_VALUE */
 export const Result_user_rejection: Result = 1; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_user_rejection */
 
+/* START_OF_SYMBOL_DEFINITION user_rejection */
+/**
+ * @summary Result_user_rejection
+ * @constant
+ * @type {number}
+ */
+export const user_rejection: Result = Result_user_rejection; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION user_rejection */
+
 /* START_OF_SYMBOL_DEFINITION Result_provider_rejection */
 /**
  * @summary Result_provider_rejection
@@ -45,6 +63,15 @@ export const Result_user_rejection: Result = 1; /* LONG_NAMED_INTEGER_VALUE */
  */
 export const Result_provider_rejection: Result = 2; /* LONG_NAMED_INTEGER_VALUE */
 /* END_OF_SYMBOL_DEFINITION Result_provider_rejection */
+
+/* START_OF_SYMBOL_DEFINITION provider_rejection */
+/**
+ * @summary Result_provider_rejection
+ * @constant
+ * @type {number}
+ */
+export const provider_rejection: Result = Result_provider_rejection; /* SHORT_NAMED_INTEGER_VALUE */
+/* END_OF_SYMBOL_DEFINITION provider_rejection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Result */
 let _cached_decoder_for_Result: $.ASN1Decoder<Result> | null = null;

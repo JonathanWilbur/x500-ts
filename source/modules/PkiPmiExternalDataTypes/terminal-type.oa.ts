@@ -6,13 +6,19 @@ import {
 } from "../PkiPmiExternalDataTypes/TerminalType.ta";
 export { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 export {
+    g3_facsimile /* IMPORTED_SHORT_NAMED_INTEGER */,
+    g4_facsimile /* IMPORTED_SHORT_NAMED_INTEGER */,
+    ia5_terminal /* IMPORTED_SHORT_NAMED_INTEGER */,
+    teletex /* IMPORTED_SHORT_NAMED_INTEGER */,
+    telex /* IMPORTED_SHORT_NAMED_INTEGER */,
     TerminalType,
-    TerminalType_g3_facsimile /* IMPORTED_NAMED_INTEGER */,
-    TerminalType_g4_facsimile /* IMPORTED_NAMED_INTEGER */,
-    TerminalType_ia5_terminal /* IMPORTED_NAMED_INTEGER */,
-    TerminalType_teletex /* IMPORTED_NAMED_INTEGER */,
-    TerminalType_telex /* IMPORTED_NAMED_INTEGER */,
-    TerminalType_videotex /* IMPORTED_NAMED_INTEGER */,
+    TerminalType_g3_facsimile /* IMPORTED_LONG_NAMED_INTEGER */,
+    TerminalType_g4_facsimile /* IMPORTED_LONG_NAMED_INTEGER */,
+    TerminalType_ia5_terminal /* IMPORTED_LONG_NAMED_INTEGER */,
+    TerminalType_teletex /* IMPORTED_LONG_NAMED_INTEGER */,
+    TerminalType_telex /* IMPORTED_LONG_NAMED_INTEGER */,
+    TerminalType_videotex /* IMPORTED_LONG_NAMED_INTEGER */,
+    videotex /* IMPORTED_SHORT_NAMED_INTEGER */,
     _decode_TerminalType,
     _encode_TerminalType,
 } from "../PkiPmiExternalDataTypes/TerminalType.ta";

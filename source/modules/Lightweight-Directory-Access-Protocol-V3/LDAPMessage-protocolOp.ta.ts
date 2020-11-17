@@ -5,212 +5,212 @@ import {
     AbandonRequest,
     _decode_AbandonRequest,
     _encode_AbandonRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/AbandonRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AbandonRequest.ta";
 import {
     AddRequest,
     _decode_AddRequest,
     _encode_AddRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/AddRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AddRequest.ta";
 import {
     AddResponse,
     _decode_AddResponse,
     _encode_AddResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/AddResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AddResponse.ta";
 import {
     BindRequest,
     _decode_BindRequest,
     _encode_BindRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/BindRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/BindRequest.ta";
 import {
     BindResponse,
     _decode_BindResponse,
     _encode_BindResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/BindResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/BindResponse.ta";
 import {
     CompareRequest,
     _decode_CompareRequest,
     _encode_CompareRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/CompareRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/CompareRequest.ta";
 import {
     CompareResponse,
     _decode_CompareResponse,
     _encode_CompareResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/CompareResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/CompareResponse.ta";
 import {
     DelRequest,
     _decode_DelRequest,
     _encode_DelRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/DelRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/DelRequest.ta";
 import {
     DelResponse,
     _decode_DelResponse,
     _encode_DelResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/DelResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/DelResponse.ta";
 import {
     ExtendedRequest,
     _decode_ExtendedRequest,
     _encode_ExtendedRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ExtendedRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ExtendedRequest.ta";
 import {
     ExtendedResponse,
     _decode_ExtendedResponse,
     _encode_ExtendedResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ExtendedResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ExtendedResponse.ta";
 import {
     IntermediateResponse,
     _decode_IntermediateResponse,
     _encode_IntermediateResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/IntermediateResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/IntermediateResponse.ta";
 import {
     ModifyDNRequest,
     _decode_ModifyDNRequest,
     _encode_ModifyDNRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyDNRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyDNRequest.ta";
 import {
     ModifyDNResponse,
     _decode_ModifyDNResponse,
     _encode_ModifyDNResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyDNResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyDNResponse.ta";
 import {
     ModifyRequest,
     _decode_ModifyRequest,
     _encode_ModifyRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest.ta";
 import {
     ModifyResponse,
     _decode_ModifyResponse,
     _encode_ModifyResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyResponse.ta";
 import {
     SearchRequest,
     _decode_SearchRequest,
     _encode_SearchRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest.ta";
 import {
     SearchResultDone,
     _decode_SearchResultDone,
     _encode_SearchResultDone,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultDone.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultDone.ta";
 import {
     SearchResultEntry,
     _decode_SearchResultEntry,
     _encode_SearchResultEntry,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultEntry.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultEntry.ta";
 import {
     SearchResultReference,
     _decode_SearchResultReference,
     _encode_SearchResultReference,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultReference.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultReference.ta";
 import {
     UnbindRequest,
     _decode_UnbindRequest,
     _encode_UnbindRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/UnbindRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/UnbindRequest.ta";
 export {
     AbandonRequest,
     _decode_AbandonRequest,
     _encode_AbandonRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/AbandonRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AbandonRequest.ta";
 export {
     AddRequest,
     _decode_AddRequest,
     _encode_AddRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/AddRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AddRequest.ta";
 export {
     AddResponse,
     _decode_AddResponse,
     _encode_AddResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/AddResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/AddResponse.ta";
 export {
     BindRequest,
     _decode_BindRequest,
     _encode_BindRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/BindRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/BindRequest.ta";
 export {
     BindResponse,
     _decode_BindResponse,
     _encode_BindResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/BindResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/BindResponse.ta";
 export {
     CompareRequest,
     _decode_CompareRequest,
     _encode_CompareRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/CompareRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/CompareRequest.ta";
 export {
     CompareResponse,
     _decode_CompareResponse,
     _encode_CompareResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/CompareResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/CompareResponse.ta";
 export {
     DelRequest,
     _decode_DelRequest,
     _encode_DelRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/DelRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/DelRequest.ta";
 export {
     DelResponse,
     _decode_DelResponse,
     _encode_DelResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/DelResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/DelResponse.ta";
 export {
     ExtendedRequest,
     _decode_ExtendedRequest,
     _encode_ExtendedRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ExtendedRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ExtendedRequest.ta";
 export {
     ExtendedResponse,
     _decode_ExtendedResponse,
     _encode_ExtendedResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ExtendedResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ExtendedResponse.ta";
 export {
     IntermediateResponse,
     _decode_IntermediateResponse,
     _encode_IntermediateResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/IntermediateResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/IntermediateResponse.ta";
 export {
     ModifyDNRequest,
     _decode_ModifyDNRequest,
     _encode_ModifyDNRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyDNRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyDNRequest.ta";
 export {
     ModifyDNResponse,
     _decode_ModifyDNResponse,
     _encode_ModifyDNResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyDNResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyDNResponse.ta";
 export {
     ModifyRequest,
     _decode_ModifyRequest,
     _encode_ModifyRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyRequest.ta";
 export {
     ModifyResponse,
     _decode_ModifyResponse,
     _encode_ModifyResponse,
-} from "../Lightweight_Directory_Access_Protocol_V3/ModifyResponse.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/ModifyResponse.ta";
 export {
     SearchRequest,
     _decode_SearchRequest,
     _encode_SearchRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchRequest.ta";
 export {
     SearchResultDone,
     _decode_SearchResultDone,
     _encode_SearchResultDone,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultDone.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultDone.ta";
 export {
     SearchResultEntry,
     _decode_SearchResultEntry,
     _encode_SearchResultEntry,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultEntry.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultEntry.ta";
 export {
     SearchResultReference,
     _decode_SearchResultReference,
     _encode_SearchResultReference,
-} from "../Lightweight_Directory_Access_Protocol_V3/SearchResultReference.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/SearchResultReference.ta";
 export {
     UnbindRequest,
     _decode_UnbindRequest,
     _encode_UnbindRequest,
-} from "../Lightweight_Directory_Access_Protocol_V3/UnbindRequest.ta";
+} from "../Lightweight-Directory-Access-Protocol-V3/UnbindRequest.ta";
 
 /* START_OF_SYMBOL_DEFINITION LDAPMessage_protocolOp */
 /**
