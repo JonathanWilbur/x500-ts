@@ -2,7 +2,7 @@
 import {
     ASN1Element as _Element,
     ASN1TagClass as _TagClass,
-    INTEGER,
+    OCTET_STRING,
     OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
@@ -31,19 +31,19 @@ export class NumberRange {
          * @public
          * @readonly
          */
-        readonly startingNumber: OPTIONAL<INTEGER>,
+        readonly startingNumber: OPTIONAL<OCTET_STRING>,
         /**
          * @summary `endingNumber`.
          * @public
          * @readonly
          */
-        readonly endingNumber: OPTIONAL<INTEGER>,
+        readonly endingNumber: OPTIONAL<OCTET_STRING>,
         /**
          * @summary `modulus`.
          * @public
          * @readonly
          */
-        readonly modulus: OPTIONAL<INTEGER>,
+        readonly modulus: OPTIONAL<OCTET_STRING>,
         /**
          * @summary Extensions that are not recognized.
          * @public
@@ -150,25 +150,25 @@ export function _decode_NumberRange(el: _Element) {
     if (!_cached_decoder_for_NumberRange) {
         _cached_decoder_for_NumberRange = function (el: _Element): NumberRange {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
-            let startingNumber: OPTIONAL<INTEGER>;
-            let endingNumber: OPTIONAL<INTEGER>;
-            let modulus: OPTIONAL<INTEGER>;
+            let startingNumber: OPTIONAL<OCTET_STRING>;
+            let endingNumber: OPTIONAL<OCTET_STRING>;
+            let modulus: OPTIONAL<OCTET_STRING>;
             let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 startingNumber: (_el: _Element): void => {
-                    startingNumber = $._decode_implicit<INTEGER>(
-                        () => $._decodeInteger
+                    startingNumber = $._decode_implicit<OCTET_STRING>(
+                        () => $._decodeBigInt,
                     )(_el);
                 },
                 endingNumber: (_el: _Element): void => {
-                    endingNumber = $._decode_implicit<INTEGER>(
-                        () => $._decodeInteger
+                    endingNumber = $._decode_implicit<OCTET_STRING>(
+                        () => $._decodeBigInt,
                     )(_el);
                 },
                 modulus: (_el: _Element): void => {
-                    modulus = $._decodeInteger(_el);
+                    modulus = $._decodeBigInt(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -224,7 +224,7 @@ export function _encode_NumberRange(
                                 : $._encode_implicit(
                                       _TagClass.context,
                                       0,
-                                      () => $._encodeInteger,
+                                      () => $._encodeBigInt,
                                       $.BER
                                   )(value.startingNumber, $.BER),
                             /* IF_ABSENT  */ value.endingNumber === undefined
@@ -232,12 +232,12 @@ export function _encode_NumberRange(
                                 : $._encode_implicit(
                                       _TagClass.context,
                                       1,
-                                      () => $._encodeInteger,
+                                      () => $._encodeBigInt,
                                       $.BER
                                   )(value.endingNumber, $.BER),
                             /* IF_ABSENT  */ value.modulus === undefined
                                 ? undefined
-                                : $._encodeInteger(value.modulus, $.BER),
+                                : $._encodeBigInt(value.modulus, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ASN1Element as _Element, INTEGER } from "asn1-ts";
+import { ASN1Element as _Element, OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 
 /* START_OF_SYMBOL_DEFINITION CertificateSerialNumber */
@@ -13,7 +13,7 @@ import * as $ from "asn1-ts/dist/node/functional";
  * CertificateSerialNumber  ::=  INTEGER
  * ```
  */
-export type CertificateSerialNumber = INTEGER;
+export type CertificateSerialNumber = OCTET_STRING;
 /* END_OF_SYMBOL_DEFINITION CertificateSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateSerialNumber */
@@ -31,7 +31,7 @@ let _cached_decoder_for_CertificateSerialNumber: $.ASN1Decoder<
  */
 export function _decode_CertificateSerialNumber(el: _Element) {
     if (!_cached_decoder_for_CertificateSerialNumber) {
-        _cached_decoder_for_CertificateSerialNumber = $._decodeInteger;
+        _cached_decoder_for_CertificateSerialNumber = $._decodeBigInt;
     }
     return _cached_decoder_for_CertificateSerialNumber(el);
 }
@@ -56,7 +56,7 @@ export function _encode_CertificateSerialNumber(
     elGetter: $.ASN1Encoder<CertificateSerialNumber>
 ) {
     if (!_cached_encoder_for_CertificateSerialNumber) {
-        _cached_encoder_for_CertificateSerialNumber = $._encodeInteger;
+        _cached_encoder_for_CertificateSerialNumber = $._encodeBigInt;
     }
     return _cached_encoder_for_CertificateSerialNumber(value, elGetter);
 }

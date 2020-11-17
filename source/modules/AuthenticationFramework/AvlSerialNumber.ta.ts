@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ASN1Element as _Element, INTEGER } from "asn1-ts";
+import { ASN1Element as _Element, OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 
 /* START_OF_SYMBOL_DEFINITION AvlSerialNumber */
@@ -13,7 +13,7 @@ import * as $ from "asn1-ts/dist/node/functional";
  * AvlSerialNumber  ::=  INTEGER (0..MAX)
  * ```
  */
-export type AvlSerialNumber = INTEGER;
+export type AvlSerialNumber = OCTET_STRING;
 /* END_OF_SYMBOL_DEFINITION AvlSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AvlSerialNumber */
@@ -31,7 +31,7 @@ let _cached_decoder_for_AvlSerialNumber: $.ASN1Decoder<
  */
 export function _decode_AvlSerialNumber(el: _Element) {
     if (!_cached_decoder_for_AvlSerialNumber) {
-        _cached_decoder_for_AvlSerialNumber = $._decodeInteger;
+        _cached_decoder_for_AvlSerialNumber = $._decodeBigInt;
     }
     return _cached_decoder_for_AvlSerialNumber(el);
 }
@@ -56,7 +56,7 @@ export function _encode_AvlSerialNumber(
     elGetter: $.ASN1Encoder<AvlSerialNumber>
 ) {
     if (!_cached_encoder_for_AvlSerialNumber) {
-        _cached_encoder_for_AvlSerialNumber = $._encodeInteger;
+        _cached_encoder_for_AvlSerialNumber = $._encodeBigInt;
     }
     return _cached_encoder_for_AvlSerialNumber(value, elGetter);
 }
