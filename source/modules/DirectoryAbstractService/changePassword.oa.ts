@@ -2,10 +2,12 @@
 import { id_opcode_changePassword } from "../CommonProtocolSpecification/id-opcode-changePassword.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    ChangePasswordArgument,
     _decode_ChangePasswordArgument,
     _encode_ChangePasswordArgument,
 } from "../DirectoryAbstractService/ChangePasswordArgument.ta";
 import {
+    ChangePasswordResult,
     _decode_ChangePasswordResult,
     _encode_ChangePasswordResult,
 } from "../DirectoryAbstractService/ChangePasswordResult.ta";
@@ -49,10 +51,13 @@ export { updateError } from "../DirectoryAbstractService/updateError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<ChangePasswordArgument, ChangePasswordResult>}
+ * @implements {OPERATION<ChangePasswordArgument, ChangePasswordResult>}
  */
-export const changePassword: OPERATION = {
+export const changePassword: OPERATION<
+    ChangePasswordArgument,
+    ChangePasswordResult
+> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_ChangePasswordArgument,

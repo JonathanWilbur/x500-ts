@@ -29,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<KeyPurposeId[]>}
+ * @implements {EXTENSION<KeyPurposeId[]>}
  */
-export const extKeyUsage: EXTENSION = {
+export const extKeyUsage: EXTENSION<KeyPurposeId[]> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeSequenceOf<KeyPurposeId>(

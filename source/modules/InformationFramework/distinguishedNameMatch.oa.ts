@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
@@ -33,10 +34,10 @@ export { dn } from "../SelectedAttributeTypes/dn.oa";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<DistinguishedName>}
+ * @implements {MATCHING_RULE<DistinguishedName>}
  */
-export const distinguishedNameMatch: MATCHING_RULE = {
+export const distinguishedNameMatch: MATCHING_RULE<DistinguishedName> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_DistinguishedName,

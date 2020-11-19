@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalDomainDefinedAttributes,
     _decode_UniversalDomainDefinedAttributes,
     _encode_UniversalDomainDefinedAttributes,
 } from "../MTSAbstractService/UniversalDomainDefinedAttributes.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalDomainDefinedAttributes>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalDomainDefinedAttributes>}
  */
-export const universal_domain_defined_attributes: EXTENSION_ATTRIBUTE = {
+export const universal_domain_defined_attributes: EXTENSION_ATTRIBUTE<UniversalDomainDefinedAttributes> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalDomainDefinedAttributes,

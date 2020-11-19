@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalLocalPostalAttributes,
     _decode_UniversalLocalPostalAttributes,
     _encode_UniversalLocalPostalAttributes,
 } from "../MTSAbstractService/UniversalLocalPostalAttributes.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalLocalPostalAttributes>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalLocalPostalAttributes>}
  */
-export const universal_local_postal_attributes: EXTENSION_ATTRIBUTE = {
+export const universal_local_postal_attributes: EXTENSION_ATTRIBUTE<UniversalLocalPostalAttributes> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalLocalPostalAttributes,

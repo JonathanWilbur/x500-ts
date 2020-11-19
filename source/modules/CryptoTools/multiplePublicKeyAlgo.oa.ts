@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multiplePublicKeyAlgo } from "../CryptoTools/id-algo-multiplePublicKeyAlgo.va";
 import {
+    MultiplePublicKeyAlgo,
     _decode_MultiplePublicKeyAlgo,
     _encode_MultiplePublicKeyAlgo,
 } from "../CryptoTools/MultiplePublicKeyAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultiplePublicKeyAlgo>}
+ * @implements {ALGORITHM<MultiplePublicKeyAlgo>}
  */
-export const multiplePublicKeyAlgo: ALGORITHM = {
+export const multiplePublicKeyAlgo: ALGORITHM<MultiplePublicKeyAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultiplePublicKeyAlgo,

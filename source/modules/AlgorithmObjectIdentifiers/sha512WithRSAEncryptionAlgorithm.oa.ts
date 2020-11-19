@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { sha512WithRSAEncryption } from "../AlgorithmObjectIdentifiers/sha512WithRSAEncryption.va";
 import { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
@@ -19,10 +20,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<NULL>}
+ * @implements {ALGORITHM<NULL>}
  */
-export const sha512WithRSAEncryptionAlgorithm: ALGORITHM = {
+export const sha512WithRSAEncryptionAlgorithm: ALGORITHM<NULL> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": $._decodeNull,

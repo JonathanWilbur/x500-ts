@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DSEType,
     _decode_DSEType,
     _encode_DSEType,
 } from "../DSAOperationalAttributeTypes/DSEType.ta";
@@ -88,10 +89,10 @@ export { bitStringMatch } from "../SelectedAttributeTypes/bitStringMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DSEType>}
+ * @implements {ATTRIBUTE<DSEType>}
  */
-export const dseType: ATTRIBUTE = {
+export const dseType: ATTRIBUTE<DSEType> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DSEType,

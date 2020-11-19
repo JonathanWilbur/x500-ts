@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    DITStructureRuleDescription,
     _decode_DITStructureRuleDescription,
     _encode_DITStructureRuleDescription,
 } from "../SchemaAdministration/DITStructureRuleDescription.ta";
@@ -54,10 +55,10 @@ export { integerFirstComponentMatch } from "../SelectedAttributeTypes/integerFir
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DITStructureRuleDescription>}
+ * @implements {ATTRIBUTE<DITStructureRuleDescription>}
  */
-export const dITStructureRules: ATTRIBUTE = {
+export const dITStructureRules: ATTRIBUTE<DITStructureRuleDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DITStructureRuleDescription,

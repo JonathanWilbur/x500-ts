@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    SearchControlOptions,
     _decode_SearchControlOptions,
     _encode_SearchControlOptions,
 } from "../DirectoryAbstractService/SearchControlOptions.ta";
@@ -71,10 +72,10 @@ export { id_not_searchControlOptionsList } from "../SelectedAttributeTypes/id-no
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SearchControlOptions>}
+ * @implements {ATTRIBUTE<SearchControlOptions>}
  */
-export const searchControlOptionsList: ATTRIBUTE = {
+export const searchControlOptionsList: ATTRIBUTE<SearchControlOptions> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SearchControlOptions,

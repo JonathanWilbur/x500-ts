@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AllowedAttributeAssignments,
     _decode_AllowedAttributeAssignments,
     _encode_AllowedAttributeAssignments,
 } from "../AttributeCertificateDefinitions/AllowedAttributeAssignments.ta";
@@ -27,10 +28,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AllowedAttributeAssignments>}
+ * @implements {EXTENSION<AllowedAttributeAssignments>}
  */
-export const allowedAttributeAssignments: EXTENSION = {
+export const allowedAttributeAssignments: EXTENSION<AllowedAttributeAssignments> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AllowedAttributeAssignments,

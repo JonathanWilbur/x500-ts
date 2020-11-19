@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_kmr_supplierConsumerMatch } from "../DSAOperationalAttributeTypes/id-kmr-supplierConsumerMatch.va";
 import {
+    supplierOrConsumerInformationMatch_AssertionType,
     _decode_supplierOrConsumerInformationMatch_AssertionType,
     _encode_supplierOrConsumerInformationMatch_AssertionType,
 } from "../DSAOperationalAttributeTypes/supplierOrConsumerInformationMatch-AssertionType.ta";
@@ -31,10 +32,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<supplierOrConsumerInformationMatch_AssertionType>}
+ * @implements {MATCHING_RULE<supplierOrConsumerInformationMatch_AssertionType>}
  */
-export const supplierOrConsumerInformationMatch: MATCHING_RULE = {
+export const supplierOrConsumerInformationMatch: MATCHING_RULE<supplierOrConsumerInformationMatch_AssertionType> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_supplierOrConsumerInformationMatch_AssertionType,

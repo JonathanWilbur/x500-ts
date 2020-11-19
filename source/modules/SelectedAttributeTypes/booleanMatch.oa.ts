@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BOOLEAN } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { bitString } from "../SelectedAttributeTypes/bitString.oa";
@@ -25,10 +26,10 @@ export { id_mr_booleanMatch } from "../SelectedAttributeTypes/id-mr-booleanMatch
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<BOOLEAN>}
+ * @implements {MATCHING_RULE<BOOLEAN>}
  */
-export const booleanMatch: MATCHING_RULE = {
+export const booleanMatch: MATCHING_RULE<BOOLEAN> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeBoolean,

@@ -6,10 +6,12 @@ import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
 import {
+    SearchArgument,
     _decode_SearchArgument,
     _encode_SearchArgument,
 } from "../DirectoryAbstractService/SearchArgument.ta";
 import {
+    SearchResult,
     _decode_SearchResult,
     _encode_SearchResult,
 } from "../DirectoryAbstractService/SearchResult.ta";
@@ -61,10 +63,10 @@ export { serviceError } from "../DirectoryAbstractService/serviceError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<SearchArgument, SearchResult>}
+ * @implements {OPERATION<SearchArgument, SearchResult>}
  */
-export const search: OPERATION = {
+export const search: OPERATION<SearchArgument, SearchResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_SearchArgument,

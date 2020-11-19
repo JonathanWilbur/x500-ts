@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    BasicAttConstraintsSyntax,
     _decode_BasicAttConstraintsSyntax,
     _encode_BasicAttConstraintsSyntax,
 } from "../AttributeCertificateDefinitions/BasicAttConstraintsSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<BasicAttConstraintsSyntax>}
+ * @implements {MATCHING_RULE<BasicAttConstraintsSyntax>}
  */
-export const basicAttConstraintsMatch: MATCHING_RULE = {
+export const basicAttConstraintsMatch: MATCHING_RULE<BasicAttConstraintsSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_BasicAttConstraintsSyntax,

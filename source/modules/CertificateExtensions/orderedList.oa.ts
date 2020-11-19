@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_orderedList } from "../CertificateExtensions/id-ce-orderedList.va";
 import {
+    OrderedListSyntax,
     _decode_OrderedListSyntax,
     _encode_OrderedListSyntax,
 } from "../CertificateExtensions/OrderedListSyntax.ta";
@@ -32,10 +33,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<OrderedListSyntax>}
+ * @implements {EXTENSION<OrderedListSyntax>}
  */
-export const orderedList: EXTENSION = {
+export const orderedList: EXTENSION<OrderedListSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_OrderedListSyntax,

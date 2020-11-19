@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AddAvlRsp,
     _decode_AddAvlRsp,
     _encode_AddAvlRsp,
 } from "../PkiPMIProtocolSpecifications/AddAvlRsp.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<AddAvlRsp>}
+ * @implements {WRAPPED_PDU<AddAvlRsp>}
  */
 export const addAvlRsp: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

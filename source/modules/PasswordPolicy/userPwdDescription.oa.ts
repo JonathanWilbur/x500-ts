@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_userPwdDescription } from "../PasswordPolicy/id-asx-userPwdDescription.va";
-import { _decode_UserPwd, _encode_UserPwd } from "../PasswordPolicy/UserPwd.ta";
+import {
+    UserPwd,
+    _decode_UserPwd,
+    _encode_UserPwd,
+} from "../PasswordPolicy/UserPwd.ta";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_asx_userPwdDescription } from "../PasswordPolicy/id-asx-userPwdDescription.va";
 export {
@@ -25,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<UserPwd>}
+ * @implements {SYNTAX_NAME<UserPwd>}
  */
-export const userPwdDescription: SYNTAX_NAME = {
+export const userPwdDescription: SYNTAX_NAME<UserPwd> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_UserPwd,

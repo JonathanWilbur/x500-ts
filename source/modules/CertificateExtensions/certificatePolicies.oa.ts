@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CertificatePoliciesSyntax,
     _decode_CertificatePoliciesSyntax,
     _encode_CertificatePoliciesSyntax,
 } from "../CertificateExtensions/CertificatePoliciesSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_certificatePolicies } from "../CertificateExtensions/id-ce-certif
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CertificatePoliciesSyntax>}
+ * @implements {EXTENSION<CertificatePoliciesSyntax>}
  */
-export const certificatePolicies: EXTENSION = {
+export const certificatePolicies: EXTENSION<CertificatePoliciesSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CertificatePoliciesSyntax,

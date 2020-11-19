@@ -1,4 +1,4 @@
-import { RelativeDistinguishedName } from "../modules/InformationFramework";
+import { RelativeDistinguishedName } from "../modules/InformationFramework/RelativeDistinguishedName.ta";
 import attributeTypeAndValueToString from "./attributeTypeAndValueToString";
 
 export default function relativeDistinguishedNameToString(

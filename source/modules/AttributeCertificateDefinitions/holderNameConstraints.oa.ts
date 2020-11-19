@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    HolderNameConstraintsSyntax,
     _decode_HolderNameConstraintsSyntax,
     _encode_HolderNameConstraintsSyntax,
 } from "../AttributeCertificateDefinitions/HolderNameConstraintsSyntax.ta";
@@ -27,10 +28,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<HolderNameConstraintsSyntax>}
+ * @implements {EXTENSION<HolderNameConstraintsSyntax>}
  */
-export const holderNameConstraints: EXTENSION = {
+export const holderNameConstraints: EXTENSION<HolderNameConstraintsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_HolderNameConstraintsSyntax,

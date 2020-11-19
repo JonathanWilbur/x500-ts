@@ -1,10 +1,13 @@
 /* eslint-disable */
 import { id_oc_privilegePolicy } from "../AttributeCertificateDefinitions/id-oc-privilegePolicy.va";
+import { privPolicy } from "../AttributeCertificateDefinitions/privPolicy.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 export { id_oc_privilegePolicy } from "../AttributeCertificateDefinitions/id-oc-privilegePolicy.va";
+export { privPolicy } from "../AttributeCertificateDefinitions/privPolicy.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -19,6 +22,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION privilegePolicy */
 /**
@@ -43,9 +47,9 @@ export const privilegePolicy: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [privPolicy] /* OBJECT_FIELD_SETTING */,
     "&id": id_oc_privilegePolicy /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION privilegePolicy */

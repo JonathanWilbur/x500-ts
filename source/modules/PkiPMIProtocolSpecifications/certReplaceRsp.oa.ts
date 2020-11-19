@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertReplaceRsp,
     _decode_CertReplaceRsp,
     _encode_CertReplaceRsp,
 } from "../PkiPMIProtocolSpecifications/CertReplaceRsp.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<CertReplaceRsp>}
+ * @implements {WRAPPED_PDU<CertReplaceRsp>}
  */
 export const certReplaceRsp: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
@@ -25,10 +26,10 @@ export { id_mr_uriMatch } from "../SelectedAttributeTypes/id-mr-uriMatch.va";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<UTF8String>}
+ * @implements {MATCHING_RULE<UTF8String>}
  */
-export const uriMatch: MATCHING_RULE = {
+export const uriMatch: MATCHING_RULE<UTF8String> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeUTF8String,

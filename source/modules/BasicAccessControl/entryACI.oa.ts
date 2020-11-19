@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    ACIItem,
     _decode_ACIItem,
     _encode_ACIItem,
 } from "../BasicAccessControl/ACIItem.ta";
@@ -50,10 +51,10 @@ export { directoryStringFirstComponentMatch } from "../SelectedAttributeTypes/di
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ACIItem>}
+ * @implements {ATTRIBUTE<ACIItem>}
  */
-export const entryACI: ATTRIBUTE = {
+export const entryACI: ATTRIBUTE<ACIItem> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ACIItem,

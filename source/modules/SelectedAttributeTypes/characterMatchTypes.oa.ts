@@ -4,6 +4,7 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    CharacterMatchTypes,
     _decode_CharacterMatchTypes,
     _encode_CharacterMatchTypes,
 } from "../SelectedAttributeTypes/CharacterMatchTypes.ta";
@@ -54,10 +55,10 @@ export { id_cat_characterMatchTypes } from "../SelectedAttributeTypes/id-cat-cha
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<CharacterMatchTypes>}
+ * @implements {ATTRIBUTE<CharacterMatchTypes>}
  */
-export const characterMatchTypes: ATTRIBUTE = {
+export const characterMatchTypes: ATTRIBUTE<CharacterMatchTypes> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CharacterMatchTypes,

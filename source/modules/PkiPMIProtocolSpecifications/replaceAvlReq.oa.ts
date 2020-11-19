@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_replaceAvlReq } from "../PkiPMIProtocolSpecifications/id-replaceAvlReq.va";
 import {
+    ReplaceAvlReq,
     _decode_ReplaceAvlReq,
     _encode_ReplaceAvlReq,
 } from "../PkiPMIProtocolSpecifications/ReplaceAvlReq.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<ReplaceAvlReq>}
+ * @implements {WRAPPED_PDU<ReplaceAvlReq>}
  */
 export const replaceAvlReq: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

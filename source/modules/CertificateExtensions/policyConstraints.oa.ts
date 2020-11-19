@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_policyConstraints } from "../CertificateExtensions/id-ce-policyConstraints.va";
 import {
+    PolicyConstraintsSyntax,
     _decode_PolicyConstraintsSyntax,
     _encode_PolicyConstraintsSyntax,
 } from "../CertificateExtensions/PolicyConstraintsSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<PolicyConstraintsSyntax>}
+ * @implements {EXTENSION<PolicyConstraintsSyntax>}
  */
-export const policyConstraints: EXTENSION = {
+export const policyConstraints: EXTENSION<PolicyConstraintsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_PolicyConstraintsSyntax,

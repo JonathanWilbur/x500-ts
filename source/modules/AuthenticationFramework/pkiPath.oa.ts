@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_pkiPath } from "../AuthenticationFramework/id-at-pkiPath.va";
 import {
+    PkiPath,
     _decode_PkiPath,
     _encode_PkiPath,
 } from "../AuthenticationFramework/PkiPath.ta";
@@ -49,10 +50,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PkiPath>}
+ * @implements {ATTRIBUTE<PkiPath>}
  */
-export const pkiPath: ATTRIBUTE = {
+export const pkiPath: ATTRIBUTE<PkiPath> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PkiPath,

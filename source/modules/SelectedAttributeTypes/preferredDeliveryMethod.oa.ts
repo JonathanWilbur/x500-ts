@@ -6,6 +6,7 @@ import {
 import { deliveryMethod } from "../SelectedAttributeTypes/deliveryMethod.oa";
 import { id_at_preferredDeliveryMethod } from "../SelectedAttributeTypes/id-at-preferredDeliveryMethod.va";
 import {
+    PreferredDeliveryMethod,
     _decode_PreferredDeliveryMethod,
     _encode_PreferredDeliveryMethod,
 } from "../SelectedAttributeTypes/PreferredDeliveryMethod.ta";
@@ -51,10 +52,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PreferredDeliveryMethod>}
+ * @implements {ATTRIBUTE<PreferredDeliveryMethod>}
  */
-export const preferredDeliveryMethod: ATTRIBUTE = {
+export const preferredDeliveryMethod: ATTRIBUTE<PreferredDeliveryMethod> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PreferredDeliveryMethod,

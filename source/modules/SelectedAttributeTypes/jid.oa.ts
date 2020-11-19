@@ -4,7 +4,11 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_jid } from "../SelectedAttributeTypes/id-at-jid.va";
-import { _decode_Jid, _encode_Jid } from "../SelectedAttributeTypes/Jid.ta";
+import {
+    Jid,
+    _decode_Jid,
+    _encode_Jid,
+} from "../SelectedAttributeTypes/Jid.ta";
 import { jidMatch } from "../SelectedAttributeTypes/jidMatch.oa";
 import { jidString } from "../SelectedAttributeTypes/jidString.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -51,10 +55,10 @@ export { jidString } from "../SelectedAttributeTypes/jidString.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<Jid>}
+ * @implements {ATTRIBUTE<Jid>}
  */
-export const jid: ATTRIBUTE = {
+export const jid: ATTRIBUTE<Jid> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_Jid,

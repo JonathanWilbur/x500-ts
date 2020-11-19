@@ -1,6 +1,10 @@
 /* eslint-disable */
 import { id_tbprot } from "../ProtProtocols/id-tbprot.va";
-import { _decode_TBprot, _encode_TBprot } from "../TrustBroker/TBprot.ta";
+import {
+    TBprot,
+    _decode_TBprot,
+    _encode_TBprot,
+} from "../TrustBroker/TBprot.ta";
 import { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
 export { id_tbprot } from "../ProtProtocols/id-tbprot.va";
 export {
@@ -24,8 +28,8 @@ export { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PROT}
- * @implements {WRAPPED_PROT}
+ * @type {WRAPPED_PROT<TBprot>}
+ * @implements {WRAPPED_PROT<TBprot>}
  */
 export const tbprot: WRAPPED_PROT = {
     class: "TYPE-IDENTIFIER",

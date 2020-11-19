@@ -1,9 +1,12 @@
 /* eslint-disable */
+import { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { certificationAuthority } from "../SelectedObjectClasses/certificationAuthority.oa";
 import { id_oc_certificationAuthority_V2 } from "../SelectedObjectClasses/id-oc-certificationAuthority-V2.va";
+export { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -18,6 +21,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { certificationAuthority } from "../SelectedObjectClasses/certificationAuthority.oa";
 export { id_oc_certificationAuthority_V2 } from "../SelectedObjectClasses/id-oc-certificationAuthority-V2.va";
 
 /* START_OF_SYMBOL_DEFINITION certificationAuthority_V2 */
@@ -45,9 +49,9 @@ export const certificationAuthority_V2: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [certificationAuthority] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [deltaRevocationList] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&ldapDesc": undefined,
     "&id": id_oc_certificationAuthority_V2 /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

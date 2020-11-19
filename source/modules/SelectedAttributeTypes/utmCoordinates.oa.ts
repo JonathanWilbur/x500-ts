@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_utmCoordinates } from "../SelectedAttributeTypes/id-at-utmCoordinates.va";
 import {
+    UtmCoordinates,
     _decode_UtmCoordinates,
     _encode_UtmCoordinates,
 } from "../SelectedAttributeTypes/UtmCoordinates.ta";
@@ -51,10 +52,10 @@ export { utmCoords } from "../SelectedAttributeTypes/utmCoords.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UtmCoordinates>}
+ * @implements {ATTRIBUTE<UtmCoordinates>}
  */
-export const utmCoordinates: ATTRIBUTE = {
+export const utmCoordinates: ATTRIBUTE<UtmCoordinates> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UtmCoordinates,

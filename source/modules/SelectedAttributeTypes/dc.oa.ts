@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { IA5String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -48,10 +49,10 @@ export { id_coat_dc } from "../SelectedAttributeTypes/id-coat-dc.va";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<IA5String>}
+ * @implements {ATTRIBUTE<IA5String>}
  */
-export const dc: ATTRIBUTE = {
+export const dc: ATTRIBUTE<IA5String> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeIA5String,

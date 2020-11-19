@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeDescriptorSyntax,
     _decode_AttributeDescriptorSyntax,
     _encode_AttributeDescriptorSyntax,
 } from "../AttributeCertificateDefinitions/AttributeDescriptorSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<AttributeDescriptorSyntax>}
+ * @implements {MATCHING_RULE<AttributeDescriptorSyntax>}
  */
-export const attDescriptor: MATCHING_RULE = {
+export const attDescriptor: MATCHING_RULE<AttributeDescriptorSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_AttributeDescriptorSyntax,

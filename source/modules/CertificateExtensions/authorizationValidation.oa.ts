@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AvlId,
     _decode_AvlId,
     _encode_AvlId,
 } from "../CertificateExtensions/AvlId.ta";
@@ -27,10 +28,10 @@ export { id_ce_authorizationValidation } from "../CertificateExtensions/id-ce-au
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AvlId>}
+ * @implements {EXTENSION<AvlId>}
  */
-export const authorizationValidation: EXTENSION = {
+export const authorizationValidation: EXTENSION<AvlId> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AvlId,

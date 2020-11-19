@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    DITContextUseDescription,
     _decode_DITContextUseDescription,
     _encode_DITContextUseDescription,
 } from "../SchemaAdministration/DITContextUseDescription.ta";
@@ -50,10 +51,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DITContextUseDescription>}
+ * @implements {ATTRIBUTE<DITContextUseDescription>}
  */
-export const dITContextUse: ATTRIBUTE = {
+export const dITContextUse: ATTRIBUTE<DITContextUseDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DITContextUseDescription,

@@ -2,6 +2,7 @@
 import { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 import { id_avc_locale } from "../SelectedAttributeTypes/id-avc-locale.va";
 import {
+    LocaleContextSyntax,
     _decode_LocaleContextSyntax,
     _encode_LocaleContextSyntax,
 } from "../SelectedAttributeTypes/LocaleContextSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {CONTEXT}
- * @implements {CONTEXT}
+ * @type {CONTEXT<LocaleContextSyntax>}
+ * @implements {CONTEXT<LocaleContextSyntax>}
  */
-export const localeContext: CONTEXT = {
+export const localeContext: CONTEXT<LocaleContextSyntax> = {
     class: "CONTEXT",
     decoderFor: {
         "&Type": _decode_LocaleContextSyntax,

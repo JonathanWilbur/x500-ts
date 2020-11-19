@@ -6,6 +6,7 @@ import {
 import { id_at_presentationAddress } from "../SelectedAttributeTypes/id-at-presentationAddress.va";
 import { presentationAddr } from "../SelectedAttributeTypes/presentationAddr.oa";
 import {
+    PresentationAddress,
     _decode_PresentationAddress,
     _encode_PresentationAddress,
 } from "../SelectedAttributeTypes/PresentationAddress.ta";
@@ -54,10 +55,10 @@ export { presentationAddressMatch } from "../SelectedAttributeTypes/presentation
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PresentationAddress>}
+ * @implements {ATTRIBUTE<PresentationAddress>}
  */
-export const presentationAddress: ATTRIBUTE = {
+export const presentationAddress: ATTRIBUTE<PresentationAddress> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PresentationAddress,

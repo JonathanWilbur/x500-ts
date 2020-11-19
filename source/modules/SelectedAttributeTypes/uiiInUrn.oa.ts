@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -46,10 +47,10 @@ export { id_at_uiiInUrn } from "../SelectedAttributeTypes/id-at-uiiInUrn.va";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UTF8String>}
+ * @implements {ATTRIBUTE<UTF8String>}
  */
-export const uiiInUrn: ATTRIBUTE = {
+export const uiiInUrn: ATTRIBUTE<UTF8String> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeUTF8String,

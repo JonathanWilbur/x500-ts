@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeDescriptorSyntax,
     _decode_AttributeDescriptorSyntax,
     _encode_AttributeDescriptorSyntax,
 } from "../AttributeCertificateDefinitions/AttributeDescriptorSyntax.ta";
@@ -25,10 +26,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AttributeDescriptorSyntax>}
+ * @implements {EXTENSION<AttributeDescriptorSyntax>}
  */
-export const attributeDescriptor: EXTENSION = {
+export const attributeDescriptor: EXTENSION<AttributeDescriptorSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AttributeDescriptorSyntax,

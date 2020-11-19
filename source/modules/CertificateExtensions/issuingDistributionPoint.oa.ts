@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_issuingDistributionPoint } from "../CertificateExtensions/id-ce-issuingDistributionPoint.va";
 import {
+    IssuingDistPointSyntax,
     _decode_IssuingDistPointSyntax,
     _encode_IssuingDistPointSyntax,
 } from "../CertificateExtensions/IssuingDistPointSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<IssuingDistPointSyntax>}
+ * @implements {EXTENSION<IssuingDistPointSyntax>}
  */
-export const issuingDistributionPoint: EXTENSION = {
+export const issuingDistributionPoint: EXTENSION<IssuingDistPointSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_IssuingDistPointSyntax,

@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_protRestrict } from "../CertificateExtensions/id-ce-protRestrict.va";
 import {
+    ProtRestriction,
     _decode_ProtRestriction,
     _encode_ProtRestriction,
 } from "../CertificateExtensions/ProtRestriction.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<ProtRestriction>}
+ * @implements {EXTENSION<ProtRestriction>}
  */
-export const protRestrict: EXTENSION = {
+export const protRestrict: EXTENSION<ProtRestriction> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_ProtRestriction,

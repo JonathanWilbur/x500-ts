@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    PosteRestanteAddress,
     _decode_PosteRestanteAddress,
     _encode_PosteRestanteAddress,
 } from "../PkiPmiExternalDataTypes/PosteRestanteAddress.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PosteRestanteAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<PosteRestanteAddress>}
  */
-export const poste_restante_address: EXTENSION_ATTRIBUTE = {
+export const poste_restante_address: EXTENSION_ATTRIBUTE<PosteRestanteAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PosteRestanteAddress,

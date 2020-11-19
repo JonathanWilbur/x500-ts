@@ -1,4 +1,4 @@
-import { DistinguishedName } from "../modules/InformationFramework";
+import type { DistinguishedName } from "../modules/InformationFramework/DistinguishedName.ta";
 import rdnSequenceToString from "./rdnSequenceToString";
 
 export default function distinguishedNameToString(

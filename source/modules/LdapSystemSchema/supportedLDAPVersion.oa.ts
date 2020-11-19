@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { INTEGER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -43,10 +44,10 @@ export { integer } from "../SelectedAttributeTypes/integer.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<INTEGER>}
+ * @implements {ATTRIBUTE<INTEGER>}
  */
-export const supportedLDAPVersion: ATTRIBUTE = {
+export const supportedLDAPVersion: ATTRIBUTE<INTEGER> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeInteger,

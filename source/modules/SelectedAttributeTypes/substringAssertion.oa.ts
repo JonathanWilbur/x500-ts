@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_substringAssertion } from "../SelectedAttributeTypes/id-lsx-substringAssertion.va";
 import {
+    SubstringAssertion,
     _decode_SubstringAssertion,
     _encode_SubstringAssertion,
 } from "../SelectedAttributeTypes/SubstringAssertion.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<SubstringAssertion>}
+ * @implements {SYNTAX_NAME<SubstringAssertion>}
  */
-export const substringAssertion: SYNTAX_NAME = {
+export const substringAssertion: SYNTAX_NAME<SubstringAssertion> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_SubstringAssertion,

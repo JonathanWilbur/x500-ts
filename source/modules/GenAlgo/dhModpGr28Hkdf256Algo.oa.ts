@@ -1,7 +1,15 @@
 /* eslint-disable */
-import { _decode_Group28, _encode_Group28 } from "../GenAlgo/Group28.ta";
+import {
+    Group28,
+    _decode_Group28,
+    _encode_Group28,
+} from "../GenAlgo/Group28.ta";
 import { id_algo_dhModpGr28Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr28Hkdf256Algo.va";
-import { _decode_Payload28, _encode_Payload28 } from "../GenAlgo/Payload28.ta";
+import {
+    Payload28,
+    _decode_Payload28,
+    _encode_Payload28,
+} from "../GenAlgo/Payload28.ta";
 import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group28,
@@ -31,10 +39,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<Group28, Payload28>}
+ * @implements {ALGORITHM<Group28, Payload28>}
  */
-export const dhModpGr28Hkdf256Algo: ALGORITHM = {
+export const dhModpGr28Hkdf256Algo: ALGORITHM<Group28, Payload28> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_Group28,

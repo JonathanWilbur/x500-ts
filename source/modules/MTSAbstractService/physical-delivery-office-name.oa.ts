@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    PhysicalDeliveryOfficeName,
     _decode_PhysicalDeliveryOfficeName,
     _encode_PhysicalDeliveryOfficeName,
 } from "../MTSAbstractService/PhysicalDeliveryOfficeName.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PhysicalDeliveryOfficeName>}
+ * @implements {EXTENSION_ATTRIBUTE<PhysicalDeliveryOfficeName>}
  */
-export const physical_delivery_office_name: EXTENSION_ATTRIBUTE = {
+export const physical_delivery_office_name: EXTENSION_ATTRIBUTE<PhysicalDeliveryOfficeName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PhysicalDeliveryOfficeName,

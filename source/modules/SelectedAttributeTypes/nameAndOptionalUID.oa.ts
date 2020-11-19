@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_nameAndOptionalUID } from "../SelectedAttributeTypes/id-lsx-nameAndOptionalUID.va";
 import {
+    NameAndOptionalUID,
     _decode_NameAndOptionalUID,
     _encode_NameAndOptionalUID,
 } from "../SelectedAttributeTypes/NameAndOptionalUID.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<NameAndOptionalUID>}
+ * @implements {SYNTAX_NAME<NameAndOptionalUID>}
  */
-export const nameAndOptionalUID: SYNTAX_NAME = {
+export const nameAndOptionalUID: SYNTAX_NAME<NameAndOptionalUID> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_NameAndOptionalUID,

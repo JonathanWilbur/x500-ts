@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CRLReason,
     _decode_CRLReason,
     _encode_CRLReason,
 } from "../CertificateExtensions/CRLReason.ta";
@@ -50,10 +51,10 @@ export { id_ce_reasonCode } from "../CertificateExtensions/id-ce-reasonCode.va";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CRLReason>}
+ * @implements {EXTENSION<CRLReason>}
  */
-export const reasonCode: EXTENSION = {
+export const reasonCode: EXTENSION<CRLReason> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CRLReason,

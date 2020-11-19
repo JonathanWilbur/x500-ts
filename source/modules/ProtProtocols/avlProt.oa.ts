@@ -1,5 +1,9 @@
 /* eslint-disable */
-import { _decode_AvlProt, _encode_AvlProt } from "../AVL-management/AvlProt.ta";
+import {
+    AvlProt,
+    _decode_AvlProt,
+    _encode_AvlProt,
+} from "../AVL-management/AvlProt.ta";
 import { id_avlprot } from "../ProtProtocols/id-avlprot.va";
 import { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
 export {
@@ -24,8 +28,8 @@ export { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PROT}
- * @implements {WRAPPED_PROT}
+ * @type {WRAPPED_PROT<AvlProt>}
+ * @implements {WRAPPED_PROT<AvlProt>}
  */
 export const avlProt: WRAPPED_PROT = {
     class: "TYPE-IDENTIFIER",

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_hmacWithSHA256 } from "../AlgorithmObjectIdentifiers/id-hmacWithSHA256.va";
 import { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
@@ -19,10 +20,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<NULL>}
+ * @implements {ALGORITHM<NULL>}
  */
-export const hmacWithSHA256: ALGORITHM = {
+export const hmacWithSHA256: ALGORITHM<NULL> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": $._decodeNull,

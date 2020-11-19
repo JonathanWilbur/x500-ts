@@ -2,6 +2,7 @@
 import { id_ce_issuedOnBehalfOf } from "../AttributeCertificateDefinitions/id-ce-issuedOnBehalfOf.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    GeneralName,
     _decode_GeneralName,
     _encode_GeneralName,
 } from "../CertificateExtensions/GeneralName.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<GeneralName>}
+ * @implements {EXTENSION<GeneralName>}
  */
-export const issuedOnBehalfOf: EXTENSION = {
+export const issuedOnBehalfOf: EXTENSION<GeneralName> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_GeneralName,

@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_jidString } from "../SelectedAttributeTypes/id-asx-jidString.va";
-import { _decode_Jid, _encode_Jid } from "../SelectedAttributeTypes/Jid.ta";
+import {
+    Jid,
+    _decode_Jid,
+    _encode_Jid,
+} from "../SelectedAttributeTypes/Jid.ta";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_asx_jidString } from "../SelectedAttributeTypes/id-asx-jidString.va";
 export {
@@ -25,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<Jid>}
+ * @implements {SYNTAX_NAME<Jid>}
  */
-export const jidString: SYNTAX_NAME = {
+export const jidString: SYNTAX_NAME<Jid> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_Jid,

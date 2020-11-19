@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof baseUpdateTime["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof baseUpdateTime["&ExtnType"]>}
  */
-export const a_baseUpdateTime: ATTRIBUTE = {
+export const a_baseUpdateTime: ATTRIBUTE<typeof baseUpdateTime["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": baseUpdateTime.decoderFor["&ExtnType"],

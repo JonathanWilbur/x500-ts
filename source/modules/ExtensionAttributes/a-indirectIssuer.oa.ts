@@ -1,10 +1,12 @@
 /* eslint-disable */
+import { indirectIssuer } from "../AttributeCertificateDefinitions/indirectIssuer.oa";
 import { id_asx_indirectIssuer } from "../ExtensionAttributes/id-asx-indirectIssuer.va";
 import { id_ce_a_indirectIssuer } from "../ExtensionAttributes/id-ce-a-indirectIssuer.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
+export { indirectIssuer } from "../AttributeCertificateDefinitions/indirectIssuer.oa";
 export { id_asx_indirectIssuer } from "../ExtensionAttributes/id-asx-indirectIssuer.va";
 export { id_ce_a_indirectIssuer } from "../ExtensionAttributes/id-ce-a-indirectIssuer.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -24,7 +26,6 @@ export {
 } from "../InformationFramework/AttributeUsage.ta";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
-import { indirectIssuer } from "../AttributeCertificateDefinitions/indirectIssuer.oa";
 
 /* START_OF_SYMBOL_DEFINITION a_indirectIssuer */
 /**
@@ -42,10 +43,10 @@ import { indirectIssuer } from "../AttributeCertificateDefinitions/indirectIssue
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof indirectIssuer["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof indirectIssuer["&ExtnType"]>}
  */
-export const a_indirectIssuer: ATTRIBUTE = {
+export const a_indirectIssuer: ATTRIBUTE<typeof indirectIssuer["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": indirectIssuer.decoderFor["&ExtnType"],

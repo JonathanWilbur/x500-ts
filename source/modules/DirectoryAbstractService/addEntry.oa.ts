@@ -2,10 +2,12 @@
 import { id_opcode_addEntry } from "../CommonProtocolSpecification/id-opcode-addEntry.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    AddEntryArgument,
     _decode_AddEntryArgument,
     _encode_AddEntryArgument,
 } from "../DirectoryAbstractService/AddEntryArgument.ta";
 import {
+    AddEntryResult,
     _decode_AddEntryResult,
     _encode_AddEntryResult,
 } from "../DirectoryAbstractService/AddEntryResult.ta";
@@ -61,10 +63,10 @@ export { updateError } from "../DirectoryAbstractService/updateError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<AddEntryArgument, AddEntryResult>}
+ * @implements {OPERATION<AddEntryArgument, AddEntryResult>}
  */
-export const addEntry: OPERATION = {
+export const addEntry: OPERATION<AddEntryArgument, AddEntryResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_AddEntryArgument,

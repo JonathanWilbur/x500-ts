@@ -7,6 +7,7 @@ import {
     _encode_AttributeErrorData,
 } from "../DirectoryAbstractService/AttributeErrorData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<AttributeErrorData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<AttributeErrorData>>}
  */
-export const attributeError: ERROR = {
+export const attributeError: ERROR<OPTIONALLY_PROTECTED<AttributeErrorData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<

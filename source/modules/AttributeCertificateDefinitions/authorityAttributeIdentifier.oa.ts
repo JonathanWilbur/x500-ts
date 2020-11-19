@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AuthorityAttributeIdentifierSyntax,
     _decode_AuthorityAttributeIdentifierSyntax,
     _encode_AuthorityAttributeIdentifierSyntax,
 } from "../AttributeCertificateDefinitions/AuthorityAttributeIdentifierSyntax.ta";
@@ -25,10 +26,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AuthorityAttributeIdentifierSyntax>}
+ * @implements {EXTENSION<AuthorityAttributeIdentifierSyntax>}
  */
-export const authorityAttributeIdentifier: EXTENSION = {
+export const authorityAttributeIdentifier: EXTENSION<AuthorityAttributeIdentifierSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AuthorityAttributeIdentifierSyntax,

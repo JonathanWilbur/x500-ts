@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { dh_public_number } from "../AlgorithmObjectIdentifiers/dh-public-number.va";
 import {
+    DomainParameters,
     _decode_DomainParameters,
     _encode_DomainParameters,
 } from "../AlgorithmObjectIdentifiers/DomainParameters.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<DomainParameters>}
+ * @implements {ALGORITHM<DomainParameters>}
  */
-export const dh_public_numberAlgorithm: ALGORITHM = {
+export const dh_public_numberAlgorithm: ALGORITHM<DomainParameters> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_DomainParameters,

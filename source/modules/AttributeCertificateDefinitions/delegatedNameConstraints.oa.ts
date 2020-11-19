@@ -2,6 +2,7 @@
 import { id_ce_delegatedNameConstraints } from "../AttributeCertificateDefinitions/id-ce-delegatedNameConstraints.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    NameConstraintsSyntax,
     _decode_NameConstraintsSyntax,
     _encode_NameConstraintsSyntax,
 } from "../CertificateExtensions/NameConstraintsSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<NameConstraintsSyntax>}
+ * @implements {EXTENSION<NameConstraintsSyntax>}
  */
-export const delegatedNameConstraints: EXTENSION = {
+export const delegatedNameConstraints: EXTENSION<NameConstraintsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_NameConstraintsSyntax,

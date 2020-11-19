@@ -4,6 +4,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { pwdAttribute } from "../InformationFramework/pwdAttribute.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { id_sc_pwdAdminSubentry } from "../InformationFramework/id-sc-pwdAdminSubentry.va";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
@@ -19,6 +20,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { pwdAttribute } from "../InformationFramework/pwdAttribute.oa";
 
 /* START_OF_SYMBOL_DEFINITION pwdAdminSubentry */
 /**
@@ -44,7 +46,7 @@ export const pwdAdminSubentry: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [pwdAttribute] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_sc_pwdAdminSubentry /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };

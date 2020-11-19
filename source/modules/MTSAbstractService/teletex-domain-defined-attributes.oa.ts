@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    TeletexDomainDefinedAttributes,
     _decode_TeletexDomainDefinedAttributes,
     _encode_TeletexDomainDefinedAttributes,
 } from "../MTSAbstractService/TeletexDomainDefinedAttributes.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<TeletexDomainDefinedAttributes>}
+ * @implements {EXTENSION_ATTRIBUTE<TeletexDomainDefinedAttributes>}
  */
-export const teletex_domain_defined_attributes: EXTENSION_ATTRIBUTE = {
+export const teletex_domain_defined_attributes: EXTENSION_ATTRIBUTE<TeletexDomainDefinedAttributes> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TeletexDomainDefinedAttributes,

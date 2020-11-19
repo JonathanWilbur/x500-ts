@@ -6,6 +6,7 @@ import {
 import { id_at_pseudonym } from "../SelectedAttributeTypes/id-at-pseudonym.va";
 import { name } from "../SelectedAttributeTypes/name.oa";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -49,10 +50,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UnboundedDirectoryString>}
+ * @implements {ATTRIBUTE<UnboundedDirectoryString>}
  */
-export const pseudonym: ATTRIBUTE = {
+export const pseudonym: ATTRIBUTE<UnboundedDirectoryString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UnboundedDirectoryString,

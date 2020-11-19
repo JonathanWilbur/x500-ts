@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { INTEGER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_integerOrderingMatch } from "../SelectedAttributeTypes/id-mr-integerOrderingMatch.va";
@@ -25,10 +26,10 @@ export { integer } from "../SelectedAttributeTypes/integer.oa";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<INTEGER>}
+ * @implements {MATCHING_RULE<INTEGER>}
  */
-export const integerOrderingMatch: MATCHING_RULE = {
+export const integerOrderingMatch: MATCHING_RULE<INTEGER> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeInteger,

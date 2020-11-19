@@ -4,10 +4,12 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import { operationalBindingError } from "../OperationalBindingManagement/operationalBindingError.oa";
 import {
+    TerminateOperationalBindingArgument,
     _decode_TerminateOperationalBindingArgument,
     _encode_TerminateOperationalBindingArgument,
 } from "../OperationalBindingManagement/TerminateOperationalBindingArgument.ta";
 import {
+    TerminateOperationalBindingResult,
     _decode_TerminateOperationalBindingResult,
     _encode_TerminateOperationalBindingResult,
 } from "../OperationalBindingManagement/TerminateOperationalBindingResult.ta";
@@ -48,10 +50,13 @@ export {
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<TerminateOperationalBindingArgument, TerminateOperationalBindingResult>}
+ * @implements {OPERATION<TerminateOperationalBindingArgument, TerminateOperationalBindingResult>}
  */
-export const terminateOperationalBinding: OPERATION = {
+export const terminateOperationalBinding: OPERATION<
+    TerminateOperationalBindingArgument,
+    TerminateOperationalBindingResult
+> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_TerminateOperationalBindingArgument,

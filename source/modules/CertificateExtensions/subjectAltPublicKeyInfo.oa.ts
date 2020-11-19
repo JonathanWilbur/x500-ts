@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_subjectAltPublicKeyInfo } from "../CertificateExtensions/id-ce-subjectAltPublicKeyInfo.va";
 import {
+    SubjectAltPublicKeyInfo,
     _decode_SubjectAltPublicKeyInfo,
     _encode_SubjectAltPublicKeyInfo,
 } from "../CertificateExtensions/SubjectAltPublicKeyInfo.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<SubjectAltPublicKeyInfo>}
+ * @implements {EXTENSION<SubjectAltPublicKeyInfo>}
  */
-export const subjectAltPublicKeyInfo: EXTENSION = {
+export const subjectAltPublicKeyInfo: EXTENSION<SubjectAltPublicKeyInfo> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_SubjectAltPublicKeyInfo,

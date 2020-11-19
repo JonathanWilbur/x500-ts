@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_octetString } from "../SelectedAttributeTypes/id-lsx-octetString.va";
@@ -20,10 +21,10 @@ export { id_lsx_octetString } from "../SelectedAttributeTypes/id-lsx-octetString
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<OCTET_STRING>}
+ * @implements {SYNTAX_NAME<OCTET_STRING>}
  */
-export const octetString: SYNTAX_NAME = {
+export const octetString: SYNTAX_NAME<OCTET_STRING> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeOctetString,

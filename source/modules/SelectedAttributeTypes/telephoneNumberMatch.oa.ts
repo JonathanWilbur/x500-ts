@@ -3,6 +3,7 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_telephoneNumberMatch } from "../SelectedAttributeTypes/id-mr-telephoneNumberMatch.va";
 import { telephoneNr } from "../SelectedAttributeTypes/telephoneNr.oa";
 import {
+    TelephoneNumber,
     _decode_TelephoneNumber,
     _encode_TelephoneNumber,
 } from "../SelectedAttributeTypes/TelephoneNumber.ta";
@@ -33,10 +34,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<TelephoneNumber>}
+ * @implements {MATCHING_RULE<TelephoneNumber>}
  */
-export const telephoneNumberMatch: MATCHING_RULE = {
+export const telephoneNumberMatch: MATCHING_RULE<TelephoneNumber> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_TelephoneNumber,

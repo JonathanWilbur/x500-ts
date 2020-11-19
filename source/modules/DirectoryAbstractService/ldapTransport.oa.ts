@@ -5,6 +5,7 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { abandonFailed } from "../DirectoryAbstractService/abandonFailed.oa";
 import {
+    LdapArgument,
     _decode_LdapArgument,
     _encode_LdapArgument,
 } from "../DirectoryAbstractService/LdapArgument.ta";
@@ -50,10 +51,10 @@ export {
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<LdapArgument, LDAPMessage[]>}
+ * @implements {OPERATION<LdapArgument, LDAPMessage[]>}
  */
-export const ldapTransport: OPERATION = {
+export const ldapTransport: OPERATION<LdapArgument, LDAPMessage[]> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_LdapArgument,

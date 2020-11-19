@@ -7,6 +7,7 @@ import { organizationalUnitName } from "../SelectedAttributeTypes/organizational
 import { title } from "../SelectedAttributeTypes/title.oa";
 import { id_oc_organizationalPerson } from "../SelectedObjectClasses/id-oc-organizationalPerson.va";
 import { LocaleAttributeSet } from "../SelectedObjectClasses/LocaleAttributeSet.osa";
+import { person } from "../SelectedObjectClasses/person.oa";
 import { PostalAttributeSet } from "../SelectedObjectClasses/PostalAttributeSet.osa";
 import { TelecommunicationAttributeSet } from "../SelectedObjectClasses/TelecommunicationAttributeSet.osa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -27,6 +28,7 @@ export { organizationalUnitName } from "../SelectedAttributeTypes/organizational
 export { title } from "../SelectedAttributeTypes/title.oa";
 export { id_oc_organizationalPerson } from "../SelectedObjectClasses/id-oc-organizationalPerson.va";
 export { LocaleAttributeSet } from "../SelectedObjectClasses/LocaleAttributeSet.osa";
+export { person } from "../SelectedObjectClasses/person.oa";
 export { PostalAttributeSet } from "../SelectedObjectClasses/PostalAttributeSet.osa";
 export { TelecommunicationAttributeSet } from "../SelectedObjectClasses/TelecommunicationAttributeSet.osa";
 
@@ -57,7 +59,7 @@ export const organizationalPerson: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [person] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         ...LocaleAttributeSet,
         ...PostalAttributeSet,

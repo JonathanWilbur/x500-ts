@@ -14,7 +14,7 @@
         "@babel/core": "^7.12.3",
         "@babel/preset-env": "^7.12.1",
         "@babel/preset-typescript": "^7.12.1",
-        "@types/node": "^14.14.7",
+        "@types/node": "^14.14.8",
         "@typescript-eslint/eslint-plugin": "^4.8.1",
         "@typescript-eslint/parser": "^4.8.1",
         "babel-jest": "^26.6.3",
@@ -22,15 +22,11 @@
         "jest": "^26.6.3",
         "jest-junit": "^12.0.0",
         "npm-check-updates": "^10.2.1",
-        "organize-imports-cli": "^0.8.0",
         "pem-ts": "^2.0.1",
         "prettier": "2.1.2",
         "prettier-plugin-organize-imports": "^1.1.1",
         "sloc": "^0.2.1",
-        "ts-loader": "^8.0.11",
-        "typescript": "^4.0.5",
-        "webpack": "^5.5.0",
-        "webpack-cli": "^4.2.0"
+        "typescript": "^4.0.5"
     },
     "directories": {
         "doc": "documentation",
@@ -50,14 +46,11 @@
         "CRL"
     ],
     "license": "MIT",
-    "main": "./dist/node/index.js",
     "name": "x500-ts",
     "scripts": {
         "benchmark": "node ./test/benchmark.js",
         "breaking-update": "npx ncu -u && npm install",
-        "build": "npx tsc && npx webpack",
-        "build-node": "npx tsc",
-        "build-web": "npx webpack",
+        "build": "npx tsc",
         "clean": "rm -rf dist; mkdir -p dist",
         "line-count": "npx sloc source",
         "lint": "npx eslint --config .eslintrc.yml './source/**/*.ts' || true",
@@ -65,7 +58,7 @@
         "test": "npx jest --ci --reporters=default --reporters=jest-junit --coverage"
     },
     "types": "./dist/node/index.d.ts",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "dependencies": {
         "asn1-ts": "^5.0.0",
         "madge": "^3.12.0"

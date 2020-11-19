@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
@@ -28,10 +29,10 @@ export { id_lsx_dn } from "../SelectedAttributeTypes/id-lsx-dn.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<DistinguishedName>}
+ * @implements {SYNTAX_NAME<DistinguishedName>}
  */
-export const dn: SYNTAX_NAME = {
+export const dn: SYNTAX_NAME<DistinguishedName> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_DistinguishedName,

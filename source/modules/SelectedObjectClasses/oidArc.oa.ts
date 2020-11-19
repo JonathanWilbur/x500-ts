@@ -1,9 +1,12 @@
 /* eslint-disable */
+import { alias } from "../InformationFramework/alias.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { oidC } from "../SelectedAttributeTypes/oidC.oa";
 import { id_oidArc } from "../SelectedObjectClasses/id-oidArc.va";
+export { alias } from "../InformationFramework/alias.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -18,6 +21,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { oidC } from "../SelectedAttributeTypes/oidC.oa";
 export { id_oidArc } from "../SelectedObjectClasses/id-oidArc.va";
 
 /* START_OF_SYMBOL_DEFINITION oidArc */
@@ -43,8 +47,8 @@ export const oidArc: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
-    "&MandatoryAttributes": undefined,
+    "&Superclasses": [alias] /* OBJECT_FIELD_SETTING */,
+    "&MandatoryAttributes": [oidC] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oidArc /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&kind": structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,

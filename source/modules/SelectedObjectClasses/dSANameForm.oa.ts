@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { dSA } from "../SelectedObjectClasses/dSA.oa";
 import { id_nf_dSANameForm } from "../SelectedObjectClasses/id-nf-dSANameForm.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { dSA } from "../SelectedObjectClasses/dSA.oa";
 export { id_nf_dSANameForm } from "../SelectedObjectClasses/id-nf-dSANameForm.va";
 
@@ -31,7 +33,7 @@ export const dSANameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": dSA /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_dSANameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION dSANameForm */

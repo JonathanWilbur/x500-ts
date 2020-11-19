@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_presentationAddr } from "../SelectedAttributeTypes/id-lsx-presentationAddr.va";
 import {
+    PresentationAddress,
     _decode_PresentationAddress,
     _encode_PresentationAddress,
 } from "../SelectedAttributeTypes/PresentationAddress.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<PresentationAddress>}
+ * @implements {SYNTAX_NAME<PresentationAddress>}
  */
-export const presentationAddr: SYNTAX_NAME = {
+export const presentationAddr: SYNTAX_NAME<PresentationAddress> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_PresentationAddress,

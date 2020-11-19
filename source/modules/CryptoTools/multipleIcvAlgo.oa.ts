@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multipleIcvAlgo } from "../CryptoTools/id-algo-multipleIcvAlgo.va";
 import {
+    MultipleIcvAlgo,
     _decode_MultipleIcvAlgo,
     _encode_MultipleIcvAlgo,
 } from "../CryptoTools/MultipleIcvAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultipleIcvAlgo>}
+ * @implements {ALGORITHM<MultipleIcvAlgo>}
  */
-export const multipleIcvAlgo: ALGORITHM = {
+export const multipleIcvAlgo: ALGORITHM<MultipleIcvAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultipleIcvAlgo,

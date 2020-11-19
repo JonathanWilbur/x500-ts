@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_telexNr } from "../SelectedAttributeTypes/id-lsx-telexNr.va";
 import {
+    TelexNumber,
     _decode_TelexNumber,
     _encode_TelexNumber,
 } from "../SelectedAttributeTypes/TelexNumber.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<TelexNumber>}
+ * @implements {SYNTAX_NAME<TelexNumber>}
  */
-export const telexNr: SYNTAX_NAME = {
+export const telexNr: SYNTAX_NAME<TelexNumber> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_TelexNumber,

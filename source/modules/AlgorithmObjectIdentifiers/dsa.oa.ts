@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DSS_Parms,
     _decode_DSS_Parms,
     _encode_DSS_Parms,
 } from "../AlgorithmObjectIdentifiers/DSS-Parms.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<DSS_Parms>}
+ * @implements {ALGORITHM<DSS_Parms>}
  */
-export const dsa: ALGORITHM = {
+export const dsa: ALGORITHM<DSS_Parms> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_DSS_Parms,

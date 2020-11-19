@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/id-mr-objectIdentifierFirstComponentMatch.va";
@@ -25,10 +26,10 @@ export { oid } from "../SelectedAttributeTypes/oid.oa";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<OBJECT_IDENTIFIER>}
+ * @implements {MATCHING_RULE<OBJECT_IDENTIFIER>}
  */
-export const objectIdentifierFirstComponentMatch: MATCHING_RULE = {
+export const objectIdentifierFirstComponentMatch: MATCHING_RULE<OBJECT_IDENTIFIER> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeObjectIdentifier,

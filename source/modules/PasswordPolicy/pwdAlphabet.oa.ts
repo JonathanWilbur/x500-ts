@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_oa_pwdAlphabet } from "../PasswordPolicy/id-oa-pwdAlphabet.va";
 import {
+    PwdAlphabet,
     _decode_PwdAlphabet,
     _encode_PwdAlphabet,
 } from "../PasswordPolicy/PwdAlphabet.ta";
@@ -52,10 +53,10 @@ export { pwdAlphabetDescription } from "../PasswordPolicy/pwdAlphabetDescription
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PwdAlphabet>}
+ * @implements {ATTRIBUTE<PwdAlphabet>}
  */
-export const pwdAlphabet: ATTRIBUTE = {
+export const pwdAlphabet: ATTRIBUTE<PwdAlphabet> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PwdAlphabet,

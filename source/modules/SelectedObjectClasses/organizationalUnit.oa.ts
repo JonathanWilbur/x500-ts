@@ -3,6 +3,8 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
+import { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
 import { id_oc_organizationalUnit } from "../SelectedObjectClasses/id-oc-organizationalUnit.va";
 import { OrganizationalAttributeSet } from "../SelectedObjectClasses/OrganizationalAttributeSet.osa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -19,6 +21,8 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
+export { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
 export { id_oc_organizationalUnit } from "../SelectedObjectClasses/id-oc-organizationalUnit.va";
 export { OrganizationalAttributeSet } from "../SelectedObjectClasses/OrganizationalAttributeSet.osa";
 
@@ -46,8 +50,8 @@ export const organizationalUnit: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
-    "&MandatoryAttributes": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
+    "&MandatoryAttributes": [organizationalUnitName] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         ...OrganizationalAttributeSet,
     ] /* OBJECT_FIELD_SETTING */,

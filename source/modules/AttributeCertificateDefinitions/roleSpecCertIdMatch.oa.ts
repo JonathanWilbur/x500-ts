@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_mr_roleSpecCertIdMatch } from "../AttributeCertificateDefinitions/id-mr-roleSpecCertIdMatch.va";
 import {
+    RoleSpecCertIdentifierSyntax,
     _decode_RoleSpecCertIdentifierSyntax,
     _encode_RoleSpecCertIdentifierSyntax,
 } from "../AttributeCertificateDefinitions/RoleSpecCertIdentifierSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<RoleSpecCertIdentifierSyntax>}
+ * @implements {MATCHING_RULE<RoleSpecCertIdentifierSyntax>}
  */
-export const roleSpecCertIdMatch: MATCHING_RULE = {
+export const roleSpecCertIdMatch: MATCHING_RULE<RoleSpecCertIdentifierSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_RoleSpecCertIdentifierSyntax,

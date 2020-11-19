@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    PostOfficeBoxAddress,
     _decode_PostOfficeBoxAddress,
     _encode_PostOfficeBoxAddress,
 } from "../PkiPmiExternalDataTypes/PostOfficeBoxAddress.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PostOfficeBoxAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<PostOfficeBoxAddress>}
  */
-export const post_office_box_address: EXTENSION_ATTRIBUTE = {
+export const post_office_box_address: EXTENSION_ATTRIBUTE<PostOfficeBoxAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PostOfficeBoxAddress,

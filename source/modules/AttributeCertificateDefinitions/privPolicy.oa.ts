@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_privPolicy } from "../AttributeCertificateDefinitions/id-at-privPolicy.va";
 import {
+    PolicySyntax,
     _decode_PolicySyntax,
     _encode_PolicySyntax,
 } from "../AuthenticationFramework/PolicySyntax.ta";
@@ -46,10 +47,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PolicySyntax>}
+ * @implements {ATTRIBUTE<PolicySyntax>}
  */
-export const privPolicy: ATTRIBUTE = {
+export const privPolicy: ATTRIBUTE<PolicySyntax> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PolicySyntax,

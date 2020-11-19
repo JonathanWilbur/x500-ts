@@ -3,6 +3,7 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_lmr_caseIgnoreIA5Match } from "../SelectedAttributeTypes/id-lmr-caseIgnoreIA5Match.va";
 import { substringAssertion } from "../SelectedAttributeTypes/substringAssertion.oa";
 import {
+    SubstringAssertion,
     _decode_SubstringAssertion,
     _encode_SubstringAssertion,
 } from "../SelectedAttributeTypes/SubstringAssertion.ta";
@@ -33,10 +34,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<SubstringAssertion>}
+ * @implements {MATCHING_RULE<SubstringAssertion>}
  */
-export const caseIgnoreIA5SubstringsMatch: MATCHING_RULE = {
+export const caseIgnoreIA5SubstringsMatch: MATCHING_RULE<SubstringAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_SubstringAssertion,

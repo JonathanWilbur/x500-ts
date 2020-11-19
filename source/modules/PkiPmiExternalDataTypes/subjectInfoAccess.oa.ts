@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_pe_subjectInfoAccess } from "../PkiPmiExternalDataTypes/id-pe-subjectInfoAccess.va";
 import {
+    SubjectInfoAccessSyntax,
     _decode_SubjectInfoAccessSyntax,
     _encode_SubjectInfoAccessSyntax,
 } from "../PkiPmiExternalDataTypes/SubjectInfoAccessSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<SubjectInfoAccessSyntax>}
+ * @implements {EXTENSION<SubjectInfoAccessSyntax>}
  */
-export const subjectInfoAccess: EXTENSION = {
+export const subjectInfoAccess: EXTENSION<SubjectInfoAccessSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_SubjectInfoAccessSyntax,

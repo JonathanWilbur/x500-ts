@@ -1,4 +1,4 @@
-import { Name } from "../modules/InformationFramework";
+import type { Name } from "../modules/InformationFramework/Name.ta";
 import rdnSequenceToString from "./rdnSequenceToString";
 
 export default function nameToString(name: Name): string {

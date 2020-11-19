@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_certificatePolicy } from "../AuthenticationFramework/id-at-certificatePolicy.va";
 import {
+    PolicySyntax,
     _decode_PolicySyntax,
     _encode_PolicySyntax,
 } from "../AuthenticationFramework/PolicySyntax.ta";
@@ -49,10 +50,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PolicySyntax>}
+ * @implements {ATTRIBUTE<PolicySyntax>}
  */
-export const certificatePolicy: ATTRIBUTE = {
+export const certificatePolicy: ATTRIBUTE<PolicySyntax> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PolicySyntax,

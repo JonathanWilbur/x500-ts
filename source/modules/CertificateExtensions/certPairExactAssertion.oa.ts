@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertificatePairExactAssertion,
     _decode_CertificatePairExactAssertion,
     _encode_CertificatePairExactAssertion,
 } from "../CertificateExtensions/CertificatePairExactAssertion.ta";
@@ -28,10 +29,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<CertificatePairExactAssertion>}
+ * @implements {SYNTAX_NAME<CertificatePairExactAssertion>}
  */
-export const certPairExactAssertion: SYNTAX_NAME = {
+export const certPairExactAssertion: SYNTAX_NAME<CertificatePairExactAssertion> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_CertificatePairExactAssertion,

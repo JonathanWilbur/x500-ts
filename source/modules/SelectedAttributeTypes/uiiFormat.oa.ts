@@ -6,6 +6,7 @@ import {
 import { id_at_uiiFormat } from "../SelectedAttributeTypes/id-at-uiiFormat.va";
 import { uiiForm } from "../SelectedAttributeTypes/uiiForm.oa";
 import {
+    UiiFormat,
     _decode_UiiFormat,
     _encode_UiiFormat,
 } from "../SelectedAttributeTypes/UiiFormat.ta";
@@ -51,10 +52,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UiiFormat>}
+ * @implements {ATTRIBUTE<UiiFormat>}
  */
-export const uiiFormat: ATTRIBUTE = {
+export const uiiFormat: ATTRIBUTE<UiiFormat> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UiiFormat,

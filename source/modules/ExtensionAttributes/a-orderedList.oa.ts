@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof orderedList["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof orderedList["&ExtnType"]>}
  */
-export const a_orderedList: ATTRIBUTE = {
+export const a_orderedList: ATTRIBUTE<typeof orderedList["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": orderedList.decoderFor["&ExtnType"],

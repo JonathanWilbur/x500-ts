@@ -3,6 +3,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 import { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
 import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { description } from "../SelectedAttributeTypes/description.oa";
@@ -26,6 +27,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 export { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
 export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { description } from "../SelectedAttributeTypes/description.oa";
@@ -65,7 +67,7 @@ export const groupOfNames: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&MandatoryAttributes": [commonName, member] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         description,

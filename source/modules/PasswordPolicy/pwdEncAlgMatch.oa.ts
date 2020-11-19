@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_pwdEncAlgMatch } from "../PasswordPolicy/id-mr-pwdEncAlgMatch.va";
 import {
+    PwdEncAlg,
     _decode_PwdEncAlg,
     _encode_PwdEncAlg,
 } from "../PasswordPolicy/PwdEncAlg.ta";
@@ -33,10 +34,10 @@ export { pwdEncAlgDescription } from "../PasswordPolicy/pwdEncAlgDescription.oa"
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<PwdEncAlg>}
+ * @implements {MATCHING_RULE<PwdEncAlg>}
  */
-export const pwdEncAlgMatch: MATCHING_RULE = {
+export const pwdEncAlgMatch: MATCHING_RULE<PwdEncAlg> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_PwdEncAlg,

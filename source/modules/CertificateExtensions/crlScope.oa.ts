@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CRLScopeSyntax,
     _decode_CRLScopeSyntax,
     _encode_CRLScopeSyntax,
 } from "../CertificateExtensions/CRLScopeSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_cRLScope } from "../CertificateExtensions/id-ce-cRLScope.va";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CRLScopeSyntax>}
+ * @implements {EXTENSION<CRLScopeSyntax>}
  */
-export const crlScope: EXTENSION = {
+export const crlScope: EXTENSION<CRLScopeSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CRLScopeSyntax,

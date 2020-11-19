@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_uuidpair } from "../SelectedAttributeTypes/id-at-uuidpair.va";
 import {
+    UUIDPair,
     _decode_UUIDPair,
     _encode_UUIDPair,
 } from "../SelectedAttributeTypes/UUIDPair.ta";
@@ -49,10 +50,10 @@ export { uUIDPairMatch } from "../SelectedAttributeTypes/uUIDPairMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UUIDPair>}
+ * @implements {ATTRIBUTE<UUIDPair>}
  */
-export const uUIDPair: ATTRIBUTE = {
+export const uUIDPair: ATTRIBUTE<UUIDPair> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UUIDPair,

@@ -3,6 +3,8 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { knowledgeInformation } from "../SelectedAttributeTypes/knowledgeInformation.oa";
+import { applicationEntity } from "../SelectedObjectClasses/applicationEntity.oa";
 import { id_oc_dSA } from "../SelectedObjectClasses/id-oc-dSA.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
@@ -18,6 +20,8 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { knowledgeInformation } from "../SelectedAttributeTypes/knowledgeInformation.oa";
+export { applicationEntity } from "../SelectedObjectClasses/applicationEntity.oa";
 export { id_oc_dSA } from "../SelectedObjectClasses/id-oc-dSA.va";
 
 /* START_OF_SYMBOL_DEFINITION dSA */
@@ -43,8 +47,8 @@ export const dSA: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
-    "&OptionalAttributes": undefined,
+    "&Superclasses": [applicationEntity] /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": [knowledgeInformation] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&id": id_oc_dSA /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&kind": structural /* OBJECT_FIELD_SETTING DEFAULT_OBJECT_FIELD_SETTING */,

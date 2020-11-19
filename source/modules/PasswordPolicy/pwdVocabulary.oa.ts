@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_oa_pwdVocabulary } from "../PasswordPolicy/id-oa-pwdVocabulary.va";
 import {
+    PwdVocabulary,
     _decode_PwdVocabulary,
     _encode_PwdVocabulary,
 } from "../PasswordPolicy/PwdVocabulary.ta";
@@ -61,10 +62,10 @@ export { bitStringMatch } from "../SelectedAttributeTypes/bitStringMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PwdVocabulary>}
+ * @implements {ATTRIBUTE<PwdVocabulary>}
  */
-export const pwdVocabulary: ATTRIBUTE = {
+export const pwdVocabulary: ATTRIBUTE<PwdVocabulary> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PwdVocabulary,

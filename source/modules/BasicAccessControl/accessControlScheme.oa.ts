@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_aca_accessControlScheme } from "../BasicAccessControl/id-aca-accessControlScheme.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -43,10 +44,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<OBJECT_IDENTIFIER>}
+ * @implements {ATTRIBUTE<OBJECT_IDENTIFIER>}
  */
-export const accessControlScheme: ATTRIBUTE = {
+export const accessControlScheme: ATTRIBUTE<OBJECT_IDENTIFIER> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeObjectIdentifier,

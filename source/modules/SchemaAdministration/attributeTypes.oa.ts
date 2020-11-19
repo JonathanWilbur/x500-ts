@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    AttributeTypeDescription,
     _decode_AttributeTypeDescription,
     _encode_AttributeTypeDescription,
 } from "../SchemaAdministration/AttributeTypeDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AttributeTypeDescription>}
+ * @implements {ATTRIBUTE<AttributeTypeDescription>}
  */
-export const attributeTypes: ATTRIBUTE = {
+export const attributeTypes: ATTRIBUTE<AttributeTypeDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AttributeTypeDescription,

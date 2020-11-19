@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { IA5String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -43,10 +44,10 @@ export { ia5String } from "../SelectedAttributeTypes/ia5String.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<IA5String>}
+ * @implements {ATTRIBUTE<IA5String>}
  */
-export const altServer: ATTRIBUTE = {
+export const altServer: ATTRIBUTE<IA5String> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeIA5String,

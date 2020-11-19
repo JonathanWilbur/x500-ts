@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof authorityAttributeIdentifier["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof authorityAttributeIdentifier["&ExtnType"]>}
  */
-export const a_authorityAttributeIdentifier: ATTRIBUTE = {
+export const a_authorityAttributeIdentifier: ATTRIBUTE<
+    typeof authorityAttributeIdentifier["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": authorityAttributeIdentifier.decoderFor["&ExtnType"],

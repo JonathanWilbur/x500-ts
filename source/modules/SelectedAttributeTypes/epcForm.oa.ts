@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    EpcFormat,
     _decode_EpcFormat,
     _encode_EpcFormat,
 } from "../SelectedAttributeTypes/EpcFormat.ta";
@@ -28,10 +29,10 @@ export { id_asx_epcForm } from "../SelectedAttributeTypes/id-asx-epcForm.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<EpcFormat>}
+ * @implements {SYNTAX_NAME<EpcFormat>}
  */
-export const epcForm: SYNTAX_NAME = {
+export const epcForm: SYNTAX_NAME<EpcFormat> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_EpcFormat,

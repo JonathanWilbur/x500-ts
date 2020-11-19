@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_doa_secondaryShadows } from "../DSAOperationalAttributeTypes/id-doa-secondaryShadows.va";
 import {
+    SupplierAndConsumers,
     _decode_SupplierAndConsumers,
     _encode_SupplierAndConsumers,
 } from "../DSAOperationalAttributeTypes/SupplierAndConsumers.ta";
@@ -51,10 +52,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SupplierAndConsumers>}
+ * @implements {ATTRIBUTE<SupplierAndConsumers>}
  */
-export const secondaryShadows: ATTRIBUTE = {
+export const secondaryShadows: ATTRIBUTE<SupplierAndConsumers> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SupplierAndConsumers,

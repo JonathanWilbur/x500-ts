@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    PhysicalDeliveryOrganizationName,
     _decode_PhysicalDeliveryOrganizationName,
     _encode_PhysicalDeliveryOrganizationName,
 } from "../PkiPmiExternalDataTypes/PhysicalDeliveryOrganizationName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PhysicalDeliveryOrganizationName>}
+ * @implements {EXTENSION_ATTRIBUTE<PhysicalDeliveryOrganizationName>}
  */
-export const physical_delivery_organization_name: EXTENSION_ATTRIBUTE = {
+export const physical_delivery_organization_name: EXTENSION_ATTRIBUTE<PhysicalDeliveryOrganizationName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PhysicalDeliveryOrganizationName,

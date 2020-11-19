@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { urnC } from "../SelectedAttributeTypes/urnC.oa";
 import { id_nf_urnCNameForm } from "../SelectedObjectClasses/id-nf-urnCNameForm.va";
 import { urnCobj } from "../SelectedObjectClasses/urnCobj.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { urnC } from "../SelectedAttributeTypes/urnC.oa";
 export { id_nf_urnCNameForm } from "../SelectedObjectClasses/id-nf-urnCNameForm.va";
 export { urnCobj } from "../SelectedObjectClasses/urnCobj.oa";
 
@@ -31,7 +33,7 @@ export const urnCNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": urnCobj /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [urnC] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_urnCNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION urnCNameForm */

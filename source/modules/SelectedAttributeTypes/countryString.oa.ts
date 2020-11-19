@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    CountryName,
     _decode_CountryName,
     _encode_CountryName,
 } from "../SelectedAttributeTypes/CountryName.ta";
@@ -28,10 +29,10 @@ export { id_lsx_countryString } from "../SelectedAttributeTypes/id-lsx-countrySt
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<CountryName>}
+ * @implements {SYNTAX_NAME<CountryName>}
  */
-export const countryString: SYNTAX_NAME = {
+export const countryString: SYNTAX_NAME<CountryName> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_CountryName,

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AES_InitializationVector,
     _decode_AES_InitializationVector,
     _encode_AES_InitializationVector,
 } from "../AlgorithmObjectIdentifiers/AES-InitializationVector.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<AES_InitializationVector>}
+ * @implements {ALGORITHM<AES_InitializationVector>}
  */
-export const aes192_CBC: ALGORITHM = {
+export const aes192_CBC: ALGORITHM<AES_InitializationVector> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_AES_InitializationVector,

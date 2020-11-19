@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    PolicyID,
     _decode_PolicyID,
     _encode_PolicyID,
 } from "../AuthenticationFramework/PolicyID.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<PolicyID>}
+ * @implements {MATCHING_RULE<PolicyID>}
  */
-export const policyMatch: MATCHING_RULE = {
+export const policyMatch: MATCHING_RULE<PolicyID> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_PolicyID,

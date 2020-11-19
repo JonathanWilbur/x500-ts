@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeCertificateAssertion,
     _decode_AttributeCertificateAssertion,
     _encode_AttributeCertificateAssertion,
 } from "../AttributeCertificateDefinitions/AttributeCertificateAssertion.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<AttributeCertificateAssertion>}
+ * @implements {MATCHING_RULE<AttributeCertificateAssertion>}
  */
-export const attributeCertificateMatch: MATCHING_RULE = {
+export const attributeCertificateMatch: MATCHING_RULE<AttributeCertificateAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_AttributeCertificateAssertion,

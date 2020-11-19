@@ -4,6 +4,7 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
@@ -53,10 +54,10 @@ export { id_at_distinguishedName } from "../SelectedAttributeTypes/id-at-disting
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DistinguishedName>}
+ * @implements {ATTRIBUTE<DistinguishedName>}
  */
-export const distinguishedName: ATTRIBUTE = {
+export const distinguishedName: ATTRIBUTE<DistinguishedName> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DistinguishedName,

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { GeneralizedTime } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_generalizedTime } from "../SelectedAttributeTypes/id-lsx-generalizedTime.va";
@@ -20,10 +21,10 @@ export { id_lsx_generalizedTime } from "../SelectedAttributeTypes/id-lsx-general
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<GeneralizedTime>}
+ * @implements {SYNTAX_NAME<GeneralizedTime>}
  */
-export const generalizedTime: SYNTAX_NAME = {
+export const generalizedTime: SYNTAX_NAME<GeneralizedTime> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeGeneralizedTime,

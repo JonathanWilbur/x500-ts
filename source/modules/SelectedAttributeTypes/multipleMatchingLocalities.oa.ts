@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_not_multipleMatchingLocalities } from "../SelectedAttributeTypes/id-not-multipleMatchingLocalities.va";
 import {
+    MultipleMatchingLocalities,
     _decode_MultipleMatchingLocalities,
     _encode_MultipleMatchingLocalities,
 } from "../SelectedAttributeTypes/MultipleMatchingLocalities.ta";
@@ -46,10 +47,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<MultipleMatchingLocalities>}
+ * @implements {ATTRIBUTE<MultipleMatchingLocalities>}
  */
-export const multipleMatchingLocalities: ATTRIBUTE = {
+export const multipleMatchingLocalities: ATTRIBUTE<MultipleMatchingLocalities> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_MultipleMatchingLocalities,

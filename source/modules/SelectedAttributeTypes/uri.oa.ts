@@ -5,7 +5,11 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import { id_at_uri } from "../SelectedAttributeTypes/id-at-uri.va";
-import { _decode_URI, _encode_URI } from "../SelectedAttributeTypes/URI.ta";
+import {
+    URI,
+    _decode_URI,
+    _encode_URI,
+} from "../SelectedAttributeTypes/URI.ta";
 import { uriMatch } from "../SelectedAttributeTypes/uriMatch.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
@@ -50,10 +54,10 @@ export { uriMatch } from "../SelectedAttributeTypes/uriMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<URI>}
+ * @implements {ATTRIBUTE<URI>}
  */
-export const uri: ATTRIBUTE = {
+export const uri: ATTRIBUTE<URI> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_URI,

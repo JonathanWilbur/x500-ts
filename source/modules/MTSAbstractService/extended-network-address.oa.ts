@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    ExtendedNetworkAddress,
     _decode_ExtendedNetworkAddress,
     _encode_ExtendedNetworkAddress,
 } from "../MTSAbstractService/ExtendedNetworkAddress.ta";
@@ -26,10 +27,10 @@ export { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.o
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<ExtendedNetworkAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<ExtendedNetworkAddress>}
  */
-export const extended_network_address: EXTENSION_ATTRIBUTE = {
+export const extended_network_address: EXTENSION_ATTRIBUTE<ExtendedNetworkAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ExtendedNetworkAddress,

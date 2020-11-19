@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 import {
+    AttributeOptionList,
     _decode_AttributeOptionList,
     _encode_AttributeOptionList,
 } from "../SelectedAttributeTypes/AttributeOptionList.ta";
@@ -29,10 +30,13 @@ export { id_avc_ldapAttributeOption } from "../SelectedAttributeTypes/id-avc-lda
  * ```
  *
  * @constant
- * @type {CONTEXT}
- * @implements {CONTEXT}
+ * @type {CONTEXT<AttributeOptionList, AttributeOptionList>}
+ * @implements {CONTEXT<AttributeOptionList, AttributeOptionList>}
  */
-export const ldapAttributeOptionContext: CONTEXT = {
+export const ldapAttributeOptionContext: CONTEXT<
+    AttributeOptionList,
+    AttributeOptionList
+> = {
     class: "CONTEXT",
     decoderFor: {
         "&Type": _decode_AttributeOptionList,

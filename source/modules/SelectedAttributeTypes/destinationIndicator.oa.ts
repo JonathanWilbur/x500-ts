@@ -6,6 +6,7 @@ import {
 import { caseIgnoreMatch } from "../SelectedAttributeTypes/caseIgnoreMatch.oa";
 import { caseIgnoreSubstringsMatch } from "../SelectedAttributeTypes/caseIgnoreSubstringsMatch.oa";
 import {
+    DestinationIndicator,
     _decode_DestinationIndicator,
     _encode_DestinationIndicator,
 } from "../SelectedAttributeTypes/DestinationIndicator.ta";
@@ -56,10 +57,10 @@ export { printableString } from "../SelectedAttributeTypes/printableString.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DestinationIndicator>}
+ * @implements {ATTRIBUTE<DestinationIndicator>}
  */
-export const destinationIndicator: ATTRIBUTE = {
+export const destinationIndicator: ATTRIBUTE<DestinationIndicator> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DestinationIndicator,

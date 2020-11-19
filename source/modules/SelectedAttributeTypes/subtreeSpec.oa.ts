@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    SubtreeSpecification,
     _decode_SubtreeSpecification,
     _encode_SubtreeSpecification,
 } from "../InformationFramework/SubtreeSpecification.ta";
@@ -28,10 +29,10 @@ export { id_lsx_subtreeSpec } from "../SelectedAttributeTypes/id-lsx-subtreeSpec
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<SubtreeSpecification>}
+ * @implements {SYNTAX_NAME<SubtreeSpecification>}
  */
-export const subtreeSpec: SYNTAX_NAME = {
+export const subtreeSpec: SYNTAX_NAME<SubtreeSpecification> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_SubtreeSpecification,

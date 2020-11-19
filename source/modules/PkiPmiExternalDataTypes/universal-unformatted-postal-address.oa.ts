@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalUnformattedPostalAddress,
     _decode_UniversalUnformattedPostalAddress,
     _encode_UniversalUnformattedPostalAddress,
 } from "../PkiPmiExternalDataTypes/UniversalUnformattedPostalAddress.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalUnformattedPostalAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalUnformattedPostalAddress>}
  */
-export const universal_unformatted_postal_address: EXTENSION_ATTRIBUTE = {
+export const universal_unformatted_postal_address: EXTENSION_ATTRIBUTE<UniversalUnformattedPostalAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalUnformattedPostalAddress,

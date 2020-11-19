@@ -42,10 +42,10 @@ import { protRestrict } from "../CertificateExtensions/protRestrict.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof protRestrict["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof protRestrict["&ExtnType"]>}
  */
-export const a_protRestrict: ATTRIBUTE = {
+export const a_protRestrict: ATTRIBUTE<typeof protRestrict["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": protRestrict.decoderFor["&ExtnType"],

@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof statusReferrals["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof statusReferrals["&ExtnType"]>}
  */
-export const a_statusReferrals: ATTRIBUTE = {
+export const a_statusReferrals: ATTRIBUTE<
+    typeof statusReferrals["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": statusReferrals.decoderFor["&ExtnType"],

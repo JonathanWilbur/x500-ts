@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { dualStringMatch } from "../AttributeCertificateDefinitions/dualStringMatch.oa";
 import {
+    DualStringSyntax,
     _decode_DualStringSyntax,
     _encode_DualStringSyntax,
 } from "../AttributeCertificateDefinitions/DualStringSyntax.ta";
@@ -49,10 +50,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DualStringSyntax>}
+ * @implements {ATTRIBUTE<DualStringSyntax>}
  */
-export const permission: ATTRIBUTE = {
+export const permission: ATTRIBUTE<DualStringSyntax> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DualStringSyntax,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_avc_attributeValueSecurityLabelContext } from "../EnhancedSecurity/id-avc-attributeValueSecurityLabelContext.va";
 import {
+    SignedSecurityLabel,
     _decode_SignedSecurityLabel,
     _encode_SignedSecurityLabel,
 } from "../EnhancedSecurity/SignedSecurityLabel.ta";
@@ -28,10 +29,10 @@ export { CONTEXT } from "../InformationFramework/CONTEXT.oca";
  * ```
  *
  * @constant
- * @type {CONTEXT}
- * @implements {CONTEXT}
+ * @type {CONTEXT<SignedSecurityLabel>}
+ * @implements {CONTEXT<SignedSecurityLabel>}
  */
-export const attributeValueSecurityLabelContext: CONTEXT = {
+export const attributeValueSecurityLabelContext: CONTEXT<SignedSecurityLabel> = {
     class: "CONTEXT",
     decoderFor: {
         "&Type": _decode_SignedSecurityLabel,

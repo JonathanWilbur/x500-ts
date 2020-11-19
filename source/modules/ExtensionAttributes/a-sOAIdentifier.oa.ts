@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof sOAIdentifier["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof sOAIdentifier["&ExtnType"]>}
  */
-export const a_sOAIdentifier: ATTRIBUTE = {
+export const a_sOAIdentifier: ATTRIBUTE<typeof sOAIdentifier["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": sOAIdentifier.decoderFor["&ExtnType"],

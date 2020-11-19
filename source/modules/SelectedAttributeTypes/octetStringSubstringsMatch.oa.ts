@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_octetStringSubstringsMatch } from "../SelectedAttributeTypes/id-mr-octetStringSubstringsMatch.va";
 import {
+    OctetSubstringAssertion,
     _decode_OctetSubstringAssertion,
     _encode_OctetSubstringAssertion,
 } from "../SelectedAttributeTypes/OctetSubstringAssertion.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<OctetSubstringAssertion>}
+ * @implements {MATCHING_RULE<OctetSubstringAssertion>}
  */
-export const octetStringSubstringsMatch: MATCHING_RULE = {
+export const octetStringSubstringsMatch: MATCHING_RULE<OctetSubstringAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_OctetSubstringAssertion,

@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_soa_objectClasses } from "../SchemaAdministration/id-soa-objectClasses.va";
 import {
+    ObjectClassDescription,
     _decode_ObjectClassDescription,
     _encode_ObjectClassDescription,
 } from "../SchemaAdministration/ObjectClassDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ObjectClassDescription>}
+ * @implements {ATTRIBUTE<ObjectClassDescription>}
  */
-export const objectClasses: ATTRIBUTE = {
+export const objectClasses: ATTRIBUTE<ObjectClassDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ObjectClassDescription,

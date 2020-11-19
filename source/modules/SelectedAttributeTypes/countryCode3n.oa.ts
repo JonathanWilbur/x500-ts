@@ -4,6 +4,7 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    CountryCode3n,
     _decode_CountryCode3n,
     _encode_CountryCode3n,
 } from "../SelectedAttributeTypes/CountryCode3n.ta";
@@ -54,10 +55,10 @@ export { name } from "../SelectedAttributeTypes/name.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<CountryCode3n>}
+ * @implements {ATTRIBUTE<CountryCode3n>}
  */
-export const countryCode3n: ATTRIBUTE = {
+export const countryCode3n: ATTRIBUTE<CountryCode3n> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CountryCode3n,

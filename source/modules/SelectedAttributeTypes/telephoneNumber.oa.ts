@@ -6,6 +6,7 @@ import {
 import { id_at_telephoneNumber } from "../SelectedAttributeTypes/id-at-telephoneNumber.va";
 import { printableString } from "../SelectedAttributeTypes/printableString.oa";
 import {
+    TelephoneNumber,
     _decode_TelephoneNumber,
     _encode_TelephoneNumber,
 } from "../SelectedAttributeTypes/TelephoneNumber.ta";
@@ -56,10 +57,10 @@ export { telephoneNumberSubstringsMatch } from "../SelectedAttributeTypes/teleph
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<TelephoneNumber>}
+ * @implements {ATTRIBUTE<TelephoneNumber>}
  */
-export const telephoneNumber: ATTRIBUTE = {
+export const telephoneNumber: ATTRIBUTE<TelephoneNumber> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TelephoneNumber,

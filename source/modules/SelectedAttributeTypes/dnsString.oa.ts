@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    DomainName,
     _decode_DomainName,
     _encode_DomainName,
 } from "../SelectedAttributeTypes/DomainName.ta";
@@ -28,10 +29,10 @@ export { id_asx_dnsString } from "../SelectedAttributeTypes/id-asx-dnsString.va"
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<DomainName>}
+ * @implements {SYNTAX_NAME<DomainName>}
  */
-export const dnsString: SYNTAX_NAME = {
+export const dnsString: SYNTAX_NAME<DomainName> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_DomainName,

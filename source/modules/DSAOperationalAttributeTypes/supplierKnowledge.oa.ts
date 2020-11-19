@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_doa_supplierKnowledge } from "../DSAOperationalAttributeTypes/id-doa-supplierKnowledge.va";
 import {
+    SupplierInformation,
     _decode_SupplierInformation,
     _encode_SupplierInformation,
 } from "../DSAOperationalAttributeTypes/SupplierInformation.ta";
@@ -51,10 +52,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SupplierInformation>}
+ * @implements {ATTRIBUTE<SupplierInformation>}
  */
-export const supplierKnowledge: ATTRIBUTE = {
+export const supplierKnowledge: ATTRIBUTE<SupplierInformation> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SupplierInformation,

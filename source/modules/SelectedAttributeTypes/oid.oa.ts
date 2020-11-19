@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_oid } from "../SelectedAttributeTypes/id-lsx-oid.va";
@@ -20,10 +21,10 @@ export { id_lsx_oid } from "../SelectedAttributeTypes/id-lsx-oid.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<OBJECT_IDENTIFIER>}
+ * @implements {SYNTAX_NAME<OBJECT_IDENTIFIER>}
  */
-export const oid: SYNTAX_NAME = {
+export const oid: SYNTAX_NAME<OBJECT_IDENTIFIER> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeObjectIdentifier,

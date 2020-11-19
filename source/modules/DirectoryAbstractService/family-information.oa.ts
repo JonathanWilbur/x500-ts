@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    FamilyEntries,
     _decode_FamilyEntries,
     _encode_FamilyEntries,
 } from "../DirectoryAbstractService/FamilyEntries.ta";
@@ -47,10 +48,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<FamilyEntries>}
+ * @implements {ATTRIBUTE<FamilyEntries>}
  */
-export const family_information: ATTRIBUTE = {
+export const family_information: ATTRIBUTE<FamilyEntries> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_FamilyEntries,

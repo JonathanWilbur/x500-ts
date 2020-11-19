@@ -7,6 +7,7 @@ import {
     _encode_AbandonedData,
 } from "../DirectoryAbstractService/AbandonedData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<AbandonedData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<AbandonedData>>}
  */
-export const abandoned: ERROR = {
+export const abandoned: ERROR<OPTIONALLY_PROTECTED<AbandonedData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<AbandonedData>(

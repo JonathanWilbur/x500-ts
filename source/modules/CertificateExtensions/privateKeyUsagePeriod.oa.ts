@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_privateKeyUsagePeriod } from "../CertificateExtensions/id-ce-privateKeyUsagePeriod.va";
 import {
+    PrivateKeyUsagePeriod,
     _decode_PrivateKeyUsagePeriod,
     _encode_PrivateKeyUsagePeriod,
 } from "../CertificateExtensions/PrivateKeyUsagePeriod.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<PrivateKeyUsagePeriod>}
+ * @implements {EXTENSION<PrivateKeyUsagePeriod>}
  */
-export const privateKeyUsagePeriod: EXTENSION = {
+export const privateKeyUsagePeriod: EXTENSION<PrivateKeyUsagePeriod> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_PrivateKeyUsagePeriod,

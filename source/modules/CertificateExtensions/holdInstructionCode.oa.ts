@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    HoldInstruction,
     _decode_HoldInstruction,
     _encode_HoldInstruction,
 } from "../CertificateExtensions/HoldInstruction.ta";
@@ -27,10 +28,10 @@ export { id_ce_holdInstructionCode } from "../CertificateExtensions/id-ce-holdIn
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<HoldInstruction>}
+ * @implements {EXTENSION<HoldInstruction>}
  */
-export const holdInstructionCode: EXTENSION = {
+export const holdInstructionCode: EXTENSION<HoldInstruction> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_HoldInstruction,

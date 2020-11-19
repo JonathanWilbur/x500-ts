@@ -1,8 +1,8 @@
-import { AttributeTypeAndValue } from "../modules/InformationFramework";
+import type { AttributeTypeAndValue } from "../modules/InformationFramework/AttributeTypeAndValue.ta";
 
 export default function compare(
     a: AttributeTypeAndValue,
-    b: AttributeTypeAndValue
+    b: AttributeTypeAndValue,
 ): boolean {
     return (
         a.type_.toString() === b.type_.toString() &&

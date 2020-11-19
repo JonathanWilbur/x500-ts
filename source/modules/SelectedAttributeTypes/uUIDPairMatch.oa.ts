@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_uuidpairmatch } from "../SelectedAttributeTypes/id-mr-uuidpairmatch.va";
 import {
+    UUIDPair,
     _decode_UUIDPair,
     _encode_UUIDPair,
 } from "../SelectedAttributeTypes/UUIDPair.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<UUIDPair>}
+ * @implements {MATCHING_RULE<UUIDPair>}
  */
-export const uUIDPairMatch: MATCHING_RULE = {
+export const uUIDPairMatch: MATCHING_RULE<UUIDPair> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_UUIDPair,

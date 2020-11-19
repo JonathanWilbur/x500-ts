@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalPersonalName,
     _decode_UniversalPersonalName,
     _encode_UniversalPersonalName,
 } from "../MTSAbstractService/UniversalPersonalName.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalPersonalName>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalPersonalName>}
  */
-export const universal_personal_name: EXTENSION_ATTRIBUTE = {
+export const universal_personal_name: EXTENSION_ATTRIBUTE<UniversalPersonalName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalPersonalName,

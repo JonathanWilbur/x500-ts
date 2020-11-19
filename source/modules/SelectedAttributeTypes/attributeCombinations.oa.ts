@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_not_attributeCombinations } from "../SelectedAttributeTypes/id-not-attributeCombinations.va";
 import {
+    AttributeCombination,
     _decode_AttributeCombination,
     _encode_AttributeCombination,
 } from "../ServiceAdministration/AttributeCombination.ta";
@@ -46,10 +47,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AttributeCombination>}
+ * @implements {ATTRIBUTE<AttributeCombination>}
  */
-export const attributeCombinations: ATTRIBUTE = {
+export const attributeCombinations: ATTRIBUTE<AttributeCombination> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AttributeCombination,

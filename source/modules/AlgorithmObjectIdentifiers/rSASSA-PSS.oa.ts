@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_RSASSA_PSS } from "../AlgorithmObjectIdentifiers/id-RSASSA-PSS.va";
 import {
+    rSASSA_PSS_Type,
     _decode_rSASSA_PSS_Type,
     _encode_rSASSA_PSS_Type,
 } from "../AlgorithmObjectIdentifiers/rSASSA-PSS-Type.ta";
@@ -31,10 +32,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<rSASSA_PSS_Type>}
+ * @implements {ALGORITHM<rSASSA_PSS_Type>}
  */
-export const rSASSA_PSS: ALGORITHM = {
+export const rSASSA_PSS: ALGORITHM<rSASSA_PSS_Type> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_rSASSA_PSS_Type,

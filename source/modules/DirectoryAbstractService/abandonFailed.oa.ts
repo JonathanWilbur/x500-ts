@@ -7,6 +7,7 @@ import {
     _encode_AbandonFailedData,
 } from "../DirectoryAbstractService/AbandonFailedData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<AbandonFailedData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<AbandonFailedData>>}
  */
-export const abandonFailed: ERROR = {
+export const abandonFailed: ERROR<OPTIONALLY_PROTECTED<AbandonFailedData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<

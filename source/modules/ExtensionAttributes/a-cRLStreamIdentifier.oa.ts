@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof cRLStreamIdentifier["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof cRLStreamIdentifier["&ExtnType"]>}
  */
-export const a_cRLStreamIdentifier: ATTRIBUTE = {
+export const a_cRLStreamIdentifier: ATTRIBUTE<
+    typeof cRLStreamIdentifier["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": cRLStreamIdentifier.decoderFor["&ExtnType"],

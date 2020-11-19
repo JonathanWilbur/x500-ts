@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multipleAuthenEncryptAlgo } from "../CryptoTools/id-algo-multipleAuthenEncryptAlgo.va";
 import {
+    MultipleAuthenEncryptAlgo,
     _decode_MultipleAuthenEncryptAlgo,
     _encode_MultipleAuthenEncryptAlgo,
 } from "../CryptoTools/MultipleAuthenEncryptAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultipleAuthenEncryptAlgo>}
+ * @implements {ALGORITHM<MultipleAuthenEncryptAlgo>}
  */
-export const multipleAuthenEncryptAlgo: ALGORITHM = {
+export const multipleAuthenEncryptAlgo: ALGORITHM<MultipleAuthenEncryptAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultipleAuthenEncryptAlgo,

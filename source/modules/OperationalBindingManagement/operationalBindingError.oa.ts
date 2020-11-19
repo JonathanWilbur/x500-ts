@@ -2,6 +2,7 @@
 import { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 import { id_err_operationalBindingError } from "../CommonProtocolSpecification/id-err-operationalBindingError.va";
 import {
+    OPTIONALLY_PROTECTED_SEQ,
     _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED-SEQ.ta";
@@ -42,10 +43,12 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED_SEQ<OpBindingErrorParam>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED_SEQ<OpBindingErrorParam>>}
  */
-export const operationalBindingError: ERROR = {
+export const operationalBindingError: ERROR<OPTIONALLY_PROTECTED_SEQ<
+    OpBindingErrorParam
+>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<

@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { guide } from "../SelectedAttributeTypes/guide.oa";
 import {
+    Guide,
     _decode_Guide,
     _encode_Guide,
 } from "../SelectedAttributeTypes/Guide.ta";
@@ -50,10 +51,10 @@ export { id_at_searchGuide } from "../SelectedAttributeTypes/id-at-searchGuide.v
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<Guide>}
+ * @implements {ATTRIBUTE<Guide>}
  */
-export const searchGuide: ATTRIBUTE = {
+export const searchGuide: ATTRIBUTE<Guide> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_Guide,

@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof holderNameConstraints["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof holderNameConstraints["&ExtnType"]>}
  */
-export const a_holderNameConstraints: ATTRIBUTE = {
+export const a_holderNameConstraints: ATTRIBUTE<
+    typeof holderNameConstraints["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": holderNameConstraints.decoderFor["&ExtnType"],

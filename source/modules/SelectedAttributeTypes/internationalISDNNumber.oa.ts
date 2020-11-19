@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_internationalISDNNumber } from "../SelectedAttributeTypes/id-at-internationalISDNNumber.va";
 import {
+    InternationalISDNNumber,
     _decode_InternationalISDNNumber,
     _encode_InternationalISDNNumber,
 } from "../SelectedAttributeTypes/InternationalISDNNumber.ta";
@@ -56,10 +57,10 @@ export { numericStringSubstringsMatch } from "../SelectedAttributeTypes/numericS
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<InternationalISDNNumber>}
+ * @implements {ATTRIBUTE<InternationalISDNNumber>}
  */
-export const internationalISDNNumber: ATTRIBUTE = {
+export const internationalISDNNumber: ATTRIBUTE<InternationalISDNNumber> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_InternationalISDNNumber,

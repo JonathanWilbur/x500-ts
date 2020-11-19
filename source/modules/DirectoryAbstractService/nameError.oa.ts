@@ -7,6 +7,7 @@ import {
     _encode_NameErrorData,
 } from "../DirectoryAbstractService/NameErrorData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<NameErrorData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<NameErrorData>>}
  */
-export const nameError: ERROR = {
+export const nameError: ERROR<OPTIONALLY_PROTECTED<NameErrorData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<NameErrorData>(

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CommonName,
     _decode_CommonName,
     _encode_CommonName,
 } from "../PkiPmiExternalDataTypes/CommonName.ta";
@@ -25,10 +26,10 @@ export { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIB
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<CommonName>}
+ * @implements {EXTENSION_ATTRIBUTE<CommonName>}
  */
-export const common_name: EXTENSION_ATTRIBUTE = {
+export const common_name: EXTENSION_ATTRIBUTE<CommonName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CommonName,

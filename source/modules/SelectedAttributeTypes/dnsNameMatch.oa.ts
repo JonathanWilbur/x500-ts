@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 import {
+    DomainName,
     _decode_DomainName,
     _encode_DomainName,
 } from "../SelectedAttributeTypes/DomainName.ta";
@@ -33,10 +34,10 @@ export { id_mr_dnsNameMatch } from "../SelectedAttributeTypes/id-mr-dnsNameMatch
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<DomainName>}
+ * @implements {MATCHING_RULE<DomainName>}
  */
-export const dnsNameMatch: MATCHING_RULE = {
+export const dnsNameMatch: MATCHING_RULE<DomainName> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_DomainName,

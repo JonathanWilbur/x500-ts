@@ -1,10 +1,13 @@
 /* eslint-disable */
 import { id_oc_pkiCertPath } from "../AuthenticationFramework/id-oc-pkiCertPath.va";
+import { pkiPath } from "../AuthenticationFramework/pkiPath.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 export { id_oc_pkiCertPath } from "../AuthenticationFramework/id-oc-pkiCertPath.va";
+export { pkiPath } from "../AuthenticationFramework/pkiPath.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -19,6 +22,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION pkiCertPath */
 /**
@@ -45,9 +49,9 @@ export const pkiCertPath: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [pkiPath] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&ldapDesc": "PKI Certification Path" /* OBJECT_FIELD_SETTING */,
     "&id": id_oc_pkiCertPath /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

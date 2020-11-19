@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AcceptablePrivilegePoliciesSyntax,
     _decode_AcceptablePrivilegePoliciesSyntax,
     _encode_AcceptablePrivilegePoliciesSyntax,
 } from "../AttributeCertificateDefinitions/AcceptablePrivilegePoliciesSyntax.ta";
@@ -27,10 +28,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AcceptablePrivilegePoliciesSyntax>}
+ * @implements {EXTENSION<AcceptablePrivilegePoliciesSyntax>}
  */
-export const acceptablePrivilegePolicies: EXTENSION = {
+export const acceptablePrivilegePolicies: EXTENSION<AcceptablePrivilegePoliciesSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AcceptablePrivilegePoliciesSyntax,

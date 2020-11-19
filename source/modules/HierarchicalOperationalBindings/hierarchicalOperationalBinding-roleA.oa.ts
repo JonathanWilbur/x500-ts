@@ -1,9 +1,11 @@
 /* eslint-disable */
 import {
+    SuperiorToSubordinate,
     _decode_SuperiorToSubordinate,
     _encode_SuperiorToSubordinate,
 } from "../HierarchicalOperationalBindings/SuperiorToSubordinate.ta";
 import {
+    SuperiorToSubordinateModification,
     _decode_SuperiorToSubordinateModification,
     _encode_SuperiorToSubordinateModification,
 } from "../HierarchicalOperationalBindings/SuperiorToSubordinateModification.ta";
@@ -32,10 +34,13 @@ export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
  * ```
  *
  * @constant
- * @type {OP_BIND_ROLE}
- * @implements {OP_BIND_ROLE}
+ * @type {OP_BIND_ROLE<SuperiorToSubordinate, SuperiorToSubordinateModification>}
+ * @implements {OP_BIND_ROLE<SuperiorToSubordinate, SuperiorToSubordinateModification>}
  */
-export const hierarchicalOperationalBinding_roleA: OP_BIND_ROLE = {
+export const hierarchicalOperationalBinding_roleA: OP_BIND_ROLE<
+    SuperiorToSubordinate,
+    SuperiorToSubordinateModification
+> = {
     class: "OP-BIND-ROLE",
     decoderFor: {
         "&EstablishParam": _decode_SuperiorToSubordinate,

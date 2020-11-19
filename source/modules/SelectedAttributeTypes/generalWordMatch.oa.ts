@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_generalWordMatch } from "../SelectedAttributeTypes/id-mr-generalWordMatch.va";
 import {
+    SubstringAssertion,
     _decode_SubstringAssertion,
     _encode_SubstringAssertion,
 } from "../SelectedAttributeTypes/SubstringAssertion.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<SubstringAssertion>}
+ * @implements {MATCHING_RULE<SubstringAssertion>}
  */
-export const generalWordMatch: MATCHING_RULE = {
+export const generalWordMatch: MATCHING_RULE<SubstringAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_SubstringAssertion,

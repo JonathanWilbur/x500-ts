@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    MasterAndShadowAccessPoints,
     _decode_MasterAndShadowAccessPoints,
     _encode_MasterAndShadowAccessPoints,
 } from "../DistributedOperations/MasterAndShadowAccessPoints.ta";
@@ -51,10 +52,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<MasterAndShadowAccessPoints>}
+ * @implements {ATTRIBUTE<MasterAndShadowAccessPoints>}
  */
-export const nonSpecificKnowledge: ATTRIBUTE = {
+export const nonSpecificKnowledge: ATTRIBUTE<MasterAndShadowAccessPoints> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_MasterAndShadowAccessPoints,

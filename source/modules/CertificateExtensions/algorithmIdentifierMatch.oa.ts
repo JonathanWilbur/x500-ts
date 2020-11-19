@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
 } from "../AuthenticationFramework/AlgorithmIdentifier.ta";
@@ -34,10 +35,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<AlgorithmIdentifier>}
+ * @implements {MATCHING_RULE<AlgorithmIdentifier>}
  */
-export const algorithmIdentifierMatch: MATCHING_RULE = {
+export const algorithmIdentifierMatch: MATCHING_RULE<AlgorithmIdentifier> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_AlgorithmIdentifier,

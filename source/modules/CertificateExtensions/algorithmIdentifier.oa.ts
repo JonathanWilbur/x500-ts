@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AlgorithmIdentifier,
     _decode_AlgorithmIdentifier,
     _encode_AlgorithmIdentifier,
 } from "../AuthenticationFramework/AlgorithmIdentifier.ta";
@@ -28,10 +29,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<AlgorithmIdentifier>}
+ * @implements {SYNTAX_NAME<AlgorithmIdentifier>}
  */
-export const algorithmIdentifier: SYNTAX_NAME = {
+export const algorithmIdentifier: SYNTAX_NAME<AlgorithmIdentifier> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_AlgorithmIdentifier,

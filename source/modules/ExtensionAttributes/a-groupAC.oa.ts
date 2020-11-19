@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof groupAC["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof groupAC["&ExtnType"]>}
  */
-export const a_groupAC: ATTRIBUTE = {
+export const a_groupAC: ATTRIBUTE<typeof groupAC["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": groupAC.decoderFor["&ExtnType"],

@@ -6,6 +6,7 @@ import {
 import { id_at_telexNumber } from "../SelectedAttributeTypes/id-at-telexNumber.va";
 import { telexNr } from "../SelectedAttributeTypes/telexNr.oa";
 import {
+    TelexNumber,
     _decode_TelexNumber,
     _encode_TelexNumber,
 } from "../SelectedAttributeTypes/TelexNumber.ta";
@@ -50,10 +51,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<TelexNumber>}
+ * @implements {ATTRIBUTE<TelexNumber>}
  */
-export const telexNumber: ATTRIBUTE = {
+export const telexNumber: ATTRIBUTE<TelexNumber> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TelexNumber,

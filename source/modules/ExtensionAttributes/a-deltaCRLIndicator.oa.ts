@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof deltaCRLIndicator["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof deltaCRLIndicator["&ExtnType"]>}
  */
-export const a_deltaCRLIndicator: ATTRIBUTE = {
+export const a_deltaCRLIndicator: ATTRIBUTE<
+    typeof deltaCRLIndicator["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": deltaCRLIndicator.decoderFor["&ExtnType"],

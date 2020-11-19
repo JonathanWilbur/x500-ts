@@ -7,6 +7,7 @@ import {
     _encode_ServiceErrorData,
 } from "../DirectoryAbstractService/ServiceErrorData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<ServiceErrorData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<ServiceErrorData>>}
  */
-export const serviceError: ERROR = {
+export const serviceError: ERROR<OPTIONALLY_PROTECTED<ServiceErrorData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<

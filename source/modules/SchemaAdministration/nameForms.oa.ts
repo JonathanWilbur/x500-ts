@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_soa_nameForms } from "../SchemaAdministration/id-soa-nameForms.va";
 import {
+    NameFormDescription,
     _decode_NameFormDescription,
     _encode_NameFormDescription,
 } from "../SchemaAdministration/NameFormDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<NameFormDescription>}
+ * @implements {ATTRIBUTE<NameFormDescription>}
  */
-export const nameForms: ATTRIBUTE = {
+export const nameForms: ATTRIBUTE<NameFormDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_NameFormDescription,

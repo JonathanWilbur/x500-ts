@@ -5,6 +5,7 @@ import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
 import { subtreeSpecification } from "../InformationFramework/subtreeSpecification.oa";
+import { top } from "../InformationFramework/top.oa";
 import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { id_sc_subentry } from "../InformationFramework/id-sc-subentry.va";
@@ -22,6 +23,7 @@ export {
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
 export { subtreeSpecification } from "../InformationFramework/subtreeSpecification.oa";
+export { top } from "../InformationFramework/top.oa";
 export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 
 /* START_OF_SYMBOL_DEFINITION subentry */
@@ -49,7 +51,7 @@ export const subentry: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": structural /* OBJECT_FIELD_SETTING */,
     "&MandatoryAttributes": [
         commonName,

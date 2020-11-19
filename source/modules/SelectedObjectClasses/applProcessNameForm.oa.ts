@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { applicationProcess } from "../SelectedObjectClasses/applicationProcess.oa";
 import { id_nf_applProcessNameForm } from "../SelectedObjectClasses/id-nf-applProcessNameForm.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { applicationProcess } from "../SelectedObjectClasses/applicationProcess.oa";
 export { id_nf_applProcessNameForm } from "../SelectedObjectClasses/id-nf-applProcessNameForm.va";
 
@@ -31,7 +33,7 @@ export const applProcessNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": applicationProcess /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_applProcessNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION applProcessNameForm */

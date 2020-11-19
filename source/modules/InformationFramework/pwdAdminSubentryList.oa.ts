@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    DistinguishedName,
     _decode_DistinguishedName,
     _encode_DistinguishedName,
 } from "../InformationFramework/DistinguishedName.ta";
@@ -56,10 +57,10 @@ export { dn } from "../SelectedAttributeTypes/dn.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DistinguishedName>}
+ * @implements {ATTRIBUTE<DistinguishedName>}
  */
-export const pwdAdminSubentryList: ATTRIBUTE = {
+export const pwdAdminSubentryList: ATTRIBUTE<DistinguishedName> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DistinguishedName,

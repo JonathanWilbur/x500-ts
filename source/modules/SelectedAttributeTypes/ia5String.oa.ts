@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { IA5String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_ia5String } from "../SelectedAttributeTypes/id-lsx-ia5String.va";
@@ -20,10 +21,10 @@ export { id_lsx_ia5String } from "../SelectedAttributeTypes/id-lsx-ia5String.va"
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<IA5String>}
+ * @implements {SYNTAX_NAME<IA5String>}
  */
-export const ia5String: SYNTAX_NAME = {
+export const ia5String: SYNTAX_NAME<IA5String> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeIA5String,

@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_revokedGroups } from "../CertificateExtensions/id-ce-revokedGroups.va";
 import {
+    RevokedGroupsSyntax,
     _decode_RevokedGroupsSyntax,
     _encode_RevokedGroupsSyntax,
 } from "../CertificateExtensions/RevokedGroupsSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<RevokedGroupsSyntax>}
+ * @implements {EXTENSION<RevokedGroupsSyntax>}
  */
-export const revokedGroups: EXTENSION = {
+export const revokedGroups: EXTENSION<RevokedGroupsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_RevokedGroupsSyntax,

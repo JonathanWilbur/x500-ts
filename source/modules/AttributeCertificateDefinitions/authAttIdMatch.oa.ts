@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AuthorityAttributeIdentifierSyntax,
     _decode_AuthorityAttributeIdentifierSyntax,
     _encode_AuthorityAttributeIdentifierSyntax,
 } from "../AttributeCertificateDefinitions/AuthorityAttributeIdentifierSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<AuthorityAttributeIdentifierSyntax>}
+ * @implements {MATCHING_RULE<AuthorityAttributeIdentifierSyntax>}
  */
-export const authAttIdMatch: MATCHING_RULE = {
+export const authAttIdMatch: MATCHING_RULE<AuthorityAttributeIdentifierSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_AuthorityAttributeIdentifierSyntax,

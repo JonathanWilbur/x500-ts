@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DualStringSyntax,
     _decode_DualStringSyntax,
     _encode_DualStringSyntax,
 } from "../AttributeCertificateDefinitions/DualStringSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<DualStringSyntax>}
+ * @implements {MATCHING_RULE<DualStringSyntax>}
  */
-export const dualStringMatch: MATCHING_RULE = {
+export const dualStringMatch: MATCHING_RULE<DualStringSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_DualStringSyntax,

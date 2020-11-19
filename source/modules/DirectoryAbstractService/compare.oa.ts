@@ -4,10 +4,12 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 import {
+    CompareArgument,
     _decode_CompareArgument,
     _encode_CompareArgument,
 } from "../DirectoryAbstractService/CompareArgument.ta";
 import {
+    CompareResult,
     _decode_CompareResult,
     _encode_CompareResult,
 } from "../DirectoryAbstractService/CompareResult.ta";
@@ -61,10 +63,10 @@ export { serviceError } from "../DirectoryAbstractService/serviceError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<CompareArgument, CompareResult>}
+ * @implements {OPERATION<CompareArgument, CompareResult>}
  */
-export const compare: OPERATION = {
+export const compare: OPERATION<CompareArgument, CompareResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_CompareArgument,

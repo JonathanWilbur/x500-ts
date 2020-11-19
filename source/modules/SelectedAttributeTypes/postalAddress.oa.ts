@@ -8,6 +8,7 @@ import { caseIgnoreListSubstringsMatch } from "../SelectedAttributeTypes/caseIgn
 import { id_at_postalAddress } from "../SelectedAttributeTypes/id-at-postalAddress.va";
 import { postalAddr } from "../SelectedAttributeTypes/postalAddr.oa";
 import {
+    PostalAddress,
     _decode_PostalAddress,
     _encode_PostalAddress,
 } from "../SelectedAttributeTypes/PostalAddress.ta";
@@ -56,10 +57,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PostalAddress>}
+ * @implements {ATTRIBUTE<PostalAddress>}
  */
-export const postalAddress: ATTRIBUTE = {
+export const postalAddress: ATTRIBUTE<PostalAddress> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PostalAddress,

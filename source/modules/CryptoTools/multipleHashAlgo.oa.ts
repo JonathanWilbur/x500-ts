@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multipleHashAlgo } from "../CryptoTools/id-algo-multipleHashAlgo.va";
 import {
+    MultipleHashAlgo,
     _decode_MultipleHashAlgo,
     _encode_MultipleHashAlgo,
 } from "../CryptoTools/MultipleHashAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultipleHashAlgo>}
+ * @implements {ALGORITHM<MultipleHashAlgo>}
  */
-export const multipleHashAlgo: ALGORITHM = {
+export const multipleHashAlgo: ALGORITHM<MultipleHashAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultipleHashAlgo,

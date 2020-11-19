@@ -2,6 +2,7 @@
 import { id_mr_timeSpecMatch } from "../AttributeCertificateDefinitions/id-mr-timeSpecMatch.va";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import {
+    TimeSpecification,
     _decode_TimeSpecification,
     _encode_TimeSpecification,
 } from "../SelectedAttributeTypes/TimeSpecification.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<TimeSpecification>}
+ * @implements {MATCHING_RULE<TimeSpecification>}
  */
-export const timeSpecificationMatch: MATCHING_RULE = {
+export const timeSpecificationMatch: MATCHING_RULE<TimeSpecification> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_TimeSpecification,

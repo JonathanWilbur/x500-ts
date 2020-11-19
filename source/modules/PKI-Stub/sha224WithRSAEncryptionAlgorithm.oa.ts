@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ObjectIdentifier as _OID } from "asn1-ts";
+import { NULL, ObjectIdentifier as _OID } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
@@ -18,10 +18,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<NULL>}
+ * @implements {ALGORITHM<NULL>}
  */
-export const sha224WithRSAEncryptionAlgorithm: ALGORITHM = {
+export const sha224WithRSAEncryptionAlgorithm: ALGORITHM<NULL> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": $._decodeNull,

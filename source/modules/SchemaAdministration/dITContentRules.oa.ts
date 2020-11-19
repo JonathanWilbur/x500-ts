@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    DITContentRuleDescription,
     _decode_DITContentRuleDescription,
     _encode_DITContentRuleDescription,
 } from "../SchemaAdministration/DITContentRuleDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DITContentRuleDescription>}
+ * @implements {ATTRIBUTE<DITContentRuleDescription>}
  */
-export const dITContentRules: ATTRIBUTE = {
+export const dITContentRules: ATTRIBUTE<DITContentRuleDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DITContentRuleDescription,

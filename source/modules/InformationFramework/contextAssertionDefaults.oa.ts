@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    TypeAndContextAssertion,
     _decode_TypeAndContextAssertion,
     _encode_TypeAndContextAssertion,
 } from "../DirectoryAbstractService/TypeAndContextAssertion.ta";
@@ -50,10 +51,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<TypeAndContextAssertion>}
+ * @implements {ATTRIBUTE<TypeAndContextAssertion>}
  */
-export const contextAssertionDefaults: ATTRIBUTE = {
+export const contextAssertionDefaults: ATTRIBUTE<TypeAndContextAssertion> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TypeAndContextAssertion,

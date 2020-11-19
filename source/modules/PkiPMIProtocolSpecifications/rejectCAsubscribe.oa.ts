@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_rejectCAsubscribe } from "../PkiPMIProtocolSpecifications/id-rejectCAsubscribe.va";
 import {
+    RejectCAsubscribe,
     _decode_RejectCAsubscribe,
     _encode_RejectCAsubscribe,
 } from "../PkiPMIProtocolSpecifications/RejectCAsubscribe.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<RejectCAsubscribe>}
+ * @implements {WRAPPED_PDU<RejectCAsubscribe>}
  */
 export const rejectCAsubscribe: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

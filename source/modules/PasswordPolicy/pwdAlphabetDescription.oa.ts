@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_pwdAlphabetDescription } from "../PasswordPolicy/id-asx-pwdAlphabetDescription.va";
 import {
+    PwdAlphabet,
     _decode_PwdAlphabet,
     _encode_PwdAlphabet,
 } from "../PasswordPolicy/PwdAlphabet.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<PwdAlphabet>}
+ * @implements {SYNTAX_NAME<PwdAlphabet>}
  */
-export const pwdAlphabetDescription: SYNTAX_NAME = {
+export const pwdAlphabetDescription: SYNTAX_NAME<PwdAlphabet> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_PwdAlphabet,

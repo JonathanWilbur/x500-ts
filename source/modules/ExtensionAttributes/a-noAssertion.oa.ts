@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof noAssertion["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof noAssertion["&ExtnType"]>}
  */
-export const a_noAssertion: ATTRIBUTE = {
+export const a_noAssertion: ATTRIBUTE<typeof noAssertion["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": noAssertion.decoderFor["&ExtnType"],

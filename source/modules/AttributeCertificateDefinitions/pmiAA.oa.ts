@@ -8,6 +8,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 export { aACertificate } from "../AttributeCertificateDefinitions/aACertificate.oa";
 export { attributeAuthorityRevocationList } from "../AttributeCertificateDefinitions/attributeAuthorityRevocationList.oa";
 export { attributeCertificateRevocationList } from "../AttributeCertificateDefinitions/attributeCertificateRevocationList.oa";
@@ -27,6 +28,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION pmiAA */
 /**
@@ -54,7 +56,7 @@ export const pmiAA: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         aACertificate,

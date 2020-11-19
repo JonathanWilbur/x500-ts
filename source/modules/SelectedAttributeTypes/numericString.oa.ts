@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NumericString } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_numericString } from "../SelectedAttributeTypes/id-lsx-numericString.va";
@@ -20,10 +21,10 @@ export { id_lsx_numericString } from "../SelectedAttributeTypes/id-lsx-numericSt
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<NumericString>}
+ * @implements {SYNTAX_NAME<NumericString>}
  */
-export const numericString: SYNTAX_NAME = {
+export const numericString: SYNTAX_NAME<NumericString> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeNumericString,

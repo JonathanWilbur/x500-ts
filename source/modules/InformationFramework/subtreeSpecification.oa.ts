@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_oa_subtreeSpecification } from "../InformationFramework/id-oa-subtreeSpecification.va";
 import {
+    SubtreeSpecification,
     _decode_SubtreeSpecification,
     _encode_SubtreeSpecification,
 } from "../InformationFramework/SubtreeSpecification.ta";
@@ -51,10 +52,10 @@ export { subtreeSpec } from "../SelectedAttributeTypes/subtreeSpec.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SubtreeSpecification>}
+ * @implements {ATTRIBUTE<SubtreeSpecification>}
  */
-export const subtreeSpecification: ATTRIBUTE = {
+export const subtreeSpecification: ATTRIBUTE<SubtreeSpecification> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SubtreeSpecification,

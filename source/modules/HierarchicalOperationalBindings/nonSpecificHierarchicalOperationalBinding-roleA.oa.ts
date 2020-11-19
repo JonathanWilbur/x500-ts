@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    NHOBSuperiorToSubordinate,
     _decode_NHOBSuperiorToSubordinate,
     _encode_NHOBSuperiorToSubordinate,
 } from "../HierarchicalOperationalBindings/NHOBSuperiorToSubordinate.ta";
@@ -23,10 +24,13 @@ export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
  * ```
  *
  * @constant
- * @type {OP_BIND_ROLE}
- * @implements {OP_BIND_ROLE}
+ * @type {OP_BIND_ROLE<NHOBSuperiorToSubordinate, NHOBSuperiorToSubordinate>}
+ * @implements {OP_BIND_ROLE<NHOBSuperiorToSubordinate, NHOBSuperiorToSubordinate>}
  */
-export const nonSpecificHierarchicalOperationalBinding_roleA: OP_BIND_ROLE = {
+export const nonSpecificHierarchicalOperationalBinding_roleA: OP_BIND_ROLE<
+    NHOBSuperiorToSubordinate,
+    NHOBSuperiorToSubordinate
+> = {
     class: "OP-BIND-ROLE",
     decoderFor: {
         "&EstablishParam": _decode_NHOBSuperiorToSubordinate,

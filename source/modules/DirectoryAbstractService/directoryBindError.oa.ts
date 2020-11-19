@@ -6,6 +6,7 @@ import {
     _encode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1,
 } from "../DirectoryAbstractService/DirectoryBindError-OPTIONALLY-PROTECTED-Parameter1.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -39,10 +40,12 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1>>}
  */
-export const directoryBindError: ERROR = {
+export const directoryBindError: ERROR<OPTIONALLY_PROTECTED<
+    DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1
+>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<

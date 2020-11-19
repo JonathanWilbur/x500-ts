@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertSubscribeReq,
     _decode_CertSubscribeReq,
     _encode_CertSubscribeReq,
 } from "../PkiPMIProtocolSpecifications/CertSubscribeReq.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<CertSubscribeReq>}
+ * @implements {WRAPPED_PDU<CertSubscribeReq>}
  */
 export const certSubscribeReq: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

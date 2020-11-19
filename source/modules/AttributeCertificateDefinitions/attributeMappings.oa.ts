@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeMappings,
     _decode_AttributeMappings,
     _encode_AttributeMappings,
 } from "../AttributeCertificateDefinitions/AttributeMappings.ta";
@@ -27,10 +28,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AttributeMappings>}
+ * @implements {EXTENSION<AttributeMappings>}
  */
-export const attributeMappings: EXTENSION = {
+export const attributeMappings: EXTENSION<AttributeMappings> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AttributeMappings,

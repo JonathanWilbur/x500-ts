@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof freshestCRL["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof freshestCRL["&ExtnType"]>}
  */
-export const a_freshestCRL: ATTRIBUTE = {
+export const a_freshestCRL: ATTRIBUTE<typeof freshestCRL["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": freshestCRL.decoderFor["&ExtnType"],

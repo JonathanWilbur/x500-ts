@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AcceptableCertPoliciesSyntax,
     _decode_AcceptableCertPoliciesSyntax,
     _encode_AcceptableCertPoliciesSyntax,
 } from "../AttributeCertificateDefinitions/AcceptableCertPoliciesSyntax.ta";
@@ -27,10 +28,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AcceptableCertPoliciesSyntax>}
+ * @implements {EXTENSION<AcceptableCertPoliciesSyntax>}
  */
-export const acceptableCertPolicies: EXTENSION = {
+export const acceptableCertPolicies: EXTENSION<AcceptableCertPoliciesSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AcceptableCertPoliciesSyntax,

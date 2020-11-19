@@ -4,6 +4,7 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    ContextAssertion,
     _decode_ContextAssertion,
     _encode_ContextAssertion,
 } from "../InformationFramework/ContextAssertion.ta";
@@ -46,10 +47,10 @@ export { id_cat_selectedContexts } from "../SelectedAttributeTypes/id-cat-select
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ContextAssertion>}
+ * @implements {ATTRIBUTE<ContextAssertion>}
  */
-export const selectedContexts: ATTRIBUTE = {
+export const selectedContexts: ATTRIBUTE<ContextAssertion> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ContextAssertion,

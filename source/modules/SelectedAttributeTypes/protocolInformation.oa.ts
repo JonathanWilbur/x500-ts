@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_protocolInformation } from "../SelectedAttributeTypes/id-at-protocolInformation.va";
 import {
+    ProtocolInformation,
     _decode_ProtocolInformation,
     _encode_ProtocolInformation,
 } from "../SelectedAttributeTypes/ProtocolInformation.ta";
@@ -49,10 +50,10 @@ export { protocolInformationMatch } from "../SelectedAttributeTypes/protocolInfo
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ProtocolInformation>}
+ * @implements {ATTRIBUTE<ProtocolInformation>}
  */
-export const protocolInformation: ATTRIBUTE = {
+export const protocolInformation: ATTRIBUTE<ProtocolInformation> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ProtocolInformation,

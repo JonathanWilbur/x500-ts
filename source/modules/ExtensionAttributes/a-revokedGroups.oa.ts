@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof revokedGroups["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof revokedGroups["&ExtnType"]>}
  */
-export const a_revokedGroups: ATTRIBUTE = {
+export const a_revokedGroups: ATTRIBUTE<typeof revokedGroups["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": revokedGroups.decoderFor["&ExtnType"],

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_rejectAVL } from "../PkiPMIProtocolSpecifications/id-rejectAVL.va";
 import {
+    RejectAVL,
     _decode_RejectAVL,
     _encode_RejectAVL,
 } from "../PkiPMIProtocolSpecifications/RejectAVL.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<RejectAVL>}
+ * @implements {WRAPPED_PDU<RejectAVL>}
  */
 export const rejectAVL: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof privateKeyUsagePeriod["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof privateKeyUsagePeriod["&ExtnType"]>}
  */
-export const a_privateKeyUsagePeriod: ATTRIBUTE = {
+export const a_privateKeyUsagePeriod: ATTRIBUTE<
+    typeof privateKeyUsagePeriod["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": privateKeyUsagePeriod.decoderFor["&ExtnType"],

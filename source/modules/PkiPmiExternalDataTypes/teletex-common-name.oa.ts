@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    TeletexCommonName,
     _decode_TeletexCommonName,
     _encode_TeletexCommonName,
 } from "../PkiPmiExternalDataTypes/TeletexCommonName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<TeletexCommonName>}
+ * @implements {EXTENSION_ATTRIBUTE<TeletexCommonName>}
  */
-export const teletex_common_name: EXTENSION_ATTRIBUTE = {
+export const teletex_common_name: EXTENSION_ATTRIBUTE<TeletexCommonName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TeletexCommonName,

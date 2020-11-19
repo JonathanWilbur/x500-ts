@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_subjectKeyIdentifier } from "../CertificateExtensions/id-ce-subjectKeyIdentifier.va";
 import {
+    SubjectKeyIdentifier,
     _decode_SubjectKeyIdentifier,
     _encode_SubjectKeyIdentifier,
 } from "../CertificateExtensions/SubjectKeyIdentifier.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<SubjectKeyIdentifier>}
+ * @implements {EXTENSION<SubjectKeyIdentifier>}
  */
-export const subjectKeyIdentifier: EXTENSION = {
+export const subjectKeyIdentifier: EXTENSION<SubjectKeyIdentifier> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_SubjectKeyIdentifier,

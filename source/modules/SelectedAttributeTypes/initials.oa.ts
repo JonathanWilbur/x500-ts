@@ -7,6 +7,7 @@ import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import { id_at_initials } from "../SelectedAttributeTypes/id-at-initials.va";
 import { name } from "../SelectedAttributeTypes/name.oa";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -53,10 +54,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UnboundedDirectoryString>}
+ * @implements {ATTRIBUTE<UnboundedDirectoryString>}
  */
-export const initials: ATTRIBUTE = {
+export const initials: ATTRIBUTE<UnboundedDirectoryString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UnboundedDirectoryString,

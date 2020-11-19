@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_mr_sOAIdentifierMatch } from "../AttributeCertificateDefinitions/id-mr-sOAIdentifierMatch.va";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
@@ -21,10 +22,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<NULL>}
+ * @implements {MATCHING_RULE<NULL>}
  */
-export const sOAIdentifierMatch: MATCHING_RULE = {
+export const sOAIdentifierMatch: MATCHING_RULE<NULL> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeNull,

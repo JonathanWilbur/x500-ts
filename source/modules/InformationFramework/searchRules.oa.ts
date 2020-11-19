@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_oa_searchRules } from "../InformationFramework/id-oa-searchRules.va";
 import {
+    SearchRuleDescription,
     _decode_SearchRuleDescription,
     _encode_SearchRuleDescription,
 } from "../InformationFramework/SearchRuleDescription.ta";
@@ -50,10 +51,10 @@ export { integerFirstComponentMatch } from "../SelectedAttributeTypes/integerFir
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SearchRuleDescription>}
+ * @implements {ATTRIBUTE<SearchRuleDescription>}
  */
-export const searchRules: ATTRIBUTE = {
+export const searchRules: ATTRIBUTE<SearchRuleDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SearchRuleDescription,

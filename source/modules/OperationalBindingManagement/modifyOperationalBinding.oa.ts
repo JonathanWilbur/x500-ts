@@ -3,10 +3,12 @@ import { id_op_modifyOperationalBinding } from "../CommonProtocolSpecification/i
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { securityError } from "../DirectoryAbstractService/securityError.oa";
 import {
+    ModifyOperationalBindingArgument,
     _decode_ModifyOperationalBindingArgument,
     _encode_ModifyOperationalBindingArgument,
 } from "../OperationalBindingManagement/ModifyOperationalBindingArgument.ta";
 import {
+    ModifyOperationalBindingResult,
     _decode_ModifyOperationalBindingResult,
     _encode_ModifyOperationalBindingResult,
 } from "../OperationalBindingManagement/ModifyOperationalBindingResult.ta";
@@ -48,10 +50,13 @@ export { operationalBindingError } from "../OperationalBindingManagement/operati
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<ModifyOperationalBindingArgument, ModifyOperationalBindingResult>}
+ * @implements {OPERATION<ModifyOperationalBindingArgument, ModifyOperationalBindingResult>}
  */
-export const modifyOperationalBinding: OPERATION = {
+export const modifyOperationalBinding: OPERATION<
+    ModifyOperationalBindingArgument,
+    ModifyOperationalBindingResult
+> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_ModifyOperationalBindingArgument,

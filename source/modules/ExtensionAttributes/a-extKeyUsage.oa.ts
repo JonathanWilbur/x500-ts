@@ -43,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof extKeyUsage["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof extKeyUsage["&ExtnType"]>}
  */
-export const a_extKeyUsage: ATTRIBUTE = {
+export const a_extKeyUsage: ATTRIBUTE<typeof extKeyUsage["&ExtnType"]> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": extKeyUsage.decoderFor["&ExtnType"],

@@ -1,12 +1,10 @@
-import {
-    AttributeTypeAndValue,
-    RelativeDistinguishedName,
-} from "../modules/InformationFramework";
+import type { AttributeTypeAndValue } from "../modules/InformationFramework/AttributeTypeAndValue.ta";
+import type { RelativeDistinguishedName } from "../modules/InformationFramework/RelativeDistinguishedName.ta";
 import compareAttributeTypeAndValue from "./compareAttributeTypeAndValue";
 
 export default function compare(
     a: RelativeDistinguishedName,
-    b: RelativeDistinguishedName
+    b: RelativeDistinguishedName,
 ): boolean {
     if (a.length !== b.length) {
         return false;

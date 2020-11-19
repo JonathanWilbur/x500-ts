@@ -2,6 +2,7 @@
 import { id_ce_timeSpecification } from "../AttributeCertificateDefinitions/id-ce-timeSpecification.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    TimeSpecification,
     _decode_TimeSpecification,
     _encode_TimeSpecification,
 } from "../SelectedAttributeTypes/TimeSpecification.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<TimeSpecification>}
+ * @implements {EXTENSION<TimeSpecification>}
  */
-export const timeSpecification: EXTENSION = {
+export const timeSpecification: EXTENSION<TimeSpecification> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_TimeSpecification,

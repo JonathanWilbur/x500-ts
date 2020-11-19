@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { GeneralizedTime } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { generalizedTime } from "../SelectedAttributeTypes/generalizedTime.oa";
@@ -26,10 +27,10 @@ export { id_mr_generalizedTimeMatch } from "../SelectedAttributeTypes/id-mr-gene
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<GeneralizedTime>}
+ * @implements {MATCHING_RULE<GeneralizedTime>}
  */
-export const generalizedTimeMatch: MATCHING_RULE = {
+export const generalizedTimeMatch: MATCHING_RULE<GeneralizedTime> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeGeneralizedTime,

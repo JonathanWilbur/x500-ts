@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { PrintableString } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -46,10 +47,10 @@ export { printableString } from "../SelectedAttributeTypes/printableString.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PrintableString>}
+ * @implements {ATTRIBUTE<PrintableString>}
  */
-export const urnC: ATTRIBUTE = {
+export const urnC: ATTRIBUTE<PrintableString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodePrintableString,

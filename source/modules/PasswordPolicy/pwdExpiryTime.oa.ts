@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { GeneralizedTime } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -50,10 +51,10 @@ export { generalizedTimeOrderingMatch } from "../SelectedAttributeTypes/generali
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<GeneralizedTime>}
+ * @implements {ATTRIBUTE<GeneralizedTime>}
  */
-export const pwdExpiryTime: ATTRIBUTE = {
+export const pwdExpiryTime: ATTRIBUTE<GeneralizedTime> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeGeneralizedTime,

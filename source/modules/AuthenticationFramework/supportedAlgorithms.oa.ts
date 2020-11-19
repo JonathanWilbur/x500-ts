@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_supportedAlgorithms } from "../AuthenticationFramework/id-at-supportedAlgorithms.va";
 import {
+    SupportedAlgorithm,
     _decode_SupportedAlgorithm,
     _encode_SupportedAlgorithm,
 } from "../AuthenticationFramework/SupportedAlgorithm.ta";
@@ -54,10 +55,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SupportedAlgorithm>}
+ * @implements {ATTRIBUTE<SupportedAlgorithm>}
  */
-export const supportedAlgorithms: ATTRIBUTE = {
+export const supportedAlgorithms: ATTRIBUTE<SupportedAlgorithm> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SupportedAlgorithm,

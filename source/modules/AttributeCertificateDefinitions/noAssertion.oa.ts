@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_ce_noAssertion } from "../AttributeCertificateDefinitions/id-ce-noAssertion.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
@@ -19,10 +20,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<NULL>}
+ * @implements {EXTENSION<NULL>}
  */
-export const noAssertion: EXTENSION = {
+export const noAssertion: EXTENSION<NULL> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeNull,

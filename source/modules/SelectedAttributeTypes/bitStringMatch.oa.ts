@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BIT_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { bitString } from "../SelectedAttributeTypes/bitString.oa";
@@ -25,10 +26,10 @@ export { id_mr_bitStringMatch } from "../SelectedAttributeTypes/id-mr-bitStringM
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<BIT_STRING>}
+ * @implements {MATCHING_RULE<BIT_STRING>}
  */
-export const bitStringMatch: MATCHING_RULE = {
+export const bitStringMatch: MATCHING_RULE<BIT_STRING> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeBitString,

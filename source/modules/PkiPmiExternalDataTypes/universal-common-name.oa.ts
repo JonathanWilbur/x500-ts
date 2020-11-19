@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalCommonName,
     _decode_UniversalCommonName,
     _encode_UniversalCommonName,
 } from "../PkiPmiExternalDataTypes/UniversalCommonName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalCommonName>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalCommonName>}
  */
-export const universal_common_name: EXTENSION_ATTRIBUTE = {
+export const universal_common_name: EXTENSION_ATTRIBUTE<UniversalCommonName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalCommonName,

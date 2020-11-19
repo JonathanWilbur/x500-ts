@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    ObjectClassDescription,
     _decode_ObjectClassDescription,
     _encode_ObjectClassDescription,
 } from "../SchemaAdministration/ObjectClassDescription.ta";
@@ -28,10 +29,10 @@ export { id_lsx_objectClassDescription } from "../SelectedAttributeTypes/id-lsx-
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<ObjectClassDescription>}
+ * @implements {SYNTAX_NAME<ObjectClassDescription>}
  */
-export const objectClassDescription: SYNTAX_NAME = {
+export const objectClassDescription: SYNTAX_NAME<ObjectClassDescription> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_ObjectClassDescription,

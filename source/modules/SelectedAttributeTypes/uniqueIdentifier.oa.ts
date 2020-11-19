@@ -7,6 +7,7 @@ import { bitString } from "../SelectedAttributeTypes/bitString.oa";
 import { bitStringMatch } from "../SelectedAttributeTypes/bitStringMatch.oa";
 import { id_at_uniqueIdentifier } from "../SelectedAttributeTypes/id-at-uniqueIdentifier.va";
 import {
+    UniqueIdentifier,
     _decode_UniqueIdentifier,
     _encode_UniqueIdentifier,
 } from "../SelectedAttributeTypes/UniqueIdentifier.ta";
@@ -53,10 +54,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UniqueIdentifier>}
+ * @implements {ATTRIBUTE<UniqueIdentifier>}
  */
-export const uniqueIdentifier: ATTRIBUTE = {
+export const uniqueIdentifier: ATTRIBUTE<UniqueIdentifier> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniqueIdentifier,

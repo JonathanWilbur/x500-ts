@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_statusReferrals } from "../CertificateExtensions/id-ce-statusReferrals.va";
 import {
+    StatusReferrals,
     _decode_StatusReferrals,
     _encode_StatusReferrals,
 } from "../CertificateExtensions/StatusReferrals.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<StatusReferrals>}
+ * @implements {EXTENSION<StatusReferrals>}
  */
-export const statusReferrals: EXTENSION = {
+export const statusReferrals: EXTENSION<StatusReferrals> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_StatusReferrals,

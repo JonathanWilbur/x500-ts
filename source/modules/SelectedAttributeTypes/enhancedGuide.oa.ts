@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    EnhancedGuide,
     _decode_EnhancedGuide,
     _encode_EnhancedGuide,
 } from "../SelectedAttributeTypes/EnhancedGuide.ta";
@@ -28,10 +29,10 @@ export { id_lsx_enhancedGuide } from "../SelectedAttributeTypes/id-lsx-enhancedG
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<EnhancedGuide>}
+ * @implements {SYNTAX_NAME<EnhancedGuide>}
  */
-export const enhancedGuide: SYNTAX_NAME = {
+export const enhancedGuide: SYNTAX_NAME<EnhancedGuide> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_EnhancedGuide,

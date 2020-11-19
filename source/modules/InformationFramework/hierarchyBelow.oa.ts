@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    HierarchyBelow,
     _decode_HierarchyBelow,
     _encode_HierarchyBelow,
 } from "../InformationFramework/HierarchyBelow.ta";
@@ -52,10 +53,10 @@ export { booleanMatch } from "../SelectedAttributeTypes/booleanMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<HierarchyBelow>}
+ * @implements {ATTRIBUTE<HierarchyBelow>}
  */
-export const hierarchyBelow: ATTRIBUTE = {
+export const hierarchyBelow: ATTRIBUTE<HierarchyBelow> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_HierarchyBelow,

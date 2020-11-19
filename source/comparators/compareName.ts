@@ -1,4 +1,4 @@
-import { Name } from "../modules/InformationFramework";
+import type { Name } from "../modules/InformationFramework/Name.ta";
 import compareRDNSequence from "./compareRDNSequence";
 
 export default function compare(a: Name, b: Name): boolean {

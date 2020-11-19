@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    PDSName,
     _decode_PDSName,
     _encode_PDSName,
 } from "../MTSAbstractService/PDSName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PDSName>}
+ * @implements {EXTENSION_ATTRIBUTE<PDSName>}
  */
-export const pds_name: EXTENSION_ATTRIBUTE = {
+export const pds_name: EXTENSION_ATTRIBUTE<PDSName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PDSName,

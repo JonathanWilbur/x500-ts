@@ -4,10 +4,12 @@ import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import { referral } from "../DirectoryAbstractService/referral.oa";
 import {
+    RemoveEntryArgument,
     _decode_RemoveEntryArgument,
     _encode_RemoveEntryArgument,
 } from "../DirectoryAbstractService/RemoveEntryArgument.ta";
 import {
+    RemoveEntryResult,
     _decode_RemoveEntryResult,
     _encode_RemoveEntryResult,
 } from "../DirectoryAbstractService/RemoveEntryResult.ta";
@@ -58,10 +60,10 @@ export { updateError } from "../DirectoryAbstractService/updateError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<RemoveEntryArgument, RemoveEntryResult>}
+ * @implements {OPERATION<RemoveEntryArgument, RemoveEntryResult>}
  */
-export const removeEntry: OPERATION = {
+export const removeEntry: OPERATION<RemoveEntryArgument, RemoveEntryResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_RemoveEntryArgument,

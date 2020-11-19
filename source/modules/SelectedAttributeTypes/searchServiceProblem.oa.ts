@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -42,10 +43,10 @@ export { id_not_searchServiceProblem } from "../SelectedAttributeTypes/id-not-se
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<OBJECT_IDENTIFIER>}
+ * @implements {ATTRIBUTE<OBJECT_IDENTIFIER>}
  */
-export const searchServiceProblem: ATTRIBUTE = {
+export const searchServiceProblem: ATTRIBUTE<OBJECT_IDENTIFIER> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeObjectIdentifier,

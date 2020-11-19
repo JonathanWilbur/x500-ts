@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    HierarchyLevel,
     _decode_HierarchyLevel,
     _encode_HierarchyLevel,
 } from "../InformationFramework/HierarchyLevel.ta";
@@ -55,10 +56,10 @@ export { integerOrderingMatch } from "../SelectedAttributeTypes/integerOrderingM
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<HierarchyLevel>}
+ * @implements {ATTRIBUTE<HierarchyLevel>}
  */
-export const hierarchyLevel: ATTRIBUTE = {
+export const hierarchyLevel: ATTRIBUTE<HierarchyLevel> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_HierarchyLevel,

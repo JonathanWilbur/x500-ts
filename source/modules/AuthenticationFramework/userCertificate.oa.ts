@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    Certificate,
     _decode_Certificate,
     _encode_Certificate,
 } from "../AuthenticationFramework/Certificate.ta";
@@ -54,10 +55,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<Certificate>}
+ * @implements {ATTRIBUTE<Certificate>}
  */
-export const userCertificate: ATTRIBUTE = {
+export const userCertificate: ATTRIBUTE<Certificate> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_Certificate,

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertificateListExactAssertion,
     _decode_CertificateListExactAssertion,
     _encode_CertificateListExactAssertion,
 } from "../CertificateExtensions/CertificateListExactAssertion.ta";
@@ -34,10 +35,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<CertificateListExactAssertion>}
+ * @implements {MATCHING_RULE<CertificateListExactAssertion>}
  */
-export const certificateListExactMatch: MATCHING_RULE = {
+export const certificateListExactMatch: MATCHING_RULE<CertificateListExactAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_CertificateListExactAssertion,

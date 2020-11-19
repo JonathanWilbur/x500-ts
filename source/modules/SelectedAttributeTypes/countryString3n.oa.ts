@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    CountryCode3n,
     _decode_CountryCode3n,
     _encode_CountryCode3n,
 } from "../SelectedAttributeTypes/CountryCode3n.ta";
@@ -28,10 +29,10 @@ export { id_asx_countryString3n } from "../SelectedAttributeTypes/id-asx-country
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<CountryCode3n>}
+ * @implements {SYNTAX_NAME<CountryCode3n>}
  */
-export const countryString3n: SYNTAX_NAME = {
+export const countryString3n: SYNTAX_NAME<CountryCode3n> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_CountryCode3n,

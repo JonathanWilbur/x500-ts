@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalExtensionORAddressComponents,
     _decode_UniversalExtensionORAddressComponents,
     _encode_UniversalExtensionORAddressComponents,
 } from "../MTSAbstractService/UniversalExtensionORAddressComponents.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalExtensionORAddressComponents>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalExtensionORAddressComponents>}
  */
-export const universal_extension_OR_address_components: EXTENSION_ATTRIBUTE = {
+export const universal_extension_OR_address_components: EXTENSION_ATTRIBUTE<UniversalExtensionORAddressComponents> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalExtensionORAddressComponents,

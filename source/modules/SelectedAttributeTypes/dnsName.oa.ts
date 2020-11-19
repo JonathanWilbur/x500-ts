@@ -6,6 +6,7 @@ import {
 import { dnsNameMatch } from "../SelectedAttributeTypes/dnsNameMatch.oa";
 import { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 import {
+    DomainName,
     _decode_DomainName,
     _encode_DomainName,
 } from "../SelectedAttributeTypes/DomainName.ta";
@@ -53,10 +54,10 @@ export { id_at_dnsName } from "../SelectedAttributeTypes/id-at-dnsName.va";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DomainName>}
+ * @implements {ATTRIBUTE<DomainName>}
  */
-export const dnsName: ATTRIBUTE = {
+export const dnsName: ATTRIBUTE<DomainName> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DomainName,

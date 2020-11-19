@@ -6,6 +6,7 @@ import {
 import { id_at_uniqueMember } from "../SelectedAttributeTypes/id-at-uniqueMember.va";
 import { nameAndOptionalUID } from "../SelectedAttributeTypes/nameAndOptionalUID.oa";
 import {
+    NameAndOptionalUID,
     _decode_NameAndOptionalUID,
     _encode_NameAndOptionalUID,
 } from "../SelectedAttributeTypes/NameAndOptionalUID.ta";
@@ -53,10 +54,10 @@ export { uniqueMemberMatch } from "../SelectedAttributeTypes/uniqueMemberMatch.o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<NameAndOptionalUID>}
+ * @implements {ATTRIBUTE<NameAndOptionalUID>}
  */
-export const uniqueMember: ATTRIBUTE = {
+export const uniqueMember: ATTRIBUTE<NameAndOptionalUID> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_NameAndOptionalUID,

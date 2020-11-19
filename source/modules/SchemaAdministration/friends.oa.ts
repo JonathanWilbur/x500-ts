@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    FriendsDescription,
     _decode_FriendsDescription,
     _encode_FriendsDescription,
 } from "../SchemaAdministration/FriendsDescription.ta";
@@ -50,10 +51,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<FriendsDescription>}
+ * @implements {ATTRIBUTE<FriendsDescription>}
  */
-export const friends: ATTRIBUTE = {
+export const friends: ATTRIBUTE<FriendsDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_FriendsDescription,

@@ -3,6 +3,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 import { tagAfi } from "../SelectedAttributeTypes/tagAfi.oa";
 import { tagOid } from "../SelectedAttributeTypes/tagOid.oa";
 import { uiiFormat } from "../SelectedAttributeTypes/uiiFormat.oa";
@@ -21,6 +22,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 export { tagAfi } from "../SelectedAttributeTypes/tagAfi.oa";
 export { tagOid } from "../SelectedAttributeTypes/tagOid.oa";
 export { uiiFormat } from "../SelectedAttributeTypes/uiiFormat.oa";
@@ -52,7 +54,7 @@ export const isoTagType: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         tagOid,

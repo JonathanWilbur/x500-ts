@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_directoryString } from "../SelectedAttributeTypes/id-lsx-directoryString.va";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<UnboundedDirectoryString>}
+ * @implements {SYNTAX_NAME<UnboundedDirectoryString>}
  */
-export const directoryString: SYNTAX_NAME = {
+export const directoryString: SYNTAX_NAME<UnboundedDirectoryString> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_UnboundedDirectoryString,

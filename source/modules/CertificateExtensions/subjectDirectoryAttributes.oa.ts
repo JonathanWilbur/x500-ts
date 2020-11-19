@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AttributesSyntax,
     _decode_AttributesSyntax,
     _encode_AttributesSyntax,
 } from "../CertificateExtensions/AttributesSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_subjectDirectoryAttributes } from "../CertificateExtensions/id-ce
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AttributesSyntax>}
+ * @implements {EXTENSION<AttributesSyntax>}
  */
-export const subjectDirectoryAttributes: EXTENSION = {
+export const subjectDirectoryAttributes: EXTENSION<AttributesSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AttributesSyntax,

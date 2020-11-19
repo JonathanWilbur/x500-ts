@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { oidC } from "../SelectedAttributeTypes/oidC.oa";
 import { id_nf_oidCNameForm } from "../SelectedObjectClasses/id-nf-oidCNameForm.va";
 import { oidCobj } from "../SelectedObjectClasses/oidCobj.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { oidC } from "../SelectedAttributeTypes/oidC.oa";
 export { id_nf_oidCNameForm } from "../SelectedObjectClasses/id-nf-oidCNameForm.va";
 export { oidCobj } from "../SelectedObjectClasses/oidCobj.oa";
 
@@ -31,7 +33,7 @@ export const oidCNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": oidCobj /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [oidC] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_oidCNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION oidCNameForm */

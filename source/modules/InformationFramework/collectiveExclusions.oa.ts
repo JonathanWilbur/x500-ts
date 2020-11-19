@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -42,10 +43,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<OBJECT_IDENTIFIER>}
+ * @implements {ATTRIBUTE<OBJECT_IDENTIFIER>}
  */
-export const collectiveExclusions: ATTRIBUTE = {
+export const collectiveExclusions: ATTRIBUTE<OBJECT_IDENTIFIER> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeObjectIdentifier,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_op_binding_shadow } from "../DirectoryOperationalBindingTypes/id-op-binding-shadow.va";
 import {
+    ShadowingAgreementInfo,
     _decode_ShadowingAgreementInfo,
     _encode_ShadowingAgreementInfo,
 } from "../DirectoryShadowAbstractService/ShadowingAgreementInfo.ta";
@@ -52,10 +53,10 @@ export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL
  * ```
  *
  * @constant
- * @type {OPERATIONAL_BINDING}
- * @implements {OPERATIONAL_BINDING}
+ * @type {OPERATIONAL_BINDING<ShadowingAgreementInfo>}
+ * @implements {OPERATIONAL_BINDING<ShadowingAgreementInfo>}
  */
-export const shadowOperationalBinding: OPERATIONAL_BINDING = {
+export const shadowOperationalBinding: OPERATIONAL_BINDING<ShadowingAgreementInfo> = {
     class: "OPERATIONAL-BINDING",
     decoderFor: {
         "&Agreement": _decode_ShadowingAgreementInfo,

@@ -1,4 +1,4 @@
-import { UnboundedDirectoryString } from "../modules/SelectedAttributeTypes";
+import type { UnboundedDirectoryString } from "../modules/SelectedAttributeTypes/UnboundedDirectoryString.ta";
 
 // export type UnboundedDirectoryString =
 //     | { teletexString: asn1.TeletexString } /* CHOICE_ALT_ROOT */

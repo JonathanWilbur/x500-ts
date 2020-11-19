@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_replaceAvlRsp } from "../PkiPMIProtocolSpecifications/id-replaceAvlRsp.va";
 import {
+    ReplaceAvlRsp,
     _decode_ReplaceAvlRsp,
     _encode_ReplaceAvlRsp,
 } from "../PkiPMIProtocolSpecifications/ReplaceAvlRsp.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<ReplaceAvlRsp>}
+ * @implements {WRAPPED_PDU<ReplaceAvlRsp>}
  */
 export const replaceAvlRsp: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

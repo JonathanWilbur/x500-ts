@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BOOLEAN } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -47,10 +48,10 @@ export { booleanMatch } from "../SelectedAttributeTypes/booleanMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<BOOLEAN>}
+ * @implements {ATTRIBUTE<BOOLEAN>}
  */
-export const pwdModifyEntryAllowed: ATTRIBUTE = {
+export const pwdModifyEntryAllowed: ATTRIBUTE<BOOLEAN> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeBoolean,

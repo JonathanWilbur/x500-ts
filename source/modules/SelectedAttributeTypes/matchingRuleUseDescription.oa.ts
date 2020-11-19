@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    MatchingRuleUseDescription,
     _decode_MatchingRuleUseDescription,
     _encode_MatchingRuleUseDescription,
 } from "../SchemaAdministration/MatchingRuleUseDescription.ta";
@@ -28,10 +29,10 @@ export { id_lsx_matchingRuleUseDescription } from "../SelectedAttributeTypes/id-
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<MatchingRuleUseDescription>}
+ * @implements {SYNTAX_NAME<MatchingRuleUseDescription>}
  */
-export const matchingRuleUseDescription: SYNTAX_NAME = {
+export const matchingRuleUseDescription: SYNTAX_NAME<MatchingRuleUseDescription> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_MatchingRuleUseDescription,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { certAssertion } from "../CertificateExtensions/certAssertion.oa";
 import {
+    CertificateAssertion,
     _decode_CertificateAssertion,
     _encode_CertificateAssertion,
 } from "../CertificateExtensions/CertificateAssertion.ta";
@@ -34,10 +35,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<CertificateAssertion>}
+ * @implements {MATCHING_RULE<CertificateAssertion>}
  */
-export const certificateMatch: MATCHING_RULE = {
+export const certificateMatch: MATCHING_RULE<CertificateAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_CertificateAssertion,

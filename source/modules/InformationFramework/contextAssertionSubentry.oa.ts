@@ -1,10 +1,12 @@
 /* eslint-disable */
+import { contextAssertionDefaults } from "../InformationFramework/contextAssertionDefaults.oa";
 import { id_sc_contextAssertionSubentry } from "../InformationFramework/id-sc-contextAssertionSubentry.va";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
+export { contextAssertionDefaults } from "../InformationFramework/contextAssertionDefaults.oa";
 export { id_sc_contextAssertionSubentry } from "../InformationFramework/id-sc-contextAssertionSubentry.va";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -43,7 +45,9 @@ export const contextAssertionSubentry: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [
+        contextAssertionDefaults,
+    ] /* OBJECT_FIELD_SETTING */,
     "&id": id_sc_contextAssertionSubentry /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION contextAssertionSubentry */

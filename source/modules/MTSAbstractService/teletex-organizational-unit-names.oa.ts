@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    TeletexOrganizationalUnitNames,
     _decode_TeletexOrganizationalUnitNames,
     _encode_TeletexOrganizationalUnitNames,
 } from "../MTSAbstractService/TeletexOrganizationalUnitNames.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<TeletexOrganizationalUnitNames>}
+ * @implements {EXTENSION_ATTRIBUTE<TeletexOrganizationalUnitNames>}
  */
-export const teletex_organizational_unit_names: EXTENSION_ATTRIBUTE = {
+export const teletex_organizational_unit_names: EXTENSION_ATTRIBUTE<TeletexOrganizationalUnitNames> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TeletexOrganizationalUnitNames,

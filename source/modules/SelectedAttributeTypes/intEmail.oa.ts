@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_intEmail } from "../SelectedAttributeTypes/id-at-intEmail.va";
 import {
+    IntEmail,
     _decode_IntEmail,
     _encode_IntEmail,
 } from "../SelectedAttributeTypes/IntEmail.ta";
@@ -54,10 +55,10 @@ export { intEmailString } from "../SelectedAttributeTypes/intEmailString.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<IntEmail>}
+ * @implements {ATTRIBUTE<IntEmail>}
  */
-export const intEmail: ATTRIBUTE = {
+export const intEmail: ATTRIBUTE<IntEmail> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_IntEmail,

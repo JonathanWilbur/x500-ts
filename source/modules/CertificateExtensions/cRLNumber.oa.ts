@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CRLNumber,
     _decode_CRLNumber,
     _encode_CRLNumber,
 } from "../CertificateExtensions/CRLNumber.ta";
@@ -27,10 +28,10 @@ export { id_ce_cRLNumber } from "../CertificateExtensions/id-ce-cRLNumber.va";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CRLNumber>}
+ * @implements {EXTENSION<CRLNumber>}
  */
-export const cRLNumber: EXTENSION = {
+export const cRLNumber: EXTENSION<CRLNumber> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CRLNumber,

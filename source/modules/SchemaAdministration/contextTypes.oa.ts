@@ -4,6 +4,7 @@ import {
     directoryOperation /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    ContextDescription,
     _decode_ContextDescription,
     _encode_ContextDescription,
 } from "../SchemaAdministration/ContextDescription.ta";
@@ -50,10 +51,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ContextDescription>}
+ * @implements {ATTRIBUTE<ContextDescription>}
  */
-export const contextTypes: ATTRIBUTE = {
+export const contextTypes: ATTRIBUTE<ContextDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ContextDescription,

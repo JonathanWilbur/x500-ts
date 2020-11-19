@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AuthorityInfoAccessSyntax,
     _decode_AuthorityInfoAccessSyntax,
     _encode_AuthorityInfoAccessSyntax,
 } from "../PkiPmiExternalDataTypes/AuthorityInfoAccessSyntax.ta";
@@ -27,10 +28,10 @@ export { id_pe_authorityInfoAccess } from "../PkiPmiExternalDataTypes/id-pe-auth
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AuthorityInfoAccessSyntax>}
+ * @implements {EXTENSION<AuthorityInfoAccessSyntax>}
  */
-export const authorityInfoAccess: EXTENSION = {
+export const authorityInfoAccess: EXTENSION<AuthorityInfoAccessSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AuthorityInfoAccessSyntax,

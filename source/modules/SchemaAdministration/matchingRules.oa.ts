@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_soa_matchingRules } from "../SchemaAdministration/id-soa-matchingRules.va";
 import {
+    MatchingRuleDescription,
     _decode_MatchingRuleDescription,
     _encode_MatchingRuleDescription,
 } from "../SchemaAdministration/MatchingRuleDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<MatchingRuleDescription>}
+ * @implements {ATTRIBUTE<MatchingRuleDescription>}
  */
-export const matchingRules: ATTRIBUTE = {
+export const matchingRules: ATTRIBUTE<MatchingRuleDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_MatchingRuleDescription,

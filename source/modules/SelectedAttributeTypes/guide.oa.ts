@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    Guide,
     _decode_Guide,
     _encode_Guide,
 } from "../SelectedAttributeTypes/Guide.ta";
@@ -28,10 +29,10 @@ export { id_lsx_guide } from "../SelectedAttributeTypes/id-lsx-guide.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<Guide>}
+ * @implements {SYNTAX_NAME<Guide>}
  */
-export const guide: SYNTAX_NAME = {
+export const guide: SYNTAX_NAME<Guide> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_Guide,

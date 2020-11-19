@@ -2,14 +2,17 @@
 import { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 import { cACertificate } from "../AuthenticationFramework/cACertificate.oa";
 import { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
+import { crossCertificatePair } from "../AuthenticationFramework/crossCertificatePair.oa";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 import { id_oc_certificationAuthority } from "../SelectedObjectClasses/id-oc-certificationAuthority.va";
 export { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 export { cACertificate } from "../AuthenticationFramework/cACertificate.oa";
 export { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
+export { crossCertificatePair } from "../AuthenticationFramework/crossCertificatePair.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 export {
@@ -24,6 +27,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 export { id_oc_certificationAuthority } from "../SelectedObjectClasses/id-oc-certificationAuthority.va";
 
 /* START_OF_SYMBOL_DEFINITION certificationAuthority */
@@ -54,14 +58,14 @@ export const certificationAuthority: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&MandatoryAttributes": [
         cACertificate,
         certificateRevocationList,
         authorityRevocationList,
     ] /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [crossCertificatePair] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&ldapDesc": undefined,
     "&id": id_oc_certificationAuthority /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

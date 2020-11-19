@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    ServiceControlOptions,
     _decode_ServiceControlOptions,
     _encode_ServiceControlOptions,
 } from "../DirectoryAbstractService/ServiceControlOptions.ta";
@@ -77,10 +78,10 @@ export { id_not_serviceControlOptionsList } from "../SelectedAttributeTypes/id-n
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ServiceControlOptions>}
+ * @implements {ATTRIBUTE<ServiceControlOptions>}
  */
-export const serviceControlOptionsList: ATTRIBUTE = {
+export const serviceControlOptionsList: ATTRIBUTE<ServiceControlOptions> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ServiceControlOptions,

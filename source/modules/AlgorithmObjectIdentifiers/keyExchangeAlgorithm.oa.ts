@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_keyExchangeAlgorithm } from "../AlgorithmObjectIdentifiers/id-keyExchangeAlgorithm.va";
 import {
+    KEA_Parms_Id,
     _decode_KEA_Parms_Id,
     _encode_KEA_Parms_Id,
 } from "../AlgorithmObjectIdentifiers/KEA-Parms-Id.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<KEA_Parms_Id>}
+ * @implements {ALGORITHM<KEA_Parms_Id>}
  */
-export const keyExchangeAlgorithm: ALGORITHM = {
+export const keyExchangeAlgorithm: ALGORITHM<KEA_Parms_Id> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_KEA_Parms_Id,

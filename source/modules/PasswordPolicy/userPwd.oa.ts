@@ -4,7 +4,11 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_at_userPwd } from "../PasswordPolicy/id-at-userPwd.va";
-import { _decode_UserPwd, _encode_UserPwd } from "../PasswordPolicy/UserPwd.ta";
+import {
+    UserPwd,
+    _decode_UserPwd,
+    _encode_UserPwd,
+} from "../PasswordPolicy/UserPwd.ta";
 import { userPwdDescription } from "../PasswordPolicy/userPwdDescription.oa";
 import { userPwdMatch } from "../PasswordPolicy/userPwdMatch.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -51,10 +55,10 @@ export { userPwdMatch } from "../PasswordPolicy/userPwdMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UserPwd>}
+ * @implements {ATTRIBUTE<UserPwd>}
  */
-export const userPwd: ATTRIBUTE = {
+export const userPwd: ATTRIBUTE<UserPwd> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UserPwd,

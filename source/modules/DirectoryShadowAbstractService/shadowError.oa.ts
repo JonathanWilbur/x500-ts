@@ -7,6 +7,7 @@ import {
     _encode_ShadowErrorData,
 } from "../DirectoryShadowAbstractService/ShadowErrorData.ta";
 import {
+    OPTIONALLY_PROTECTED_SEQ,
     _get_decoder_for_OPTIONALLY_PROTECTED_SEQ,
     _get_encoder_for_OPTIONALLY_PROTECTED_SEQ,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED-SEQ.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>>}
  */
-export const shadowError: ERROR = {
+export const shadowError: ERROR<OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<

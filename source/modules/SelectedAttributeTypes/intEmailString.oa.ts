@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_intEmailString } from "../SelectedAttributeTypes/id-asx-intEmailString.va";
 import {
+    IntEmail,
     _decode_IntEmail,
     _encode_IntEmail,
 } from "../SelectedAttributeTypes/IntEmail.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<IntEmail>}
+ * @implements {SYNTAX_NAME<IntEmail>}
  */
-export const intEmailString: SYNTAX_NAME = {
+export const intEmailString: SYNTAX_NAME<IntEmail> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_IntEmail,

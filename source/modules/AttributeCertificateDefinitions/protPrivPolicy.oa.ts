@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeCertificate,
     _decode_AttributeCertificate,
     _encode_AttributeCertificate,
 } from "../AttributeCertificateDefinitions/AttributeCertificate.ta";
@@ -49,10 +50,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AttributeCertificate>}
+ * @implements {ATTRIBUTE<AttributeCertificate>}
  */
-export const protPrivPolicy: ATTRIBUTE = {
+export const protPrivPolicy: ATTRIBUTE<AttributeCertificate> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AttributeCertificate,

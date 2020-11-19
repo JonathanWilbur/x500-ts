@@ -8,6 +8,7 @@ import { numericString } from "../SelectedAttributeTypes/numericString.oa";
 import { numericStringMatch } from "../SelectedAttributeTypes/numericStringMatch.oa";
 import { numericStringSubstringsMatch } from "../SelectedAttributeTypes/numericStringSubstringsMatch.oa";
 import {
+    X121Address,
     _decode_X121Address,
     _encode_X121Address,
 } from "../SelectedAttributeTypes/X121Address.ta";
@@ -56,10 +57,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<X121Address>}
+ * @implements {ATTRIBUTE<X121Address>}
  */
-export const x121Address: ATTRIBUTE = {
+export const x121Address: ATTRIBUTE<X121Address> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_X121Address,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    LocalPostalAttributes,
     _decode_LocalPostalAttributes,
     _encode_LocalPostalAttributes,
 } from "../PkiPmiExternalDataTypes/LocalPostalAttributes.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<LocalPostalAttributes>}
+ * @implements {EXTENSION_ATTRIBUTE<LocalPostalAttributes>}
  */
-export const local_postal_attributes: EXTENSION_ATTRIBUTE = {
+export const local_postal_attributes: EXTENSION_ATTRIBUTE<LocalPostalAttributes> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_LocalPostalAttributes,

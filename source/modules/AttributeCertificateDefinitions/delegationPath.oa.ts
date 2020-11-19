@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttCertPath,
     _decode_AttCertPath,
     _encode_AttCertPath,
 } from "../AttributeCertificateDefinitions/AttCertPath.ta";
@@ -46,10 +47,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AttCertPath>}
+ * @implements {ATTRIBUTE<AttCertPath>}
  */
-export const delegationPath: ATTRIBUTE = {
+export const delegationPath: ATTRIBUTE<AttCertPath> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AttCertPath,

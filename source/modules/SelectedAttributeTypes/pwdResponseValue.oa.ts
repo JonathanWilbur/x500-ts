@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_not_pwdResponse } from "../SelectedAttributeTypes/id-not-pwdResponse.va";
 import {
+    PwdResponse,
     _decode_PwdResponse,
     _encode_PwdResponse,
 } from "../SelectedAttributeTypes/PwdResponse.ta";
@@ -46,10 +47,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PwdResponse>}
+ * @implements {ATTRIBUTE<PwdResponse>}
  */
-export const pwdResponseValue: ATTRIBUTE = {
+export const pwdResponseValue: ATTRIBUTE<PwdResponse> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PwdResponse,

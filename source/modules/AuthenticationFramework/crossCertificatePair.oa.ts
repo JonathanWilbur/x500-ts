@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertificatePair,
     _decode_CertificatePair,
     _encode_CertificatePair,
 } from "../AuthenticationFramework/CertificatePair.ta";
@@ -54,10 +55,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<CertificatePair>}
+ * @implements {ATTRIBUTE<CertificatePair>}
  */
-export const crossCertificatePair: ATTRIBUTE = {
+export const crossCertificatePair: ATTRIBUTE<CertificatePair> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CertificatePair,

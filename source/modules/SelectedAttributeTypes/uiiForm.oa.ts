@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_uiiForm } from "../SelectedAttributeTypes/id-asx-uiiForm.va";
 import {
+    UiiFormat,
     _decode_UiiFormat,
     _encode_UiiFormat,
 } from "../SelectedAttributeTypes/UiiFormat.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<UiiFormat>}
+ * @implements {SYNTAX_NAME<UiiFormat>}
  */
-export const uiiForm: SYNTAX_NAME = {
+export const uiiForm: SYNTAX_NAME<UiiFormat> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_UiiFormat,

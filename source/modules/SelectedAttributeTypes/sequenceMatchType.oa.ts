@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_cat_sequenceMatchType } from "../SelectedAttributeTypes/id-cat-sequenceMatchType.va";
 import {
+    SequenceMatchType,
     _decode_SequenceMatchType,
     _encode_SequenceMatchType,
 } from "../SelectedAttributeTypes/SequenceMatchType.ta";
@@ -60,10 +61,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SequenceMatchType>}
+ * @implements {ATTRIBUTE<SequenceMatchType>}
  */
-export const sequenceMatchType: ATTRIBUTE = {
+export const sequenceMatchType: ATTRIBUTE<SequenceMatchType> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SequenceMatchType,

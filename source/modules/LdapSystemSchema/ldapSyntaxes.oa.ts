@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_soa_ldapSyntaxes } from "../LdapSystemSchema/id-soa-ldapSyntaxes.va";
 import {
+    LdapSyntaxDescription,
     _decode_LdapSyntaxDescription,
     _encode_LdapSyntaxDescription,
 } from "../LdapSystemSchema/LdapSyntaxDescription.ta";
@@ -54,10 +55,10 @@ export { objectIdentifierFirstComponentMatch } from "../SelectedAttributeTypes/o
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<LdapSyntaxDescription>}
+ * @implements {ATTRIBUTE<LdapSyntaxDescription>}
  */
-export const ldapSyntaxes: ATTRIBUTE = {
+export const ldapSyntaxes: ATTRIBUTE<LdapSyntaxDescription> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_LdapSyntaxDescription,

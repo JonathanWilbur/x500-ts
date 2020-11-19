@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DeleteAvlReq,
     _decode_DeleteAvlReq,
     _encode_DeleteAvlReq,
 } from "../PkiPMIProtocolSpecifications/DeleteAvlReq.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<DeleteAvlReq>}
+ * @implements {WRAPPED_PDU<DeleteAvlReq>}
  */
 export const deleteAvlReq: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

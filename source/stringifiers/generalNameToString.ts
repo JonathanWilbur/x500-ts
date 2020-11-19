@@ -1,4 +1,4 @@
-import { GeneralName } from "../modules/CertificateExtensions";
+import type { GeneralName } from "../modules/CertificateExtensions/GeneralName.ta";
 import nameToString from "./nameToString";
 
 // GeneralName ::= CHOICE {

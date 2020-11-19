@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    FacsimileTelephoneNumber,
     _decode_FacsimileTelephoneNumber,
     _encode_FacsimileTelephoneNumber,
 } from "../SelectedAttributeTypes/FacsimileTelephoneNumber.ta";
@@ -28,10 +29,10 @@ export { id_lsx_facsimileTelephoneNr } from "../SelectedAttributeTypes/id-lsx-fa
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<FacsimileTelephoneNumber>}
+ * @implements {SYNTAX_NAME<FacsimileTelephoneNumber>}
  */
-export const facsimileTelephoneNr: SYNTAX_NAME = {
+export const facsimileTelephoneNr: SYNTAX_NAME<FacsimileTelephoneNumber> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_FacsimileTelephoneNumber,

@@ -1,7 +1,15 @@
 /* eslint-disable */
-import { _decode_Group23, _encode_Group23 } from "../GenAlgo/Group23.ta";
+import {
+    Group23,
+    _decode_Group23,
+    _encode_Group23,
+} from "../GenAlgo/Group23.ta";
 import { id_algo_dhModpGr23Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr23Hkdf256Algo.va";
-import { _decode_Payload23, _encode_Payload23 } from "../GenAlgo/Payload23.ta";
+import {
+    Payload23,
+    _decode_Payload23,
+    _encode_Payload23,
+} from "../GenAlgo/Payload23.ta";
 import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group23,
@@ -31,10 +39,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<Group23, Payload23>}
+ * @implements {ALGORITHM<Group23, Payload23>}
  */
-export const dhModpGr23Hkdf256Algo: ALGORITHM = {
+export const dhModpGr23Hkdf256Algo: ALGORITHM<Group23, Payload23> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_Group23,

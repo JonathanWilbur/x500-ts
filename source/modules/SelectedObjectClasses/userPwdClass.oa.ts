@@ -3,6 +3,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { userPwd } from "../PasswordPolicy/userPwd.oa";
 import { id_oc_userPwdClass } from "../SelectedObjectClasses/id-oc-userPwdClass.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
@@ -18,6 +19,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { userPwd } from "../PasswordPolicy/userPwd.oa";
 export { id_oc_userPwdClass } from "../SelectedObjectClasses/id-oc-userPwdClass.va";
 
 /* START_OF_SYMBOL_DEFINITION userPwdClass */
@@ -43,7 +45,7 @@ export const userPwdClass: OBJECT_CLASS = {
     decoderFor: {},
     encoderFor: {},
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [userPwd] /* OBJECT_FIELD_SETTING */,
     "&id": id_oc_userPwdClass /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION userPwdClass */

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    FilterItem,
     _decode_FilterItem,
     _encode_FilterItem,
 } from "../DirectoryAbstractService/FilterItem.ta";
@@ -46,10 +47,10 @@ export { id_not_filterItem } from "../SelectedAttributeTypes/id-not-filterItem.v
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<FilterItem>}
+ * @implements {ATTRIBUTE<FilterItem>}
  */
-export const filterItem: ATTRIBUTE = {
+export const filterItem: ATTRIBUTE<FilterItem> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_FilterItem,

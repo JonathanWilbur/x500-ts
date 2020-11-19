@@ -1,7 +1,15 @@
 /* eslint-disable */
-import { _decode_Group14, _encode_Group14 } from "../GenAlgo/Group14.ta";
+import {
+    Group14,
+    _decode_Group14,
+    _encode_Group14,
+} from "../GenAlgo/Group14.ta";
 import { id_algo_dhModpGr14Hkdf256Algo } from "../GenAlgo/id-algo-dhModpGr14Hkdf256Algo.va";
-import { _decode_Payload14, _encode_Payload14 } from "../GenAlgo/Payload14.ta";
+import {
+    Payload14,
+    _decode_Payload14,
+    _encode_Payload14,
+} from "../GenAlgo/Payload14.ta";
 import { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
 export {
     Group14,
@@ -31,10 +39,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<Group14, Payload14>}
+ * @implements {ALGORITHM<Group14, Payload14>}
  */
-export const dhModpGr14Hkdf256Algo: ALGORITHM = {
+export const dhModpGr14Hkdf256Algo: ALGORITHM<Group14, Payload14> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_Group14,

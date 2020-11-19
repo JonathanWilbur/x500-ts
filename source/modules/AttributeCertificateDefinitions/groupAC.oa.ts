@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_ce_groupAC } from "../AttributeCertificateDefinitions/id-ce-groupAC.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
@@ -19,10 +20,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<NULL>}
+ * @implements {EXTENSION<NULL>}
  */
-export const groupAC: EXTENSION = {
+export const groupAC: EXTENSION<NULL> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeNull,

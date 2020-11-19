@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AccessPoint,
     _decode_AccessPoint,
     _encode_AccessPoint,
 } from "../DistributedOperations/AccessPoint.ta";
@@ -51,10 +52,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AccessPoint>}
+ * @implements {ATTRIBUTE<AccessPoint>}
  */
-export const superiorKnowledge: ATTRIBUTE = {
+export const superiorKnowledge: ATTRIBUTE<AccessPoint> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AccessPoint,

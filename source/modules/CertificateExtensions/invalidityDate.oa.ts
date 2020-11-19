@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { GeneralizedTime } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_invalidityDate } from "../CertificateExtensions/id-ce-invalidityDate.va";
@@ -19,10 +20,10 @@ export { id_ce_invalidityDate } from "../CertificateExtensions/id-ce-invalidityD
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<GeneralizedTime>}
+ * @implements {EXTENSION<GeneralizedTime>}
  */
-export const invalidityDate: EXTENSION = {
+export const invalidityDate: EXTENSION<GeneralizedTime> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeGeneralizedTime,

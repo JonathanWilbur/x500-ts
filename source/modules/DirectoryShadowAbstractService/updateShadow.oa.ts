@@ -1,11 +1,14 @@
 /* eslint-disable */
 import { id_opcode_updateShadow } from "../CommonProtocolSpecification/id-opcode-updateShadow.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
+import { shadowError } from "../DirectoryShadowAbstractService/shadowError.oa";
 import {
+    UpdateShadowArgument,
     _decode_UpdateShadowArgument,
     _encode_UpdateShadowArgument,
 } from "../DirectoryShadowAbstractService/UpdateShadowArgument.ta";
 import {
+    UpdateShadowResult,
     _decode_UpdateShadowResult,
     _encode_UpdateShadowResult,
 } from "../DirectoryShadowAbstractService/UpdateShadowResult.ta";
@@ -17,6 +20,7 @@ export {
 export { ERROR } from "../CommonProtocolSpecification/ERROR.oca";
 export { id_opcode_updateShadow } from "../CommonProtocolSpecification/id-opcode-updateShadow.va";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
+export { shadowError } from "../DirectoryShadowAbstractService/shadowError.oa";
 export {
     UpdateShadowArgument,
     _decode_UpdateShadowArgument,
@@ -44,10 +48,13 @@ export {
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<UpdateShadowArgument, UpdateShadowResult>}
+ * @implements {OPERATION<UpdateShadowArgument, UpdateShadowResult>}
  */
-export const updateShadow: OPERATION = {
+export const updateShadow: OPERATION<
+    UpdateShadowArgument,
+    UpdateShadowResult
+> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_UpdateShadowArgument,
@@ -57,7 +64,7 @@ export const updateShadow: OPERATION = {
         "&ArgumentType": _encode_UpdateShadowArgument,
         "&ResultType": _encode_UpdateShadowResult,
     },
-    "&Errors": undefined,
+    "&Errors": [shadowError] /* OBJECT_FIELD_SETTING */,
     "&operationCode": id_opcode_updateShadow /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ArgumentType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
     "&ResultType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

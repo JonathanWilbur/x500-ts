@@ -6,6 +6,7 @@ import {
 import { caseIgnoreMatch } from "../SelectedAttributeTypes/caseIgnoreMatch.oa";
 import { id_at_knowledgeInformation } from "../SelectedAttributeTypes/id-at-knowledgeInformation.va";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -50,10 +51,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UnboundedDirectoryString>}
+ * @implements {ATTRIBUTE<UnboundedDirectoryString>}
  */
-export const knowledgeInformation: ATTRIBUTE = {
+export const knowledgeInformation: ATTRIBUTE<UnboundedDirectoryString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UnboundedDirectoryString,

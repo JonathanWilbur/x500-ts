@@ -9,6 +9,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 export { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 export { cACertificate } from "../AuthenticationFramework/cACertificate.oa";
 export { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
@@ -29,6 +30,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION pkiCA */
 /**
@@ -59,7 +61,7 @@ export const pkiCA: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         cACertificate,

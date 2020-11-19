@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_ecMQV } from "../AlgorithmObjectIdentifiers/id-ecMQV.va";
 import {
+    X509Curves,
     _decode_X509Curves,
     _encode_X509Curves,
 } from "../AlgorithmObjectIdentifiers/X509Curves.vsa";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<X509Curves>}
+ * @implements {ALGORITHM<X509Curves>}
  */
-export const ecMQV: ALGORITHM = {
+export const ecMQV: ALGORITHM<X509Curves> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_X509Curves,

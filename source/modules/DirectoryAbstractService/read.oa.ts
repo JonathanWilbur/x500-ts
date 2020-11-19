@@ -5,10 +5,12 @@ import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import { attributeError } from "../DirectoryAbstractService/attributeError.oa";
 import { nameError } from "../DirectoryAbstractService/nameError.oa";
 import {
+    ReadArgument,
     _decode_ReadArgument,
     _encode_ReadArgument,
 } from "../DirectoryAbstractService/ReadArgument.ta";
 import {
+    ReadResult,
     _decode_ReadResult,
     _encode_ReadResult,
 } from "../DirectoryAbstractService/ReadResult.ta";
@@ -61,10 +63,10 @@ export { serviceError } from "../DirectoryAbstractService/serviceError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<ReadArgument, ReadResult>}
+ * @implements {OPERATION<ReadArgument, ReadResult>}
  */
-export const read: OPERATION = {
+export const read: OPERATION<ReadArgument, ReadResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_ReadArgument,

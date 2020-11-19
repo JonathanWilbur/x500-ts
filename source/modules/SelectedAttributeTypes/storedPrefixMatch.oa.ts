@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_storedPrefixMatch } from "../SelectedAttributeTypes/id-mr-storedPrefixMatch.va";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<UnboundedDirectoryString>}
+ * @implements {MATCHING_RULE<UnboundedDirectoryString>}
  */
-export const storedPrefixMatch: MATCHING_RULE = {
+export const storedPrefixMatch: MATCHING_RULE<UnboundedDirectoryString> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_UnboundedDirectoryString,

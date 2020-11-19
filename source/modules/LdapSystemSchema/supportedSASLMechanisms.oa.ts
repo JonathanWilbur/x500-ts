@@ -6,6 +6,7 @@ import {
 import { id_lat_supportedSASLMechanisms } from "../LdapSystemSchema/id-lat-supportedSASLMechanisms.va";
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import {
+    DirectoryString,
     _decode_DirectoryString,
     _encode_DirectoryString,
 } from "../SelectedAttributeTypes/DirectoryString.ta";
@@ -52,10 +53,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DirectoryString>}
+ * @implements {ATTRIBUTE<DirectoryString>}
  */
-export const supportedSASLMechanisms: ATTRIBUTE = {
+export const supportedSASLMechanisms: ATTRIBUTE<DirectoryString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DirectoryString,

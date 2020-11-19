@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_eeAttrCertificateRevocationList } from "../AttributeCertificateDefinitions/id-at-eeAttrCertificateRevocationList.va";
 import {
+    CertificateList,
     _decode_CertificateList,
     _encode_CertificateList,
 } from "../AuthenticationFramework/CertificateList.ta";
@@ -54,10 +55,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<CertificateList>}
+ * @implements {ATTRIBUTE<CertificateList>}
  */
-export const eeAttrCertificateRevocationList: ATTRIBUTE = {
+export const eeAttrCertificateRevocationList: ATTRIBUTE<CertificateList> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CertificateList,

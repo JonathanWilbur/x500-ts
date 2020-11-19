@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_ecDH } from "../AlgorithmObjectIdentifiers/id-ecDH.va";
 import {
+    X509Curves,
     _decode_X509Curves,
     _encode_X509Curves,
 } from "../AlgorithmObjectIdentifiers/X509Curves.vsa";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<X509Curves>}
+ * @implements {ALGORITHM<X509Curves>}
  */
-export const ecDH: ALGORITHM = {
+export const ecDH: ALGORITHM<X509Curves> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_X509Curves,

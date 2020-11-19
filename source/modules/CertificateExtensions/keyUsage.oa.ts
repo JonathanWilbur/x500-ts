@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_keyUsage } from "../CertificateExtensions/id-ce-keyUsage.va";
 import {
+    KeyUsage,
     _decode_KeyUsage,
     _encode_KeyUsage,
 } from "../CertificateExtensions/KeyUsage.ta";
@@ -45,10 +46,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<KeyUsage>}
+ * @implements {EXTENSION<KeyUsage>}
  */
-export const keyUsage: EXTENSION = {
+export const keyUsage: EXTENSION<KeyUsage> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_KeyUsage,

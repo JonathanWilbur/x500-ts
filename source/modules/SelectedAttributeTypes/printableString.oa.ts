@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { PrintableString } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_printableString } from "../SelectedAttributeTypes/id-lsx-printableString.va";
@@ -20,10 +21,10 @@ export { id_lsx_printableString } from "../SelectedAttributeTypes/id-lsx-printab
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<PrintableString>}
+ * @implements {SYNTAX_NAME<PrintableString>}
  */
-export const printableString: SYNTAX_NAME = {
+export const printableString: SYNTAX_NAME<PrintableString> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodePrintableString,

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BOOLEAN } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_boolean } from "../SelectedAttributeTypes/id-lsx-boolean.va";
@@ -20,10 +21,10 @@ export { id_lsx_boolean } from "../SelectedAttributeTypes/id-lsx-boolean.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<BOOLEAN>}
+ * @implements {SYNTAX_NAME<BOOLEAN>}
  */
-export const boolean_: SYNTAX_NAME = {
+export const boolean_: SYNTAX_NAME<BOOLEAN> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeBoolean,

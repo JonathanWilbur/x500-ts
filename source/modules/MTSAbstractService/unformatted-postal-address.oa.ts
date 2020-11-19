@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UnformattedPostalAddress,
     _decode_UnformattedPostalAddress,
     _encode_UnformattedPostalAddress,
 } from "../MTSAbstractService/UnformattedPostalAddress.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UnformattedPostalAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<UnformattedPostalAddress>}
  */
-export const unformatted_postal_address: EXTENSION_ATTRIBUTE = {
+export const unformatted_postal_address: EXTENSION_ATTRIBUTE<UnformattedPostalAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UnformattedPostalAddress,

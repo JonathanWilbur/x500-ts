@@ -2,10 +2,12 @@
 import { id_opcode_linkedLDAP } from "../CommonProtocolSpecification/id-opcode-linkedLDAP.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    LinkedArgument,
     _decode_LinkedArgument,
     _encode_LinkedArgument,
 } from "../DirectoryAbstractService/LinkedArgument.ta";
 import {
+    LinkedResult,
     _decode_LinkedResult,
     _encode_LinkedResult,
 } from "../DirectoryAbstractService/LinkedResult.ta";
@@ -43,10 +45,10 @@ export {
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<LinkedArgument, LinkedResult>}
+ * @implements {OPERATION<LinkedArgument, LinkedResult>}
  */
-export const linkedLDAP: OPERATION = {
+export const linkedLDAP: OPERATION<LinkedArgument, LinkedResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_LinkedArgument,

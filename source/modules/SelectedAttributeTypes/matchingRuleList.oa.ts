@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -41,10 +42,10 @@ export { id_not_matchingRuleList } from "../SelectedAttributeTypes/id-not-matchi
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<OBJECT_IDENTIFIER>}
+ * @implements {ATTRIBUTE<OBJECT_IDENTIFIER>}
  */
-export const matchingRuleList: ATTRIBUTE = {
+export const matchingRuleList: ATTRIBUTE<OBJECT_IDENTIFIER> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeObjectIdentifier,

@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { epcForm } from "../SelectedAttributeTypes/epcForm.oa";
 import {
+    EpcFormat,
     _decode_EpcFormat,
     _encode_EpcFormat,
 } from "../SelectedAttributeTypes/EpcFormat.ta";
@@ -51,10 +52,10 @@ export { id_at_epcFormat } from "../SelectedAttributeTypes/id-at-epcFormat.va";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<EpcFormat>}
+ * @implements {ATTRIBUTE<EpcFormat>}
  */
-export const epcFormat: ATTRIBUTE = {
+export const epcFormat: ATTRIBUTE<EpcFormat> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_EpcFormat,

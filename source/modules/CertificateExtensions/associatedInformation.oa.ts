@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AttributesSyntax,
     _decode_AttributesSyntax,
     _encode_AttributesSyntax,
 } from "../CertificateExtensions/AttributesSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_associatedInformation } from "../CertificateExtensions/id-ce-asso
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AttributesSyntax>}
+ * @implements {EXTENSION<AttributesSyntax>}
  */
-export const associatedInformation: EXTENSION = {
+export const associatedInformation: EXTENSION<AttributesSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AttributesSyntax,

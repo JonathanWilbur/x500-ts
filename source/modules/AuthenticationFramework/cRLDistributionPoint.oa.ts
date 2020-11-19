@@ -8,6 +8,8 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { authorityRevocationList } from "../AuthenticationFramework/authorityRevocationList.oa";
 export { certificateRevocationList } from "../AuthenticationFramework/certificateRevocationList.oa";
 export { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
@@ -27,6 +29,8 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 
 /* START_OF_SYMBOL_DEFINITION cRLDistributionPoint */
 /**
@@ -57,9 +61,9 @@ export const cRLDistributionPoint: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": structural /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         certificateRevocationList,
         eepkCertificateRevocationList,

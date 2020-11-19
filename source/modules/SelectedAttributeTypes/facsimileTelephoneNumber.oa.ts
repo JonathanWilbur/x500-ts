@@ -7,6 +7,7 @@ import { facsimileNumberMatch } from "../SelectedAttributeTypes/facsimileNumberM
 import { facsimileNumberSubstringsMatch } from "../SelectedAttributeTypes/facsimileNumberSubstringsMatch.oa";
 import { facsimileTelephoneNr } from "../SelectedAttributeTypes/facsimileTelephoneNr.oa";
 import {
+    FacsimileTelephoneNumber,
     _decode_FacsimileTelephoneNumber,
     _encode_FacsimileTelephoneNumber,
 } from "../SelectedAttributeTypes/FacsimileTelephoneNumber.ta";
@@ -56,10 +57,10 @@ export { id_at_facsimileTelephoneNumber } from "../SelectedAttributeTypes/id-at-
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<FacsimileTelephoneNumber>}
+ * @implements {ATTRIBUTE<FacsimileTelephoneNumber>}
  */
-export const facsimileTelephoneNumber: ATTRIBUTE = {
+export const facsimileTelephoneNumber: ATTRIBUTE<FacsimileTelephoneNumber> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_FacsimileTelephoneNumber,

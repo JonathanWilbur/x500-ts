@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AcceptableCertPoliciesSyntax,
     _decode_AcceptableCertPoliciesSyntax,
     _encode_AcceptableCertPoliciesSyntax,
 } from "../AttributeCertificateDefinitions/AcceptableCertPoliciesSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<AcceptableCertPoliciesSyntax>}
+ * @implements {MATCHING_RULE<AcceptableCertPoliciesSyntax>}
  */
-export const acceptableCertPoliciesMatch: MATCHING_RULE = {
+export const acceptableCertPoliciesMatch: MATCHING_RULE<AcceptableCertPoliciesSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_AcceptableCertPoliciesSyntax,

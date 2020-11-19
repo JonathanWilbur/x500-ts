@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    Clearance,
     _decode_Clearance,
     _encode_Clearance,
 } from "../EnhancedSecurity/Clearance.ta";
@@ -46,10 +47,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<Clearance>}
+ * @implements {ATTRIBUTE<Clearance>}
  */
-export const clearance: ATTRIBUTE = {
+export const clearance: ATTRIBUTE<Clearance> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_Clearance,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_mr_pkiPathMatch } from "../CertificateExtensions/id-mr-pkiPathMatch.va";
 import {
+    PkiPathMatchSyntax,
     _decode_PkiPathMatchSyntax,
     _encode_PkiPathMatchSyntax,
 } from "../CertificateExtensions/PkiPathMatchSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<PkiPathMatchSyntax>}
+ * @implements {MATCHING_RULE<PkiPathMatchSyntax>}
  */
-export const pkiPathMatch: MATCHING_RULE = {
+export const pkiPathMatch: MATCHING_RULE<PkiPathMatchSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_PkiPathMatchSyntax,

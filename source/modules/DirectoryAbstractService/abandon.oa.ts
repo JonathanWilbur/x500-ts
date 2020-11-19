@@ -2,10 +2,13 @@
 import { id_opcode_abandon } from "../CommonProtocolSpecification/id-opcode-abandon.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    AbandonArgument,
     _decode_AbandonArgument,
     _encode_AbandonArgument,
 } from "../DirectoryAbstractService/AbandonArgument.ta";
+import { abandonFailed } from "../DirectoryAbstractService/abandonFailed.oa";
 import {
+    AbandonResult,
     _decode_AbandonResult,
     _encode_AbandonResult,
 } from "../DirectoryAbstractService/AbandonResult.ta";
@@ -22,6 +25,7 @@ export {
     _decode_AbandonArgument,
     _encode_AbandonArgument,
 } from "../DirectoryAbstractService/AbandonArgument.ta";
+export { abandonFailed } from "../DirectoryAbstractService/abandonFailed.oa";
 export {
     AbandonResult,
     _decode_AbandonResult,
@@ -44,10 +48,10 @@ export {
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<AbandonArgument, AbandonResult>}
+ * @implements {OPERATION<AbandonArgument, AbandonResult>}
  */
-export const abandon: OPERATION = {
+export const abandon: OPERATION<AbandonArgument, AbandonResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_AbandonArgument,
@@ -57,7 +61,7 @@ export const abandon: OPERATION = {
         "&ArgumentType": _encode_AbandonArgument,
         "&ResultType": _encode_AbandonResult,
     },
-    "&Errors": undefined,
+    "&Errors": [abandonFailed] /* OBJECT_FIELD_SETTING */,
     "&operationCode": id_opcode_abandon /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ArgumentType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,
     "&ResultType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

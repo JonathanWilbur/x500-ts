@@ -3,6 +3,8 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { description } from "../SelectedAttributeTypes/description.oa";
 import { localityName } from "../SelectedAttributeTypes/localityName.oa";
 import { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
@@ -25,6 +27,8 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { description } from "../SelectedAttributeTypes/description.oa";
 export { localityName } from "../SelectedAttributeTypes/localityName.oa";
 export { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
@@ -64,8 +68,8 @@ export const device: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
-    "&MandatoryAttributes": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         description,
         localityName,

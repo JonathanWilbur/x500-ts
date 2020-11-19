@@ -2,7 +2,11 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 import { id_mr_jidMatch } from "../SelectedAttributeTypes/id-mr-jidMatch.va";
-import { _decode_Jid, _encode_Jid } from "../SelectedAttributeTypes/Jid.ta";
+import {
+    Jid,
+    _decode_Jid,
+    _encode_Jid,
+} from "../SelectedAttributeTypes/Jid.ta";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
@@ -30,10 +34,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<Jid>}
+ * @implements {MATCHING_RULE<Jid>}
  */
-export const jidMatch: MATCHING_RULE = {
+export const jidMatch: MATCHING_RULE<Jid> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_Jid,

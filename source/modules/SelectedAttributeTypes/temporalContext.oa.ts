@@ -2,10 +2,12 @@
 import { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 import { id_avc_temporal } from "../SelectedAttributeTypes/id-avc-temporal.va";
 import {
+    TimeAssertion,
     _decode_TimeAssertion,
     _encode_TimeAssertion,
 } from "../SelectedAttributeTypes/TimeAssertion.ta";
 import {
+    TimeSpecification,
     _decode_TimeSpecification,
     _encode_TimeSpecification,
 } from "../SelectedAttributeTypes/TimeSpecification.ta";
@@ -37,10 +39,10 @@ export {
  * ```
  *
  * @constant
- * @type {CONTEXT}
- * @implements {CONTEXT}
+ * @type {CONTEXT<TimeSpecification, TimeAssertion>}
+ * @implements {CONTEXT<TimeSpecification, TimeAssertion>}
  */
-export const temporalContext: CONTEXT = {
+export const temporalContext: CONTEXT<TimeSpecification, TimeAssertion> = {
     class: "CONTEXT",
     decoderFor: {
         "&Type": _decode_TimeSpecification,

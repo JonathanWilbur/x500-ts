@@ -3,6 +3,7 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { dnsString } from "../SelectedAttributeTypes/dnsString.oa";
 import { id_mr_intEmailMatch } from "../SelectedAttributeTypes/id-mr-intEmailMatch.va";
 import {
+    IntEmail,
     _decode_IntEmail,
     _encode_IntEmail,
 } from "../SelectedAttributeTypes/IntEmail.ta";
@@ -33,10 +34,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<IntEmail>}
+ * @implements {MATCHING_RULE<IntEmail>}
  */
-export const intEmailMatch: MATCHING_RULE = {
+export const intEmailMatch: MATCHING_RULE<IntEmail> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_IntEmail,

@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_postalAddr } from "../SelectedAttributeTypes/id-lsx-postalAddr.va";
 import {
+    PostalAddress,
     _decode_PostalAddress,
     _encode_PostalAddress,
 } from "../SelectedAttributeTypes/PostalAddress.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<PostalAddress>}
+ * @implements {SYNTAX_NAME<PostalAddress>}
  */
-export const postalAddr: SYNTAX_NAME = {
+export const postalAddr: SYNTAX_NAME<PostalAddress> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_PostalAddress,

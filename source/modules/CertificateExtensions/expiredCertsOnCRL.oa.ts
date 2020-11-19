@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    ExpiredCertsOnCRL,
     _decode_ExpiredCertsOnCRL,
     _encode_ExpiredCertsOnCRL,
 } from "../CertificateExtensions/ExpiredCertsOnCRL.ta";
@@ -27,10 +28,10 @@ export { id_ce_expiredCertsOnCRL } from "../CertificateExtensions/id-ce-expiredC
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<ExpiredCertsOnCRL>}
+ * @implements {EXTENSION<ExpiredCertsOnCRL>}
  */
-export const expiredCertsOnCRL: EXTENSION = {
+export const expiredCertsOnCRL: EXTENSION<ExpiredCertsOnCRL> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_ExpiredCertsOnCRL,

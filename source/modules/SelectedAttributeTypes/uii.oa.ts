@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BIT_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -45,10 +46,10 @@ export { id_at_uii } from "../SelectedAttributeTypes/id-at-uii.va";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<BIT_STRING>}
+ * @implements {ATTRIBUTE<BIT_STRING>}
  */
-export const uii: ATTRIBUTE = {
+export const uii: ATTRIBUTE<BIT_STRING> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeBitString,

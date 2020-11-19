@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ObjectIdentifier as _OID } from "asn1-ts";
+import { NULL, ObjectIdentifier as _OID } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
 export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
@@ -18,10 +18,10 @@ export { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<NULL>}
+ * @implements {ALGORITHM<NULL>}
  */
-export const mD5Algorithm: ALGORITHM = {
+export const mD5Algorithm: ALGORITHM<NULL> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": $._decodeNull,

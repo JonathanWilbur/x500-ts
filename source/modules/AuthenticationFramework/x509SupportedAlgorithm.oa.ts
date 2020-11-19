@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_lsx_x509SupportedAlgorithm } from "../AuthenticationFramework/id-lsx-x509SupportedAlgorithm.va";
 import {
+    SupportedAlgorithm,
     _decode_SupportedAlgorithm,
     _encode_SupportedAlgorithm,
 } from "../AuthenticationFramework/SupportedAlgorithm.ta";
@@ -28,10 +29,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<SupportedAlgorithm>}
+ * @implements {SYNTAX_NAME<SupportedAlgorithm>}
  */
-export const x509SupportedAlgorithm: SYNTAX_NAME = {
+export const x509SupportedAlgorithm: SYNTAX_NAME<SupportedAlgorithm> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_SupportedAlgorithm,

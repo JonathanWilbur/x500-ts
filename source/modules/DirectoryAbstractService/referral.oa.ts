@@ -7,6 +7,7 @@ import {
     _encode_ReferralData,
 } from "../DirectoryAbstractService/ReferralData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<ReferralData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<ReferralData>>}
  */
-export const referral: ERROR = {
+export const referral: ERROR<OPTIONALLY_PROTECTED<ReferralData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<ReferralData>(

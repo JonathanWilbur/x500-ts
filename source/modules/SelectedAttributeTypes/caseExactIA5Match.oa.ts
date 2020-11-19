@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { IA5String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { ia5String } from "../SelectedAttributeTypes/ia5String.oa";
@@ -25,10 +26,10 @@ export { id_lmr_caseExactIA5Match } from "../SelectedAttributeTypes/id-lmr-caseE
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<IA5String>}
+ * @implements {MATCHING_RULE<IA5String>}
  */
-export const caseExactIA5Match: MATCHING_RULE = {
+export const caseExactIA5Match: MATCHING_RULE<IA5String> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeIA5String,

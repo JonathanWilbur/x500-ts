@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    BaseCRLNumber,
     _decode_BaseCRLNumber,
     _encode_BaseCRLNumber,
 } from "../CertificateExtensions/BaseCRLNumber.ta";
@@ -27,10 +28,10 @@ export { id_ce_deltaCRLIndicator } from "../CertificateExtensions/id-ce-deltaCRL
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<BaseCRLNumber>}
+ * @implements {EXTENSION<BaseCRLNumber>}
  */
-export const deltaCRLIndicator: EXTENSION = {
+export const deltaCRLIndicator: EXTENSION<BaseCRLNumber> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_BaseCRLNumber,

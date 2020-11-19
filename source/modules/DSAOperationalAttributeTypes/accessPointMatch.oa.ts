@@ -1,7 +1,11 @@
 /* eslint-disable */
 import { id_kmr_accessPointMatch } from "../DSAOperationalAttributeTypes/id-kmr-accessPointMatch.va";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
-import { _decode_Name, _encode_Name } from "../InformationFramework/Name.ta";
+import {
+    Name,
+    _decode_Name,
+    _encode_Name,
+} from "../InformationFramework/Name.ta";
 export { id_kmr_accessPointMatch } from "../DSAOperationalAttributeTypes/id-kmr-accessPointMatch.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
@@ -26,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<Name>}
+ * @implements {MATCHING_RULE<Name>}
  */
-export const accessPointMatch: MATCHING_RULE = {
+export const accessPointMatch: MATCHING_RULE<Name> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_Name,

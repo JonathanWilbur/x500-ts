@@ -1,10 +1,14 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
+import { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
 import { id_nf_orgPersonNameForm } from "../SelectedObjectClasses/id-nf-orgPersonNameForm.va";
 import { organizationalPerson } from "../SelectedObjectClasses/organizationalPerson.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
+export { organizationalUnitName } from "../SelectedAttributeTypes/organizationalUnitName.oa";
 export { id_nf_orgPersonNameForm } from "../SelectedObjectClasses/id-nf-orgPersonNameForm.va";
 export { organizationalPerson } from "../SelectedObjectClasses/organizationalPerson.oa";
 
@@ -32,8 +36,8 @@ export const orgPersonNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": organizationalPerson /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
-    "&OptionalAttributes": undefined,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
+    "&OptionalAttributes": [organizationalUnitName] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_orgPersonNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION orgPersonNameForm */

@@ -3,10 +3,12 @@ import { id_opcode_list } from "../CommonProtocolSpecification/id-opcode-list.va
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import { abandoned } from "../DirectoryAbstractService/abandoned.oa";
 import {
+    ListArgument,
     _decode_ListArgument,
     _encode_ListArgument,
 } from "../DirectoryAbstractService/ListArgument.ta";
 import {
+    ListResult,
     _decode_ListResult,
     _encode_ListResult,
 } from "../DirectoryAbstractService/ListResult.ta";
@@ -58,10 +60,10 @@ export { serviceError } from "../DirectoryAbstractService/serviceError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<ListArgument, ListResult>}
+ * @implements {OPERATION<ListArgument, ListResult>}
  */
-export const list: OPERATION = {
+export const list: OPERATION<ListArgument, ListResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_ListArgument,

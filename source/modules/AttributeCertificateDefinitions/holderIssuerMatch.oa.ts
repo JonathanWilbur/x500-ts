@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    HolderIssuerAssertion,
     _decode_HolderIssuerAssertion,
     _encode_HolderIssuerAssertion,
 } from "../AttributeCertificateDefinitions/HolderIssuerAssertion.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<HolderIssuerAssertion>}
+ * @implements {MATCHING_RULE<HolderIssuerAssertion>}
  */
-export const holderIssuerMatch: MATCHING_RULE = {
+export const holderIssuerMatch: MATCHING_RULE<HolderIssuerAssertion> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_HolderIssuerAssertion,

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeIntegrityInfo,
     _decode_AttributeIntegrityInfo,
     _encode_AttributeIntegrityInfo,
 } from "../EnhancedSecurity/AttributeIntegrityInfo.ta";
@@ -47,10 +48,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<AttributeIntegrityInfo>}
+ * @implements {ATTRIBUTE<AttributeIntegrityInfo>}
  */
-export const attributeIntegrityInfo: ATTRIBUTE = {
+export const attributeIntegrityInfo: ATTRIBUTE<AttributeIntegrityInfo> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_AttributeIntegrityInfo,

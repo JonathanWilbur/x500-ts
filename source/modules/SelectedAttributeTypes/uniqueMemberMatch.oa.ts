@@ -3,6 +3,7 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_uniqueMemberMatch } from "../SelectedAttributeTypes/id-mr-uniqueMemberMatch.va";
 import { nameAndOptionalUID } from "../SelectedAttributeTypes/nameAndOptionalUID.oa";
 import {
+    NameAndOptionalUID,
     _decode_NameAndOptionalUID,
     _encode_NameAndOptionalUID,
 } from "../SelectedAttributeTypes/NameAndOptionalUID.ta";
@@ -33,10 +34,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<NameAndOptionalUID>}
+ * @implements {MATCHING_RULE<NameAndOptionalUID>}
  */
-export const uniqueMemberMatch: MATCHING_RULE = {
+export const uniqueMemberMatch: MATCHING_RULE<NameAndOptionalUID> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_NameAndOptionalUID,

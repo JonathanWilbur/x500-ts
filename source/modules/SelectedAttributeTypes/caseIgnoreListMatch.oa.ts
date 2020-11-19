@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import {
+    CaseIgnoreList,
     _decode_CaseIgnoreList,
     _encode_CaseIgnoreList,
 } from "../SelectedAttributeTypes/CaseIgnoreList.ta";
@@ -33,10 +34,10 @@ export { postalAddr } from "../SelectedAttributeTypes/postalAddr.oa";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<CaseIgnoreList>}
+ * @implements {MATCHING_RULE<CaseIgnoreList>}
  */
-export const caseIgnoreListMatch: MATCHING_RULE = {
+export const caseIgnoreListMatch: MATCHING_RULE<CaseIgnoreList> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_CaseIgnoreList,

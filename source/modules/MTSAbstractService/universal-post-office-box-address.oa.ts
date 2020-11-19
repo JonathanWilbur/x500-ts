@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalPostOfficeBoxAddress,
     _decode_UniversalPostOfficeBoxAddress,
     _encode_UniversalPostOfficeBoxAddress,
 } from "../MTSAbstractService/UniversalPostOfficeBoxAddress.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalPostOfficeBoxAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalPostOfficeBoxAddress>}
  */
-export const universal_post_office_box_address: EXTENSION_ATTRIBUTE = {
+export const universal_post_office_box_address: EXTENSION_ATTRIBUTE<UniversalPostOfficeBoxAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalPostOfficeBoxAddress,

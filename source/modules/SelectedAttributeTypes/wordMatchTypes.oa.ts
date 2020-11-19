@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_cat_wordMatchType } from "../SelectedAttributeTypes/id-cat-wordMatchType.va";
 import {
+    WordMatchTypes,
     _decode_WordMatchTypes,
     _encode_WordMatchTypes,
 } from "../SelectedAttributeTypes/WordMatchTypes.ta";
@@ -56,10 +57,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<WordMatchTypes>}
+ * @implements {ATTRIBUTE<WordMatchTypes>}
  */
-export const wordMatchTypes: ATTRIBUTE = {
+export const wordMatchTypes: ATTRIBUTE<WordMatchTypes> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_WordMatchTypes,

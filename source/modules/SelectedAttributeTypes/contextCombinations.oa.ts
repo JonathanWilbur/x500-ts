@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_not_contextCombinations } from "../SelectedAttributeTypes/id-not-contextCombinations.va";
 import {
+    ContextCombination,
     _decode_ContextCombination,
     _encode_ContextCombination,
 } from "../ServiceAdministration/ContextCombination.ta";
@@ -46,10 +47,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ContextCombination>}
+ * @implements {ATTRIBUTE<ContextCombination>}
  */
-export const contextCombinations: ATTRIBUTE = {
+export const contextCombinations: ATTRIBUTE<ContextCombination> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ContextCombination,

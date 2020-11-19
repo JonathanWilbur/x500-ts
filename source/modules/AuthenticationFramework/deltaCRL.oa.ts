@@ -1,9 +1,12 @@
 /* eslint-disable */
+import { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
 import { id_oc_deltaCRL } from "../AuthenticationFramework/id-oc-deltaCRL.va";
 import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
+export { deltaRevocationList } from "../AuthenticationFramework/deltaRevocationList.oa";
 export { id_oc_deltaCRL } from "../AuthenticationFramework/id-oc-deltaCRL.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
@@ -19,6 +22,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION deltaCRL */
 /**
@@ -45,9 +49,9 @@ export const deltaCRL: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
-    "&OptionalAttributes": undefined,
+    "&OptionalAttributes": [deltaRevocationList] /* OBJECT_FIELD_SETTING */,
     "&ldapName": undefined,
     "&ldapDesc": "X.509 delta CRL" /* OBJECT_FIELD_SETTING */,
     "&id": id_oc_deltaCRL /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,

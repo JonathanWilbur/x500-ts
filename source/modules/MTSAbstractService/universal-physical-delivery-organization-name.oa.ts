@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalPhysicalDeliveryOrganizationName,
     _decode_UniversalPhysicalDeliveryOrganizationName,
     _encode_UniversalPhysicalDeliveryOrganizationName,
 } from "../MTSAbstractService/UniversalPhysicalDeliveryOrganizationName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalPhysicalDeliveryOrganizationName>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalPhysicalDeliveryOrganizationName>}
  */
-export const universal_physical_delivery_organization_name: EXTENSION_ATTRIBUTE = {
+export const universal_physical_delivery_organization_name: EXTENSION_ATTRIBUTE<UniversalPhysicalDeliveryOrganizationName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalPhysicalDeliveryOrganizationName,

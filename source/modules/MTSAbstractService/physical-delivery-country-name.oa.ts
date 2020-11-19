@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    PhysicalDeliveryCountryName,
     _decode_PhysicalDeliveryCountryName,
     _encode_PhysicalDeliveryCountryName,
 } from "../MTSAbstractService/PhysicalDeliveryCountryName.ta";
@@ -26,10 +27,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<PhysicalDeliveryCountryName>}
+ * @implements {EXTENSION_ATTRIBUTE<PhysicalDeliveryCountryName>}
  */
-export const physical_delivery_country_name: EXTENSION_ATTRIBUTE = {
+export const physical_delivery_country_name: EXTENSION_ATTRIBUTE<PhysicalDeliveryCountryName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PhysicalDeliveryCountryName,

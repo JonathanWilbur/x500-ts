@@ -1,4 +1,4 @@
-import { RDNSequence } from "../modules/InformationFramework";
+import type { RDNSequence } from "../modules/InformationFramework/RDNSequence.ta";
 import compareRelativeDistinguishedName from "./compareRelativeDistinguishedName";
 
 export default function compare(a: RDNSequence, b: RDNSequence): boolean {

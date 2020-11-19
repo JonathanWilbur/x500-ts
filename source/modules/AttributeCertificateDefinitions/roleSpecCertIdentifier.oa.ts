@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    RoleSpecCertIdentifierSyntax,
     _decode_RoleSpecCertIdentifierSyntax,
     _encode_RoleSpecCertIdentifierSyntax,
 } from "../AttributeCertificateDefinitions/RoleSpecCertIdentifierSyntax.ta";
@@ -25,10 +26,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<RoleSpecCertIdentifierSyntax>}
+ * @implements {EXTENSION<RoleSpecCertIdentifierSyntax>}
  */
-export const roleSpecCertIdentifier: EXTENSION = {
+export const roleSpecCertIdentifier: EXTENSION<RoleSpecCertIdentifierSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_RoleSpecCertIdentifierSyntax,

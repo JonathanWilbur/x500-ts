@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { BOOLEAN } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -44,10 +45,10 @@ export { booleanMatch } from "../SelectedAttributeTypes/booleanMatch.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<BOOLEAN>}
+ * @implements {ATTRIBUTE<BOOLEAN>}
  */
-export const hasSubordinates: ATTRIBUTE = {
+export const hasSubordinates: ATTRIBUTE<BOOLEAN> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeBoolean,

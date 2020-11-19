@@ -7,6 +7,7 @@ import {
     _encode_DsaReferralData,
 } from "../DistributedOperations/DsaReferralData.ta";
 import {
+    OPTIONALLY_PROTECTED,
     _get_decoder_for_OPTIONALLY_PROTECTED,
     _get_encoder_for_OPTIONALLY_PROTECTED,
 } from "../EnhancedSecurity/OPTIONALLY-PROTECTED.ta";
@@ -42,10 +43,10 @@ export {
  * ```
  *
  * @constant
- * @type {ERROR}
- * @implements {ERROR}
+ * @type {ERROR<OPTIONALLY_PROTECTED<DsaReferralData>>}
+ * @implements {ERROR<OPTIONALLY_PROTECTED<DsaReferralData>>}
  */
-export const dsaReferral: ERROR = {
+export const dsaReferral: ERROR<OPTIONALLY_PROTECTED<DsaReferralData>> = {
     class: "ERROR",
     decoderFor: {
         "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<

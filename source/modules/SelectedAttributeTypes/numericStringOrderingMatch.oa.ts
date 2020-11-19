@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NumericString } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_numericStringOrderingMatch } from "../SelectedAttributeTypes/id-mr-numericStringOrderingMatch.va";
@@ -25,10 +26,10 @@ export { numericString } from "../SelectedAttributeTypes/numericString.oa";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<NumericString>}
+ * @implements {MATCHING_RULE<NumericString>}
  */
-export const numericStringOrderingMatch: MATCHING_RULE = {
+export const numericStringOrderingMatch: MATCHING_RULE<NumericString> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeNumericString,

@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_nameConstraints } from "../CertificateExtensions/id-ce-nameConstraints.va";
 import {
+    NameConstraintsSyntax,
     _decode_NameConstraintsSyntax,
     _encode_NameConstraintsSyntax,
 } from "../CertificateExtensions/NameConstraintsSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<NameConstraintsSyntax>}
+ * @implements {EXTENSION<NameConstraintsSyntax>}
  */
-export const nameConstraints: EXTENSION = {
+export const nameConstraints: EXTENSION<NameConstraintsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_NameConstraintsSyntax,

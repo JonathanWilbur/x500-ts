@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_toBeRevoked } from "../CertificateExtensions/id-ce-toBeRevoked.va";
 import {
+    ToBeRevokedSyntax,
     _decode_ToBeRevokedSyntax,
     _encode_ToBeRevokedSyntax,
 } from "../CertificateExtensions/ToBeRevokedSyntax.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<ToBeRevokedSyntax>}
+ * @implements {EXTENSION<ToBeRevokedSyntax>}
  */
-export const toBeRevoked: EXTENSION = {
+export const toBeRevoked: EXTENSION<ToBeRevokedSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_ToBeRevokedSyntax,

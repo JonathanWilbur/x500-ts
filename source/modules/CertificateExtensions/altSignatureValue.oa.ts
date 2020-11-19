@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AltSignatureValue,
     _decode_AltSignatureValue,
     _encode_AltSignatureValue,
 } from "../CertificateExtensions/AltSignatureValue.ta";
@@ -27,10 +28,10 @@ export { id_ce_altSignatureValue } from "../CertificateExtensions/id-ce-altSigna
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AltSignatureValue>}
+ * @implements {EXTENSION<AltSignatureValue>}
  */
-export const altSignatureValue: EXTENSION = {
+export const altSignatureValue: EXTENSION<AltSignatureValue> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AltSignatureValue,

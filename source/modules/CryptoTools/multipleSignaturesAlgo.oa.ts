@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multipleSignaturesAlgo } from "../CryptoTools/id-algo-multipleSignaturesAlgo.va";
 import {
+    MultipleSignaturesAlgo,
     _decode_MultipleSignaturesAlgo,
     _encode_MultipleSignaturesAlgo,
 } from "../CryptoTools/MultipleSignaturesAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultipleSignaturesAlgo>}
+ * @implements {ALGORITHM<MultipleSignaturesAlgo>}
  */
-export const multipleSignaturesAlgo: ALGORITHM = {
+export const multipleSignaturesAlgo: ALGORITHM<MultipleSignaturesAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultipleSignaturesAlgo,

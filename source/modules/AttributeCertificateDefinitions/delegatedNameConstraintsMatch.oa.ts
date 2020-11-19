@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_mr_delegatedNameConstraintsMatch } from "../AttributeCertificateDefinitions/id-mr-delegatedNameConstraintsMatch.va";
 import {
+    NameConstraintsSyntax,
     _decode_NameConstraintsSyntax,
     _encode_NameConstraintsSyntax,
 } from "../CertificateExtensions/NameConstraintsSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<NameConstraintsSyntax>}
+ * @implements {MATCHING_RULE<NameConstraintsSyntax>}
  */
-export const delegatedNameConstraintsMatch: MATCHING_RULE = {
+export const delegatedNameConstraintsMatch: MATCHING_RULE<NameConstraintsSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_NameConstraintsSyntax,

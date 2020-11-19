@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { UTCTime } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_utcTime } from "../SelectedAttributeTypes/id-lsx-utcTime.va";
@@ -20,10 +21,10 @@ export { id_lsx_utcTime } from "../SelectedAttributeTypes/id-lsx-utcTime.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<UTCTime>}
+ * @implements {SYNTAX_NAME<UTCTime>}
  */
-export const utcTime: SYNTAX_NAME = {
+export const utcTime: SYNTAX_NAME<UTCTime> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeUTCTime,

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
 export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
@@ -15,10 +16,10 @@ export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
  * ```
  *
  * @constant
- * @type {OP_BIND_ROLE}
- * @implements {OP_BIND_ROLE}
+ * @type {OP_BIND_ROLE<NULL>}
+ * @implements {OP_BIND_ROLE<NULL>}
  */
-export const shadowOperationalBinding_roleA: OP_BIND_ROLE = {
+export const shadowOperationalBinding_roleA: OP_BIND_ROLE<NULL> = {
     class: "OP-BIND-ROLE",
     decoderFor: {
         "&EstablishParam": $._decodeNull,

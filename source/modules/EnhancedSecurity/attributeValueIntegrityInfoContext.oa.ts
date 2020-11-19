@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AttributeValueIntegrityInfo,
     _decode_AttributeValueIntegrityInfo,
     _encode_AttributeValueIntegrityInfo,
 } from "../EnhancedSecurity/AttributeValueIntegrityInfo.ta";
@@ -27,10 +28,10 @@ export { CONTEXT } from "../InformationFramework/CONTEXT.oca";
  * ```
  *
  * @constant
- * @type {CONTEXT}
- * @implements {CONTEXT}
+ * @type {CONTEXT<AttributeValueIntegrityInfo>}
+ * @implements {CONTEXT<AttributeValueIntegrityInfo>}
  */
-export const attributeValueIntegrityInfoContext: CONTEXT = {
+export const attributeValueIntegrityInfoContext: CONTEXT<AttributeValueIntegrityInfo> = {
     class: "CONTEXT",
     decoderFor: {
         "&Type": _decode_AttributeValueIntegrityInfo,

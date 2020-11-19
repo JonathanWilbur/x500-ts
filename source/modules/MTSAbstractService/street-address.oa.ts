@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../MTSAbstractService/EXTENSION-ATTRIBUTE.oca";
 import {
+    StreetAddress,
     _decode_StreetAddress,
     _encode_StreetAddress,
 } from "../MTSAbstractService/StreetAddress.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<StreetAddress>}
+ * @implements {EXTENSION_ATTRIBUTE<StreetAddress>}
  */
-export const street_address: EXTENSION_ATTRIBUTE = {
+export const street_address: EXTENSION_ATTRIBUTE<StreetAddress> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_StreetAddress,

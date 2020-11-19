@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_protocolInformationMatch } from "../SelectedAttributeTypes/id-mr-protocolInformationMatch.va";
@@ -21,10 +22,10 @@ export { id_mr_protocolInformationMatch } from "../SelectedAttributeTypes/id-mr-
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<OCTET_STRING>}
+ * @implements {MATCHING_RULE<OCTET_STRING>}
  */
-export const protocolInformationMatch: MATCHING_RULE = {
+export const protocolInformationMatch: MATCHING_RULE<OCTET_STRING> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeOctetString,

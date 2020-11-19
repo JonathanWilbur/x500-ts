@@ -31,10 +31,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<Name[]>}
+ * @implements {MATCHING_RULE<Name[]>}
  */
-export const masterAndShadowAccessPointsMatch: MATCHING_RULE = {
+export const masterAndShadowAccessPointsMatch: MATCHING_RULE<Name[]> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeSetOf<Name>(() => _decode_Name),

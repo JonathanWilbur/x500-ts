@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_certificationPracticeStmt } from "../AuthenticationFramework/id-at-certificationPracticeStmt.va";
 import {
+    InfoSyntax,
     _decode_InfoSyntax,
     _encode_InfoSyntax,
 } from "../AuthenticationFramework/InfoSyntax.ta";
@@ -46,10 +47,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<InfoSyntax>}
+ * @implements {ATTRIBUTE<InfoSyntax>}
  */
-export const certificationPracticeStmt: ATTRIBUTE = {
+export const certificationPracticeStmt: ATTRIBUTE<InfoSyntax> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_InfoSyntax,

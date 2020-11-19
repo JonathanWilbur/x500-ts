@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof authorizationValidation["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof authorizationValidation["&ExtnType"]>}
  */
-export const a_authorizationValidation: ATTRIBUTE = {
+export const a_authorizationValidation: ATTRIBUTE<
+    typeof authorizationValidation["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": authorizationValidation.decoderFor["&ExtnType"],

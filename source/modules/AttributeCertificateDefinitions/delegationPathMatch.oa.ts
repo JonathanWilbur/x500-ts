@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DelMatchSyntax,
     _decode_DelMatchSyntax,
     _encode_DelMatchSyntax,
 } from "../AttributeCertificateDefinitions/DelMatchSyntax.ta";
@@ -29,10 +30,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<DelMatchSyntax>}
+ * @implements {MATCHING_RULE<DelMatchSyntax>}
  */
-export const delegationPathMatch: MATCHING_RULE = {
+export const delegationPathMatch: MATCHING_RULE<DelMatchSyntax> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_DelMatchSyntax,

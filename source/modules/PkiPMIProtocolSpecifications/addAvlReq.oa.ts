@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    AddAvlReq,
     _decode_AddAvlReq,
     _encode_AddAvlReq,
 } from "../PkiPMIProtocolSpecifications/AddAvlReq.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PDU } from "../PkiPmiWrapper/WRAPPED-PDU.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PDU}
- * @implements {WRAPPED_PDU}
+ * @type {WRAPPED_PDU<AddAvlReq>}
+ * @implements {WRAPPED_PDU<AddAvlReq>}
  */
 export const addAvlReq: WRAPPED_PDU = {
     class: "TYPE-IDENTIFIER",

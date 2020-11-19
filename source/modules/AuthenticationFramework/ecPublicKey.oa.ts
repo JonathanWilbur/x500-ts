@@ -2,6 +2,7 @@
 import { ALGORITHM } from "../AuthenticationFramework/ALGORITHM.oca";
 import { id_ecPublicKey } from "../AuthenticationFramework/id-ecPublicKey.va";
 import {
+    SupportedCurves,
     _decode_SupportedCurves,
     _encode_SupportedCurves,
 } from "../AuthenticationFramework/SupportedCurves.vsa";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<SupportedCurves>}
+ * @implements {ALGORITHM<SupportedCurves>}
  */
-export const ecPublicKey: ALGORITHM = {
+export const ecPublicKey: ALGORITHM<SupportedCurves> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_SupportedCurves,

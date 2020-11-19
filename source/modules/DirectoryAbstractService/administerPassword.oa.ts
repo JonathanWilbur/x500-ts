@@ -2,10 +2,12 @@
 import { id_opcode_administerPassword } from "../CommonProtocolSpecification/id-opcode-administerPassword.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    AdministerPasswordArgument,
     _decode_AdministerPasswordArgument,
     _encode_AdministerPasswordArgument,
 } from "../DirectoryAbstractService/AdministerPasswordArgument.ta";
 import {
+    AdministerPasswordResult,
     _decode_AdministerPasswordResult,
     _encode_AdministerPasswordResult,
 } from "../DirectoryAbstractService/AdministerPasswordResult.ta";
@@ -49,10 +51,13 @@ export { updateError } from "../DirectoryAbstractService/updateError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<AdministerPasswordArgument, AdministerPasswordResult>}
+ * @implements {OPERATION<AdministerPasswordArgument, AdministerPasswordResult>}
  */
-export const administerPassword: OPERATION = {
+export const administerPassword: OPERATION<
+    AdministerPasswordArgument,
+    AdministerPasswordResult
+> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_AdministerPasswordArgument,

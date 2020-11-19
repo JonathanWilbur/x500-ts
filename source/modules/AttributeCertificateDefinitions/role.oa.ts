@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_role } from "../AttributeCertificateDefinitions/id-at-role.va";
 import {
+    RoleSyntax,
     _decode_RoleSyntax,
     _encode_RoleSyntax,
 } from "../AttributeCertificateDefinitions/RoleSyntax.ta";
@@ -46,10 +47,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<RoleSyntax>}
+ * @implements {ATTRIBUTE<RoleSyntax>}
  */
-export const role: ATTRIBUTE = {
+export const role: ATTRIBUTE<RoleSyntax> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_RoleSyntax,

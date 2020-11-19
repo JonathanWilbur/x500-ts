@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OCTET_STRING } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import {
@@ -42,10 +43,10 @@ export { octetStringMatch } from "../SelectedAttributeTypes/octetStringMatch.oa"
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<OCTET_STRING>}
+ * @implements {ATTRIBUTE<OCTET_STRING>}
  */
-export const messageDigest: ATTRIBUTE = {
+export const messageDigest: ATTRIBUTE<OCTET_STRING> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeOctetString,

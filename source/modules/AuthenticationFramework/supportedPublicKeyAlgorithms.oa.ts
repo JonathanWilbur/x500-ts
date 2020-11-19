@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_at_supportedPublicKeyAlgorithms } from "../AuthenticationFramework/id-at-supportedPublicKeyAlgorithms.va";
 import {
+    SupportedPublicKeyAlgorithms,
     _decode_SupportedPublicKeyAlgorithms,
     _encode_SupportedPublicKeyAlgorithms,
 } from "../AuthenticationFramework/SupportedPublicKeyAlgorithms.ta";
@@ -54,10 +55,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<SupportedPublicKeyAlgorithms>}
+ * @implements {ATTRIBUTE<SupportedPublicKeyAlgorithms>}
  */
-export const supportedPublicKeyAlgorithms: ATTRIBUTE = {
+export const supportedPublicKeyAlgorithms: ATTRIBUTE<SupportedPublicKeyAlgorithms> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_SupportedPublicKeyAlgorithms,

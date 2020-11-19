@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    HierarchySelections,
     _decode_HierarchySelections,
     _encode_HierarchySelections,
 } from "../DirectoryAbstractService/HierarchySelections.ta";
@@ -67,10 +68,10 @@ export { id_not_hierarchySelectList } from "../SelectedAttributeTypes/id-not-hie
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<HierarchySelections>}
+ * @implements {ATTRIBUTE<HierarchySelections>}
  */
-export const hierarchySelectList: ATTRIBUTE = {
+export const hierarchySelectList: ATTRIBUTE<HierarchySelections> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_HierarchySelections,

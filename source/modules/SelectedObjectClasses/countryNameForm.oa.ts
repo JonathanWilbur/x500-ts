@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { countryName } from "../SelectedAttributeTypes/countryName.oa";
 import { country } from "../SelectedObjectClasses/country.oa";
 import { id_nf_countryNameForm } from "../SelectedObjectClasses/id-nf-countryNameForm.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { countryName } from "../SelectedAttributeTypes/countryName.oa";
 export { country } from "../SelectedObjectClasses/country.oa";
 export { id_nf_countryNameForm } from "../SelectedObjectClasses/id-nf-countryNameForm.va";
 
@@ -31,7 +33,7 @@ export const countryNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": country /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [countryName] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_countryNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION countryNameForm */

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_asx_x509SupportedPublicKeyAlgos } from "../AuthenticationFramework/id-asx-x509SupportedPublicKeyAlgos.va";
 import {
+    SupportedPublicKeyAlgorithms,
     _decode_SupportedPublicKeyAlgorithms,
     _encode_SupportedPublicKeyAlgorithms,
 } from "../AuthenticationFramework/SupportedPublicKeyAlgorithms.ta";
@@ -28,10 +29,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<SupportedPublicKeyAlgorithms>}
+ * @implements {SYNTAX_NAME<SupportedPublicKeyAlgorithms>}
  */
-export const x509SupportedPublicKeyAlgos: SYNTAX_NAME = {
+export const x509SupportedPublicKeyAlgos: SYNTAX_NAME<SupportedPublicKeyAlgorithms> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_SupportedPublicKeyAlgorithms,

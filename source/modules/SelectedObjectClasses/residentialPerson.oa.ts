@@ -4,9 +4,11 @@ import {
     structural /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
 import { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
+import { localityName } from "../SelectedAttributeTypes/localityName.oa";
 import { preferredDeliveryMethod } from "../SelectedAttributeTypes/preferredDeliveryMethod.oa";
 import { id_oc_residentialPerson } from "../SelectedObjectClasses/id-oc-residentialPerson.va";
 import { LocaleAttributeSet } from "../SelectedObjectClasses/LocaleAttributeSet.osa";
+import { person } from "../SelectedObjectClasses/person.oa";
 import { PostalAttributeSet } from "../SelectedObjectClasses/PostalAttributeSet.osa";
 import { TelecommunicationAttributeSet } from "../SelectedObjectClasses/TelecommunicationAttributeSet.osa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -24,9 +26,11 @@ export {
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
 export { businessCategory } from "../SelectedAttributeTypes/businessCategory.oa";
+export { localityName } from "../SelectedAttributeTypes/localityName.oa";
 export { preferredDeliveryMethod } from "../SelectedAttributeTypes/preferredDeliveryMethod.oa";
 export { id_oc_residentialPerson } from "../SelectedObjectClasses/id-oc-residentialPerson.va";
 export { LocaleAttributeSet } from "../SelectedObjectClasses/LocaleAttributeSet.osa";
+export { person } from "../SelectedObjectClasses/person.oa";
 export { PostalAttributeSet } from "../SelectedObjectClasses/PostalAttributeSet.osa";
 export { TelecommunicationAttributeSet } from "../SelectedObjectClasses/TelecommunicationAttributeSet.osa";
 
@@ -58,8 +62,8 @@ export const residentialPerson: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
-    "&MandatoryAttributes": undefined,
+    "&Superclasses": [person] /* OBJECT_FIELD_SETTING */,
+    "&MandatoryAttributes": [localityName] /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         ...LocaleAttributeSet,
         ...PostalAttributeSet,

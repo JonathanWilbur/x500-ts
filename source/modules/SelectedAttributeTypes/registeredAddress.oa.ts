@@ -7,6 +7,7 @@ import { id_at_registeredAddress } from "../SelectedAttributeTypes/id-at-registe
 import { postalAddr } from "../SelectedAttributeTypes/postalAddr.oa";
 import { postalAddress } from "../SelectedAttributeTypes/postalAddress.oa";
 import {
+    PostalAddress,
     _decode_PostalAddress,
     _encode_PostalAddress,
 } from "../SelectedAttributeTypes/PostalAddress.ta";
@@ -53,10 +54,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<PostalAddress>}
+ * @implements {ATTRIBUTE<PostalAddress>}
  */
-export const registeredAddress: ATTRIBUTE = {
+export const registeredAddress: ATTRIBUTE<PostalAddress> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_PostalAddress,

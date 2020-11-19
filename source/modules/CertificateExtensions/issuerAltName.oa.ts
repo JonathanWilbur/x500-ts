@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    GeneralNames,
     _decode_GeneralNames,
     _encode_GeneralNames,
 } from "../CertificateExtensions/GeneralNames.ta";
@@ -27,10 +28,10 @@ export { id_ce_issuerAltName } from "../CertificateExtensions/id-ce-issuerAltNam
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<GeneralNames>}
+ * @implements {EXTENSION<GeneralNames>}
  */
-export const issuerAltName: EXTENSION = {
+export const issuerAltName: EXTENSION<GeneralNames> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_GeneralNames,

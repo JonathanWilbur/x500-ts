@@ -29,10 +29,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<UserNotice[]>}
+ * @implements {EXTENSION<UserNotice[]>}
  */
-export const userNotice: EXTENSION = {
+export const userNotice: EXTENSION<UserNotice[]> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeSequenceOf<UserNotice>(() => _decode_UserNotice),

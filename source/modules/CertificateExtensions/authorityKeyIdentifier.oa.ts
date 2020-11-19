@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AuthorityKeyIdentifier,
     _decode_AuthorityKeyIdentifier,
     _encode_AuthorityKeyIdentifier,
 } from "../CertificateExtensions/AuthorityKeyIdentifier.ta";
@@ -27,10 +28,10 @@ export { id_ce_authorityKeyIdentifier } from "../CertificateExtensions/id-ce-aut
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AuthorityKeyIdentifier>}
+ * @implements {EXTENSION<AuthorityKeyIdentifier>}
  */
-export const authorityKeyIdentifier: EXTENSION = {
+export const authorityKeyIdentifier: EXTENSION<AuthorityKeyIdentifier> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AuthorityKeyIdentifier,

@@ -2,6 +2,7 @@
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_asx_utmCoords } from "../SelectedAttributeTypes/id-asx-utmCoords.va";
 import {
+    UtmCoordinates,
     _decode_UtmCoordinates,
     _encode_UtmCoordinates,
 } from "../SelectedAttributeTypes/UtmCoordinates.ta";
@@ -28,10 +29,10 @@ export {
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<UtmCoordinates>}
+ * @implements {SYNTAX_NAME<UtmCoordinates>}
  */
-export const utmCoords: SYNTAX_NAME = {
+export const utmCoords: SYNTAX_NAME<UtmCoordinates> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_UtmCoordinates,

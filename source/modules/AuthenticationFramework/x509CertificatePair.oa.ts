@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CertificatePair,
     _decode_CertificatePair,
     _encode_CertificatePair,
 } from "../AuthenticationFramework/CertificatePair.ta";
@@ -28,10 +29,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<CertificatePair>}
+ * @implements {SYNTAX_NAME<CertificatePair>}
  */
-export const x509CertificatePair: SYNTAX_NAME = {
+export const x509CertificatePair: SYNTAX_NAME<CertificatePair> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_CertificatePair,

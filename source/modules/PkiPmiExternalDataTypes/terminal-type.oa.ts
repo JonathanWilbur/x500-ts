@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    TerminalType,
     _decode_TerminalType,
     _encode_TerminalType,
 } from "../PkiPmiExternalDataTypes/TerminalType.ta";
@@ -37,10 +38,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<TerminalType>}
+ * @implements {EXTENSION_ATTRIBUTE<TerminalType>}
  */
-export const terminal_type: EXTENSION_ATTRIBUTE = {
+export const terminal_type: EXTENSION_ATTRIBUTE<TerminalType> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_TerminalType,

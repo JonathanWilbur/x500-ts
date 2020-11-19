@@ -2,6 +2,7 @@
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import { id_ce_inhibitAnyPolicy } from "../CertificateExtensions/id-ce-inhibitAnyPolicy.va";
 import {
+    SkipCerts,
     _decode_SkipCerts,
     _encode_SkipCerts,
 } from "../CertificateExtensions/SkipCerts.ta";
@@ -27,10 +28,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<SkipCerts>}
+ * @implements {EXTENSION<SkipCerts>}
  */
-export const inhibitAnyPolicy: EXTENSION = {
+export const inhibitAnyPolicy: EXTENSION<SkipCerts> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_SkipCerts,

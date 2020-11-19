@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    DeltaInformation,
     _decode_DeltaInformation,
     _encode_DeltaInformation,
 } from "../CertificateExtensions/DeltaInformation.ta";
@@ -27,10 +28,10 @@ export { id_ce_deltaInfo } from "../CertificateExtensions/id-ce-deltaInfo.va";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<DeltaInformation>}
+ * @implements {EXTENSION<DeltaInformation>}
  */
-export const deltaInfo: EXTENSION = {
+export const deltaInfo: EXTENSION<DeltaInformation> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_DeltaInformation,

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    CasubProt,
     _decode_CasubProt,
     _encode_CasubProt,
 } from "../CaSubscription/CasubProt.ta";
@@ -27,8 +28,8 @@ export { WRAPPED_PROT } from "../Wrapper/WRAPPED-PROT.oca";
  * ```
  *
  * @constant
- * @type {WRAPPED_PROT}
- * @implements {WRAPPED_PROT}
+ * @type {WRAPPED_PROT<CasubProt>}
+ * @implements {WRAPPED_PROT<CasubProt>}
  */
 export const casubProt: WRAPPED_PROT = {
     class: "TYPE-IDENTIFIER",

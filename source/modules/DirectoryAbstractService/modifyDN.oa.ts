@@ -2,10 +2,12 @@
 import { id_opcode_modifyDN } from "../CommonProtocolSpecification/id-opcode-modifyDN.va";
 import { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
 import {
+    ModifyDNArgument,
     _decode_ModifyDNArgument,
     _encode_ModifyDNArgument,
 } from "../DirectoryAbstractService/ModifyDNArgument.ta";
 import {
+    ModifyDNResult,
     _decode_ModifyDNResult,
     _encode_ModifyDNResult,
 } from "../DirectoryAbstractService/ModifyDNResult.ta";
@@ -58,10 +60,10 @@ export { updateError } from "../DirectoryAbstractService/updateError.oa";
  * ```
  *
  * @constant
- * @type {OPERATION}
- * @implements {OPERATION}
+ * @type {OPERATION<ModifyDNArgument, ModifyDNResult>}
+ * @implements {OPERATION<ModifyDNArgument, ModifyDNResult>}
  */
-export const modifyDN: OPERATION = {
+export const modifyDN: OPERATION<ModifyDNArgument, ModifyDNResult> = {
     class: "OPERATION",
     decoderFor: {
         "&ArgumentType": _decode_ModifyDNArgument,

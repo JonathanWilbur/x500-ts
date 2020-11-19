@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { UTF8String } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_at_xmlPrivPolicy } from "../AttributeCertificateDefinitions/id-at-xmlPrivPolicy.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -38,10 +39,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UTF8String>}
+ * @implements {ATTRIBUTE<UTF8String>}
  */
-export const xmlPrivPolicy: ATTRIBUTE = {
+export const xmlPrivPolicy: ATTRIBUTE<UTF8String> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": $._decodeUTF8String,

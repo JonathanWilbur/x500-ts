@@ -8,6 +8,7 @@ import { caseIgnoreSubstringsMatch } from "../SelectedAttributeTypes/caseIgnoreS
 import { directoryString } from "../SelectedAttributeTypes/directoryString.oa";
 import { id_at_physicalDeliveryOfficeName } from "../SelectedAttributeTypes/id-at-physicalDeliveryOfficeName.va";
 import {
+    UnboundedDirectoryString,
     _decode_UnboundedDirectoryString,
     _encode_UnboundedDirectoryString,
 } from "../SelectedAttributeTypes/UnboundedDirectoryString.ta";
@@ -56,10 +57,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<UnboundedDirectoryString>}
+ * @implements {ATTRIBUTE<UnboundedDirectoryString>}
  */
-export const physicalDeliveryOfficeName: ATTRIBUTE = {
+export const physicalDeliveryOfficeName: ATTRIBUTE<UnboundedDirectoryString> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UnboundedDirectoryString,

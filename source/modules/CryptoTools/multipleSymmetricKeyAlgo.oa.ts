@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { id_algo_multipleSymmetricKeyAlgo } from "../CryptoTools/id-algo-multipleSymmetricKeyAlgo.va";
 import {
+    MultipleSymmetricKeyAlgo,
     _decode_MultipleSymmetricKeyAlgo,
     _encode_MultipleSymmetricKeyAlgo,
 } from "../CryptoTools/MultipleSymmetricKeyAlgo.ta";
@@ -27,10 +28,10 @@ export { ALGORITHM } from "../PKI-Stub/ALGORITHM.oca";
  * ```
  *
  * @constant
- * @type {ALGORITHM}
- * @implements {ALGORITHM}
+ * @type {ALGORITHM<MultipleSymmetricKeyAlgo>}
+ * @implements {ALGORITHM<MultipleSymmetricKeyAlgo>}
  */
-export const multipleSymmetricKeyAlgo: ALGORITHM = {
+export const multipleSymmetricKeyAlgo: ALGORITHM<MultipleSymmetricKeyAlgo> = {
     class: "ALGORITHM",
     decoderFor: {
         "&Type": _decode_MultipleSymmetricKeyAlgo,

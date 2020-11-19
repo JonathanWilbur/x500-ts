@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_ce_indirectIssuer } from "../AttributeCertificateDefinitions/id-ce-indirectIssuer.va";
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
@@ -19,10 +20,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<NULL>}
+ * @implements {EXTENSION<NULL>}
  */
-export const indirectIssuer: EXTENSION = {
+export const indirectIssuer: EXTENSION<NULL> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": $._decodeNull,

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION_ATTRIBUTE } from "../PkiPmiExternalDataTypes/EXTENSION-ATTRIBUTE.oca";
 import {
+    UniversalUniquePostalName,
     _decode_UniversalUniquePostalName,
     _encode_UniversalUniquePostalName,
 } from "../PkiPmiExternalDataTypes/UniversalUniquePostalName.ta";
@@ -25,10 +26,10 @@ export {
  * ```
  *
  * @constant
- * @type {EXTENSION_ATTRIBUTE}
- * @implements {EXTENSION_ATTRIBUTE}
+ * @type {EXTENSION_ATTRIBUTE<UniversalUniquePostalName>}
+ * @implements {EXTENSION_ATTRIBUTE<UniversalUniquePostalName>}
  */
-export const universal_unique_postal_name: EXTENSION_ATTRIBUTE = {
+export const universal_unique_postal_name: EXTENSION_ATTRIBUTE<UniversalUniquePostalName> = {
     class: "EXTENSION-ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_UniversalUniquePostalName,

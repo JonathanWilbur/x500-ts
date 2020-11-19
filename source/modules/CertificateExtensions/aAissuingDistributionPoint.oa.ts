@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    AAIssuingDistPointSyntax,
     _decode_AAIssuingDistPointSyntax,
     _encode_AAIssuingDistPointSyntax,
 } from "../CertificateExtensions/AAIssuingDistPointSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_aAissuingDistributionPoint } from "../CertificateExtensions/id-ce
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<AAIssuingDistPointSyntax>}
+ * @implements {EXTENSION<AAIssuingDistPointSyntax>}
  */
-export const aAissuingDistributionPoint: EXTENSION = {
+export const aAissuingDistributionPoint: EXTENSION<AAIssuingDistPointSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_AAIssuingDistPointSyntax,

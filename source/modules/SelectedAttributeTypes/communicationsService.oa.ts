@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { objectIdentifierMatch } from "../InformationFramework/objectIdentifierMatch.oa";
 import {
+    CommunicationsService,
     _decode_CommunicationsService,
     _encode_CommunicationsService,
 } from "../SelectedAttributeTypes/CommunicationsService.ta";
@@ -53,10 +54,10 @@ export { oid } from "../SelectedAttributeTypes/oid.oa";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<CommunicationsService>}
+ * @implements {ATTRIBUTE<CommunicationsService>}
  */
-export const communicationsService: ATTRIBUTE = {
+export const communicationsService: ATTRIBUTE<CommunicationsService> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_CommunicationsService,

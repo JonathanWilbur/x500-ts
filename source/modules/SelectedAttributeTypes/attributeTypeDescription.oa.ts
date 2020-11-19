@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    AttributeTypeDescription,
     _decode_AttributeTypeDescription,
     _encode_AttributeTypeDescription,
 } from "../SchemaAdministration/AttributeTypeDescription.ta";
@@ -28,10 +29,10 @@ export { id_lsx_attributeTypeDescription } from "../SelectedAttributeTypes/id-ls
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<AttributeTypeDescription>}
+ * @implements {SYNTAX_NAME<AttributeTypeDescription>}
  */
-export const attributeTypeDescription: SYNTAX_NAME = {
+export const attributeTypeDescription: SYNTAX_NAME<AttributeTypeDescription> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_AttributeTypeDescription,

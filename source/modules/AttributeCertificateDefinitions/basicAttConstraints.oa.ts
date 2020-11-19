@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    BasicAttConstraintsSyntax,
     _decode_BasicAttConstraintsSyntax,
     _encode_BasicAttConstraintsSyntax,
 } from "../AttributeCertificateDefinitions/BasicAttConstraintsSyntax.ta";
@@ -25,10 +26,10 @@ export { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<BasicAttConstraintsSyntax>}
+ * @implements {EXTENSION<BasicAttConstraintsSyntax>}
  */
-export const basicAttConstraints: EXTENSION = {
+export const basicAttConstraints: EXTENSION<BasicAttConstraintsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_BasicAttConstraintsSyntax,

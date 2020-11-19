@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { INTEGER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_integer } from "../SelectedAttributeTypes/id-lsx-integer.va";
@@ -20,10 +21,10 @@ export { id_lsx_integer } from "../SelectedAttributeTypes/id-lsx-integer.va";
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<INTEGER>}
+ * @implements {SYNTAX_NAME<INTEGER>}
  */
-export const integer: SYNTAX_NAME = {
+export const integer: SYNTAX_NAME<INTEGER> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeInteger,

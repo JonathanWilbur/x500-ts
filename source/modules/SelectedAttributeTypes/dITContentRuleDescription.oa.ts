@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import {
+    DITContentRuleDescription,
     _decode_DITContentRuleDescription,
     _encode_DITContentRuleDescription,
 } from "../SchemaAdministration/DITContentRuleDescription.ta";
@@ -28,10 +29,10 @@ export { id_lsx_dITContentRuleDescription } from "../SelectedAttributeTypes/id-l
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<DITContentRuleDescription>}
+ * @implements {SYNTAX_NAME<DITContentRuleDescription>}
  */
-export const dITContentRuleDescription: SYNTAX_NAME = {
+export const dITContentRuleDescription: SYNTAX_NAME<DITContentRuleDescription> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": _decode_DITContentRuleDescription,

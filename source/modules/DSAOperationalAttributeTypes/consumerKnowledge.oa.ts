@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    ConsumerInformation,
     _decode_ConsumerInformation,
     _encode_ConsumerInformation,
 } from "../DSAOperationalAttributeTypes/ConsumerInformation.ta";
@@ -51,10 +52,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ConsumerInformation>}
+ * @implements {ATTRIBUTE<ConsumerInformation>}
  */
-export const consumerKnowledge: ATTRIBUTE = {
+export const consumerKnowledge: ATTRIBUTE<ConsumerInformation> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ConsumerInformation,

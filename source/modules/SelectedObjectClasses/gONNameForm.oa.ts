@@ -1,10 +1,12 @@
 /* eslint-disable */
 import { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
+import { commonName } from "../SelectedAttributeTypes/commonName.oa";
 import { groupOfNames } from "../SelectedObjectClasses/groupOfNames.oa";
 import { id_nf_gONNameForm } from "../SelectedObjectClasses/id-nf-gONNameForm.va";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export { NAME_FORM } from "../InformationFramework/NAME-FORM.oca";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
+export { commonName } from "../SelectedAttributeTypes/commonName.oa";
 export { groupOfNames } from "../SelectedObjectClasses/groupOfNames.oa";
 export { id_nf_gONNameForm } from "../SelectedObjectClasses/id-nf-gONNameForm.va";
 
@@ -31,7 +33,7 @@ export const gONNameForm: NAME_FORM = {
     decoderFor: {},
     encoderFor: {},
     "&namedObjectClass": groupOfNames /* OBJECT_FIELD_SETTING */,
-    "&MandatoryAttributes": undefined,
+    "&MandatoryAttributes": [commonName] /* OBJECT_FIELD_SETTING */,
     "&id": id_nf_gONNameForm /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
 };
 /* END_OF_SYMBOL_DEFINITION gONNameForm */

@@ -4,6 +4,7 @@ import {
     userApplications /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/AttributeUsage.ta";
 import {
+    ContextAssertion,
     _decode_ContextAssertion,
     _encode_ContextAssertion,
 } from "../InformationFramework/ContextAssertion.ta";
@@ -46,10 +47,10 @@ export { id_not_contextList } from "../SelectedAttributeTypes/id-not-contextList
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<ContextAssertion>}
+ * @implements {ATTRIBUTE<ContextAssertion>}
  */
-export const contextList: ATTRIBUTE = {
+export const contextList: ATTRIBUTE<ContextAssertion> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_ContextAssertion,

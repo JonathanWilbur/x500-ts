@@ -2,6 +2,7 @@
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 import { id_mr_presentationAddressMatch } from "../SelectedAttributeTypes/id-mr-presentationAddressMatch.va";
 import {
+    PresentationAddress,
     _decode_PresentationAddress,
     _encode_PresentationAddress,
 } from "../SelectedAttributeTypes/PresentationAddress.ta";
@@ -29,10 +30,10 @@ export {
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<PresentationAddress>}
+ * @implements {MATCHING_RULE<PresentationAddress>}
  */
-export const presentationAddressMatch: MATCHING_RULE = {
+export const presentationAddressMatch: MATCHING_RULE<PresentationAddress> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": _decode_PresentationAddress,

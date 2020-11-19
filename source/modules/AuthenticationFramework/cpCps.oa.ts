@@ -6,6 +6,7 @@ import { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 import {
     auxiliary /* IMPORTED_SHORT_ENUMERATION_ITEM */,
 } from "../InformationFramework/ObjectClassKind.ta";
+import { top } from "../InformationFramework/top.oa";
 export { certificatePolicy } from "../AuthenticationFramework/certificatePolicy.oa";
 export { certificationPracticeStmt } from "../AuthenticationFramework/certificationPracticeStmt.oa";
 export { id_oc_cpCps } from "../AuthenticationFramework/id-oc-cpCps.va";
@@ -23,6 +24,7 @@ export {
     _encode_ObjectClassKind,
     _enum_for_ObjectClassKind,
 } from "../InformationFramework/ObjectClassKind.ta";
+export { top } from "../InformationFramework/top.oa";
 
 /* START_OF_SYMBOL_DEFINITION cpCps */
 /**
@@ -50,7 +52,7 @@ export const cpCps: OBJECT_CLASS = {
     class: "OBJECT-CLASS",
     decoderFor: {},
     encoderFor: {},
-    "&Superclasses": undefined,
+    "&Superclasses": [top] /* OBJECT_FIELD_SETTING */,
     "&kind": auxiliary /* OBJECT_FIELD_SETTING */,
     "&OptionalAttributes": [
         certificatePolicy,

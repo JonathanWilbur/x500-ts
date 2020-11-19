@@ -5,6 +5,7 @@ import {
 } from "../InformationFramework/AttributeUsage.ta";
 import { id_not_proposedRelaxation } from "../SelectedAttributeTypes/id-not-proposedRelaxation.va";
 import {
+    MRMappings,
     _decode_MRMappings,
     _encode_MRMappings,
 } from "../SelectedAttributeTypes/MRMappings.ta";
@@ -46,10 +47,10 @@ export {
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<MRMappings>}
+ * @implements {ATTRIBUTE<MRMappings>}
  */
-export const proposedRelaxation: ATTRIBUTE = {
+export const proposedRelaxation: ATTRIBUTE<MRMappings> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_MRMappings,

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import {
+    DitBridgeKnowledge,
     _decode_DitBridgeKnowledge,
     _encode_DitBridgeKnowledge,
 } from "../DistributedOperations/DitBridgeKnowledge.ta";
@@ -51,10 +52,10 @@ export { directoryStringFirstComponentMatch } from "../SelectedAttributeTypes/di
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<DitBridgeKnowledge>}
+ * @implements {ATTRIBUTE<DitBridgeKnowledge>}
  */
-export const ditBridgeKnowledge: ATTRIBUTE = {
+export const ditBridgeKnowledge: ATTRIBUTE<DitBridgeKnowledge> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": _decode_DitBridgeKnowledge,

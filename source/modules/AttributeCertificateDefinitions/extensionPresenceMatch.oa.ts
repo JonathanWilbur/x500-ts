@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { id_mr_extensionPresenceMatch } from "../AttributeCertificateDefinitions/id-mr-extensionPresenceMatch.va";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
@@ -22,10 +23,10 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {MATCHING_RULE}
- * @implements {MATCHING_RULE}
+ * @type {MATCHING_RULE<OBJECT_IDENTIFIER>}
+ * @implements {MATCHING_RULE<OBJECT_IDENTIFIER>}
  */
-export const extensionPresenceMatch: MATCHING_RULE = {
+export const extensionPresenceMatch: MATCHING_RULE<OBJECT_IDENTIFIER> = {
     class: "MATCHING-RULE",
     decoderFor: {
         "&AssertionType": $._decodeObjectIdentifier,

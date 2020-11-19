@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof issuingDistributionPoint["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof issuingDistributionPoint["&ExtnType"]>}
  */
-export const a_issuingDistributionPoint: ATTRIBUTE = {
+export const a_issuingDistributionPoint: ATTRIBUTE<
+    typeof issuingDistributionPoint["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": issuingDistributionPoint.decoderFor["&ExtnType"],

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CRLStreamIdentifier,
     _decode_CRLStreamIdentifier,
     _encode_CRLStreamIdentifier,
 } from "../CertificateExtensions/CRLStreamIdentifier.ta";
@@ -27,10 +28,10 @@ export { id_ce_cRLStreamIdentifier } from "../CertificateExtensions/id-ce-cRLStr
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CRLStreamIdentifier>}
+ * @implements {EXTENSION<CRLStreamIdentifier>}
  */
-export const cRLStreamIdentifier: EXTENSION = {
+export const cRLStreamIdentifier: EXTENSION<CRLStreamIdentifier> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CRLStreamIdentifier,

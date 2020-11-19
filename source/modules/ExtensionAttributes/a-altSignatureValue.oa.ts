@@ -43,10 +43,12 @@ export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
  * ```
  *
  * @constant
- * @type {ATTRIBUTE}
- * @implements {ATTRIBUTE}
+ * @type {ATTRIBUTE<typeof altSignatureValue["&ExtnType"]>}
+ * @implements {ATTRIBUTE<typeof altSignatureValue["&ExtnType"]>}
  */
-export const a_altSignatureValue: ATTRIBUTE = {
+export const a_altSignatureValue: ATTRIBUTE<
+    typeof altSignatureValue["&ExtnType"]
+> = {
     class: "ATTRIBUTE",
     decoderFor: {
         "&Type": altSignatureValue.decoderFor["&ExtnType"],

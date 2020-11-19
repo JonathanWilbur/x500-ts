@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { EXTENSION } from "../AuthenticationFramework/EXTENSION.oca";
 import {
+    CRLDistPointsSyntax,
     _decode_CRLDistPointsSyntax,
     _encode_CRLDistPointsSyntax,
 } from "../CertificateExtensions/CRLDistPointsSyntax.ta";
@@ -27,10 +28,10 @@ export { id_ce_freshestCRL } from "../CertificateExtensions/id-ce-freshestCRL.va
  * ```
  *
  * @constant
- * @type {EXTENSION}
- * @implements {EXTENSION}
+ * @type {EXTENSION<CRLDistPointsSyntax>}
+ * @implements {EXTENSION<CRLDistPointsSyntax>}
  */
-export const freshestCRL: EXTENSION = {
+export const freshestCRL: EXTENSION<CRLDistPointsSyntax> = {
     class: "EXTENSION",
     decoderFor: {
         "&ExtnType": _decode_CRLDistPointsSyntax,

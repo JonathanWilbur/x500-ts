@@ -1,6 +1,8 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
+    ModificationParameter,
     _decode_ModificationParameter,
     _encode_ModificationParameter,
 } from "../DirectoryShadowAbstractService/ModificationParameter.ta";
@@ -24,10 +26,13 @@ export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
  * ```
  *
  * @constant
- * @type {OP_BIND_ROLE}
- * @implements {OP_BIND_ROLE}
+ * @type {OP_BIND_ROLE<NULL, ModificationParameter>}
+ * @implements {OP_BIND_ROLE<NULL, ModificationParameter>}
  */
-export const shadowOperationalBinding_roleB: OP_BIND_ROLE = {
+export const shadowOperationalBinding_roleB: OP_BIND_ROLE<
+    NULL,
+    ModificationParameter
+> = {
     class: "OP-BIND-ROLE",
     decoderFor: {
         "&EstablishParam": $._decodeNull,

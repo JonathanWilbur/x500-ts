@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { NULL } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 import { id_lsx_ldapSyntaxDescription } from "../SelectedAttributeTypes/id-lsx-ldapSyntaxDescription.va";
@@ -20,10 +21,10 @@ export { id_lsx_ldapSyntaxDescription } from "../SelectedAttributeTypes/id-lsx-l
  * ```
  *
  * @constant
- * @type {SYNTAX_NAME}
- * @implements {SYNTAX_NAME}
+ * @type {SYNTAX_NAME<NULL>}
+ * @implements {SYNTAX_NAME<NULL>}
  */
-export const ldapSyntaxDescription: SYNTAX_NAME = {
+export const ldapSyntaxDescription: SYNTAX_NAME<NULL> = {
     class: "SYNTAX-NAME",
     decoderFor: {
         "&Type": $._decodeNull,
