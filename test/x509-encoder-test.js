@@ -1,14 +1,19 @@
 const asn1 = require("asn1-ts");
-const x509 = require("../dist/node/index");
 const fs = require("fs");
-const AuthenticationFramework = x509.AuthenticationFramework;
-const InformationFramework = x509.InformationFramework;
+const { SIGNED } = require("../dist/node/modules/AuthenticationFramework/SIGNED.ta");
+const { _encode_Certificate } = require("../dist/node/modules/AuthenticationFramework/Certificate.ta");
+const { TBSCertificate } = require("../dist/node/modules/AuthenticationFramework/TBSCertificate.ta");
+const { Version_v1 } = require("../dist/node/modules/AuthenticationFramework/Version.ta");
+const { AlgorithmIdentifier } = require("../dist/node/modules/AuthenticationFramework/AlgorithmIdentifier.ta");
+const { Validity } = require("../dist/node/modules/AuthenticationFramework/Validity.ta");
+const { SubjectPublicKeyInfo } = require("../dist/node/modules/AuthenticationFramework/SubjectPublicKeyInfo.ta");
+const { AttributeTypeAndValue } = require("../dist/node/modules/InformationFramework/AttributeTypeAndValue.ta");
 
-const cert2 = new AuthenticationFramework.SIGNED(
-    new AuthenticationFramework.TBSCertificate(
-        AuthenticationFramework.Version_v1,
+const cert2 = new SIGNED(
+    new TBSCertificate(
+        Version_v1,
         new Uint8Array([ 1, 2, 3, 4, 5, 6, 7, 8 ]),
-        new AuthenticationFramework.AlgorithmIdentifier(
+        new AlgorithmIdentifier(
             new asn1.ObjectIdentifier([ 1, 2, 840, 113549, 1, 1, 11 ]),
             new asn1.DERElement(
                 asn1.ASN1TagClass.universal,
@@ -20,7 +25,7 @@ const cert2 = new AuthenticationFramework.SIGNED(
         {
             rdnSequence: [
                 [
-                    new InformationFramework.AttributeTypeAndValue(
+                    new AttributeTypeAndValue(
                         new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]),
                         new asn1.DERElement(
                             asn1.ASN1TagClass.universal,
@@ -32,14 +37,14 @@ const cert2 = new AuthenticationFramework.SIGNED(
                 ],
             ],
         },
-        new AuthenticationFramework.Validity(
+        new Validity(
             { generalizedTime: new Date() },
             { generalizedTime: new Date() },
         ),
         {
             rdnSequence: [
                 [
-                    new InformationFramework.AttributeTypeAndValue(
+                    new AttributeTypeAndValue(
                         new asn1.ObjectIdentifier([ 2, 5, 4, 3 ]),
                         new asn1.DERElement(
                             asn1.ASN1TagClass.universal,
@@ -51,8 +56,8 @@ const cert2 = new AuthenticationFramework.SIGNED(
                 ],
             ],
         },
-        new AuthenticationFramework.SubjectPublicKeyInfo(
-            new AuthenticationFramework.AlgorithmIdentifier(
+        new SubjectPublicKeyInfo(
+            new AlgorithmIdentifier(
                 new asn1.ObjectIdentifier([ 1, 2, 840, 113549, 1, 1, 1 ]),
                 new asn1.DERElement(
                     asn1.ASN1TagClass.universal,
@@ -80,7 +85,7 @@ const cert2 = new AuthenticationFramework.SIGNED(
         undefined,
         undefined,
     ),
-    new AuthenticationFramework.AlgorithmIdentifier(
+    new AlgorithmIdentifier(
         new asn1.ObjectIdentifier([ 1, 2, 840, 113549, 1, 1, 11 ]),
         new asn1.DERElement(
             asn1.ASN1TagClass.universal,
@@ -92,4 +97,4 @@ const cert2 = new AuthenticationFramework.SIGNED(
     new Uint8ClampedArray([ 1, 0, 1, 0, 1, 0, 1, 0 ]),
 );
 
-fs.writeFileSync("./test/output.der", AuthenticationFramework._encode_Certificate(cert2).toBytes());
+fs.writeFileSync("./test/output.der", _encode_Certificate(cert2).toBytes());

@@ -1,5 +1,9 @@
-const x500 = require("../../dist/node/index.js");
 const asn1 = require("asn1-ts");
+const { AttributeTypeAndValue } = require("../../dist/node/modules/InformationFramework/AttributeTypeAndValue.ta");
+const { id_at_givenName } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-givenName.va");
+const { id_at_surname } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-surName.va");
+const { id_at_organizationName } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-organizationName.va");
+const compareRDNSequence = require("../../dist/node/comparators/compareRDNSequence").default;
 
 describe("Comparators", () => {
     const issuerCN = "Bigboi";
@@ -12,18 +16,18 @@ describe("Comparators", () => {
 
     const dn1 = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_givenName,
+            new AttributeTypeAndValue(
+                id_at_givenName,
                 issuerEl,
             ),
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
         ],
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_organizationName,
+            new AttributeTypeAndValue(
+                id_at_organizationName,
                 issuerEl,
             ),
         ]
@@ -31,18 +35,18 @@ describe("Comparators", () => {
 
     const dn2 = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_givenName,
+            new AttributeTypeAndValue(
+                id_at_givenName,
                 issuerEl,
             ),
         ],
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_organizationName,
+            new AttributeTypeAndValue(
+                id_at_organizationName,
                 issuerEl,
             ),
         ]
@@ -50,14 +54,14 @@ describe("Comparators", () => {
 
     const dn3 = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
         ],
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_organizationName,
+            new AttributeTypeAndValue(
+                id_at_organizationName,
                 issuerEl,
             ),
         ]
@@ -65,12 +69,12 @@ describe("Comparators", () => {
 
     const dn4 = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_givenName,
+            new AttributeTypeAndValue(
+                id_at_givenName,
                 issuerEl,
             ),
         ],
@@ -78,27 +82,27 @@ describe("Comparators", () => {
 
     const dn5 = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_organizationName,
+            new AttributeTypeAndValue(
+                id_at_organizationName,
                 issuerEl,
             ),
         ],
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_givenName,
+            new AttributeTypeAndValue(
+                id_at_givenName,
                 issuerEl,
             ),
         ],
     ];
 
     test("can compare two DNs", () => {
-        expect(x500.comparators.compareRDNSequence(dn1, dn2)).toBe(true);
-        expect(x500.comparators.compareRDNSequence(dn1, dn3)).toBe(false);
-        expect(x500.comparators.compareRDNSequence(dn1, dn4)).toBe(false);
-        expect(x500.comparators.compareRDNSequence(dn1, dn5)).toBe(false);
+        expect(compareRDNSequence(dn1, dn2)).toBe(true);
+        expect(compareRDNSequence(dn1, dn3)).toBe(false);
+        expect(compareRDNSequence(dn1, dn4)).toBe(false);
+        expect(compareRDNSequence(dn1, dn5)).toBe(false);
     });
 });

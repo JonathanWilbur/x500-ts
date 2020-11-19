@@ -1,5 +1,10 @@
-const x500 = require("../../dist/node/index.js");
 const asn1 = require("asn1-ts");
+const { AttributeTypeAndValue } = require("../../dist/node/modules/InformationFramework/AttributeTypeAndValue.ta");
+const { id_at_givenName } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-givenName.va");
+const { id_at_surname } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-surName.va");
+const { id_at_organizationName } = require("../../dist/node/modules/SelectedAttributeTypes/id-at-organizationName.va");
+const rdnSequenceToString = require("../../dist/node/stringifiers/rdnSequenceToString").default;
+const generalNameToString = require("../../dist/node/stringifiers/generalNameToString").default;
 
 describe("Stringifiers", () => {
     const issuerCN = "Mr. Is/uer, Jr.";
@@ -12,18 +17,18 @@ describe("Stringifiers", () => {
 
     const dn = [
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_givenName,
+            new AttributeTypeAndValue(
+                id_at_givenName,
                 issuerEl,
             ),
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_surname,
+            new AttributeTypeAndValue(
+                id_at_surname,
                 issuerEl,
             ),
         ],
         [
-            new x500.InformationFramework.AttributeTypeAndValue(
-                x500.SelectedAttributeTypes.id_at_organizationName,
+            new AttributeTypeAndValue(
+                id_at_organizationName,
                 issuerEl,
             ),
         ]
@@ -36,10 +41,10 @@ describe("Stringifiers", () => {
     };
 
     test("can stringify a DN", () => {
-        expect(x500.stringifiers.rdnSequenceToString(dn)).toBe("gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
+        expect(rdnSequenceToString(dn)).toBe("gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
     });
 
     test("can stringify a GeneralName", () => {
-        expect(x500.stringifiers.generalNameToString(gn)).toBe("directoryName:gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
+        expect(generalNameToString(gn)).toBe("directoryName:gn=Mr. Is\\/uer, Jr.+sn=Mr. Is\\/uer, Jr./o=Mr. Is\\/uer, Jr.");
     });
 });
