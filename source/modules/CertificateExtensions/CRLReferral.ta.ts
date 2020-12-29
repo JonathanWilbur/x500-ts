@@ -237,12 +237,12 @@ export function _decode_CRLReferral(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 issuer: (_el: _Element): void => {
-                    issuer = $._decode_implicit<GeneralName>(
+                    issuer = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
                 location: (_el: _Element): void => {
-                    location = $._decode_implicit<GeneralName>(
+                    location = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
@@ -318,7 +318,7 @@ export function _encode_CRLReferral(
                         [
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_GeneralName,
@@ -326,7 +326,7 @@ export function _encode_CRLReferral(
                                   )(value.issuer, $.BER),
                             /* IF_ABSENT  */ value.location === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_GeneralName,

@@ -55,22 +55,22 @@ let _cached_decoder_for_UpdateMode: $.ASN1Decoder<UpdateMode> | null = null;
  */
 export function _decode_UpdateMode(el: _Element) {
     if (!_cached_decoder_for_UpdateMode) {
-        _cached_decoder_for_UpdateMode = $._decode_extensible_choice<
-            UpdateMode
-        >({
-            "CONTEXT 0": [
-                "supplierInitiated",
-                $._decode_implicit<SupplierUpdateMode>(
-                    () => _decode_SupplierUpdateMode
-                ),
-            ],
-            "CONTEXT 1": [
-                "consumerInitiated",
-                $._decode_implicit<ConsumerUpdateMode>(
-                    () => _decode_ConsumerUpdateMode
-                ),
-            ],
-        });
+        _cached_decoder_for_UpdateMode = $._decode_extensible_choice<UpdateMode>(
+            {
+                "CONTEXT 0": [
+                    "supplierInitiated",
+                    $._decode_explicit<SupplierUpdateMode>(
+                        () => _decode_SupplierUpdateMode
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "consumerInitiated",
+                    $._decode_implicit<ConsumerUpdateMode>(
+                        () => _decode_ConsumerUpdateMode
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_UpdateMode(el);
 }
@@ -95,7 +95,7 @@ export function _encode_UpdateMode(
     if (!_cached_encoder_for_UpdateMode) {
         _cached_encoder_for_UpdateMode = $._encode_choice<UpdateMode>(
             {
-                supplierInitiated: $._encode_implicit(
+                supplierInitiated: $._encode_explicit(
                     _TagClass.context,
                     0,
                     () => _encode_SupplierUpdateMode,

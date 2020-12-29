@@ -166,7 +166,7 @@ export function _decode_RoleSyntax(el: _Element) {
                     )(_el);
                 },
                 roleName: (_el: _Element): void => {
-                    roleName = $._decode_implicit<GeneralName>(
+                    roleName = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
@@ -226,7 +226,7 @@ export function _encode_RoleSyntax(
                                       () => _encode_GeneralNames,
                                       $.BER
                                   )(value.roleAuthority, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,

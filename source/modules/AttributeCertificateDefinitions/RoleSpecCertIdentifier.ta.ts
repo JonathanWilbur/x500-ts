@@ -182,9 +182,7 @@ export const _extension_additions_list_spec_for_RoleSpecCertIdentifier: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RoleSpecCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RoleSpecCertIdentifier */
-let _cached_decoder_for_RoleSpecCertIdentifier: $.ASN1Decoder<
-    RoleSpecCertIdentifier
-> | null = null;
+let _cached_decoder_for_RoleSpecCertIdentifier: $.ASN1Decoder<RoleSpecCertIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RoleSpecCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RoleSpecCertIdentifier */
@@ -209,19 +207,19 @@ export function _decode_RoleSpecCertIdentifier(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 roleName: (_el: _Element): void => {
-                    roleName = $._decode_implicit<GeneralName>(
+                    roleName = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
                 roleCertIssuer: (_el: _Element): void => {
-                    roleCertIssuer = $._decode_implicit<GeneralName>(
+                    roleCertIssuer = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
                 roleCertSerialNumber: (_el: _Element): void => {
-                    roleCertSerialNumber = $._decode_implicit<
-                        CertificateSerialNumber
-                    >(() => _decode_CertificateSerialNumber)(_el);
+                    roleCertSerialNumber = $._decode_implicit<CertificateSerialNumber>(
+                        () => _decode_CertificateSerialNumber
+                    )(_el);
                 },
                 roleCertLocator: (_el: _Element): void => {
                     roleCertLocator = $._decode_implicit<GeneralNames>(
@@ -254,9 +252,7 @@ export function _decode_RoleSpecCertIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RoleSpecCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RoleSpecCertIdentifier */
-let _cached_encoder_for_RoleSpecCertIdentifier: $.ASN1Encoder<
-    RoleSpecCertIdentifier
-> | null = null;
+let _cached_encoder_for_RoleSpecCertIdentifier: $.ASN1Encoder<RoleSpecCertIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RoleSpecCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RoleSpecCertIdentifier */
@@ -280,13 +276,13 @@ export function _encode_RoleSpecCertIdentifier(
                 ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 0,
                                 () => _encode_GeneralName,
                                 $.BER
                             )(value.roleName, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,

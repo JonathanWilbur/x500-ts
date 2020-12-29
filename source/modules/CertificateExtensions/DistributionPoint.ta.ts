@@ -185,9 +185,7 @@ export const _extension_additions_list_spec_for_DistributionPoint: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DistributionPoint */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DistributionPoint */
-let _cached_decoder_for_DistributionPoint: $.ASN1Decoder<
-    DistributionPoint
-> | null = null;
+let _cached_decoder_for_DistributionPoint: $.ASN1Decoder<DistributionPoint> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DistributionPoint */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DistributionPoint */
@@ -211,9 +209,9 @@ export function _decode_DistributionPoint(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 distributionPoint: (_el: _Element): void => {
-                    distributionPoint = $._decode_implicit<
-                        DistributionPointName
-                    >(() => _decode_DistributionPointName)(_el);
+                    distributionPoint = $._decode_explicit<DistributionPointName>(
+                        () => _decode_DistributionPointName
+                    )(_el);
                 },
                 reasons: (_el: _Element): void => {
                     reasons = $._decode_implicit<ReasonFlags>(
@@ -250,9 +248,7 @@ export function _decode_DistributionPoint(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DistributionPoint */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DistributionPoint */
-let _cached_encoder_for_DistributionPoint: $.ASN1Encoder<
-    DistributionPoint
-> | null = null;
+let _cached_encoder_for_DistributionPoint: $.ASN1Encoder<DistributionPoint> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DistributionPoint */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DistributionPoint */
@@ -279,7 +275,7 @@ export function _encode_DistributionPoint(
                             /* IF_ABSENT  */ value.distributionPoint ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_DistributionPointName,

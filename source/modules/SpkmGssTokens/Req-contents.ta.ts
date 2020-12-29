@@ -371,7 +371,7 @@ export function _decode_Req_contents(el: _Element) {
                     targ_name = _decode_Name(_el);
                 },
                 "src-name": (_el: _Element): void => {
-                    src_name = $._decode_implicit<Name>(() => _decode_Name)(
+                    src_name = $._decode_explicit<Name>(() => _decode_Name)(
                         _el
                     );
                 },
@@ -462,7 +462,7 @@ export function _encode_Req_contents(
                         /* REQUIRED   */ _encode_Name(value.targ_name, $.BER),
                         /* IF_ABSENT  */ value.src_name === undefined
                             ? undefined
-                            : $._encode_implicit(
+                            : $._encode_explicit(
                                   _TagClass.context,
                                   0,
                                   () => _encode_Name,

@@ -262,9 +262,7 @@ export const _extension_additions_list_spec_for_AAIssuingDistPointSyntax: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AAIssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AAIssuingDistPointSyntax */
-let _cached_decoder_for_AAIssuingDistPointSyntax: $.ASN1Decoder<
-    AAIssuingDistPointSyntax
-> | null = null;
+let _cached_decoder_for_AAIssuingDistPointSyntax: $.ASN1Decoder<AAIssuingDistPointSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AAIssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AAIssuingDistPointSyntax */
@@ -295,9 +293,9 @@ export function _decode_AAIssuingDistPointSyntax(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 distributionPoint: (_el: _Element): void => {
-                    distributionPoint = $._decode_implicit<
-                        DistributionPointName
-                    >(() => _decode_DistributionPointName)(_el);
+                    distributionPoint = $._decode_explicit<DistributionPointName>(
+                        () => _decode_DistributionPointName
+                    )(_el);
                 },
                 onlySomeReasons: (_el: _Element): void => {
                     onlySomeReasons = $._decode_implicit<ReasonFlags>(
@@ -352,9 +350,7 @@ export function _decode_AAIssuingDistPointSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AAIssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AAIssuingDistPointSyntax */
-let _cached_encoder_for_AAIssuingDistPointSyntax: $.ASN1Encoder<
-    AAIssuingDistPointSyntax
-> | null = null;
+let _cached_encoder_for_AAIssuingDistPointSyntax: $.ASN1Encoder<AAIssuingDistPointSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AAIssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AAIssuingDistPointSyntax */
@@ -381,7 +377,7 @@ export function _encode_AAIssuingDistPointSyntax(
                             /* IF_ABSENT  */ value.distributionPoint ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_DistributionPointName,

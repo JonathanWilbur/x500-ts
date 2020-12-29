@@ -316,9 +316,7 @@ export const _extension_additions_list_spec_for_BuiltInStandardAttributes: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_BuiltInStandardAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInStandardAttributes */
-let _cached_decoder_for_BuiltInStandardAttributes: $.ASN1Decoder<
-    BuiltInStandardAttributes
-> | null = null;
+let _cached_decoder_for_BuiltInStandardAttributes: $.ASN1Decoder<BuiltInStandardAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInStandardAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BuiltInStandardAttributes */
@@ -360,12 +358,12 @@ export function _decode_BuiltInStandardAttributes(el: _Element) {
                     )(_el);
                 },
                 "terminal-identifier": (_el: _Element): void => {
-                    terminal_identifier = $._decode_implicit<
-                        TerminalIdentifier
-                    >(() => _decode_TerminalIdentifier)(_el);
+                    terminal_identifier = $._decode_implicit<TerminalIdentifier>(
+                        () => _decode_TerminalIdentifier
+                    )(_el);
                 },
                 "private-domain-name": (_el: _Element): void => {
-                    private_domain_name = $._decode_implicit<PrivateDomainName>(
+                    private_domain_name = $._decode_explicit<PrivateDomainName>(
                         () => _decode_PrivateDomainName
                     )(_el);
                 },
@@ -375,9 +373,9 @@ export function _decode_BuiltInStandardAttributes(el: _Element) {
                     )(_el);
                 },
                 "numeric-user-identifier": (_el: _Element): void => {
-                    numeric_user_identifier = $._decode_implicit<
-                        NumericUserIdentifier
-                    >(() => _decode_NumericUserIdentifier)(_el);
+                    numeric_user_identifier = $._decode_implicit<NumericUserIdentifier>(
+                        () => _decode_NumericUserIdentifier
+                    )(_el);
                 },
                 "personal-name": (_el: _Element): void => {
                     personal_name = $._decode_implicit<PersonalName>(
@@ -385,9 +383,9 @@ export function _decode_BuiltInStandardAttributes(el: _Element) {
                     )(_el);
                 },
                 "organizational-unit-names": (_el: _Element): void => {
-                    organizational_unit_names = $._decode_implicit<
-                        OrganizationalUnitNames
-                    >(() => _decode_OrganizationalUnitNames)(_el);
+                    organizational_unit_names = $._decode_implicit<OrganizationalUnitNames>(
+                        () => _decode_OrganizationalUnitNames
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -417,9 +415,7 @@ export function _decode_BuiltInStandardAttributes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BuiltInStandardAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInStandardAttributes */
-let _cached_encoder_for_BuiltInStandardAttributes: $.ASN1Encoder<
-    BuiltInStandardAttributes
-> | null = null;
+let _cached_encoder_for_BuiltInStandardAttributes: $.ASN1Encoder<BuiltInStandardAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInStandardAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BuiltInStandardAttributes */
@@ -470,7 +466,7 @@ export function _encode_BuiltInStandardAttributes(
                               )(value.terminal_identifier, $.BER),
                         /* IF_ABSENT  */ value.private_domain_name === undefined
                             ? undefined
-                            : $._encode_implicit(
+                            : $._encode_explicit(
                                   _TagClass.context,
                                   2,
                                   () => _encode_PrivateDomainName,

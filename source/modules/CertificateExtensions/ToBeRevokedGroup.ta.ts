@@ -181,9 +181,7 @@ export const _extension_additions_list_spec_for_ToBeRevokedGroup: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ToBeRevokedGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ToBeRevokedGroup */
-let _cached_decoder_for_ToBeRevokedGroup: $.ASN1Decoder<
-    ToBeRevokedGroup
-> | null = null;
+let _cached_decoder_for_ToBeRevokedGroup: $.ASN1Decoder<ToBeRevokedGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ToBeRevokedGroup */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ToBeRevokedGroup */
@@ -208,7 +206,7 @@ export function _decode_ToBeRevokedGroup(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 certificateIssuer: (_el: _Element): void => {
-                    certificateIssuer = $._decode_implicit<GeneralName>(
+                    certificateIssuer = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
@@ -249,9 +247,7 @@ export function _decode_ToBeRevokedGroup(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ToBeRevokedGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ToBeRevokedGroup */
-let _cached_encoder_for_ToBeRevokedGroup: $.ASN1Encoder<
-    ToBeRevokedGroup
-> | null = null;
+let _cached_encoder_for_ToBeRevokedGroup: $.ASN1Encoder<ToBeRevokedGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ToBeRevokedGroup */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ToBeRevokedGroup */
@@ -278,7 +274,7 @@ export function _encode_ToBeRevokedGroup(
                             /* IF_ABSENT  */ value.certificateIssuer ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_GeneralName,

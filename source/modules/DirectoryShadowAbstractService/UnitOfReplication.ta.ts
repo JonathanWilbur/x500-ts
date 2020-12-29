@@ -236,9 +236,7 @@ export const _extension_additions_list_spec_for_UnitOfReplication: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UnitOfReplication */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UnitOfReplication */
-let _cached_decoder_for_UnitOfReplication: $.ASN1Decoder<
-    UnitOfReplication
-> | null = null;
+let _cached_decoder_for_UnitOfReplication: $.ASN1Decoder<UnitOfReplication> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UnitOfReplication */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UnitOfReplication */
@@ -280,9 +278,9 @@ export function _decode_UnitOfReplication(el: _Element) {
                     contextSelection = _decode_ContextSelection(_el);
                 },
                 supplyContexts: (_el: _Element): void => {
-                    supplyContexts = $._decode_implicit<
-                        UnitOfReplication_supplyContexts
-                    >(() => _decode_UnitOfReplication_supplyContexts)(_el);
+                    supplyContexts = $._decode_explicit<UnitOfReplication_supplyContexts>(
+                        () => _decode_UnitOfReplication_supplyContexts
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -309,9 +307,7 @@ export function _decode_UnitOfReplication(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UnitOfReplication */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UnitOfReplication */
-let _cached_encoder_for_UnitOfReplication: $.ASN1Encoder<
-    UnitOfReplication
-> | null = null;
+let _cached_encoder_for_UnitOfReplication: $.ASN1Encoder<UnitOfReplication> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UnitOfReplication */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UnitOfReplication */
@@ -360,7 +356,7 @@ export function _encode_UnitOfReplication(
                               ),
                         /* IF_ABSENT  */ value.supplyContexts === undefined
                             ? undefined
-                            : $._encode_implicit(
+                            : $._encode_explicit(
                                   _TagClass.context,
                                   0,
                                   () =>

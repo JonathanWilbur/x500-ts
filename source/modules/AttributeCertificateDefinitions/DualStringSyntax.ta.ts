@@ -130,9 +130,7 @@ export const _extension_additions_list_spec_for_DualStringSyntax: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DualStringSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DualStringSyntax */
-let _cached_decoder_for_DualStringSyntax: $.ASN1Decoder<
-    DualStringSyntax
-> | null = null;
+let _cached_decoder_for_DualStringSyntax: $.ASN1Decoder<DualStringSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DualStringSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DualStringSyntax */
@@ -159,10 +157,10 @@ export function _decode_DualStringSyntax(el: _Element) {
             sequence[1].name = "object";
             let operation!: UnboundedDirectoryString;
             let object!: UnboundedDirectoryString;
-            operation = $._decode_implicit<UnboundedDirectoryString>(
+            operation = $._decode_explicit<UnboundedDirectoryString>(
                 () => _decode_UnboundedDirectoryString
             )(sequence[0]);
-            object = $._decode_implicit<UnboundedDirectoryString>(
+            object = $._decode_explicit<UnboundedDirectoryString>(
                 () => _decode_UnboundedDirectoryString
             )(sequence[1]);
             return new DualStringSyntax(operation, object, sequence.slice(2));
@@ -173,9 +171,7 @@ export function _decode_DualStringSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DualStringSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DualStringSyntax */
-let _cached_encoder_for_DualStringSyntax: $.ASN1Encoder<
-    DualStringSyntax
-> | null = null;
+let _cached_encoder_for_DualStringSyntax: $.ASN1Encoder<DualStringSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DualStringSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DualStringSyntax */
@@ -199,13 +195,13 @@ export function _encode_DualStringSyntax(
                 ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 0,
                                 () => _encode_UnboundedDirectoryString,
                                 $.BER
                             )(value.operation, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_UnboundedDirectoryString,

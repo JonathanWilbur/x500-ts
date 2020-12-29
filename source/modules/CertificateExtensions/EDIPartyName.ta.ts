@@ -153,12 +153,12 @@ export function _decode_EDIPartyName(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 nameAssigner: (_el: _Element): void => {
-                    nameAssigner = $._decode_implicit<UnboundedDirectoryString>(
+                    nameAssigner = $._decode_explicit<UnboundedDirectoryString>(
                         () => _decode_UnboundedDirectoryString
                     )(_el);
                 },
                 partyName: (_el: _Element): void => {
-                    partyName = $._decode_implicit<UnboundedDirectoryString>(
+                    partyName = $._decode_explicit<UnboundedDirectoryString>(
                         () => _decode_UnboundedDirectoryString
                     )(_el);
                 },
@@ -212,13 +212,13 @@ export function _encode_EDIPartyName(
                         [
                             /* IF_ABSENT  */ value.nameAssigner === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_UnboundedDirectoryString,
                                       $.BER
                                   )(value.nameAssigner, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_UnboundedDirectoryString,

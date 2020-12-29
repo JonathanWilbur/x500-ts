@@ -206,7 +206,7 @@ export function _decode_RevokedGroup(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 certificateIssuer: (_el: _Element): void => {
-                    certificateIssuer = $._decode_implicit<GeneralName>(
+                    certificateIssuer = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
@@ -221,9 +221,9 @@ export function _decode_RevokedGroup(el: _Element) {
                     )(_el);
                 },
                 revokedcertificateGroup: (_el: _Element): void => {
-                    revokedcertificateGroup = $._decode_implicit<
-                        RevokedCertificateGroup
-                    >(() => _decode_RevokedCertificateGroup)(_el);
+                    revokedcertificateGroup = $._decode_explicit<RevokedCertificateGroup>(
+                        () => _decode_RevokedCertificateGroup
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -278,7 +278,7 @@ export function _encode_RevokedGroup(
                             /* IF_ABSENT  */ value.certificateIssuer ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_GeneralName,
@@ -300,7 +300,7 @@ export function _encode_RevokedGroup(
                                       () => $._encodeGeneralizedTime,
                                       $.BER
                                   )(value.invalidityDate, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 3,
                                 () => _encode_RevokedCertificateGroup,

@@ -233,7 +233,7 @@ export function _decode_Wrap_Header(el: _Element) {
                     )(_el);
                 },
                 "conf-alg": (_el: _Element): void => {
-                    conf_alg = $._decode_implicit<Conf_Alg>(
+                    conf_alg = $._decode_explicit<Conf_Alg>(
                         () => _decode_Conf_Alg
                     )(_el);
                 },
@@ -304,7 +304,7 @@ export function _encode_Wrap_Header(
                               )(value.int_alg, $.BER),
                         /* IF_ABSENT  */ value.conf_alg === undefined
                             ? undefined
-                            : $._encode_implicit(
+                            : $._encode_explicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_Conf_Alg,

@@ -397,9 +397,7 @@ export const _extension_additions_list_spec_for_CertificateAssertion: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateAssertion */
-let _cached_decoder_for_CertificateAssertion: $.ASN1Decoder<
-    CertificateAssertion
-> | null = null;
+let _cached_decoder_for_CertificateAssertion: $.ASN1Decoder<CertificateAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateAssertion */
@@ -438,20 +436,20 @@ export function _decode_CertificateAssertion(el: _Element) {
                     )(_el);
                 },
                 issuer: (_el: _Element): void => {
-                    issuer = $._decode_implicit<Name>(() => _decode_Name)(_el);
+                    issuer = $._decode_explicit<Name>(() => _decode_Name)(_el);
                 },
                 subjectKeyIdentifier: (_el: _Element): void => {
-                    subjectKeyIdentifier = $._decode_implicit<
-                        SubjectKeyIdentifier
-                    >(() => _decode_SubjectKeyIdentifier)(_el);
+                    subjectKeyIdentifier = $._decode_implicit<SubjectKeyIdentifier>(
+                        () => _decode_SubjectKeyIdentifier
+                    )(_el);
                 },
                 authorityKeyIdentifier: (_el: _Element): void => {
-                    authorityKeyIdentifier = $._decode_implicit<
-                        AuthorityKeyIdentifier
-                    >(() => _decode_AuthorityKeyIdentifier)(_el);
+                    authorityKeyIdentifier = $._decode_implicit<AuthorityKeyIdentifier>(
+                        () => _decode_AuthorityKeyIdentifier
+                    )(_el);
                 },
                 certificateValid: (_el: _Element): void => {
-                    certificateValid = $._decode_implicit<Time>(
+                    certificateValid = $._decode_explicit<Time>(
                         () => _decode_Time
                     )(_el);
                 },
@@ -461,9 +459,9 @@ export function _decode_CertificateAssertion(el: _Element) {
                     )(_el);
                 },
                 subjectPublicKeyAlgID: (_el: _Element): void => {
-                    subjectPublicKeyAlgID = $._decode_implicit<
-                        OBJECT_IDENTIFIER
-                    >(() => $._decodeObjectIdentifier)(_el);
+                    subjectPublicKeyAlgID = $._decode_implicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    )(_el);
                 },
                 keyUsage: (_el: _Element): void => {
                     keyUsage = $._decode_implicit<KeyUsage>(
@@ -471,7 +469,7 @@ export function _decode_CertificateAssertion(el: _Element) {
                     )(_el);
                 },
                 subjectAltName: (_el: _Element): void => {
-                    subjectAltName = $._decode_implicit<AltNameType>(
+                    subjectAltName = $._decode_explicit<AltNameType>(
                         () => _decode_AltNameType
                     )(_el);
                 },
@@ -481,12 +479,12 @@ export function _decode_CertificateAssertion(el: _Element) {
                     )(_el);
                 },
                 pathToName: (_el: _Element): void => {
-                    pathToName = $._decode_implicit<Name>(() => _decode_Name)(
+                    pathToName = $._decode_explicit<Name>(() => _decode_Name)(
                         _el
                     );
                 },
                 subject: (_el: _Element): void => {
-                    subject = $._decode_implicit<Name>(() => _decode_Name)(_el);
+                    subject = $._decode_explicit<Name>(() => _decode_Name)(_el);
                 },
                 nameConstraints: (_el: _Element): void => {
                     nameConstraints = $._decode_implicit<NameConstraintsSyntax>(
@@ -528,9 +526,7 @@ export function _decode_CertificateAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateAssertion */
-let _cached_encoder_for_CertificateAssertion: $.ASN1Encoder<
-    CertificateAssertion
-> | null = null;
+let _cached_encoder_for_CertificateAssertion: $.ASN1Encoder<CertificateAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateAssertion */
@@ -564,7 +560,7 @@ export function _encode_CertificateAssertion(
                                   )(value.serialNumber, $.BER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_Name,
@@ -591,7 +587,7 @@ export function _encode_CertificateAssertion(
                             /* IF_ABSENT  */ value.certificateValid ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       4,
                                       () => _encode_Time,
@@ -624,7 +620,7 @@ export function _encode_CertificateAssertion(
                                   )(value.keyUsage, $.BER),
                             /* IF_ABSENT  */ value.subjectAltName === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       8,
                                       () => _encode_AltNameType,
@@ -640,7 +636,7 @@ export function _encode_CertificateAssertion(
                                   )(value.policy, $.BER),
                             /* IF_ABSENT  */ value.pathToName === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       10,
                                       () => _encode_Name,
@@ -648,7 +644,7 @@ export function _encode_CertificateAssertion(
                                   )(value.pathToName, $.BER),
                             /* IF_ABSENT  */ value.subject === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       11,
                                       () => _encode_Name,

@@ -253,9 +253,7 @@ export const _extension_additions_list_spec_for_IssuingDistPointSyntax: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_IssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IssuingDistPointSyntax */
-let _cached_decoder_for_IssuingDistPointSyntax: $.ASN1Decoder<
-    IssuingDistPointSyntax
-> | null = null;
+let _cached_decoder_for_IssuingDistPointSyntax: $.ASN1Decoder<IssuingDistPointSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IssuingDistPointSyntax */
@@ -285,14 +283,14 @@ export function _decode_IssuingDistPointSyntax(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 distributionPoint: (_el: _Element): void => {
-                    distributionPoint = $._decode_implicit<
-                        DistributionPointName
-                    >(() => _decode_DistributionPointName)(_el);
+                    distributionPoint = $._decode_explicit<DistributionPointName>(
+                        () => _decode_DistributionPointName
+                    )(_el);
                 },
                 onlyContainsUserPublicKeyCerts: (_el: _Element): void => {
-                    onlyContainsUserPublicKeyCerts = $._decode_implicit<
-                        BOOLEAN
-                    >(() => $._decodeBoolean)(_el);
+                    onlyContainsUserPublicKeyCerts = $._decode_implicit<BOOLEAN>(
+                        () => $._decodeBoolean
+                    )(_el);
                 },
                 onlyContainsCACerts: (_el: _Element): void => {
                     onlyContainsCACerts = $._decode_implicit<BOOLEAN>(
@@ -342,9 +340,7 @@ export function _decode_IssuingDistPointSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IssuingDistPointSyntax */
-let _cached_encoder_for_IssuingDistPointSyntax: $.ASN1Encoder<
-    IssuingDistPointSyntax
-> | null = null;
+let _cached_encoder_for_IssuingDistPointSyntax: $.ASN1Encoder<IssuingDistPointSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IssuingDistPointSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IssuingDistPointSyntax */
@@ -371,7 +367,7 @@ export function _encode_IssuingDistPointSyntax(
                             /* IF_ABSENT  */ value.distributionPoint ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_DistributionPointName,

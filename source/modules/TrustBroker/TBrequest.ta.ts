@@ -48,13 +48,13 @@ export function _decode_TBrequest(el: _Element) {
         _cached_decoder_for_TBrequest = $._decode_extensible_choice<TBrequest>({
             "CONTEXT 0": [
                 "caCert",
-                $._decode_implicit<PKCertIdentifier>(
+                $._decode_explicit<PKCertIdentifier>(
                     () => _decode_PKCertIdentifier
                 ),
             ],
             "CONTEXT 1": [
                 "subjectCert",
-                $._decode_implicit<PKCertIdentifier>(
+                $._decode_explicit<PKCertIdentifier>(
                     () => _decode_PKCertIdentifier
                 ),
             ],
@@ -83,13 +83,13 @@ export function _encode_TBrequest(
     if (!_cached_encoder_for_TBrequest) {
         _cached_encoder_for_TBrequest = $._encode_choice<TBrequest>(
             {
-                caCert: $._encode_implicit(
+                caCert: $._encode_explicit(
                     _TagClass.context,
                     0,
                     () => _encode_PKCertIdentifier,
                     $.BER
                 ),
-                subjectCert: $._encode_implicit(
+                subjectCert: $._encode_explicit(
                     _TagClass.context,
                     1,
                     () => _encode_PKCertIdentifier,

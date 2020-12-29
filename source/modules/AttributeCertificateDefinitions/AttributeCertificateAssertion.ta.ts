@@ -188,9 +188,7 @@ export const _extension_additions_list_spec_for_AttributeCertificateAssertion: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeCertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateAssertion */
-let _cached_decoder_for_AttributeCertificateAssertion: $.ASN1Decoder<
-    AttributeCertificateAssertion
-> | null = null;
+let _cached_decoder_for_AttributeCertificateAssertion: $.ASN1Decoder<AttributeCertificateAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificateAssertion */
@@ -215,9 +213,9 @@ export function _decode_AttributeCertificateAssertion(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 holder: (_el: _Element): void => {
-                    holder = $._decode_implicit<
-                        AttributeCertificateAssertion_holder
-                    >(() => _decode_AttributeCertificateAssertion_holder)(_el);
+                    holder = $._decode_explicit<AttributeCertificateAssertion_holder>(
+                        () => _decode_AttributeCertificateAssertion_holder
+                    )(_el);
                 },
                 issuer: (_el: _Element): void => {
                     issuer = $._decode_implicit<GeneralNames>(
@@ -262,9 +260,7 @@ export function _decode_AttributeCertificateAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateAssertion */
-let _cached_encoder_for_AttributeCertificateAssertion: $.ASN1Encoder<
-    AttributeCertificateAssertion
-> | null = null;
+let _cached_encoder_for_AttributeCertificateAssertion: $.ASN1Encoder<AttributeCertificateAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificateAssertion */
@@ -290,7 +286,7 @@ export function _encode_AttributeCertificateAssertion(
                         [
                             /* IF_ABSENT  */ value.holder === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () =>

@@ -130,11 +130,11 @@ export function _decode_TBprot(el: _Element) {
             ],
             "CONTEXT 4": [
                 "tBrequest",
-                $._decode_implicit<TBrequest>(() => _decode_TBrequest),
+                $._decode_explicit<TBrequest>(() => _decode_TBrequest),
             ],
             "CONTEXT 5": [
                 "tBresponse",
-                $._decode_implicit<TBresponse>(() => _decode_TBresponse),
+                $._decode_explicit<TBresponse>(() => _decode_TBresponse),
             ],
         });
     }
@@ -182,13 +182,13 @@ export function _encode_TBprot(value: TBprot, elGetter: $.ASN1Encoder<TBprot>) {
                     () => _encode_InitializationAbort,
                     $.BER
                 ),
-                tBrequest: $._encode_implicit(
+                tBrequest: $._encode_explicit(
                     _TagClass.context,
                     4,
                     () => _encode_TBrequest,
                     $.BER
                 ),
-                tBresponse: $._encode_implicit(
+                tBresponse: $._encode_explicit(
                     _TagClass.context,
                     5,
                     () => _encode_TBresponse,

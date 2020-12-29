@@ -60,11 +60,11 @@ export function _decode_Target(el: _Element) {
         _cached_decoder_for_Target = $._decode_extensible_choice<Target>({
             "CONTEXT 0": [
                 "targetName",
-                $._decode_implicit<GeneralName>(() => _decode_GeneralName),
+                $._decode_explicit<GeneralName>(() => _decode_GeneralName),
             ],
             "CONTEXT 1": [
                 "targetGroup",
-                $._decode_implicit<GeneralName>(() => _decode_GeneralName),
+                $._decode_explicit<GeneralName>(() => _decode_GeneralName),
             ],
             "CONTEXT 2": [
                 "targetCert",
@@ -92,13 +92,13 @@ export function _encode_Target(value: Target, elGetter: $.ASN1Encoder<Target>) {
     if (!_cached_encoder_for_Target) {
         _cached_encoder_for_Target = $._encode_choice<Target>(
             {
-                targetName: $._encode_implicit(
+                targetName: $._encode_explicit(
                     _TagClass.context,
                     0,
                     () => _encode_GeneralName,
                     $.BER
                 ),
-                targetGroup: $._encode_implicit(
+                targetGroup: $._encode_explicit(
                     _TagClass.context,
                     1,
                     () => _encode_GeneralName,

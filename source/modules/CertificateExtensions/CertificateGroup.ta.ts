@@ -55,9 +55,7 @@ export type CertificateGroup =
 /* END_OF_SYMBOL_DEFINITION CertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateGroup */
-let _cached_decoder_for_CertificateGroup: $.ASN1Decoder<
-    CertificateGroup
-> | null = null;
+let _cached_decoder_for_CertificateGroup: $.ASN1Decoder<CertificateGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateGroup */
@@ -69,35 +67,33 @@ let _cached_decoder_for_CertificateGroup: $.ASN1Decoder<
  */
 export function _decode_CertificateGroup(el: _Element) {
     if (!_cached_decoder_for_CertificateGroup) {
-        _cached_decoder_for_CertificateGroup = $._decode_extensible_choice<
-            CertificateGroup
-        >({
-            "CONTEXT 0": [
-                "serialNumbers",
-                $._decode_implicit<CertificateSerialNumbers>(
-                    () => _decode_CertificateSerialNumbers
-                ),
-            ],
-            "CONTEXT 1": [
-                "serialNumberRange",
-                $._decode_implicit<CertificateGroupNumberRange>(
-                    () => _decode_CertificateGroupNumberRange
-                ),
-            ],
-            "CONTEXT 2": [
-                "nameSubtree",
-                $._decode_implicit<GeneralName>(() => _decode_GeneralName),
-            ],
-        });
+        _cached_decoder_for_CertificateGroup = $._decode_extensible_choice<CertificateGroup>(
+            {
+                "CONTEXT 0": [
+                    "serialNumbers",
+                    $._decode_implicit<CertificateSerialNumbers>(
+                        () => _decode_CertificateSerialNumbers
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "serialNumberRange",
+                    $._decode_implicit<CertificateGroupNumberRange>(
+                        () => _decode_CertificateGroupNumberRange
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "nameSubtree",
+                    $._decode_explicit<GeneralName>(() => _decode_GeneralName),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertificateGroup(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateGroup */
-let _cached_encoder_for_CertificateGroup: $.ASN1Encoder<
-    CertificateGroup
-> | null = null;
+let _cached_encoder_for_CertificateGroup: $.ASN1Encoder<CertificateGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateGroup */
@@ -113,9 +109,7 @@ export function _encode_CertificateGroup(
     elGetter: $.ASN1Encoder<CertificateGroup>
 ) {
     if (!_cached_encoder_for_CertificateGroup) {
-        _cached_encoder_for_CertificateGroup = $._encode_choice<
-            CertificateGroup
-        >(
+        _cached_encoder_for_CertificateGroup = $._encode_choice<CertificateGroup>(
             {
                 serialNumbers: $._encode_implicit(
                     _TagClass.context,
@@ -129,7 +123,7 @@ export function _encode_CertificateGroup(
                     () => _encode_CertificateGroupNumberRange,
                     $.BER
                 ),
-                nameSubtree: $._encode_implicit(
+                nameSubtree: $._encode_explicit(
                     _TagClass.context,
                     2,
                     () => _encode_GeneralName,

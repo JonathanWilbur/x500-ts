@@ -43,7 +43,6 @@ export {
 } from "../Lightweight-Directory-Access-Protocol-V3/SubstringFilter.ta";
 
 /* START_OF_SYMBOL_DEFINITION Filter */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary Filter
  * @description
@@ -108,7 +107,7 @@ export function _decode_Filter(el: _Element) {
             ],
             "CONTEXT 2": [
                 "not",
-                $._decode_implicit<Filter>(() => _decode_Filter),
+                $._decode_explicit<Filter>(() => _decode_Filter),
             ],
             "CONTEXT 3": [
                 "equalityMatch",
@@ -186,7 +185,7 @@ export function _encode_Filter(value: Filter, elGetter: $.ASN1Encoder<Filter>) {
                     () => $._encodeSetOf<Filter>(() => _encode_Filter, $.BER),
                     $.BER
                 ),
-                not: $._encode_implicit(
+                not: $._encode_explicit(
                     _TagClass.context,
                     2,
                     () => _encode_Filter,

@@ -141,9 +141,7 @@ export const _extension_additions_list_spec_for_AllowedAttributeAssignments_Item
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AllowedAttributeAssignments_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments_Item */
-let _cached_decoder_for_AllowedAttributeAssignments_Item: $.ASN1Decoder<
-    AllowedAttributeAssignments_Item
-> | null = null;
+let _cached_decoder_for_AllowedAttributeAssignments_Item: $.ASN1Decoder<AllowedAttributeAssignments_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments_Item */
@@ -173,14 +171,12 @@ export function _decode_AllowedAttributeAssignments_Item(el: _Element) {
             attributes = $._decode_implicit<
                 AllowedAttributeAssignments_Item_attributes_Item[]
             >(() =>
-                $._decodeSetOf<
-                    AllowedAttributeAssignments_Item_attributes_Item
-                >(
+                $._decodeSetOf<AllowedAttributeAssignments_Item_attributes_Item>(
                     () =>
                         _decode_AllowedAttributeAssignments_Item_attributes_Item
                 )
             )(sequence[0]);
-            holderDomain = $._decode_implicit<GeneralName>(
+            holderDomain = $._decode_explicit<GeneralName>(
                 () => _decode_GeneralName
             )(sequence[1]);
             return new AllowedAttributeAssignments_Item(
@@ -195,9 +191,7 @@ export function _decode_AllowedAttributeAssignments_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments_Item */
-let _cached_encoder_for_AllowedAttributeAssignments_Item: $.ASN1Encoder<
-    AllowedAttributeAssignments_Item
-> | null = null;
+let _cached_encoder_for_AllowedAttributeAssignments_Item: $.ASN1Encoder<AllowedAttributeAssignments_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AllowedAttributeAssignments_Item */
@@ -225,16 +219,14 @@ export function _encode_AllowedAttributeAssignments_Item(
                                 _TagClass.context,
                                 0,
                                 () =>
-                                    $._encodeSetOf<
-                                        AllowedAttributeAssignments_Item_attributes_Item
-                                    >(
+                                    $._encodeSetOf<AllowedAttributeAssignments_Item_attributes_Item>(
                                         () =>
                                             _encode_AllowedAttributeAssignments_Item_attributes_Item,
                                         $.BER
                                     ),
                                 $.BER
                             )(value.attributes, $.BER),
-                            /* REQUIRED   */ $._encode_implicit(
+                            /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_GeneralName,

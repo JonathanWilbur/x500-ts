@@ -306,9 +306,7 @@ export const _extension_additions_list_spec_for_PerAuthorityScope: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PerAuthorityScope */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PerAuthorityScope */
-let _cached_decoder_for_PerAuthorityScope: $.ASN1Decoder<
-    PerAuthorityScope
-> | null = null;
+let _cached_decoder_for_PerAuthorityScope: $.ASN1Decoder<PerAuthorityScope> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PerAuthorityScope */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PerAuthorityScope */
@@ -337,14 +335,14 @@ export function _decode_PerAuthorityScope(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 authorityName: (_el: _Element): void => {
-                    authorityName = $._decode_implicit<GeneralName>(
+                    authorityName = $._decode_explicit<GeneralName>(
                         () => _decode_GeneralName
                     )(_el);
                 },
                 distributionPoint: (_el: _Element): void => {
-                    distributionPoint = $._decode_implicit<
-                        DistributionPointName
-                    >(() => _decode_DistributionPointName)(_el);
+                    distributionPoint = $._decode_explicit<DistributionPointName>(
+                        () => _decode_DistributionPointName
+                    )(_el);
                 },
                 onlyContains: (_el: _Element): void => {
                     onlyContains = $._decode_implicit<OnlyCertificateTypes>(
@@ -406,9 +404,7 @@ export function _decode_PerAuthorityScope(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PerAuthorityScope */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PerAuthorityScope */
-let _cached_encoder_for_PerAuthorityScope: $.ASN1Encoder<
-    PerAuthorityScope
-> | null = null;
+let _cached_encoder_for_PerAuthorityScope: $.ASN1Encoder<PerAuthorityScope> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PerAuthorityScope */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PerAuthorityScope */
@@ -434,7 +430,7 @@ export function _encode_PerAuthorityScope(
                         [
                             /* IF_ABSENT  */ value.authorityName === undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_GeneralName,
@@ -443,7 +439,7 @@ export function _encode_PerAuthorityScope(
                             /* IF_ABSENT  */ value.distributionPoint ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_DistributionPointName,

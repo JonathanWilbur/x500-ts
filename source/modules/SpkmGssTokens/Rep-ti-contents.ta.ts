@@ -310,9 +310,7 @@ export const _extension_additions_list_spec_for_Rep_ti_contents: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Rep_ti_contents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Rep_ti_contents */
-let _cached_decoder_for_Rep_ti_contents: $.ASN1Decoder<
-    Rep_ti_contents
-> | null = null;
+let _cached_decoder_for_Rep_ti_contents: $.ASN1Decoder<Rep_ti_contents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Rep_ti_contents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Rep_ti_contents */
@@ -361,7 +359,7 @@ export function _decode_Rep_ti_contents(el: _Element) {
                     randTarg = _decode_Random_Integer(_el);
                 },
                 "src-name": (_el: _Element): void => {
-                    src_name = $._decode_implicit<Name>(() => _decode_Name)(
+                    src_name = $._decode_explicit<Name>(() => _decode_Name)(
                         _el
                     );
                 },
@@ -416,9 +414,7 @@ export function _decode_Rep_ti_contents(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Rep_ti_contents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Rep_ti_contents */
-let _cached_encoder_for_Rep_ti_contents: $.ASN1Encoder<
-    Rep_ti_contents
-> | null = null;
+let _cached_encoder_for_Rep_ti_contents: $.ASN1Encoder<Rep_ti_contents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Rep_ti_contents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Rep_ti_contents */
@@ -463,7 +459,7 @@ export function _encode_Rep_ti_contents(
                         ),
                         /* IF_ABSENT  */ value.src_name === undefined
                             ? undefined
-                            : $._encode_implicit(
+                            : $._encode_explicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_Name,

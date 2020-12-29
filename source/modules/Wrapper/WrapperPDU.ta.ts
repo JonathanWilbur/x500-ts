@@ -175,70 +175,74 @@ let _cached_decoder_for_WrapperPDU: $.ASN1Decoder<WrapperPDU> | null = null;
  */
 export function _decode_WrapperPDU(el: _Element) {
     if (!_cached_decoder_for_WrapperPDU) {
-        _cached_decoder_for_WrapperPDU = $._decode_extensible_choice<
-            WrapperPDU
-        >({
-            "CONTEXT 0": [
-                "handshakeReq",
-                $._decode_implicit<HandshakeReq>(() => _decode_HandshakeReq),
-            ],
-            "CONTEXT 1": [
-                "handshakeAcc",
-                $._decode_implicit<HandshakeAcc>(() => _decode_HandshakeAcc),
-            ],
-            "CONTEXT 2": [
-                "handshakeWrpRej",
-                $._decode_implicit<HandshakeWrpRej>(
-                    () => _decode_HandshakeWrpRej
-                ),
-            ],
-            "CONTEXT 3": [
-                "handshakeProRej",
-                $._decode_implicit<HandshakeProRej>(
-                    () => _decode_HandshakeProRej
-                ),
-            ],
-            "CONTEXT 4": [
-                "handshakeSecAbort",
-                $._decode_implicit<HandshakeSecAbort>(
-                    () => _decode_HandshakeSecAbort
-                ),
-            ],
-            "CONTEXT 5": [
-                "handshakeProAbort",
-                $._decode_implicit<HandshakeProAbort>(
-                    () => _decode_HandshakeProAbort
-                ),
-            ],
-            "CONTEXT 6": [
-                "dtSecAbort",
-                $._decode_implicit<DtSecAbort>(() => _decode_DtSecAbort),
-            ],
-            "CONTEXT 7": [
-                "applAbort",
-                $._decode_implicit<ApplAbort>(() => _decode_ApplAbort),
-            ],
-            "CONTEXT 8": [
-                "releaseReq",
-                $._decode_implicit<ReleaseReq>(() => _decode_ReleaseReq),
-            ],
-            "CONTEXT 9": [
-                "releaseRsp",
-                $._decode_implicit<ReleaseRsp>(() => _decode_ReleaseRsp),
-            ],
-            "CONTEXT 10": [
-                "dataTransferClient",
-                $._decode_implicit<DataTransferClient>(
-                    () => _decode_DataTransferClient
-                ),
-            ],
-            "CONTEXT 11": [
-                "dataTransferServer",
-                $._decode_implicit<DataTransferServer>(
-                    () => _decode_DataTransferServer
-                ),
-            ],
-        });
+        _cached_decoder_for_WrapperPDU = $._decode_extensible_choice<WrapperPDU>(
+            {
+                "CONTEXT 0": [
+                    "handshakeReq",
+                    $._decode_implicit<HandshakeReq>(
+                        () => _decode_HandshakeReq
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "handshakeAcc",
+                    $._decode_implicit<HandshakeAcc>(
+                        () => _decode_HandshakeAcc
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "handshakeWrpRej",
+                    $._decode_implicit<HandshakeWrpRej>(
+                        () => _decode_HandshakeWrpRej
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "handshakeProRej",
+                    $._decode_implicit<HandshakeProRej>(
+                        () => _decode_HandshakeProRej
+                    ),
+                ],
+                "CONTEXT 4": [
+                    "handshakeSecAbort",
+                    $._decode_implicit<HandshakeSecAbort>(
+                        () => _decode_HandshakeSecAbort
+                    ),
+                ],
+                "CONTEXT 5": [
+                    "handshakeProAbort",
+                    $._decode_implicit<HandshakeProAbort>(
+                        () => _decode_HandshakeProAbort
+                    ),
+                ],
+                "CONTEXT 6": [
+                    "dtSecAbort",
+                    $._decode_implicit<DtSecAbort>(() => _decode_DtSecAbort),
+                ],
+                "CONTEXT 7": [
+                    "applAbort",
+                    $._decode_implicit<ApplAbort>(() => _decode_ApplAbort),
+                ],
+                "CONTEXT 8": [
+                    "releaseReq",
+                    $._decode_implicit<ReleaseReq>(() => _decode_ReleaseReq),
+                ],
+                "CONTEXT 9": [
+                    "releaseRsp",
+                    $._decode_implicit<ReleaseRsp>(() => _decode_ReleaseRsp),
+                ],
+                "CONTEXT 10": [
+                    "dataTransferClient",
+                    $._decode_explicit<DataTransferClient>(
+                        () => _decode_DataTransferClient
+                    ),
+                ],
+                "CONTEXT 11": [
+                    "dataTransferServer",
+                    $._decode_explicit<DataTransferServer>(
+                        () => _decode_DataTransferServer
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_WrapperPDU(el);
 }
@@ -323,13 +327,13 @@ export function _encode_WrapperPDU(
                     () => _encode_ReleaseRsp,
                     $.BER
                 ),
-                dataTransferClient: $._encode_implicit(
+                dataTransferClient: $._encode_explicit(
                     _TagClass.context,
                     10,
                     () => _encode_DataTransferClient,
                     $.BER
                 ),
-                dataTransferServer: $._encode_implicit(
+                dataTransferServer: $._encode_explicit(
                     _TagClass.context,
                     11,
                     () => _encode_DataTransferServer,

@@ -267,9 +267,7 @@ export const _extension_additions_list_spec_for_CertificateListAssertion: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateListAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListAssertion */
-let _cached_decoder_for_CertificateListAssertion: $.ASN1Decoder<
-    CertificateListAssertion
-> | null = null;
+let _cached_decoder_for_CertificateListAssertion: $.ASN1Decoder<CertificateListAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateListAssertion */
@@ -316,14 +314,14 @@ export function _decode_CertificateListAssertion(el: _Element) {
                     dateAndTime = _decode_Time(_el);
                 },
                 distributionPoint: (_el: _Element): void => {
-                    distributionPoint = $._decode_implicit<
-                        DistributionPointName
-                    >(() => _decode_DistributionPointName)(_el);
+                    distributionPoint = $._decode_explicit<DistributionPointName>(
+                        () => _decode_DistributionPointName
+                    )(_el);
                 },
                 authorityKeyIdentifier: (_el: _Element): void => {
-                    authorityKeyIdentifier = $._decode_implicit<
-                        AuthorityKeyIdentifier
-                    >(() => _decode_AuthorityKeyIdentifier)(_el);
+                    authorityKeyIdentifier = $._decode_implicit<AuthorityKeyIdentifier>(
+                        () => _decode_AuthorityKeyIdentifier
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -354,9 +352,7 @@ export function _decode_CertificateListAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateListAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListAssertion */
-let _cached_encoder_for_CertificateListAssertion: $.ASN1Encoder<
-    CertificateListAssertion
-> | null = null;
+let _cached_encoder_for_CertificateListAssertion: $.ASN1Encoder<CertificateListAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateListAssertion */
@@ -408,7 +404,7 @@ export function _encode_CertificateListAssertion(
                             /* IF_ABSENT  */ value.distributionPoint ===
                             undefined
                                 ? undefined
-                                : $._encode_implicit(
+                                : $._encode_explicit(
                                       _TagClass.context,
                                       2,
                                       () => _encode_DistributionPointName,
