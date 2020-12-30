@@ -56,7 +56,10 @@ const nameToAttribute = new Map<string, [ OBJECT_IDENTIFIER, (str: string) => AS
     [ "dc", [ new ObjectIdentifier([ 0, 9, 2342, 19200300, 100, 1, 25 ]), encodeIA5String ] ],
 ]);
 
-const oidRegex = /^(0|1|2)\.\d+(?:\.\d+)+$/g;
+/**
+ * @see https://stackoverflow.com/questions/3891641/regex-test-only-works-every-other-time
+ */
+const oidRegex = /^(0|1|2)\.\d+(?:\.\d+)+$/;
 
 export
 function atavFromString (
@@ -65,7 +68,7 @@ function atavFromString (
 ): ATAV {
     const firstEqualSign: number = str.indexOf("=");
     if (firstEqualSign === -1) {
-        throw new Error();
+        throw new Error(str);
     }
     const name = str.slice(0, firstEqualSign).trim().toLowerCase();
     const value = str.slice(firstEqualSign + 1).trim();
@@ -84,7 +87,7 @@ function atavFromString (
                 encodeUBS(value), // We guess that it is a UBS...
             );
         } else {
-            throw new Error();
+            throw new Error(name);
         }
     }
 }

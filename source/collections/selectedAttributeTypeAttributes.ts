@@ -58,7 +58,7 @@ export { dmdName } from "../modules/SelectedAttributeTypes/dmdName.oa";
 export { pseudonym } from "../modules/SelectedAttributeTypes/pseudonym.oa";
 export { communicationsService } from "../modules/SelectedAttributeTypes/communicationsService.oa";
 export { communicationsNetwork } from "../modules/SelectedAttributeTypes/communicationsNetwork.oa";
-export { uUIDPair } from "../modules/SelectedAttributeTypes/uuidpair.oa";
+export { uUIDPair } from "../modules/SelectedAttributeTypes/uUIDPair.oa";
 export { tagOid } from "../modules/SelectedAttributeTypes/tagOid.oa";
 export { uiiFormat } from "../modules/SelectedAttributeTypes/uiiFormat.oa";
 export { uiiInUrn } from "../modules/SelectedAttributeTypes/uiiInUrn.oa";
