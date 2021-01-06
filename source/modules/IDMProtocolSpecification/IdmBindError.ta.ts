@@ -243,8 +243,8 @@ export function _decode_IdmBindError(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new IdmBindError /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocolID,
+            return new IdmBindError(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
                 respondingAETitle,
                 aETitleError,
                 error,

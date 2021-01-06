@@ -109,9 +109,7 @@ export const wholeSubtree: UiiFormat_subset =
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UiiFormat_subset */
-let _cached_decoder_for_UiiFormat_subset: $.ASN1Decoder<
-    UiiFormat_subset
-> | null = null;
+let _cached_decoder_for_UiiFormat_subset: $.ASN1Decoder<UiiFormat_subset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UiiFormat_subset */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UiiFormat_subset */
@@ -130,9 +128,7 @@ export function _decode_UiiFormat_subset(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UiiFormat_subset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UiiFormat_subset */
-let _cached_encoder_for_UiiFormat_subset: $.ASN1Encoder<
-    UiiFormat_subset
-> | null = null;
+let _cached_encoder_for_UiiFormat_subset: $.ASN1Encoder<UiiFormat_subset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UiiFormat_subset */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UiiFormat_subset */

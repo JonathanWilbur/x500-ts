@@ -138,9 +138,7 @@ export const _extension_additions_list_spec_for_DITContextUse: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DITContextUse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DITContextUse */
-let _cached_decoder_for_DITContextUse: $.ASN1Decoder<
-    DITContextUse
-> | null = null;
+let _cached_decoder_for_DITContextUse: $.ASN1Decoder<DITContextUse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DITContextUse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DITContextUse */
@@ -194,8 +192,8 @@ export function _decode_DITContextUse(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DITContextUse /* SEQUENCE_CONSTRUCTOR_CALL */(
-                attributeType,
+            return new DITContextUse(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ attributeType,
                 mandatoryContexts,
                 optionalContexts,
                 _unrecognizedExtensionsList
@@ -207,9 +205,7 @@ export function _decode_DITContextUse(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DITContextUse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DITContextUse */
-let _cached_encoder_for_DITContextUse: $.ASN1Encoder<
-    DITContextUse
-> | null = null;
+let _cached_encoder_for_DITContextUse: $.ASN1Encoder<DITContextUse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DITContextUse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DITContextUse */

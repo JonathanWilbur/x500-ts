@@ -46,9 +46,7 @@ export type RequestShadowUpdateResult =
 /* END_OF_SYMBOL_DEFINITION RequestShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateResult */
-let _cached_decoder_for_RequestShadowUpdateResult: $.ASN1Decoder<
-    RequestShadowUpdateResult
-> | null = null;
+let _cached_decoder_for_RequestShadowUpdateResult: $.ASN1Decoder<RequestShadowUpdateResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateResult */
@@ -60,26 +58,24 @@ let _cached_decoder_for_RequestShadowUpdateResult: $.ASN1Decoder<
  */
 export function _decode_RequestShadowUpdateResult(el: _Element) {
     if (!_cached_decoder_for_RequestShadowUpdateResult) {
-        _cached_decoder_for_RequestShadowUpdateResult = $._decode_extensible_choice<
-            RequestShadowUpdateResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "UNIVERSAL 16": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED<
-                    RequestShadowUpdateResultData
-                >(_decode_RequestShadowUpdateResultData),
-            ],
-        });
+        _cached_decoder_for_RequestShadowUpdateResult = $._decode_extensible_choice<RequestShadowUpdateResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "UNIVERSAL 16": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateResultData>(
+                        _decode_RequestShadowUpdateResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_RequestShadowUpdateResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateResult */
-let _cached_encoder_for_RequestShadowUpdateResult: $.ASN1Encoder<
-    RequestShadowUpdateResult
-> | null = null;
+let _cached_encoder_for_RequestShadowUpdateResult: $.ASN1Encoder<RequestShadowUpdateResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestShadowUpdateResult */
@@ -95,14 +91,12 @@ export function _encode_RequestShadowUpdateResult(
     elGetter: $.ASN1Encoder<RequestShadowUpdateResult>
 ) {
     if (!_cached_encoder_for_RequestShadowUpdateResult) {
-        _cached_encoder_for_RequestShadowUpdateResult = $._encode_choice<
-            RequestShadowUpdateResult
-        >(
+        _cached_encoder_for_RequestShadowUpdateResult = $._encode_choice<RequestShadowUpdateResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED<
-                    RequestShadowUpdateResultData
-                >(_encode_RequestShadowUpdateResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateResultData>(
+                    _encode_RequestShadowUpdateResultData
+                ),
             },
             $.BER
         );

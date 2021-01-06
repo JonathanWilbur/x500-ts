@@ -17,9 +17,7 @@ export type AssertionValue = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION AssertionValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AssertionValue */
-let _cached_decoder_for_AssertionValue: $.ASN1Decoder<
-    AssertionValue
-> | null = null;
+let _cached_decoder_for_AssertionValue: $.ASN1Decoder<AssertionValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AssertionValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AssertionValue */
@@ -38,9 +36,7 @@ export function _decode_AssertionValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AssertionValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AssertionValue */
-let _cached_encoder_for_AssertionValue: $.ASN1Encoder<
-    AssertionValue
-> | null = null;
+let _cached_encoder_for_AssertionValue: $.ASN1Encoder<AssertionValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AssertionValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AssertionValue */

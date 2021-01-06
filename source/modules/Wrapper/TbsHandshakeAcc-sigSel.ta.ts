@@ -29,9 +29,7 @@ export type TbsHandshakeAcc_sigSel =
 /* END_OF_SYMBOL_DEFINITION TbsHandshakeAcc_sigSel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_sigSel */
-let _cached_decoder_for_TbsHandshakeAcc_sigSel: $.ASN1Decoder<
-    TbsHandshakeAcc_sigSel
-> | null = null;
+let _cached_decoder_for_TbsHandshakeAcc_sigSel: $.ASN1Decoder<TbsHandshakeAcc_sigSel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_sigSel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_sigSel */
@@ -43,26 +41,24 @@ let _cached_decoder_for_TbsHandshakeAcc_sigSel: $.ASN1Decoder<
  */
 export function _decode_TbsHandshakeAcc_sigSel(el: _Element) {
     if (!_cached_decoder_for_TbsHandshakeAcc_sigSel) {
-        _cached_decoder_for_TbsHandshakeAcc_sigSel = $._decode_inextensible_choice<
-            TbsHandshakeAcc_sigSel
-        >({
-            "UNIVERSAL 16": ["sigAlg", _decode_AlgorithmIdentifier],
-            "CONTEXT 0": [
-                "altSigAlg",
-                $._decode_implicit<AlgorithmIdentifier>(
-                    () => _decode_AlgorithmIdentifier
-                ),
-            ],
-        });
+        _cached_decoder_for_TbsHandshakeAcc_sigSel = $._decode_inextensible_choice<TbsHandshakeAcc_sigSel>(
+            {
+                "UNIVERSAL 16": ["sigAlg", _decode_AlgorithmIdentifier],
+                "CONTEXT 0": [
+                    "altSigAlg",
+                    $._decode_implicit<AlgorithmIdentifier>(
+                        () => _decode_AlgorithmIdentifier
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TbsHandshakeAcc_sigSel(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_sigSel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_sigSel */
-let _cached_encoder_for_TbsHandshakeAcc_sigSel: $.ASN1Encoder<
-    TbsHandshakeAcc_sigSel
-> | null = null;
+let _cached_encoder_for_TbsHandshakeAcc_sigSel: $.ASN1Encoder<TbsHandshakeAcc_sigSel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_sigSel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeAcc_sigSel */
@@ -78,9 +74,7 @@ export function _encode_TbsHandshakeAcc_sigSel(
     elGetter: $.ASN1Encoder<TbsHandshakeAcc_sigSel>
 ) {
     if (!_cached_encoder_for_TbsHandshakeAcc_sigSel) {
-        _cached_encoder_for_TbsHandshakeAcc_sigSel = $._encode_choice<
-            TbsHandshakeAcc_sigSel
-        >(
+        _cached_encoder_for_TbsHandshakeAcc_sigSel = $._encode_choice<TbsHandshakeAcc_sigSel>(
             {
                 sigAlg: _encode_AlgorithmIdentifier,
                 altSigAlg: $._encode_implicit(

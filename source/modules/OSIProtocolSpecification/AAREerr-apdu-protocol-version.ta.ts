@@ -33,9 +33,7 @@ export const version1: number = AAREerr_apdu_protocol_version_version1; /* SHORT
 /* END_OF_SYMBOL_DEFINITION version1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AAREerr_apdu_protocol_version */
-let _cached_decoder_for_AAREerr_apdu_protocol_version: $.ASN1Decoder<
-    AAREerr_apdu_protocol_version
-> | null = null;
+let _cached_decoder_for_AAREerr_apdu_protocol_version: $.ASN1Decoder<AAREerr_apdu_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AAREerr_apdu_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AAREerr_apdu_protocol_version */
@@ -54,9 +52,7 @@ export function _decode_AAREerr_apdu_protocol_version(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AAREerr_apdu_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AAREerr_apdu_protocol_version */
-let _cached_encoder_for_AAREerr_apdu_protocol_version: $.ASN1Encoder<
-    AAREerr_apdu_protocol_version
-> | null = null;
+let _cached_encoder_for_AAREerr_apdu_protocol_version: $.ASN1Encoder<AAREerr_apdu_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AAREerr_apdu_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AAREerr_apdu_protocol_version */

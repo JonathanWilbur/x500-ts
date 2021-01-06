@@ -37,9 +37,7 @@ export type CertificateList = SIGNED<CertificateListContent>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION CertificateList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateList */
-let _cached_decoder_for_CertificateList: $.ASN1Decoder<
-    CertificateList
-> | null = null;
+let _cached_decoder_for_CertificateList: $.ASN1Decoder<CertificateList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateList */
@@ -51,18 +49,16 @@ let _cached_decoder_for_CertificateList: $.ASN1Decoder<
  */
 export function _decode_CertificateList(el: _Element) {
     if (!_cached_decoder_for_CertificateList) {
-        _cached_decoder_for_CertificateList = _get_decoder_for_SIGNED<
-            CertificateListContent
-        >(_decode_CertificateListContent);
+        _cached_decoder_for_CertificateList = _get_decoder_for_SIGNED<CertificateListContent>(
+            _decode_CertificateListContent
+        );
     }
     return _cached_decoder_for_CertificateList(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateList */
-let _cached_encoder_for_CertificateList: $.ASN1Encoder<
-    CertificateList
-> | null = null;
+let _cached_encoder_for_CertificateList: $.ASN1Encoder<CertificateList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateList */
@@ -78,9 +74,9 @@ export function _encode_CertificateList(
     elGetter: $.ASN1Encoder<CertificateList>
 ) {
     if (!_cached_encoder_for_CertificateList) {
-        _cached_encoder_for_CertificateList = _get_encoder_for_SIGNED<
-            CertificateListContent
-        >(_encode_CertificateListContent);
+        _cached_encoder_for_CertificateList = _get_encoder_for_SIGNED<CertificateListContent>(
+            _encode_CertificateListContent
+        );
     }
     return _cached_encoder_for_CertificateList(value, elGetter);
 }

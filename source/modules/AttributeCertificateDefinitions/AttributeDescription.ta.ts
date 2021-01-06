@@ -17,9 +17,7 @@ export type AttributeDescription = UTF8String; // UTF8String
 /* END_OF_SYMBOL_DEFINITION AttributeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeDescription */
-let _cached_decoder_for_AttributeDescription: $.ASN1Decoder<
-    AttributeDescription
-> | null = null;
+let _cached_decoder_for_AttributeDescription: $.ASN1Decoder<AttributeDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeDescription */
@@ -38,9 +36,7 @@ export function _decode_AttributeDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeDescription */
-let _cached_encoder_for_AttributeDescription: $.ASN1Encoder<
-    AttributeDescription
-> | null = null;
+let _cached_encoder_for_AttributeDescription: $.ASN1Encoder<AttributeDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeDescription */

@@ -27,9 +27,7 @@ export type UniversalPosteRestanteAddress = UniversalPDSParameter; // DefinedTyp
 /* END_OF_SYMBOL_DEFINITION UniversalPosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPosteRestanteAddress */
-let _cached_decoder_for_UniversalPosteRestanteAddress: $.ASN1Decoder<
-    UniversalPosteRestanteAddress
-> | null = null;
+let _cached_decoder_for_UniversalPosteRestanteAddress: $.ASN1Decoder<UniversalPosteRestanteAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPosteRestanteAddress */
@@ -48,9 +46,7 @@ export function _decode_UniversalPosteRestanteAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPosteRestanteAddress */
-let _cached_encoder_for_UniversalPosteRestanteAddress: $.ASN1Encoder<
-    UniversalPosteRestanteAddress
-> | null = null;
+let _cached_encoder_for_UniversalPosteRestanteAddress: $.ASN1Encoder<UniversalPosteRestanteAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPosteRestanteAddress */

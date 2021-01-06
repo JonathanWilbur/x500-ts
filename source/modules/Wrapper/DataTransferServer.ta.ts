@@ -43,9 +43,7 @@ export type DataTransferServer =
 /* END_OF_SYMBOL_DEFINITION DataTransferServer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferServer */
-let _cached_decoder_for_DataTransferServer: $.ASN1Decoder<
-    DataTransferServer
-> | null = null;
+let _cached_decoder_for_DataTransferServer: $.ASN1Decoder<DataTransferServer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferServer */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DataTransferServer */
@@ -57,31 +55,29 @@ let _cached_decoder_for_DataTransferServer: $.ASN1Decoder<
  */
 export function _decode_DataTransferServer(el: _Element) {
     if (!_cached_decoder_for_DataTransferServer) {
-        _cached_decoder_for_DataTransferServer = $._decode_extensible_choice<
-            DataTransferServer
-        >({
-            "CONTEXT 0": [
-                "aead",
-                $._decode_implicit<DataTransferServerAE>(
-                    () => _decode_DataTransferServerAE
-                ),
-            ],
-            "CONTEXT 1": [
-                "non_aead",
-                $._decode_implicit<DataTransferServerNEA>(
-                    () => _decode_DataTransferServerNEA
-                ),
-            ],
-        });
+        _cached_decoder_for_DataTransferServer = $._decode_extensible_choice<DataTransferServer>(
+            {
+                "CONTEXT 0": [
+                    "aead",
+                    $._decode_implicit<DataTransferServerAE>(
+                        () => _decode_DataTransferServerAE
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "non_aead",
+                    $._decode_implicit<DataTransferServerNEA>(
+                        () => _decode_DataTransferServerNEA
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DataTransferServer(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DataTransferServer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferServer */
-let _cached_encoder_for_DataTransferServer: $.ASN1Encoder<
-    DataTransferServer
-> | null = null;
+let _cached_encoder_for_DataTransferServer: $.ASN1Encoder<DataTransferServer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferServer */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DataTransferServer */
@@ -97,9 +93,7 @@ export function _encode_DataTransferServer(
     elGetter: $.ASN1Encoder<DataTransferServer>
 ) {
     if (!_cached_encoder_for_DataTransferServer) {
-        _cached_encoder_for_DataTransferServer = $._encode_choice<
-            DataTransferServer
-        >(
+        _cached_encoder_for_DataTransferServer = $._encode_choice<DataTransferServer>(
             {
                 aead: $._encode_implicit(
                     _TagClass.context,

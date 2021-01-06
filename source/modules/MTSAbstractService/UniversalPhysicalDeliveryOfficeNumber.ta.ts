@@ -27,9 +27,7 @@ export type UniversalPhysicalDeliveryOfficeNumber = UniversalPDSParameter; // De
 /* END_OF_SYMBOL_DEFINITION UniversalPhysicalDeliveryOfficeNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryOfficeNumber */
-let _cached_decoder_for_UniversalPhysicalDeliveryOfficeNumber: $.ASN1Decoder<
-    UniversalPhysicalDeliveryOfficeNumber
-> | null = null;
+let _cached_decoder_for_UniversalPhysicalDeliveryOfficeNumber: $.ASN1Decoder<UniversalPhysicalDeliveryOfficeNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryOfficeNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryOfficeNumber */
@@ -48,9 +46,7 @@ export function _decode_UniversalPhysicalDeliveryOfficeNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryOfficeNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryOfficeNumber */
-let _cached_encoder_for_UniversalPhysicalDeliveryOfficeNumber: $.ASN1Encoder<
-    UniversalPhysicalDeliveryOfficeNumber
-> | null = null;
+let _cached_encoder_for_UniversalPhysicalDeliveryOfficeNumber: $.ASN1Encoder<UniversalPhysicalDeliveryOfficeNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryOfficeNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPhysicalDeliveryOfficeNumber */

@@ -17,9 +17,7 @@ export type ApplicationContext = OBJECT_IDENTIFIER; // ObjectIdentifierType
 /* END_OF_SYMBOL_DEFINITION ApplicationContext */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ApplicationContext */
-let _cached_decoder_for_ApplicationContext: $.ASN1Decoder<
-    ApplicationContext
-> | null = null;
+let _cached_decoder_for_ApplicationContext: $.ASN1Decoder<ApplicationContext> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ApplicationContext */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ApplicationContext */
@@ -38,9 +36,7 @@ export function _decode_ApplicationContext(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ApplicationContext */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ApplicationContext */
-let _cached_encoder_for_ApplicationContext: $.ASN1Encoder<
-    ApplicationContext
-> | null = null;
+let _cached_encoder_for_ApplicationContext: $.ASN1Encoder<ApplicationContext> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ApplicationContext */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ApplicationContext */

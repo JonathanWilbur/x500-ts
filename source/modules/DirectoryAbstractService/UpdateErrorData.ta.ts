@@ -138,25 +138,19 @@ export class UpdateErrorData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -284,9 +278,7 @@ export const _extension_additions_list_spec_for_UpdateErrorData: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UpdateErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateErrorData */
-let _cached_decoder_for_UpdateErrorData: $.ASN1Decoder<
-    UpdateErrorData
-> | null = null;
+let _cached_decoder_for_UpdateErrorData: $.ASN1Decoder<UpdateErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UpdateErrorData */
@@ -359,8 +351,8 @@ export function _decode_UpdateErrorData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new UpdateErrorData /* SET_CONSTRUCTOR_CALL */(
-                problem,
+            return new UpdateErrorData(
+                /* SET_CONSTRUCTOR_CALL */ problem,
                 attributeInfo,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -375,9 +367,7 @@ export function _decode_UpdateErrorData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UpdateErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateErrorData */
-let _cached_encoder_for_UpdateErrorData: $.ASN1Encoder<
-    UpdateErrorData
-> | null = null;
+let _cached_encoder_for_UpdateErrorData: $.ASN1Encoder<UpdateErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UpdateErrorData */
@@ -413,9 +403,7 @@ export function _encode_UpdateErrorData(
                                       _TagClass.context,
                                       1,
                                       () =>
-                                          $._encodeSetOf<
-                                              UpdateErrorData_attributeInfo_Item
-                                          >(
+                                          $._encodeSetOf<UpdateErrorData_attributeInfo_Item>(
                                               () =>
                                                   _encode_UpdateErrorData_attributeInfo_Item,
                                               $.BER

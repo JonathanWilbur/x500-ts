@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_Presentation_context_identifier_
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Presentation_context_identifier_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier_list_Item */
-let _cached_decoder_for_Presentation_context_identifier_list_Item: $.ASN1Decoder<
-    Presentation_context_identifier_list_Item
-> | null = null;
+let _cached_decoder_for_Presentation_context_identifier_list_Item: $.ASN1Decoder<Presentation_context_identifier_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier_list_Item */
@@ -180,9 +178,7 @@ export function _decode_Presentation_context_identifier_list_Item(
 /* END_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier_list_Item */
-let _cached_encoder_for_Presentation_context_identifier_list_Item: $.ASN1Encoder<
-    Presentation_context_identifier_list_Item
-> | null = null;
+let _cached_encoder_for_Presentation_context_identifier_list_Item: $.ASN1Encoder<Presentation_context_identifier_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Presentation_context_identifier_list_Item */

@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_SubstringFilter: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubstringFilter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringFilter */
-let _cached_decoder_for_SubstringFilter: $.ASN1Decoder<
-    SubstringFilter
-> | null = null;
+let _cached_decoder_for_SubstringFilter: $.ASN1Decoder<SubstringFilter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringFilter */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubstringFilter */
@@ -174,9 +172,9 @@ export function _decode_SubstringFilter(el: _Element) {
             let type_!: AttributeDescription;
             let substrings!: SubstringFilter_substrings_substring[];
             type_ = _decode_AttributeDescription(sequence[0]);
-            substrings = $._decodeSequenceOf<
-                SubstringFilter_substrings_substring
-            >(() => _decode_SubstringFilter_substrings_substring)(sequence[1]);
+            substrings = $._decodeSequenceOf<SubstringFilter_substrings_substring>(
+                () => _decode_SubstringFilter_substrings_substring
+            )(sequence[1]);
             return new SubstringFilter(type_, substrings, sequence.slice(2));
         };
     }
@@ -185,9 +183,7 @@ export function _decode_SubstringFilter(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubstringFilter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringFilter */
-let _cached_encoder_for_SubstringFilter: $.ASN1Encoder<
-    SubstringFilter
-> | null = null;
+let _cached_encoder_for_SubstringFilter: $.ASN1Encoder<SubstringFilter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringFilter */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubstringFilter */
@@ -215,9 +211,7 @@ export function _encode_SubstringFilter(
                                 value.type_,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                SubstringFilter_substrings_substring
-                            >(
+                            /* REQUIRED   */ $._encodeSequenceOf<SubstringFilter_substrings_substring>(
                                 () =>
                                     _encode_SubstringFilter_substrings_substring,
                                 $.BER

@@ -71,9 +71,7 @@ export const global: DSAScopeOfReferralValue = DSAScopeOfReferralValue_global; /
 /* END_OF_SYMBOL_DEFINITION global */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfReferralValue */
-let _cached_decoder_for_DSAScopeOfReferralValue: $.ASN1Decoder<
-    DSAScopeOfReferralValue
-> | null = null;
+let _cached_decoder_for_DSAScopeOfReferralValue: $.ASN1Decoder<DSAScopeOfReferralValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfReferralValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DSAScopeOfReferralValue */
@@ -92,9 +90,7 @@ export function _decode_DSAScopeOfReferralValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DSAScopeOfReferralValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DSAScopeOfReferralValue */
-let _cached_encoder_for_DSAScopeOfReferralValue: $.ASN1Encoder<
-    DSAScopeOfReferralValue
-> | null = null;
+let _cached_encoder_for_DSAScopeOfReferralValue: $.ASN1Encoder<DSAScopeOfReferralValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DSAScopeOfReferralValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DSAScopeOfReferralValue */

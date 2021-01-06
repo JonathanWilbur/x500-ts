@@ -27,9 +27,7 @@ export type PostalAddress = UnboundedDirectoryString[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION PostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PostalAddress */
-let _cached_decoder_for_PostalAddress: $.ASN1Decoder<
-    PostalAddress
-> | null = null;
+let _cached_decoder_for_PostalAddress: $.ASN1Decoder<PostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PostalAddress */
@@ -41,18 +39,16 @@ let _cached_decoder_for_PostalAddress: $.ASN1Decoder<
  */
 export function _decode_PostalAddress(el: _Element) {
     if (!_cached_decoder_for_PostalAddress) {
-        _cached_decoder_for_PostalAddress = $._decodeSequenceOf<
-            UnboundedDirectoryString
-        >(() => _decode_UnboundedDirectoryString);
+        _cached_decoder_for_PostalAddress = $._decodeSequenceOf<UnboundedDirectoryString>(
+            () => _decode_UnboundedDirectoryString
+        );
     }
     return _cached_decoder_for_PostalAddress(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PostalAddress */
-let _cached_encoder_for_PostalAddress: $.ASN1Encoder<
-    PostalAddress
-> | null = null;
+let _cached_encoder_for_PostalAddress: $.ASN1Encoder<PostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PostalAddress */
@@ -68,9 +64,10 @@ export function _encode_PostalAddress(
     elGetter: $.ASN1Encoder<PostalAddress>
 ) {
     if (!_cached_encoder_for_PostalAddress) {
-        _cached_encoder_for_PostalAddress = $._encodeSequenceOf<
-            UnboundedDirectoryString
-        >(() => _encode_UnboundedDirectoryString, $.BER);
+        _cached_encoder_for_PostalAddress = $._encodeSequenceOf<UnboundedDirectoryString>(
+            () => _encode_UnboundedDirectoryString,
+            $.BER
+        );
     }
     return _cached_encoder_for_PostalAddress(value, elGetter);
 }

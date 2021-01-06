@@ -125,9 +125,7 @@ export const _extension_additions_list_spec_for_PrivateKeyUsagePeriod: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PrivateKeyUsagePeriod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivateKeyUsagePeriod */
-let _cached_decoder_for_PrivateKeyUsagePeriod: $.ASN1Decoder<
-    PrivateKeyUsagePeriod
-> | null = null;
+let _cached_decoder_for_PrivateKeyUsagePeriod: $.ASN1Decoder<PrivateKeyUsagePeriod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivateKeyUsagePeriod */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PrivateKeyUsagePeriod */
@@ -171,8 +169,8 @@ export function _decode_PrivateKeyUsagePeriod(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PrivateKeyUsagePeriod /* SEQUENCE_CONSTRUCTOR_CALL */(
-                notBefore,
+            return new PrivateKeyUsagePeriod(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ notBefore,
                 notAfter,
                 _unrecognizedExtensionsList
             );
@@ -183,9 +181,7 @@ export function _decode_PrivateKeyUsagePeriod(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PrivateKeyUsagePeriod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivateKeyUsagePeriod */
-let _cached_encoder_for_PrivateKeyUsagePeriod: $.ASN1Encoder<
-    PrivateKeyUsagePeriod
-> | null = null;
+let _cached_encoder_for_PrivateKeyUsagePeriod: $.ASN1Encoder<PrivateKeyUsagePeriod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivateKeyUsagePeriod */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PrivateKeyUsagePeriod */

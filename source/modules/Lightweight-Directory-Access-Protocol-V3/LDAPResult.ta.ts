@@ -357,8 +357,8 @@ export function _decode_LDAPResult(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new LDAPResult /* SEQUENCE_CONSTRUCTOR_CALL */(
-                resultCode,
+            return new LDAPResult(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ resultCode,
                 matchedDN,
                 diagnosticMessage,
                 referral,

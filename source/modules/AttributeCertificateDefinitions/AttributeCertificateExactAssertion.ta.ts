@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_AttributeCertificateExactAsserti
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeCertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateExactAssertion */
-let _cached_decoder_for_AttributeCertificateExactAssertion: $.ASN1Decoder<
-    AttributeCertificateExactAssertion
-> | null = null;
+let _cached_decoder_for_AttributeCertificateExactAssertion: $.ASN1Decoder<AttributeCertificateExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificateExactAssertion */
@@ -187,9 +185,7 @@ export function _decode_AttributeCertificateExactAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateExactAssertion */
-let _cached_encoder_for_AttributeCertificateExactAssertion: $.ASN1Encoder<
-    AttributeCertificateExactAssertion
-> | null = null;
+let _cached_encoder_for_AttributeCertificateExactAssertion: $.ASN1Encoder<AttributeCertificateExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificateExactAssertion */

@@ -114,9 +114,7 @@ export class ModifyOperationalBindingArgumentData {
          * @public
          * @readonly
          */
-        readonly initiator: OPTIONAL<
-            ModifyOperationalBindingArgumentData_initiator
-        >,
+        readonly initiator: OPTIONAL<ModifyOperationalBindingArgumentData_initiator>,
         /**
          * @summary `newBindingID`.
          * @public
@@ -271,9 +269,7 @@ export const _extension_additions_list_spec_for_ModifyOperationalBindingArgument
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgumentData */
-let _cached_decoder_for_ModifyOperationalBindingArgumentData: $.ASN1Decoder<
-    ModifyOperationalBindingArgumentData
-> | null = null;
+let _cached_decoder_for_ModifyOperationalBindingArgumentData: $.ASN1Decoder<ModifyOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgumentData */
@@ -353,8 +349,8 @@ export function _decode_ModifyOperationalBindingArgumentData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ModifyOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                bindingType,
+            return new ModifyOperationalBindingArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
                 bindingID,
                 accessPoint,
                 initiator,
@@ -371,9 +367,7 @@ export function _decode_ModifyOperationalBindingArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgumentData */
-let _cached_encoder_for_ModifyOperationalBindingArgumentData: $.ASN1Encoder<
-    ModifyOperationalBindingArgumentData
-> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgumentData: $.ASN1Encoder<ModifyOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyOperationalBindingArgumentData */

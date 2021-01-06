@@ -34,9 +34,7 @@ export type DirectoryString =
 /* END_OF_SYMBOL_DEFINITION DirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryString */
-let _cached_decoder_for_DirectoryString: $.ASN1Decoder<
-    DirectoryString
-> | null = null;
+let _cached_decoder_for_DirectoryString: $.ASN1Decoder<DirectoryString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryString */
@@ -48,24 +46,22 @@ let _cached_decoder_for_DirectoryString: $.ASN1Decoder<
  */
 export function _decode_DirectoryString(el: _Element) {
     if (!_cached_decoder_for_DirectoryString) {
-        _cached_decoder_for_DirectoryString = $._decode_inextensible_choice<
-            DirectoryString
-        >({
-            "UNIVERSAL 20": ["teletexString", $._decodeTeletexString],
-            "UNIVERSAL 19": ["printableString", $._decodePrintableString],
-            "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
-            "UNIVERSAL 28": ["universalString", $._decodeUniversalString],
-            "UNIVERSAL 12": ["uTF8String", $._decodeUTF8String],
-        });
+        _cached_decoder_for_DirectoryString = $._decode_inextensible_choice<DirectoryString>(
+            {
+                "UNIVERSAL 20": ["teletexString", $._decodeTeletexString],
+                "UNIVERSAL 19": ["printableString", $._decodePrintableString],
+                "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
+                "UNIVERSAL 28": ["universalString", $._decodeUniversalString],
+                "UNIVERSAL 12": ["uTF8String", $._decodeUTF8String],
+            }
+        );
     }
     return _cached_decoder_for_DirectoryString(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryString */
-let _cached_encoder_for_DirectoryString: $.ASN1Encoder<
-    DirectoryString
-> | null = null;
+let _cached_encoder_for_DirectoryString: $.ASN1Encoder<DirectoryString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryString */

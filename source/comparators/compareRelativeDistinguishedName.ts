@@ -4,7 +4,7 @@ import compareAttributeTypeAndValue from "./compareAttributeTypeAndValue";
 
 export default function compare(
     a: RelativeDistinguishedName,
-    b: RelativeDistinguishedName,
+    b: RelativeDistinguishedName
 ): boolean {
     if (a.length !== b.length) {
         return false;

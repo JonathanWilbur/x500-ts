@@ -203,8 +203,8 @@ export function _decode_DayTime(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DayTime /* SEQUENCE_CONSTRUCTOR_CALL */(
-                hour,
+            return new DayTime(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ hour,
                 minute,
                 second,
                 _unrecognizedExtensionsList

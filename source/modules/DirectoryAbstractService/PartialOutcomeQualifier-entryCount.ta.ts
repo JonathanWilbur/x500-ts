@@ -25,9 +25,7 @@ export type PartialOutcomeQualifier_entryCount =
 /* END_OF_SYMBOL_DEFINITION PartialOutcomeQualifier_entryCount */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialOutcomeQualifier_entryCount */
-let _cached_decoder_for_PartialOutcomeQualifier_entryCount: $.ASN1Decoder<
-    PartialOutcomeQualifier_entryCount
-> | null = null;
+let _cached_decoder_for_PartialOutcomeQualifier_entryCount: $.ASN1Decoder<PartialOutcomeQualifier_entryCount> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialOutcomeQualifier_entryCount */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PartialOutcomeQualifier_entryCount */
@@ -39,31 +37,29 @@ let _cached_decoder_for_PartialOutcomeQualifier_entryCount: $.ASN1Decoder<
  */
 export function _decode_PartialOutcomeQualifier_entryCount(el: _Element) {
     if (!_cached_decoder_for_PartialOutcomeQualifier_entryCount) {
-        _cached_decoder_for_PartialOutcomeQualifier_entryCount = $._decode_extensible_choice<
-            PartialOutcomeQualifier_entryCount
-        >({
-            "CONTEXT 7": [
-                "bestEstimate",
-                $._decode_explicit<INTEGER>(() => $._decodeInteger),
-            ],
-            "CONTEXT 8": [
-                "lowEstimate",
-                $._decode_explicit<INTEGER>(() => $._decodeInteger),
-            ],
-            "CONTEXT 9": [
-                "exact",
-                $._decode_explicit<INTEGER>(() => $._decodeInteger),
-            ],
-        });
+        _cached_decoder_for_PartialOutcomeQualifier_entryCount = $._decode_extensible_choice<PartialOutcomeQualifier_entryCount>(
+            {
+                "CONTEXT 7": [
+                    "bestEstimate",
+                    $._decode_explicit<INTEGER>(() => $._decodeInteger),
+                ],
+                "CONTEXT 8": [
+                    "lowEstimate",
+                    $._decode_explicit<INTEGER>(() => $._decodeInteger),
+                ],
+                "CONTEXT 9": [
+                    "exact",
+                    $._decode_explicit<INTEGER>(() => $._decodeInteger),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_PartialOutcomeQualifier_entryCount(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PartialOutcomeQualifier_entryCount */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialOutcomeQualifier_entryCount */
-let _cached_encoder_for_PartialOutcomeQualifier_entryCount: $.ASN1Encoder<
-    PartialOutcomeQualifier_entryCount
-> | null = null;
+let _cached_encoder_for_PartialOutcomeQualifier_entryCount: $.ASN1Encoder<PartialOutcomeQualifier_entryCount> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialOutcomeQualifier_entryCount */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PartialOutcomeQualifier_entryCount */
@@ -79,9 +75,7 @@ export function _encode_PartialOutcomeQualifier_entryCount(
     elGetter: $.ASN1Encoder<PartialOutcomeQualifier_entryCount>
 ) {
     if (!_cached_encoder_for_PartialOutcomeQualifier_entryCount) {
-        _cached_encoder_for_PartialOutcomeQualifier_entryCount = $._encode_choice<
-            PartialOutcomeQualifier_entryCount
-        >(
+        _cached_encoder_for_PartialOutcomeQualifier_entryCount = $._encode_choice<PartialOutcomeQualifier_entryCount>(
             {
                 bestEstimate: $._encode_explicit(
                     _TagClass.context,

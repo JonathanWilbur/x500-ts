@@ -40,9 +40,7 @@ export type ACIItem_itemOrUserFirst =
 /* END_OF_SYMBOL_DEFINITION ACIItem_itemOrUserFirst */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ACIItem_itemOrUserFirst */
-let _cached_decoder_for_ACIItem_itemOrUserFirst: $.ASN1Decoder<
-    ACIItem_itemOrUserFirst
-> | null = null;
+let _cached_decoder_for_ACIItem_itemOrUserFirst: $.ASN1Decoder<ACIItem_itemOrUserFirst> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ACIItem_itemOrUserFirst */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ACIItem_itemOrUserFirst */
@@ -54,31 +52,29 @@ let _cached_decoder_for_ACIItem_itemOrUserFirst: $.ASN1Decoder<
  */
 export function _decode_ACIItem_itemOrUserFirst(el: _Element) {
     if (!_cached_decoder_for_ACIItem_itemOrUserFirst) {
-        _cached_decoder_for_ACIItem_itemOrUserFirst = $._decode_extensible_choice<
-            ACIItem_itemOrUserFirst
-        >({
-            "CONTEXT 0": [
-                "itemFirst",
-                $._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
-                    () => _decode_ACIItem_itemOrUserFirst_itemFirst
-                ),
-            ],
-            "CONTEXT 1": [
-                "userFirst",
-                $._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
-                    () => _decode_ACIItem_itemOrUserFirst_userFirst
-                ),
-            ],
-        });
+        _cached_decoder_for_ACIItem_itemOrUserFirst = $._decode_extensible_choice<ACIItem_itemOrUserFirst>(
+            {
+                "CONTEXT 0": [
+                    "itemFirst",
+                    $._decode_explicit<ACIItem_itemOrUserFirst_itemFirst>(
+                        () => _decode_ACIItem_itemOrUserFirst_itemFirst
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "userFirst",
+                    $._decode_explicit<ACIItem_itemOrUserFirst_userFirst>(
+                        () => _decode_ACIItem_itemOrUserFirst_userFirst
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ACIItem_itemOrUserFirst(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ACIItem_itemOrUserFirst */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ACIItem_itemOrUserFirst */
-let _cached_encoder_for_ACIItem_itemOrUserFirst: $.ASN1Encoder<
-    ACIItem_itemOrUserFirst
-> | null = null;
+let _cached_encoder_for_ACIItem_itemOrUserFirst: $.ASN1Encoder<ACIItem_itemOrUserFirst> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ACIItem_itemOrUserFirst */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ACIItem_itemOrUserFirst */
@@ -94,9 +90,7 @@ export function _encode_ACIItem_itemOrUserFirst(
     elGetter: $.ASN1Encoder<ACIItem_itemOrUserFirst>
 ) {
     if (!_cached_encoder_for_ACIItem_itemOrUserFirst) {
-        _cached_encoder_for_ACIItem_itemOrUserFirst = $._encode_choice<
-            ACIItem_itemOrUserFirst
-        >(
+        _cached_encoder_for_ACIItem_itemOrUserFirst = $._encode_choice<ACIItem_itemOrUserFirst>(
             {
                 itemFirst: $._encode_explicit(
                     _TagClass.context,

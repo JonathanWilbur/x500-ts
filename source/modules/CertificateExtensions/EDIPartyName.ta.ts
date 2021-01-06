@@ -174,8 +174,8 @@ export function _decode_EDIPartyName(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EDIPartyName /* SEQUENCE_CONSTRUCTOR_CALL */(
-                nameAssigner,
+            return new EDIPartyName(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ nameAssigner,
                 partyName,
                 _unrecognizedExtensionsList
             );

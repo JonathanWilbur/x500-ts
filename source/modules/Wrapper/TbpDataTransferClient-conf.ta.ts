@@ -41,9 +41,7 @@ export type TbpDataTransferClient_conf =
 /* END_OF_SYMBOL_DEFINITION TbpDataTransferClient_conf */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbpDataTransferClient_conf */
-let _cached_decoder_for_TbpDataTransferClient_conf: $.ASN1Decoder<
-    TbpDataTransferClient_conf
-> | null = null;
+let _cached_decoder_for_TbpDataTransferClient_conf: $.ASN1Decoder<TbpDataTransferClient_conf> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbpDataTransferClient_conf */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbpDataTransferClient_conf */
@@ -55,29 +53,27 @@ let _cached_decoder_for_TbpDataTransferClient_conf: $.ASN1Decoder<
  */
 export function _decode_TbpDataTransferClient_conf(el: _Element) {
     if (!_cached_decoder_for_TbpDataTransferClient_conf) {
-        _cached_decoder_for_TbpDataTransferClient_conf = $._decode_extensible_choice<
-            TbpDataTransferClient_conf
-        >({
-            "CONTEXT 4": [
-                "clear",
-                $._decode_implicit<WrappedProt>(() => _decode_WrappedProt),
-            ],
-            "CONTEXT 5": [
-                "protected_",
-                $._decode_implicit<ENCIPHERED<_Element>>(() =>
-                    _get_decoder_for_ENCIPHERED<_Element>($._decodeAny)
-                ),
-            ],
-        });
+        _cached_decoder_for_TbpDataTransferClient_conf = $._decode_extensible_choice<TbpDataTransferClient_conf>(
+            {
+                "CONTEXT 4": [
+                    "clear",
+                    $._decode_implicit<WrappedProt>(() => _decode_WrappedProt),
+                ],
+                "CONTEXT 5": [
+                    "protected_",
+                    $._decode_implicit<ENCIPHERED<_Element>>(() =>
+                        _get_decoder_for_ENCIPHERED<_Element>($._decodeAny)
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TbpDataTransferClient_conf(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TbpDataTransferClient_conf */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbpDataTransferClient_conf */
-let _cached_encoder_for_TbpDataTransferClient_conf: $.ASN1Encoder<
-    TbpDataTransferClient_conf
-> | null = null;
+let _cached_encoder_for_TbpDataTransferClient_conf: $.ASN1Encoder<TbpDataTransferClient_conf> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbpDataTransferClient_conf */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbpDataTransferClient_conf */
@@ -93,9 +89,7 @@ export function _encode_TbpDataTransferClient_conf(
     elGetter: $.ASN1Encoder<TbpDataTransferClient_conf>
 ) {
     if (!_cached_encoder_for_TbpDataTransferClient_conf) {
-        _cached_encoder_for_TbpDataTransferClient_conf = $._encode_choice<
-            TbpDataTransferClient_conf
-        >(
+        _cached_encoder_for_TbpDataTransferClient_conf = $._encode_choice<TbpDataTransferClient_conf>(
             {
                 clear: $._encode_implicit(
                     _TagClass.context,

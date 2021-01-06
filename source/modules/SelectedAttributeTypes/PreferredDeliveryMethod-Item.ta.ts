@@ -197,9 +197,7 @@ export const telephone_delivery: PreferredDeliveryMethod_Item = PreferredDeliver
 /* END_OF_SYMBOL_DEFINITION telephone_delivery */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PreferredDeliveryMethod_Item */
-let _cached_decoder_for_PreferredDeliveryMethod_Item: $.ASN1Decoder<
-    PreferredDeliveryMethod_Item
-> | null = null;
+let _cached_decoder_for_PreferredDeliveryMethod_Item: $.ASN1Decoder<PreferredDeliveryMethod_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PreferredDeliveryMethod_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PreferredDeliveryMethod_Item */
@@ -218,9 +216,7 @@ export function _decode_PreferredDeliveryMethod_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PreferredDeliveryMethod_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PreferredDeliveryMethod_Item */
-let _cached_encoder_for_PreferredDeliveryMethod_Item: $.ASN1Encoder<
-    PreferredDeliveryMethod_Item
-> | null = null;
+let _cached_encoder_for_PreferredDeliveryMethod_Item: $.ASN1Encoder<PreferredDeliveryMethod_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PreferredDeliveryMethod_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PreferredDeliveryMethod_Item */

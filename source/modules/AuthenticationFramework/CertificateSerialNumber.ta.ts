@@ -17,9 +17,7 @@ export type CertificateSerialNumber = OCTET_STRING;
 /* END_OF_SYMBOL_DEFINITION CertificateSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateSerialNumber */
-let _cached_decoder_for_CertificateSerialNumber: $.ASN1Decoder<
-    CertificateSerialNumber
-> | null = null;
+let _cached_decoder_for_CertificateSerialNumber: $.ASN1Decoder<CertificateSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateSerialNumber */
@@ -38,9 +36,7 @@ export function _decode_CertificateSerialNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateSerialNumber */
-let _cached_encoder_for_CertificateSerialNumber: $.ASN1Encoder<
-    CertificateSerialNumber
-> | null = null;
+let _cached_encoder_for_CertificateSerialNumber: $.ASN1Encoder<CertificateSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateSerialNumber */

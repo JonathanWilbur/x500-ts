@@ -209,8 +209,8 @@ export function _decode_IssuerSerial(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new IssuerSerial /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuer,
+            return new IssuerSerial(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
                 serial,
                 issuerUID,
                 _unrecognizedExtensionsList

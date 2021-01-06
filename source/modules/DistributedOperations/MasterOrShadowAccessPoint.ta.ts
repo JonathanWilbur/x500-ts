@@ -254,9 +254,7 @@ export const _extension_additions_list_spec_for_MasterOrShadowAccessPoint: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MasterOrShadowAccessPoint */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterOrShadowAccessPoint */
-let _cached_decoder_for_MasterOrShadowAccessPoint: $.ASN1Decoder<
-    MasterOrShadowAccessPoint
-> | null = null;
+let _cached_decoder_for_MasterOrShadowAccessPoint: $.ASN1Decoder<MasterOrShadowAccessPoint> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterOrShadowAccessPoint */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MasterOrShadowAccessPoint */
@@ -303,9 +301,9 @@ export function _decode_MasterOrShadowAccessPoint(el: _Element) {
                     )(_el);
                 },
                 category: (_el: _Element): void => {
-                    category = $._decode_explicit<
-                        MasterOrShadowAccessPoint_category
-                    >(() => _decode_MasterOrShadowAccessPoint_category)(_el);
+                    category = $._decode_explicit<MasterOrShadowAccessPoint_category>(
+                        () => _decode_MasterOrShadowAccessPoint_category
+                    )(_el);
                 },
                 chainingRequired: (_el: _Element): void => {
                     chainingRequired = $._decode_explicit<BOOLEAN>(
@@ -324,8 +322,8 @@ export function _decode_MasterOrShadowAccessPoint(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MasterOrShadowAccessPoint /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new MasterOrShadowAccessPoint(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 address,
                 protocolInformation,
                 category,
@@ -339,9 +337,7 @@ export function _decode_MasterOrShadowAccessPoint(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MasterOrShadowAccessPoint */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterOrShadowAccessPoint */
-let _cached_encoder_for_MasterOrShadowAccessPoint: $.ASN1Encoder<
-    MasterOrShadowAccessPoint
-> | null = null;
+let _cached_encoder_for_MasterOrShadowAccessPoint: $.ASN1Encoder<MasterOrShadowAccessPoint> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterOrShadowAccessPoint */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MasterOrShadowAccessPoint */

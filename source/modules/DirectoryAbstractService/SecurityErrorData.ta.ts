@@ -144,25 +144,19 @@ export class SecurityErrorData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -298,9 +292,7 @@ export const _extension_additions_list_spec_for_SecurityErrorData: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SecurityErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityErrorData */
-let _cached_decoder_for_SecurityErrorData: $.ASN1Decoder<
-    SecurityErrorData
-> | null = null;
+let _cached_decoder_for_SecurityErrorData: $.ASN1Decoder<SecurityErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityErrorData */
@@ -375,8 +367,8 @@ export function _decode_SecurityErrorData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SecurityErrorData /* SET_CONSTRUCTOR_CALL */(
-                problem,
+            return new SecurityErrorData(
+                /* SET_CONSTRUCTOR_CALL */ problem,
                 spkmInfo,
                 encPwdInfo,
                 _unrecognizedExtensionsList,
@@ -392,9 +384,7 @@ export function _decode_SecurityErrorData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityErrorData */
-let _cached_encoder_for_SecurityErrorData: $.ASN1Encoder<
-    SecurityErrorData
-> | null = null;
+let _cached_encoder_for_SecurityErrorData: $.ASN1Encoder<SecurityErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityErrorData */

@@ -27,9 +27,7 @@ export type AcceptablePrivilegePoliciesSyntax = PrivilegePolicy[]; // SequenceOf
 /* END_OF_SYMBOL_DEFINITION AcceptablePrivilegePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AcceptablePrivilegePoliciesSyntax */
-let _cached_decoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Decoder<
-    AcceptablePrivilegePoliciesSyntax
-> | null = null;
+let _cached_decoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Decoder<AcceptablePrivilegePoliciesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AcceptablePrivilegePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AcceptablePrivilegePoliciesSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Decoder<
  */
 export function _decode_AcceptablePrivilegePoliciesSyntax(el: _Element) {
     if (!_cached_decoder_for_AcceptablePrivilegePoliciesSyntax) {
-        _cached_decoder_for_AcceptablePrivilegePoliciesSyntax = $._decodeSequenceOf<
-            PrivilegePolicy
-        >(() => _decode_PrivilegePolicy);
+        _cached_decoder_for_AcceptablePrivilegePoliciesSyntax = $._decodeSequenceOf<PrivilegePolicy>(
+            () => _decode_PrivilegePolicy
+        );
     }
     return _cached_decoder_for_AcceptablePrivilegePoliciesSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AcceptablePrivilegePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AcceptablePrivilegePoliciesSyntax */
-let _cached_encoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Encoder<
-    AcceptablePrivilegePoliciesSyntax
-> | null = null;
+let _cached_encoder_for_AcceptablePrivilegePoliciesSyntax: $.ASN1Encoder<AcceptablePrivilegePoliciesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AcceptablePrivilegePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AcceptablePrivilegePoliciesSyntax */
@@ -68,9 +64,10 @@ export function _encode_AcceptablePrivilegePoliciesSyntax(
     elGetter: $.ASN1Encoder<AcceptablePrivilegePoliciesSyntax>
 ) {
     if (!_cached_encoder_for_AcceptablePrivilegePoliciesSyntax) {
-        _cached_encoder_for_AcceptablePrivilegePoliciesSyntax = $._encodeSequenceOf<
-            PrivilegePolicy
-        >(() => _encode_PrivilegePolicy, $.BER);
+        _cached_encoder_for_AcceptablePrivilegePoliciesSyntax = $._encodeSequenceOf<PrivilegePolicy>(
+            () => _encode_PrivilegePolicy,
+            $.BER
+        );
     }
     return _cached_encoder_for_AcceptablePrivilegePoliciesSyntax(
         value,

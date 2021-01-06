@@ -132,9 +132,7 @@ export const _extension_additions_list_spec_for_FilterItem_substrings: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_FilterItem_substrings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FilterItem_substrings */
-let _cached_decoder_for_FilterItem_substrings: $.ASN1Decoder<
-    FilterItem_substrings
-> | null = null;
+let _cached_decoder_for_FilterItem_substrings: $.ASN1Decoder<FilterItem_substrings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FilterItem_substrings */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FilterItem_substrings */
@@ -173,9 +171,7 @@ export function _decode_FilterItem_substrings(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_FilterItem_substrings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FilterItem_substrings */
-let _cached_encoder_for_FilterItem_substrings: $.ASN1Encoder<
-    FilterItem_substrings
-> | null = null;
+let _cached_encoder_for_FilterItem_substrings: $.ASN1Encoder<FilterItem_substrings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FilterItem_substrings */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FilterItem_substrings */
@@ -203,9 +199,7 @@ export function _encode_FilterItem_substrings(
                                 value.type_,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                FilterItem_substrings_strings_Item
-                            >(
+                            /* REQUIRED   */ $._encodeSequenceOf<FilterItem_substrings_strings_Item>(
                                 () =>
                                     _encode_FilterItem_substrings_strings_Item,
                                 $.BER

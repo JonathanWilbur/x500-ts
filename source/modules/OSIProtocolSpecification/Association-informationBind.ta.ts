@@ -23,9 +23,7 @@ export type Association_informationBind = EXTERNAL[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION Association_informationBind */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBind */
-let _cached_decoder_for_Association_informationBind: $.ASN1Decoder<
-    Association_informationBind
-> | null = null;
+let _cached_decoder_for_Association_informationBind: $.ASN1Decoder<Association_informationBind> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBind */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Association_informationBind */
@@ -37,18 +35,16 @@ let _cached_decoder_for_Association_informationBind: $.ASN1Decoder<
  */
 export function _decode_Association_informationBind(el: _Element) {
     if (!_cached_decoder_for_Association_informationBind) {
-        _cached_decoder_for_Association_informationBind = $._decodeSequenceOf<
-            EXTERNAL
-        >(() => $._decodeExternal);
+        _cached_decoder_for_Association_informationBind = $._decodeSequenceOf<EXTERNAL>(
+            () => $._decodeExternal
+        );
     }
     return _cached_decoder_for_Association_informationBind(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Association_informationBind */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBind */
-let _cached_encoder_for_Association_informationBind: $.ASN1Encoder<
-    Association_informationBind
-> | null = null;
+let _cached_encoder_for_Association_informationBind: $.ASN1Encoder<Association_informationBind> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBind */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Association_informationBind */
@@ -64,9 +60,10 @@ export function _encode_Association_informationBind(
     elGetter: $.ASN1Encoder<Association_informationBind>
 ) {
     if (!_cached_encoder_for_Association_informationBind) {
-        _cached_encoder_for_Association_informationBind = $._encodeSequenceOf<
-            EXTERNAL
-        >(() => $._encodeExternal, $.BER);
+        _cached_encoder_for_Association_informationBind = $._encodeSequenceOf<EXTERNAL>(
+            () => $._encodeExternal,
+            $.BER
+        );
     }
     return _cached_encoder_for_Association_informationBind(value, elGetter);
 }

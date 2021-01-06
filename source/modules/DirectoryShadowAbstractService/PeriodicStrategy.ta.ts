@@ -146,9 +146,7 @@ export const _extension_additions_list_spec_for_PeriodicStrategy: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PeriodicStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PeriodicStrategy */
-let _cached_decoder_for_PeriodicStrategy: $.ASN1Decoder<
-    PeriodicStrategy
-> | null = null;
+let _cached_decoder_for_PeriodicStrategy: $.ASN1Decoder<PeriodicStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PeriodicStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PeriodicStrategy */
@@ -192,8 +190,8 @@ export function _decode_PeriodicStrategy(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PeriodicStrategy /* SEQUENCE_CONSTRUCTOR_CALL */(
-                beginTime,
+            return new PeriodicStrategy(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ beginTime,
                 windowSize,
                 updateInterval,
                 _unrecognizedExtensionsList
@@ -205,9 +203,7 @@ export function _decode_PeriodicStrategy(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PeriodicStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PeriodicStrategy */
-let _cached_encoder_for_PeriodicStrategy: $.ASN1Encoder<
-    PeriodicStrategy
-> | null = null;
+let _cached_encoder_for_PeriodicStrategy: $.ASN1Encoder<PeriodicStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PeriodicStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PeriodicStrategy */

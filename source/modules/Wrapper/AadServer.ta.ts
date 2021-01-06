@@ -283,8 +283,8 @@ export function _decode_AadServer(el: _Element) {
                 _root_component_type_list_2_spec_for_AadServer,
                 undefined
             );
-            return new AadServer /* SEQUENCE_CONSTRUCTOR_CALL */(
-                invokeID,
+            return new AadServer(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ invokeID,
                 assoID,
                 time,
                 seq,

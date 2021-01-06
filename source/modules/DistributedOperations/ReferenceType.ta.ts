@@ -203,9 +203,7 @@ export const ditBridge: ReferenceType = ReferenceType_ditBridge; /* SHORT_NAMED_
 /* END_OF_SYMBOL_DEFINITION ditBridge */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReferenceType */
-let _cached_decoder_for_ReferenceType: $.ASN1Decoder<
-    ReferenceType
-> | null = null;
+let _cached_decoder_for_ReferenceType: $.ASN1Decoder<ReferenceType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReferenceType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReferenceType */
@@ -224,9 +222,7 @@ export function _decode_ReferenceType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReferenceType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReferenceType */
-let _cached_encoder_for_ReferenceType: $.ASN1Encoder<
-    ReferenceType
-> | null = null;
+let _cached_encoder_for_ReferenceType: $.ASN1Encoder<ReferenceType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReferenceType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReferenceType */

@@ -27,9 +27,7 @@ export type ModifyResponse = LDAPResult; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ModifyResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyResponse */
-let _cached_decoder_for_ModifyResponse: $.ASN1Decoder<
-    ModifyResponse
-> | null = null;
+let _cached_decoder_for_ModifyResponse: $.ASN1Decoder<ModifyResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyResponse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyResponse */
@@ -50,9 +48,7 @@ export function _decode_ModifyResponse(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyResponse */
-let _cached_encoder_for_ModifyResponse: $.ASN1Encoder<
-    ModifyResponse
-> | null = null;
+let _cached_encoder_for_ModifyResponse: $.ASN1Encoder<ModifyResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyResponse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyResponse */

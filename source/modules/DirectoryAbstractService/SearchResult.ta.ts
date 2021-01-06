@@ -49,9 +49,9 @@ let _cached_decoder_for_SearchResult: $.ASN1Decoder<SearchResult> | null = null;
  */
 export function _decode_SearchResult(el: _Element) {
     if (!_cached_decoder_for_SearchResult) {
-        _cached_decoder_for_SearchResult = _get_decoder_for_OPTIONALLY_PROTECTED<
-            SearchResultData
-        >(_decode_SearchResultData);
+        _cached_decoder_for_SearchResult = _get_decoder_for_OPTIONALLY_PROTECTED<SearchResultData>(
+            _decode_SearchResultData
+        );
     }
     return _cached_decoder_for_SearchResult(el);
 }
@@ -74,9 +74,9 @@ export function _encode_SearchResult(
     elGetter: $.ASN1Encoder<SearchResult>
 ) {
     if (!_cached_encoder_for_SearchResult) {
-        _cached_encoder_for_SearchResult = _get_encoder_for_OPTIONALLY_PROTECTED<
-            SearchResultData
-        >(_encode_SearchResultData);
+        _cached_encoder_for_SearchResult = _get_encoder_for_OPTIONALLY_PROTECTED<SearchResultData>(
+            _encode_SearchResultData
+        );
     }
     return _cached_encoder_for_SearchResult(value, elGetter);
 }

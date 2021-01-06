@@ -115,9 +115,7 @@ export const external: number = PeerEntityAuthenticationPolicy_external; /* SHOR
 /* END_OF_SYMBOL_DEFINITION external */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PeerEntityAuthenticationPolicy */
-let _cached_decoder_for_PeerEntityAuthenticationPolicy: $.ASN1Decoder<
-    PeerEntityAuthenticationPolicy
-> | null = null;
+let _cached_decoder_for_PeerEntityAuthenticationPolicy: $.ASN1Decoder<PeerEntityAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PeerEntityAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PeerEntityAuthenticationPolicy */
@@ -136,9 +134,7 @@ export function _decode_PeerEntityAuthenticationPolicy(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PeerEntityAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PeerEntityAuthenticationPolicy */
-let _cached_encoder_for_PeerEntityAuthenticationPolicy: $.ASN1Encoder<
-    PeerEntityAuthenticationPolicy
-> | null = null;
+let _cached_encoder_for_PeerEntityAuthenticationPolicy: $.ASN1Encoder<PeerEntityAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PeerEntityAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PeerEntityAuthenticationPolicy */

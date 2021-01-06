@@ -27,9 +27,7 @@ export type AttributeTypes = AttributeType[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION AttributeTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypes */
-let _cached_decoder_for_AttributeTypes: $.ASN1Decoder<
-    AttributeTypes
-> | null = null;
+let _cached_decoder_for_AttributeTypes: $.ASN1Decoder<AttributeTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypes */
@@ -50,9 +48,7 @@ export function _decode_AttributeTypes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypes */
-let _cached_encoder_for_AttributeTypes: $.ASN1Encoder<
-    AttributeTypes
-> | null = null;
+let _cached_encoder_for_AttributeTypes: $.ASN1Encoder<AttributeTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypes */

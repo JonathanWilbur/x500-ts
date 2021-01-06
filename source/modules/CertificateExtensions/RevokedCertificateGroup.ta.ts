@@ -41,9 +41,7 @@ export type RevokedCertificateGroup =
 /* END_OF_SYMBOL_DEFINITION RevokedCertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RevokedCertificateGroup */
-let _cached_decoder_for_RevokedCertificateGroup: $.ASN1Decoder<
-    RevokedCertificateGroup
-> | null = null;
+let _cached_decoder_for_RevokedCertificateGroup: $.ASN1Decoder<RevokedCertificateGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RevokedCertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RevokedCertificateGroup */
@@ -55,29 +53,27 @@ let _cached_decoder_for_RevokedCertificateGroup: $.ASN1Decoder<
  */
 export function _decode_RevokedCertificateGroup(el: _Element) {
     if (!_cached_decoder_for_RevokedCertificateGroup) {
-        _cached_decoder_for_RevokedCertificateGroup = $._decode_inextensible_choice<
-            RevokedCertificateGroup
-        >({
-            "UNIVERSAL 16": ["serialNumberRange", _decode_NumberRange],
-            "CONTEXT 0": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 1": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 2": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 3": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 4": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 5": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 6": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 7": ["nameSubtree", _decode_GeneralName],
-            "CONTEXT 8": ["nameSubtree", _decode_GeneralName],
-        });
+        _cached_decoder_for_RevokedCertificateGroup = $._decode_inextensible_choice<RevokedCertificateGroup>(
+            {
+                "UNIVERSAL 16": ["serialNumberRange", _decode_NumberRange],
+                "CONTEXT 0": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 1": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 2": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 3": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 4": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 5": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 6": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 7": ["nameSubtree", _decode_GeneralName],
+                "CONTEXT 8": ["nameSubtree", _decode_GeneralName],
+            }
+        );
     }
     return _cached_decoder_for_RevokedCertificateGroup(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RevokedCertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RevokedCertificateGroup */
-let _cached_encoder_for_RevokedCertificateGroup: $.ASN1Encoder<
-    RevokedCertificateGroup
-> | null = null;
+let _cached_encoder_for_RevokedCertificateGroup: $.ASN1Encoder<RevokedCertificateGroup> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RevokedCertificateGroup */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RevokedCertificateGroup */
@@ -93,9 +89,7 @@ export function _encode_RevokedCertificateGroup(
     elGetter: $.ASN1Encoder<RevokedCertificateGroup>
 ) {
     if (!_cached_encoder_for_RevokedCertificateGroup) {
-        _cached_encoder_for_RevokedCertificateGroup = $._encode_choice<
-            RevokedCertificateGroup
-        >(
+        _cached_encoder_for_RevokedCertificateGroup = $._encode_choice<RevokedCertificateGroup>(
             {
                 serialNumberRange: _encode_NumberRange,
                 nameSubtree: _encode_GeneralName,

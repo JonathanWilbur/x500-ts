@@ -28,9 +28,7 @@ export type ShadowConsumerInitiatedDISP_OSI_PDUs = OSI_PDU; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ShadowConsumerInitiatedDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs */
-let _cached_decoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs: $.ASN1Decoder<
-    ShadowConsumerInitiatedDISP_OSI_PDUs
-> | null = null;
+let _cached_decoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs: $.ASN1Decoder<ShadowConsumerInitiatedDISP_OSI_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShadowConsumerInitiatedDISP_OSI_PDUs */
@@ -49,9 +47,7 @@ export function _decode_ShadowConsumerInitiatedDISP_OSI_PDUs(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ShadowConsumerInitiatedDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs */
-let _cached_encoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs: $.ASN1Encoder<
-    ShadowConsumerInitiatedDISP_OSI_PDUs
-> | null = null;
+let _cached_encoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs: $.ASN1Encoder<ShadowConsumerInitiatedDISP_OSI_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowConsumerInitiatedDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShadowConsumerInitiatedDISP_OSI_PDUs */

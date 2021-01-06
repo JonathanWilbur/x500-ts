@@ -21,9 +21,7 @@ export type UnitOfReplication_supplyContexts =
 /* END_OF_SYMBOL_DEFINITION UnitOfReplication_supplyContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UnitOfReplication_supplyContexts */
-let _cached_decoder_for_UnitOfReplication_supplyContexts: $.ASN1Decoder<
-    UnitOfReplication_supplyContexts
-> | null = null;
+let _cached_decoder_for_UnitOfReplication_supplyContexts: $.ASN1Decoder<UnitOfReplication_supplyContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UnitOfReplication_supplyContexts */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UnitOfReplication_supplyContexts */
@@ -35,26 +33,24 @@ let _cached_decoder_for_UnitOfReplication_supplyContexts: $.ASN1Decoder<
  */
 export function _decode_UnitOfReplication_supplyContexts(el: _Element) {
     if (!_cached_decoder_for_UnitOfReplication_supplyContexts) {
-        _cached_decoder_for_UnitOfReplication_supplyContexts = $._decode_extensible_choice<
-            UnitOfReplication_supplyContexts
-        >({
-            "UNIVERSAL 5": ["allContexts", $._decodeNull],
-            "UNIVERSAL 17": [
-                "selectedContexts",
-                $._decodeSetOf<OBJECT_IDENTIFIER>(
-                    () => $._decodeObjectIdentifier
-                ),
-            ],
-        });
+        _cached_decoder_for_UnitOfReplication_supplyContexts = $._decode_extensible_choice<UnitOfReplication_supplyContexts>(
+            {
+                "UNIVERSAL 5": ["allContexts", $._decodeNull],
+                "UNIVERSAL 17": [
+                    "selectedContexts",
+                    $._decodeSetOf<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_UnitOfReplication_supplyContexts(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UnitOfReplication_supplyContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UnitOfReplication_supplyContexts */
-let _cached_encoder_for_UnitOfReplication_supplyContexts: $.ASN1Encoder<
-    UnitOfReplication_supplyContexts
-> | null = null;
+let _cached_encoder_for_UnitOfReplication_supplyContexts: $.ASN1Encoder<UnitOfReplication_supplyContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UnitOfReplication_supplyContexts */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UnitOfReplication_supplyContexts */
@@ -70,9 +66,7 @@ export function _encode_UnitOfReplication_supplyContexts(
     elGetter: $.ASN1Encoder<UnitOfReplication_supplyContexts>
 ) {
     if (!_cached_encoder_for_UnitOfReplication_supplyContexts) {
-        _cached_encoder_for_UnitOfReplication_supplyContexts = $._encode_choice<
-            UnitOfReplication_supplyContexts
-        >(
+        _cached_encoder_for_UnitOfReplication_supplyContexts = $._encode_choice<UnitOfReplication_supplyContexts>(
             {
                 allContexts: $._encodeNull,
                 selectedContexts: $._encodeSetOf<OBJECT_IDENTIFIER>(

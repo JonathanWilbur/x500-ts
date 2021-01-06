@@ -200,8 +200,8 @@ export function _decode_PersonalName(el: _Element) {
                 _root_component_type_list_2_spec_for_PersonalName,
                 undefined
             );
-            return new PersonalName /* SET_CONSTRUCTOR_CALL */(
-                surname,
+            return new PersonalName(
+                /* SET_CONSTRUCTOR_CALL */ surname,
                 given_name,
                 initials,
                 generation_qualifier

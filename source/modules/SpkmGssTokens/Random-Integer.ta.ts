@@ -17,9 +17,7 @@ export type Random_Integer = BIT_STRING;
 /* END_OF_SYMBOL_DEFINITION Random_Integer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Random_Integer */
-let _cached_decoder_for_Random_Integer: $.ASN1Decoder<
-    Random_Integer
-> | null = null;
+let _cached_decoder_for_Random_Integer: $.ASN1Decoder<Random_Integer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Random_Integer */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Random_Integer */
@@ -38,9 +36,7 @@ export function _decode_Random_Integer(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Random_Integer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Random_Integer */
-let _cached_encoder_for_Random_Integer: $.ASN1Encoder<
-    Random_Integer
-> | null = null;
+let _cached_encoder_for_Random_Integer: $.ASN1Encoder<Random_Integer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Random_Integer */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Random_Integer */

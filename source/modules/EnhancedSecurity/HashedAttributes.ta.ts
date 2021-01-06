@@ -27,9 +27,7 @@ export type HashedAttributes = Attribute[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION HashedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HashedAttributes */
-let _cached_decoder_for_HashedAttributes: $.ASN1Decoder<
-    HashedAttributes
-> | null = null;
+let _cached_decoder_for_HashedAttributes: $.ASN1Decoder<HashedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HashedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HashedAttributes */
@@ -50,9 +48,7 @@ export function _decode_HashedAttributes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HashedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HashedAttributes */
-let _cached_encoder_for_HashedAttributes: $.ASN1Encoder<
-    HashedAttributes
-> | null = null;
+let _cached_encoder_for_HashedAttributes: $.ASN1Encoder<HashedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HashedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HashedAttributes */

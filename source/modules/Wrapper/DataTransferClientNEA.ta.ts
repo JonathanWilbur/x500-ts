@@ -37,9 +37,7 @@ export type DataTransferClientNEA = ICV_Invoke<TbpDataTransferClient>; // Define
 /* END_OF_SYMBOL_DEFINITION DataTransferClientNEA */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferClientNEA */
-let _cached_decoder_for_DataTransferClientNEA: $.ASN1Decoder<
-    DataTransferClientNEA
-> | null = null;
+let _cached_decoder_for_DataTransferClientNEA: $.ASN1Decoder<DataTransferClientNEA> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferClientNEA */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DataTransferClientNEA */
@@ -51,18 +49,16 @@ let _cached_decoder_for_DataTransferClientNEA: $.ASN1Decoder<
  */
 export function _decode_DataTransferClientNEA(el: _Element) {
     if (!_cached_decoder_for_DataTransferClientNEA) {
-        _cached_decoder_for_DataTransferClientNEA = _get_decoder_for_ICV_Invoke<
-            TbpDataTransferClient
-        >(_decode_TbpDataTransferClient);
+        _cached_decoder_for_DataTransferClientNEA = _get_decoder_for_ICV_Invoke<TbpDataTransferClient>(
+            _decode_TbpDataTransferClient
+        );
     }
     return _cached_decoder_for_DataTransferClientNEA(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DataTransferClientNEA */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferClientNEA */
-let _cached_encoder_for_DataTransferClientNEA: $.ASN1Encoder<
-    DataTransferClientNEA
-> | null = null;
+let _cached_encoder_for_DataTransferClientNEA: $.ASN1Encoder<DataTransferClientNEA> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferClientNEA */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DataTransferClientNEA */
@@ -78,9 +74,9 @@ export function _encode_DataTransferClientNEA(
     elGetter: $.ASN1Encoder<DataTransferClientNEA>
 ) {
     if (!_cached_encoder_for_DataTransferClientNEA) {
-        _cached_encoder_for_DataTransferClientNEA = _get_encoder_for_ICV_Invoke<
-            TbpDataTransferClient
-        >(_encode_TbpDataTransferClient);
+        _cached_encoder_for_DataTransferClientNEA = _get_encoder_for_ICV_Invoke<TbpDataTransferClient>(
+            _encode_TbpDataTransferClient
+        );
     }
     return _cached_encoder_for_DataTransferClientNEA(value, elGetter);
 }

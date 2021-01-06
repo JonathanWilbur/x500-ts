@@ -27,9 +27,7 @@ export type PhysicalDeliveryOfficeName = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION PhysicalDeliveryOfficeName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryOfficeName */
-let _cached_decoder_for_PhysicalDeliveryOfficeName: $.ASN1Decoder<
-    PhysicalDeliveryOfficeName
-> | null = null;
+let _cached_decoder_for_PhysicalDeliveryOfficeName: $.ASN1Decoder<PhysicalDeliveryOfficeName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryOfficeName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryOfficeName */
@@ -48,9 +46,7 @@ export function _decode_PhysicalDeliveryOfficeName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryOfficeName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryOfficeName */
-let _cached_encoder_for_PhysicalDeliveryOfficeName: $.ASN1Encoder<
-    PhysicalDeliveryOfficeName
-> | null = null;
+let _cached_encoder_for_PhysicalDeliveryOfficeName: $.ASN1Encoder<PhysicalDeliveryOfficeName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryOfficeName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PhysicalDeliveryOfficeName */

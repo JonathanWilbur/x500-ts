@@ -139,9 +139,7 @@ export const _extension_additions_list_spec_for_ModifyRights_Item: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyRights_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item */
-let _cached_decoder_for_ModifyRights_Item: $.ASN1Decoder<
-    ModifyRights_Item
-> | null = null;
+let _cached_decoder_for_ModifyRights_Item: $.ASN1Decoder<ModifyRights_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item */
@@ -180,9 +178,7 @@ export function _decode_ModifyRights_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item */
-let _cached_encoder_for_ModifyRights_Item: $.ASN1Encoder<
-    ModifyRights_Item
-> | null = null;
+let _cached_encoder_for_ModifyRights_Item: $.ASN1Encoder<ModifyRights_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyRights_Item */

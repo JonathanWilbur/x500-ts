@@ -17,9 +17,7 @@ export type OrganizationName = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION OrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationName */
-let _cached_decoder_for_OrganizationName: $.ASN1Decoder<
-    OrganizationName
-> | null = null;
+let _cached_decoder_for_OrganizationName: $.ASN1Decoder<OrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OrganizationName */
@@ -38,9 +36,7 @@ export function _decode_OrganizationName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationName */
-let _cached_encoder_for_OrganizationName: $.ASN1Encoder<
-    OrganizationName
-> | null = null;
+let _cached_encoder_for_OrganizationName: $.ASN1Encoder<OrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OrganizationName */

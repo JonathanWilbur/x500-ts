@@ -27,9 +27,7 @@ export type GeneralSubtrees = GeneralSubtree[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION GeneralSubtrees */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralSubtrees */
-let _cached_decoder_for_GeneralSubtrees: $.ASN1Decoder<
-    GeneralSubtrees
-> | null = null;
+let _cached_decoder_for_GeneralSubtrees: $.ASN1Decoder<GeneralSubtrees> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralSubtrees */
 
 /* START_OF_SYMBOL_DEFINITION _decode_GeneralSubtrees */
@@ -41,18 +39,16 @@ let _cached_decoder_for_GeneralSubtrees: $.ASN1Decoder<
  */
 export function _decode_GeneralSubtrees(el: _Element) {
     if (!_cached_decoder_for_GeneralSubtrees) {
-        _cached_decoder_for_GeneralSubtrees = $._decodeSequenceOf<
-            GeneralSubtree
-        >(() => _decode_GeneralSubtree);
+        _cached_decoder_for_GeneralSubtrees = $._decodeSequenceOf<GeneralSubtree>(
+            () => _decode_GeneralSubtree
+        );
     }
     return _cached_decoder_for_GeneralSubtrees(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_GeneralSubtrees */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralSubtrees */
-let _cached_encoder_for_GeneralSubtrees: $.ASN1Encoder<
-    GeneralSubtrees
-> | null = null;
+let _cached_encoder_for_GeneralSubtrees: $.ASN1Encoder<GeneralSubtrees> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralSubtrees */
 
 /* START_OF_SYMBOL_DEFINITION _encode_GeneralSubtrees */
@@ -68,9 +64,10 @@ export function _encode_GeneralSubtrees(
     elGetter: $.ASN1Encoder<GeneralSubtrees>
 ) {
     if (!_cached_encoder_for_GeneralSubtrees) {
-        _cached_encoder_for_GeneralSubtrees = $._encodeSequenceOf<
-            GeneralSubtree
-        >(() => _encode_GeneralSubtree, $.BER);
+        _cached_encoder_for_GeneralSubtrees = $._encodeSequenceOf<GeneralSubtree>(
+            () => _encode_GeneralSubtree,
+            $.BER
+        );
     }
     return _cached_encoder_for_GeneralSubtrees(value, elGetter);
 }

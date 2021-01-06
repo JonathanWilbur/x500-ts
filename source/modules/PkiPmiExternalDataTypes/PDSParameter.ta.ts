@@ -148,8 +148,8 @@ export function _decode_PDSParameter(el: _Element) {
                 _root_component_type_list_2_spec_for_PDSParameter,
                 undefined
             );
-            return new PDSParameter /* SET_CONSTRUCTOR_CALL */(
-                printable_string,
+            return new PDSParameter(
+                /* SET_CONSTRUCTOR_CALL */ printable_string,
                 teletex_string
             );
         };

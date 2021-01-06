@@ -27,9 +27,7 @@ export type MatchingRuleId = LDAPString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION MatchingRuleId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleId */
-let _cached_decoder_for_MatchingRuleId: $.ASN1Decoder<
-    MatchingRuleId
-> | null = null;
+let _cached_decoder_for_MatchingRuleId: $.ASN1Decoder<MatchingRuleId> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleId */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MatchingRuleId */
@@ -48,9 +46,7 @@ export function _decode_MatchingRuleId(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MatchingRuleId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleId */
-let _cached_encoder_for_MatchingRuleId: $.ASN1Encoder<
-    MatchingRuleId
-> | null = null;
+let _cached_encoder_for_MatchingRuleId: $.ASN1Encoder<MatchingRuleId> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleId */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MatchingRuleId */

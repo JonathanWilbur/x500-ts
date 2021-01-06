@@ -19,9 +19,7 @@ export type UniversalOrBMPString_character_encoding =
 /* END_OF_SYMBOL_DEFINITION UniversalOrBMPString_character_encoding */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrBMPString_character_encoding */
-let _cached_decoder_for_UniversalOrBMPString_character_encoding: $.ASN1Decoder<
-    UniversalOrBMPString_character_encoding
-> | null = null;
+let _cached_decoder_for_UniversalOrBMPString_character_encoding: $.ASN1Decoder<UniversalOrBMPString_character_encoding> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrBMPString_character_encoding */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalOrBMPString_character_encoding */
@@ -33,21 +31,19 @@ let _cached_decoder_for_UniversalOrBMPString_character_encoding: $.ASN1Decoder<
  */
 export function _decode_UniversalOrBMPString_character_encoding(el: _Element) {
     if (!_cached_decoder_for_UniversalOrBMPString_character_encoding) {
-        _cached_decoder_for_UniversalOrBMPString_character_encoding = $._decode_inextensible_choice<
-            UniversalOrBMPString_character_encoding
-        >({
-            "UNIVERSAL 30": ["two_octets", $._decodeBMPString],
-            "UNIVERSAL 28": ["four_octets", $._decodeUniversalString],
-        });
+        _cached_decoder_for_UniversalOrBMPString_character_encoding = $._decode_inextensible_choice<UniversalOrBMPString_character_encoding>(
+            {
+                "UNIVERSAL 30": ["two_octets", $._decodeBMPString],
+                "UNIVERSAL 28": ["four_octets", $._decodeUniversalString],
+            }
+        );
     }
     return _cached_decoder_for_UniversalOrBMPString_character_encoding(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalOrBMPString_character_encoding */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrBMPString_character_encoding */
-let _cached_encoder_for_UniversalOrBMPString_character_encoding: $.ASN1Encoder<
-    UniversalOrBMPString_character_encoding
-> | null = null;
+let _cached_encoder_for_UniversalOrBMPString_character_encoding: $.ASN1Encoder<UniversalOrBMPString_character_encoding> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrBMPString_character_encoding */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalOrBMPString_character_encoding */
@@ -63,9 +59,7 @@ export function _encode_UniversalOrBMPString_character_encoding(
     elGetter: $.ASN1Encoder<UniversalOrBMPString_character_encoding>
 ) {
     if (!_cached_encoder_for_UniversalOrBMPString_character_encoding) {
-        _cached_encoder_for_UniversalOrBMPString_character_encoding = $._encode_choice<
-            UniversalOrBMPString_character_encoding
-        >(
+        _cached_encoder_for_UniversalOrBMPString_character_encoding = $._encode_choice<UniversalOrBMPString_character_encoding>(
             {
                 two_octets: $._encodeBMPString,
                 four_octets: $._encodeUniversalString,

@@ -37,9 +37,7 @@ export type RemoveEntryArgument = OPTIONALLY_PROTECTED<RemoveEntryArgumentData>;
 /* END_OF_SYMBOL_DEFINITION RemoveEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoveEntryArgument */
-let _cached_decoder_for_RemoveEntryArgument: $.ASN1Decoder<
-    RemoveEntryArgument
-> | null = null;
+let _cached_decoder_for_RemoveEntryArgument: $.ASN1Decoder<RemoveEntryArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoveEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RemoveEntryArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_RemoveEntryArgument: $.ASN1Decoder<
  */
 export function _decode_RemoveEntryArgument(el: _Element) {
     if (!_cached_decoder_for_RemoveEntryArgument) {
-        _cached_decoder_for_RemoveEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            RemoveEntryArgumentData
-        >(_decode_RemoveEntryArgumentData);
+        _cached_decoder_for_RemoveEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<RemoveEntryArgumentData>(
+            _decode_RemoveEntryArgumentData
+        );
     }
     return _cached_decoder_for_RemoveEntryArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RemoveEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoveEntryArgument */
-let _cached_encoder_for_RemoveEntryArgument: $.ASN1Encoder<
-    RemoveEntryArgument
-> | null = null;
+let _cached_encoder_for_RemoveEntryArgument: $.ASN1Encoder<RemoveEntryArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoveEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RemoveEntryArgument */
@@ -78,9 +74,9 @@ export function _encode_RemoveEntryArgument(
     elGetter: $.ASN1Encoder<RemoveEntryArgument>
 ) {
     if (!_cached_encoder_for_RemoveEntryArgument) {
-        _cached_encoder_for_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            RemoveEntryArgumentData
-        >(_encode_RemoveEntryArgumentData);
+        _cached_encoder_for_RemoveEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<RemoveEntryArgumentData>(
+            _encode_RemoveEntryArgumentData
+        );
     }
     return _cached_encoder_for_RemoveEntryArgument(value, elGetter);
 }

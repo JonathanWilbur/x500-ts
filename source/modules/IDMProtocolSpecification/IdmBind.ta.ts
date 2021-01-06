@@ -215,8 +215,8 @@ export function _decode_IdmBind(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new IdmBind /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocolID,
+            return new IdmBind(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
                 callingAETitle,
                 calledAETitle,
                 argument,

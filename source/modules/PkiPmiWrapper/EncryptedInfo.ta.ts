@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_EncryptedInfo: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EncryptedInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedInfo */
-let _cached_decoder_for_EncryptedInfo: $.ASN1Decoder<
-    EncryptedInfo
-> | null = null;
+let _cached_decoder_for_EncryptedInfo: $.ASN1Decoder<EncryptedInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EncryptedInfo */
@@ -183,9 +181,7 @@ export function _decode_EncryptedInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EncryptedInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedInfo */
-let _cached_encoder_for_EncryptedInfo: $.ASN1Encoder<
-    EncryptedInfo
-> | null = null;
+let _cached_encoder_for_EncryptedInfo: $.ASN1Encoder<EncryptedInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EncryptedInfo */

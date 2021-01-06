@@ -27,9 +27,7 @@ export type CertPolicySet = CertPolicyId[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CertPolicySet */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertPolicySet */
-let _cached_decoder_for_CertPolicySet: $.ASN1Decoder<
-    CertPolicySet
-> | null = null;
+let _cached_decoder_for_CertPolicySet: $.ASN1Decoder<CertPolicySet> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertPolicySet */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertPolicySet */
@@ -50,9 +48,7 @@ export function _decode_CertPolicySet(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertPolicySet */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertPolicySet */
-let _cached_encoder_for_CertPolicySet: $.ASN1Encoder<
-    CertPolicySet
-> | null = null;
+let _cached_encoder_for_CertPolicySet: $.ASN1Encoder<CertPolicySet> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertPolicySet */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertPolicySet */

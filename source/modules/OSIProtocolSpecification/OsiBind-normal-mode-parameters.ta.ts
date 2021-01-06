@@ -70,9 +70,7 @@ export class OsiBind_normal_mode_parameters {
          * @public
          * @readonly
          */
-        readonly protocol_version: OPTIONAL<
-            OsiBind_normal_mode_parameters_protocol_version
-        >,
+        readonly protocol_version: OPTIONAL<OsiBind_normal_mode_parameters_protocol_version>,
         /**
          * @summary `calling_presentation_selector`.
          * @public
@@ -212,9 +210,7 @@ export const _extension_additions_list_spec_for_OsiBind_normal_mode_parameters: 
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBind_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBind_normal_mode_parameters */
-let _cached_decoder_for_OsiBind_normal_mode_parameters: $.ASN1Decoder<
-    OsiBind_normal_mode_parameters
-> | null = null;
+let _cached_decoder_for_OsiBind_normal_mode_parameters: $.ASN1Decoder<OsiBind_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBind_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBind_normal_mode_parameters */
@@ -240,29 +236,27 @@ export function _decode_OsiBind_normal_mode_parameters(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "protocol-version": (_el: _Element): void => {
-                    protocol_version = $._decode_explicit<
-                        OsiBind_normal_mode_parameters_protocol_version
-                    >(
+                    protocol_version = $._decode_explicit<OsiBind_normal_mode_parameters_protocol_version>(
                         () =>
                             _decode_OsiBind_normal_mode_parameters_protocol_version
                     )(_el);
                 },
                 "calling-presentation-selector": (_el: _Element): void => {
-                    calling_presentation_selector = $._decode_explicit<
-                        Presentation_selector
-                    >(() => _decode_Presentation_selector)(_el);
+                    calling_presentation_selector = $._decode_explicit<Presentation_selector>(
+                        () => _decode_Presentation_selector
+                    )(_el);
                 },
                 "called-presentation-selector": (_el: _Element): void => {
-                    called_presentation_selector = $._decode_explicit<
-                        Presentation_selector
-                    >(() => _decode_Presentation_selector)(_el);
+                    called_presentation_selector = $._decode_explicit<Presentation_selector>(
+                        () => _decode_Presentation_selector
+                    )(_el);
                 },
                 "presentation-context-definition-list": (
                     _el: _Element
                 ): void => {
-                    presentation_context_definition_list = $._decode_explicit<
-                        Context_list
-                    >(() => _decode_Context_list)(_el);
+                    presentation_context_definition_list = $._decode_explicit<Context_list>(
+                        () => _decode_Context_list
+                    )(_el);
                 },
                 "user-data": (_el: _Element): void => {
                     user_data = _decode_OsiBind_normal_mode_parameters_user_data(
@@ -279,8 +273,8 @@ export function _decode_OsiBind_normal_mode_parameters(el: _Element) {
                 _root_component_type_list_2_spec_for_OsiBind_normal_mode_parameters,
                 undefined
             );
-            return new OsiBind_normal_mode_parameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocol_version,
+            return new OsiBind_normal_mode_parameters(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                 calling_presentation_selector,
                 called_presentation_selector,
                 presentation_context_definition_list,
@@ -293,9 +287,7 @@ export function _decode_OsiBind_normal_mode_parameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBind_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBind_normal_mode_parameters */
-let _cached_encoder_for_OsiBind_normal_mode_parameters: $.ASN1Encoder<
-    OsiBind_normal_mode_parameters
-> | null = null;
+let _cached_encoder_for_OsiBind_normal_mode_parameters: $.ASN1Encoder<OsiBind_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBind_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBind_normal_mode_parameters */

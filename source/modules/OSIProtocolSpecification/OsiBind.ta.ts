@@ -164,9 +164,9 @@ export function _decode_OsiBind(el: _Element) {
                     )(_el);
                 },
                 "normal-mode-parameters": (_el: _Element): void => {
-                    normal_mode_parameters = $._decode_explicit<
-                        OsiBind_normal_mode_parameters
-                    >(() => _decode_OsiBind_normal_mode_parameters)(_el);
+                    normal_mode_parameters = $._decode_explicit<OsiBind_normal_mode_parameters>(
+                        () => _decode_OsiBind_normal_mode_parameters
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -178,8 +178,8 @@ export function _decode_OsiBind(el: _Element) {
                 _root_component_type_list_2_spec_for_OsiBind,
                 undefined
             );
-            return new OsiBind /* SET_CONSTRUCTOR_CALL */(
-                mode_selector,
+            return new OsiBind(
+                /* SET_CONSTRUCTOR_CALL */ mode_selector,
                 normal_mode_parameters
             );
         };

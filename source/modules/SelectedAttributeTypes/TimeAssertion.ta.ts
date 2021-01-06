@@ -39,9 +39,7 @@ export type TimeAssertion =
 /* END_OF_SYMBOL_DEFINITION TimeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeAssertion */
-let _cached_decoder_for_TimeAssertion: $.ASN1Decoder<
-    TimeAssertion
-> | null = null;
+let _cached_decoder_for_TimeAssertion: $.ASN1Decoder<TimeAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TimeAssertion */
@@ -53,22 +51,20 @@ let _cached_decoder_for_TimeAssertion: $.ASN1Decoder<
  */
 export function _decode_TimeAssertion(el: _Element) {
     if (!_cached_decoder_for_TimeAssertion) {
-        _cached_decoder_for_TimeAssertion = $._decode_extensible_choice<
-            TimeAssertion
-        >({
-            "UNIVERSAL 5": ["now", $._decodeNull],
-            "UNIVERSAL 24": ["at", $._decodeGeneralizedTime],
-            "UNIVERSAL 16": ["between", _decode_TimeAssertion_between],
-        });
+        _cached_decoder_for_TimeAssertion = $._decode_extensible_choice<TimeAssertion>(
+            {
+                "UNIVERSAL 5": ["now", $._decodeNull],
+                "UNIVERSAL 24": ["at", $._decodeGeneralizedTime],
+                "UNIVERSAL 16": ["between", _decode_TimeAssertion_between],
+            }
+        );
     }
     return _cached_decoder_for_TimeAssertion(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TimeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeAssertion */
-let _cached_encoder_for_TimeAssertion: $.ASN1Encoder<
-    TimeAssertion
-> | null = null;
+let _cached_encoder_for_TimeAssertion: $.ASN1Encoder<TimeAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TimeAssertion */

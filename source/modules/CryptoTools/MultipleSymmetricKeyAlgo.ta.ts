@@ -28,9 +28,7 @@ export type MultipleSymmetricKeyAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultipleSymmetricKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleSymmetricKeyAlgo */
-let _cached_decoder_for_MultipleSymmetricKeyAlgo: $.ASN1Decoder<
-    MultipleSymmetricKeyAlgo
-> | null = null;
+let _cached_decoder_for_MultipleSymmetricKeyAlgo: $.ASN1Decoder<MultipleSymmetricKeyAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleSymmetricKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleSymmetricKeyAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultipleSymmetricKeyAlgo: $.ASN1Decoder<
  */
 export function _decode_MultipleSymmetricKeyAlgo(el: _Element) {
     if (!_cached_decoder_for_MultipleSymmetricKeyAlgo) {
-        _cached_decoder_for_MultipleSymmetricKeyAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultipleSymmetricKeyAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultipleSymmetricKeyAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleSymmetricKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleSymmetricKeyAlgo */
-let _cached_encoder_for_MultipleSymmetricKeyAlgo: $.ASN1Encoder<
-    MultipleSymmetricKeyAlgo
-> | null = null;
+let _cached_encoder_for_MultipleSymmetricKeyAlgo: $.ASN1Encoder<MultipleSymmetricKeyAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleSymmetricKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleSymmetricKeyAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultipleSymmetricKeyAlgo(
     elGetter: $.ASN1Encoder<MultipleSymmetricKeyAlgo>
 ) {
     if (!_cached_encoder_for_MultipleSymmetricKeyAlgo) {
-        _cached_encoder_for_MultipleSymmetricKeyAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultipleSymmetricKeyAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultipleSymmetricKeyAlgo(value, elGetter);
 }

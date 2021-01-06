@@ -34,15 +34,11 @@ export {
  *   OPTIONALLY-PROTECTED-SEQ { ModifyOperationalBindingArgumentData }
  * ```
  */
-export type ModifyOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<
-    ModifyOperationalBindingArgumentData
->; // DefinedType
+export type ModifyOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ModifyOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgument */
-let _cached_decoder_for_ModifyOperationalBindingArgument: $.ASN1Decoder<
-    ModifyOperationalBindingArgument
-> | null = null;
+let _cached_decoder_for_ModifyOperationalBindingArgument: $.ASN1Decoder<ModifyOperationalBindingArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgument */
@@ -54,18 +50,16 @@ let _cached_decoder_for_ModifyOperationalBindingArgument: $.ASN1Decoder<
  */
 export function _decode_ModifyOperationalBindingArgument(el: _Element) {
     if (!_cached_decoder_for_ModifyOperationalBindingArgument) {
-        _cached_decoder_for_ModifyOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ModifyOperationalBindingArgumentData
-        >(_decode_ModifyOperationalBindingArgumentData);
+        _cached_decoder_for_ModifyOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingArgumentData>(
+            _decode_ModifyOperationalBindingArgumentData
+        );
     }
     return _cached_decoder_for_ModifyOperationalBindingArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgument */
-let _cached_encoder_for_ModifyOperationalBindingArgument: $.ASN1Encoder<
-    ModifyOperationalBindingArgument
-> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgument: $.ASN1Encoder<ModifyOperationalBindingArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyOperationalBindingArgument */
@@ -81,9 +75,9 @@ export function _encode_ModifyOperationalBindingArgument(
     elGetter: $.ASN1Encoder<ModifyOperationalBindingArgument>
 ) {
     if (!_cached_encoder_for_ModifyOperationalBindingArgument) {
-        _cached_encoder_for_ModifyOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ModifyOperationalBindingArgumentData
-        >(_encode_ModifyOperationalBindingArgumentData);
+        _cached_encoder_for_ModifyOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyOperationalBindingArgumentData>(
+            _encode_ModifyOperationalBindingArgumentData
+        );
     }
     return _cached_encoder_for_ModifyOperationalBindingArgument(
         value,

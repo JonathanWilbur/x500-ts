@@ -27,9 +27,7 @@ export type TraceInformation = TraceItem[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION TraceInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TraceInformation */
-let _cached_decoder_for_TraceInformation: $.ASN1Decoder<
-    TraceInformation
-> | null = null;
+let _cached_decoder_for_TraceInformation: $.ASN1Decoder<TraceInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TraceInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TraceInformation */
@@ -50,9 +48,7 @@ export function _decode_TraceInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TraceInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TraceInformation */
-let _cached_encoder_for_TraceInformation: $.ASN1Encoder<
-    TraceInformation
-> | null = null;
+let _cached_encoder_for_TraceInformation: $.ASN1Encoder<TraceInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TraceInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TraceInformation */

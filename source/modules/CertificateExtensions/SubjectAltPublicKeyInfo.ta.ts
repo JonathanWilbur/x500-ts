@@ -127,9 +127,7 @@ export const _extension_additions_list_spec_for_SubjectAltPublicKeyInfo: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubjectAltPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectAltPublicKeyInfo */
-let _cached_decoder_for_SubjectAltPublicKeyInfo: $.ASN1Decoder<
-    SubjectAltPublicKeyInfo
-> | null = null;
+let _cached_decoder_for_SubjectAltPublicKeyInfo: $.ASN1Decoder<SubjectAltPublicKeyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectAltPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubjectAltPublicKeyInfo */
@@ -166,9 +164,7 @@ export function _decode_SubjectAltPublicKeyInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubjectAltPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectAltPublicKeyInfo */
-let _cached_encoder_for_SubjectAltPublicKeyInfo: $.ASN1Encoder<
-    SubjectAltPublicKeyInfo
-> | null = null;
+let _cached_encoder_for_SubjectAltPublicKeyInfo: $.ASN1Encoder<SubjectAltPublicKeyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectAltPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubjectAltPublicKeyInfo */

@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_SubordinateChanges: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubordinateChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubordinateChanges */
-let _cached_decoder_for_SubordinateChanges: $.ASN1Decoder<
-    SubordinateChanges
-> | null = null;
+let _cached_decoder_for_SubordinateChanges: $.ASN1Decoder<SubordinateChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubordinateChanges */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubordinateChanges */
@@ -185,9 +183,7 @@ export function _decode_SubordinateChanges(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubordinateChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubordinateChanges */
-let _cached_encoder_for_SubordinateChanges: $.ASN1Encoder<
-    SubordinateChanges
-> | null = null;
+let _cached_encoder_for_SubordinateChanges: $.ASN1Encoder<SubordinateChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubordinateChanges */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubordinateChanges */

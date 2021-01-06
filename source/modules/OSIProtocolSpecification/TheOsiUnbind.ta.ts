@@ -142,8 +142,8 @@ export function _decode_TheOsiUnbind(el: _Element) {
                         _root_component_type_list_2_spec_for_TheOsiUnbind,
                         undefined
                     );
-                    return new TheOsiUnbind /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        reason
+                    return new TheOsiUnbind(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ reason
                     );
                 }
         );

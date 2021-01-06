@@ -1,6 +1,4 @@
-import {
-    OBJECT_IDENTIFIER,
-} from "asn1-ts";
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 
@@ -9,8 +7,10 @@ import { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 //   SYNTAX     passwordAttribute.&Type
 //   ID         id}
 
-export
-function pwdHistoryMatch (passwordAttribute: ATTRIBUTE, id: OBJECT_IDENTIFIER): MATCHING_RULE {
+export function pwdHistoryMatch(
+    passwordAttribute: ATTRIBUTE,
+    id: OBJECT_IDENTIFIER
+): MATCHING_RULE {
     return {
         class: "MATCHING-RULE",
         decoderFor: {

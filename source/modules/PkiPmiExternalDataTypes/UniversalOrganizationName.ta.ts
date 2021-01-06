@@ -28,9 +28,7 @@ export type UniversalOrganizationName = UniversalOrBMPString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UniversalOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationName */
-let _cached_decoder_for_UniversalOrganizationName: $.ASN1Decoder<
-    UniversalOrganizationName
-> | null = null;
+let _cached_decoder_for_UniversalOrganizationName: $.ASN1Decoder<UniversalOrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationName */
@@ -49,9 +47,7 @@ export function _decode_UniversalOrganizationName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationName */
-let _cached_encoder_for_UniversalOrganizationName: $.ASN1Encoder<
-    UniversalOrganizationName
-> | null = null;
+let _cached_encoder_for_UniversalOrganizationName: $.ASN1Encoder<UniversalOrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalOrganizationName */

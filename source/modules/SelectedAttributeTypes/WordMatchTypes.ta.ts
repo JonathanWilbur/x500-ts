@@ -103,9 +103,7 @@ export const wordProviderDefined: WordMatchTypes = WordMatchTypes_wordProviderDe
 /* END_OF_SYMBOL_DEFINITION wordProviderDefined */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_WordMatchTypes */
-let _cached_decoder_for_WordMatchTypes: $.ASN1Decoder<
-    WordMatchTypes
-> | null = null;
+let _cached_decoder_for_WordMatchTypes: $.ASN1Decoder<WordMatchTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_WordMatchTypes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_WordMatchTypes */
@@ -124,9 +122,7 @@ export function _decode_WordMatchTypes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_WordMatchTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_WordMatchTypes */
-let _cached_encoder_for_WordMatchTypes: $.ASN1Encoder<
-    WordMatchTypes
-> | null = null;
+let _cached_encoder_for_WordMatchTypes: $.ASN1Encoder<WordMatchTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_WordMatchTypes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_WordMatchTypes */

@@ -27,9 +27,7 @@ export type Notifications = Attribute[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION Notifications */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Notifications */
-let _cached_decoder_for_Notifications: $.ASN1Decoder<
-    Notifications
-> | null = null;
+let _cached_decoder_for_Notifications: $.ASN1Decoder<Notifications> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Notifications */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Notifications */
@@ -50,9 +48,7 @@ export function _decode_Notifications(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Notifications */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Notifications */
-let _cached_encoder_for_Notifications: $.ASN1Encoder<
-    Notifications
-> | null = null;
+let _cached_encoder_for_Notifications: $.ASN1Encoder<Notifications> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Notifications */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Notifications */

@@ -118,9 +118,7 @@ export const _extension_additions_list_spec_for_AlgorithmIdentifier: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AlgorithmIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AlgorithmIdentifier */
-let _cached_decoder_for_AlgorithmIdentifier: $.ASN1Decoder<
-    AlgorithmIdentifier
-> | null = null;
+let _cached_decoder_for_AlgorithmIdentifier: $.ASN1Decoder<AlgorithmIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AlgorithmIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AlgorithmIdentifier */
@@ -160,8 +158,8 @@ export function _decode_AlgorithmIdentifier(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AlgorithmIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithm,
+            return new AlgorithmIdentifier(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
                 parameters,
                 _unrecognizedExtensionsList
             );
@@ -172,9 +170,7 @@ export function _decode_AlgorithmIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AlgorithmIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AlgorithmIdentifier */
-let _cached_encoder_for_AlgorithmIdentifier: $.ASN1Encoder<
-    AlgorithmIdentifier
-> | null = null;
+let _cached_encoder_for_AlgorithmIdentifier: $.ASN1Encoder<AlgorithmIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AlgorithmIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AlgorithmIdentifier */

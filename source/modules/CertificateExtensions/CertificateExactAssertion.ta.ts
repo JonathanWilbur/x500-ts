@@ -138,9 +138,7 @@ export const _extension_additions_list_spec_for_CertificateExactAssertion: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateExactAssertion */
-let _cached_decoder_for_CertificateExactAssertion: $.ASN1Decoder<
-    CertificateExactAssertion
-> | null = null;
+let _cached_decoder_for_CertificateExactAssertion: $.ASN1Decoder<CertificateExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateExactAssertion */
@@ -181,9 +179,7 @@ export function _decode_CertificateExactAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateExactAssertion */
-let _cached_encoder_for_CertificateExactAssertion: $.ASN1Encoder<
-    CertificateExactAssertion
-> | null = null;
+let _cached_encoder_for_CertificateExactAssertion: $.ASN1Encoder<CertificateExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateExactAssertion */

@@ -17,9 +17,7 @@ export type AltSignatureValue = BIT_STRING;
 /* END_OF_SYMBOL_DEFINITION AltSignatureValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AltSignatureValue */
-let _cached_decoder_for_AltSignatureValue: $.ASN1Decoder<
-    AltSignatureValue
-> | null = null;
+let _cached_decoder_for_AltSignatureValue: $.ASN1Decoder<AltSignatureValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AltSignatureValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AltSignatureValue */
@@ -38,9 +36,7 @@ export function _decode_AltSignatureValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AltSignatureValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AltSignatureValue */
-let _cached_encoder_for_AltSignatureValue: $.ASN1Encoder<
-    AltSignatureValue
-> | null = null;
+let _cached_encoder_for_AltSignatureValue: $.ASN1Encoder<AltSignatureValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AltSignatureValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AltSignatureValue */

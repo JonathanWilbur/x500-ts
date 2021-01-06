@@ -154,9 +154,7 @@ export const _extension_additions_list_spec_for_Context_list_Item: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Context_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Context_list_Item */
-let _cached_decoder_for_Context_list_Item: $.ASN1Decoder<
-    Context_list_Item
-> | null = null;
+let _cached_decoder_for_Context_list_Item: $.ASN1Decoder<Context_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Context_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Context_list_Item */
@@ -189,9 +187,9 @@ export function _decode_Context_list_Item(el: _Element) {
                 sequence[0]
             );
             abstract_syntax_name = _decode_Abstract_syntax_name(sequence[1]);
-            transfer_syntax_name_list = $._decodeSequenceOf<
-                Transfer_syntax_name
-            >(() => _decode_Transfer_syntax_name)(sequence[2]);
+            transfer_syntax_name_list = $._decodeSequenceOf<Transfer_syntax_name>(
+                () => _decode_Transfer_syntax_name
+            )(sequence[2]);
             return new Context_list_Item(
                 presentation_context_identifier,
                 abstract_syntax_name,
@@ -204,9 +202,7 @@ export function _decode_Context_list_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Context_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Context_list_Item */
-let _cached_encoder_for_Context_list_Item: $.ASN1Encoder<
-    Context_list_Item
-> | null = null;
+let _cached_encoder_for_Context_list_Item: $.ASN1Encoder<Context_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Context_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Context_list_Item */
@@ -237,12 +233,10 @@ export function _encode_Context_list_Item(
                             value.abstract_syntax_name,
                             $.BER
                         ),
-                        /* REQUIRED   */ $._encodeSequenceOf<
-                            Transfer_syntax_name
-                        >(() => _encode_Transfer_syntax_name, $.BER)(
-                            value.transfer_syntax_name_list,
+                        /* REQUIRED   */ $._encodeSequenceOf<Transfer_syntax_name>(
+                            () => _encode_Transfer_syntax_name,
                             $.BER
-                        ),
+                        )(value.transfer_syntax_name_list, $.BER),
                     ])
                     .filter((c: _Element | undefined): c is _Element => !!c),
                 $.BER

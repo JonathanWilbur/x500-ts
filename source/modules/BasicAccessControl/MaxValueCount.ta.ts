@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_MaxValueCount: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MaxValueCount */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MaxValueCount */
-let _cached_decoder_for_MaxValueCount: $.ASN1Decoder<
-    MaxValueCount
-> | null = null;
+let _cached_decoder_for_MaxValueCount: $.ASN1Decoder<MaxValueCount> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MaxValueCount */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MaxValueCount */
@@ -170,9 +168,7 @@ export function _decode_MaxValueCount(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MaxValueCount */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MaxValueCount */
-let _cached_encoder_for_MaxValueCount: $.ASN1Encoder<
-    MaxValueCount
-> | null = null;
+let _cached_encoder_for_MaxValueCount: $.ASN1Encoder<MaxValueCount> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MaxValueCount */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MaxValueCount */

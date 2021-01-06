@@ -204,8 +204,8 @@ export function _decode_Subtree(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Subtree /* SEQUENCE_CONSTRUCTOR_CALL */(
-                rdn,
+            return new Subtree(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
                 sDSE,
                 subtree,
                 _unrecognizedExtensionsList

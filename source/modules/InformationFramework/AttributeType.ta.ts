@@ -18,9 +18,7 @@ export type AttributeType = OBJECT_IDENTIFIER; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION AttributeType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeType */
-let _cached_decoder_for_AttributeType: $.ASN1Decoder<
-    AttributeType
-> | null = null;
+let _cached_decoder_for_AttributeType: $.ASN1Decoder<AttributeType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeType */
@@ -39,9 +37,7 @@ export function _decode_AttributeType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeType */
-let _cached_encoder_for_AttributeType: $.ASN1Encoder<
-    AttributeType
-> | null = null;
+let _cached_encoder_for_AttributeType: $.ASN1Encoder<AttributeType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeType */

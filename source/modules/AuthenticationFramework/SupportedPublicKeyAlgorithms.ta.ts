@@ -160,9 +160,7 @@ export const _extension_additions_list_spec_for_SupportedPublicKeyAlgorithms: $.
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SupportedPublicKeyAlgorithms */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedPublicKeyAlgorithms */
-let _cached_decoder_for_SupportedPublicKeyAlgorithms: $.ASN1Decoder<
-    SupportedPublicKeyAlgorithms
-> | null = null;
+let _cached_decoder_for_SupportedPublicKeyAlgorithms: $.ASN1Decoder<SupportedPublicKeyAlgorithms> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedPublicKeyAlgorithms */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupportedPublicKeyAlgorithms */
@@ -208,8 +206,8 @@ export function _decode_SupportedPublicKeyAlgorithms(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SupportedPublicKeyAlgorithms /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithmIdentifier,
+            return new SupportedPublicKeyAlgorithms(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithmIdentifier,
                 minKeySize,
                 extensions,
                 _unrecognizedExtensionsList
@@ -221,9 +219,7 @@ export function _decode_SupportedPublicKeyAlgorithms(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SupportedPublicKeyAlgorithms */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedPublicKeyAlgorithms */
-let _cached_encoder_for_SupportedPublicKeyAlgorithms: $.ASN1Encoder<
-    SupportedPublicKeyAlgorithms
-> | null = null;
+let _cached_encoder_for_SupportedPublicKeyAlgorithms: $.ASN1Encoder<SupportedPublicKeyAlgorithms> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedPublicKeyAlgorithms */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupportedPublicKeyAlgorithms */

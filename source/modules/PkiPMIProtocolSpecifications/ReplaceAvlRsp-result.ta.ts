@@ -40,9 +40,7 @@ export type ReplaceAvlRsp_result =
 /* END_OF_SYMBOL_DEFINITION ReplaceAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlRsp_result */
-let _cached_decoder_for_ReplaceAvlRsp_result: $.ASN1Decoder<
-    ReplaceAvlRsp_result
-> | null = null;
+let _cached_decoder_for_ReplaceAvlRsp_result: $.ASN1Decoder<ReplaceAvlRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReplaceAvlRsp_result */
@@ -54,27 +52,25 @@ let _cached_decoder_for_ReplaceAvlRsp_result: $.ASN1Decoder<
  */
 export function _decode_ReplaceAvlRsp_result(el: _Element) {
     if (!_cached_decoder_for_ReplaceAvlRsp_result) {
-        _cached_decoder_for_ReplaceAvlRsp_result = $._decode_extensible_choice<
-            ReplaceAvlRsp_result
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_explicit<RepAvlOK>(() => _decode_RepAvlOK),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_explicit<RepAvlErr>(() => _decode_RepAvlErr),
-            ],
-        });
+        _cached_decoder_for_ReplaceAvlRsp_result = $._decode_extensible_choice<ReplaceAvlRsp_result>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_explicit<RepAvlOK>(() => _decode_RepAvlOK),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_explicit<RepAvlErr>(() => _decode_RepAvlErr),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ReplaceAvlRsp_result(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ReplaceAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlRsp_result */
-let _cached_encoder_for_ReplaceAvlRsp_result: $.ASN1Encoder<
-    ReplaceAvlRsp_result
-> | null = null;
+let _cached_encoder_for_ReplaceAvlRsp_result: $.ASN1Encoder<ReplaceAvlRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReplaceAvlRsp_result */
@@ -90,9 +86,7 @@ export function _encode_ReplaceAvlRsp_result(
     elGetter: $.ASN1Encoder<ReplaceAvlRsp_result>
 ) {
     if (!_cached_encoder_for_ReplaceAvlRsp_result) {
-        _cached_encoder_for_ReplaceAvlRsp_result = $._encode_choice<
-            ReplaceAvlRsp_result
-        >(
+        _cached_encoder_for_ReplaceAvlRsp_result = $._encode_choice<ReplaceAvlRsp_result>(
             {
                 success: $._encode_explicit(
                     _TagClass.context,

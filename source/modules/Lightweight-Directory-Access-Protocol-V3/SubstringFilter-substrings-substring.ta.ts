@@ -31,9 +31,7 @@ export type SubstringFilter_substrings_substring =
 /* END_OF_SYMBOL_DEFINITION SubstringFilter_substrings_substring */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringFilter_substrings_substring */
-let _cached_decoder_for_SubstringFilter_substrings_substring: $.ASN1Decoder<
-    SubstringFilter_substrings_substring
-> | null = null;
+let _cached_decoder_for_SubstringFilter_substrings_substring: $.ASN1Decoder<SubstringFilter_substrings_substring> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringFilter_substrings_substring */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubstringFilter_substrings_substring */
@@ -45,37 +43,35 @@ let _cached_decoder_for_SubstringFilter_substrings_substring: $.ASN1Decoder<
  */
 export function _decode_SubstringFilter_substrings_substring(el: _Element) {
     if (!_cached_decoder_for_SubstringFilter_substrings_substring) {
-        _cached_decoder_for_SubstringFilter_substrings_substring = $._decode_extensible_choice<
-            SubstringFilter_substrings_substring
-        >({
-            "CONTEXT 0": [
-                "initial",
-                $._decode_implicit<AssertionValue>(
-                    () => _decode_AssertionValue
-                ),
-            ],
-            "CONTEXT 1": [
-                "any_",
-                $._decode_implicit<AssertionValue>(
-                    () => _decode_AssertionValue
-                ),
-            ],
-            "CONTEXT 2": [
-                "final",
-                $._decode_implicit<AssertionValue>(
-                    () => _decode_AssertionValue
-                ),
-            ],
-        });
+        _cached_decoder_for_SubstringFilter_substrings_substring = $._decode_extensible_choice<SubstringFilter_substrings_substring>(
+            {
+                "CONTEXT 0": [
+                    "initial",
+                    $._decode_implicit<AssertionValue>(
+                        () => _decode_AssertionValue
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "any_",
+                    $._decode_implicit<AssertionValue>(
+                        () => _decode_AssertionValue
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "final",
+                    $._decode_implicit<AssertionValue>(
+                        () => _decode_AssertionValue
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_SubstringFilter_substrings_substring(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SubstringFilter_substrings_substring */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringFilter_substrings_substring */
-let _cached_encoder_for_SubstringFilter_substrings_substring: $.ASN1Encoder<
-    SubstringFilter_substrings_substring
-> | null = null;
+let _cached_encoder_for_SubstringFilter_substrings_substring: $.ASN1Encoder<SubstringFilter_substrings_substring> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringFilter_substrings_substring */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubstringFilter_substrings_substring */
@@ -91,9 +87,7 @@ export function _encode_SubstringFilter_substrings_substring(
     elGetter: $.ASN1Encoder<SubstringFilter_substrings_substring>
 ) {
     if (!_cached_encoder_for_SubstringFilter_substrings_substring) {
-        _cached_encoder_for_SubstringFilter_substrings_substring = $._encode_choice<
-            SubstringFilter_substrings_substring
-        >(
+        _cached_encoder_for_SubstringFilter_substrings_substring = $._encode_choice<SubstringFilter_substrings_substring>(
             {
                 initial: $._encode_implicit(
                     _TagClass.context,

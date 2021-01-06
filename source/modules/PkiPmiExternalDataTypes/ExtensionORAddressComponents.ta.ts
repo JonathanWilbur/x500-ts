@@ -27,9 +27,7 @@ export type ExtensionORAddressComponents = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionORAddressComponents */
-let _cached_decoder_for_ExtensionORAddressComponents: $.ASN1Decoder<
-    ExtensionORAddressComponents
-> | null = null;
+let _cached_decoder_for_ExtensionORAddressComponents: $.ASN1Decoder<ExtensionORAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtensionORAddressComponents */
@@ -48,9 +46,7 @@ export function _decode_ExtensionORAddressComponents(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionORAddressComponents */
-let _cached_encoder_for_ExtensionORAddressComponents: $.ASN1Encoder<
-    ExtensionORAddressComponents
-> | null = null;
+let _cached_encoder_for_ExtensionORAddressComponents: $.ASN1Encoder<ExtensionORAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtensionORAddressComponents */

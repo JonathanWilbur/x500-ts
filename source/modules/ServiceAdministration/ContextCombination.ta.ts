@@ -34,9 +34,7 @@ export type ContextCombination =
 /* END_OF_SYMBOL_DEFINITION ContextCombination */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextCombination */
-let _cached_decoder_for_ContextCombination: $.ASN1Decoder<
-    ContextCombination
-> | null = null;
+let _cached_decoder_for_ContextCombination: $.ASN1Decoder<ContextCombination> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextCombination */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContextCombination */
@@ -48,47 +46,45 @@ let _cached_decoder_for_ContextCombination: $.ASN1Decoder<
  */
 export function _decode_ContextCombination(el: _Element) {
     if (!_cached_decoder_for_ContextCombination) {
-        _cached_decoder_for_ContextCombination = $._decode_extensible_choice<
-            ContextCombination
-        >({
-            "CONTEXT 0": [
-                "context",
-                $._decode_explicit<OBJECT_IDENTIFIER>(
-                    () => $._decodeObjectIdentifier
-                ),
-            ],
-            "CONTEXT 1": [
-                "and",
-                $._decode_explicit<ContextCombination[]>(() =>
-                    $._decodeSequenceOf<ContextCombination>(
+        _cached_decoder_for_ContextCombination = $._decode_extensible_choice<ContextCombination>(
+            {
+                "CONTEXT 0": [
+                    "context",
+                    $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "and",
+                    $._decode_explicit<ContextCombination[]>(() =>
+                        $._decodeSequenceOf<ContextCombination>(
+                            () => _decode_ContextCombination
+                        )
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "or",
+                    $._decode_explicit<ContextCombination[]>(() =>
+                        $._decodeSequenceOf<ContextCombination>(
+                            () => _decode_ContextCombination
+                        )
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "not",
+                    $._decode_explicit<ContextCombination>(
                         () => _decode_ContextCombination
-                    )
-                ),
-            ],
-            "CONTEXT 2": [
-                "or",
-                $._decode_explicit<ContextCombination[]>(() =>
-                    $._decodeSequenceOf<ContextCombination>(
-                        () => _decode_ContextCombination
-                    )
-                ),
-            ],
-            "CONTEXT 3": [
-                "not",
-                $._decode_explicit<ContextCombination>(
-                    () => _decode_ContextCombination
-                ),
-            ],
-        });
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ContextCombination(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ContextCombination */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextCombination */
-let _cached_encoder_for_ContextCombination: $.ASN1Encoder<
-    ContextCombination
-> | null = null;
+let _cached_encoder_for_ContextCombination: $.ASN1Encoder<ContextCombination> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextCombination */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContextCombination */
@@ -104,9 +100,7 @@ export function _encode_ContextCombination(
     elGetter: $.ASN1Encoder<ContextCombination>
 ) {
     if (!_cached_encoder_for_ContextCombination) {
-        _cached_encoder_for_ContextCombination = $._encode_choice<
-            ContextCombination
-        >(
+        _cached_encoder_for_ContextCombination = $._encode_choice<ContextCombination>(
             {
                 context: $._encode_explicit(
                     _TagClass.context,

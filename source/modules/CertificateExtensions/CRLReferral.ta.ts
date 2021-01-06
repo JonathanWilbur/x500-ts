@@ -276,8 +276,8 @@ export function _decode_CRLReferral(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CRLReferral /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuer,
+            return new CRLReferral(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
                 location,
                 deltaRefInfo,
                 cRLScope,

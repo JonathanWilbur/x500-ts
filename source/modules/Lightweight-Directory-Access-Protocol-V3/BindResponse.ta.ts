@@ -352,8 +352,8 @@ export function _decode_BindResponse(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new BindResponse /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        resultCode,
+                    return new BindResponse(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ resultCode,
                         matchedDN,
                         diagnosticMessage,
                         referral,

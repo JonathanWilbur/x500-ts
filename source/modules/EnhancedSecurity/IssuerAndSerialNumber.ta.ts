@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_IssuerAndSerialNumber: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_IssuerAndSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IssuerAndSerialNumber */
-let _cached_decoder_for_IssuerAndSerialNumber: $.ASN1Decoder<
-    IssuerAndSerialNumber
-> | null = null;
+let _cached_decoder_for_IssuerAndSerialNumber: $.ASN1Decoder<IssuerAndSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IssuerAndSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IssuerAndSerialNumber */
@@ -175,9 +173,7 @@ export function _decode_IssuerAndSerialNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IssuerAndSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IssuerAndSerialNumber */
-let _cached_encoder_for_IssuerAndSerialNumber: $.ASN1Encoder<
-    IssuerAndSerialNumber
-> | null = null;
+let _cached_encoder_for_IssuerAndSerialNumber: $.ASN1Encoder<IssuerAndSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IssuerAndSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IssuerAndSerialNumber */

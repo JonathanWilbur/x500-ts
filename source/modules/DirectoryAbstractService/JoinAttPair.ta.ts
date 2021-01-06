@@ -199,8 +199,8 @@ export function _decode_JoinAttPair(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new JoinAttPair /* SEQUENCE_CONSTRUCTOR_CALL */(
-                baseAtt,
+            return new JoinAttPair(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ baseAtt,
                 joinAtt,
                 joinContext,
                 _unrecognizedExtensionsList

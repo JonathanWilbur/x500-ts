@@ -27,9 +27,7 @@ export type ModifyDNResponse = LDAPResult; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ModifyDNResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNResponse */
-let _cached_decoder_for_ModifyDNResponse: $.ASN1Decoder<
-    ModifyDNResponse
-> | null = null;
+let _cached_decoder_for_ModifyDNResponse: $.ASN1Decoder<ModifyDNResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNResponse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyDNResponse */
@@ -41,18 +39,16 @@ let _cached_decoder_for_ModifyDNResponse: $.ASN1Decoder<
  */
 export function _decode_ModifyDNResponse(el: _Element) {
     if (!_cached_decoder_for_ModifyDNResponse) {
-        _cached_decoder_for_ModifyDNResponse = $._decode_implicit<
-            ModifyDNResponse
-        >(() => _decode_LDAPResult);
+        _cached_decoder_for_ModifyDNResponse = $._decode_implicit<ModifyDNResponse>(
+            () => _decode_LDAPResult
+        );
     }
     return _cached_decoder_for_ModifyDNResponse(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyDNResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNResponse */
-let _cached_encoder_for_ModifyDNResponse: $.ASN1Encoder<
-    ModifyDNResponse
-> | null = null;
+let _cached_encoder_for_ModifyDNResponse: $.ASN1Encoder<ModifyDNResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNResponse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyDNResponse */

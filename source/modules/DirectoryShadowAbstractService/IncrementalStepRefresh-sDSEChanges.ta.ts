@@ -45,9 +45,7 @@ export type IncrementalStepRefresh_sDSEChanges =
 /* END_OF_SYMBOL_DEFINITION IncrementalStepRefresh_sDSEChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalStepRefresh_sDSEChanges */
-let _cached_decoder_for_IncrementalStepRefresh_sDSEChanges: $.ASN1Decoder<
-    IncrementalStepRefresh_sDSEChanges
-> | null = null;
+let _cached_decoder_for_IncrementalStepRefresh_sDSEChanges: $.ASN1Decoder<IncrementalStepRefresh_sDSEChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalStepRefresh_sDSEChanges */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IncrementalStepRefresh_sDSEChanges */
@@ -59,28 +57,28 @@ let _cached_decoder_for_IncrementalStepRefresh_sDSEChanges: $.ASN1Decoder<
  */
 export function _decode_IncrementalStepRefresh_sDSEChanges(el: _Element) {
     if (!_cached_decoder_for_IncrementalStepRefresh_sDSEChanges) {
-        _cached_decoder_for_IncrementalStepRefresh_sDSEChanges = $._decode_extensible_choice<
-            IncrementalStepRefresh_sDSEChanges
-        >({
-            "CONTEXT 0": [
-                "add",
-                $._decode_implicit<SDSEContent>(() => _decode_SDSEContent),
-            ],
-            "UNIVERSAL 5": ["remove", $._decodeNull],
-            "CONTEXT 1": [
-                "modify",
-                $._decode_implicit<ContentChange>(() => _decode_ContentChange),
-            ],
-        });
+        _cached_decoder_for_IncrementalStepRefresh_sDSEChanges = $._decode_extensible_choice<IncrementalStepRefresh_sDSEChanges>(
+            {
+                "CONTEXT 0": [
+                    "add",
+                    $._decode_implicit<SDSEContent>(() => _decode_SDSEContent),
+                ],
+                "UNIVERSAL 5": ["remove", $._decodeNull],
+                "CONTEXT 1": [
+                    "modify",
+                    $._decode_implicit<ContentChange>(
+                        () => _decode_ContentChange
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_IncrementalStepRefresh_sDSEChanges(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_IncrementalStepRefresh_sDSEChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalStepRefresh_sDSEChanges */
-let _cached_encoder_for_IncrementalStepRefresh_sDSEChanges: $.ASN1Encoder<
-    IncrementalStepRefresh_sDSEChanges
-> | null = null;
+let _cached_encoder_for_IncrementalStepRefresh_sDSEChanges: $.ASN1Encoder<IncrementalStepRefresh_sDSEChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalStepRefresh_sDSEChanges */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IncrementalStepRefresh_sDSEChanges */
@@ -96,9 +94,7 @@ export function _encode_IncrementalStepRefresh_sDSEChanges(
     elGetter: $.ASN1Encoder<IncrementalStepRefresh_sDSEChanges>
 ) {
     if (!_cached_encoder_for_IncrementalStepRefresh_sDSEChanges) {
-        _cached_encoder_for_IncrementalStepRefresh_sDSEChanges = $._encode_choice<
-            IncrementalStepRefresh_sDSEChanges
-        >(
+        _cached_encoder_for_IncrementalStepRefresh_sDSEChanges = $._encode_choice<IncrementalStepRefresh_sDSEChanges>(
             {
                 add: $._encode_implicit(
                     _TagClass.context,

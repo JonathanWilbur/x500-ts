@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_CertUpdateReq: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertUpdateReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUpdateReq */
-let _cached_decoder_for_CertUpdateReq: $.ASN1Decoder<
-    CertUpdateReq
-> | null = null;
+let _cached_decoder_for_CertUpdateReq: $.ASN1Decoder<CertUpdateReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUpdateReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUpdateReq */
@@ -185,9 +183,7 @@ export function _decode_CertUpdateReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertUpdateReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUpdateReq */
-let _cached_encoder_for_CertUpdateReq: $.ASN1Encoder<
-    CertUpdateReq
-> | null = null;
+let _cached_encoder_for_CertUpdateReq: $.ASN1Encoder<CertUpdateReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUpdateReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUpdateReq */
@@ -215,12 +211,10 @@ export function _encode_CertUpdateReq(
                                 value.invokeID,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                CertUpdateReq_certs_Item
-                            >(() => _encode_CertUpdateReq_certs_Item, $.BER)(
-                                value.certs,
+                            /* REQUIRED   */ $._encodeSequenceOf<CertUpdateReq_certs_Item>(
+                                () => _encode_CertUpdateReq_certs_Item,
                                 $.BER
-                            ),
+                            )(value.certs, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

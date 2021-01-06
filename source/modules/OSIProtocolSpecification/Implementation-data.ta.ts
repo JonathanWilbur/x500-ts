@@ -17,9 +17,7 @@ export type Implementation_data = GraphicString; // GraphicString
 /* END_OF_SYMBOL_DEFINITION Implementation_data */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Implementation_data */
-let _cached_decoder_for_Implementation_data: $.ASN1Decoder<
-    Implementation_data
-> | null = null;
+let _cached_decoder_for_Implementation_data: $.ASN1Decoder<Implementation_data> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Implementation_data */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Implementation_data */
@@ -38,9 +36,7 @@ export function _decode_Implementation_data(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Implementation_data */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Implementation_data */
-let _cached_encoder_for_Implementation_data: $.ASN1Encoder<
-    Implementation_data
-> | null = null;
+let _cached_encoder_for_Implementation_data: $.ASN1Encoder<Implementation_data> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Implementation_data */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Implementation_data */

@@ -37,9 +37,7 @@ export type RequestShadowUpdateArgumentData_requestedStrategy =
 /* END_OF_SYMBOL_DEFINITION RequestShadowUpdateArgumentData_requestedStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy */
-let _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy: $.ASN1Decoder<
-    RequestShadowUpdateArgumentData_requestedStrategy
-> | null = null;
+let _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy: $.ASN1Decoder<RequestShadowUpdateArgumentData_requestedStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData_requestedStrategy */
@@ -55,15 +53,15 @@ export function _decode_RequestShadowUpdateArgumentData_requestedStrategy(
     if (
         !_cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy
     ) {
-        _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy = $._decode_extensible_choice<
-            RequestShadowUpdateArgumentData_requestedStrategy
-        >({
-            "UNIVERSAL 10": [
-                "standard",
-                _decode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
-            ],
-            "UNIVERSAL 8": ["other", $._decodeExternal],
-        });
+        _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy = $._decode_extensible_choice<RequestShadowUpdateArgumentData_requestedStrategy>(
+            {
+                "UNIVERSAL 10": [
+                    "standard",
+                    _decode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
+                ],
+                "UNIVERSAL 8": ["other", $._decodeExternal],
+            }
+        );
     }
     return _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy(
         el
@@ -72,9 +70,7 @@ export function _decode_RequestShadowUpdateArgumentData_requestedStrategy(
 /* END_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData_requestedStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy */
-let _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy: $.ASN1Encoder<
-    RequestShadowUpdateArgumentData_requestedStrategy
-> | null = null;
+let _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy: $.ASN1Encoder<RequestShadowUpdateArgumentData_requestedStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestShadowUpdateArgumentData_requestedStrategy */
@@ -92,9 +88,7 @@ export function _encode_RequestShadowUpdateArgumentData_requestedStrategy(
     if (
         !_cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy
     ) {
-        _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy = $._encode_choice<
-            RequestShadowUpdateArgumentData_requestedStrategy
-        >(
+        _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy = $._encode_choice<RequestShadowUpdateArgumentData_requestedStrategy>(
             {
                 standard: _encode_RequestShadowUpdateArgumentData_requestedStrategy_standard,
                 other: $._encodeExternal,

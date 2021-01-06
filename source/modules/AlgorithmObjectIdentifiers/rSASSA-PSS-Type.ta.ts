@@ -154,9 +154,7 @@ export const _extension_additions_list_spec_for_rSASSA_PSS_Type: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_rSASSA_PSS_Type */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_rSASSA_PSS_Type */
-let _cached_decoder_for_rSASSA_PSS_Type: $.ASN1Decoder<
-    rSASSA_PSS_Type
-> | null = null;
+let _cached_decoder_for_rSASSA_PSS_Type: $.ASN1Decoder<rSASSA_PSS_Type> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_rSASSA_PSS_Type */
 
 /* START_OF_SYMBOL_DEFINITION _decode_rSASSA_PSS_Type */
@@ -205,8 +203,8 @@ export function _decode_rSASSA_PSS_Type(el: _Element) {
                 _root_component_type_list_2_spec_for_rSASSA_PSS_Type,
                 undefined
             );
-            return new rSASSA_PSS_Type /* SEQUENCE_CONSTRUCTOR_CALL */(
-                hashAlgorithm,
+            return new rSASSA_PSS_Type(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ hashAlgorithm,
                 saltLength,
                 trailerField
             );
@@ -217,9 +215,7 @@ export function _decode_rSASSA_PSS_Type(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_rSASSA_PSS_Type */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_rSASSA_PSS_Type */
-let _cached_encoder_for_rSASSA_PSS_Type: $.ASN1Encoder<
-    rSASSA_PSS_Type
-> | null = null;
+let _cached_encoder_for_rSASSA_PSS_Type: $.ASN1Encoder<rSASSA_PSS_Type> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_rSASSA_PSS_Type */
 
 /* START_OF_SYMBOL_DEFINITION _encode_rSASSA_PSS_Type */

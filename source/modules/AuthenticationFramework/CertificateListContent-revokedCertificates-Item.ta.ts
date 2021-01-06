@@ -165,9 +165,7 @@ export const _extension_additions_list_spec_for_CertificateListContent_revokedCe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateListContent_revokedCertificates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListContent_revokedCertificates_Item */
-let _cached_decoder_for_CertificateListContent_revokedCertificates_Item: $.ASN1Decoder<
-    CertificateListContent_revokedCertificates_Item
-> | null = null;
+let _cached_decoder_for_CertificateListContent_revokedCertificates_Item: $.ASN1Decoder<CertificateListContent_revokedCertificates_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListContent_revokedCertificates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateListContent_revokedCertificates_Item */
@@ -213,8 +211,8 @@ export function _decode_CertificateListContent_revokedCertificates_Item(
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificateListContent_revokedCertificates_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                serialNumber,
+            return new CertificateListContent_revokedCertificates_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
                 revocationDate,
                 crlEntryExtensions,
                 _unrecognizedExtensionsList
@@ -228,9 +226,7 @@ export function _decode_CertificateListContent_revokedCertificates_Item(
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateListContent_revokedCertificates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListContent_revokedCertificates_Item */
-let _cached_encoder_for_CertificateListContent_revokedCertificates_Item: $.ASN1Encoder<
-    CertificateListContent_revokedCertificates_Item
-> | null = null;
+let _cached_encoder_for_CertificateListContent_revokedCertificates_Item: $.ASN1Encoder<CertificateListContent_revokedCertificates_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListContent_revokedCertificates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateListContent_revokedCertificates_Item */
@@ -248,9 +244,7 @@ export function _encode_CertificateListContent_revokedCertificates_Item(
     if (!_cached_encoder_for_CertificateListContent_revokedCertificates_Item) {
         _cached_encoder_for_CertificateListContent_revokedCertificates_Item = function (
             value: CertificateListContent_revokedCertificates_Item,
-            elGetter: $.ASN1Encoder<
-                CertificateListContent_revokedCertificates_Item
-            >
+            elGetter: $.ASN1Encoder<CertificateListContent_revokedCertificates_Item>
         ): _Element {
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])

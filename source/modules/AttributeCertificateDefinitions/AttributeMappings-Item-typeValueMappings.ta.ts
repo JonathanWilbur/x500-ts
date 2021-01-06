@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_AttributeMappings_Item_typeValue
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeMappings_Item_typeValueMappings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings_Item_typeValueMappings */
-let _cached_decoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Decoder<
-    AttributeMappings_Item_typeValueMappings
-> | null = null;
+let _cached_decoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Decoder<AttributeMappings_Item_typeValueMappings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings_Item_typeValueMappings */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeMappings_Item_typeValueMappings */
@@ -178,9 +176,7 @@ export function _decode_AttributeMappings_Item_typeValueMappings(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeMappings_Item_typeValueMappings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings_Item_typeValueMappings */
-let _cached_encoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Encoder<
-    AttributeMappings_Item_typeValueMappings
-> | null = null;
+let _cached_encoder_for_AttributeMappings_Item_typeValueMappings: $.ASN1Encoder<AttributeMappings_Item_typeValueMappings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings_Item_typeValueMappings */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeMappings_Item_typeValueMappings */

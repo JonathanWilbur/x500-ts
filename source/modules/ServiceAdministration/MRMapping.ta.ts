@@ -184,8 +184,8 @@ export function _decode_MRMapping(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MRMapping /* SEQUENCE_CONSTRUCTOR_CALL */(
-                mapping,
+            return new MRMapping(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mapping,
                 substitution,
                 _unrecognizedExtensionsList
             );

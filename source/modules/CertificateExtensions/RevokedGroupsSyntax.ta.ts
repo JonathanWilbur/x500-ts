@@ -27,9 +27,7 @@ export type RevokedGroupsSyntax = RevokedGroup[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION RevokedGroupsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RevokedGroupsSyntax */
-let _cached_decoder_for_RevokedGroupsSyntax: $.ASN1Decoder<
-    RevokedGroupsSyntax
-> | null = null;
+let _cached_decoder_for_RevokedGroupsSyntax: $.ASN1Decoder<RevokedGroupsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RevokedGroupsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RevokedGroupsSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_RevokedGroupsSyntax: $.ASN1Decoder<
  */
 export function _decode_RevokedGroupsSyntax(el: _Element) {
     if (!_cached_decoder_for_RevokedGroupsSyntax) {
-        _cached_decoder_for_RevokedGroupsSyntax = $._decodeSequenceOf<
-            RevokedGroup
-        >(() => _decode_RevokedGroup);
+        _cached_decoder_for_RevokedGroupsSyntax = $._decodeSequenceOf<RevokedGroup>(
+            () => _decode_RevokedGroup
+        );
     }
     return _cached_decoder_for_RevokedGroupsSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RevokedGroupsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RevokedGroupsSyntax */
-let _cached_encoder_for_RevokedGroupsSyntax: $.ASN1Encoder<
-    RevokedGroupsSyntax
-> | null = null;
+let _cached_encoder_for_RevokedGroupsSyntax: $.ASN1Encoder<RevokedGroupsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RevokedGroupsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RevokedGroupsSyntax */
@@ -68,9 +64,10 @@ export function _encode_RevokedGroupsSyntax(
     elGetter: $.ASN1Encoder<RevokedGroupsSyntax>
 ) {
     if (!_cached_encoder_for_RevokedGroupsSyntax) {
-        _cached_encoder_for_RevokedGroupsSyntax = $._encodeSequenceOf<
-            RevokedGroup
-        >(() => _encode_RevokedGroup, $.BER);
+        _cached_encoder_for_RevokedGroupsSyntax = $._encodeSequenceOf<RevokedGroup>(
+            () => _encode_RevokedGroup,
+            $.BER
+        );
     }
     return _cached_encoder_for_RevokedGroupsSyntax(value, elGetter);
 }

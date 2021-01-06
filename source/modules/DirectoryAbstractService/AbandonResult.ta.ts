@@ -45,9 +45,7 @@ export type AbandonResult =
 /* END_OF_SYMBOL_DEFINITION AbandonResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonResult */
-let _cached_decoder_for_AbandonResult: $.ASN1Decoder<
-    AbandonResult
-> | null = null;
+let _cached_decoder_for_AbandonResult: $.ASN1Decoder<AbandonResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_AbandonResult: $.ASN1Decoder<
  */
 export function _decode_AbandonResult(el: _Element) {
     if (!_cached_decoder_for_AbandonResult) {
-        _cached_decoder_for_AbandonResult = $._decode_extensible_choice<
-            AbandonResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(
-                    _decode_AbandonResultData
-                ),
-            ],
-        });
+        _cached_decoder_for_AbandonResult = $._decode_extensible_choice<AbandonResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(
+                        _decode_AbandonResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AbandonResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonResult */
-let _cached_encoder_for_AbandonResult: $.ASN1Encoder<
-    AbandonResult
-> | null = null;
+let _cached_encoder_for_AbandonResult: $.ASN1Encoder<AbandonResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonResult */
@@ -97,9 +93,9 @@ export function _encode_AbandonResult(
         _cached_encoder_for_AbandonResult = $._encode_choice<AbandonResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    AbandonResultData
-                >(_encode_AbandonResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonResultData>(
+                    _encode_AbandonResultData
+                ),
             },
             $.BER
         );

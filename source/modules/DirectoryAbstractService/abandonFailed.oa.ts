@@ -49,14 +49,14 @@ export {
 export const abandonFailed: ERROR<OPTIONALLY_PROTECTED<AbandonFailedData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<
-            AbandonFailedData
-        >(_decode_AbandonFailedData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<AbandonFailedData>(
+            _decode_AbandonFailedData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<
-            AbandonFailedData
-        >(_encode_AbandonFailedData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<AbandonFailedData>(
+            _encode_AbandonFailedData
+        ),
     },
     "&errorCode": id_errcode_abandonFailed /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

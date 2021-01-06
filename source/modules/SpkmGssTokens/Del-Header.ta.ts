@@ -216,8 +216,8 @@ export function _decode_Del_Header(el: _Element) {
                 _root_component_type_list_2_spec_for_Del_Header,
                 undefined
             );
-            return new Del_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new Del_Header(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 int_alg,
                 snd_seq

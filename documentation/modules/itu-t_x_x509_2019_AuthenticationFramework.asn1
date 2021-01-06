@@ -227,6 +227,7 @@ TBSCertAVL ::= SEQUENCE {
       certIdentifier        [0]  PKCertIdentifier,
       entityGroup                DistinguishedName, -- only for constrained = FALSE
       ... },
+    scope                 [0]  IMPLICIT ScopeRestrictions OPTIONAL,
     entryExtensions       [1]  IMPLICIT Extensions OPTIONAL,
     ... },
   ...,
@@ -244,6 +245,15 @@ PKCertIdentifier ::= CHOICE {
 IssuerSerialNumber ::= SEQUENCE {
   issuer        Name,
   serialNumber  CertificateSerialNumber,
+  ... }
+
+ScopeRestrictions ::= SEQUENCE OF ScopeRestriction
+
+SCOPE-RESTRICTION ::= TYPE-IDENTIFIER
+
+ScopeRestriction ::= SEQUENCE {
+  id            SCOPE-RESTRICTION.&id,
+  restriction   SCOPE-RESTRICTION.&Type,
   ... }
 
 -- PKI object classes

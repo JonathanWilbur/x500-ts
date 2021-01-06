@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_BasicAttConstraintsSyntax: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_BasicAttConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BasicAttConstraintsSyntax */
-let _cached_decoder_for_BasicAttConstraintsSyntax: $.ASN1Decoder<
-    BasicAttConstraintsSyntax
-> | null = null;
+let _cached_decoder_for_BasicAttConstraintsSyntax: $.ASN1Decoder<BasicAttConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BasicAttConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BasicAttConstraintsSyntax */
@@ -179,8 +177,8 @@ export function _decode_BasicAttConstraintsSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new BasicAttConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                authority,
+            return new BasicAttConstraintsSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ authority,
                 pathLenConstraint,
                 _unrecognizedExtensionsList
             );
@@ -191,9 +189,7 @@ export function _decode_BasicAttConstraintsSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BasicAttConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BasicAttConstraintsSyntax */
-let _cached_encoder_for_BasicAttConstraintsSyntax: $.ASN1Encoder<
-    BasicAttConstraintsSyntax
-> | null = null;
+let _cached_encoder_for_BasicAttConstraintsSyntax: $.ASN1Encoder<BasicAttConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BasicAttConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BasicAttConstraintsSyntax */

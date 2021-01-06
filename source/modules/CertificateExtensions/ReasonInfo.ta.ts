@@ -210,8 +210,8 @@ export function _decode_ReasonInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ReasonInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                reasonCode,
+            return new ReasonInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ reasonCode,
                 holdInstructionCode,
                 _unrecognizedExtensionsList
             );

@@ -29,9 +29,7 @@ export type UniversalOrganizationalUnitName = UniversalOrBMPString; // DefinedTy
 /* END_OF_SYMBOL_DEFINITION UniversalOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationalUnitName */
-let _cached_decoder_for_UniversalOrganizationalUnitName: $.ASN1Decoder<
-    UniversalOrganizationalUnitName
-> | null = null;
+let _cached_decoder_for_UniversalOrganizationalUnitName: $.ASN1Decoder<UniversalOrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationalUnitName */
@@ -50,9 +48,7 @@ export function _decode_UniversalOrganizationalUnitName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationalUnitName */
-let _cached_encoder_for_UniversalOrganizationalUnitName: $.ASN1Encoder<
-    UniversalOrganizationalUnitName
-> | null = null;
+let _cached_encoder_for_UniversalOrganizationalUnitName: $.ASN1Encoder<UniversalOrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalOrganizationalUnitName */

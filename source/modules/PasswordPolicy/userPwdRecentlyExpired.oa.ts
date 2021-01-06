@@ -1,6 +1,8 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import { pwdRecentlyExpired } from "../InformationFramework/pwdRecentlyExpired.oa";
+import { id_oa_userPwdRecentlyExpired } from "../PasswordPolicy/id-oa-userPwdRecentlyExpired.va";
+import { userPwd } from "../PasswordPolicy/userPwd.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
     AttributeUsage,
@@ -21,8 +23,6 @@ export { pwdRecentlyExpired } from "../InformationFramework/pwdRecentlyExpired.o
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
 export { id_oa_userPwdRecentlyExpired } from "../PasswordPolicy/id-oa-userPwdRecentlyExpired.va";
 export { userPwd } from "../PasswordPolicy/userPwd.oa";
-import { id_oa_userPwdRecentlyExpired } from "../PasswordPolicy/id-oa-userPwdRecentlyExpired.va";
-import { userPwd } from "../PasswordPolicy/userPwd.oa";
 
 /* START_OF_SYMBOL_DEFINITION userPwdRecentlyExpired */
 /**
@@ -39,7 +39,10 @@ import { userPwd } from "../PasswordPolicy/userPwd.oa";
  * @type {ATTRIBUTE}
  * @implements {ATTRIBUTE}
  */
-export const userPwdRecentlyExpired: ATTRIBUTE = pwdRecentlyExpired(userPwd, id_oa_userPwdRecentlyExpired);
+export const userPwdRecentlyExpired: ATTRIBUTE = pwdRecentlyExpired(
+    userPwd,
+    id_oa_userPwdRecentlyExpired
+);
 /* END_OF_SYMBOL_DEFINITION userPwdRecentlyExpired */
 
 /* eslint-enable */

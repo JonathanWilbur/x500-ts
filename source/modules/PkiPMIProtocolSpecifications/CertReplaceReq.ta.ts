@@ -198,9 +198,7 @@ export const _extension_additions_list_spec_for_CertReplaceReq: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertReplaceReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceReq */
-let _cached_decoder_for_CertReplaceReq: $.ASN1Decoder<
-    CertReplaceReq
-> | null = null;
+let _cached_decoder_for_CertReplaceReq: $.ASN1Decoder<CertReplaceReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertReplaceReq */
@@ -247,8 +245,8 @@ export function _decode_CertReplaceReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertReplaceReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CertReplaceReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sequence,
                 certs,
                 _unrecognizedExtensionsList
@@ -260,9 +258,7 @@ export function _decode_CertReplaceReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertReplaceReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceReq */
-let _cached_encoder_for_CertReplaceReq: $.ASN1Encoder<
-    CertReplaceReq
-> | null = null;
+let _cached_encoder_for_CertReplaceReq: $.ASN1Encoder<CertReplaceReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertReplaceReq */
@@ -297,12 +293,10 @@ export function _encode_CertReplaceReq(
                                 value.sequence,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                CertReplaceReq_certs_Item
-                            >(() => _encode_CertReplaceReq_certs_Item, $.BER)(
-                                value.certs,
+                            /* REQUIRED   */ $._encodeSequenceOf<CertReplaceReq_certs_Item>(
+                                () => _encode_CertReplaceReq_certs_Item,
                                 $.BER
-                            ),
+                            )(value.certs, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

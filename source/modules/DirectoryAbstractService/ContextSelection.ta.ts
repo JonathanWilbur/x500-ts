@@ -33,9 +33,7 @@ export type ContextSelection =
 /* END_OF_SYMBOL_DEFINITION ContextSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextSelection */
-let _cached_decoder_for_ContextSelection: $.ASN1Decoder<
-    ContextSelection
-> | null = null;
+let _cached_decoder_for_ContextSelection: $.ASN1Decoder<ContextSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextSelection */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContextSelection */
@@ -47,26 +45,24 @@ let _cached_decoder_for_ContextSelection: $.ASN1Decoder<
  */
 export function _decode_ContextSelection(el: _Element) {
     if (!_cached_decoder_for_ContextSelection) {
-        _cached_decoder_for_ContextSelection = $._decode_extensible_choice<
-            ContextSelection
-        >({
-            "UNIVERSAL 5": ["allContexts", $._decodeNull],
-            "UNIVERSAL 17": [
-                "selectedContexts",
-                $._decodeSetOf<TypeAndContextAssertion>(
-                    () => _decode_TypeAndContextAssertion
-                ),
-            ],
-        });
+        _cached_decoder_for_ContextSelection = $._decode_extensible_choice<ContextSelection>(
+            {
+                "UNIVERSAL 5": ["allContexts", $._decodeNull],
+                "UNIVERSAL 17": [
+                    "selectedContexts",
+                    $._decodeSetOf<TypeAndContextAssertion>(
+                        () => _decode_TypeAndContextAssertion
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ContextSelection(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ContextSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextSelection */
-let _cached_encoder_for_ContextSelection: $.ASN1Encoder<
-    ContextSelection
-> | null = null;
+let _cached_encoder_for_ContextSelection: $.ASN1Encoder<ContextSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextSelection */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContextSelection */
@@ -82,9 +78,7 @@ export function _encode_ContextSelection(
     elGetter: $.ASN1Encoder<ContextSelection>
 ) {
     if (!_cached_encoder_for_ContextSelection) {
-        _cached_encoder_for_ContextSelection = $._encode_choice<
-            ContextSelection
-        >(
+        _cached_encoder_for_ContextSelection = $._encode_choice<ContextSelection>(
             {
                 allContexts: $._encodeNull,
                 selectedContexts: $._encodeSetOf<TypeAndContextAssertion>(

@@ -35,9 +35,7 @@ export type AttributeMappings = AttributeMappings_Item[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION AttributeMappings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings */
-let _cached_decoder_for_AttributeMappings: $.ASN1Decoder<
-    AttributeMappings
-> | null = null;
+let _cached_decoder_for_AttributeMappings: $.ASN1Decoder<AttributeMappings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeMappings */
@@ -49,18 +47,16 @@ let _cached_decoder_for_AttributeMappings: $.ASN1Decoder<
  */
 export function _decode_AttributeMappings(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings) {
-        _cached_decoder_for_AttributeMappings = $._decodeSetOf<
-            AttributeMappings_Item
-        >(() => _decode_AttributeMappings_Item);
+        _cached_decoder_for_AttributeMappings = $._decodeSetOf<AttributeMappings_Item>(
+            () => _decode_AttributeMappings_Item
+        );
     }
     return _cached_decoder_for_AttributeMappings(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeMappings */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings */
-let _cached_encoder_for_AttributeMappings: $.ASN1Encoder<
-    AttributeMappings
-> | null = null;
+let _cached_encoder_for_AttributeMappings: $.ASN1Encoder<AttributeMappings> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeMappings */
@@ -76,9 +72,10 @@ export function _encode_AttributeMappings(
     elGetter: $.ASN1Encoder<AttributeMappings>
 ) {
     if (!_cached_encoder_for_AttributeMappings) {
-        _cached_encoder_for_AttributeMappings = $._encodeSetOf<
-            AttributeMappings_Item
-        >(() => _encode_AttributeMappings_Item, $.BER);
+        _cached_encoder_for_AttributeMappings = $._encodeSetOf<AttributeMappings_Item>(
+            () => _encode_AttributeMappings_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_AttributeMappings(value, elGetter);
 }

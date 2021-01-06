@@ -17,9 +17,7 @@ export type MgtOctetString = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION MgtOctetString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtOctetString */
-let _cached_decoder_for_MgtOctetString: $.ASN1Decoder<
-    MgtOctetString
-> | null = null;
+let _cached_decoder_for_MgtOctetString: $.ASN1Decoder<MgtOctetString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtOctetString */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MgtOctetString */
@@ -38,9 +36,7 @@ export function _decode_MgtOctetString(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MgtOctetString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtOctetString */
-let _cached_encoder_for_MgtOctetString: $.ASN1Encoder<
-    MgtOctetString
-> | null = null;
+let _cached_encoder_for_MgtOctetString: $.ASN1Encoder<MgtOctetString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtOctetString */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MgtOctetString */

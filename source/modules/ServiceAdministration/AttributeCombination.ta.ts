@@ -38,9 +38,7 @@ export type AttributeCombination =
 /* END_OF_SYMBOL_DEFINITION AttributeCombination */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCombination */
-let _cached_decoder_for_AttributeCombination: $.ASN1Decoder<
-    AttributeCombination
-> | null = null;
+let _cached_decoder_for_AttributeCombination: $.ASN1Decoder<AttributeCombination> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCombination */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCombination */
@@ -52,45 +50,45 @@ let _cached_decoder_for_AttributeCombination: $.ASN1Decoder<
  */
 export function _decode_AttributeCombination(el: _Element) {
     if (!_cached_decoder_for_AttributeCombination) {
-        _cached_decoder_for_AttributeCombination = $._decode_extensible_choice<
-            AttributeCombination
-        >({
-            "CONTEXT 0": [
-                "attribute",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 1": [
-                "and",
-                $._decode_explicit<AttributeCombination[]>(() =>
-                    $._decodeSequenceOf<AttributeCombination>(
+        _cached_decoder_for_AttributeCombination = $._decode_extensible_choice<AttributeCombination>(
+            {
+                "CONTEXT 0": [
+                    "attribute",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "and",
+                    $._decode_explicit<AttributeCombination[]>(() =>
+                        $._decodeSequenceOf<AttributeCombination>(
+                            () => _decode_AttributeCombination
+                        )
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "or",
+                    $._decode_explicit<AttributeCombination[]>(() =>
+                        $._decodeSequenceOf<AttributeCombination>(
+                            () => _decode_AttributeCombination
+                        )
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "not",
+                    $._decode_explicit<AttributeCombination>(
                         () => _decode_AttributeCombination
-                    )
-                ),
-            ],
-            "CONTEXT 2": [
-                "or",
-                $._decode_explicit<AttributeCombination[]>(() =>
-                    $._decodeSequenceOf<AttributeCombination>(
-                        () => _decode_AttributeCombination
-                    )
-                ),
-            ],
-            "CONTEXT 3": [
-                "not",
-                $._decode_explicit<AttributeCombination>(
-                    () => _decode_AttributeCombination
-                ),
-            ],
-        });
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AttributeCombination(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCombination */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCombination */
-let _cached_encoder_for_AttributeCombination: $.ASN1Encoder<
-    AttributeCombination
-> | null = null;
+let _cached_encoder_for_AttributeCombination: $.ASN1Encoder<AttributeCombination> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCombination */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCombination */
@@ -106,9 +104,7 @@ export function _encode_AttributeCombination(
     elGetter: $.ASN1Encoder<AttributeCombination>
 ) {
     if (!_cached_encoder_for_AttributeCombination) {
-        _cached_encoder_for_AttributeCombination = $._encode_choice<
-            AttributeCombination
-        >(
+        _cached_encoder_for_AttributeCombination = $._encode_choice<AttributeCombination>(
             {
                 attribute: $._encode_explicit(
                     _TagClass.context,

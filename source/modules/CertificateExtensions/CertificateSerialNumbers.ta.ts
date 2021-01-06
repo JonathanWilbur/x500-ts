@@ -27,9 +27,7 @@ export type CertificateSerialNumbers = CertificateSerialNumber[]; // SequenceOfT
 /* END_OF_SYMBOL_DEFINITION CertificateSerialNumbers */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateSerialNumbers */
-let _cached_decoder_for_CertificateSerialNumbers: $.ASN1Decoder<
-    CertificateSerialNumbers
-> | null = null;
+let _cached_decoder_for_CertificateSerialNumbers: $.ASN1Decoder<CertificateSerialNumbers> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateSerialNumbers */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateSerialNumbers */
@@ -41,18 +39,16 @@ let _cached_decoder_for_CertificateSerialNumbers: $.ASN1Decoder<
  */
 export function _decode_CertificateSerialNumbers(el: _Element) {
     if (!_cached_decoder_for_CertificateSerialNumbers) {
-        _cached_decoder_for_CertificateSerialNumbers = $._decodeSequenceOf<
-            CertificateSerialNumber
-        >(() => _decode_CertificateSerialNumber);
+        _cached_decoder_for_CertificateSerialNumbers = $._decodeSequenceOf<CertificateSerialNumber>(
+            () => _decode_CertificateSerialNumber
+        );
     }
     return _cached_decoder_for_CertificateSerialNumbers(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateSerialNumbers */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateSerialNumbers */
-let _cached_encoder_for_CertificateSerialNumbers: $.ASN1Encoder<
-    CertificateSerialNumbers
-> | null = null;
+let _cached_encoder_for_CertificateSerialNumbers: $.ASN1Encoder<CertificateSerialNumbers> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateSerialNumbers */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateSerialNumbers */
@@ -68,9 +64,10 @@ export function _encode_CertificateSerialNumbers(
     elGetter: $.ASN1Encoder<CertificateSerialNumbers>
 ) {
     if (!_cached_encoder_for_CertificateSerialNumbers) {
-        _cached_encoder_for_CertificateSerialNumbers = $._encodeSequenceOf<
-            CertificateSerialNumber
-        >(() => _encode_CertificateSerialNumber, $.BER);
+        _cached_encoder_for_CertificateSerialNumbers = $._encodeSequenceOf<CertificateSerialNumber>(
+            () => _encode_CertificateSerialNumber,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertificateSerialNumbers(value, elGetter);
 }

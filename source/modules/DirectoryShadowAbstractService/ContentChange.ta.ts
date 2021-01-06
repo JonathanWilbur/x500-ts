@@ -238,9 +238,7 @@ export const _extension_additions_list_spec_for_ContentChange: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ContentChange */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContentChange */
-let _cached_decoder_for_ContentChange: $.ASN1Decoder<
-    ContentChange
-> | null = null;
+let _cached_decoder_for_ContentChange: $.ASN1Decoder<ContentChange> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContentChange */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContentChange */
@@ -306,8 +304,8 @@ export function _decode_ContentChange(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ContentChange /* SEQUENCE_CONSTRUCTOR_CALL */(
-                rename,
+            return new ContentChange(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ rename,
                 attributeChanges,
                 sDSEType,
                 subComplete,
@@ -322,9 +320,7 @@ export function _decode_ContentChange(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ContentChange */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContentChange */
-let _cached_encoder_for_ContentChange: $.ASN1Encoder<
-    ContentChange
-> | null = null;
+let _cached_encoder_for_ContentChange: $.ASN1Encoder<ContentChange> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContentChange */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContentChange */

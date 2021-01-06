@@ -130,9 +130,7 @@ export const derefAlways: SearchRequest_derefAliases =
 /* END_OF_SYMBOL_DEFINITION derefAlways */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_derefAliases */
-let _cached_decoder_for_SearchRequest_derefAliases: $.ASN1Decoder<
-    SearchRequest_derefAliases
-> | null = null;
+let _cached_decoder_for_SearchRequest_derefAliases: $.ASN1Decoder<SearchRequest_derefAliases> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_derefAliases */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchRequest_derefAliases */
@@ -151,9 +149,7 @@ export function _decode_SearchRequest_derefAliases(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchRequest_derefAliases */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest_derefAliases */
-let _cached_encoder_for_SearchRequest_derefAliases: $.ASN1Encoder<
-    SearchRequest_derefAliases
-> | null = null;
+let _cached_encoder_for_SearchRequest_derefAliases: $.ASN1Encoder<SearchRequest_derefAliases> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest_derefAliases */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchRequest_derefAliases */

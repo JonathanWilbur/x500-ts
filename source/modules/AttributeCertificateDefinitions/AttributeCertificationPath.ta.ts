@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_AttributeCertificationPath: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificationPath */
-let _cached_decoder_for_AttributeCertificationPath: $.ASN1Decoder<
-    AttributeCertificationPath
-> | null = null;
+let _cached_decoder_for_AttributeCertificationPath: $.ASN1Decoder<AttributeCertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificationPath */
@@ -188,8 +186,8 @@ export function _decode_AttributeCertificationPath(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeCertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
-                attributeCertificate,
+            return new AttributeCertificationPath(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ attributeCertificate,
                 acPath,
                 _unrecognizedExtensionsList
             );
@@ -200,9 +198,7 @@ export function _decode_AttributeCertificationPath(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificationPath */
-let _cached_encoder_for_AttributeCertificationPath: $.ASN1Encoder<
-    AttributeCertificationPath
-> | null = null;
+let _cached_encoder_for_AttributeCertificationPath: $.ASN1Encoder<AttributeCertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificationPath */

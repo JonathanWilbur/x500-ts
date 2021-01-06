@@ -27,9 +27,7 @@ export type SelectedTypes = AttributeType[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION SelectedTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SelectedTypes */
-let _cached_decoder_for_SelectedTypes: $.ASN1Decoder<
-    SelectedTypes
-> | null = null;
+let _cached_decoder_for_SelectedTypes: $.ASN1Decoder<SelectedTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SelectedTypes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SelectedTypes */
@@ -50,9 +48,7 @@ export function _decode_SelectedTypes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SelectedTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SelectedTypes */
-let _cached_encoder_for_SelectedTypes: $.ASN1Encoder<
-    SelectedTypes
-> | null = null;
+let _cached_encoder_for_SelectedTypes: $.ASN1Encoder<SelectedTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SelectedTypes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SelectedTypes */

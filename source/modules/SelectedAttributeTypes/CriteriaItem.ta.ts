@@ -51,30 +51,40 @@ let _cached_decoder_for_CriteriaItem: $.ASN1Decoder<CriteriaItem> | null = null;
  */
 export function _decode_CriteriaItem(el: _Element) {
     if (!_cached_decoder_for_CriteriaItem) {
-        _cached_decoder_for_CriteriaItem = $._decode_extensible_choice<
-            CriteriaItem
-        >({
-            "CONTEXT 0": [
-                "equality",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 1": [
-                "substrings",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 2": [
-                "greaterOrEqual",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 3": [
-                "lessOrEqual",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 4": [
-                "approximateMatch",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-        });
+        _cached_decoder_for_CriteriaItem = $._decode_extensible_choice<CriteriaItem>(
+            {
+                "CONTEXT 0": [
+                    "equality",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "substrings",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "greaterOrEqual",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "lessOrEqual",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 4": [
+                    "approximateMatch",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CriteriaItem(el);
 }

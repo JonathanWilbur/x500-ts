@@ -24,9 +24,7 @@ export type DER_AttributeCertificate = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION DER_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DER_AttributeCertificate */
-let _cached_decoder_for_DER_AttributeCertificate: $.ASN1Decoder<
-    DER_AttributeCertificate
-> | null = null;
+let _cached_decoder_for_DER_AttributeCertificate: $.ASN1Decoder<DER_AttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DER_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DER_AttributeCertificate */
@@ -45,9 +43,7 @@ export function _decode_DER_AttributeCertificate(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DER_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DER_AttributeCertificate */
-let _cached_encoder_for_DER_AttributeCertificate: $.ASN1Encoder<
-    DER_AttributeCertificate
-> | null = null;
+let _cached_encoder_for_DER_AttributeCertificate: $.ASN1Encoder<DER_AttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DER_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DER_AttributeCertificate */

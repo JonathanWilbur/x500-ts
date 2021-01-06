@@ -18,9 +18,7 @@ export type OrganizationalUnitName = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION OrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationalUnitName */
-let _cached_decoder_for_OrganizationalUnitName: $.ASN1Decoder<
-    OrganizationalUnitName
-> | null = null;
+let _cached_decoder_for_OrganizationalUnitName: $.ASN1Decoder<OrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OrganizationalUnitName */
@@ -39,9 +37,7 @@ export function _decode_OrganizationalUnitName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationalUnitName */
-let _cached_encoder_for_OrganizationalUnitName: $.ASN1Encoder<
-    OrganizationalUnitName
-> | null = null;
+let _cached_encoder_for_OrganizationalUnitName: $.ASN1Encoder<OrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OrganizationalUnitName */

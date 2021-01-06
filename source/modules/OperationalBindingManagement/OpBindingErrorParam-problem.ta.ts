@@ -271,9 +271,7 @@ export const invalidNewID: OpBindingErrorParam_problem = OpBindingErrorParam_pro
 /* END_OF_SYMBOL_DEFINITION invalidNewID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OpBindingErrorParam_problem */
-let _cached_decoder_for_OpBindingErrorParam_problem: $.ASN1Decoder<
-    OpBindingErrorParam_problem
-> | null = null;
+let _cached_decoder_for_OpBindingErrorParam_problem: $.ASN1Decoder<OpBindingErrorParam_problem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OpBindingErrorParam_problem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OpBindingErrorParam_problem */
@@ -292,9 +290,7 @@ export function _decode_OpBindingErrorParam_problem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OpBindingErrorParam_problem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OpBindingErrorParam_problem */
-let _cached_encoder_for_OpBindingErrorParam_problem: $.ASN1Encoder<
-    OpBindingErrorParam_problem
-> | null = null;
+let _cached_encoder_for_OpBindingErrorParam_problem: $.ASN1Encoder<OpBindingErrorParam_problem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OpBindingErrorParam_problem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OpBindingErrorParam_problem */

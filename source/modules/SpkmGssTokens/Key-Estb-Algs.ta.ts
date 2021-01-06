@@ -27,9 +27,7 @@ export type Key_Estb_Algs = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION Key_Estb_Algs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Key_Estb_Algs */
-let _cached_decoder_for_Key_Estb_Algs: $.ASN1Decoder<
-    Key_Estb_Algs
-> | null = null;
+let _cached_decoder_for_Key_Estb_Algs: $.ASN1Decoder<Key_Estb_Algs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Key_Estb_Algs */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Key_Estb_Algs */
@@ -41,18 +39,16 @@ let _cached_decoder_for_Key_Estb_Algs: $.ASN1Decoder<
  */
 export function _decode_Key_Estb_Algs(el: _Element) {
     if (!_cached_decoder_for_Key_Estb_Algs) {
-        _cached_decoder_for_Key_Estb_Algs = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_Key_Estb_Algs = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_Key_Estb_Algs(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Key_Estb_Algs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Key_Estb_Algs */
-let _cached_encoder_for_Key_Estb_Algs: $.ASN1Encoder<
-    Key_Estb_Algs
-> | null = null;
+let _cached_encoder_for_Key_Estb_Algs: $.ASN1Encoder<Key_Estb_Algs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Key_Estb_Algs */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Key_Estb_Algs */
@@ -68,9 +64,10 @@ export function _encode_Key_Estb_Algs(
     elGetter: $.ASN1Encoder<Key_Estb_Algs>
 ) {
     if (!_cached_encoder_for_Key_Estb_Algs) {
-        _cached_encoder_for_Key_Estb_Algs = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_Key_Estb_Algs = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_Key_Estb_Algs(value, elGetter);
 }

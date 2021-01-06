@@ -117,9 +117,7 @@ export const _extension_additions_list_spec_for_AbandonArgumentData: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AbandonArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonArgumentData */
-let _cached_decoder_for_AbandonArgumentData: $.ASN1Decoder<
-    AbandonArgumentData
-> | null = null;
+let _cached_decoder_for_AbandonArgumentData: $.ASN1Decoder<AbandonArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonArgumentData */
@@ -155,9 +153,7 @@ export function _decode_AbandonArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonArgumentData */
-let _cached_encoder_for_AbandonArgumentData: $.ASN1Encoder<
-    AbandonArgumentData
-> | null = null;
+let _cached_encoder_for_AbandonArgumentData: $.ASN1Encoder<AbandonArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonArgumentData */

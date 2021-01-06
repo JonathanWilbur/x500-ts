@@ -29,9 +29,7 @@ export type TeletexDomainDefinedAttributes = TeletexDomainDefinedAttribute[]; //
 /* END_OF_SYMBOL_DEFINITION TeletexDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexDomainDefinedAttributes */
-let _cached_decoder_for_TeletexDomainDefinedAttributes: $.ASN1Decoder<
-    TeletexDomainDefinedAttributes
-> | null = null;
+let _cached_decoder_for_TeletexDomainDefinedAttributes: $.ASN1Decoder<TeletexDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexDomainDefinedAttributes */
@@ -43,18 +41,16 @@ let _cached_decoder_for_TeletexDomainDefinedAttributes: $.ASN1Decoder<
  */
 export function _decode_TeletexDomainDefinedAttributes(el: _Element) {
     if (!_cached_decoder_for_TeletexDomainDefinedAttributes) {
-        _cached_decoder_for_TeletexDomainDefinedAttributes = $._decodeSequenceOf<
-            TeletexDomainDefinedAttribute
-        >(() => _decode_TeletexDomainDefinedAttribute);
+        _cached_decoder_for_TeletexDomainDefinedAttributes = $._decodeSequenceOf<TeletexDomainDefinedAttribute>(
+            () => _decode_TeletexDomainDefinedAttribute
+        );
     }
     return _cached_decoder_for_TeletexDomainDefinedAttributes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexDomainDefinedAttributes */
-let _cached_encoder_for_TeletexDomainDefinedAttributes: $.ASN1Encoder<
-    TeletexDomainDefinedAttributes
-> | null = null;
+let _cached_encoder_for_TeletexDomainDefinedAttributes: $.ASN1Encoder<TeletexDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexDomainDefinedAttributes */
@@ -70,9 +66,10 @@ export function _encode_TeletexDomainDefinedAttributes(
     elGetter: $.ASN1Encoder<TeletexDomainDefinedAttributes>
 ) {
     if (!_cached_encoder_for_TeletexDomainDefinedAttributes) {
-        _cached_encoder_for_TeletexDomainDefinedAttributes = $._encodeSequenceOf<
-            TeletexDomainDefinedAttribute
-        >(() => _encode_TeletexDomainDefinedAttribute, $.BER);
+        _cached_encoder_for_TeletexDomainDefinedAttributes = $._encodeSequenceOf<TeletexDomainDefinedAttribute>(
+            () => _encode_TeletexDomainDefinedAttribute,
+            $.BER
+        );
     }
     return _cached_encoder_for_TeletexDomainDefinedAttributes(value, elGetter);
 }

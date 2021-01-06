@@ -123,9 +123,7 @@ export const _extension_additions_list_spec_for_OperationalBindingID: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OperationalBindingID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationalBindingID */
-let _cached_decoder_for_OperationalBindingID: $.ASN1Decoder<
-    OperationalBindingID
-> | null = null;
+let _cached_decoder_for_OperationalBindingID: $.ASN1Decoder<OperationalBindingID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationalBindingID */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OperationalBindingID */
@@ -166,9 +164,7 @@ export function _decode_OperationalBindingID(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OperationalBindingID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationalBindingID */
-let _cached_encoder_for_OperationalBindingID: $.ASN1Encoder<
-    OperationalBindingID
-> | null = null;
+let _cached_encoder_for_OperationalBindingID: $.ASN1Encoder<OperationalBindingID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationalBindingID */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OperationalBindingID */

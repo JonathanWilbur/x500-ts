@@ -123,9 +123,7 @@ export const _extension_additions_list_spec_for_AttCertValidityPeriod: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttCertValidityPeriod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertValidityPeriod */
-let _cached_decoder_for_AttCertValidityPeriod: $.ASN1Decoder<
-    AttCertValidityPeriod
-> | null = null;
+let _cached_decoder_for_AttCertValidityPeriod: $.ASN1Decoder<AttCertValidityPeriod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertValidityPeriod */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttCertValidityPeriod */
@@ -166,9 +164,7 @@ export function _decode_AttCertValidityPeriod(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttCertValidityPeriod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertValidityPeriod */
-let _cached_encoder_for_AttCertValidityPeriod: $.ASN1Encoder<
-    AttCertValidityPeriod
-> | null = null;
+let _cached_encoder_for_AttCertValidityPeriod: $.ASN1Encoder<AttCertValidityPeriod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertValidityPeriod */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttCertValidityPeriod */

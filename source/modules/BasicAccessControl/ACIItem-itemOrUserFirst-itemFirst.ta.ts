@@ -141,9 +141,7 @@ export const _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirs
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ACIItem_itemOrUserFirst_itemFirst */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst */
-let _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Decoder<
-    ACIItem_itemOrUserFirst_itemFirst
-> | null = null;
+let _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Decoder<ACIItem_itemOrUserFirst_itemFirst> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ACIItem_itemOrUserFirst_itemFirst */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ACIItem_itemOrUserFirst_itemFirst */
@@ -186,9 +184,7 @@ export function _decode_ACIItem_itemOrUserFirst_itemFirst(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ACIItem_itemOrUserFirst_itemFirst */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst */
-let _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Encoder<
-    ACIItem_itemOrUserFirst_itemFirst
-> | null = null;
+let _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst: $.ASN1Encoder<ACIItem_itemOrUserFirst_itemFirst> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ACIItem_itemOrUserFirst_itemFirst */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ACIItem_itemOrUserFirst_itemFirst */

@@ -27,9 +27,7 @@ export type IncrementalRefresh = IncrementalStepRefresh[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION IncrementalRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalRefresh */
-let _cached_decoder_for_IncrementalRefresh: $.ASN1Decoder<
-    IncrementalRefresh
-> | null = null;
+let _cached_decoder_for_IncrementalRefresh: $.ASN1Decoder<IncrementalRefresh> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IncrementalRefresh */
@@ -41,18 +39,16 @@ let _cached_decoder_for_IncrementalRefresh: $.ASN1Decoder<
  */
 export function _decode_IncrementalRefresh(el: _Element) {
     if (!_cached_decoder_for_IncrementalRefresh) {
-        _cached_decoder_for_IncrementalRefresh = $._decodeSequenceOf<
-            IncrementalStepRefresh
-        >(() => _decode_IncrementalStepRefresh);
+        _cached_decoder_for_IncrementalRefresh = $._decodeSequenceOf<IncrementalStepRefresh>(
+            () => _decode_IncrementalStepRefresh
+        );
     }
     return _cached_decoder_for_IncrementalRefresh(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_IncrementalRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalRefresh */
-let _cached_encoder_for_IncrementalRefresh: $.ASN1Encoder<
-    IncrementalRefresh
-> | null = null;
+let _cached_encoder_for_IncrementalRefresh: $.ASN1Encoder<IncrementalRefresh> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IncrementalRefresh */
@@ -68,9 +64,10 @@ export function _encode_IncrementalRefresh(
     elGetter: $.ASN1Encoder<IncrementalRefresh>
 ) {
     if (!_cached_encoder_for_IncrementalRefresh) {
-        _cached_encoder_for_IncrementalRefresh = $._encodeSequenceOf<
-            IncrementalStepRefresh
-        >(() => _encode_IncrementalStepRefresh, $.BER);
+        _cached_encoder_for_IncrementalRefresh = $._encodeSequenceOf<IncrementalStepRefresh>(
+            () => _encode_IncrementalStepRefresh,
+            $.BER
+        );
     }
     return _cached_encoder_for_IncrementalRefresh(value, elGetter);
 }

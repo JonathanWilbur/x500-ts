@@ -132,9 +132,7 @@ export const _extension_additions_list_spec_for_IncrementalStepRefresh: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_IncrementalStepRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalStepRefresh */
-let _cached_decoder_for_IncrementalStepRefresh: $.ASN1Decoder<
-    IncrementalStepRefresh
-> | null = null;
+let _cached_decoder_for_IncrementalStepRefresh: $.ASN1Decoder<IncrementalStepRefresh> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IncrementalStepRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IncrementalStepRefresh */
@@ -161,9 +159,9 @@ export function _decode_IncrementalStepRefresh(el: _Element) {
                     );
                 },
                 subordinateUpdates: (_el: _Element): void => {
-                    subordinateUpdates = $._decodeSequenceOf<
-                        SubordinateChanges
-                    >(() => _decode_SubordinateChanges)(_el);
+                    subordinateUpdates = $._decodeSequenceOf<SubordinateChanges>(
+                        () => _decode_SubordinateChanges
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -175,8 +173,8 @@ export function _decode_IncrementalStepRefresh(el: _Element) {
                 _root_component_type_list_2_spec_for_IncrementalStepRefresh,
                 undefined
             );
-            return new IncrementalStepRefresh /* SEQUENCE_CONSTRUCTOR_CALL */(
-                sDSEChanges,
+            return new IncrementalStepRefresh(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ sDSEChanges,
                 subordinateUpdates
             );
         };
@@ -186,9 +184,7 @@ export function _decode_IncrementalStepRefresh(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IncrementalStepRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalStepRefresh */
-let _cached_encoder_for_IncrementalStepRefresh: $.ASN1Encoder<
-    IncrementalStepRefresh
-> | null = null;
+let _cached_encoder_for_IncrementalStepRefresh: $.ASN1Encoder<IncrementalStepRefresh> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IncrementalStepRefresh */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IncrementalStepRefresh */

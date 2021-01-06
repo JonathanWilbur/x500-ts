@@ -120,9 +120,7 @@ export const _extension_additions_list_spec_for_AccessDescription: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AccessDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AccessDescription */
-let _cached_decoder_for_AccessDescription: $.ASN1Decoder<
-    AccessDescription
-> | null = null;
+let _cached_decoder_for_AccessDescription: $.ASN1Decoder<AccessDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AccessDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AccessDescription */
@@ -159,9 +157,7 @@ export function _decode_AccessDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AccessDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AccessDescription */
-let _cached_encoder_for_AccessDescription: $.ASN1Encoder<
-    AccessDescription
-> | null = null;
+let _cached_encoder_for_AccessDescription: $.ASN1Encoder<AccessDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AccessDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AccessDescription */

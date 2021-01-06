@@ -71,25 +71,19 @@ export class ChangePasswordResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -204,9 +198,7 @@ export const _extension_additions_list_spec_for_ChangePasswordResultData: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ChangePasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordResultData */
-let _cached_decoder_for_ChangePasswordResultData: $.ASN1Decoder<
-    ChangePasswordResultData
-> | null = null;
+let _cached_decoder_for_ChangePasswordResultData: $.ASN1Decoder<ChangePasswordResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChangePasswordResultData */
@@ -263,8 +255,8 @@ export function _decode_ChangePasswordResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ChangePasswordResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                _unrecognizedExtensionsList,
+            return new ChangePasswordResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ _unrecognizedExtensionsList,
                 securityParameters,
                 performer,
                 aliasDereferenced,
@@ -277,9 +269,7 @@ export function _decode_ChangePasswordResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ChangePasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordResultData */
-let _cached_encoder_for_ChangePasswordResultData: $.ASN1Encoder<
-    ChangePasswordResultData
-> | null = null;
+let _cached_encoder_for_ChangePasswordResultData: $.ASN1Encoder<ChangePasswordResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChangePasswordResultData */

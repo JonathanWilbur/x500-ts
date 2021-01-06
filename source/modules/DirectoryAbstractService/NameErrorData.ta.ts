@@ -113,25 +113,19 @@ export class NameErrorData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -259,9 +253,7 @@ export const _extension_additions_list_spec_for_NameErrorData: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NameErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NameErrorData */
-let _cached_decoder_for_NameErrorData: $.ASN1Decoder<
-    NameErrorData
-> | null = null;
+let _cached_decoder_for_NameErrorData: $.ASN1Decoder<NameErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NameErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NameErrorData */
@@ -328,8 +320,8 @@ export function _decode_NameErrorData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NameErrorData /* SET_CONSTRUCTOR_CALL */(
-                problem,
+            return new NameErrorData(
+                /* SET_CONSTRUCTOR_CALL */ problem,
                 matched,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -344,9 +336,7 @@ export function _decode_NameErrorData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NameErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NameErrorData */
-let _cached_encoder_for_NameErrorData: $.ASN1Encoder<
-    NameErrorData
-> | null = null;
+let _cached_encoder_for_NameErrorData: $.ASN1Encoder<NameErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NameErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NameErrorData */

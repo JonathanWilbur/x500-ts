@@ -81,9 +81,7 @@ export const strong: AuthenticationLevel_basicLevels_level = AuthenticationLevel
 /* END_OF_SYMBOL_DEFINITION strong */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel_basicLevels_level */
-let _cached_decoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Decoder<
-    AuthenticationLevel_basicLevels_level
-> | null = null;
+let _cached_decoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Decoder<AuthenticationLevel_basicLevels_level> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel_basicLevels_level */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel_basicLevels_level */
@@ -103,9 +101,7 @@ export function _decode_AuthenticationLevel_basicLevels_level(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel_basicLevels_level */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel_basicLevels_level */
-let _cached_encoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Encoder<
-    AuthenticationLevel_basicLevels_level
-> | null = null;
+let _cached_encoder_for_AuthenticationLevel_basicLevels_level: $.ASN1Encoder<AuthenticationLevel_basicLevels_level> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel_basicLevels_level */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthenticationLevel_basicLevels_level */

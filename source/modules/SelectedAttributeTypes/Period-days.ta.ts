@@ -67,20 +67,20 @@ let _cached_decoder_for_Period_days: $.ASN1Decoder<Period_days> | null = null;
  */
 export function _decode_Period_days(el: _Element) {
     if (!_cached_decoder_for_Period_days) {
-        _cached_decoder_for_Period_days = $._decode_extensible_choice<
-            Period_days
-        >({
-            "UNIVERSAL 17": [
-                "intDay",
-                $._decodeSetOf<INTEGER>(() => $._decodeInteger),
-            ],
-            "UNIVERSAL 3": ["bitDay", _decode_Period_days_bitDay],
-            "CONTEXT 1": ["dayOf", _decode_XDayOf],
-            "CONTEXT 2": ["dayOf", _decode_XDayOf],
-            "CONTEXT 3": ["dayOf", _decode_XDayOf],
-            "CONTEXT 4": ["dayOf", _decode_XDayOf],
-            "CONTEXT 5": ["dayOf", _decode_XDayOf],
-        });
+        _cached_decoder_for_Period_days = $._decode_extensible_choice<Period_days>(
+            {
+                "UNIVERSAL 17": [
+                    "intDay",
+                    $._decodeSetOf<INTEGER>(() => $._decodeInteger),
+                ],
+                "UNIVERSAL 3": ["bitDay", _decode_Period_days_bitDay],
+                "CONTEXT 1": ["dayOf", _decode_XDayOf],
+                "CONTEXT 2": ["dayOf", _decode_XDayOf],
+                "CONTEXT 3": ["dayOf", _decode_XDayOf],
+                "CONTEXT 4": ["dayOf", _decode_XDayOf],
+                "CONTEXT 5": ["dayOf", _decode_XDayOf],
+            }
+        );
     }
     return _cached_decoder_for_Period_days(el);
 }

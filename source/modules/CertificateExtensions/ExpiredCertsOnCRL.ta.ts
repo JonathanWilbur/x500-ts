@@ -17,9 +17,7 @@ export type ExpiredCertsOnCRL = GeneralizedTime; // GeneralizedTime
 /* END_OF_SYMBOL_DEFINITION ExpiredCertsOnCRL */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExpiredCertsOnCRL */
-let _cached_decoder_for_ExpiredCertsOnCRL: $.ASN1Decoder<
-    ExpiredCertsOnCRL
-> | null = null;
+let _cached_decoder_for_ExpiredCertsOnCRL: $.ASN1Decoder<ExpiredCertsOnCRL> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExpiredCertsOnCRL */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExpiredCertsOnCRL */
@@ -38,9 +36,7 @@ export function _decode_ExpiredCertsOnCRL(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExpiredCertsOnCRL */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExpiredCertsOnCRL */
-let _cached_encoder_for_ExpiredCertsOnCRL: $.ASN1Encoder<
-    ExpiredCertsOnCRL
-> | null = null;
+let _cached_encoder_for_ExpiredCertsOnCRL: $.ASN1Encoder<ExpiredCertsOnCRL> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExpiredCertsOnCRL */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExpiredCertsOnCRL */

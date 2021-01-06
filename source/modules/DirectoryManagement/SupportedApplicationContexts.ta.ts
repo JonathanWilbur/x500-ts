@@ -17,9 +17,7 @@ export type SupportedApplicationContexts = OBJECT_IDENTIFIER[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION SupportedApplicationContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedApplicationContexts */
-let _cached_decoder_for_SupportedApplicationContexts: $.ASN1Decoder<
-    SupportedApplicationContexts
-> | null = null;
+let _cached_decoder_for_SupportedApplicationContexts: $.ASN1Decoder<SupportedApplicationContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedApplicationContexts */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupportedApplicationContexts */
@@ -31,18 +29,16 @@ let _cached_decoder_for_SupportedApplicationContexts: $.ASN1Decoder<
  */
 export function _decode_SupportedApplicationContexts(el: _Element) {
     if (!_cached_decoder_for_SupportedApplicationContexts) {
-        _cached_decoder_for_SupportedApplicationContexts = $._decodeSetOf<
-            OBJECT_IDENTIFIER
-        >(() => $._decodeObjectIdentifier);
+        _cached_decoder_for_SupportedApplicationContexts = $._decodeSetOf<OBJECT_IDENTIFIER>(
+            () => $._decodeObjectIdentifier
+        );
     }
     return _cached_decoder_for_SupportedApplicationContexts(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SupportedApplicationContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedApplicationContexts */
-let _cached_encoder_for_SupportedApplicationContexts: $.ASN1Encoder<
-    SupportedApplicationContexts
-> | null = null;
+let _cached_encoder_for_SupportedApplicationContexts: $.ASN1Encoder<SupportedApplicationContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedApplicationContexts */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupportedApplicationContexts */
@@ -58,9 +54,10 @@ export function _encode_SupportedApplicationContexts(
     elGetter: $.ASN1Encoder<SupportedApplicationContexts>
 ) {
     if (!_cached_encoder_for_SupportedApplicationContexts) {
-        _cached_encoder_for_SupportedApplicationContexts = $._encodeSetOf<
-            OBJECT_IDENTIFIER
-        >(() => $._encodeObjectIdentifier, $.BER);
+        _cached_encoder_for_SupportedApplicationContexts = $._encodeSetOf<OBJECT_IDENTIFIER>(
+            () => $._encodeObjectIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_SupportedApplicationContexts(value, elGetter);
 }

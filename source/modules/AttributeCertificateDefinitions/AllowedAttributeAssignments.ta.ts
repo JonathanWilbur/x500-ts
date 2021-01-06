@@ -33,9 +33,7 @@ export type AllowedAttributeAssignments = AllowedAttributeAssignments_Item[]; //
 /* END_OF_SYMBOL_DEFINITION AllowedAttributeAssignments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments */
-let _cached_decoder_for_AllowedAttributeAssignments: $.ASN1Decoder<
-    AllowedAttributeAssignments
-> | null = null;
+let _cached_decoder_for_AllowedAttributeAssignments: $.ASN1Decoder<AllowedAttributeAssignments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments */
@@ -47,18 +45,16 @@ let _cached_decoder_for_AllowedAttributeAssignments: $.ASN1Decoder<
  */
 export function _decode_AllowedAttributeAssignments(el: _Element) {
     if (!_cached_decoder_for_AllowedAttributeAssignments) {
-        _cached_decoder_for_AllowedAttributeAssignments = $._decodeSetOf<
-            AllowedAttributeAssignments_Item
-        >(() => _decode_AllowedAttributeAssignments_Item);
+        _cached_decoder_for_AllowedAttributeAssignments = $._decodeSetOf<AllowedAttributeAssignments_Item>(
+            () => _decode_AllowedAttributeAssignments_Item
+        );
     }
     return _cached_decoder_for_AllowedAttributeAssignments(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments */
-let _cached_encoder_for_AllowedAttributeAssignments: $.ASN1Encoder<
-    AllowedAttributeAssignments
-> | null = null;
+let _cached_encoder_for_AllowedAttributeAssignments: $.ASN1Encoder<AllowedAttributeAssignments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AllowedAttributeAssignments */
@@ -74,9 +70,10 @@ export function _encode_AllowedAttributeAssignments(
     elGetter: $.ASN1Encoder<AllowedAttributeAssignments>
 ) {
     if (!_cached_encoder_for_AllowedAttributeAssignments) {
-        _cached_encoder_for_AllowedAttributeAssignments = $._encodeSetOf<
-            AllowedAttributeAssignments_Item
-        >(() => _encode_AllowedAttributeAssignments_Item, $.BER);
+        _cached_encoder_for_AllowedAttributeAssignments = $._encodeSetOf<AllowedAttributeAssignments_Item>(
+            () => _encode_AllowedAttributeAssignments_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_AllowedAttributeAssignments(value, elGetter);
 }

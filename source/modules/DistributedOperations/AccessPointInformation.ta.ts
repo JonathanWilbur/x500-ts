@@ -114,9 +114,7 @@ export class AccessPointInformation {
          * @public
          * @readonly
          */
-        readonly category: OPTIONAL<
-            MasterOrShadowAccessPoint_category
-        > /* REPLICATED_COMPONENT */,
+        readonly category: OPTIONAL<MasterOrShadowAccessPoint_category> /* REPLICATED_COMPONENT */,
         /**
          * @summary `chainingRequired`.
          * @public
@@ -273,9 +271,7 @@ export const _extension_additions_list_spec_for_AccessPointInformation: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AccessPointInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AccessPointInformation */
-let _cached_decoder_for_AccessPointInformation: $.ASN1Decoder<
-    AccessPointInformation
-> | null = null;
+let _cached_decoder_for_AccessPointInformation: $.ASN1Decoder<AccessPointInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AccessPointInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AccessPointInformation */
@@ -323,9 +319,9 @@ export function _decode_AccessPointInformation(el: _Element) {
                     )(_el);
                 },
                 category: (_el: _Element): void => {
-                    category = $._decode_explicit<
-                        MasterOrShadowAccessPoint_category
-                    >(() => _decode_MasterOrShadowAccessPoint_category)(_el);
+                    category = $._decode_explicit<MasterOrShadowAccessPoint_category>(
+                        () => _decode_MasterOrShadowAccessPoint_category
+                    )(_el);
                 },
                 chainingRequired: (_el: _Element): void => {
                     chainingRequired = $._decode_explicit<BOOLEAN>(
@@ -333,9 +329,9 @@ export function _decode_AccessPointInformation(el: _Element) {
                     )(_el);
                 },
                 additionalPoints: (_el: _Element): void => {
-                    additionalPoints = $._decode_explicit<
-                        MasterAndShadowAccessPoints
-                    >(() => _decode_MasterAndShadowAccessPoints)(_el);
+                    additionalPoints = $._decode_explicit<MasterAndShadowAccessPoints>(
+                        () => _decode_MasterAndShadowAccessPoints
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -349,8 +345,8 @@ export function _decode_AccessPointInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AccessPointInformation /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new AccessPointInformation(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 address,
                 protocolInformation,
                 category,
@@ -365,9 +361,7 @@ export function _decode_AccessPointInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AccessPointInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AccessPointInformation */
-let _cached_encoder_for_AccessPointInformation: $.ASN1Encoder<
-    AccessPointInformation
-> | null = null;
+let _cached_encoder_for_AccessPointInformation: $.ASN1Encoder<AccessPointInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AccessPointInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AccessPointInformation */

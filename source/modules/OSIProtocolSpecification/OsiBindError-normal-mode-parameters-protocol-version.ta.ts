@@ -33,9 +33,7 @@ export const version_1: number = OsiBindError_normal_mode_parameters_protocol_ve
 /* END_OF_SYMBOL_DEFINITION version_1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindError_normal_mode_parameters_protocol_version */
-let _cached_decoder_for_OsiBindError_normal_mode_parameters_protocol_version: $.ASN1Decoder<
-    OsiBindError_normal_mode_parameters_protocol_version
-> | null = null;
+let _cached_decoder_for_OsiBindError_normal_mode_parameters_protocol_version: $.ASN1Decoder<OsiBindError_normal_mode_parameters_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindError_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindError_normal_mode_parameters_protocol_version */
@@ -61,9 +59,7 @@ export function _decode_OsiBindError_normal_mode_parameters_protocol_version(
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindError_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version */
-let _cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version: $.ASN1Encoder<
-    OsiBindError_normal_mode_parameters_protocol_version
-> | null = null;
+let _cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version: $.ASN1Encoder<OsiBindError_normal_mode_parameters_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindError_normal_mode_parameters_protocol_version */
@@ -76,9 +72,7 @@ let _cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version: $.
  */
 export function _encode_OsiBindError_normal_mode_parameters_protocol_version(
     value: OsiBindError_normal_mode_parameters_protocol_version,
-    elGetter: $.ASN1Encoder<
-        OsiBindError_normal_mode_parameters_protocol_version
-    >
+    elGetter: $.ASN1Encoder<OsiBindError_normal_mode_parameters_protocol_version>
 ) {
     if (
         !_cached_encoder_for_OsiBindError_normal_mode_parameters_protocol_version

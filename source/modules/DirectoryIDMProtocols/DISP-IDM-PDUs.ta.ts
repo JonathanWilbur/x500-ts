@@ -28,9 +28,7 @@ export type DISP_IDM_PDUs = IDM_PDU; // DefinedType
 /* END_OF_SYMBOL_DEFINITION DISP_IDM_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DISP_IDM_PDUs */
-let _cached_decoder_for_DISP_IDM_PDUs: $.ASN1Decoder<
-    DISP_IDM_PDUs
-> | null = null;
+let _cached_decoder_for_DISP_IDM_PDUs: $.ASN1Decoder<DISP_IDM_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DISP_IDM_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DISP_IDM_PDUs */
@@ -49,9 +47,7 @@ export function _decode_DISP_IDM_PDUs(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DISP_IDM_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DISP_IDM_PDUs */
-let _cached_encoder_for_DISP_IDM_PDUs: $.ASN1Encoder<
-    DISP_IDM_PDUs
-> | null = null;
+let _cached_encoder_for_DISP_IDM_PDUs: $.ASN1Encoder<DISP_IDM_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DISP_IDM_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DISP_IDM_PDUs */

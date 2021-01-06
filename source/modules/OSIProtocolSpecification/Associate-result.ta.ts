@@ -74,9 +74,7 @@ export const rejected_transient: Associate_result = Associate_result_rejected_tr
 /* END_OF_SYMBOL_DEFINITION rejected_transient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_result */
-let _cached_decoder_for_Associate_result: $.ASN1Decoder<
-    Associate_result
-> | null = null;
+let _cached_decoder_for_Associate_result: $.ASN1Decoder<Associate_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Associate_result */
@@ -95,9 +93,7 @@ export function _decode_Associate_result(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Associate_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Associate_result */
-let _cached_encoder_for_Associate_result: $.ASN1Encoder<
-    Associate_result
-> | null = null;
+let _cached_encoder_for_Associate_result: $.ASN1Encoder<Associate_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Associate_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Associate_result */

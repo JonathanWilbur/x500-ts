@@ -37,9 +37,7 @@ export type CompareArgument = OPTIONALLY_PROTECTED<CompareArgumentData>; // Defi
 /* END_OF_SYMBOL_DEFINITION CompareArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareArgument */
-let _cached_decoder_for_CompareArgument: $.ASN1Decoder<
-    CompareArgument
-> | null = null;
+let _cached_decoder_for_CompareArgument: $.ASN1Decoder<CompareArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CompareArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_CompareArgument: $.ASN1Decoder<
  */
 export function _decode_CompareArgument(el: _Element) {
     if (!_cached_decoder_for_CompareArgument) {
-        _cached_decoder_for_CompareArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            CompareArgumentData
-        >(_decode_CompareArgumentData);
+        _cached_decoder_for_CompareArgument = _get_decoder_for_OPTIONALLY_PROTECTED<CompareArgumentData>(
+            _decode_CompareArgumentData
+        );
     }
     return _cached_decoder_for_CompareArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CompareArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareArgument */
-let _cached_encoder_for_CompareArgument: $.ASN1Encoder<
-    CompareArgument
-> | null = null;
+let _cached_encoder_for_CompareArgument: $.ASN1Encoder<CompareArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CompareArgument */
@@ -78,9 +74,9 @@ export function _encode_CompareArgument(
     elGetter: $.ASN1Encoder<CompareArgument>
 ) {
     if (!_cached_encoder_for_CompareArgument) {
-        _cached_encoder_for_CompareArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            CompareArgumentData
-        >(_encode_CompareArgumentData);
+        _cached_encoder_for_CompareArgument = _get_encoder_for_OPTIONALLY_PROTECTED<CompareArgumentData>(
+            _encode_CompareArgumentData
+        );
     }
     return _cached_encoder_for_CompareArgument(value, elGetter);
 }

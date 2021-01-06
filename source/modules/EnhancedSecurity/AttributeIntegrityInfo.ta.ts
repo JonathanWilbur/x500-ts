@@ -37,9 +37,7 @@ export type AttributeIntegrityInfo = SIGNED<AttributeIntegrityInfoContent>; // D
 /* END_OF_SYMBOL_DEFINITION AttributeIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeIntegrityInfo */
-let _cached_decoder_for_AttributeIntegrityInfo: $.ASN1Decoder<
-    AttributeIntegrityInfo
-> | null = null;
+let _cached_decoder_for_AttributeIntegrityInfo: $.ASN1Decoder<AttributeIntegrityInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeIntegrityInfo */
@@ -51,18 +49,16 @@ let _cached_decoder_for_AttributeIntegrityInfo: $.ASN1Decoder<
  */
 export function _decode_AttributeIntegrityInfo(el: _Element) {
     if (!_cached_decoder_for_AttributeIntegrityInfo) {
-        _cached_decoder_for_AttributeIntegrityInfo = _get_decoder_for_SIGNED<
-            AttributeIntegrityInfoContent
-        >(_decode_AttributeIntegrityInfoContent);
+        _cached_decoder_for_AttributeIntegrityInfo = _get_decoder_for_SIGNED<AttributeIntegrityInfoContent>(
+            _decode_AttributeIntegrityInfoContent
+        );
     }
     return _cached_decoder_for_AttributeIntegrityInfo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeIntegrityInfo */
-let _cached_encoder_for_AttributeIntegrityInfo: $.ASN1Encoder<
-    AttributeIntegrityInfo
-> | null = null;
+let _cached_encoder_for_AttributeIntegrityInfo: $.ASN1Encoder<AttributeIntegrityInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeIntegrityInfo */
@@ -78,9 +74,9 @@ export function _encode_AttributeIntegrityInfo(
     elGetter: $.ASN1Encoder<AttributeIntegrityInfo>
 ) {
     if (!_cached_encoder_for_AttributeIntegrityInfo) {
-        _cached_encoder_for_AttributeIntegrityInfo = _get_encoder_for_SIGNED<
-            AttributeIntegrityInfoContent
-        >(_encode_AttributeIntegrityInfoContent);
+        _cached_encoder_for_AttributeIntegrityInfo = _get_encoder_for_SIGNED<AttributeIntegrityInfoContent>(
+            _encode_AttributeIntegrityInfoContent
+        );
     }
     return _cached_encoder_for_AttributeIntegrityInfo(value, elGetter);
 }

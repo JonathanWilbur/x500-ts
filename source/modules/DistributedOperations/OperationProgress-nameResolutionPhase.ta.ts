@@ -81,9 +81,7 @@ export const completed: OperationProgress_nameResolutionPhase = OperationProgres
 /* END_OF_SYMBOL_DEFINITION completed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationProgress_nameResolutionPhase */
-let _cached_decoder_for_OperationProgress_nameResolutionPhase: $.ASN1Decoder<
-    OperationProgress_nameResolutionPhase
-> | null = null;
+let _cached_decoder_for_OperationProgress_nameResolutionPhase: $.ASN1Decoder<OperationProgress_nameResolutionPhase> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationProgress_nameResolutionPhase */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OperationProgress_nameResolutionPhase */
@@ -103,9 +101,7 @@ export function _decode_OperationProgress_nameResolutionPhase(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OperationProgress_nameResolutionPhase */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationProgress_nameResolutionPhase */
-let _cached_encoder_for_OperationProgress_nameResolutionPhase: $.ASN1Encoder<
-    OperationProgress_nameResolutionPhase
-> | null = null;
+let _cached_encoder_for_OperationProgress_nameResolutionPhase: $.ASN1Encoder<OperationProgress_nameResolutionPhase> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationProgress_nameResolutionPhase */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OperationProgress_nameResolutionPhase */

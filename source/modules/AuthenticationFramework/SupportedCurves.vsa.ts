@@ -19,9 +19,7 @@ export type SupportedCurves = OBJECT_IDENTIFIER; // VALUE_SET_TYPE
 /* END_OF_SYMBOL_DEFINITION SupportedCurves */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedCurves */
-let _cached_decoder_for_SupportedCurves: $.ASN1Decoder<
-    SupportedCurves
-> | null = null;
+let _cached_decoder_for_SupportedCurves: $.ASN1Decoder<SupportedCurves> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedCurves */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupportedCurves */
@@ -34,9 +32,7 @@ export function _decode_SupportedCurves(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SupportedCurves */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedCurves */
-let _cached_encoder_for_SupportedCurves: $.ASN1Encoder<
-    SupportedCurves
-> | null = null;
+let _cached_encoder_for_SupportedCurves: $.ASN1Encoder<SupportedCurves> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedCurves */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupportedCurves */

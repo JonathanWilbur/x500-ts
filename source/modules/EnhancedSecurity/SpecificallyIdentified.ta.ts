@@ -135,9 +135,7 @@ export const _extension_additions_list_spec_for_SpecificallyIdentified: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SpecificallyIdentified */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SpecificallyIdentified */
-let _cached_decoder_for_SpecificallyIdentified: $.ASN1Decoder<
-    SpecificallyIdentified
-> | null = null;
+let _cached_decoder_for_SpecificallyIdentified: $.ASN1Decoder<SpecificallyIdentified> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SpecificallyIdentified */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SpecificallyIdentified */
@@ -178,8 +176,8 @@ export function _decode_SpecificallyIdentified(el: _Element) {
                 _root_component_type_list_2_spec_for_SpecificallyIdentified,
                 undefined
             );
-            return new SpecificallyIdentified /* SEQUENCE_CONSTRUCTOR_CALL */(
-                name,
+            return new SpecificallyIdentified(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ name,
                 issuer,
                 serial
             );
@@ -190,9 +188,7 @@ export function _decode_SpecificallyIdentified(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SpecificallyIdentified */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SpecificallyIdentified */
-let _cached_encoder_for_SpecificallyIdentified: $.ASN1Encoder<
-    SpecificallyIdentified
-> | null = null;
+let _cached_encoder_for_SpecificallyIdentified: $.ASN1Encoder<SpecificallyIdentified> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SpecificallyIdentified */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SpecificallyIdentified */

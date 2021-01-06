@@ -17,9 +17,7 @@ export type CommunicationsService = OBJECT_IDENTIFIER; // ObjectIdentifierType
 /* END_OF_SYMBOL_DEFINITION CommunicationsService */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CommunicationsService */
-let _cached_decoder_for_CommunicationsService: $.ASN1Decoder<
-    CommunicationsService
-> | null = null;
+let _cached_decoder_for_CommunicationsService: $.ASN1Decoder<CommunicationsService> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CommunicationsService */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CommunicationsService */
@@ -38,9 +36,7 @@ export function _decode_CommunicationsService(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CommunicationsService */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CommunicationsService */
-let _cached_encoder_for_CommunicationsService: $.ASN1Encoder<
-    CommunicationsService
-> | null = null;
+let _cached_encoder_for_CommunicationsService: $.ASN1Encoder<CommunicationsService> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CommunicationsService */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CommunicationsService */

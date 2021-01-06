@@ -33,9 +33,7 @@ export type AttributeValueAssertion_assertedContexts =
 /* END_OF_SYMBOL_DEFINITION AttributeValueAssertion_assertedContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValueAssertion_assertedContexts */
-let _cached_decoder_for_AttributeValueAssertion_assertedContexts: $.ASN1Decoder<
-    AttributeValueAssertion_assertedContexts
-> | null = null;
+let _cached_decoder_for_AttributeValueAssertion_assertedContexts: $.ASN1Decoder<AttributeValueAssertion_assertedContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValueAssertion_assertedContexts */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeValueAssertion_assertedContexts */
@@ -47,31 +45,29 @@ let _cached_decoder_for_AttributeValueAssertion_assertedContexts: $.ASN1Decoder<
  */
 export function _decode_AttributeValueAssertion_assertedContexts(el: _Element) {
     if (!_cached_decoder_for_AttributeValueAssertion_assertedContexts) {
-        _cached_decoder_for_AttributeValueAssertion_assertedContexts = $._decode_inextensible_choice<
-            AttributeValueAssertion_assertedContexts
-        >({
-            "CONTEXT 0": [
-                "allContexts",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-            "CONTEXT 1": [
-                "selectedContexts",
-                $._decode_explicit<ContextAssertion[]>(() =>
-                    $._decodeSetOf<ContextAssertion>(
-                        () => _decode_ContextAssertion
-                    )
-                ),
-            ],
-        });
+        _cached_decoder_for_AttributeValueAssertion_assertedContexts = $._decode_inextensible_choice<AttributeValueAssertion_assertedContexts>(
+            {
+                "CONTEXT 0": [
+                    "allContexts",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "selectedContexts",
+                    $._decode_explicit<ContextAssertion[]>(() =>
+                        $._decodeSetOf<ContextAssertion>(
+                            () => _decode_ContextAssertion
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AttributeValueAssertion_assertedContexts(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeValueAssertion_assertedContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValueAssertion_assertedContexts */
-let _cached_encoder_for_AttributeValueAssertion_assertedContexts: $.ASN1Encoder<
-    AttributeValueAssertion_assertedContexts
-> | null = null;
+let _cached_encoder_for_AttributeValueAssertion_assertedContexts: $.ASN1Encoder<AttributeValueAssertion_assertedContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValueAssertion_assertedContexts */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeValueAssertion_assertedContexts */
@@ -87,9 +83,7 @@ export function _encode_AttributeValueAssertion_assertedContexts(
     elGetter: $.ASN1Encoder<AttributeValueAssertion_assertedContexts>
 ) {
     if (!_cached_encoder_for_AttributeValueAssertion_assertedContexts) {
-        _cached_encoder_for_AttributeValueAssertion_assertedContexts = $._encode_choice<
-            AttributeValueAssertion_assertedContexts
-        >(
+        _cached_encoder_for_AttributeValueAssertion_assertedContexts = $._encode_choice<AttributeValueAssertion_assertedContexts>(
             {
                 allContexts: $._encode_explicit(
                     _TagClass.context,

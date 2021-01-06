@@ -208,8 +208,8 @@ export function _decode_CertErr(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertErr /* SEQUENCE_CONSTRUCTOR_CALL */(
-                notOK,
+            return new CertErr(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ notOK,
                 note,
                 _unrecognizedExtensionsList
             );

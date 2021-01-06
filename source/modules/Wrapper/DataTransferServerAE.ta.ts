@@ -38,9 +38,7 @@ export type DataTransferServerAE = AUTHEN_ENCRYPT<AadServerAE, _Element>; // Def
 /* END_OF_SYMBOL_DEFINITION DataTransferServerAE */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferServerAE */
-let _cached_decoder_for_DataTransferServerAE: $.ASN1Decoder<
-    DataTransferServerAE
-> | null = null;
+let _cached_decoder_for_DataTransferServerAE: $.ASN1Decoder<DataTransferServerAE> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferServerAE */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DataTransferServerAE */
@@ -62,9 +60,7 @@ export function _decode_DataTransferServerAE(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DataTransferServerAE */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferServerAE */
-let _cached_encoder_for_DataTransferServerAE: $.ASN1Encoder<
-    DataTransferServerAE
-> | null = null;
+let _cached_encoder_for_DataTransferServerAE: $.ASN1Encoder<DataTransferServerAE> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferServerAE */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DataTransferServerAE */

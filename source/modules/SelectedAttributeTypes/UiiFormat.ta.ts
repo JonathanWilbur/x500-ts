@@ -218,8 +218,8 @@ export function _decode_UiiFormat(el: _Element) {
                 _root_component_type_list_2_spec_for_UiiFormat,
                 undefined
             );
-            return new UiiFormat /* SEQUENCE_CONSTRUCTOR_CALL */(
-                baseObject,
+            return new UiiFormat(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ baseObject,
                 subset,
                 next
             );

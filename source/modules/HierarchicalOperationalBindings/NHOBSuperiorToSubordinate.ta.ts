@@ -28,9 +28,7 @@ export type NHOBSuperiorToSubordinate = SuperiorToSubordinate; // DefinedType
 /* END_OF_SYMBOL_DEFINITION NHOBSuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NHOBSuperiorToSubordinate */
-let _cached_decoder_for_NHOBSuperiorToSubordinate: $.ASN1Decoder<
-    NHOBSuperiorToSubordinate
-> | null = null;
+let _cached_decoder_for_NHOBSuperiorToSubordinate: $.ASN1Decoder<NHOBSuperiorToSubordinate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NHOBSuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NHOBSuperiorToSubordinate */
@@ -49,9 +47,7 @@ export function _decode_NHOBSuperiorToSubordinate(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NHOBSuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NHOBSuperiorToSubordinate */
-let _cached_encoder_for_NHOBSuperiorToSubordinate: $.ASN1Encoder<
-    NHOBSuperiorToSubordinate
-> | null = null;
+let _cached_encoder_for_NHOBSuperiorToSubordinate: $.ASN1Encoder<NHOBSuperiorToSubordinate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NHOBSuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NHOBSuperiorToSubordinate */

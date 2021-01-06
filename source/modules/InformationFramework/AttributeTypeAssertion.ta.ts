@@ -135,9 +135,7 @@ export const _extension_additions_list_spec_for_AttributeTypeAssertion: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeTypeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeAssertion */
-let _cached_decoder_for_AttributeTypeAssertion: $.ASN1Decoder<
-    AttributeTypeAssertion
-> | null = null;
+let _cached_decoder_for_AttributeTypeAssertion: $.ASN1Decoder<AttributeTypeAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypeAssertion */
@@ -179,8 +177,8 @@ export function _decode_AttributeTypeAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeTypeAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                type_,
+            return new AttributeTypeAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
                 assertedContexts,
                 _unrecognizedExtensionsList
             );
@@ -191,9 +189,7 @@ export function _decode_AttributeTypeAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeAssertion */
-let _cached_encoder_for_AttributeTypeAssertion: $.ASN1Encoder<
-    AttributeTypeAssertion
-> | null = null;
+let _cached_encoder_for_AttributeTypeAssertion: $.ASN1Encoder<AttributeTypeAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypeAssertion */

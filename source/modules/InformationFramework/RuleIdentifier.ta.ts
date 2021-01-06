@@ -17,9 +17,7 @@ export type RuleIdentifier = INTEGER;
 /* END_OF_SYMBOL_DEFINITION RuleIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RuleIdentifier */
-let _cached_decoder_for_RuleIdentifier: $.ASN1Decoder<
-    RuleIdentifier
-> | null = null;
+let _cached_decoder_for_RuleIdentifier: $.ASN1Decoder<RuleIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RuleIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RuleIdentifier */
@@ -38,9 +36,7 @@ export function _decode_RuleIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RuleIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RuleIdentifier */
-let _cached_encoder_for_RuleIdentifier: $.ASN1Encoder<
-    RuleIdentifier
-> | null = null;
+let _cached_encoder_for_RuleIdentifier: $.ASN1Encoder<RuleIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RuleIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RuleIdentifier */

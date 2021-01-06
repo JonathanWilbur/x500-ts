@@ -103,9 +103,7 @@ export const multiStrand: FamilyGrouping = FamilyGrouping_multiStrand; /* SHORT_
 /* END_OF_SYMBOL_DEFINITION multiStrand */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyGrouping */
-let _cached_decoder_for_FamilyGrouping: $.ASN1Decoder<
-    FamilyGrouping
-> | null = null;
+let _cached_decoder_for_FamilyGrouping: $.ASN1Decoder<FamilyGrouping> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyGrouping */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FamilyGrouping */
@@ -124,9 +122,7 @@ export function _decode_FamilyGrouping(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_FamilyGrouping */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FamilyGrouping */
-let _cached_encoder_for_FamilyGrouping: $.ASN1Encoder<
-    FamilyGrouping
-> | null = null;
+let _cached_encoder_for_FamilyGrouping: $.ASN1Encoder<FamilyGrouping> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FamilyGrouping */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FamilyGrouping */

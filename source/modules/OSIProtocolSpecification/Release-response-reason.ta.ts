@@ -35,9 +35,7 @@ export const normal: Release_response_reason = Release_response_reason_normal; /
 /* END_OF_SYMBOL_DEFINITION normal */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Release_response_reason */
-let _cached_decoder_for_Release_response_reason: $.ASN1Decoder<
-    Release_response_reason
-> | null = null;
+let _cached_decoder_for_Release_response_reason: $.ASN1Decoder<Release_response_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Release_response_reason */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Release_response_reason */
@@ -56,9 +54,7 @@ export function _decode_Release_response_reason(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Release_response_reason */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Release_response_reason */
-let _cached_encoder_for_Release_response_reason: $.ASN1Encoder<
-    Release_response_reason
-> | null = null;
+let _cached_encoder_for_Release_response_reason: $.ASN1Encoder<Release_response_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Release_response_reason */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Release_response_reason */

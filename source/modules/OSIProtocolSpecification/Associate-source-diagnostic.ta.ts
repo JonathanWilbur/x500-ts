@@ -83,9 +83,7 @@ export type Associate_source_diagnostic =
 /* END_OF_SYMBOL_DEFINITION Associate_source_diagnostic */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_source_diagnostic */
-let _cached_decoder_for_Associate_source_diagnostic: $.ASN1Decoder<
-    Associate_source_diagnostic
-> | null = null;
+let _cached_decoder_for_Associate_source_diagnostic: $.ASN1Decoder<Associate_source_diagnostic> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Associate_source_diagnostic */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Associate_source_diagnostic */
@@ -97,34 +95,31 @@ let _cached_decoder_for_Associate_source_diagnostic: $.ASN1Decoder<
  */
 export function _decode_Associate_source_diagnostic(el: _Element) {
     if (!_cached_decoder_for_Associate_source_diagnostic) {
-        _cached_decoder_for_Associate_source_diagnostic = $._decode_inextensible_choice<
-            Associate_source_diagnostic
-        >({
-            "CONTEXT 1": [
-                "acse_service_user",
-                $._decode_explicit<
-                    Associate_source_diagnostic_acse_service_user
-                >(() => _decode_Associate_source_diagnostic_acse_service_user),
-            ],
-            "CONTEXT 2": [
-                "acse_service_provider",
-                $._decode_explicit<
-                    Associate_source_diagnostic_acse_service_provider
-                >(
-                    () =>
-                        _decode_Associate_source_diagnostic_acse_service_provider
-                ),
-            ],
-        });
+        _cached_decoder_for_Associate_source_diagnostic = $._decode_inextensible_choice<Associate_source_diagnostic>(
+            {
+                "CONTEXT 1": [
+                    "acse_service_user",
+                    $._decode_explicit<Associate_source_diagnostic_acse_service_user>(
+                        () =>
+                            _decode_Associate_source_diagnostic_acse_service_user
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "acse_service_provider",
+                    $._decode_explicit<Associate_source_diagnostic_acse_service_provider>(
+                        () =>
+                            _decode_Associate_source_diagnostic_acse_service_provider
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Associate_source_diagnostic(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Associate_source_diagnostic */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Associate_source_diagnostic */
-let _cached_encoder_for_Associate_source_diagnostic: $.ASN1Encoder<
-    Associate_source_diagnostic
-> | null = null;
+let _cached_encoder_for_Associate_source_diagnostic: $.ASN1Encoder<Associate_source_diagnostic> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Associate_source_diagnostic */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Associate_source_diagnostic */
@@ -140,9 +135,7 @@ export function _encode_Associate_source_diagnostic(
     elGetter: $.ASN1Encoder<Associate_source_diagnostic>
 ) {
     if (!_cached_encoder_for_Associate_source_diagnostic) {
-        _cached_encoder_for_Associate_source_diagnostic = $._encode_choice<
-            Associate_source_diagnostic
-        >(
+        _cached_encoder_for_Associate_source_diagnostic = $._encode_choice<Associate_source_diagnostic>(
             {
                 acse_service_user: $._encode_explicit(
                     _TagClass.context,

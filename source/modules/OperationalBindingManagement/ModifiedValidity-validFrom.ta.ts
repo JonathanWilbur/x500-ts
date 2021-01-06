@@ -34,9 +34,7 @@ export type ModifiedValidity_validFrom =
 /* END_OF_SYMBOL_DEFINITION ModifiedValidity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity_validFrom */
-let _cached_decoder_for_ModifiedValidity_validFrom: $.ASN1Decoder<
-    ModifiedValidity_validFrom
-> | null = null;
+let _cached_decoder_for_ModifiedValidity_validFrom: $.ASN1Decoder<ModifiedValidity_validFrom> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifiedValidity_validFrom */
@@ -48,21 +46,25 @@ let _cached_decoder_for_ModifiedValidity_validFrom: $.ASN1Decoder<
  */
 export function _decode_ModifiedValidity_validFrom(el: _Element) {
     if (!_cached_decoder_for_ModifiedValidity_validFrom) {
-        _cached_decoder_for_ModifiedValidity_validFrom = $._decode_extensible_choice<
-            ModifiedValidity_validFrom
-        >({
-            "CONTEXT 0": ["now", $._decode_explicit<NULL>(() => $._decodeNull)],
-            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
-        });
+        _cached_decoder_for_ModifiedValidity_validFrom = $._decode_extensible_choice<ModifiedValidity_validFrom>(
+            {
+                "CONTEXT 0": [
+                    "now",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "time",
+                    $._decode_explicit<Time>(() => _decode_Time),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifiedValidity_validFrom(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifiedValidity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity_validFrom */
-let _cached_encoder_for_ModifiedValidity_validFrom: $.ASN1Encoder<
-    ModifiedValidity_validFrom
-> | null = null;
+let _cached_encoder_for_ModifiedValidity_validFrom: $.ASN1Encoder<ModifiedValidity_validFrom> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifiedValidity_validFrom */
@@ -78,9 +80,7 @@ export function _encode_ModifiedValidity_validFrom(
     elGetter: $.ASN1Encoder<ModifiedValidity_validFrom>
 ) {
     if (!_cached_encoder_for_ModifiedValidity_validFrom) {
-        _cached_encoder_for_ModifiedValidity_validFrom = $._encode_choice<
-            ModifiedValidity_validFrom
-        >(
+        _cached_encoder_for_ModifiedValidity_validFrom = $._encode_choice<ModifiedValidity_validFrom>(
             {
                 now: $._encode_explicit(
                     _TagClass.context,

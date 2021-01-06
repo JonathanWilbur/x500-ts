@@ -33,15 +33,11 @@ export {
  * ChangePasswordArgument  ::=  OPTIONALLY-PROTECTED-SEQ { ChangePasswordArgumentData }
  * ```
  */
-export type ChangePasswordArgument = OPTIONALLY_PROTECTED_SEQ<
-    ChangePasswordArgumentData
->; // DefinedType
+export type ChangePasswordArgument = OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ChangePasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordArgument */
-let _cached_decoder_for_ChangePasswordArgument: $.ASN1Decoder<
-    ChangePasswordArgument
-> | null = null;
+let _cached_decoder_for_ChangePasswordArgument: $.ASN1Decoder<ChangePasswordArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChangePasswordArgument */
@@ -53,18 +49,16 @@ let _cached_decoder_for_ChangePasswordArgument: $.ASN1Decoder<
  */
 export function _decode_ChangePasswordArgument(el: _Element) {
     if (!_cached_decoder_for_ChangePasswordArgument) {
-        _cached_decoder_for_ChangePasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ChangePasswordArgumentData
-        >(_decode_ChangePasswordArgumentData);
+        _cached_decoder_for_ChangePasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>(
+            _decode_ChangePasswordArgumentData
+        );
     }
     return _cached_decoder_for_ChangePasswordArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ChangePasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordArgument */
-let _cached_encoder_for_ChangePasswordArgument: $.ASN1Encoder<
-    ChangePasswordArgument
-> | null = null;
+let _cached_encoder_for_ChangePasswordArgument: $.ASN1Encoder<ChangePasswordArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChangePasswordArgument */
@@ -80,9 +74,9 @@ export function _encode_ChangePasswordArgument(
     elGetter: $.ASN1Encoder<ChangePasswordArgument>
 ) {
     if (!_cached_encoder_for_ChangePasswordArgument) {
-        _cached_encoder_for_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ChangePasswordArgumentData
-        >(_encode_ChangePasswordArgumentData);
+        _cached_encoder_for_ChangePasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordArgumentData>(
+            _encode_ChangePasswordArgumentData
+        );
     }
     return _cached_encoder_for_ChangePasswordArgument(value, elGetter);
 }

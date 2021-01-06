@@ -166,8 +166,8 @@ export function _decode_SPKM_REP_TI(el: _Element) {
                 _root_component_type_list_2_spec_for_SPKM_REP_TI,
                 undefined
             );
-            return new SPKM_REP_TI /* SEQUENCE_CONSTRUCTOR_CALL */(
-                responseToken,
+            return new SPKM_REP_TI(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ responseToken,
                 certif_data
             );
         };

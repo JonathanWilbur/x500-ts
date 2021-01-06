@@ -33,9 +33,7 @@ export type OsiUnbindResult = {
 /* END_OF_SYMBOL_DEFINITION OsiUnbindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult */
-let _cached_decoder_for_OsiUnbindResult: $.ASN1Decoder<
-    OsiUnbindResult
-> | null = null;
+let _cached_decoder_for_OsiUnbindResult: $.ASN1Decoder<OsiUnbindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult */
@@ -47,28 +45,28 @@ let _cached_decoder_for_OsiUnbindResult: $.ASN1Decoder<
  */
 export function _decode_OsiUnbindResult(el: _Element) {
     if (!_cached_decoder_for_OsiUnbindResult) {
-        _cached_decoder_for_OsiUnbindResult = $._decode_inextensible_choice<
-            OsiUnbindResult
-        >({
-            "APPLICATION 1": [
-                "fully_encoded_data",
-                $._decode_explicit<OsiUnbindResult_fully_encoded_data_Item[]>(
-                    () =>
-                        $._decodeSequenceOf<
-                            OsiUnbindResult_fully_encoded_data_Item
-                        >(() => _decode_OsiUnbindResult_fully_encoded_data_Item)
-                ),
-            ],
-        });
+        _cached_decoder_for_OsiUnbindResult = $._decode_inextensible_choice<OsiUnbindResult>(
+            {
+                "APPLICATION 1": [
+                    "fully_encoded_data",
+                    $._decode_explicit<
+                        OsiUnbindResult_fully_encoded_data_Item[]
+                    >(() =>
+                        $._decodeSequenceOf<OsiUnbindResult_fully_encoded_data_Item>(
+                            () =>
+                                _decode_OsiUnbindResult_fully_encoded_data_Item
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiUnbindResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult */
-let _cached_encoder_for_OsiUnbindResult: $.ASN1Encoder<
-    OsiUnbindResult
-> | null = null;
+let _cached_encoder_for_OsiUnbindResult: $.ASN1Encoder<OsiUnbindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiUnbindResult */
@@ -90,9 +88,7 @@ export function _encode_OsiUnbindResult(
                     _TagClass.application,
                     1,
                     () =>
-                        $._encodeSequenceOf<
-                            OsiUnbindResult_fully_encoded_data_Item
-                        >(
+                        $._encodeSequenceOf<OsiUnbindResult_fully_encoded_data_Item>(
                             () =>
                                 _encode_OsiUnbindResult_fully_encoded_data_Item,
                             $.BER

@@ -17,9 +17,7 @@ export type HierarchyLevel = INTEGER;
 /* END_OF_SYMBOL_DEFINITION HierarchyLevel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchyLevel */
-let _cached_decoder_for_HierarchyLevel: $.ASN1Decoder<
-    HierarchyLevel
-> | null = null;
+let _cached_decoder_for_HierarchyLevel: $.ASN1Decoder<HierarchyLevel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchyLevel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HierarchyLevel */
@@ -38,9 +36,7 @@ export function _decode_HierarchyLevel(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HierarchyLevel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchyLevel */
-let _cached_encoder_for_HierarchyLevel: $.ASN1Encoder<
-    HierarchyLevel
-> | null = null;
+let _cached_encoder_for_HierarchyLevel: $.ASN1Encoder<HierarchyLevel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchyLevel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HierarchyLevel */

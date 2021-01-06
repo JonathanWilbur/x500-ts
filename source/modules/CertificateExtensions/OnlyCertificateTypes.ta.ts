@@ -68,9 +68,7 @@ export const attribute: number = OnlyCertificateTypes_attribute; /* SHORT_NAMED_
 /* END_OF_SYMBOL_DEFINITION attribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OnlyCertificateTypes */
-let _cached_decoder_for_OnlyCertificateTypes: $.ASN1Decoder<
-    OnlyCertificateTypes
-> | null = null;
+let _cached_decoder_for_OnlyCertificateTypes: $.ASN1Decoder<OnlyCertificateTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OnlyCertificateTypes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OnlyCertificateTypes */
@@ -89,9 +87,7 @@ export function _decode_OnlyCertificateTypes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OnlyCertificateTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OnlyCertificateTypes */
-let _cached_encoder_for_OnlyCertificateTypes: $.ASN1Encoder<
-    OnlyCertificateTypes
-> | null = null;
+let _cached_encoder_for_OnlyCertificateTypes: $.ASN1Encoder<OnlyCertificateTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OnlyCertificateTypes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OnlyCertificateTypes */

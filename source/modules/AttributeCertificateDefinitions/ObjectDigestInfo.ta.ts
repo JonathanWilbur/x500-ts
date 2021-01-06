@@ -191,9 +191,7 @@ export const _extension_additions_list_spec_for_ObjectDigestInfo: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ObjectDigestInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectDigestInfo */
-let _cached_decoder_for_ObjectDigestInfo: $.ASN1Decoder<
-    ObjectDigestInfo
-> | null = null;
+let _cached_decoder_for_ObjectDigestInfo: $.ASN1Decoder<ObjectDigestInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectDigestInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ObjectDigestInfo */
@@ -243,8 +241,8 @@ export function _decode_ObjectDigestInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ObjectDigestInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                digestedObjectType,
+            return new ObjectDigestInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ digestedObjectType,
                 otherObjectTypeID,
                 digestAlgorithm,
                 objectDigest,
@@ -257,9 +255,7 @@ export function _decode_ObjectDigestInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ObjectDigestInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectDigestInfo */
-let _cached_encoder_for_ObjectDigestInfo: $.ASN1Encoder<
-    ObjectDigestInfo
-> | null = null;
+let _cached_encoder_for_ObjectDigestInfo: $.ASN1Encoder<ObjectDigestInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectDigestInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ObjectDigestInfo */

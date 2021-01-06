@@ -266,9 +266,7 @@ export const _extension_additions_list_spec_for_ControlOptions: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ControlOptions */
-let _cached_decoder_for_ControlOptions: $.ASN1Decoder<
-    ControlOptions
-> | null = null;
+let _cached_decoder_for_ControlOptions: $.ASN1Decoder<ControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ControlOptions */
@@ -320,8 +318,8 @@ export function _decode_ControlOptions(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ControlOptions /* SEQUENCE_CONSTRUCTOR_CALL */(
-                serviceControls,
+            return new ControlOptions(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serviceControls,
                 searchOptions,
                 hierarchyOptions,
                 _unrecognizedExtensionsList
@@ -333,9 +331,7 @@ export function _decode_ControlOptions(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ControlOptions */
-let _cached_encoder_for_ControlOptions: $.ASN1Encoder<
-    ControlOptions
-> | null = null;
+let _cached_encoder_for_ControlOptions: $.ASN1Encoder<ControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ControlOptions */

@@ -147,7 +147,7 @@ export function _decode_UiiItem(el: _Element) {
                 _root_component_type_list_2_spec_for_UiiItem,
                 undefined
             );
-            return new UiiItem /* SEQUENCE_CONSTRUCTOR_CALL */(type_, length);
+            return new UiiItem(/* SEQUENCE_CONSTRUCTOR_CALL */ type_, length);
         };
     }
     return _cached_decoder_for_UiiItem(el);

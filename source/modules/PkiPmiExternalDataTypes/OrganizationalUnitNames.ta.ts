@@ -28,9 +28,7 @@ export type OrganizationalUnitNames = OrganizationalUnitName[]; // SequenceOfTyp
 /* END_OF_SYMBOL_DEFINITION OrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationalUnitNames */
-let _cached_decoder_for_OrganizationalUnitNames: $.ASN1Decoder<
-    OrganizationalUnitNames
-> | null = null;
+let _cached_decoder_for_OrganizationalUnitNames: $.ASN1Decoder<OrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OrganizationalUnitNames */
@@ -42,18 +40,16 @@ let _cached_decoder_for_OrganizationalUnitNames: $.ASN1Decoder<
  */
 export function _decode_OrganizationalUnitNames(el: _Element) {
     if (!_cached_decoder_for_OrganizationalUnitNames) {
-        _cached_decoder_for_OrganizationalUnitNames = $._decodeSequenceOf<
-            OrganizationalUnitName
-        >(() => _decode_OrganizationalUnitName);
+        _cached_decoder_for_OrganizationalUnitNames = $._decodeSequenceOf<OrganizationalUnitName>(
+            () => _decode_OrganizationalUnitName
+        );
     }
     return _cached_decoder_for_OrganizationalUnitNames(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationalUnitNames */
-let _cached_encoder_for_OrganizationalUnitNames: $.ASN1Encoder<
-    OrganizationalUnitNames
-> | null = null;
+let _cached_encoder_for_OrganizationalUnitNames: $.ASN1Encoder<OrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OrganizationalUnitNames */
@@ -69,9 +65,10 @@ export function _encode_OrganizationalUnitNames(
     elGetter: $.ASN1Encoder<OrganizationalUnitNames>
 ) {
     if (!_cached_encoder_for_OrganizationalUnitNames) {
-        _cached_encoder_for_OrganizationalUnitNames = $._encodeSequenceOf<
-            OrganizationalUnitName
-        >(() => _encode_OrganizationalUnitName, $.BER);
+        _cached_encoder_for_OrganizationalUnitNames = $._encodeSequenceOf<OrganizationalUnitName>(
+            () => _encode_OrganizationalUnitName,
+            $.BER
+        );
     }
     return _cached_encoder_for_OrganizationalUnitNames(value, elGetter);
 }

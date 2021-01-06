@@ -254,8 +254,8 @@ export function _decode_UserClasses(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new UserClasses /* SEQUENCE_CONSTRUCTOR_CALL */(
-                allUsers,
+            return new UserClasses(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ allUsers,
                 thisEntry,
                 name,
                 userGroup,

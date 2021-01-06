@@ -247,9 +247,7 @@ export const _extension_additions_list_spec_for_SupplierInformation: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SupplierInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierInformation */
-let _cached_decoder_for_SupplierInformation: $.ASN1Decoder<
-    SupplierInformation
-> | null = null;
+let _cached_decoder_for_SupplierInformation: $.ASN1Decoder<SupplierInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupplierInformation */
@@ -322,8 +320,8 @@ export function _decode_SupplierInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SupplierInformation /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new SupplierInformation(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 address,
                 protocolInformation,
                 agreementID,
@@ -338,9 +336,7 @@ export function _decode_SupplierInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SupplierInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierInformation */
-let _cached_encoder_for_SupplierInformation: $.ASN1Encoder<
-    SupplierInformation
-> | null = null;
+let _cached_encoder_for_SupplierInformation: $.ASN1Encoder<SupplierInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupplierInformation */

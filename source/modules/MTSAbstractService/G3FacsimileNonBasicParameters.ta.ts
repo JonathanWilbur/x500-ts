@@ -415,9 +415,7 @@ export const processable_mode_26: number = G3FacsimileNonBasicParameters_process
 /* END_OF_SYMBOL_DEFINITION processable_mode_26 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_G3FacsimileNonBasicParameters */
-let _cached_decoder_for_G3FacsimileNonBasicParameters: $.ASN1Decoder<
-    G3FacsimileNonBasicParameters
-> | null = null;
+let _cached_decoder_for_G3FacsimileNonBasicParameters: $.ASN1Decoder<G3FacsimileNonBasicParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_G3FacsimileNonBasicParameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_G3FacsimileNonBasicParameters */
@@ -436,9 +434,7 @@ export function _decode_G3FacsimileNonBasicParameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_G3FacsimileNonBasicParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_G3FacsimileNonBasicParameters */
-let _cached_encoder_for_G3FacsimileNonBasicParameters: $.ASN1Encoder<
-    G3FacsimileNonBasicParameters
-> | null = null;
+let _cached_encoder_for_G3FacsimileNonBasicParameters: $.ASN1Encoder<G3FacsimileNonBasicParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_G3FacsimileNonBasicParameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_G3FacsimileNonBasicParameters */

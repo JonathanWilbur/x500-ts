@@ -45,9 +45,7 @@ export type AdministerPasswordResult =
 /* END_OF_SYMBOL_DEFINITION AdministerPasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordResult */
-let _cached_decoder_for_AdministerPasswordResult: $.ASN1Decoder<
-    AdministerPasswordResult
-> | null = null;
+let _cached_decoder_for_AdministerPasswordResult: $.ASN1Decoder<AdministerPasswordResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AdministerPasswordResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_AdministerPasswordResult: $.ASN1Decoder<
  */
 export function _decode_AdministerPasswordResult(el: _Element) {
     if (!_cached_decoder_for_AdministerPasswordResult) {
-        _cached_decoder_for_AdministerPasswordResult = $._decode_extensible_choice<
-            AdministerPasswordResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    AdministerPasswordResultData
-                >(_decode_AdministerPasswordResultData),
-            ],
-        });
+        _cached_decoder_for_AdministerPasswordResult = $._decode_extensible_choice<AdministerPasswordResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(
+                        _decode_AdministerPasswordResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AdministerPasswordResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AdministerPasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordResult */
-let _cached_encoder_for_AdministerPasswordResult: $.ASN1Encoder<
-    AdministerPasswordResult
-> | null = null;
+let _cached_encoder_for_AdministerPasswordResult: $.ASN1Encoder<AdministerPasswordResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AdministerPasswordResult */
@@ -94,14 +90,12 @@ export function _encode_AdministerPasswordResult(
     elGetter: $.ASN1Encoder<AdministerPasswordResult>
 ) {
     if (!_cached_encoder_for_AdministerPasswordResult) {
-        _cached_encoder_for_AdministerPasswordResult = $._encode_choice<
-            AdministerPasswordResult
-        >(
+        _cached_encoder_for_AdministerPasswordResult = $._encode_choice<AdministerPasswordResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    AdministerPasswordResultData
-                >(_encode_AdministerPasswordResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordResultData>(
+                    _encode_AdministerPasswordResultData
+                ),
             },
             $.BER
         );

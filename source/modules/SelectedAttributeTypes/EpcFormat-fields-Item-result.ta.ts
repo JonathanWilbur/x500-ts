@@ -109,9 +109,7 @@ export const alpha7bits: EpcFormat_fields_Item_result =
 /* END_OF_SYMBOL_DEFINITION alpha7bits */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EpcFormat_fields_Item_result */
-let _cached_decoder_for_EpcFormat_fields_Item_result: $.ASN1Decoder<
-    EpcFormat_fields_Item_result
-> | null = null;
+let _cached_decoder_for_EpcFormat_fields_Item_result: $.ASN1Decoder<EpcFormat_fields_Item_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EpcFormat_fields_Item_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EpcFormat_fields_Item_result */
@@ -130,9 +128,7 @@ export function _decode_EpcFormat_fields_Item_result(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EpcFormat_fields_Item_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EpcFormat_fields_Item_result */
-let _cached_encoder_for_EpcFormat_fields_Item_result: $.ASN1Encoder<
-    EpcFormat_fields_Item_result
-> | null = null;
+let _cached_encoder_for_EpcFormat_fields_Item_result: $.ASN1Encoder<EpcFormat_fields_Item_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EpcFormat_fields_Item_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EpcFormat_fields_Item_result */

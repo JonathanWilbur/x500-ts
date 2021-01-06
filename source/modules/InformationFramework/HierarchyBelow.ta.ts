@@ -17,9 +17,7 @@ export type HierarchyBelow = BOOLEAN; // BooleanType
 /* END_OF_SYMBOL_DEFINITION HierarchyBelow */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchyBelow */
-let _cached_decoder_for_HierarchyBelow: $.ASN1Decoder<
-    HierarchyBelow
-> | null = null;
+let _cached_decoder_for_HierarchyBelow: $.ASN1Decoder<HierarchyBelow> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchyBelow */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HierarchyBelow */
@@ -38,9 +36,7 @@ export function _decode_HierarchyBelow(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HierarchyBelow */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchyBelow */
-let _cached_encoder_for_HierarchyBelow: $.ASN1Encoder<
-    HierarchyBelow
-> | null = null;
+let _cached_encoder_for_HierarchyBelow: $.ASN1Encoder<HierarchyBelow> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchyBelow */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HierarchyBelow */

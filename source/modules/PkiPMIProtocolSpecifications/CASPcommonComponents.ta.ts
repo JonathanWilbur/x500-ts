@@ -168,9 +168,7 @@ export const _extension_additions_list_spec_for_CASPcommonComponents: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CASPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CASPcommonComponents */
-let _cached_decoder_for_CASPcommonComponents: $.ASN1Decoder<
-    CASPcommonComponents
-> | null = null;
+let _cached_decoder_for_CASPcommonComponents: $.ASN1Decoder<CASPcommonComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CASPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CASPcommonComponents */
@@ -211,8 +209,8 @@ export function _decode_CASPcommonComponents(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CASPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CASPcommonComponents(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sequence,
                 _unrecognizedExtensionsList
             );
@@ -223,9 +221,7 @@ export function _decode_CASPcommonComponents(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CASPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CASPcommonComponents */
-let _cached_encoder_for_CASPcommonComponents: $.ASN1Encoder<
-    CASPcommonComponents
-> | null = null;
+let _cached_encoder_for_CASPcommonComponents: $.ASN1Encoder<CASPcommonComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CASPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CASPcommonComponents */

@@ -171,8 +171,8 @@ export function _decode_DeltaRefInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DeltaRefInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                deltaLocation,
+            return new DeltaRefInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ deltaLocation,
                 lastDelta,
                 _unrecognizedExtensionsList
             );

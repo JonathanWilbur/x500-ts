@@ -192,9 +192,7 @@ export const _extension_additions_list_spec_for_CertSubscribeRsp: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertSubscribeRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeRsp */
-let _cached_decoder_for_CertSubscribeRsp: $.ASN1Decoder<
-    CertSubscribeRsp
-> | null = null;
+let _cached_decoder_for_CertSubscribeRsp: $.ASN1Decoder<CertSubscribeRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeRsp */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertSubscribeRsp */
@@ -239,8 +237,8 @@ export function _decode_CertSubscribeRsp(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertSubscribeRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CertSubscribeRsp(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sequence,
                 result,
                 _unrecognizedExtensionsList
@@ -252,9 +250,7 @@ export function _decode_CertSubscribeRsp(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertSubscribeRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeRsp */
-let _cached_encoder_for_CertSubscribeRsp: $.ASN1Encoder<
-    CertSubscribeRsp
-> | null = null;
+let _cached_encoder_for_CertSubscribeRsp: $.ASN1Encoder<CertSubscribeRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeRsp */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertSubscribeRsp */

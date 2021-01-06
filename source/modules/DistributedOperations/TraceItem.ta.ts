@@ -201,8 +201,8 @@ export function _decode_TraceItem(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TraceItem /* SET_CONSTRUCTOR_CALL */(
-                dsa,
+            return new TraceItem(
+                /* SET_CONSTRUCTOR_CALL */ dsa,
                 targetObject,
                 operationProgress,
                 _unrecognizedExtensionsList

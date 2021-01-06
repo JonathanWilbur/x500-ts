@@ -184,9 +184,7 @@ export const _extension_additions_list_spec_for_FriendsDescription: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_FriendsDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FriendsDescription */
-let _cached_decoder_for_FriendsDescription: $.ASN1Decoder<
-    FriendsDescription
-> | null = null;
+let _cached_decoder_for_FriendsDescription: $.ASN1Decoder<FriendsDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FriendsDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FriendsDescription */
@@ -245,8 +243,8 @@ export function _decode_FriendsDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new FriendsDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                anchor,
+            return new FriendsDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ anchor,
                 name,
                 description,
                 obsolete,
@@ -260,9 +258,7 @@ export function _decode_FriendsDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_FriendsDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FriendsDescription */
-let _cached_encoder_for_FriendsDescription: $.ASN1Encoder<
-    FriendsDescription
-> | null = null;
+let _cached_encoder_for_FriendsDescription: $.ASN1Encoder<FriendsDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FriendsDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FriendsDescription */

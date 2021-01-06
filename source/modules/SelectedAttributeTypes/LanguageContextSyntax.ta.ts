@@ -17,9 +17,7 @@ export type LanguageContextSyntax = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION LanguageContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LanguageContextSyntax */
-let _cached_decoder_for_LanguageContextSyntax: $.ASN1Decoder<
-    LanguageContextSyntax
-> | null = null;
+let _cached_decoder_for_LanguageContextSyntax: $.ASN1Decoder<LanguageContextSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LanguageContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LanguageContextSyntax */
@@ -38,9 +36,7 @@ export function _decode_LanguageContextSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_LanguageContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LanguageContextSyntax */
-let _cached_encoder_for_LanguageContextSyntax: $.ASN1Encoder<
-    LanguageContextSyntax
-> | null = null;
+let _cached_encoder_for_LanguageContextSyntax: $.ASN1Encoder<LanguageContextSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LanguageContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LanguageContextSyntax */

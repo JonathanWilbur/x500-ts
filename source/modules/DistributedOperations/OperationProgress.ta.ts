@@ -151,9 +151,7 @@ export const _extension_additions_list_spec_for_OperationProgress: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OperationProgress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationProgress */
-let _cached_decoder_for_OperationProgress: $.ASN1Decoder<
-    OperationProgress
-> | null = null;
+let _cached_decoder_for_OperationProgress: $.ASN1Decoder<OperationProgress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OperationProgress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OperationProgress */
@@ -176,9 +174,9 @@ export function _decode_OperationProgress(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 nameResolutionPhase: (_el: _Element): void => {
-                    nameResolutionPhase = $._decode_explicit<
-                        OperationProgress_nameResolutionPhase
-                    >(() => _decode_OperationProgress_nameResolutionPhase)(_el);
+                    nameResolutionPhase = $._decode_explicit<OperationProgress_nameResolutionPhase>(
+                        () => _decode_OperationProgress_nameResolutionPhase
+                    )(_el);
                 },
                 nextRDNToBeResolved: (_el: _Element): void => {
                     nextRDNToBeResolved = $._decode_explicit<INTEGER>(
@@ -197,8 +195,8 @@ export function _decode_OperationProgress(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new OperationProgress /* SET_CONSTRUCTOR_CALL */(
-                nameResolutionPhase,
+            return new OperationProgress(
+                /* SET_CONSTRUCTOR_CALL */ nameResolutionPhase,
                 nextRDNToBeResolved,
                 _unrecognizedExtensionsList
             );
@@ -209,9 +207,7 @@ export function _decode_OperationProgress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OperationProgress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationProgress */
-let _cached_encoder_for_OperationProgress: $.ASN1Encoder<
-    OperationProgress
-> | null = null;
+let _cached_encoder_for_OperationProgress: $.ASN1Encoder<OperationProgress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OperationProgress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OperationProgress */

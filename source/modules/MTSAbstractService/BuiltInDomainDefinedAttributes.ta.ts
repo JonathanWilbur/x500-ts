@@ -29,9 +29,7 @@ export type BuiltInDomainDefinedAttributes = BuiltInDomainDefinedAttribute[]; //
 /* END_OF_SYMBOL_DEFINITION BuiltInDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInDomainDefinedAttributes */
-let _cached_decoder_for_BuiltInDomainDefinedAttributes: $.ASN1Decoder<
-    BuiltInDomainDefinedAttributes
-> | null = null;
+let _cached_decoder_for_BuiltInDomainDefinedAttributes: $.ASN1Decoder<BuiltInDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BuiltInDomainDefinedAttributes */
@@ -43,18 +41,16 @@ let _cached_decoder_for_BuiltInDomainDefinedAttributes: $.ASN1Decoder<
  */
 export function _decode_BuiltInDomainDefinedAttributes(el: _Element) {
     if (!_cached_decoder_for_BuiltInDomainDefinedAttributes) {
-        _cached_decoder_for_BuiltInDomainDefinedAttributes = $._decodeSequenceOf<
-            BuiltInDomainDefinedAttribute
-        >(() => _decode_BuiltInDomainDefinedAttribute);
+        _cached_decoder_for_BuiltInDomainDefinedAttributes = $._decodeSequenceOf<BuiltInDomainDefinedAttribute>(
+            () => _decode_BuiltInDomainDefinedAttribute
+        );
     }
     return _cached_decoder_for_BuiltInDomainDefinedAttributes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_BuiltInDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInDomainDefinedAttributes */
-let _cached_encoder_for_BuiltInDomainDefinedAttributes: $.ASN1Encoder<
-    BuiltInDomainDefinedAttributes
-> | null = null;
+let _cached_encoder_for_BuiltInDomainDefinedAttributes: $.ASN1Encoder<BuiltInDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BuiltInDomainDefinedAttributes */
@@ -70,9 +66,10 @@ export function _encode_BuiltInDomainDefinedAttributes(
     elGetter: $.ASN1Encoder<BuiltInDomainDefinedAttributes>
 ) {
     if (!_cached_encoder_for_BuiltInDomainDefinedAttributes) {
-        _cached_encoder_for_BuiltInDomainDefinedAttributes = $._encodeSequenceOf<
-            BuiltInDomainDefinedAttribute
-        >(() => _encode_BuiltInDomainDefinedAttribute, $.BER);
+        _cached_encoder_for_BuiltInDomainDefinedAttributes = $._encodeSequenceOf<BuiltInDomainDefinedAttribute>(
+            () => _encode_BuiltInDomainDefinedAttribute,
+            $.BER
+        );
     }
     return _cached_encoder_for_BuiltInDomainDefinedAttributes(value, elGetter);
 }

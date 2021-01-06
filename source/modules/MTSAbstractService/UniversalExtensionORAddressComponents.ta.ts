@@ -27,9 +27,7 @@ export type UniversalExtensionORAddressComponents = UniversalPDSParameter; // De
 /* END_OF_SYMBOL_DEFINITION UniversalExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalExtensionORAddressComponents */
-let _cached_decoder_for_UniversalExtensionORAddressComponents: $.ASN1Decoder<
-    UniversalExtensionORAddressComponents
-> | null = null;
+let _cached_decoder_for_UniversalExtensionORAddressComponents: $.ASN1Decoder<UniversalExtensionORAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalExtensionORAddressComponents */
@@ -48,9 +46,7 @@ export function _decode_UniversalExtensionORAddressComponents(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalExtensionORAddressComponents */
-let _cached_encoder_for_UniversalExtensionORAddressComponents: $.ASN1Encoder<
-    UniversalExtensionORAddressComponents
-> | null = null;
+let _cached_encoder_for_UniversalExtensionORAddressComponents: $.ASN1Encoder<UniversalExtensionORAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalExtensionORAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalExtensionORAddressComponents */

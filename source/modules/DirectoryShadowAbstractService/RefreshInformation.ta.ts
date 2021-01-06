@@ -52,9 +52,7 @@ export type RefreshInformation =
 /* END_OF_SYMBOL_DEFINITION RefreshInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RefreshInformation */
-let _cached_decoder_for_RefreshInformation: $.ASN1Decoder<
-    RefreshInformation
-> | null = null;
+let _cached_decoder_for_RefreshInformation: $.ASN1Decoder<RefreshInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RefreshInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RefreshInformation */
@@ -66,31 +64,31 @@ let _cached_decoder_for_RefreshInformation: $.ASN1Decoder<
  */
 export function _decode_RefreshInformation(el: _Element) {
     if (!_cached_decoder_for_RefreshInformation) {
-        _cached_decoder_for_RefreshInformation = $._decode_extensible_choice<
-            RefreshInformation
-        >({
-            "UNIVERSAL 5": ["noRefresh", $._decodeNull],
-            "CONTEXT 0": [
-                "total",
-                $._decode_implicit<TotalRefresh>(() => _decode_TotalRefresh),
-            ],
-            "CONTEXT 1": [
-                "incremental",
-                $._decode_implicit<IncrementalRefresh>(
-                    () => _decode_IncrementalRefresh
-                ),
-            ],
-            "UNIVERSAL 8": ["otherStrategy", $._decodeExternal],
-        });
+        _cached_decoder_for_RefreshInformation = $._decode_extensible_choice<RefreshInformation>(
+            {
+                "UNIVERSAL 5": ["noRefresh", $._decodeNull],
+                "CONTEXT 0": [
+                    "total",
+                    $._decode_implicit<TotalRefresh>(
+                        () => _decode_TotalRefresh
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "incremental",
+                    $._decode_implicit<IncrementalRefresh>(
+                        () => _decode_IncrementalRefresh
+                    ),
+                ],
+                "UNIVERSAL 8": ["otherStrategy", $._decodeExternal],
+            }
+        );
     }
     return _cached_decoder_for_RefreshInformation(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RefreshInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RefreshInformation */
-let _cached_encoder_for_RefreshInformation: $.ASN1Encoder<
-    RefreshInformation
-> | null = null;
+let _cached_encoder_for_RefreshInformation: $.ASN1Encoder<RefreshInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RefreshInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RefreshInformation */
@@ -106,9 +104,7 @@ export function _encode_RefreshInformation(
     elGetter: $.ASN1Encoder<RefreshInformation>
 ) {
     if (!_cached_encoder_for_RefreshInformation) {
-        _cached_encoder_for_RefreshInformation = $._encode_choice<
-            RefreshInformation
-        >(
+        _cached_encoder_for_RefreshInformation = $._encode_choice<RefreshInformation>(
             {
                 noRefresh: $._encodeNull,
                 total: $._encode_implicit(

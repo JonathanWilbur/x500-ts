@@ -11,6 +11,11 @@ import {
     _encode_Extensions,
 } from "../AuthenticationFramework/Extensions.ta";
 import {
+    ScopeRestrictions,
+    _decode_ScopeRestrictions,
+    _encode_ScopeRestrictions,
+} from "../AuthenticationFramework/ScopeRestrictions.ta";
+import {
     TBSCertAVL_entries_Item_idType,
     _decode_TBSCertAVL_entries_Item_idType,
     _encode_TBSCertAVL_entries_Item_idType,
@@ -20,6 +25,11 @@ export {
     _decode_Extensions,
     _encode_Extensions,
 } from "../AuthenticationFramework/Extensions.ta";
+export {
+    ScopeRestrictions,
+    _decode_ScopeRestrictions,
+    _encode_ScopeRestrictions,
+} from "../AuthenticationFramework/ScopeRestrictions.ta";
 export {
     TBSCertAVL_entries_Item_idType,
     _decode_TBSCertAVL_entries_Item_idType,
@@ -47,6 +57,12 @@ export class TBSCertAVL_entries_Item {
          * @readonly
          */
         readonly idType: TBSCertAVL_entries_Item_idType,
+        /**
+         * @summary `scope`.
+         * @public
+         * @readonly
+         */
+        readonly scope: OPTIONAL<ScopeRestrictions>,
         /**
          * @summary `entryExtensions`.
          * @public
@@ -82,6 +98,7 @@ export class TBSCertAVL_entries_Item {
     ): TBSCertAVL_entries_Item {
         return new TBSCertAVL_entries_Item(
             _o.idType,
+            _o.scope,
             _o.entryExtensions,
             _o._unrecognizedExtensionsList
         );
@@ -100,6 +117,13 @@ export class TBSCertAVL_entries_Item {
  */
 export const _root_component_type_list_1_spec_for_TBSCertAVL_entries_Item: $.ComponentSpec[] = [
     new $.ComponentSpec("idType", false, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec(
+        "scope",
+        true,
+        $.hasTag(_TagClass.context, 0),
+        undefined,
+        undefined
+    ),
     new $.ComponentSpec(
         "entryExtensions",
         true,
@@ -135,9 +159,7 @@ export const _extension_additions_list_spec_for_TBSCertAVL_entries_Item: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item */
-let _cached_decoder_for_TBSCertAVL_entries_Item: $.ASN1Decoder<
-    TBSCertAVL_entries_Item
-> | null = null;
+let _cached_decoder_for_TBSCertAVL_entries_Item: $.ASN1Decoder<TBSCertAVL_entries_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item */
@@ -154,6 +176,7 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
         ): TBSCertAVL_entries_Item {
             /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             let idType!: TBSCertAVL_entries_Item_idType;
+            let scope: OPTIONAL<ScopeRestrictions>;
             let entryExtensions: OPTIONAL<Extensions>;
             let _unrecognizedExtensionsList: _Element[] = [];
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -161,6 +184,11 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
             const callbacks: $.DecodingMap = {
                 idType: (_el: _Element): void => {
                     idType = _decode_TBSCertAVL_entries_Item_idType(_el);
+                },
+                scope: (_el: _Element): void => {
+                    scope = $._decode_explicit<ScopeRestrictions>(
+                        () => _decode_ScopeRestrictions
+                    )(_el);
                 },
                 entryExtensions: (_el: _Element): void => {
                     entryExtensions = $._decode_explicit<Extensions>(
@@ -179,8 +207,9 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSCertAVL_entries_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                idType,
+            return new TBSCertAVL_entries_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ idType,
+                scope,
                 entryExtensions,
                 _unrecognizedExtensionsList
             );
@@ -191,9 +220,7 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item */
-let _cached_encoder_for_TBSCertAVL_entries_Item: $.ASN1Encoder<
-    TBSCertAVL_entries_Item
-> | null = null;
+let _cached_encoder_for_TBSCertAVL_entries_Item: $.ASN1Encoder<TBSCertAVL_entries_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSCertAVL_entries_Item */
@@ -221,6 +248,14 @@ export function _encode_TBSCertAVL_entries_Item(
                                 value.idType,
                                 $.BER
                             ),
+                            /* IF_ABSENT  */ value.scope === undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      0,
+                                      () => _encode_ScopeRestrictions,
+                                      $.BER
+                                  )(value.scope, $.BER),
                             /* IF_ABSENT  */ value.entryExtensions === undefined
                                 ? undefined
                                 : $._encode_explicit(

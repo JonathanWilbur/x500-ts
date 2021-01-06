@@ -115,9 +115,7 @@ export const _extension_additions_list_spec_for_BuiltInDomainDefinedAttribute: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_BuiltInDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInDomainDefinedAttribute */
-let _cached_decoder_for_BuiltInDomainDefinedAttribute: $.ASN1Decoder<
-    BuiltInDomainDefinedAttribute
-> | null = null;
+let _cached_decoder_for_BuiltInDomainDefinedAttribute: $.ASN1Decoder<BuiltInDomainDefinedAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BuiltInDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BuiltInDomainDefinedAttribute */
@@ -154,9 +152,7 @@ export function _decode_BuiltInDomainDefinedAttribute(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BuiltInDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInDomainDefinedAttribute */
-let _cached_encoder_for_BuiltInDomainDefinedAttribute: $.ASN1Encoder<
-    BuiltInDomainDefinedAttribute
-> | null = null;
+let _cached_encoder_for_BuiltInDomainDefinedAttribute: $.ASN1Encoder<BuiltInDomainDefinedAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BuiltInDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BuiltInDomainDefinedAttribute */

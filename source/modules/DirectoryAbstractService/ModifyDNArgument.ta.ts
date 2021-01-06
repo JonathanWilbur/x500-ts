@@ -37,9 +37,7 @@ export type ModifyDNArgument = OPTIONALLY_PROTECTED<ModifyDNArgumentData>; // De
 /* END_OF_SYMBOL_DEFINITION ModifyDNArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNArgument */
-let _cached_decoder_for_ModifyDNArgument: $.ASN1Decoder<
-    ModifyDNArgument
-> | null = null;
+let _cached_decoder_for_ModifyDNArgument: $.ASN1Decoder<ModifyDNArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyDNArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_ModifyDNArgument: $.ASN1Decoder<
  */
 export function _decode_ModifyDNArgument(el: _Element) {
     if (!_cached_decoder_for_ModifyDNArgument) {
-        _cached_decoder_for_ModifyDNArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            ModifyDNArgumentData
-        >(_decode_ModifyDNArgumentData);
+        _cached_decoder_for_ModifyDNArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ModifyDNArgumentData>(
+            _decode_ModifyDNArgumentData
+        );
     }
     return _cached_decoder_for_ModifyDNArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyDNArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNArgument */
-let _cached_encoder_for_ModifyDNArgument: $.ASN1Encoder<
-    ModifyDNArgument
-> | null = null;
+let _cached_encoder_for_ModifyDNArgument: $.ASN1Encoder<ModifyDNArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyDNArgument */
@@ -78,9 +74,9 @@ export function _encode_ModifyDNArgument(
     elGetter: $.ASN1Encoder<ModifyDNArgument>
 ) {
     if (!_cached_encoder_for_ModifyDNArgument) {
-        _cached_encoder_for_ModifyDNArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            ModifyDNArgumentData
-        >(_encode_ModifyDNArgumentData);
+        _cached_encoder_for_ModifyDNArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ModifyDNArgumentData>(
+            _encode_ModifyDNArgumentData
+        );
     }
     return _cached_encoder_for_ModifyDNArgument(value, elGetter);
 }

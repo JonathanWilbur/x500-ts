@@ -167,9 +167,7 @@ export const _extension_additions_list_spec_for_ChopSpecification: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ChopSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChopSpecification */
-let _cached_decoder_for_ChopSpecification: $.ASN1Decoder<
-    ChopSpecification
-> | null = null;
+let _cached_decoder_for_ChopSpecification: $.ASN1Decoder<ChopSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChopSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChopSpecification */
@@ -199,9 +197,7 @@ export function _decode_ChopSpecification(el: _Element) {
                     specificExclusions = $._decode_explicit<
                         ChopSpecification_specificExclusions_Item[]
                     >(() =>
-                        $._decodeSetOf<
-                            ChopSpecification_specificExclusions_Item
-                        >(
+                        $._decodeSetOf<ChopSpecification_specificExclusions_Item>(
                             () =>
                                 _decode_ChopSpecification_specificExclusions_Item
                         )
@@ -229,8 +225,8 @@ export function _decode_ChopSpecification(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ChopSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-                specificExclusions,
+            return new ChopSpecification(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ specificExclusions,
                 minimum,
                 maximum,
                 _unrecognizedExtensionsList
@@ -242,9 +238,7 @@ export function _decode_ChopSpecification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ChopSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChopSpecification */
-let _cached_encoder_for_ChopSpecification: $.ASN1Encoder<
-    ChopSpecification
-> | null = null;
+let _cached_encoder_for_ChopSpecification: $.ASN1Encoder<ChopSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChopSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChopSpecification */
@@ -275,9 +269,7 @@ export function _encode_ChopSpecification(
                                       _TagClass.context,
                                       1,
                                       () =>
-                                          $._encodeSetOf<
-                                              ChopSpecification_specificExclusions_Item
-                                          >(
+                                          $._encodeSetOf<ChopSpecification_specificExclusions_Item>(
                                               () =>
                                                   _encode_ChopSpecification_specificExclusions_Item,
                                               $.BER

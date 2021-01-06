@@ -128,9 +128,7 @@ export const _extension_additions_list_spec_for_UniversalOrBMPString: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UniversalOrBMPString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrBMPString */
-let _cached_decoder_for_UniversalOrBMPString: $.ASN1Decoder<
-    UniversalOrBMPString
-> | null = null;
+let _cached_decoder_for_UniversalOrBMPString: $.ASN1Decoder<UniversalOrBMPString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrBMPString */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalOrBMPString */
@@ -169,8 +167,8 @@ export function _decode_UniversalOrBMPString(el: _Element) {
                 _root_component_type_list_2_spec_for_UniversalOrBMPString,
                 undefined
             );
-            return new UniversalOrBMPString /* SET_CONSTRUCTOR_CALL */(
-                character_encoding,
+            return new UniversalOrBMPString(
+                /* SET_CONSTRUCTOR_CALL */ character_encoding,
                 iso_639_language_code
             );
         };
@@ -180,9 +178,7 @@ export function _decode_UniversalOrBMPString(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalOrBMPString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrBMPString */
-let _cached_encoder_for_UniversalOrBMPString: $.ASN1Encoder<
-    UniversalOrBMPString
-> | null = null;
+let _cached_encoder_for_UniversalOrBMPString: $.ASN1Encoder<UniversalOrBMPString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrBMPString */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalOrBMPString */

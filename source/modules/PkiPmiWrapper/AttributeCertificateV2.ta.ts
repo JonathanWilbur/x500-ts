@@ -27,9 +27,7 @@ export type AttributeCertificateV2 = AttributeCertificate; // DefinedType
 /* END_OF_SYMBOL_DEFINITION AttributeCertificateV2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateV2 */
-let _cached_decoder_for_AttributeCertificateV2: $.ASN1Decoder<
-    AttributeCertificateV2
-> | null = null;
+let _cached_decoder_for_AttributeCertificateV2: $.ASN1Decoder<AttributeCertificateV2> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateV2 */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificateV2 */
@@ -48,9 +46,7 @@ export function _decode_AttributeCertificateV2(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificateV2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateV2 */
-let _cached_encoder_for_AttributeCertificateV2: $.ASN1Encoder<
-    AttributeCertificateV2
-> | null = null;
+let _cached_encoder_for_AttributeCertificateV2: $.ASN1Encoder<AttributeCertificateV2> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateV2 */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificateV2 */

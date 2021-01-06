@@ -209,9 +209,7 @@ export const december: number = Period_months_bitMonth_december; /* SHORT_NAMED_
 /* END_OF_SYMBOL_DEFINITION december */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_months_bitMonth */
-let _cached_decoder_for_Period_months_bitMonth: $.ASN1Decoder<
-    Period_months_bitMonth
-> | null = null;
+let _cached_decoder_for_Period_months_bitMonth: $.ASN1Decoder<Period_months_bitMonth> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_months_bitMonth */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Period_months_bitMonth */
@@ -230,9 +228,7 @@ export function _decode_Period_months_bitMonth(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Period_months_bitMonth */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_months_bitMonth */
-let _cached_encoder_for_Period_months_bitMonth: $.ASN1Encoder<
-    Period_months_bitMonth
-> | null = null;
+let _cached_encoder_for_Period_months_bitMonth: $.ASN1Encoder<Period_months_bitMonth> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_months_bitMonth */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Period_months_bitMonth */

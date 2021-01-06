@@ -27,9 +27,7 @@ export type PhysicalDeliveryPersonalName = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION PhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryPersonalName */
-let _cached_decoder_for_PhysicalDeliveryPersonalName: $.ASN1Decoder<
-    PhysicalDeliveryPersonalName
-> | null = null;
+let _cached_decoder_for_PhysicalDeliveryPersonalName: $.ASN1Decoder<PhysicalDeliveryPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryPersonalName */
@@ -48,9 +46,7 @@ export function _decode_PhysicalDeliveryPersonalName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryPersonalName */
-let _cached_encoder_for_PhysicalDeliveryPersonalName: $.ASN1Encoder<
-    PhysicalDeliveryPersonalName
-> | null = null;
+let _cached_encoder_for_PhysicalDeliveryPersonalName: $.ASN1Encoder<PhysicalDeliveryPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PhysicalDeliveryPersonalName */

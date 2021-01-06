@@ -30,9 +30,7 @@ export type TypeAndContextAssertion_contextAssertions =
 /* END_OF_SYMBOL_DEFINITION TypeAndContextAssertion_contextAssertions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TypeAndContextAssertion_contextAssertions */
-let _cached_decoder_for_TypeAndContextAssertion_contextAssertions: $.ASN1Decoder<
-    TypeAndContextAssertion_contextAssertions
-> | null = null;
+let _cached_decoder_for_TypeAndContextAssertion_contextAssertions: $.ASN1Decoder<TypeAndContextAssertion_contextAssertions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TypeAndContextAssertion_contextAssertions */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TypeAndContextAssertion_contextAssertions */
@@ -46,31 +44,29 @@ export function _decode_TypeAndContextAssertion_contextAssertions(
     el: _Element
 ) {
     if (!_cached_decoder_for_TypeAndContextAssertion_contextAssertions) {
-        _cached_decoder_for_TypeAndContextAssertion_contextAssertions = $._decode_extensible_choice<
-            TypeAndContextAssertion_contextAssertions
-        >({
-            "UNIVERSAL 16": [
-                "preference",
-                $._decodeSequenceOf<ContextAssertion>(
-                    () => _decode_ContextAssertion
-                ),
-            ],
-            "UNIVERSAL 17": [
-                "all",
-                $._decodeSetOf<ContextAssertion>(
-                    () => _decode_ContextAssertion
-                ),
-            ],
-        });
+        _cached_decoder_for_TypeAndContextAssertion_contextAssertions = $._decode_extensible_choice<TypeAndContextAssertion_contextAssertions>(
+            {
+                "UNIVERSAL 16": [
+                    "preference",
+                    $._decodeSequenceOf<ContextAssertion>(
+                        () => _decode_ContextAssertion
+                    ),
+                ],
+                "UNIVERSAL 17": [
+                    "all",
+                    $._decodeSetOf<ContextAssertion>(
+                        () => _decode_ContextAssertion
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TypeAndContextAssertion_contextAssertions(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TypeAndContextAssertion_contextAssertions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TypeAndContextAssertion_contextAssertions */
-let _cached_encoder_for_TypeAndContextAssertion_contextAssertions: $.ASN1Encoder<
-    TypeAndContextAssertion_contextAssertions
-> | null = null;
+let _cached_encoder_for_TypeAndContextAssertion_contextAssertions: $.ASN1Encoder<TypeAndContextAssertion_contextAssertions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TypeAndContextAssertion_contextAssertions */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TypeAndContextAssertion_contextAssertions */
@@ -86,9 +82,7 @@ export function _encode_TypeAndContextAssertion_contextAssertions(
     elGetter: $.ASN1Encoder<TypeAndContextAssertion_contextAssertions>
 ) {
     if (!_cached_encoder_for_TypeAndContextAssertion_contextAssertions) {
-        _cached_encoder_for_TypeAndContextAssertion_contextAssertions = $._encode_choice<
-            TypeAndContextAssertion_contextAssertions
-        >(
+        _cached_encoder_for_TypeAndContextAssertion_contextAssertions = $._encode_choice<TypeAndContextAssertion_contextAssertions>(
             {
                 preference: $._encodeSequenceOf<ContextAssertion>(
                     () => _encode_ContextAssertion,

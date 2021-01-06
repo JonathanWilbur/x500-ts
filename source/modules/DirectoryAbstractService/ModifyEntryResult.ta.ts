@@ -45,9 +45,7 @@ export type ModifyEntryResult =
 /* END_OF_SYMBOL_DEFINITION ModifyEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyEntryResult */
-let _cached_decoder_for_ModifyEntryResult: $.ASN1Decoder<
-    ModifyEntryResult
-> | null = null;
+let _cached_decoder_for_ModifyEntryResult: $.ASN1Decoder<ModifyEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyEntryResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_ModifyEntryResult: $.ASN1Decoder<
  */
 export function _decode_ModifyEntryResult(el: _Element) {
     if (!_cached_decoder_for_ModifyEntryResult) {
-        _cached_decoder_for_ModifyEntryResult = $._decode_extensible_choice<
-            ModifyEntryResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    ModifyEntryResultData
-                >(_decode_ModifyEntryResultData),
-            ],
-        });
+        _cached_decoder_for_ModifyEntryResult = $._decode_extensible_choice<ModifyEntryResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(
+                        _decode_ModifyEntryResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifyEntryResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyEntryResult */
-let _cached_encoder_for_ModifyEntryResult: $.ASN1Encoder<
-    ModifyEntryResult
-> | null = null;
+let _cached_encoder_for_ModifyEntryResult: $.ASN1Encoder<ModifyEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyEntryResult */
@@ -94,14 +90,12 @@ export function _encode_ModifyEntryResult(
     elGetter: $.ASN1Encoder<ModifyEntryResult>
 ) {
     if (!_cached_encoder_for_ModifyEntryResult) {
-        _cached_encoder_for_ModifyEntryResult = $._encode_choice<
-            ModifyEntryResult
-        >(
+        _cached_encoder_for_ModifyEntryResult = $._encode_choice<ModifyEntryResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    ModifyEntryResultData
-                >(_encode_ModifyEntryResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyEntryResultData>(
+                    _encode_ModifyEntryResultData
+                ),
             },
             $.BER
         );

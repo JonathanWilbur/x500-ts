@@ -169,9 +169,7 @@ export const no_PSAP_available: Provider_reason = Provider_reason_no_PSAP_availa
 /* END_OF_SYMBOL_DEFINITION no_PSAP_available */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Provider_reason */
-let _cached_decoder_for_Provider_reason: $.ASN1Decoder<
-    Provider_reason
-> | null = null;
+let _cached_decoder_for_Provider_reason: $.ASN1Decoder<Provider_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Provider_reason */
@@ -190,9 +188,7 @@ export function _decode_Provider_reason(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Provider_reason */
-let _cached_encoder_for_Provider_reason: $.ASN1Encoder<
-    Provider_reason
-> | null = null;
+let _cached_encoder_for_Provider_reason: $.ASN1Encoder<Provider_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Provider_reason */

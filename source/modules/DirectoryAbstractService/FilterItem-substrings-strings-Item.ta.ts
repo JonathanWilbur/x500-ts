@@ -34,9 +34,7 @@ export type FilterItem_substrings_strings_Item =
 /* END_OF_SYMBOL_DEFINITION FilterItem_substrings_strings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FilterItem_substrings_strings_Item */
-let _cached_decoder_for_FilterItem_substrings_strings_Item: $.ASN1Decoder<
-    FilterItem_substrings_strings_Item
-> | null = null;
+let _cached_decoder_for_FilterItem_substrings_strings_Item: $.ASN1Decoder<FilterItem_substrings_strings_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FilterItem_substrings_strings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FilterItem_substrings_strings_Item */
@@ -48,32 +46,30 @@ let _cached_decoder_for_FilterItem_substrings_strings_Item: $.ASN1Decoder<
  */
 export function _decode_FilterItem_substrings_strings_Item(el: _Element) {
     if (!_cached_decoder_for_FilterItem_substrings_strings_Item) {
-        _cached_decoder_for_FilterItem_substrings_strings_Item = $._decode_extensible_choice<
-            FilterItem_substrings_strings_Item
-        >({
-            "CONTEXT 0": [
-                "initial",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 1": [
-                "any_",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 2": [
-                "final",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "UNIVERSAL 16": ["control", _decode_Attribute],
-        });
+        _cached_decoder_for_FilterItem_substrings_strings_Item = $._decode_extensible_choice<FilterItem_substrings_strings_Item>(
+            {
+                "CONTEXT 0": [
+                    "initial",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 1": [
+                    "any_",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 2": [
+                    "final",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "UNIVERSAL 16": ["control", _decode_Attribute],
+            }
+        );
     }
     return _cached_decoder_for_FilterItem_substrings_strings_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_FilterItem_substrings_strings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FilterItem_substrings_strings_Item */
-let _cached_encoder_for_FilterItem_substrings_strings_Item: $.ASN1Encoder<
-    FilterItem_substrings_strings_Item
-> | null = null;
+let _cached_encoder_for_FilterItem_substrings_strings_Item: $.ASN1Encoder<FilterItem_substrings_strings_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FilterItem_substrings_strings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FilterItem_substrings_strings_Item */
@@ -89,9 +85,7 @@ export function _encode_FilterItem_substrings_strings_Item(
     elGetter: $.ASN1Encoder<FilterItem_substrings_strings_Item>
 ) {
     if (!_cached_encoder_for_FilterItem_substrings_strings_Item) {
-        _cached_encoder_for_FilterItem_substrings_strings_Item = $._encode_choice<
-            FilterItem_substrings_strings_Item
-        >(
+        _cached_encoder_for_FilterItem_substrings_strings_Item = $._encode_choice<FilterItem_substrings_strings_Item>(
             {
                 initial: $._encode_explicit(
                     _TagClass.context,

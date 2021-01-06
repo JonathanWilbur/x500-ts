@@ -106,25 +106,19 @@ export class TerminateOperationalBindingResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -264,9 +258,7 @@ export const _extension_additions_list_spec_for_TerminateOperationalBindingResul
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TerminateOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingResultData */
-let _cached_decoder_for_TerminateOperationalBindingResultData: $.ASN1Decoder<
-    TerminateOperationalBindingResultData
-> | null = null;
+let _cached_decoder_for_TerminateOperationalBindingResultData: $.ASN1Decoder<TerminateOperationalBindingResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingResultData */
@@ -335,8 +327,8 @@ export function _decode_TerminateOperationalBindingResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TerminateOperationalBindingResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                bindingID,
+            return new TerminateOperationalBindingResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingID,
                 bindingType,
                 terminateAt,
                 _unrecognizedExtensionsList,
@@ -352,9 +344,7 @@ export function _decode_TerminateOperationalBindingResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingResultData */
-let _cached_encoder_for_TerminateOperationalBindingResultData: $.ASN1Encoder<
-    TerminateOperationalBindingResultData
-> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingResultData: $.ASN1Encoder<TerminateOperationalBindingResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TerminateOperationalBindingResultData */

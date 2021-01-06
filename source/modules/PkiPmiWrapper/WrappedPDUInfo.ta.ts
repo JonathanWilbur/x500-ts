@@ -117,9 +117,7 @@ export const _extension_additions_list_spec_for_WrappedPDUInfo: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_WrappedPDUInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_WrappedPDUInfo */
-let _cached_decoder_for_WrappedPDUInfo: $.ASN1Decoder<
-    WrappedPDUInfo
-> | null = null;
+let _cached_decoder_for_WrappedPDUInfo: $.ASN1Decoder<WrappedPDUInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_WrappedPDUInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_WrappedPDUInfo */
@@ -156,9 +154,7 @@ export function _decode_WrappedPDUInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_WrappedPDUInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_WrappedPDUInfo */
-let _cached_encoder_for_WrappedPDUInfo: $.ASN1Encoder<
-    WrappedPDUInfo
-> | null = null;
+let _cached_encoder_for_WrappedPDUInfo: $.ASN1Encoder<WrappedPDUInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_WrappedPDUInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_WrappedPDUInfo */

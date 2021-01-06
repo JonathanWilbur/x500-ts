@@ -46,18 +46,19 @@ let _cached_decoder_for_OsiUnbind: $.ASN1Decoder<OsiUnbind> | null = null;
  */
 export function _decode_OsiUnbind(el: _Element) {
     if (!_cached_decoder_for_OsiUnbind) {
-        _cached_decoder_for_OsiUnbind = $._decode_inextensible_choice<
-            OsiUnbind
-        >({
-            "APPLICATION 1": [
-                "fully_encoded_data",
-                $._decode_explicit<OsiUnbind_fully_encoded_data_Item[]>(() =>
-                    $._decodeSequenceOf<OsiUnbind_fully_encoded_data_Item>(
-                        () => _decode_OsiUnbind_fully_encoded_data_Item
-                    )
-                ),
-            ],
-        });
+        _cached_decoder_for_OsiUnbind = $._decode_inextensible_choice<OsiUnbind>(
+            {
+                "APPLICATION 1": [
+                    "fully_encoded_data",
+                    $._decode_explicit<OsiUnbind_fully_encoded_data_Item[]>(
+                        () =>
+                            $._decodeSequenceOf<OsiUnbind_fully_encoded_data_Item>(
+                                () => _decode_OsiUnbind_fully_encoded_data_Item
+                            )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiUnbind(el);
 }

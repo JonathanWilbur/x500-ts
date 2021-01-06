@@ -359,9 +359,7 @@ export const notSupportedByLDAP: ServiceProblem = ServiceProblem_notSupportedByL
 /* END_OF_SYMBOL_DEFINITION notSupportedByLDAP */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceProblem */
-let _cached_decoder_for_ServiceProblem: $.ASN1Decoder<
-    ServiceProblem
-> | null = null;
+let _cached_decoder_for_ServiceProblem: $.ASN1Decoder<ServiceProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ServiceProblem */
@@ -380,9 +378,7 @@ export function _decode_ServiceProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ServiceProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceProblem */
-let _cached_encoder_for_ServiceProblem: $.ASN1Encoder<
-    ServiceProblem
-> | null = null;
+let _cached_encoder_for_ServiceProblem: $.ASN1Encoder<ServiceProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ServiceProblem */

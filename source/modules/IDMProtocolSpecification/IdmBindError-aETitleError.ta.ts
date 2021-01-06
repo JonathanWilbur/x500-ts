@@ -62,9 +62,7 @@ export const calledAETitleNotRecognized: IdmBindError_aETitleError = IdmBindErro
 /* END_OF_SYMBOL_DEFINITION calledAETitleNotRecognized */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmBindError_aETitleError */
-let _cached_decoder_for_IdmBindError_aETitleError: $.ASN1Decoder<
-    IdmBindError_aETitleError
-> | null = null;
+let _cached_decoder_for_IdmBindError_aETitleError: $.ASN1Decoder<IdmBindError_aETitleError> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmBindError_aETitleError */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IdmBindError_aETitleError */
@@ -83,9 +81,7 @@ export function _decode_IdmBindError_aETitleError(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IdmBindError_aETitleError */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmBindError_aETitleError */
-let _cached_encoder_for_IdmBindError_aETitleError: $.ASN1Encoder<
-    IdmBindError_aETitleError
-> | null = null;
+let _cached_encoder_for_IdmBindError_aETitleError: $.ASN1Encoder<IdmBindError_aETitleError> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmBindError_aETitleError */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IdmBindError_aETitleError */

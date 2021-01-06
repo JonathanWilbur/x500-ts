@@ -205,33 +205,25 @@ export class ModifyEntryArgumentData {
          * @public
          * @readonly
          */
-        readonly serviceControls: OPTIONAL<
-            ServiceControls
-        > /* REPLICATED_COMPONENT */,
+        readonly serviceControls: OPTIONAL<ServiceControls> /* REPLICATED_COMPONENT */,
         /**
          * @summary `securityParameters`.
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `requestor`.
          * @public
          * @readonly
          */
-        readonly requestor: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly requestor: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `operationProgress`.
          * @public
          * @readonly
          */
-        readonly operationProgress: OPTIONAL<
-            OperationProgress
-        > /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OPTIONAL<OperationProgress> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasedRDNs`.
          * @public
@@ -243,17 +235,13 @@ export class ModifyEntryArgumentData {
          * @public
          * @readonly
          */
-        readonly criticalExtensions: OPTIONAL<
-            BIT_STRING
-        > /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: OPTIONAL<BIT_STRING> /* REPLICATED_COMPONENT */,
         /**
          * @summary `referenceType`.
          * @public
          * @readonly
          */
-        readonly referenceType: OPTIONAL<
-            ReferenceType
-        > /* REPLICATED_COMPONENT */,
+        readonly referenceType: OPTIONAL<ReferenceType> /* REPLICATED_COMPONENT */,
         /**
          * @summary `entryOnly`.
          * @public
@@ -271,25 +259,19 @@ export class ModifyEntryArgumentData {
          * @public
          * @readonly
          */
-        readonly nameResolveOnMaster: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `operationContexts`.
          * @public
          * @readonly
          */
-        readonly operationContexts: OPTIONAL<
-            ContextSelection
-        > /* REPLICATED_COMPONENT */,
+        readonly operationContexts: OPTIONAL<ContextSelection> /* REPLICATED_COMPONENT */,
         /**
          * @summary `familyGrouping`.
          * @public
          * @readonly
          */
-        readonly familyGrouping: OPTIONAL<
-            FamilyGrouping
-        > /* REPLICATED_COMPONENT */
+        readonly familyGrouping: OPTIONAL<FamilyGrouping> /* REPLICATED_COMPONENT */
     ) {}
 
     /**
@@ -540,9 +522,7 @@ export const _extension_additions_list_spec_for_ModifyEntryArgumentData: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyEntryArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyEntryArgumentData */
-let _cached_decoder_for_ModifyEntryArgumentData: $.ASN1Decoder<
-    ModifyEntryArgumentData
-> | null = null;
+let _cached_decoder_for_ModifyEntryArgumentData: $.ASN1Decoder<ModifyEntryArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyEntryArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyEntryArgumentData */
@@ -669,8 +649,8 @@ export function _decode_ModifyEntryArgumentData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ModifyEntryArgumentData /* SET_CONSTRUCTOR_CALL */(
-                object,
+            return new ModifyEntryArgumentData(
+                /* SET_CONSTRUCTOR_CALL */ object,
                 changes,
                 selection,
                 _unrecognizedExtensionsList,
@@ -694,9 +674,7 @@ export function _decode_ModifyEntryArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyEntryArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyEntryArgumentData */
-let _cached_encoder_for_ModifyEntryArgumentData: $.ASN1Encoder<
-    ModifyEntryArgumentData
-> | null = null;
+let _cached_encoder_for_ModifyEntryArgumentData: $.ASN1Encoder<ModifyEntryArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyEntryArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyEntryArgumentData */

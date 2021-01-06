@@ -74,9 +74,7 @@ export const badlyStructuredPDU: GeneralProblem = GeneralProblem_badlyStructured
 /* END_OF_SYMBOL_DEFINITION badlyStructuredPDU */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralProblem */
-let _cached_decoder_for_GeneralProblem: $.ASN1Decoder<
-    GeneralProblem
-> | null = null;
+let _cached_decoder_for_GeneralProblem: $.ASN1Decoder<GeneralProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_GeneralProblem */
@@ -95,9 +93,7 @@ export function _decode_GeneralProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_GeneralProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralProblem */
-let _cached_encoder_for_GeneralProblem: $.ASN1Encoder<
-    GeneralProblem
-> | null = null;
+let _cached_encoder_for_GeneralProblem: $.ASN1Encoder<GeneralProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_GeneralProblem */

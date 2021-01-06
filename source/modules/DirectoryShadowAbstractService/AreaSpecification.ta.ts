@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_AreaSpecification: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AreaSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AreaSpecification */
-let _cached_decoder_for_AreaSpecification: $.ASN1Decoder<
-    AreaSpecification
-> | null = null;
+let _cached_decoder_for_AreaSpecification: $.ASN1Decoder<AreaSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AreaSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AreaSpecification */
@@ -183,9 +181,7 @@ export function _decode_AreaSpecification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AreaSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AreaSpecification */
-let _cached_encoder_for_AreaSpecification: $.ASN1Encoder<
-    AreaSpecification
-> | null = null;
+let _cached_encoder_for_AreaSpecification: $.ASN1Encoder<AreaSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AreaSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AreaSpecification */

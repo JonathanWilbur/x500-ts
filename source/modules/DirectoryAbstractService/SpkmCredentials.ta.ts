@@ -43,9 +43,7 @@ export type SpkmCredentials =
 /* END_OF_SYMBOL_DEFINITION SpkmCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SpkmCredentials */
-let _cached_decoder_for_SpkmCredentials: $.ASN1Decoder<
-    SpkmCredentials
-> | null = null;
+let _cached_decoder_for_SpkmCredentials: $.ASN1Decoder<SpkmCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SpkmCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SpkmCredentials */
@@ -57,27 +55,25 @@ let _cached_decoder_for_SpkmCredentials: $.ASN1Decoder<
  */
 export function _decode_SpkmCredentials(el: _Element) {
     if (!_cached_decoder_for_SpkmCredentials) {
-        _cached_decoder_for_SpkmCredentials = $._decode_extensible_choice<
-            SpkmCredentials
-        >({
-            "CONTEXT 0": [
-                "req",
-                $._decode_explicit<SPKM_REQ>(() => _decode_SPKM_REQ),
-            ],
-            "CONTEXT 1": [
-                "rep",
-                $._decode_explicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI),
-            ],
-        });
+        _cached_decoder_for_SpkmCredentials = $._decode_extensible_choice<SpkmCredentials>(
+            {
+                "CONTEXT 0": [
+                    "req",
+                    $._decode_explicit<SPKM_REQ>(() => _decode_SPKM_REQ),
+                ],
+                "CONTEXT 1": [
+                    "rep",
+                    $._decode_explicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_SpkmCredentials(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SpkmCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SpkmCredentials */
-let _cached_encoder_for_SpkmCredentials: $.ASN1Encoder<
-    SpkmCredentials
-> | null = null;
+let _cached_encoder_for_SpkmCredentials: $.ASN1Encoder<SpkmCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SpkmCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SpkmCredentials */

@@ -17,9 +17,7 @@ export type CountryCode3c = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION CountryCode3c */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CountryCode3c */
-let _cached_decoder_for_CountryCode3c: $.ASN1Decoder<
-    CountryCode3c
-> | null = null;
+let _cached_decoder_for_CountryCode3c: $.ASN1Decoder<CountryCode3c> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CountryCode3c */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CountryCode3c */
@@ -38,9 +36,7 @@ export function _decode_CountryCode3c(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CountryCode3c */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CountryCode3c */
-let _cached_encoder_for_CountryCode3c: $.ASN1Encoder<
-    CountryCode3c
-> | null = null;
+let _cached_encoder_for_CountryCode3c: $.ASN1Encoder<CountryCode3c> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CountryCode3c */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CountryCode3c */

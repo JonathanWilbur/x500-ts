@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_HolderIssuerAssertion: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_HolderIssuerAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HolderIssuerAssertion */
-let _cached_decoder_for_HolderIssuerAssertion: $.ASN1Decoder<
-    HolderIssuerAssertion
-> | null = null;
+let _cached_decoder_for_HolderIssuerAssertion: $.ASN1Decoder<HolderIssuerAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HolderIssuerAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HolderIssuerAssertion */
@@ -188,8 +186,8 @@ export function _decode_HolderIssuerAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new HolderIssuerAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                holder,
+            return new HolderIssuerAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
                 issuer,
                 _unrecognizedExtensionsList
             );
@@ -200,9 +198,7 @@ export function _decode_HolderIssuerAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HolderIssuerAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HolderIssuerAssertion */
-let _cached_encoder_for_HolderIssuerAssertion: $.ASN1Encoder<
-    HolderIssuerAssertion
-> | null = null;
+let _cached_encoder_for_HolderIssuerAssertion: $.ASN1Encoder<HolderIssuerAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HolderIssuerAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HolderIssuerAssertion */

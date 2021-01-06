@@ -125,9 +125,7 @@ export const _extension_additions_list_spec_for_RequestAttribute_defaultValues_I
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RequestAttribute_defaultValues_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestAttribute_defaultValues_Item */
-let _cached_decoder_for_RequestAttribute_defaultValues_Item: $.ASN1Decoder<
-    RequestAttribute_defaultValues_Item
-> | null = null;
+let _cached_decoder_for_RequestAttribute_defaultValues_Item: $.ASN1Decoder<RequestAttribute_defaultValues_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestAttribute_defaultValues_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestAttribute_defaultValues_Item */
@@ -169,8 +167,8 @@ export function _decode_RequestAttribute_defaultValues_Item(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RequestAttribute_defaultValues_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                entryType,
+            return new RequestAttribute_defaultValues_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ entryType,
                 values,
                 _unrecognizedExtensionsList
             );
@@ -181,9 +179,7 @@ export function _decode_RequestAttribute_defaultValues_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RequestAttribute_defaultValues_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestAttribute_defaultValues_Item */
-let _cached_encoder_for_RequestAttribute_defaultValues_Item: $.ASN1Encoder<
-    RequestAttribute_defaultValues_Item
-> | null = null;
+let _cached_encoder_for_RequestAttribute_defaultValues_Item: $.ASN1Encoder<RequestAttribute_defaultValues_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestAttribute_defaultValues_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestAttribute_defaultValues_Item */

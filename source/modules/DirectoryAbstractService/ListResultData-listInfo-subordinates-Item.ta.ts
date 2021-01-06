@@ -165,9 +165,7 @@ export const _extension_additions_list_spec_for_ListResultData_listInfo_subordin
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ListResultData_listInfo_subordinates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData_listInfo_subordinates_Item */
-let _cached_decoder_for_ListResultData_listInfo_subordinates_Item: $.ASN1Decoder<
-    ListResultData_listInfo_subordinates_Item
-> | null = null;
+let _cached_decoder_for_ListResultData_listInfo_subordinates_Item: $.ASN1Decoder<ListResultData_listInfo_subordinates_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData_listInfo_subordinates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ListResultData_listInfo_subordinates_Item */
@@ -219,8 +217,8 @@ export function _decode_ListResultData_listInfo_subordinates_Item(
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ListResultData_listInfo_subordinates_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                rdn,
+            return new ListResultData_listInfo_subordinates_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
                 aliasEntry,
                 fromEntry,
                 _unrecognizedExtensionsList
@@ -232,9 +230,7 @@ export function _decode_ListResultData_listInfo_subordinates_Item(
 /* END_OF_SYMBOL_DEFINITION _decode_ListResultData_listInfo_subordinates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData_listInfo_subordinates_Item */
-let _cached_encoder_for_ListResultData_listInfo_subordinates_Item: $.ASN1Encoder<
-    ListResultData_listInfo_subordinates_Item
-> | null = null;
+let _cached_encoder_for_ListResultData_listInfo_subordinates_Item: $.ASN1Encoder<ListResultData_listInfo_subordinates_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData_listInfo_subordinates_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ListResultData_listInfo_subordinates_Item */

@@ -40,9 +40,7 @@ export type AttributeCertificateAssertion_holder =
 /* END_OF_SYMBOL_DEFINITION AttributeCertificateAssertion_holder */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateAssertion_holder */
-let _cached_decoder_for_AttributeCertificateAssertion_holder: $.ASN1Decoder<
-    AttributeCertificateAssertion_holder
-> | null = null;
+let _cached_decoder_for_AttributeCertificateAssertion_holder: $.ASN1Decoder<AttributeCertificateAssertion_holder> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificateAssertion_holder */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificateAssertion_holder */
@@ -54,27 +52,29 @@ let _cached_decoder_for_AttributeCertificateAssertion_holder: $.ASN1Decoder<
  */
 export function _decode_AttributeCertificateAssertion_holder(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificateAssertion_holder) {
-        _cached_decoder_for_AttributeCertificateAssertion_holder = $._decode_extensible_choice<
-            AttributeCertificateAssertion_holder
-        >({
-            "CONTEXT 0": [
-                "baseCertificateID",
-                $._decode_implicit<IssuerSerial>(() => _decode_IssuerSerial),
-            ],
-            "CONTEXT 1": [
-                "holderName",
-                $._decode_implicit<GeneralNames>(() => _decode_GeneralNames),
-            ],
-        });
+        _cached_decoder_for_AttributeCertificateAssertion_holder = $._decode_extensible_choice<AttributeCertificateAssertion_holder>(
+            {
+                "CONTEXT 0": [
+                    "baseCertificateID",
+                    $._decode_implicit<IssuerSerial>(
+                        () => _decode_IssuerSerial
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "holderName",
+                    $._decode_implicit<GeneralNames>(
+                        () => _decode_GeneralNames
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AttributeCertificateAssertion_holder(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificateAssertion_holder */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateAssertion_holder */
-let _cached_encoder_for_AttributeCertificateAssertion_holder: $.ASN1Encoder<
-    AttributeCertificateAssertion_holder
-> | null = null;
+let _cached_encoder_for_AttributeCertificateAssertion_holder: $.ASN1Encoder<AttributeCertificateAssertion_holder> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificateAssertion_holder */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificateAssertion_holder */
@@ -90,9 +90,7 @@ export function _encode_AttributeCertificateAssertion_holder(
     elGetter: $.ASN1Encoder<AttributeCertificateAssertion_holder>
 ) {
     if (!_cached_encoder_for_AttributeCertificateAssertion_holder) {
-        _cached_encoder_for_AttributeCertificateAssertion_holder = $._encode_choice<
-            AttributeCertificateAssertion_holder
-        >(
+        _cached_encoder_for_AttributeCertificateAssertion_holder = $._encode_choice<AttributeCertificateAssertion_holder>(
             {
                 baseCertificateID: $._encode_implicit(
                     _TagClass.context,

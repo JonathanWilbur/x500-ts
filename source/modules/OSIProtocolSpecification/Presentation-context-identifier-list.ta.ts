@@ -29,9 +29,7 @@ export type Presentation_context_identifier_list = Presentation_context_identifi
 /* END_OF_SYMBOL_DEFINITION Presentation_context_identifier_list */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier_list */
-let _cached_decoder_for_Presentation_context_identifier_list: $.ASN1Decoder<
-    Presentation_context_identifier_list
-> | null = null;
+let _cached_decoder_for_Presentation_context_identifier_list: $.ASN1Decoder<Presentation_context_identifier_list> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier_list */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier_list */
@@ -43,18 +41,16 @@ let _cached_decoder_for_Presentation_context_identifier_list: $.ASN1Decoder<
  */
 export function _decode_Presentation_context_identifier_list(el: _Element) {
     if (!_cached_decoder_for_Presentation_context_identifier_list) {
-        _cached_decoder_for_Presentation_context_identifier_list = $._decodeSequenceOf<
-            Presentation_context_identifier_list_Item
-        >(() => _decode_Presentation_context_identifier_list_Item);
+        _cached_decoder_for_Presentation_context_identifier_list = $._decodeSequenceOf<Presentation_context_identifier_list_Item>(
+            () => _decode_Presentation_context_identifier_list_Item
+        );
     }
     return _cached_decoder_for_Presentation_context_identifier_list(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier_list */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier_list */
-let _cached_encoder_for_Presentation_context_identifier_list: $.ASN1Encoder<
-    Presentation_context_identifier_list
-> | null = null;
+let _cached_encoder_for_Presentation_context_identifier_list: $.ASN1Encoder<Presentation_context_identifier_list> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier_list */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Presentation_context_identifier_list */
@@ -70,9 +66,10 @@ export function _encode_Presentation_context_identifier_list(
     elGetter: $.ASN1Encoder<Presentation_context_identifier_list>
 ) {
     if (!_cached_encoder_for_Presentation_context_identifier_list) {
-        _cached_encoder_for_Presentation_context_identifier_list = $._encodeSequenceOf<
-            Presentation_context_identifier_list_Item
-        >(() => _encode_Presentation_context_identifier_list_Item, $.BER);
+        _cached_encoder_for_Presentation_context_identifier_list = $._encodeSequenceOf<Presentation_context_identifier_list_Item>(
+            () => _encode_Presentation_context_identifier_list_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_Presentation_context_identifier_list(
         value,

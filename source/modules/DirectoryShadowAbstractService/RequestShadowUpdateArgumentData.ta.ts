@@ -200,9 +200,7 @@ export const _extension_additions_list_spec_for_RequestShadowUpdateArgumentData:
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RequestShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData */
-let _cached_decoder_for_RequestShadowUpdateArgumentData: $.ASN1Decoder<
-    RequestShadowUpdateArgumentData
-> | null = null;
+let _cached_decoder_for_RequestShadowUpdateArgumentData: $.ASN1Decoder<RequestShadowUpdateArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData */
@@ -214,9 +212,7 @@ let _cached_decoder_for_RequestShadowUpdateArgumentData: $.ASN1Decoder<
  */
 export function _decode_RequestShadowUpdateArgumentData(el: _Element) {
     if (!_cached_decoder_for_RequestShadowUpdateArgumentData) {
-        _cached_decoder_for_RequestShadowUpdateArgumentData = $._decode_implicit<
-            RequestShadowUpdateArgumentData
-        >(
+        _cached_decoder_for_RequestShadowUpdateArgumentData = $._decode_implicit<RequestShadowUpdateArgumentData>(
             () =>
                 function (el: _Element): RequestShadowUpdateArgumentData {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -256,8 +252,8 @@ export function _decode_RequestShadowUpdateArgumentData(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new RequestShadowUpdateArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        agreementID,
+                    return new RequestShadowUpdateArgumentData(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                         lastUpdate,
                         requestedStrategy,
                         securityParameters,
@@ -271,9 +267,7 @@ export function _decode_RequestShadowUpdateArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData */
-let _cached_encoder_for_RequestShadowUpdateArgumentData: $.ASN1Encoder<
-    RequestShadowUpdateArgumentData
-> | null = null;
+let _cached_encoder_for_RequestShadowUpdateArgumentData: $.ASN1Encoder<RequestShadowUpdateArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestShadowUpdateArgumentData */

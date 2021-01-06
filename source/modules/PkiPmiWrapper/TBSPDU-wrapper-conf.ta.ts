@@ -40,9 +40,7 @@ export type TBSPDU_wrapper_conf =
 /* END_OF_SYMBOL_DEFINITION TBSPDU_wrapper_conf */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSPDU_wrapper_conf */
-let _cached_decoder_for_TBSPDU_wrapper_conf: $.ASN1Decoder<
-    TBSPDU_wrapper_conf
-> | null = null;
+let _cached_decoder_for_TBSPDU_wrapper_conf: $.ASN1Decoder<TBSPDU_wrapper_conf> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSPDU_wrapper_conf */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSPDU_wrapper_conf */
@@ -54,29 +52,29 @@ let _cached_decoder_for_TBSPDU_wrapper_conf: $.ASN1Decoder<
  */
 export function _decode_TBSPDU_wrapper_conf(el: _Element) {
     if (!_cached_decoder_for_TBSPDU_wrapper_conf) {
-        _cached_decoder_for_TBSPDU_wrapper_conf = $._decode_extensible_choice<
-            TBSPDU_wrapper_conf
-        >({
-            "CONTEXT 2": [
-                "clear",
-                $._decode_explicit<WrappedPDUInfo>(
-                    () => _decode_WrappedPDUInfo
-                ),
-            ],
-            "CONTEXT 3": [
-                "protected_",
-                $._decode_explicit<EncryptedInfo>(() => _decode_EncryptedInfo),
-            ],
-        });
+        _cached_decoder_for_TBSPDU_wrapper_conf = $._decode_extensible_choice<TBSPDU_wrapper_conf>(
+            {
+                "CONTEXT 2": [
+                    "clear",
+                    $._decode_explicit<WrappedPDUInfo>(
+                        () => _decode_WrappedPDUInfo
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "protected_",
+                    $._decode_explicit<EncryptedInfo>(
+                        () => _decode_EncryptedInfo
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TBSPDU_wrapper_conf(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TBSPDU_wrapper_conf */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSPDU_wrapper_conf */
-let _cached_encoder_for_TBSPDU_wrapper_conf: $.ASN1Encoder<
-    TBSPDU_wrapper_conf
-> | null = null;
+let _cached_encoder_for_TBSPDU_wrapper_conf: $.ASN1Encoder<TBSPDU_wrapper_conf> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSPDU_wrapper_conf */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSPDU_wrapper_conf */
@@ -92,9 +90,7 @@ export function _encode_TBSPDU_wrapper_conf(
     elGetter: $.ASN1Encoder<TBSPDU_wrapper_conf>
 ) {
     if (!_cached_encoder_for_TBSPDU_wrapper_conf) {
-        _cached_encoder_for_TBSPDU_wrapper_conf = $._encode_choice<
-            TBSPDU_wrapper_conf
-        >(
+        _cached_encoder_for_TBSPDU_wrapper_conf = $._encode_choice<TBSPDU_wrapper_conf>(
             {
                 clear: $._encode_explicit(
                     _TagClass.context,

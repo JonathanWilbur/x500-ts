@@ -49,9 +49,9 @@ let _cached_decoder_for_ReadArgument: $.ASN1Decoder<ReadArgument> | null = null;
  */
 export function _decode_ReadArgument(el: _Element) {
     if (!_cached_decoder_for_ReadArgument) {
-        _cached_decoder_for_ReadArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            ReadArgumentData
-        >(_decode_ReadArgumentData);
+        _cached_decoder_for_ReadArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ReadArgumentData>(
+            _decode_ReadArgumentData
+        );
     }
     return _cached_decoder_for_ReadArgument(el);
 }
@@ -74,9 +74,9 @@ export function _encode_ReadArgument(
     elGetter: $.ASN1Encoder<ReadArgument>
 ) {
     if (!_cached_encoder_for_ReadArgument) {
-        _cached_encoder_for_ReadArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            ReadArgumentData
-        >(_encode_ReadArgumentData);
+        _cached_encoder_for_ReadArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ReadArgumentData>(
+            _encode_ReadArgumentData
+        );
     }
     return _cached_encoder_for_ReadArgument(value, elGetter);
 }

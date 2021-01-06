@@ -137,9 +137,7 @@ export const _extension_additions_list_spec_for_ReplaceAvlRsp: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ReplaceAvlRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlRsp */
-let _cached_decoder_for_ReplaceAvlRsp: $.ASN1Decoder<
-    ReplaceAvlRsp
-> | null = null;
+let _cached_decoder_for_ReplaceAvlRsp: $.ASN1Decoder<ReplaceAvlRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlRsp */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReplaceAvlRsp */
@@ -176,9 +174,7 @@ export function _decode_ReplaceAvlRsp(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReplaceAvlRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlRsp */
-let _cached_encoder_for_ReplaceAvlRsp: $.ASN1Encoder<
-    ReplaceAvlRsp
-> | null = null;
+let _cached_encoder_for_ReplaceAvlRsp: $.ASN1Encoder<ReplaceAvlRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlRsp */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReplaceAvlRsp */

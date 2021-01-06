@@ -285,8 +285,8 @@ export function _decode_Context_Data(el: _Element) {
                 _root_component_type_list_2_spec_for_Context_Data,
                 undefined
             );
-            return new Context_Data /* SEQUENCE_CONSTRUCTOR_CALL */(
-                channelId,
+            return new Context_Data(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ channelId,
                 seq_number,
                 options,
                 conf_alg,

@@ -27,9 +27,7 @@ export type SecondaryShadows = SupplierAndConsumers[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION SecondaryShadows */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecondaryShadows */
-let _cached_decoder_for_SecondaryShadows: $.ASN1Decoder<
-    SecondaryShadows
-> | null = null;
+let _cached_decoder_for_SecondaryShadows: $.ASN1Decoder<SecondaryShadows> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecondaryShadows */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecondaryShadows */
@@ -41,18 +39,16 @@ let _cached_decoder_for_SecondaryShadows: $.ASN1Decoder<
  */
 export function _decode_SecondaryShadows(el: _Element) {
     if (!_cached_decoder_for_SecondaryShadows) {
-        _cached_decoder_for_SecondaryShadows = $._decodeSetOf<
-            SupplierAndConsumers
-        >(() => _decode_SupplierAndConsumers);
+        _cached_decoder_for_SecondaryShadows = $._decodeSetOf<SupplierAndConsumers>(
+            () => _decode_SupplierAndConsumers
+        );
     }
     return _cached_decoder_for_SecondaryShadows(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SecondaryShadows */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecondaryShadows */
-let _cached_encoder_for_SecondaryShadows: $.ASN1Encoder<
-    SecondaryShadows
-> | null = null;
+let _cached_encoder_for_SecondaryShadows: $.ASN1Encoder<SecondaryShadows> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecondaryShadows */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecondaryShadows */
@@ -68,9 +64,10 @@ export function _encode_SecondaryShadows(
     elGetter: $.ASN1Encoder<SecondaryShadows>
 ) {
     if (!_cached_encoder_for_SecondaryShadows) {
-        _cached_encoder_for_SecondaryShadows = $._encodeSetOf<
-            SupplierAndConsumers
-        >(() => _encode_SupplierAndConsumers, $.BER);
+        _cached_encoder_for_SecondaryShadows = $._encodeSetOf<SupplierAndConsumers>(
+            () => _encode_SupplierAndConsumers,
+            $.BER
+        );
     }
     return _cached_encoder_for_SecondaryShadows(value, elGetter);
 }

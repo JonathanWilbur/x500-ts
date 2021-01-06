@@ -402,8 +402,8 @@ export function _decode_Req_contents(el: _Element) {
                 _root_component_type_list_2_spec_for_Req_contents,
                 undefined
             );
-            return new Req_contents /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new Req_contents(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 pvno,
                 timestamp,

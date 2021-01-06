@@ -124,9 +124,7 @@ export type CertErr_notOK =
 /* END_OF_SYMBOL_DEFINITION CertErr_notOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertErr_notOK */
-let _cached_decoder_for_CertErr_notOK: $.ASN1Decoder<
-    CertErr_notOK
-> | null = null;
+let _cached_decoder_for_CertErr_notOK: $.ASN1Decoder<CertErr_notOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertErr_notOK */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertErr_notOK */
@@ -138,27 +136,25 @@ let _cached_decoder_for_CertErr_notOK: $.ASN1Decoder<
  */
 export function _decode_CertErr_notOK(el: _Element) {
     if (!_cached_decoder_for_CertErr_notOK) {
-        _cached_decoder_for_CertErr_notOK = $._decode_extensible_choice<
-            CertErr_notOK
-        >({
-            "CONTEXT 0": [
-                "wrErr",
-                $._decode_explicit<PkiWaError>(() => _decode_PkiWaError),
-            ],
-            "CONTEXT 1": [
-                "avmpErr",
-                $._decode_explicit<AVMP_error>(() => _decode_AVMP_error),
-            ],
-        });
+        _cached_decoder_for_CertErr_notOK = $._decode_extensible_choice<CertErr_notOK>(
+            {
+                "CONTEXT 0": [
+                    "wrErr",
+                    $._decode_explicit<PkiWaError>(() => _decode_PkiWaError),
+                ],
+                "CONTEXT 1": [
+                    "avmpErr",
+                    $._decode_explicit<AVMP_error>(() => _decode_AVMP_error),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertErr_notOK(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertErr_notOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertErr_notOK */
-let _cached_encoder_for_CertErr_notOK: $.ASN1Encoder<
-    CertErr_notOK
-> | null = null;
+let _cached_encoder_for_CertErr_notOK: $.ASN1Encoder<CertErr_notOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertErr_notOK */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertErr_notOK */

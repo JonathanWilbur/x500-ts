@@ -161,9 +161,7 @@ export const _extension_additions_list_spec_for_ResultAttribute: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ResultAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAttribute */
-let _cached_decoder_for_ResultAttribute: $.ASN1Decoder<
-    ResultAttribute
-> | null = null;
+let _cached_decoder_for_ResultAttribute: $.ASN1Decoder<ResultAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ResultAttribute */
@@ -211,8 +209,8 @@ export function _decode_ResultAttribute(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ResultAttribute /* SEQUENCE_CONSTRUCTOR_CALL */(
-                attributeType,
+            return new ResultAttribute(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ attributeType,
                 outputValues,
                 contexts,
                 _unrecognizedExtensionsList
@@ -224,9 +222,7 @@ export function _decode_ResultAttribute(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ResultAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAttribute */
-let _cached_encoder_for_ResultAttribute: $.ASN1Encoder<
-    ResultAttribute
-> | null = null;
+let _cached_encoder_for_ResultAttribute: $.ASN1Encoder<ResultAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ResultAttribute */

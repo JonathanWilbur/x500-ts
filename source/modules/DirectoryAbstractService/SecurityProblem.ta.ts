@@ -227,9 +227,7 @@ export const inappropriateAlgorithms: SecurityProblem = SecurityProblem_inapprop
 /* END_OF_SYMBOL_DEFINITION inappropriateAlgorithms */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityProblem */
-let _cached_decoder_for_SecurityProblem: $.ASN1Decoder<
-    SecurityProblem
-> | null = null;
+let _cached_decoder_for_SecurityProblem: $.ASN1Decoder<SecurityProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityProblem */
@@ -248,9 +246,7 @@ export function _decode_SecurityProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityProblem */
-let _cached_encoder_for_SecurityProblem: $.ASN1Encoder<
-    SecurityProblem
-> | null = null;
+let _cached_encoder_for_SecurityProblem: $.ASN1Encoder<SecurityProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityProblem */

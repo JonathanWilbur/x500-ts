@@ -68,9 +68,7 @@ export const noGeographicalNames: number = PwdVocabulary_noGeographicalNames; /*
 /* END_OF_SYMBOL_DEFINITION noGeographicalNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdVocabulary */
-let _cached_decoder_for_PwdVocabulary: $.ASN1Decoder<
-    PwdVocabulary
-> | null = null;
+let _cached_decoder_for_PwdVocabulary: $.ASN1Decoder<PwdVocabulary> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdVocabulary */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PwdVocabulary */
@@ -89,9 +87,7 @@ export function _decode_PwdVocabulary(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PwdVocabulary */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdVocabulary */
-let _cached_encoder_for_PwdVocabulary: $.ASN1Encoder<
-    PwdVocabulary
-> | null = null;
+let _cached_encoder_for_PwdVocabulary: $.ASN1Encoder<PwdVocabulary> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdVocabulary */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PwdVocabulary */

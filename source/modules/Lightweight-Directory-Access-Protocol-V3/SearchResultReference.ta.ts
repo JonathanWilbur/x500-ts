@@ -27,9 +27,7 @@ export type SearchResultReference = URI[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION SearchResultReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultReference */
-let _cached_decoder_for_SearchResultReference: $.ASN1Decoder<
-    SearchResultReference
-> | null = null;
+let _cached_decoder_for_SearchResultReference: $.ASN1Decoder<SearchResultReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultReference */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchResultReference */
@@ -41,18 +39,16 @@ let _cached_decoder_for_SearchResultReference: $.ASN1Decoder<
  */
 export function _decode_SearchResultReference(el: _Element) {
     if (!_cached_decoder_for_SearchResultReference) {
-        _cached_decoder_for_SearchResultReference = $._decode_implicit<
-            SearchResultReference
-        >(() => $._decodeSequenceOf<URI>(() => _decode_URI));
+        _cached_decoder_for_SearchResultReference = $._decode_implicit<SearchResultReference>(
+            () => $._decodeSequenceOf<URI>(() => _decode_URI)
+        );
     }
     return _cached_decoder_for_SearchResultReference(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SearchResultReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultReference */
-let _cached_encoder_for_SearchResultReference: $.ASN1Encoder<
-    SearchResultReference
-> | null = null;
+let _cached_encoder_for_SearchResultReference: $.ASN1Encoder<SearchResultReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultReference */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchResultReference */

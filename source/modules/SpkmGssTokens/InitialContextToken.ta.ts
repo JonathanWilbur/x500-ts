@@ -132,9 +132,7 @@ export const _extension_additions_list_spec_for_InitialContextToken: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_InitialContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitialContextToken */
-let _cached_decoder_for_InitialContextToken: $.ASN1Decoder<
-    InitialContextToken
-> | null = null;
+let _cached_decoder_for_InitialContextToken: $.ASN1Decoder<InitialContextToken> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InitialContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InitialContextToken */
@@ -146,9 +144,7 @@ let _cached_decoder_for_InitialContextToken: $.ASN1Decoder<
  */
 export function _decode_InitialContextToken(el: _Element) {
     if (!_cached_decoder_for_InitialContextToken) {
-        _cached_decoder_for_InitialContextToken = $._decode_implicit<
-            InitialContextToken
-        >(
+        _cached_decoder_for_InitialContextToken = $._decode_implicit<InitialContextToken>(
             () =>
                 function (el: _Element): InitialContextToken {
                     const sequence: _Element[] = el.sequence;
@@ -176,9 +172,7 @@ export function _decode_InitialContextToken(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InitialContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InitialContextToken */
-let _cached_encoder_for_InitialContextToken: $.ASN1Encoder<
-    InitialContextToken
-> | null = null;
+let _cached_encoder_for_InitialContextToken: $.ASN1Encoder<InitialContextToken> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InitialContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InitialContextToken */

@@ -53,9 +53,7 @@ export const consumer: ShadowingRole = ShadowingRole_consumer; /* SHORT_NAMED_IN
 /* END_OF_SYMBOL_DEFINITION consumer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowingRole */
-let _cached_decoder_for_ShadowingRole: $.ASN1Decoder<
-    ShadowingRole
-> | null = null;
+let _cached_decoder_for_ShadowingRole: $.ASN1Decoder<ShadowingRole> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowingRole */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShadowingRole */
@@ -74,9 +72,7 @@ export function _decode_ShadowingRole(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ShadowingRole */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowingRole */
-let _cached_encoder_for_ShadowingRole: $.ASN1Encoder<
-    ShadowingRole
-> | null = null;
+let _cached_encoder_for_ShadowingRole: $.ASN1Encoder<ShadowingRole> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowingRole */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShadowingRole */

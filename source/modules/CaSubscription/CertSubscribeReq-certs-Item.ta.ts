@@ -127,9 +127,7 @@ export const _extension_additions_list_spec_for_CertSubscribeReq_certs_Item: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertSubscribeReq_certs_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeReq_certs_Item */
-let _cached_decoder_for_CertSubscribeReq_certs_Item: $.ASN1Decoder<
-    CertSubscribeReq_certs_Item
-> | null = null;
+let _cached_decoder_for_CertSubscribeReq_certs_Item: $.ASN1Decoder<CertSubscribeReq_certs_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeReq_certs_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertSubscribeReq_certs_Item */
@@ -170,9 +168,7 @@ export function _decode_CertSubscribeReq_certs_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertSubscribeReq_certs_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeReq_certs_Item */
-let _cached_encoder_for_CertSubscribeReq_certs_Item: $.ASN1Encoder<
-    CertSubscribeReq_certs_Item
-> | null = null;
+let _cached_encoder_for_CertSubscribeReq_certs_Item: $.ASN1Encoder<CertSubscribeReq_certs_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeReq_certs_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertSubscribeReq_certs_Item */

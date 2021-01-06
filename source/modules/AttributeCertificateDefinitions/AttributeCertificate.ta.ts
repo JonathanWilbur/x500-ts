@@ -37,9 +37,7 @@ export type AttributeCertificate = SIGNED<TBSAttributeCertificate>; // DefinedTy
 /* END_OF_SYMBOL_DEFINITION AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificate */
-let _cached_decoder_for_AttributeCertificate: $.ASN1Decoder<
-    AttributeCertificate
-> | null = null;
+let _cached_decoder_for_AttributeCertificate: $.ASN1Decoder<AttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeCertificate */
@@ -51,18 +49,16 @@ let _cached_decoder_for_AttributeCertificate: $.ASN1Decoder<
  */
 export function _decode_AttributeCertificate(el: _Element) {
     if (!_cached_decoder_for_AttributeCertificate) {
-        _cached_decoder_for_AttributeCertificate = _get_decoder_for_SIGNED<
-            TBSAttributeCertificate
-        >(_decode_TBSAttributeCertificate);
+        _cached_decoder_for_AttributeCertificate = _get_decoder_for_SIGNED<TBSAttributeCertificate>(
+            _decode_TBSAttributeCertificate
+        );
     }
     return _cached_decoder_for_AttributeCertificate(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificate */
-let _cached_encoder_for_AttributeCertificate: $.ASN1Encoder<
-    AttributeCertificate
-> | null = null;
+let _cached_encoder_for_AttributeCertificate: $.ASN1Encoder<AttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeCertificate */
@@ -78,9 +74,9 @@ export function _encode_AttributeCertificate(
     elGetter: $.ASN1Encoder<AttributeCertificate>
 ) {
     if (!_cached_encoder_for_AttributeCertificate) {
-        _cached_encoder_for_AttributeCertificate = _get_encoder_for_SIGNED<
-            TBSAttributeCertificate
-        >(_encode_TBSAttributeCertificate);
+        _cached_encoder_for_AttributeCertificate = _get_encoder_for_SIGNED<TBSAttributeCertificate>(
+            _encode_TBSAttributeCertificate
+        );
     }
     return _cached_encoder_for_AttributeCertificate(value, elGetter);
 }

@@ -109,9 +109,7 @@ export const both: Knowledge_knowledgeType =
 /* END_OF_SYMBOL_DEFINITION both */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Knowledge_knowledgeType */
-let _cached_decoder_for_Knowledge_knowledgeType: $.ASN1Decoder<
-    Knowledge_knowledgeType
-> | null = null;
+let _cached_decoder_for_Knowledge_knowledgeType: $.ASN1Decoder<Knowledge_knowledgeType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Knowledge_knowledgeType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Knowledge_knowledgeType */
@@ -130,9 +128,7 @@ export function _decode_Knowledge_knowledgeType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Knowledge_knowledgeType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Knowledge_knowledgeType */
-let _cached_encoder_for_Knowledge_knowledgeType: $.ASN1Encoder<
-    Knowledge_knowledgeType
-> | null = null;
+let _cached_encoder_for_Knowledge_knowledgeType: $.ASN1Encoder<Knowledge_knowledgeType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Knowledge_knowledgeType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Knowledge_knowledgeType */

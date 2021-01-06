@@ -205,8 +205,8 @@ export function _decode_TBOK(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBOK /* SEQUENCE_CONSTRUCTOR_CALL */(
-                levelOfAssurance,
+            return new TBOK(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ levelOfAssurance,
                 confidenceLevel,
                 validationTime,
                 info,

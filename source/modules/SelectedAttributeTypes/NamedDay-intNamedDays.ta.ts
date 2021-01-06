@@ -193,9 +193,7 @@ export const saturday: NamedDay_intNamedDays =
 /* END_OF_SYMBOL_DEFINITION saturday */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NamedDay_intNamedDays */
-let _cached_decoder_for_NamedDay_intNamedDays: $.ASN1Decoder<
-    NamedDay_intNamedDays
-> | null = null;
+let _cached_decoder_for_NamedDay_intNamedDays: $.ASN1Decoder<NamedDay_intNamedDays> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NamedDay_intNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NamedDay_intNamedDays */
@@ -214,9 +212,7 @@ export function _decode_NamedDay_intNamedDays(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NamedDay_intNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NamedDay_intNamedDays */
-let _cached_encoder_for_NamedDay_intNamedDays: $.ASN1Encoder<
-    NamedDay_intNamedDays
-> | null = null;
+let _cached_encoder_for_NamedDay_intNamedDays: $.ASN1Encoder<NamedDay_intNamedDays> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NamedDay_intNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NamedDay_intNamedDays */

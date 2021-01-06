@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_HolderNameConstraintsSyntax: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_HolderNameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HolderNameConstraintsSyntax */
-let _cached_decoder_for_HolderNameConstraintsSyntax: $.ASN1Decoder<
-    HolderNameConstraintsSyntax
-> | null = null;
+let _cached_decoder_for_HolderNameConstraintsSyntax: $.ASN1Decoder<HolderNameConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HolderNameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HolderNameConstraintsSyntax */
@@ -180,8 +178,8 @@ export function _decode_HolderNameConstraintsSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new HolderNameConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                permittedSubtrees,
+            return new HolderNameConstraintsSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ permittedSubtrees,
                 excludedSubtrees,
                 _unrecognizedExtensionsList
             );
@@ -192,9 +190,7 @@ export function _decode_HolderNameConstraintsSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HolderNameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HolderNameConstraintsSyntax */
-let _cached_encoder_for_HolderNameConstraintsSyntax: $.ASN1Encoder<
-    HolderNameConstraintsSyntax
-> | null = null;
+let _cached_encoder_for_HolderNameConstraintsSyntax: $.ASN1Encoder<HolderNameConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HolderNameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HolderNameConstraintsSyntax */

@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_NameFormInformation: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NameFormInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NameFormInformation */
-let _cached_decoder_for_NameFormInformation: $.ASN1Decoder<
-    NameFormInformation
-> | null = null;
+let _cached_decoder_for_NameFormInformation: $.ASN1Decoder<NameFormInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NameFormInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NameFormInformation */
@@ -190,8 +188,8 @@ export function _decode_NameFormInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NameFormInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-                subordinate,
+            return new NameFormInformation(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ subordinate,
                 namingMandatories,
                 namingOptionals,
                 _unrecognizedExtensionsList
@@ -203,9 +201,7 @@ export function _decode_NameFormInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NameFormInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NameFormInformation */
-let _cached_encoder_for_NameFormInformation: $.ASN1Encoder<
-    NameFormInformation
-> | null = null;
+let _cached_encoder_for_NameFormInformation: $.ASN1Encoder<NameFormInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NameFormInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NameFormInformation */

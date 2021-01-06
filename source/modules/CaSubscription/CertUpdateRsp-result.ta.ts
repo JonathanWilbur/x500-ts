@@ -40,9 +40,7 @@ export type CertUpdateRsp_result =
 /* END_OF_SYMBOL_DEFINITION CertUpdateRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUpdateRsp_result */
-let _cached_decoder_for_CertUpdateRsp_result: $.ASN1Decoder<
-    CertUpdateRsp_result
-> | null = null;
+let _cached_decoder_for_CertUpdateRsp_result: $.ASN1Decoder<CertUpdateRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUpdateRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUpdateRsp_result */
@@ -54,27 +52,29 @@ let _cached_decoder_for_CertUpdateRsp_result: $.ASN1Decoder<
  */
 export function _decode_CertUpdateRsp_result(el: _Element) {
     if (!_cached_decoder_for_CertUpdateRsp_result) {
-        _cached_decoder_for_CertUpdateRsp_result = $._decode_extensible_choice<
-            CertUpdateRsp_result
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_implicit<CertUpdateOK>(() => _decode_CertUpdateOK),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_implicit<CertUpdateErr>(() => _decode_CertUpdateErr),
-            ],
-        });
+        _cached_decoder_for_CertUpdateRsp_result = $._decode_extensible_choice<CertUpdateRsp_result>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_implicit<CertUpdateOK>(
+                        () => _decode_CertUpdateOK
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_implicit<CertUpdateErr>(
+                        () => _decode_CertUpdateErr
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertUpdateRsp_result(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertUpdateRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUpdateRsp_result */
-let _cached_encoder_for_CertUpdateRsp_result: $.ASN1Encoder<
-    CertUpdateRsp_result
-> | null = null;
+let _cached_encoder_for_CertUpdateRsp_result: $.ASN1Encoder<CertUpdateRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUpdateRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUpdateRsp_result */
@@ -90,9 +90,7 @@ export function _encode_CertUpdateRsp_result(
     elGetter: $.ASN1Encoder<CertUpdateRsp_result>
 ) {
     if (!_cached_encoder_for_CertUpdateRsp_result) {
-        _cached_encoder_for_CertUpdateRsp_result = $._encode_choice<
-            CertUpdateRsp_result
-        >(
+        _cached_encoder_for_CertUpdateRsp_result = $._encode_choice<CertUpdateRsp_result>(
             {
                 success: $._encode_implicit(
                     _TagClass.context,

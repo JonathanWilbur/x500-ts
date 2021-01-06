@@ -208,9 +208,9 @@ export function _get_decoder_for_ICV_Total<ToBeProtected>(
                 icv = $._decodeBitString(_el);
             },
             altAlgorithmIdentifier: (_el: _Element): void => {
-                altAlgorithmIdentifier = $._decode_implicit<
-                    AlgorithmWithInvoke
-                >(() => _decode_AlgorithmWithInvoke)(_el);
+                altAlgorithmIdentifier = $._decode_implicit<AlgorithmWithInvoke>(
+                    () => _decode_AlgorithmWithInvoke
+                )(_el);
             },
             altIcv: (_el: _Element): void => {
                 altIcv = $._decode_implicit<BIT_STRING>(
@@ -229,8 +229,8 @@ export function _get_decoder_for_ICV_Total<ToBeProtected>(
                 _unrecognizedExtensionsList.push(ext);
             }
         );
-        return new ICV_Total /* SEQUENCE_CONSTRUCTOR_CALL */(
-            toBeProtected,
+        return new ICV_Total(
+            /* SEQUENCE_CONSTRUCTOR_CALL */ toBeProtected,
             algorithmIdentifier,
             icv,
             altAlgorithmIdentifier,

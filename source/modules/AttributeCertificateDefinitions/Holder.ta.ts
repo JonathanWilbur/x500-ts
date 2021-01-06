@@ -205,8 +205,8 @@ export function _decode_Holder(el: _Element) {
                 _root_component_type_list_2_spec_for_Holder,
                 undefined
             );
-            return new Holder /* SEQUENCE_CONSTRUCTOR_CALL */(
-                baseCertificateID,
+            return new Holder(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ baseCertificateID,
                 entityName,
                 objectDigestInfo
             );

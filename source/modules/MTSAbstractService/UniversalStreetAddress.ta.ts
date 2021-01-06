@@ -27,9 +27,7 @@ export type UniversalStreetAddress = UniversalPDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UniversalStreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalStreetAddress */
-let _cached_decoder_for_UniversalStreetAddress: $.ASN1Decoder<
-    UniversalStreetAddress
-> | null = null;
+let _cached_decoder_for_UniversalStreetAddress: $.ASN1Decoder<UniversalStreetAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalStreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalStreetAddress */
@@ -48,9 +46,7 @@ export function _decode_UniversalStreetAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalStreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalStreetAddress */
-let _cached_encoder_for_UniversalStreetAddress: $.ASN1Encoder<
-    UniversalStreetAddress
-> | null = null;
+let _cached_encoder_for_UniversalStreetAddress: $.ASN1Encoder<UniversalStreetAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalStreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalStreetAddress */

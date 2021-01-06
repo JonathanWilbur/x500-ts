@@ -308,9 +308,7 @@ export const _extension_additions_list_spec_for_AttributeTypeInformation: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeTypeInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeInformation */
-let _cached_decoder_for_AttributeTypeInformation: $.ASN1Decoder<
-    AttributeTypeInformation
-> | null = null;
+let _cached_decoder_for_AttributeTypeInformation: $.ASN1Decoder<AttributeTypeInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypeInformation */
@@ -364,9 +362,9 @@ export function _decode_AttributeTypeInformation(el: _Element) {
                     )(_el);
                 },
                 attributeSyntax: (_el: _Element): void => {
-                    attributeSyntax = $._decode_explicit<
-                        UnboundedDirectoryString
-                    >(() => _decode_UnboundedDirectoryString)(_el);
+                    attributeSyntax = $._decode_explicit<UnboundedDirectoryString>(
+                        () => _decode_UnboundedDirectoryString
+                    )(_el);
                 },
                 "multi-valued": (_el: _Element): void => {
                     multi_valued = $._decode_explicit<BOOLEAN>(
@@ -398,8 +396,8 @@ export function _decode_AttributeTypeInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeTypeInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-                derivation,
+            return new AttributeTypeInformation(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ derivation,
                 equalityMatch,
                 orderingMatch,
                 substringsMatch,
@@ -417,9 +415,7 @@ export function _decode_AttributeTypeInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypeInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeInformation */
-let _cached_encoder_for_AttributeTypeInformation: $.ASN1Encoder<
-    AttributeTypeInformation
-> | null = null;
+let _cached_encoder_for_AttributeTypeInformation: $.ASN1Encoder<AttributeTypeInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypeInformation */

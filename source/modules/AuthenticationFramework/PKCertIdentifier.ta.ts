@@ -65,9 +65,7 @@ export type PKCertIdentifier =
 /* END_OF_SYMBOL_DEFINITION PKCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PKCertIdentifier */
-let _cached_decoder_for_PKCertIdentifier: $.ASN1Decoder<
-    PKCertIdentifier
-> | null = null;
+let _cached_decoder_for_PKCertIdentifier: $.ASN1Decoder<PKCertIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PKCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PKCertIdentifier */
@@ -79,34 +77,37 @@ let _cached_decoder_for_PKCertIdentifier: $.ASN1Decoder<
  */
 export function _decode_PKCertIdentifier(el: _Element) {
     if (!_cached_decoder_for_PKCertIdentifier) {
-        _cached_decoder_for_PKCertIdentifier = $._decode_extensible_choice<
-            PKCertIdentifier
-        >({
-            "UNIVERSAL 16": ["issuerSerialNumber", _decode_IssuerSerialNumber],
-            "CONTEXT 0": [
-                "fingerprintPKC",
-                $._decode_explicit<FingerPrint<Certificate>>(() =>
-                    _get_decoder_for_FingerPrint<Certificate>(
-                        _decode_Certificate
-                    )
-                ),
-            ],
-            "CONTEXT 1": [
-                "fingerprintPK",
-                $._decode_explicit<FingerPrint<PublicKey>>(() =>
-                    _get_decoder_for_FingerPrint<PublicKey>(_decode_PublicKey)
-                ),
-            ],
-        });
+        _cached_decoder_for_PKCertIdentifier = $._decode_extensible_choice<PKCertIdentifier>(
+            {
+                "UNIVERSAL 16": [
+                    "issuerSerialNumber",
+                    _decode_IssuerSerialNumber,
+                ],
+                "CONTEXT 0": [
+                    "fingerprintPKC",
+                    $._decode_explicit<FingerPrint<Certificate>>(() =>
+                        _get_decoder_for_FingerPrint<Certificate>(
+                            _decode_Certificate
+                        )
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "fingerprintPK",
+                    $._decode_explicit<FingerPrint<PublicKey>>(() =>
+                        _get_decoder_for_FingerPrint<PublicKey>(
+                            _decode_PublicKey
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_PKCertIdentifier(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PKCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PKCertIdentifier */
-let _cached_encoder_for_PKCertIdentifier: $.ASN1Encoder<
-    PKCertIdentifier
-> | null = null;
+let _cached_encoder_for_PKCertIdentifier: $.ASN1Encoder<PKCertIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PKCertIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PKCertIdentifier */
@@ -122,9 +123,7 @@ export function _encode_PKCertIdentifier(
     elGetter: $.ASN1Encoder<PKCertIdentifier>
 ) {
     if (!_cached_encoder_for_PKCertIdentifier) {
-        _cached_encoder_for_PKCertIdentifier = $._encode_choice<
-            PKCertIdentifier
-        >(
+        _cached_encoder_for_PKCertIdentifier = $._encode_choice<PKCertIdentifier>(
             {
                 issuerSerialNumber: _encode_IssuerSerialNumber,
                 fingerprintPKC: $._encode_explicit(

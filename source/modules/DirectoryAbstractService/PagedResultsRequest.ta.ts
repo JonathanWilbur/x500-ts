@@ -45,9 +45,7 @@ export type PagedResultsRequest =
 /* END_OF_SYMBOL_DEFINITION PagedResultsRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PagedResultsRequest */
-let _cached_decoder_for_PagedResultsRequest: $.ASN1Decoder<
-    PagedResultsRequest
-> | null = null;
+let _cached_decoder_for_PagedResultsRequest: $.ASN1Decoder<PagedResultsRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PagedResultsRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PagedResultsRequest */
@@ -59,28 +57,28 @@ let _cached_decoder_for_PagedResultsRequest: $.ASN1Decoder<
  */
 export function _decode_PagedResultsRequest(el: _Element) {
     if (!_cached_decoder_for_PagedResultsRequest) {
-        _cached_decoder_for_PagedResultsRequest = $._decode_extensible_choice<
-            PagedResultsRequest
-        >({
-            "UNIVERSAL 16": [
-                "newRequest",
-                _decode_PagedResultsRequest_newRequest,
-            ],
-            "UNIVERSAL 4": ["queryReference", $._decodeOctetString],
-            "CONTEXT 0": [
-                "abandonQuery",
-                $._decode_explicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-        });
+        _cached_decoder_for_PagedResultsRequest = $._decode_extensible_choice<PagedResultsRequest>(
+            {
+                "UNIVERSAL 16": [
+                    "newRequest",
+                    _decode_PagedResultsRequest_newRequest,
+                ],
+                "UNIVERSAL 4": ["queryReference", $._decodeOctetString],
+                "CONTEXT 0": [
+                    "abandonQuery",
+                    $._decode_explicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_PagedResultsRequest(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PagedResultsRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PagedResultsRequest */
-let _cached_encoder_for_PagedResultsRequest: $.ASN1Encoder<
-    PagedResultsRequest
-> | null = null;
+let _cached_encoder_for_PagedResultsRequest: $.ASN1Encoder<PagedResultsRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PagedResultsRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PagedResultsRequest */
@@ -96,9 +94,7 @@ export function _encode_PagedResultsRequest(
     elGetter: $.ASN1Encoder<PagedResultsRequest>
 ) {
     if (!_cached_encoder_for_PagedResultsRequest) {
-        _cached_encoder_for_PagedResultsRequest = $._encode_choice<
-            PagedResultsRequest
-        >(
+        _cached_encoder_for_PagedResultsRequest = $._encode_choice<PagedResultsRequest>(
             {
                 newRequest: _encode_PagedResultsRequest_newRequest,
                 queryReference: $._encodeOctetString,

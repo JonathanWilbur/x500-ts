@@ -27,9 +27,7 @@ export type CertificatePoliciesSyntax = PolicyInformation[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CertificatePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePoliciesSyntax */
-let _cached_decoder_for_CertificatePoliciesSyntax: $.ASN1Decoder<
-    CertificatePoliciesSyntax
-> | null = null;
+let _cached_decoder_for_CertificatePoliciesSyntax: $.ASN1Decoder<CertificatePoliciesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificatePoliciesSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_CertificatePoliciesSyntax: $.ASN1Decoder<
  */
 export function _decode_CertificatePoliciesSyntax(el: _Element) {
     if (!_cached_decoder_for_CertificatePoliciesSyntax) {
-        _cached_decoder_for_CertificatePoliciesSyntax = $._decodeSequenceOf<
-            PolicyInformation
-        >(() => _decode_PolicyInformation);
+        _cached_decoder_for_CertificatePoliciesSyntax = $._decodeSequenceOf<PolicyInformation>(
+            () => _decode_PolicyInformation
+        );
     }
     return _cached_decoder_for_CertificatePoliciesSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertificatePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePoliciesSyntax */
-let _cached_encoder_for_CertificatePoliciesSyntax: $.ASN1Encoder<
-    CertificatePoliciesSyntax
-> | null = null;
+let _cached_encoder_for_CertificatePoliciesSyntax: $.ASN1Encoder<CertificatePoliciesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePoliciesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificatePoliciesSyntax */
@@ -68,9 +64,10 @@ export function _encode_CertificatePoliciesSyntax(
     elGetter: $.ASN1Encoder<CertificatePoliciesSyntax>
 ) {
     if (!_cached_encoder_for_CertificatePoliciesSyntax) {
-        _cached_encoder_for_CertificatePoliciesSyntax = $._encodeSequenceOf<
-            PolicyInformation
-        >(() => _encode_PolicyInformation, $.BER);
+        _cached_encoder_for_CertificatePoliciesSyntax = $._encodeSequenceOf<PolicyInformation>(
+            () => _encode_PolicyInformation,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertificatePoliciesSyntax(value, elGetter);
 }

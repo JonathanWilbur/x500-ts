@@ -45,9 +45,7 @@ export type DistributionPointName =
 /* END_OF_SYMBOL_DEFINITION DistributionPointName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DistributionPointName */
-let _cached_decoder_for_DistributionPointName: $.ASN1Decoder<
-    DistributionPointName
-> | null = null;
+let _cached_decoder_for_DistributionPointName: $.ASN1Decoder<DistributionPointName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DistributionPointName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DistributionPointName */
@@ -59,29 +57,29 @@ let _cached_decoder_for_DistributionPointName: $.ASN1Decoder<
  */
 export function _decode_DistributionPointName(el: _Element) {
     if (!_cached_decoder_for_DistributionPointName) {
-        _cached_decoder_for_DistributionPointName = $._decode_extensible_choice<
-            DistributionPointName
-        >({
-            "CONTEXT 0": [
-                "fullName",
-                $._decode_implicit<GeneralNames>(() => _decode_GeneralNames),
-            ],
-            "CONTEXT 1": [
-                "nameRelativeToCRLIssuer",
-                $._decode_implicit<RelativeDistinguishedName>(
-                    () => _decode_RelativeDistinguishedName
-                ),
-            ],
-        });
+        _cached_decoder_for_DistributionPointName = $._decode_extensible_choice<DistributionPointName>(
+            {
+                "CONTEXT 0": [
+                    "fullName",
+                    $._decode_implicit<GeneralNames>(
+                        () => _decode_GeneralNames
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "nameRelativeToCRLIssuer",
+                    $._decode_implicit<RelativeDistinguishedName>(
+                        () => _decode_RelativeDistinguishedName
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DistributionPointName(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DistributionPointName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DistributionPointName */
-let _cached_encoder_for_DistributionPointName: $.ASN1Encoder<
-    DistributionPointName
-> | null = null;
+let _cached_encoder_for_DistributionPointName: $.ASN1Encoder<DistributionPointName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DistributionPointName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DistributionPointName */
@@ -97,9 +95,7 @@ export function _encode_DistributionPointName(
     elGetter: $.ASN1Encoder<DistributionPointName>
 ) {
     if (!_cached_encoder_for_DistributionPointName) {
-        _cached_encoder_for_DistributionPointName = $._encode_choice<
-            DistributionPointName
-        >(
+        _cached_encoder_for_DistributionPointName = $._encode_choice<DistributionPointName>(
             {
                 fullName: $._encode_implicit(
                     _TagClass.context,

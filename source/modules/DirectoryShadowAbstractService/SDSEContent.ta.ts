@@ -275,8 +275,8 @@ export function _decode_SDSEContent(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SDSEContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-                sDSEType,
+            return new SDSEContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ sDSEType,
                 subComplete,
                 attComplete,
                 attributes,

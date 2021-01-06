@@ -37,9 +37,7 @@ export type CompareResult = OPTIONALLY_PROTECTED<CompareResultData>; // DefinedT
 /* END_OF_SYMBOL_DEFINITION CompareResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResult */
-let _cached_decoder_for_CompareResult: $.ASN1Decoder<
-    CompareResult
-> | null = null;
+let _cached_decoder_for_CompareResult: $.ASN1Decoder<CompareResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CompareResult */
@@ -51,18 +49,16 @@ let _cached_decoder_for_CompareResult: $.ASN1Decoder<
  */
 export function _decode_CompareResult(el: _Element) {
     if (!_cached_decoder_for_CompareResult) {
-        _cached_decoder_for_CompareResult = _get_decoder_for_OPTIONALLY_PROTECTED<
-            CompareResultData
-        >(_decode_CompareResultData);
+        _cached_decoder_for_CompareResult = _get_decoder_for_OPTIONALLY_PROTECTED<CompareResultData>(
+            _decode_CompareResultData
+        );
     }
     return _cached_decoder_for_CompareResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CompareResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResult */
-let _cached_encoder_for_CompareResult: $.ASN1Encoder<
-    CompareResult
-> | null = null;
+let _cached_encoder_for_CompareResult: $.ASN1Encoder<CompareResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CompareResult */
@@ -78,9 +74,9 @@ export function _encode_CompareResult(
     elGetter: $.ASN1Encoder<CompareResult>
 ) {
     if (!_cached_encoder_for_CompareResult) {
-        _cached_encoder_for_CompareResult = _get_encoder_for_OPTIONALLY_PROTECTED<
-            CompareResultData
-        >(_encode_CompareResultData);
+        _cached_encoder_for_CompareResult = _get_encoder_for_OPTIONALLY_PROTECTED<CompareResultData>(
+            _encode_CompareResultData
+        );
     }
     return _cached_encoder_for_CompareResult(value, elGetter);
 }

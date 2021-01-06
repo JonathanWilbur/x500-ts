@@ -150,9 +150,7 @@ export const contextViolation: AttributeProblem = AttributeProblem_contextViolat
 /* END_OF_SYMBOL_DEFINITION contextViolation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeProblem */
-let _cached_decoder_for_AttributeProblem: $.ASN1Decoder<
-    AttributeProblem
-> | null = null;
+let _cached_decoder_for_AttributeProblem: $.ASN1Decoder<AttributeProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeProblem */
@@ -171,9 +169,7 @@ export function _decode_AttributeProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeProblem */
-let _cached_encoder_for_AttributeProblem: $.ASN1Encoder<
-    AttributeProblem
-> | null = null;
+let _cached_encoder_for_AttributeProblem: $.ASN1Encoder<AttributeProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeProblem */

@@ -70,9 +70,7 @@ export const pagingAbandoned: AbandonedProblem =
 /* END_OF_SYMBOL_DEFINITION pagingAbandoned */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonedProblem */
-let _cached_decoder_for_AbandonedProblem: $.ASN1Decoder<
-    AbandonedProblem
-> | null = null;
+let _cached_decoder_for_AbandonedProblem: $.ASN1Decoder<AbandonedProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonedProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonedProblem */
@@ -91,9 +89,7 @@ export function _decode_AbandonedProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonedProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonedProblem */
-let _cached_encoder_for_AbandonedProblem: $.ASN1Encoder<
-    AbandonedProblem
-> | null = null;
+let _cached_encoder_for_AbandonedProblem: $.ASN1Encoder<AbandonedProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonedProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonedProblem */

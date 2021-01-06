@@ -98,9 +98,7 @@ export const _extension_additions_list_spec_for_OsiBindResult_mode_selector: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBindResult_mode_selector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_mode_selector */
-let _cached_decoder_for_OsiBindResult_mode_selector: $.ASN1Decoder<
-    OsiBindResult_mode_selector
-> | null = null;
+let _cached_decoder_for_OsiBindResult_mode_selector: $.ASN1Decoder<OsiBindResult_mode_selector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_mode_selector */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindResult_mode_selector */
@@ -135,8 +133,8 @@ export function _decode_OsiBindResult_mode_selector(el: _Element) {
                 _root_component_type_list_2_spec_for_OsiBindResult_mode_selector,
                 undefined
             );
-            return new OsiBindResult_mode_selector /* SET_CONSTRUCTOR_CALL */(
-                mode_value
+            return new OsiBindResult_mode_selector(
+                /* SET_CONSTRUCTOR_CALL */ mode_value
             );
         };
     }
@@ -145,9 +143,7 @@ export function _decode_OsiBindResult_mode_selector(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindResult_mode_selector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_mode_selector */
-let _cached_encoder_for_OsiBindResult_mode_selector: $.ASN1Encoder<
-    OsiBindResult_mode_selector
-> | null = null;
+let _cached_encoder_for_OsiBindResult_mode_selector: $.ASN1Encoder<OsiBindResult_mode_selector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_mode_selector */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindResult_mode_selector */

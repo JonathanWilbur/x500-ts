@@ -28,9 +28,7 @@ export type UniversalCommonName = UniversalOrBMPString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UniversalCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalCommonName */
-let _cached_decoder_for_UniversalCommonName: $.ASN1Decoder<
-    UniversalCommonName
-> | null = null;
+let _cached_decoder_for_UniversalCommonName: $.ASN1Decoder<UniversalCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalCommonName */
@@ -49,9 +47,7 @@ export function _decode_UniversalCommonName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalCommonName */
-let _cached_encoder_for_UniversalCommonName: $.ASN1Encoder<
-    UniversalCommonName
-> | null = null;
+let _cached_encoder_for_UniversalCommonName: $.ASN1Encoder<UniversalCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalCommonName */

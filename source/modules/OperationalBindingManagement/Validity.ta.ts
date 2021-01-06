@@ -209,8 +209,8 @@ export function _decode_Validity(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Validity /* SEQUENCE_CONSTRUCTOR_CALL */(
-                validFrom,
+            return new Validity(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
                 validUntil,
                 _unrecognizedExtensionsList
             );

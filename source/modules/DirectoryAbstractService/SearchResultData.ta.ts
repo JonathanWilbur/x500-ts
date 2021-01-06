@@ -51,9 +51,7 @@ export type SearchResultData =
 /* END_OF_SYMBOL_DEFINITION SearchResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultData */
-let _cached_decoder_for_SearchResultData: $.ASN1Decoder<
-    SearchResultData
-> | null = null;
+let _cached_decoder_for_SearchResultData: $.ASN1Decoder<SearchResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchResultData */
@@ -65,26 +63,27 @@ let _cached_decoder_for_SearchResultData: $.ASN1Decoder<
  */
 export function _decode_SearchResultData(el: _Element) {
     if (!_cached_decoder_for_SearchResultData) {
-        _cached_decoder_for_SearchResultData = $._decode_extensible_choice<
-            SearchResultData
-        >({
-            "UNIVERSAL 17": ["searchInfo", _decode_SearchResultData_searchInfo],
-            "CONTEXT 0": [
-                "uncorrelatedSearchInfo",
-                $._decode_explicit<SearchResult[]>(() =>
-                    $._decodeSetOf<SearchResult>(() => _decode_SearchResult)
-                ),
-            ],
-        });
+        _cached_decoder_for_SearchResultData = $._decode_extensible_choice<SearchResultData>(
+            {
+                "UNIVERSAL 17": [
+                    "searchInfo",
+                    _decode_SearchResultData_searchInfo,
+                ],
+                "CONTEXT 0": [
+                    "uncorrelatedSearchInfo",
+                    $._decode_explicit<SearchResult[]>(() =>
+                        $._decodeSetOf<SearchResult>(() => _decode_SearchResult)
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_SearchResultData(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SearchResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultData */
-let _cached_encoder_for_SearchResultData: $.ASN1Encoder<
-    SearchResultData
-> | null = null;
+let _cached_encoder_for_SearchResultData: $.ASN1Encoder<SearchResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchResultData */
@@ -100,9 +99,7 @@ export function _encode_SearchResultData(
     elGetter: $.ASN1Encoder<SearchResultData>
 ) {
     if (!_cached_encoder_for_SearchResultData) {
-        _cached_encoder_for_SearchResultData = $._encode_choice<
-            SearchResultData
-        >(
+        _cached_encoder_for_SearchResultData = $._encode_choice<SearchResultData>(
             {
                 searchInfo: _encode_SearchResultData_searchInfo,
                 uncorrelatedSearchInfo: $._encode_explicit(

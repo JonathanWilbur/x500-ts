@@ -117,9 +117,7 @@ export const _extension_additions_list_spec_for_InitializationAcc: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_InitializationAcc */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAcc */
-let _cached_decoder_for_InitializationAcc: $.ASN1Decoder<
-    InitializationAcc
-> | null = null;
+let _cached_decoder_for_InitializationAcc: $.ASN1Decoder<InitializationAcc> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAcc */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InitializationAcc */
@@ -153,9 +151,7 @@ export function _decode_InitializationAcc(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InitializationAcc */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAcc */
-let _cached_encoder_for_InitializationAcc: $.ASN1Encoder<
-    InitializationAcc
-> | null = null;
+let _cached_encoder_for_InitializationAcc: $.ASN1Encoder<InitializationAcc> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAcc */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InitializationAcc */

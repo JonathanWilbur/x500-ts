@@ -149,9 +149,7 @@ export const _extension_additions_list_spec_for_InfoSyntax_pointer: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_InfoSyntax_pointer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InfoSyntax_pointer */
-let _cached_decoder_for_InfoSyntax_pointer: $.ASN1Decoder<
-    InfoSyntax_pointer
-> | null = null;
+let _cached_decoder_for_InfoSyntax_pointer: $.ASN1Decoder<InfoSyntax_pointer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InfoSyntax_pointer */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InfoSyntax_pointer */
@@ -193,8 +191,8 @@ export function _decode_InfoSyntax_pointer(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new InfoSyntax_pointer /* SEQUENCE_CONSTRUCTOR_CALL */(
-                name,
+            return new InfoSyntax_pointer(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ name,
                 hash,
                 _unrecognizedExtensionsList
             );
@@ -205,9 +203,7 @@ export function _decode_InfoSyntax_pointer(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InfoSyntax_pointer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InfoSyntax_pointer */
-let _cached_encoder_for_InfoSyntax_pointer: $.ASN1Encoder<
-    InfoSyntax_pointer
-> | null = null;
+let _cached_encoder_for_InfoSyntax_pointer: $.ASN1Encoder<InfoSyntax_pointer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InfoSyntax_pointer */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InfoSyntax_pointer */

@@ -81,9 +81,7 @@ export const compoundEntry: FamilyReturn_memberSelect = FamilyReturn_memberSelec
 /* END_OF_SYMBOL_DEFINITION compoundEntry */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyReturn_memberSelect */
-let _cached_decoder_for_FamilyReturn_memberSelect: $.ASN1Decoder<
-    FamilyReturn_memberSelect
-> | null = null;
+let _cached_decoder_for_FamilyReturn_memberSelect: $.ASN1Decoder<FamilyReturn_memberSelect> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FamilyReturn_memberSelect */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FamilyReturn_memberSelect */
@@ -102,9 +100,7 @@ export function _decode_FamilyReturn_memberSelect(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_FamilyReturn_memberSelect */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FamilyReturn_memberSelect */
-let _cached_encoder_for_FamilyReturn_memberSelect: $.ASN1Encoder<
-    FamilyReturn_memberSelect
-> | null = null;
+let _cached_encoder_for_FamilyReturn_memberSelect: $.ASN1Encoder<FamilyReturn_memberSelect> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FamilyReturn_memberSelect */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FamilyReturn_memberSelect */

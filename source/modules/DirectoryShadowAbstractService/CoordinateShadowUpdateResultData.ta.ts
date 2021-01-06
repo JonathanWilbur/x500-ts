@@ -105,25 +105,19 @@ export class CoordinateShadowUpdateResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -255,9 +249,7 @@ export const _extension_additions_list_spec_for_CoordinateShadowUpdateResultData
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CoordinateShadowUpdateResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateResultData */
-let _cached_decoder_for_CoordinateShadowUpdateResultData: $.ASN1Decoder<
-    CoordinateShadowUpdateResultData
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateResultData: $.ASN1Decoder<CoordinateShadowUpdateResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateResultData */
@@ -269,9 +261,7 @@ let _cached_decoder_for_CoordinateShadowUpdateResultData: $.ASN1Decoder<
  */
 export function _decode_CoordinateShadowUpdateResultData(el: _Element) {
     if (!_cached_decoder_for_CoordinateShadowUpdateResultData) {
-        _cached_decoder_for_CoordinateShadowUpdateResultData = $._decode_implicit<
-            CoordinateShadowUpdateResultData
-        >(
+        _cached_decoder_for_CoordinateShadowUpdateResultData = $._decode_implicit<CoordinateShadowUpdateResultData>(
             () =>
                 function (el: _Element): CoordinateShadowUpdateResultData {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -293,9 +283,9 @@ export function _decode_CoordinateShadowUpdateResultData(el: _Element) {
                             lastUpdate = _decode_Time(_el);
                         },
                         securityParameters: (_el: _Element): void => {
-                            securityParameters = $._decode_explicit<
-                                SecurityParameters
-                            >(() => _decode_SecurityParameters)(_el);
+                            securityParameters = $._decode_explicit<SecurityParameters>(
+                                () => _decode_SecurityParameters
+                            )(_el);
                         },
                         performer: (_el: _Element): void => {
                             performer = $._decode_explicit<DistinguishedName>(
@@ -326,8 +316,8 @@ export function _decode_CoordinateShadowUpdateResultData(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new CoordinateShadowUpdateResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        agreementID,
+                    return new CoordinateShadowUpdateResultData(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                         lastUpdate,
                         _unrecognizedExtensionsList,
                         securityParameters,
@@ -343,9 +333,7 @@ export function _decode_CoordinateShadowUpdateResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateResultData */
-let _cached_encoder_for_CoordinateShadowUpdateResultData: $.ASN1Encoder<
-    CoordinateShadowUpdateResultData
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateResultData: $.ASN1Encoder<CoordinateShadowUpdateResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateResultData */
@@ -424,9 +412,7 @@ export function _encode_CoordinateShadowUpdateResultData(
                                               _TagClass.context,
                                               27,
                                               () =>
-                                                  $._encodeSequenceOf<
-                                                      Attribute
-                                                  >(
+                                                  $._encodeSequenceOf<Attribute>(
                                                       () => _encode_Attribute,
                                                       $.BER
                                                   ),

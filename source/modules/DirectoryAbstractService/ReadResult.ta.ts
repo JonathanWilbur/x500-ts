@@ -49,9 +49,9 @@ let _cached_decoder_for_ReadResult: $.ASN1Decoder<ReadResult> | null = null;
  */
 export function _decode_ReadResult(el: _Element) {
     if (!_cached_decoder_for_ReadResult) {
-        _cached_decoder_for_ReadResult = _get_decoder_for_OPTIONALLY_PROTECTED<
-            ReadResultData
-        >(_decode_ReadResultData);
+        _cached_decoder_for_ReadResult = _get_decoder_for_OPTIONALLY_PROTECTED<ReadResultData>(
+            _decode_ReadResultData
+        );
     }
     return _cached_decoder_for_ReadResult(el);
 }
@@ -74,9 +74,9 @@ export function _encode_ReadResult(
     elGetter: $.ASN1Encoder<ReadResult>
 ) {
     if (!_cached_encoder_for_ReadResult) {
-        _cached_encoder_for_ReadResult = _get_encoder_for_OPTIONALLY_PROTECTED<
-            ReadResultData
-        >(_encode_ReadResultData);
+        _cached_encoder_for_ReadResult = _get_encoder_for_OPTIONALLY_PROTECTED<ReadResultData>(
+            _encode_ReadResultData
+        );
     }
     return _cached_encoder_for_ReadResult(value, elGetter);
 }

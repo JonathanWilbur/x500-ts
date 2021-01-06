@@ -105,25 +105,19 @@ export class ReadResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -251,9 +245,7 @@ export const _extension_additions_list_spec_for_ReadResultData: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ReadResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReadResultData */
-let _cached_decoder_for_ReadResultData: $.ASN1Decoder<
-    ReadResultData
-> | null = null;
+let _cached_decoder_for_ReadResultData: $.ASN1Decoder<ReadResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReadResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReadResultData */
@@ -322,8 +314,8 @@ export function _decode_ReadResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ReadResultData /* SET_CONSTRUCTOR_CALL */(
-                entry,
+            return new ReadResultData(
+                /* SET_CONSTRUCTOR_CALL */ entry,
                 modifyRights,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -338,9 +330,7 @@ export function _decode_ReadResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReadResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReadResultData */
-let _cached_encoder_for_ReadResultData: $.ASN1Encoder<
-    ReadResultData
-> | null = null;
+let _cached_encoder_for_ReadResultData: $.ASN1Encoder<ReadResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReadResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReadResultData */

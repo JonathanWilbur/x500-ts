@@ -39,9 +39,9 @@ let _cached_decoder_for_AttCertPath: $.ASN1Decoder<AttCertPath> | null = null;
  */
 export function _decode_AttCertPath(el: _Element) {
     if (!_cached_decoder_for_AttCertPath) {
-        _cached_decoder_for_AttCertPath = $._decodeSequenceOf<
-            AttributeCertificate
-        >(() => _decode_AttributeCertificate);
+        _cached_decoder_for_AttCertPath = $._decodeSequenceOf<AttributeCertificate>(
+            () => _decode_AttributeCertificate
+        );
     }
     return _cached_decoder_for_AttCertPath(el);
 }
@@ -64,9 +64,10 @@ export function _encode_AttCertPath(
     elGetter: $.ASN1Encoder<AttCertPath>
 ) {
     if (!_cached_encoder_for_AttCertPath) {
-        _cached_encoder_for_AttCertPath = $._encodeSequenceOf<
-            AttributeCertificate
-        >(() => _encode_AttributeCertificate, $.BER);
+        _cached_encoder_for_AttCertPath = $._encodeSequenceOf<AttributeCertificate>(
+            () => _encode_AttributeCertificate,
+            $.BER
+        );
     }
     return _cached_encoder_for_AttCertPath(value, elGetter);
 }

@@ -97,9 +97,7 @@ export const week5: number = Period_weeks_bitWeek_week5; /* SHORT_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION week5 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_weeks_bitWeek */
-let _cached_decoder_for_Period_weeks_bitWeek: $.ASN1Decoder<
-    Period_weeks_bitWeek
-> | null = null;
+let _cached_decoder_for_Period_weeks_bitWeek: $.ASN1Decoder<Period_weeks_bitWeek> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_weeks_bitWeek */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Period_weeks_bitWeek */
@@ -118,9 +116,7 @@ export function _decode_Period_weeks_bitWeek(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Period_weeks_bitWeek */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_weeks_bitWeek */
-let _cached_encoder_for_Period_weeks_bitWeek: $.ASN1Encoder<
-    Period_weeks_bitWeek
-> | null = null;
+let _cached_encoder_for_Period_weeks_bitWeek: $.ASN1Encoder<Period_weeks_bitWeek> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_weeks_bitWeek */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Period_weeks_bitWeek */

@@ -302,9 +302,7 @@ export const noPasswordSlot: UpdateProblem = UpdateProblem_noPasswordSlot; /* SH
 /* END_OF_SYMBOL_DEFINITION noPasswordSlot */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateProblem */
-let _cached_decoder_for_UpdateProblem: $.ASN1Decoder<
-    UpdateProblem
-> | null = null;
+let _cached_decoder_for_UpdateProblem: $.ASN1Decoder<UpdateProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UpdateProblem */
@@ -323,9 +321,7 @@ export function _decode_UpdateProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UpdateProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateProblem */
-let _cached_encoder_for_UpdateProblem: $.ASN1Encoder<
-    UpdateProblem
-> | null = null;
+let _cached_encoder_for_UpdateProblem: $.ASN1Encoder<UpdateProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UpdateProblem */

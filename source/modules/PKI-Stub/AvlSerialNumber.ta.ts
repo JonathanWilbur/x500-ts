@@ -17,9 +17,7 @@ export type AvlSerialNumber = INTEGER;
 /* END_OF_SYMBOL_DEFINITION AvlSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AvlSerialNumber */
-let _cached_decoder_for_AvlSerialNumber: $.ASN1Decoder<
-    AvlSerialNumber
-> | null = null;
+let _cached_decoder_for_AvlSerialNumber: $.ASN1Decoder<AvlSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AvlSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AvlSerialNumber */
@@ -38,9 +36,7 @@ export function _decode_AvlSerialNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AvlSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AvlSerialNumber */
-let _cached_encoder_for_AvlSerialNumber: $.ASN1Encoder<
-    AvlSerialNumber
-> | null = null;
+let _cached_encoder_for_AvlSerialNumber: $.ASN1Encoder<AvlSerialNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AvlSerialNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AvlSerialNumber */

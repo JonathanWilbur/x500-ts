@@ -49,9 +49,9 @@ let _cached_decoder_for_LdapResult: $.ASN1Decoder<LdapResult> | null = null;
  */
 export function _decode_LdapResult(el: _Element) {
     if (!_cached_decoder_for_LdapResult) {
-        _cached_decoder_for_LdapResult = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LdapResultData
-        >(_decode_LdapResultData);
+        _cached_decoder_for_LdapResult = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LdapResultData>(
+            _decode_LdapResultData
+        );
     }
     return _cached_decoder_for_LdapResult(el);
 }
@@ -74,9 +74,9 @@ export function _encode_LdapResult(
     elGetter: $.ASN1Encoder<LdapResult>
 ) {
     if (!_cached_encoder_for_LdapResult) {
-        _cached_encoder_for_LdapResult = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LdapResultData
-        >(_encode_LdapResultData);
+        _cached_encoder_for_LdapResult = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LdapResultData>(
+            _encode_LdapResultData
+        );
     }
     return _cached_encoder_for_LdapResult(value, elGetter);
 }

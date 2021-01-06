@@ -71,15 +71,15 @@ let _cached_decoder_for_AltNameType: $.ASN1Decoder<AltNameType> | null = null;
  */
 export function _decode_AltNameType(el: _Element) {
     if (!_cached_decoder_for_AltNameType) {
-        _cached_decoder_for_AltNameType = $._decode_extensible_choice<
-            AltNameType
-        >({
-            "UNIVERSAL 10": [
-                "builtinNameForm",
-                _decode_AltNameType_builtinNameForm,
-            ],
-            "UNIVERSAL 6": ["otherNameForm", $._decodeObjectIdentifier],
-        });
+        _cached_decoder_for_AltNameType = $._decode_extensible_choice<AltNameType>(
+            {
+                "UNIVERSAL 10": [
+                    "builtinNameForm",
+                    _decode_AltNameType_builtinNameForm,
+                ],
+                "UNIVERSAL 6": ["otherNameForm", $._decodeObjectIdentifier],
+            }
+        );
     }
     return _cached_decoder_for_AltNameType(el);
 }

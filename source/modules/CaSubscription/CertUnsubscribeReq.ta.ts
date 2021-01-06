@@ -145,9 +145,7 @@ export const _extension_additions_list_spec_for_CertUnsubscribeReq: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertUnsubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeReq */
-let _cached_decoder_for_CertUnsubscribeReq: $.ASN1Decoder<
-    CertUnsubscribeReq
-> | null = null;
+let _cached_decoder_for_CertUnsubscribeReq: $.ASN1Decoder<CertUnsubscribeReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeReq */
@@ -186,9 +184,7 @@ export function _decode_CertUnsubscribeReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeReq */
-let _cached_encoder_for_CertUnsubscribeReq: $.ASN1Encoder<
-    CertUnsubscribeReq
-> | null = null;
+let _cached_encoder_for_CertUnsubscribeReq: $.ASN1Encoder<CertUnsubscribeReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUnsubscribeReq */
@@ -216,9 +212,7 @@ export function _encode_CertUnsubscribeReq(
                                 value.invokeID,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                CertUnsubscribeReq_certs_Item
-                            >(
+                            /* REQUIRED   */ $._encodeSequenceOf<CertUnsubscribeReq_certs_Item>(
                                 () => _encode_CertUnsubscribeReq_certs_Item,
                                 $.BER
                             )(value.certs, $.BER),

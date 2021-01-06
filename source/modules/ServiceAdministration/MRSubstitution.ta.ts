@@ -147,9 +147,7 @@ export const _extension_additions_list_spec_for_MRSubstitution: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MRSubstitution */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MRSubstitution */
-let _cached_decoder_for_MRSubstitution: $.ASN1Decoder<
-    MRSubstitution
-> | null = null;
+let _cached_decoder_for_MRSubstitution: $.ASN1Decoder<MRSubstitution> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MRSubstitution */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MRSubstitution */
@@ -197,8 +195,8 @@ export function _decode_MRSubstitution(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MRSubstitution /* SEQUENCE_CONSTRUCTOR_CALL */(
-                attribute,
+            return new MRSubstitution(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ attribute,
                 oldMatchingRule,
                 newMatchingRule,
                 _unrecognizedExtensionsList
@@ -210,9 +208,7 @@ export function _decode_MRSubstitution(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MRSubstitution */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MRSubstitution */
-let _cached_encoder_for_MRSubstitution: $.ASN1Encoder<
-    MRSubstitution
-> | null = null;
+let _cached_encoder_for_MRSubstitution: $.ASN1Encoder<MRSubstitution> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MRSubstitution */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MRSubstitution */

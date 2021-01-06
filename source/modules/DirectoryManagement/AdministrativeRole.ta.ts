@@ -18,9 +18,7 @@ export type AdministrativeRole = OBJECT_IDENTIFIER; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION AdministrativeRole */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministrativeRole */
-let _cached_decoder_for_AdministrativeRole: $.ASN1Decoder<
-    AdministrativeRole
-> | null = null;
+let _cached_decoder_for_AdministrativeRole: $.ASN1Decoder<AdministrativeRole> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministrativeRole */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AdministrativeRole */
@@ -39,9 +37,7 @@ export function _decode_AdministrativeRole(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AdministrativeRole */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministrativeRole */
-let _cached_encoder_for_AdministrativeRole: $.ASN1Encoder<
-    AdministrativeRole
-> | null = null;
+let _cached_encoder_for_AdministrativeRole: $.ASN1Encoder<AdministrativeRole> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministrativeRole */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AdministrativeRole */

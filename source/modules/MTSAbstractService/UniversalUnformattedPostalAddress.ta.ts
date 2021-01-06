@@ -29,9 +29,7 @@ export type UniversalUnformattedPostalAddress = UniversalOrBMPString; // Defined
 /* END_OF_SYMBOL_DEFINITION UniversalUnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalUnformattedPostalAddress */
-let _cached_decoder_for_UniversalUnformattedPostalAddress: $.ASN1Decoder<
-    UniversalUnformattedPostalAddress
-> | null = null;
+let _cached_decoder_for_UniversalUnformattedPostalAddress: $.ASN1Decoder<UniversalUnformattedPostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalUnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalUnformattedPostalAddress */
@@ -50,9 +48,7 @@ export function _decode_UniversalUnformattedPostalAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalUnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalUnformattedPostalAddress */
-let _cached_encoder_for_UniversalUnformattedPostalAddress: $.ASN1Encoder<
-    UniversalUnformattedPostalAddress
-> | null = null;
+let _cached_encoder_for_UniversalUnformattedPostalAddress: $.ASN1Encoder<UniversalUnformattedPostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalUnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalUnformattedPostalAddress */

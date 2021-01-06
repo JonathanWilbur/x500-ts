@@ -17,9 +17,7 @@ export type Presentation_selector = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION Presentation_selector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_selector */
-let _cached_decoder_for_Presentation_selector: $.ASN1Decoder<
-    Presentation_selector
-> | null = null;
+let _cached_decoder_for_Presentation_selector: $.ASN1Decoder<Presentation_selector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_selector */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Presentation_selector */
@@ -38,9 +36,7 @@ export function _decode_Presentation_selector(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Presentation_selector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_selector */
-let _cached_encoder_for_Presentation_selector: $.ASN1Encoder<
-    Presentation_selector
-> | null = null;
+let _cached_encoder_for_Presentation_selector: $.ASN1Encoder<Presentation_selector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_selector */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Presentation_selector */

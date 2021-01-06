@@ -229,9 +229,7 @@ export const _extension_additions_list_spec_for_TBSPDU_wrapper: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSPDU_wrapper */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSPDU_wrapper */
-let _cached_decoder_for_TBSPDU_wrapper: $.ASN1Decoder<
-    TBSPDU_wrapper
-> | null = null;
+let _cached_decoder_for_TBSPDU_wrapper: $.ASN1Decoder<TBSPDU_wrapper> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSPDU_wrapper */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSPDU_wrapper */
@@ -288,8 +286,8 @@ export function _decode_TBSPDU_wrapper(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSPDU_wrapper /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TBSPDU_wrapper(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 signatureAlgorithm,
                 certPath,
                 signedAttrs,
@@ -303,9 +301,7 @@ export function _decode_TBSPDU_wrapper(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TBSPDU_wrapper */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSPDU_wrapper */
-let _cached_encoder_for_TBSPDU_wrapper: $.ASN1Encoder<
-    TBSPDU_wrapper
-> | null = null;
+let _cached_encoder_for_TBSPDU_wrapper: $.ASN1Encoder<TBSPDU_wrapper> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSPDU_wrapper */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSPDU_wrapper */

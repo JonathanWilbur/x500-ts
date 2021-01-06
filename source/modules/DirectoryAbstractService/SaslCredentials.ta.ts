@@ -158,9 +158,7 @@ export const _extension_additions_list_spec_for_SaslCredentials: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SaslCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SaslCredentials */
-let _cached_decoder_for_SaslCredentials: $.ASN1Decoder<
-    SaslCredentials
-> | null = null;
+let _cached_decoder_for_SaslCredentials: $.ASN1Decoder<SaslCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SaslCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SaslCredentials */
@@ -211,8 +209,8 @@ export function _decode_SaslCredentials(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SaslCredentials /* SEQUENCE_CONSTRUCTOR_CALL */(
-                mechanism,
+            return new SaslCredentials(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mechanism,
                 credentials,
                 saslAbort,
                 _unrecognizedExtensionsList
@@ -224,9 +222,7 @@ export function _decode_SaslCredentials(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SaslCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SaslCredentials */
-let _cached_encoder_for_SaslCredentials: $.ASN1Encoder<
-    SaslCredentials
-> | null = null;
+let _cached_encoder_for_SaslCredentials: $.ASN1Encoder<SaslCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SaslCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SaslCredentials */

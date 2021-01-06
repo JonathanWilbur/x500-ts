@@ -302,8 +302,8 @@ export function _decode_Period(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Period /* SEQUENCE_CONSTRUCTOR_CALL */(
-                timesOfDay,
+            return new Period(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ timesOfDay,
                 days,
                 weeks,
                 months,

@@ -27,9 +27,7 @@ export type DomainLocalID = UnboundedDirectoryString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION DomainLocalID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DomainLocalID */
-let _cached_decoder_for_DomainLocalID: $.ASN1Decoder<
-    DomainLocalID
-> | null = null;
+let _cached_decoder_for_DomainLocalID: $.ASN1Decoder<DomainLocalID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DomainLocalID */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DomainLocalID */
@@ -48,9 +46,7 @@ export function _decode_DomainLocalID(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DomainLocalID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DomainLocalID */
-let _cached_encoder_for_DomainLocalID: $.ASN1Encoder<
-    DomainLocalID
-> | null = null;
+let _cached_encoder_for_DomainLocalID: $.ASN1Encoder<DomainLocalID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DomainLocalID */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DomainLocalID */

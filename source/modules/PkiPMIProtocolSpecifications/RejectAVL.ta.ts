@@ -310,8 +310,8 @@ export function _decode_RejectAVL(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RejectAVL /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new RejectAVL(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 reason,

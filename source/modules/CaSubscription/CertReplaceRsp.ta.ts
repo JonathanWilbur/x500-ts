@@ -137,9 +137,7 @@ export const _extension_additions_list_spec_for_CertReplaceRsp: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertReplaceRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceRsp */
-let _cached_decoder_for_CertReplaceRsp: $.ASN1Decoder<
-    CertReplaceRsp
-> | null = null;
+let _cached_decoder_for_CertReplaceRsp: $.ASN1Decoder<CertReplaceRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceRsp */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertReplaceRsp */
@@ -176,9 +174,7 @@ export function _decode_CertReplaceRsp(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertReplaceRsp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceRsp */
-let _cached_encoder_for_CertReplaceRsp: $.ASN1Encoder<
-    CertReplaceRsp
-> | null = null;
+let _cached_encoder_for_CertReplaceRsp: $.ASN1Encoder<CertReplaceRsp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceRsp */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertReplaceRsp */

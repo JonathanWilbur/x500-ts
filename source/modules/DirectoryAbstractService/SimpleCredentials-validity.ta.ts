@@ -163,9 +163,7 @@ export const _extension_additions_list_spec_for_SimpleCredentials_validity: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SimpleCredentials_validity */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SimpleCredentials_validity */
-let _cached_decoder_for_SimpleCredentials_validity: $.ASN1Decoder<
-    SimpleCredentials_validity
-> | null = null;
+let _cached_decoder_for_SimpleCredentials_validity: $.ASN1Decoder<SimpleCredentials_validity> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SimpleCredentials_validity */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SimpleCredentials_validity */
@@ -189,14 +187,14 @@ export function _decode_SimpleCredentials_validity(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 time1: (_el: _Element): void => {
-                    time1 = $._decode_explicit<
-                        SimpleCredentials_validity_time1
-                    >(() => _decode_SimpleCredentials_validity_time1)(_el);
+                    time1 = $._decode_explicit<SimpleCredentials_validity_time1>(
+                        () => _decode_SimpleCredentials_validity_time1
+                    )(_el);
                 },
                 time2: (_el: _Element): void => {
-                    time2 = $._decode_explicit<
-                        SimpleCredentials_validity_time2
-                    >(() => _decode_SimpleCredentials_validity_time2)(_el);
+                    time2 = $._decode_explicit<SimpleCredentials_validity_time2>(
+                        () => _decode_SimpleCredentials_validity_time2
+                    )(_el);
                 },
                 random1: (_el: _Element): void => {
                     random1 = $._decode_explicit<BIT_STRING>(
@@ -218,8 +216,8 @@ export function _decode_SimpleCredentials_validity(el: _Element) {
                 _root_component_type_list_2_spec_for_SimpleCredentials_validity,
                 undefined
             );
-            return new SimpleCredentials_validity /* SET_CONSTRUCTOR_CALL */(
-                time1,
+            return new SimpleCredentials_validity(
+                /* SET_CONSTRUCTOR_CALL */ time1,
                 time2,
                 random1,
                 random2
@@ -231,9 +229,7 @@ export function _decode_SimpleCredentials_validity(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SimpleCredentials_validity */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SimpleCredentials_validity */
-let _cached_encoder_for_SimpleCredentials_validity: $.ASN1Encoder<
-    SimpleCredentials_validity
-> | null = null;
+let _cached_encoder_for_SimpleCredentials_validity: $.ASN1Encoder<SimpleCredentials_validity> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SimpleCredentials_validity */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SimpleCredentials_validity */

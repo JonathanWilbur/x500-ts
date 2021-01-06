@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters_
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
-let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Decoder<
-    ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-> | null = null;
+let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Decoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
@@ -186,9 +184,7 @@ export function _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_
 /* END_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
-let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Encoder<
-    ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-> | null = null;
+let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item */
@@ -201,18 +197,14 @@ let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_
  */
 export function _encode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item(
     value: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item,
-    elGetter: $.ASN1Encoder<
-        ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-    >
+    elGetter: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item>
 ) {
     if (
         !_cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
     ) {
         _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item = function (
             value: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item,
-            elGetter: $.ASN1Encoder<
-                ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-            >
+            elGetter: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item>
         ): _Element {
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])

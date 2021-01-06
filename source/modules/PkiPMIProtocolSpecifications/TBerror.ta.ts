@@ -207,8 +207,8 @@ export function _decode_TBerror(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBerror /* SEQUENCE_CONSTRUCTOR_CALL */(
-                code,
+            return new TBerror(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ code,
                 diagnostic,
                 _unrecognizedExtensionsList
             );

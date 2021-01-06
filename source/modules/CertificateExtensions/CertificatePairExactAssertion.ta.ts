@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_CertificatePairExactAssertion: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificatePairExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePairExactAssertion */
-let _cached_decoder_for_CertificatePairExactAssertion: $.ASN1Decoder<
-    CertificatePairExactAssertion
-> | null = null;
+let _cached_decoder_for_CertificatePairExactAssertion: $.ASN1Decoder<CertificatePairExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePairExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificatePairExactAssertion */
@@ -161,14 +159,14 @@ export function _decode_CertificatePairExactAssertion(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 issuedToThisCAAssertion: (_el: _Element): void => {
-                    issuedToThisCAAssertion = $._decode_implicit<
-                        CertificateExactAssertion
-                    >(() => _decode_CertificateExactAssertion)(_el);
+                    issuedToThisCAAssertion = $._decode_implicit<CertificateExactAssertion>(
+                        () => _decode_CertificateExactAssertion
+                    )(_el);
                 },
                 issuedByThisCAAssertion: (_el: _Element): void => {
-                    issuedByThisCAAssertion = $._decode_implicit<
-                        CertificateExactAssertion
-                    >(() => _decode_CertificateExactAssertion)(_el);
+                    issuedByThisCAAssertion = $._decode_implicit<CertificateExactAssertion>(
+                        () => _decode_CertificateExactAssertion
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -182,8 +180,8 @@ export function _decode_CertificatePairExactAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificatePairExactAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuedToThisCAAssertion,
+            return new CertificatePairExactAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCAAssertion,
                 issuedByThisCAAssertion,
                 _unrecognizedExtensionsList
             );
@@ -194,9 +192,7 @@ export function _decode_CertificatePairExactAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificatePairExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePairExactAssertion */
-let _cached_encoder_for_CertificatePairExactAssertion: $.ASN1Encoder<
-    CertificatePairExactAssertion
-> | null = null;
+let _cached_encoder_for_CertificatePairExactAssertion: $.ASN1Encoder<CertificatePairExactAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePairExactAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificatePairExactAssertion */

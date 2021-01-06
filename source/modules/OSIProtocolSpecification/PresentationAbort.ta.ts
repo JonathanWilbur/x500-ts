@@ -41,9 +41,7 @@ export type PresentationAbort =
 /* END_OF_SYMBOL_DEFINITION PresentationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PresentationAbort */
-let _cached_decoder_for_PresentationAbort: $.ASN1Decoder<
-    PresentationAbort
-> | null = null;
+let _cached_decoder_for_PresentationAbort: $.ASN1Decoder<PresentationAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PresentationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PresentationAbort */
@@ -55,21 +53,19 @@ let _cached_decoder_for_PresentationAbort: $.ASN1Decoder<
  */
 export function _decode_PresentationAbort(el: _Element) {
     if (!_cached_decoder_for_PresentationAbort) {
-        _cached_decoder_for_PresentationAbort = $._decode_inextensible_choice<
-            PresentationAbort
-        >({
-            "CONTEXT 0": ["aru_ppdu", _decode_ARU_PPDU],
-            "UNIVERSAL 16": ["arp_ppdu", _decode_ARP_PPDU],
-        });
+        _cached_decoder_for_PresentationAbort = $._decode_inextensible_choice<PresentationAbort>(
+            {
+                "CONTEXT 0": ["aru_ppdu", _decode_ARU_PPDU],
+                "UNIVERSAL 16": ["arp_ppdu", _decode_ARP_PPDU],
+            }
+        );
     }
     return _cached_decoder_for_PresentationAbort(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PresentationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PresentationAbort */
-let _cached_encoder_for_PresentationAbort: $.ASN1Encoder<
-    PresentationAbort
-> | null = null;
+let _cached_encoder_for_PresentationAbort: $.ASN1Encoder<PresentationAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PresentationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PresentationAbort */
@@ -85,9 +81,7 @@ export function _encode_PresentationAbort(
     elGetter: $.ASN1Encoder<PresentationAbort>
 ) {
     if (!_cached_encoder_for_PresentationAbort) {
-        _cached_encoder_for_PresentationAbort = $._encode_choice<
-            PresentationAbort
-        >(
+        _cached_encoder_for_PresentationAbort = $._encode_choice<PresentationAbort>(
             {
                 aru_ppdu: _encode_ARU_PPDU,
                 arp_ppdu: _encode_ARP_PPDU,

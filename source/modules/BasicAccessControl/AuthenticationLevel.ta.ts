@@ -37,9 +37,7 @@ export type AuthenticationLevel =
 /* END_OF_SYMBOL_DEFINITION AuthenticationLevel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel */
-let _cached_decoder_for_AuthenticationLevel: $.ASN1Decoder<
-    AuthenticationLevel
-> | null = null;
+let _cached_decoder_for_AuthenticationLevel: $.ASN1Decoder<AuthenticationLevel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel */
@@ -51,24 +49,22 @@ let _cached_decoder_for_AuthenticationLevel: $.ASN1Decoder<
  */
 export function _decode_AuthenticationLevel(el: _Element) {
     if (!_cached_decoder_for_AuthenticationLevel) {
-        _cached_decoder_for_AuthenticationLevel = $._decode_extensible_choice<
-            AuthenticationLevel
-        >({
-            "UNIVERSAL 16": [
-                "basicLevels",
-                _decode_AuthenticationLevel_basicLevels,
-            ],
-            "UNIVERSAL 8": ["other", $._decodeExternal],
-        });
+        _cached_decoder_for_AuthenticationLevel = $._decode_extensible_choice<AuthenticationLevel>(
+            {
+                "UNIVERSAL 16": [
+                    "basicLevels",
+                    _decode_AuthenticationLevel_basicLevels,
+                ],
+                "UNIVERSAL 8": ["other", $._decodeExternal],
+            }
+        );
     }
     return _cached_decoder_for_AuthenticationLevel(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel */
-let _cached_encoder_for_AuthenticationLevel: $.ASN1Encoder<
-    AuthenticationLevel
-> | null = null;
+let _cached_encoder_for_AuthenticationLevel: $.ASN1Encoder<AuthenticationLevel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthenticationLevel */
@@ -84,9 +80,7 @@ export function _encode_AuthenticationLevel(
     elGetter: $.ASN1Encoder<AuthenticationLevel>
 ) {
     if (!_cached_encoder_for_AuthenticationLevel) {
-        _cached_encoder_for_AuthenticationLevel = $._encode_choice<
-            AuthenticationLevel
-        >(
+        _cached_encoder_for_AuthenticationLevel = $._encode_choice<AuthenticationLevel>(
             {
                 basicLevels: _encode_AuthenticationLevel_basicLevels,
                 other: $._encodeExternal,

@@ -21,9 +21,7 @@ export type UnbindRequest = NULL; // NullType
 /* END_OF_SYMBOL_DEFINITION UnbindRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UnbindRequest */
-let _cached_decoder_for_UnbindRequest: $.ASN1Decoder<
-    UnbindRequest
-> | null = null;
+let _cached_decoder_for_UnbindRequest: $.ASN1Decoder<UnbindRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UnbindRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UnbindRequest */
@@ -44,9 +42,7 @@ export function _decode_UnbindRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UnbindRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UnbindRequest */
-let _cached_encoder_for_UnbindRequest: $.ASN1Encoder<
-    UnbindRequest
-> | null = null;
+let _cached_encoder_for_UnbindRequest: $.ASN1Encoder<UnbindRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UnbindRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UnbindRequest */

@@ -176,9 +176,7 @@ export const registeredId: AltNameType_builtinNameForm = AltNameType_builtinName
 /* END_OF_SYMBOL_DEFINITION registeredId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AltNameType_builtinNameForm */
-let _cached_decoder_for_AltNameType_builtinNameForm: $.ASN1Decoder<
-    AltNameType_builtinNameForm
-> | null = null;
+let _cached_decoder_for_AltNameType_builtinNameForm: $.ASN1Decoder<AltNameType_builtinNameForm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AltNameType_builtinNameForm */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AltNameType_builtinNameForm */
@@ -197,9 +195,7 @@ export function _decode_AltNameType_builtinNameForm(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AltNameType_builtinNameForm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AltNameType_builtinNameForm */
-let _cached_encoder_for_AltNameType_builtinNameForm: $.ASN1Encoder<
-    AltNameType_builtinNameForm
-> | null = null;
+let _cached_encoder_for_AltNameType_builtinNameForm: $.ASN1Encoder<AltNameType_builtinNameForm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AltNameType_builtinNameForm */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AltNameType_builtinNameForm */

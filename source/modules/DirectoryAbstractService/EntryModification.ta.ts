@@ -63,9 +63,7 @@ export type EntryModification =
 /* END_OF_SYMBOL_DEFINITION EntryModification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryModification */
-let _cached_decoder_for_EntryModification: $.ASN1Decoder<
-    EntryModification
-> | null = null;
+let _cached_decoder_for_EntryModification: $.ASN1Decoder<EntryModification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryModification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryModification */
@@ -77,49 +75,51 @@ let _cached_decoder_for_EntryModification: $.ASN1Decoder<
  */
 export function _decode_EntryModification(el: _Element) {
     if (!_cached_decoder_for_EntryModification) {
-        _cached_decoder_for_EntryModification = $._decode_extensible_choice<
-            EntryModification
-        >({
-            "CONTEXT 0": [
-                "addAttribute",
-                $._decode_explicit<Attribute>(() => _decode_Attribute),
-            ],
-            "CONTEXT 1": [
-                "removeAttribute",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 2": [
-                "addValues",
-                $._decode_explicit<Attribute>(() => _decode_Attribute),
-            ],
-            "CONTEXT 3": [
-                "removeValues",
-                $._decode_explicit<Attribute>(() => _decode_Attribute),
-            ],
-            "CONTEXT 4": [
-                "alterValues",
-                $._decode_explicit<AttributeTypeAndValue>(
-                    () => _decode_AttributeTypeAndValue
-                ),
-            ],
-            "CONTEXT 5": [
-                "resetValue",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 6": [
-                "replaceValues",
-                $._decode_explicit<Attribute>(() => _decode_Attribute),
-            ],
-        });
+        _cached_decoder_for_EntryModification = $._decode_extensible_choice<EntryModification>(
+            {
+                "CONTEXT 0": [
+                    "addAttribute",
+                    $._decode_explicit<Attribute>(() => _decode_Attribute),
+                ],
+                "CONTEXT 1": [
+                    "removeAttribute",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "addValues",
+                    $._decode_explicit<Attribute>(() => _decode_Attribute),
+                ],
+                "CONTEXT 3": [
+                    "removeValues",
+                    $._decode_explicit<Attribute>(() => _decode_Attribute),
+                ],
+                "CONTEXT 4": [
+                    "alterValues",
+                    $._decode_explicit<AttributeTypeAndValue>(
+                        () => _decode_AttributeTypeAndValue
+                    ),
+                ],
+                "CONTEXT 5": [
+                    "resetValue",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 6": [
+                    "replaceValues",
+                    $._decode_explicit<Attribute>(() => _decode_Attribute),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_EntryModification(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_EntryModification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryModification */
-let _cached_encoder_for_EntryModification: $.ASN1Encoder<
-    EntryModification
-> | null = null;
+let _cached_encoder_for_EntryModification: $.ASN1Encoder<EntryModification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryModification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryModification */
@@ -135,9 +135,7 @@ export function _encode_EntryModification(
     elGetter: $.ASN1Encoder<EntryModification>
 ) {
     if (!_cached_encoder_for_EntryModification) {
-        _cached_encoder_for_EntryModification = $._encode_choice<
-            EntryModification
-        >(
+        _cached_encoder_for_EntryModification = $._encode_choice<EntryModification>(
             {
                 addAttribute: $._encode_explicit(
                     _TagClass.context,

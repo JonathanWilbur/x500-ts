@@ -283,8 +283,8 @@ export function _decode_AadClientAE(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AadClientAE /* SEQUENCE_CONSTRUCTOR_CALL */(
-                invokeID,
+            return new AadClientAE(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ invokeID,
                 assoID,
                 time,
                 seq,

@@ -49,14 +49,14 @@ export {
 export const shadowError: ERROR<OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ShadowErrorData
-        >(_decode_ShadowErrorData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>(
+            _decode_ShadowErrorData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            ShadowErrorData
-        >(_encode_ShadowErrorData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ShadowErrorData>(
+            _encode_ShadowErrorData
+        ),
     },
     "&errorCode": id_errcode_shadowError /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

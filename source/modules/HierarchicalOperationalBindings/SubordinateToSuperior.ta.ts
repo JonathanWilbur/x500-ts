@@ -193,9 +193,7 @@ export const _extension_additions_list_spec_for_SubordinateToSuperior: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubordinateToSuperior */
-let _cached_decoder_for_SubordinateToSuperior: $.ASN1Decoder<
-    SubordinateToSuperior
-> | null = null;
+let _cached_decoder_for_SubordinateToSuperior: $.ASN1Decoder<SubordinateToSuperior> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubordinateToSuperior */
@@ -221,9 +219,9 @@ export function _decode_SubordinateToSuperior(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 accessPoints: (_el: _Element): void => {
-                    accessPoints = $._decode_explicit<
-                        MasterAndShadowAccessPoints
-                    >(() => _decode_MasterAndShadowAccessPoints)(_el);
+                    accessPoints = $._decode_explicit<MasterAndShadowAccessPoints>(
+                        () => _decode_MasterAndShadowAccessPoints
+                    )(_el);
                 },
                 alias: (_el: _Element): void => {
                     alias = $._decode_explicit<BOOLEAN>(() => $._decodeBoolean)(
@@ -252,8 +250,8 @@ export function _decode_SubordinateToSuperior(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
-                accessPoints,
+            return new SubordinateToSuperior(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
                 alias,
                 entryInfo,
                 subentries,
@@ -266,9 +264,7 @@ export function _decode_SubordinateToSuperior(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubordinateToSuperior */
-let _cached_encoder_for_SubordinateToSuperior: $.ASN1Encoder<
-    SubordinateToSuperior
-> | null = null;
+let _cached_encoder_for_SubordinateToSuperior: $.ASN1Encoder<SubordinateToSuperior> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubordinateToSuperior */

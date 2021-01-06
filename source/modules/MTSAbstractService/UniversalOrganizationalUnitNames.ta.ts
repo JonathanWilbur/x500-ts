@@ -28,9 +28,7 @@ export type UniversalOrganizationalUnitNames = UniversalOrganizationalUnitName[]
 /* END_OF_SYMBOL_DEFINITION UniversalOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationalUnitNames */
-let _cached_decoder_for_UniversalOrganizationalUnitNames: $.ASN1Decoder<
-    UniversalOrganizationalUnitNames
-> | null = null;
+let _cached_decoder_for_UniversalOrganizationalUnitNames: $.ASN1Decoder<UniversalOrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationalUnitNames */
@@ -42,18 +40,16 @@ let _cached_decoder_for_UniversalOrganizationalUnitNames: $.ASN1Decoder<
  */
 export function _decode_UniversalOrganizationalUnitNames(el: _Element) {
     if (!_cached_decoder_for_UniversalOrganizationalUnitNames) {
-        _cached_decoder_for_UniversalOrganizationalUnitNames = $._decodeSequenceOf<
-            UniversalOrganizationalUnitName
-        >(() => _decode_UniversalOrganizationalUnitName);
+        _cached_decoder_for_UniversalOrganizationalUnitNames = $._decodeSequenceOf<UniversalOrganizationalUnitName>(
+            () => _decode_UniversalOrganizationalUnitName
+        );
     }
     return _cached_decoder_for_UniversalOrganizationalUnitNames(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationalUnitNames */
-let _cached_encoder_for_UniversalOrganizationalUnitNames: $.ASN1Encoder<
-    UniversalOrganizationalUnitNames
-> | null = null;
+let _cached_encoder_for_UniversalOrganizationalUnitNames: $.ASN1Encoder<UniversalOrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalOrganizationalUnitNames */
@@ -69,9 +65,10 @@ export function _encode_UniversalOrganizationalUnitNames(
     elGetter: $.ASN1Encoder<UniversalOrganizationalUnitNames>
 ) {
     if (!_cached_encoder_for_UniversalOrganizationalUnitNames) {
-        _cached_encoder_for_UniversalOrganizationalUnitNames = $._encodeSequenceOf<
-            UniversalOrganizationalUnitName
-        >(() => _encode_UniversalOrganizationalUnitName, $.BER);
+        _cached_encoder_for_UniversalOrganizationalUnitNames = $._encodeSequenceOf<UniversalOrganizationalUnitName>(
+            () => _encode_UniversalOrganizationalUnitName,
+            $.BER
+        );
     }
     return _cached_encoder_for_UniversalOrganizationalUnitNames(
         value,

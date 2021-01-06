@@ -165,9 +165,7 @@ export const _extension_additions_list_spec_for_TimeSpecification: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TimeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification */
-let _cached_decoder_for_TimeSpecification: $.ASN1Decoder<
-    TimeSpecification
-> | null = null;
+let _cached_decoder_for_TimeSpecification: $.ASN1Decoder<TimeSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TimeSpecification */
@@ -212,8 +210,8 @@ export function _decode_TimeSpecification(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TimeSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-                time,
+            return new TimeSpecification(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ time,
                 notThisTime,
                 timeZone,
                 _unrecognizedExtensionsList
@@ -225,9 +223,7 @@ export function _decode_TimeSpecification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TimeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification */
-let _cached_encoder_for_TimeSpecification: $.ASN1Encoder<
-    TimeSpecification
-> | null = null;
+let _cached_encoder_for_TimeSpecification: $.ASN1Encoder<TimeSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TimeSpecification */

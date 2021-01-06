@@ -682,9 +682,7 @@ export const _extension_additions_list_spec_for_ChainingArguments: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ChainingArguments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChainingArguments */
-let _cached_decoder_for_ChainingArguments: $.ASN1Decoder<
-    ChainingArguments
-> | null = null;
+let _cached_decoder_for_ChainingArguments: $.ASN1Decoder<ChainingArguments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChainingArguments */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChainingArguments */
@@ -803,9 +801,9 @@ export function _decode_ChainingArguments(el: _Element) {
                     )(_el);
                 },
                 authenticationLevel: (_el: _Element): void => {
-                    authenticationLevel = $._decode_explicit<
-                        AuthenticationLevel
-                    >(() => _decode_AuthenticationLevel)(_el);
+                    authenticationLevel = $._decode_explicit<AuthenticationLevel>(
+                        () => _decode_AuthenticationLevel
+                    )(_el);
                 },
                 exclusions: (_el: _Element): void => {
                     exclusions = $._decode_explicit<Exclusions>(
@@ -864,8 +862,8 @@ export function _decode_ChainingArguments(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ChainingArguments /* SET_CONSTRUCTOR_CALL */(
-                originator,
+            return new ChainingArguments(
+                /* SET_CONSTRUCTOR_CALL */ originator,
                 targetObject,
                 operationProgress,
                 traceInformation,
@@ -897,9 +895,7 @@ export function _decode_ChainingArguments(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ChainingArguments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChainingArguments */
-let _cached_encoder_for_ChainingArguments: $.ASN1Encoder<
-    ChainingArguments
-> | null = null;
+let _cached_encoder_for_ChainingArguments: $.ASN1Encoder<ChainingArguments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChainingArguments */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChainingArguments */

@@ -148,9 +148,7 @@ export const _extension_additions_list_spec_for_IdmBindResult: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_IdmBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmBindResult */
-let _cached_decoder_for_IdmBindResult: $.ASN1Decoder<
-    IdmBindResult
-> | null = null;
+let _cached_decoder_for_IdmBindResult: $.ASN1Decoder<IdmBindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IdmBindResult */
@@ -198,8 +196,8 @@ export function _decode_IdmBindResult(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new IdmBindResult /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocolID,
+            return new IdmBindResult(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocolID,
                 respondingAETitle,
                 result,
                 _unrecognizedExtensionsList
@@ -211,9 +209,7 @@ export function _decode_IdmBindResult(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IdmBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmBindResult */
-let _cached_encoder_for_IdmBindResult: $.ASN1Encoder<
-    IdmBindResult
-> | null = null;
+let _cached_encoder_for_IdmBindResult: $.ASN1Encoder<IdmBindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IdmBindResult */

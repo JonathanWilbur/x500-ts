@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parame
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
-let _cached_decoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: $.ASN1Decoder<
-    OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-> | null = null;
+let _cached_decoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: $.ASN1Decoder<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
@@ -192,9 +190,7 @@ export function _decode_OsiBindResult_normal_mode_parameters_presentation_contex
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
-let _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: $.ASN1Encoder<
-    OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-> | null = null;
+let _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item */
@@ -207,18 +203,14 @@ let _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_contex
  */
 export function _encode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item(
     value: OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item,
-    elGetter: $.ASN1Encoder<
-        OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-    >
+    elGetter: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item>
 ) {
     if (
         !_cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
     ) {
         _cached_encoder_for_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item = function (
             value: OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item,
-            elGetter: $.ASN1Encoder<
-                OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-            >
+            elGetter: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item>
         ): _Element {
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])

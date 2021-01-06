@@ -34,15 +34,11 @@ export {
  *   OPTIONALLY-PROTECTED-SEQ { AdministerPasswordArgumentData }
  * ```
  */
-export type AdministerPasswordArgument = OPTIONALLY_PROTECTED_SEQ<
-    AdministerPasswordArgumentData
->; // DefinedType
+export type AdministerPasswordArgument = OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION AdministerPasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordArgument */
-let _cached_decoder_for_AdministerPasswordArgument: $.ASN1Decoder<
-    AdministerPasswordArgument
-> | null = null;
+let _cached_decoder_for_AdministerPasswordArgument: $.ASN1Decoder<AdministerPasswordArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AdministerPasswordArgument */
@@ -54,18 +50,16 @@ let _cached_decoder_for_AdministerPasswordArgument: $.ASN1Decoder<
  */
 export function _decode_AdministerPasswordArgument(el: _Element) {
     if (!_cached_decoder_for_AdministerPasswordArgument) {
-        _cached_decoder_for_AdministerPasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            AdministerPasswordArgumentData
-        >(_decode_AdministerPasswordArgumentData);
+        _cached_decoder_for_AdministerPasswordArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>(
+            _decode_AdministerPasswordArgumentData
+        );
     }
     return _cached_decoder_for_AdministerPasswordArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AdministerPasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordArgument */
-let _cached_encoder_for_AdministerPasswordArgument: $.ASN1Encoder<
-    AdministerPasswordArgument
-> | null = null;
+let _cached_encoder_for_AdministerPasswordArgument: $.ASN1Encoder<AdministerPasswordArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AdministerPasswordArgument */
@@ -81,9 +75,9 @@ export function _encode_AdministerPasswordArgument(
     elGetter: $.ASN1Encoder<AdministerPasswordArgument>
 ) {
     if (!_cached_encoder_for_AdministerPasswordArgument) {
-        _cached_encoder_for_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            AdministerPasswordArgumentData
-        >(_encode_AdministerPasswordArgumentData);
+        _cached_encoder_for_AdministerPasswordArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AdministerPasswordArgumentData>(
+            _encode_AdministerPasswordArgumentData
+        );
     }
     return _cached_encoder_for_AdministerPasswordArgument(value, elGetter);
 }

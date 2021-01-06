@@ -189,8 +189,8 @@ export function _decode_EncPwdInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EncPwdInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithms,
+            return new EncPwdInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithms,
                 pwdQualityRule,
                 _unrecognizedExtensionsList
             );
@@ -231,9 +231,7 @@ export function _encode_EncPwdInfo(
                                       _TagClass.context,
                                       0,
                                       () =>
-                                          $._encodeSequenceOf<
-                                              AlgorithmIdentifier
-                                          >(
+                                          $._encodeSequenceOf<AlgorithmIdentifier>(
                                               () => _encode_AlgorithmIdentifier,
                                               $.BER
                                           ),
@@ -245,9 +243,7 @@ export function _encode_EncPwdInfo(
                                       _TagClass.context,
                                       1,
                                       () =>
-                                          $._encodeSequenceOf<
-                                              AttributeTypeAndValue
-                                          >(
+                                          $._encodeSequenceOf<AttributeTypeAndValue>(
                                               () =>
                                                   _encode_AttributeTypeAndValue,
                                               $.BER

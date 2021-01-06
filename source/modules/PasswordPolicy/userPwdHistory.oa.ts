@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import { pwdHistory } from "../InformationFramework/pwdHistory.oa";
+import { id_oa_userPwdHistory } from "../PasswordPolicy/id-oa-userPwdHistory.va";
+import { userPwd } from "../PasswordPolicy/userPwd.oa";
+import { userPwdHistoryMatch } from "../PasswordPolicy/userPwdHistoryMatch.oa";
 export { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 export {
     AttributeUsage,
@@ -19,9 +22,6 @@ export {
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { pwdHistory } from "../InformationFramework/pwdHistory.oa";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
-import { id_oa_userPwdHistory } from "../PasswordPolicy/id-oa-userPwdHistory.va";
-import { userPwd } from "../PasswordPolicy/userPwd.oa";
-import { userPwdHistoryMatch } from "../PasswordPolicy/userPwdHistoryMatch.oa";
 
 /* START_OF_SYMBOL_DEFINITION userPwdHistory */
 /**
@@ -38,7 +38,11 @@ import { userPwdHistoryMatch } from "../PasswordPolicy/userPwdHistoryMatch.oa";
  * @type {ATTRIBUTE}
  * @implements {ATTRIBUTE}
  */
-export const userPwdHistory: ATTRIBUTE = pwdHistory(userPwd, userPwdHistoryMatch, id_oa_userPwdHistory);
+export const userPwdHistory: ATTRIBUTE = pwdHistory(
+    userPwd,
+    userPwdHistoryMatch,
+    id_oa_userPwdHistory
+);
 /* END_OF_SYMBOL_DEFINITION userPwdHistory */
 
 /* eslint-enable */

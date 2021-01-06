@@ -19,9 +19,7 @@ export type HashedPolicyInfo = _Element; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION HashedPolicyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HashedPolicyInfo */
-let _cached_decoder_for_HashedPolicyInfo: $.ASN1Decoder<
-    HashedPolicyInfo
-> | null = null;
+let _cached_decoder_for_HashedPolicyInfo: $.ASN1Decoder<HashedPolicyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HashedPolicyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HashedPolicyInfo */
@@ -40,9 +38,7 @@ export function _decode_HashedPolicyInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HashedPolicyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HashedPolicyInfo */
-let _cached_encoder_for_HashedPolicyInfo: $.ASN1Encoder<
-    HashedPolicyInfo
-> | null = null;
+let _cached_encoder_for_HashedPolicyInfo: $.ASN1Encoder<HashedPolicyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HashedPolicyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HashedPolicyInfo */

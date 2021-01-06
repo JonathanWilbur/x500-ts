@@ -61,9 +61,7 @@ export type DSACredentials =
 /* END_OF_SYMBOL_DEFINITION DSACredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSACredentials */
-let _cached_decoder_for_DSACredentials: $.ASN1Decoder<
-    DSACredentials
-> | null = null;
+let _cached_decoder_for_DSACredentials: $.ASN1Decoder<DSACredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DSACredentials */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DSACredentials */
@@ -75,41 +73,39 @@ let _cached_decoder_for_DSACredentials: $.ASN1Decoder<
  */
 export function _decode_DSACredentials(el: _Element) {
     if (!_cached_decoder_for_DSACredentials) {
-        _cached_decoder_for_DSACredentials = $._decode_extensible_choice<
-            DSACredentials
-        >({
-            "CONTEXT 0": [
-                "simple",
-                $._decode_explicit<SimpleCredentials>(
-                    () => _decode_SimpleCredentials
-                ),
-            ],
-            "CONTEXT 1": [
-                "strong",
-                $._decode_explicit<StrongCredentials>(
-                    () => _decode_StrongCredentials
-                ),
-            ],
-            "CONTEXT 2": [
-                "externalProcedure",
-                $._decode_explicit<EXTERNAL>(() => $._decodeExternal),
-            ],
-            "CONTEXT 3": [
-                "spkm",
-                $._decode_explicit<SpkmCredentials>(
-                    () => _decode_SpkmCredentials
-                ),
-            ],
-        });
+        _cached_decoder_for_DSACredentials = $._decode_extensible_choice<DSACredentials>(
+            {
+                "CONTEXT 0": [
+                    "simple",
+                    $._decode_explicit<SimpleCredentials>(
+                        () => _decode_SimpleCredentials
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "strong",
+                    $._decode_explicit<StrongCredentials>(
+                        () => _decode_StrongCredentials
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "externalProcedure",
+                    $._decode_explicit<EXTERNAL>(() => $._decodeExternal),
+                ],
+                "CONTEXT 3": [
+                    "spkm",
+                    $._decode_explicit<SpkmCredentials>(
+                        () => _decode_SpkmCredentials
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DSACredentials(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DSACredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DSACredentials */
-let _cached_encoder_for_DSACredentials: $.ASN1Encoder<
-    DSACredentials
-> | null = null;
+let _cached_encoder_for_DSACredentials: $.ASN1Encoder<DSACredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DSACredentials */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DSACredentials */

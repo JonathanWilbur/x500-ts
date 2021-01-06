@@ -55,22 +55,22 @@ let _cached_decoder_for_SenderDhInfo: $.ASN1Decoder<SenderDhInfo> | null = null;
  */
 export function _decode_SenderDhInfo(el: _Element) {
     if (!_cached_decoder_for_SenderDhInfo) {
-        _cached_decoder_for_SenderDhInfo = $._decode_extensible_choice<
-            SenderDhInfo
-        >({
-            "CONTEXT 0": [
-                "senderStaticInfo",
-                $._decode_explicit<SenderStaticInfo>(
-                    () => _decode_SenderStaticInfo
-                ),
-            ],
-            "CONTEXT 1": [
-                "senderDhPublicKey",
-                $._decode_explicit<SenderDhPublicKey>(
-                    () => _decode_SenderDhPublicKey
-                ),
-            ],
-        });
+        _cached_decoder_for_SenderDhInfo = $._decode_extensible_choice<SenderDhInfo>(
+            {
+                "CONTEXT 0": [
+                    "senderStaticInfo",
+                    $._decode_explicit<SenderStaticInfo>(
+                        () => _decode_SenderStaticInfo
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "senderDhPublicKey",
+                    $._decode_explicit<SenderDhPublicKey>(
+                        () => _decode_SenderDhPublicKey
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_SenderDhInfo(el);
 }

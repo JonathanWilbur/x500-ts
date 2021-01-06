@@ -123,25 +123,19 @@ export class ModifyOperationalBindingResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -289,9 +283,7 @@ export const _extension_additions_list_spec_for_ModifyOperationalBindingResultDa
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingResultData */
-let _cached_decoder_for_ModifyOperationalBindingResultData: $.ASN1Decoder<
-    ModifyOperationalBindingResultData
-> | null = null;
+let _cached_decoder_for_ModifyOperationalBindingResultData: $.ASN1Decoder<ModifyOperationalBindingResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingResultData */
@@ -364,8 +356,8 @@ export function _decode_ModifyOperationalBindingResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ModifyOperationalBindingResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                newBindingID,
+            return new ModifyOperationalBindingResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ newBindingID,
                 bindingType,
                 newAgreement,
                 valid,
@@ -382,9 +374,7 @@ export function _decode_ModifyOperationalBindingResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingResultData */
-let _cached_encoder_for_ModifyOperationalBindingResultData: $.ASN1Encoder<
-    ModifyOperationalBindingResultData
-> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingResultData: $.ASN1Encoder<ModifyOperationalBindingResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyOperationalBindingResultData */

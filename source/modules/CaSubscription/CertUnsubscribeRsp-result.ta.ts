@@ -40,9 +40,7 @@ export type CertUnsubscribeRsp_result =
 /* END_OF_SYMBOL_DEFINITION CertUnsubscribeRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeRsp_result */
-let _cached_decoder_for_CertUnsubscribeRsp_result: $.ASN1Decoder<
-    CertUnsubscribeRsp_result
-> | null = null;
+let _cached_decoder_for_CertUnsubscribeRsp_result: $.ASN1Decoder<CertUnsubscribeRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeRsp_result */
@@ -54,31 +52,29 @@ let _cached_decoder_for_CertUnsubscribeRsp_result: $.ASN1Decoder<
  */
 export function _decode_CertUnsubscribeRsp_result(el: _Element) {
     if (!_cached_decoder_for_CertUnsubscribeRsp_result) {
-        _cached_decoder_for_CertUnsubscribeRsp_result = $._decode_extensible_choice<
-            CertUnsubscribeRsp_result
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_implicit<CertUnsubscribeOK>(
-                    () => _decode_CertUnsubscribeOK
-                ),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_implicit<CertUnsubscribeErr>(
-                    () => _decode_CertUnsubscribeErr
-                ),
-            ],
-        });
+        _cached_decoder_for_CertUnsubscribeRsp_result = $._decode_extensible_choice<CertUnsubscribeRsp_result>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_implicit<CertUnsubscribeOK>(
+                        () => _decode_CertUnsubscribeOK
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_implicit<CertUnsubscribeErr>(
+                        () => _decode_CertUnsubscribeErr
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertUnsubscribeRsp_result(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeRsp_result */
-let _cached_encoder_for_CertUnsubscribeRsp_result: $.ASN1Encoder<
-    CertUnsubscribeRsp_result
-> | null = null;
+let _cached_encoder_for_CertUnsubscribeRsp_result: $.ASN1Encoder<CertUnsubscribeRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUnsubscribeRsp_result */
@@ -94,9 +90,7 @@ export function _encode_CertUnsubscribeRsp_result(
     elGetter: $.ASN1Encoder<CertUnsubscribeRsp_result>
 ) {
     if (!_cached_encoder_for_CertUnsubscribeRsp_result) {
-        _cached_encoder_for_CertUnsubscribeRsp_result = $._encode_choice<
-            CertUnsubscribeRsp_result
-        >(
+        _cached_encoder_for_CertUnsubscribeRsp_result = $._encode_choice<CertUnsubscribeRsp_result>(
             {
                 success: $._encode_implicit(
                     _TagClass.context,

@@ -291,9 +291,7 @@ export const _extension_additions_list_spec_for_TBSCertificate: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertificate */
-let _cached_decoder_for_TBSCertificate: $.ASN1Decoder<
-    TBSCertificate
-> | null = null;
+let _cached_decoder_for_TBSCertificate: $.ASN1Decoder<TBSCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSCertificate */
@@ -346,9 +344,9 @@ export function _decode_TBSCertificate(el: _Element) {
                     subjectPublicKeyInfo = _decode_SubjectPublicKeyInfo(_el);
                 },
                 issuerUniqueIdentifier: (_el: _Element): void => {
-                    issuerUniqueIdentifier = $._decode_explicit<
-                        UniqueIdentifier
-                    >(() => _decode_UniqueIdentifier)(_el);
+                    issuerUniqueIdentifier = $._decode_explicit<UniqueIdentifier>(
+                        () => _decode_UniqueIdentifier
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -362,8 +360,8 @@ export function _decode_TBSCertificate(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSCertificate /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TBSCertificate(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 serialNumber,
                 signature,
                 issuer,
@@ -380,9 +378,7 @@ export function _decode_TBSCertificate(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TBSCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertificate */
-let _cached_encoder_for_TBSCertificate: $.ASN1Encoder<
-    TBSCertificate
-> | null = null;
+let _cached_encoder_for_TBSCertificate: $.ASN1Encoder<TBSCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSCertificate */

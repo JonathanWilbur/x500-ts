@@ -201,9 +201,7 @@ export const _extension_additions_list_spec_for_CoordinateShadowUpdateArgumentDa
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CoordinateShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData */
-let _cached_decoder_for_CoordinateShadowUpdateArgumentData: $.ASN1Decoder<
-    CoordinateShadowUpdateArgumentData
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateArgumentData: $.ASN1Decoder<CoordinateShadowUpdateArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData */
@@ -215,9 +213,7 @@ let _cached_decoder_for_CoordinateShadowUpdateArgumentData: $.ASN1Decoder<
  */
 export function _decode_CoordinateShadowUpdateArgumentData(el: _Element) {
     if (!_cached_decoder_for_CoordinateShadowUpdateArgumentData) {
-        _cached_decoder_for_CoordinateShadowUpdateArgumentData = $._decode_implicit<
-            CoordinateShadowUpdateArgumentData
-        >(
+        _cached_decoder_for_CoordinateShadowUpdateArgumentData = $._decode_implicit<CoordinateShadowUpdateArgumentData>(
             () =>
                 function (el: _Element): CoordinateShadowUpdateArgumentData {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -257,8 +253,8 @@ export function _decode_CoordinateShadowUpdateArgumentData(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new CoordinateShadowUpdateArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        agreementID,
+                    return new CoordinateShadowUpdateArgumentData(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                         lastUpdate,
                         updateStrategy,
                         securityParameters,
@@ -272,9 +268,7 @@ export function _decode_CoordinateShadowUpdateArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData */
-let _cached_encoder_for_CoordinateShadowUpdateArgumentData: $.ASN1Encoder<
-    CoordinateShadowUpdateArgumentData
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateArgumentData: $.ASN1Encoder<CoordinateShadowUpdateArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateArgumentData */

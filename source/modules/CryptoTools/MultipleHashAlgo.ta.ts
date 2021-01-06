@@ -28,9 +28,7 @@ export type MultipleHashAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultipleHashAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleHashAlgo */
-let _cached_decoder_for_MultipleHashAlgo: $.ASN1Decoder<
-    MultipleHashAlgo
-> | null = null;
+let _cached_decoder_for_MultipleHashAlgo: $.ASN1Decoder<MultipleHashAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleHashAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleHashAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultipleHashAlgo: $.ASN1Decoder<
  */
 export function _decode_MultipleHashAlgo(el: _Element) {
     if (!_cached_decoder_for_MultipleHashAlgo) {
-        _cached_decoder_for_MultipleHashAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultipleHashAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultipleHashAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleHashAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleHashAlgo */
-let _cached_encoder_for_MultipleHashAlgo: $.ASN1Encoder<
-    MultipleHashAlgo
-> | null = null;
+let _cached_encoder_for_MultipleHashAlgo: $.ASN1Encoder<MultipleHashAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleHashAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleHashAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultipleHashAlgo(
     elGetter: $.ASN1Encoder<MultipleHashAlgo>
 ) {
     if (!_cached_encoder_for_MultipleHashAlgo) {
-        _cached_encoder_for_MultipleHashAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultipleHashAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultipleHashAlgo(value, elGetter);
 }

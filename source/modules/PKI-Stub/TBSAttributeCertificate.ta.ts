@@ -316,9 +316,7 @@ export const _extension_additions_list_spec_for_TBSAttributeCertificate: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSAttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSAttributeCertificate */
-let _cached_decoder_for_TBSAttributeCertificate: $.ASN1Decoder<
-    TBSAttributeCertificate
-> | null = null;
+let _cached_decoder_for_TBSAttributeCertificate: $.ASN1Decoder<TBSAttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSAttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSAttributeCertificate */
@@ -388,8 +386,8 @@ export function _decode_TBSAttributeCertificate(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSAttributeCertificate /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TBSAttributeCertificate(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 holder,
                 issuer,
                 signature,
@@ -407,9 +405,7 @@ export function _decode_TBSAttributeCertificate(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TBSAttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSAttributeCertificate */
-let _cached_encoder_for_TBSAttributeCertificate: $.ASN1Encoder<
-    TBSAttributeCertificate
-> | null = null;
+let _cached_encoder_for_TBSAttributeCertificate: $.ASN1Encoder<TBSAttributeCertificate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSAttributeCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSAttributeCertificate */

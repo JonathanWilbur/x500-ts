@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_DitBridgeKnowledge: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DitBridgeKnowledge */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DitBridgeKnowledge */
-let _cached_decoder_for_DitBridgeKnowledge: $.ASN1Decoder<
-    DitBridgeKnowledge
-> | null = null;
+let _cached_decoder_for_DitBridgeKnowledge: $.ASN1Decoder<DitBridgeKnowledge> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DitBridgeKnowledge */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DitBridgeKnowledge */
@@ -184,8 +182,8 @@ export function _decode_DitBridgeKnowledge(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DitBridgeKnowledge /* SEQUENCE_CONSTRUCTOR_CALL */(
-                domainLocalID,
+            return new DitBridgeKnowledge(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ domainLocalID,
                 accessPoints,
                 _unrecognizedExtensionsList
             );
@@ -196,9 +194,7 @@ export function _decode_DitBridgeKnowledge(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DitBridgeKnowledge */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DitBridgeKnowledge */
-let _cached_encoder_for_DitBridgeKnowledge: $.ASN1Encoder<
-    DitBridgeKnowledge
-> | null = null;
+let _cached_encoder_for_DitBridgeKnowledge: $.ASN1Encoder<DitBridgeKnowledge> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DitBridgeKnowledge */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DitBridgeKnowledge */

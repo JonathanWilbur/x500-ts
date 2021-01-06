@@ -168,9 +168,7 @@ export const _extension_additions_list_spec_for_DITContentRule: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DITContentRule */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DITContentRule */
-let _cached_decoder_for_DITContentRule: $.ASN1Decoder<
-    DITContentRule
-> | null = null;
+let _cached_decoder_for_DITContentRule: $.ASN1Decoder<DITContentRule> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DITContentRule */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DITContentRule */
@@ -236,8 +234,8 @@ export function _decode_DITContentRule(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DITContentRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-                structuralObjectClass,
+            return new DITContentRule(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ structuralObjectClass,
                 auxiliaries,
                 mandatory,
                 optional,
@@ -251,9 +249,7 @@ export function _decode_DITContentRule(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DITContentRule */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DITContentRule */
-let _cached_encoder_for_DITContentRule: $.ASN1Encoder<
-    DITContentRule
-> | null = null;
+let _cached_encoder_for_DITContentRule: $.ASN1Encoder<DITContentRule> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DITContentRule */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DITContentRule */

@@ -335,8 +335,8 @@ export function _decode_CertificateListAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificateListAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuer,
+            return new CertificateListAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
                 minCRLNumber,
                 maxCRLNumber,
                 reasonFlags,

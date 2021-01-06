@@ -40,9 +40,7 @@ export type EntryInformation_information_Item =
 /* END_OF_SYMBOL_DEFINITION EntryInformation_information_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformation_information_Item */
-let _cached_decoder_for_EntryInformation_information_Item: $.ASN1Decoder<
-    EntryInformation_information_Item
-> | null = null;
+let _cached_decoder_for_EntryInformation_information_Item: $.ASN1Decoder<EntryInformation_information_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformation_information_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryInformation_information_Item */
@@ -54,21 +52,19 @@ let _cached_decoder_for_EntryInformation_information_Item: $.ASN1Decoder<
  */
 export function _decode_EntryInformation_information_Item(el: _Element) {
     if (!_cached_decoder_for_EntryInformation_information_Item) {
-        _cached_decoder_for_EntryInformation_information_Item = $._decode_extensible_choice<
-            EntryInformation_information_Item
-        >({
-            "UNIVERSAL 6": ["attributeType", _decode_AttributeType],
-            "UNIVERSAL 16": ["attribute", _decode_Attribute],
-        });
+        _cached_decoder_for_EntryInformation_information_Item = $._decode_extensible_choice<EntryInformation_information_Item>(
+            {
+                "UNIVERSAL 6": ["attributeType", _decode_AttributeType],
+                "UNIVERSAL 16": ["attribute", _decode_Attribute],
+            }
+        );
     }
     return _cached_decoder_for_EntryInformation_information_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_EntryInformation_information_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformation_information_Item */
-let _cached_encoder_for_EntryInformation_information_Item: $.ASN1Encoder<
-    EntryInformation_information_Item
-> | null = null;
+let _cached_encoder_for_EntryInformation_information_Item: $.ASN1Encoder<EntryInformation_information_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformation_information_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryInformation_information_Item */
@@ -84,9 +80,7 @@ export function _encode_EntryInformation_information_Item(
     elGetter: $.ASN1Encoder<EntryInformation_information_Item>
 ) {
     if (!_cached_encoder_for_EntryInformation_information_Item) {
-        _cached_encoder_for_EntryInformation_information_Item = $._encode_choice<
-            EntryInformation_information_Item
-        >(
+        _cached_encoder_for_EntryInformation_information_Item = $._encode_choice<EntryInformation_information_Item>(
             {
                 attributeType: _encode_AttributeType,
                 attribute: _encode_Attribute,

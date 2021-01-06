@@ -17,9 +17,7 @@ export type TerminalIdentifier = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION TerminalIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminalIdentifier */
-let _cached_decoder_for_TerminalIdentifier: $.ASN1Decoder<
-    TerminalIdentifier
-> | null = null;
+let _cached_decoder_for_TerminalIdentifier: $.ASN1Decoder<TerminalIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminalIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TerminalIdentifier */
@@ -38,9 +36,7 @@ export function _decode_TerminalIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TerminalIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminalIdentifier */
-let _cached_encoder_for_TerminalIdentifier: $.ASN1Encoder<
-    TerminalIdentifier
-> | null = null;
+let _cached_encoder_for_TerminalIdentifier: $.ASN1Encoder<TerminalIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminalIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TerminalIdentifier */

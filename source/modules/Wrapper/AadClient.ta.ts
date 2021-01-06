@@ -250,8 +250,8 @@ export function _decode_AadClient(el: _Element) {
                 _root_component_type_list_2_spec_for_AadClient,
                 undefined
             );
-            return new AadClient /* SEQUENCE_CONSTRUCTOR_CALL */(
-                invokeID,
+            return new AadClient(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ invokeID,
                 assoID,
                 time,
                 seq,

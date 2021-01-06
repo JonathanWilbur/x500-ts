@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_BasicConstraintsSyntax: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_BasicConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BasicConstraintsSyntax */
-let _cached_decoder_for_BasicConstraintsSyntax: $.ASN1Decoder<
-    BasicConstraintsSyntax
-> | null = null;
+let _cached_decoder_for_BasicConstraintsSyntax: $.ASN1Decoder<BasicConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BasicConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BasicConstraintsSyntax */
@@ -177,8 +175,8 @@ export function _decode_BasicConstraintsSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new BasicConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                cA,
+            return new BasicConstraintsSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ cA,
                 pathLenConstraint,
                 _unrecognizedExtensionsList
             );
@@ -189,9 +187,7 @@ export function _decode_BasicConstraintsSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BasicConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BasicConstraintsSyntax */
-let _cached_encoder_for_BasicConstraintsSyntax: $.ASN1Encoder<
-    BasicConstraintsSyntax
-> | null = null;
+let _cached_encoder_for_BasicConstraintsSyntax: $.ASN1Encoder<BasicConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BasicConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BasicConstraintsSyntax */

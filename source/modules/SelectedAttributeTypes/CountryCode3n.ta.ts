@@ -17,9 +17,7 @@ export type CountryCode3n = NumericString; // NumericString
 /* END_OF_SYMBOL_DEFINITION CountryCode3n */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CountryCode3n */
-let _cached_decoder_for_CountryCode3n: $.ASN1Decoder<
-    CountryCode3n
-> | null = null;
+let _cached_decoder_for_CountryCode3n: $.ASN1Decoder<CountryCode3n> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CountryCode3n */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CountryCode3n */
@@ -38,9 +36,7 @@ export function _decode_CountryCode3n(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CountryCode3n */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CountryCode3n */
-let _cached_encoder_for_CountryCode3n: $.ASN1Encoder<
-    CountryCode3n
-> | null = null;
+let _cached_encoder_for_CountryCode3n: $.ASN1Encoder<CountryCode3n> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CountryCode3n */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CountryCode3n */

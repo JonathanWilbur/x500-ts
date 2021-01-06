@@ -28,9 +28,7 @@ export type RelativeLDAPDN = LDAPString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION RelativeLDAPDN */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RelativeLDAPDN */
-let _cached_decoder_for_RelativeLDAPDN: $.ASN1Decoder<
-    RelativeLDAPDN
-> | null = null;
+let _cached_decoder_for_RelativeLDAPDN: $.ASN1Decoder<RelativeLDAPDN> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RelativeLDAPDN */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RelativeLDAPDN */
@@ -49,9 +47,7 @@ export function _decode_RelativeLDAPDN(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RelativeLDAPDN */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RelativeLDAPDN */
-let _cached_encoder_for_RelativeLDAPDN: $.ASN1Encoder<
-    RelativeLDAPDN
-> | null = null;
+let _cached_encoder_for_RelativeLDAPDN: $.ASN1Encoder<RelativeLDAPDN> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RelativeLDAPDN */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RelativeLDAPDN */

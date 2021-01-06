@@ -113,9 +113,7 @@ export const _extension_additions_list_spec_for_ProtocolInformation: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ProtocolInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ProtocolInformation */
-let _cached_decoder_for_ProtocolInformation: $.ASN1Decoder<
-    ProtocolInformation
-> | null = null;
+let _cached_decoder_for_ProtocolInformation: $.ASN1Decoder<ProtocolInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ProtocolInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ProtocolInformation */
@@ -154,9 +152,7 @@ export function _decode_ProtocolInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ProtocolInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ProtocolInformation */
-let _cached_encoder_for_ProtocolInformation: $.ASN1Encoder<
-    ProtocolInformation
-> | null = null;
+let _cached_encoder_for_ProtocolInformation: $.ASN1Encoder<ProtocolInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ProtocolInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ProtocolInformation */

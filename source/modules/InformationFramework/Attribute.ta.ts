@@ -180,9 +180,9 @@ export function _decode_Attribute(el: _Element) {
                     values = $._decodeSetOf<_Element>(() => $._decodeAny)(_el);
                 },
                 valuesWithContext: (_el: _Element): void => {
-                    valuesWithContext = $._decodeSetOf<
-                        Attribute_valuesWithContext_Item
-                    >(() => _decode_Attribute_valuesWithContext_Item)(_el);
+                    valuesWithContext = $._decodeSetOf<Attribute_valuesWithContext_Item>(
+                        () => _decode_Attribute_valuesWithContext_Item
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -196,8 +196,8 @@ export function _decode_Attribute(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Attribute /* SEQUENCE_CONSTRUCTOR_CALL */(
-                type_,
+            return new Attribute(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
                 values,
                 valuesWithContext,
                 _unrecognizedExtensionsList
@@ -244,9 +244,7 @@ export function _encode_Attribute(
                             /* IF_ABSENT  */ value.valuesWithContext ===
                             undefined
                                 ? undefined
-                                : $._encodeSetOf<
-                                      Attribute_valuesWithContext_Item
-                                  >(
+                                : $._encodeSetOf<Attribute_valuesWithContext_Item>(
                                       () =>
                                           _encode_Attribute_valuesWithContext_Item,
                                       $.BER

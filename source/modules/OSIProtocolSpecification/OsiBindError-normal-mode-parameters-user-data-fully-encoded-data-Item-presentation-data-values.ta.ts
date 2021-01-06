@@ -19,9 +19,7 @@ export type OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Ite
 /* END_OF_SYMBOL_DEFINITION OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
-let _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<
-    OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
@@ -37,14 +35,14 @@ export function _decode_OsiBindError_normal_mode_parameters_user_data_fully_enco
     if (
         !_cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<
-            OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-        >({
-            "CONTEXT 0": [
-                "single_ASN1_type",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-        });
+        _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>(
+            {
+                "CONTEXT 0": [
+                    "single_ASN1_type",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values(
         el
@@ -53,9 +51,7 @@ export function _decode_OsiBindError_normal_mode_parameters_user_data_fully_enco
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
-let _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<
-    OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
@@ -68,16 +64,12 @@ let _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_enco
  */
 export function _encode_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values(
     value: OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values,
-    elGetter: $.ASN1Encoder<
-        OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-    >
+    elGetter: $.ASN1Encoder<OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>
 ) {
     if (
         !_cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._encode_choice<
-            OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-        >(
+        _cached_encoder_for_OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._encode_choice<OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>(
             {
                 single_ASN1_type: $._encode_explicit(
                     _TagClass.context,

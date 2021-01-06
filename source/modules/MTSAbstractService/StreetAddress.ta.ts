@@ -27,9 +27,7 @@ export type StreetAddress = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION StreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_StreetAddress */
-let _cached_decoder_for_StreetAddress: $.ASN1Decoder<
-    StreetAddress
-> | null = null;
+let _cached_decoder_for_StreetAddress: $.ASN1Decoder<StreetAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_StreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_StreetAddress */
@@ -48,9 +46,7 @@ export function _decode_StreetAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_StreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_StreetAddress */
-let _cached_encoder_for_StreetAddress: $.ASN1Encoder<
-    StreetAddress
-> | null = null;
+let _cached_encoder_for_StreetAddress: $.ASN1Encoder<StreetAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_StreetAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_StreetAddress */

@@ -29,9 +29,7 @@ export type ARU_PPDU_normal_mode_parameters_user_data = {
 /* END_OF_SYMBOL_DEFINITION ARU_PPDU_normal_mode_parameters_user_data */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data */
-let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data: $.ASN1Decoder<
-    ARU_PPDU_normal_mode_parameters_user_data
-> | null = null;
+let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data: $.ASN1Decoder<ARU_PPDU_normal_mode_parameters_user_data> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data */
@@ -45,32 +43,28 @@ export function _decode_ARU_PPDU_normal_mode_parameters_user_data(
     el: _Element
 ) {
     if (!_cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data) {
-        _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data = $._decode_inextensible_choice<
-            ARU_PPDU_normal_mode_parameters_user_data
-        >({
-            "APPLICATION 1": [
-                "fully_encoded_data",
-                $._decode_explicit<
-                    ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item[]
-                >(() =>
-                    $._decodeSequenceOf<
-                        ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-                    >(
-                        () =>
-                            _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-                    )
-                ),
-            ],
-        });
+        _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data = $._decode_inextensible_choice<ARU_PPDU_normal_mode_parameters_user_data>(
+            {
+                "APPLICATION 1": [
+                    "fully_encoded_data",
+                    $._decode_explicit<
+                        ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item[]
+                    >(() =>
+                        $._decodeSequenceOf<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item>(
+                            () =>
+                                _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data */
-let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data: $.ASN1Encoder<
-    ARU_PPDU_normal_mode_parameters_user_data
-> | null = null;
+let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ARU_PPDU_normal_mode_parameters_user_data */
@@ -86,17 +80,13 @@ export function _encode_ARU_PPDU_normal_mode_parameters_user_data(
     elGetter: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data>
 ) {
     if (!_cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data) {
-        _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data = $._encode_choice<
-            ARU_PPDU_normal_mode_parameters_user_data
-        >(
+        _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data = $._encode_choice<ARU_PPDU_normal_mode_parameters_user_data>(
             {
                 fully_encoded_data: $._encode_explicit(
                     _TagClass.application,
                     1,
                     () =>
-                        $._encodeSequenceOf<
-                            ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item
-                        >(
+                        $._encodeSequenceOf<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item>(
                             () =>
                                 _encode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item,
                             $.BER

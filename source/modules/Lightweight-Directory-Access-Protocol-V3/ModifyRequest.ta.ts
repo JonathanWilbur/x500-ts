@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_ModifyRequest: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRequest */
-let _cached_decoder_for_ModifyRequest: $.ASN1Decoder<
-    ModifyRequest
-> | null = null;
+let _cached_decoder_for_ModifyRequest: $.ASN1Decoder<ModifyRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyRequest */
@@ -190,9 +188,7 @@ export function _decode_ModifyRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRequest */
-let _cached_encoder_for_ModifyRequest: $.ASN1Encoder<
-    ModifyRequest
-> | null = null;
+let _cached_encoder_for_ModifyRequest: $.ASN1Encoder<ModifyRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyRequest */
@@ -224,9 +220,7 @@ export function _encode_ModifyRequest(
                                         value.object,
                                         $.BER
                                     ),
-                                    /* REQUIRED   */ $._encodeSequenceOf<
-                                        ModifyRequest_changes_change
-                                    >(
+                                    /* REQUIRED   */ $._encodeSequenceOf<ModifyRequest_changes_change>(
                                         () =>
                                             _encode_ModifyRequest_changes_change,
                                         $.BER

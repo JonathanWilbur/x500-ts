@@ -120,9 +120,7 @@ export const _extension_additions_list_spec_for_NoticeReference: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NoticeReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NoticeReference */
-let _cached_decoder_for_NoticeReference: $.ASN1Decoder<
-    NoticeReference
-> | null = null;
+let _cached_decoder_for_NoticeReference: $.ASN1Decoder<NoticeReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NoticeReference */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NoticeReference */
@@ -161,9 +159,7 @@ export function _decode_NoticeReference(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NoticeReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NoticeReference */
-let _cached_encoder_for_NoticeReference: $.ASN1Encoder<
-    NoticeReference
-> | null = null;
+let _cached_encoder_for_NoticeReference: $.ASN1Encoder<NoticeReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NoticeReference */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NoticeReference */

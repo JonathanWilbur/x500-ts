@@ -70,17 +70,13 @@ export class OsiBindResult_normal_mode_parameters {
          * @public
          * @readonly
          */
-        readonly protocol_version: OPTIONAL<
-            OsiBindResult_normal_mode_parameters_protocol_version
-        >,
+        readonly protocol_version: OPTIONAL<OsiBindResult_normal_mode_parameters_protocol_version>,
         /**
          * @summary `responding_presentation_selector`.
          * @public
          * @readonly
          */
-        readonly responding_presentation_selector: OPTIONAL<
-            Presentation_selector
-        >,
+        readonly responding_presentation_selector: OPTIONAL<Presentation_selector>,
         /**
          * @summary `presentation_context_definition_result_list`.
          * @public
@@ -200,9 +196,7 @@ export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parame
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters */
-let _cached_decoder_for_OsiBindResult_normal_mode_parameters: $.ASN1Decoder<
-    OsiBindResult_normal_mode_parameters
-> | null = null;
+let _cached_decoder_for_OsiBindResult_normal_mode_parameters: $.ASN1Decoder<OsiBindResult_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters */
@@ -227,17 +221,15 @@ export function _decode_OsiBindResult_normal_mode_parameters(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "protocol-version": (_el: _Element): void => {
-                    protocol_version = $._decode_explicit<
-                        OsiBindResult_normal_mode_parameters_protocol_version
-                    >(
+                    protocol_version = $._decode_explicit<OsiBindResult_normal_mode_parameters_protocol_version>(
                         () =>
                             _decode_OsiBindResult_normal_mode_parameters_protocol_version
                     )(_el);
                 },
                 "responding-presentation-selector": (_el: _Element): void => {
-                    responding_presentation_selector = $._decode_explicit<
-                        Presentation_selector
-                    >(() => _decode_Presentation_selector)(_el);
+                    responding_presentation_selector = $._decode_explicit<Presentation_selector>(
+                        () => _decode_Presentation_selector
+                    )(_el);
                 },
                 "presentation-context-definition-result-list": (
                     _el: _Element
@@ -245,9 +237,7 @@ export function _decode_OsiBindResult_normal_mode_parameters(el: _Element) {
                     presentation_context_definition_result_list = $._decode_explicit<
                         OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item[]
                     >(() =>
-                        $._decodeSequenceOf<
-                            OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-                        >(
+                        $._decodeSequenceOf<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item>(
                             () =>
                                 _decode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
                         )
@@ -268,8 +258,8 @@ export function _decode_OsiBindResult_normal_mode_parameters(el: _Element) {
                 _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters,
                 undefined
             );
-            return new OsiBindResult_normal_mode_parameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-                protocol_version,
+            return new OsiBindResult_normal_mode_parameters(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                 responding_presentation_selector,
                 presentation_context_definition_result_list,
                 user_data
@@ -281,9 +271,7 @@ export function _decode_OsiBindResult_normal_mode_parameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters */
-let _cached_encoder_for_OsiBindResult_normal_mode_parameters: $.ASN1Encoder<
-    OsiBindResult_normal_mode_parameters
-> | null = null;
+let _cached_encoder_for_OsiBindResult_normal_mode_parameters: $.ASN1Encoder<OsiBindResult_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindResult_normal_mode_parameters */
@@ -332,9 +320,7 @@ export function _encode_OsiBindResult_normal_mode_parameters(
                             _TagClass.context,
                             5,
                             () =>
-                                $._encodeSequenceOf<
-                                    OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item
-                                >(
+                                $._encodeSequenceOf<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item>(
                                     () =>
                                         _encode_OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item,
                                     $.BER

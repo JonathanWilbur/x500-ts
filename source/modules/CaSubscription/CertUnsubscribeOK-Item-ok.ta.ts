@@ -127,9 +127,7 @@ export const _extension_additions_list_spec_for_CertUnsubscribeOK_Item_ok: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertUnsubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeOK_Item_ok */
-let _cached_decoder_for_CertUnsubscribeOK_Item_ok: $.ASN1Decoder<
-    CertUnsubscribeOK_Item_ok
-> | null = null;
+let _cached_decoder_for_CertUnsubscribeOK_Item_ok: $.ASN1Decoder<CertUnsubscribeOK_Item_ok> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeOK_Item_ok */
@@ -170,9 +168,7 @@ export function _decode_CertUnsubscribeOK_Item_ok(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeOK_Item_ok */
-let _cached_encoder_for_CertUnsubscribeOK_Item_ok: $.ASN1Encoder<
-    CertUnsubscribeOK_Item_ok
-> | null = null;
+let _cached_encoder_for_CertUnsubscribeOK_Item_ok: $.ASN1Encoder<CertUnsubscribeOK_Item_ok> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUnsubscribeOK_Item_ok */

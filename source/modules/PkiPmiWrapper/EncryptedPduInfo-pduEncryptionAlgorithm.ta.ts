@@ -111,9 +111,7 @@ export const _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAl
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EncryptedPduInfo_pduEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm */
-let _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Decoder<
-    EncryptedPduInfo_pduEncryptionAlgorithm
-> | null = null;
+let _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Decoder<EncryptedPduInfo_pduEncryptionAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedPduInfo_pduEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EncryptedPduInfo_pduEncryptionAlgorithm */
@@ -153,9 +151,7 @@ export function _decode_EncryptedPduInfo_pduEncryptionAlgorithm(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EncryptedPduInfo_pduEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm */
-let _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Encoder<
-    EncryptedPduInfo_pduEncryptionAlgorithm
-> | null = null;
+let _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm: $.ASN1Encoder<EncryptedPduInfo_pduEncryptionAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedPduInfo_pduEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EncryptedPduInfo_pduEncryptionAlgorithm */

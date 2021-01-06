@@ -172,9 +172,7 @@ export const _extension_additions_list_spec_for_AuthenticationLevel_basicLevels:
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AuthenticationLevel_basicLevels */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel_basicLevels */
-let _cached_decoder_for_AuthenticationLevel_basicLevels: $.ASN1Decoder<
-    AuthenticationLevel_basicLevels
-> | null = null;
+let _cached_decoder_for_AuthenticationLevel_basicLevels: $.ASN1Decoder<AuthenticationLevel_basicLevels> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationLevel_basicLevels */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel_basicLevels */
@@ -219,8 +217,8 @@ export function _decode_AuthenticationLevel_basicLevels(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AuthenticationLevel_basicLevels /* SEQUENCE_CONSTRUCTOR_CALL */(
-                level,
+            return new AuthenticationLevel_basicLevels(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ level,
                 localQualifier,
                 signed,
                 _unrecognizedExtensionsList
@@ -232,9 +230,7 @@ export function _decode_AuthenticationLevel_basicLevels(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AuthenticationLevel_basicLevels */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel_basicLevels */
-let _cached_encoder_for_AuthenticationLevel_basicLevels: $.ASN1Encoder<
-    AuthenticationLevel_basicLevels
-> | null = null;
+let _cached_encoder_for_AuthenticationLevel_basicLevels: $.ASN1Encoder<AuthenticationLevel_basicLevels> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationLevel_basicLevels */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthenticationLevel_basicLevels */

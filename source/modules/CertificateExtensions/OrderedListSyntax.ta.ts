@@ -63,9 +63,7 @@ export const ascRevDate: OrderedListSyntax = OrderedListSyntax_ascRevDate; /* SH
 /* END_OF_SYMBOL_DEFINITION ascRevDate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OrderedListSyntax */
-let _cached_decoder_for_OrderedListSyntax: $.ASN1Decoder<
-    OrderedListSyntax
-> | null = null;
+let _cached_decoder_for_OrderedListSyntax: $.ASN1Decoder<OrderedListSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OrderedListSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OrderedListSyntax */
@@ -84,9 +82,7 @@ export function _decode_OrderedListSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OrderedListSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OrderedListSyntax */
-let _cached_encoder_for_OrderedListSyntax: $.ASN1Encoder<
-    OrderedListSyntax
-> | null = null;
+let _cached_encoder_for_OrderedListSyntax: $.ASN1Encoder<OrderedListSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OrderedListSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OrderedListSyntax */

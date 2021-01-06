@@ -128,9 +128,7 @@ export const _extension_additions_list_spec_for_UserPwd_encrypted: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UserPwd_encrypted */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UserPwd_encrypted */
-let _cached_decoder_for_UserPwd_encrypted: $.ASN1Decoder<
-    UserPwd_encrypted
-> | null = null;
+let _cached_decoder_for_UserPwd_encrypted: $.ASN1Decoder<UserPwd_encrypted> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UserPwd_encrypted */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UserPwd_encrypted */
@@ -171,9 +169,7 @@ export function _decode_UserPwd_encrypted(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UserPwd_encrypted */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UserPwd_encrypted */
-let _cached_encoder_for_UserPwd_encrypted: $.ASN1Encoder<
-    UserPwd_encrypted
-> | null = null;
+let _cached_encoder_for_UserPwd_encrypted: $.ASN1Encoder<UserPwd_encrypted> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UserPwd_encrypted */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UserPwd_encrypted */

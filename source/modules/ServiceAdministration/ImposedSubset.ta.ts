@@ -79,9 +79,7 @@ export const wholeSubtree: ImposedSubset = ImposedSubset_wholeSubtree; /* SHORT_
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ImposedSubset */
-let _cached_decoder_for_ImposedSubset: $.ASN1Decoder<
-    ImposedSubset
-> | null = null;
+let _cached_decoder_for_ImposedSubset: $.ASN1Decoder<ImposedSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ImposedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ImposedSubset */
@@ -100,9 +98,7 @@ export function _decode_ImposedSubset(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ImposedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ImposedSubset */
-let _cached_encoder_for_ImposedSubset: $.ASN1Encoder<
-    ImposedSubset
-> | null = null;
+let _cached_encoder_for_ImposedSubset: $.ASN1Encoder<ImposedSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ImposedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ImposedSubset */

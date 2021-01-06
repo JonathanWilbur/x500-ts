@@ -38,9 +38,7 @@ export type AbandonArgument = OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>; // 
 /* END_OF_SYMBOL_DEFINITION AbandonArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonArgument */
-let _cached_decoder_for_AbandonArgument: $.ASN1Decoder<
-    AbandonArgument
-> | null = null;
+let _cached_decoder_for_AbandonArgument: $.ASN1Decoder<AbandonArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonArgument */
@@ -52,18 +50,16 @@ let _cached_decoder_for_AbandonArgument: $.ASN1Decoder<
  */
 export function _decode_AbandonArgument(el: _Element) {
     if (!_cached_decoder_for_AbandonArgument) {
-        _cached_decoder_for_AbandonArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            AbandonArgumentData
-        >(_decode_AbandonArgumentData);
+        _cached_decoder_for_AbandonArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>(
+            _decode_AbandonArgumentData
+        );
     }
     return _cached_decoder_for_AbandonArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonArgument */
-let _cached_encoder_for_AbandonArgument: $.ASN1Encoder<
-    AbandonArgument
-> | null = null;
+let _cached_encoder_for_AbandonArgument: $.ASN1Encoder<AbandonArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonArgument */
@@ -79,9 +75,9 @@ export function _encode_AbandonArgument(
     elGetter: $.ASN1Encoder<AbandonArgument>
 ) {
     if (!_cached_encoder_for_AbandonArgument) {
-        _cached_encoder_for_AbandonArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            AbandonArgumentData
-        >(_encode_AbandonArgumentData);
+        _cached_encoder_for_AbandonArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AbandonArgumentData>(
+            _encode_AbandonArgumentData
+        );
     }
     return _cached_encoder_for_AbandonArgument(value, elGetter);
 }

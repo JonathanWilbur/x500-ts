@@ -122,9 +122,7 @@ export const _extension_additions_list_spec_for_Chained_ArgumentType_OPTIONALLY_
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
-let _cached_decoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Decoder<
-    Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
-> | null = null;
+let _cached_decoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Decoder<Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
@@ -167,8 +165,8 @@ export function _decode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1(
                 _root_component_type_list_2_spec_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1,
                 undefined
             );
-            return new Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 /* SET_CONSTRUCTOR_CALL */(
-                chainedArgument,
+            return new Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1(
+                /* SET_CONSTRUCTOR_CALL */ chainedArgument,
                 argument
             );
         };
@@ -180,9 +178,7 @@ export function _decode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1(
 /* END_OF_SYMBOL_DEFINITION _decode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
-let _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Encoder<
-    Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
-> | null = null;
+let _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Encoder<Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 */
@@ -195,18 +191,14 @@ let _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1: $.
  */
 export function _encode_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1(
     value: Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1,
-    elGetter: $.ASN1Encoder<
-        Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
-    >
+    elGetter: $.ASN1Encoder<Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1>
 ) {
     if (
         !_cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
     ) {
         _cached_encoder_for_Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1 = function (
             value: Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1,
-            elGetter: $.ASN1Encoder<
-                Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1
-            >
+            elGetter: $.ASN1Encoder<Chained_ArgumentType_OPTIONALLY_PROTECTED_Parameter1>
         ): _Element {
             return $._encodeSet(
                 ([] as (_Element | undefined)[])

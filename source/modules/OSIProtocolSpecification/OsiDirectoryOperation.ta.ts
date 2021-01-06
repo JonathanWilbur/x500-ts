@@ -65,9 +65,7 @@ export type OsiDirectoryOperation =
 /* END_OF_SYMBOL_DEFINITION OsiDirectoryOperation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiDirectoryOperation */
-let _cached_decoder_for_OsiDirectoryOperation: $.ASN1Decoder<
-    OsiDirectoryOperation
-> | null = null;
+let _cached_decoder_for_OsiDirectoryOperation: $.ASN1Decoder<OsiDirectoryOperation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiDirectoryOperation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiDirectoryOperation */
@@ -79,23 +77,21 @@ let _cached_decoder_for_OsiDirectoryOperation: $.ASN1Decoder<
  */
 export function _decode_OsiDirectoryOperation(el: _Element) {
     if (!_cached_decoder_for_OsiDirectoryOperation) {
-        _cached_decoder_for_OsiDirectoryOperation = $._decode_inextensible_choice<
-            OsiDirectoryOperation
-        >({
-            "CONTEXT 1": ["request", _decode_OsiReq],
-            "CONTEXT 2": ["result", _decode_OsiRes],
-            "CONTEXT 3": ["error", _decode_OsiErr],
-            "CONTEXT 4": ["reject", _decode_OsiRej],
-        });
+        _cached_decoder_for_OsiDirectoryOperation = $._decode_inextensible_choice<OsiDirectoryOperation>(
+            {
+                "CONTEXT 1": ["request", _decode_OsiReq],
+                "CONTEXT 2": ["result", _decode_OsiRes],
+                "CONTEXT 3": ["error", _decode_OsiErr],
+                "CONTEXT 4": ["reject", _decode_OsiRej],
+            }
+        );
     }
     return _cached_decoder_for_OsiDirectoryOperation(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OsiDirectoryOperation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiDirectoryOperation */
-let _cached_encoder_for_OsiDirectoryOperation: $.ASN1Encoder<
-    OsiDirectoryOperation
-> | null = null;
+let _cached_encoder_for_OsiDirectoryOperation: $.ASN1Encoder<OsiDirectoryOperation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiDirectoryOperation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiDirectoryOperation */
@@ -111,9 +107,7 @@ export function _encode_OsiDirectoryOperation(
     elGetter: $.ASN1Encoder<OsiDirectoryOperation>
 ) {
     if (!_cached_encoder_for_OsiDirectoryOperation) {
-        _cached_encoder_for_OsiDirectoryOperation = $._encode_choice<
-            OsiDirectoryOperation
-        >(
+        _cached_encoder_for_OsiDirectoryOperation = $._encode_choice<OsiDirectoryOperation>(
             {
                 request: _encode_OsiReq,
                 result: _encode_OsiRes,

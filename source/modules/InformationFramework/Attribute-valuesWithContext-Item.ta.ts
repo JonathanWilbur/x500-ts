@@ -127,9 +127,7 @@ export const _extension_additions_list_spec_for_Attribute_valuesWithContext_Item
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Attribute_valuesWithContext_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Attribute_valuesWithContext_Item */
-let _cached_decoder_for_Attribute_valuesWithContext_Item: $.ASN1Decoder<
-    Attribute_valuesWithContext_Item
-> | null = null;
+let _cached_decoder_for_Attribute_valuesWithContext_Item: $.ASN1Decoder<Attribute_valuesWithContext_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Attribute_valuesWithContext_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Attribute_valuesWithContext_Item */
@@ -172,9 +170,7 @@ export function _decode_Attribute_valuesWithContext_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Attribute_valuesWithContext_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Attribute_valuesWithContext_Item */
-let _cached_encoder_for_Attribute_valuesWithContext_Item: $.ASN1Encoder<
-    Attribute_valuesWithContext_Item
-> | null = null;
+let _cached_encoder_for_Attribute_valuesWithContext_Item: $.ASN1Encoder<Attribute_valuesWithContext_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Attribute_valuesWithContext_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Attribute_valuesWithContext_Item */

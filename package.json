@@ -14,11 +14,11 @@
         "@babel/core": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
         "@babel/preset-typescript": "^7.12.7",
-        "@types/node": "^14.14.16",
-        "@typescript-eslint/eslint-plugin": "^4.11.1",
-        "@typescript-eslint/parser": "^4.11.1",
+        "@types/node": "^14.14.20",
+        "@typescript-eslint/eslint-plugin": "^4.12.0",
+        "@typescript-eslint/parser": "^4.12.0",
         "babel-jest": "^26.6.3",
-        "eslint": "^7.16.0",
+        "eslint": "^7.17.0",
         "jest": "^26.6.3",
         "jest-junit": "^12.0.0",
         "npm-check-updates": "^10.2.5",
@@ -58,9 +58,9 @@
         "test": "npx jest --ci --reporters=default --reporters=jest-junit --coverage"
     },
     "types": "./dist/node/index.d.ts",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "dependencies": {
         "asn1-ts": "^5.0.2",
-        "madge": "^3.12.0"
+        "madge": "^4.0.0"
     }
 }

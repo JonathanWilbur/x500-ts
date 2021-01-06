@@ -254,9 +254,7 @@ export const _extension_additions_list_spec_for_CertificateListContent: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateListContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListContent */
-let _cached_decoder_for_CertificateListContent: $.ASN1Decoder<
-    CertificateListContent
-> | null = null;
+let _cached_decoder_for_CertificateListContent: $.ASN1Decoder<CertificateListContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateListContent */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateListContent */
@@ -301,9 +299,7 @@ export function _decode_CertificateListContent(el: _Element) {
                     nextUpdate = _decode_Time(_el);
                 },
                 revokedCertificates: (_el: _Element): void => {
-                    revokedCertificates = $._decodeSequenceOf<
-                        CertificateListContent_revokedCertificates_Item
-                    >(
+                    revokedCertificates = $._decodeSequenceOf<CertificateListContent_revokedCertificates_Item>(
                         () =>
                             _decode_CertificateListContent_revokedCertificates_Item
                     )(_el);
@@ -325,8 +321,8 @@ export function _decode_CertificateListContent(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificateListContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CertificateListContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 signature,
                 issuer,
                 thisUpdate,
@@ -342,9 +338,7 @@ export function _decode_CertificateListContent(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateListContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListContent */
-let _cached_encoder_for_CertificateListContent: $.ASN1Encoder<
-    CertificateListContent
-> | null = null;
+let _cached_encoder_for_CertificateListContent: $.ASN1Encoder<CertificateListContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateListContent */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateListContent */
@@ -386,9 +380,7 @@ export function _encode_CertificateListContent(
                             /* IF_ABSENT  */ value.revokedCertificates ===
                             undefined
                                 ? undefined
-                                : $._encodeSequenceOf<
-                                      CertificateListContent_revokedCertificates_Item
-                                  >(
+                                : $._encodeSequenceOf<CertificateListContent_revokedCertificates_Item>(
                                       () =>
                                           _encode_CertificateListContent_revokedCertificates_Item,
                                       $.BER

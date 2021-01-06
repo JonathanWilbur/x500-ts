@@ -109,9 +109,7 @@ export const unrecognizedUser: AuthenReasonSyntax = AuthenReasonSyntax_unrecogni
 /* END_OF_SYMBOL_DEFINITION unrecognizedUser */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenReasonSyntax */
-let _cached_decoder_for_AuthenReasonSyntax: $.ASN1Decoder<
-    AuthenReasonSyntax
-> | null = null;
+let _cached_decoder_for_AuthenReasonSyntax: $.ASN1Decoder<AuthenReasonSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenReasonSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthenReasonSyntax */
@@ -130,9 +128,7 @@ export function _decode_AuthenReasonSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AuthenReasonSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenReasonSyntax */
-let _cached_encoder_for_AuthenReasonSyntax: $.ASN1Encoder<
-    AuthenReasonSyntax
-> | null = null;
+let _cached_encoder_for_AuthenReasonSyntax: $.ASN1Encoder<AuthenReasonSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenReasonSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthenReasonSyntax */

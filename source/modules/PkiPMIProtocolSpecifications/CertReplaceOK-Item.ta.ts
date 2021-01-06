@@ -40,9 +40,7 @@ export type CertReplaceOK_Item =
 /* END_OF_SYMBOL_DEFINITION CertReplaceOK_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceOK_Item */
-let _cached_decoder_for_CertReplaceOK_Item: $.ASN1Decoder<
-    CertReplaceOK_Item
-> | null = null;
+let _cached_decoder_for_CertReplaceOK_Item: $.ASN1Decoder<CertReplaceOK_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceOK_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertReplaceOK_Item */
@@ -54,31 +52,29 @@ let _cached_decoder_for_CertReplaceOK_Item: $.ASN1Decoder<
  */
 export function _decode_CertReplaceOK_Item(el: _Element) {
     if (!_cached_decoder_for_CertReplaceOK_Item) {
-        _cached_decoder_for_CertReplaceOK_Item = $._decode_extensible_choice<
-            CertReplaceOK_Item
-        >({
-            "CONTEXT 0": [
-                "ok",
-                $._decode_explicit<CertReplaceOK_Item_ok>(
-                    () => _decode_CertReplaceOK_Item_ok
-                ),
-            ],
-            "CONTEXT 1": [
-                "not_ok",
-                $._decode_explicit<CertReplaceOK_Item_not_ok>(
-                    () => _decode_CertReplaceOK_Item_not_ok
-                ),
-            ],
-        });
+        _cached_decoder_for_CertReplaceOK_Item = $._decode_extensible_choice<CertReplaceOK_Item>(
+            {
+                "CONTEXT 0": [
+                    "ok",
+                    $._decode_explicit<CertReplaceOK_Item_ok>(
+                        () => _decode_CertReplaceOK_Item_ok
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "not_ok",
+                    $._decode_explicit<CertReplaceOK_Item_not_ok>(
+                        () => _decode_CertReplaceOK_Item_not_ok
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertReplaceOK_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertReplaceOK_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceOK_Item */
-let _cached_encoder_for_CertReplaceOK_Item: $.ASN1Encoder<
-    CertReplaceOK_Item
-> | null = null;
+let _cached_encoder_for_CertReplaceOK_Item: $.ASN1Encoder<CertReplaceOK_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceOK_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertReplaceOK_Item */
@@ -94,9 +90,7 @@ export function _encode_CertReplaceOK_Item(
     elGetter: $.ASN1Encoder<CertReplaceOK_Item>
 ) {
     if (!_cached_encoder_for_CertReplaceOK_Item) {
-        _cached_encoder_for_CertReplaceOK_Item = $._encode_choice<
-            CertReplaceOK_Item
-        >(
+        _cached_encoder_for_CertReplaceOK_Item = $._encode_choice<CertReplaceOK_Item>(
             {
                 ok: $._encode_explicit(
                     _TagClass.context,

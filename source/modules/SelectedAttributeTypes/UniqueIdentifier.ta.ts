@@ -17,9 +17,7 @@ export type UniqueIdentifier = BIT_STRING;
 /* END_OF_SYMBOL_DEFINITION UniqueIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniqueIdentifier */
-let _cached_decoder_for_UniqueIdentifier: $.ASN1Decoder<
-    UniqueIdentifier
-> | null = null;
+let _cached_decoder_for_UniqueIdentifier: $.ASN1Decoder<UniqueIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniqueIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniqueIdentifier */
@@ -38,9 +36,7 @@ export function _decode_UniqueIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniqueIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniqueIdentifier */
-let _cached_encoder_for_UniqueIdentifier: $.ASN1Encoder<
-    UniqueIdentifier
-> | null = null;
+let _cached_encoder_for_UniqueIdentifier: $.ASN1Encoder<UniqueIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniqueIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniqueIdentifier */

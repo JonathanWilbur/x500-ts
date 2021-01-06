@@ -193,9 +193,9 @@ export function _decode_FamilyEntry(el: _Element) {
                     rdn = _decode_RelativeDistinguishedName(_el);
                 },
                 information: (_el: _Element): void => {
-                    information = $._decodeSequenceOf<
-                        FamilyEntry_information_Item
-                    >(() => _decode_FamilyEntry_information_Item)(_el);
+                    information = $._decodeSequenceOf<FamilyEntry_information_Item>(
+                        () => _decode_FamilyEntry_information_Item
+                    )(_el);
                 },
                 "family-info": (_el: _Element): void => {
                     family_info = $._decodeSequenceOf<FamilyEntries>(
@@ -214,8 +214,8 @@ export function _decode_FamilyEntry(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new FamilyEntry /* SEQUENCE_CONSTRUCTOR_CALL */(
-                rdn,
+            return new FamilyEntry(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
                 information,
                 family_info,
                 _unrecognizedExtensionsList
@@ -255,9 +255,7 @@ export function _encode_FamilyEntry(
                                 value.rdn,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                FamilyEntry_information_Item
-                            >(
+                            /* REQUIRED   */ $._encodeSequenceOf<FamilyEntry_information_Item>(
                                 () => _encode_FamilyEntry_information_Item,
                                 $.BER
                             )(value.information, $.BER),

@@ -62,9 +62,7 @@ export const changeAfterReset: PwdResponseValue_error = PwdResponseValue_error_c
 /* END_OF_SYMBOL_DEFINITION changeAfterReset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue_error */
-let _cached_decoder_for_PwdResponseValue_error: $.ASN1Decoder<
-    PwdResponseValue_error
-> | null = null;
+let _cached_decoder_for_PwdResponseValue_error: $.ASN1Decoder<PwdResponseValue_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue_error */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PwdResponseValue_error */
@@ -83,9 +81,7 @@ export function _decode_PwdResponseValue_error(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PwdResponseValue_error */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue_error */
-let _cached_encoder_for_PwdResponseValue_error: $.ASN1Encoder<
-    PwdResponseValue_error
-> | null = null;
+let _cached_encoder_for_PwdResponseValue_error: $.ASN1Encoder<PwdResponseValue_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue_error */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PwdResponseValue_error */

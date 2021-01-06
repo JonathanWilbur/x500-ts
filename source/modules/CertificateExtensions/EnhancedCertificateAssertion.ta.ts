@@ -516,8 +516,8 @@ export function _decode_EnhancedCertificateAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EnhancedCertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                serialNumber,
+            return new EnhancedCertificateAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
                 issuer,
                 subjectKeyIdentifier,
                 authorityKeyIdentifier,

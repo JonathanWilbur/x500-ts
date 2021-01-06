@@ -197,9 +197,7 @@ export const _extension_additions_list_spec_for_SupplierOrConsumer: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SupplierOrConsumer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierOrConsumer */
-let _cached_decoder_for_SupplierOrConsumer: $.ASN1Decoder<
-    SupplierOrConsumer
-> | null = null;
+let _cached_decoder_for_SupplierOrConsumer: $.ASN1Decoder<SupplierOrConsumer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierOrConsumer */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupplierOrConsumer */
@@ -259,8 +257,8 @@ export function _decode_SupplierOrConsumer(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SupplierOrConsumer /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new SupplierOrConsumer(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 address,
                 protocolInformation,
                 agreementID,
@@ -273,9 +271,7 @@ export function _decode_SupplierOrConsumer(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SupplierOrConsumer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierOrConsumer */
-let _cached_encoder_for_SupplierOrConsumer: $.ASN1Encoder<
-    SupplierOrConsumer
-> | null = null;
+let _cached_encoder_for_SupplierOrConsumer: $.ASN1Encoder<SupplierOrConsumer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierOrConsumer */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupplierOrConsumer */

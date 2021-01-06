@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_SubjectPublicKeyInfo: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubjectPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectPublicKeyInfo */
-let _cached_decoder_for_SubjectPublicKeyInfo: $.ASN1Decoder<
-    SubjectPublicKeyInfo
-> | null = null;
+let _cached_decoder_for_SubjectPublicKeyInfo: $.ASN1Decoder<SubjectPublicKeyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubjectPublicKeyInfo */
@@ -185,9 +183,7 @@ export function _decode_SubjectPublicKeyInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubjectPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectPublicKeyInfo */
-let _cached_encoder_for_SubjectPublicKeyInfo: $.ASN1Encoder<
-    SubjectPublicKeyInfo
-> | null = null;
+let _cached_encoder_for_SubjectPublicKeyInfo: $.ASN1Encoder<SubjectPublicKeyInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectPublicKeyInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubjectPublicKeyInfo */

@@ -27,9 +27,7 @@ export type PosteRestanteAddress = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION PosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PosteRestanteAddress */
-let _cached_decoder_for_PosteRestanteAddress: $.ASN1Decoder<
-    PosteRestanteAddress
-> | null = null;
+let _cached_decoder_for_PosteRestanteAddress: $.ASN1Decoder<PosteRestanteAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PosteRestanteAddress */
@@ -48,9 +46,7 @@ export function _decode_PosteRestanteAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PosteRestanteAddress */
-let _cached_encoder_for_PosteRestanteAddress: $.ASN1Encoder<
-    PosteRestanteAddress
-> | null = null;
+let _cached_encoder_for_PosteRestanteAddress: $.ASN1Encoder<PosteRestanteAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PosteRestanteAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PosteRestanteAddress */

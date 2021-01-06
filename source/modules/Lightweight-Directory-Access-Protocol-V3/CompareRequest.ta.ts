@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_CompareRequest: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CompareRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareRequest */
-let _cached_decoder_for_CompareRequest: $.ASN1Decoder<
-    CompareRequest
-> | null = null;
+let _cached_decoder_for_CompareRequest: $.ASN1Decoder<CompareRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CompareRequest */
@@ -180,9 +178,7 @@ export function _decode_CompareRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CompareRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareRequest */
-let _cached_encoder_for_CompareRequest: $.ASN1Encoder<
-    CompareRequest
-> | null = null;
+let _cached_encoder_for_CompareRequest: $.ASN1Encoder<CompareRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CompareRequest */

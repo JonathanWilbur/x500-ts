@@ -42,9 +42,9 @@ let _cached_decoder_for_Context_list: $.ASN1Decoder<Context_list> | null = null;
  */
 export function _decode_Context_list(el: _Element) {
     if (!_cached_decoder_for_Context_list) {
-        _cached_decoder_for_Context_list = $._decodeSequenceOf<
-            Context_list_Item
-        >(() => _decode_Context_list_Item);
+        _cached_decoder_for_Context_list = $._decodeSequenceOf<Context_list_Item>(
+            () => _decode_Context_list_Item
+        );
     }
     return _cached_decoder_for_Context_list(el);
 }
@@ -67,9 +67,10 @@ export function _encode_Context_list(
     elGetter: $.ASN1Encoder<Context_list>
 ) {
     if (!_cached_encoder_for_Context_list) {
-        _cached_encoder_for_Context_list = $._encodeSequenceOf<
-            Context_list_Item
-        >(() => _encode_Context_list_Item, $.BER);
+        _cached_encoder_for_Context_list = $._encodeSequenceOf<Context_list_Item>(
+            () => _encode_Context_list_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_Context_list(value, elGetter);
 }

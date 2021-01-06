@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_CertUnsubscribeErr: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertUnsubscribeErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeErr */
-let _cached_decoder_for_CertUnsubscribeErr: $.ASN1Decoder<
-    CertUnsubscribeErr
-> | null = null;
+let _cached_decoder_for_CertUnsubscribeErr: $.ASN1Decoder<CertUnsubscribeErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeErr */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeErr */
@@ -178,9 +176,7 @@ export function _decode_CertUnsubscribeErr(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeErr */
-let _cached_encoder_for_CertUnsubscribeErr: $.ASN1Encoder<
-    CertUnsubscribeErr
-> | null = null;
+let _cached_encoder_for_CertUnsubscribeErr: $.ASN1Encoder<CertUnsubscribeErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeErr */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUnsubscribeErr */

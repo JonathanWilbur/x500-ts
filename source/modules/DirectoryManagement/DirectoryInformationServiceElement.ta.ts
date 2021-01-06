@@ -81,9 +81,7 @@ export class DirectoryInformationServiceElement {
          * @public
          * @readonly
          */
-        readonly operationType: OPTIONAL<
-            DirectoryInformationServiceElement_operationType
-        >,
+        readonly operationType: OPTIONAL<DirectoryInformationServiceElement_operationType>,
         /**
          * @summary `attributeType`.
          * @public
@@ -185,9 +183,7 @@ export const _extension_additions_list_spec_for_DirectoryInformationServiceEleme
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DirectoryInformationServiceElement */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryInformationServiceElement */
-let _cached_decoder_for_DirectoryInformationServiceElement: $.ASN1Decoder<
-    DirectoryInformationServiceElement
-> | null = null;
+let _cached_decoder_for_DirectoryInformationServiceElement: $.ASN1Decoder<DirectoryInformationServiceElement> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryInformationServiceElement */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryInformationServiceElement */
@@ -232,8 +228,8 @@ export function _decode_DirectoryInformationServiceElement(el: _Element) {
                 _root_component_type_list_2_spec_for_DirectoryInformationServiceElement,
                 undefined
             );
-            return new DirectoryInformationServiceElement /* SEQUENCE_CONSTRUCTOR_CALL */(
-                operationType,
+            return new DirectoryInformationServiceElement(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ operationType,
                 attributeType,
                 attributeValue
             );
@@ -244,9 +240,7 @@ export function _decode_DirectoryInformationServiceElement(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryInformationServiceElement */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryInformationServiceElement */
-let _cached_encoder_for_DirectoryInformationServiceElement: $.ASN1Encoder<
-    DirectoryInformationServiceElement
-> | null = null;
+let _cached_encoder_for_DirectoryInformationServiceElement: $.ASN1Encoder<DirectoryInformationServiceElement> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryInformationServiceElement */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryInformationServiceElement */

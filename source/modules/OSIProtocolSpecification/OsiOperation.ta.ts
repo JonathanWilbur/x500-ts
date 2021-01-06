@@ -46,18 +46,20 @@ let _cached_decoder_for_OsiOperation: $.ASN1Decoder<OsiOperation> | null = null;
  */
 export function _decode_OsiOperation(el: _Element) {
     if (!_cached_decoder_for_OsiOperation) {
-        _cached_decoder_for_OsiOperation = $._decode_inextensible_choice<
-            OsiOperation
-        >({
-            "APPLICATION 1": [
-                "fully_encoded_data",
-                $._decode_explicit<OsiOperation_fully_encoded_data_Item[]>(() =>
-                    $._decodeSequenceOf<OsiOperation_fully_encoded_data_Item>(
-                        () => _decode_OsiOperation_fully_encoded_data_Item
-                    )
-                ),
-            ],
-        });
+        _cached_decoder_for_OsiOperation = $._decode_inextensible_choice<OsiOperation>(
+            {
+                "APPLICATION 1": [
+                    "fully_encoded_data",
+                    $._decode_explicit<OsiOperation_fully_encoded_data_Item[]>(
+                        () =>
+                            $._decodeSequenceOf<OsiOperation_fully_encoded_data_Item>(
+                                () =>
+                                    _decode_OsiOperation_fully_encoded_data_Item
+                            )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiOperation(el);
 }
@@ -86,9 +88,7 @@ export function _encode_OsiOperation(
                     _TagClass.application,
                     1,
                     () =>
-                        $._encodeSequenceOf<
-                            OsiOperation_fully_encoded_data_Item
-                        >(
+                        $._encodeSequenceOf<OsiOperation_fully_encoded_data_Item>(
                             () => _encode_OsiOperation_fully_encoded_data_Item,
                             $.BER
                         ),

@@ -222,9 +222,7 @@ export const _extension_additions_list_spec_for_RejectCAsubscribe: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RejectCAsubscribe */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RejectCAsubscribe */
-let _cached_decoder_for_RejectCAsubscribe: $.ASN1Decoder<
-    RejectCAsubscribe
-> | null = null;
+let _cached_decoder_for_RejectCAsubscribe: $.ASN1Decoder<RejectCAsubscribe> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RejectCAsubscribe */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RejectCAsubscribe */
@@ -269,8 +267,8 @@ export function _decode_RejectCAsubscribe(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RejectCAsubscribe /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new RejectCAsubscribe(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sequence,
                 reason,
                 _unrecognizedExtensionsList
@@ -282,9 +280,7 @@ export function _decode_RejectCAsubscribe(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RejectCAsubscribe */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RejectCAsubscribe */
-let _cached_encoder_for_RejectCAsubscribe: $.ASN1Encoder<
-    RejectCAsubscribe
-> | null = null;
+let _cached_encoder_for_RejectCAsubscribe: $.ASN1Encoder<RejectCAsubscribe> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RejectCAsubscribe */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RejectCAsubscribe */

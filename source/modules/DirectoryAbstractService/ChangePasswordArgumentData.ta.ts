@@ -159,9 +159,7 @@ export const _extension_additions_list_spec_for_ChangePasswordArgumentData: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ChangePasswordArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordArgumentData */
-let _cached_decoder_for_ChangePasswordArgumentData: $.ASN1Decoder<
-    ChangePasswordArgumentData
-> | null = null;
+let _cached_decoder_for_ChangePasswordArgumentData: $.ASN1Decoder<ChangePasswordArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChangePasswordArgumentData */
@@ -212,9 +210,7 @@ export function _decode_ChangePasswordArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ChangePasswordArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordArgumentData */
-let _cached_encoder_for_ChangePasswordArgumentData: $.ASN1Encoder<
-    ChangePasswordArgumentData
-> | null = null;
+let _cached_encoder_for_ChangePasswordArgumentData: $.ASN1Encoder<ChangePasswordArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChangePasswordArgumentData */

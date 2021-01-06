@@ -39,9 +39,7 @@ export type ClassAttributes =
 /* END_OF_SYMBOL_DEFINITION ClassAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ClassAttributes */
-let _cached_decoder_for_ClassAttributes: $.ASN1Decoder<
-    ClassAttributes
-> | null = null;
+let _cached_decoder_for_ClassAttributes: $.ASN1Decoder<ClassAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ClassAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ClassAttributes */
@@ -53,32 +51,30 @@ let _cached_decoder_for_ClassAttributes: $.ASN1Decoder<
  */
 export function _decode_ClassAttributes(el: _Element) {
     if (!_cached_decoder_for_ClassAttributes) {
-        _cached_decoder_for_ClassAttributes = $._decode_extensible_choice<
-            ClassAttributes
-        >({
-            "UNIVERSAL 5": ["allAttributes", $._decodeNull],
-            "CONTEXT 0": [
-                "include",
-                $._decode_implicit<AttributeTypes>(
-                    () => _decode_AttributeTypes
-                ),
-            ],
-            "CONTEXT 1": [
-                "exclude",
-                $._decode_implicit<AttributeTypes>(
-                    () => _decode_AttributeTypes
-                ),
-            ],
-        });
+        _cached_decoder_for_ClassAttributes = $._decode_extensible_choice<ClassAttributes>(
+            {
+                "UNIVERSAL 5": ["allAttributes", $._decodeNull],
+                "CONTEXT 0": [
+                    "include",
+                    $._decode_implicit<AttributeTypes>(
+                        () => _decode_AttributeTypes
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "exclude",
+                    $._decode_implicit<AttributeTypes>(
+                        () => _decode_AttributeTypes
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ClassAttributes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ClassAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ClassAttributes */
-let _cached_encoder_for_ClassAttributes: $.ASN1Encoder<
-    ClassAttributes
-> | null = null;
+let _cached_encoder_for_ClassAttributes: $.ASN1Encoder<ClassAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ClassAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ClassAttributes */

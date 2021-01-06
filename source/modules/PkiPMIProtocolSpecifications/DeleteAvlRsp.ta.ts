@@ -256,8 +256,8 @@ export function _decode_DeleteAvlRsp(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DeleteAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new DeleteAvlRsp(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 result,

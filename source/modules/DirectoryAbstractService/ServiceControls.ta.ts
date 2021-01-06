@@ -158,9 +158,7 @@ export class ServiceControls {
          * @public
          * @readonly
          */
-        readonly manageDSAITPlaneRef: OPTIONAL<
-            ServiceControls_manageDSAITPlaneRef
-        >,
+        readonly manageDSAITPlaneRef: OPTIONAL<ServiceControls_manageDSAITPlaneRef>,
         /**
          * @summary `serviceType`.
          * @public
@@ -332,9 +330,7 @@ export const _extension_additions_list_spec_for_ServiceControls: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ServiceControls */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls */
-let _cached_decoder_for_ServiceControls: $.ASN1Decoder<
-    ServiceControls
-> | null = null;
+let _cached_decoder_for_ServiceControls: $.ASN1Decoder<ServiceControls> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ServiceControls */
@@ -386,9 +382,9 @@ export function _decode_ServiceControls(el: _Element) {
                     )(_el);
                 },
                 scopeOfReferral: (_el: _Element): void => {
-                    scopeOfReferral = $._decode_explicit<
-                        ServiceControls_scopeOfReferral
-                    >(() => _decode_ServiceControls_scopeOfReferral)(_el);
+                    scopeOfReferral = $._decode_explicit<ServiceControls_scopeOfReferral>(
+                        () => _decode_ServiceControls_scopeOfReferral
+                    )(_el);
                 },
                 attributeSizeLimit: (_el: _Element): void => {
                     attributeSizeLimit = $._decode_explicit<INTEGER>(
@@ -396,9 +392,9 @@ export function _decode_ServiceControls(el: _Element) {
                     )(_el);
                 },
                 manageDSAITPlaneRef: (_el: _Element): void => {
-                    manageDSAITPlaneRef = $._decode_explicit<
-                        ServiceControls_manageDSAITPlaneRef
-                    >(() => _decode_ServiceControls_manageDSAITPlaneRef)(_el);
+                    manageDSAITPlaneRef = $._decode_explicit<ServiceControls_manageDSAITPlaneRef>(
+                        () => _decode_ServiceControls_manageDSAITPlaneRef
+                    )(_el);
                 },
                 serviceType: (_el: _Element): void => {
                     serviceType = $._decode_explicit<OBJECT_IDENTIFIER>(
@@ -422,8 +418,8 @@ export function _decode_ServiceControls(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ServiceControls /* SET_CONSTRUCTOR_CALL */(
-                options,
+            return new ServiceControls(
+                /* SET_CONSTRUCTOR_CALL */ options,
                 priority,
                 timeLimit,
                 sizeLimit,
@@ -441,9 +437,7 @@ export function _decode_ServiceControls(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ServiceControls */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls */
-let _cached_encoder_for_ServiceControls: $.ASN1Encoder<
-    ServiceControls
-> | null = null;
+let _cached_encoder_for_ServiceControls: $.ASN1Encoder<ServiceControls> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ServiceControls */

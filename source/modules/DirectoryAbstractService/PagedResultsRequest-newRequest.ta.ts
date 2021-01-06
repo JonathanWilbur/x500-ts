@@ -194,9 +194,7 @@ export const _extension_additions_list_spec_for_PagedResultsRequest_newRequest: 
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PagedResultsRequest_newRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PagedResultsRequest_newRequest */
-let _cached_decoder_for_PagedResultsRequest_newRequest: $.ASN1Decoder<
-    PagedResultsRequest_newRequest
-> | null = null;
+let _cached_decoder_for_PagedResultsRequest_newRequest: $.ASN1Decoder<PagedResultsRequest_newRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PagedResultsRequest_newRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PagedResultsRequest_newRequest */
@@ -258,8 +256,8 @@ export function _decode_PagedResultsRequest_newRequest(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PagedResultsRequest_newRequest /* SEQUENCE_CONSTRUCTOR_CALL */(
-                pageSize,
+            return new PagedResultsRequest_newRequest(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ pageSize,
                 sortKeys,
                 reverse,
                 unmerged,
@@ -273,9 +271,7 @@ export function _decode_PagedResultsRequest_newRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PagedResultsRequest_newRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PagedResultsRequest_newRequest */
-let _cached_encoder_for_PagedResultsRequest_newRequest: $.ASN1Encoder<
-    PagedResultsRequest_newRequest
-> | null = null;
+let _cached_encoder_for_PagedResultsRequest_newRequest: $.ASN1Encoder<PagedResultsRequest_newRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PagedResultsRequest_newRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PagedResultsRequest_newRequest */

@@ -115,9 +115,7 @@ export const _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_ad
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ExtendedNetworkAddress_e163_4_address */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedNetworkAddress_e163_4_address */
-let _cached_decoder_for_ExtendedNetworkAddress_e163_4_address: $.ASN1Decoder<
-    ExtendedNetworkAddress_e163_4_address
-> | null = null;
+let _cached_decoder_for_ExtendedNetworkAddress_e163_4_address: $.ASN1Decoder<ExtendedNetworkAddress_e163_4_address> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedNetworkAddress_e163_4_address */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtendedNetworkAddress_e163_4_address */
@@ -158,8 +156,8 @@ export function _decode_ExtendedNetworkAddress_e163_4_address(el: _Element) {
                 _root_component_type_list_2_spec_for_ExtendedNetworkAddress_e163_4_address,
                 undefined
             );
-            return new ExtendedNetworkAddress_e163_4_address /* SEQUENCE_CONSTRUCTOR_CALL */(
-                number_,
+            return new ExtendedNetworkAddress_e163_4_address(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ number_,
                 sub_address
             );
         };
@@ -169,9 +167,7 @@ export function _decode_ExtendedNetworkAddress_e163_4_address(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExtendedNetworkAddress_e163_4_address */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedNetworkAddress_e163_4_address */
-let _cached_encoder_for_ExtendedNetworkAddress_e163_4_address: $.ASN1Encoder<
-    ExtendedNetworkAddress_e163_4_address
-> | null = null;
+let _cached_encoder_for_ExtendedNetworkAddress_e163_4_address: $.ASN1Encoder<ExtendedNetworkAddress_e163_4_address> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedNetworkAddress_e163_4_address */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtendedNetworkAddress_e163_4_address */

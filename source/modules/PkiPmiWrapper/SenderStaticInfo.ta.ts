@@ -159,9 +159,7 @@ export const _extension_additions_list_spec_for_SenderStaticInfo: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SenderStaticInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SenderStaticInfo */
-let _cached_decoder_for_SenderStaticInfo: $.ASN1Decoder<
-    SenderStaticInfo
-> | null = null;
+let _cached_decoder_for_SenderStaticInfo: $.ASN1Decoder<SenderStaticInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SenderStaticInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SenderStaticInfo */
@@ -206,9 +204,7 @@ export function _decode_SenderStaticInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SenderStaticInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SenderStaticInfo */
-let _cached_encoder_for_SenderStaticInfo: $.ASN1Encoder<
-    SenderStaticInfo
-> | null = null;
+let _cached_encoder_for_SenderStaticInfo: $.ASN1Encoder<SenderStaticInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SenderStaticInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SenderStaticInfo */

@@ -6,6 +6,11 @@ import {
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
+import {
     InvokeId,
     _decode_InvokeId,
     _encode_InvokeId,
@@ -16,7 +21,6 @@ export {
     _encode_InvokeId,
 } from "../CommonProtocolSpecification/InvokeId.ta";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
-import { Code, _encode_Code, _decode_Code } from "../CommonProtocolSpecification/Code.ta";
 
 /* START_OF_SYMBOL_DEFINITION OsiReq */
 /**

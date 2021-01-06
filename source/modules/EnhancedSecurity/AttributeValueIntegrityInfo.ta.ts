@@ -33,15 +33,11 @@ export {
  * AttributeValueIntegrityInfo  ::=  SIGNED{AttributeValueIntegrityInfoContent}
  * ```
  */
-export type AttributeValueIntegrityInfo = SIGNED<
-    AttributeValueIntegrityInfoContent
->; // DefinedType
+export type AttributeValueIntegrityInfo = SIGNED<AttributeValueIntegrityInfoContent>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION AttributeValueIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValueIntegrityInfo */
-let _cached_decoder_for_AttributeValueIntegrityInfo: $.ASN1Decoder<
-    AttributeValueIntegrityInfo
-> | null = null;
+let _cached_decoder_for_AttributeValueIntegrityInfo: $.ASN1Decoder<AttributeValueIntegrityInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValueIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeValueIntegrityInfo */
@@ -53,18 +49,16 @@ let _cached_decoder_for_AttributeValueIntegrityInfo: $.ASN1Decoder<
  */
 export function _decode_AttributeValueIntegrityInfo(el: _Element) {
     if (!_cached_decoder_for_AttributeValueIntegrityInfo) {
-        _cached_decoder_for_AttributeValueIntegrityInfo = _get_decoder_for_SIGNED<
-            AttributeValueIntegrityInfoContent
-        >(_decode_AttributeValueIntegrityInfoContent);
+        _cached_decoder_for_AttributeValueIntegrityInfo = _get_decoder_for_SIGNED<AttributeValueIntegrityInfoContent>(
+            _decode_AttributeValueIntegrityInfoContent
+        );
     }
     return _cached_decoder_for_AttributeValueIntegrityInfo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeValueIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValueIntegrityInfo */
-let _cached_encoder_for_AttributeValueIntegrityInfo: $.ASN1Encoder<
-    AttributeValueIntegrityInfo
-> | null = null;
+let _cached_encoder_for_AttributeValueIntegrityInfo: $.ASN1Encoder<AttributeValueIntegrityInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValueIntegrityInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeValueIntegrityInfo */
@@ -80,9 +74,9 @@ export function _encode_AttributeValueIntegrityInfo(
     elGetter: $.ASN1Encoder<AttributeValueIntegrityInfo>
 ) {
     if (!_cached_encoder_for_AttributeValueIntegrityInfo) {
-        _cached_encoder_for_AttributeValueIntegrityInfo = _get_encoder_for_SIGNED<
-            AttributeValueIntegrityInfoContent
-        >(_encode_AttributeValueIntegrityInfoContent);
+        _cached_encoder_for_AttributeValueIntegrityInfo = _get_encoder_for_SIGNED<AttributeValueIntegrityInfoContent>(
+            _encode_AttributeValueIntegrityInfoContent
+        );
     }
     return _cached_encoder_for_AttributeValueIntegrityInfo(value, elGetter);
 }

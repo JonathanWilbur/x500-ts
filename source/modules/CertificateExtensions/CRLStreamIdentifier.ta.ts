@@ -17,9 +17,7 @@ export type CRLStreamIdentifier = INTEGER;
 /* END_OF_SYMBOL_DEFINITION CRLStreamIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CRLStreamIdentifier */
-let _cached_decoder_for_CRLStreamIdentifier: $.ASN1Decoder<
-    CRLStreamIdentifier
-> | null = null;
+let _cached_decoder_for_CRLStreamIdentifier: $.ASN1Decoder<CRLStreamIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CRLStreamIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CRLStreamIdentifier */
@@ -38,9 +36,7 @@ export function _decode_CRLStreamIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CRLStreamIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CRLStreamIdentifier */
-let _cached_encoder_for_CRLStreamIdentifier: $.ASN1Encoder<
-    CRLStreamIdentifier
-> | null = null;
+let _cached_encoder_for_CRLStreamIdentifier: $.ASN1Encoder<CRLStreamIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CRLStreamIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CRLStreamIdentifier */

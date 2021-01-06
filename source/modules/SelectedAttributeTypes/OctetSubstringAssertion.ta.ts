@@ -31,9 +31,7 @@ export type OctetSubstringAssertion = OctetSubstringAssertion_Item[]; // Sequenc
 /* END_OF_SYMBOL_DEFINITION OctetSubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OctetSubstringAssertion */
-let _cached_decoder_for_OctetSubstringAssertion: $.ASN1Decoder<
-    OctetSubstringAssertion
-> | null = null;
+let _cached_decoder_for_OctetSubstringAssertion: $.ASN1Decoder<OctetSubstringAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OctetSubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OctetSubstringAssertion */
@@ -45,18 +43,16 @@ let _cached_decoder_for_OctetSubstringAssertion: $.ASN1Decoder<
  */
 export function _decode_OctetSubstringAssertion(el: _Element) {
     if (!_cached_decoder_for_OctetSubstringAssertion) {
-        _cached_decoder_for_OctetSubstringAssertion = $._decodeSequenceOf<
-            OctetSubstringAssertion_Item
-        >(() => _decode_OctetSubstringAssertion_Item);
+        _cached_decoder_for_OctetSubstringAssertion = $._decodeSequenceOf<OctetSubstringAssertion_Item>(
+            () => _decode_OctetSubstringAssertion_Item
+        );
     }
     return _cached_decoder_for_OctetSubstringAssertion(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OctetSubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OctetSubstringAssertion */
-let _cached_encoder_for_OctetSubstringAssertion: $.ASN1Encoder<
-    OctetSubstringAssertion
-> | null = null;
+let _cached_encoder_for_OctetSubstringAssertion: $.ASN1Encoder<OctetSubstringAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OctetSubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OctetSubstringAssertion */
@@ -72,9 +68,10 @@ export function _encode_OctetSubstringAssertion(
     elGetter: $.ASN1Encoder<OctetSubstringAssertion>
 ) {
     if (!_cached_encoder_for_OctetSubstringAssertion) {
-        _cached_encoder_for_OctetSubstringAssertion = $._encodeSequenceOf<
-            OctetSubstringAssertion_Item
-        >(() => _encode_OctetSubstringAssertion_Item, $.BER);
+        _cached_encoder_for_OctetSubstringAssertion = $._encodeSequenceOf<OctetSubstringAssertion_Item>(
+            () => _encode_OctetSubstringAssertion_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_OctetSubstringAssertion(value, elGetter);
 }

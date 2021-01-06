@@ -503,8 +503,8 @@ export function _decode_CertificateAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                serialNumber,
+            return new CertificateAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serialNumber,
                 issuer,
                 subjectKeyIdentifier,
                 authorityKeyIdentifier,

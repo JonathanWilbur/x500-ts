@@ -465,9 +465,7 @@ export const denyInvoke: number = GrantsAndDenials_denyInvoke; /* SHORT_NAMED_BI
 /* END_OF_SYMBOL_DEFINITION denyInvoke */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_GrantsAndDenials */
-let _cached_decoder_for_GrantsAndDenials: $.ASN1Decoder<
-    GrantsAndDenials
-> | null = null;
+let _cached_decoder_for_GrantsAndDenials: $.ASN1Decoder<GrantsAndDenials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_GrantsAndDenials */
 
 /* START_OF_SYMBOL_DEFINITION _decode_GrantsAndDenials */
@@ -486,9 +484,7 @@ export function _decode_GrantsAndDenials(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_GrantsAndDenials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_GrantsAndDenials */
-let _cached_encoder_for_GrantsAndDenials: $.ASN1Encoder<
-    GrantsAndDenials
-> | null = null;
+let _cached_encoder_for_GrantsAndDenials: $.ASN1Encoder<GrantsAndDenials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_GrantsAndDenials */
 
 /* START_OF_SYMBOL_DEFINITION _encode_GrantsAndDenials */

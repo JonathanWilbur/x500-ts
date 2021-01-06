@@ -17,9 +17,7 @@ export type AttributeName = UTF8String; // UTF8String
 /* END_OF_SYMBOL_DEFINITION AttributeName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeName */
-let _cached_decoder_for_AttributeName: $.ASN1Decoder<
-    AttributeName
-> | null = null;
+let _cached_decoder_for_AttributeName: $.ASN1Decoder<AttributeName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeName */
@@ -38,9 +36,7 @@ export function _decode_AttributeName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeName */
-let _cached_encoder_for_AttributeName: $.ASN1Encoder<
-    AttributeName
-> | null = null;
+let _cached_encoder_for_AttributeName: $.ASN1Encoder<AttributeName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeName */

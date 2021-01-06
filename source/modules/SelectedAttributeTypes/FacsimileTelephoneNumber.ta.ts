@@ -192,9 +192,7 @@ export const _extension_additions_list_spec_for_FacsimileTelephoneNumber: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_FacsimileTelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_FacsimileTelephoneNumber */
-let _cached_decoder_for_FacsimileTelephoneNumber: $.ASN1Decoder<
-    FacsimileTelephoneNumber
-> | null = null;
+let _cached_decoder_for_FacsimileTelephoneNumber: $.ASN1Decoder<FacsimileTelephoneNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_FacsimileTelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_FacsimileTelephoneNumber */
@@ -234,8 +232,8 @@ export function _decode_FacsimileTelephoneNumber(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new FacsimileTelephoneNumber /* SEQUENCE_CONSTRUCTOR_CALL */(
-                telephoneNumber,
+            return new FacsimileTelephoneNumber(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ telephoneNumber,
                 parameters,
                 _unrecognizedExtensionsList
             );
@@ -246,9 +244,7 @@ export function _decode_FacsimileTelephoneNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_FacsimileTelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_FacsimileTelephoneNumber */
-let _cached_encoder_for_FacsimileTelephoneNumber: $.ASN1Encoder<
-    FacsimileTelephoneNumber
-> | null = null;
+let _cached_encoder_for_FacsimileTelephoneNumber: $.ASN1Encoder<FacsimileTelephoneNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_FacsimileTelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_FacsimileTelephoneNumber */

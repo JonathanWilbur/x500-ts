@@ -81,9 +81,7 @@ export const writeableCopy: MasterOrShadowAccessPoint_category = MasterOrShadowA
 /* END_OF_SYMBOL_DEFINITION writeableCopy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterOrShadowAccessPoint_category */
-let _cached_decoder_for_MasterOrShadowAccessPoint_category: $.ASN1Decoder<
-    MasterOrShadowAccessPoint_category
-> | null = null;
+let _cached_decoder_for_MasterOrShadowAccessPoint_category: $.ASN1Decoder<MasterOrShadowAccessPoint_category> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterOrShadowAccessPoint_category */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MasterOrShadowAccessPoint_category */
@@ -103,9 +101,7 @@ export function _decode_MasterOrShadowAccessPoint_category(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MasterOrShadowAccessPoint_category */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterOrShadowAccessPoint_category */
-let _cached_encoder_for_MasterOrShadowAccessPoint_category: $.ASN1Encoder<
-    MasterOrShadowAccessPoint_category
-> | null = null;
+let _cached_encoder_for_MasterOrShadowAccessPoint_category: $.ASN1Encoder<MasterOrShadowAccessPoint_category> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterOrShadowAccessPoint_category */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MasterOrShadowAccessPoint_category */

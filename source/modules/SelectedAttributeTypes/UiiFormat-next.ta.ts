@@ -29,9 +29,7 @@ export type UiiFormat_next =
 /* END_OF_SYMBOL_DEFINITION UiiFormat_next */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UiiFormat_next */
-let _cached_decoder_for_UiiFormat_next: $.ASN1Decoder<
-    UiiFormat_next
-> | null = null;
+let _cached_decoder_for_UiiFormat_next: $.ASN1Decoder<UiiFormat_next> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UiiFormat_next */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UiiFormat_next */
@@ -43,24 +41,22 @@ let _cached_decoder_for_UiiFormat_next: $.ASN1Decoder<
  */
 export function _decode_UiiFormat_next(el: _Element) {
     if (!_cached_decoder_for_UiiFormat_next) {
-        _cached_decoder_for_UiiFormat_next = $._decode_inextensible_choice<
-            UiiFormat_next
-        >({
-            "UNIVERSAL 2": ["length", $._decodeInteger],
-            "CONTEXT 0": ["filter", _decode_UiiFilter],
-            "CONTEXT 1": ["filter", _decode_UiiFilter],
-            "CONTEXT 2": ["filter", _decode_UiiFilter],
-            "CONTEXT 3": ["filter", _decode_UiiFilter],
-        });
+        _cached_decoder_for_UiiFormat_next = $._decode_inextensible_choice<UiiFormat_next>(
+            {
+                "UNIVERSAL 2": ["length", $._decodeInteger],
+                "CONTEXT 0": ["filter", _decode_UiiFilter],
+                "CONTEXT 1": ["filter", _decode_UiiFilter],
+                "CONTEXT 2": ["filter", _decode_UiiFilter],
+                "CONTEXT 3": ["filter", _decode_UiiFilter],
+            }
+        );
     }
     return _cached_decoder_for_UiiFormat_next(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UiiFormat_next */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UiiFormat_next */
-let _cached_encoder_for_UiiFormat_next: $.ASN1Encoder<
-    UiiFormat_next
-> | null = null;
+let _cached_encoder_for_UiiFormat_next: $.ASN1Encoder<UiiFormat_next> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UiiFormat_next */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UiiFormat_next */

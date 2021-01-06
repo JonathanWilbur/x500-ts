@@ -65,9 +65,7 @@ export const strong: number = RequestAuthenticationPolicy_strong; /* SHORT_NAMED
 /* END_OF_SYMBOL_DEFINITION strong */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestAuthenticationPolicy */
-let _cached_decoder_for_RequestAuthenticationPolicy: $.ASN1Decoder<
-    RequestAuthenticationPolicy
-> | null = null;
+let _cached_decoder_for_RequestAuthenticationPolicy: $.ASN1Decoder<RequestAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestAuthenticationPolicy */
@@ -86,9 +84,7 @@ export function _decode_RequestAuthenticationPolicy(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RequestAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestAuthenticationPolicy */
-let _cached_encoder_for_RequestAuthenticationPolicy: $.ASN1Encoder<
-    RequestAuthenticationPolicy
-> | null = null;
+let _cached_encoder_for_RequestAuthenticationPolicy: $.ASN1Encoder<RequestAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestAuthenticationPolicy */

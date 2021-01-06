@@ -218,9 +218,9 @@ export function _get_encoder_for_MULTY_SIGNED<ToBeSigned>(
                             MULTY_SIGNED_parmeters_sign<ToBeSigned>
                         >(
                             () =>
-                                _get_encoder_for_MULTY_SIGNED_parmeters_sign<
-                                    ToBeSigned
-                                >(_encode_ToBeSigned),
+                                _get_encoder_for_MULTY_SIGNED_parmeters_sign<ToBeSigned>(
+                                    _encode_ToBeSigned
+                                ),
                             $.BER
                         )(value.parmeters, $.BER),
                     ],

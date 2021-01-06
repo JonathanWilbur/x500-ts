@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_NameConstraintsSyntax: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NameConstraintsSyntax */
-let _cached_decoder_for_NameConstraintsSyntax: $.ASN1Decoder<
-    NameConstraintsSyntax
-> | null = null;
+let _cached_decoder_for_NameConstraintsSyntax: $.ASN1Decoder<NameConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NameConstraintsSyntax */
@@ -180,8 +178,8 @@ export function _decode_NameConstraintsSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NameConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                permittedSubtrees,
+            return new NameConstraintsSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ permittedSubtrees,
                 excludedSubtrees,
                 _unrecognizedExtensionsList
             );
@@ -192,9 +190,7 @@ export function _decode_NameConstraintsSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NameConstraintsSyntax */
-let _cached_encoder_for_NameConstraintsSyntax: $.ASN1Encoder<
-    NameConstraintsSyntax
-> | null = null;
+let _cached_encoder_for_NameConstraintsSyntax: $.ASN1Encoder<NameConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NameConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NameConstraintsSyntax */

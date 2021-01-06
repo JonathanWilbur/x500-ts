@@ -255,8 +255,8 @@ export function _decode_REP_IT_TOKEN(el: _Element) {
                 _root_component_type_list_2_spec_for_REP_IT_TOKEN,
                 undefined
             );
-            return new REP_IT_TOKEN /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new REP_IT_TOKEN(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 randSrc,
                 randTarg,

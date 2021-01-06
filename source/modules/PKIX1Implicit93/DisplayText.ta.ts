@@ -41,13 +41,13 @@ let _cached_decoder_for_DisplayText: $.ASN1Decoder<DisplayText> | null = null;
  */
 export function _decode_DisplayText(el: _Element) {
     if (!_cached_decoder_for_DisplayText) {
-        _cached_decoder_for_DisplayText = $._decode_inextensible_choice<
-            DisplayText
-        >({
-            "UNIVERSAL 26": ["visibleString", $._decodeVisibleString],
-            "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
-            "UNIVERSAL 12": ["utf8String", $._decodeUTF8String],
-        });
+        _cached_decoder_for_DisplayText = $._decode_inextensible_choice<DisplayText>(
+            {
+                "UNIVERSAL 26": ["visibleString", $._decodeVisibleString],
+                "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
+                "UNIVERSAL 12": ["utf8String", $._decodeUTF8String],
+            }
+        );
     }
     return _cached_decoder_for_DisplayText(el);
 }

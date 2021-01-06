@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_PolicyConstraintsSyntax: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PolicyConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyConstraintsSyntax */
-let _cached_decoder_for_PolicyConstraintsSyntax: $.ASN1Decoder<
-    PolicyConstraintsSyntax
-> | null = null;
+let _cached_decoder_for_PolicyConstraintsSyntax: $.ASN1Decoder<PolicyConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PolicyConstraintsSyntax */
@@ -182,8 +180,8 @@ export function _decode_PolicyConstraintsSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PolicyConstraintsSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                requireExplicitPolicy,
+            return new PolicyConstraintsSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ requireExplicitPolicy,
                 inhibitPolicyMapping,
                 _unrecognizedExtensionsList
             );
@@ -194,9 +192,7 @@ export function _decode_PolicyConstraintsSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PolicyConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyConstraintsSyntax */
-let _cached_encoder_for_PolicyConstraintsSyntax: $.ASN1Encoder<
-    PolicyConstraintsSyntax
-> | null = null;
+let _cached_encoder_for_PolicyConstraintsSyntax: $.ASN1Encoder<PolicyConstraintsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyConstraintsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PolicyConstraintsSyntax */

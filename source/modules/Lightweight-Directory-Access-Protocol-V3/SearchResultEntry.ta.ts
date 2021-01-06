@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_SearchResultEntry: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SearchResultEntry */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultEntry */
-let _cached_decoder_for_SearchResultEntry: $.ASN1Decoder<
-    SearchResultEntry
-> | null = null;
+let _cached_decoder_for_SearchResultEntry: $.ASN1Decoder<SearchResultEntry> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultEntry */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchResultEntry */
@@ -154,9 +152,7 @@ let _cached_decoder_for_SearchResultEntry: $.ASN1Decoder<
  */
 export function _decode_SearchResultEntry(el: _Element) {
     if (!_cached_decoder_for_SearchResultEntry) {
-        _cached_decoder_for_SearchResultEntry = $._decode_implicit<
-            SearchResultEntry
-        >(
+        _cached_decoder_for_SearchResultEntry = $._decode_implicit<SearchResultEntry>(
             () =>
                 function (el: _Element): SearchResultEntry {
                     const sequence: _Element[] = el.sequence;
@@ -186,9 +182,7 @@ export function _decode_SearchResultEntry(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchResultEntry */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultEntry */
-let _cached_encoder_for_SearchResultEntry: $.ASN1Encoder<
-    SearchResultEntry
-> | null = null;
+let _cached_encoder_for_SearchResultEntry: $.ASN1Encoder<SearchResultEntry> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultEntry */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchResultEntry */

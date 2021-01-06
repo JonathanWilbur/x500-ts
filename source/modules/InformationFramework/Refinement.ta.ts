@@ -45,32 +45,32 @@ let _cached_decoder_for_Refinement: $.ASN1Decoder<Refinement> | null = null;
  */
 export function _decode_Refinement(el: _Element) {
     if (!_cached_decoder_for_Refinement) {
-        _cached_decoder_for_Refinement = $._decode_extensible_choice<
-            Refinement
-        >({
-            "CONTEXT 0": [
-                "item",
-                $._decode_explicit<OBJECT_IDENTIFIER>(
-                    () => $._decodeObjectIdentifier
-                ),
-            ],
-            "CONTEXT 1": [
-                "and",
-                $._decode_explicit<Refinement[]>(() =>
-                    $._decodeSetOf<Refinement>(() => _decode_Refinement)
-                ),
-            ],
-            "CONTEXT 2": [
-                "or",
-                $._decode_explicit<Refinement[]>(() =>
-                    $._decodeSetOf<Refinement>(() => _decode_Refinement)
-                ),
-            ],
-            "CONTEXT 3": [
-                "not",
-                $._decode_explicit<Refinement>(() => _decode_Refinement),
-            ],
-        });
+        _cached_decoder_for_Refinement = $._decode_extensible_choice<Refinement>(
+            {
+                "CONTEXT 0": [
+                    "item",
+                    $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "and",
+                    $._decode_explicit<Refinement[]>(() =>
+                        $._decodeSetOf<Refinement>(() => _decode_Refinement)
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "or",
+                    $._decode_explicit<Refinement[]>(() =>
+                        $._decodeSetOf<Refinement>(() => _decode_Refinement)
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "not",
+                    $._decode_explicit<Refinement>(() => _decode_Refinement),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Refinement(el);
 }

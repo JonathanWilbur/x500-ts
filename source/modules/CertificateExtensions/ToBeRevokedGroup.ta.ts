@@ -233,8 +233,8 @@ export function _decode_ToBeRevokedGroup(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ToBeRevokedGroup /* SEQUENCE_CONSTRUCTOR_CALL */(
-                certificateIssuer,
+            return new ToBeRevokedGroup(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ certificateIssuer,
                 reasonInfo,
                 revocationTime,
                 certificateGroup,

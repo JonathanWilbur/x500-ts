@@ -49,9 +49,9 @@ let _cached_decoder_for_AVIHash: $.ASN1Decoder<AVIHash> | null = null;
  */
 export function _decode_AVIHash(el: _Element) {
     if (!_cached_decoder_for_AVIHash) {
-        _cached_decoder_for_AVIHash = _get_decoder_for_HASH<
-            AttributeTypeValueContexts
-        >(_decode_AttributeTypeValueContexts);
+        _cached_decoder_for_AVIHash = _get_decoder_for_HASH<AttributeTypeValueContexts>(
+            _decode_AttributeTypeValueContexts
+        );
     }
     return _cached_decoder_for_AVIHash(el);
 }
@@ -74,9 +74,9 @@ export function _encode_AVIHash(
     elGetter: $.ASN1Encoder<AVIHash>
 ) {
     if (!_cached_encoder_for_AVIHash) {
-        _cached_encoder_for_AVIHash = _get_encoder_for_HASH<
-            AttributeTypeValueContexts
-        >(_encode_AttributeTypeValueContexts);
+        _cached_encoder_for_AVIHash = _get_encoder_for_HASH<AttributeTypeValueContexts>(
+            _encode_AttributeTypeValueContexts
+        );
     }
     return _cached_encoder_for_AVIHash(value, elGetter);
 }

@@ -188,9 +188,7 @@ export const _extension_additions_list_spec_for_ShadowingAgreementInfo: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ShadowingAgreementInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowingAgreementInfo */
-let _cached_decoder_for_ShadowingAgreementInfo: $.ASN1Decoder<
-    ShadowingAgreementInfo
-> | null = null;
+let _cached_decoder_for_ShadowingAgreementInfo: $.ASN1Decoder<ShadowingAgreementInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowingAgreementInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShadowingAgreementInfo */
@@ -239,8 +237,8 @@ export function _decode_ShadowingAgreementInfo(el: _Element) {
                 _root_component_type_list_2_spec_for_ShadowingAgreementInfo,
                 undefined
             );
-            return new ShadowingAgreementInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                shadowSubject,
+            return new ShadowingAgreementInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ shadowSubject,
                 updateMode,
                 master,
                 secondaryShadows
@@ -252,9 +250,7 @@ export function _decode_ShadowingAgreementInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ShadowingAgreementInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowingAgreementInfo */
-let _cached_encoder_for_ShadowingAgreementInfo: $.ASN1Encoder<
-    ShadowingAgreementInfo
-> | null = null;
+let _cached_encoder_for_ShadowingAgreementInfo: $.ASN1Encoder<ShadowingAgreementInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowingAgreementInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShadowingAgreementInfo */

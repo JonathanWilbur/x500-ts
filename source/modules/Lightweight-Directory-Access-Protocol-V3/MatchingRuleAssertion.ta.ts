@@ -193,9 +193,7 @@ export const _extension_additions_list_spec_for_MatchingRuleAssertion: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MatchingRuleAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleAssertion */
-let _cached_decoder_for_MatchingRuleAssertion: $.ASN1Decoder<
-    MatchingRuleAssertion
-> | null = null;
+let _cached_decoder_for_MatchingRuleAssertion: $.ASN1Decoder<MatchingRuleAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MatchingRuleAssertion */
@@ -252,8 +250,8 @@ export function _decode_MatchingRuleAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MatchingRuleAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                matchingRule,
+            return new MatchingRuleAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ matchingRule,
                 type_,
                 matchValue,
                 dnAttributes,
@@ -266,9 +264,7 @@ export function _decode_MatchingRuleAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MatchingRuleAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleAssertion */
-let _cached_encoder_for_MatchingRuleAssertion: $.ASN1Encoder<
-    MatchingRuleAssertion
-> | null = null;
+let _cached_encoder_for_MatchingRuleAssertion: $.ASN1Encoder<MatchingRuleAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MatchingRuleAssertion */

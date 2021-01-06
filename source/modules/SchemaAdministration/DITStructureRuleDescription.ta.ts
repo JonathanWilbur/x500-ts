@@ -216,9 +216,7 @@ export const _extension_additions_list_spec_for_DITStructureRuleDescription: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DITStructureRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DITStructureRuleDescription */
-let _cached_decoder_for_DITStructureRuleDescription: $.ASN1Decoder<
-    DITStructureRuleDescription
-> | null = null;
+let _cached_decoder_for_DITStructureRuleDescription: $.ASN1Decoder<DITStructureRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DITStructureRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DITStructureRuleDescription */
@@ -281,8 +279,8 @@ export function _decode_DITStructureRuleDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DITStructureRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                ruleIdentifier,
+            return new DITStructureRuleDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ ruleIdentifier,
                 nameForm,
                 superiorStructureRules,
                 name,
@@ -297,9 +295,7 @@ export function _decode_DITStructureRuleDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DITStructureRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DITStructureRuleDescription */
-let _cached_encoder_for_DITStructureRuleDescription: $.ASN1Encoder<
-    DITStructureRuleDescription
-> | null = null;
+let _cached_encoder_for_DITStructureRuleDescription: $.ASN1Encoder<DITStructureRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DITStructureRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DITStructureRuleDescription */
@@ -344,9 +340,7 @@ export function _encode_DITStructureRuleDescription(
                                       _TagClass.context,
                                       1,
                                       () =>
-                                          $._encodeSetOf<
-                                              UnboundedDirectoryString
-                                          >(
+                                          $._encodeSetOf<UnboundedDirectoryString>(
                                               () =>
                                                   _encode_UnboundedDirectoryString,
                                               $.BER

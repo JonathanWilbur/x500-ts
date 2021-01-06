@@ -145,9 +145,7 @@ export const _extension_additions_list_spec_for_TimeAssertion_between: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TimeAssertion_between */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeAssertion_between */
-let _cached_decoder_for_TimeAssertion_between: $.ASN1Decoder<
-    TimeAssertion_between
-> | null = null;
+let _cached_decoder_for_TimeAssertion_between: $.ASN1Decoder<TimeAssertion_between> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeAssertion_between */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TimeAssertion_between */
@@ -196,8 +194,8 @@ export function _decode_TimeAssertion_between(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TimeAssertion_between /* SEQUENCE_CONSTRUCTOR_CALL */(
-                startTime,
+            return new TimeAssertion_between(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
                 endTime,
                 entirely,
                 _unrecognizedExtensionsList
@@ -209,9 +207,7 @@ export function _decode_TimeAssertion_between(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TimeAssertion_between */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeAssertion_between */
-let _cached_encoder_for_TimeAssertion_between: $.ASN1Encoder<
-    TimeAssertion_between
-> | null = null;
+let _cached_encoder_for_TimeAssertion_between: $.ASN1Encoder<TimeAssertion_between> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeAssertion_between */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TimeAssertion_between */

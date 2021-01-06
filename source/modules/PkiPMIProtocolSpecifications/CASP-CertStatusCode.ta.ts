@@ -63,9 +63,7 @@ export const unknownCert: CASP_CertStatusCode = CASP_CertStatusCode_unknownCert;
 /* END_OF_SYMBOL_DEFINITION unknownCert */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CASP_CertStatusCode */
-let _cached_decoder_for_CASP_CertStatusCode: $.ASN1Decoder<
-    CASP_CertStatusCode
-> | null = null;
+let _cached_decoder_for_CASP_CertStatusCode: $.ASN1Decoder<CASP_CertStatusCode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CASP_CertStatusCode */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CASP_CertStatusCode */
@@ -84,9 +82,7 @@ export function _decode_CASP_CertStatusCode(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CASP_CertStatusCode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CASP_CertStatusCode */
-let _cached_encoder_for_CASP_CertStatusCode: $.ASN1Encoder<
-    CASP_CertStatusCode
-> | null = null;
+let _cached_encoder_for_CASP_CertStatusCode: $.ASN1Encoder<CASP_CertStatusCode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CASP_CertStatusCode */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CASP_CertStatusCode */

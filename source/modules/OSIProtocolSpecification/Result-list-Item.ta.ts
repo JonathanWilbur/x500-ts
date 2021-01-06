@@ -166,9 +166,7 @@ export const _extension_additions_list_spec_for_Result_list_Item: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_Result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Result_list_Item */
-let _cached_decoder_for_Result_list_Item: $.ASN1Decoder<
-    Result_list_Item
-> | null = null;
+let _cached_decoder_for_Result_list_Item: $.ASN1Decoder<Result_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Result_list_Item */
@@ -196,14 +194,14 @@ export function _decode_Result_list_Item(el: _Element) {
                     );
                 },
                 "transfer-syntax-name": (_el: _Element): void => {
-                    transfer_syntax_name = $._decode_explicit<
-                        Transfer_syntax_name
-                    >(() => _decode_Transfer_syntax_name)(_el);
+                    transfer_syntax_name = $._decode_explicit<Transfer_syntax_name>(
+                        () => _decode_Transfer_syntax_name
+                    )(_el);
                 },
                 "provider-reason": (_el: _Element): void => {
-                    provider_reason = $._decode_explicit<
-                        Result_list_Item_provider_reason
-                    >(() => _decode_Result_list_Item_provider_reason)(_el);
+                    provider_reason = $._decode_explicit<Result_list_Item_provider_reason>(
+                        () => _decode_Result_list_Item_provider_reason
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -215,8 +213,8 @@ export function _decode_Result_list_Item(el: _Element) {
                 _root_component_type_list_2_spec_for_Result_list_Item,
                 undefined
             );
-            return new Result_list_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                result,
+            return new Result_list_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ result,
                 transfer_syntax_name,
                 provider_reason
             );
@@ -227,9 +225,7 @@ export function _decode_Result_list_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Result_list_Item */
-let _cached_encoder_for_Result_list_Item: $.ASN1Encoder<
-    Result_list_Item
-> | null = null;
+let _cached_encoder_for_Result_list_Item: $.ASN1Encoder<Result_list_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Result_list_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Result_list_Item */

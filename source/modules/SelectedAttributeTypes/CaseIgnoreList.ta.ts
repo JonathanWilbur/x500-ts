@@ -27,9 +27,7 @@ export type CaseIgnoreList = UnboundedDirectoryString[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CaseIgnoreList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CaseIgnoreList */
-let _cached_decoder_for_CaseIgnoreList: $.ASN1Decoder<
-    CaseIgnoreList
-> | null = null;
+let _cached_decoder_for_CaseIgnoreList: $.ASN1Decoder<CaseIgnoreList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CaseIgnoreList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CaseIgnoreList */
@@ -41,18 +39,16 @@ let _cached_decoder_for_CaseIgnoreList: $.ASN1Decoder<
  */
 export function _decode_CaseIgnoreList(el: _Element) {
     if (!_cached_decoder_for_CaseIgnoreList) {
-        _cached_decoder_for_CaseIgnoreList = $._decodeSequenceOf<
-            UnboundedDirectoryString
-        >(() => _decode_UnboundedDirectoryString);
+        _cached_decoder_for_CaseIgnoreList = $._decodeSequenceOf<UnboundedDirectoryString>(
+            () => _decode_UnboundedDirectoryString
+        );
     }
     return _cached_decoder_for_CaseIgnoreList(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CaseIgnoreList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CaseIgnoreList */
-let _cached_encoder_for_CaseIgnoreList: $.ASN1Encoder<
-    CaseIgnoreList
-> | null = null;
+let _cached_encoder_for_CaseIgnoreList: $.ASN1Encoder<CaseIgnoreList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CaseIgnoreList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CaseIgnoreList */
@@ -68,9 +64,10 @@ export function _encode_CaseIgnoreList(
     elGetter: $.ASN1Encoder<CaseIgnoreList>
 ) {
     if (!_cached_encoder_for_CaseIgnoreList) {
-        _cached_encoder_for_CaseIgnoreList = $._encodeSequenceOf<
-            UnboundedDirectoryString
-        >(() => _encode_UnboundedDirectoryString, $.BER);
+        _cached_encoder_for_CaseIgnoreList = $._encodeSequenceOf<UnboundedDirectoryString>(
+            () => _encode_UnboundedDirectoryString,
+            $.BER
+        );
     }
     return _cached_encoder_for_CaseIgnoreList(value, elGetter);
 }

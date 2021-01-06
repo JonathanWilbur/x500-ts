@@ -125,9 +125,7 @@ export const _extension_additions_list_spec_for_UtmCoordinates: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UtmCoordinates */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UtmCoordinates */
-let _cached_decoder_for_UtmCoordinates: $.ASN1Decoder<
-    UtmCoordinates
-> | null = null;
+let _cached_decoder_for_UtmCoordinates: $.ASN1Decoder<UtmCoordinates> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UtmCoordinates */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UtmCoordinates */
@@ -167,9 +165,7 @@ export function _decode_UtmCoordinates(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UtmCoordinates */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UtmCoordinates */
-let _cached_encoder_for_UtmCoordinates: $.ASN1Encoder<
-    UtmCoordinates
-> | null = null;
+let _cached_encoder_for_UtmCoordinates: $.ASN1Encoder<UtmCoordinates> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UtmCoordinates */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UtmCoordinates */

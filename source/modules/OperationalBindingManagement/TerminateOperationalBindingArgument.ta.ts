@@ -34,15 +34,11 @@ export {
  *   OPTIONALLY-PROTECTED-SEQ { TerminateOperationalBindingArgumentData }
  * ```
  */
-export type TerminateOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<
-    TerminateOperationalBindingArgumentData
->; // DefinedType
+export type TerminateOperationalBindingArgument = OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION TerminateOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingArgument */
-let _cached_decoder_for_TerminateOperationalBindingArgument: $.ASN1Decoder<
-    TerminateOperationalBindingArgument
-> | null = null;
+let _cached_decoder_for_TerminateOperationalBindingArgument: $.ASN1Decoder<TerminateOperationalBindingArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingArgument */
@@ -54,18 +50,16 @@ let _cached_decoder_for_TerminateOperationalBindingArgument: $.ASN1Decoder<
  */
 export function _decode_TerminateOperationalBindingArgument(el: _Element) {
     if (!_cached_decoder_for_TerminateOperationalBindingArgument) {
-        _cached_decoder_for_TerminateOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            TerminateOperationalBindingArgumentData
-        >(_decode_TerminateOperationalBindingArgumentData);
+        _cached_decoder_for_TerminateOperationalBindingArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingArgumentData>(
+            _decode_TerminateOperationalBindingArgumentData
+        );
     }
     return _cached_decoder_for_TerminateOperationalBindingArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingArgument */
-let _cached_encoder_for_TerminateOperationalBindingArgument: $.ASN1Encoder<
-    TerminateOperationalBindingArgument
-> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingArgument: $.ASN1Encoder<TerminateOperationalBindingArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TerminateOperationalBindingArgument */
@@ -81,9 +75,9 @@ export function _encode_TerminateOperationalBindingArgument(
     elGetter: $.ASN1Encoder<TerminateOperationalBindingArgument>
 ) {
     if (!_cached_encoder_for_TerminateOperationalBindingArgument) {
-        _cached_encoder_for_TerminateOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            TerminateOperationalBindingArgumentData
-        >(_encode_TerminateOperationalBindingArgumentData);
+        _cached_encoder_for_TerminateOperationalBindingArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingArgumentData>(
+            _encode_TerminateOperationalBindingArgumentData
+        );
     }
     return _cached_encoder_for_TerminateOperationalBindingArgument(
         value,

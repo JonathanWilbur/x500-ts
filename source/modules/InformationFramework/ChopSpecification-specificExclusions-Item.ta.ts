@@ -33,9 +33,7 @@ export type ChopSpecification_specificExclusions_Item =
 /* END_OF_SYMBOL_DEFINITION ChopSpecification_specificExclusions_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChopSpecification_specificExclusions_Item */
-let _cached_decoder_for_ChopSpecification_specificExclusions_Item: $.ASN1Decoder<
-    ChopSpecification_specificExclusions_Item
-> | null = null;
+let _cached_decoder_for_ChopSpecification_specificExclusions_Item: $.ASN1Decoder<ChopSpecification_specificExclusions_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChopSpecification_specificExclusions_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChopSpecification_specificExclusions_Item */
@@ -49,27 +47,25 @@ export function _decode_ChopSpecification_specificExclusions_Item(
     el: _Element
 ) {
     if (!_cached_decoder_for_ChopSpecification_specificExclusions_Item) {
-        _cached_decoder_for_ChopSpecification_specificExclusions_Item = $._decode_extensible_choice<
-            ChopSpecification_specificExclusions_Item
-        >({
-            "CONTEXT 0": [
-                "chopBefore",
-                $._decode_explicit<LocalName>(() => _decode_LocalName),
-            ],
-            "CONTEXT 1": [
-                "chopAfter",
-                $._decode_explicit<LocalName>(() => _decode_LocalName),
-            ],
-        });
+        _cached_decoder_for_ChopSpecification_specificExclusions_Item = $._decode_extensible_choice<ChopSpecification_specificExclusions_Item>(
+            {
+                "CONTEXT 0": [
+                    "chopBefore",
+                    $._decode_explicit<LocalName>(() => _decode_LocalName),
+                ],
+                "CONTEXT 1": [
+                    "chopAfter",
+                    $._decode_explicit<LocalName>(() => _decode_LocalName),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ChopSpecification_specificExclusions_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ChopSpecification_specificExclusions_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChopSpecification_specificExclusions_Item */
-let _cached_encoder_for_ChopSpecification_specificExclusions_Item: $.ASN1Encoder<
-    ChopSpecification_specificExclusions_Item
-> | null = null;
+let _cached_encoder_for_ChopSpecification_specificExclusions_Item: $.ASN1Encoder<ChopSpecification_specificExclusions_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChopSpecification_specificExclusions_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChopSpecification_specificExclusions_Item */
@@ -85,9 +81,7 @@ export function _encode_ChopSpecification_specificExclusions_Item(
     elGetter: $.ASN1Encoder<ChopSpecification_specificExclusions_Item>
 ) {
     if (!_cached_encoder_for_ChopSpecification_specificExclusions_Item) {
-        _cached_encoder_for_ChopSpecification_specificExclusions_Item = $._encode_choice<
-            ChopSpecification_specificExclusions_Item
-        >(
+        _cached_encoder_for_ChopSpecification_specificExclusions_Item = $._encode_choice<ChopSpecification_specificExclusions_Item>(
             {
                 chopBefore: $._encode_explicit(
                     _TagClass.context,

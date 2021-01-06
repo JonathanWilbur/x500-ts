@@ -27,9 +27,7 @@ export type UniversalLocalPostalAttributes = UniversalPDSParameter; // DefinedTy
 /* END_OF_SYMBOL_DEFINITION UniversalLocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalLocalPostalAttributes */
-let _cached_decoder_for_UniversalLocalPostalAttributes: $.ASN1Decoder<
-    UniversalLocalPostalAttributes
-> | null = null;
+let _cached_decoder_for_UniversalLocalPostalAttributes: $.ASN1Decoder<UniversalLocalPostalAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalLocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalLocalPostalAttributes */
@@ -48,9 +46,7 @@ export function _decode_UniversalLocalPostalAttributes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalLocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalLocalPostalAttributes */
-let _cached_encoder_for_UniversalLocalPostalAttributes: $.ASN1Encoder<
-    UniversalLocalPostalAttributes
-> | null = null;
+let _cached_encoder_for_UniversalLocalPostalAttributes: $.ASN1Encoder<UniversalLocalPostalAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalLocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalLocalPostalAttributes */

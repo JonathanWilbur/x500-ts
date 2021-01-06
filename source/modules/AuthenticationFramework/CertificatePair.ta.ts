@@ -132,9 +132,7 @@ export const _extension_additions_list_spec_for_CertificatePair: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificatePair */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePair */
-let _cached_decoder_for_CertificatePair: $.ASN1Decoder<
-    CertificatePair
-> | null = null;
+let _cached_decoder_for_CertificatePair: $.ASN1Decoder<CertificatePair> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePair */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificatePair */
@@ -178,8 +176,8 @@ export function _decode_CertificatePair(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificatePair /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuedToThisCA,
+            return new CertificatePair(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCA,
                 issuedByThisCA,
                 _unrecognizedExtensionsList
             );
@@ -190,9 +188,7 @@ export function _decode_CertificatePair(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificatePair */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePair */
-let _cached_encoder_for_CertificatePair: $.ASN1Encoder<
-    CertificatePair
-> | null = null;
+let _cached_encoder_for_CertificatePair: $.ASN1Encoder<CertificatePair> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePair */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificatePair */

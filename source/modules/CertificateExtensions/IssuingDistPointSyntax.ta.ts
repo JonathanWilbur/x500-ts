@@ -324,8 +324,8 @@ export function _decode_IssuingDistPointSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new IssuingDistPointSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                distributionPoint,
+            return new IssuingDistPointSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
                 onlyContainsUserPublicKeyCerts,
                 onlyContainsCACerts,
                 onlySomeReasons,

@@ -211,8 +211,8 @@ export function _decode_EpcFormat(el: _Element) {
                 _root_component_type_list_2_spec_for_EpcFormat,
                 undefined
             );
-            return new EpcFormat /* SEQUENCE_CONSTRUCTOR_CALL */(
-                fields,
+            return new EpcFormat(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ fields,
                 digitShift,
                 checkCalc,
                 urnPrefix
@@ -247,12 +247,10 @@ export function _encode_EpcFormat(
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encodeSequenceOf<
-                            EpcFormat_fields_Item
-                        >(() => _encode_EpcFormat_fields_Item, $.BER)(
-                            value.fields,
+                        /* REQUIRED   */ $._encodeSequenceOf<EpcFormat_fields_Item>(
+                            () => _encode_EpcFormat_fields_Item,
                             $.BER
-                        ),
+                        )(value.fields, $.BER),
                         /* IF_ABSENT  */ value.digitShift === undefined
                             ? undefined
                             : $._encode_explicit(

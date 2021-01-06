@@ -115,9 +115,7 @@ export const _extension_additions_list_spec_for_TeletexDomainDefinedAttribute: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TeletexDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexDomainDefinedAttribute */
-let _cached_decoder_for_TeletexDomainDefinedAttribute: $.ASN1Decoder<
-    TeletexDomainDefinedAttribute
-> | null = null;
+let _cached_decoder_for_TeletexDomainDefinedAttribute: $.ASN1Decoder<TeletexDomainDefinedAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexDomainDefinedAttribute */
@@ -154,9 +152,7 @@ export function _decode_TeletexDomainDefinedAttribute(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexDomainDefinedAttribute */
-let _cached_encoder_for_TeletexDomainDefinedAttribute: $.ASN1Encoder<
-    TeletexDomainDefinedAttribute
-> | null = null;
+let _cached_encoder_for_TeletexDomainDefinedAttribute: $.ASN1Encoder<TeletexDomainDefinedAttribute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexDomainDefinedAttribute */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexDomainDefinedAttribute */

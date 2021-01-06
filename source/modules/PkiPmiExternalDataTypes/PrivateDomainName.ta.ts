@@ -25,9 +25,7 @@ export type PrivateDomainName =
 /* END_OF_SYMBOL_DEFINITION PrivateDomainName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivateDomainName */
-let _cached_decoder_for_PrivateDomainName: $.ASN1Decoder<
-    PrivateDomainName
-> | null = null;
+let _cached_decoder_for_PrivateDomainName: $.ASN1Decoder<PrivateDomainName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivateDomainName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PrivateDomainName */
@@ -39,21 +37,19 @@ let _cached_decoder_for_PrivateDomainName: $.ASN1Decoder<
  */
 export function _decode_PrivateDomainName(el: _Element) {
     if (!_cached_decoder_for_PrivateDomainName) {
-        _cached_decoder_for_PrivateDomainName = $._decode_inextensible_choice<
-            PrivateDomainName
-        >({
-            "UNIVERSAL 18": ["numeric", $._decodeNumericString],
-            "UNIVERSAL 19": ["printable", $._decodePrintableString],
-        });
+        _cached_decoder_for_PrivateDomainName = $._decode_inextensible_choice<PrivateDomainName>(
+            {
+                "UNIVERSAL 18": ["numeric", $._decodeNumericString],
+                "UNIVERSAL 19": ["printable", $._decodePrintableString],
+            }
+        );
     }
     return _cached_decoder_for_PrivateDomainName(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PrivateDomainName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivateDomainName */
-let _cached_encoder_for_PrivateDomainName: $.ASN1Encoder<
-    PrivateDomainName
-> | null = null;
+let _cached_encoder_for_PrivateDomainName: $.ASN1Encoder<PrivateDomainName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivateDomainName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PrivateDomainName */
@@ -69,9 +65,7 @@ export function _encode_PrivateDomainName(
     elGetter: $.ASN1Encoder<PrivateDomainName>
 ) {
     if (!_cached_encoder_for_PrivateDomainName) {
-        _cached_encoder_for_PrivateDomainName = $._encode_choice<
-            PrivateDomainName
-        >(
+        _cached_encoder_for_PrivateDomainName = $._encode_choice<PrivateDomainName>(
             {
                 numeric: $._encodeNumericString,
                 printable: $._encodePrintableString,

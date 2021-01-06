@@ -67,9 +67,7 @@ export class MULTY_SIGNED_parmeters_sign<ToBeSigned> {
     public static _from_object(
         _o: Partial<
             {
-                [_K in keyof MULTY_SIGNED_parmeters_sign<
-                    any
-                >]: MULTY_SIGNED_parmeters_sign<any>[_K];
+                [_K in keyof MULTY_SIGNED_parmeters_sign<any>]: MULTY_SIGNED_parmeters_sign<any>[_K];
             }
         >
     ): MULTY_SIGNED_parmeters_sign<any> {

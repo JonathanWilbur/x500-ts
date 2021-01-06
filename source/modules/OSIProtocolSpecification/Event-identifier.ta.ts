@@ -169,9 +169,7 @@ export const s_release_confirm: Event_identifier = Event_identifier_s_release_co
 /* END_OF_SYMBOL_DEFINITION s_release_confirm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Event_identifier */
-let _cached_decoder_for_Event_identifier: $.ASN1Decoder<
-    Event_identifier
-> | null = null;
+let _cached_decoder_for_Event_identifier: $.ASN1Decoder<Event_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Event_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Event_identifier */
@@ -190,9 +188,7 @@ export function _decode_Event_identifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Event_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Event_identifier */
-let _cached_encoder_for_Event_identifier: $.ASN1Encoder<
-    Event_identifier
-> | null = null;
+let _cached_encoder_for_Event_identifier: $.ASN1Encoder<Event_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Event_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Event_identifier */

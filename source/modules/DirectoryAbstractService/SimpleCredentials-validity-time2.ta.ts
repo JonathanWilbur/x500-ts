@@ -19,9 +19,7 @@ export type SimpleCredentials_validity_time2 =
 /* END_OF_SYMBOL_DEFINITION SimpleCredentials_validity_time2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SimpleCredentials_validity_time2 */
-let _cached_decoder_for_SimpleCredentials_validity_time2: $.ASN1Decoder<
-    SimpleCredentials_validity_time2
-> | null = null;
+let _cached_decoder_for_SimpleCredentials_validity_time2: $.ASN1Decoder<SimpleCredentials_validity_time2> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SimpleCredentials_validity_time2 */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SimpleCredentials_validity_time2 */
@@ -33,21 +31,19 @@ let _cached_decoder_for_SimpleCredentials_validity_time2: $.ASN1Decoder<
  */
 export function _decode_SimpleCredentials_validity_time2(el: _Element) {
     if (!_cached_decoder_for_SimpleCredentials_validity_time2) {
-        _cached_decoder_for_SimpleCredentials_validity_time2 = $._decode_inextensible_choice<
-            SimpleCredentials_validity_time2
-        >({
-            "UNIVERSAL 23": ["utc", $._decodeUTCTime],
-            "UNIVERSAL 24": ["gt", $._decodeGeneralizedTime],
-        });
+        _cached_decoder_for_SimpleCredentials_validity_time2 = $._decode_inextensible_choice<SimpleCredentials_validity_time2>(
+            {
+                "UNIVERSAL 23": ["utc", $._decodeUTCTime],
+                "UNIVERSAL 24": ["gt", $._decodeGeneralizedTime],
+            }
+        );
     }
     return _cached_decoder_for_SimpleCredentials_validity_time2(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SimpleCredentials_validity_time2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SimpleCredentials_validity_time2 */
-let _cached_encoder_for_SimpleCredentials_validity_time2: $.ASN1Encoder<
-    SimpleCredentials_validity_time2
-> | null = null;
+let _cached_encoder_for_SimpleCredentials_validity_time2: $.ASN1Encoder<SimpleCredentials_validity_time2> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SimpleCredentials_validity_time2 */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SimpleCredentials_validity_time2 */
@@ -63,9 +59,7 @@ export function _encode_SimpleCredentials_validity_time2(
     elGetter: $.ASN1Encoder<SimpleCredentials_validity_time2>
 ) {
     if (!_cached_encoder_for_SimpleCredentials_validity_time2) {
-        _cached_encoder_for_SimpleCredentials_validity_time2 = $._encode_choice<
-            SimpleCredentials_validity_time2
-        >(
+        _cached_encoder_for_SimpleCredentials_validity_time2 = $._encode_choice<SimpleCredentials_validity_time2>(
             {
                 utc: $._encodeUTCTime,
                 gt: $._encodeGeneralizedTime,

@@ -209,9 +209,7 @@ export const _extension_additions_list_spec_for_TbsHandshakeProAbort: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbsHandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeProAbort */
-let _cached_decoder_for_TbsHandshakeProAbort: $.ASN1Decoder<
-    TbsHandshakeProAbort
-> | null = null;
+let _cached_decoder_for_TbsHandshakeProAbort: $.ASN1Decoder<TbsHandshakeProAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeProAbort */
@@ -264,9 +262,7 @@ export function _decode_TbsHandshakeProAbort(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeProAbort */
-let _cached_encoder_for_TbsHandshakeProAbort: $.ASN1Encoder<
-    TbsHandshakeProAbort
-> | null = null;
+let _cached_encoder_for_TbsHandshakeProAbort: $.ASN1Encoder<TbsHandshakeProAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeProAbort */

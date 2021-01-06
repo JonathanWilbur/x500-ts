@@ -148,9 +148,7 @@ export const _extension_additions_list_spec_for_DITStructureRule: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DITStructureRule */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DITStructureRule */
-let _cached_decoder_for_DITStructureRule: $.ASN1Decoder<
-    DITStructureRule
-> | null = null;
+let _cached_decoder_for_DITStructureRule: $.ASN1Decoder<DITStructureRule> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DITStructureRule */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DITStructureRule */
@@ -196,8 +194,8 @@ export function _decode_DITStructureRule(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DITStructureRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-                ruleIdentifier,
+            return new DITStructureRule(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ ruleIdentifier,
                 nameForm,
                 superiorStructureRules,
                 _unrecognizedExtensionsList
@@ -209,9 +207,7 @@ export function _decode_DITStructureRule(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DITStructureRule */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DITStructureRule */
-let _cached_encoder_for_DITStructureRule: $.ASN1Encoder<
-    DITStructureRule
-> | null = null;
+let _cached_encoder_for_DITStructureRule: $.ASN1Encoder<DITStructureRule> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DITStructureRule */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DITStructureRule */

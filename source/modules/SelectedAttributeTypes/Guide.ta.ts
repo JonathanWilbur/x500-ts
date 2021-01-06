@@ -174,8 +174,8 @@ export function _decode_Guide(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Guide /* SET_CONSTRUCTOR_CALL */(
-                objectClass,
+            return new Guide(
+                /* SET_CONSTRUCTOR_CALL */ objectClass,
                 criteria,
                 _unrecognizedExtensionsList
             );

@@ -257,8 +257,8 @@ export function _decode_AddAvlReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AddAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new AddAvlReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 certlist,

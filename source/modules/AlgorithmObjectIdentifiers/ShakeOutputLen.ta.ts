@@ -17,9 +17,7 @@ export type ShakeOutputLen = INTEGER;
 /* END_OF_SYMBOL_DEFINITION ShakeOutputLen */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShakeOutputLen */
-let _cached_decoder_for_ShakeOutputLen: $.ASN1Decoder<
-    ShakeOutputLen
-> | null = null;
+let _cached_decoder_for_ShakeOutputLen: $.ASN1Decoder<ShakeOutputLen> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShakeOutputLen */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShakeOutputLen */
@@ -38,9 +36,7 @@ export function _decode_ShakeOutputLen(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ShakeOutputLen */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShakeOutputLen */
-let _cached_encoder_for_ShakeOutputLen: $.ASN1Encoder<
-    ShakeOutputLen
-> | null = null;
+let _cached_encoder_for_ShakeOutputLen: $.ASN1Encoder<ShakeOutputLen> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShakeOutputLen */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShakeOutputLen */

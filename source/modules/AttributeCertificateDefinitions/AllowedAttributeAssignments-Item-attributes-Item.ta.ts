@@ -40,9 +40,7 @@ export type AllowedAttributeAssignments_Item_attributes_Item =
 /* END_OF_SYMBOL_DEFINITION AllowedAttributeAssignments_Item_attributes_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item */
-let _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Decoder<
-    AllowedAttributeAssignments_Item_attributes_Item
-> | null = null;
+let _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Decoder<AllowedAttributeAssignments_Item_attributes_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments_Item_attributes_Item */
@@ -56,18 +54,20 @@ export function _decode_AllowedAttributeAssignments_Item_attributes_Item(
     el: _Element
 ) {
     if (!_cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item) {
-        _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._decode_extensible_choice<
-            AllowedAttributeAssignments_Item_attributes_Item
-        >({
-            "CONTEXT 0": [
-                "attributeType",
-                $._decode_implicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 1": [
-                "attributeTypeandValues",
-                $._decode_implicit<Attribute>(() => _decode_Attribute),
-            ],
-        });
+        _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._decode_extensible_choice<AllowedAttributeAssignments_Item_attributes_Item>(
+            {
+                "CONTEXT 0": [
+                    "attributeType",
+                    $._decode_implicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "attributeTypeandValues",
+                    $._decode_implicit<Attribute>(() => _decode_Attribute),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AllowedAttributeAssignments_Item_attributes_Item(
         el
@@ -76,9 +76,7 @@ export function _decode_AllowedAttributeAssignments_Item_attributes_Item(
 /* END_OF_SYMBOL_DEFINITION _decode_AllowedAttributeAssignments_Item_attributes_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item */
-let _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Encoder<
-    AllowedAttributeAssignments_Item_attributes_Item
-> | null = null;
+let _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item: $.ASN1Encoder<AllowedAttributeAssignments_Item_attributes_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AllowedAttributeAssignments_Item_attributes_Item */
@@ -94,9 +92,7 @@ export function _encode_AllowedAttributeAssignments_Item_attributes_Item(
     elGetter: $.ASN1Encoder<AllowedAttributeAssignments_Item_attributes_Item>
 ) {
     if (!_cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item) {
-        _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._encode_choice<
-            AllowedAttributeAssignments_Item_attributes_Item
-        >(
+        _cached_encoder_for_AllowedAttributeAssignments_Item_attributes_Item = $._encode_choice<AllowedAttributeAssignments_Item_attributes_Item>(
             {
                 attributeType: $._encode_implicit(
                     _TagClass.context,

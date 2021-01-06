@@ -43,9 +43,7 @@ export type AttributeMappings_Item =
 /* END_OF_SYMBOL_DEFINITION AttributeMappings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings_Item */
-let _cached_decoder_for_AttributeMappings_Item: $.ASN1Decoder<
-    AttributeMappings_Item
-> | null = null;
+let _cached_decoder_for_AttributeMappings_Item: $.ASN1Decoder<AttributeMappings_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeMappings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeMappings_Item */
@@ -57,31 +55,29 @@ let _cached_decoder_for_AttributeMappings_Item: $.ASN1Decoder<
  */
 export function _decode_AttributeMappings_Item(el: _Element) {
     if (!_cached_decoder_for_AttributeMappings_Item) {
-        _cached_decoder_for_AttributeMappings_Item = $._decode_inextensible_choice<
-            AttributeMappings_Item
-        >({
-            "CONTEXT 0": [
-                "typeMappings",
-                $._decode_implicit<AttributeMappings_Item_typeMappings>(
-                    () => _decode_AttributeMappings_Item_typeMappings
-                ),
-            ],
-            "CONTEXT 1": [
-                "typeValueMappings",
-                $._decode_implicit<AttributeMappings_Item_typeValueMappings>(
-                    () => _decode_AttributeMappings_Item_typeValueMappings
-                ),
-            ],
-        });
+        _cached_decoder_for_AttributeMappings_Item = $._decode_inextensible_choice<AttributeMappings_Item>(
+            {
+                "CONTEXT 0": [
+                    "typeMappings",
+                    $._decode_implicit<AttributeMappings_Item_typeMappings>(
+                        () => _decode_AttributeMappings_Item_typeMappings
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "typeValueMappings",
+                    $._decode_implicit<AttributeMappings_Item_typeValueMappings>(
+                        () => _decode_AttributeMappings_Item_typeValueMappings
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AttributeMappings_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeMappings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings_Item */
-let _cached_encoder_for_AttributeMappings_Item: $.ASN1Encoder<
-    AttributeMappings_Item
-> | null = null;
+let _cached_encoder_for_AttributeMappings_Item: $.ASN1Encoder<AttributeMappings_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeMappings_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeMappings_Item */
@@ -97,9 +93,7 @@ export function _encode_AttributeMappings_Item(
     elGetter: $.ASN1Encoder<AttributeMappings_Item>
 ) {
     if (!_cached_encoder_for_AttributeMappings_Item) {
-        _cached_encoder_for_AttributeMappings_Item = $._encode_choice<
-            AttributeMappings_Item
-        >(
+        _cached_encoder_for_AttributeMappings_Item = $._encode_choice<AttributeMappings_Item>(
             {
                 typeMappings: $._encode_implicit(
                     _TagClass.context,

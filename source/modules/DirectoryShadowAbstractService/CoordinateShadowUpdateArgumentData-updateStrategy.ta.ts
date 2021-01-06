@@ -39,9 +39,7 @@ export type CoordinateShadowUpdateArgumentData_updateStrategy =
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgumentData_updateStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy */
-let _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy: $.ASN1Decoder<
-    CoordinateShadowUpdateArgumentData_updateStrategy
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy: $.ASN1Decoder<CoordinateShadowUpdateArgumentData_updateStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData_updateStrategy */
@@ -57,15 +55,15 @@ export function _decode_CoordinateShadowUpdateArgumentData_updateStrategy(
     if (
         !_cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy
     ) {
-        _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy = $._decode_extensible_choice<
-            CoordinateShadowUpdateArgumentData_updateStrategy
-        >({
-            "UNIVERSAL 10": [
-                "standard",
-                _decode_CoordinateShadowUpdateArgumentData_updateStrategy_standard,
-            ],
-            "UNIVERSAL 8": ["other", $._decodeExternal],
-        });
+        _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy = $._decode_extensible_choice<CoordinateShadowUpdateArgumentData_updateStrategy>(
+            {
+                "UNIVERSAL 10": [
+                    "standard",
+                    _decode_CoordinateShadowUpdateArgumentData_updateStrategy_standard,
+                ],
+                "UNIVERSAL 8": ["other", $._decodeExternal],
+            }
+        );
     }
     return _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy(
         el
@@ -74,9 +72,7 @@ export function _decode_CoordinateShadowUpdateArgumentData_updateStrategy(
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData_updateStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy */
-let _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy: $.ASN1Encoder<
-    CoordinateShadowUpdateArgumentData_updateStrategy
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy: $.ASN1Encoder<CoordinateShadowUpdateArgumentData_updateStrategy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateArgumentData_updateStrategy */
@@ -94,9 +90,7 @@ export function _encode_CoordinateShadowUpdateArgumentData_updateStrategy(
     if (
         !_cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy
     ) {
-        _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy = $._encode_choice<
-            CoordinateShadowUpdateArgumentData_updateStrategy
-        >(
+        _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy = $._encode_choice<CoordinateShadowUpdateArgumentData_updateStrategy>(
             {
                 standard: _encode_CoordinateShadowUpdateArgumentData_updateStrategy_standard,
                 other: $._encodeExternal,

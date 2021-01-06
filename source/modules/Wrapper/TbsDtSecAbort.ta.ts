@@ -314,9 +314,7 @@ export const _extension_additions_list_spec_for_TbsDtSecAbort: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbsDtSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsDtSecAbort */
-let _cached_decoder_for_TbsDtSecAbort: $.ASN1Decoder<
-    TbsDtSecAbort
-> | null = null;
+let _cached_decoder_for_TbsDtSecAbort: $.ASN1Decoder<TbsDtSecAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsDtSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsDtSecAbort */
@@ -372,8 +370,8 @@ export function _decode_TbsDtSecAbort(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TbsDtSecAbort /* SEQUENCE_CONSTRUCTOR_CALL */(
-                sigAlg,
+            return new TbsDtSecAbort(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ sigAlg,
                 assoID,
                 time,
                 pkiPath,
@@ -388,9 +386,7 @@ export function _decode_TbsDtSecAbort(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbsDtSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsDtSecAbort */
-let _cached_encoder_for_TbsDtSecAbort: $.ASN1Encoder<
-    TbsDtSecAbort
-> | null = null;
+let _cached_encoder_for_TbsDtSecAbort: $.ASN1Encoder<TbsDtSecAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsDtSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsDtSecAbort */

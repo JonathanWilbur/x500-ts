@@ -29,9 +29,7 @@ export type ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs = OSI_PDU; // Defin
 /* END_OF_SYMBOL_DEFINITION ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
-let _cached_decoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs: $.ASN1Decoder<
-    ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs
-> | null = null;
+let _cached_decoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs: $.ASN1Decoder<ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
@@ -54,9 +52,7 @@ export function _decode_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs(
 /* END_OF_SYMBOL_DEFINITION _decode_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
-let _cached_encoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs: $.ASN1Encoder<
-    ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs
-> | null = null;
+let _cached_encoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs: $.ASN1Encoder<ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShadowSupplierInitiatedAsynchronousDISP_OSI_PDUs */

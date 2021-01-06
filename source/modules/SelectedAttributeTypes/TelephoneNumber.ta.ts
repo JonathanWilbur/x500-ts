@@ -17,9 +17,7 @@ export type TelephoneNumber = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION TelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TelephoneNumber */
-let _cached_decoder_for_TelephoneNumber: $.ASN1Decoder<
-    TelephoneNumber
-> | null = null;
+let _cached_decoder_for_TelephoneNumber: $.ASN1Decoder<TelephoneNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TelephoneNumber */
@@ -38,9 +36,7 @@ export function _decode_TelephoneNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TelephoneNumber */
-let _cached_encoder_for_TelephoneNumber: $.ASN1Encoder<
-    TelephoneNumber
-> | null = null;
+let _cached_encoder_for_TelephoneNumber: $.ASN1Encoder<TelephoneNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TelephoneNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TelephoneNumber */

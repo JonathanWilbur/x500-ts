@@ -37,9 +37,7 @@ export type LinkedArgument = OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>; // De
 /* END_OF_SYMBOL_DEFINITION LinkedArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LinkedArgument */
-let _cached_decoder_for_LinkedArgument: $.ASN1Decoder<
-    LinkedArgument
-> | null = null;
+let _cached_decoder_for_LinkedArgument: $.ASN1Decoder<LinkedArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LinkedArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LinkedArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_LinkedArgument: $.ASN1Decoder<
  */
 export function _decode_LinkedArgument(el: _Element) {
     if (!_cached_decoder_for_LinkedArgument) {
-        _cached_decoder_for_LinkedArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LinkedArgumentData
-        >(_decode_LinkedArgumentData);
+        _cached_decoder_for_LinkedArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>(
+            _decode_LinkedArgumentData
+        );
     }
     return _cached_decoder_for_LinkedArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_LinkedArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LinkedArgument */
-let _cached_encoder_for_LinkedArgument: $.ASN1Encoder<
-    LinkedArgument
-> | null = null;
+let _cached_encoder_for_LinkedArgument: $.ASN1Encoder<LinkedArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LinkedArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LinkedArgument */
@@ -78,9 +74,9 @@ export function _encode_LinkedArgument(
     elGetter: $.ASN1Encoder<LinkedArgument>
 ) {
     if (!_cached_encoder_for_LinkedArgument) {
-        _cached_encoder_for_LinkedArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LinkedArgumentData
-        >(_encode_LinkedArgumentData);
+        _cached_encoder_for_LinkedArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LinkedArgumentData>(
+            _encode_LinkedArgumentData
+        );
     }
     return _cached_encoder_for_LinkedArgument(value, elGetter);
 }

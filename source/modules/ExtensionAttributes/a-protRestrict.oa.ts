@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { protRestrict } from "../CertificateExtensions/protRestrict.oa";
 import { id_asx_protRestrict } from "../ExtensionAttributes/id-asx-protRestrict.va";
 import { id_ce_a_protRestrict } from "../ExtensionAttributes/id-ce-a-protRestrict.va";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
@@ -24,7 +25,6 @@ export {
 } from "../InformationFramework/AttributeUsage.ta";
 export { MATCHING_RULE } from "../InformationFramework/MATCHING-RULE.oca";
 export { SYNTAX_NAME } from "../InformationFramework/SYNTAX-NAME.oca";
-import { protRestrict } from "../CertificateExtensions/protRestrict.oa";
 
 /* START_OF_SYMBOL_DEFINITION a_protRestrict */
 /**

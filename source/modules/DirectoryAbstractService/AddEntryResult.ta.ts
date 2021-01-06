@@ -45,9 +45,7 @@ export type AddEntryResult =
 /* END_OF_SYMBOL_DEFINITION AddEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryResult */
-let _cached_decoder_for_AddEntryResult: $.ASN1Decoder<
-    AddEntryResult
-> | null = null;
+let _cached_decoder_for_AddEntryResult: $.ASN1Decoder<AddEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AddEntryResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_AddEntryResult: $.ASN1Decoder<
  */
 export function _decode_AddEntryResult(el: _Element) {
     if (!_cached_decoder_for_AddEntryResult) {
-        _cached_decoder_for_AddEntryResult = $._decode_extensible_choice<
-            AddEntryResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(
-                    _decode_AddEntryResultData
-                ),
-            ],
-        });
+        _cached_decoder_for_AddEntryResult = $._decode_extensible_choice<AddEntryResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(
+                        _decode_AddEntryResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AddEntryResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AddEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryResult */
-let _cached_encoder_for_AddEntryResult: $.ASN1Encoder<
-    AddEntryResult
-> | null = null;
+let _cached_encoder_for_AddEntryResult: $.ASN1Encoder<AddEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AddEntryResult */
@@ -97,9 +93,9 @@ export function _encode_AddEntryResult(
         _cached_encoder_for_AddEntryResult = $._encode_choice<AddEntryResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    AddEntryResultData
-                >(_encode_AddEntryResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<AddEntryResultData>(
+                    _encode_AddEntryResultData
+                ),
             },
             $.BER
         );

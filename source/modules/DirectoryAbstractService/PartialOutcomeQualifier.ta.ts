@@ -274,9 +274,7 @@ export const _extension_additions_list_spec_for_PartialOutcomeQualifier: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PartialOutcomeQualifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialOutcomeQualifier */
-let _cached_decoder_for_PartialOutcomeQualifier: $.ASN1Decoder<
-    PartialOutcomeQualifier
-> | null = null;
+let _cached_decoder_for_PartialOutcomeQualifier: $.ASN1Decoder<PartialOutcomeQualifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialOutcomeQualifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PartialOutcomeQualifier */
@@ -357,8 +355,8 @@ export function _decode_PartialOutcomeQualifier(el: _Element) {
                 _root_component_type_list_2_spec_for_PartialOutcomeQualifier,
                 undefined
             );
-            return new PartialOutcomeQualifier /* SET_CONSTRUCTOR_CALL */(
-                limitProblem,
+            return new PartialOutcomeQualifier(
+                /* SET_CONSTRUCTOR_CALL */ limitProblem,
                 unexplored,
                 unavailableCriticalExtensions,
                 unknownErrors,
@@ -374,9 +372,7 @@ export function _decode_PartialOutcomeQualifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PartialOutcomeQualifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialOutcomeQualifier */
-let _cached_encoder_for_PartialOutcomeQualifier: $.ASN1Encoder<
-    PartialOutcomeQualifier
-> | null = null;
+let _cached_encoder_for_PartialOutcomeQualifier: $.ASN1Encoder<PartialOutcomeQualifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialOutcomeQualifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PartialOutcomeQualifier */

@@ -33,9 +33,7 @@ export type LocaleContextSyntax =
 /* END_OF_SYMBOL_DEFINITION LocaleContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LocaleContextSyntax */
-let _cached_decoder_for_LocaleContextSyntax: $.ASN1Decoder<
-    LocaleContextSyntax
-> | null = null;
+let _cached_decoder_for_LocaleContextSyntax: $.ASN1Decoder<LocaleContextSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LocaleContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LocaleContextSyntax */
@@ -47,25 +45,23 @@ let _cached_decoder_for_LocaleContextSyntax: $.ASN1Decoder<
  */
 export function _decode_LocaleContextSyntax(el: _Element) {
     if (!_cached_decoder_for_LocaleContextSyntax) {
-        _cached_decoder_for_LocaleContextSyntax = $._decode_extensible_choice<
-            LocaleContextSyntax
-        >({
-            "UNIVERSAL 6": ["localeID1", $._decodeObjectIdentifier],
-            "UNIVERSAL 20": ["localeID2", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 19": ["localeID2", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 30": ["localeID2", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 28": ["localeID2", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 12": ["localeID2", _decode_UnboundedDirectoryString],
-        });
+        _cached_decoder_for_LocaleContextSyntax = $._decode_extensible_choice<LocaleContextSyntax>(
+            {
+                "UNIVERSAL 6": ["localeID1", $._decodeObjectIdentifier],
+                "UNIVERSAL 20": ["localeID2", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 19": ["localeID2", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 30": ["localeID2", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 28": ["localeID2", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 12": ["localeID2", _decode_UnboundedDirectoryString],
+            }
+        );
     }
     return _cached_decoder_for_LocaleContextSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_LocaleContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LocaleContextSyntax */
-let _cached_encoder_for_LocaleContextSyntax: $.ASN1Encoder<
-    LocaleContextSyntax
-> | null = null;
+let _cached_encoder_for_LocaleContextSyntax: $.ASN1Encoder<LocaleContextSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LocaleContextSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LocaleContextSyntax */
@@ -81,9 +77,7 @@ export function _encode_LocaleContextSyntax(
     elGetter: $.ASN1Encoder<LocaleContextSyntax>
 ) {
     if (!_cached_encoder_for_LocaleContextSyntax) {
-        _cached_encoder_for_LocaleContextSyntax = $._encode_choice<
-            LocaleContextSyntax
-        >(
+        _cached_encoder_for_LocaleContextSyntax = $._encode_choice<LocaleContextSyntax>(
             {
                 localeID1: $._encodeObjectIdentifier,
                 localeID2: _encode_UnboundedDirectoryString,

@@ -17,9 +17,7 @@ export type UserKeyingMaterial = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION UserKeyingMaterial */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UserKeyingMaterial */
-let _cached_decoder_for_UserKeyingMaterial: $.ASN1Decoder<
-    UserKeyingMaterial
-> | null = null;
+let _cached_decoder_for_UserKeyingMaterial: $.ASN1Decoder<UserKeyingMaterial> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UserKeyingMaterial */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UserKeyingMaterial */
@@ -38,9 +36,7 @@ export function _decode_UserKeyingMaterial(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UserKeyingMaterial */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UserKeyingMaterial */
-let _cached_encoder_for_UserKeyingMaterial: $.ASN1Encoder<
-    UserKeyingMaterial
-> | null = null;
+let _cached_encoder_for_UserKeyingMaterial: $.ASN1Encoder<UserKeyingMaterial> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UserKeyingMaterial */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UserKeyingMaterial */

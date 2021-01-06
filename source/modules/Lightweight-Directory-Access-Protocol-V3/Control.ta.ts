@@ -200,8 +200,8 @@ export function _decode_Control(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Control /* SEQUENCE_CONSTRUCTOR_CALL */(
-                controlType,
+            return new Control(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ controlType,
                 criticality,
                 controlValue,
                 _unrecognizedExtensionsList

@@ -293,9 +293,7 @@ export const _extension_additions_list_spec_for_SearchRequest: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SearchRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest */
-let _cached_decoder_for_SearchRequest: $.ASN1Decoder<
-    SearchRequest
-> | null = null;
+let _cached_decoder_for_SearchRequest: $.ASN1Decoder<SearchRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchRequest */
@@ -363,9 +361,7 @@ export function _decode_SearchRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest */
-let _cached_encoder_for_SearchRequest: $.ASN1Encoder<
-    SearchRequest
-> | null = null;
+let _cached_encoder_for_SearchRequest: $.ASN1Encoder<SearchRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchRequest */

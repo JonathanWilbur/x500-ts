@@ -21,9 +21,7 @@ export type ResultAttribute_outputValues =
 /* END_OF_SYMBOL_DEFINITION ResultAttribute_outputValues */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAttribute_outputValues */
-let _cached_decoder_for_ResultAttribute_outputValues: $.ASN1Decoder<
-    ResultAttribute_outputValues
-> | null = null;
+let _cached_decoder_for_ResultAttribute_outputValues: $.ASN1Decoder<ResultAttribute_outputValues> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAttribute_outputValues */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ResultAttribute_outputValues */
@@ -35,24 +33,22 @@ let _cached_decoder_for_ResultAttribute_outputValues: $.ASN1Decoder<
  */
 export function _decode_ResultAttribute_outputValues(el: _Element) {
     if (!_cached_decoder_for_ResultAttribute_outputValues) {
-        _cached_decoder_for_ResultAttribute_outputValues = $._decode_inextensible_choice<
-            ResultAttribute_outputValues
-        >({
-            "UNIVERSAL 16": [
-                "selectedValues",
-                $._decodeSequenceOf<_Element>(() => $._decodeAny),
-            ],
-            "UNIVERSAL 5": ["matchedValuesOnly", $._decodeNull],
-        });
+        _cached_decoder_for_ResultAttribute_outputValues = $._decode_inextensible_choice<ResultAttribute_outputValues>(
+            {
+                "UNIVERSAL 16": [
+                    "selectedValues",
+                    $._decodeSequenceOf<_Element>(() => $._decodeAny),
+                ],
+                "UNIVERSAL 5": ["matchedValuesOnly", $._decodeNull],
+            }
+        );
     }
     return _cached_decoder_for_ResultAttribute_outputValues(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ResultAttribute_outputValues */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAttribute_outputValues */
-let _cached_encoder_for_ResultAttribute_outputValues: $.ASN1Encoder<
-    ResultAttribute_outputValues
-> | null = null;
+let _cached_encoder_for_ResultAttribute_outputValues: $.ASN1Encoder<ResultAttribute_outputValues> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAttribute_outputValues */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ResultAttribute_outputValues */
@@ -68,9 +64,7 @@ export function _encode_ResultAttribute_outputValues(
     elGetter: $.ASN1Encoder<ResultAttribute_outputValues>
 ) {
     if (!_cached_encoder_for_ResultAttribute_outputValues) {
-        _cached_encoder_for_ResultAttribute_outputValues = $._encode_choice<
-            ResultAttribute_outputValues
-        >(
+        _cached_encoder_for_ResultAttribute_outputValues = $._encode_choice<ResultAttribute_outputValues>(
             {
                 selectedValues: $._encodeSequenceOf<_Element>(
                     () => $._encodeAny,

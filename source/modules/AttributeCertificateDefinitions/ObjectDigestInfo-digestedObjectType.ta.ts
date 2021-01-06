@@ -109,9 +109,7 @@ export const otherObjectTypes: ObjectDigestInfo_digestedObjectType =
 /* END_OF_SYMBOL_DEFINITION otherObjectTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectDigestInfo_digestedObjectType */
-let _cached_decoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Decoder<
-    ObjectDigestInfo_digestedObjectType
-> | null = null;
+let _cached_decoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Decoder<ObjectDigestInfo_digestedObjectType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectDigestInfo_digestedObjectType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ObjectDigestInfo_digestedObjectType */
@@ -131,9 +129,7 @@ export function _decode_ObjectDigestInfo_digestedObjectType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ObjectDigestInfo_digestedObjectType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectDigestInfo_digestedObjectType */
-let _cached_encoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Encoder<
-    ObjectDigestInfo_digestedObjectType
-> | null = null;
+let _cached_encoder_for_ObjectDigestInfo_digestedObjectType: $.ASN1Encoder<ObjectDigestInfo_digestedObjectType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectDigestInfo_digestedObjectType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ObjectDigestInfo_digestedObjectType */

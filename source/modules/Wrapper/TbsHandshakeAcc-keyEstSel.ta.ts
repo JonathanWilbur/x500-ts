@@ -29,9 +29,7 @@ export type TbsHandshakeAcc_keyEstSel =
 /* END_OF_SYMBOL_DEFINITION TbsHandshakeAcc_keyEstSel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_keyEstSel */
-let _cached_decoder_for_TbsHandshakeAcc_keyEstSel: $.ASN1Decoder<
-    TbsHandshakeAcc_keyEstSel
-> | null = null;
+let _cached_decoder_for_TbsHandshakeAcc_keyEstSel: $.ASN1Decoder<TbsHandshakeAcc_keyEstSel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_keyEstSel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_keyEstSel */
@@ -43,26 +41,24 @@ let _cached_decoder_for_TbsHandshakeAcc_keyEstSel: $.ASN1Decoder<
  */
 export function _decode_TbsHandshakeAcc_keyEstSel(el: _Element) {
     if (!_cached_decoder_for_TbsHandshakeAcc_keyEstSel) {
-        _cached_decoder_for_TbsHandshakeAcc_keyEstSel = $._decode_inextensible_choice<
-            TbsHandshakeAcc_keyEstSel
-        >({
-            "UNIVERSAL 16": ["keyEst", _decode_AlgorithmWithInvoke],
-            "CONTEXT 1": [
-                "altKeyEst",
-                $._decode_implicit<AlgorithmWithInvoke>(
-                    () => _decode_AlgorithmWithInvoke
-                ),
-            ],
-        });
+        _cached_decoder_for_TbsHandshakeAcc_keyEstSel = $._decode_inextensible_choice<TbsHandshakeAcc_keyEstSel>(
+            {
+                "UNIVERSAL 16": ["keyEst", _decode_AlgorithmWithInvoke],
+                "CONTEXT 1": [
+                    "altKeyEst",
+                    $._decode_implicit<AlgorithmWithInvoke>(
+                        () => _decode_AlgorithmWithInvoke
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TbsHandshakeAcc_keyEstSel(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_keyEstSel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_keyEstSel */
-let _cached_encoder_for_TbsHandshakeAcc_keyEstSel: $.ASN1Encoder<
-    TbsHandshakeAcc_keyEstSel
-> | null = null;
+let _cached_encoder_for_TbsHandshakeAcc_keyEstSel: $.ASN1Encoder<TbsHandshakeAcc_keyEstSel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_keyEstSel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeAcc_keyEstSel */
@@ -78,9 +74,7 @@ export function _encode_TbsHandshakeAcc_keyEstSel(
     elGetter: $.ASN1Encoder<TbsHandshakeAcc_keyEstSel>
 ) {
     if (!_cached_encoder_for_TbsHandshakeAcc_keyEstSel) {
-        _cached_encoder_for_TbsHandshakeAcc_keyEstSel = $._encode_choice<
-            TbsHandshakeAcc_keyEstSel
-        >(
+        _cached_encoder_for_TbsHandshakeAcc_keyEstSel = $._encode_choice<TbsHandshakeAcc_keyEstSel>(
             {
                 keyEst: _encode_AlgorithmWithInvoke,
                 altKeyEst: $._encode_implicit(

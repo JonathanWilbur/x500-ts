@@ -330,8 +330,8 @@ export function _decode_TBSCertAVL(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSCertAVL /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TBSCertAVL(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 serialNumber,
                 signature,
                 issuer,
@@ -398,12 +398,10 @@ export function _encode_TBSCertAVL(
                                 value.constrained,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                TBSCertAVL_entries_Item
-                            >(() => _encode_TBSCertAVL_entries_Item, $.BER)(
-                                value.entries,
+                            /* REQUIRED   */ $._encodeSequenceOf<TBSCertAVL_entries_Item>(
+                                () => _encode_TBSCertAVL_entries_Item,
                                 $.BER
-                            ),
+                            )(value.entries, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

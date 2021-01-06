@@ -49,9 +49,9 @@ let _cached_decoder_for_PDU_wrapper: $.ASN1Decoder<PDU_wrapper> | null = null;
  */
 export function _decode_PDU_wrapper(el: _Element) {
     if (!_cached_decoder_for_PDU_wrapper) {
-        _cached_decoder_for_PDU_wrapper = _get_decoder_for_SIGNED<
-            TBSPDU_wrapper
-        >(_decode_TBSPDU_wrapper);
+        _cached_decoder_for_PDU_wrapper = _get_decoder_for_SIGNED<TBSPDU_wrapper>(
+            _decode_TBSPDU_wrapper
+        );
     }
     return _cached_decoder_for_PDU_wrapper(el);
 }
@@ -74,9 +74,9 @@ export function _encode_PDU_wrapper(
     elGetter: $.ASN1Encoder<PDU_wrapper>
 ) {
     if (!_cached_encoder_for_PDU_wrapper) {
-        _cached_encoder_for_PDU_wrapper = _get_encoder_for_SIGNED<
-            TBSPDU_wrapper
-        >(_encode_TBSPDU_wrapper);
+        _cached_encoder_for_PDU_wrapper = _get_encoder_for_SIGNED<TBSPDU_wrapper>(
+            _encode_TBSPDU_wrapper
+        );
     }
     return _cached_encoder_for_PDU_wrapper(value, elGetter);
 }

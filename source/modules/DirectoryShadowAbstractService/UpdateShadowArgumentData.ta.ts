@@ -219,9 +219,7 @@ export const _extension_additions_list_spec_for_UpdateShadowArgumentData: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UpdateShadowArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateShadowArgumentData */
-let _cached_decoder_for_UpdateShadowArgumentData: $.ASN1Decoder<
-    UpdateShadowArgumentData
-> | null = null;
+let _cached_decoder_for_UpdateShadowArgumentData: $.ASN1Decoder<UpdateShadowArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateShadowArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UpdateShadowArgumentData */
@@ -233,9 +231,7 @@ let _cached_decoder_for_UpdateShadowArgumentData: $.ASN1Decoder<
  */
 export function _decode_UpdateShadowArgumentData(el: _Element) {
     if (!_cached_decoder_for_UpdateShadowArgumentData) {
-        _cached_decoder_for_UpdateShadowArgumentData = $._decode_implicit<
-            UpdateShadowArgumentData
-        >(
+        _cached_decoder_for_UpdateShadowArgumentData = $._decode_implicit<UpdateShadowArgumentData>(
             () =>
                 function (el: _Element): UpdateShadowArgumentData {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -277,8 +273,8 @@ export function _decode_UpdateShadowArgumentData(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new UpdateShadowArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        agreementID,
+                    return new UpdateShadowArgumentData(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ agreementID,
                         updateTime,
                         updateWindow,
                         updatedInfo,
@@ -293,9 +289,7 @@ export function _decode_UpdateShadowArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UpdateShadowArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateShadowArgumentData */
-let _cached_encoder_for_UpdateShadowArgumentData: $.ASN1Encoder<
-    UpdateShadowArgumentData
-> | null = null;
+let _cached_encoder_for_UpdateShadowArgumentData: $.ASN1Encoder<UpdateShadowArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateShadowArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UpdateShadowArgumentData */

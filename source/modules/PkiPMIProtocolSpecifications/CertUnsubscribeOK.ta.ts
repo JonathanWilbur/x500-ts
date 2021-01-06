@@ -35,9 +35,7 @@ export type CertUnsubscribeOK = CertUnsubscribeOK_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CertUnsubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeOK */
-let _cached_decoder_for_CertUnsubscribeOK: $.ASN1Decoder<
-    CertUnsubscribeOK
-> | null = null;
+let _cached_decoder_for_CertUnsubscribeOK: $.ASN1Decoder<CertUnsubscribeOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertUnsubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeOK */
@@ -49,18 +47,16 @@ let _cached_decoder_for_CertUnsubscribeOK: $.ASN1Decoder<
  */
 export function _decode_CertUnsubscribeOK(el: _Element) {
     if (!_cached_decoder_for_CertUnsubscribeOK) {
-        _cached_decoder_for_CertUnsubscribeOK = $._decodeSequenceOf<
-            CertUnsubscribeOK_Item
-        >(() => _decode_CertUnsubscribeOK_Item);
+        _cached_decoder_for_CertUnsubscribeOK = $._decodeSequenceOf<CertUnsubscribeOK_Item>(
+            () => _decode_CertUnsubscribeOK_Item
+        );
     }
     return _cached_decoder_for_CertUnsubscribeOK(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertUnsubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeOK */
-let _cached_encoder_for_CertUnsubscribeOK: $.ASN1Encoder<
-    CertUnsubscribeOK
-> | null = null;
+let _cached_encoder_for_CertUnsubscribeOK: $.ASN1Encoder<CertUnsubscribeOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertUnsubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertUnsubscribeOK */
@@ -76,9 +72,10 @@ export function _encode_CertUnsubscribeOK(
     elGetter: $.ASN1Encoder<CertUnsubscribeOK>
 ) {
     if (!_cached_encoder_for_CertUnsubscribeOK) {
-        _cached_encoder_for_CertUnsubscribeOK = $._encodeSequenceOf<
-            CertUnsubscribeOK_Item
-        >(() => _encode_CertUnsubscribeOK_Item, $.BER);
+        _cached_encoder_for_CertUnsubscribeOK = $._encodeSequenceOf<CertUnsubscribeOK_Item>(
+            () => _encode_CertUnsubscribeOK_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertUnsubscribeOK(value, elGetter);
 }

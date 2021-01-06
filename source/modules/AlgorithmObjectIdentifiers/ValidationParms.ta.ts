@@ -122,9 +122,7 @@ export const _extension_additions_list_spec_for_ValidationParms: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ValidationParms */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ValidationParms */
-let _cached_decoder_for_ValidationParms: $.ASN1Decoder<
-    ValidationParms
-> | null = null;
+let _cached_decoder_for_ValidationParms: $.ASN1Decoder<ValidationParms> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ValidationParms */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ValidationParms */
@@ -161,9 +159,7 @@ export function _decode_ValidationParms(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ValidationParms */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ValidationParms */
-let _cached_encoder_for_ValidationParms: $.ASN1Encoder<
-    ValidationParms
-> | null = null;
+let _cached_encoder_for_ValidationParms: $.ASN1Encoder<ValidationParms> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ValidationParms */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ValidationParms */

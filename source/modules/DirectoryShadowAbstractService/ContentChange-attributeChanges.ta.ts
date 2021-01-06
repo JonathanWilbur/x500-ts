@@ -39,9 +39,7 @@ export type ContentChange_attributeChanges =
 /* END_OF_SYMBOL_DEFINITION ContentChange_attributeChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContentChange_attributeChanges */
-let _cached_decoder_for_ContentChange_attributeChanges: $.ASN1Decoder<
-    ContentChange_attributeChanges
-> | null = null;
+let _cached_decoder_for_ContentChange_attributeChanges: $.ASN1Decoder<ContentChange_attributeChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContentChange_attributeChanges */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContentChange_attributeChanges */
@@ -53,33 +51,31 @@ let _cached_decoder_for_ContentChange_attributeChanges: $.ASN1Decoder<
  */
 export function _decode_ContentChange_attributeChanges(el: _Element) {
     if (!_cached_decoder_for_ContentChange_attributeChanges) {
-        _cached_decoder_for_ContentChange_attributeChanges = $._decode_inextensible_choice<
-            ContentChange_attributeChanges
-        >({
-            "CONTEXT 0": [
-                "replace",
-                $._decode_implicit<Attribute[]>(() =>
-                    $._decodeSetOf<Attribute>(() => _decode_Attribute)
-                ),
-            ],
-            "CONTEXT 1": [
-                "changes",
-                $._decode_implicit<EntryModification[]>(() =>
-                    $._decodeSequenceOf<EntryModification>(
-                        () => _decode_EntryModification
-                    )
-                ),
-            ],
-        });
+        _cached_decoder_for_ContentChange_attributeChanges = $._decode_inextensible_choice<ContentChange_attributeChanges>(
+            {
+                "CONTEXT 0": [
+                    "replace",
+                    $._decode_implicit<Attribute[]>(() =>
+                        $._decodeSetOf<Attribute>(() => _decode_Attribute)
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "changes",
+                    $._decode_implicit<EntryModification[]>(() =>
+                        $._decodeSequenceOf<EntryModification>(
+                            () => _decode_EntryModification
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ContentChange_attributeChanges(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ContentChange_attributeChanges */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContentChange_attributeChanges */
-let _cached_encoder_for_ContentChange_attributeChanges: $.ASN1Encoder<
-    ContentChange_attributeChanges
-> | null = null;
+let _cached_encoder_for_ContentChange_attributeChanges: $.ASN1Encoder<ContentChange_attributeChanges> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContentChange_attributeChanges */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContentChange_attributeChanges */
@@ -95,9 +91,7 @@ export function _encode_ContentChange_attributeChanges(
     elGetter: $.ASN1Encoder<ContentChange_attributeChanges>
 ) {
     if (!_cached_encoder_for_ContentChange_attributeChanges) {
-        _cached_encoder_for_ContentChange_attributeChanges = $._encode_choice<
-            ContentChange_attributeChanges
-        >(
+        _cached_encoder_for_ContentChange_attributeChanges = $._encode_choice<ContentChange_attributeChanges>(
             {
                 replace: $._encode_implicit(
                     _TagClass.context,

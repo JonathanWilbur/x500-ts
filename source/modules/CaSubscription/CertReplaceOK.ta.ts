@@ -35,9 +35,7 @@ export type CertReplaceOK = CertReplaceOK_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CertReplaceOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceOK */
-let _cached_decoder_for_CertReplaceOK: $.ASN1Decoder<
-    CertReplaceOK
-> | null = null;
+let _cached_decoder_for_CertReplaceOK: $.ASN1Decoder<CertReplaceOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceOK */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertReplaceOK */
@@ -49,18 +47,16 @@ let _cached_decoder_for_CertReplaceOK: $.ASN1Decoder<
  */
 export function _decode_CertReplaceOK(el: _Element) {
     if (!_cached_decoder_for_CertReplaceOK) {
-        _cached_decoder_for_CertReplaceOK = $._decodeSequenceOf<
-            CertReplaceOK_Item
-        >(() => _decode_CertReplaceOK_Item);
+        _cached_decoder_for_CertReplaceOK = $._decodeSequenceOf<CertReplaceOK_Item>(
+            () => _decode_CertReplaceOK_Item
+        );
     }
     return _cached_decoder_for_CertReplaceOK(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertReplaceOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceOK */
-let _cached_encoder_for_CertReplaceOK: $.ASN1Encoder<
-    CertReplaceOK
-> | null = null;
+let _cached_encoder_for_CertReplaceOK: $.ASN1Encoder<CertReplaceOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceOK */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertReplaceOK */
@@ -76,9 +72,10 @@ export function _encode_CertReplaceOK(
     elGetter: $.ASN1Encoder<CertReplaceOK>
 ) {
     if (!_cached_encoder_for_CertReplaceOK) {
-        _cached_encoder_for_CertReplaceOK = $._encodeSequenceOf<
-            CertReplaceOK_Item
-        >(() => _encode_CertReplaceOK_Item, $.BER);
+        _cached_encoder_for_CertReplaceOK = $._encodeSequenceOf<CertReplaceOK_Item>(
+            () => _encode_CertReplaceOK_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertReplaceOK(value, elGetter);
 }

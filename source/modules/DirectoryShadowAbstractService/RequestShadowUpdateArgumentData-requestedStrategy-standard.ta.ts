@@ -62,9 +62,7 @@ export const total: RequestShadowUpdateArgumentData_requestedStrategy_standard =
 /* END_OF_SYMBOL_DEFINITION total */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard */
-let _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard: $.ASN1Decoder<
-    RequestShadowUpdateArgumentData_requestedStrategy_standard
-> | null = null;
+let _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard: $.ASN1Decoder<RequestShadowUpdateArgumentData_requestedStrategy_standard> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData_requestedStrategy_standard */
@@ -90,9 +88,7 @@ export function _decode_RequestShadowUpdateArgumentData_requestedStrategy_standa
 /* END_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgumentData_requestedStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard */
-let _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard: $.ASN1Encoder<
-    RequestShadowUpdateArgumentData_requestedStrategy_standard
-> | null = null;
+let _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard: $.ASN1Encoder<RequestShadowUpdateArgumentData_requestedStrategy_standard> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestShadowUpdateArgumentData_requestedStrategy_standard */
@@ -105,9 +101,7 @@ let _cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standa
  */
 export function _encode_RequestShadowUpdateArgumentData_requestedStrategy_standard(
     value: RequestShadowUpdateArgumentData_requestedStrategy_standard,
-    elGetter: $.ASN1Encoder<
-        RequestShadowUpdateArgumentData_requestedStrategy_standard
-    >
+    elGetter: $.ASN1Encoder<RequestShadowUpdateArgumentData_requestedStrategy_standard>
 ) {
     if (
         !_cached_encoder_for_RequestShadowUpdateArgumentData_requestedStrategy_standard

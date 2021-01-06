@@ -18,9 +18,7 @@ export type TeletexOrganizationalUnitName = TeletexString; // TeletexString
 /* END_OF_SYMBOL_DEFINITION TeletexOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexOrganizationalUnitName */
-let _cached_decoder_for_TeletexOrganizationalUnitName: $.ASN1Decoder<
-    TeletexOrganizationalUnitName
-> | null = null;
+let _cached_decoder_for_TeletexOrganizationalUnitName: $.ASN1Decoder<TeletexOrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexOrganizationalUnitName */
@@ -40,9 +38,7 @@ export function _decode_TeletexOrganizationalUnitName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexOrganizationalUnitName */
-let _cached_encoder_for_TeletexOrganizationalUnitName: $.ASN1Encoder<
-    TeletexOrganizationalUnitName
-> | null = null;
+let _cached_encoder_for_TeletexOrganizationalUnitName: $.ASN1Encoder<TeletexOrganizationalUnitName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexOrganizationalUnitName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexOrganizationalUnitName */

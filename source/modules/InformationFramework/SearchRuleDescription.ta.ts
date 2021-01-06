@@ -187,9 +187,7 @@ export class SearchRuleDescription {
          * @public
          * @readonly
          */
-        readonly serviceType: OPTIONAL<
-            OBJECT_IDENTIFIER
-        > /* REPLICATED_COMPONENT */,
+        readonly serviceType: OPTIONAL<OBJECT_IDENTIFIER> /* REPLICATED_COMPONENT */,
         /**
          * @summary `userClass`.
          * @public
@@ -209,9 +207,7 @@ export class SearchRuleDescription {
          * @public
          * @readonly
          */
-        readonly attributeCombination: OPTIONAL<
-            AttributeCombination
-        > /* REPLICATED_COMPONENT */,
+        readonly attributeCombination: OPTIONAL<AttributeCombination> /* REPLICATED_COMPONENT */,
         /**
          * @summary `outputAttributeTypes`.
          * @public
@@ -225,49 +221,37 @@ export class SearchRuleDescription {
          * @public
          * @readonly
          */
-        readonly defaultControls: OPTIONAL<
-            ControlOptions
-        > /* REPLICATED_COMPONENT */,
+        readonly defaultControls: OPTIONAL<ControlOptions> /* REPLICATED_COMPONENT */,
         /**
          * @summary `mandatoryControls`.
          * @public
          * @readonly
          */
-        readonly mandatoryControls: OPTIONAL<
-            ControlOptions
-        > /* REPLICATED_COMPONENT */,
+        readonly mandatoryControls: OPTIONAL<ControlOptions> /* REPLICATED_COMPONENT */,
         /**
          * @summary `searchRuleControls`.
          * @public
          * @readonly
          */
-        readonly searchRuleControls: OPTIONAL<
-            ControlOptions
-        > /* REPLICATED_COMPONENT */,
+        readonly searchRuleControls: OPTIONAL<ControlOptions> /* REPLICATED_COMPONENT */,
         /**
          * @summary `familyGrouping`.
          * @public
          * @readonly
          */
-        readonly familyGrouping: OPTIONAL<
-            FamilyGrouping
-        > /* REPLICATED_COMPONENT */,
+        readonly familyGrouping: OPTIONAL<FamilyGrouping> /* REPLICATED_COMPONENT */,
         /**
          * @summary `familyReturn`.
          * @public
          * @readonly
          */
-        readonly familyReturn: OPTIONAL<
-            FamilyReturn
-        > /* REPLICATED_COMPONENT */,
+        readonly familyReturn: OPTIONAL<FamilyReturn> /* REPLICATED_COMPONENT */,
         /**
          * @summary `relaxation`.
          * @public
          * @readonly
          */
-        readonly relaxation: OPTIONAL<
-            RelaxationPolicy
-        > /* REPLICATED_COMPONENT */,
+        readonly relaxation: OPTIONAL<RelaxationPolicy> /* REPLICATED_COMPONENT */,
         /**
          * @summary `additionalControl`.
          * @public
@@ -281,17 +265,13 @@ export class SearchRuleDescription {
          * @public
          * @readonly
          */
-        readonly allowedSubset: OPTIONAL<
-            AllowedSubset
-        > /* REPLICATED_COMPONENT */,
+        readonly allowedSubset: OPTIONAL<AllowedSubset> /* REPLICATED_COMPONENT */,
         /**
          * @summary `imposedSubset`.
          * @public
          * @readonly
          */
-        readonly imposedSubset: OPTIONAL<
-            ImposedSubset
-        > /* REPLICATED_COMPONENT */,
+        readonly imposedSubset: OPTIONAL<ImposedSubset> /* REPLICATED_COMPONENT */,
         /**
          * @summary `entryLimit`.
          * @public
@@ -565,9 +545,7 @@ export const _extension_additions_list_spec_for_SearchRuleDescription: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SearchRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRuleDescription */
-let _cached_decoder_for_SearchRuleDescription: $.ASN1Decoder<
-    SearchRuleDescription
-> | null = null;
+let _cached_decoder_for_SearchRuleDescription: $.ASN1Decoder<SearchRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchRuleDescription */
@@ -636,9 +614,9 @@ export function _decode_SearchRuleDescription(el: _Element) {
                     )(_el);
                 },
                 attributeCombination: (_el: _Element): void => {
-                    attributeCombination = $._decode_explicit<
-                        AttributeCombination
-                    >(() => _decode_AttributeCombination)(_el);
+                    attributeCombination = $._decode_explicit<AttributeCombination>(
+                        () => _decode_AttributeCombination
+                    )(_el);
                 },
                 outputAttributeTypes: (_el: _Element): void => {
                     outputAttributeTypes = $._decode_explicit<
@@ -726,8 +704,8 @@ export function _decode_SearchRuleDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SearchRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                id,
+            return new SearchRuleDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ id,
                 dmdId,
                 serviceType,
                 userClass,
@@ -755,9 +733,7 @@ export function _decode_SearchRuleDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRuleDescription */
-let _cached_encoder_for_SearchRuleDescription: $.ASN1Encoder<
-    SearchRuleDescription
-> | null = null;
+let _cached_encoder_for_SearchRuleDescription: $.ASN1Encoder<SearchRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchRuleDescription */
@@ -941,9 +917,7 @@ export function _encode_SearchRuleDescription(
                                       _TagClass.context,
                                       28,
                                       () =>
-                                          $._encodeSetOf<
-                                              UnboundedDirectoryString
-                                          >(
+                                          $._encodeSetOf<UnboundedDirectoryString>(
                                               () =>
                                                   _encode_UnboundedDirectoryString,
                                               $.BER

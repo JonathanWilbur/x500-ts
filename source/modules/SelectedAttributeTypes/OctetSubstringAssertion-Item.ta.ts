@@ -25,9 +25,7 @@ export type OctetSubstringAssertion_Item =
 /* END_OF_SYMBOL_DEFINITION OctetSubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OctetSubstringAssertion_Item */
-let _cached_decoder_for_OctetSubstringAssertion_Item: $.ASN1Decoder<
-    OctetSubstringAssertion_Item
-> | null = null;
+let _cached_decoder_for_OctetSubstringAssertion_Item: $.ASN1Decoder<OctetSubstringAssertion_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OctetSubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OctetSubstringAssertion_Item */
@@ -39,31 +37,35 @@ let _cached_decoder_for_OctetSubstringAssertion_Item: $.ASN1Decoder<
  */
 export function _decode_OctetSubstringAssertion_Item(el: _Element) {
     if (!_cached_decoder_for_OctetSubstringAssertion_Item) {
-        _cached_decoder_for_OctetSubstringAssertion_Item = $._decode_extensible_choice<
-            OctetSubstringAssertion_Item
-        >({
-            "CONTEXT 0": [
-                "initial",
-                $._decode_explicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-            "CONTEXT 1": [
-                "any_",
-                $._decode_explicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-            "CONTEXT 2": [
-                "final",
-                $._decode_explicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-        });
+        _cached_decoder_for_OctetSubstringAssertion_Item = $._decode_extensible_choice<OctetSubstringAssertion_Item>(
+            {
+                "CONTEXT 0": [
+                    "initial",
+                    $._decode_explicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "any_",
+                    $._decode_explicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "final",
+                    $._decode_explicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OctetSubstringAssertion_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OctetSubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OctetSubstringAssertion_Item */
-let _cached_encoder_for_OctetSubstringAssertion_Item: $.ASN1Encoder<
-    OctetSubstringAssertion_Item
-> | null = null;
+let _cached_encoder_for_OctetSubstringAssertion_Item: $.ASN1Encoder<OctetSubstringAssertion_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OctetSubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OctetSubstringAssertion_Item */
@@ -79,9 +81,7 @@ export function _encode_OctetSubstringAssertion_Item(
     elGetter: $.ASN1Encoder<OctetSubstringAssertion_Item>
 ) {
     if (!_cached_encoder_for_OctetSubstringAssertion_Item) {
-        _cached_encoder_for_OctetSubstringAssertion_Item = $._encode_choice<
-            OctetSubstringAssertion_Item
-        >(
+        _cached_encoder_for_OctetSubstringAssertion_Item = $._encode_choice<OctetSubstringAssertion_Item>(
             {
                 initial: $._encode_explicit(
                     _TagClass.context,

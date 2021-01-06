@@ -159,12 +159,12 @@ export function _decode_NumberRange(el: _Element) {
             const callbacks: $.DecodingMap = {
                 startingNumber: (_el: _Element): void => {
                     startingNumber = $._decode_implicit<OCTET_STRING>(
-                        () => $._decodeBigInt,
+                        () => $._decodeBigInt
                     )(_el);
                 },
                 endingNumber: (_el: _Element): void => {
                     endingNumber = $._decode_implicit<OCTET_STRING>(
-                        () => $._decodeBigInt,
+                        () => $._decodeBigInt
                     )(_el);
                 },
                 modulus: (_el: _Element): void => {
@@ -182,8 +182,8 @@ export function _decode_NumberRange(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NumberRange /* SEQUENCE_CONSTRUCTOR_CALL */(
-                startingNumber,
+            return new NumberRange(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startingNumber,
                 endingNumber,
                 modulus,
                 _unrecognizedExtensionsList

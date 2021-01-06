@@ -17,9 +17,7 @@ export type CommunicationsNetwork = OBJECT_IDENTIFIER; // ObjectIdentifierType
 /* END_OF_SYMBOL_DEFINITION CommunicationsNetwork */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CommunicationsNetwork */
-let _cached_decoder_for_CommunicationsNetwork: $.ASN1Decoder<
-    CommunicationsNetwork
-> | null = null;
+let _cached_decoder_for_CommunicationsNetwork: $.ASN1Decoder<CommunicationsNetwork> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CommunicationsNetwork */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CommunicationsNetwork */
@@ -38,9 +36,7 @@ export function _decode_CommunicationsNetwork(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CommunicationsNetwork */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CommunicationsNetwork */
-let _cached_encoder_for_CommunicationsNetwork: $.ASN1Encoder<
-    CommunicationsNetwork
-> | null = null;
+let _cached_encoder_for_CommunicationsNetwork: $.ASN1Encoder<CommunicationsNetwork> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CommunicationsNetwork */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CommunicationsNetwork */

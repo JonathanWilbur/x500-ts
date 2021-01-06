@@ -81,9 +81,7 @@ export const replace: ModifyRequest_changes_change_operation = ModifyRequest_cha
 /* END_OF_SYMBOL_DEFINITION replace */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRequest_changes_change_operation */
-let _cached_decoder_for_ModifyRequest_changes_change_operation: $.ASN1Decoder<
-    ModifyRequest_changes_change_operation
-> | null = null;
+let _cached_decoder_for_ModifyRequest_changes_change_operation: $.ASN1Decoder<ModifyRequest_changes_change_operation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRequest_changes_change_operation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyRequest_changes_change_operation */
@@ -103,9 +101,7 @@ export function _decode_ModifyRequest_changes_change_operation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyRequest_changes_change_operation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRequest_changes_change_operation */
-let _cached_encoder_for_ModifyRequest_changes_change_operation: $.ASN1Encoder<
-    ModifyRequest_changes_change_operation
-> | null = null;
+let _cached_encoder_for_ModifyRequest_changes_change_operation: $.ASN1Encoder<ModifyRequest_changes_change_operation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRequest_changes_change_operation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyRequest_changes_change_operation */

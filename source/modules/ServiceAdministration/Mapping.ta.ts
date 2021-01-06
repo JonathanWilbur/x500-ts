@@ -171,8 +171,8 @@ export function _decode_Mapping(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Mapping /* SEQUENCE_CONSTRUCTOR_CALL */(
-                mappingFunction,
+            return new Mapping(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mappingFunction,
                 level,
                 _unrecognizedExtensionsList
             );

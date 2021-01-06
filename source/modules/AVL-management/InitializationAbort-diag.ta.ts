@@ -62,9 +62,7 @@ export const onlySingleVersionAllowed: InitializationAbort_diag = Initialization
 /* END_OF_SYMBOL_DEFINITION onlySingleVersionAllowed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAbort_diag */
-let _cached_decoder_for_InitializationAbort_diag: $.ASN1Decoder<
-    InitializationAbort_diag
-> | null = null;
+let _cached_decoder_for_InitializationAbort_diag: $.ASN1Decoder<InitializationAbort_diag> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAbort_diag */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InitializationAbort_diag */
@@ -83,9 +81,7 @@ export function _decode_InitializationAbort_diag(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InitializationAbort_diag */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAbort_diag */
-let _cached_encoder_for_InitializationAbort_diag: $.ASN1Encoder<
-    InitializationAbort_diag
-> | null = null;
+let _cached_encoder_for_InitializationAbort_diag: $.ASN1Encoder<InitializationAbort_diag> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAbort_diag */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InitializationAbort_diag */

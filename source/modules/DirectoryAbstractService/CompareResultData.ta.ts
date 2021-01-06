@@ -119,25 +119,19 @@ export class CompareResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -284,9 +278,7 @@ export const _extension_additions_list_spec_for_CompareResultData: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CompareResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResultData */
-let _cached_decoder_for_CompareResultData: $.ASN1Decoder<
-    CompareResultData
-> | null = null;
+let _cached_decoder_for_CompareResultData: $.ASN1Decoder<CompareResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CompareResultData */
@@ -366,8 +358,8 @@ export function _decode_CompareResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CompareResultData /* SET_CONSTRUCTOR_CALL */(
-                name,
+            return new CompareResultData(
+                /* SET_CONSTRUCTOR_CALL */ name,
                 matched,
                 fromEntry,
                 matchedSubtype,
@@ -384,9 +376,7 @@ export function _decode_CompareResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CompareResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResultData */
-let _cached_encoder_for_CompareResultData: $.ASN1Encoder<
-    CompareResultData
-> | null = null;
+let _cached_encoder_for_CompareResultData: $.ASN1Encoder<CompareResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CompareResultData */

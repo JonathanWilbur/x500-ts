@@ -1,17 +1,17 @@
-import { id_at_countryName } from "../modules/SelectedAttributeTypes/id-at-countryName.va";
-import { id_at_organizationName } from "../modules/SelectedAttributeTypes/id-at-organizationName.va";
-import { id_at_organizationalUnitName } from "../modules/SelectedAttributeTypes/id-at-organizationalUnitName.va";
-import { id_at_dnQualifier } from "../modules/SelectedAttributeTypes/id-at-dnQualifier.va";
-import { id_at_stateOrProvinceName } from "../modules/SelectedAttributeTypes/id-at-stateOrProvinceName.va";
 import { id_at_commonName } from "../modules/SelectedAttributeTypes/id-at-commonName.va";
-import { id_at_serialNumber } from "../modules/SelectedAttributeTypes/id-at-serialNumber.va";
-import { id_at_localityName } from "../modules/SelectedAttributeTypes/id-at-localityName.va";
-import { id_at_title } from "../modules/SelectedAttributeTypes/id-at-title.va";
-import { id_at_surname } from "../modules/SelectedAttributeTypes/id-at-surname.va";
+import { id_at_countryName } from "../modules/SelectedAttributeTypes/id-at-countryName.va";
+import { id_at_dnQualifier } from "../modules/SelectedAttributeTypes/id-at-dnQualifier.va";
+import { id_at_generationQualifier } from "../modules/SelectedAttributeTypes/id-at-generationQualifier.va";
 import { id_at_givenName } from "../modules/SelectedAttributeTypes/id-at-givenName.va";
 import { id_at_initials } from "../modules/SelectedAttributeTypes/id-at-initials.va";
+import { id_at_localityName } from "../modules/SelectedAttributeTypes/id-at-localityName.va";
+import { id_at_organizationalUnitName } from "../modules/SelectedAttributeTypes/id-at-organizationalUnitName.va";
+import { id_at_organizationName } from "../modules/SelectedAttributeTypes/id-at-organizationName.va";
 import { id_at_pseudonym } from "../modules/SelectedAttributeTypes/id-at-pseudonym.va";
-import { id_at_generationQualifier } from "../modules/SelectedAttributeTypes/id-at-generationQualifier.va";
+import { id_at_serialNumber } from "../modules/SelectedAttributeTypes/id-at-serialNumber.va";
+import { id_at_stateOrProvinceName } from "../modules/SelectedAttributeTypes/id-at-stateOrProvinceName.va";
+import { id_at_surname } from "../modules/SelectedAttributeTypes/id-at-surname.va";
+import { id_at_title } from "../modules/SelectedAttributeTypes/id-at-title.va";
 
 const ret: Record<string, string> = {};
 // Recognized attributes sourced from https://tools.ietf.org/html/rfc5280#section-4.1.2.4.

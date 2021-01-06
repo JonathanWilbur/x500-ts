@@ -34,9 +34,7 @@ export type SubstringAssertion = SubstringAssertion_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION SubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringAssertion */
-let _cached_decoder_for_SubstringAssertion: $.ASN1Decoder<
-    SubstringAssertion
-> | null = null;
+let _cached_decoder_for_SubstringAssertion: $.ASN1Decoder<SubstringAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubstringAssertion */
@@ -48,18 +46,16 @@ let _cached_decoder_for_SubstringAssertion: $.ASN1Decoder<
  */
 export function _decode_SubstringAssertion(el: _Element) {
     if (!_cached_decoder_for_SubstringAssertion) {
-        _cached_decoder_for_SubstringAssertion = $._decodeSequenceOf<
-            SubstringAssertion_Item
-        >(() => _decode_SubstringAssertion_Item);
+        _cached_decoder_for_SubstringAssertion = $._decodeSequenceOf<SubstringAssertion_Item>(
+            () => _decode_SubstringAssertion_Item
+        );
     }
     return _cached_decoder_for_SubstringAssertion(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringAssertion */
-let _cached_encoder_for_SubstringAssertion: $.ASN1Encoder<
-    SubstringAssertion
-> | null = null;
+let _cached_encoder_for_SubstringAssertion: $.ASN1Encoder<SubstringAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubstringAssertion */
@@ -75,9 +71,10 @@ export function _encode_SubstringAssertion(
     elGetter: $.ASN1Encoder<SubstringAssertion>
 ) {
     if (!_cached_encoder_for_SubstringAssertion) {
-        _cached_encoder_for_SubstringAssertion = $._encodeSequenceOf<
-            SubstringAssertion_Item
-        >(() => _encode_SubstringAssertion_Item, $.BER);
+        _cached_encoder_for_SubstringAssertion = $._encodeSequenceOf<SubstringAssertion_Item>(
+            () => _encode_SubstringAssertion_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_SubstringAssertion(value, elGetter);
 }

@@ -171,9 +171,7 @@ export const _extension_additions_list_spec_for_ModifyDNRequest: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifyDNRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNRequest */
-let _cached_decoder_for_ModifyDNRequest: $.ASN1Decoder<
-    ModifyDNRequest
-> | null = null;
+let _cached_decoder_for_ModifyDNRequest: $.ASN1Decoder<ModifyDNRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyDNRequest */
@@ -185,9 +183,7 @@ let _cached_decoder_for_ModifyDNRequest: $.ASN1Decoder<
  */
 export function _decode_ModifyDNRequest(el: _Element) {
     if (!_cached_decoder_for_ModifyDNRequest) {
-        _cached_decoder_for_ModifyDNRequest = $._decode_implicit<
-            ModifyDNRequest
-        >(
+        _cached_decoder_for_ModifyDNRequest = $._decode_implicit<ModifyDNRequest>(
             () =>
                 function (el: _Element): ModifyDNRequest {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -225,8 +221,8 @@ export function _decode_ModifyDNRequest(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new ModifyDNRequest /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        entry,
+                    return new ModifyDNRequest(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ entry,
                         newrdn,
                         deleteoldrdn,
                         newSuperior,
@@ -240,9 +236,7 @@ export function _decode_ModifyDNRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyDNRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNRequest */
-let _cached_encoder_for_ModifyDNRequest: $.ASN1Encoder<
-    ModifyDNRequest
-> | null = null;
+let _cached_encoder_for_ModifyDNRequest: $.ASN1Encoder<ModifyDNRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyDNRequest */

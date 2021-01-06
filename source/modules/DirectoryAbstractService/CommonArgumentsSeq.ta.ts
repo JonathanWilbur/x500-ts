@@ -450,9 +450,7 @@ export const _extension_additions_list_spec_for_CommonArgumentsSeq: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CommonArgumentsSeq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonArgumentsSeq */
-let _cached_decoder_for_CommonArgumentsSeq: $.ASN1Decoder<
-    CommonArgumentsSeq
-> | null = null;
+let _cached_decoder_for_CommonArgumentsSeq: $.ASN1Decoder<CommonArgumentsSeq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonArgumentsSeq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CommonArgumentsSeq */
@@ -561,8 +559,8 @@ export function _decode_CommonArgumentsSeq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CommonArgumentsSeq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                serviceControls,
+            return new CommonArgumentsSeq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ serviceControls,
                 securityParameters,
                 requestor,
                 operationProgress,
@@ -583,9 +581,7 @@ export function _decode_CommonArgumentsSeq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CommonArgumentsSeq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonArgumentsSeq */
-let _cached_encoder_for_CommonArgumentsSeq: $.ASN1Encoder<
-    CommonArgumentsSeq
-> | null = null;
+let _cached_encoder_for_CommonArgumentsSeq: $.ASN1Encoder<CommonArgumentsSeq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonArgumentsSeq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CommonArgumentsSeq */

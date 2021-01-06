@@ -27,9 +27,7 @@ export type PostOfficeBoxAddress = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION PostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PostOfficeBoxAddress */
-let _cached_decoder_for_PostOfficeBoxAddress: $.ASN1Decoder<
-    PostOfficeBoxAddress
-> | null = null;
+let _cached_decoder_for_PostOfficeBoxAddress: $.ASN1Decoder<PostOfficeBoxAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PostOfficeBoxAddress */
@@ -48,9 +46,7 @@ export function _decode_PostOfficeBoxAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PostOfficeBoxAddress */
-let _cached_encoder_for_PostOfficeBoxAddress: $.ASN1Encoder<
-    PostOfficeBoxAddress
-> | null = null;
+let _cached_encoder_for_PostOfficeBoxAddress: $.ASN1Encoder<PostOfficeBoxAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PostOfficeBoxAddress */

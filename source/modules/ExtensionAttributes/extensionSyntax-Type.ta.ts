@@ -153,9 +153,7 @@ export const _extension_additions_list_spec_for_extensionSyntax_Type: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_extensionSyntax_Type */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_extensionSyntax_Type */
-let _cached_decoder_for_extensionSyntax_Type: $.ASN1Decoder<
-    extensionSyntax_Type
-> | null = null;
+let _cached_decoder_for_extensionSyntax_Type: $.ASN1Decoder<extensionSyntax_Type> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_extensionSyntax_Type */
 
 /* START_OF_SYMBOL_DEFINITION _decode_extensionSyntax_Type */
@@ -191,9 +189,7 @@ export function _decode_extensionSyntax_Type(el: _Element) {
                     )(_el);
                 },
                 ext: (_el: _Element): void => {
-                    ext = $._decode_explicit<_Element>(
-                        () => $._decodeAny,
-                    )(_el);
+                    ext = $._decode_explicit<_Element>(() => $._decodeAny)(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -207,8 +203,8 @@ export function _decode_extensionSyntax_Type(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new extensionSyntax_Type /* SEQUENCE_CONSTRUCTOR_CALL */(
-                mandatory,
+            return new extensionSyntax_Type(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
                 critical,
                 ext,
                 _unrecognizedExtensionsList
@@ -220,9 +216,7 @@ export function _decode_extensionSyntax_Type(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_extensionSyntax_Type */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_extensionSyntax_Type */
-let _cached_encoder_for_extensionSyntax_Type: $.ASN1Encoder<
-    extensionSyntax_Type
-> | null = null;
+let _cached_encoder_for_extensionSyntax_Type: $.ASN1Encoder<extensionSyntax_Type> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_extensionSyntax_Type */
 
 /* START_OF_SYMBOL_DEFINITION _encode_extensionSyntax_Type */
@@ -273,8 +267,7 @@ export function _encode_extensionSyntax_Type(
                             /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 2,
-                                () =>
-                                    $._encodeAny,
+                                () => $._encodeAny,
                                 $.BER
                             )(value.ext, $.BER),
                         ],

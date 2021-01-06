@@ -107,9 +107,7 @@ export const _extension_additions_list_spec_for_TheOsiUnbindRes: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TheOsiUnbindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiUnbindRes */
-let _cached_decoder_for_TheOsiUnbindRes: $.ASN1Decoder<
-    TheOsiUnbindRes
-> | null = null;
+let _cached_decoder_for_TheOsiUnbindRes: $.ASN1Decoder<TheOsiUnbindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiUnbindRes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TheOsiUnbindRes */
@@ -121,9 +119,7 @@ let _cached_decoder_for_TheOsiUnbindRes: $.ASN1Decoder<
  */
 export function _decode_TheOsiUnbindRes(el: _Element) {
     if (!_cached_decoder_for_TheOsiUnbindRes) {
-        _cached_decoder_for_TheOsiUnbindRes = $._decode_explicit<
-            TheOsiUnbindRes
-        >(
+        _cached_decoder_for_TheOsiUnbindRes = $._decode_explicit<TheOsiUnbindRes>(
             () =>
                 function (el: _Element): TheOsiUnbindRes {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -132,9 +128,9 @@ export function _decode_TheOsiUnbindRes(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         reason: (_el: _Element): void => {
-                            reason = $._decode_explicit<
-                                Release_response_reason
-                            >(() => _decode_Release_response_reason)(_el);
+                            reason = $._decode_explicit<Release_response_reason>(
+                                () => _decode_Release_response_reason
+                            )(_el);
                         },
                     };
                     /* END_OF_CALLBACKS_MAP */
@@ -146,8 +142,8 @@ export function _decode_TheOsiUnbindRes(el: _Element) {
                         _root_component_type_list_2_spec_for_TheOsiUnbindRes,
                         undefined
                     );
-                    return new TheOsiUnbindRes /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        reason
+                    return new TheOsiUnbindRes(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ reason
                     );
                 }
         );
@@ -157,9 +153,7 @@ export function _decode_TheOsiUnbindRes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TheOsiUnbindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiUnbindRes */
-let _cached_encoder_for_TheOsiUnbindRes: $.ASN1Encoder<
-    TheOsiUnbindRes
-> | null = null;
+let _cached_encoder_for_TheOsiUnbindRes: $.ASN1Encoder<TheOsiUnbindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiUnbindRes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TheOsiUnbindRes */

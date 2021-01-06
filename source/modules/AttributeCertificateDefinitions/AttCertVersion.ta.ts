@@ -35,9 +35,7 @@ export const v2: AttCertVersion = AttCertVersion_v2; /* SHORT_NAMED_INTEGER_VALU
 /* END_OF_SYMBOL_DEFINITION v2 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertVersion */
-let _cached_decoder_for_AttCertVersion: $.ASN1Decoder<
-    AttCertVersion
-> | null = null;
+let _cached_decoder_for_AttCertVersion: $.ASN1Decoder<AttCertVersion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertVersion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttCertVersion */
@@ -56,9 +54,7 @@ export function _decode_AttCertVersion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttCertVersion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertVersion */
-let _cached_encoder_for_AttCertVersion: $.ASN1Encoder<
-    AttCertVersion
-> | null = null;
+let _cached_encoder_for_AttCertVersion: $.ASN1Encoder<AttCertVersion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertVersion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttCertVersion */

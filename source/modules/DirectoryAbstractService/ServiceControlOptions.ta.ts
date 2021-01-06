@@ -272,9 +272,7 @@ export const allowWriteableCopy: number = ServiceControlOptions_allowWriteableCo
 /* END_OF_SYMBOL_DEFINITION allowWriteableCopy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControlOptions */
-let _cached_decoder_for_ServiceControlOptions: $.ASN1Decoder<
-    ServiceControlOptions
-> | null = null;
+let _cached_decoder_for_ServiceControlOptions: $.ASN1Decoder<ServiceControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ServiceControlOptions */
@@ -293,9 +291,7 @@ export function _decode_ServiceControlOptions(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ServiceControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControlOptions */
-let _cached_encoder_for_ServiceControlOptions: $.ASN1Encoder<
-    ServiceControlOptions
-> | null = null;
+let _cached_encoder_for_ServiceControlOptions: $.ASN1Encoder<ServiceControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ServiceControlOptions */

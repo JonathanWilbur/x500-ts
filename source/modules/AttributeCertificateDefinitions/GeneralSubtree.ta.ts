@@ -159,9 +159,7 @@ export const _extension_additions_list_spec_for_GeneralSubtree: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_GeneralSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralSubtree */
-let _cached_decoder_for_GeneralSubtree: $.ASN1Decoder<
-    GeneralSubtree
-> | null = null;
+let _cached_decoder_for_GeneralSubtree: $.ASN1Decoder<GeneralSubtree> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_GeneralSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _decode_GeneralSubtree */
@@ -210,8 +208,8 @@ export function _decode_GeneralSubtree(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new GeneralSubtree /* SEQUENCE_CONSTRUCTOR_CALL */(
-                base,
+            return new GeneralSubtree(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ base,
                 minimum,
                 maximum,
                 _unrecognizedExtensionsList
@@ -223,9 +221,7 @@ export function _decode_GeneralSubtree(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_GeneralSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralSubtree */
-let _cached_encoder_for_GeneralSubtree: $.ASN1Encoder<
-    GeneralSubtree
-> | null = null;
+let _cached_encoder_for_GeneralSubtree: $.ASN1Encoder<GeneralSubtree> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_GeneralSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _encode_GeneralSubtree */

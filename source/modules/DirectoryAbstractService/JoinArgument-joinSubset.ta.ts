@@ -81,9 +81,7 @@ export const wholeSubtree: JoinArgument_joinSubset = JoinArgument_joinSubset_who
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_JoinArgument_joinSubset */
-let _cached_decoder_for_JoinArgument_joinSubset: $.ASN1Decoder<
-    JoinArgument_joinSubset
-> | null = null;
+let _cached_decoder_for_JoinArgument_joinSubset: $.ASN1Decoder<JoinArgument_joinSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_JoinArgument_joinSubset */
 
 /* START_OF_SYMBOL_DEFINITION _decode_JoinArgument_joinSubset */
@@ -102,9 +100,7 @@ export function _decode_JoinArgument_joinSubset(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_JoinArgument_joinSubset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_JoinArgument_joinSubset */
-let _cached_encoder_for_JoinArgument_joinSubset: $.ASN1Encoder<
-    JoinArgument_joinSubset
-> | null = null;
+let _cached_encoder_for_JoinArgument_joinSubset: $.ASN1Encoder<JoinArgument_joinSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_JoinArgument_joinSubset */
 
 /* START_OF_SYMBOL_DEFINITION _encode_JoinArgument_joinSubset */

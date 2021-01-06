@@ -23,9 +23,7 @@ export type Association_informationBindErr = EXTERNAL[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION Association_informationBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBindErr */
-let _cached_decoder_for_Association_informationBindErr: $.ASN1Decoder<
-    Association_informationBindErr
-> | null = null;
+let _cached_decoder_for_Association_informationBindErr: $.ASN1Decoder<Association_informationBindErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Association_informationBindErr */
@@ -37,18 +35,16 @@ let _cached_decoder_for_Association_informationBindErr: $.ASN1Decoder<
  */
 export function _decode_Association_informationBindErr(el: _Element) {
     if (!_cached_decoder_for_Association_informationBindErr) {
-        _cached_decoder_for_Association_informationBindErr = $._decodeSequenceOf<
-            EXTERNAL
-        >(() => $._decodeExternal);
+        _cached_decoder_for_Association_informationBindErr = $._decodeSequenceOf<EXTERNAL>(
+            () => $._decodeExternal
+        );
     }
     return _cached_decoder_for_Association_informationBindErr(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Association_informationBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBindErr */
-let _cached_encoder_for_Association_informationBindErr: $.ASN1Encoder<
-    Association_informationBindErr
-> | null = null;
+let _cached_encoder_for_Association_informationBindErr: $.ASN1Encoder<Association_informationBindErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Association_informationBindErr */
@@ -64,9 +60,10 @@ export function _encode_Association_informationBindErr(
     elGetter: $.ASN1Encoder<Association_informationBindErr>
 ) {
     if (!_cached_encoder_for_Association_informationBindErr) {
-        _cached_encoder_for_Association_informationBindErr = $._encodeSequenceOf<
-            EXTERNAL
-        >(() => $._encodeExternal, $.BER);
+        _cached_encoder_for_Association_informationBindErr = $._encodeSequenceOf<EXTERNAL>(
+            () => $._encodeExternal,
+            $.BER
+        );
     }
     return _cached_encoder_for_Association_informationBindErr(value, elGetter);
 }

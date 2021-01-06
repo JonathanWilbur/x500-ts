@@ -22,9 +22,7 @@ export type EstablishOperationalBindingArgumentData_initiator =
 /* END_OF_SYMBOL_DEFINITION EstablishOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator */
-let _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Decoder<
-    EstablishOperationalBindingArgumentData_initiator
-> | null = null;
+let _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Decoder<EstablishOperationalBindingArgumentData_initiator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EstablishOperationalBindingArgumentData_initiator */
@@ -40,22 +38,22 @@ export function _decode_EstablishOperationalBindingArgumentData_initiator(
     if (
         !_cached_decoder_for_EstablishOperationalBindingArgumentData_initiator
     ) {
-        _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<
-            EstablishOperationalBindingArgumentData_initiator
-        >({
-            "CONTEXT 3": [
-                "symmetric",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 4": [
-                "roleA_initiates",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 5": [
-                "roleB_initiates",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-        });
+        _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<EstablishOperationalBindingArgumentData_initiator>(
+            {
+                "CONTEXT 3": [
+                    "symmetric",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 4": [
+                    "roleA_initiates",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 5": [
+                    "roleB_initiates",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_EstablishOperationalBindingArgumentData_initiator(
         el
@@ -64,9 +62,7 @@ export function _decode_EstablishOperationalBindingArgumentData_initiator(
 /* END_OF_SYMBOL_DEFINITION _decode_EstablishOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator */
-let _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Encoder<
-    EstablishOperationalBindingArgumentData_initiator
-> | null = null;
+let _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator: $.ASN1Encoder<EstablishOperationalBindingArgumentData_initiator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EstablishOperationalBindingArgumentData_initiator */
@@ -84,9 +80,7 @@ export function _encode_EstablishOperationalBindingArgumentData_initiator(
     if (
         !_cached_encoder_for_EstablishOperationalBindingArgumentData_initiator
     ) {
-        _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator = $._encode_choice<
-            EstablishOperationalBindingArgumentData_initiator
-        >(
+        _cached_encoder_for_EstablishOperationalBindingArgumentData_initiator = $._encode_choice<EstablishOperationalBindingArgumentData_initiator>(
             {
                 symmetric: $._encode_explicit(
                     _TagClass.context,

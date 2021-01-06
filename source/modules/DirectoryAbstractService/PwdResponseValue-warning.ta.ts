@@ -24,9 +24,7 @@ export type PwdResponseValue_warning =
 /* END_OF_SYMBOL_DEFINITION PwdResponseValue_warning */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue_warning */
-let _cached_decoder_for_PwdResponseValue_warning: $.ASN1Decoder<
-    PwdResponseValue_warning
-> | null = null;
+let _cached_decoder_for_PwdResponseValue_warning: $.ASN1Decoder<PwdResponseValue_warning> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue_warning */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PwdResponseValue_warning */
@@ -38,27 +36,25 @@ let _cached_decoder_for_PwdResponseValue_warning: $.ASN1Decoder<
  */
 export function _decode_PwdResponseValue_warning(el: _Element) {
     if (!_cached_decoder_for_PwdResponseValue_warning) {
-        _cached_decoder_for_PwdResponseValue_warning = $._decode_extensible_choice<
-            PwdResponseValue_warning
-        >({
-            "CONTEXT 0": [
-                "timeLeft",
-                $._decode_explicit<INTEGER>(() => $._decodeInteger),
-            ],
-            "CONTEXT 1": [
-                "graceRemaining",
-                $._decode_explicit<INTEGER>(() => $._decodeInteger),
-            ],
-        });
+        _cached_decoder_for_PwdResponseValue_warning = $._decode_extensible_choice<PwdResponseValue_warning>(
+            {
+                "CONTEXT 0": [
+                    "timeLeft",
+                    $._decode_explicit<INTEGER>(() => $._decodeInteger),
+                ],
+                "CONTEXT 1": [
+                    "graceRemaining",
+                    $._decode_explicit<INTEGER>(() => $._decodeInteger),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_PwdResponseValue_warning(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PwdResponseValue_warning */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue_warning */
-let _cached_encoder_for_PwdResponseValue_warning: $.ASN1Encoder<
-    PwdResponseValue_warning
-> | null = null;
+let _cached_encoder_for_PwdResponseValue_warning: $.ASN1Encoder<PwdResponseValue_warning> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue_warning */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PwdResponseValue_warning */
@@ -74,9 +70,7 @@ export function _encode_PwdResponseValue_warning(
     elGetter: $.ASN1Encoder<PwdResponseValue_warning>
 ) {
     if (!_cached_encoder_for_PwdResponseValue_warning) {
-        _cached_encoder_for_PwdResponseValue_warning = $._encode_choice<
-            PwdResponseValue_warning
-        >(
+        _cached_encoder_for_PwdResponseValue_warning = $._encode_choice<PwdResponseValue_warning>(
             {
                 timeLeft: $._encode_explicit(
                     _TagClass.context,

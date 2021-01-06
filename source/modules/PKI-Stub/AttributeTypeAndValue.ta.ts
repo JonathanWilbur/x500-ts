@@ -125,9 +125,7 @@ export const _extension_additions_list_spec_for_AttributeTypeAndValue: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeTypeAndValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeAndValue */
-let _cached_decoder_for_AttributeTypeAndValue: $.ASN1Decoder<
-    AttributeTypeAndValue
-> | null = null;
+let _cached_decoder_for_AttributeTypeAndValue: $.ASN1Decoder<AttributeTypeAndValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeAndValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypeAndValue */
@@ -164,9 +162,7 @@ export function _decode_AttributeTypeAndValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypeAndValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeAndValue */
-let _cached_encoder_for_AttributeTypeAndValue: $.ASN1Encoder<
-    AttributeTypeAndValue
-> | null = null;
+let _cached_encoder_for_AttributeTypeAndValue: $.ASN1Encoder<AttributeTypeAndValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeAndValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypeAndValue */

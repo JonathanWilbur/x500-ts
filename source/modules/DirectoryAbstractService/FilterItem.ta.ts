@@ -109,56 +109,58 @@ let _cached_decoder_for_FilterItem: $.ASN1Decoder<FilterItem> | null = null;
  */
 export function _decode_FilterItem(el: _Element) {
     if (!_cached_decoder_for_FilterItem) {
-        _cached_decoder_for_FilterItem = $._decode_extensible_choice<
-            FilterItem
-        >({
-            "CONTEXT 0": [
-                "equality",
-                $._decode_explicit<AttributeValueAssertion>(
-                    () => _decode_AttributeValueAssertion
-                ),
-            ],
-            "CONTEXT 1": [
-                "substrings",
-                $._decode_explicit<FilterItem_substrings>(
-                    () => _decode_FilterItem_substrings
-                ),
-            ],
-            "CONTEXT 2": [
-                "greaterOrEqual",
-                $._decode_explicit<AttributeValueAssertion>(
-                    () => _decode_AttributeValueAssertion
-                ),
-            ],
-            "CONTEXT 3": [
-                "lessOrEqual",
-                $._decode_explicit<AttributeValueAssertion>(
-                    () => _decode_AttributeValueAssertion
-                ),
-            ],
-            "CONTEXT 4": [
-                "present",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 5": [
-                "approximateMatch",
-                $._decode_explicit<AttributeValueAssertion>(
-                    () => _decode_AttributeValueAssertion
-                ),
-            ],
-            "CONTEXT 6": [
-                "extensibleMatch",
-                $._decode_explicit<MatchingRuleAssertion>(
-                    () => _decode_MatchingRuleAssertion
-                ),
-            ],
-            "CONTEXT 7": [
-                "contextPresent",
-                $._decode_explicit<AttributeTypeAssertion>(
-                    () => _decode_AttributeTypeAssertion
-                ),
-            ],
-        });
+        _cached_decoder_for_FilterItem = $._decode_extensible_choice<FilterItem>(
+            {
+                "CONTEXT 0": [
+                    "equality",
+                    $._decode_explicit<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "substrings",
+                    $._decode_explicit<FilterItem_substrings>(
+                        () => _decode_FilterItem_substrings
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "greaterOrEqual",
+                    $._decode_explicit<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "lessOrEqual",
+                    $._decode_explicit<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    ),
+                ],
+                "CONTEXT 4": [
+                    "present",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 5": [
+                    "approximateMatch",
+                    $._decode_explicit<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    ),
+                ],
+                "CONTEXT 6": [
+                    "extensibleMatch",
+                    $._decode_explicit<MatchingRuleAssertion>(
+                        () => _decode_MatchingRuleAssertion
+                    ),
+                ],
+                "CONTEXT 7": [
+                    "contextPresent",
+                    $._decode_explicit<AttributeTypeAssertion>(
+                        () => _decode_AttributeTypeAssertion
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_FilterItem(el);
 }

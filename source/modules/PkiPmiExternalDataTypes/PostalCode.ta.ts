@@ -38,12 +38,12 @@ let _cached_decoder_for_PostalCode: $.ASN1Decoder<PostalCode> | null = null;
  */
 export function _decode_PostalCode(el: _Element) {
     if (!_cached_decoder_for_PostalCode) {
-        _cached_decoder_for_PostalCode = $._decode_inextensible_choice<
-            PostalCode
-        >({
-            "UNIVERSAL 18": ["numeric_code", $._decodeNumericString],
-            "UNIVERSAL 19": ["printable_code", $._decodePrintableString],
-        });
+        _cached_decoder_for_PostalCode = $._decode_inextensible_choice<PostalCode>(
+            {
+                "UNIVERSAL 18": ["numeric_code", $._decodeNumericString],
+                "UNIVERSAL 19": ["printable_code", $._decodePrintableString],
+            }
+        );
     }
     return _cached_decoder_for_PostalCode(el);
 }

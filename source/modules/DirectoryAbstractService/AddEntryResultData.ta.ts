@@ -71,25 +71,19 @@ export class AddEntryResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -202,9 +196,7 @@ export const _extension_additions_list_spec_for_AddEntryResultData: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AddEntryResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryResultData */
-let _cached_decoder_for_AddEntryResultData: $.ASN1Decoder<
-    AddEntryResultData
-> | null = null;
+let _cached_decoder_for_AddEntryResultData: $.ASN1Decoder<AddEntryResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AddEntryResultData */
@@ -261,8 +253,8 @@ export function _decode_AddEntryResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AddEntryResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                _unrecognizedExtensionsList,
+            return new AddEntryResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ _unrecognizedExtensionsList,
                 securityParameters,
                 performer,
                 aliasDereferenced,
@@ -275,9 +267,7 @@ export function _decode_AddEntryResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AddEntryResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryResultData */
-let _cached_encoder_for_AddEntryResultData: $.ASN1Encoder<
-    AddEntryResultData
-> | null = null;
+let _cached_encoder_for_AddEntryResultData: $.ASN1Encoder<AddEntryResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AddEntryResultData */

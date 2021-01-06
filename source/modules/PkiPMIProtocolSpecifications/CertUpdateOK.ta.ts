@@ -47,9 +47,9 @@ let _cached_decoder_for_CertUpdateOK: $.ASN1Decoder<CertUpdateOK> | null = null;
  */
 export function _decode_CertUpdateOK(el: _Element) {
     if (!_cached_decoder_for_CertUpdateOK) {
-        _cached_decoder_for_CertUpdateOK = $._decodeSequenceOf<
-            CertUpdateOK_Item
-        >(() => _decode_CertUpdateOK_Item);
+        _cached_decoder_for_CertUpdateOK = $._decodeSequenceOf<CertUpdateOK_Item>(
+            () => _decode_CertUpdateOK_Item
+        );
     }
     return _cached_decoder_for_CertUpdateOK(el);
 }
@@ -72,9 +72,10 @@ export function _encode_CertUpdateOK(
     elGetter: $.ASN1Encoder<CertUpdateOK>
 ) {
     if (!_cached_encoder_for_CertUpdateOK) {
-        _cached_encoder_for_CertUpdateOK = $._encodeSequenceOf<
-            CertUpdateOK_Item
-        >(() => _encode_CertUpdateOK_Item, $.BER);
+        _cached_encoder_for_CertUpdateOK = $._encodeSequenceOf<CertUpdateOK_Item>(
+            () => _encode_CertUpdateOK_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertUpdateOK(value, elGetter);
 }

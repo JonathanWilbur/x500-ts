@@ -195,8 +195,8 @@ export function _decode_Context(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Context /* SEQUENCE_CONSTRUCTOR_CALL */(
-                contextType,
+            return new Context(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ contextType,
                 contextValues,
                 fallback,
                 _unrecognizedExtensionsList

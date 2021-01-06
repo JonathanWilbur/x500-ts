@@ -37,9 +37,7 @@ export type HandshakeProAbort = Signed<TbsHandshakeProAbort>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION HandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HandshakeProAbort */
-let _cached_decoder_for_HandshakeProAbort: $.ASN1Decoder<
-    HandshakeProAbort
-> | null = null;
+let _cached_decoder_for_HandshakeProAbort: $.ASN1Decoder<HandshakeProAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HandshakeProAbort */
@@ -51,18 +49,16 @@ let _cached_decoder_for_HandshakeProAbort: $.ASN1Decoder<
  */
 export function _decode_HandshakeProAbort(el: _Element) {
     if (!_cached_decoder_for_HandshakeProAbort) {
-        _cached_decoder_for_HandshakeProAbort = _get_decoder_for_Signed<
-            TbsHandshakeProAbort
-        >(_decode_TbsHandshakeProAbort);
+        _cached_decoder_for_HandshakeProAbort = _get_decoder_for_Signed<TbsHandshakeProAbort>(
+            _decode_TbsHandshakeProAbort
+        );
     }
     return _cached_decoder_for_HandshakeProAbort(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_HandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HandshakeProAbort */
-let _cached_encoder_for_HandshakeProAbort: $.ASN1Encoder<
-    HandshakeProAbort
-> | null = null;
+let _cached_encoder_for_HandshakeProAbort: $.ASN1Encoder<HandshakeProAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HandshakeProAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HandshakeProAbort */
@@ -78,9 +74,9 @@ export function _encode_HandshakeProAbort(
     elGetter: $.ASN1Encoder<HandshakeProAbort>
 ) {
     if (!_cached_encoder_for_HandshakeProAbort) {
-        _cached_encoder_for_HandshakeProAbort = _get_encoder_for_Signed<
-            TbsHandshakeProAbort
-        >(_encode_TbsHandshakeProAbort);
+        _cached_encoder_for_HandshakeProAbort = _get_encoder_for_Signed<TbsHandshakeProAbort>(
+            _encode_TbsHandshakeProAbort
+        );
     }
     return _cached_encoder_for_HandshakeProAbort(value, elGetter);
 }

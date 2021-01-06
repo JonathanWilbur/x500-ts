@@ -128,9 +128,7 @@ export const _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters:
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ARU_PPDU_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters */
-let _cached_decoder_for_ARU_PPDU_normal_mode_parameters: $.ASN1Decoder<
-    ARU_PPDU_normal_mode_parameters
-> | null = null;
+let _cached_decoder_for_ARU_PPDU_normal_mode_parameters: $.ASN1Decoder<ARU_PPDU_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters */
@@ -157,9 +155,9 @@ export function _decode_ARU_PPDU_normal_mode_parameters(el: _Element) {
             sequence[1].name = "user-data";
             let presentation_context_identifier_list!: Presentation_context_identifier_list;
             let user_data!: ARU_PPDU_normal_mode_parameters_user_data;
-            presentation_context_identifier_list = $._decode_explicit<
-                Presentation_context_identifier_list
-            >(() => _decode_Presentation_context_identifier_list)(sequence[0]);
+            presentation_context_identifier_list = $._decode_explicit<Presentation_context_identifier_list>(
+                () => _decode_Presentation_context_identifier_list
+            )(sequence[0]);
             user_data = _decode_ARU_PPDU_normal_mode_parameters_user_data(
                 sequence[1]
             );
@@ -174,9 +172,7 @@ export function _decode_ARU_PPDU_normal_mode_parameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters */
-let _cached_encoder_for_ARU_PPDU_normal_mode_parameters: $.ASN1Encoder<
-    ARU_PPDU_normal_mode_parameters
-> | null = null;
+let _cached_encoder_for_ARU_PPDU_normal_mode_parameters: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ARU_PPDU_normal_mode_parameters */

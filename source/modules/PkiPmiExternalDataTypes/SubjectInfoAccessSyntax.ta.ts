@@ -27,9 +27,7 @@ export type SubjectInfoAccessSyntax = AccessDescription[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION SubjectInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectInfoAccessSyntax */
-let _cached_decoder_for_SubjectInfoAccessSyntax: $.ASN1Decoder<
-    SubjectInfoAccessSyntax
-> | null = null;
+let _cached_decoder_for_SubjectInfoAccessSyntax: $.ASN1Decoder<SubjectInfoAccessSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubjectInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubjectInfoAccessSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_SubjectInfoAccessSyntax: $.ASN1Decoder<
  */
 export function _decode_SubjectInfoAccessSyntax(el: _Element) {
     if (!_cached_decoder_for_SubjectInfoAccessSyntax) {
-        _cached_decoder_for_SubjectInfoAccessSyntax = $._decodeSequenceOf<
-            AccessDescription
-        >(() => _decode_AccessDescription);
+        _cached_decoder_for_SubjectInfoAccessSyntax = $._decodeSequenceOf<AccessDescription>(
+            () => _decode_AccessDescription
+        );
     }
     return _cached_decoder_for_SubjectInfoAccessSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SubjectInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectInfoAccessSyntax */
-let _cached_encoder_for_SubjectInfoAccessSyntax: $.ASN1Encoder<
-    SubjectInfoAccessSyntax
-> | null = null;
+let _cached_encoder_for_SubjectInfoAccessSyntax: $.ASN1Encoder<SubjectInfoAccessSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubjectInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubjectInfoAccessSyntax */
@@ -68,9 +64,10 @@ export function _encode_SubjectInfoAccessSyntax(
     elGetter: $.ASN1Encoder<SubjectInfoAccessSyntax>
 ) {
     if (!_cached_encoder_for_SubjectInfoAccessSyntax) {
-        _cached_encoder_for_SubjectInfoAccessSyntax = $._encodeSequenceOf<
-            AccessDescription
-        >(() => _encode_AccessDescription, $.BER);
+        _cached_encoder_for_SubjectInfoAccessSyntax = $._encodeSequenceOf<AccessDescription>(
+            () => _encode_AccessDescription,
+            $.BER
+        );
     }
     return _cached_encoder_for_SubjectInfoAccessSyntax(value, elGetter);
 }

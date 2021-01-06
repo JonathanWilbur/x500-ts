@@ -39,9 +39,7 @@ export type AuthenticationChoice =
 /* END_OF_SYMBOL_DEFINITION AuthenticationChoice */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationChoice */
-let _cached_decoder_for_AuthenticationChoice: $.ASN1Decoder<
-    AuthenticationChoice
-> | null = null;
+let _cached_decoder_for_AuthenticationChoice: $.ASN1Decoder<AuthenticationChoice> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthenticationChoice */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthenticationChoice */
@@ -53,29 +51,29 @@ let _cached_decoder_for_AuthenticationChoice: $.ASN1Decoder<
  */
 export function _decode_AuthenticationChoice(el: _Element) {
     if (!_cached_decoder_for_AuthenticationChoice) {
-        _cached_decoder_for_AuthenticationChoice = $._decode_extensible_choice<
-            AuthenticationChoice
-        >({
-            "CONTEXT 0": [
-                "simple",
-                $._decode_implicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-            "CONTEXT 3": [
-                "sasl",
-                $._decode_implicit<SaslCredentials>(
-                    () => _decode_SaslCredentials
-                ),
-            ],
-        });
+        _cached_decoder_for_AuthenticationChoice = $._decode_extensible_choice<AuthenticationChoice>(
+            {
+                "CONTEXT 0": [
+                    "simple",
+                    $._decode_implicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "sasl",
+                    $._decode_implicit<SaslCredentials>(
+                        () => _decode_SaslCredentials
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_AuthenticationChoice(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AuthenticationChoice */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationChoice */
-let _cached_encoder_for_AuthenticationChoice: $.ASN1Encoder<
-    AuthenticationChoice
-> | null = null;
+let _cached_encoder_for_AuthenticationChoice: $.ASN1Encoder<AuthenticationChoice> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthenticationChoice */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthenticationChoice */
@@ -91,9 +89,7 @@ export function _encode_AuthenticationChoice(
     elGetter: $.ASN1Encoder<AuthenticationChoice>
 ) {
     if (!_cached_encoder_for_AuthenticationChoice) {
-        _cached_encoder_for_AuthenticationChoice = $._encode_choice<
-            AuthenticationChoice
-        >(
+        _cached_encoder_for_AuthenticationChoice = $._encode_choice<AuthenticationChoice>(
             {
                 simple: $._encode_implicit(
                     _TagClass.context,

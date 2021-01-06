@@ -193,8 +193,8 @@ export function _decode_DayTimeBand(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DayTimeBand /* SEQUENCE_CONSTRUCTOR_CALL */(
-                startDayTime,
+            return new DayTimeBand(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startDayTime,
                 endDayTime,
                 _unrecognizedExtensionsList
             );

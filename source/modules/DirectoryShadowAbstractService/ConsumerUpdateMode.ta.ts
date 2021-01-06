@@ -27,9 +27,7 @@ export type ConsumerUpdateMode = SchedulingParameters; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ConsumerUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ConsumerUpdateMode */
-let _cached_decoder_for_ConsumerUpdateMode: $.ASN1Decoder<
-    ConsumerUpdateMode
-> | null = null;
+let _cached_decoder_for_ConsumerUpdateMode: $.ASN1Decoder<ConsumerUpdateMode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ConsumerUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ConsumerUpdateMode */
@@ -48,9 +46,7 @@ export function _decode_ConsumerUpdateMode(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ConsumerUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ConsumerUpdateMode */
-let _cached_encoder_for_ConsumerUpdateMode: $.ASN1Encoder<
-    ConsumerUpdateMode
-> | null = null;
+let _cached_encoder_for_ConsumerUpdateMode: $.ASN1Encoder<ConsumerUpdateMode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ConsumerUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ConsumerUpdateMode */

@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_ClassAttributeSelection: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ClassAttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ClassAttributeSelection */
-let _cached_decoder_for_ClassAttributeSelection: $.ASN1Decoder<
-    ClassAttributeSelection
-> | null = null;
+let _cached_decoder_for_ClassAttributeSelection: $.ASN1Decoder<ClassAttributeSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ClassAttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ClassAttributeSelection */
@@ -174,8 +172,8 @@ export function _decode_ClassAttributeSelection(el: _Element) {
                 _root_component_type_list_2_spec_for_ClassAttributeSelection,
                 undefined
             );
-            return new ClassAttributeSelection /* SEQUENCE_CONSTRUCTOR_CALL */(
-                class_,
+            return new ClassAttributeSelection(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ class_,
                 classAttributes
             );
         };
@@ -185,9 +183,7 @@ export function _decode_ClassAttributeSelection(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ClassAttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ClassAttributeSelection */
-let _cached_encoder_for_ClassAttributeSelection: $.ASN1Encoder<
-    ClassAttributeSelection
-> | null = null;
+let _cached_encoder_for_ClassAttributeSelection: $.ASN1Encoder<ClassAttributeSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ClassAttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ClassAttributeSelection */

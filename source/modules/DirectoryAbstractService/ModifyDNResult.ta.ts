@@ -45,9 +45,7 @@ export type ModifyDNResult =
 /* END_OF_SYMBOL_DEFINITION ModifyDNResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNResult */
-let _cached_decoder_for_ModifyDNResult: $.ASN1Decoder<
-    ModifyDNResult
-> | null = null;
+let _cached_decoder_for_ModifyDNResult: $.ASN1Decoder<ModifyDNResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyDNResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyDNResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_ModifyDNResult: $.ASN1Decoder<
  */
 export function _decode_ModifyDNResult(el: _Element) {
     if (!_cached_decoder_for_ModifyDNResult) {
-        _cached_decoder_for_ModifyDNResult = $._decode_extensible_choice<
-            ModifyDNResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(
-                    _decode_ModifyDNResultData
-                ),
-            ],
-        });
+        _cached_decoder_for_ModifyDNResult = $._decode_extensible_choice<ModifyDNResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(
+                        _decode_ModifyDNResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifyDNResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyDNResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNResult */
-let _cached_encoder_for_ModifyDNResult: $.ASN1Encoder<
-    ModifyDNResult
-> | null = null;
+let _cached_encoder_for_ModifyDNResult: $.ASN1Encoder<ModifyDNResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyDNResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyDNResult */
@@ -97,9 +93,9 @@ export function _encode_ModifyDNResult(
         _cached_encoder_for_ModifyDNResult = $._encode_choice<ModifyDNResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    ModifyDNResultData
-                >(_encode_ModifyDNResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ModifyDNResultData>(
+                    _encode_ModifyDNResultData
+                ),
             },
             $.BER
         );

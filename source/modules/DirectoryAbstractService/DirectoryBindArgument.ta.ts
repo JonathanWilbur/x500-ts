@@ -162,9 +162,7 @@ export const _extension_additions_list_spec_for_DirectoryBindArgument: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DirectoryBindArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindArgument */
-let _cached_decoder_for_DirectoryBindArgument: $.ASN1Decoder<
-    DirectoryBindArgument
-> | null = null;
+let _cached_decoder_for_DirectoryBindArgument: $.ASN1Decoder<DirectoryBindArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryBindArgument */
@@ -209,8 +207,8 @@ export function _decode_DirectoryBindArgument(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DirectoryBindArgument /* SET_CONSTRUCTOR_CALL */(
-                credentials,
+            return new DirectoryBindArgument(
+                /* SET_CONSTRUCTOR_CALL */ credentials,
                 versions,
                 _unrecognizedExtensionsList
             );
@@ -221,9 +219,7 @@ export function _decode_DirectoryBindArgument(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryBindArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindArgument */
-let _cached_encoder_for_DirectoryBindArgument: $.ASN1Encoder<
-    DirectoryBindArgument
-> | null = null;
+let _cached_encoder_for_DirectoryBindArgument: $.ASN1Encoder<DirectoryBindArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryBindArgument */

@@ -55,9 +55,7 @@ export type Period_months =
 /* END_OF_SYMBOL_DEFINITION Period_months */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_months */
-let _cached_decoder_for_Period_months: $.ASN1Decoder<
-    Period_months
-> | null = null;
+let _cached_decoder_for_Period_months: $.ASN1Decoder<Period_months> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_months */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Period_months */
@@ -69,25 +67,23 @@ let _cached_decoder_for_Period_months: $.ASN1Decoder<
  */
 export function _decode_Period_months(el: _Element) {
     if (!_cached_decoder_for_Period_months) {
-        _cached_decoder_for_Period_months = $._decode_extensible_choice<
-            Period_months
-        >({
-            "UNIVERSAL 5": ["allMonths", $._decodeNull],
-            "UNIVERSAL 17": [
-                "intMonth",
-                $._decodeSetOf<INTEGER>(() => $._decodeInteger),
-            ],
-            "UNIVERSAL 3": ["bitMonth", _decode_Period_months_bitMonth],
-        });
+        _cached_decoder_for_Period_months = $._decode_extensible_choice<Period_months>(
+            {
+                "UNIVERSAL 5": ["allMonths", $._decodeNull],
+                "UNIVERSAL 17": [
+                    "intMonth",
+                    $._decodeSetOf<INTEGER>(() => $._decodeInteger),
+                ],
+                "UNIVERSAL 3": ["bitMonth", _decode_Period_months_bitMonth],
+            }
+        );
     }
     return _cached_decoder_for_Period_months(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Period_months */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_months */
-let _cached_encoder_for_Period_months: $.ASN1Encoder<
-    Period_months
-> | null = null;
+let _cached_encoder_for_Period_months: $.ASN1Encoder<Period_months> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_months */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Period_months */

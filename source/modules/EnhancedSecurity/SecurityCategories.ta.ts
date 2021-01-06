@@ -27,9 +27,7 @@ export type SecurityCategories = SecurityCategory[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION SecurityCategories */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityCategories */
-let _cached_decoder_for_SecurityCategories: $.ASN1Decoder<
-    SecurityCategories
-> | null = null;
+let _cached_decoder_for_SecurityCategories: $.ASN1Decoder<SecurityCategories> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityCategories */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityCategories */
@@ -41,18 +39,16 @@ let _cached_decoder_for_SecurityCategories: $.ASN1Decoder<
  */
 export function _decode_SecurityCategories(el: _Element) {
     if (!_cached_decoder_for_SecurityCategories) {
-        _cached_decoder_for_SecurityCategories = $._decodeSetOf<
-            SecurityCategory
-        >(() => _decode_SecurityCategory);
+        _cached_decoder_for_SecurityCategories = $._decodeSetOf<SecurityCategory>(
+            () => _decode_SecurityCategory
+        );
     }
     return _cached_decoder_for_SecurityCategories(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityCategories */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityCategories */
-let _cached_encoder_for_SecurityCategories: $.ASN1Encoder<
-    SecurityCategories
-> | null = null;
+let _cached_encoder_for_SecurityCategories: $.ASN1Encoder<SecurityCategories> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityCategories */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityCategories */
@@ -68,9 +64,10 @@ export function _encode_SecurityCategories(
     elGetter: $.ASN1Encoder<SecurityCategories>
 ) {
     if (!_cached_encoder_for_SecurityCategories) {
-        _cached_encoder_for_SecurityCategories = $._encodeSetOf<
-            SecurityCategory
-        >(() => _encode_SecurityCategory, $.BER);
+        _cached_encoder_for_SecurityCategories = $._encodeSetOf<SecurityCategory>(
+            () => _encode_SecurityCategory,
+            $.BER
+        );
     }
     return _cached_encoder_for_SecurityCategories(value, elGetter);
 }

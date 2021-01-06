@@ -103,9 +103,7 @@ export const dSAOperation: AttributeUsage = AttributeUsage_dSAOperation; /* SHOR
 /* END_OF_SYMBOL_DEFINITION dSAOperation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeUsage */
-let _cached_decoder_for_AttributeUsage: $.ASN1Decoder<
-    AttributeUsage
-> | null = null;
+let _cached_decoder_for_AttributeUsage: $.ASN1Decoder<AttributeUsage> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeUsage */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeUsage */
@@ -124,9 +122,7 @@ export function _decode_AttributeUsage(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeUsage */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeUsage */
-let _cached_encoder_for_AttributeUsage: $.ASN1Encoder<
-    AttributeUsage
-> | null = null;
+let _cached_encoder_for_AttributeUsage: $.ASN1Encoder<AttributeUsage> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeUsage */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeUsage */

@@ -34,9 +34,7 @@ export type UnboundedDirectoryString =
 /* END_OF_SYMBOL_DEFINITION UnboundedDirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UnboundedDirectoryString */
-let _cached_decoder_for_UnboundedDirectoryString: $.ASN1Decoder<
-    UnboundedDirectoryString
-> | null = null;
+let _cached_decoder_for_UnboundedDirectoryString: $.ASN1Decoder<UnboundedDirectoryString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UnboundedDirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UnboundedDirectoryString */
@@ -48,24 +46,22 @@ let _cached_decoder_for_UnboundedDirectoryString: $.ASN1Decoder<
  */
 export function _decode_UnboundedDirectoryString(el: _Element) {
     if (!_cached_decoder_for_UnboundedDirectoryString) {
-        _cached_decoder_for_UnboundedDirectoryString = $._decode_inextensible_choice<
-            UnboundedDirectoryString
-        >({
-            "UNIVERSAL 20": ["teletexString", $._decodeTeletexString],
-            "UNIVERSAL 19": ["printableString", $._decodePrintableString],
-            "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
-            "UNIVERSAL 28": ["universalString", $._decodeUniversalString],
-            "UNIVERSAL 12": ["uTF8String", $._decodeUTF8String],
-        });
+        _cached_decoder_for_UnboundedDirectoryString = $._decode_inextensible_choice<UnboundedDirectoryString>(
+            {
+                "UNIVERSAL 20": ["teletexString", $._decodeTeletexString],
+                "UNIVERSAL 19": ["printableString", $._decodePrintableString],
+                "UNIVERSAL 30": ["bmpString", $._decodeBMPString],
+                "UNIVERSAL 28": ["universalString", $._decodeUniversalString],
+                "UNIVERSAL 12": ["uTF8String", $._decodeUTF8String],
+            }
+        );
     }
     return _cached_decoder_for_UnboundedDirectoryString(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UnboundedDirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UnboundedDirectoryString */
-let _cached_encoder_for_UnboundedDirectoryString: $.ASN1Encoder<
-    UnboundedDirectoryString
-> | null = null;
+let _cached_encoder_for_UnboundedDirectoryString: $.ASN1Encoder<UnboundedDirectoryString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UnboundedDirectoryString */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UnboundedDirectoryString */
@@ -81,9 +77,7 @@ export function _encode_UnboundedDirectoryString(
     elGetter: $.ASN1Encoder<UnboundedDirectoryString>
 ) {
     if (!_cached_encoder_for_UnboundedDirectoryString) {
-        _cached_encoder_for_UnboundedDirectoryString = $._encode_choice<
-            UnboundedDirectoryString
-        >(
+        _cached_encoder_for_UnboundedDirectoryString = $._encode_choice<UnboundedDirectoryString>(
             {
                 teletexString: $._encodeTeletexString,
                 printableString: $._encodePrintableString,

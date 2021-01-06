@@ -171,9 +171,7 @@ export const _extension_additions_list_spec_for_AuthorityKeyIdentifier: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AuthorityKeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityKeyIdentifier */
-let _cached_decoder_for_AuthorityKeyIdentifier: $.ASN1Decoder<
-    AuthorityKeyIdentifier
-> | null = null;
+let _cached_decoder_for_AuthorityKeyIdentifier: $.ASN1Decoder<AuthorityKeyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityKeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthorityKeyIdentifier */
@@ -207,9 +205,9 @@ export function _decode_AuthorityKeyIdentifier(el: _Element) {
                     )(_el);
                 },
                 authorityCertSerialNumber: (_el: _Element): void => {
-                    authorityCertSerialNumber = $._decode_implicit<
-                        CertificateSerialNumber
-                    >(() => _decode_CertificateSerialNumber)(_el);
+                    authorityCertSerialNumber = $._decode_implicit<CertificateSerialNumber>(
+                        () => _decode_CertificateSerialNumber
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -223,8 +221,8 @@ export function _decode_AuthorityKeyIdentifier(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AuthorityKeyIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-                keyIdentifier,
+            return new AuthorityKeyIdentifier(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ keyIdentifier,
                 authorityCertIssuer,
                 authorityCertSerialNumber,
                 _unrecognizedExtensionsList
@@ -236,9 +234,7 @@ export function _decode_AuthorityKeyIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AuthorityKeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityKeyIdentifier */
-let _cached_encoder_for_AuthorityKeyIdentifier: $.ASN1Encoder<
-    AuthorityKeyIdentifier
-> | null = null;
+let _cached_encoder_for_AuthorityKeyIdentifier: $.ASN1Encoder<AuthorityKeyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityKeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthorityKeyIdentifier */

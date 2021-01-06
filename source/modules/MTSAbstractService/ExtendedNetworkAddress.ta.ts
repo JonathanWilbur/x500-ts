@@ -49,9 +49,7 @@ export type ExtendedNetworkAddress =
 /* END_OF_SYMBOL_DEFINITION ExtendedNetworkAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedNetworkAddress */
-let _cached_decoder_for_ExtendedNetworkAddress: $.ASN1Decoder<
-    ExtendedNetworkAddress
-> | null = null;
+let _cached_decoder_for_ExtendedNetworkAddress: $.ASN1Decoder<ExtendedNetworkAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedNetworkAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtendedNetworkAddress */
@@ -63,29 +61,27 @@ let _cached_decoder_for_ExtendedNetworkAddress: $.ASN1Decoder<
  */
 export function _decode_ExtendedNetworkAddress(el: _Element) {
     if (!_cached_decoder_for_ExtendedNetworkAddress) {
-        _cached_decoder_for_ExtendedNetworkAddress = $._decode_inextensible_choice<
-            ExtendedNetworkAddress
-        >({
-            "UNIVERSAL 16": [
-                "e163_4_address",
-                _decode_ExtendedNetworkAddress_e163_4_address,
-            ],
-            "CONTEXT 0": [
-                "psap_address",
-                $._decode_implicit<PresentationAddress>(
-                    () => _decode_PresentationAddress
-                ),
-            ],
-        });
+        _cached_decoder_for_ExtendedNetworkAddress = $._decode_inextensible_choice<ExtendedNetworkAddress>(
+            {
+                "UNIVERSAL 16": [
+                    "e163_4_address",
+                    _decode_ExtendedNetworkAddress_e163_4_address,
+                ],
+                "CONTEXT 0": [
+                    "psap_address",
+                    $._decode_implicit<PresentationAddress>(
+                        () => _decode_PresentationAddress
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ExtendedNetworkAddress(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ExtendedNetworkAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedNetworkAddress */
-let _cached_encoder_for_ExtendedNetworkAddress: $.ASN1Encoder<
-    ExtendedNetworkAddress
-> | null = null;
+let _cached_encoder_for_ExtendedNetworkAddress: $.ASN1Encoder<ExtendedNetworkAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedNetworkAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtendedNetworkAddress */
@@ -101,9 +97,7 @@ export function _encode_ExtendedNetworkAddress(
     elGetter: $.ASN1Encoder<ExtendedNetworkAddress>
 ) {
     if (!_cached_encoder_for_ExtendedNetworkAddress) {
-        _cached_encoder_for_ExtendedNetworkAddress = $._encode_choice<
-            ExtendedNetworkAddress
-        >(
+        _cached_encoder_for_ExtendedNetworkAddress = $._encode_choice<ExtendedNetworkAddress>(
             {
                 e163_4_address: _encode_ExtendedNetworkAddress_e163_4_address,
                 psap_address: $._encode_implicit(

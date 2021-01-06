@@ -79,9 +79,7 @@ export class EncryptedPduInfo {
          * @public
          * @readonly
          */
-        readonly pduEncryptionAlgorithm: OPTIONAL<
-            EncryptedPduInfo_pduEncryptionAlgorithm
-        >,
+        readonly pduEncryptionAlgorithm: OPTIONAL<EncryptedPduInfo_pduEncryptionAlgorithm>,
         /**
          * @summary `encryptedPdu`.
          * @public
@@ -188,9 +186,7 @@ export const _extension_additions_list_spec_for_EncryptedPduInfo: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EncryptedPduInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedPduInfo */
-let _cached_decoder_for_EncryptedPduInfo: $.ASN1Decoder<
-    EncryptedPduInfo
-> | null = null;
+let _cached_decoder_for_EncryptedPduInfo: $.ASN1Decoder<EncryptedPduInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EncryptedPduInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EncryptedPduInfo */
@@ -242,8 +238,8 @@ export function _decode_EncryptedPduInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EncryptedPduInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                pduType,
+            return new EncryptedPduInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ pduType,
                 encryptedKey,
                 pduEncryptionAlgorithm,
                 encryptedPdu,
@@ -256,9 +252,7 @@ export function _decode_EncryptedPduInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EncryptedPduInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedPduInfo */
-let _cached_encoder_for_EncryptedPduInfo: $.ASN1Encoder<
-    EncryptedPduInfo
-> | null = null;
+let _cached_encoder_for_EncryptedPduInfo: $.ASN1Encoder<EncryptedPduInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EncryptedPduInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EncryptedPduInfo */

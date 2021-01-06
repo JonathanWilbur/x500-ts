@@ -182,8 +182,8 @@ export function _decode_RoleSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RoleSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                roleAuthority,
+            return new RoleSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ roleAuthority,
                 roleName,
                 _unrecognizedExtensionsList
             );

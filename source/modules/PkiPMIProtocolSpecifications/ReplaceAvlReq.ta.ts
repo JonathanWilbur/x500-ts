@@ -235,9 +235,7 @@ export const _extension_additions_list_spec_for_ReplaceAvlReq: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ReplaceAvlReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlReq */
-let _cached_decoder_for_ReplaceAvlReq: $.ASN1Decoder<
-    ReplaceAvlReq
-> | null = null;
+let _cached_decoder_for_ReplaceAvlReq: $.ASN1Decoder<ReplaceAvlReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReplaceAvlReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReplaceAvlReq */
@@ -290,8 +288,8 @@ export function _decode_ReplaceAvlReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ReplaceAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new ReplaceAvlReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 old,
@@ -305,9 +303,7 @@ export function _decode_ReplaceAvlReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReplaceAvlReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlReq */
-let _cached_encoder_for_ReplaceAvlReq: $.ASN1Encoder<
-    ReplaceAvlReq
-> | null = null;
+let _cached_encoder_for_ReplaceAvlReq: $.ASN1Encoder<ReplaceAvlReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReplaceAvlReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReplaceAvlReq */

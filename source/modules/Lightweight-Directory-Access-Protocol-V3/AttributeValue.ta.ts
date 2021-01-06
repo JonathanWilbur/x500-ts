@@ -17,9 +17,7 @@ export type AttributeValue = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION AttributeValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValue */
-let _cached_decoder_for_AttributeValue: $.ASN1Decoder<
-    AttributeValue
-> | null = null;
+let _cached_decoder_for_AttributeValue: $.ASN1Decoder<AttributeValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeValue */
@@ -38,9 +36,7 @@ export function _decode_AttributeValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValue */
-let _cached_encoder_for_AttributeValue: $.ASN1Encoder<
-    AttributeValue
-> | null = null;
+let _cached_encoder_for_AttributeValue: $.ASN1Encoder<AttributeValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeValue */

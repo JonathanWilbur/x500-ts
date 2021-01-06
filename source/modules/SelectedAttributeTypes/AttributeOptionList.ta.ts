@@ -17,9 +17,7 @@ export type AttributeOptionList = UTF8String[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AttributeOptionList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeOptionList */
-let _cached_decoder_for_AttributeOptionList: $.ASN1Decoder<
-    AttributeOptionList
-> | null = null;
+let _cached_decoder_for_AttributeOptionList: $.ASN1Decoder<AttributeOptionList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeOptionList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeOptionList */
@@ -31,18 +29,16 @@ let _cached_decoder_for_AttributeOptionList: $.ASN1Decoder<
  */
 export function _decode_AttributeOptionList(el: _Element) {
     if (!_cached_decoder_for_AttributeOptionList) {
-        _cached_decoder_for_AttributeOptionList = $._decodeSequenceOf<
-            UTF8String
-        >(() => $._decodeUTF8String);
+        _cached_decoder_for_AttributeOptionList = $._decodeSequenceOf<UTF8String>(
+            () => $._decodeUTF8String
+        );
     }
     return _cached_decoder_for_AttributeOptionList(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeOptionList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeOptionList */
-let _cached_encoder_for_AttributeOptionList: $.ASN1Encoder<
-    AttributeOptionList
-> | null = null;
+let _cached_encoder_for_AttributeOptionList: $.ASN1Encoder<AttributeOptionList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeOptionList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeOptionList */
@@ -58,9 +54,10 @@ export function _encode_AttributeOptionList(
     elGetter: $.ASN1Encoder<AttributeOptionList>
 ) {
     if (!_cached_encoder_for_AttributeOptionList) {
-        _cached_encoder_for_AttributeOptionList = $._encodeSequenceOf<
-            UTF8String
-        >(() => $._encodeUTF8String, $.BER);
+        _cached_encoder_for_AttributeOptionList = $._encodeSequenceOf<UTF8String>(
+            () => $._encodeUTF8String,
+            $.BER
+        );
     }
     return _cached_encoder_for_AttributeOptionList(value, elGetter);
 }

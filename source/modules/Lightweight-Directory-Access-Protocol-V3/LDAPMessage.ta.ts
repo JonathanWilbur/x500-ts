@@ -225,8 +225,8 @@ export function _decode_LDAPMessage(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new LDAPMessage /* SEQUENCE_CONSTRUCTOR_CALL */(
-                messageID,
+            return new LDAPMessage(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ messageID,
                 protocolOp,
                 controls,
                 _unrecognizedExtensionsList

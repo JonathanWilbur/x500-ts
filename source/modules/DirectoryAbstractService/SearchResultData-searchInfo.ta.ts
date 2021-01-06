@@ -122,25 +122,19 @@ export class SearchResultData_searchInfo {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -291,9 +285,7 @@ export const _extension_additions_list_spec_for_SearchResultData_searchInfo: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SearchResultData_searchInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultData_searchInfo */
-let _cached_decoder_for_SearchResultData_searchInfo: $.ASN1Decoder<
-    SearchResultData_searchInfo
-> | null = null;
+let _cached_decoder_for_SearchResultData_searchInfo: $.ASN1Decoder<SearchResultData_searchInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultData_searchInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchResultData_searchInfo */
@@ -334,9 +326,9 @@ export function _decode_SearchResultData_searchInfo(el: _Element) {
                     )(_el);
                 },
                 partialOutcomeQualifier: (_el: _Element): void => {
-                    partialOutcomeQualifier = $._decode_explicit<
-                        PartialOutcomeQualifier
-                    >(() => _decode_PartialOutcomeQualifier)(_el);
+                    partialOutcomeQualifier = $._decode_explicit<PartialOutcomeQualifier>(
+                        () => _decode_PartialOutcomeQualifier
+                    )(_el);
                 },
                 altMatching: (_el: _Element): void => {
                     altMatching = $._decode_explicit<BOOLEAN>(
@@ -375,8 +367,8 @@ export function _decode_SearchResultData_searchInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SearchResultData_searchInfo /* SET_CONSTRUCTOR_CALL */(
-                name,
+            return new SearchResultData_searchInfo(
+                /* SET_CONSTRUCTOR_CALL */ name,
                 entries,
                 partialOutcomeQualifier,
                 altMatching,
@@ -393,9 +385,7 @@ export function _decode_SearchResultData_searchInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchResultData_searchInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultData_searchInfo */
-let _cached_encoder_for_SearchResultData_searchInfo: $.ASN1Encoder<
-    SearchResultData_searchInfo
-> | null = null;
+let _cached_encoder_for_SearchResultData_searchInfo: $.ASN1Encoder<SearchResultData_searchInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultData_searchInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchResultData_searchInfo */

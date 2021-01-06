@@ -124,9 +124,7 @@ export const _extension_additions_list_spec_for_supplierOrConsumerInformationMat
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_supplierOrConsumerInformationMatch_AssertionType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_supplierOrConsumerInformationMatch_AssertionType */
-let _cached_decoder_for_supplierOrConsumerInformationMatch_AssertionType: $.ASN1Decoder<
-    supplierOrConsumerInformationMatch_AssertionType
-> | null = null;
+let _cached_decoder_for_supplierOrConsumerInformationMatch_AssertionType: $.ASN1Decoder<supplierOrConsumerInformationMatch_AssertionType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_supplierOrConsumerInformationMatch_AssertionType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_supplierOrConsumerInformationMatch_AssertionType */
@@ -169,8 +167,8 @@ export function _decode_supplierOrConsumerInformationMatch_AssertionType(
                 _root_component_type_list_2_spec_for_supplierOrConsumerInformationMatch_AssertionType,
                 undefined
             );
-            return new supplierOrConsumerInformationMatch_AssertionType /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new supplierOrConsumerInformationMatch_AssertionType(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 agreement_identifier
             );
         };
@@ -182,9 +180,7 @@ export function _decode_supplierOrConsumerInformationMatch_AssertionType(
 /* END_OF_SYMBOL_DEFINITION _decode_supplierOrConsumerInformationMatch_AssertionType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType */
-let _cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType: $.ASN1Encoder<
-    supplierOrConsumerInformationMatch_AssertionType
-> | null = null;
+let _cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType: $.ASN1Encoder<supplierOrConsumerInformationMatch_AssertionType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_supplierOrConsumerInformationMatch_AssertionType */
@@ -202,9 +198,7 @@ export function _encode_supplierOrConsumerInformationMatch_AssertionType(
     if (!_cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType) {
         _cached_encoder_for_supplierOrConsumerInformationMatch_AssertionType = function (
             value: supplierOrConsumerInformationMatch_AssertionType,
-            elGetter: $.ASN1Encoder<
-                supplierOrConsumerInformationMatch_AssertionType
-            >
+            elGetter: $.ASN1Encoder<supplierOrConsumerInformationMatch_AssertionType>
         ): _Element {
             return $._encodeSet(
                 ([] as (_Element | undefined)[])

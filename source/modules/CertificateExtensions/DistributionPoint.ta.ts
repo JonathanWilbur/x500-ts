@@ -235,8 +235,8 @@ export function _decode_DistributionPoint(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DistributionPoint /* SEQUENCE_CONSTRUCTOR_CALL */(
-                distributionPoint,
+            return new DistributionPoint(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
                 reasons,
                 cRLIssuer,
                 _unrecognizedExtensionsList

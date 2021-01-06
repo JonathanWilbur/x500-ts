@@ -158,9 +158,7 @@ export const _extension_additions_list_spec_for_OsiBindResult_normal_mode_parame
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
-let _cached_decoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Decoder<
-    OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item
-> | null = null;
+let _cached_decoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Decoder<OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
@@ -209,8 +207,8 @@ export function _decode_OsiBindResult_normal_mode_parameters_user_data_fully_enc
                 _root_component_type_list_2_spec_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item,
                 undefined
             );
-            return new OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                transfer_syntax_name,
+            return new OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ transfer_syntax_name,
                 presentation_context_identifier,
                 presentation_data_values
             );
@@ -223,9 +221,7 @@ export function _decode_OsiBindResult_normal_mode_parameters_user_data_fully_enc
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
-let _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Encoder<
-    OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item
-> | null = null;
+let _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item */
@@ -238,18 +234,14 @@ let _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_enc
  */
 export function _encode_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item(
     value: OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item,
-    elGetter: $.ASN1Encoder<
-        OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item
-    >
+    elGetter: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item>
 ) {
     if (
         !_cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item
     ) {
         _cached_encoder_for_OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item = function (
             value: OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item,
-            elGetter: $.ASN1Encoder<
-                OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item
-            >
+            elGetter: $.ASN1Encoder<OsiBindResult_normal_mode_parameters_user_data_fully_encoded_data_Item>
         ): _Element {
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])

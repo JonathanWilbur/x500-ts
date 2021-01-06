@@ -48,30 +48,30 @@ let _cached_decoder_for_UiiFilter: $.ASN1Decoder<UiiFilter> | null = null;
  */
 export function _decode_UiiFilter(el: _Element) {
     if (!_cached_decoder_for_UiiFilter) {
-        _cached_decoder_for_UiiFilter = $._decode_inextensible_choice<
-            UiiFilter
-        >({
-            "CONTEXT 0": [
-                "item",
-                $._decode_explicit<UiiItem>(() => _decode_UiiItem),
-            ],
-            "CONTEXT 1": [
-                "and",
-                $._decode_explicit<UiiFilter[]>(() =>
-                    $._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
-                ),
-            ],
-            "CONTEXT 2": [
-                "or",
-                $._decode_explicit<UiiFilter[]>(() =>
-                    $._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
-                ),
-            ],
-            "CONTEXT 3": [
-                "not",
-                $._decode_explicit<UiiFilter>(() => _decode_UiiFilter),
-            ],
-        });
+        _cached_decoder_for_UiiFilter = $._decode_inextensible_choice<UiiFilter>(
+            {
+                "CONTEXT 0": [
+                    "item",
+                    $._decode_explicit<UiiItem>(() => _decode_UiiItem),
+                ],
+                "CONTEXT 1": [
+                    "and",
+                    $._decode_explicit<UiiFilter[]>(() =>
+                        $._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "or",
+                    $._decode_explicit<UiiFilter[]>(() =>
+                        $._decodeSetOf<UiiFilter>(() => _decode_UiiFilter)
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "not",
+                    $._decode_explicit<UiiFilter>(() => _decode_UiiFilter),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_UiiFilter(el);
 }

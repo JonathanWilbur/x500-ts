@@ -133,9 +133,7 @@ export const _extension_additions_list_spec_for_IntermediateResponse: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_IntermediateResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IntermediateResponse */
-let _cached_decoder_for_IntermediateResponse: $.ASN1Decoder<
-    IntermediateResponse
-> | null = null;
+let _cached_decoder_for_IntermediateResponse: $.ASN1Decoder<IntermediateResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IntermediateResponse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IntermediateResponse */
@@ -147,9 +145,7 @@ let _cached_decoder_for_IntermediateResponse: $.ASN1Decoder<
  */
 export function _decode_IntermediateResponse(el: _Element) {
     if (!_cached_decoder_for_IntermediateResponse) {
-        _cached_decoder_for_IntermediateResponse = $._decode_implicit<
-            IntermediateResponse
-        >(
+        _cached_decoder_for_IntermediateResponse = $._decode_implicit<IntermediateResponse>(
             () =>
                 function (el: _Element): IntermediateResponse {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -181,8 +177,8 @@ export function _decode_IntermediateResponse(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new IntermediateResponse /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        responseName,
+                    return new IntermediateResponse(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ responseName,
                         responseValue,
                         _unrecognizedExtensionsList
                     );
@@ -194,9 +190,7 @@ export function _decode_IntermediateResponse(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IntermediateResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IntermediateResponse */
-let _cached_encoder_for_IntermediateResponse: $.ASN1Encoder<
-    IntermediateResponse
-> | null = null;
+let _cached_encoder_for_IntermediateResponse: $.ASN1Encoder<IntermediateResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IntermediateResponse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IntermediateResponse */

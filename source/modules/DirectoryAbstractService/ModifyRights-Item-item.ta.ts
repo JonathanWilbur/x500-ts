@@ -45,9 +45,7 @@ export type ModifyRights_Item_item =
 /* END_OF_SYMBOL_DEFINITION ModifyRights_Item_item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item_item */
-let _cached_decoder_for_ModifyRights_Item_item: $.ASN1Decoder<
-    ModifyRights_Item_item
-> | null = null;
+let _cached_decoder_for_ModifyRights_Item_item: $.ASN1Decoder<ModifyRights_Item_item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item_item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item_item */
@@ -59,33 +57,33 @@ let _cached_decoder_for_ModifyRights_Item_item: $.ASN1Decoder<
  */
 export function _decode_ModifyRights_Item_item(el: _Element) {
     if (!_cached_decoder_for_ModifyRights_Item_item) {
-        _cached_decoder_for_ModifyRights_Item_item = $._decode_extensible_choice<
-            ModifyRights_Item_item
-        >({
-            "CONTEXT 0": [
-                "entry",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-            "CONTEXT 1": [
-                "attribute",
-                $._decode_explicit<AttributeType>(() => _decode_AttributeType),
-            ],
-            "CONTEXT 2": [
-                "value",
-                $._decode_explicit<AttributeValueAssertion>(
-                    () => _decode_AttributeValueAssertion
-                ),
-            ],
-        });
+        _cached_decoder_for_ModifyRights_Item_item = $._decode_extensible_choice<ModifyRights_Item_item>(
+            {
+                "CONTEXT 0": [
+                    "entry",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "attribute",
+                    $._decode_explicit<AttributeType>(
+                        () => _decode_AttributeType
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "value",
+                    $._decode_explicit<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifyRights_Item_item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item_item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item_item */
-let _cached_encoder_for_ModifyRights_Item_item: $.ASN1Encoder<
-    ModifyRights_Item_item
-> | null = null;
+let _cached_encoder_for_ModifyRights_Item_item: $.ASN1Encoder<ModifyRights_Item_item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item_item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyRights_Item_item */
@@ -101,9 +99,7 @@ export function _encode_ModifyRights_Item_item(
     elGetter: $.ASN1Encoder<ModifyRights_Item_item>
 ) {
     if (!_cached_encoder_for_ModifyRights_Item_item) {
-        _cached_encoder_for_ModifyRights_Item_item = $._encode_choice<
-            ModifyRights_Item_item
-        >(
+        _cached_encoder_for_ModifyRights_Item_item = $._encode_choice<ModifyRights_Item_item>(
             {
                 entry: $._encode_explicit(
                     _TagClass.context,

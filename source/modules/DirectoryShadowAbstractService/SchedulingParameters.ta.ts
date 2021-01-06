@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_SchedulingParameters: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SchedulingParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SchedulingParameters */
-let _cached_decoder_for_SchedulingParameters: $.ASN1Decoder<
-    SchedulingParameters
-> | null = null;
+let _cached_decoder_for_SchedulingParameters: $.ASN1Decoder<SchedulingParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SchedulingParameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SchedulingParameters */
@@ -187,8 +185,8 @@ export function _decode_SchedulingParameters(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SchedulingParameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-                periodic,
+            return new SchedulingParameters(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ periodic,
                 othertimes,
                 _unrecognizedExtensionsList
             );
@@ -199,9 +197,7 @@ export function _decode_SchedulingParameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SchedulingParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SchedulingParameters */
-let _cached_encoder_for_SchedulingParameters: $.ASN1Encoder<
-    SchedulingParameters
-> | null = null;
+let _cached_encoder_for_SchedulingParameters: $.ASN1Encoder<SchedulingParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SchedulingParameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SchedulingParameters */

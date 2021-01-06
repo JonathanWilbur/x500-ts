@@ -264,9 +264,7 @@ export const _extension_additions_list_spec_for_EstablishOperationalBindingArgum
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EstablishOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EstablishOperationalBindingArgumentData */
-let _cached_decoder_for_EstablishOperationalBindingArgumentData: $.ASN1Decoder<
-    EstablishOperationalBindingArgumentData
-> | null = null;
+let _cached_decoder_for_EstablishOperationalBindingArgumentData: $.ASN1Decoder<EstablishOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EstablishOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EstablishOperationalBindingArgumentData */
@@ -341,8 +339,8 @@ export function _decode_EstablishOperationalBindingArgumentData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EstablishOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                bindingType,
+            return new EstablishOperationalBindingArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
                 bindingID,
                 accessPoint,
                 initiator,
@@ -358,9 +356,7 @@ export function _decode_EstablishOperationalBindingArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EstablishOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EstablishOperationalBindingArgumentData */
-let _cached_encoder_for_EstablishOperationalBindingArgumentData: $.ASN1Encoder<
-    EstablishOperationalBindingArgumentData
-> | null = null;
+let _cached_encoder_for_EstablishOperationalBindingArgumentData: $.ASN1Encoder<EstablishOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EstablishOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EstablishOperationalBindingArgumentData */

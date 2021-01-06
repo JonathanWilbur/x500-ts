@@ -67,9 +67,7 @@ export class ORAddress {
          * @public
          * @readonly
          */
-        readonly built_in_domain_defined_attributes: OPTIONAL<
-            BuiltInDomainDefinedAttributes
-        >,
+        readonly built_in_domain_defined_attributes: OPTIONAL<BuiltInDomainDefinedAttributes>,
         /**
          * @summary `extension_attributes`.
          * @public
@@ -204,8 +202,8 @@ export function _decode_ORAddress(el: _Element) {
                 _root_component_type_list_2_spec_for_ORAddress,
                 undefined
             );
-            return new ORAddress /* SEQUENCE_CONSTRUCTOR_CALL */(
-                built_in_standard_attributes,
+            return new ORAddress(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ built_in_standard_attributes,
                 built_in_domain_defined_attributes,
                 extension_attributes
             );

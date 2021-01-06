@@ -49,9 +49,7 @@ export const outward: number = AssociationEstablishment_outward; /* SHORT_NAMED_
 /* END_OF_SYMBOL_DEFINITION outward */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AssociationEstablishment */
-let _cached_decoder_for_AssociationEstablishment: $.ASN1Decoder<
-    AssociationEstablishment
-> | null = null;
+let _cached_decoder_for_AssociationEstablishment: $.ASN1Decoder<AssociationEstablishment> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AssociationEstablishment */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AssociationEstablishment */
@@ -70,9 +68,7 @@ export function _decode_AssociationEstablishment(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AssociationEstablishment */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AssociationEstablishment */
-let _cached_encoder_for_AssociationEstablishment: $.ASN1Encoder<
-    AssociationEstablishment
-> | null = null;
+let _cached_encoder_for_AssociationEstablishment: $.ASN1Encoder<AssociationEstablishment> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AssociationEstablishment */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AssociationEstablishment */

@@ -17,9 +17,7 @@ export type AES_InitializationVector = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION AES_InitializationVector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AES_InitializationVector */
-let _cached_decoder_for_AES_InitializationVector: $.ASN1Decoder<
-    AES_InitializationVector
-> | null = null;
+let _cached_decoder_for_AES_InitializationVector: $.ASN1Decoder<AES_InitializationVector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AES_InitializationVector */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AES_InitializationVector */
@@ -38,9 +36,7 @@ export function _decode_AES_InitializationVector(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AES_InitializationVector */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AES_InitializationVector */
-let _cached_encoder_for_AES_InitializationVector: $.ASN1Encoder<
-    AES_InitializationVector
-> | null = null;
+let _cached_encoder_for_AES_InitializationVector: $.ASN1Encoder<AES_InitializationVector> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AES_InitializationVector */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AES_InitializationVector */

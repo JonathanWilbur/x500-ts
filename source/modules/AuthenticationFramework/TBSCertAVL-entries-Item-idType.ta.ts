@@ -40,9 +40,7 @@ export type TBSCertAVL_entries_Item_idType =
 /* END_OF_SYMBOL_DEFINITION TBSCertAVL_entries_Item_idType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item_idType */
-let _cached_decoder_for_TBSCertAVL_entries_Item_idType: $.ASN1Decoder<
-    TBSCertAVL_entries_Item_idType
-> | null = null;
+let _cached_decoder_for_TBSCertAVL_entries_Item_idType: $.ASN1Decoder<TBSCertAVL_entries_Item_idType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item_idType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item_idType */
@@ -54,26 +52,24 @@ let _cached_decoder_for_TBSCertAVL_entries_Item_idType: $.ASN1Decoder<
  */
 export function _decode_TBSCertAVL_entries_Item_idType(el: _Element) {
     if (!_cached_decoder_for_TBSCertAVL_entries_Item_idType) {
-        _cached_decoder_for_TBSCertAVL_entries_Item_idType = $._decode_extensible_choice<
-            TBSCertAVL_entries_Item_idType
-        >({
-            "CONTEXT 0": [
-                "certIdentifier",
-                $._decode_explicit<PKCertIdentifier>(
-                    () => _decode_PKCertIdentifier
-                ),
-            ],
-            "UNIVERSAL 16": ["entityGroup", _decode_DistinguishedName],
-        });
+        _cached_decoder_for_TBSCertAVL_entries_Item_idType = $._decode_extensible_choice<TBSCertAVL_entries_Item_idType>(
+            {
+                "CONTEXT 0": [
+                    "certIdentifier",
+                    $._decode_explicit<PKCertIdentifier>(
+                        () => _decode_PKCertIdentifier
+                    ),
+                ],
+                "UNIVERSAL 16": ["entityGroup", _decode_DistinguishedName],
+            }
+        );
     }
     return _cached_decoder_for_TBSCertAVL_entries_Item_idType(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item_idType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item_idType */
-let _cached_encoder_for_TBSCertAVL_entries_Item_idType: $.ASN1Encoder<
-    TBSCertAVL_entries_Item_idType
-> | null = null;
+let _cached_encoder_for_TBSCertAVL_entries_Item_idType: $.ASN1Encoder<TBSCertAVL_entries_Item_idType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item_idType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSCertAVL_entries_Item_idType */
@@ -89,9 +85,7 @@ export function _encode_TBSCertAVL_entries_Item_idType(
     elGetter: $.ASN1Encoder<TBSCertAVL_entries_Item_idType>
 ) {
     if (!_cached_encoder_for_TBSCertAVL_entries_Item_idType) {
-        _cached_encoder_for_TBSCertAVL_entries_Item_idType = $._encode_choice<
-            TBSCertAVL_entries_Item_idType
-        >(
+        _cached_encoder_for_TBSCertAVL_entries_Item_idType = $._encode_choice<TBSCertAVL_entries_Item_idType>(
             {
                 certIdentifier: $._encode_explicit(
                     _TagClass.context,

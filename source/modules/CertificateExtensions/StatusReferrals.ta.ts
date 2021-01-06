@@ -27,9 +27,7 @@ export type StatusReferrals = StatusReferral[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION StatusReferrals */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_StatusReferrals */
-let _cached_decoder_for_StatusReferrals: $.ASN1Decoder<
-    StatusReferrals
-> | null = null;
+let _cached_decoder_for_StatusReferrals: $.ASN1Decoder<StatusReferrals> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_StatusReferrals */
 
 /* START_OF_SYMBOL_DEFINITION _decode_StatusReferrals */
@@ -41,18 +39,16 @@ let _cached_decoder_for_StatusReferrals: $.ASN1Decoder<
  */
 export function _decode_StatusReferrals(el: _Element) {
     if (!_cached_decoder_for_StatusReferrals) {
-        _cached_decoder_for_StatusReferrals = $._decodeSequenceOf<
-            StatusReferral
-        >(() => _decode_StatusReferral);
+        _cached_decoder_for_StatusReferrals = $._decodeSequenceOf<StatusReferral>(
+            () => _decode_StatusReferral
+        );
     }
     return _cached_decoder_for_StatusReferrals(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_StatusReferrals */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_StatusReferrals */
-let _cached_encoder_for_StatusReferrals: $.ASN1Encoder<
-    StatusReferrals
-> | null = null;
+let _cached_encoder_for_StatusReferrals: $.ASN1Encoder<StatusReferrals> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_StatusReferrals */
 
 /* START_OF_SYMBOL_DEFINITION _encode_StatusReferrals */
@@ -68,9 +64,10 @@ export function _encode_StatusReferrals(
     elGetter: $.ASN1Encoder<StatusReferrals>
 ) {
     if (!_cached_encoder_for_StatusReferrals) {
-        _cached_encoder_for_StatusReferrals = $._encodeSequenceOf<
-            StatusReferral
-        >(() => _encode_StatusReferral, $.BER);
+        _cached_encoder_for_StatusReferrals = $._encodeSequenceOf<StatusReferral>(
+            () => _encode_StatusReferral,
+            $.BER
+        );
     }
     return _cached_encoder_for_StatusReferrals(value, elGetter);
 }

@@ -109,25 +109,19 @@ export class AttributeErrorData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -257,9 +251,7 @@ export const _extension_additions_list_spec_for_AttributeErrorData: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeErrorData */
-let _cached_decoder_for_AttributeErrorData: $.ASN1Decoder<
-    AttributeErrorData
-> | null = null;
+let _cached_decoder_for_AttributeErrorData: $.ASN1Decoder<AttributeErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeErrorData */
@@ -330,8 +322,8 @@ export function _decode_AttributeErrorData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeErrorData /* SET_CONSTRUCTOR_CALL */(
-                object,
+            return new AttributeErrorData(
+                /* SET_CONSTRUCTOR_CALL */ object,
                 problems,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -346,9 +338,7 @@ export function _decode_AttributeErrorData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeErrorData */
-let _cached_encoder_for_AttributeErrorData: $.ASN1Encoder<
-    AttributeErrorData
-> | null = null;
+let _cached_encoder_for_AttributeErrorData: $.ASN1Encoder<AttributeErrorData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeErrorData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeErrorData */
@@ -382,9 +372,7 @@ export function _encode_AttributeErrorData(
                                 _TagClass.context,
                                 1,
                                 () =>
-                                    $._encodeSetOf<
-                                        AttributeErrorData_problems_Item
-                                    >(
+                                    $._encodeSetOf<AttributeErrorData_problems_Item>(
                                         () =>
                                             _encode_AttributeErrorData_problems_Item,
                                         $.BER

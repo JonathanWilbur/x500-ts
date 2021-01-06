@@ -168,9 +168,7 @@ export const _extension_additions_list_spec_for_CAsubscribeAbort: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CAsubscribeAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CAsubscribeAbort */
-let _cached_decoder_for_CAsubscribeAbort: $.ASN1Decoder<
-    CAsubscribeAbort
-> | null = null;
+let _cached_decoder_for_CAsubscribeAbort: $.ASN1Decoder<CAsubscribeAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CAsubscribeAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CAsubscribeAbort */
@@ -207,9 +205,7 @@ export function _decode_CAsubscribeAbort(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CAsubscribeAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CAsubscribeAbort */
-let _cached_encoder_for_CAsubscribeAbort: $.ASN1Encoder<
-    CAsubscribeAbort
-> | null = null;
+let _cached_encoder_for_CAsubscribeAbort: $.ASN1Encoder<CAsubscribeAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CAsubscribeAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CAsubscribeAbort */

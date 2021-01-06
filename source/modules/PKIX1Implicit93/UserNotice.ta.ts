@@ -165,8 +165,8 @@ export function _decode_UserNotice(el: _Element) {
                 _root_component_type_list_2_spec_for_UserNotice,
                 undefined
             );
-            return new UserNotice /* SEQUENCE_CONSTRUCTOR_CALL */(
-                noticeRef,
+            return new UserNotice(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ noticeRef,
                 explicitText
             );
         };

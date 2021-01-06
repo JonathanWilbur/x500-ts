@@ -102,9 +102,7 @@ export type SPKMInnerContextToken =
 /* END_OF_SYMBOL_DEFINITION SPKMInnerContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SPKMInnerContextToken */
-let _cached_decoder_for_SPKMInnerContextToken: $.ASN1Decoder<
-    SPKMInnerContextToken
-> | null = null;
+let _cached_decoder_for_SPKMInnerContextToken: $.ASN1Decoder<SPKMInnerContextToken> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SPKMInnerContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SPKMInnerContextToken */
@@ -116,47 +114,45 @@ let _cached_decoder_for_SPKMInnerContextToken: $.ASN1Decoder<
  */
 export function _decode_SPKMInnerContextToken(el: _Element) {
     if (!_cached_decoder_for_SPKMInnerContextToken) {
-        _cached_decoder_for_SPKMInnerContextToken = $._decode_inextensible_choice<
-            SPKMInnerContextToken
-        >({
-            "CONTEXT 0": [
-                "req",
-                $._decode_implicit<SPKM_REQ>(() => _decode_SPKM_REQ),
-            ],
-            "CONTEXT 1": [
-                "rep_ti",
-                $._decode_implicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI),
-            ],
-            "CONTEXT 2": [
-                "rep_it",
-                $._decode_implicit<SPKM_REP_IT>(() => _decode_SPKM_REP_IT),
-            ],
-            "CONTEXT 3": [
-                "error",
-                $._decode_implicit<SPKM_ERROR>(() => _decode_SPKM_ERROR),
-            ],
-            "CONTEXT 4": [
-                "mic",
-                $._decode_implicit<SPKM_MIC>(() => _decode_SPKM_MIC),
-            ],
-            "CONTEXT 5": [
-                "wrap",
-                $._decode_implicit<SPKM_WRAP>(() => _decode_SPKM_WRAP),
-            ],
-            "CONTEXT 6": [
-                "del",
-                $._decode_implicit<SPKM_DEL>(() => _decode_SPKM_DEL),
-            ],
-        });
+        _cached_decoder_for_SPKMInnerContextToken = $._decode_inextensible_choice<SPKMInnerContextToken>(
+            {
+                "CONTEXT 0": [
+                    "req",
+                    $._decode_implicit<SPKM_REQ>(() => _decode_SPKM_REQ),
+                ],
+                "CONTEXT 1": [
+                    "rep_ti",
+                    $._decode_implicit<SPKM_REP_TI>(() => _decode_SPKM_REP_TI),
+                ],
+                "CONTEXT 2": [
+                    "rep_it",
+                    $._decode_implicit<SPKM_REP_IT>(() => _decode_SPKM_REP_IT),
+                ],
+                "CONTEXT 3": [
+                    "error",
+                    $._decode_implicit<SPKM_ERROR>(() => _decode_SPKM_ERROR),
+                ],
+                "CONTEXT 4": [
+                    "mic",
+                    $._decode_implicit<SPKM_MIC>(() => _decode_SPKM_MIC),
+                ],
+                "CONTEXT 5": [
+                    "wrap",
+                    $._decode_implicit<SPKM_WRAP>(() => _decode_SPKM_WRAP),
+                ],
+                "CONTEXT 6": [
+                    "del",
+                    $._decode_implicit<SPKM_DEL>(() => _decode_SPKM_DEL),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_SPKMInnerContextToken(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SPKMInnerContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SPKMInnerContextToken */
-let _cached_encoder_for_SPKMInnerContextToken: $.ASN1Encoder<
-    SPKMInnerContextToken
-> | null = null;
+let _cached_encoder_for_SPKMInnerContextToken: $.ASN1Encoder<SPKMInnerContextToken> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SPKMInnerContextToken */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SPKMInnerContextToken */
@@ -172,9 +168,7 @@ export function _encode_SPKMInnerContextToken(
     elGetter: $.ASN1Encoder<SPKMInnerContextToken>
 ) {
     if (!_cached_encoder_for_SPKMInnerContextToken) {
-        _cached_encoder_for_SPKMInnerContextToken = $._encode_choice<
-            SPKMInnerContextToken
-        >(
+        _cached_encoder_for_SPKMInnerContextToken = $._encode_choice<SPKMInnerContextToken>(
             {
                 req: $._encode_implicit(
                     _TagClass.context,

@@ -30,9 +30,7 @@ export type PolicyMappingsSyntax = PolicyMappingsSyntax_Item[]; // SequenceOfTyp
 /* END_OF_SYMBOL_DEFINITION PolicyMappingsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyMappingsSyntax */
-let _cached_decoder_for_PolicyMappingsSyntax: $.ASN1Decoder<
-    PolicyMappingsSyntax
-> | null = null;
+let _cached_decoder_for_PolicyMappingsSyntax: $.ASN1Decoder<PolicyMappingsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyMappingsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PolicyMappingsSyntax */
@@ -44,18 +42,16 @@ let _cached_decoder_for_PolicyMappingsSyntax: $.ASN1Decoder<
  */
 export function _decode_PolicyMappingsSyntax(el: _Element) {
     if (!_cached_decoder_for_PolicyMappingsSyntax) {
-        _cached_decoder_for_PolicyMappingsSyntax = $._decodeSequenceOf<
-            PolicyMappingsSyntax_Item
-        >(() => _decode_PolicyMappingsSyntax_Item);
+        _cached_decoder_for_PolicyMappingsSyntax = $._decodeSequenceOf<PolicyMappingsSyntax_Item>(
+            () => _decode_PolicyMappingsSyntax_Item
+        );
     }
     return _cached_decoder_for_PolicyMappingsSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PolicyMappingsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyMappingsSyntax */
-let _cached_encoder_for_PolicyMappingsSyntax: $.ASN1Encoder<
-    PolicyMappingsSyntax
-> | null = null;
+let _cached_encoder_for_PolicyMappingsSyntax: $.ASN1Encoder<PolicyMappingsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyMappingsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PolicyMappingsSyntax */
@@ -71,9 +67,10 @@ export function _encode_PolicyMappingsSyntax(
     elGetter: $.ASN1Encoder<PolicyMappingsSyntax>
 ) {
     if (!_cached_encoder_for_PolicyMappingsSyntax) {
-        _cached_encoder_for_PolicyMappingsSyntax = $._encodeSequenceOf<
-            PolicyMappingsSyntax_Item
-        >(() => _encode_PolicyMappingsSyntax_Item, $.BER);
+        _cached_encoder_for_PolicyMappingsSyntax = $._encodeSequenceOf<PolicyMappingsSyntax_Item>(
+            () => _encode_PolicyMappingsSyntax_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_PolicyMappingsSyntax(value, elGetter);
 }

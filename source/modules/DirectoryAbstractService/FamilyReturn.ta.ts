@@ -194,8 +194,8 @@ export function _decode_FamilyReturn(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new FamilyReturn /* SEQUENCE_CONSTRUCTOR_CALL */(
-                memberSelect,
+            return new FamilyReturn(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ memberSelect,
                 familySelect,
                 _unrecognizedExtensionsList
             );

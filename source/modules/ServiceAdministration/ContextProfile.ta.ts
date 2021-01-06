@@ -124,9 +124,7 @@ export const _extension_additions_list_spec_for_ContextProfile: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ContextProfile */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextProfile */
-let _cached_decoder_for_ContextProfile: $.ASN1Decoder<
-    ContextProfile
-> | null = null;
+let _cached_decoder_for_ContextProfile: $.ASN1Decoder<ContextProfile> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextProfile */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContextProfile */
@@ -168,8 +166,8 @@ export function _decode_ContextProfile(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ContextProfile /* SEQUENCE_CONSTRUCTOR_CALL */(
-                contextType,
+            return new ContextProfile(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ contextType,
                 contextValue,
                 _unrecognizedExtensionsList
             );
@@ -180,9 +178,7 @@ export function _decode_ContextProfile(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ContextProfile */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextProfile */
-let _cached_encoder_for_ContextProfile: $.ASN1Encoder<
-    ContextProfile
-> | null = null;
+let _cached_encoder_for_ContextProfile: $.ASN1Encoder<ContextProfile> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextProfile */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContextProfile */

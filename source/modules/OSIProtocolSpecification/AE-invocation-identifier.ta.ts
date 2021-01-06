@@ -17,9 +17,7 @@ export type AE_invocation_identifier = INTEGER;
 /* END_OF_SYMBOL_DEFINITION AE_invocation_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AE_invocation_identifier */
-let _cached_decoder_for_AE_invocation_identifier: $.ASN1Decoder<
-    AE_invocation_identifier
-> | null = null;
+let _cached_decoder_for_AE_invocation_identifier: $.ASN1Decoder<AE_invocation_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AE_invocation_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AE_invocation_identifier */
@@ -38,9 +36,7 @@ export function _decode_AE_invocation_identifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AE_invocation_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AE_invocation_identifier */
-let _cached_encoder_for_AE_invocation_identifier: $.ASN1Encoder<
-    AE_invocation_identifier
-> | null = null;
+let _cached_encoder_for_AE_invocation_identifier: $.ASN1Encoder<AE_invocation_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AE_invocation_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AE_invocation_identifier */

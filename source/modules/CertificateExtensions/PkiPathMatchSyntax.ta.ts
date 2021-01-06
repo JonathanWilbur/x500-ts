@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_PkiPathMatchSyntax: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PkiPathMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PkiPathMatchSyntax */
-let _cached_decoder_for_PkiPathMatchSyntax: $.ASN1Decoder<
-    PkiPathMatchSyntax
-> | null = null;
+let _cached_decoder_for_PkiPathMatchSyntax: $.ASN1Decoder<PkiPathMatchSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PkiPathMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PkiPathMatchSyntax */
@@ -174,9 +172,7 @@ export function _decode_PkiPathMatchSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PkiPathMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PkiPathMatchSyntax */
-let _cached_encoder_for_PkiPathMatchSyntax: $.ASN1Encoder<
-    PkiPathMatchSyntax
-> | null = null;
+let _cached_encoder_for_PkiPathMatchSyntax: $.ASN1Encoder<PkiPathMatchSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PkiPathMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PkiPathMatchSyntax */

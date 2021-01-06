@@ -48,22 +48,22 @@ let _cached_decoder_for_Conf_Algs: $.ASN1Decoder<Conf_Algs> | null = null;
  */
 export function _decode_Conf_Algs(el: _Element) {
     if (!_cached_decoder_for_Conf_Algs) {
-        _cached_decoder_for_Conf_Algs = $._decode_inextensible_choice<
-            Conf_Algs
-        >({
-            "CONTEXT 0": [
-                "algs",
-                $._decode_implicit<AlgorithmIdentifier[]>(() =>
-                    $._decodeSequenceOf<AlgorithmIdentifier>(
-                        () => _decode_AlgorithmIdentifier
-                    )
-                ),
-            ],
-            "CONTEXT 1": [
-                "null_",
-                $._decode_implicit<NULL>(() => $._decodeNull),
-            ],
-        });
+        _cached_decoder_for_Conf_Algs = $._decode_inextensible_choice<Conf_Algs>(
+            {
+                "CONTEXT 0": [
+                    "algs",
+                    $._decode_implicit<AlgorithmIdentifier[]>(() =>
+                        $._decodeSequenceOf<AlgorithmIdentifier>(
+                            () => _decode_AlgorithmIdentifier
+                        )
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "null_",
+                    $._decode_implicit<NULL>(() => $._decodeNull),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Conf_Algs(el);
 }

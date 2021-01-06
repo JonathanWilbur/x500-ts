@@ -17,9 +17,7 @@ export type MgtPrintableString = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION MgtPrintableString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtPrintableString */
-let _cached_decoder_for_MgtPrintableString: $.ASN1Decoder<
-    MgtPrintableString
-> | null = null;
+let _cached_decoder_for_MgtPrintableString: $.ASN1Decoder<MgtPrintableString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtPrintableString */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MgtPrintableString */
@@ -38,9 +36,7 @@ export function _decode_MgtPrintableString(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MgtPrintableString */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtPrintableString */
-let _cached_encoder_for_MgtPrintableString: $.ASN1Encoder<
-    MgtPrintableString
-> | null = null;
+let _cached_encoder_for_MgtPrintableString: $.ASN1Encoder<MgtPrintableString> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtPrintableString */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MgtPrintableString */

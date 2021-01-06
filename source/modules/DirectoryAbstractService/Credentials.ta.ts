@@ -85,38 +85,38 @@ let _cached_decoder_for_Credentials: $.ASN1Decoder<Credentials> | null = null;
  */
 export function _decode_Credentials(el: _Element) {
     if (!_cached_decoder_for_Credentials) {
-        _cached_decoder_for_Credentials = $._decode_extensible_choice<
-            Credentials
-        >({
-            "CONTEXT 0": [
-                "simple",
-                $._decode_explicit<SimpleCredentials>(
-                    () => _decode_SimpleCredentials
-                ),
-            ],
-            "CONTEXT 1": [
-                "strong",
-                $._decode_explicit<StrongCredentials>(
-                    () => _decode_StrongCredentials
-                ),
-            ],
-            "CONTEXT 2": [
-                "externalProcedure",
-                $._decode_explicit<EXTERNAL>(() => $._decodeExternal),
-            ],
-            "CONTEXT 3": [
-                "spkm",
-                $._decode_explicit<SpkmCredentials>(
-                    () => _decode_SpkmCredentials
-                ),
-            ],
-            "CONTEXT 4": [
-                "sasl",
-                $._decode_explicit<SaslCredentials>(
-                    () => _decode_SaslCredentials
-                ),
-            ],
-        });
+        _cached_decoder_for_Credentials = $._decode_extensible_choice<Credentials>(
+            {
+                "CONTEXT 0": [
+                    "simple",
+                    $._decode_explicit<SimpleCredentials>(
+                        () => _decode_SimpleCredentials
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "strong",
+                    $._decode_explicit<StrongCredentials>(
+                        () => _decode_StrongCredentials
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "externalProcedure",
+                    $._decode_explicit<EXTERNAL>(() => $._decodeExternal),
+                ],
+                "CONTEXT 3": [
+                    "spkm",
+                    $._decode_explicit<SpkmCredentials>(
+                        () => _decode_SpkmCredentials
+                    ),
+                ],
+                "CONTEXT 4": [
+                    "sasl",
+                    $._decode_explicit<SaslCredentials>(
+                        () => _decode_SaslCredentials
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Credentials(el);
 }

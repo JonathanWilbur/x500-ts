@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_CrossReference: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CrossReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CrossReference */
-let _cached_decoder_for_CrossReference: $.ASN1Decoder<
-    CrossReference
-> | null = null;
+let _cached_decoder_for_CrossReference: $.ASN1Decoder<CrossReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CrossReference */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CrossReference */
@@ -182,8 +180,8 @@ export function _decode_CrossReference(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CrossReference /* SET_CONSTRUCTOR_CALL */(
-                contextPrefix,
+            return new CrossReference(
+                /* SET_CONSTRUCTOR_CALL */ contextPrefix,
                 accessPoint,
                 _unrecognizedExtensionsList
             );
@@ -194,9 +192,7 @@ export function _decode_CrossReference(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CrossReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CrossReference */
-let _cached_encoder_for_CrossReference: $.ASN1Encoder<
-    CrossReference
-> | null = null;
+let _cached_encoder_for_CrossReference: $.ASN1Encoder<CrossReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CrossReference */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CrossReference */

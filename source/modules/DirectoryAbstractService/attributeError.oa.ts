@@ -49,14 +49,14 @@ export {
 export const attributeError: ERROR<OPTIONALLY_PROTECTED<AttributeErrorData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<
-            AttributeErrorData
-        >(_decode_AttributeErrorData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<AttributeErrorData>(
+            _decode_AttributeErrorData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<
-            AttributeErrorData
-        >(_encode_AttributeErrorData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<AttributeErrorData>(
+            _encode_AttributeErrorData
+        ),
     },
     "&errorCode": id_errcode_attributeError /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

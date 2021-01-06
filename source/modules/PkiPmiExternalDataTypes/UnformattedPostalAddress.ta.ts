@@ -119,9 +119,7 @@ export const _extension_additions_list_spec_for_UnformattedPostalAddress: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UnformattedPostalAddress */
-let _cached_decoder_for_UnformattedPostalAddress: $.ASN1Decoder<
-    UnformattedPostalAddress
-> | null = null;
+let _cached_decoder_for_UnformattedPostalAddress: $.ASN1Decoder<UnformattedPostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UnformattedPostalAddress */
@@ -160,8 +158,8 @@ export function _decode_UnformattedPostalAddress(el: _Element) {
                 _root_component_type_list_2_spec_for_UnformattedPostalAddress,
                 undefined
             );
-            return new UnformattedPostalAddress /* SET_CONSTRUCTOR_CALL */(
-                printable_address,
+            return new UnformattedPostalAddress(
+                /* SET_CONSTRUCTOR_CALL */ printable_address,
                 teletex_string
             );
         };
@@ -171,9 +169,7 @@ export function _decode_UnformattedPostalAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UnformattedPostalAddress */
-let _cached_encoder_for_UnformattedPostalAddress: $.ASN1Encoder<
-    UnformattedPostalAddress
-> | null = null;
+let _cached_encoder_for_UnformattedPostalAddress: $.ASN1Encoder<UnformattedPostalAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UnformattedPostalAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UnformattedPostalAddress */

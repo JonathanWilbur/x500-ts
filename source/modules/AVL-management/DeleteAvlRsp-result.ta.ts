@@ -40,9 +40,7 @@ export type DeleteAvlRsp_result =
 /* END_OF_SYMBOL_DEFINITION DeleteAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DeleteAvlRsp_result */
-let _cached_decoder_for_DeleteAvlRsp_result: $.ASN1Decoder<
-    DeleteAvlRsp_result
-> | null = null;
+let _cached_decoder_for_DeleteAvlRsp_result: $.ASN1Decoder<DeleteAvlRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DeleteAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DeleteAvlRsp_result */
@@ -54,27 +52,25 @@ let _cached_decoder_for_DeleteAvlRsp_result: $.ASN1Decoder<
  */
 export function _decode_DeleteAvlRsp_result(el: _Element) {
     if (!_cached_decoder_for_DeleteAvlRsp_result) {
-        _cached_decoder_for_DeleteAvlRsp_result = $._decode_extensible_choice<
-            DeleteAvlRsp_result
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_implicit<DelAvlOK>(() => _decode_DelAvlOK),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_implicit<DelAvlErr>(() => _decode_DelAvlErr),
-            ],
-        });
+        _cached_decoder_for_DeleteAvlRsp_result = $._decode_extensible_choice<DeleteAvlRsp_result>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_implicit<DelAvlOK>(() => _decode_DelAvlOK),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_implicit<DelAvlErr>(() => _decode_DelAvlErr),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DeleteAvlRsp_result(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DeleteAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DeleteAvlRsp_result */
-let _cached_encoder_for_DeleteAvlRsp_result: $.ASN1Encoder<
-    DeleteAvlRsp_result
-> | null = null;
+let _cached_encoder_for_DeleteAvlRsp_result: $.ASN1Encoder<DeleteAvlRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DeleteAvlRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DeleteAvlRsp_result */
@@ -90,9 +86,7 @@ export function _encode_DeleteAvlRsp_result(
     elGetter: $.ASN1Encoder<DeleteAvlRsp_result>
 ) {
     if (!_cached_encoder_for_DeleteAvlRsp_result) {
-        _cached_encoder_for_DeleteAvlRsp_result = $._encode_choice<
-            DeleteAvlRsp_result
-        >(
+        _cached_encoder_for_DeleteAvlRsp_result = $._encode_choice<DeleteAvlRsp_result>(
             {
                 success: $._encode_implicit(
                     _TagClass.context,

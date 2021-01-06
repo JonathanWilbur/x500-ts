@@ -27,9 +27,7 @@ export type AltSignatureAlgorithm = AlgorithmIdentifier; // DefinedType
 /* END_OF_SYMBOL_DEFINITION AltSignatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AltSignatureAlgorithm */
-let _cached_decoder_for_AltSignatureAlgorithm: $.ASN1Decoder<
-    AltSignatureAlgorithm
-> | null = null;
+let _cached_decoder_for_AltSignatureAlgorithm: $.ASN1Decoder<AltSignatureAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AltSignatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AltSignatureAlgorithm */
@@ -48,9 +46,7 @@ export function _decode_AltSignatureAlgorithm(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AltSignatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AltSignatureAlgorithm */
-let _cached_encoder_for_AltSignatureAlgorithm: $.ASN1Encoder<
-    AltSignatureAlgorithm
-> | null = null;
+let _cached_encoder_for_AltSignatureAlgorithm: $.ASN1Encoder<AltSignatureAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AltSignatureAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AltSignatureAlgorithm */

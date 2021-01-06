@@ -27,9 +27,7 @@ export type ConsumerInformation = SupplierOrConsumer; // DefinedType
 /* END_OF_SYMBOL_DEFINITION ConsumerInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ConsumerInformation */
-let _cached_decoder_for_ConsumerInformation: $.ASN1Decoder<
-    ConsumerInformation
-> | null = null;
+let _cached_decoder_for_ConsumerInformation: $.ASN1Decoder<ConsumerInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ConsumerInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ConsumerInformation */
@@ -48,9 +46,7 @@ export function _decode_ConsumerInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ConsumerInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ConsumerInformation */
-let _cached_encoder_for_ConsumerInformation: $.ASN1Encoder<
-    ConsumerInformation
-> | null = null;
+let _cached_encoder_for_ConsumerInformation: $.ASN1Encoder<ConsumerInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ConsumerInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ConsumerInformation */

@@ -111,9 +111,7 @@ export const _extension_additions_list_spec_for_AuthorizationData_Item: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AuthorizationData_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorizationData_Item */
-let _cached_decoder_for_AuthorizationData_Item: $.ASN1Decoder<
-    AuthorizationData_Item
-> | null = null;
+let _cached_decoder_for_AuthorizationData_Item: $.ASN1Decoder<AuthorizationData_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorizationData_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthorizationData_Item */
@@ -150,9 +148,7 @@ export function _decode_AuthorizationData_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AuthorizationData_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorizationData_Item */
-let _cached_encoder_for_AuthorizationData_Item: $.ASN1Encoder<
-    AuthorizationData_Item
-> | null = null;
+let _cached_encoder_for_AuthorizationData_Item: $.ASN1Encoder<AuthorizationData_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorizationData_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthorizationData_Item */

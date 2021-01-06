@@ -17,9 +17,7 @@ export type DestinationIndicator = PrintableString; // PrintableString
 /* END_OF_SYMBOL_DEFINITION DestinationIndicator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DestinationIndicator */
-let _cached_decoder_for_DestinationIndicator: $.ASN1Decoder<
-    DestinationIndicator
-> | null = null;
+let _cached_decoder_for_DestinationIndicator: $.ASN1Decoder<DestinationIndicator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DestinationIndicator */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DestinationIndicator */
@@ -38,9 +36,7 @@ export function _decode_DestinationIndicator(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DestinationIndicator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DestinationIndicator */
-let _cached_encoder_for_DestinationIndicator: $.ASN1Encoder<
-    DestinationIndicator
-> | null = null;
+let _cached_encoder_for_DestinationIndicator: $.ASN1Encoder<DestinationIndicator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DestinationIndicator */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DestinationIndicator */

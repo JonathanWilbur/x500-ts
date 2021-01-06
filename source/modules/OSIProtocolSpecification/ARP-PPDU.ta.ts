@@ -198,8 +198,8 @@ export function _decode_ARP_PPDU(el: _Element) {
                 _root_component_type_list_2_spec_for_ARP_PPDU,
                 undefined
             );
-            return new ARP_PPDU /* SEQUENCE_CONSTRUCTOR_CALL */(
-                provider_reason,
+            return new ARP_PPDU(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ provider_reason,
                 event_identifier
             );
         };

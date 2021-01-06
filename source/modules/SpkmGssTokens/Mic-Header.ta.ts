@@ -216,8 +216,8 @@ export function _decode_Mic_Header(el: _Element) {
                 _root_component_type_list_2_spec_for_Mic_Header,
                 undefined
             );
-            return new Mic_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new Mic_Header(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 int_alg,
                 snd_seq

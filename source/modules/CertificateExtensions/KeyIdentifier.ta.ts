@@ -17,9 +17,7 @@ export type KeyIdentifier = OCTET_STRING; // OctetStringType
 /* END_OF_SYMBOL_DEFINITION KeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_KeyIdentifier */
-let _cached_decoder_for_KeyIdentifier: $.ASN1Decoder<
-    KeyIdentifier
-> | null = null;
+let _cached_decoder_for_KeyIdentifier: $.ASN1Decoder<KeyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_KeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_KeyIdentifier */
@@ -38,9 +36,7 @@ export function _decode_KeyIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_KeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_KeyIdentifier */
-let _cached_encoder_for_KeyIdentifier: $.ASN1Encoder<
-    KeyIdentifier
-> | null = null;
+let _cached_encoder_for_KeyIdentifier: $.ASN1Encoder<KeyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_KeyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_KeyIdentifier */

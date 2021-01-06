@@ -36,9 +36,7 @@ export type CertSubscribeOK = CertSubscribeOK_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CertSubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeOK */
-let _cached_decoder_for_CertSubscribeOK: $.ASN1Decoder<
-    CertSubscribeOK
-> | null = null;
+let _cached_decoder_for_CertSubscribeOK: $.ASN1Decoder<CertSubscribeOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertSubscribeOK */
@@ -50,18 +48,16 @@ let _cached_decoder_for_CertSubscribeOK: $.ASN1Decoder<
  */
 export function _decode_CertSubscribeOK(el: _Element) {
     if (!_cached_decoder_for_CertSubscribeOK) {
-        _cached_decoder_for_CertSubscribeOK = $._decodeSequenceOf<
-            CertSubscribeOK_Item
-        >(() => _decode_CertSubscribeOK_Item);
+        _cached_decoder_for_CertSubscribeOK = $._decodeSequenceOf<CertSubscribeOK_Item>(
+            () => _decode_CertSubscribeOK_Item
+        );
     }
     return _cached_decoder_for_CertSubscribeOK(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertSubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeOK */
-let _cached_encoder_for_CertSubscribeOK: $.ASN1Encoder<
-    CertSubscribeOK
-> | null = null;
+let _cached_encoder_for_CertSubscribeOK: $.ASN1Encoder<CertSubscribeOK> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeOK */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertSubscribeOK */
@@ -77,9 +73,10 @@ export function _encode_CertSubscribeOK(
     elGetter: $.ASN1Encoder<CertSubscribeOK>
 ) {
     if (!_cached_encoder_for_CertSubscribeOK) {
-        _cached_encoder_for_CertSubscribeOK = $._encodeSequenceOf<
-            CertSubscribeOK_Item
-        >(() => _encode_CertSubscribeOK_Item, $.BER);
+        _cached_encoder_for_CertSubscribeOK = $._encodeSequenceOf<CertSubscribeOK_Item>(
+            () => _encode_CertSubscribeOK_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_CertSubscribeOK(value, elGetter);
 }

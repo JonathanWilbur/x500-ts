@@ -38,9 +38,7 @@ export type StatusReferral =
 /* END_OF_SYMBOL_DEFINITION StatusReferral */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_StatusReferral */
-let _cached_decoder_for_StatusReferral: $.ASN1Decoder<
-    StatusReferral
-> | null = null;
+let _cached_decoder_for_StatusReferral: $.ASN1Decoder<StatusReferral> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_StatusReferral */
 
 /* START_OF_SYMBOL_DEFINITION _decode_StatusReferral */
@@ -52,27 +50,25 @@ let _cached_decoder_for_StatusReferral: $.ASN1Decoder<
  */
 export function _decode_StatusReferral(el: _Element) {
     if (!_cached_decoder_for_StatusReferral) {
-        _cached_decoder_for_StatusReferral = $._decode_extensible_choice<
-            StatusReferral
-        >({
-            "CONTEXT 0": [
-                "cRLReferral",
-                $._decode_implicit<CRLReferral>(() => _decode_CRLReferral),
-            ],
-            "CONTEXT 1": [
-                "otherReferral",
-                $._decode_implicit<INSTANCE_OF>(() => $._decodeInstanceOf),
-            ],
-        });
+        _cached_decoder_for_StatusReferral = $._decode_extensible_choice<StatusReferral>(
+            {
+                "CONTEXT 0": [
+                    "cRLReferral",
+                    $._decode_implicit<CRLReferral>(() => _decode_CRLReferral),
+                ],
+                "CONTEXT 1": [
+                    "otherReferral",
+                    $._decode_implicit<INSTANCE_OF>(() => $._decodeInstanceOf),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_StatusReferral(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_StatusReferral */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_StatusReferral */
-let _cached_encoder_for_StatusReferral: $.ASN1Encoder<
-    StatusReferral
-> | null = null;
+let _cached_encoder_for_StatusReferral: $.ASN1Encoder<StatusReferral> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_StatusReferral */
 
 /* START_OF_SYMBOL_DEFINITION _encode_StatusReferral */

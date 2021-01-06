@@ -765,9 +765,7 @@ export const other: LDAPResult_resultCode = LDAPResult_resultCode_other; /* SHOR
 /* END_OF_SYMBOL_DEFINITION other */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LDAPResult_resultCode */
-let _cached_decoder_for_LDAPResult_resultCode: $.ASN1Decoder<
-    LDAPResult_resultCode
-> | null = null;
+let _cached_decoder_for_LDAPResult_resultCode: $.ASN1Decoder<LDAPResult_resultCode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LDAPResult_resultCode */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LDAPResult_resultCode */
@@ -786,9 +784,7 @@ export function _decode_LDAPResult_resultCode(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_LDAPResult_resultCode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LDAPResult_resultCode */
-let _cached_encoder_for_LDAPResult_resultCode: $.ASN1Encoder<
-    LDAPResult_resultCode
-> | null = null;
+let _cached_encoder_for_LDAPResult_resultCode: $.ASN1Encoder<LDAPResult_resultCode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LDAPResult_resultCode */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LDAPResult_resultCode */

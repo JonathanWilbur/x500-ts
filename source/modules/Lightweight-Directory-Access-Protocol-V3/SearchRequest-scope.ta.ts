@@ -79,9 +79,7 @@ export const wholeSubtree: SearchRequest_scope = SearchRequest_scope_wholeSubtre
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_scope */
-let _cached_decoder_for_SearchRequest_scope: $.ASN1Decoder<
-    SearchRequest_scope
-> | null = null;
+let _cached_decoder_for_SearchRequest_scope: $.ASN1Decoder<SearchRequest_scope> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchRequest_scope */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchRequest_scope */
@@ -100,9 +98,7 @@ export function _decode_SearchRequest_scope(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchRequest_scope */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest_scope */
-let _cached_encoder_for_SearchRequest_scope: $.ASN1Encoder<
-    SearchRequest_scope
-> | null = null;
+let _cached_encoder_for_SearchRequest_scope: $.ASN1Encoder<SearchRequest_scope> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchRequest_scope */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchRequest_scope */

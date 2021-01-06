@@ -74,9 +74,7 @@ export const cannotAbandon: AbandonProblem = AbandonProblem_cannotAbandon; /* SH
 /* END_OF_SYMBOL_DEFINITION cannotAbandon */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonProblem */
-let _cached_decoder_for_AbandonProblem: $.ASN1Decoder<
-    AbandonProblem
-> | null = null;
+let _cached_decoder_for_AbandonProblem: $.ASN1Decoder<AbandonProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonProblem */
@@ -95,9 +93,7 @@ export function _decode_AbandonProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonProblem */
-let _cached_encoder_for_AbandonProblem: $.ASN1Encoder<
-    AbandonProblem
-> | null = null;
+let _cached_encoder_for_AbandonProblem: $.ASN1Encoder<AbandonProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonProblem */

@@ -187,9 +187,7 @@ export const all: number = HierarchySelections_all; /* SHORT_NAMED_BIT */
 /* END_OF_SYMBOL_DEFINITION all */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchySelections */
-let _cached_decoder_for_HierarchySelections: $.ASN1Decoder<
-    HierarchySelections
-> | null = null;
+let _cached_decoder_for_HierarchySelections: $.ASN1Decoder<HierarchySelections> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HierarchySelections */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HierarchySelections */
@@ -208,9 +206,7 @@ export function _decode_HierarchySelections(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HierarchySelections */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchySelections */
-let _cached_encoder_for_HierarchySelections: $.ASN1Encoder<
-    HierarchySelections
-> | null = null;
+let _cached_encoder_for_HierarchySelections: $.ASN1Encoder<HierarchySelections> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HierarchySelections */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HierarchySelections */

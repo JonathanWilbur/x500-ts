@@ -22,9 +22,7 @@ export type ModifyOperationalBindingArgumentData_initiator =
 /* END_OF_SYMBOL_DEFINITION ModifyOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator */
-let _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Decoder<
-    ModifyOperationalBindingArgumentData_initiator
-> | null = null;
+let _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Decoder<ModifyOperationalBindingArgumentData_initiator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgumentData_initiator */
@@ -38,22 +36,22 @@ export function _decode_ModifyOperationalBindingArgumentData_initiator(
     el: _Element
 ) {
     if (!_cached_decoder_for_ModifyOperationalBindingArgumentData_initiator) {
-        _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<
-            ModifyOperationalBindingArgumentData_initiator
-        >({
-            "CONTEXT 3": [
-                "symmetric",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 4": [
-                "roleA_initiates",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-            "CONTEXT 5": [
-                "roleB_initiates",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-        });
+        _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator = $._decode_inextensible_choice<ModifyOperationalBindingArgumentData_initiator>(
+            {
+                "CONTEXT 3": [
+                    "symmetric",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 4": [
+                    "roleA_initiates",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+                "CONTEXT 5": [
+                    "roleB_initiates",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifyOperationalBindingArgumentData_initiator(
         el
@@ -62,9 +60,7 @@ export function _decode_ModifyOperationalBindingArgumentData_initiator(
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator */
-let _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Encoder<
-    ModifyOperationalBindingArgumentData_initiator
-> | null = null;
+let _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator: $.ASN1Encoder<ModifyOperationalBindingArgumentData_initiator> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyOperationalBindingArgumentData_initiator */
@@ -80,9 +76,7 @@ export function _encode_ModifyOperationalBindingArgumentData_initiator(
     elGetter: $.ASN1Encoder<ModifyOperationalBindingArgumentData_initiator>
 ) {
     if (!_cached_encoder_for_ModifyOperationalBindingArgumentData_initiator) {
-        _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator = $._encode_choice<
-            ModifyOperationalBindingArgumentData_initiator
-        >(
+        _cached_encoder_for_ModifyOperationalBindingArgumentData_initiator = $._encode_choice<ModifyOperationalBindingArgumentData_initiator>(
             {
                 symmetric: $._encode_explicit(
                     _TagClass.context,

@@ -194,9 +194,7 @@ export const _extension_additions_list_spec_for_NameFormDescription: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NameFormDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NameFormDescription */
-let _cached_decoder_for_NameFormDescription: $.ASN1Decoder<
-    NameFormDescription
-> | null = null;
+let _cached_decoder_for_NameFormDescription: $.ASN1Decoder<NameFormDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NameFormDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NameFormDescription */
@@ -253,8 +251,8 @@ export function _decode_NameFormDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NameFormDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new NameFormDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 name,
                 description,
                 obsolete,
@@ -268,9 +266,7 @@ export function _decode_NameFormDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NameFormDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NameFormDescription */
-let _cached_encoder_for_NameFormDescription: $.ASN1Encoder<
-    NameFormDescription
-> | null = null;
+let _cached_encoder_for_NameFormDescription: $.ASN1Encoder<NameFormDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NameFormDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NameFormDescription */

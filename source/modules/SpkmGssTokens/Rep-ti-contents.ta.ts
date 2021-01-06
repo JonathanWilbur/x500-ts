@@ -393,8 +393,8 @@ export function _decode_Rep_ti_contents(el: _Element) {
                 _root_component_type_list_2_spec_for_Rep_ti_contents,
                 undefined
             );
-            return new Rep_ti_contents /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new Rep_ti_contents(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 pvno,
                 timestamp,

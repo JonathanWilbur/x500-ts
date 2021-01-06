@@ -49,9 +49,9 @@ let _cached_decoder_for_LdapArgument: $.ASN1Decoder<LdapArgument> | null = null;
  */
 export function _decode_LdapArgument(el: _Element) {
     if (!_cached_decoder_for_LdapArgument) {
-        _cached_decoder_for_LdapArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LdapArgumentData
-        >(_decode_LdapArgumentData);
+        _cached_decoder_for_LdapArgument = _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<LdapArgumentData>(
+            _decode_LdapArgumentData
+        );
     }
     return _cached_decoder_for_LdapArgument(el);
 }
@@ -74,9 +74,9 @@ export function _encode_LdapArgument(
     elGetter: $.ASN1Encoder<LdapArgument>
 ) {
     if (!_cached_encoder_for_LdapArgument) {
-        _cached_encoder_for_LdapArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-            LdapArgumentData
-        >(_encode_LdapArgumentData);
+        _cached_encoder_for_LdapArgument = _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<LdapArgumentData>(
+            _encode_LdapArgumentData
+        );
     }
     return _cached_encoder_for_LdapArgument(value, elGetter);
 }

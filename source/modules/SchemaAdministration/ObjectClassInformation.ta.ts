@@ -191,9 +191,7 @@ export const _extension_additions_list_spec_for_ObjectClassInformation: $.Compon
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ObjectClassInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectClassInformation */
-let _cached_decoder_for_ObjectClassInformation: $.ASN1Decoder<
-    ObjectClassInformation
-> | null = null;
+let _cached_decoder_for_ObjectClassInformation: $.ASN1Decoder<ObjectClassInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectClassInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ObjectClassInformation */
@@ -252,8 +250,8 @@ export function _decode_ObjectClassInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ObjectClassInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-                subclassOf,
+            return new ObjectClassInformation(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ subclassOf,
                 kind,
                 mandatories,
                 optionals,
@@ -266,9 +264,7 @@ export function _decode_ObjectClassInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ObjectClassInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectClassInformation */
-let _cached_encoder_for_ObjectClassInformation: $.ASN1Encoder<
-    ObjectClassInformation
-> | null = null;
+let _cached_encoder_for_ObjectClassInformation: $.ASN1Encoder<ObjectClassInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectClassInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ObjectClassInformation */

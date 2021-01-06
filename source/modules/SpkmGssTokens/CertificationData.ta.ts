@@ -133,9 +133,7 @@ export const _extension_additions_list_spec_for_CertificationData: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificationData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificationData */
-let _cached_decoder_for_CertificationData: $.ASN1Decoder<
-    CertificationData
-> | null = null;
+let _cached_decoder_for_CertificationData: $.ASN1Decoder<CertificationData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificationData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificationData */
@@ -162,9 +160,9 @@ export function _decode_CertificationData(el: _Element) {
                     )(_el);
                 },
                 certificateRevocationList: (_el: _Element): void => {
-                    certificateRevocationList = $._decode_implicit<
-                        CertificateList
-                    >(() => _decode_CertificateList)(_el);
+                    certificateRevocationList = $._decode_implicit<CertificateList>(
+                        () => _decode_CertificateList
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -176,8 +174,8 @@ export function _decode_CertificationData(el: _Element) {
                 _root_component_type_list_2_spec_for_CertificationData,
                 undefined
             );
-            return new CertificationData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                certificationPath,
+            return new CertificationData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ certificationPath,
                 certificateRevocationList
             );
         };
@@ -187,9 +185,7 @@ export function _decode_CertificationData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificationData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificationData */
-let _cached_encoder_for_CertificationData: $.ASN1Encoder<
-    CertificationData
-> | null = null;
+let _cached_encoder_for_CertificationData: $.ASN1Encoder<CertificationData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificationData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificationData */

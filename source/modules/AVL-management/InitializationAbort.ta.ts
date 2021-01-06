@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_InitializationAbort: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_InitializationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAbort */
-let _cached_decoder_for_InitializationAbort: $.ASN1Decoder<
-    InitializationAbort
-> | null = null;
+let _cached_decoder_for_InitializationAbort: $.ASN1Decoder<InitializationAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InitializationAbort */
@@ -167,9 +165,7 @@ export function _decode_InitializationAbort(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InitializationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAbort */
-let _cached_encoder_for_InitializationAbort: $.ASN1Encoder<
-    InitializationAbort
-> | null = null;
+let _cached_encoder_for_InitializationAbort: $.ASN1Encoder<InitializationAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InitializationAbort */

@@ -33,9 +33,7 @@ export const version_1: number = OsiBind_normal_mode_parameters_protocol_version
 /* END_OF_SYMBOL_DEFINITION version_1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version */
-let _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version: $.ASN1Decoder<
-    OsiBind_normal_mode_parameters_protocol_version
-> | null = null;
+let _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version: $.ASN1Decoder<OsiBind_normal_mode_parameters_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBind_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBind_normal_mode_parameters_protocol_version */
@@ -59,9 +57,7 @@ export function _decode_OsiBind_normal_mode_parameters_protocol_version(
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBind_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBind_normal_mode_parameters_protocol_version */
-let _cached_encoder_for_OsiBind_normal_mode_parameters_protocol_version: $.ASN1Encoder<
-    OsiBind_normal_mode_parameters_protocol_version
-> | null = null;
+let _cached_encoder_for_OsiBind_normal_mode_parameters_protocol_version: $.ASN1Encoder<OsiBind_normal_mode_parameters_protocol_version> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBind_normal_mode_parameters_protocol_version */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBind_normal_mode_parameters_protocol_version */

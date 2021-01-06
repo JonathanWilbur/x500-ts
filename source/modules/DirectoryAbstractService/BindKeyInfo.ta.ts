@@ -39,9 +39,9 @@ let _cached_decoder_for_BindKeyInfo: $.ASN1Decoder<BindKeyInfo> | null = null;
  */
 export function _decode_BindKeyInfo(el: _Element) {
     if (!_cached_decoder_for_BindKeyInfo) {
-        _cached_decoder_for_BindKeyInfo = _get_decoder_for_ENCRYPTED<
-            BIT_STRING
-        >($._decodeBitString);
+        _cached_decoder_for_BindKeyInfo = _get_decoder_for_ENCRYPTED<BIT_STRING>(
+            $._decodeBitString
+        );
     }
     return _cached_decoder_for_BindKeyInfo(el);
 }
@@ -64,9 +64,9 @@ export function _encode_BindKeyInfo(
     elGetter: $.ASN1Encoder<BindKeyInfo>
 ) {
     if (!_cached_encoder_for_BindKeyInfo) {
-        _cached_encoder_for_BindKeyInfo = _get_encoder_for_ENCRYPTED<
-            BIT_STRING
-        >($._encodeBitString);
+        _cached_encoder_for_BindKeyInfo = _get_encoder_for_ENCRYPTED<BIT_STRING>(
+            $._encodeBitString
+        );
     }
     return _cached_encoder_for_BindKeyInfo(value, elGetter);
 }

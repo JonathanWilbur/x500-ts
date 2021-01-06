@@ -112,9 +112,7 @@ export const mistypedParameter: ReturnErrorProblem = ReturnErrorProblem_mistyped
 /* END_OF_SYMBOL_DEFINITION mistypedParameter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReturnErrorProblem */
-let _cached_decoder_for_ReturnErrorProblem: $.ASN1Decoder<
-    ReturnErrorProblem
-> | null = null;
+let _cached_decoder_for_ReturnErrorProblem: $.ASN1Decoder<ReturnErrorProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReturnErrorProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReturnErrorProblem */
@@ -133,9 +131,7 @@ export function _decode_ReturnErrorProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReturnErrorProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReturnErrorProblem */
-let _cached_encoder_for_ReturnErrorProblem: $.ASN1Encoder<
-    ReturnErrorProblem
-> | null = null;
+let _cached_encoder_for_ReturnErrorProblem: $.ASN1Encoder<ReturnErrorProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReturnErrorProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReturnErrorProblem */

@@ -27,9 +27,7 @@ export type MasterAndShadowAccessPoints = MasterOrShadowAccessPoint[]; // SetOfT
 /* END_OF_SYMBOL_DEFINITION MasterAndShadowAccessPoints */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterAndShadowAccessPoints */
-let _cached_decoder_for_MasterAndShadowAccessPoints: $.ASN1Decoder<
-    MasterAndShadowAccessPoints
-> | null = null;
+let _cached_decoder_for_MasterAndShadowAccessPoints: $.ASN1Decoder<MasterAndShadowAccessPoints> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MasterAndShadowAccessPoints */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MasterAndShadowAccessPoints */
@@ -41,18 +39,16 @@ let _cached_decoder_for_MasterAndShadowAccessPoints: $.ASN1Decoder<
  */
 export function _decode_MasterAndShadowAccessPoints(el: _Element) {
     if (!_cached_decoder_for_MasterAndShadowAccessPoints) {
-        _cached_decoder_for_MasterAndShadowAccessPoints = $._decodeSetOf<
-            MasterOrShadowAccessPoint
-        >(() => _decode_MasterOrShadowAccessPoint);
+        _cached_decoder_for_MasterAndShadowAccessPoints = $._decodeSetOf<MasterOrShadowAccessPoint>(
+            () => _decode_MasterOrShadowAccessPoint
+        );
     }
     return _cached_decoder_for_MasterAndShadowAccessPoints(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MasterAndShadowAccessPoints */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterAndShadowAccessPoints */
-let _cached_encoder_for_MasterAndShadowAccessPoints: $.ASN1Encoder<
-    MasterAndShadowAccessPoints
-> | null = null;
+let _cached_encoder_for_MasterAndShadowAccessPoints: $.ASN1Encoder<MasterAndShadowAccessPoints> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MasterAndShadowAccessPoints */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MasterAndShadowAccessPoints */
@@ -68,9 +64,10 @@ export function _encode_MasterAndShadowAccessPoints(
     elGetter: $.ASN1Encoder<MasterAndShadowAccessPoints>
 ) {
     if (!_cached_encoder_for_MasterAndShadowAccessPoints) {
-        _cached_encoder_for_MasterAndShadowAccessPoints = $._encodeSetOf<
-            MasterOrShadowAccessPoint
-        >(() => _encode_MasterOrShadowAccessPoint, $.BER);
+        _cached_encoder_for_MasterAndShadowAccessPoints = $._encodeSetOf<MasterOrShadowAccessPoint>(
+            () => _encode_MasterOrShadowAccessPoint,
+            $.BER
+        );
     }
     return _cached_encoder_for_MasterAndShadowAccessPoints(value, elGetter);
 }

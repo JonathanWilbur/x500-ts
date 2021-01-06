@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_DelMatchSyntax: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DelMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DelMatchSyntax */
-let _cached_decoder_for_DelMatchSyntax: $.ASN1Decoder<
-    DelMatchSyntax
-> | null = null;
+let _cached_decoder_for_DelMatchSyntax: $.ASN1Decoder<DelMatchSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DelMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DelMatchSyntax */
@@ -183,9 +181,7 @@ export function _decode_DelMatchSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DelMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DelMatchSyntax */
-let _cached_encoder_for_DelMatchSyntax: $.ASN1Encoder<
-    DelMatchSyntax
-> | null = null;
+let _cached_encoder_for_DelMatchSyntax: $.ASN1Encoder<DelMatchSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DelMatchSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DelMatchSyntax */

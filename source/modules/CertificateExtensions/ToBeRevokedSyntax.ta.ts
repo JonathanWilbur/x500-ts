@@ -27,9 +27,7 @@ export type ToBeRevokedSyntax = ToBeRevokedGroup[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION ToBeRevokedSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ToBeRevokedSyntax */
-let _cached_decoder_for_ToBeRevokedSyntax: $.ASN1Decoder<
-    ToBeRevokedSyntax
-> | null = null;
+let _cached_decoder_for_ToBeRevokedSyntax: $.ASN1Decoder<ToBeRevokedSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ToBeRevokedSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ToBeRevokedSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_ToBeRevokedSyntax: $.ASN1Decoder<
  */
 export function _decode_ToBeRevokedSyntax(el: _Element) {
     if (!_cached_decoder_for_ToBeRevokedSyntax) {
-        _cached_decoder_for_ToBeRevokedSyntax = $._decodeSequenceOf<
-            ToBeRevokedGroup
-        >(() => _decode_ToBeRevokedGroup);
+        _cached_decoder_for_ToBeRevokedSyntax = $._decodeSequenceOf<ToBeRevokedGroup>(
+            () => _decode_ToBeRevokedGroup
+        );
     }
     return _cached_decoder_for_ToBeRevokedSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ToBeRevokedSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ToBeRevokedSyntax */
-let _cached_encoder_for_ToBeRevokedSyntax: $.ASN1Encoder<
-    ToBeRevokedSyntax
-> | null = null;
+let _cached_encoder_for_ToBeRevokedSyntax: $.ASN1Encoder<ToBeRevokedSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ToBeRevokedSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ToBeRevokedSyntax */
@@ -68,9 +64,10 @@ export function _encode_ToBeRevokedSyntax(
     elGetter: $.ASN1Encoder<ToBeRevokedSyntax>
 ) {
     if (!_cached_encoder_for_ToBeRevokedSyntax) {
-        _cached_encoder_for_ToBeRevokedSyntax = $._encodeSequenceOf<
-            ToBeRevokedGroup
-        >(() => _encode_ToBeRevokedGroup, $.BER);
+        _cached_encoder_for_ToBeRevokedSyntax = $._encodeSequenceOf<ToBeRevokedGroup>(
+            () => _encode_ToBeRevokedGroup,
+            $.BER
+        );
     }
     return _cached_encoder_for_ToBeRevokedSyntax(value, elGetter);
 }

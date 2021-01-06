@@ -27,9 +27,7 @@ export type ForwardCertificationPath = CrossCertificates[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION ForwardCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ForwardCertificationPath */
-let _cached_decoder_for_ForwardCertificationPath: $.ASN1Decoder<
-    ForwardCertificationPath
-> | null = null;
+let _cached_decoder_for_ForwardCertificationPath: $.ASN1Decoder<ForwardCertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ForwardCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ForwardCertificationPath */
@@ -41,18 +39,16 @@ let _cached_decoder_for_ForwardCertificationPath: $.ASN1Decoder<
  */
 export function _decode_ForwardCertificationPath(el: _Element) {
     if (!_cached_decoder_for_ForwardCertificationPath) {
-        _cached_decoder_for_ForwardCertificationPath = $._decodeSequenceOf<
-            CrossCertificates
-        >(() => _decode_CrossCertificates);
+        _cached_decoder_for_ForwardCertificationPath = $._decodeSequenceOf<CrossCertificates>(
+            () => _decode_CrossCertificates
+        );
     }
     return _cached_decoder_for_ForwardCertificationPath(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ForwardCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ForwardCertificationPath */
-let _cached_encoder_for_ForwardCertificationPath: $.ASN1Encoder<
-    ForwardCertificationPath
-> | null = null;
+let _cached_encoder_for_ForwardCertificationPath: $.ASN1Encoder<ForwardCertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ForwardCertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ForwardCertificationPath */
@@ -68,9 +64,10 @@ export function _encode_ForwardCertificationPath(
     elGetter: $.ASN1Encoder<ForwardCertificationPath>
 ) {
     if (!_cached_encoder_for_ForwardCertificationPath) {
-        _cached_encoder_for_ForwardCertificationPath = $._encodeSequenceOf<
-            CrossCertificates
-        >(() => _encode_CrossCertificates, $.BER);
+        _cached_encoder_for_ForwardCertificationPath = $._encodeSequenceOf<CrossCertificates>(
+            () => _encode_CrossCertificates,
+            $.BER
+        );
     }
     return _cached_encoder_for_ForwardCertificationPath(value, elGetter);
 }

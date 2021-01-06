@@ -170,8 +170,8 @@ export function _decode_SortKey(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SortKey /* SEQUENCE_CONSTRUCTOR_CALL */(
-                type_,
+            return new SortKey(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
                 orderingRule,
                 _unrecognizedExtensionsList
             );

@@ -118,9 +118,7 @@ export const auxiliary: ObjectClassKind =
 /* END_OF_SYMBOL_DEFINITION auxiliary */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectClassKind */
-let _cached_decoder_for_ObjectClassKind: $.ASN1Decoder<
-    ObjectClassKind
-> | null = null;
+let _cached_decoder_for_ObjectClassKind: $.ASN1Decoder<ObjectClassKind> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ObjectClassKind */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ObjectClassKind */
@@ -139,9 +137,7 @@ export function _decode_ObjectClassKind(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ObjectClassKind */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectClassKind */
-let _cached_encoder_for_ObjectClassKind: $.ASN1Encoder<
-    ObjectClassKind
-> | null = null;
+let _cached_encoder_for_ObjectClassKind: $.ASN1Encoder<ObjectClassKind> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ObjectClassKind */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ObjectClassKind */

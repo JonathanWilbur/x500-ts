@@ -254,8 +254,8 @@ export function _decode_AddAvlRsp(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AddAvlRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new AddAvlRsp(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 result,

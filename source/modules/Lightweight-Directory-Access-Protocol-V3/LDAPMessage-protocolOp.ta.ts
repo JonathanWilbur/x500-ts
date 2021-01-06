@@ -249,9 +249,7 @@ export type LDAPMessage_protocolOp =
 /* END_OF_SYMBOL_DEFINITION LDAPMessage_protocolOp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LDAPMessage_protocolOp */
-let _cached_decoder_for_LDAPMessage_protocolOp: $.ASN1Decoder<
-    LDAPMessage_protocolOp
-> | null = null;
+let _cached_decoder_for_LDAPMessage_protocolOp: $.ASN1Decoder<LDAPMessage_protocolOp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LDAPMessage_protocolOp */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LDAPMessage_protocolOp */
@@ -263,43 +261,44 @@ let _cached_decoder_for_LDAPMessage_protocolOp: $.ASN1Decoder<
  */
 export function _decode_LDAPMessage_protocolOp(el: _Element) {
     if (!_cached_decoder_for_LDAPMessage_protocolOp) {
-        _cached_decoder_for_LDAPMessage_protocolOp = $._decode_extensible_choice<
-            LDAPMessage_protocolOp
-        >({
-            "APPLICATION 0": ["bindRequest", _decode_BindRequest],
-            "APPLICATION 1": ["bindResponse", _decode_BindResponse],
-            "APPLICATION 2": ["unbindRequest", _decode_UnbindRequest],
-            "APPLICATION 3": ["searchRequest", _decode_SearchRequest],
-            "APPLICATION 4": ["searchResEntry", _decode_SearchResultEntry],
-            "APPLICATION 5": ["searchResDone", _decode_SearchResultDone],
-            "APPLICATION 19": ["searchResRef", _decode_SearchResultReference],
-            "APPLICATION 6": ["modifyRequest", _decode_ModifyRequest],
-            "APPLICATION 7": ["modifyResponse", _decode_ModifyResponse],
-            "APPLICATION 8": ["addRequest", _decode_AddRequest],
-            "APPLICATION 9": ["addResponse", _decode_AddResponse],
-            "APPLICATION 10": ["delRequest", _decode_DelRequest],
-            "APPLICATION 11": ["delResponse", _decode_DelResponse],
-            "APPLICATION 12": ["modDNRequest", _decode_ModifyDNRequest],
-            "APPLICATION 13": ["modDNResponse", _decode_ModifyDNResponse],
-            "APPLICATION 14": ["compareRequest", _decode_CompareRequest],
-            "APPLICATION 15": ["compareResponse", _decode_CompareResponse],
-            "APPLICATION 16": ["abandonRequest", _decode_AbandonRequest],
-            "APPLICATION 23": ["extendedReq", _decode_ExtendedRequest],
-            "APPLICATION 24": ["extendedResp", _decode_ExtendedResponse],
-            "APPLICATION 25": [
-                "intermediateResponse",
-                _decode_IntermediateResponse,
-            ],
-        });
+        _cached_decoder_for_LDAPMessage_protocolOp = $._decode_extensible_choice<LDAPMessage_protocolOp>(
+            {
+                "APPLICATION 0": ["bindRequest", _decode_BindRequest],
+                "APPLICATION 1": ["bindResponse", _decode_BindResponse],
+                "APPLICATION 2": ["unbindRequest", _decode_UnbindRequest],
+                "APPLICATION 3": ["searchRequest", _decode_SearchRequest],
+                "APPLICATION 4": ["searchResEntry", _decode_SearchResultEntry],
+                "APPLICATION 5": ["searchResDone", _decode_SearchResultDone],
+                "APPLICATION 19": [
+                    "searchResRef",
+                    _decode_SearchResultReference,
+                ],
+                "APPLICATION 6": ["modifyRequest", _decode_ModifyRequest],
+                "APPLICATION 7": ["modifyResponse", _decode_ModifyResponse],
+                "APPLICATION 8": ["addRequest", _decode_AddRequest],
+                "APPLICATION 9": ["addResponse", _decode_AddResponse],
+                "APPLICATION 10": ["delRequest", _decode_DelRequest],
+                "APPLICATION 11": ["delResponse", _decode_DelResponse],
+                "APPLICATION 12": ["modDNRequest", _decode_ModifyDNRequest],
+                "APPLICATION 13": ["modDNResponse", _decode_ModifyDNResponse],
+                "APPLICATION 14": ["compareRequest", _decode_CompareRequest],
+                "APPLICATION 15": ["compareResponse", _decode_CompareResponse],
+                "APPLICATION 16": ["abandonRequest", _decode_AbandonRequest],
+                "APPLICATION 23": ["extendedReq", _decode_ExtendedRequest],
+                "APPLICATION 24": ["extendedResp", _decode_ExtendedResponse],
+                "APPLICATION 25": [
+                    "intermediateResponse",
+                    _decode_IntermediateResponse,
+                ],
+            }
+        );
     }
     return _cached_decoder_for_LDAPMessage_protocolOp(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_LDAPMessage_protocolOp */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LDAPMessage_protocolOp */
-let _cached_encoder_for_LDAPMessage_protocolOp: $.ASN1Encoder<
-    LDAPMessage_protocolOp
-> | null = null;
+let _cached_encoder_for_LDAPMessage_protocolOp: $.ASN1Encoder<LDAPMessage_protocolOp> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LDAPMessage_protocolOp */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LDAPMessage_protocolOp */
@@ -315,9 +314,7 @@ export function _encode_LDAPMessage_protocolOp(
     elGetter: $.ASN1Encoder<LDAPMessage_protocolOp>
 ) {
     if (!_cached_encoder_for_LDAPMessage_protocolOp) {
-        _cached_encoder_for_LDAPMessage_protocolOp = $._encode_choice<
-            LDAPMessage_protocolOp
-        >(
+        _cached_encoder_for_LDAPMessage_protocolOp = $._encode_choice<LDAPMessage_protocolOp>(
             {
                 bindRequest: _encode_BindRequest,
                 bindResponse: _encode_BindResponse,

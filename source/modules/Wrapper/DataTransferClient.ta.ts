@@ -43,9 +43,7 @@ export type DataTransferClient =
 /* END_OF_SYMBOL_DEFINITION DataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferClient */
-let _cached_decoder_for_DataTransferClient: $.ASN1Decoder<
-    DataTransferClient
-> | null = null;
+let _cached_decoder_for_DataTransferClient: $.ASN1Decoder<DataTransferClient> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DataTransferClient */
@@ -57,31 +55,29 @@ let _cached_decoder_for_DataTransferClient: $.ASN1Decoder<
  */
 export function _decode_DataTransferClient(el: _Element) {
     if (!_cached_decoder_for_DataTransferClient) {
-        _cached_decoder_for_DataTransferClient = $._decode_extensible_choice<
-            DataTransferClient
-        >({
-            "CONTEXT 0": [
-                "aead",
-                $._decode_implicit<DataTransferClientAE>(
-                    () => _decode_DataTransferClientAE
-                ),
-            ],
-            "CONTEXT 1": [
-                "non_aead",
-                $._decode_implicit<DataTransferClientNEA>(
-                    () => _decode_DataTransferClientNEA
-                ),
-            ],
-        });
+        _cached_decoder_for_DataTransferClient = $._decode_extensible_choice<DataTransferClient>(
+            {
+                "CONTEXT 0": [
+                    "aead",
+                    $._decode_implicit<DataTransferClientAE>(
+                        () => _decode_DataTransferClientAE
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "non_aead",
+                    $._decode_implicit<DataTransferClientNEA>(
+                        () => _decode_DataTransferClientNEA
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DataTransferClient(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_DataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferClient */
-let _cached_encoder_for_DataTransferClient: $.ASN1Encoder<
-    DataTransferClient
-> | null = null;
+let _cached_encoder_for_DataTransferClient: $.ASN1Encoder<DataTransferClient> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DataTransferClient */
@@ -97,9 +93,7 @@ export function _encode_DataTransferClient(
     elGetter: $.ASN1Encoder<DataTransferClient>
 ) {
     if (!_cached_encoder_for_DataTransferClient) {
-        _cached_encoder_for_DataTransferClient = $._encode_choice<
-            DataTransferClient
-        >(
+        _cached_encoder_for_DataTransferClient = $._encode_choice<DataTransferClient>(
             {
                 aead: $._encode_implicit(
                     _TagClass.context,

@@ -220,8 +220,8 @@ export function _get_decoder_for_SIGNED<ToBeSigned>(
                 _unrecognizedExtensionsList.push(ext);
             }
         );
-        return new SIGNED /* SEQUENCE_CONSTRUCTOR_CALL */(
-            toBeSigned,
+        return new SIGNED(
+            /* SEQUENCE_CONSTRUCTOR_CALL */ toBeSigned,
             algorithmIdentifier,
             signature,
             altAlgorithmIdentifier,

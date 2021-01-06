@@ -17,9 +17,7 @@ export type MgtGeneralizedTime = GeneralizedTime; // GeneralizedTime
 /* END_OF_SYMBOL_DEFINITION MgtGeneralizedTime */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtGeneralizedTime */
-let _cached_decoder_for_MgtGeneralizedTime: $.ASN1Decoder<
-    MgtGeneralizedTime
-> | null = null;
+let _cached_decoder_for_MgtGeneralizedTime: $.ASN1Decoder<MgtGeneralizedTime> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtGeneralizedTime */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MgtGeneralizedTime */
@@ -38,9 +36,7 @@ export function _decode_MgtGeneralizedTime(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MgtGeneralizedTime */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtGeneralizedTime */
-let _cached_encoder_for_MgtGeneralizedTime: $.ASN1Encoder<
-    MgtGeneralizedTime
-> | null = null;
+let _cached_encoder_for_MgtGeneralizedTime: $.ASN1Encoder<MgtGeneralizedTime> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtGeneralizedTime */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MgtGeneralizedTime */

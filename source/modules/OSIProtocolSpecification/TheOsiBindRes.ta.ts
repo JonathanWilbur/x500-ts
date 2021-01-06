@@ -19,9 +19,7 @@ export type TheOsiBindRes = _Element; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION TheOsiBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiBindRes */
-let _cached_decoder_for_TheOsiBindRes: $.ASN1Decoder<
-    TheOsiBindRes
-> | null = null;
+let _cached_decoder_for_TheOsiBindRes: $.ASN1Decoder<TheOsiBindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TheOsiBindRes */
@@ -42,9 +40,7 @@ export function _decode_TheOsiBindRes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TheOsiBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiBindRes */
-let _cached_encoder_for_TheOsiBindRes: $.ASN1Encoder<
-    TheOsiBindRes
-> | null = null;
+let _cached_encoder_for_TheOsiBindRes: $.ASN1Encoder<TheOsiBindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TheOsiBindRes */

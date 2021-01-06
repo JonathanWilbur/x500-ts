@@ -27,9 +27,7 @@ export type MgtCommonName = UnboundedDirectoryString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION MgtCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtCommonName */
-let _cached_decoder_for_MgtCommonName: $.ASN1Decoder<
-    MgtCommonName
-> | null = null;
+let _cached_decoder_for_MgtCommonName: $.ASN1Decoder<MgtCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MgtCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MgtCommonName */
@@ -48,9 +46,7 @@ export function _decode_MgtCommonName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MgtCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtCommonName */
-let _cached_encoder_for_MgtCommonName: $.ASN1Encoder<
-    MgtCommonName
-> | null = null;
+let _cached_encoder_for_MgtCommonName: $.ASN1Encoder<MgtCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MgtCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MgtCommonName */

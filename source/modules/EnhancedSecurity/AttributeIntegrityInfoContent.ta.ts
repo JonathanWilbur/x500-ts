@@ -157,9 +157,7 @@ export const _extension_additions_list_spec_for_AttributeIntegrityInfoContent: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeIntegrityInfoContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeIntegrityInfoContent */
-let _cached_decoder_for_AttributeIntegrityInfoContent: $.ASN1Decoder<
-    AttributeIntegrityInfoContent
-> | null = null;
+let _cached_decoder_for_AttributeIntegrityInfoContent: $.ASN1Decoder<AttributeIntegrityInfoContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeIntegrityInfoContent */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeIntegrityInfoContent */
@@ -203,8 +201,8 @@ export function _decode_AttributeIntegrityInfoContent(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeIntegrityInfoContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-                scope,
+            return new AttributeIntegrityInfoContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ scope,
                 signer,
                 attribsHash,
                 _unrecognizedExtensionsList
@@ -216,9 +214,7 @@ export function _decode_AttributeIntegrityInfoContent(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeIntegrityInfoContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeIntegrityInfoContent */
-let _cached_encoder_for_AttributeIntegrityInfoContent: $.ASN1Encoder<
-    AttributeIntegrityInfoContent
-> | null = null;
+let _cached_encoder_for_AttributeIntegrityInfoContent: $.ASN1Encoder<AttributeIntegrityInfoContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeIntegrityInfoContent */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeIntegrityInfoContent */

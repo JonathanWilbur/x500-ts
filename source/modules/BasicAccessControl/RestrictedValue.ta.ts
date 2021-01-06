@@ -130,9 +130,7 @@ export const _extension_additions_list_spec_for_RestrictedValue: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RestrictedValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RestrictedValue */
-let _cached_decoder_for_RestrictedValue: $.ASN1Decoder<
-    RestrictedValue
-> | null = null;
+let _cached_decoder_for_RestrictedValue: $.ASN1Decoder<RestrictedValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RestrictedValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RestrictedValue */
@@ -169,9 +167,7 @@ export function _decode_RestrictedValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RestrictedValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RestrictedValue */
-let _cached_encoder_for_RestrictedValue: $.ASN1Encoder<
-    RestrictedValue
-> | null = null;
+let _cached_encoder_for_RestrictedValue: $.ASN1Encoder<RestrictedValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RestrictedValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RestrictedValue */

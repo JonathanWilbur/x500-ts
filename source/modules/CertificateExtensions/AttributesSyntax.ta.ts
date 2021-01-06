@@ -27,9 +27,7 @@ export type AttributesSyntax = Attribute[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AttributesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributesSyntax */
-let _cached_decoder_for_AttributesSyntax: $.ASN1Decoder<
-    AttributesSyntax
-> | null = null;
+let _cached_decoder_for_AttributesSyntax: $.ASN1Decoder<AttributesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributesSyntax */
@@ -50,9 +48,7 @@ export function _decode_AttributesSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributesSyntax */
-let _cached_encoder_for_AttributesSyntax: $.ASN1Encoder<
-    AttributesSyntax
-> | null = null;
+let _cached_encoder_for_AttributesSyntax: $.ASN1Encoder<AttributesSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributesSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributesSyntax */

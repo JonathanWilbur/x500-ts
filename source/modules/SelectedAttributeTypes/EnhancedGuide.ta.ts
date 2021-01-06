@@ -177,9 +177,7 @@ export const _extension_additions_list_spec_for_EnhancedGuide: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EnhancedGuide */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EnhancedGuide */
-let _cached_decoder_for_EnhancedGuide: $.ASN1Decoder<
-    EnhancedGuide
-> | null = null;
+let _cached_decoder_for_EnhancedGuide: $.ASN1Decoder<EnhancedGuide> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EnhancedGuide */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EnhancedGuide */
@@ -230,8 +228,8 @@ export function _decode_EnhancedGuide(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EnhancedGuide /* SEQUENCE_CONSTRUCTOR_CALL */(
-                objectClass,
+            return new EnhancedGuide(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ objectClass,
                 criteria,
                 subset,
                 _unrecognizedExtensionsList
@@ -243,9 +241,7 @@ export function _decode_EnhancedGuide(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EnhancedGuide */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EnhancedGuide */
-let _cached_encoder_for_EnhancedGuide: $.ASN1Encoder<
-    EnhancedGuide
-> | null = null;
+let _cached_encoder_for_EnhancedGuide: $.ASN1Encoder<EnhancedGuide> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EnhancedGuide */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EnhancedGuide */

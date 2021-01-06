@@ -158,9 +158,7 @@ export const _extension_additions_list_spec_for_BaseRevocationInfo: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_BaseRevocationInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BaseRevocationInfo */
-let _cached_decoder_for_BaseRevocationInfo: $.ASN1Decoder<
-    BaseRevocationInfo
-> | null = null;
+let _cached_decoder_for_BaseRevocationInfo: $.ASN1Decoder<BaseRevocationInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BaseRevocationInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BaseRevocationInfo */
@@ -184,9 +182,9 @@ export function _decode_BaseRevocationInfo(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 cRLStreamIdentifier: (_el: _Element): void => {
-                    cRLStreamIdentifier = $._decode_implicit<
-                        CRLStreamIdentifier
-                    >(() => _decode_CRLStreamIdentifier)(_el);
+                    cRLStreamIdentifier = $._decode_implicit<CRLStreamIdentifier>(
+                        () => _decode_CRLStreamIdentifier
+                    )(_el);
                 },
                 cRLNumber: (_el: _Element): void => {
                     cRLNumber = $._decode_implicit<CRLNumber>(
@@ -210,8 +208,8 @@ export function _decode_BaseRevocationInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new BaseRevocationInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                cRLStreamIdentifier,
+            return new BaseRevocationInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ cRLStreamIdentifier,
                 cRLNumber,
                 baseThisUpdate,
                 _unrecognizedExtensionsList
@@ -223,9 +221,7 @@ export function _decode_BaseRevocationInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BaseRevocationInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BaseRevocationInfo */
-let _cached_encoder_for_BaseRevocationInfo: $.ASN1Encoder<
-    BaseRevocationInfo
-> | null = null;
+let _cached_encoder_for_BaseRevocationInfo: $.ASN1Encoder<BaseRevocationInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BaseRevocationInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BaseRevocationInfo */

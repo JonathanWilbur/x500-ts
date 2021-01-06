@@ -29,9 +29,7 @@ export type AuthorizationData = AuthorizationData_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AuthorizationData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorizationData */
-let _cached_decoder_for_AuthorizationData: $.ASN1Decoder<
-    AuthorizationData
-> | null = null;
+let _cached_decoder_for_AuthorizationData: $.ASN1Decoder<AuthorizationData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorizationData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthorizationData */
@@ -43,18 +41,16 @@ let _cached_decoder_for_AuthorizationData: $.ASN1Decoder<
  */
 export function _decode_AuthorizationData(el: _Element) {
     if (!_cached_decoder_for_AuthorizationData) {
-        _cached_decoder_for_AuthorizationData = $._decodeSequenceOf<
-            AuthorizationData_Item
-        >(() => _decode_AuthorizationData_Item);
+        _cached_decoder_for_AuthorizationData = $._decodeSequenceOf<AuthorizationData_Item>(
+            () => _decode_AuthorizationData_Item
+        );
     }
     return _cached_decoder_for_AuthorizationData(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AuthorizationData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorizationData */
-let _cached_encoder_for_AuthorizationData: $.ASN1Encoder<
-    AuthorizationData
-> | null = null;
+let _cached_encoder_for_AuthorizationData: $.ASN1Encoder<AuthorizationData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorizationData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthorizationData */
@@ -70,9 +66,10 @@ export function _encode_AuthorizationData(
     elGetter: $.ASN1Encoder<AuthorizationData>
 ) {
     if (!_cached_encoder_for_AuthorizationData) {
-        _cached_encoder_for_AuthorizationData = $._encodeSequenceOf<
-            AuthorizationData_Item
-        >(() => _encode_AuthorizationData_Item, $.BER);
+        _cached_encoder_for_AuthorizationData = $._encodeSequenceOf<AuthorizationData_Item>(
+            () => _encode_AuthorizationData_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_AuthorizationData(value, elGetter);
 }

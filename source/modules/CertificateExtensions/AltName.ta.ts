@@ -160,8 +160,8 @@ export function _decode_AltName(el: _Element) {
                 _root_component_type_list_2_spec_for_AltName,
                 undefined
             );
-            return new AltName /* SEQUENCE_CONSTRUCTOR_CALL */(
-                altnameType,
+            return new AltName(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ altnameType,
                 altNameValue
             );
         };

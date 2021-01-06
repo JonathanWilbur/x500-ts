@@ -426,33 +426,25 @@ export class SearchArgumentData {
          * @public
          * @readonly
          */
-        readonly serviceControls: OPTIONAL<
-            ServiceControls
-        > /* REPLICATED_COMPONENT */,
+        readonly serviceControls: OPTIONAL<ServiceControls> /* REPLICATED_COMPONENT */,
         /**
          * @summary `securityParameters`.
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `requestor`.
          * @public
          * @readonly
          */
-        readonly requestor: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly requestor: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `operationProgress`.
          * @public
          * @readonly
          */
-        readonly operationProgress: OPTIONAL<
-            OperationProgress
-        > /* REPLICATED_COMPONENT */,
+        readonly operationProgress: OPTIONAL<OperationProgress> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasedRDNs`.
          * @public
@@ -464,17 +456,13 @@ export class SearchArgumentData {
          * @public
          * @readonly
          */
-        readonly criticalExtensions: OPTIONAL<
-            BIT_STRING
-        > /* REPLICATED_COMPONENT */,
+        readonly criticalExtensions: OPTIONAL<BIT_STRING> /* REPLICATED_COMPONENT */,
         /**
          * @summary `referenceType`.
          * @public
          * @readonly
          */
-        readonly referenceType: OPTIONAL<
-            ReferenceType
-        > /* REPLICATED_COMPONENT */,
+        readonly referenceType: OPTIONAL<ReferenceType> /* REPLICATED_COMPONENT */,
         /**
          * @summary `entryOnly`.
          * @public
@@ -492,25 +480,19 @@ export class SearchArgumentData {
          * @public
          * @readonly
          */
-        readonly nameResolveOnMaster: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly nameResolveOnMaster: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `operationContexts`.
          * @public
          * @readonly
          */
-        readonly operationContexts: OPTIONAL<
-            ContextSelection
-        > /* REPLICATED_COMPONENT */,
+        readonly operationContexts: OPTIONAL<ContextSelection> /* REPLICATED_COMPONENT */,
         /**
          * @summary `familyGrouping`.
          * @public
          * @readonly
          */
-        readonly familyGrouping: OPTIONAL<
-            FamilyGrouping
-        > /* REPLICATED_COMPONENT */
+        readonly familyGrouping: OPTIONAL<FamilyGrouping> /* REPLICATED_COMPONENT */
     ) {}
 
     /**
@@ -955,9 +937,7 @@ export const _extension_additions_list_spec_for_SearchArgumentData: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SearchArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData */
-let _cached_decoder_for_SearchArgumentData: $.ASN1Decoder<
-    SearchArgumentData
-> | null = null;
+let _cached_decoder_for_SearchArgumentData: $.ASN1Decoder<SearchArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchArgumentData */
@@ -1074,14 +1054,14 @@ export function _decode_SearchArgumentData(el: _Element) {
                     )(_el);
                 },
                 hierarchySelections: (_el: _Element): void => {
-                    hierarchySelections = $._decode_explicit<
-                        HierarchySelections
-                    >(() => _decode_HierarchySelections)(_el);
+                    hierarchySelections = $._decode_explicit<HierarchySelections>(
+                        () => _decode_HierarchySelections
+                    )(_el);
                 },
                 searchControlOptions: (_el: _Element): void => {
-                    searchControlOptions = $._decode_explicit<
-                        SearchControlOptions
-                    >(() => _decode_SearchControlOptions)(_el);
+                    searchControlOptions = $._decode_explicit<SearchControlOptions>(
+                        () => _decode_SearchControlOptions
+                    )(_el);
                 },
                 joinArguments: (_el: _Element): void => {
                     joinArguments = $._decode_explicit<JoinArgument[]>(() =>
@@ -1167,8 +1147,8 @@ export function _decode_SearchArgumentData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SearchArgumentData /* SET_CONSTRUCTOR_CALL */(
-                baseObject,
+            return new SearchArgumentData(
+                /* SET_CONSTRUCTOR_CALL */ baseObject,
                 subset,
                 filter,
                 searchAliases,
@@ -1204,9 +1184,7 @@ export function _decode_SearchArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData */
-let _cached_encoder_for_SearchArgumentData: $.ASN1Encoder<
-    SearchArgumentData
-> | null = null;
+let _cached_encoder_for_SearchArgumentData: $.ASN1Encoder<SearchArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchArgumentData */

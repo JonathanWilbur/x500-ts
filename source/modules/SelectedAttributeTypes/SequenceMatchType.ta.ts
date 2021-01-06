@@ -143,9 +143,7 @@ export const sequenceProviderDefined: SequenceMatchType = SequenceMatchType_sequ
 /* END_OF_SYMBOL_DEFINITION sequenceProviderDefined */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SequenceMatchType */
-let _cached_decoder_for_SequenceMatchType: $.ASN1Decoder<
-    SequenceMatchType
-> | null = null;
+let _cached_decoder_for_SequenceMatchType: $.ASN1Decoder<SequenceMatchType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SequenceMatchType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SequenceMatchType */
@@ -164,9 +162,7 @@ export function _decode_SequenceMatchType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SequenceMatchType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SequenceMatchType */
-let _cached_encoder_for_SequenceMatchType: $.ASN1Encoder<
-    SequenceMatchType
-> | null = null;
+let _cached_encoder_for_SequenceMatchType: $.ASN1Encoder<SequenceMatchType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SequenceMatchType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SequenceMatchType */

@@ -196,9 +196,7 @@ export const _extension_additions_list_spec_for_AttributeTypeDescription: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeTypeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeDescription */
-let _cached_decoder_for_AttributeTypeDescription: $.ASN1Decoder<
-    AttributeTypeDescription
-> | null = null;
+let _cached_decoder_for_AttributeTypeDescription: $.ASN1Decoder<AttributeTypeDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypeDescription */
@@ -255,8 +253,8 @@ export function _decode_AttributeTypeDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeTypeDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new AttributeTypeDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 name,
                 description,
                 obsolete,
@@ -270,9 +268,7 @@ export function _decode_AttributeTypeDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeDescription */
-let _cached_encoder_for_AttributeTypeDescription: $.ASN1Encoder<
-    AttributeTypeDescription
-> | null = null;
+let _cached_encoder_for_AttributeTypeDescription: $.ASN1Encoder<AttributeTypeDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypeDescription */

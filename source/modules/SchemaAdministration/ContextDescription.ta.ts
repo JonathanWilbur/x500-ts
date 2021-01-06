@@ -194,9 +194,7 @@ export const _extension_additions_list_spec_for_ContextDescription: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ContextDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextDescription */
-let _cached_decoder_for_ContextDescription: $.ASN1Decoder<
-    ContextDescription
-> | null = null;
+let _cached_decoder_for_ContextDescription: $.ASN1Decoder<ContextDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContextDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContextDescription */
@@ -253,8 +251,8 @@ export function _decode_ContextDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ContextDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new ContextDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 name,
                 description,
                 obsolete,
@@ -268,9 +266,7 @@ export function _decode_ContextDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ContextDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextDescription */
-let _cached_encoder_for_ContextDescription: $.ASN1Encoder<
-    ContextDescription
-> | null = null;
+let _cached_encoder_for_ContextDescription: $.ASN1Encoder<ContextDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContextDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContextDescription */

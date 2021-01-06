@@ -153,9 +153,7 @@ export const _extension_additions_list_spec_for_PresentationAddress: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PresentationAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PresentationAddress */
-let _cached_decoder_for_PresentationAddress: $.ASN1Decoder<
-    PresentationAddress
-> | null = null;
+let _cached_decoder_for_PresentationAddress: $.ASN1Decoder<PresentationAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PresentationAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PresentationAddress */
@@ -211,8 +209,8 @@ export function _decode_PresentationAddress(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PresentationAddress /* SEQUENCE_CONSTRUCTOR_CALL */(
-                pSelector,
+            return new PresentationAddress(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ pSelector,
                 sSelector,
                 tSelector,
                 nAddresses,
@@ -225,9 +223,7 @@ export function _decode_PresentationAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PresentationAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PresentationAddress */
-let _cached_encoder_for_PresentationAddress: $.ASN1Encoder<
-    PresentationAddress
-> | null = null;
+let _cached_encoder_for_PresentationAddress: $.ASN1Encoder<PresentationAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PresentationAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PresentationAddress */

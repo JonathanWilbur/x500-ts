@@ -71,9 +71,7 @@ export const proposed_transfer_syntaxes_not_supported: Result_list_Item_provider
 /* END_OF_SYMBOL_DEFINITION proposed_transfer_syntaxes_not_supported */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Result_list_Item_provider_reason */
-let _cached_decoder_for_Result_list_Item_provider_reason: $.ASN1Decoder<
-    Result_list_Item_provider_reason
-> | null = null;
+let _cached_decoder_for_Result_list_Item_provider_reason: $.ASN1Decoder<Result_list_Item_provider_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Result_list_Item_provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Result_list_Item_provider_reason */
@@ -92,9 +90,7 @@ export function _decode_Result_list_Item_provider_reason(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Result_list_Item_provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Result_list_Item_provider_reason */
-let _cached_encoder_for_Result_list_Item_provider_reason: $.ASN1Encoder<
-    Result_list_Item_provider_reason
-> | null = null;
+let _cached_encoder_for_Result_list_Item_provider_reason: $.ASN1Encoder<Result_list_Item_provider_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Result_list_Item_provider_reason */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Result_list_Item_provider_reason */

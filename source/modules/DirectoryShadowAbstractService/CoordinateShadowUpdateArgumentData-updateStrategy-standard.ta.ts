@@ -81,9 +81,7 @@ export const total: CoordinateShadowUpdateArgumentData_updateStrategy_standard =
 /* END_OF_SYMBOL_DEFINITION total */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
-let _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard: $.ASN1Decoder<
-    CoordinateShadowUpdateArgumentData_updateStrategy_standard
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard: $.ASN1Decoder<CoordinateShadowUpdateArgumentData_updateStrategy_standard> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
@@ -109,9 +107,7 @@ export function _decode_CoordinateShadowUpdateArgumentData_updateStrategy_standa
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
-let _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard: $.ASN1Encoder<
-    CoordinateShadowUpdateArgumentData_updateStrategy_standard
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard: $.ASN1Encoder<CoordinateShadowUpdateArgumentData_updateStrategy_standard> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateArgumentData_updateStrategy_standard */
@@ -124,9 +120,7 @@ let _cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standa
  */
 export function _encode_CoordinateShadowUpdateArgumentData_updateStrategy_standard(
     value: CoordinateShadowUpdateArgumentData_updateStrategy_standard,
-    elGetter: $.ASN1Encoder<
-        CoordinateShadowUpdateArgumentData_updateStrategy_standard
-    >
+    elGetter: $.ASN1Encoder<CoordinateShadowUpdateArgumentData_updateStrategy_standard>
 ) {
     if (
         !_cached_encoder_for_CoordinateShadowUpdateArgumentData_updateStrategy_standard

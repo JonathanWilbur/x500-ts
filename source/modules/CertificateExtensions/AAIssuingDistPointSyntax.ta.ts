@@ -334,8 +334,8 @@ export function _decode_AAIssuingDistPointSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AAIssuingDistPointSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                distributionPoint,
+            return new AAIssuingDistPointSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ distributionPoint,
                 onlySomeReasons,
                 indirectCRL,
                 containsUserAttributeCerts,

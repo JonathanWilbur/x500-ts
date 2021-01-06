@@ -33,9 +33,7 @@ export type EntryInformationSelection_extraAttributes =
 /* END_OF_SYMBOL_DEFINITION EntryInformationSelection_extraAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection_extraAttributes */
-let _cached_decoder_for_EntryInformationSelection_extraAttributes: $.ASN1Decoder<
-    EntryInformationSelection_extraAttributes
-> | null = null;
+let _cached_decoder_for_EntryInformationSelection_extraAttributes: $.ASN1Decoder<EntryInformationSelection_extraAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection_extraAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection_extraAttributes */
@@ -49,29 +47,29 @@ export function _decode_EntryInformationSelection_extraAttributes(
     el: _Element
 ) {
     if (!_cached_decoder_for_EntryInformationSelection_extraAttributes) {
-        _cached_decoder_for_EntryInformationSelection_extraAttributes = $._decode_inextensible_choice<
-            EntryInformationSelection_extraAttributes
-        >({
-            "CONTEXT 3": [
-                "allOperationalAttributes",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-            "CONTEXT 4": [
-                "select",
-                $._decode_explicit<AttributeType[]>(() =>
-                    $._decodeSetOf<AttributeType>(() => _decode_AttributeType)
-                ),
-            ],
-        });
+        _cached_decoder_for_EntryInformationSelection_extraAttributes = $._decode_inextensible_choice<EntryInformationSelection_extraAttributes>(
+            {
+                "CONTEXT 3": [
+                    "allOperationalAttributes",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 4": [
+                    "select",
+                    $._decode_explicit<AttributeType[]>(() =>
+                        $._decodeSetOf<AttributeType>(
+                            () => _decode_AttributeType
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_EntryInformationSelection_extraAttributes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection_extraAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection_extraAttributes */
-let _cached_encoder_for_EntryInformationSelection_extraAttributes: $.ASN1Encoder<
-    EntryInformationSelection_extraAttributes
-> | null = null;
+let _cached_encoder_for_EntryInformationSelection_extraAttributes: $.ASN1Encoder<EntryInformationSelection_extraAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection_extraAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryInformationSelection_extraAttributes */
@@ -87,9 +85,7 @@ export function _encode_EntryInformationSelection_extraAttributes(
     elGetter: $.ASN1Encoder<EntryInformationSelection_extraAttributes>
 ) {
     if (!_cached_encoder_for_EntryInformationSelection_extraAttributes) {
-        _cached_encoder_for_EntryInformationSelection_extraAttributes = $._encode_choice<
-            EntryInformationSelection_extraAttributes
-        >(
+        _cached_encoder_for_EntryInformationSelection_extraAttributes = $._encode_choice<EntryInformationSelection_extraAttributes>(
             {
                 allOperationalAttributes: $._encode_explicit(
                     _TagClass.context,

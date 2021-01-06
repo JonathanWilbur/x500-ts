@@ -43,9 +43,7 @@ export const unsupportedVersion: InitializationRej_diag = InitializationRej_diag
 /* END_OF_SYMBOL_DEFINITION unsupportedVersion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationRej_diag */
-let _cached_decoder_for_InitializationRej_diag: $.ASN1Decoder<
-    InitializationRej_diag
-> | null = null;
+let _cached_decoder_for_InitializationRej_diag: $.ASN1Decoder<InitializationRej_diag> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InitializationRej_diag */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InitializationRej_diag */
@@ -64,9 +62,7 @@ export function _decode_InitializationRej_diag(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InitializationRej_diag */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationRej_diag */
-let _cached_encoder_for_InitializationRej_diag: $.ASN1Encoder<
-    InitializationRej_diag
-> | null = null;
+let _cached_encoder_for_InitializationRej_diag: $.ASN1Encoder<InitializationRej_diag> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InitializationRej_diag */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InitializationRej_diag */

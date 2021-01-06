@@ -17,9 +17,7 @@ export type TeletexCommonName = TeletexString; // TeletexString
 /* END_OF_SYMBOL_DEFINITION TeletexCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexCommonName */
-let _cached_decoder_for_TeletexCommonName: $.ASN1Decoder<
-    TeletexCommonName
-> | null = null;
+let _cached_decoder_for_TeletexCommonName: $.ASN1Decoder<TeletexCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexCommonName */
@@ -38,9 +36,7 @@ export function _decode_TeletexCommonName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexCommonName */
-let _cached_encoder_for_TeletexCommonName: $.ASN1Encoder<
-    TeletexCommonName
-> | null = null;
+let _cached_encoder_for_TeletexCommonName: $.ASN1Encoder<TeletexCommonName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexCommonName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexCommonName */

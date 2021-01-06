@@ -33,15 +33,11 @@ export {
  * RequestShadowUpdateArgument  ::=  OPTIONALLY-PROTECTED { RequestShadowUpdateArgumentData }
  * ```
  */
-export type RequestShadowUpdateArgument = OPTIONALLY_PROTECTED<
-    RequestShadowUpdateArgumentData
->; // DefinedType
+export type RequestShadowUpdateArgument = OPTIONALLY_PROTECTED<RequestShadowUpdateArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION RequestShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgument */
-let _cached_decoder_for_RequestShadowUpdateArgument: $.ASN1Decoder<
-    RequestShadowUpdateArgument
-> | null = null;
+let _cached_decoder_for_RequestShadowUpdateArgument: $.ASN1Decoder<RequestShadowUpdateArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RequestShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgument */
@@ -53,18 +49,16 @@ let _cached_decoder_for_RequestShadowUpdateArgument: $.ASN1Decoder<
  */
 export function _decode_RequestShadowUpdateArgument(el: _Element) {
     if (!_cached_decoder_for_RequestShadowUpdateArgument) {
-        _cached_decoder_for_RequestShadowUpdateArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            RequestShadowUpdateArgumentData
-        >(_decode_RequestShadowUpdateArgumentData);
+        _cached_decoder_for_RequestShadowUpdateArgument = _get_decoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateArgumentData>(
+            _decode_RequestShadowUpdateArgumentData
+        );
     }
     return _cached_decoder_for_RequestShadowUpdateArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RequestShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgument */
-let _cached_encoder_for_RequestShadowUpdateArgument: $.ASN1Encoder<
-    RequestShadowUpdateArgument
-> | null = null;
+let _cached_encoder_for_RequestShadowUpdateArgument: $.ASN1Encoder<RequestShadowUpdateArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RequestShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RequestShadowUpdateArgument */
@@ -80,9 +74,9 @@ export function _encode_RequestShadowUpdateArgument(
     elGetter: $.ASN1Encoder<RequestShadowUpdateArgument>
 ) {
     if (!_cached_encoder_for_RequestShadowUpdateArgument) {
-        _cached_encoder_for_RequestShadowUpdateArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            RequestShadowUpdateArgumentData
-        >(_encode_RequestShadowUpdateArgumentData);
+        _cached_encoder_for_RequestShadowUpdateArgument = _get_encoder_for_OPTIONALLY_PROTECTED<RequestShadowUpdateArgumentData>(
+            _encode_RequestShadowUpdateArgumentData
+        );
     }
     return _cached_encoder_for_RequestShadowUpdateArgument(value, elGetter);
 }

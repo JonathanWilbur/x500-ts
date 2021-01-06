@@ -288,9 +288,7 @@ export const invalidIdmVersion: IdmReject_reason = IdmReject_reason_invalidIdmVe
 /* END_OF_SYMBOL_DEFINITION invalidIdmVersion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmReject_reason */
-let _cached_decoder_for_IdmReject_reason: $.ASN1Decoder<
-    IdmReject_reason
-> | null = null;
+let _cached_decoder_for_IdmReject_reason: $.ASN1Decoder<IdmReject_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_IdmReject_reason */
 
 /* START_OF_SYMBOL_DEFINITION _decode_IdmReject_reason */
@@ -309,9 +307,7 @@ export function _decode_IdmReject_reason(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_IdmReject_reason */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmReject_reason */
-let _cached_encoder_for_IdmReject_reason: $.ASN1Encoder<
-    IdmReject_reason
-> | null = null;
+let _cached_encoder_for_IdmReject_reason: $.ASN1Encoder<IdmReject_reason> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_IdmReject_reason */
 
 /* START_OF_SYMBOL_DEFINITION _encode_IdmReject_reason */

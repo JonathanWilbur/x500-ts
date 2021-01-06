@@ -226,9 +226,7 @@ export const insufficientResources: ShadowProblem = ShadowProblem_insufficientRe
 /* END_OF_SYMBOL_DEFINITION insufficientResources */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowProblem */
-let _cached_decoder_for_ShadowProblem: $.ASN1Decoder<
-    ShadowProblem
-> | null = null;
+let _cached_decoder_for_ShadowProblem: $.ASN1Decoder<ShadowProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ShadowProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ShadowProblem */
@@ -247,9 +245,7 @@ export function _decode_ShadowProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ShadowProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowProblem */
-let _cached_encoder_for_ShadowProblem: $.ASN1Encoder<
-    ShadowProblem
-> | null = null;
+let _cached_encoder_for_ShadowProblem: $.ASN1Encoder<ShadowProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ShadowProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ShadowProblem */

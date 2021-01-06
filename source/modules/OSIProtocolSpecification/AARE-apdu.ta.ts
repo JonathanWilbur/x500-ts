@@ -184,17 +184,13 @@ export class AARE_apdu {
          * @public
          * @readonly
          */
-        readonly responding_AP_invocation_identifier: OPTIONAL<
-            AP_invocation_identifier
-        >,
+        readonly responding_AP_invocation_identifier: OPTIONAL<AP_invocation_identifier>,
         /**
          * @summary `responding_AE_invocation_identifier`.
          * @public
          * @readonly
          */
-        readonly responding_AE_invocation_identifier: OPTIONAL<
-            AE_invocation_identifier
-        >,
+        readonly responding_AE_invocation_identifier: OPTIONAL<AE_invocation_identifier>,
         /**
          * @summary `implementation_information`.
          * @public
@@ -393,14 +389,14 @@ export function _decode_AARE_apdu(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         "protocol-version": (_el: _Element): void => {
-                            protocol_version = $._decode_explicit<
-                                AARE_apdu_protocol_version
-                            >(() => _decode_AARE_apdu_protocol_version)(_el);
+                            protocol_version = $._decode_explicit<AARE_apdu_protocol_version>(
+                                () => _decode_AARE_apdu_protocol_version
+                            )(_el);
                         },
                         "application-context-name": (_el: _Element): void => {
-                            application_context_name = $._decode_explicit<
-                                Application_context_name
-                            >(() => _decode_Application_context_name)(_el);
+                            application_context_name = $._decode_explicit<Application_context_name>(
+                                () => _decode_Application_context_name
+                            )(_el);
                         },
                         result: (_el: _Element): void => {
                             result = $._decode_explicit<Associate_result>(
@@ -408,9 +404,9 @@ export function _decode_AARE_apdu(el: _Element) {
                             )(_el);
                         },
                         "result-source-diagnostic": (_el: _Element): void => {
-                            result_source_diagnostic = $._decode_explicit<
-                                Associate_source_diagnostic
-                            >(() => _decode_Associate_source_diagnostic)(_el);
+                            result_source_diagnostic = $._decode_explicit<Associate_source_diagnostic>(
+                                () => _decode_Associate_source_diagnostic
+                            )(_el);
                         },
                         "responding-AP-title": (_el: _Element): void => {
                             responding_AP_title = $._decode_explicit<Name>(
@@ -418,35 +414,33 @@ export function _decode_AARE_apdu(el: _Element) {
                             )(_el);
                         },
                         "responding-AE-qualifier": (_el: _Element): void => {
-                            responding_AE_qualifier = $._decode_explicit<
-                                RelativeDistinguishedName
-                            >(() => _decode_RelativeDistinguishedName)(_el);
+                            responding_AE_qualifier = $._decode_explicit<RelativeDistinguishedName>(
+                                () => _decode_RelativeDistinguishedName
+                            )(_el);
                         },
                         "responding-AP-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            responding_AP_invocation_identifier = $._decode_explicit<
-                                AP_invocation_identifier
-                            >(() => _decode_AP_invocation_identifier)(_el);
+                            responding_AP_invocation_identifier = $._decode_explicit<AP_invocation_identifier>(
+                                () => _decode_AP_invocation_identifier
+                            )(_el);
                         },
                         "responding-AE-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            responding_AE_invocation_identifier = $._decode_explicit<
-                                AE_invocation_identifier
-                            >(() => _decode_AE_invocation_identifier)(_el);
+                            responding_AE_invocation_identifier = $._decode_explicit<AE_invocation_identifier>(
+                                () => _decode_AE_invocation_identifier
+                            )(_el);
                         },
                         "implementation-information": (_el: _Element): void => {
-                            implementation_information = $._decode_explicit<
-                                Implementation_data
-                            >(() => _decode_Implementation_data)(_el);
+                            implementation_information = $._decode_explicit<Implementation_data>(
+                                () => _decode_Implementation_data
+                            )(_el);
                         },
                         "user-information": (_el: _Element): void => {
-                            user_information = $._decode_explicit<
-                                Association_informationBindRes
-                            >(() => _decode_Association_informationBindRes)(
-                                _el
-                            );
+                            user_information = $._decode_explicit<Association_informationBindRes>(
+                                () => _decode_Association_informationBindRes
+                            )(_el);
                         },
                     };
                     /* END_OF_CALLBACKS_MAP */
@@ -458,8 +452,8 @@ export function _decode_AARE_apdu(el: _Element) {
                         _root_component_type_list_2_spec_for_AARE_apdu,
                         undefined
                     );
-                    return new AARE_apdu /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        protocol_version,
+                    return new AARE_apdu(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                         application_context_name,
                         result,
                         result_source_diagnostic,

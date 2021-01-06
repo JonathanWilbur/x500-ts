@@ -146,9 +146,7 @@ export const _extension_additions_list_spec_for_AttributeTypeValueContexts: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeTypeValueContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeValueContexts */
-let _cached_decoder_for_AttributeTypeValueContexts: $.ASN1Decoder<
-    AttributeTypeValueContexts
-> | null = null;
+let _cached_decoder_for_AttributeTypeValueContexts: $.ASN1Decoder<AttributeTypeValueContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeTypeValueContexts */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeTypeValueContexts */
@@ -194,8 +192,8 @@ export function _decode_AttributeTypeValueContexts(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeTypeValueContexts /* SEQUENCE_CONSTRUCTOR_CALL */(
-                type_,
+            return new AttributeTypeValueContexts(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ type_,
                 value,
                 contextList,
                 _unrecognizedExtensionsList
@@ -207,9 +205,7 @@ export function _decode_AttributeTypeValueContexts(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeTypeValueContexts */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeValueContexts */
-let _cached_encoder_for_AttributeTypeValueContexts: $.ASN1Encoder<
-    AttributeTypeValueContexts
-> | null = null;
+let _cached_encoder_for_AttributeTypeValueContexts: $.ASN1Encoder<AttributeTypeValueContexts> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeTypeValueContexts */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeTypeValueContexts */

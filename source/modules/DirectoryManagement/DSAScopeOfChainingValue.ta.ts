@@ -71,9 +71,7 @@ export const global: DSAScopeOfChainingValue = DSAScopeOfChainingValue_global; /
 /* END_OF_SYMBOL_DEFINITION global */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfChainingValue */
-let _cached_decoder_for_DSAScopeOfChainingValue: $.ASN1Decoder<
-    DSAScopeOfChainingValue
-> | null = null;
+let _cached_decoder_for_DSAScopeOfChainingValue: $.ASN1Decoder<DSAScopeOfChainingValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DSAScopeOfChainingValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DSAScopeOfChainingValue */
@@ -92,9 +90,7 @@ export function _decode_DSAScopeOfChainingValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DSAScopeOfChainingValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DSAScopeOfChainingValue */
-let _cached_encoder_for_DSAScopeOfChainingValue: $.ASN1Encoder<
-    DSAScopeOfChainingValue
-> | null = null;
+let _cached_encoder_for_DSAScopeOfChainingValue: $.ASN1Encoder<DSAScopeOfChainingValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DSAScopeOfChainingValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DSAScopeOfChainingValue */

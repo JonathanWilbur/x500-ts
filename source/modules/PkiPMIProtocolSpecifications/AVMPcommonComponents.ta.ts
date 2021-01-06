@@ -184,9 +184,7 @@ export const _extension_additions_list_spec_for_AVMPcommonComponents: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AVMPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AVMPcommonComponents */
-let _cached_decoder_for_AVMPcommonComponents: $.ASN1Decoder<
-    AVMPcommonComponents
-> | null = null;
+let _cached_decoder_for_AVMPcommonComponents: $.ASN1Decoder<AVMPcommonComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AVMPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AVMPcommonComponents */
@@ -231,8 +229,8 @@ export function _decode_AVMPcommonComponents(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AVMPcommonComponents /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new AVMPcommonComponents(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 _unrecognizedExtensionsList
@@ -244,9 +242,7 @@ export function _decode_AVMPcommonComponents(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AVMPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AVMPcommonComponents */
-let _cached_encoder_for_AVMPcommonComponents: $.ASN1Encoder<
-    AVMPcommonComponents
-> | null = null;
+let _cached_encoder_for_AVMPcommonComponents: $.ASN1Encoder<AVMPcommonComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AVMPcommonComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AVMPcommonComponents */

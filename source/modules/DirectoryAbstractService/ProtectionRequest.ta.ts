@@ -53,9 +53,7 @@ export const signed: ProtectionRequest = ProtectionRequest_signed; /* SHORT_NAME
 /* END_OF_SYMBOL_DEFINITION signed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ProtectionRequest */
-let _cached_decoder_for_ProtectionRequest: $.ASN1Decoder<
-    ProtectionRequest
-> | null = null;
+let _cached_decoder_for_ProtectionRequest: $.ASN1Decoder<ProtectionRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ProtectionRequest */
@@ -74,9 +72,7 @@ export function _decode_ProtectionRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ProtectionRequest */
-let _cached_encoder_for_ProtectionRequest: $.ASN1Encoder<
-    ProtectionRequest
-> | null = null;
+let _cached_encoder_for_ProtectionRequest: $.ASN1Encoder<ProtectionRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ProtectionRequest */

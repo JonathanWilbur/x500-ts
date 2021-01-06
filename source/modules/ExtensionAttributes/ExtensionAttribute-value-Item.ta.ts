@@ -156,9 +156,7 @@ export const _extension_additions_list_spec_for_ExtensionAttribute_value_Item: $
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ExtensionAttribute_value_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionAttribute_value_Item */
-let _cached_decoder_for_ExtensionAttribute_value_Item: $.ASN1Decoder<
-    ExtensionAttribute_value_Item
-> | null = null;
+let _cached_decoder_for_ExtensionAttribute_value_Item: $.ASN1Decoder<ExtensionAttribute_value_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionAttribute_value_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtensionAttribute_value_Item */
@@ -208,8 +206,8 @@ export function _decode_ExtensionAttribute_value_Item(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ExtensionAttribute_value_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                mandatory,
+            return new ExtensionAttribute_value_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ mandatory,
                 critical,
                 ext,
                 _unrecognizedExtensionsList
@@ -221,9 +219,7 @@ export function _decode_ExtensionAttribute_value_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExtensionAttribute_value_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionAttribute_value_Item */
-let _cached_encoder_for_ExtensionAttribute_value_Item: $.ASN1Encoder<
-    ExtensionAttribute_value_Item
-> | null = null;
+let _cached_encoder_for_ExtensionAttribute_value_Item: $.ASN1Encoder<ExtensionAttribute_value_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionAttribute_value_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtensionAttribute_value_Item */

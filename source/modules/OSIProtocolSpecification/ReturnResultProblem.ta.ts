@@ -74,9 +74,7 @@ export const mistypedResult: ReturnResultProblem = ReturnResultProblem_mistypedR
 /* END_OF_SYMBOL_DEFINITION mistypedResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ReturnResultProblem */
-let _cached_decoder_for_ReturnResultProblem: $.ASN1Decoder<
-    ReturnResultProblem
-> | null = null;
+let _cached_decoder_for_ReturnResultProblem: $.ASN1Decoder<ReturnResultProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ReturnResultProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ReturnResultProblem */
@@ -95,9 +93,7 @@ export function _decode_ReturnResultProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ReturnResultProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ReturnResultProblem */
-let _cached_encoder_for_ReturnResultProblem: $.ASN1Encoder<
-    ReturnResultProblem
-> | null = null;
+let _cached_encoder_for_ReturnResultProblem: $.ASN1Encoder<ReturnResultProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ReturnResultProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ReturnResultProblem */

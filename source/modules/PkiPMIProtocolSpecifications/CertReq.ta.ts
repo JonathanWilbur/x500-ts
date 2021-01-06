@@ -228,8 +228,8 @@ export function _decode_CertReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CertReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 _unrecognizedExtensionsList

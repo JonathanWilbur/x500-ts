@@ -116,25 +116,19 @@ export class ListResultData_listInfo {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -268,9 +262,7 @@ export const _extension_additions_list_spec_for_ListResultData_listInfo: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ListResultData_listInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData_listInfo */
-let _cached_decoder_for_ListResultData_listInfo: $.ASN1Decoder<
-    ListResultData_listInfo
-> | null = null;
+let _cached_decoder_for_ListResultData_listInfo: $.ASN1Decoder<ListResultData_listInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData_listInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ListResultData_listInfo */
@@ -305,18 +297,16 @@ export function _decode_ListResultData_listInfo(el: _Element) {
                     subordinates = $._decode_explicit<
                         ListResultData_listInfo_subordinates_Item[]
                     >(() =>
-                        $._decodeSetOf<
-                            ListResultData_listInfo_subordinates_Item
-                        >(
+                        $._decodeSetOf<ListResultData_listInfo_subordinates_Item>(
                             () =>
                                 _decode_ListResultData_listInfo_subordinates_Item
                         )
                     )(_el);
                 },
                 partialOutcomeQualifier: (_el: _Element): void => {
-                    partialOutcomeQualifier = $._decode_explicit<
-                        PartialOutcomeQualifier
-                    >(() => _decode_PartialOutcomeQualifier)(_el);
+                    partialOutcomeQualifier = $._decode_explicit<PartialOutcomeQualifier>(
+                        () => _decode_PartialOutcomeQualifier
+                    )(_el);
                 },
                 securityParameters: (_el: _Element): void => {
                     securityParameters = $._decode_explicit<SecurityParameters>(
@@ -350,8 +340,8 @@ export function _decode_ListResultData_listInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ListResultData_listInfo /* SET_CONSTRUCTOR_CALL */(
-                name,
+            return new ListResultData_listInfo(
+                /* SET_CONSTRUCTOR_CALL */ name,
                 subordinates,
                 partialOutcomeQualifier,
                 _unrecognizedExtensionsList,
@@ -367,9 +357,7 @@ export function _decode_ListResultData_listInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ListResultData_listInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData_listInfo */
-let _cached_encoder_for_ListResultData_listInfo: $.ASN1Encoder<
-    ListResultData_listInfo
-> | null = null;
+let _cached_encoder_for_ListResultData_listInfo: $.ASN1Encoder<ListResultData_listInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData_listInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ListResultData_listInfo */
@@ -400,9 +388,7 @@ export function _encode_ListResultData_listInfo(
                                 _TagClass.context,
                                 1,
                                 () =>
-                                    $._encodeSetOf<
-                                        ListResultData_listInfo_subordinates_Item
-                                    >(
+                                    $._encodeSetOf<ListResultData_listInfo_subordinates_Item>(
                                         () =>
                                             _encode_ListResultData_listInfo_subordinates_Item,
                                         $.BER

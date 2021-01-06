@@ -94,9 +94,7 @@ export class TerminateOperationalBindingArgumentData {
          * @public
          * @readonly
          */
-        readonly initiator: OPTIONAL<
-            TerminateOperationalBindingArgumentData_initiator
-        >,
+        readonly initiator: OPTIONAL<TerminateOperationalBindingArgumentData_initiator>,
         /**
          * @summary `terminateAt`.
          * @public
@@ -215,9 +213,7 @@ export const _extension_additions_list_spec_for_TerminateOperationalBindingArgum
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TerminateOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingArgumentData */
-let _cached_decoder_for_TerminateOperationalBindingArgumentData: $.ASN1Decoder<
-    TerminateOperationalBindingArgumentData
-> | null = null;
+let _cached_decoder_for_TerminateOperationalBindingArgumentData: $.ASN1Decoder<TerminateOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingArgumentData */
@@ -279,8 +275,8 @@ export function _decode_TerminateOperationalBindingArgumentData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TerminateOperationalBindingArgumentData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                bindingType,
+            return new TerminateOperationalBindingArgumentData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bindingType,
                 bindingID,
                 initiator,
                 terminateAt,
@@ -294,9 +290,7 @@ export function _decode_TerminateOperationalBindingArgumentData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingArgumentData */
-let _cached_encoder_for_TerminateOperationalBindingArgumentData: $.ASN1Encoder<
-    TerminateOperationalBindingArgumentData
-> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingArgumentData: $.ASN1Encoder<TerminateOperationalBindingArgumentData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingArgumentData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TerminateOperationalBindingArgumentData */

@@ -27,9 +27,7 @@ export type AuthorityInfoAccessSyntax = AccessDescription[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AuthorityInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityInfoAccessSyntax */
-let _cached_decoder_for_AuthorityInfoAccessSyntax: $.ASN1Decoder<
-    AuthorityInfoAccessSyntax
-> | null = null;
+let _cached_decoder_for_AuthorityInfoAccessSyntax: $.ASN1Decoder<AuthorityInfoAccessSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthorityInfoAccessSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_AuthorityInfoAccessSyntax: $.ASN1Decoder<
  */
 export function _decode_AuthorityInfoAccessSyntax(el: _Element) {
     if (!_cached_decoder_for_AuthorityInfoAccessSyntax) {
-        _cached_decoder_for_AuthorityInfoAccessSyntax = $._decodeSequenceOf<
-            AccessDescription
-        >(() => _decode_AccessDescription);
+        _cached_decoder_for_AuthorityInfoAccessSyntax = $._decodeSequenceOf<AccessDescription>(
+            () => _decode_AccessDescription
+        );
     }
     return _cached_decoder_for_AuthorityInfoAccessSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AuthorityInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityInfoAccessSyntax */
-let _cached_encoder_for_AuthorityInfoAccessSyntax: $.ASN1Encoder<
-    AuthorityInfoAccessSyntax
-> | null = null;
+let _cached_encoder_for_AuthorityInfoAccessSyntax: $.ASN1Encoder<AuthorityInfoAccessSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityInfoAccessSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthorityInfoAccessSyntax */
@@ -68,9 +64,10 @@ export function _encode_AuthorityInfoAccessSyntax(
     elGetter: $.ASN1Encoder<AuthorityInfoAccessSyntax>
 ) {
     if (!_cached_encoder_for_AuthorityInfoAccessSyntax) {
-        _cached_encoder_for_AuthorityInfoAccessSyntax = $._encodeSequenceOf<
-            AccessDescription
-        >(() => _encode_AccessDescription, $.BER);
+        _cached_encoder_for_AuthorityInfoAccessSyntax = $._encodeSequenceOf<AccessDescription>(
+            () => _encode_AccessDescription,
+            $.BER
+        );
     }
     return _cached_encoder_for_AuthorityInfoAccessSyntax(value, elGetter);
 }

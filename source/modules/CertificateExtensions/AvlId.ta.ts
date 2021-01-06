@@ -172,8 +172,8 @@ export function _decode_AvlId(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AvlId /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuer,
+            return new AvlId(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuer,
                 serialNumber,
                 _unrecognizedExtensionsList
             );

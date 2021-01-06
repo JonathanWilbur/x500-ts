@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_PrivilegePolicyIdentifier: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PrivilegePolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivilegePolicyIdentifier */
-let _cached_decoder_for_PrivilegePolicyIdentifier: $.ASN1Decoder<
-    PrivilegePolicyIdentifier
-> | null = null;
+let _cached_decoder_for_PrivilegePolicyIdentifier: $.ASN1Decoder<PrivilegePolicyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PrivilegePolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PrivilegePolicyIdentifier */
@@ -187,9 +185,7 @@ export function _decode_PrivilegePolicyIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PrivilegePolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivilegePolicyIdentifier */
-let _cached_encoder_for_PrivilegePolicyIdentifier: $.ASN1Encoder<
-    PrivilegePolicyIdentifier
-> | null = null;
+let _cached_encoder_for_PrivilegePolicyIdentifier: $.ASN1Encoder<PrivilegePolicyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PrivilegePolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PrivilegePolicyIdentifier */

@@ -4,8 +4,12 @@ import {
     ASN1Element as _Element,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
+import {
+    Code,
+    _decode_Code,
+    _encode_Code,
+} from "../CommonProtocolSpecification/Code.ta";
 export { OPERATION } from "../CommonProtocolSpecification/OPERATION.oca";
-import { Code, _encode_Code, _decode_Code } from "../CommonProtocolSpecification/Code.ta";
 
 /* START_OF_SYMBOL_DEFINITION OsiRes_result */
 /**
@@ -96,9 +100,7 @@ export const _extension_additions_list_spec_for_OsiRes_result: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiRes_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiRes_result */
-let _cached_decoder_for_OsiRes_result: $.ASN1Decoder<
-    OsiRes_result
-> | null = null;
+let _cached_decoder_for_OsiRes_result: $.ASN1Decoder<OsiRes_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiRes_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiRes_result */
@@ -135,9 +137,7 @@ export function _decode_OsiRes_result(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiRes_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiRes_result */
-let _cached_encoder_for_OsiRes_result: $.ASN1Encoder<
-    OsiRes_result
-> | null = null;
+let _cached_encoder_for_OsiRes_result: $.ASN1Encoder<OsiRes_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiRes_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiRes_result */

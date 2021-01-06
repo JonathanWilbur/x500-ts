@@ -572,9 +572,9 @@ export function _decode_SearchRule(el: _Element) {
                     )(_el);
                 },
                 attributeCombination: (_el: _Element): void => {
-                    attributeCombination = $._decode_explicit<
-                        AttributeCombination
-                    >(() => _decode_AttributeCombination)(_el);
+                    attributeCombination = $._decode_explicit<AttributeCombination>(
+                        () => _decode_AttributeCombination
+                    )(_el);
                 },
                 outputAttributeTypes: (_el: _Element): void => {
                     outputAttributeTypes = $._decode_explicit<
@@ -650,8 +650,8 @@ export function _decode_SearchRule(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SearchRule /* SEQUENCE_CONSTRUCTOR_CALL */(
-                id,
+            return new SearchRule(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ id,
                 dmdId,
                 serviceType,
                 userClass,

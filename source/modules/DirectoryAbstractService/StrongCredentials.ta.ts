@@ -89,9 +89,7 @@ export class StrongCredentials {
          * @public
          * @readonly
          */
-        readonly attributeCertificationPath: OPTIONAL<
-            AttributeCertificationPath
-        >,
+        readonly attributeCertificationPath: OPTIONAL<AttributeCertificationPath>,
         /**
          * @summary Extensions that are not recognized.
          * @public
@@ -192,9 +190,7 @@ export const _extension_additions_list_spec_for_StrongCredentials: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_StrongCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_StrongCredentials */
-let _cached_decoder_for_StrongCredentials: $.ASN1Decoder<
-    StrongCredentials
-> | null = null;
+let _cached_decoder_for_StrongCredentials: $.ASN1Decoder<StrongCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_StrongCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _decode_StrongCredentials */
@@ -234,9 +230,9 @@ export function _decode_StrongCredentials(el: _Element) {
                     )(_el);
                 },
                 attributeCertificationPath: (_el: _Element): void => {
-                    attributeCertificationPath = $._decode_explicit<
-                        AttributeCertificationPath
-                    >(() => _decode_AttributeCertificationPath)(_el);
+                    attributeCertificationPath = $._decode_explicit<AttributeCertificationPath>(
+                        () => _decode_AttributeCertificationPath
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -250,8 +246,8 @@ export function _decode_StrongCredentials(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new StrongCredentials /* SET_CONSTRUCTOR_CALL */(
-                certification_path,
+            return new StrongCredentials(
+                /* SET_CONSTRUCTOR_CALL */ certification_path,
                 bind_token,
                 name,
                 attributeCertificationPath,
@@ -264,9 +260,7 @@ export function _decode_StrongCredentials(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_StrongCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_StrongCredentials */
-let _cached_encoder_for_StrongCredentials: $.ASN1Encoder<
-    StrongCredentials
-> | null = null;
+let _cached_encoder_for_StrongCredentials: $.ASN1Encoder<StrongCredentials> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_StrongCredentials */
 
 /* START_OF_SYMBOL_DEFINITION _encode_StrongCredentials */

@@ -198,8 +198,8 @@ export function _decode_Knowledge(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Knowledge /* SEQUENCE_CONSTRUCTOR_CALL */(
-                knowledgeType,
+            return new Knowledge(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ knowledgeType,
                 extendedKnowledge,
                 _unrecognizedExtensionsList
             );

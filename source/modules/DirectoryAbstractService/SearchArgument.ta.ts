@@ -37,9 +37,7 @@ export type SearchArgument = OPTIONALLY_PROTECTED<SearchArgumentData>; // Define
 /* END_OF_SYMBOL_DEFINITION SearchArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgument */
-let _cached_decoder_for_SearchArgument: $.ASN1Decoder<
-    SearchArgument
-> | null = null;
+let _cached_decoder_for_SearchArgument: $.ASN1Decoder<SearchArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_SearchArgument: $.ASN1Decoder<
  */
 export function _decode_SearchArgument(el: _Element) {
     if (!_cached_decoder_for_SearchArgument) {
-        _cached_decoder_for_SearchArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            SearchArgumentData
-        >(_decode_SearchArgumentData);
+        _cached_decoder_for_SearchArgument = _get_decoder_for_OPTIONALLY_PROTECTED<SearchArgumentData>(
+            _decode_SearchArgumentData
+        );
     }
     return _cached_decoder_for_SearchArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SearchArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgument */
-let _cached_encoder_for_SearchArgument: $.ASN1Encoder<
-    SearchArgument
-> | null = null;
+let _cached_encoder_for_SearchArgument: $.ASN1Encoder<SearchArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchArgument */
@@ -78,9 +74,9 @@ export function _encode_SearchArgument(
     elGetter: $.ASN1Encoder<SearchArgument>
 ) {
     if (!_cached_encoder_for_SearchArgument) {
-        _cached_encoder_for_SearchArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            SearchArgumentData
-        >(_encode_SearchArgumentData);
+        _cached_encoder_for_SearchArgument = _get_encoder_for_OPTIONALLY_PROTECTED<SearchArgumentData>(
+            _encode_SearchArgumentData
+        );
     }
     return _cached_encoder_for_SearchArgument(value, elGetter);
 }

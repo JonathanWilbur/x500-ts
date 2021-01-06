@@ -187,8 +187,8 @@ export function _get_decoder_for_ICV_Invoke<ToBeProtected>(
                 _unrecognizedExtensionsList.push(ext);
             }
         );
-        return new ICV_Invoke /* SEQUENCE_CONSTRUCTOR_CALL */(
-            toBeProtected,
+        return new ICV_Invoke(
+            /* SEQUENCE_CONSTRUCTOR_CALL */ toBeProtected,
             dynParms,
             icv,
             _unrecognizedExtensionsList
@@ -196,7 +196,6 @@ export function _get_decoder_for_ICV_Invoke<ToBeProtected>(
     };
 }
 /* END_OF_SYMBOL_DEFINITION _get_decoder_for_ICV_Invoke */
-
 
 /* START_OF_SYMBOL_DEFINITION _get_encoder_for_ICV_Invoke */
 /**

@@ -143,9 +143,7 @@ export const _extension_additions_list_spec_for_PwdResponseValue: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PwdResponseValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue */
-let _cached_decoder_for_PwdResponseValue: $.ASN1Decoder<
-    PwdResponseValue
-> | null = null;
+let _cached_decoder_for_PwdResponseValue: $.ASN1Decoder<PwdResponseValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PwdResponseValue */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PwdResponseValue */
@@ -182,8 +180,8 @@ export function _decode_PwdResponseValue(el: _Element) {
                 _root_component_type_list_2_spec_for_PwdResponseValue,
                 undefined
             );
-            return new PwdResponseValue /* SEQUENCE_CONSTRUCTOR_CALL */(
-                warning,
+            return new PwdResponseValue(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ warning,
                 error
             );
         };
@@ -193,9 +191,7 @@ export function _decode_PwdResponseValue(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PwdResponseValue */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue */
-let _cached_encoder_for_PwdResponseValue: $.ASN1Encoder<
-    PwdResponseValue
-> | null = null;
+let _cached_encoder_for_PwdResponseValue: $.ASN1Encoder<PwdResponseValue> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PwdResponseValue */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PwdResponseValue */

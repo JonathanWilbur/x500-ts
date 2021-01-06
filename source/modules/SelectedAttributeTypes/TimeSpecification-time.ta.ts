@@ -39,9 +39,7 @@ export type TimeSpecification_time =
 /* END_OF_SYMBOL_DEFINITION TimeSpecification_time */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification_time */
-let _cached_decoder_for_TimeSpecification_time: $.ASN1Decoder<
-    TimeSpecification_time
-> | null = null;
+let _cached_decoder_for_TimeSpecification_time: $.ASN1Decoder<TimeSpecification_time> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification_time */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TimeSpecification_time */
@@ -53,27 +51,25 @@ let _cached_decoder_for_TimeSpecification_time: $.ASN1Decoder<
  */
 export function _decode_TimeSpecification_time(el: _Element) {
     if (!_cached_decoder_for_TimeSpecification_time) {
-        _cached_decoder_for_TimeSpecification_time = $._decode_inextensible_choice<
-            TimeSpecification_time
-        >({
-            "UNIVERSAL 16": [
-                "absolute",
-                _decode_TimeSpecification_time_absolute,
-            ],
-            "UNIVERSAL 17": [
-                "periodic",
-                $._decodeSetOf<Period>(() => _decode_Period),
-            ],
-        });
+        _cached_decoder_for_TimeSpecification_time = $._decode_inextensible_choice<TimeSpecification_time>(
+            {
+                "UNIVERSAL 16": [
+                    "absolute",
+                    _decode_TimeSpecification_time_absolute,
+                ],
+                "UNIVERSAL 17": [
+                    "periodic",
+                    $._decodeSetOf<Period>(() => _decode_Period),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TimeSpecification_time(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TimeSpecification_time */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification_time */
-let _cached_encoder_for_TimeSpecification_time: $.ASN1Encoder<
-    TimeSpecification_time
-> | null = null;
+let _cached_encoder_for_TimeSpecification_time: $.ASN1Encoder<TimeSpecification_time> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification_time */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TimeSpecification_time */
@@ -89,9 +85,7 @@ export function _encode_TimeSpecification_time(
     elGetter: $.ASN1Encoder<TimeSpecification_time>
 ) {
     if (!_cached_encoder_for_TimeSpecification_time) {
-        _cached_encoder_for_TimeSpecification_time = $._encode_choice<
-            TimeSpecification_time
-        >(
+        _cached_encoder_for_TimeSpecification_time = $._encode_choice<TimeSpecification_time>(
             {
                 absolute: _encode_TimeSpecification_time_absolute,
                 periodic: $._encodeSetOf<Period>(() => _encode_Period, $.BER),

@@ -190,8 +190,8 @@ export function _decode_TargetCert(el: _Element) {
                 _root_component_type_list_2_spec_for_TargetCert,
                 undefined
             );
-            return new TargetCert /* SEQUENCE_CONSTRUCTOR_CALL */(
-                targetCertificate,
+            return new TargetCert(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ targetCertificate,
                 targetName,
                 certDigestInfo
             );

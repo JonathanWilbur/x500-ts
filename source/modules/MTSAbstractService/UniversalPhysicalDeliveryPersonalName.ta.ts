@@ -27,9 +27,7 @@ export type UniversalPhysicalDeliveryPersonalName = UniversalPDSParameter; // De
 /* END_OF_SYMBOL_DEFINITION UniversalPhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryPersonalName */
-let _cached_decoder_for_UniversalPhysicalDeliveryPersonalName: $.ASN1Decoder<
-    UniversalPhysicalDeliveryPersonalName
-> | null = null;
+let _cached_decoder_for_UniversalPhysicalDeliveryPersonalName: $.ASN1Decoder<UniversalPhysicalDeliveryPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryPersonalName */
@@ -48,9 +46,7 @@ export function _decode_UniversalPhysicalDeliveryPersonalName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryPersonalName */
-let _cached_encoder_for_UniversalPhysicalDeliveryPersonalName: $.ASN1Encoder<
-    UniversalPhysicalDeliveryPersonalName
-> | null = null;
+let _cached_encoder_for_UniversalPhysicalDeliveryPersonalName: $.ASN1Encoder<UniversalPhysicalDeliveryPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPhysicalDeliveryPersonalName */

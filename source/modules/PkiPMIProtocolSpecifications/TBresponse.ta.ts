@@ -55,18 +55,18 @@ let _cached_decoder_for_TBresponse: $.ASN1Decoder<TBresponse> | null = null;
  */
 export function _decode_TBresponse(el: _Element) {
     if (!_cached_decoder_for_TBresponse) {
-        _cached_decoder_for_TBresponse = $._decode_extensible_choice<
-            TBresponse
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_explicit<TBOK>(() => _decode_TBOK),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_explicit<TBerror>(() => _decode_TBerror),
-            ],
-        });
+        _cached_decoder_for_TBresponse = $._decode_extensible_choice<TBresponse>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_explicit<TBOK>(() => _decode_TBOK),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_explicit<TBerror>(() => _decode_TBerror),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TBresponse(el);
 }

@@ -108,9 +108,7 @@ export class EntryInformationSelection {
          * @public
          * @readonly
          */
-        readonly extraAttributes: OPTIONAL<
-            EntryInformationSelection_extraAttributes
-        >,
+        readonly extraAttributes: OPTIONAL<EntryInformationSelection_extraAttributes>,
         /**
          * @summary `contextSelection`.
          * @public
@@ -276,9 +274,7 @@ export const _extension_additions_list_spec_for_EntryInformationSelection: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EntryInformationSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection */
-let _cached_decoder_for_EntryInformationSelection: $.ASN1Decoder<
-    EntryInformationSelection
-> | null = null;
+let _cached_decoder_for_EntryInformationSelection: $.ASN1Decoder<EntryInformationSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection */
@@ -313,9 +309,9 @@ export function _decode_EntryInformationSelection(el: _Element) {
                     );
                 },
                 infoTypes: (_el: _Element): void => {
-                    infoTypes = $._decode_explicit<
-                        EntryInformationSelection_infoTypes
-                    >(() => _decode_EntryInformationSelection_infoTypes)(_el);
+                    infoTypes = $._decode_explicit<EntryInformationSelection_infoTypes>(
+                        () => _decode_EntryInformationSelection_infoTypes
+                    )(_el);
                 },
                 extraAttributes: (_el: _Element): void => {
                     extraAttributes = _decode_EntryInformationSelection_extraAttributes(
@@ -341,8 +337,8 @@ export function _decode_EntryInformationSelection(el: _Element) {
                 _root_component_type_list_2_spec_for_EntryInformationSelection,
                 undefined
             );
-            return new EntryInformationSelection /* SET_CONSTRUCTOR_CALL */(
-                attributes,
+            return new EntryInformationSelection(
+                /* SET_CONSTRUCTOR_CALL */ attributes,
                 infoTypes,
                 extraAttributes,
                 contextSelection,
@@ -356,9 +352,7 @@ export function _decode_EntryInformationSelection(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection */
-let _cached_encoder_for_EntryInformationSelection: $.ASN1Encoder<
-    EntryInformationSelection
-> | null = null;
+let _cached_encoder_for_EntryInformationSelection: $.ASN1Encoder<EntryInformationSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryInformationSelection */

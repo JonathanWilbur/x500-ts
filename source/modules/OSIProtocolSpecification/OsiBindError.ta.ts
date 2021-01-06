@@ -56,14 +56,14 @@ let _cached_decoder_for_OsiBindError: $.ASN1Decoder<OsiBindError> | null = null;
  */
 export function _decode_OsiBindError(el: _Element) {
     if (!_cached_decoder_for_OsiBindError) {
-        _cached_decoder_for_OsiBindError = $._decode_inextensible_choice<
-            OsiBindError
-        >({
-            "UNIVERSAL 16": [
-                "normal_mode_parameters",
-                _decode_OsiBindError_normal_mode_parameters,
-            ],
-        });
+        _cached_decoder_for_OsiBindError = $._decode_inextensible_choice<OsiBindError>(
+            {
+                "UNIVERSAL 16": [
+                    "normal_mode_parameters",
+                    _decode_OsiBindError_normal_mode_parameters,
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiBindError(el);
 }

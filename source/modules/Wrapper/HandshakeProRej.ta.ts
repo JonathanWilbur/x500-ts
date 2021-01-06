@@ -37,9 +37,7 @@ export type HandshakeProRej = Signed<TbsHandshakeProRej>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION HandshakeProRej */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HandshakeProRej */
-let _cached_decoder_for_HandshakeProRej: $.ASN1Decoder<
-    HandshakeProRej
-> | null = null;
+let _cached_decoder_for_HandshakeProRej: $.ASN1Decoder<HandshakeProRej> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HandshakeProRej */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HandshakeProRej */
@@ -51,18 +49,16 @@ let _cached_decoder_for_HandshakeProRej: $.ASN1Decoder<
  */
 export function _decode_HandshakeProRej(el: _Element) {
     if (!_cached_decoder_for_HandshakeProRej) {
-        _cached_decoder_for_HandshakeProRej = _get_decoder_for_Signed<
-            TbsHandshakeProRej
-        >(_decode_TbsHandshakeProRej);
+        _cached_decoder_for_HandshakeProRej = _get_decoder_for_Signed<TbsHandshakeProRej>(
+            _decode_TbsHandshakeProRej
+        );
     }
     return _cached_decoder_for_HandshakeProRej(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_HandshakeProRej */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HandshakeProRej */
-let _cached_encoder_for_HandshakeProRej: $.ASN1Encoder<
-    HandshakeProRej
-> | null = null;
+let _cached_encoder_for_HandshakeProRej: $.ASN1Encoder<HandshakeProRej> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HandshakeProRej */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HandshakeProRej */
@@ -78,9 +74,9 @@ export function _encode_HandshakeProRej(
     elGetter: $.ASN1Encoder<HandshakeProRej>
 ) {
     if (!_cached_encoder_for_HandshakeProRej) {
-        _cached_encoder_for_HandshakeProRej = _get_encoder_for_Signed<
-            TbsHandshakeProRej
-        >(_encode_TbsHandshakeProRej);
+        _cached_encoder_for_HandshakeProRej = _get_encoder_for_Signed<TbsHandshakeProRej>(
+            _encode_TbsHandshakeProRej
+        );
     }
     return _cached_encoder_for_HandshakeProRej(value, elGetter);
 }

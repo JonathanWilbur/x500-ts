@@ -229,8 +229,8 @@ export function _decode_Clearance(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Clearance /* SEQUENCE_CONSTRUCTOR_CALL */(
-                policyId,
+            return new Clearance(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ policyId,
                 classList,
                 securityCategories,
                 _unrecognizedExtensionsList

@@ -81,9 +81,7 @@ export const move: number = ModifyRights_Item_permission_move; /* SHORT_NAMED_BI
 /* END_OF_SYMBOL_DEFINITION move */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item_permission */
-let _cached_decoder_for_ModifyRights_Item_permission: $.ASN1Decoder<
-    ModifyRights_Item_permission
-> | null = null;
+let _cached_decoder_for_ModifyRights_Item_permission: $.ASN1Decoder<ModifyRights_Item_permission> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifyRights_Item_permission */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item_permission */
@@ -102,9 +100,7 @@ export function _decode_ModifyRights_Item_permission(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifyRights_Item_permission */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item_permission */
-let _cached_encoder_for_ModifyRights_Item_permission: $.ASN1Encoder<
-    ModifyRights_Item_permission
-> | null = null;
+let _cached_encoder_for_ModifyRights_Item_permission: $.ASN1Encoder<ModifyRights_Item_permission> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifyRights_Item_permission */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifyRights_Item_permission */

@@ -95,25 +95,19 @@ export class LdapResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -250,9 +244,7 @@ export const _extension_additions_list_spec_for_LdapResultData: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_LdapResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LdapResultData */
-let _cached_decoder_for_LdapResultData: $.ASN1Decoder<
-    LdapResultData
-> | null = null;
+let _cached_decoder_for_LdapResultData: $.ASN1Decoder<LdapResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LdapResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LdapResultData */
@@ -320,8 +312,8 @@ export function _decode_LdapResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new LdapResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                ldapMessages,
+            return new LdapResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ ldapMessages,
                 returnToClient,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -336,9 +328,7 @@ export function _decode_LdapResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_LdapResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LdapResultData */
-let _cached_encoder_for_LdapResultData: $.ASN1Encoder<
-    LdapResultData
-> | null = null;
+let _cached_encoder_for_LdapResultData: $.ASN1Encoder<LdapResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LdapResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LdapResultData */

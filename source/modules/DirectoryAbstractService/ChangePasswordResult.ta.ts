@@ -45,9 +45,7 @@ export type ChangePasswordResult =
 /* END_OF_SYMBOL_DEFINITION ChangePasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordResult */
-let _cached_decoder_for_ChangePasswordResult: $.ASN1Decoder<
-    ChangePasswordResult
-> | null = null;
+let _cached_decoder_for_ChangePasswordResult: $.ASN1Decoder<ChangePasswordResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ChangePasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ChangePasswordResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_ChangePasswordResult: $.ASN1Decoder<
  */
 export function _decode_ChangePasswordResult(el: _Element) {
     if (!_cached_decoder_for_ChangePasswordResult) {
-        _cached_decoder_for_ChangePasswordResult = $._decode_extensible_choice<
-            ChangePasswordResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    ChangePasswordResultData
-                >(_decode_ChangePasswordResultData),
-            ],
-        });
+        _cached_decoder_for_ChangePasswordResult = $._decode_extensible_choice<ChangePasswordResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(
+                        _decode_ChangePasswordResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ChangePasswordResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ChangePasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordResult */
-let _cached_encoder_for_ChangePasswordResult: $.ASN1Encoder<
-    ChangePasswordResult
-> | null = null;
+let _cached_encoder_for_ChangePasswordResult: $.ASN1Encoder<ChangePasswordResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ChangePasswordResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ChangePasswordResult */
@@ -94,14 +90,12 @@ export function _encode_ChangePasswordResult(
     elGetter: $.ASN1Encoder<ChangePasswordResult>
 ) {
     if (!_cached_encoder_for_ChangePasswordResult) {
-        _cached_encoder_for_ChangePasswordResult = $._encode_choice<
-            ChangePasswordResult
-        >(
+        _cached_encoder_for_ChangePasswordResult = $._encode_choice<ChangePasswordResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    ChangePasswordResultData
-                >(_encode_ChangePasswordResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<ChangePasswordResultData>(
+                    _encode_ChangePasswordResultData
+                ),
             },
             $.BER
         );

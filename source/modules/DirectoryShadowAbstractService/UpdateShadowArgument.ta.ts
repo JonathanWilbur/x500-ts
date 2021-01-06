@@ -33,15 +33,11 @@ export {
  * UpdateShadowArgument  ::=  OPTIONALLY-PROTECTED {UpdateShadowArgumentData }
  * ```
  */
-export type UpdateShadowArgument = OPTIONALLY_PROTECTED<
-    UpdateShadowArgumentData
->; // DefinedType
+export type UpdateShadowArgument = OPTIONALLY_PROTECTED<UpdateShadowArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UpdateShadowArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateShadowArgument */
-let _cached_decoder_for_UpdateShadowArgument: $.ASN1Decoder<
-    UpdateShadowArgument
-> | null = null;
+let _cached_decoder_for_UpdateShadowArgument: $.ASN1Decoder<UpdateShadowArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UpdateShadowArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UpdateShadowArgument */
@@ -53,18 +49,16 @@ let _cached_decoder_for_UpdateShadowArgument: $.ASN1Decoder<
  */
 export function _decode_UpdateShadowArgument(el: _Element) {
     if (!_cached_decoder_for_UpdateShadowArgument) {
-        _cached_decoder_for_UpdateShadowArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            UpdateShadowArgumentData
-        >(_decode_UpdateShadowArgumentData);
+        _cached_decoder_for_UpdateShadowArgument = _get_decoder_for_OPTIONALLY_PROTECTED<UpdateShadowArgumentData>(
+            _decode_UpdateShadowArgumentData
+        );
     }
     return _cached_decoder_for_UpdateShadowArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UpdateShadowArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateShadowArgument */
-let _cached_encoder_for_UpdateShadowArgument: $.ASN1Encoder<
-    UpdateShadowArgument
-> | null = null;
+let _cached_encoder_for_UpdateShadowArgument: $.ASN1Encoder<UpdateShadowArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UpdateShadowArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UpdateShadowArgument */
@@ -80,9 +74,9 @@ export function _encode_UpdateShadowArgument(
     elGetter: $.ASN1Encoder<UpdateShadowArgument>
 ) {
     if (!_cached_encoder_for_UpdateShadowArgument) {
-        _cached_encoder_for_UpdateShadowArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            UpdateShadowArgumentData
-        >(_encode_UpdateShadowArgumentData);
+        _cached_encoder_for_UpdateShadowArgument = _get_encoder_for_OPTIONALLY_PROTECTED<UpdateShadowArgumentData>(
+            _encode_UpdateShadowArgumentData
+        );
     }
     return _cached_encoder_for_UpdateShadowArgument(value, elGetter);
 }

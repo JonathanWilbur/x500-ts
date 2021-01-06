@@ -34,15 +34,11 @@ export {
  *   OPTIONALLY-PROTECTED { CoordinateShadowUpdateArgumentData }
  * ```
  */
-export type CoordinateShadowUpdateArgument = OPTIONALLY_PROTECTED<
-    CoordinateShadowUpdateArgumentData
->; // DefinedType
+export type CoordinateShadowUpdateArgument = OPTIONALLY_PROTECTED<CoordinateShadowUpdateArgumentData>; // DefinedType
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgument */
-let _cached_decoder_for_CoordinateShadowUpdateArgument: $.ASN1Decoder<
-    CoordinateShadowUpdateArgument
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateArgument: $.ASN1Decoder<CoordinateShadowUpdateArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgument */
@@ -54,18 +50,16 @@ let _cached_decoder_for_CoordinateShadowUpdateArgument: $.ASN1Decoder<
  */
 export function _decode_CoordinateShadowUpdateArgument(el: _Element) {
     if (!_cached_decoder_for_CoordinateShadowUpdateArgument) {
-        _cached_decoder_for_CoordinateShadowUpdateArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            CoordinateShadowUpdateArgumentData
-        >(_decode_CoordinateShadowUpdateArgumentData);
+        _cached_decoder_for_CoordinateShadowUpdateArgument = _get_decoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateArgumentData>(
+            _decode_CoordinateShadowUpdateArgumentData
+        );
     }
     return _cached_decoder_for_CoordinateShadowUpdateArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgument */
-let _cached_encoder_for_CoordinateShadowUpdateArgument: $.ASN1Encoder<
-    CoordinateShadowUpdateArgument
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateArgument: $.ASN1Encoder<CoordinateShadowUpdateArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateArgument */
@@ -81,9 +75,9 @@ export function _encode_CoordinateShadowUpdateArgument(
     elGetter: $.ASN1Encoder<CoordinateShadowUpdateArgument>
 ) {
     if (!_cached_encoder_for_CoordinateShadowUpdateArgument) {
-        _cached_encoder_for_CoordinateShadowUpdateArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            CoordinateShadowUpdateArgumentData
-        >(_encode_CoordinateShadowUpdateArgumentData);
+        _cached_encoder_for_CoordinateShadowUpdateArgument = _get_encoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateArgumentData>(
+            _encode_CoordinateShadowUpdateArgumentData
+        );
     }
     return _cached_encoder_for_CoordinateShadowUpdateArgument(value, elGetter);
 }

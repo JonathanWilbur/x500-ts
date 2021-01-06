@@ -92,9 +92,7 @@ export type OsiRej_problem =
 /* END_OF_SYMBOL_DEFINITION OsiRej_problem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiRej_problem */
-let _cached_decoder_for_OsiRej_problem: $.ASN1Decoder<
-    OsiRej_problem
-> | null = null;
+let _cached_decoder_for_OsiRej_problem: $.ASN1Decoder<OsiRej_problem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiRej_problem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiRej_problem */
@@ -106,41 +104,41 @@ let _cached_decoder_for_OsiRej_problem: $.ASN1Decoder<
  */
 export function _decode_OsiRej_problem(el: _Element) {
     if (!_cached_decoder_for_OsiRej_problem) {
-        _cached_decoder_for_OsiRej_problem = $._decode_extensible_choice<
-            OsiRej_problem
-        >({
-            "CONTEXT 0": [
-                "general",
-                $._decode_explicit<GeneralProblem>(
-                    () => _decode_GeneralProblem
-                ),
-            ],
-            "CONTEXT 1": [
-                "invoke",
-                $._decode_explicit<InvokeProblem>(() => _decode_InvokeProblem),
-            ],
-            "CONTEXT 2": [
-                "returnResult",
-                $._decode_explicit<ReturnResultProblem>(
-                    () => _decode_ReturnResultProblem
-                ),
-            ],
-            "CONTEXT 3": [
-                "returnError",
-                $._decode_explicit<ReturnErrorProblem>(
-                    () => _decode_ReturnErrorProblem
-                ),
-            ],
-        });
+        _cached_decoder_for_OsiRej_problem = $._decode_extensible_choice<OsiRej_problem>(
+            {
+                "CONTEXT 0": [
+                    "general",
+                    $._decode_explicit<GeneralProblem>(
+                        () => _decode_GeneralProblem
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "invoke",
+                    $._decode_explicit<InvokeProblem>(
+                        () => _decode_InvokeProblem
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "returnResult",
+                    $._decode_explicit<ReturnResultProblem>(
+                        () => _decode_ReturnResultProblem
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "returnError",
+                    $._decode_explicit<ReturnErrorProblem>(
+                        () => _decode_ReturnErrorProblem
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiRej_problem(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_OsiRej_problem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiRej_problem */
-let _cached_encoder_for_OsiRej_problem: $.ASN1Encoder<
-    OsiRej_problem
-> | null = null;
+let _cached_encoder_for_OsiRej_problem: $.ASN1Encoder<OsiRej_problem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiRej_problem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiRej_problem */

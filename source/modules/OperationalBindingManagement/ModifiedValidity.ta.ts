@@ -166,9 +166,7 @@ export const _extension_additions_list_spec_for_ModifiedValidity: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModifiedValidity */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity */
-let _cached_decoder_for_ModifiedValidity: $.ASN1Decoder<
-    ModifiedValidity
-> | null = null;
+let _cached_decoder_for_ModifiedValidity: $.ASN1Decoder<ModifiedValidity> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifiedValidity */
@@ -198,9 +196,9 @@ export function _decode_ModifiedValidity(el: _Element) {
                     )(_el);
                 },
                 validUntil: (_el: _Element): void => {
-                    validUntil = $._decode_explicit<
-                        ModifiedValidity_validUntil
-                    >(() => _decode_ModifiedValidity_validUntil)(_el);
+                    validUntil = $._decode_explicit<ModifiedValidity_validUntil>(
+                        () => _decode_ModifiedValidity_validUntil
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -214,8 +212,8 @@ export function _decode_ModifiedValidity(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ModifiedValidity /* SEQUENCE_CONSTRUCTOR_CALL */(
-                validFrom,
+            return new ModifiedValidity(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ validFrom,
                 validUntil,
                 _unrecognizedExtensionsList
             );
@@ -226,9 +224,7 @@ export function _decode_ModifiedValidity(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModifiedValidity */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity */
-let _cached_encoder_for_ModifiedValidity: $.ASN1Encoder<
-    ModifiedValidity
-> | null = null;
+let _cached_encoder_for_ModifiedValidity: $.ASN1Encoder<ModifiedValidity> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifiedValidity */

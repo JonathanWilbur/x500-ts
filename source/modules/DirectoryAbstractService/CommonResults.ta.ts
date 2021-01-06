@@ -192,9 +192,7 @@ export const _extension_additions_list_spec_for_CommonResults: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CommonResults */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonResults */
-let _cached_decoder_for_CommonResults: $.ASN1Decoder<
-    CommonResults
-> | null = null;
+let _cached_decoder_for_CommonResults: $.ASN1Decoder<CommonResults> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonResults */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CommonResults */
@@ -251,8 +249,8 @@ export function _decode_CommonResults(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CommonResults /* SET_CONSTRUCTOR_CALL */(
-                securityParameters,
+            return new CommonResults(
+                /* SET_CONSTRUCTOR_CALL */ securityParameters,
                 performer,
                 aliasDereferenced,
                 notification,
@@ -265,9 +263,7 @@ export function _decode_CommonResults(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CommonResults */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonResults */
-let _cached_encoder_for_CommonResults: $.ASN1Encoder<
-    CommonResults
-> | null = null;
+let _cached_encoder_for_CommonResults: $.ASN1Encoder<CommonResults> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonResults */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CommonResults */

@@ -182,8 +182,8 @@ export function _decode_TotalRefresh(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TotalRefresh /* SEQUENCE_CONSTRUCTOR_CALL */(
-                sDSE,
+            return new TotalRefresh(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ sDSE,
                 subtree,
                 _unrecognizedExtensionsList
             );

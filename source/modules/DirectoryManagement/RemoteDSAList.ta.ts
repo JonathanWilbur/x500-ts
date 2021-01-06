@@ -27,9 +27,7 @@ export type RemoteDSAList = AccessPoint[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION RemoteDSAList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoteDSAList */
-let _cached_decoder_for_RemoteDSAList: $.ASN1Decoder<
-    RemoteDSAList
-> | null = null;
+let _cached_decoder_for_RemoteDSAList: $.ASN1Decoder<RemoteDSAList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoteDSAList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RemoteDSAList */
@@ -50,9 +48,7 @@ export function _decode_RemoteDSAList(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RemoteDSAList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoteDSAList */
-let _cached_encoder_for_RemoteDSAList: $.ASN1Encoder<
-    RemoteDSAList
-> | null = null;
+let _cached_encoder_for_RemoteDSAList: $.ASN1Encoder<RemoteDSAList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoteDSAList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RemoteDSAList */

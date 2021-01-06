@@ -161,9 +161,7 @@ export const modifyDN: number = DirectoryInformationServiceElement_operationType
 /* END_OF_SYMBOL_DEFINITION modifyDN */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryInformationServiceElement_operationType */
-let _cached_decoder_for_DirectoryInformationServiceElement_operationType: $.ASN1Decoder<
-    DirectoryInformationServiceElement_operationType
-> | null = null;
+let _cached_decoder_for_DirectoryInformationServiceElement_operationType: $.ASN1Decoder<DirectoryInformationServiceElement_operationType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryInformationServiceElement_operationType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryInformationServiceElement_operationType */
@@ -187,9 +185,7 @@ export function _decode_DirectoryInformationServiceElement_operationType(
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryInformationServiceElement_operationType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryInformationServiceElement_operationType */
-let _cached_encoder_for_DirectoryInformationServiceElement_operationType: $.ASN1Encoder<
-    DirectoryInformationServiceElement_operationType
-> | null = null;
+let _cached_encoder_for_DirectoryInformationServiceElement_operationType: $.ASN1Encoder<DirectoryInformationServiceElement_operationType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryInformationServiceElement_operationType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryInformationServiceElement_operationType */

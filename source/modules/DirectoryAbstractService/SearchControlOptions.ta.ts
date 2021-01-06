@@ -221,9 +221,7 @@ export const searchFamily: number = SearchControlOptions_searchFamily; /* SHORT_
 /* END_OF_SYMBOL_DEFINITION searchFamily */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchControlOptions */
-let _cached_decoder_for_SearchControlOptions: $.ASN1Decoder<
-    SearchControlOptions
-> | null = null;
+let _cached_decoder_for_SearchControlOptions: $.ASN1Decoder<SearchControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchControlOptions */
@@ -242,9 +240,7 @@ export function _decode_SearchControlOptions(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchControlOptions */
-let _cached_encoder_for_SearchControlOptions: $.ASN1Encoder<
-    SearchControlOptions
-> | null = null;
+let _cached_encoder_for_SearchControlOptions: $.ASN1Encoder<SearchControlOptions> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchControlOptions */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchControlOptions */

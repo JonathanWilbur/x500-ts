@@ -246,8 +246,8 @@ export function _decode_AttributeCertificateAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeCertificateAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                holder,
+            return new AttributeCertificateAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ holder,
                 issuer,
                 attCertValidity,
                 attType,

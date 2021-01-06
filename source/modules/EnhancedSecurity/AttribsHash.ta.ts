@@ -49,9 +49,9 @@ let _cached_decoder_for_AttribsHash: $.ASN1Decoder<AttribsHash> | null = null;
  */
 export function _decode_AttribsHash(el: _Element) {
     if (!_cached_decoder_for_AttribsHash) {
-        _cached_decoder_for_AttribsHash = _get_decoder_for_HASH<
-            HashedAttributes
-        >(_decode_HashedAttributes);
+        _cached_decoder_for_AttribsHash = _get_decoder_for_HASH<HashedAttributes>(
+            _decode_HashedAttributes
+        );
     }
     return _cached_decoder_for_AttribsHash(el);
 }
@@ -74,9 +74,9 @@ export function _encode_AttribsHash(
     elGetter: $.ASN1Encoder<AttribsHash>
 ) {
     if (!_cached_encoder_for_AttribsHash) {
-        _cached_encoder_for_AttribsHash = _get_encoder_for_HASH<
-            HashedAttributes
-        >(_encode_HashedAttributes);
+        _cached_encoder_for_AttribsHash = _get_encoder_for_HASH<HashedAttributes>(
+            _encode_HashedAttributes
+        );
     }
     return _cached_encoder_for_AttribsHash(value, elGetter);
 }

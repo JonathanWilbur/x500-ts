@@ -139,9 +139,7 @@ export const _extension_additions_list_spec_for_AlgorithmWithInvoke: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AlgorithmWithInvoke */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AlgorithmWithInvoke */
-let _cached_decoder_for_AlgorithmWithInvoke: $.ASN1Decoder<
-    AlgorithmWithInvoke
-> | null = null;
+let _cached_decoder_for_AlgorithmWithInvoke: $.ASN1Decoder<AlgorithmWithInvoke> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AlgorithmWithInvoke */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AlgorithmWithInvoke */
@@ -189,8 +187,8 @@ export function _decode_AlgorithmWithInvoke(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AlgorithmWithInvoke /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithm,
+            return new AlgorithmWithInvoke(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
                 parameters,
                 dynamParms,
                 _unrecognizedExtensionsList
@@ -202,9 +200,7 @@ export function _decode_AlgorithmWithInvoke(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AlgorithmWithInvoke */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AlgorithmWithInvoke */
-let _cached_encoder_for_AlgorithmWithInvoke: $.ASN1Encoder<
-    AlgorithmWithInvoke
-> | null = null;
+let _cached_encoder_for_AlgorithmWithInvoke: $.ASN1Encoder<AlgorithmWithInvoke> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AlgorithmWithInvoke */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AlgorithmWithInvoke */

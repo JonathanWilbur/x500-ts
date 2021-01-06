@@ -179,9 +179,7 @@ export const _extension_additions_list_spec_for_CertificationPath: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificationPath */
-let _cached_decoder_for_CertificationPath: $.ASN1Decoder<
-    CertificationPath
-> | null = null;
+let _cached_decoder_for_CertificationPath: $.ASN1Decoder<CertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificationPath */
@@ -243,8 +241,8 @@ export function _decode_CertificationPath(el: _Element) {
                 _root_component_type_list_2_spec_for_CertificationPath,
                 undefined
             );
-            return new CertificationPath /* SEQUENCE_CONSTRUCTOR_CALL */(
-                userKeyId,
+            return new CertificationPath(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ userKeyId,
                 userCertif,
                 verifKeyId,
                 userVerifCertif,
@@ -257,9 +255,7 @@ export function _decode_CertificationPath(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificationPath */
-let _cached_encoder_for_CertificationPath: $.ASN1Encoder<
-    CertificationPath
-> | null = null;
+let _cached_encoder_for_CertificationPath: $.ASN1Encoder<CertificationPath> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificationPath */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificationPath */

@@ -122,9 +122,7 @@ export const _extension_additions_list_spec_for_TimeSpecification_time_absolute:
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TimeSpecification_time_absolute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification_time_absolute */
-let _cached_decoder_for_TimeSpecification_time_absolute: $.ASN1Decoder<
-    TimeSpecification_time_absolute
-> | null = null;
+let _cached_decoder_for_TimeSpecification_time_absolute: $.ASN1Decoder<TimeSpecification_time_absolute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TimeSpecification_time_absolute */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TimeSpecification_time_absolute */
@@ -168,8 +166,8 @@ export function _decode_TimeSpecification_time_absolute(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TimeSpecification_time_absolute /* SEQUENCE_CONSTRUCTOR_CALL */(
-                startTime,
+            return new TimeSpecification_time_absolute(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ startTime,
                 endTime,
                 _unrecognizedExtensionsList
             );
@@ -180,9 +178,7 @@ export function _decode_TimeSpecification_time_absolute(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TimeSpecification_time_absolute */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification_time_absolute */
-let _cached_encoder_for_TimeSpecification_time_absolute: $.ASN1Encoder<
-    TimeSpecification_time_absolute
-> | null = null;
+let _cached_encoder_for_TimeSpecification_time_absolute: $.ASN1Encoder<TimeSpecification_time_absolute> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TimeSpecification_time_absolute */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TimeSpecification_time_absolute */

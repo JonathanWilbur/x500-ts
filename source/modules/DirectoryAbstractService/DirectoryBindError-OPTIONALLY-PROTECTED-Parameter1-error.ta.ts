@@ -98,9 +98,7 @@ export type DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error =
 /* END_OF_SYMBOL_DEFINITION DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
-let _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error: $.ASN1Decoder<
-    DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
-> | null = null;
+let _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error: $.ASN1Decoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
@@ -116,22 +114,22 @@ export function _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
     if (
         !_cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
     ) {
-        _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error = $._decode_extensible_choice<
-            DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
-        >({
-            "CONTEXT 1": [
-                "serviceError",
-                $._decode_explicit<ServiceProblem>(
-                    () => _decode_ServiceProblem
-                ),
-            ],
-            "CONTEXT 2": [
-                "securityError",
-                $._decode_explicit<SecurityProblem>(
-                    () => _decode_SecurityProblem
-                ),
-            ],
-        });
+        _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error = $._decode_extensible_choice<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error>(
+            {
+                "CONTEXT 1": [
+                    "serviceError",
+                    $._decode_explicit<ServiceProblem>(
+                        () => _decode_ServiceProblem
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "securityError",
+                    $._decode_explicit<SecurityProblem>(
+                        () => _decode_SecurityProblem
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error(
         el
@@ -140,9 +138,7 @@ export function _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
-let _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error: $.ASN1Encoder<
-    DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
-> | null = null;
+let _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error: $.ASN1Encoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error */
@@ -155,16 +151,12 @@ let _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
  */
 export function _encode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error(
     value: DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error,
-    elGetter: $.ASN1Encoder<
-        DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
-    >
+    elGetter: $.ASN1Encoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error>
 ) {
     if (
         !_cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
     ) {
-        _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error = $._encode_choice<
-            DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error
-        >(
+        _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error = $._encode_choice<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1_error>(
             {
                 serviceError: $._encode_explicit(
                     _TagClass.context,

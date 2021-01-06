@@ -90,9 +90,7 @@ export class SupportedAlgorithm {
          * @public
          * @readonly
          */
-        readonly intendedCertificatePolicies: OPTIONAL<
-            CertificatePoliciesSyntax
-        >,
+        readonly intendedCertificatePolicies: OPTIONAL<CertificatePoliciesSyntax>,
         /**
          * @summary Extensions that are not recognized.
          * @public
@@ -187,9 +185,7 @@ export const _extension_additions_list_spec_for_SupportedAlgorithm: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SupportedAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedAlgorithm */
-let _cached_decoder_for_SupportedAlgorithm: $.ASN1Decoder<
-    SupportedAlgorithm
-> | null = null;
+let _cached_decoder_for_SupportedAlgorithm: $.ASN1Decoder<SupportedAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupportedAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupportedAlgorithm */
@@ -221,9 +217,9 @@ export function _decode_SupportedAlgorithm(el: _Element) {
                     )(_el);
                 },
                 intendedCertificatePolicies: (_el: _Element): void => {
-                    intendedCertificatePolicies = $._decode_explicit<
-                        CertificatePoliciesSyntax
-                    >(() => _decode_CertificatePoliciesSyntax)(_el);
+                    intendedCertificatePolicies = $._decode_explicit<CertificatePoliciesSyntax>(
+                        () => _decode_CertificatePoliciesSyntax
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -237,8 +233,8 @@ export function _decode_SupportedAlgorithm(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SupportedAlgorithm /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithmIdentifier,
+            return new SupportedAlgorithm(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithmIdentifier,
                 intendedUsage,
                 intendedCertificatePolicies,
                 _unrecognizedExtensionsList
@@ -250,9 +246,7 @@ export function _decode_SupportedAlgorithm(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SupportedAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedAlgorithm */
-let _cached_encoder_for_SupportedAlgorithm: $.ASN1Encoder<
-    SupportedAlgorithm
-> | null = null;
+let _cached_encoder_for_SupportedAlgorithm: $.ASN1Encoder<SupportedAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupportedAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupportedAlgorithm */

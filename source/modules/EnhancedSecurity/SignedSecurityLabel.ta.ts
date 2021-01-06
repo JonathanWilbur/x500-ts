@@ -37,9 +37,7 @@ export type SignedSecurityLabel = SIGNED<SignedSecurityLabelContent>; // Defined
 /* END_OF_SYMBOL_DEFINITION SignedSecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedSecurityLabel */
-let _cached_decoder_for_SignedSecurityLabel: $.ASN1Decoder<
-    SignedSecurityLabel
-> | null = null;
+let _cached_decoder_for_SignedSecurityLabel: $.ASN1Decoder<SignedSecurityLabel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedSecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SignedSecurityLabel */
@@ -51,18 +49,16 @@ let _cached_decoder_for_SignedSecurityLabel: $.ASN1Decoder<
  */
 export function _decode_SignedSecurityLabel(el: _Element) {
     if (!_cached_decoder_for_SignedSecurityLabel) {
-        _cached_decoder_for_SignedSecurityLabel = _get_decoder_for_SIGNED<
-            SignedSecurityLabelContent
-        >(_decode_SignedSecurityLabelContent);
+        _cached_decoder_for_SignedSecurityLabel = _get_decoder_for_SIGNED<SignedSecurityLabelContent>(
+            _decode_SignedSecurityLabelContent
+        );
     }
     return _cached_decoder_for_SignedSecurityLabel(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SignedSecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedSecurityLabel */
-let _cached_encoder_for_SignedSecurityLabel: $.ASN1Encoder<
-    SignedSecurityLabel
-> | null = null;
+let _cached_encoder_for_SignedSecurityLabel: $.ASN1Encoder<SignedSecurityLabel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedSecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SignedSecurityLabel */
@@ -78,9 +74,9 @@ export function _encode_SignedSecurityLabel(
     elGetter: $.ASN1Encoder<SignedSecurityLabel>
 ) {
     if (!_cached_encoder_for_SignedSecurityLabel) {
-        _cached_encoder_for_SignedSecurityLabel = _get_encoder_for_SIGNED<
-            SignedSecurityLabelContent
-        >(_encode_SignedSecurityLabelContent);
+        _cached_encoder_for_SignedSecurityLabel = _get_encoder_for_SIGNED<SignedSecurityLabelContent>(
+            _encode_SignedSecurityLabelContent
+        );
     }
     return _cached_encoder_for_SignedSecurityLabel(value, elGetter);
 }

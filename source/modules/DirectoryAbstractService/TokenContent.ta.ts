@@ -256,8 +256,8 @@ export function _decode_TokenContent(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TokenContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-                algorithm,
+            return new TokenContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ algorithm,
                 name,
                 time,
                 random,

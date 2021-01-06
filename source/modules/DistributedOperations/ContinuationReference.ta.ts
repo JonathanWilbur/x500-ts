@@ -349,9 +349,7 @@ export const _extension_additions_list_spec_for_ContinuationReference: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ContinuationReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ContinuationReference */
-let _cached_decoder_for_ContinuationReference: $.ASN1Decoder<
-    ContinuationReference
-> | null = null;
+let _cached_decoder_for_ContinuationReference: $.ASN1Decoder<ContinuationReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ContinuationReference */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ContinuationReference */
@@ -449,8 +447,8 @@ export function _decode_ContinuationReference(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ContinuationReference /* SET_CONSTRUCTOR_CALL */(
-                targetObject,
+            return new ContinuationReference(
+                /* SET_CONSTRUCTOR_CALL */ targetObject,
                 aliasedRDNs,
                 operationProgress,
                 rdnsResolved,
@@ -469,9 +467,7 @@ export function _decode_ContinuationReference(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ContinuationReference */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ContinuationReference */
-let _cached_encoder_for_ContinuationReference: $.ASN1Encoder<
-    ContinuationReference
-> | null = null;
+let _cached_encoder_for_ContinuationReference: $.ASN1Encoder<ContinuationReference> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ContinuationReference */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ContinuationReference */

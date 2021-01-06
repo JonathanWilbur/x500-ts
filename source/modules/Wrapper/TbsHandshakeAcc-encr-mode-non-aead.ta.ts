@@ -121,9 +121,7 @@ export const _extension_additions_list_spec_for_TbsHandshakeAcc_encr_mode_non_ae
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbsHandshakeAcc_encr_mode_non_aead */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_encr_mode_non_aead */
-let _cached_decoder_for_TbsHandshakeAcc_encr_mode_non_aead: $.ASN1Decoder<
-    TbsHandshakeAcc_encr_mode_non_aead
-> | null = null;
+let _cached_decoder_for_TbsHandshakeAcc_encr_mode_non_aead: $.ASN1Decoder<TbsHandshakeAcc_encr_mode_non_aead> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeAcc_encr_mode_non_aead */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_encr_mode_non_aead */
@@ -164,8 +162,8 @@ export function _decode_TbsHandshakeAcc_encr_mode_non_aead(el: _Element) {
                 _root_component_type_list_2_spec_for_TbsHandshakeAcc_encr_mode_non_aead,
                 undefined
             );
-            return new TbsHandshakeAcc_encr_mode_non_aead /* SEQUENCE_CONSTRUCTOR_CALL */(
-                encr,
+            return new TbsHandshakeAcc_encr_mode_non_aead(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ encr,
                 icvAlgID
             );
         };
@@ -175,9 +173,7 @@ export function _decode_TbsHandshakeAcc_encr_mode_non_aead(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeAcc_encr_mode_non_aead */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_encr_mode_non_aead */
-let _cached_encoder_for_TbsHandshakeAcc_encr_mode_non_aead: $.ASN1Encoder<
-    TbsHandshakeAcc_encr_mode_non_aead
-> | null = null;
+let _cached_encoder_for_TbsHandshakeAcc_encr_mode_non_aead: $.ASN1Encoder<TbsHandshakeAcc_encr_mode_non_aead> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeAcc_encr_mode_non_aead */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeAcc_encr_mode_non_aead */

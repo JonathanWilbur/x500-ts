@@ -139,9 +139,7 @@ export const _extension_additions_list_spec_for_OsiBindResult: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult */
-let _cached_decoder_for_OsiBindResult: $.ASN1Decoder<
-    OsiBindResult
-> | null = null;
+let _cached_decoder_for_OsiBindResult: $.ASN1Decoder<OsiBindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiBindResult */
@@ -163,14 +161,14 @@ export function _decode_OsiBindResult(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "mode-selector": (_el: _Element): void => {
-                    mode_selector = $._decode_explicit<
-                        OsiBindResult_mode_selector
-                    >(() => _decode_OsiBindResult_mode_selector)(_el);
+                    mode_selector = $._decode_explicit<OsiBindResult_mode_selector>(
+                        () => _decode_OsiBindResult_mode_selector
+                    )(_el);
                 },
                 "normal-mode-parameters": (_el: _Element): void => {
-                    normal_mode_parameters = $._decode_explicit<
-                        OsiBindResult_normal_mode_parameters
-                    >(() => _decode_OsiBindResult_normal_mode_parameters)(_el);
+                    normal_mode_parameters = $._decode_explicit<OsiBindResult_normal_mode_parameters>(
+                        () => _decode_OsiBindResult_normal_mode_parameters
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -182,8 +180,8 @@ export function _decode_OsiBindResult(el: _Element) {
                 _root_component_type_list_2_spec_for_OsiBindResult,
                 undefined
             );
-            return new OsiBindResult /* SET_CONSTRUCTOR_CALL */(
-                mode_selector,
+            return new OsiBindResult(
+                /* SET_CONSTRUCTOR_CALL */ mode_selector,
                 normal_mode_parameters
             );
         };
@@ -193,9 +191,7 @@ export function _decode_OsiBindResult(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult */
-let _cached_encoder_for_OsiBindResult: $.ASN1Encoder<
-    OsiBindResult
-> | null = null;
+let _cached_encoder_for_OsiBindResult: $.ASN1Encoder<OsiBindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiBindResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiBindResult */

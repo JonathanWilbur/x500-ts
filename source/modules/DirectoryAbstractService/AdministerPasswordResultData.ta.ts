@@ -71,25 +71,19 @@ export class AdministerPasswordResultData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -204,9 +198,7 @@ export const _extension_additions_list_spec_for_AdministerPasswordResultData: $.
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AdministerPasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordResultData */
-let _cached_decoder_for_AdministerPasswordResultData: $.ASN1Decoder<
-    AdministerPasswordResultData
-> | null = null;
+let _cached_decoder_for_AdministerPasswordResultData: $.ASN1Decoder<AdministerPasswordResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AdministerPasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AdministerPasswordResultData */
@@ -263,8 +255,8 @@ export function _decode_AdministerPasswordResultData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AdministerPasswordResultData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                _unrecognizedExtensionsList,
+            return new AdministerPasswordResultData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ _unrecognizedExtensionsList,
                 securityParameters,
                 performer,
                 aliasDereferenced,
@@ -277,9 +269,7 @@ export function _decode_AdministerPasswordResultData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AdministerPasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordResultData */
-let _cached_encoder_for_AdministerPasswordResultData: $.ASN1Encoder<
-    AdministerPasswordResultData
-> | null = null;
+let _cached_encoder_for_AdministerPasswordResultData: $.ASN1Encoder<AdministerPasswordResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AdministerPasswordResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AdministerPasswordResultData */

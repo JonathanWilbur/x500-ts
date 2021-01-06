@@ -49,14 +49,14 @@ export {
 export const updateError: ERROR<OPTIONALLY_PROTECTED<UpdateErrorData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<
-            UpdateErrorData
-        >(_decode_UpdateErrorData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<UpdateErrorData>(
+            _decode_UpdateErrorData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<
-            UpdateErrorData
-        >(_encode_UpdateErrorData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<UpdateErrorData>(
+            _encode_UpdateErrorData
+        ),
     },
     "&errorCode": id_errcode_updateError /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

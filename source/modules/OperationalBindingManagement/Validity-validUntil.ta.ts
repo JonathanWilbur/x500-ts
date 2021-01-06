@@ -34,9 +34,7 @@ export type Validity_validUntil =
 /* END_OF_SYMBOL_DEFINITION Validity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Validity_validUntil */
-let _cached_decoder_for_Validity_validUntil: $.ASN1Decoder<
-    Validity_validUntil
-> | null = null;
+let _cached_decoder_for_Validity_validUntil: $.ASN1Decoder<Validity_validUntil> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Validity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Validity_validUntil */
@@ -48,24 +46,25 @@ let _cached_decoder_for_Validity_validUntil: $.ASN1Decoder<
  */
 export function _decode_Validity_validUntil(el: _Element) {
     if (!_cached_decoder_for_Validity_validUntil) {
-        _cached_decoder_for_Validity_validUntil = $._decode_extensible_choice<
-            Validity_validUntil
-        >({
-            "CONTEXT 0": [
-                "explicitTermination",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
-        });
+        _cached_decoder_for_Validity_validUntil = $._decode_extensible_choice<Validity_validUntil>(
+            {
+                "CONTEXT 0": [
+                    "explicitTermination",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "time",
+                    $._decode_explicit<Time>(() => _decode_Time),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Validity_validUntil(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Validity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Validity_validUntil */
-let _cached_encoder_for_Validity_validUntil: $.ASN1Encoder<
-    Validity_validUntil
-> | null = null;
+let _cached_encoder_for_Validity_validUntil: $.ASN1Encoder<Validity_validUntil> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Validity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Validity_validUntil */
@@ -81,9 +80,7 @@ export function _encode_Validity_validUntil(
     elGetter: $.ASN1Encoder<Validity_validUntil>
 ) {
     if (!_cached_encoder_for_Validity_validUntil) {
-        _cached_encoder_for_Validity_validUntil = $._encode_choice<
-            Validity_validUntil
-        >(
+        _cached_encoder_for_Validity_validUntil = $._encode_choice<Validity_validUntil>(
             {
                 explicitTermination: $._encode_explicit(
                     _TagClass.context,

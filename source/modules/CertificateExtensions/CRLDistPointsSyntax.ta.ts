@@ -27,9 +27,7 @@ export type CRLDistPointsSyntax = DistributionPoint[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION CRLDistPointsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CRLDistPointsSyntax */
-let _cached_decoder_for_CRLDistPointsSyntax: $.ASN1Decoder<
-    CRLDistPointsSyntax
-> | null = null;
+let _cached_decoder_for_CRLDistPointsSyntax: $.ASN1Decoder<CRLDistPointsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CRLDistPointsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CRLDistPointsSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_CRLDistPointsSyntax: $.ASN1Decoder<
  */
 export function _decode_CRLDistPointsSyntax(el: _Element) {
     if (!_cached_decoder_for_CRLDistPointsSyntax) {
-        _cached_decoder_for_CRLDistPointsSyntax = $._decodeSequenceOf<
-            DistributionPoint
-        >(() => _decode_DistributionPoint);
+        _cached_decoder_for_CRLDistPointsSyntax = $._decodeSequenceOf<DistributionPoint>(
+            () => _decode_DistributionPoint
+        );
     }
     return _cached_decoder_for_CRLDistPointsSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CRLDistPointsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CRLDistPointsSyntax */
-let _cached_encoder_for_CRLDistPointsSyntax: $.ASN1Encoder<
-    CRLDistPointsSyntax
-> | null = null;
+let _cached_encoder_for_CRLDistPointsSyntax: $.ASN1Encoder<CRLDistPointsSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CRLDistPointsSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CRLDistPointsSyntax */
@@ -68,9 +64,10 @@ export function _encode_CRLDistPointsSyntax(
     elGetter: $.ASN1Encoder<CRLDistPointsSyntax>
 ) {
     if (!_cached_encoder_for_CRLDistPointsSyntax) {
-        _cached_encoder_for_CRLDistPointsSyntax = $._encodeSequenceOf<
-            DistributionPoint
-        >(() => _encode_DistributionPoint, $.BER);
+        _cached_encoder_for_CRLDistPointsSyntax = $._encodeSequenceOf<DistributionPoint>(
+            () => _encode_DistributionPoint,
+            $.BER
+        );
     }
     return _cached_encoder_for_CRLDistPointsSyntax(value, elGetter);
 }

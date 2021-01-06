@@ -71,9 +71,7 @@ export const wholeSubtree: SearchArgumentData_subset = SearchArgumentData_subset
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData_subset */
-let _cached_decoder_for_SearchArgumentData_subset: $.ASN1Decoder<
-    SearchArgumentData_subset
-> | null = null;
+let _cached_decoder_for_SearchArgumentData_subset: $.ASN1Decoder<SearchArgumentData_subset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData_subset */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchArgumentData_subset */
@@ -92,9 +90,7 @@ export function _decode_SearchArgumentData_subset(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchArgumentData_subset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData_subset */
-let _cached_encoder_for_SearchArgumentData_subset: $.ASN1Encoder<
-    SearchArgumentData_subset
-> | null = null;
+let _cached_encoder_for_SearchArgumentData_subset: $.ASN1Encoder<SearchArgumentData_subset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData_subset */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchArgumentData_subset */

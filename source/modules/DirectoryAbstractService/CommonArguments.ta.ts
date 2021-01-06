@@ -448,9 +448,7 @@ export const _extension_additions_list_spec_for_CommonArguments: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CommonArguments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonArguments */
-let _cached_decoder_for_CommonArguments: $.ASN1Decoder<
-    CommonArguments
-> | null = null;
+let _cached_decoder_for_CommonArguments: $.ASN1Decoder<CommonArguments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CommonArguments */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CommonArguments */
@@ -559,8 +557,8 @@ export function _decode_CommonArguments(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CommonArguments /* SET_CONSTRUCTOR_CALL */(
-                serviceControls,
+            return new CommonArguments(
+                /* SET_CONSTRUCTOR_CALL */ serviceControls,
                 securityParameters,
                 requestor,
                 operationProgress,
@@ -581,9 +579,7 @@ export function _decode_CommonArguments(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CommonArguments */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonArguments */
-let _cached_encoder_for_CommonArguments: $.ASN1Encoder<
-    CommonArguments
-> | null = null;
+let _cached_encoder_for_CommonArguments: $.ASN1Encoder<CommonArguments> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CommonArguments */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CommonArguments */

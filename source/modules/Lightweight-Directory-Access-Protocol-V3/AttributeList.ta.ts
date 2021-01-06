@@ -27,9 +27,7 @@ export type AttributeList = Attribute[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeList */
-let _cached_decoder_for_AttributeList: $.ASN1Decoder<
-    AttributeList
-> | null = null;
+let _cached_decoder_for_AttributeList: $.ASN1Decoder<AttributeList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeList */
@@ -50,9 +48,7 @@ export function _decode_AttributeList(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeList */
-let _cached_encoder_for_AttributeList: $.ASN1Encoder<
-    AttributeList
-> | null = null;
+let _cached_encoder_for_AttributeList: $.ASN1Encoder<AttributeList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeList */

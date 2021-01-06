@@ -49,9 +49,9 @@ let _cached_decoder_for_Certificate: $.ASN1Decoder<Certificate> | null = null;
  */
 export function _decode_Certificate(el: _Element) {
     if (!_cached_decoder_for_Certificate) {
-        _cached_decoder_for_Certificate = _get_decoder_for_SIGNED<
-            TBSCertificate
-        >(_decode_TBSCertificate);
+        _cached_decoder_for_Certificate = _get_decoder_for_SIGNED<TBSCertificate>(
+            _decode_TBSCertificate
+        );
     }
     return _cached_decoder_for_Certificate(el);
 }
@@ -74,9 +74,9 @@ export function _encode_Certificate(
     elGetter: $.ASN1Encoder<Certificate>
 ) {
     if (!_cached_encoder_for_Certificate) {
-        _cached_encoder_for_Certificate = _get_encoder_for_SIGNED<
-            TBSCertificate
-        >(_encode_TBSCertificate);
+        _cached_encoder_for_Certificate = _get_encoder_for_SIGNED<TBSCertificate>(
+            _encode_TBSCertificate
+        );
     }
     return _cached_encoder_for_Certificate(value, elGetter);
 }

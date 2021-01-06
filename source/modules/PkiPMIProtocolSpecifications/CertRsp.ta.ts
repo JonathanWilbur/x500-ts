@@ -254,8 +254,8 @@ export function _decode_CertRsp(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertRsp /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new CertRsp(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 result,

@@ -26,9 +26,7 @@ export type PhysicalDeliveryCountryName =
 /* END_OF_SYMBOL_DEFINITION PhysicalDeliveryCountryName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryCountryName */
-let _cached_decoder_for_PhysicalDeliveryCountryName: $.ASN1Decoder<
-    PhysicalDeliveryCountryName
-> | null = null;
+let _cached_decoder_for_PhysicalDeliveryCountryName: $.ASN1Decoder<PhysicalDeliveryCountryName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PhysicalDeliveryCountryName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryCountryName */
@@ -40,21 +38,22 @@ let _cached_decoder_for_PhysicalDeliveryCountryName: $.ASN1Decoder<
  */
 export function _decode_PhysicalDeliveryCountryName(el: _Element) {
     if (!_cached_decoder_for_PhysicalDeliveryCountryName) {
-        _cached_decoder_for_PhysicalDeliveryCountryName = $._decode_inextensible_choice<
-            PhysicalDeliveryCountryName
-        >({
-            "UNIVERSAL 18": ["x121_dcc_code", $._decodeNumericString],
-            "UNIVERSAL 19": ["iso_3166_alpha2_code", $._decodePrintableString],
-        });
+        _cached_decoder_for_PhysicalDeliveryCountryName = $._decode_inextensible_choice<PhysicalDeliveryCountryName>(
+            {
+                "UNIVERSAL 18": ["x121_dcc_code", $._decodeNumericString],
+                "UNIVERSAL 19": [
+                    "iso_3166_alpha2_code",
+                    $._decodePrintableString,
+                ],
+            }
+        );
     }
     return _cached_decoder_for_PhysicalDeliveryCountryName(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PhysicalDeliveryCountryName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryCountryName */
-let _cached_encoder_for_PhysicalDeliveryCountryName: $.ASN1Encoder<
-    PhysicalDeliveryCountryName
-> | null = null;
+let _cached_encoder_for_PhysicalDeliveryCountryName: $.ASN1Encoder<PhysicalDeliveryCountryName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PhysicalDeliveryCountryName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PhysicalDeliveryCountryName */
@@ -70,9 +69,7 @@ export function _encode_PhysicalDeliveryCountryName(
     elGetter: $.ASN1Encoder<PhysicalDeliveryCountryName>
 ) {
     if (!_cached_encoder_for_PhysicalDeliveryCountryName) {
-        _cached_encoder_for_PhysicalDeliveryCountryName = $._encode_choice<
-            PhysicalDeliveryCountryName
-        >(
+        _cached_encoder_for_PhysicalDeliveryCountryName = $._encode_choice<PhysicalDeliveryCountryName>(
             {
                 x121_dcc_code: $._encodeNumericString,
                 iso_3166_alpha2_code: $._encodePrintableString,

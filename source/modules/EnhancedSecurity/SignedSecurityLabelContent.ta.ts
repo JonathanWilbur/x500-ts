@@ -198,9 +198,7 @@ export const _extension_additions_list_spec_for_SignedSecurityLabelContent: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SignedSecurityLabelContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedSecurityLabelContent */
-let _cached_decoder_for_SignedSecurityLabelContent: $.ASN1Decoder<
-    SignedSecurityLabelContent
-> | null = null;
+let _cached_decoder_for_SignedSecurityLabelContent: $.ASN1Decoder<SignedSecurityLabelContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedSecurityLabelContent */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SignedSecurityLabelContent */
@@ -250,8 +248,8 @@ export function _decode_SignedSecurityLabelContent(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SignedSecurityLabelContent /* SEQUENCE_CONSTRUCTOR_CALL */(
-                attHash,
+            return new SignedSecurityLabelContent(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ attHash,
                 issuer,
                 keyIdentifier,
                 securityLabel,
@@ -264,9 +262,7 @@ export function _decode_SignedSecurityLabelContent(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SignedSecurityLabelContent */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedSecurityLabelContent */
-let _cached_encoder_for_SignedSecurityLabelContent: $.ASN1Encoder<
-    SignedSecurityLabelContent
-> | null = null;
+let _cached_encoder_for_SignedSecurityLabelContent: $.ASN1Encoder<SignedSecurityLabelContent> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedSecurityLabelContent */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SignedSecurityLabelContent */
@@ -290,12 +286,9 @@ export function _encode_SignedSecurityLabelContent(
                 ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ _get_encoder_for_HASH<
-                                AttributeTypeAndValue
-                            >(_encode_AttributeTypeAndValue)(
-                                value.attHash,
-                                $.BER
-                            ),
+                            /* REQUIRED   */ _get_encoder_for_HASH<AttributeTypeAndValue>(
+                                _encode_AttributeTypeAndValue
+                            )(value.attHash, $.BER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
                                 : _encode_Name(value.issuer, $.BER),

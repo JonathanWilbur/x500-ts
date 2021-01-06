@@ -235,9 +235,7 @@ export const _extension_additions_list_spec_for_EntryInformation: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EntryInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformation */
-let _cached_decoder_for_EntryInformation: $.ASN1Decoder<
-    EntryInformation
-> | null = null;
+let _cached_decoder_for_EntryInformation: $.ASN1Decoder<EntryInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryInformation */
@@ -274,9 +272,9 @@ export function _decode_EntryInformation(el: _Element) {
                     fromEntry = $._decodeBoolean(_el);
                 },
                 information: (_el: _Element): void => {
-                    information = $._decodeSetOf<
-                        EntryInformation_information_Item
-                    >(() => _decode_EntryInformation_information_Item)(_el);
+                    information = $._decodeSetOf<EntryInformation_information_Item>(
+                        () => _decode_EntryInformation_information_Item
+                    )(_el);
                 },
                 incompleteEntry: (_el: _Element): void => {
                     incompleteEntry = $._decode_explicit<BOOLEAN>(
@@ -305,8 +303,8 @@ export function _decode_EntryInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new EntryInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-                name,
+            return new EntryInformation(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ name,
                 fromEntry,
                 information,
                 incompleteEntry,
@@ -321,9 +319,7 @@ export function _decode_EntryInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EntryInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformation */
-let _cached_encoder_for_EntryInformation: $.ASN1Encoder<
-    EntryInformation
-> | null = null;
+let _cached_encoder_for_EntryInformation: $.ASN1Encoder<EntryInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryInformation */
@@ -357,9 +353,7 @@ export function _encode_EntryInformation(
                                 : $._encodeBoolean(value.fromEntry, $.BER),
                             /* IF_ABSENT  */ value.information === undefined
                                 ? undefined
-                                : $._encodeSetOf<
-                                      EntryInformation_information_Item
-                                  >(
+                                : $._encodeSetOf<EntryInformation_information_Item>(
                                       () =>
                                           _encode_EntryInformation_information_Item,
                                       $.BER

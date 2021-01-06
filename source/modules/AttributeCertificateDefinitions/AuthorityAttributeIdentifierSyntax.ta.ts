@@ -27,9 +27,7 @@ export type AuthorityAttributeIdentifierSyntax = AuthAttId[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AuthorityAttributeIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityAttributeIdentifierSyntax */
-let _cached_decoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Decoder<
-    AuthorityAttributeIdentifierSyntax
-> | null = null;
+let _cached_decoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Decoder<AuthorityAttributeIdentifierSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AuthorityAttributeIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AuthorityAttributeIdentifierSyntax */
@@ -41,18 +39,16 @@ let _cached_decoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Decoder<
  */
 export function _decode_AuthorityAttributeIdentifierSyntax(el: _Element) {
     if (!_cached_decoder_for_AuthorityAttributeIdentifierSyntax) {
-        _cached_decoder_for_AuthorityAttributeIdentifierSyntax = $._decodeSequenceOf<
-            AuthAttId
-        >(() => _decode_AuthAttId);
+        _cached_decoder_for_AuthorityAttributeIdentifierSyntax = $._decodeSequenceOf<AuthAttId>(
+            () => _decode_AuthAttId
+        );
     }
     return _cached_decoder_for_AuthorityAttributeIdentifierSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AuthorityAttributeIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityAttributeIdentifierSyntax */
-let _cached_encoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Encoder<
-    AuthorityAttributeIdentifierSyntax
-> | null = null;
+let _cached_encoder_for_AuthorityAttributeIdentifierSyntax: $.ASN1Encoder<AuthorityAttributeIdentifierSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AuthorityAttributeIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AuthorityAttributeIdentifierSyntax */
@@ -68,9 +64,10 @@ export function _encode_AuthorityAttributeIdentifierSyntax(
     elGetter: $.ASN1Encoder<AuthorityAttributeIdentifierSyntax>
 ) {
     if (!_cached_encoder_for_AuthorityAttributeIdentifierSyntax) {
-        _cached_encoder_for_AuthorityAttributeIdentifierSyntax = $._encodeSequenceOf<
-            AuthAttId
-        >(() => _encode_AuthAttId, $.BER);
+        _cached_encoder_for_AuthorityAttributeIdentifierSyntax = $._encodeSequenceOf<AuthAttId>(
+            () => _encode_AuthAttId,
+            $.BER
+        );
     }
     return _cached_encoder_for_AuthorityAttributeIdentifierSyntax(
         value,

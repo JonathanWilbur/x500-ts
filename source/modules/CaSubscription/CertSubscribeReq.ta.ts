@@ -143,9 +143,7 @@ export const _extension_additions_list_spec_for_CertSubscribeReq: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertSubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeReq */
-let _cached_decoder_for_CertSubscribeReq: $.ASN1Decoder<
-    CertSubscribeReq
-> | null = null;
+let _cached_decoder_for_CertSubscribeReq: $.ASN1Decoder<CertSubscribeReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertSubscribeReq */
@@ -184,9 +182,7 @@ export function _decode_CertSubscribeReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertSubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeReq */
-let _cached_encoder_for_CertSubscribeReq: $.ASN1Encoder<
-    CertSubscribeReq
-> | null = null;
+let _cached_encoder_for_CertSubscribeReq: $.ASN1Encoder<CertSubscribeReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertSubscribeReq */
@@ -214,12 +210,10 @@ export function _encode_CertSubscribeReq(
                                 value.invokeID,
                                 $.BER
                             ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                CertSubscribeReq_certs_Item
-                            >(() => _encode_CertSubscribeReq_certs_Item, $.BER)(
-                                value.certs,
+                            /* REQUIRED   */ $._encodeSequenceOf<CertSubscribeReq_certs_Item>(
+                                () => _encode_CertSubscribeReq_certs_Item,
                                 $.BER
-                            ),
+                            )(value.certs, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

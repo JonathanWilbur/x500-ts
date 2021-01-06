@@ -163,9 +163,7 @@ export const _extension_additions_list_spec_for_EpcFormat_fields_Item: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_EpcFormat_fields_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EpcFormat_fields_Item */
-let _cached_decoder_for_EpcFormat_fields_Item: $.ASN1Decoder<
-    EpcFormat_fields_Item
-> | null = null;
+let _cached_decoder_for_EpcFormat_fields_Item: $.ASN1Decoder<EpcFormat_fields_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EpcFormat_fields_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EpcFormat_fields_Item */
@@ -207,8 +205,8 @@ export function _decode_EpcFormat_fields_Item(el: _Element) {
                 _root_component_type_list_2_spec_for_EpcFormat_fields_Item,
                 undefined
             );
-            return new EpcFormat_fields_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                bits,
+            return new EpcFormat_fields_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ bits,
                 charField,
                 result
             );
@@ -219,9 +217,7 @@ export function _decode_EpcFormat_fields_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EpcFormat_fields_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EpcFormat_fields_Item */
-let _cached_encoder_for_EpcFormat_fields_Item: $.ASN1Encoder<
-    EpcFormat_fields_Item
-> | null = null;
+let _cached_encoder_for_EpcFormat_fields_Item: $.ASN1Encoder<EpcFormat_fields_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EpcFormat_fields_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EpcFormat_fields_Item */

@@ -27,9 +27,7 @@ export type CompareResponse = LDAPResult; // DefinedType
 /* END_OF_SYMBOL_DEFINITION CompareResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResponse */
-let _cached_decoder_for_CompareResponse: $.ASN1Decoder<
-    CompareResponse
-> | null = null;
+let _cached_decoder_for_CompareResponse: $.ASN1Decoder<CompareResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CompareResponse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CompareResponse */
@@ -41,18 +39,16 @@ let _cached_decoder_for_CompareResponse: $.ASN1Decoder<
  */
 export function _decode_CompareResponse(el: _Element) {
     if (!_cached_decoder_for_CompareResponse) {
-        _cached_decoder_for_CompareResponse = $._decode_implicit<
-            CompareResponse
-        >(() => _decode_LDAPResult);
+        _cached_decoder_for_CompareResponse = $._decode_implicit<CompareResponse>(
+            () => _decode_LDAPResult
+        );
     }
     return _cached_decoder_for_CompareResponse(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CompareResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResponse */
-let _cached_encoder_for_CompareResponse: $.ASN1Encoder<
-    CompareResponse
-> | null = null;
+let _cached_encoder_for_CompareResponse: $.ASN1Encoder<CompareResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CompareResponse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CompareResponse */

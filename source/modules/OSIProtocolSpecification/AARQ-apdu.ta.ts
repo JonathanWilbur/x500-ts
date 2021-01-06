@@ -148,17 +148,13 @@ export class AARQ_apdu {
          * @public
          * @readonly
          */
-        readonly called_AP_invocation_identifier: OPTIONAL<
-            AP_invocation_identifier
-        >,
+        readonly called_AP_invocation_identifier: OPTIONAL<AP_invocation_identifier>,
         /**
          * @summary `called_AE_invocation_identifier`.
          * @public
          * @readonly
          */
-        readonly called_AE_invocation_identifier: OPTIONAL<
-            AE_invocation_identifier
-        >,
+        readonly called_AE_invocation_identifier: OPTIONAL<AE_invocation_identifier>,
         /**
          * @summary `calling_AP_title`.
          * @public
@@ -176,17 +172,13 @@ export class AARQ_apdu {
          * @public
          * @readonly
          */
-        readonly calling_AP_invocation_identifier: OPTIONAL<
-            AP_invocation_identifier
-        >,
+        readonly calling_AP_invocation_identifier: OPTIONAL<AP_invocation_identifier>,
         /**
          * @summary `calling_AE_invocation_identifier`.
          * @public
          * @readonly
          */
-        readonly calling_AE_invocation_identifier: OPTIONAL<
-            AE_invocation_identifier
-        >,
+        readonly calling_AE_invocation_identifier: OPTIONAL<AE_invocation_identifier>,
         /**
          * @summary `implementation_information`.
          * @public
@@ -403,14 +395,14 @@ export function _decode_AARQ_apdu(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         "protocol-version": (_el: _Element): void => {
-                            protocol_version = $._decode_explicit<
-                                AARQ_apdu_protocol_version
-                            >(() => _decode_AARQ_apdu_protocol_version)(_el);
+                            protocol_version = $._decode_explicit<AARQ_apdu_protocol_version>(
+                                () => _decode_AARQ_apdu_protocol_version
+                            )(_el);
                         },
                         "application-context-name": (_el: _Element): void => {
-                            application_context_name = $._decode_explicit<
-                                Application_context_name
-                            >(() => _decode_Application_context_name)(_el);
+                            application_context_name = $._decode_explicit<Application_context_name>(
+                                () => _decode_Application_context_name
+                            )(_el);
                         },
                         "called-AP-title": (_el: _Element): void => {
                             called_AP_title = $._decode_explicit<Name>(
@@ -418,23 +410,23 @@ export function _decode_AARQ_apdu(el: _Element) {
                             )(_el);
                         },
                         "called-AE-qualifier": (_el: _Element): void => {
-                            called_AE_qualifier = $._decode_explicit<
-                                RelativeDistinguishedName
-                            >(() => _decode_RelativeDistinguishedName)(_el);
+                            called_AE_qualifier = $._decode_explicit<RelativeDistinguishedName>(
+                                () => _decode_RelativeDistinguishedName
+                            )(_el);
                         },
                         "called-AP-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            called_AP_invocation_identifier = $._decode_explicit<
-                                AP_invocation_identifier
-                            >(() => _decode_AP_invocation_identifier)(_el);
+                            called_AP_invocation_identifier = $._decode_explicit<AP_invocation_identifier>(
+                                () => _decode_AP_invocation_identifier
+                            )(_el);
                         },
                         "called-AE-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            called_AE_invocation_identifier = $._decode_explicit<
-                                AE_invocation_identifier
-                            >(() => _decode_AE_invocation_identifier)(_el);
+                            called_AE_invocation_identifier = $._decode_explicit<AE_invocation_identifier>(
+                                () => _decode_AE_invocation_identifier
+                            )(_el);
                         },
                         "calling-AP-title": (_el: _Element): void => {
                             calling_AP_title = $._decode_explicit<Name>(
@@ -442,33 +434,33 @@ export function _decode_AARQ_apdu(el: _Element) {
                             )(_el);
                         },
                         "calling-AE-qualifier": (_el: _Element): void => {
-                            calling_AE_qualifier = $._decode_explicit<
-                                RelativeDistinguishedName
-                            >(() => _decode_RelativeDistinguishedName)(_el);
+                            calling_AE_qualifier = $._decode_explicit<RelativeDistinguishedName>(
+                                () => _decode_RelativeDistinguishedName
+                            )(_el);
                         },
                         "calling-AP-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            calling_AP_invocation_identifier = $._decode_explicit<
-                                AP_invocation_identifier
-                            >(() => _decode_AP_invocation_identifier)(_el);
+                            calling_AP_invocation_identifier = $._decode_explicit<AP_invocation_identifier>(
+                                () => _decode_AP_invocation_identifier
+                            )(_el);
                         },
                         "calling-AE-invocation-identifier": (
                             _el: _Element
                         ): void => {
-                            calling_AE_invocation_identifier = $._decode_explicit<
-                                AE_invocation_identifier
-                            >(() => _decode_AE_invocation_identifier)(_el);
+                            calling_AE_invocation_identifier = $._decode_explicit<AE_invocation_identifier>(
+                                () => _decode_AE_invocation_identifier
+                            )(_el);
                         },
                         "implementation-information": (_el: _Element): void => {
-                            implementation_information = $._decode_explicit<
-                                Implementation_data
-                            >(() => _decode_Implementation_data)(_el);
+                            implementation_information = $._decode_explicit<Implementation_data>(
+                                () => _decode_Implementation_data
+                            )(_el);
                         },
                         "user-information": (_el: _Element): void => {
-                            user_information = $._decode_explicit<
-                                Association_informationBind
-                            >(() => _decode_Association_informationBind)(_el);
+                            user_information = $._decode_explicit<Association_informationBind>(
+                                () => _decode_Association_informationBind
+                            )(_el);
                         },
                     };
                     /* END_OF_CALLBACKS_MAP */
@@ -480,8 +472,8 @@ export function _decode_AARQ_apdu(el: _Element) {
                         _root_component_type_list_2_spec_for_AARQ_apdu,
                         undefined
                     );
-                    return new AARQ_apdu /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        protocol_version,
+                    return new AARQ_apdu(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ protocol_version,
                         application_context_name,
                         called_AP_title,
                         called_AE_qualifier,

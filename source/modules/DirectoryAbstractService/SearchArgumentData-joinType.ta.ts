@@ -109,9 +109,7 @@ export const fullOuterJoin: SearchArgumentData_joinType =
 /* END_OF_SYMBOL_DEFINITION fullOuterJoin */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData_joinType */
-let _cached_decoder_for_SearchArgumentData_joinType: $.ASN1Decoder<
-    SearchArgumentData_joinType
-> | null = null;
+let _cached_decoder_for_SearchArgumentData_joinType: $.ASN1Decoder<SearchArgumentData_joinType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchArgumentData_joinType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchArgumentData_joinType */
@@ -130,9 +128,7 @@ export function _decode_SearchArgumentData_joinType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SearchArgumentData_joinType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData_joinType */
-let _cached_encoder_for_SearchArgumentData_joinType: $.ASN1Encoder<
-    SearchArgumentData_joinType
-> | null = null;
+let _cached_encoder_for_SearchArgumentData_joinType: $.ASN1Encoder<SearchArgumentData_joinType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchArgumentData_joinType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchArgumentData_joinType */

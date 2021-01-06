@@ -17,9 +17,7 @@ export type Abstract_syntax_name = OBJECT_IDENTIFIER; // ObjectIdentifierType
 /* END_OF_SYMBOL_DEFINITION Abstract_syntax_name */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Abstract_syntax_name */
-let _cached_decoder_for_Abstract_syntax_name: $.ASN1Decoder<
-    Abstract_syntax_name
-> | null = null;
+let _cached_decoder_for_Abstract_syntax_name: $.ASN1Decoder<Abstract_syntax_name> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Abstract_syntax_name */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Abstract_syntax_name */
@@ -38,9 +36,7 @@ export function _decode_Abstract_syntax_name(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Abstract_syntax_name */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Abstract_syntax_name */
-let _cached_encoder_for_Abstract_syntax_name: $.ASN1Encoder<
-    Abstract_syntax_name
-> | null = null;
+let _cached_encoder_for_Abstract_syntax_name: $.ASN1Encoder<Abstract_syntax_name> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Abstract_syntax_name */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Abstract_syntax_name */

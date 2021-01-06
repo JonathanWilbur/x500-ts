@@ -27,9 +27,7 @@ export type CrossCertificates = Certificate[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION CrossCertificates */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CrossCertificates */
-let _cached_decoder_for_CrossCertificates: $.ASN1Decoder<
-    CrossCertificates
-> | null = null;
+let _cached_decoder_for_CrossCertificates: $.ASN1Decoder<CrossCertificates> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CrossCertificates */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CrossCertificates */
@@ -50,9 +48,7 @@ export function _decode_CrossCertificates(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CrossCertificates */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CrossCertificates */
-let _cached_encoder_for_CrossCertificates: $.ASN1Encoder<
-    CrossCertificates
-> | null = null;
+let _cached_encoder_for_CrossCertificates: $.ASN1Encoder<CrossCertificates> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CrossCertificates */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CrossCertificates */

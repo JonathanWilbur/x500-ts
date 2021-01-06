@@ -131,9 +131,7 @@ export const top_secret: SecurityClassification = SecurityClassification_top_sec
 /* END_OF_SYMBOL_DEFINITION top_secret */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityClassification */
-let _cached_decoder_for_SecurityClassification: $.ASN1Decoder<
-    SecurityClassification
-> | null = null;
+let _cached_decoder_for_SecurityClassification: $.ASN1Decoder<SecurityClassification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityClassification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityClassification */
@@ -152,9 +150,7 @@ export function _decode_SecurityClassification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityClassification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityClassification */
-let _cached_encoder_for_SecurityClassification: $.ASN1Encoder<
-    SecurityClassification
-> | null = null;
+let _cached_encoder_for_SecurityClassification: $.ASN1Encoder<SecurityClassification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityClassification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityClassification */

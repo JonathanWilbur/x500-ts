@@ -27,9 +27,7 @@ export type BaseCRLNumber = CRLNumber; // DefinedType
 /* END_OF_SYMBOL_DEFINITION BaseCRLNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_BaseCRLNumber */
-let _cached_decoder_for_BaseCRLNumber: $.ASN1Decoder<
-    BaseCRLNumber
-> | null = null;
+let _cached_decoder_for_BaseCRLNumber: $.ASN1Decoder<BaseCRLNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_BaseCRLNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_BaseCRLNumber */
@@ -48,9 +46,7 @@ export function _decode_BaseCRLNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_BaseCRLNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_BaseCRLNumber */
-let _cached_encoder_for_BaseCRLNumber: $.ASN1Encoder<
-    BaseCRLNumber
-> | null = null;
+let _cached_encoder_for_BaseCRLNumber: $.ASN1Encoder<BaseCRLNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_BaseCRLNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_BaseCRLNumber */

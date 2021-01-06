@@ -49,9 +49,9 @@ let _cached_decoder_for_ListArgument: $.ASN1Decoder<ListArgument> | null = null;
  */
 export function _decode_ListArgument(el: _Element) {
     if (!_cached_decoder_for_ListArgument) {
-        _cached_decoder_for_ListArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            ListArgumentData
-        >(_decode_ListArgumentData);
+        _cached_decoder_for_ListArgument = _get_decoder_for_OPTIONALLY_PROTECTED<ListArgumentData>(
+            _decode_ListArgumentData
+        );
     }
     return _cached_decoder_for_ListArgument(el);
 }
@@ -74,9 +74,9 @@ export function _encode_ListArgument(
     elGetter: $.ASN1Encoder<ListArgument>
 ) {
     if (!_cached_encoder_for_ListArgument) {
-        _cached_encoder_for_ListArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            ListArgumentData
-        >(_encode_ListArgumentData);
+        _cached_encoder_for_ListArgument = _get_encoder_for_OPTIONALLY_PROTECTED<ListArgumentData>(
+            _encode_ListArgumentData
+        );
     }
     return _cached_encoder_for_ListArgument(value, elGetter);
 }

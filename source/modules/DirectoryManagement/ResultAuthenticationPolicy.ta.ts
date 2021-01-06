@@ -33,9 +33,7 @@ export type ResultAuthenticationPolicy = RequestAuthenticationPolicy; // Defined
 /* END_OF_SYMBOL_DEFINITION ResultAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAuthenticationPolicy */
-let _cached_decoder_for_ResultAuthenticationPolicy: $.ASN1Decoder<
-    ResultAuthenticationPolicy
-> | null = null;
+let _cached_decoder_for_ResultAuthenticationPolicy: $.ASN1Decoder<ResultAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ResultAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ResultAuthenticationPolicy */
@@ -54,9 +52,7 @@ export function _decode_ResultAuthenticationPolicy(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ResultAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAuthenticationPolicy */
-let _cached_encoder_for_ResultAuthenticationPolicy: $.ASN1Encoder<
-    ResultAuthenticationPolicy
-> | null = null;
+let _cached_encoder_for_ResultAuthenticationPolicy: $.ASN1Encoder<ResultAuthenticationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ResultAuthenticationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ResultAuthenticationPolicy */

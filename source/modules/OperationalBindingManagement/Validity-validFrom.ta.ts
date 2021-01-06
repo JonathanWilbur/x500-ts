@@ -34,9 +34,7 @@ export type Validity_validFrom =
 /* END_OF_SYMBOL_DEFINITION Validity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Validity_validFrom */
-let _cached_decoder_for_Validity_validFrom: $.ASN1Decoder<
-    Validity_validFrom
-> | null = null;
+let _cached_decoder_for_Validity_validFrom: $.ASN1Decoder<Validity_validFrom> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Validity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Validity_validFrom */
@@ -48,21 +46,25 @@ let _cached_decoder_for_Validity_validFrom: $.ASN1Decoder<
  */
 export function _decode_Validity_validFrom(el: _Element) {
     if (!_cached_decoder_for_Validity_validFrom) {
-        _cached_decoder_for_Validity_validFrom = $._decode_extensible_choice<
-            Validity_validFrom
-        >({
-            "CONTEXT 0": ["now", $._decode_explicit<NULL>(() => $._decodeNull)],
-            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
-        });
+        _cached_decoder_for_Validity_validFrom = $._decode_extensible_choice<Validity_validFrom>(
+            {
+                "CONTEXT 0": [
+                    "now",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "time",
+                    $._decode_explicit<Time>(() => _decode_Time),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_Validity_validFrom(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Validity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Validity_validFrom */
-let _cached_encoder_for_Validity_validFrom: $.ASN1Encoder<
-    Validity_validFrom
-> | null = null;
+let _cached_encoder_for_Validity_validFrom: $.ASN1Encoder<Validity_validFrom> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Validity_validFrom */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Validity_validFrom */
@@ -78,9 +80,7 @@ export function _encode_Validity_validFrom(
     elGetter: $.ASN1Encoder<Validity_validFrom>
 ) {
     if (!_cached_encoder_for_Validity_validFrom) {
-        _cached_encoder_for_Validity_validFrom = $._encode_choice<
-            Validity_validFrom
-        >(
+        _cached_encoder_for_Validity_validFrom = $._encode_choice<Validity_validFrom>(
             {
                 now: $._encode_explicit(
                     _TagClass.context,

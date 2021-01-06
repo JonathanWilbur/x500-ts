@@ -19,9 +19,7 @@ export type OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = {
 /* END_OF_SYMBOL_DEFINITION OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
-let _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<
-    OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
@@ -37,14 +35,14 @@ export function _decode_OsiUnbindResult_fully_encoded_data_Item_presentation_dat
     if (
         !_cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<
-            OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
-        >({
-            "CONTEXT 0": [
-                "single_ASN1_type",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-        });
+        _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values>(
+            {
+                "CONTEXT 0": [
+                    "single_ASN1_type",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values(
         el
@@ -53,9 +51,7 @@ export function _decode_OsiUnbindResult_fully_encoded_data_Item_presentation_dat
 /* END_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
-let _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<
-    OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values */
@@ -68,16 +64,12 @@ let _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_dat
  */
 export function _encode_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values(
     value: OsiUnbindResult_fully_encoded_data_Item_presentation_data_values,
-    elGetter: $.ASN1Encoder<
-        OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
-    >
+    elGetter: $.ASN1Encoder<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values>
 ) {
     if (
         !_cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = $._encode_choice<
-            OsiUnbindResult_fully_encoded_data_Item_presentation_data_values
-        >(
+        _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = $._encode_choice<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values>(
             {
                 single_ASN1_type: $._encode_explicit(
                     _TagClass.context,

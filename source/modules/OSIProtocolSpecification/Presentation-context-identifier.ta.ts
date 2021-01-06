@@ -17,9 +17,7 @@ export type Presentation_context_identifier = INTEGER;
 /* END_OF_SYMBOL_DEFINITION Presentation_context_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier */
-let _cached_decoder_for_Presentation_context_identifier: $.ASN1Decoder<
-    Presentation_context_identifier
-> | null = null;
+let _cached_decoder_for_Presentation_context_identifier: $.ASN1Decoder<Presentation_context_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Presentation_context_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier */
@@ -38,9 +36,7 @@ export function _decode_Presentation_context_identifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Presentation_context_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier */
-let _cached_encoder_for_Presentation_context_identifier: $.ASN1Encoder<
-    Presentation_context_identifier
-> | null = null;
+let _cached_encoder_for_Presentation_context_identifier: $.ASN1Encoder<Presentation_context_identifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Presentation_context_identifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Presentation_context_identifier */

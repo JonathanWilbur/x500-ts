@@ -28,9 +28,7 @@ export type TeletexOrganizationalUnitNames = TeletexOrganizationalUnitName[]; //
 /* END_OF_SYMBOL_DEFINITION TeletexOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexOrganizationalUnitNames */
-let _cached_decoder_for_TeletexOrganizationalUnitNames: $.ASN1Decoder<
-    TeletexOrganizationalUnitNames
-> | null = null;
+let _cached_decoder_for_TeletexOrganizationalUnitNames: $.ASN1Decoder<TeletexOrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexOrganizationalUnitNames */
@@ -42,18 +40,16 @@ let _cached_decoder_for_TeletexOrganizationalUnitNames: $.ASN1Decoder<
  */
 export function _decode_TeletexOrganizationalUnitNames(el: _Element) {
     if (!_cached_decoder_for_TeletexOrganizationalUnitNames) {
-        _cached_decoder_for_TeletexOrganizationalUnitNames = $._decodeSequenceOf<
-            TeletexOrganizationalUnitName
-        >(() => _decode_TeletexOrganizationalUnitName);
+        _cached_decoder_for_TeletexOrganizationalUnitNames = $._decodeSequenceOf<TeletexOrganizationalUnitName>(
+            () => _decode_TeletexOrganizationalUnitName
+        );
     }
     return _cached_decoder_for_TeletexOrganizationalUnitNames(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexOrganizationalUnitNames */
-let _cached_encoder_for_TeletexOrganizationalUnitNames: $.ASN1Encoder<
-    TeletexOrganizationalUnitNames
-> | null = null;
+let _cached_encoder_for_TeletexOrganizationalUnitNames: $.ASN1Encoder<TeletexOrganizationalUnitNames> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexOrganizationalUnitNames */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexOrganizationalUnitNames */
@@ -69,9 +65,10 @@ export function _encode_TeletexOrganizationalUnitNames(
     elGetter: $.ASN1Encoder<TeletexOrganizationalUnitNames>
 ) {
     if (!_cached_encoder_for_TeletexOrganizationalUnitNames) {
-        _cached_encoder_for_TeletexOrganizationalUnitNames = $._encodeSequenceOf<
-            TeletexOrganizationalUnitName
-        >(() => _encode_TeletexOrganizationalUnitName, $.BER);
+        _cached_encoder_for_TeletexOrganizationalUnitNames = $._encodeSequenceOf<TeletexOrganizationalUnitName>(
+            () => _encode_TeletexOrganizationalUnitName,
+            $.BER
+        );
     }
     return _cached_encoder_for_TeletexOrganizationalUnitNames(value, elGetter);
 }

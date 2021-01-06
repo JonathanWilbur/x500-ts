@@ -254,9 +254,7 @@ export const _extension_additions_list_spec_for_SubSchemaSyntax_Item_subSchema: 
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubSchemaSyntax_Item_subSchema */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubSchemaSyntax_Item_subSchema */
-let _cached_decoder_for_SubSchemaSyntax_Item_subSchema: $.ASN1Decoder<
-    SubSchemaSyntax_Item_subSchema
-> | null = null;
+let _cached_decoder_for_SubSchemaSyntax_Item_subSchema: $.ASN1Decoder<SubSchemaSyntax_Item_subSchema> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubSchemaSyntax_Item_subSchema */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubSchemaSyntax_Item_subSchema */
@@ -353,8 +351,8 @@ export function _decode_SubSchemaSyntax_Item_subSchema(el: _Element) {
                 _root_component_type_list_2_spec_for_SubSchemaSyntax_Item_subSchema,
                 undefined
             );
-            return new SubSchemaSyntax_Item_subSchema /* SEQUENCE_CONSTRUCTOR_CALL */(
-                structureRules,
+            return new SubSchemaSyntax_Item_subSchema(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ structureRules,
                 contentRules,
                 matchingRules,
                 attributeTypes,
@@ -369,9 +367,7 @@ export function _decode_SubSchemaSyntax_Item_subSchema(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubSchemaSyntax_Item_subSchema */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubSchemaSyntax_Item_subSchema */
-let _cached_encoder_for_SubSchemaSyntax_Item_subSchema: $.ASN1Encoder<
-    SubSchemaSyntax_Item_subSchema
-> | null = null;
+let _cached_encoder_for_SubSchemaSyntax_Item_subSchema: $.ASN1Encoder<SubSchemaSyntax_Item_subSchema> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubSchemaSyntax_Item_subSchema */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubSchemaSyntax_Item_subSchema */
@@ -400,9 +396,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   1,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          DITStructureRuleDescription
-                                      >(
+                                      $._encodeSequenceOf<DITStructureRuleDescription>(
                                           () =>
                                               _encode_DITStructureRuleDescription,
                                           $.BER
@@ -415,9 +409,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   2,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          DITContentRuleDescription
-                                      >(
+                                      $._encodeSequenceOf<DITContentRuleDescription>(
                                           () =>
                                               _encode_DITContentRuleDescription,
                                           $.BER
@@ -430,9 +422,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   3,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          MatchingRuleDescription
-                                      >(
+                                      $._encodeSequenceOf<MatchingRuleDescription>(
                                           () => _encode_MatchingRuleDescription,
                                           $.BER
                                       ),
@@ -444,9 +434,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   4,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          AttributeTypeDescription
-                                      >(
+                                      $._encodeSequenceOf<AttributeTypeDescription>(
                                           () =>
                                               _encode_AttributeTypeDescription,
                                           $.BER
@@ -459,9 +447,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   5,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          ObjectClassDescription
-                                      >(
+                                      $._encodeSequenceOf<ObjectClassDescription>(
                                           () => _encode_ObjectClassDescription,
                                           $.BER
                                       ),
@@ -485,9 +471,7 @@ export function _encode_SubSchemaSyntax_Item_subSchema(
                                   _TagClass.context,
                                   7,
                                   () =>
-                                      $._encodeSequenceOf<
-                                          MatchingRuleUseDescription
-                                      >(
+                                      $._encodeSequenceOf<MatchingRuleUseDescription>(
                                           () =>
                                               _encode_MatchingRuleUseDescription,
                                           $.BER

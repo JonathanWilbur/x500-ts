@@ -43,17 +43,13 @@ export {
 export type TerminateOperationalBindingResult =
     | { null_: NULL } /* CHOICE_ALT_ROOT */
     | {
-          protected_: OPTIONALLY_PROTECTED_SEQ<
-              TerminateOperationalBindingResultData
-          >;
+          protected_: OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>;
       } /* CHOICE_ALT_ROOT */
     | _Element /* CHOICE_ALT_UNRECOGNIZED_EXT */;
 /* END_OF_SYMBOL_DEFINITION TerminateOperationalBindingResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingResult */
-let _cached_decoder_for_TerminateOperationalBindingResult: $.ASN1Decoder<
-    TerminateOperationalBindingResult
-> | null = null;
+let _cached_decoder_for_TerminateOperationalBindingResult: $.ASN1Decoder<TerminateOperationalBindingResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TerminateOperationalBindingResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingResult */
@@ -65,32 +61,28 @@ let _cached_decoder_for_TerminateOperationalBindingResult: $.ASN1Decoder<
  */
 export function _decode_TerminateOperationalBindingResult(el: _Element) {
     if (!_cached_decoder_for_TerminateOperationalBindingResult) {
-        _cached_decoder_for_TerminateOperationalBindingResult = $._decode_extensible_choice<
-            TerminateOperationalBindingResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 1": [
-                "protected_",
-                $._decode_explicit<
-                    OPTIONALLY_PROTECTED_SEQ<
-                        TerminateOperationalBindingResultData
-                    >
-                >(() =>
-                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                        TerminateOperationalBindingResultData
-                    >(_decode_TerminateOperationalBindingResultData)
-                ),
-            ],
-        });
+        _cached_decoder_for_TerminateOperationalBindingResult = $._decode_extensible_choice<TerminateOperationalBindingResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 1": [
+                    "protected_",
+                    $._decode_explicit<
+                        OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>
+                    >(() =>
+                        _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(
+                            _decode_TerminateOperationalBindingResultData
+                        )
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TerminateOperationalBindingResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TerminateOperationalBindingResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingResult */
-let _cached_encoder_for_TerminateOperationalBindingResult: $.ASN1Encoder<
-    TerminateOperationalBindingResult
-> | null = null;
+let _cached_encoder_for_TerminateOperationalBindingResult: $.ASN1Encoder<TerminateOperationalBindingResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TerminateOperationalBindingResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TerminateOperationalBindingResult */
@@ -106,18 +98,16 @@ export function _encode_TerminateOperationalBindingResult(
     elGetter: $.ASN1Encoder<TerminateOperationalBindingResult>
 ) {
     if (!_cached_encoder_for_TerminateOperationalBindingResult) {
-        _cached_encoder_for_TerminateOperationalBindingResult = $._encode_choice<
-            TerminateOperationalBindingResult
-        >(
+        _cached_encoder_for_TerminateOperationalBindingResult = $._encode_choice<TerminateOperationalBindingResult>(
             {
                 null_: $._encodeNull,
                 protected_: $._encode_explicit(
                     _TagClass.context,
                     1,
                     () =>
-                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                            TerminateOperationalBindingResultData
-                        >(_encode_TerminateOperationalBindingResultData),
+                        _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<TerminateOperationalBindingResultData>(
+                            _encode_TerminateOperationalBindingResultData
+                        ),
                     $.BER
                 ),
             },

@@ -28,9 +28,7 @@ export type RoleSpecCertIdentifierSyntax = RoleSpecCertIdentifier[]; // Sequence
 /* END_OF_SYMBOL_DEFINITION RoleSpecCertIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RoleSpecCertIdentifierSyntax */
-let _cached_decoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Decoder<
-    RoleSpecCertIdentifierSyntax
-> | null = null;
+let _cached_decoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Decoder<RoleSpecCertIdentifierSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RoleSpecCertIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RoleSpecCertIdentifierSyntax */
@@ -42,18 +40,16 @@ let _cached_decoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Decoder<
  */
 export function _decode_RoleSpecCertIdentifierSyntax(el: _Element) {
     if (!_cached_decoder_for_RoleSpecCertIdentifierSyntax) {
-        _cached_decoder_for_RoleSpecCertIdentifierSyntax = $._decodeSequenceOf<
-            RoleSpecCertIdentifier
-        >(() => _decode_RoleSpecCertIdentifier);
+        _cached_decoder_for_RoleSpecCertIdentifierSyntax = $._decodeSequenceOf<RoleSpecCertIdentifier>(
+            () => _decode_RoleSpecCertIdentifier
+        );
     }
     return _cached_decoder_for_RoleSpecCertIdentifierSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RoleSpecCertIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RoleSpecCertIdentifierSyntax */
-let _cached_encoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Encoder<
-    RoleSpecCertIdentifierSyntax
-> | null = null;
+let _cached_encoder_for_RoleSpecCertIdentifierSyntax: $.ASN1Encoder<RoleSpecCertIdentifierSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RoleSpecCertIdentifierSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RoleSpecCertIdentifierSyntax */
@@ -69,9 +65,10 @@ export function _encode_RoleSpecCertIdentifierSyntax(
     elGetter: $.ASN1Encoder<RoleSpecCertIdentifierSyntax>
 ) {
     if (!_cached_encoder_for_RoleSpecCertIdentifierSyntax) {
-        _cached_encoder_for_RoleSpecCertIdentifierSyntax = $._encodeSequenceOf<
-            RoleSpecCertIdentifier
-        >(() => _encode_RoleSpecCertIdentifier, $.BER);
+        _cached_encoder_for_RoleSpecCertIdentifierSyntax = $._encodeSequenceOf<RoleSpecCertIdentifier>(
+            () => _encode_RoleSpecCertIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_RoleSpecCertIdentifierSyntax(value, elGetter);
 }

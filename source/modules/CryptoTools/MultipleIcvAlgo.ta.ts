@@ -28,9 +28,7 @@ export type MultipleIcvAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultipleIcvAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleIcvAlgo */
-let _cached_decoder_for_MultipleIcvAlgo: $.ASN1Decoder<
-    MultipleIcvAlgo
-> | null = null;
+let _cached_decoder_for_MultipleIcvAlgo: $.ASN1Decoder<MultipleIcvAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleIcvAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleIcvAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultipleIcvAlgo: $.ASN1Decoder<
  */
 export function _decode_MultipleIcvAlgo(el: _Element) {
     if (!_cached_decoder_for_MultipleIcvAlgo) {
-        _cached_decoder_for_MultipleIcvAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultipleIcvAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultipleIcvAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleIcvAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleIcvAlgo */
-let _cached_encoder_for_MultipleIcvAlgo: $.ASN1Encoder<
-    MultipleIcvAlgo
-> | null = null;
+let _cached_encoder_for_MultipleIcvAlgo: $.ASN1Encoder<MultipleIcvAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleIcvAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleIcvAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultipleIcvAlgo(
     elGetter: $.ASN1Encoder<MultipleIcvAlgo>
 ) {
     if (!_cached_encoder_for_MultipleIcvAlgo) {
-        _cached_encoder_for_MultipleIcvAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultipleIcvAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultipleIcvAlgo(value, elGetter);
 }

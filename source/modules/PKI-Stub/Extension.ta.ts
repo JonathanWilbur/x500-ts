@@ -196,8 +196,8 @@ export function _decode_Extension(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Extension /* SEQUENCE_CONSTRUCTOR_CALL */(
-                extnId,
+            return new Extension(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ extnId,
                 critical,
                 extnValue,
                 _unrecognizedExtensionsList

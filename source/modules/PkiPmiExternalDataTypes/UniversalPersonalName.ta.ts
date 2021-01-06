@@ -164,9 +164,7 @@ export const _extension_additions_list_spec_for_UniversalPersonalName: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_UniversalPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPersonalName */
-let _cached_decoder_for_UniversalPersonalName: $.ASN1Decoder<
-    UniversalPersonalName
-> | null = null;
+let _cached_decoder_for_UniversalPersonalName: $.ASN1Decoder<UniversalPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPersonalName */
@@ -205,9 +203,9 @@ export function _decode_UniversalPersonalName(el: _Element) {
                     )(_el);
                 },
                 "generation-qualifier": (_el: _Element): void => {
-                    generation_qualifier = $._decode_explicit<
-                        UniversalOrBMPString
-                    >(() => _decode_UniversalOrBMPString)(_el);
+                    generation_qualifier = $._decode_explicit<UniversalOrBMPString>(
+                        () => _decode_UniversalOrBMPString
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -219,8 +217,8 @@ export function _decode_UniversalPersonalName(el: _Element) {
                 _root_component_type_list_2_spec_for_UniversalPersonalName,
                 undefined
             );
-            return new UniversalPersonalName /* SET_CONSTRUCTOR_CALL */(
-                surname,
+            return new UniversalPersonalName(
+                /* SET_CONSTRUCTOR_CALL */ surname,
                 given_name,
                 initials,
                 generation_qualifier
@@ -232,9 +230,7 @@ export function _decode_UniversalPersonalName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPersonalName */
-let _cached_encoder_for_UniversalPersonalName: $.ASN1Encoder<
-    UniversalPersonalName
-> | null = null;
+let _cached_encoder_for_UniversalPersonalName: $.ASN1Encoder<UniversalPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPersonalName */

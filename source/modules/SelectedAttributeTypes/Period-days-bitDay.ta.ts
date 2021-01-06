@@ -129,9 +129,7 @@ export const saturday: number = Period_days_bitDay_saturday; /* SHORT_NAMED_BIT 
 /* END_OF_SYMBOL_DEFINITION saturday */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_days_bitDay */
-let _cached_decoder_for_Period_days_bitDay: $.ASN1Decoder<
-    Period_days_bitDay
-> | null = null;
+let _cached_decoder_for_Period_days_bitDay: $.ASN1Decoder<Period_days_bitDay> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Period_days_bitDay */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Period_days_bitDay */
@@ -150,9 +148,7 @@ export function _decode_Period_days_bitDay(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_Period_days_bitDay */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_days_bitDay */
-let _cached_encoder_for_Period_days_bitDay: $.ASN1Encoder<
-    Period_days_bitDay
-> | null = null;
+let _cached_encoder_for_Period_days_bitDay: $.ASN1Encoder<Period_days_bitDay> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Period_days_bitDay */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Period_days_bitDay */

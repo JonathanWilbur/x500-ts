@@ -27,9 +27,7 @@ export type AbandonRequest = MessageID; // DefinedType
 /* END_OF_SYMBOL_DEFINITION AbandonRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonRequest */
-let _cached_decoder_for_AbandonRequest: $.ASN1Decoder<
-    AbandonRequest
-> | null = null;
+let _cached_decoder_for_AbandonRequest: $.ASN1Decoder<AbandonRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonRequest */
@@ -50,9 +48,7 @@ export function _decode_AbandonRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonRequest */
-let _cached_encoder_for_AbandonRequest: $.ASN1Encoder<
-    AbandonRequest
-> | null = null;
+let _cached_encoder_for_AbandonRequest: $.ASN1Encoder<AbandonRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonRequest */

@@ -125,9 +125,7 @@ export const _extension_additions_list_spec_for_CertificateGroupNumberRange: $.C
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificateGroupNumberRange */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateGroupNumberRange */
-let _cached_decoder_for_CertificateGroupNumberRange: $.ASN1Decoder<
-    CertificateGroupNumberRange
-> | null = null;
+let _cached_decoder_for_CertificateGroupNumberRange: $.ASN1Decoder<CertificateGroupNumberRange> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificateGroupNumberRange */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificateGroupNumberRange */
@@ -172,9 +170,7 @@ export function _decode_CertificateGroupNumberRange(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificateGroupNumberRange */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateGroupNumberRange */
-let _cached_encoder_for_CertificateGroupNumberRange: $.ASN1Encoder<
-    CertificateGroupNumberRange
-> | null = null;
+let _cached_encoder_for_CertificateGroupNumberRange: $.ASN1Encoder<CertificateGroupNumberRange> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificateGroupNumberRange */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificateGroupNumberRange */

@@ -27,9 +27,7 @@ export type LocalPostalAttributes = PDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION LocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LocalPostalAttributes */
-let _cached_decoder_for_LocalPostalAttributes: $.ASN1Decoder<
-    LocalPostalAttributes
-> | null = null;
+let _cached_decoder_for_LocalPostalAttributes: $.ASN1Decoder<LocalPostalAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LocalPostalAttributes */
@@ -48,9 +46,7 @@ export function _decode_LocalPostalAttributes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_LocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LocalPostalAttributes */
-let _cached_encoder_for_LocalPostalAttributes: $.ASN1Encoder<
-    LocalPostalAttributes
-> | null = null;
+let _cached_encoder_for_LocalPostalAttributes: $.ASN1Encoder<LocalPostalAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LocalPostalAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LocalPostalAttributes */

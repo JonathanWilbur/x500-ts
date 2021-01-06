@@ -40,9 +40,7 @@ export type TbsHandshakeReq_encr_mode =
 /* END_OF_SYMBOL_DEFINITION TbsHandshakeReq_encr_mode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeReq_encr_mode */
-let _cached_decoder_for_TbsHandshakeReq_encr_mode: $.ASN1Decoder<
-    TbsHandshakeReq_encr_mode
-> | null = null;
+let _cached_decoder_for_TbsHandshakeReq_encr_mode: $.ASN1Decoder<TbsHandshakeReq_encr_mode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeReq_encr_mode */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeReq_encr_mode */
@@ -54,33 +52,31 @@ let _cached_decoder_for_TbsHandshakeReq_encr_mode: $.ASN1Decoder<
  */
 export function _decode_TbsHandshakeReq_encr_mode(el: _Element) {
     if (!_cached_decoder_for_TbsHandshakeReq_encr_mode) {
-        _cached_decoder_for_TbsHandshakeReq_encr_mode = $._decode_extensible_choice<
-            TbsHandshakeReq_encr_mode
-        >({
-            "CONTEXT 2": [
-                "aead",
-                $._decode_implicit<AlgorithmIdentifier[]>(() =>
-                    $._decodeSequenceOf<AlgorithmIdentifier>(
-                        () => _decode_AlgorithmIdentifier
-                    )
-                ),
-            ],
-            "CONTEXT 3": [
-                "non_aead",
-                $._decode_implicit<TbsHandshakeReq_encr_mode_non_aead>(
-                    () => _decode_TbsHandshakeReq_encr_mode_non_aead
-                ),
-            ],
-        });
+        _cached_decoder_for_TbsHandshakeReq_encr_mode = $._decode_extensible_choice<TbsHandshakeReq_encr_mode>(
+            {
+                "CONTEXT 2": [
+                    "aead",
+                    $._decode_implicit<AlgorithmIdentifier[]>(() =>
+                        $._decodeSequenceOf<AlgorithmIdentifier>(
+                            () => _decode_AlgorithmIdentifier
+                        )
+                    ),
+                ],
+                "CONTEXT 3": [
+                    "non_aead",
+                    $._decode_implicit<TbsHandshakeReq_encr_mode_non_aead>(
+                        () => _decode_TbsHandshakeReq_encr_mode_non_aead
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_TbsHandshakeReq_encr_mode(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeReq_encr_mode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeReq_encr_mode */
-let _cached_encoder_for_TbsHandshakeReq_encr_mode: $.ASN1Encoder<
-    TbsHandshakeReq_encr_mode
-> | null = null;
+let _cached_encoder_for_TbsHandshakeReq_encr_mode: $.ASN1Encoder<TbsHandshakeReq_encr_mode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeReq_encr_mode */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeReq_encr_mode */
@@ -96,9 +92,7 @@ export function _encode_TbsHandshakeReq_encr_mode(
     elGetter: $.ASN1Encoder<TbsHandshakeReq_encr_mode>
 ) {
     if (!_cached_encoder_for_TbsHandshakeReq_encr_mode) {
-        _cached_encoder_for_TbsHandshakeReq_encr_mode = $._encode_choice<
-            TbsHandshakeReq_encr_mode
-        >(
+        _cached_encoder_for_TbsHandshakeReq_encr_mode = $._encode_choice<TbsHandshakeReq_encr_mode>(
             {
                 aead: $._encode_implicit(
                     _TagClass.context,

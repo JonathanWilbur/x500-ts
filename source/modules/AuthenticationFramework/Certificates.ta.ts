@@ -180,8 +180,8 @@ export function _decode_Certificates(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Certificates /* SEQUENCE_CONSTRUCTOR_CALL */(
-                userCertificate,
+            return new Certificates(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ userCertificate,
                 certificationPath,
                 _unrecognizedExtensionsList
             );

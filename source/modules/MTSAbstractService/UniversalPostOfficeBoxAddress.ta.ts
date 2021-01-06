@@ -27,9 +27,7 @@ export type UniversalPostOfficeBoxAddress = UniversalPDSParameter; // DefinedTyp
 /* END_OF_SYMBOL_DEFINITION UniversalPostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPostOfficeBoxAddress */
-let _cached_decoder_for_UniversalPostOfficeBoxAddress: $.ASN1Decoder<
-    UniversalPostOfficeBoxAddress
-> | null = null;
+let _cached_decoder_for_UniversalPostOfficeBoxAddress: $.ASN1Decoder<UniversalPostOfficeBoxAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPostOfficeBoxAddress */
@@ -48,9 +46,7 @@ export function _decode_UniversalPostOfficeBoxAddress(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPostOfficeBoxAddress */
-let _cached_encoder_for_UniversalPostOfficeBoxAddress: $.ASN1Encoder<
-    UniversalPostOfficeBoxAddress
-> | null = null;
+let _cached_encoder_for_UniversalPostOfficeBoxAddress: $.ASN1Encoder<UniversalPostOfficeBoxAddress> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPostOfficeBoxAddress */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPostOfficeBoxAddress */

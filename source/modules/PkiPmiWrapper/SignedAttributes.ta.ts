@@ -27,9 +27,7 @@ export type SignedAttributes = Attribute[]; // SetOfType
 /* END_OF_SYMBOL_DEFINITION SignedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedAttributes */
-let _cached_decoder_for_SignedAttributes: $.ASN1Decoder<
-    SignedAttributes
-> | null = null;
+let _cached_decoder_for_SignedAttributes: $.ASN1Decoder<SignedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SignedAttributes */
@@ -50,9 +48,7 @@ export function _decode_SignedAttributes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SignedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedAttributes */
-let _cached_encoder_for_SignedAttributes: $.ASN1Encoder<
-    SignedAttributes
-> | null = null;
+let _cached_encoder_for_SignedAttributes: $.ASN1Encoder<SignedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SignedAttributes */

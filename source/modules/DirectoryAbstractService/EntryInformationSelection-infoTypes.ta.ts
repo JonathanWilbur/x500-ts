@@ -53,9 +53,7 @@ export const attributeTypesAndValues: EntryInformationSelection_infoTypes = Entr
 /* END_OF_SYMBOL_DEFINITION attributeTypesAndValues */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection_infoTypes */
-let _cached_decoder_for_EntryInformationSelection_infoTypes: $.ASN1Decoder<
-    EntryInformationSelection_infoTypes
-> | null = null;
+let _cached_decoder_for_EntryInformationSelection_infoTypes: $.ASN1Decoder<EntryInformationSelection_infoTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EntryInformationSelection_infoTypes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection_infoTypes */
@@ -75,9 +73,7 @@ export function _decode_EntryInformationSelection_infoTypes(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EntryInformationSelection_infoTypes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection_infoTypes */
-let _cached_encoder_for_EntryInformationSelection_infoTypes: $.ASN1Encoder<
-    EntryInformationSelection_infoTypes
-> | null = null;
+let _cached_encoder_for_EntryInformationSelection_infoTypes: $.ASN1Encoder<EntryInformationSelection_infoTypes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EntryInformationSelection_infoTypes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EntryInformationSelection_infoTypes */

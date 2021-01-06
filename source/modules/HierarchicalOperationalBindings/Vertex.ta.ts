@@ -228,9 +228,9 @@ export function _decode_Vertex(el: _Element) {
                     )(_el);
                 },
                 accessPoints: (_el: _Element): void => {
-                    accessPoints = $._decode_explicit<
-                        MasterAndShadowAccessPoints
-                    >(() => _decode_MasterAndShadowAccessPoints)(_el);
+                    accessPoints = $._decode_explicit<MasterAndShadowAccessPoints>(
+                        () => _decode_MasterAndShadowAccessPoints
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -244,8 +244,8 @@ export function _decode_Vertex(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new Vertex /* SEQUENCE_CONSTRUCTOR_CALL */(
-                rdn,
+            return new Vertex(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ rdn,
                 admPointInfo,
                 subentries,
                 accessPoints,

@@ -27,9 +27,7 @@ export type UniversalUniquePostalName = UniversalPDSParameter; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UniversalUniquePostalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalUniquePostalName */
-let _cached_decoder_for_UniversalUniquePostalName: $.ASN1Decoder<
-    UniversalUniquePostalName
-> | null = null;
+let _cached_decoder_for_UniversalUniquePostalName: $.ASN1Decoder<UniversalUniquePostalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalUniquePostalName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalUniquePostalName */
@@ -48,9 +46,7 @@ export function _decode_UniversalUniquePostalName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalUniquePostalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalUniquePostalName */
-let _cached_encoder_for_UniversalUniquePostalName: $.ASN1Encoder<
-    UniversalUniquePostalName
-> | null = null;
+let _cached_encoder_for_UniversalUniquePostalName: $.ASN1Encoder<UniversalUniquePostalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalUniquePostalName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalUniquePostalName */

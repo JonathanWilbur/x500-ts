@@ -259,8 +259,8 @@ export function _decode_DeleteAvlReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DeleteAvlReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new DeleteAvlReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 timeStamp,
                 sequence,
                 avl_Id,

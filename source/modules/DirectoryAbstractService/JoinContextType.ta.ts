@@ -19,9 +19,7 @@ export type JoinContextType = OBJECT_IDENTIFIER; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION JoinContextType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_JoinContextType */
-let _cached_decoder_for_JoinContextType: $.ASN1Decoder<
-    JoinContextType
-> | null = null;
+let _cached_decoder_for_JoinContextType: $.ASN1Decoder<JoinContextType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_JoinContextType */
 
 /* START_OF_SYMBOL_DEFINITION _decode_JoinContextType */
@@ -40,9 +38,7 @@ export function _decode_JoinContextType(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_JoinContextType */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_JoinContextType */
-let _cached_encoder_for_JoinContextType: $.ASN1Encoder<
-    JoinContextType
-> | null = null;
+let _cached_encoder_for_JoinContextType: $.ASN1Encoder<JoinContextType> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_JoinContextType */
 
 /* START_OF_SYMBOL_DEFINITION _encode_JoinContextType */

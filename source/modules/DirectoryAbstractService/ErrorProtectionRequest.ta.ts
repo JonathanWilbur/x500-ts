@@ -53,9 +53,7 @@ export const signed: ErrorProtectionRequest = ErrorProtectionRequest_signed; /* 
 /* END_OF_SYMBOL_DEFINITION signed */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ErrorProtectionRequest */
-let _cached_decoder_for_ErrorProtectionRequest: $.ASN1Decoder<
-    ErrorProtectionRequest
-> | null = null;
+let _cached_decoder_for_ErrorProtectionRequest: $.ASN1Decoder<ErrorProtectionRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ErrorProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ErrorProtectionRequest */
@@ -74,9 +72,7 @@ export function _decode_ErrorProtectionRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ErrorProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ErrorProtectionRequest */
-let _cached_encoder_for_ErrorProtectionRequest: $.ASN1Encoder<
-    ErrorProtectionRequest
-> | null = null;
+let _cached_encoder_for_ErrorProtectionRequest: $.ASN1Encoder<ErrorProtectionRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ErrorProtectionRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ErrorProtectionRequest */

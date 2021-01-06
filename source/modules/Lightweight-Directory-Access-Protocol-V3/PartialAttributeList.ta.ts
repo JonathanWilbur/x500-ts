@@ -27,9 +27,7 @@ export type PartialAttributeList = PartialAttribute[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION PartialAttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialAttributeList */
-let _cached_decoder_for_PartialAttributeList: $.ASN1Decoder<
-    PartialAttributeList
-> | null = null;
+let _cached_decoder_for_PartialAttributeList: $.ASN1Decoder<PartialAttributeList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PartialAttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PartialAttributeList */
@@ -41,18 +39,16 @@ let _cached_decoder_for_PartialAttributeList: $.ASN1Decoder<
  */
 export function _decode_PartialAttributeList(el: _Element) {
     if (!_cached_decoder_for_PartialAttributeList) {
-        _cached_decoder_for_PartialAttributeList = $._decodeSequenceOf<
-            PartialAttribute
-        >(() => _decode_PartialAttribute);
+        _cached_decoder_for_PartialAttributeList = $._decodeSequenceOf<PartialAttribute>(
+            () => _decode_PartialAttribute
+        );
     }
     return _cached_decoder_for_PartialAttributeList(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PartialAttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialAttributeList */
-let _cached_encoder_for_PartialAttributeList: $.ASN1Encoder<
-    PartialAttributeList
-> | null = null;
+let _cached_encoder_for_PartialAttributeList: $.ASN1Encoder<PartialAttributeList> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PartialAttributeList */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PartialAttributeList */
@@ -68,9 +64,10 @@ export function _encode_PartialAttributeList(
     elGetter: $.ASN1Encoder<PartialAttributeList>
 ) {
     if (!_cached_encoder_for_PartialAttributeList) {
-        _cached_encoder_for_PartialAttributeList = $._encodeSequenceOf<
-            PartialAttribute
-        >(() => _encode_PartialAttribute, $.BER);
+        _cached_encoder_for_PartialAttributeList = $._encodeSequenceOf<PartialAttribute>(
+            () => _encode_PartialAttribute,
+            $.BER
+        );
     }
     return _cached_encoder_for_PartialAttributeList(value, elGetter);
 }

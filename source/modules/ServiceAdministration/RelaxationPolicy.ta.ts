@@ -195,9 +195,7 @@ export const _extension_additions_list_spec_for_RelaxationPolicy: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_RelaxationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RelaxationPolicy */
-let _cached_decoder_for_RelaxationPolicy: $.ASN1Decoder<
-    RelaxationPolicy
-> | null = null;
+let _cached_decoder_for_RelaxationPolicy: $.ASN1Decoder<RelaxationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RelaxationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RelaxationPolicy */
@@ -261,8 +259,8 @@ export function _decode_RelaxationPolicy(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RelaxationPolicy /* SEQUENCE_CONSTRUCTOR_CALL */(
-                basic,
+            return new RelaxationPolicy(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ basic,
                 tightenings,
                 relaxations,
                 maximum,
@@ -276,9 +274,7 @@ export function _decode_RelaxationPolicy(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_RelaxationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RelaxationPolicy */
-let _cached_encoder_for_RelaxationPolicy: $.ASN1Encoder<
-    RelaxationPolicy
-> | null = null;
+let _cached_encoder_for_RelaxationPolicy: $.ASN1Encoder<RelaxationPolicy> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RelaxationPolicy */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RelaxationPolicy */

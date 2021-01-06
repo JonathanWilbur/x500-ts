@@ -1,6 +1,4 @@
-import {
-    OBJECT_IDENTIFIER,
-} from "asn1-ts";
+import { OBJECT_IDENTIFIER } from "asn1-ts";
 import { ATTRIBUTE } from "../InformationFramework/ATTRIBUTE.oca";
 import { AttributeUsage_directoryOperation } from "../InformationFramework/AttributeUsage.ta";
 
@@ -11,8 +9,10 @@ import { AttributeUsage_directoryOperation } from "../InformationFramework/Attri
 //     USAGE                   directoryOperation
 //     ID                      id}
 
-export
-function pwdRecentlyExpired (passwordAttribute: ATTRIBUTE, id: OBJECT_IDENTIFIER): ATTRIBUTE {
+export function pwdRecentlyExpired(
+    passwordAttribute: ATTRIBUTE,
+    id: OBJECT_IDENTIFIER
+): ATTRIBUTE {
     return {
         class: "ATTRIBUTE",
         decoderFor: {

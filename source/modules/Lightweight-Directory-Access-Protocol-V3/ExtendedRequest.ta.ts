@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_ExtendedRequest: $.ComponentSpec
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ExtendedRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedRequest */
-let _cached_decoder_for_ExtendedRequest: $.ASN1Decoder<
-    ExtendedRequest
-> | null = null;
+let _cached_decoder_for_ExtendedRequest: $.ASN1Decoder<ExtendedRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedRequest */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtendedRequest */
@@ -145,9 +143,7 @@ let _cached_decoder_for_ExtendedRequest: $.ASN1Decoder<
  */
 export function _decode_ExtendedRequest(el: _Element) {
     if (!_cached_decoder_for_ExtendedRequest) {
-        _cached_decoder_for_ExtendedRequest = $._decode_implicit<
-            ExtendedRequest
-        >(
+        _cached_decoder_for_ExtendedRequest = $._decode_implicit<ExtendedRequest>(
             () =>
                 function (el: _Element): ExtendedRequest {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -179,8 +175,8 @@ export function _decode_ExtendedRequest(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new ExtendedRequest /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        requestName,
+                    return new ExtendedRequest(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ requestName,
                         requestValue,
                         _unrecognizedExtensionsList
                     );
@@ -192,9 +188,7 @@ export function _decode_ExtendedRequest(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExtendedRequest */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedRequest */
-let _cached_encoder_for_ExtendedRequest: $.ASN1Encoder<
-    ExtendedRequest
-> | null = null;
+let _cached_encoder_for_ExtendedRequest: $.ASN1Encoder<ExtendedRequest> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedRequest */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtendedRequest */

@@ -19,9 +19,7 @@ export type ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_pr
 /* END_OF_SYMBOL_DEFINITION ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
-let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<
-    ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Decoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
@@ -37,14 +35,14 @@ export function _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_
     if (
         !_cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<
-            ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-        >({
-            "CONTEXT 0": [
-                "single_ASN1_type",
-                $._decode_explicit<_Element>(() => $._decodeAny),
-            ],
-        });
+        _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._decode_inextensible_choice<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>(
+            {
+                "CONTEXT 0": [
+                    "single_ASN1_type",
+                    $._decode_explicit<_Element>(() => $._decodeAny),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values(
         el
@@ -53,9 +51,7 @@ export function _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_
 /* END_OF_SYMBOL_DEFINITION _decode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
-let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<
-    ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-> | null = null;
+let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values */
@@ -68,16 +64,12 @@ let _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_
  */
 export function _encode_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values(
     value: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values,
-    elGetter: $.ASN1Encoder<
-        ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-    >
+    elGetter: $.ASN1Encoder<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>
 ) {
     if (
         !_cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
     ) {
-        _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._encode_choice<
-            ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values
-        >(
+        _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values = $._encode_choice<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item_presentation_data_values>(
             {
                 single_ASN1_type: $._encode_explicit(
                     _TagClass.context,

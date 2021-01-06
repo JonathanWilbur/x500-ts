@@ -166,9 +166,9 @@ export function _decode_ACPathData(el: _Element) {
                     )(_el);
                 },
                 attributeCertificate: (_el: _Element): void => {
-                    attributeCertificate = $._decode_implicit<
-                        AttributeCertificate
-                    >(() => _decode_AttributeCertificate)(_el);
+                    attributeCertificate = $._decode_implicit<AttributeCertificate>(
+                        () => _decode_AttributeCertificate
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -182,8 +182,8 @@ export function _decode_ACPathData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ACPathData /* SEQUENCE_CONSTRUCTOR_CALL */(
-                certificate,
+            return new ACPathData(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ certificate,
                 attributeCertificate,
                 _unrecognizedExtensionsList
             );

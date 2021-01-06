@@ -149,9 +149,7 @@ export const _extension_additions_list_spec_for_TeletexPersonalName: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TeletexPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexPersonalName */
-let _cached_decoder_for_TeletexPersonalName: $.ASN1Decoder<
-    TeletexPersonalName
-> | null = null;
+let _cached_decoder_for_TeletexPersonalName: $.ASN1Decoder<TeletexPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TeletexPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TeletexPersonalName */
@@ -204,8 +202,8 @@ export function _decode_TeletexPersonalName(el: _Element) {
                 _root_component_type_list_2_spec_for_TeletexPersonalName,
                 undefined
             );
-            return new TeletexPersonalName /* SET_CONSTRUCTOR_CALL */(
-                surname,
+            return new TeletexPersonalName(
+                /* SET_CONSTRUCTOR_CALL */ surname,
                 given_name,
                 initials,
                 generation_qualifier
@@ -217,9 +215,7 @@ export function _decode_TeletexPersonalName(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TeletexPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexPersonalName */
-let _cached_encoder_for_TeletexPersonalName: $.ASN1Encoder<
-    TeletexPersonalName
-> | null = null;
+let _cached_encoder_for_TeletexPersonalName: $.ASN1Encoder<TeletexPersonalName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TeletexPersonalName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TeletexPersonalName */

@@ -134,9 +134,7 @@ export const _extension_additions_list_spec_for_OsiUnbindResult_fully_encoded_da
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_OsiUnbindResult_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item */
-let _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item: $.ASN1Decoder<
-    OsiUnbindResult_fully_encoded_data_Item
-> | null = null;
+let _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item: $.ASN1Decoder<OsiUnbindResult_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_OsiUnbindResult_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult_fully_encoded_data_Item */
@@ -180,9 +178,7 @@ export function _decode_OsiUnbindResult_fully_encoded_data_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_OsiUnbindResult_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item */
-let _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item: $.ASN1Encoder<
-    OsiUnbindResult_fully_encoded_data_Item
-> | null = null;
+let _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item: $.ASN1Encoder<OsiUnbindResult_fully_encoded_data_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_OsiUnbindResult_fully_encoded_data_Item */

@@ -131,9 +131,7 @@ export const _extension_additions_list_spec_for_SenderDhPublicKey: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SenderDhPublicKey */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SenderDhPublicKey */
-let _cached_decoder_for_SenderDhPublicKey: $.ASN1Decoder<
-    SenderDhPublicKey
-> | null = null;
+let _cached_decoder_for_SenderDhPublicKey: $.ASN1Decoder<SenderDhPublicKey> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SenderDhPublicKey */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SenderDhPublicKey */
@@ -174,9 +172,7 @@ export function _decode_SenderDhPublicKey(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SenderDhPublicKey */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SenderDhPublicKey */
-let _cached_encoder_for_SenderDhPublicKey: $.ASN1Encoder<
-    SenderDhPublicKey
-> | null = null;
+let _cached_encoder_for_SenderDhPublicKey: $.ASN1Encoder<SenderDhPublicKey> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SenderDhPublicKey */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SenderDhPublicKey */

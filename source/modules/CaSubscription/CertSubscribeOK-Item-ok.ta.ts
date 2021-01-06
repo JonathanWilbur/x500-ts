@@ -214,9 +214,7 @@ export const _extension_additions_list_spec_for_CertSubscribeOK_Item_ok: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertSubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeOK_Item_ok */
-let _cached_decoder_for_CertSubscribeOK_Item_ok: $.ASN1Decoder<
-    CertSubscribeOK_Item_ok
-> | null = null;
+let _cached_decoder_for_CertSubscribeOK_Item_ok: $.ASN1Decoder<CertSubscribeOK_Item_ok> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertSubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertSubscribeOK_Item_ok */
@@ -260,8 +258,8 @@ export function _decode_CertSubscribeOK_Item_ok(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertSubscribeOK_Item_ok /* SEQUENCE_CONSTRUCTOR_CALL */(
-                cert,
+            return new CertSubscribeOK_Item_ok(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ cert,
                 status,
                 revokeReason,
                 _unrecognizedExtensionsList
@@ -273,9 +271,7 @@ export function _decode_CertSubscribeOK_Item_ok(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertSubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeOK_Item_ok */
-let _cached_encoder_for_CertSubscribeOK_Item_ok: $.ASN1Encoder<
-    CertSubscribeOK_Item_ok
-> | null = null;
+let _cached_encoder_for_CertSubscribeOK_Item_ok: $.ASN1Encoder<CertSubscribeOK_Item_ok> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertSubscribeOK_Item_ok */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertSubscribeOK_Item_ok */

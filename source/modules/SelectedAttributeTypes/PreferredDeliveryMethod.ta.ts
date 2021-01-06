@@ -57,9 +57,7 @@ export type PreferredDeliveryMethod = PreferredDeliveryMethod_Item[]; // Sequenc
 /* END_OF_SYMBOL_DEFINITION PreferredDeliveryMethod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PreferredDeliveryMethod */
-let _cached_decoder_for_PreferredDeliveryMethod: $.ASN1Decoder<
-    PreferredDeliveryMethod
-> | null = null;
+let _cached_decoder_for_PreferredDeliveryMethod: $.ASN1Decoder<PreferredDeliveryMethod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PreferredDeliveryMethod */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PreferredDeliveryMethod */
@@ -71,18 +69,16 @@ let _cached_decoder_for_PreferredDeliveryMethod: $.ASN1Decoder<
  */
 export function _decode_PreferredDeliveryMethod(el: _Element) {
     if (!_cached_decoder_for_PreferredDeliveryMethod) {
-        _cached_decoder_for_PreferredDeliveryMethod = $._decodeSequenceOf<
-            PreferredDeliveryMethod_Item
-        >(() => _decode_PreferredDeliveryMethod_Item);
+        _cached_decoder_for_PreferredDeliveryMethod = $._decodeSequenceOf<PreferredDeliveryMethod_Item>(
+            () => _decode_PreferredDeliveryMethod_Item
+        );
     }
     return _cached_decoder_for_PreferredDeliveryMethod(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_PreferredDeliveryMethod */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PreferredDeliveryMethod */
-let _cached_encoder_for_PreferredDeliveryMethod: $.ASN1Encoder<
-    PreferredDeliveryMethod
-> | null = null;
+let _cached_encoder_for_PreferredDeliveryMethod: $.ASN1Encoder<PreferredDeliveryMethod> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PreferredDeliveryMethod */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PreferredDeliveryMethod */
@@ -98,9 +94,10 @@ export function _encode_PreferredDeliveryMethod(
     elGetter: $.ASN1Encoder<PreferredDeliveryMethod>
 ) {
     if (!_cached_encoder_for_PreferredDeliveryMethod) {
-        _cached_encoder_for_PreferredDeliveryMethod = $._encodeSequenceOf<
-            PreferredDeliveryMethod_Item
-        >(() => _encode_PreferredDeliveryMethod_Item, $.BER);
+        _cached_encoder_for_PreferredDeliveryMethod = $._encodeSequenceOf<PreferredDeliveryMethod_Item>(
+            () => _encode_PreferredDeliveryMethod_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_PreferredDeliveryMethod(value, elGetter);
 }

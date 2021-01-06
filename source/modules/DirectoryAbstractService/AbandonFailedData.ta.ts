@@ -111,25 +111,19 @@ export class AbandonFailedData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -257,9 +251,7 @@ export const _extension_additions_list_spec_for_AbandonFailedData: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AbandonFailedData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonFailedData */
-let _cached_decoder_for_AbandonFailedData: $.ASN1Decoder<
-    AbandonFailedData
-> | null = null;
+let _cached_decoder_for_AbandonFailedData: $.ASN1Decoder<AbandonFailedData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AbandonFailedData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AbandonFailedData */
@@ -328,8 +320,8 @@ export function _decode_AbandonFailedData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AbandonFailedData /* SET_CONSTRUCTOR_CALL */(
-                problem,
+            return new AbandonFailedData(
+                /* SET_CONSTRUCTOR_CALL */ problem,
                 operation,
                 _unrecognizedExtensionsList,
                 securityParameters,
@@ -344,9 +336,7 @@ export function _decode_AbandonFailedData(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AbandonFailedData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonFailedData */
-let _cached_encoder_for_AbandonFailedData: $.ASN1Encoder<
-    AbandonFailedData
-> | null = null;
+let _cached_encoder_for_AbandonFailedData: $.ASN1Encoder<AbandonFailedData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AbandonFailedData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AbandonFailedData */

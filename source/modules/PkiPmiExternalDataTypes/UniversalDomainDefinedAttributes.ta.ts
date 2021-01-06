@@ -29,9 +29,7 @@ export type UniversalDomainDefinedAttributes = UniversalDomainDefinedAttribute[]
 /* END_OF_SYMBOL_DEFINITION UniversalDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalDomainDefinedAttributes */
-let _cached_decoder_for_UniversalDomainDefinedAttributes: $.ASN1Decoder<
-    UniversalDomainDefinedAttributes
-> | null = null;
+let _cached_decoder_for_UniversalDomainDefinedAttributes: $.ASN1Decoder<UniversalDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalDomainDefinedAttributes */
@@ -43,18 +41,16 @@ let _cached_decoder_for_UniversalDomainDefinedAttributes: $.ASN1Decoder<
  */
 export function _decode_UniversalDomainDefinedAttributes(el: _Element) {
     if (!_cached_decoder_for_UniversalDomainDefinedAttributes) {
-        _cached_decoder_for_UniversalDomainDefinedAttributes = $._decodeSequenceOf<
-            UniversalDomainDefinedAttribute
-        >(() => _decode_UniversalDomainDefinedAttribute);
+        _cached_decoder_for_UniversalDomainDefinedAttributes = $._decodeSequenceOf<UniversalDomainDefinedAttribute>(
+            () => _decode_UniversalDomainDefinedAttribute
+        );
     }
     return _cached_decoder_for_UniversalDomainDefinedAttributes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalDomainDefinedAttributes */
-let _cached_encoder_for_UniversalDomainDefinedAttributes: $.ASN1Encoder<
-    UniversalDomainDefinedAttributes
-> | null = null;
+let _cached_encoder_for_UniversalDomainDefinedAttributes: $.ASN1Encoder<UniversalDomainDefinedAttributes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalDomainDefinedAttributes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalDomainDefinedAttributes */
@@ -70,9 +66,10 @@ export function _encode_UniversalDomainDefinedAttributes(
     elGetter: $.ASN1Encoder<UniversalDomainDefinedAttributes>
 ) {
     if (!_cached_encoder_for_UniversalDomainDefinedAttributes) {
-        _cached_encoder_for_UniversalDomainDefinedAttributes = $._encodeSequenceOf<
-            UniversalDomainDefinedAttribute
-        >(() => _encode_UniversalDomainDefinedAttribute, $.BER);
+        _cached_encoder_for_UniversalDomainDefinedAttributes = $._encodeSequenceOf<UniversalDomainDefinedAttribute>(
+            () => _encode_UniversalDomainDefinedAttribute,
+            $.BER
+        );
     }
     return _cached_encoder_for_UniversalDomainDefinedAttributes(
         value,

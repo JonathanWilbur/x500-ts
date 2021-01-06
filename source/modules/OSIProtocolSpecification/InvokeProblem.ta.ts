@@ -112,9 +112,7 @@ export const releaseInProgress: InvokeProblem = InvokeProblem_releaseInProgress;
 /* END_OF_SYMBOL_DEFINITION releaseInProgress */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InvokeProblem */
-let _cached_decoder_for_InvokeProblem: $.ASN1Decoder<
-    InvokeProblem
-> | null = null;
+let _cached_decoder_for_InvokeProblem: $.ASN1Decoder<InvokeProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InvokeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InvokeProblem */
@@ -133,9 +131,7 @@ export function _decode_InvokeProblem(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InvokeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InvokeProblem */
-let _cached_encoder_for_InvokeProblem: $.ASN1Encoder<
-    InvokeProblem
-> | null = null;
+let _cached_encoder_for_InvokeProblem: $.ASN1Encoder<InvokeProblem> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InvokeProblem */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InvokeProblem */

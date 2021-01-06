@@ -386,8 +386,8 @@ export function _decode_PerAuthorityScope(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PerAuthorityScope /* SEQUENCE_CONSTRUCTOR_CALL */(
-                authorityName,
+            return new PerAuthorityScope(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ authorityName,
                 distributionPoint,
                 onlyContains,
                 onlySomeReasons,

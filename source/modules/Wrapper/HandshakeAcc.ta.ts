@@ -49,9 +49,9 @@ let _cached_decoder_for_HandshakeAcc: $.ASN1Decoder<HandshakeAcc> | null = null;
  */
 export function _decode_HandshakeAcc(el: _Element) {
     if (!_cached_decoder_for_HandshakeAcc) {
-        _cached_decoder_for_HandshakeAcc = _get_decoder_for_Signed<
-            TbsHandshakeAcc
-        >(_decode_TbsHandshakeAcc);
+        _cached_decoder_for_HandshakeAcc = _get_decoder_for_Signed<TbsHandshakeAcc>(
+            _decode_TbsHandshakeAcc
+        );
     }
     return _cached_decoder_for_HandshakeAcc(el);
 }
@@ -74,9 +74,9 @@ export function _encode_HandshakeAcc(
     elGetter: $.ASN1Encoder<HandshakeAcc>
 ) {
     if (!_cached_encoder_for_HandshakeAcc) {
-        _cached_encoder_for_HandshakeAcc = _get_encoder_for_Signed<
-            TbsHandshakeAcc
-        >(_encode_TbsHandshakeAcc);
+        _cached_encoder_for_HandshakeAcc = _get_encoder_for_Signed<TbsHandshakeAcc>(
+            _encode_TbsHandshakeAcc
+        );
     }
     return _cached_encoder_for_HandshakeAcc(value, elGetter);
 }

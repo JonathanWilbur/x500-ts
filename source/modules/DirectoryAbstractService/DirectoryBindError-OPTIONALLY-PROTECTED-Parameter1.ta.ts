@@ -178,9 +178,7 @@ export const _extension_additions_list_spec_for_DirectoryBindError_OPTIONALLY_PR
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
-let _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Decoder<
-    DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1
-> | null = null;
+let _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Decoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
@@ -232,8 +230,8 @@ export function _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1(
                 _root_component_type_list_2_spec_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1,
                 undefined
             );
-            return new DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 /* SET_CONSTRUCTOR_CALL */(
-                versions,
+            return new DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1(
+                /* SET_CONSTRUCTOR_CALL */ versions,
                 error,
                 securityParameters
             );
@@ -246,9 +244,7 @@ export function _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1(
 /* END_OF_SYMBOL_DEFINITION _decode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
-let _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Encoder<
-    DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1
-> | null = null;
+let _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1: $.ASN1Encoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 */
@@ -268,9 +264,7 @@ export function _encode_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1(
     ) {
         _cached_encoder_for_DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1 = function (
             value: DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1,
-            elGetter: $.ASN1Encoder<
-                DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1
-            >
+            elGetter: $.ASN1Encoder<DirectoryBindError_OPTIONALLY_PROTECTED_Parameter1>
         ): _Element {
             return $._encodeSet(
                 ([] as (_Element | undefined)[])

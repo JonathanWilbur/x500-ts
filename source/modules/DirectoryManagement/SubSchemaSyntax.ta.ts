@@ -50,9 +50,7 @@ export type SubSchemaSyntax = SubSchemaSyntax_Item[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION SubSchemaSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubSchemaSyntax */
-let _cached_decoder_for_SubSchemaSyntax: $.ASN1Decoder<
-    SubSchemaSyntax
-> | null = null;
+let _cached_decoder_for_SubSchemaSyntax: $.ASN1Decoder<SubSchemaSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubSchemaSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubSchemaSyntax */
@@ -64,18 +62,16 @@ let _cached_decoder_for_SubSchemaSyntax: $.ASN1Decoder<
  */
 export function _decode_SubSchemaSyntax(el: _Element) {
     if (!_cached_decoder_for_SubSchemaSyntax) {
-        _cached_decoder_for_SubSchemaSyntax = $._decodeSequenceOf<
-            SubSchemaSyntax_Item
-        >(() => _decode_SubSchemaSyntax_Item);
+        _cached_decoder_for_SubSchemaSyntax = $._decodeSequenceOf<SubSchemaSyntax_Item>(
+            () => _decode_SubSchemaSyntax_Item
+        );
     }
     return _cached_decoder_for_SubSchemaSyntax(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SubSchemaSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubSchemaSyntax */
-let _cached_encoder_for_SubSchemaSyntax: $.ASN1Encoder<
-    SubSchemaSyntax
-> | null = null;
+let _cached_encoder_for_SubSchemaSyntax: $.ASN1Encoder<SubSchemaSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubSchemaSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubSchemaSyntax */
@@ -91,9 +87,10 @@ export function _encode_SubSchemaSyntax(
     elGetter: $.ASN1Encoder<SubSchemaSyntax>
 ) {
     if (!_cached_encoder_for_SubSchemaSyntax) {
-        _cached_encoder_for_SubSchemaSyntax = $._encodeSequenceOf<
-            SubSchemaSyntax_Item
-        >(() => _encode_SubSchemaSyntax_Item, $.BER);
+        _cached_encoder_for_SubSchemaSyntax = $._encodeSequenceOf<SubSchemaSyntax_Item>(
+            () => _encode_SubSchemaSyntax_Item,
+            $.BER
+        );
     }
     return _cached_encoder_for_SubSchemaSyntax(value, elGetter);
 }

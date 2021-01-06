@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_MultipleMatchingLocalities: $.Co
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MultipleMatchingLocalities */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleMatchingLocalities */
-let _cached_decoder_for_MultipleMatchingLocalities: $.ASN1Decoder<
-    MultipleMatchingLocalities
-> | null = null;
+let _cached_decoder_for_MultipleMatchingLocalities: $.ASN1Decoder<MultipleMatchingLocalities> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleMatchingLocalities */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleMatchingLocalities */
@@ -164,9 +162,9 @@ export function _decode_MultipleMatchingLocalities(el: _Element) {
                     matchingRuleUsed = $._decodeObjectIdentifier(_el);
                 },
                 attributeList: (_el: _Element): void => {
-                    attributeList = $._decodeSequenceOf<
-                        AttributeValueAssertion
-                    >(() => _decode_AttributeValueAssertion)(_el);
+                    attributeList = $._decodeSequenceOf<AttributeValueAssertion>(
+                        () => _decode_AttributeValueAssertion
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -180,8 +178,8 @@ export function _decode_MultipleMatchingLocalities(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MultipleMatchingLocalities /* SEQUENCE_CONSTRUCTOR_CALL */(
-                matchingRuleUsed,
+            return new MultipleMatchingLocalities(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ matchingRuleUsed,
                 attributeList,
                 _unrecognizedExtensionsList
             );
@@ -192,9 +190,7 @@ export function _decode_MultipleMatchingLocalities(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleMatchingLocalities */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleMatchingLocalities */
-let _cached_encoder_for_MultipleMatchingLocalities: $.ASN1Encoder<
-    MultipleMatchingLocalities
-> | null = null;
+let _cached_encoder_for_MultipleMatchingLocalities: $.ASN1Encoder<MultipleMatchingLocalities> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleMatchingLocalities */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleMatchingLocalities */
@@ -225,12 +221,10 @@ export function _encode_MultipleMatchingLocalities(
                                       value.matchingRuleUsed,
                                       $.BER
                                   ),
-                            /* REQUIRED   */ $._encodeSequenceOf<
-                                AttributeValueAssertion
-                            >(() => _encode_AttributeValueAssertion, $.BER)(
-                                value.attributeList,
+                            /* REQUIRED   */ $._encodeSequenceOf<AttributeValueAssertion>(
+                                () => _encode_AttributeValueAssertion,
                                 $.BER
-                            ),
+                            )(value.attributeList, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

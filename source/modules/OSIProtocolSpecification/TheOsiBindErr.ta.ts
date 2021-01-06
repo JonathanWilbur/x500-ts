@@ -19,9 +19,7 @@ export type TheOsiBindErr = _Element; // ObjectClassFieldType
 /* END_OF_SYMBOL_DEFINITION TheOsiBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiBindErr */
-let _cached_decoder_for_TheOsiBindErr: $.ASN1Decoder<
-    TheOsiBindErr
-> | null = null;
+let _cached_decoder_for_TheOsiBindErr: $.ASN1Decoder<TheOsiBindErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TheOsiBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TheOsiBindErr */
@@ -42,9 +40,7 @@ export function _decode_TheOsiBindErr(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TheOsiBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiBindErr */
-let _cached_encoder_for_TheOsiBindErr: $.ASN1Encoder<
-    TheOsiBindErr
-> | null = null;
+let _cached_encoder_for_TheOsiBindErr: $.ASN1Encoder<TheOsiBindErr> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TheOsiBindErr */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TheOsiBindErr */

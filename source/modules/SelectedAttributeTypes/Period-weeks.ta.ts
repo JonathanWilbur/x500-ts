@@ -53,16 +53,16 @@ let _cached_decoder_for_Period_weeks: $.ASN1Decoder<Period_weeks> | null = null;
  */
 export function _decode_Period_weeks(el: _Element) {
     if (!_cached_decoder_for_Period_weeks) {
-        _cached_decoder_for_Period_weeks = $._decode_extensible_choice<
-            Period_weeks
-        >({
-            "UNIVERSAL 5": ["allWeeks", $._decodeNull],
-            "UNIVERSAL 17": [
-                "intWeek",
-                $._decodeSetOf<INTEGER>(() => $._decodeInteger),
-            ],
-            "UNIVERSAL 3": ["bitWeek", _decode_Period_weeks_bitWeek],
-        });
+        _cached_decoder_for_Period_weeks = $._decode_extensible_choice<Period_weeks>(
+            {
+                "UNIVERSAL 5": ["allWeeks", $._decodeNull],
+                "UNIVERSAL 17": [
+                    "intWeek",
+                    $._decodeSetOf<INTEGER>(() => $._decodeInteger),
+                ],
+                "UNIVERSAL 3": ["bitWeek", _decode_Period_weeks_bitWeek],
+            }
+        );
     }
     return _cached_decoder_for_Period_weeks(el);
 }

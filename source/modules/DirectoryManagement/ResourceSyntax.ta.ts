@@ -91,9 +91,7 @@ export const miscellaneousResourceExhausted: ResourceSyntax = ResourceSyntax_mis
 /* END_OF_SYMBOL_DEFINITION miscellaneousResourceExhausted */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ResourceSyntax */
-let _cached_decoder_for_ResourceSyntax: $.ASN1Decoder<
-    ResourceSyntax
-> | null = null;
+let _cached_decoder_for_ResourceSyntax: $.ASN1Decoder<ResourceSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ResourceSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ResourceSyntax */
@@ -112,9 +110,7 @@ export function _decode_ResourceSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ResourceSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ResourceSyntax */
-let _cached_encoder_for_ResourceSyntax: $.ASN1Encoder<
-    ResourceSyntax
-> | null = null;
+let _cached_encoder_for_ResourceSyntax: $.ASN1Encoder<ResourceSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ResourceSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ResourceSyntax */

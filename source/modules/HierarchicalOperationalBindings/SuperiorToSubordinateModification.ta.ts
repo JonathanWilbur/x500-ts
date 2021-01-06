@@ -28,9 +28,7 @@ export type SuperiorToSubordinateModification = SuperiorToSubordinate; // Define
 /* END_OF_SYMBOL_DEFINITION SuperiorToSubordinateModification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SuperiorToSubordinateModification */
-let _cached_decoder_for_SuperiorToSubordinateModification: $.ASN1Decoder<
-    SuperiorToSubordinateModification
-> | null = null;
+let _cached_decoder_for_SuperiorToSubordinateModification: $.ASN1Decoder<SuperiorToSubordinateModification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SuperiorToSubordinateModification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SuperiorToSubordinateModification */
@@ -49,9 +47,7 @@ export function _decode_SuperiorToSubordinateModification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SuperiorToSubordinateModification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SuperiorToSubordinateModification */
-let _cached_encoder_for_SuperiorToSubordinateModification: $.ASN1Encoder<
-    SuperiorToSubordinateModification
-> | null = null;
+let _cached_encoder_for_SuperiorToSubordinateModification: $.ASN1Encoder<SuperiorToSubordinateModification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SuperiorToSubordinateModification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SuperiorToSubordinateModification */

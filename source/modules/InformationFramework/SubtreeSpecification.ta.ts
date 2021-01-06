@@ -231,9 +231,7 @@ export const _extension_additions_list_spec_for_SubtreeSpecification: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SubtreeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubtreeSpecification */
-let _cached_decoder_for_SubtreeSpecification: $.ASN1Decoder<
-    SubtreeSpecification
-> | null = null;
+let _cached_decoder_for_SubtreeSpecification: $.ASN1Decoder<SubtreeSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubtreeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubtreeSpecification */
@@ -271,9 +269,7 @@ export function _decode_SubtreeSpecification(el: _Element) {
                     specificExclusions = $._decode_explicit<
                         ChopSpecification_specificExclusions_Item[]
                     >(() =>
-                        $._decodeSetOf<
-                            ChopSpecification_specificExclusions_Item
-                        >(
+                        $._decodeSetOf<ChopSpecification_specificExclusions_Item>(
                             () =>
                                 _decode_ChopSpecification_specificExclusions_Item
                         )
@@ -306,8 +302,8 @@ export function _decode_SubtreeSpecification(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SubtreeSpecification /* SEQUENCE_CONSTRUCTOR_CALL */(
-                base,
+            return new SubtreeSpecification(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ base,
                 specificExclusions,
                 minimum,
                 maximum,
@@ -321,9 +317,7 @@ export function _decode_SubtreeSpecification(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SubtreeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubtreeSpecification */
-let _cached_encoder_for_SubtreeSpecification: $.ASN1Encoder<
-    SubtreeSpecification
-> | null = null;
+let _cached_encoder_for_SubtreeSpecification: $.ASN1Encoder<SubtreeSpecification> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubtreeSpecification */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubtreeSpecification */
@@ -366,9 +360,7 @@ export function _encode_SubtreeSpecification(
                                       _TagClass.context,
                                       1,
                                       () =>
-                                          $._encodeSetOf<
-                                              ChopSpecification_specificExclusions_Item
-                                          >(
+                                          $._encodeSetOf<ChopSpecification_specificExclusions_Item>(
                                               () =>
                                                   _encode_ChopSpecification_specificExclusions_Item,
                                               $.BER

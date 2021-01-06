@@ -168,9 +168,7 @@ export const _extension_additions_list_spec_for_AttCertIssuer: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttCertIssuer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertIssuer */
-let _cached_decoder_for_AttCertIssuer: $.ASN1Decoder<
-    AttCertIssuer
-> | null = null;
+let _cached_decoder_for_AttCertIssuer: $.ASN1Decoder<AttCertIssuer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttCertIssuer */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttCertIssuer */
@@ -197,14 +195,14 @@ export function _decode_AttCertIssuer(el: _Element) {
                             issuerName = _decode_GeneralNames(_el);
                         },
                         baseCertificateID: (_el: _Element): void => {
-                            baseCertificateID = $._decode_explicit<
-                                IssuerSerial
-                            >(() => _decode_IssuerSerial)(_el);
+                            baseCertificateID = $._decode_explicit<IssuerSerial>(
+                                () => _decode_IssuerSerial
+                            )(_el);
                         },
                         objectDigestInfo: (_el: _Element): void => {
-                            objectDigestInfo = $._decode_explicit<
-                                ObjectDigestInfo
-                            >(() => _decode_ObjectDigestInfo)(_el);
+                            objectDigestInfo = $._decode_explicit<ObjectDigestInfo>(
+                                () => _decode_ObjectDigestInfo
+                            )(_el);
                         },
                     };
                     /* END_OF_CALLBACKS_MAP */
@@ -218,8 +216,8 @@ export function _decode_AttCertIssuer(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new AttCertIssuer /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        issuerName,
+                    return new AttCertIssuer(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ issuerName,
                         baseCertificateID,
                         objectDigestInfo,
                         _unrecognizedExtensionsList
@@ -232,9 +230,7 @@ export function _decode_AttCertIssuer(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttCertIssuer */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertIssuer */
-let _cached_encoder_for_AttCertIssuer: $.ASN1Encoder<
-    AttCertIssuer
-> | null = null;
+let _cached_encoder_for_AttCertIssuer: $.ASN1Encoder<AttCertIssuer> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttCertIssuer */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttCertIssuer */

@@ -397,8 +397,8 @@ export function _decode_BuiltInStandardAttributes(el: _Element) {
                 _root_component_type_list_2_spec_for_BuiltInStandardAttributes,
                 undefined
             );
-            return new BuiltInStandardAttributes /* SEQUENCE_CONSTRUCTOR_CALL */(
-                country_name,
+            return new BuiltInStandardAttributes(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ country_name,
                 administration_domain_name,
                 network_address,
                 terminal_identifier,

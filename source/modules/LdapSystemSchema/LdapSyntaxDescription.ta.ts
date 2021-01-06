@@ -128,9 +128,7 @@ export const _extension_additions_list_spec_for_LdapSyntaxDescription: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_LdapSyntaxDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_LdapSyntaxDescription */
-let _cached_decoder_for_LdapSyntaxDescription: $.ASN1Decoder<
-    LdapSyntaxDescription
-> | null = null;
+let _cached_decoder_for_LdapSyntaxDescription: $.ASN1Decoder<LdapSyntaxDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_LdapSyntaxDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_LdapSyntaxDescription */
@@ -170,8 +168,8 @@ export function _decode_LdapSyntaxDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new LdapSyntaxDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new LdapSyntaxDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 description,
                 _unrecognizedExtensionsList
             );
@@ -182,9 +180,7 @@ export function _decode_LdapSyntaxDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_LdapSyntaxDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_LdapSyntaxDescription */
-let _cached_encoder_for_LdapSyntaxDescription: $.ASN1Encoder<
-    LdapSyntaxDescription
-> | null = null;
+let _cached_encoder_for_LdapSyntaxDescription: $.ASN1Encoder<LdapSyntaxDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_LdapSyntaxDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_LdapSyntaxDescription */

@@ -65,9 +65,7 @@ export const wholeSubtree: number = AllowedSubset_wholeSubtree; /* SHORT_NAMED_B
 /* END_OF_SYMBOL_DEFINITION wholeSubtree */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedSubset */
-let _cached_decoder_for_AllowedSubset: $.ASN1Decoder<
-    AllowedSubset
-> | null = null;
+let _cached_decoder_for_AllowedSubset: $.ASN1Decoder<AllowedSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AllowedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AllowedSubset */
@@ -86,9 +84,7 @@ export function _decode_AllowedSubset(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AllowedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedSubset */
-let _cached_encoder_for_AllowedSubset: $.ASN1Encoder<
-    AllowedSubset
-> | null = null;
+let _cached_encoder_for_AllowedSubset: $.ASN1Encoder<AllowedSubset> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AllowedSubset */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AllowedSubset */

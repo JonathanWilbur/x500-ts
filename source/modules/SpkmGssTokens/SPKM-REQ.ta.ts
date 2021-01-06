@@ -197,8 +197,8 @@ export function _decode_SPKM_REQ(el: _Element) {
                 _root_component_type_list_2_spec_for_SPKM_REQ,
                 undefined
             );
-            return new SPKM_REQ /* SEQUENCE_CONSTRUCTOR_CALL */(
-                requestToken,
+            return new SPKM_REQ(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ requestToken,
                 certif_data,
                 auth_data
             );

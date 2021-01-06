@@ -123,9 +123,7 @@ export const _extension_additions_list_spec_for_SecurityCategory: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SecurityCategory */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityCategory */
-let _cached_decoder_for_SecurityCategory: $.ASN1Decoder<
-    SecurityCategory
-> | null = null;
+let _cached_decoder_for_SecurityCategory: $.ASN1Decoder<SecurityCategory> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityCategory */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityCategory */
@@ -166,9 +164,7 @@ export function _decode_SecurityCategory(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityCategory */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityCategory */
-let _cached_encoder_for_SecurityCategory: $.ASN1Encoder<
-    SecurityCategory
-> | null = null;
+let _cached_encoder_for_SecurityCategory: $.ASN1Encoder<SecurityCategory> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityCategory */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityCategory */

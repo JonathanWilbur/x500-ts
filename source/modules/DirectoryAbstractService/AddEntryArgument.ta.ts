@@ -37,9 +37,7 @@ export type AddEntryArgument = OPTIONALLY_PROTECTED<AddEntryArgumentData>; // De
 /* END_OF_SYMBOL_DEFINITION AddEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryArgument */
-let _cached_decoder_for_AddEntryArgument: $.ASN1Decoder<
-    AddEntryArgument
-> | null = null;
+let _cached_decoder_for_AddEntryArgument: $.ASN1Decoder<AddEntryArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AddEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AddEntryArgument */
@@ -51,18 +49,16 @@ let _cached_decoder_for_AddEntryArgument: $.ASN1Decoder<
  */
 export function _decode_AddEntryArgument(el: _Element) {
     if (!_cached_decoder_for_AddEntryArgument) {
-        _cached_decoder_for_AddEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<
-            AddEntryArgumentData
-        >(_decode_AddEntryArgumentData);
+        _cached_decoder_for_AddEntryArgument = _get_decoder_for_OPTIONALLY_PROTECTED<AddEntryArgumentData>(
+            _decode_AddEntryArgumentData
+        );
     }
     return _cached_decoder_for_AddEntryArgument(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AddEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryArgument */
-let _cached_encoder_for_AddEntryArgument: $.ASN1Encoder<
-    AddEntryArgument
-> | null = null;
+let _cached_encoder_for_AddEntryArgument: $.ASN1Encoder<AddEntryArgument> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AddEntryArgument */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AddEntryArgument */
@@ -78,9 +74,9 @@ export function _encode_AddEntryArgument(
     elGetter: $.ASN1Encoder<AddEntryArgument>
 ) {
     if (!_cached_encoder_for_AddEntryArgument) {
-        _cached_encoder_for_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<
-            AddEntryArgumentData
-        >(_encode_AddEntryArgumentData);
+        _cached_encoder_for_AddEntryArgument = _get_encoder_for_OPTIONALLY_PROTECTED<AddEntryArgumentData>(
+            _encode_AddEntryArgumentData
+        );
     }
     return _cached_encoder_for_AddEntryArgument(value, elGetter);
 }

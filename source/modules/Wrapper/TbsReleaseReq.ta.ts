@@ -225,9 +225,7 @@ export const _extension_additions_list_spec_for_TbsReleaseReq: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbsReleaseReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsReleaseReq */
-let _cached_decoder_for_TbsReleaseReq: $.ASN1Decoder<
-    TbsReleaseReq
-> | null = null;
+let _cached_decoder_for_TbsReleaseReq: $.ASN1Decoder<TbsReleaseReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsReleaseReq */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsReleaseReq */
@@ -280,8 +278,8 @@ export function _decode_TbsReleaseReq(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TbsReleaseReq /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TbsReleaseReq(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sigAlg,
                 assoID,
                 time,
@@ -295,9 +293,7 @@ export function _decode_TbsReleaseReq(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbsReleaseReq */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsReleaseReq */
-let _cached_encoder_for_TbsReleaseReq: $.ASN1Encoder<
-    TbsReleaseReq
-> | null = null;
+let _cached_encoder_for_TbsReleaseReq: $.ASN1Encoder<TbsReleaseReq> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsReleaseReq */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsReleaseReq */

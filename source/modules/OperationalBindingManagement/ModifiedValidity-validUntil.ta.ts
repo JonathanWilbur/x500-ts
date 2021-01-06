@@ -35,9 +35,7 @@ export type ModifiedValidity_validUntil =
 /* END_OF_SYMBOL_DEFINITION ModifiedValidity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity_validUntil */
-let _cached_decoder_for_ModifiedValidity_validUntil: $.ASN1Decoder<
-    ModifiedValidity_validUntil
-> | null = null;
+let _cached_decoder_for_ModifiedValidity_validUntil: $.ASN1Decoder<ModifiedValidity_validUntil> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModifiedValidity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModifiedValidity_validUntil */
@@ -49,28 +47,29 @@ let _cached_decoder_for_ModifiedValidity_validUntil: $.ASN1Decoder<
  */
 export function _decode_ModifiedValidity_validUntil(el: _Element) {
     if (!_cached_decoder_for_ModifiedValidity_validUntil) {
-        _cached_decoder_for_ModifiedValidity_validUntil = $._decode_extensible_choice<
-            ModifiedValidity_validUntil
-        >({
-            "CONTEXT 0": [
-                "explicitTermination",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-            "CONTEXT 1": ["time", $._decode_explicit<Time>(() => _decode_Time)],
-            "CONTEXT 2": [
-                "unchanged",
-                $._decode_explicit<NULL>(() => $._decodeNull),
-            ],
-        });
+        _cached_decoder_for_ModifiedValidity_validUntil = $._decode_extensible_choice<ModifiedValidity_validUntil>(
+            {
+                "CONTEXT 0": [
+                    "explicitTermination",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+                "CONTEXT 1": [
+                    "time",
+                    $._decode_explicit<Time>(() => _decode_Time),
+                ],
+                "CONTEXT 2": [
+                    "unchanged",
+                    $._decode_explicit<NULL>(() => $._decodeNull),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ModifiedValidity_validUntil(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ModifiedValidity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity_validUntil */
-let _cached_encoder_for_ModifiedValidity_validUntil: $.ASN1Encoder<
-    ModifiedValidity_validUntil
-> | null = null;
+let _cached_encoder_for_ModifiedValidity_validUntil: $.ASN1Encoder<ModifiedValidity_validUntil> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModifiedValidity_validUntil */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModifiedValidity_validUntil */
@@ -86,9 +85,7 @@ export function _encode_ModifiedValidity_validUntil(
     elGetter: $.ASN1Encoder<ModifiedValidity_validUntil>
 ) {
     if (!_cached_encoder_for_ModifiedValidity_validUntil) {
-        _cached_encoder_for_ModifiedValidity_validUntil = $._encode_choice<
-            ModifiedValidity_validUntil
-        >(
+        _cached_encoder_for_ModifiedValidity_validUntil = $._encode_choice<ModifiedValidity_validUntil>(
             {
                 explicitTermination: $._encode_explicit(
                     _TagClass.context,

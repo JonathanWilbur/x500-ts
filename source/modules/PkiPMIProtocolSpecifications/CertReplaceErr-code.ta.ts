@@ -79,9 +79,7 @@ export type CertReplaceErr_code =
 /* END_OF_SYMBOL_DEFINITION CertReplaceErr_code */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceErr_code */
-let _cached_decoder_for_CertReplaceErr_code: $.ASN1Decoder<
-    CertReplaceErr_code
-> | null = null;
+let _cached_decoder_for_CertReplaceErr_code: $.ASN1Decoder<CertReplaceErr_code> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertReplaceErr_code */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertReplaceErr_code */
@@ -93,35 +91,33 @@ let _cached_decoder_for_CertReplaceErr_code: $.ASN1Decoder<
  */
 export function _decode_CertReplaceErr_code(el: _Element) {
     if (!_cached_decoder_for_CertReplaceErr_code) {
-        _cached_decoder_for_CertReplaceErr_code = $._decode_extensible_choice<
-            CertReplaceErr_code
-        >({
-            "CONTEXT 0": [
-                "signedData",
-                $._decode_explicit<SignedData_error>(
-                    () => _decode_SignedData_error
-                ),
-            ],
-            "CONTEXT 1": [
-                "envelopedData",
-                $._decode_explicit<EnvelopedData_error>(
-                    () => _decode_EnvelopedData_error
-                ),
-            ],
-            "CONTEXT 2": [
-                "casp",
-                $._decode_explicit<CASP_error>(() => _decode_CASP_error),
-            ],
-        });
+        _cached_decoder_for_CertReplaceErr_code = $._decode_extensible_choice<CertReplaceErr_code>(
+            {
+                "CONTEXT 0": [
+                    "signedData",
+                    $._decode_explicit<SignedData_error>(
+                        () => _decode_SignedData_error
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "envelopedData",
+                    $._decode_explicit<EnvelopedData_error>(
+                        () => _decode_EnvelopedData_error
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "casp",
+                    $._decode_explicit<CASP_error>(() => _decode_CASP_error),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertReplaceErr_code(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertReplaceErr_code */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceErr_code */
-let _cached_encoder_for_CertReplaceErr_code: $.ASN1Encoder<
-    CertReplaceErr_code
-> | null = null;
+let _cached_encoder_for_CertReplaceErr_code: $.ASN1Encoder<CertReplaceErr_code> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertReplaceErr_code */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertReplaceErr_code */
@@ -137,9 +133,7 @@ export function _encode_CertReplaceErr_code(
     elGetter: $.ASN1Encoder<CertReplaceErr_code>
 ) {
     if (!_cached_encoder_for_CertReplaceErr_code) {
-        _cached_encoder_for_CertReplaceErr_code = $._encode_choice<
-            CertReplaceErr_code
-        >(
+        _cached_encoder_for_CertReplaceErr_code = $._encode_choice<CertReplaceErr_code>(
             {
                 signedData: $._encode_explicit(
                     _TagClass.context,

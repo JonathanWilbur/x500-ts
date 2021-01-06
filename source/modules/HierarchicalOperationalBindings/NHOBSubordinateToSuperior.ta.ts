@@ -144,9 +144,7 @@ export const _extension_additions_list_spec_for_NHOBSubordinateToSuperior: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NHOBSubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NHOBSubordinateToSuperior */
-let _cached_decoder_for_NHOBSubordinateToSuperior: $.ASN1Decoder<
-    NHOBSubordinateToSuperior
-> | null = null;
+let _cached_decoder_for_NHOBSubordinateToSuperior: $.ASN1Decoder<NHOBSubordinateToSuperior> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NHOBSubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NHOBSubordinateToSuperior */
@@ -169,9 +167,9 @@ export function _decode_NHOBSubordinateToSuperior(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 accessPoints: (_el: _Element): void => {
-                    accessPoints = $._decode_explicit<
-                        MasterAndShadowAccessPoints
-                    >(() => _decode_MasterAndShadowAccessPoints)(_el);
+                    accessPoints = $._decode_explicit<MasterAndShadowAccessPoints>(
+                        () => _decode_MasterAndShadowAccessPoints
+                    )(_el);
                 },
                 subentries: (_el: _Element): void => {
                     subentries = $._decode_explicit<SubentryInfo[]>(() =>
@@ -190,8 +188,8 @@ export function _decode_NHOBSubordinateToSuperior(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NHOBSubordinateToSuperior /* SEQUENCE_CONSTRUCTOR_CALL */(
-                accessPoints,
+            return new NHOBSubordinateToSuperior(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ accessPoints,
                 subentries,
                 _unrecognizedExtensionsList
             );
@@ -202,9 +200,7 @@ export function _decode_NHOBSubordinateToSuperior(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NHOBSubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NHOBSubordinateToSuperior */
-let _cached_encoder_for_NHOBSubordinateToSuperior: $.ASN1Encoder<
-    NHOBSubordinateToSuperior
-> | null = null;
+let _cached_encoder_for_NHOBSubordinateToSuperior: $.ASN1Encoder<NHOBSubordinateToSuperior> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NHOBSubordinateToSuperior */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NHOBSubordinateToSuperior */

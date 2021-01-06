@@ -17,9 +17,7 @@ export type AssociationId = INTEGER;
 /* END_OF_SYMBOL_DEFINITION AssociationId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AssociationId */
-let _cached_decoder_for_AssociationId: $.ASN1Decoder<
-    AssociationId
-> | null = null;
+let _cached_decoder_for_AssociationId: $.ASN1Decoder<AssociationId> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AssociationId */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AssociationId */
@@ -38,9 +36,7 @@ export function _decode_AssociationId(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AssociationId */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AssociationId */
-let _cached_encoder_for_AssociationId: $.ASN1Encoder<
-    AssociationId
-> | null = null;
+let _cached_encoder_for_AssociationId: $.ASN1Encoder<AssociationId> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AssociationId */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AssociationId */

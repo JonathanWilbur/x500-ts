@@ -88,25 +88,19 @@ export class ReferralData {
          * @public
          * @readonly
          */
-        readonly securityParameters: OPTIONAL<
-            SecurityParameters
-        > /* REPLICATED_COMPONENT */,
+        readonly securityParameters: OPTIONAL<SecurityParameters> /* REPLICATED_COMPONENT */,
         /**
          * @summary `performer`.
          * @public
          * @readonly
          */
-        readonly performer: OPTIONAL<
-            DistinguishedName
-        > /* REPLICATED_COMPONENT */,
+        readonly performer: OPTIONAL<DistinguishedName> /* REPLICATED_COMPONENT */,
         /**
          * @summary `aliasDereferenced`.
          * @public
          * @readonly
          */
-        readonly aliasDereferenced: OPTIONAL<
-            BOOLEAN
-        > /* REPLICATED_COMPONENT */,
+        readonly aliasDereferenced: OPTIONAL<BOOLEAN> /* REPLICATED_COMPONENT */,
         /**
          * @summary `notification`.
          * @public
@@ -289,8 +283,8 @@ export function _decode_ReferralData(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ReferralData /* SET_CONSTRUCTOR_CALL */(
-                candidate,
+            return new ReferralData(
+                /* SET_CONSTRUCTOR_CALL */ candidate,
                 _unrecognizedExtensionsList,
                 securityParameters,
                 performer,

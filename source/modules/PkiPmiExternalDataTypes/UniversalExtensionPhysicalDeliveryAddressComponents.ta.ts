@@ -27,9 +27,7 @@ export type UniversalExtensionPhysicalDeliveryAddressComponents = UniversalPDSPa
 /* END_OF_SYMBOL_DEFINITION UniversalExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalExtensionPhysicalDeliveryAddressComponents */
-let _cached_decoder_for_UniversalExtensionPhysicalDeliveryAddressComponents: $.ASN1Decoder<
-    UniversalExtensionPhysicalDeliveryAddressComponents
-> | null = null;
+let _cached_decoder_for_UniversalExtensionPhysicalDeliveryAddressComponents: $.ASN1Decoder<UniversalExtensionPhysicalDeliveryAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalExtensionPhysicalDeliveryAddressComponents */
@@ -54,9 +52,7 @@ export function _decode_UniversalExtensionPhysicalDeliveryAddressComponents(
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalExtensionPhysicalDeliveryAddressComponents */
-let _cached_encoder_for_UniversalExtensionPhysicalDeliveryAddressComponents: $.ASN1Encoder<
-    UniversalExtensionPhysicalDeliveryAddressComponents
-> | null = null;
+let _cached_encoder_for_UniversalExtensionPhysicalDeliveryAddressComponents: $.ASN1Encoder<UniversalExtensionPhysicalDeliveryAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalExtensionPhysicalDeliveryAddressComponents */

@@ -40,9 +40,7 @@ export type CertRsp_result =
 /* END_OF_SYMBOL_DEFINITION CertRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertRsp_result */
-let _cached_decoder_for_CertRsp_result: $.ASN1Decoder<
-    CertRsp_result
-> | null = null;
+let _cached_decoder_for_CertRsp_result: $.ASN1Decoder<CertRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertRsp_result */
@@ -54,27 +52,25 @@ let _cached_decoder_for_CertRsp_result: $.ASN1Decoder<
  */
 export function _decode_CertRsp_result(el: _Element) {
     if (!_cached_decoder_for_CertRsp_result) {
-        _cached_decoder_for_CertRsp_result = $._decode_extensible_choice<
-            CertRsp_result
-        >({
-            "CONTEXT 0": [
-                "success",
-                $._decode_explicit<CertOK>(() => _decode_CertOK),
-            ],
-            "CONTEXT 1": [
-                "failure",
-                $._decode_explicit<CertErr>(() => _decode_CertErr),
-            ],
-        });
+        _cached_decoder_for_CertRsp_result = $._decode_extensible_choice<CertRsp_result>(
+            {
+                "CONTEXT 0": [
+                    "success",
+                    $._decode_explicit<CertOK>(() => _decode_CertOK),
+                ],
+                "CONTEXT 1": [
+                    "failure",
+                    $._decode_explicit<CertErr>(() => _decode_CertErr),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CertRsp_result(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CertRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertRsp_result */
-let _cached_encoder_for_CertRsp_result: $.ASN1Encoder<
-    CertRsp_result
-> | null = null;
+let _cached_encoder_for_CertRsp_result: $.ASN1Encoder<CertRsp_result> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertRsp_result */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertRsp_result */

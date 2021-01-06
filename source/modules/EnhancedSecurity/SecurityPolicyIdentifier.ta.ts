@@ -17,9 +17,7 @@ export type SecurityPolicyIdentifier = OBJECT_IDENTIFIER; // ObjectIdentifierTyp
 /* END_OF_SYMBOL_DEFINITION SecurityPolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityPolicyIdentifier */
-let _cached_decoder_for_SecurityPolicyIdentifier: $.ASN1Decoder<
-    SecurityPolicyIdentifier
-> | null = null;
+let _cached_decoder_for_SecurityPolicyIdentifier: $.ASN1Decoder<SecurityPolicyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityPolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityPolicyIdentifier */
@@ -39,9 +37,7 @@ export function _decode_SecurityPolicyIdentifier(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityPolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityPolicyIdentifier */
-let _cached_encoder_for_SecurityPolicyIdentifier: $.ASN1Encoder<
-    SecurityPolicyIdentifier
-> | null = null;
+let _cached_encoder_for_SecurityPolicyIdentifier: $.ASN1Encoder<SecurityPolicyIdentifier> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityPolicyIdentifier */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityPolicyIdentifier */

@@ -159,9 +159,7 @@ export const _extension_additions_list_spec_for_SuperiorToSubordinate: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SuperiorToSubordinate */
-let _cached_decoder_for_SuperiorToSubordinate: $.ASN1Decoder<
-    SuperiorToSubordinate
-> | null = null;
+let _cached_decoder_for_SuperiorToSubordinate: $.ASN1Decoder<SuperiorToSubordinate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SuperiorToSubordinate */
@@ -211,8 +209,8 @@ export function _decode_SuperiorToSubordinate(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SuperiorToSubordinate /* SEQUENCE_CONSTRUCTOR_CALL */(
-                contextPrefixInfo,
+            return new SuperiorToSubordinate(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ contextPrefixInfo,
                 entryInfo,
                 immediateSuperiorInfo,
                 _unrecognizedExtensionsList
@@ -224,9 +222,7 @@ export function _decode_SuperiorToSubordinate(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SuperiorToSubordinate */
-let _cached_encoder_for_SuperiorToSubordinate: $.ASN1Encoder<
-    SuperiorToSubordinate
-> | null = null;
+let _cached_encoder_for_SuperiorToSubordinate: $.ASN1Encoder<SuperiorToSubordinate> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SuperiorToSubordinate */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SuperiorToSubordinate */

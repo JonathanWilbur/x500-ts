@@ -163,9 +163,7 @@ export const unsupportedHashAlgorithm: SignedData_error = SignedData_error_unsup
 /* END_OF_SYMBOL_DEFINITION unsupportedHashAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedData_error */
-let _cached_decoder_for_SignedData_error: $.ASN1Decoder<
-    SignedData_error
-> | null = null;
+let _cached_decoder_for_SignedData_error: $.ASN1Decoder<SignedData_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SignedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SignedData_error */
@@ -184,9 +182,7 @@ export function _decode_SignedData_error(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SignedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedData_error */
-let _cached_encoder_for_SignedData_error: $.ASN1Encoder<
-    SignedData_error
-> | null = null;
+let _cached_encoder_for_SignedData_error: $.ASN1Encoder<SignedData_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SignedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SignedData_error */

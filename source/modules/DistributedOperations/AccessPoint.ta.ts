@@ -218,8 +218,8 @@ export function _decode_AccessPoint(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AccessPoint /* SET_CONSTRUCTOR_CALL */(
-                ae_title,
+            return new AccessPoint(
+                /* SET_CONSTRUCTOR_CALL */ ae_title,
                 address,
                 protocolInformation,
                 _unrecognizedExtensionsList

@@ -23,9 +23,7 @@ export type Association_informationBindRes = EXTERNAL[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION Association_informationBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBindRes */
-let _cached_decoder_for_Association_informationBindRes: $.ASN1Decoder<
-    Association_informationBindRes
-> | null = null;
+let _cached_decoder_for_Association_informationBindRes: $.ASN1Decoder<Association_informationBindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_Association_informationBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _decode_Association_informationBindRes */
@@ -37,18 +35,16 @@ let _cached_decoder_for_Association_informationBindRes: $.ASN1Decoder<
  */
 export function _decode_Association_informationBindRes(el: _Element) {
     if (!_cached_decoder_for_Association_informationBindRes) {
-        _cached_decoder_for_Association_informationBindRes = $._decodeSequenceOf<
-            EXTERNAL
-        >(() => $._decodeExternal);
+        _cached_decoder_for_Association_informationBindRes = $._decodeSequenceOf<EXTERNAL>(
+            () => $._decodeExternal
+        );
     }
     return _cached_decoder_for_Association_informationBindRes(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_Association_informationBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBindRes */
-let _cached_encoder_for_Association_informationBindRes: $.ASN1Encoder<
-    Association_informationBindRes
-> | null = null;
+let _cached_encoder_for_Association_informationBindRes: $.ASN1Encoder<Association_informationBindRes> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_Association_informationBindRes */
 
 /* START_OF_SYMBOL_DEFINITION _encode_Association_informationBindRes */
@@ -64,9 +60,10 @@ export function _encode_Association_informationBindRes(
     elGetter: $.ASN1Encoder<Association_informationBindRes>
 ) {
     if (!_cached_encoder_for_Association_informationBindRes) {
-        _cached_encoder_for_Association_informationBindRes = $._encodeSequenceOf<
-            EXTERNAL
-        >(() => $._encodeExternal, $.BER);
+        _cached_encoder_for_Association_informationBindRes = $._encodeSequenceOf<EXTERNAL>(
+            () => $._encodeExternal,
+            $.BER
+        );
     }
     return _cached_encoder_for_Association_informationBindRes(value, elGetter);
 }

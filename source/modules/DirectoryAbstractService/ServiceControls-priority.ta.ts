@@ -71,9 +71,7 @@ export const high: ServiceControls_priority = ServiceControls_priority_high; /* 
 /* END_OF_SYMBOL_DEFINITION high */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls_priority */
-let _cached_decoder_for_ServiceControls_priority: $.ASN1Decoder<
-    ServiceControls_priority
-> | null = null;
+let _cached_decoder_for_ServiceControls_priority: $.ASN1Decoder<ServiceControls_priority> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls_priority */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ServiceControls_priority */
@@ -92,9 +90,7 @@ export function _decode_ServiceControls_priority(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ServiceControls_priority */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls_priority */
-let _cached_encoder_for_ServiceControls_priority: $.ASN1Encoder<
-    ServiceControls_priority
-> | null = null;
+let _cached_encoder_for_ServiceControls_priority: $.ASN1Encoder<ServiceControls_priority> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls_priority */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ServiceControls_priority */

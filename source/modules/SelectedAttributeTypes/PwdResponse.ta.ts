@@ -178,8 +178,8 @@ export function _decode_PwdResponse(el: _Element) {
                 _root_component_type_list_2_spec_for_PwdResponse,
                 undefined
             );
-            return new PwdResponse /* SEQUENCE_CONSTRUCTOR_CALL */(
-                warning,
+            return new PwdResponse(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ warning,
                 error
             );
         };

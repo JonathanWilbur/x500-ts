@@ -49,14 +49,14 @@ export {
 export const serviceError: ERROR<OPTIONALLY_PROTECTED<ServiceErrorData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<
-            ServiceErrorData
-        >(_decode_ServiceErrorData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<ServiceErrorData>(
+            _decode_ServiceErrorData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<
-            ServiceErrorData
-        >(_encode_ServiceErrorData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<ServiceErrorData>(
+            _encode_ServiceErrorData
+        ),
     },
     "&errorCode": id_errcode_serviceError /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

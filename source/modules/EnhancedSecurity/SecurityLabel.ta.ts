@@ -203,9 +203,7 @@ export const _extension_additions_list_spec_for_SecurityLabel: $.ComponentSpec[]
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityLabel */
-let _cached_decoder_for_SecurityLabel: $.ASN1Decoder<
-    SecurityLabel
-> | null = null;
+let _cached_decoder_for_SecurityLabel: $.ASN1Decoder<SecurityLabel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityLabel */
@@ -257,8 +255,8 @@ export function _decode_SecurityLabel(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SecurityLabel /* SET_CONSTRUCTOR_CALL */(
-                security_policy_identifier,
+            return new SecurityLabel(
+                /* SET_CONSTRUCTOR_CALL */ security_policy_identifier,
                 security_classification,
                 privacy_mark,
                 security_categories,
@@ -271,9 +269,7 @@ export function _decode_SecurityLabel(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityLabel */
-let _cached_encoder_for_SecurityLabel: $.ASN1Encoder<
-    SecurityLabel
-> | null = null;
+let _cached_encoder_for_SecurityLabel: $.ASN1Encoder<SecurityLabel> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityLabel */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityLabel */

@@ -27,9 +27,7 @@ export type ExtensionPhysicalDeliveryAddressComponents = PDSParameter; // Define
 /* END_OF_SYMBOL_DEFINITION ExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionPhysicalDeliveryAddressComponents */
-let _cached_decoder_for_ExtensionPhysicalDeliveryAddressComponents: $.ASN1Decoder<
-    ExtensionPhysicalDeliveryAddressComponents
-> | null = null;
+let _cached_decoder_for_ExtensionPhysicalDeliveryAddressComponents: $.ASN1Decoder<ExtensionPhysicalDeliveryAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtensionPhysicalDeliveryAddressComponents */
@@ -50,9 +48,7 @@ export function _decode_ExtensionPhysicalDeliveryAddressComponents(
 /* END_OF_SYMBOL_DEFINITION _decode_ExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionPhysicalDeliveryAddressComponents */
-let _cached_encoder_for_ExtensionPhysicalDeliveryAddressComponents: $.ASN1Encoder<
-    ExtensionPhysicalDeliveryAddressComponents
-> | null = null;
+let _cached_encoder_for_ExtensionPhysicalDeliveryAddressComponents: $.ASN1Encoder<ExtensionPhysicalDeliveryAddressComponents> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtensionPhysicalDeliveryAddressComponents */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtensionPhysicalDeliveryAddressComponents */

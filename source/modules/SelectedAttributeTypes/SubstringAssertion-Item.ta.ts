@@ -42,9 +42,7 @@ export type SubstringAssertion_Item =
 /* END_OF_SYMBOL_DEFINITION SubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringAssertion_Item */
-let _cached_decoder_for_SubstringAssertion_Item: $.ASN1Decoder<
-    SubstringAssertion_Item
-> | null = null;
+let _cached_decoder_for_SubstringAssertion_Item: $.ASN1Decoder<SubstringAssertion_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SubstringAssertion_Item */
@@ -56,38 +54,36 @@ let _cached_decoder_for_SubstringAssertion_Item: $.ASN1Decoder<
  */
 export function _decode_SubstringAssertion_Item(el: _Element) {
     if (!_cached_decoder_for_SubstringAssertion_Item) {
-        _cached_decoder_for_SubstringAssertion_Item = $._decode_extensible_choice<
-            SubstringAssertion_Item
-        >({
-            "CONTEXT 0": [
-                "initial",
-                $._decode_explicit<UnboundedDirectoryString>(
-                    () => _decode_UnboundedDirectoryString
-                ),
-            ],
-            "CONTEXT 1": [
-                "any_",
-                $._decode_explicit<UnboundedDirectoryString>(
-                    () => _decode_UnboundedDirectoryString
-                ),
-            ],
-            "CONTEXT 2": [
-                "final",
-                $._decode_explicit<UnboundedDirectoryString>(
-                    () => _decode_UnboundedDirectoryString
-                ),
-            ],
-            "UNIVERSAL 16": ["control", _decode_Attribute],
-        });
+        _cached_decoder_for_SubstringAssertion_Item = $._decode_extensible_choice<SubstringAssertion_Item>(
+            {
+                "CONTEXT 0": [
+                    "initial",
+                    $._decode_explicit<UnboundedDirectoryString>(
+                        () => _decode_UnboundedDirectoryString
+                    ),
+                ],
+                "CONTEXT 1": [
+                    "any_",
+                    $._decode_explicit<UnboundedDirectoryString>(
+                        () => _decode_UnboundedDirectoryString
+                    ),
+                ],
+                "CONTEXT 2": [
+                    "final",
+                    $._decode_explicit<UnboundedDirectoryString>(
+                        () => _decode_UnboundedDirectoryString
+                    ),
+                ],
+                "UNIVERSAL 16": ["control", _decode_Attribute],
+            }
+        );
     }
     return _cached_decoder_for_SubstringAssertion_Item(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringAssertion_Item */
-let _cached_encoder_for_SubstringAssertion_Item: $.ASN1Encoder<
-    SubstringAssertion_Item
-> | null = null;
+let _cached_encoder_for_SubstringAssertion_Item: $.ASN1Encoder<SubstringAssertion_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SubstringAssertion_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SubstringAssertion_Item */
@@ -103,9 +99,7 @@ export function _encode_SubstringAssertion_Item(
     elGetter: $.ASN1Encoder<SubstringAssertion_Item>
 ) {
     if (!_cached_encoder_for_SubstringAssertion_Item) {
-        _cached_encoder_for_SubstringAssertion_Item = $._encode_choice<
-            SubstringAssertion_Item
-        >(
+        _cached_encoder_for_SubstringAssertion_Item = $._encode_choice<SubstringAssertion_Item>(
             {
                 initial: $._encode_explicit(
                     _TagClass.context,

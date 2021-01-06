@@ -17,9 +17,7 @@ export type HoldInstruction = OBJECT_IDENTIFIER; // ObjectIdentifierType
 /* END_OF_SYMBOL_DEFINITION HoldInstruction */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_HoldInstruction */
-let _cached_decoder_for_HoldInstruction: $.ASN1Decoder<
-    HoldInstruction
-> | null = null;
+let _cached_decoder_for_HoldInstruction: $.ASN1Decoder<HoldInstruction> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_HoldInstruction */
 
 /* START_OF_SYMBOL_DEFINITION _decode_HoldInstruction */
@@ -38,9 +36,7 @@ export function _decode_HoldInstruction(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_HoldInstruction */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_HoldInstruction */
-let _cached_encoder_for_HoldInstruction: $.ASN1Encoder<
-    HoldInstruction
-> | null = null;
+let _cached_encoder_for_HoldInstruction: $.ASN1Encoder<HoldInstruction> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_HoldInstruction */
 
 /* START_OF_SYMBOL_DEFINITION _encode_HoldInstruction */

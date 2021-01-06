@@ -28,9 +28,7 @@ export type UniversalPDSParameter = UniversalOrBMPString; // DefinedType
 /* END_OF_SYMBOL_DEFINITION UniversalPDSParameter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPDSParameter */
-let _cached_decoder_for_UniversalPDSParameter: $.ASN1Decoder<
-    UniversalPDSParameter
-> | null = null;
+let _cached_decoder_for_UniversalPDSParameter: $.ASN1Decoder<UniversalPDSParameter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPDSParameter */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPDSParameter */
@@ -49,9 +47,7 @@ export function _decode_UniversalPDSParameter(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPDSParameter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPDSParameter */
-let _cached_encoder_for_UniversalPDSParameter: $.ASN1Encoder<
-    UniversalPDSParameter
-> | null = null;
+let _cached_encoder_for_UniversalPDSParameter: $.ASN1Encoder<UniversalPDSParameter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPDSParameter */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPDSParameter */

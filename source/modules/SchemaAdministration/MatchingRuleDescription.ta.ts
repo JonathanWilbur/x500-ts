@@ -187,9 +187,7 @@ export const _extension_additions_list_spec_for_MatchingRuleDescription: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_MatchingRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleDescription */
-let _cached_decoder_for_MatchingRuleDescription: $.ASN1Decoder<
-    MatchingRuleDescription
-> | null = null;
+let _cached_decoder_for_MatchingRuleDescription: $.ASN1Decoder<MatchingRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MatchingRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MatchingRuleDescription */
@@ -246,8 +244,8 @@ export function _decode_MatchingRuleDescription(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new MatchingRuleDescription /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new MatchingRuleDescription(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 name,
                 description,
                 obsolete,
@@ -261,9 +259,7 @@ export function _decode_MatchingRuleDescription(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_MatchingRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleDescription */
-let _cached_encoder_for_MatchingRuleDescription: $.ASN1Encoder<
-    MatchingRuleDescription
-> | null = null;
+let _cached_encoder_for_MatchingRuleDescription: $.ASN1Encoder<MatchingRuleDescription> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MatchingRuleDescription */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MatchingRuleDescription */

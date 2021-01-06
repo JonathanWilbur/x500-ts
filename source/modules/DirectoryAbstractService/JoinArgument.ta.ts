@@ -325,9 +325,9 @@ export function _decode_JoinArgument(el: _Element) {
                     )(_el);
                 },
                 joinSelection: (_el: _Element): void => {
-                    joinSelection = $._decode_explicit<
-                        EntryInformationSelection
-                    >(() => _decode_EntryInformationSelection)(_el);
+                    joinSelection = $._decode_explicit<EntryInformationSelection>(
+                        () => _decode_EntryInformationSelection
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -341,8 +341,8 @@ export function _decode_JoinArgument(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new JoinArgument /* SEQUENCE_CONSTRUCTOR_CALL */(
-                joinBaseObject,
+            return new JoinArgument(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ joinBaseObject,
                 domainLocalID,
                 joinSubset,
                 joinFilter,

@@ -279,9 +279,7 @@ export const _extension_additions_list_spec_for_SecurityParameters: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SecurityParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityParameters */
-let _cached_decoder_for_SecurityParameters: $.ASN1Decoder<
-    SecurityParameters
-> | null = null;
+let _cached_decoder_for_SecurityParameters: $.ASN1Decoder<SecurityParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SecurityParameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SecurityParameters */
@@ -338,9 +336,9 @@ export function _decode_SecurityParameters(el: _Element) {
                     )(_el);
                 },
                 errorProtection: (_el: _Element): void => {
-                    errorProtection = $._decode_explicit<
-                        ErrorProtectionRequest
-                    >(() => _decode_ErrorProtectionRequest)(_el);
+                    errorProtection = $._decode_explicit<ErrorProtectionRequest>(
+                        () => _decode_ErrorProtectionRequest
+                    )(_el);
                 },
                 errorCode: (_el: _Element): void => {
                     errorCode = $._decode_explicit<Code>(() => _decode_Code)(
@@ -359,8 +357,8 @@ export function _decode_SecurityParameters(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new SecurityParameters /* SET_CONSTRUCTOR_CALL */(
-                certification_path,
+            return new SecurityParameters(
+                /* SET_CONSTRUCTOR_CALL */ certification_path,
                 name,
                 time,
                 random,
@@ -377,9 +375,7 @@ export function _decode_SecurityParameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SecurityParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityParameters */
-let _cached_encoder_for_SecurityParameters: $.ASN1Encoder<
-    SecurityParameters
-> | null = null;
+let _cached_encoder_for_SecurityParameters: $.ASN1Encoder<SecurityParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SecurityParameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SecurityParameters */

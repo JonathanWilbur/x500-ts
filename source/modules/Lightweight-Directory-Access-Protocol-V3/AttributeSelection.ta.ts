@@ -27,9 +27,7 @@ export type AttributeSelection = LDAPString[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION AttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeSelection */
-let _cached_decoder_for_AttributeSelection: $.ASN1Decoder<
-    AttributeSelection
-> | null = null;
+let _cached_decoder_for_AttributeSelection: $.ASN1Decoder<AttributeSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeSelection */
@@ -41,18 +39,16 @@ let _cached_decoder_for_AttributeSelection: $.ASN1Decoder<
  */
 export function _decode_AttributeSelection(el: _Element) {
     if (!_cached_decoder_for_AttributeSelection) {
-        _cached_decoder_for_AttributeSelection = $._decodeSequenceOf<
-            LDAPString
-        >(() => _decode_LDAPString);
+        _cached_decoder_for_AttributeSelection = $._decodeSequenceOf<LDAPString>(
+            () => _decode_LDAPString
+        );
     }
     return _cached_decoder_for_AttributeSelection(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeSelection */
-let _cached_encoder_for_AttributeSelection: $.ASN1Encoder<
-    AttributeSelection
-> | null = null;
+let _cached_encoder_for_AttributeSelection: $.ASN1Encoder<AttributeSelection> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeSelection */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeSelection */
@@ -68,9 +64,10 @@ export function _encode_AttributeSelection(
     elGetter: $.ASN1Encoder<AttributeSelection>
 ) {
     if (!_cached_encoder_for_AttributeSelection) {
-        _cached_encoder_for_AttributeSelection = $._encodeSequenceOf<
-            LDAPString
-        >(() => _encode_LDAPString, $.BER);
+        _cached_encoder_for_AttributeSelection = $._encodeSequenceOf<LDAPString>(
+            () => _encode_LDAPString,
+            $.BER
+        );
     }
     return _cached_encoder_for_AttributeSelection(value, elGetter);
 }

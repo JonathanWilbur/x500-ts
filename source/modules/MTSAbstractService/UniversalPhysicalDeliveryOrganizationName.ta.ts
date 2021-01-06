@@ -27,9 +27,7 @@ export type UniversalPhysicalDeliveryOrganizationName = UniversalPDSParameter; /
 /* END_OF_SYMBOL_DEFINITION UniversalPhysicalDeliveryOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryOrganizationName */
-let _cached_decoder_for_UniversalPhysicalDeliveryOrganizationName: $.ASN1Decoder<
-    UniversalPhysicalDeliveryOrganizationName
-> | null = null;
+let _cached_decoder_for_UniversalPhysicalDeliveryOrganizationName: $.ASN1Decoder<UniversalPhysicalDeliveryOrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_UniversalPhysicalDeliveryOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryOrganizationName */
@@ -50,9 +48,7 @@ export function _decode_UniversalPhysicalDeliveryOrganizationName(
 /* END_OF_SYMBOL_DEFINITION _decode_UniversalPhysicalDeliveryOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryOrganizationName */
-let _cached_encoder_for_UniversalPhysicalDeliveryOrganizationName: $.ASN1Encoder<
-    UniversalPhysicalDeliveryOrganizationName
-> | null = null;
+let _cached_encoder_for_UniversalPhysicalDeliveryOrganizationName: $.ASN1Encoder<UniversalPhysicalDeliveryOrganizationName> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_UniversalPhysicalDeliveryOrganizationName */
 
 /* START_OF_SYMBOL_DEFINITION _encode_UniversalPhysicalDeliveryOrganizationName */

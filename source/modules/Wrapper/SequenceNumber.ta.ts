@@ -17,9 +17,7 @@ export type SequenceNumber = INTEGER;
 /* END_OF_SYMBOL_DEFINITION SequenceNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SequenceNumber */
-let _cached_decoder_for_SequenceNumber: $.ASN1Decoder<
-    SequenceNumber
-> | null = null;
+let _cached_decoder_for_SequenceNumber: $.ASN1Decoder<SequenceNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SequenceNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SequenceNumber */
@@ -38,9 +36,7 @@ export function _decode_SequenceNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_SequenceNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SequenceNumber */
-let _cached_encoder_for_SequenceNumber: $.ASN1Encoder<
-    SequenceNumber
-> | null = null;
+let _cached_encoder_for_SequenceNumber: $.ASN1Encoder<SequenceNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SequenceNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SequenceNumber */

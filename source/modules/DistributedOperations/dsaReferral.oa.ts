@@ -49,14 +49,14 @@ export {
 export const dsaReferral: ERROR<OPTIONALLY_PROTECTED<DsaReferralData>> = {
     class: "ERROR",
     decoderFor: {
-        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<
-            DsaReferralData
-        >(_decode_DsaReferralData),
+        "&ParameterType": _get_decoder_for_OPTIONALLY_PROTECTED<DsaReferralData>(
+            _decode_DsaReferralData
+        ),
     },
     encoderFor: {
-        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<
-            DsaReferralData
-        >(_encode_DsaReferralData),
+        "&ParameterType": _get_encoder_for_OPTIONALLY_PROTECTED<DsaReferralData>(
+            _encode_DsaReferralData
+        ),
     },
     "&errorCode": id_errcode_dsaReferral /* OBJECT_FIELD_SETTING */ /* UNIQUE_OBJECT_FIELD_SETTING */,
     "&ParameterType": 0 as never /* OBJECT_FIELD_SETTING OBJECT_TYPE_FIELD_SETTING */,

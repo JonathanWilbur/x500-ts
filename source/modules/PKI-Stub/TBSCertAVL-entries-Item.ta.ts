@@ -135,9 +135,7 @@ export const _extension_additions_list_spec_for_TBSCertAVL_entries_Item: $.Compo
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item */
-let _cached_decoder_for_TBSCertAVL_entries_Item: $.ASN1Decoder<
-    TBSCertAVL_entries_Item
-> | null = null;
+let _cached_decoder_for_TBSCertAVL_entries_Item: $.ASN1Decoder<TBSCertAVL_entries_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item */
@@ -179,8 +177,8 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TBSCertAVL_entries_Item /* SEQUENCE_CONSTRUCTOR_CALL */(
-                idType,
+            return new TBSCertAVL_entries_Item(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ idType,
                 entryExtensions,
                 _unrecognizedExtensionsList
             );
@@ -191,9 +189,7 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item */
-let _cached_encoder_for_TBSCertAVL_entries_Item: $.ASN1Encoder<
-    TBSCertAVL_entries_Item
-> | null = null;
+let _cached_encoder_for_TBSCertAVL_entries_Item: $.ASN1Encoder<TBSCertAVL_entries_Item> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TBSCertAVL_entries_Item */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TBSCertAVL_entries_Item */

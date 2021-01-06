@@ -153,8 +153,8 @@ export function _get_decoder_for_AUTHEN_ENCRYPT<ToBeAuth, ToBeEnciphered>(
                 _unrecognizedExtensionsList.push(ext);
             }
         );
-        return new AUTHEN_ENCRYPT /* SEQUENCE_CONSTRUCTOR_CALL */(
-            aad,
+        return new AUTHEN_ENCRYPT(
+            /* SEQUENCE_CONSTRUCTOR_CALL */ aad,
             encr,
             _unrecognizedExtensionsList
         );

@@ -238,8 +238,8 @@ export function _decode_RoleSpecCertIdentifier(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new RoleSpecCertIdentifier /* SEQUENCE_CONSTRUCTOR_CALL */(
-                roleName,
+            return new RoleSpecCertIdentifier(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ roleName,
                 roleCertIssuer,
                 roleCertSerialNumber,
                 roleCertLocator,

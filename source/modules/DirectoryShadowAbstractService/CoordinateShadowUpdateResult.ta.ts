@@ -45,9 +45,7 @@ export type CoordinateShadowUpdateResult =
 /* END_OF_SYMBOL_DEFINITION CoordinateShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateResult */
-let _cached_decoder_for_CoordinateShadowUpdateResult: $.ASN1Decoder<
-    CoordinateShadowUpdateResult
-> | null = null;
+let _cached_decoder_for_CoordinateShadowUpdateResult: $.ASN1Decoder<CoordinateShadowUpdateResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CoordinateShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_CoordinateShadowUpdateResult: $.ASN1Decoder<
  */
 export function _decode_CoordinateShadowUpdateResult(el: _Element) {
     if (!_cached_decoder_for_CoordinateShadowUpdateResult) {
-        _cached_decoder_for_CoordinateShadowUpdateResult = $._decode_extensible_choice<
-            CoordinateShadowUpdateResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "UNIVERSAL 16": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED<
-                    CoordinateShadowUpdateResultData
-                >(_decode_CoordinateShadowUpdateResultData),
-            ],
-        });
+        _cached_decoder_for_CoordinateShadowUpdateResult = $._decode_extensible_choice<CoordinateShadowUpdateResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "UNIVERSAL 16": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateResultData>(
+                        _decode_CoordinateShadowUpdateResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_CoordinateShadowUpdateResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_CoordinateShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateResult */
-let _cached_encoder_for_CoordinateShadowUpdateResult: $.ASN1Encoder<
-    CoordinateShadowUpdateResult
-> | null = null;
+let _cached_encoder_for_CoordinateShadowUpdateResult: $.ASN1Encoder<CoordinateShadowUpdateResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CoordinateShadowUpdateResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CoordinateShadowUpdateResult */
@@ -94,14 +90,12 @@ export function _encode_CoordinateShadowUpdateResult(
     elGetter: $.ASN1Encoder<CoordinateShadowUpdateResult>
 ) {
     if (!_cached_encoder_for_CoordinateShadowUpdateResult) {
-        _cached_encoder_for_CoordinateShadowUpdateResult = $._encode_choice<
-            CoordinateShadowUpdateResult
-        >(
+        _cached_encoder_for_CoordinateShadowUpdateResult = $._encode_choice<CoordinateShadowUpdateResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED<
-                    CoordinateShadowUpdateResultData
-                >(_encode_CoordinateShadowUpdateResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED<CoordinateShadowUpdateResultData>(
+                    _encode_CoordinateShadowUpdateResultData
+                ),
             },
             $.BER
         );

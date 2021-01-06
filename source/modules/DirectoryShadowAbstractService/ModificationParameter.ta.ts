@@ -117,9 +117,7 @@ export const _extension_additions_list_spec_for_ModificationParameter: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ModificationParameter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ModificationParameter */
-let _cached_decoder_for_ModificationParameter: $.ASN1Decoder<
-    ModificationParameter
-> | null = null;
+let _cached_decoder_for_ModificationParameter: $.ASN1Decoder<ModificationParameter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ModificationParameter */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ModificationParameter */
@@ -158,9 +156,7 @@ export function _decode_ModificationParameter(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ModificationParameter */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ModificationParameter */
-let _cached_encoder_for_ModificationParameter: $.ASN1Encoder<
-    ModificationParameter
-> | null = null;
+let _cached_encoder_for_ModificationParameter: $.ASN1Encoder<ModificationParameter> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ModificationParameter */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ModificationParameter */
@@ -184,12 +180,10 @@ export function _encode_ModificationParameter(
                 ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ $._encodeSetOf<
-                                SupplierAndConsumers
-                            >(() => _encode_SupplierAndConsumers, $.BER)(
-                                value.secondaryShadows,
+                            /* REQUIRED   */ $._encodeSetOf<SupplierAndConsumers>(
+                                () => _encode_SupplierAndConsumers,
                                 $.BER
-                            ),
+                            )(value.secondaryShadows, $.BER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList

@@ -247,9 +247,7 @@ export const _extension_additions_list_spec_for_TbpDataTransferClient: $.Compone
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbpDataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbpDataTransferClient */
-let _cached_decoder_for_TbpDataTransferClient: $.ASN1Decoder<
-    TbpDataTransferClient
-> | null = null;
+let _cached_decoder_for_TbpDataTransferClient: $.ASN1Decoder<TbpDataTransferClient> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbpDataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbpDataTransferClient */
@@ -315,8 +313,8 @@ export function _decode_TbpDataTransferClient(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TbpDataTransferClient /* SEQUENCE_CONSTRUCTOR_CALL */(
-                invokeID,
+            return new TbpDataTransferClient(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ invokeID,
                 assoID,
                 time,
                 seq,
@@ -332,9 +330,7 @@ export function _decode_TbpDataTransferClient(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbpDataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbpDataTransferClient */
-let _cached_encoder_for_TbpDataTransferClient: $.ASN1Encoder<
-    TbpDataTransferClient
-> | null = null;
+let _cached_encoder_for_TbpDataTransferClient: $.ASN1Encoder<TbpDataTransferClient> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbpDataTransferClient */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbpDataTransferClient */

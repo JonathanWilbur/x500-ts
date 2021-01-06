@@ -28,9 +28,7 @@ export type MultipleAuthenEncryptAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultipleAuthenEncryptAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleAuthenEncryptAlgo */
-let _cached_decoder_for_MultipleAuthenEncryptAlgo: $.ASN1Decoder<
-    MultipleAuthenEncryptAlgo
-> | null = null;
+let _cached_decoder_for_MultipleAuthenEncryptAlgo: $.ASN1Decoder<MultipleAuthenEncryptAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleAuthenEncryptAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleAuthenEncryptAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultipleAuthenEncryptAlgo: $.ASN1Decoder<
  */
 export function _decode_MultipleAuthenEncryptAlgo(el: _Element) {
     if (!_cached_decoder_for_MultipleAuthenEncryptAlgo) {
-        _cached_decoder_for_MultipleAuthenEncryptAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultipleAuthenEncryptAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultipleAuthenEncryptAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleAuthenEncryptAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleAuthenEncryptAlgo */
-let _cached_encoder_for_MultipleAuthenEncryptAlgo: $.ASN1Encoder<
-    MultipleAuthenEncryptAlgo
-> | null = null;
+let _cached_encoder_for_MultipleAuthenEncryptAlgo: $.ASN1Encoder<MultipleAuthenEncryptAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleAuthenEncryptAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleAuthenEncryptAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultipleAuthenEncryptAlgo(
     elGetter: $.ASN1Encoder<MultipleAuthenEncryptAlgo>
 ) {
     if (!_cached_encoder_for_MultipleAuthenEncryptAlgo) {
-        _cached_encoder_for_MultipleAuthenEncryptAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultipleAuthenEncryptAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultipleAuthenEncryptAlgo(value, elGetter);
 }

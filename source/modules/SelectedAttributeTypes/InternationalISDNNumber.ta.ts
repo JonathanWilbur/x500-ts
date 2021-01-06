@@ -18,9 +18,7 @@ export type InternationalISDNNumber = NumericString; // NumericString
 /* END_OF_SYMBOL_DEFINITION InternationalISDNNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_InternationalISDNNumber */
-let _cached_decoder_for_InternationalISDNNumber: $.ASN1Decoder<
-    InternationalISDNNumber
-> | null = null;
+let _cached_decoder_for_InternationalISDNNumber: $.ASN1Decoder<InternationalISDNNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_InternationalISDNNumber */
 
 /* START_OF_SYMBOL_DEFINITION _decode_InternationalISDNNumber */
@@ -39,9 +37,7 @@ export function _decode_InternationalISDNNumber(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_InternationalISDNNumber */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_InternationalISDNNumber */
-let _cached_encoder_for_InternationalISDNNumber: $.ASN1Encoder<
-    InternationalISDNNumber
-> | null = null;
+let _cached_encoder_for_InternationalISDNNumber: $.ASN1Encoder<InternationalISDNNumber> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_InternationalISDNNumber */
 
 /* START_OF_SYMBOL_DEFINITION _encode_InternationalISDNNumber */

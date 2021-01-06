@@ -33,9 +33,7 @@ export type SupplierUpdateMode =
 /* END_OF_SYMBOL_DEFINITION SupplierUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierUpdateMode */
-let _cached_decoder_for_SupplierUpdateMode: $.ASN1Decoder<
-    SupplierUpdateMode
-> | null = null;
+let _cached_decoder_for_SupplierUpdateMode: $.ASN1Decoder<SupplierUpdateMode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SupplierUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SupplierUpdateMode */
@@ -47,21 +45,19 @@ let _cached_decoder_for_SupplierUpdateMode: $.ASN1Decoder<
  */
 export function _decode_SupplierUpdateMode(el: _Element) {
     if (!_cached_decoder_for_SupplierUpdateMode) {
-        _cached_decoder_for_SupplierUpdateMode = $._decode_extensible_choice<
-            SupplierUpdateMode
-        >({
-            "UNIVERSAL 1": ["onChange", $._decodeBoolean],
-            "UNIVERSAL 16": ["scheduled", _decode_SchedulingParameters],
-        });
+        _cached_decoder_for_SupplierUpdateMode = $._decode_extensible_choice<SupplierUpdateMode>(
+            {
+                "UNIVERSAL 1": ["onChange", $._decodeBoolean],
+                "UNIVERSAL 16": ["scheduled", _decode_SchedulingParameters],
+            }
+        );
     }
     return _cached_decoder_for_SupplierUpdateMode(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SupplierUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierUpdateMode */
-let _cached_encoder_for_SupplierUpdateMode: $.ASN1Encoder<
-    SupplierUpdateMode
-> | null = null;
+let _cached_encoder_for_SupplierUpdateMode: $.ASN1Encoder<SupplierUpdateMode> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SupplierUpdateMode */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SupplierUpdateMode */
@@ -77,9 +73,7 @@ export function _encode_SupplierUpdateMode(
     elGetter: $.ASN1Encoder<SupplierUpdateMode>
 ) {
     if (!_cached_encoder_for_SupplierUpdateMode) {
-        _cached_encoder_for_SupplierUpdateMode = $._encode_choice<
-            SupplierUpdateMode
-        >(
+        _cached_encoder_for_SupplierUpdateMode = $._encode_choice<SupplierUpdateMode>(
             {
                 onChange: $._encodeBoolean,
                 scheduled: _encode_SchedulingParameters,

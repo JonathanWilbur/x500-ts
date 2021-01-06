@@ -218,9 +218,7 @@ export const _extension_additions_list_spec_for_ItemPermission: $.ComponentSpec[
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ItemPermission */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ItemPermission */
-let _cached_decoder_for_ItemPermission: $.ASN1Decoder<
-    ItemPermission
-> | null = null;
+let _cached_decoder_for_ItemPermission: $.ASN1Decoder<ItemPermission> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ItemPermission */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ItemPermission */
@@ -264,8 +262,8 @@ export function _decode_ItemPermission(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new ItemPermission /* SEQUENCE_CONSTRUCTOR_CALL */(
-                precedence,
+            return new ItemPermission(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ precedence,
                 userClasses,
                 grantsAndDenials,
                 _unrecognizedExtensionsList
@@ -277,9 +275,7 @@ export function _decode_ItemPermission(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ItemPermission */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ItemPermission */
-let _cached_encoder_for_ItemPermission: $.ASN1Encoder<
-    ItemPermission
-> | null = null;
+let _cached_encoder_for_ItemPermission: $.ASN1Encoder<ItemPermission> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ItemPermission */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ItemPermission */

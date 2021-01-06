@@ -142,9 +142,7 @@ export const _extension_additions_list_spec_for_NameAndOptionalUID: $.ComponentS
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_NameAndOptionalUID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NameAndOptionalUID */
-let _cached_decoder_for_NameAndOptionalUID: $.ASN1Decoder<
-    NameAndOptionalUID
-> | null = null;
+let _cached_decoder_for_NameAndOptionalUID: $.ASN1Decoder<NameAndOptionalUID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NameAndOptionalUID */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NameAndOptionalUID */
@@ -184,8 +182,8 @@ export function _decode_NameAndOptionalUID(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new NameAndOptionalUID /* SEQUENCE_CONSTRUCTOR_CALL */(
-                dn,
+            return new NameAndOptionalUID(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ dn,
                 uid,
                 _unrecognizedExtensionsList
             );
@@ -196,9 +194,7 @@ export function _decode_NameAndOptionalUID(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NameAndOptionalUID */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NameAndOptionalUID */
-let _cached_encoder_for_NameAndOptionalUID: $.ASN1Encoder<
-    NameAndOptionalUID
-> | null = null;
+let _cached_encoder_for_NameAndOptionalUID: $.ASN1Encoder<NameAndOptionalUID> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NameAndOptionalUID */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NameAndOptionalUID */

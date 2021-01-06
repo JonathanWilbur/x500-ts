@@ -140,9 +140,7 @@ export const _extension_additions_list_spec_for_PolicyInformation: $.ComponentSp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PolicyInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyInformation */
-let _cached_decoder_for_PolicyInformation: $.ASN1Decoder<
-    PolicyInformation
-> | null = null;
+let _cached_decoder_for_PolicyInformation: $.ASN1Decoder<PolicyInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyInformation */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PolicyInformation */
@@ -184,8 +182,8 @@ export function _decode_PolicyInformation(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PolicyInformation /* SEQUENCE_CONSTRUCTOR_CALL */(
-                policyIdentifier,
+            return new PolicyInformation(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ policyIdentifier,
                 policyQualifiers,
                 _unrecognizedExtensionsList
             );
@@ -196,9 +194,7 @@ export function _decode_PolicyInformation(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PolicyInformation */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyInformation */
-let _cached_encoder_for_PolicyInformation: $.ASN1Encoder<
-    PolicyInformation
-> | null = null;
+let _cached_encoder_for_PolicyInformation: $.ASN1Encoder<PolicyInformation> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyInformation */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PolicyInformation */

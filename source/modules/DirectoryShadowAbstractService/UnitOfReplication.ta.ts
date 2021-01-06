@@ -292,8 +292,8 @@ export function _decode_UnitOfReplication(el: _Element) {
                 _root_component_type_list_2_spec_for_UnitOfReplication,
                 undefined
             );
-            return new UnitOfReplication /* SEQUENCE_CONSTRUCTOR_CALL */(
-                area,
+            return new UnitOfReplication(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ area,
                 attributes,
                 knowledge,
                 subordinates,

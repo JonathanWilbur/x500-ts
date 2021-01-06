@@ -129,9 +129,7 @@ export const saturday: number = NamedDay_bitNamedDays_saturday; /* SHORT_NAMED_B
 /* END_OF_SYMBOL_DEFINITION saturday */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_NamedDay_bitNamedDays */
-let _cached_decoder_for_NamedDay_bitNamedDays: $.ASN1Decoder<
-    NamedDay_bitNamedDays
-> | null = null;
+let _cached_decoder_for_NamedDay_bitNamedDays: $.ASN1Decoder<NamedDay_bitNamedDays> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_NamedDay_bitNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _decode_NamedDay_bitNamedDays */
@@ -150,9 +148,7 @@ export function _decode_NamedDay_bitNamedDays(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_NamedDay_bitNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_NamedDay_bitNamedDays */
-let _cached_encoder_for_NamedDay_bitNamedDays: $.ASN1Encoder<
-    NamedDay_bitNamedDays
-> | null = null;
+let _cached_encoder_for_NamedDay_bitNamedDays: $.ASN1Encoder<NamedDay_bitNamedDays> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_NamedDay_bitNamedDays */
 
 /* START_OF_SYMBOL_DEFINITION _encode_NamedDay_bitNamedDays */

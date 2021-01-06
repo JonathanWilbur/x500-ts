@@ -53,9 +53,7 @@ export const country: ServiceControls_scopeOfReferral = ServiceControls_scopeOfR
 /* END_OF_SYMBOL_DEFINITION country */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls_scopeOfReferral */
-let _cached_decoder_for_ServiceControls_scopeOfReferral: $.ASN1Decoder<
-    ServiceControls_scopeOfReferral
-> | null = null;
+let _cached_decoder_for_ServiceControls_scopeOfReferral: $.ASN1Decoder<ServiceControls_scopeOfReferral> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ServiceControls_scopeOfReferral */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ServiceControls_scopeOfReferral */
@@ -74,9 +72,7 @@ export function _decode_ServiceControls_scopeOfReferral(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ServiceControls_scopeOfReferral */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls_scopeOfReferral */
-let _cached_encoder_for_ServiceControls_scopeOfReferral: $.ASN1Encoder<
-    ServiceControls_scopeOfReferral
-> | null = null;
+let _cached_encoder_for_ServiceControls_scopeOfReferral: $.ASN1Encoder<ServiceControls_scopeOfReferral> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ServiceControls_scopeOfReferral */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ServiceControls_scopeOfReferral */

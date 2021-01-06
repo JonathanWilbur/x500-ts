@@ -252,8 +252,8 @@ export function _decode_Wrap_Header(el: _Element) {
                 _root_component_type_list_2_spec_for_Wrap_Header,
                 undefined
             );
-            return new Wrap_Header /* SEQUENCE_CONSTRUCTOR_CALL */(
-                tok_id,
+            return new Wrap_Header(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ tok_id,
                 context_id,
                 int_alg,
                 conf_alg,

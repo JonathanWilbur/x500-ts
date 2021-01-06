@@ -54,9 +54,7 @@ export type ListResultData =
 /* END_OF_SYMBOL_DEFINITION ListResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData */
-let _cached_decoder_for_ListResultData: $.ASN1Decoder<
-    ListResultData
-> | null = null;
+let _cached_decoder_for_ListResultData: $.ASN1Decoder<ListResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ListResultData */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ListResultData */
@@ -68,26 +66,24 @@ let _cached_decoder_for_ListResultData: $.ASN1Decoder<
  */
 export function _decode_ListResultData(el: _Element) {
     if (!_cached_decoder_for_ListResultData) {
-        _cached_decoder_for_ListResultData = $._decode_extensible_choice<
-            ListResultData
-        >({
-            "UNIVERSAL 17": ["listInfo", _decode_ListResultData_listInfo],
-            "CONTEXT 0": [
-                "uncorrelatedListInfo",
-                $._decode_explicit<ListResult[]>(() =>
-                    $._decodeSetOf<ListResult>(() => _decode_ListResult)
-                ),
-            ],
-        });
+        _cached_decoder_for_ListResultData = $._decode_extensible_choice<ListResultData>(
+            {
+                "UNIVERSAL 17": ["listInfo", _decode_ListResultData_listInfo],
+                "CONTEXT 0": [
+                    "uncorrelatedListInfo",
+                    $._decode_explicit<ListResult[]>(() =>
+                        $._decodeSetOf<ListResult>(() => _decode_ListResult)
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_ListResultData(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_ListResultData */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData */
-let _cached_encoder_for_ListResultData: $.ASN1Encoder<
-    ListResultData
-> | null = null;
+let _cached_encoder_for_ListResultData: $.ASN1Encoder<ListResultData> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ListResultData */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ListResultData */

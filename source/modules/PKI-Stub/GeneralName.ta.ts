@@ -57,40 +57,42 @@ let _cached_decoder_for_GeneralName: $.ASN1Decoder<GeneralName> | null = null;
  */
 export function _decode_GeneralName(el: _Element) {
     if (!_cached_decoder_for_GeneralName) {
-        _cached_decoder_for_GeneralName = $._decode_extensible_choice<
-            GeneralName
-        >({
-            "CONTEXT 0": [
-                "otherName",
-                $._decode_explicit<INSTANCE_OF>(() => $._decodeInstanceOf),
-            ],
-            "CONTEXT 1": [
-                "rfc822Name",
-                $._decode_explicit<IA5String>(() => $._decodeIA5String),
-            ],
-            "CONTEXT 2": [
-                "dNSName",
-                $._decode_explicit<IA5String>(() => $._decodeIA5String),
-            ],
-            "CONTEXT 4": [
-                "directoryName",
-                $._decode_explicit<Name>(() => _decode_Name),
-            ],
-            "CONTEXT 6": [
-                "uniformResourceIdentifier",
-                $._decode_explicit<IA5String>(() => $._decodeIA5String),
-            ],
-            "CONTEXT 7": [
-                "iPAddress",
-                $._decode_explicit<OCTET_STRING>(() => $._decodeOctetString),
-            ],
-            "CONTEXT 8": [
-                "registeredID",
-                $._decode_explicit<OBJECT_IDENTIFIER>(
-                    () => $._decodeObjectIdentifier
-                ),
-            ],
-        });
+        _cached_decoder_for_GeneralName = $._decode_extensible_choice<GeneralName>(
+            {
+                "CONTEXT 0": [
+                    "otherName",
+                    $._decode_explicit<INSTANCE_OF>(() => $._decodeInstanceOf),
+                ],
+                "CONTEXT 1": [
+                    "rfc822Name",
+                    $._decode_explicit<IA5String>(() => $._decodeIA5String),
+                ],
+                "CONTEXT 2": [
+                    "dNSName",
+                    $._decode_explicit<IA5String>(() => $._decodeIA5String),
+                ],
+                "CONTEXT 4": [
+                    "directoryName",
+                    $._decode_explicit<Name>(() => _decode_Name),
+                ],
+                "CONTEXT 6": [
+                    "uniformResourceIdentifier",
+                    $._decode_explicit<IA5String>(() => $._decodeIA5String),
+                ],
+                "CONTEXT 7": [
+                    "iPAddress",
+                    $._decode_explicit<OCTET_STRING>(
+                        () => $._decodeOctetString
+                    ),
+                ],
+                "CONTEXT 8": [
+                    "registeredID",
+                    $._decode_explicit<OBJECT_IDENTIFIER>(
+                        () => $._decodeObjectIdentifier
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_GeneralName(el);
 }

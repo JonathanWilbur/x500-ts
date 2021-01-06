@@ -43,9 +43,7 @@ export const noReason: EnvelopedData_error = EnvelopedData_error_noReason; /* SH
 /* END_OF_SYMBOL_DEFINITION noReason */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_EnvelopedData_error */
-let _cached_decoder_for_EnvelopedData_error: $.ASN1Decoder<
-    EnvelopedData_error
-> | null = null;
+let _cached_decoder_for_EnvelopedData_error: $.ASN1Decoder<EnvelopedData_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_EnvelopedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _decode_EnvelopedData_error */
@@ -64,9 +62,7 @@ export function _decode_EnvelopedData_error(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_EnvelopedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_EnvelopedData_error */
-let _cached_encoder_for_EnvelopedData_error: $.ASN1Encoder<
-    EnvelopedData_error
-> | null = null;
+let _cached_encoder_for_EnvelopedData_error: $.ASN1Encoder<EnvelopedData_error> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_EnvelopedData_error */
 
 /* START_OF_SYMBOL_DEFINITION _encode_EnvelopedData_error */

@@ -321,9 +321,7 @@ export const _extension_additions_list_spec_for_ExtendedResponse: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_ExtendedResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedResponse */
-let _cached_decoder_for_ExtendedResponse: $.ASN1Decoder<
-    ExtendedResponse
-> | null = null;
+let _cached_decoder_for_ExtendedResponse: $.ASN1Decoder<ExtendedResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_ExtendedResponse */
 
 /* START_OF_SYMBOL_DEFINITION _decode_ExtendedResponse */
@@ -335,9 +333,7 @@ let _cached_decoder_for_ExtendedResponse: $.ASN1Decoder<
  */
 export function _decode_ExtendedResponse(el: _Element) {
     if (!_cached_decoder_for_ExtendedResponse) {
-        _cached_decoder_for_ExtendedResponse = $._decode_implicit<
-            ExtendedResponse
-        >(
+        _cached_decoder_for_ExtendedResponse = $._decode_implicit<ExtendedResponse>(
             () =>
                 function (el: _Element): ExtendedResponse {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -387,8 +383,8 @@ export function _decode_ExtendedResponse(el: _Element) {
                             _unrecognizedExtensionsList.push(ext);
                         }
                     );
-                    return new ExtendedResponse /* SEQUENCE_CONSTRUCTOR_CALL */(
-                        resultCode,
+                    return new ExtendedResponse(
+                        /* SEQUENCE_CONSTRUCTOR_CALL */ resultCode,
                         matchedDN,
                         diagnosticMessage,
                         referral,
@@ -404,9 +400,7 @@ export function _decode_ExtendedResponse(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_ExtendedResponse */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedResponse */
-let _cached_encoder_for_ExtendedResponse: $.ASN1Encoder<
-    ExtendedResponse
-> | null = null;
+let _cached_encoder_for_ExtendedResponse: $.ASN1Encoder<ExtendedResponse> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_ExtendedResponse */
 
 /* START_OF_SYMBOL_DEFINITION _encode_ExtendedResponse */

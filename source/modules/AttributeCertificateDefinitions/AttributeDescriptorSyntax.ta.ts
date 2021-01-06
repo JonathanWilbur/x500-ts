@@ -210,9 +210,7 @@ export const _extension_additions_list_spec_for_AttributeDescriptorSyntax: $.Com
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_AttributeDescriptorSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeDescriptorSyntax */
-let _cached_decoder_for_AttributeDescriptorSyntax: $.ASN1Decoder<
-    AttributeDescriptorSyntax
-> | null = null;
+let _cached_decoder_for_AttributeDescriptorSyntax: $.ASN1Decoder<AttributeDescriptorSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_AttributeDescriptorSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _decode_AttributeDescriptorSyntax */
@@ -268,8 +266,8 @@ export function _decode_AttributeDescriptorSyntax(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new AttributeDescriptorSyntax /* SEQUENCE_CONSTRUCTOR_CALL */(
-                identifier,
+            return new AttributeDescriptorSyntax(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ identifier,
                 attributeSyntax,
                 name,
                 description,
@@ -283,9 +281,7 @@ export function _decode_AttributeDescriptorSyntax(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_AttributeDescriptorSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeDescriptorSyntax */
-let _cached_encoder_for_AttributeDescriptorSyntax: $.ASN1Encoder<
-    AttributeDescriptorSyntax
-> | null = null;
+let _cached_encoder_for_AttributeDescriptorSyntax: $.ASN1Encoder<AttributeDescriptorSyntax> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_AttributeDescriptorSyntax */
 
 /* START_OF_SYMBOL_DEFINITION _encode_AttributeDescriptorSyntax */

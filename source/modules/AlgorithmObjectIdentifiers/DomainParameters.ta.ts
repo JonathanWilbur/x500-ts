@@ -176,9 +176,7 @@ export const _extension_additions_list_spec_for_DomainParameters: $.ComponentSpe
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_DomainParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DomainParameters */
-let _cached_decoder_for_DomainParameters: $.ASN1Decoder<
-    DomainParameters
-> | null = null;
+let _cached_decoder_for_DomainParameters: $.ASN1Decoder<DomainParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DomainParameters */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DomainParameters */
@@ -230,8 +228,8 @@ export function _decode_DomainParameters(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new DomainParameters /* SEQUENCE_CONSTRUCTOR_CALL */(
-                p,
+            return new DomainParameters(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ p,
                 g,
                 q,
                 j,
@@ -245,9 +243,7 @@ export function _decode_DomainParameters(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DomainParameters */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DomainParameters */
-let _cached_encoder_for_DomainParameters: $.ASN1Encoder<
-    DomainParameters
-> | null = null;
+let _cached_encoder_for_DomainParameters: $.ASN1Encoder<DomainParameters> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DomainParameters */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DomainParameters */

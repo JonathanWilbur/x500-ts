@@ -45,9 +45,7 @@ export type RemoveEntryResult =
 /* END_OF_SYMBOL_DEFINITION RemoveEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoveEntryResult */
-let _cached_decoder_for_RemoveEntryResult: $.ASN1Decoder<
-    RemoveEntryResult
-> | null = null;
+let _cached_decoder_for_RemoveEntryResult: $.ASN1Decoder<RemoveEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_RemoveEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_RemoveEntryResult */
@@ -59,26 +57,24 @@ let _cached_decoder_for_RemoveEntryResult: $.ASN1Decoder<
  */
 export function _decode_RemoveEntryResult(el: _Element) {
     if (!_cached_decoder_for_RemoveEntryResult) {
-        _cached_decoder_for_RemoveEntryResult = $._decode_extensible_choice<
-            RemoveEntryResult
-        >({
-            "UNIVERSAL 5": ["null_", $._decodeNull],
-            "CONTEXT 0": [
-                "information",
-                _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    RemoveEntryResultData
-                >(_decode_RemoveEntryResultData),
-            ],
-        });
+        _cached_decoder_for_RemoveEntryResult = $._decode_extensible_choice<RemoveEntryResult>(
+            {
+                "UNIVERSAL 5": ["null_", $._decodeNull],
+                "CONTEXT 0": [
+                    "information",
+                    _get_decoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(
+                        _decode_RemoveEntryResultData
+                    ),
+                ],
+            }
+        );
     }
     return _cached_decoder_for_RemoveEntryResult(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_RemoveEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoveEntryResult */
-let _cached_encoder_for_RemoveEntryResult: $.ASN1Encoder<
-    RemoveEntryResult
-> | null = null;
+let _cached_encoder_for_RemoveEntryResult: $.ASN1Encoder<RemoveEntryResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_RemoveEntryResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_RemoveEntryResult */
@@ -94,14 +90,12 @@ export function _encode_RemoveEntryResult(
     elGetter: $.ASN1Encoder<RemoveEntryResult>
 ) {
     if (!_cached_encoder_for_RemoveEntryResult) {
-        _cached_encoder_for_RemoveEntryResult = $._encode_choice<
-            RemoveEntryResult
-        >(
+        _cached_encoder_for_RemoveEntryResult = $._encode_choice<RemoveEntryResult>(
             {
                 null_: $._encodeNull,
-                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<
-                    RemoveEntryResultData
-                >(_encode_RemoveEntryResultData),
+                information: _get_encoder_for_OPTIONALLY_PROTECTED_SEQ<RemoveEntryResultData>(
+                    _encode_RemoveEntryResultData
+                ),
             },
             $.BER
         );

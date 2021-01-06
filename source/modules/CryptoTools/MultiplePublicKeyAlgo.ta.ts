@@ -28,9 +28,7 @@ export type MultiplePublicKeyAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultiplePublicKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultiplePublicKeyAlgo */
-let _cached_decoder_for_MultiplePublicKeyAlgo: $.ASN1Decoder<
-    MultiplePublicKeyAlgo
-> | null = null;
+let _cached_decoder_for_MultiplePublicKeyAlgo: $.ASN1Decoder<MultiplePublicKeyAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultiplePublicKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultiplePublicKeyAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultiplePublicKeyAlgo: $.ASN1Decoder<
  */
 export function _decode_MultiplePublicKeyAlgo(el: _Element) {
     if (!_cached_decoder_for_MultiplePublicKeyAlgo) {
-        _cached_decoder_for_MultiplePublicKeyAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultiplePublicKeyAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultiplePublicKeyAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultiplePublicKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultiplePublicKeyAlgo */
-let _cached_encoder_for_MultiplePublicKeyAlgo: $.ASN1Encoder<
-    MultiplePublicKeyAlgo
-> | null = null;
+let _cached_encoder_for_MultiplePublicKeyAlgo: $.ASN1Encoder<MultiplePublicKeyAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultiplePublicKeyAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultiplePublicKeyAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultiplePublicKeyAlgo(
     elGetter: $.ASN1Encoder<MultiplePublicKeyAlgo>
 ) {
     if (!_cached_encoder_for_MultiplePublicKeyAlgo) {
-        _cached_encoder_for_MultiplePublicKeyAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultiplePublicKeyAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultiplePublicKeyAlgo(value, elGetter);
 }

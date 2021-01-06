@@ -333,9 +333,7 @@ export const _extension_additions_list_spec_for_TbsHandshakeSecAbort: $.Componen
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TbsHandshakeSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeSecAbort */
-let _cached_decoder_for_TbsHandshakeSecAbort: $.ASN1Decoder<
-    TbsHandshakeSecAbort
-> | null = null;
+let _cached_decoder_for_TbsHandshakeSecAbort: $.ASN1Decoder<TbsHandshakeSecAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_TbsHandshakeSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _decode_TbsHandshakeSecAbort */
@@ -392,8 +390,8 @@ export function _decode_TbsHandshakeSecAbort(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new TbsHandshakeSecAbort /* SEQUENCE_CONSTRUCTOR_CALL */(
-                version,
+            return new TbsHandshakeSecAbort(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ version,
                 sigAlg,
                 assoID,
                 time,
@@ -408,9 +406,7 @@ export function _decode_TbsHandshakeSecAbort(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_TbsHandshakeSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeSecAbort */
-let _cached_encoder_for_TbsHandshakeSecAbort: $.ASN1Encoder<
-    TbsHandshakeSecAbort
-> | null = null;
+let _cached_encoder_for_TbsHandshakeSecAbort: $.ASN1Encoder<TbsHandshakeSecAbort> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_TbsHandshakeSecAbort */
 
 /* START_OF_SYMBOL_DEFINITION _encode_TbsHandshakeSecAbort */

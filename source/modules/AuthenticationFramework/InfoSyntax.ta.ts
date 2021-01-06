@@ -58,16 +58,16 @@ let _cached_decoder_for_InfoSyntax: $.ASN1Decoder<InfoSyntax> | null = null;
  */
 export function _decode_InfoSyntax(el: _Element) {
     if (!_cached_decoder_for_InfoSyntax) {
-        _cached_decoder_for_InfoSyntax = $._decode_extensible_choice<
-            InfoSyntax
-        >({
-            "UNIVERSAL 20": ["content", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 19": ["content", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 30": ["content", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 28": ["content", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 12": ["content", _decode_UnboundedDirectoryString],
-            "UNIVERSAL 16": ["pointer", _decode_InfoSyntax_pointer],
-        });
+        _cached_decoder_for_InfoSyntax = $._decode_extensible_choice<InfoSyntax>(
+            {
+                "UNIVERSAL 20": ["content", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 19": ["content", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 30": ["content", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 28": ["content", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 12": ["content", _decode_UnboundedDirectoryString],
+                "UNIVERSAL 16": ["pointer", _decode_InfoSyntax_pointer],
+            }
+        );
     }
     return _cached_decoder_for_InfoSyntax(el);
 }

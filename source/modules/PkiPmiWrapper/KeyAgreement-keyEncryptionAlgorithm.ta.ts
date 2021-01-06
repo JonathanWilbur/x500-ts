@@ -118,9 +118,7 @@ export const _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgori
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_KeyAgreement_keyEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm */
-let _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Decoder<
-    KeyAgreement_keyEncryptionAlgorithm
-> | null = null;
+let _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Decoder<KeyAgreement_keyEncryptionAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_KeyAgreement_keyEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _decode_KeyAgreement_keyEncryptionAlgorithm */
@@ -161,9 +159,7 @@ export function _decode_KeyAgreement_keyEncryptionAlgorithm(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_KeyAgreement_keyEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm */
-let _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Encoder<
-    KeyAgreement_keyEncryptionAlgorithm
-> | null = null;
+let _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm: $.ASN1Encoder<KeyAgreement_keyEncryptionAlgorithm> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_KeyAgreement_keyEncryptionAlgorithm */
 
 /* START_OF_SYMBOL_DEFINITION _encode_KeyAgreement_keyEncryptionAlgorithm */

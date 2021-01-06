@@ -28,9 +28,7 @@ export type MultipleSignaturesAlgo = AlgorithmIdentifier[]; // SequenceOfType
 /* END_OF_SYMBOL_DEFINITION MultipleSignaturesAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleSignaturesAlgo */
-let _cached_decoder_for_MultipleSignaturesAlgo: $.ASN1Decoder<
-    MultipleSignaturesAlgo
-> | null = null;
+let _cached_decoder_for_MultipleSignaturesAlgo: $.ASN1Decoder<MultipleSignaturesAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_MultipleSignaturesAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_MultipleSignaturesAlgo */
@@ -42,18 +40,16 @@ let _cached_decoder_for_MultipleSignaturesAlgo: $.ASN1Decoder<
  */
 export function _decode_MultipleSignaturesAlgo(el: _Element) {
     if (!_cached_decoder_for_MultipleSignaturesAlgo) {
-        _cached_decoder_for_MultipleSignaturesAlgo = $._decodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _decode_AlgorithmIdentifier);
+        _cached_decoder_for_MultipleSignaturesAlgo = $._decodeSequenceOf<AlgorithmIdentifier>(
+            () => _decode_AlgorithmIdentifier
+        );
     }
     return _cached_decoder_for_MultipleSignaturesAlgo(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_MultipleSignaturesAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleSignaturesAlgo */
-let _cached_encoder_for_MultipleSignaturesAlgo: $.ASN1Encoder<
-    MultipleSignaturesAlgo
-> | null = null;
+let _cached_encoder_for_MultipleSignaturesAlgo: $.ASN1Encoder<MultipleSignaturesAlgo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_MultipleSignaturesAlgo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_MultipleSignaturesAlgo */
@@ -69,9 +65,10 @@ export function _encode_MultipleSignaturesAlgo(
     elGetter: $.ASN1Encoder<MultipleSignaturesAlgo>
 ) {
     if (!_cached_encoder_for_MultipleSignaturesAlgo) {
-        _cached_encoder_for_MultipleSignaturesAlgo = $._encodeSequenceOf<
-            AlgorithmIdentifier
-        >(() => _encode_AlgorithmIdentifier, $.BER);
+        _cached_encoder_for_MultipleSignaturesAlgo = $._encodeSequenceOf<AlgorithmIdentifier>(
+            () => _encode_AlgorithmIdentifier,
+            $.BER
+        );
     }
     return _cached_encoder_for_MultipleSignaturesAlgo(value, elGetter);
 }

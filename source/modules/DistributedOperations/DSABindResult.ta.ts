@@ -27,9 +27,7 @@ export type DSABindResult = DSABindArgument; // DefinedType
 /* END_OF_SYMBOL_DEFINITION DSABindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_DSABindResult */
-let _cached_decoder_for_DSABindResult: $.ASN1Decoder<
-    DSABindResult
-> | null = null;
+let _cached_decoder_for_DSABindResult: $.ASN1Decoder<DSABindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_DSABindResult */
 
 /* START_OF_SYMBOL_DEFINITION _decode_DSABindResult */
@@ -48,9 +46,7 @@ export function _decode_DSABindResult(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_DSABindResult */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_DSABindResult */
-let _cached_encoder_for_DSABindResult: $.ASN1Encoder<
-    DSABindResult
-> | null = null;
+let _cached_encoder_for_DSABindResult: $.ASN1Encoder<DSABindResult> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_DSABindResult */
 
 /* START_OF_SYMBOL_DEFINITION _encode_DSABindResult */

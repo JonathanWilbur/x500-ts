@@ -27,9 +27,7 @@ export type SearchResultDone = LDAPResult; // DefinedType
 /* END_OF_SYMBOL_DEFINITION SearchResultDone */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultDone */
-let _cached_decoder_for_SearchResultDone: $.ASN1Decoder<
-    SearchResultDone
-> | null = null;
+let _cached_decoder_for_SearchResultDone: $.ASN1Decoder<SearchResultDone> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_SearchResultDone */
 
 /* START_OF_SYMBOL_DEFINITION _decode_SearchResultDone */
@@ -41,18 +39,16 @@ let _cached_decoder_for_SearchResultDone: $.ASN1Decoder<
  */
 export function _decode_SearchResultDone(el: _Element) {
     if (!_cached_decoder_for_SearchResultDone) {
-        _cached_decoder_for_SearchResultDone = $._decode_implicit<
-            SearchResultDone
-        >(() => _decode_LDAPResult);
+        _cached_decoder_for_SearchResultDone = $._decode_implicit<SearchResultDone>(
+            () => _decode_LDAPResult
+        );
     }
     return _cached_decoder_for_SearchResultDone(el);
 }
 /* END_OF_SYMBOL_DEFINITION _decode_SearchResultDone */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultDone */
-let _cached_encoder_for_SearchResultDone: $.ASN1Encoder<
-    SearchResultDone
-> | null = null;
+let _cached_encoder_for_SearchResultDone: $.ASN1Encoder<SearchResultDone> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_SearchResultDone */
 
 /* START_OF_SYMBOL_DEFINITION _encode_SearchResultDone */

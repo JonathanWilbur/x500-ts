@@ -136,9 +136,7 @@ export const _extension_additions_list_spec_for_CertificatePairAssertion: $.Comp
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_CertificatePairAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePairAssertion */
-let _cached_decoder_for_CertificatePairAssertion: $.ASN1Decoder<
-    CertificatePairAssertion
-> | null = null;
+let _cached_decoder_for_CertificatePairAssertion: $.ASN1Decoder<CertificatePairAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_CertificatePairAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _decode_CertificatePairAssertion */
@@ -161,14 +159,14 @@ export function _decode_CertificatePairAssertion(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 issuedToThisCAAssertion: (_el: _Element): void => {
-                    issuedToThisCAAssertion = $._decode_implicit<
-                        CertificateAssertion
-                    >(() => _decode_CertificateAssertion)(_el);
+                    issuedToThisCAAssertion = $._decode_implicit<CertificateAssertion>(
+                        () => _decode_CertificateAssertion
+                    )(_el);
                 },
                 issuedByThisCAAssertion: (_el: _Element): void => {
-                    issuedByThisCAAssertion = $._decode_implicit<
-                        CertificateAssertion
-                    >(() => _decode_CertificateAssertion)(_el);
+                    issuedByThisCAAssertion = $._decode_implicit<CertificateAssertion>(
+                        () => _decode_CertificateAssertion
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -182,8 +180,8 @@ export function _decode_CertificatePairAssertion(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new CertificatePairAssertion /* SEQUENCE_CONSTRUCTOR_CALL */(
-                issuedToThisCAAssertion,
+            return new CertificatePairAssertion(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ issuedToThisCAAssertion,
                 issuedByThisCAAssertion,
                 _unrecognizedExtensionsList
             );
@@ -194,9 +192,7 @@ export function _decode_CertificatePairAssertion(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_CertificatePairAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePairAssertion */
-let _cached_encoder_for_CertificatePairAssertion: $.ASN1Encoder<
-    CertificatePairAssertion
-> | null = null;
+let _cached_encoder_for_CertificatePairAssertion: $.ASN1Encoder<CertificatePairAssertion> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_CertificatePairAssertion */
 
 /* START_OF_SYMBOL_DEFINITION _encode_CertificatePairAssertion */

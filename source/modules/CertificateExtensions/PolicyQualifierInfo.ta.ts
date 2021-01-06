@@ -120,9 +120,7 @@ export const _extension_additions_list_spec_for_PolicyQualifierInfo: $.Component
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_PolicyQualifierInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyQualifierInfo */
-let _cached_decoder_for_PolicyQualifierInfo: $.ASN1Decoder<
-    PolicyQualifierInfo
-> | null = null;
+let _cached_decoder_for_PolicyQualifierInfo: $.ASN1Decoder<PolicyQualifierInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_decoder_for_PolicyQualifierInfo */
 
 /* START_OF_SYMBOL_DEFINITION _decode_PolicyQualifierInfo */
@@ -162,8 +160,8 @@ export function _decode_PolicyQualifierInfo(el: _Element) {
                     _unrecognizedExtensionsList.push(ext);
                 }
             );
-            return new PolicyQualifierInfo /* SEQUENCE_CONSTRUCTOR_CALL */(
-                policyQualifierId,
+            return new PolicyQualifierInfo(
+                /* SEQUENCE_CONSTRUCTOR_CALL */ policyQualifierId,
                 qualifier,
                 _unrecognizedExtensionsList
             );
@@ -174,9 +172,7 @@ export function _decode_PolicyQualifierInfo(el: _Element) {
 /* END_OF_SYMBOL_DEFINITION _decode_PolicyQualifierInfo */
 
 /* START_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyQualifierInfo */
-let _cached_encoder_for_PolicyQualifierInfo: $.ASN1Encoder<
-    PolicyQualifierInfo
-> | null = null;
+let _cached_encoder_for_PolicyQualifierInfo: $.ASN1Encoder<PolicyQualifierInfo> | null = null;
 /* END_OF_SYMBOL_DEFINITION _cached_encoder_for_PolicyQualifierInfo */
 
 /* START_OF_SYMBOL_DEFINITION _encode_PolicyQualifierInfo */
