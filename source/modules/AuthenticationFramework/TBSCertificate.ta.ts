@@ -16,6 +16,11 @@ import {
     _encode_CertificateSerialNumber,
 } from "../AuthenticationFramework/CertificateSerialNumber.ta";
 import {
+    Extensions,
+    _decode_Extensions,
+    _encode_Extensions,
+} from "../AuthenticationFramework/Extensions.ta";
+import {
     SubjectPublicKeyInfo,
     _decode_SubjectPublicKeyInfo,
     _encode_SubjectPublicKeyInfo,
@@ -166,7 +171,19 @@ export class TBSCertificate {
          * @public
          * @readonly
          */
-        readonly _unrecognizedExtensionsList: _Element[] = []
+        readonly _unrecognizedExtensionsList: _Element[] = [],
+        /**
+         * @summary `subjectUniqueIdentifier`
+         * @public
+         * @readonly
+         */
+        readonly subjectUniqueIdentifier: OPTIONAL<UniqueIdentifier>,
+        /**
+         * @summary `extensions`
+         * @public
+         * @readonly
+         */
+        readonly extensions: OPTIONAL<Extensions>
     ) {}
 
     /**
@@ -182,7 +199,7 @@ export class TBSCertificate {
      * @returns {TBSCertificate}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TBSCertificate]: TBSCertificate[_K] }>
+        _o: { [_K in keyof TBSCertificate]: TBSCertificate[_K] }
     ): TBSCertificate {
         return new TBSCertificate(
             _o.version,
@@ -193,7 +210,9 @@ export class TBSCertificate {
             _o.subject,
             _o.subjectPublicKeyInfo,
             _o.issuerUniqueIdentifier,
-            _o._unrecognizedExtensionsList
+            _o._unrecognizedExtensionsList,
+            _o.subjectUniqueIdentifier,
+            _o.extensions
         );
     }
 
@@ -287,7 +306,22 @@ export const _root_component_type_list_2_spec_for_TBSCertificate: $.ComponentSpe
  *
  * @constant
  */
-export const _extension_additions_list_spec_for_TBSCertificate: $.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_TBSCertificate: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "subjectUniqueIdentifier",
+        true,
+        $.hasTag(_TagClass.context, 2),
+        0,
+        2
+    ),
+    new $.ComponentSpec(
+        "extensions",
+        true,
+        $.hasTag(_TagClass.context, 3),
+        1,
+        3
+    ),
+];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_TBSCertificate */
 
 /* START_OF_SYMBOL_DEFINITION _cached_decoder_for_TBSCertificate */
@@ -317,6 +351,8 @@ export function _decode_TBSCertificate(el: _Element) {
             let subjectPublicKeyInfo!: SubjectPublicKeyInfo;
             let issuerUniqueIdentifier: OPTIONAL<UniqueIdentifier>;
             let _unrecognizedExtensionsList: _Element[] = [];
+            let subjectUniqueIdentifier: OPTIONAL<UniqueIdentifier>;
+            let extensions: OPTIONAL<Extensions>;
             /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
@@ -348,6 +384,14 @@ export function _decode_TBSCertificate(el: _Element) {
                         () => _decode_UniqueIdentifier
                     )(_el);
                 },
+                subjectUniqueIdentifier: (_el: _Element): void => {
+                    subjectUniqueIdentifier = $._decode_explicit<UniqueIdentifier>(
+                        () => _decode_UniqueIdentifier
+                    )(_el);
+                },
+                extensions: (_el: _Element): void => {
+                    extensions = _decode_Extensions(_el);
+                },
             };
             /* END_OF_CALLBACKS_MAP */
             $._parse_sequence(
@@ -369,7 +413,9 @@ export function _decode_TBSCertificate(el: _Element) {
                 subject,
                 subjectPublicKeyInfo,
                 issuerUniqueIdentifier,
-                _unrecognizedExtensionsList
+                _unrecognizedExtensionsList,
+                subjectUniqueIdentifier,
+                extensions
             );
         };
     }
@@ -444,7 +490,21 @@ export function _encode_TBSCertificate(
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
-                            : []
+                            : [],
+                        [
+                            /* IF_ABSENT  */ value.subjectUniqueIdentifier ===
+                            undefined
+                                ? undefined
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      1,
+                                      () => _encode_UniqueIdentifier,
+                                      $.BER
+                                  )(value.subjectUniqueIdentifier, $.BER),
+                            /* IF_ABSENT  */ value.extensions === undefined
+                                ? undefined
+                                : _encode_Extensions(value.extensions, $.BER),
+                        ]
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
                 $.BER
