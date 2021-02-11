@@ -252,18 +252,18 @@ export function _encode_CertificateListContent_revokedCertificates_Item(
                         [
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_Time(
                                 value.revocationDate,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.crlEntryExtensions ===
                             undefined
                                 ? undefined
                                 : _encode_Extensions(
                                       value.crlEntryExtensions,
-                                      $.BER
+                                      $.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -271,7 +271,7 @@ export function _encode_CertificateListContent_revokedCertificates_Item(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

@@ -178,11 +178,11 @@ export function _encode_Validity(
                         [
                             /* REQUIRED   */ _encode_Time(
                                 value.notBefore,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_Time(
                                 value.notAfter,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -190,7 +190,7 @@ export function _encode_Validity(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

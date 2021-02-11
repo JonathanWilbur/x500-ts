@@ -95,7 +95,7 @@ export function _encode_InfoSyntax(
                 content: _encode_UnboundedDirectoryString,
                 pointer: _encode_InfoSyntax_pointer,
             },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_InfoSyntax(value, elGetter);

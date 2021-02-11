@@ -185,11 +185,11 @@ export function _get_encoder_for_HASH<ToBeHashed>(
                     [
                         /* REQUIRED   */ _encode_AlgorithmIdentifier(
                             value.algorithmIdentifier,
-                            $.BER
+                            $.DER
                         ),
                         /* REQUIRED   */ $._encodeBitString(
                             value.hashValue,
-                            $.BER
+                            $.DER
                         ),
                     ],
                     value._unrecognizedExtensionsList
@@ -197,7 +197,7 @@ export function _get_encoder_for_HASH<ToBeHashed>(
                         : []
                 )
                 .filter((c: _Element | undefined): c is _Element => !!c),
-            $.BER
+            $.DER
         );
     };
 }

@@ -166,7 +166,9 @@ export class SecurityParameters {
      * @returns {SecurityParameters}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SecurityParameters]: SecurityParameters[_K] }>
+        _o: Partial<
+            { [_K in keyof SecurityParameters]: SecurityParameters[_K] }
+        >
     ): SecurityParameters {
         return new SecurityParameters(
             _o.certification_path,

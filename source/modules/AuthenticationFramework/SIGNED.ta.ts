@@ -3,6 +3,7 @@ import {
     ASN1Element as _Element,
     ASN1TagClass as _TagClass,
     BIT_STRING,
+    OPTIONAL,
 } from "asn1-ts";
 import * as $ from "asn1-ts/dist/node/functional";
 import {
@@ -59,6 +60,18 @@ export class SIGNED<ToBeSigned> {
          */
         readonly signature: BIT_STRING,
         /**
+         * @summary `altAlgorithmIdentifier`.
+         * @public
+         * @readonly
+         */
+        readonly altAlgorithmIdentifier: OPTIONAL<AlgorithmIdentifier>,
+        /**
+         * @summary `altSignature`.
+         * @public
+         * @readonly
+         */
+        readonly altSignature: OPTIONAL<BIT_STRING>,
+        /**
          * @summary Extensions that are not recognized.
          * @public
          * @readonly
@@ -85,6 +98,8 @@ export class SIGNED<ToBeSigned> {
             _o.toBeSigned,
             _o.algorithmIdentifier,
             _o.signature,
+            _o.altAlgorithmIdentifier,
+            _o.altSignature,
             _o._unrecognizedExtensionsList
         );
     }
@@ -158,6 +173,8 @@ export function _get_decoder_for_SIGNED<ToBeSigned>(
         let toBeSigned!: ToBeSigned;
         let algorithmIdentifier!: AlgorithmIdentifier;
         let signature!: BIT_STRING;
+        let altAlgorithmIdentifier: OPTIONAL<AlgorithmIdentifier>;
+        let altSignature: OPTIONAL<BIT_STRING>;
         let _unrecognizedExtensionsList: _Element[] = [];
         /* END_OF_SEQUENCE_COMPONENT_DECLARATIONS */
         /* START_OF_CALLBACKS_MAP */
@@ -170,6 +187,12 @@ export function _get_decoder_for_SIGNED<ToBeSigned>(
             },
             signature: (_el: _Element): void => {
                 signature = $._decodeBitString(_el);
+            },
+            altAlgorithmIdentifier: (_el: _Element): void => {
+                altAlgorithmIdentifier = _decode_AlgorithmIdentifier(_el);
+            },
+            altSignature: (_el: _Element): void => {
+                altSignature = $._decodeBitString(_el);
             },
         };
         /* END_OF_CALLBACKS_MAP */
@@ -187,6 +210,8 @@ export function _get_decoder_for_SIGNED<ToBeSigned>(
             /* SEQUENCE_CONSTRUCTOR_CALL */ toBeSigned,
             algorithmIdentifier,
             signature,
+            altAlgorithmIdentifier,
+            altSignature,
             _unrecognizedExtensionsList
         );
     };
@@ -212,23 +237,32 @@ export function _get_encoder_for_SIGNED<ToBeSigned>(
                     [
                         /* REQUIRED   */ _encode_ToBeSigned(
                             value.toBeSigned,
-                            $.BER
+                            $.DER
                         ),
                         /* REQUIRED   */ _encode_AlgorithmIdentifier(
                             value.algorithmIdentifier,
-                            $.BER
+                            $.DER
                         ),
                         /* REQUIRED   */ $._encodeBitString(
                             value.signature,
-                            $.BER
+                            $.DER
                         ),
+                        /* IF_ABSENT  */ value.algorithmIdentifier === undefined
+                            ? undefined
+                            : _encode_AlgorithmIdentifier(
+                                  value.algorithmIdentifier,
+                                  $.DER
+                              ),
+                        /* IF_ABSENT  */ value.signature === undefined
+                            ? undefined
+                            : $._encodeBitString(value.signature, $.DER),
                     ],
                     value._unrecognizedExtensionsList
                         ? value._unrecognizedExtensionsList
                         : []
                 )
                 .filter((c: _Element | undefined): c is _Element => !!c),
-            $.BER
+            $.DER
         );
     };
 }

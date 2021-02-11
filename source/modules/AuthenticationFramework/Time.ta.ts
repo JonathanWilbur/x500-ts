@@ -61,7 +61,7 @@ export function _encode_Time(value: Time, elGetter: $.ASN1Encoder<Time>) {
                 utcTime: $._encodeUTCTime,
                 generalizedTime: $._encodeGeneralizedTime,
             },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_Time(value, elGetter);

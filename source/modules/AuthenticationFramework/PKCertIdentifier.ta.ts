@@ -133,7 +133,7 @@ export function _encode_PKCertIdentifier(
                         _get_encoder_for_FingerPrint<Certificate>(
                             _encode_Certificate
                         ),
-                    $.BER
+                    $.DER
                 ),
                 fingerprintPK: $._encode_implicit(
                     _TagClass.context,
@@ -142,10 +142,10 @@ export function _encode_PKCertIdentifier(
                         _get_encoder_for_FingerPrint<PublicKey>(
                             _encode_PublicKey
                         ),
-                    $.BER
+                    $.DER
                 ),
             },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_PKCertIdentifier(value, elGetter);

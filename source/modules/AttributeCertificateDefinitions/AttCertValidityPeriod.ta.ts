@@ -188,11 +188,11 @@ export function _encode_AttCertValidityPeriod(
                         [
                             /* REQUIRED   */ $._encodeGeneralizedTime(
                                 value.notBeforeTime,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ $._encodeGeneralizedTime(
                                 value.notAfterTime,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -200,7 +200,7 @@ export function _encode_AttCertValidityPeriod(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

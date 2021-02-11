@@ -91,11 +91,11 @@ export function _encode_TBSCertAVL_entries_Item_idType(
                     _TagClass.context,
                     0,
                     () => _encode_PKCertIdentifier,
-                    $.BER
+                    $.DER
                 ),
                 entityGroup: _encode_DistinguishedName,
             },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_TBSCertAVL_entries_Item_idType(value, elGetter);

@@ -196,11 +196,11 @@ export function _encode_SIGNATURE(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.agorithmIdentifier,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ $._encodeBitString(
                                 value.signature,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -208,7 +208,7 @@ export function _encode_SIGNATURE(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

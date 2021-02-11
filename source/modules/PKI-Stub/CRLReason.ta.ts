@@ -1,6 +1,5 @@
 export {
     CRLReason,
-    _enum_for_CRLReason,
     CRLReason_aACompromise,
     CRLReason_affiliationChanged,
     CRLReason_cACompromise,
@@ -14,4 +13,5 @@ export {
     CRLReason_weakAlgorithmOrKey,
     _decode_CRLReason,
     _encode_CRLReason,
+    _enum_for_CRLReason,
 } from "../CertificateExtensions/CRLReason.ta";

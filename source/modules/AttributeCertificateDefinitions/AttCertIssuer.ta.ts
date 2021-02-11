@@ -263,7 +263,7 @@ export function _encode_AttCertIssuer(
                                         ? undefined
                                         : _encode_GeneralNames(
                                               value.issuerName,
-                                              $.BER
+                                              $.DER
                                           ),
                                     /* IF_ABSENT  */ value.baseCertificateID ===
                                     undefined
@@ -272,8 +272,8 @@ export function _encode_AttCertIssuer(
                                               _TagClass.context,
                                               0,
                                               () => _encode_IssuerSerial,
-                                              $.BER
-                                          )(value.baseCertificateID, $.BER),
+                                              $.DER
+                                          )(value.baseCertificateID, $.DER),
                                     /* IF_ABSENT  */ value.objectDigestInfo ===
                                     undefined
                                         ? undefined
@@ -281,8 +281,8 @@ export function _encode_AttCertIssuer(
                                               _TagClass.context,
                                               1,
                                               () => _encode_ObjectDigestInfo,
-                                              $.BER
-                                          )(value.objectDigestInfo, $.BER),
+                                              $.DER
+                                          )(value.objectDigestInfo, $.DER),
                                 ],
                                 value._unrecognizedExtensionsList
                                     ? value._unrecognizedExtensionsList
@@ -291,10 +291,10 @@ export function _encode_AttCertIssuer(
                             .filter(
                                 (c: _Element | undefined): c is _Element => !!c
                             ),
-                        $.BER
+                        $.DER
                     );
                 },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_AttCertIssuer(value, elGetter);

@@ -207,11 +207,11 @@ export function _encode_SubjectPublicKeyInfo(
                         [
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.algorithm,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_PublicKey(
                                 value.subjectPublicKey,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -219,7 +219,7 @@ export function _encode_SubjectPublicKeyInfo(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

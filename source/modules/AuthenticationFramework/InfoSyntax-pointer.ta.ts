@@ -227,20 +227,20 @@ export function _encode_InfoSyntax_pointer(
                         [
                             /* REQUIRED   */ _encode_GeneralNames(
                                 value.name,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.hash === undefined
                                 ? undefined
                                 : _get_encoder_for_HASH<HashedPolicyInfo>(
                                       _encode_HashedPolicyInfo
-                                  )(value.hash, $.BER),
+                                  )(value.hash, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

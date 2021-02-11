@@ -66,7 +66,7 @@ export function _encode_Extensions(
     if (!_cached_encoder_for_Extensions) {
         _cached_encoder_for_Extensions = $._encodeSequenceOf<Extension>(
             () => _encode_Extension,
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_Extensions(value, elGetter);

@@ -248,17 +248,17 @@ export function _encode_IssuerSerial(
                         [
                             /* REQUIRED   */ _encode_GeneralNames(
                                 value.issuer,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serial,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.issuerUID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUID,
-                                      $.BER
+                                      $.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -266,7 +266,7 @@ export function _encode_IssuerSerial(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

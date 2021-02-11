@@ -243,27 +243,27 @@ export function _encode_Holder(value: Holder, elGetter: $.ASN1Encoder<Holder>) {
                                   _TagClass.context,
                                   0,
                                   () => _encode_IssuerSerial,
-                                  $.BER
-                              )(value.baseCertificateID, $.BER),
+                                  $.DER
+                              )(value.baseCertificateID, $.DER),
                         /* IF_ABSENT  */ value.entityName === undefined
                             ? undefined
                             : $._encode_implicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_GeneralNames,
-                                  $.BER
-                              )(value.entityName, $.BER),
+                                  $.DER
+                              )(value.entityName, $.DER),
                         /* IF_ABSENT  */ value.objectDigestInfo === undefined
                             ? undefined
                             : $._encode_implicit(
                                   _TagClass.context,
                                   2,
                                   () => _encode_ObjectDigestInfo,
-                                  $.BER
-                              )(value.objectDigestInfo, $.BER),
+                                  $.DER
+                              )(value.objectDigestInfo, $.DER),
                     ])
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }
