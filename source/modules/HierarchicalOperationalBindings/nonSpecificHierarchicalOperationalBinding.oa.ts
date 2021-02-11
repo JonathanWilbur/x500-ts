@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { id_op_binding_non_specific_hierarchical } from "../DirectoryOperationalBindingTypes/id-op-binding-non-specific-hierarchical.va";
+import { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.oa";
 import {
     NonSpecificHierarchicalAgreement,
     _decode_NonSpecificHierarchicalAgreement,
@@ -8,18 +9,6 @@ import {
 import { nonSpecificHierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleA.oa";
 import { nonSpecificHierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleB.oa";
 import { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
-export { id_op_binding_non_specific_hierarchical } from "../DirectoryOperationalBindingTypes/id-op-binding-non-specific-hierarchical.va";
-export { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.oa";
-export {
-    NonSpecificHierarchicalAgreement,
-    _decode_NonSpecificHierarchicalAgreement,
-    _encode_NonSpecificHierarchicalAgreement,
-} from "../HierarchicalOperationalBindings/NonSpecificHierarchicalAgreement.ta";
-export { nonSpecificHierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleA.oa";
-export { nonSpecificHierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/nonSpecificHierarchicalOperationalBinding-roleB.oa";
-export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
-export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
-export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION nonSpecificHierarchicalOperationalBinding */
 /**
@@ -60,7 +49,12 @@ export const nonSpecificHierarchicalOperationalBinding: OPERATIONAL_BINDING<NonS
         "&Agreement": _encode_NonSpecificHierarchicalAgreement,
     },
     "&Cooperation": [
-        ,/* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {},
+            encoderFor: {},
+            "&applContext": directorySystemAC,
+        },
     ] /* OBJECT_FIELD_SETTING */,
     "&roleA": nonSpecificHierarchicalOperationalBinding_roleA /* OBJECT_FIELD_SETTING */,
     "&roleB": nonSpecificHierarchicalOperationalBinding_roleB /* OBJECT_FIELD_SETTING */,

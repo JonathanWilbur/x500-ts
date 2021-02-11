@@ -21,6 +21,7 @@
         "eslint": "^7.19.0",
         "jest": "^26.6.3",
         "jest-junit": "^12.0.0",
+        "madge": "^4.0.0",
         "npm-check-updates": "^11.1.1",
         "pem-ts": "^2.0.1",
         "prettier": "2.2.1",
@@ -57,9 +58,8 @@
         "test": "npx jest --ci --reporters=default --reporters=jest-junit --coverage"
     },
     "types": "./dist/node/index.d.ts",
-    "version": "3.2.7",
+    "version": "3.2.8",
     "dependencies": {
-        "asn1-ts": "^5.0.3",
-        "madge": "^4.0.0"
+        "asn1-ts": "^5.0.3"
     }
 }

@@ -13,7 +13,6 @@ export {
 } from "../SelectedAttributeTypes/CriteriaItem.ta";
 
 /* START_OF_SYMBOL_DEFINITION Criteria */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary Criteria
  * @description

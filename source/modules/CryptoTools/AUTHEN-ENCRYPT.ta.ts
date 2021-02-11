@@ -85,8 +85,8 @@ export class AUTHEN_ENCRYPT<ToBeAuth, ToBeEnciphered> {
  * @constant
  */
 export const _root_component_type_list_1_spec_for_AUTHEN_ENCRYPT: $.ComponentSpec[] = [
-    ,/* FIXME: aad COULD_NOT_RESOLVE_TYPE_DEF */
-/* FIXME: encr COULD_NOT_RESOLVE_TYPE_DEF */
+    new $.ComponentSpec("aad", true, $.hasAnyTag, undefined, undefined),
+    new $.ComponentSpec("encr", false, $.hasAnyTag, undefined, undefined),
 ];
 /* END_OF_SYMBOL_DEFINITION _root_component_type_list_1_spec_for_AUTHEN_ENCRYPT */
 

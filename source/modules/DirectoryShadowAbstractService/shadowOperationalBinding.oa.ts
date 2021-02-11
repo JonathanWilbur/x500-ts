@@ -1,5 +1,9 @@
 /* eslint-disable */
 import { id_op_binding_shadow } from "../DirectoryOperationalBindingTypes/id-op-binding-shadow.va";
+import { shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/shadowConsumerInitiatedAC.oa";
+import { shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAC.oa";
+import { All_operations_consumer_initiated } from "../DirectoryShadowAbstractService/All-operations-consumer-initiated.osa";
+import { All_operations_supplier_initiated } from "../DirectoryShadowAbstractService/All-operations-supplier-initiated.osa";
 import {
     ShadowingAgreementInfo,
     _decode_ShadowingAgreementInfo,
@@ -8,19 +12,6 @@ import {
 import { shadowOperationalBinding_roleA } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleA.oa";
 import { shadowOperationalBinding_roleB } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleB.oa";
 import { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
-export { id_op_binding_shadow } from "../DirectoryOperationalBindingTypes/id-op-binding-shadow.va";
-export { shadowConsumerInitiatedAC } from "../DirectoryOSIProtocols/shadowConsumerInitiatedAC.oa";
-export { shadowSupplierInitiatedAC } from "../DirectoryOSIProtocols/shadowSupplierInitiatedAC.oa";
-export {
-    ShadowingAgreementInfo,
-    _decode_ShadowingAgreementInfo,
-    _encode_ShadowingAgreementInfo,
-} from "../DirectoryShadowAbstractService/ShadowingAgreementInfo.ta";
-export { shadowOperationalBinding_roleA } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleA.oa";
-export { shadowOperationalBinding_roleB } from "../DirectoryShadowAbstractService/shadowOperationalBinding-roleB.oa";
-export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
-export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
-export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION shadowOperationalBinding */
 /**
@@ -65,9 +56,20 @@ export const shadowOperationalBinding: OPERATIONAL_BINDING<ShadowingAgreementInf
         "&Agreement": _encode_ShadowingAgreementInfo,
     },
     "&Cooperation": [
-        ,
-        ,/* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
-    /* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {},
+            encoderFor: {},
+            "&applContext": shadowSupplierInitiatedAC,
+            "&Operations": All_operations_supplier_initiated,
+        },
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {},
+            encoderFor: {},
+            "&applContext": shadowConsumerInitiatedAC,
+            "&Operations": All_operations_consumer_initiated,
+        },
     ] /* OBJECT_FIELD_SETTING */,
     "&roleA": shadowOperationalBinding_roleA /* OBJECT_FIELD_SETTING */,
     "&roleB": shadowOperationalBinding_roleB /* OBJECT_FIELD_SETTING */,

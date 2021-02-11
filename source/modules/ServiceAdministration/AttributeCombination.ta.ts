@@ -13,7 +13,6 @@ export {
 } from "../InformationFramework/AttributeType.ta";
 
 /* START_OF_SYMBOL_DEFINITION AttributeCombination */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary AttributeCombination
  * @description

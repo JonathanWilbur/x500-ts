@@ -13,7 +13,6 @@ export {
 } from "../SelectedAttributeTypes/UiiItem.ta";
 
 /* START_OF_SYMBOL_DEFINITION UiiFilter */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary UiiFilter
  * @description

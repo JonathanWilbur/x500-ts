@@ -8,7 +8,6 @@ import * as $ from "asn1-ts/dist/node/functional";
 export { OBJECT_CLASS } from "../InformationFramework/OBJECT-CLASS.oca";
 
 /* START_OF_SYMBOL_DEFINITION Refinement */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary Refinement
  * @description

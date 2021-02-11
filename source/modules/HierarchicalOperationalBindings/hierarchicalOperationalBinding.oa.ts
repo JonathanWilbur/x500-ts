@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { id_op_binding_hierarchical } from "../DirectoryOperationalBindingTypes/id-op-binding-hierarchical.va";
+import { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.oa";
 import {
     HierarchicalAgreement,
     _decode_HierarchicalAgreement,
@@ -8,18 +9,6 @@ import {
 import { hierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleA.oa";
 import { hierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleB.oa";
 import { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
-export { id_op_binding_hierarchical } from "../DirectoryOperationalBindingTypes/id-op-binding-hierarchical.va";
-export { directorySystemAC } from "../DirectoryOSIProtocols/directorySystemAC.oa";
-export {
-    HierarchicalAgreement,
-    _decode_HierarchicalAgreement,
-    _encode_HierarchicalAgreement,
-} from "../HierarchicalOperationalBindings/HierarchicalAgreement.ta";
-export { hierarchicalOperationalBinding_roleA } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleA.oa";
-export { hierarchicalOperationalBinding_roleB } from "../HierarchicalOperationalBindings/hierarchicalOperationalBinding-roleB.oa";
-export { OP_BIND_ROLE } from "../OperationalBindingManagement/OP-BIND-ROLE.oca";
-export { OP_BINDING_COOP } from "../OperationalBindingManagement/OP-BINDING-COOP.oca";
-export { OPERATIONAL_BINDING } from "../OperationalBindingManagement/OPERATIONAL-BINDING.oca";
 
 /* START_OF_SYMBOL_DEFINITION hierarchicalOperationalBinding */
 /**
@@ -61,7 +50,12 @@ export const hierarchicalOperationalBinding: OPERATIONAL_BINDING<HierarchicalAgr
         "&Agreement": _encode_HierarchicalAgreement,
     },
     "&Cooperation": [
-        ,/* FIXME: COULD_NOT_COMPILE_DEFINED_SYNTAX_IN_OBJECT_SET */
+        {
+            class: "OP-BINDING-COOP",
+            decoderFor: {},
+            encoderFor: {},
+            "&applContext": directorySystemAC,
+        },
     ] /* OBJECT_FIELD_SETTING */,
     "&roleA": hierarchicalOperationalBinding_roleA /* OBJECT_FIELD_SETTING */,
     "&roleB": hierarchicalOperationalBinding_roleB /* OBJECT_FIELD_SETTING */,

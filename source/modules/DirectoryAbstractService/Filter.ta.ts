@@ -13,7 +13,6 @@ export {
 } from "../DirectoryAbstractService/FilterItem.ta";
 
 /* START_OF_SYMBOL_DEFINITION Filter */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary Filter
  * @description

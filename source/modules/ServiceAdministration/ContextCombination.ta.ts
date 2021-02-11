@@ -9,7 +9,6 @@ export { CONTEXT } from "../InformationFramework/CONTEXT.oca";
 export { SupportedContexts } from "../InformationFramework/SupportedContexts.osa";
 
 /* START_OF_SYMBOL_DEFINITION ContextCombination */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary ContextCombination
  * @description

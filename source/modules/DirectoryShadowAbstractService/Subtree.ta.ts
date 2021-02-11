@@ -32,7 +32,6 @@ export {
 } from "../InformationFramework/RelativeDistinguishedName.ta";
 
 /* START_OF_SYMBOL_DEFINITION Subtree */
-// TODO: CHECK_RECURSIVE_DEFINITION
 /**
  * @summary Subtree
  * @description
