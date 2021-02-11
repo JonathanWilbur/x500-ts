@@ -277,7 +277,7 @@ export class LdapArgumentData {
      * @returns {LdapArgumentData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof LdapArgumentData]: LdapArgumentData[_K] }>
+        _o: { [_K in keyof LdapArgumentData]: LdapArgumentData[_K] }
     ): LdapArgumentData {
         return new LdapArgumentData(
             _o.object,

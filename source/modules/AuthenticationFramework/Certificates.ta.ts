@@ -77,7 +77,7 @@ export class Certificates {
      * @returns {Certificates}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Certificates]: Certificates[_K] }>
+        _o: { [_K in keyof Certificates]: Certificates[_K] }
     ): Certificates {
         return new Certificates(
             _o.userCertificate,

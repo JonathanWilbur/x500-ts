@@ -195,6 +195,8 @@ export class EntryInformationSelection {
         return FamilyReturn._from_object({
             memberSelect:
                 FamilyReturn._enum_for_memberSelect.contributingEntriesOnly,
+            familySelect: undefined,
+            _unrecognizedExtensionsList: undefined,
         });
     }
 }

@@ -84,7 +84,7 @@ export class IdmBind {
      * @returns {IdmBind}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof IdmBind]: IdmBind[_K] }>
+        _o: { [_K in keyof IdmBind]: IdmBind[_K] }
     ): IdmBind {
         return new IdmBind(
             _o.protocolID,

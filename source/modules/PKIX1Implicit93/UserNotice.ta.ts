@@ -71,7 +71,7 @@ export class UserNotice {
      * @returns {UserNotice}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UserNotice]: UserNotice[_K] }>
+        _o: { [_K in keyof UserNotice]: UserNotice[_K] }
     ): UserNotice {
         return new UserNotice(_o.noticeRef, _o.explicitText);
     }

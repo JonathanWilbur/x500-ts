@@ -84,11 +84,9 @@ export class OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_It
      * @returns {OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item]: OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item]: OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item[_K];
+        }
     ): OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item {
         return new OsiBindError_normal_mode_parameters_user_data_fully_encoded_data_Item(
             _o.transfer_syntax_name,

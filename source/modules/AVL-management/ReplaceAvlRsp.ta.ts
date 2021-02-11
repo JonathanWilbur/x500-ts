@@ -80,7 +80,7 @@ export class ReplaceAvlRsp {
      * @returns {ReplaceAvlRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReplaceAvlRsp]: ReplaceAvlRsp[_K] }>
+        _o: { [_K in keyof ReplaceAvlRsp]: ReplaceAvlRsp[_K] }
     ): ReplaceAvlRsp {
         return new ReplaceAvlRsp(
             _o.invokeID,

@@ -116,7 +116,7 @@ export class LDAPMessage {
      * @returns {LDAPMessage}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof LDAPMessage]: LDAPMessage[_K] }>
+        _o: { [_K in keyof LDAPMessage]: LDAPMessage[_K] }
     ): LDAPMessage {
         return new LDAPMessage(
             _o.messageID,

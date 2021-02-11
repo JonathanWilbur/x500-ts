@@ -217,9 +217,7 @@ export class TbsHandshakeWrpRej {
      * @returns {TbsHandshakeWrpRej}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TbsHandshakeWrpRej]: TbsHandshakeWrpRej[_K] }
-        >
+        _o: { [_K in keyof TbsHandshakeWrpRej]: TbsHandshakeWrpRej[_K] }
     ): TbsHandshakeWrpRej {
         return new TbsHandshakeWrpRej(
             _o.version,

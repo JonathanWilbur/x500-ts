@@ -206,7 +206,7 @@ export class AARQ_apdu {
      * @returns {AARQ_apdu}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AARQ_apdu]: AARQ_apdu[_K] }>
+        _o: { [_K in keyof AARQ_apdu]: AARQ_apdu[_K] }
     ): AARQ_apdu {
         return new AARQ_apdu(
             _o.protocol_version,
@@ -374,7 +374,7 @@ let _cached_decoder_for_AARQ_apdu: $.ASN1Decoder<AARQ_apdu> | null = null;
  */
 export function _decode_AARQ_apdu(el: _Element) {
     if (!_cached_decoder_for_AARQ_apdu) {
-        _cached_decoder_for_AARQ_apdu = $._decode_explicit<AARQ_apdu>(
+        _cached_decoder_for_AARQ_apdu = $._decode_implicit<AARQ_apdu>(
             () =>
                 function (el: _Element): AARQ_apdu {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -395,7 +395,7 @@ export function _decode_AARQ_apdu(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         "protocol-version": (_el: _Element): void => {
-                            protocol_version = $._decode_explicit<AARQ_apdu_protocol_version>(
+                            protocol_version = $._decode_implicit<AARQ_apdu_protocol_version>(
                                 () => _decode_AARQ_apdu_protocol_version
                             )(_el);
                         },
@@ -453,12 +453,12 @@ export function _decode_AARQ_apdu(el: _Element) {
                             )(_el);
                         },
                         "implementation-information": (_el: _Element): void => {
-                            implementation_information = $._decode_explicit<Implementation_data>(
+                            implementation_information = $._decode_implicit<Implementation_data>(
                                 () => _decode_Implementation_data
                             )(_el);
                         },
                         "user-information": (_el: _Element): void => {
-                            user_information = $._decode_explicit<Association_informationBind>(
+                            user_information = $._decode_implicit<Association_informationBind>(
                                 () => _decode_Association_informationBind
                             )(_el);
                         },
@@ -510,7 +510,7 @@ export function _encode_AARQ_apdu(
     elGetter: $.ASN1Encoder<AARQ_apdu>
 ) {
     if (!_cached_encoder_for_AARQ_apdu) {
-        _cached_encoder_for_AARQ_apdu = $._encode_explicit(
+        _cached_encoder_for_AARQ_apdu = $._encode_implicit(
             _TagClass.application,
             0,
             () =>
@@ -528,7 +528,7 @@ export function _encode_AARQ_apdu(
                                     AARQ_apdu._default_value_for_protocol_version
                                 )
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           0,
                                           () =>
@@ -634,7 +634,7 @@ export function _encode_AARQ_apdu(
                                 /* IF_ABSENT  */ value.implementation_information ===
                                 undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           29,
                                           () => _encode_Implementation_data,
@@ -643,7 +643,7 @@ export function _encode_AARQ_apdu(
                                           value.implementation_information,
                                           $.BER
                                       ),
-                                /* REQUIRED   */ $._encode_explicit(
+                                /* REQUIRED   */ $._encode_implicit(
                                     _TagClass.context,
                                     30,
                                     () => _encode_Association_informationBind,

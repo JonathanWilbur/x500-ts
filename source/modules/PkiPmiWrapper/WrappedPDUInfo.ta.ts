@@ -60,7 +60,7 @@ export class WrappedPDUInfo {
      * @returns {WrappedPDUInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof WrappedPDUInfo]: WrappedPDUInfo[_K] }>
+        _o: { [_K in keyof WrappedPDUInfo]: WrappedPDUInfo[_K] }
     ): WrappedPDUInfo {
         return new WrappedPDUInfo(
             _o.pduType,

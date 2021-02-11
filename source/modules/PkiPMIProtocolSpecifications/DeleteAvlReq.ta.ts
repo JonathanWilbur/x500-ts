@@ -114,7 +114,7 @@ export class DeleteAvlReq {
      * @returns {DeleteAvlReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DeleteAvlReq]: DeleteAvlReq[_K] }>
+        _o: { [_K in keyof DeleteAvlReq]: DeleteAvlReq[_K] }
     ): DeleteAvlReq {
         return new DeleteAvlReq(
             _o.version,

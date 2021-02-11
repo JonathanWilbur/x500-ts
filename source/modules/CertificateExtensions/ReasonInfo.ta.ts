@@ -101,7 +101,7 @@ export class ReasonInfo {
      * @returns {ReasonInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReasonInfo]: ReasonInfo[_K] }>
+        _o: { [_K in keyof ReasonInfo]: ReasonInfo[_K] }
     ): ReasonInfo {
         return new ReasonInfo(
             _o.reasonCode,

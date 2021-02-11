@@ -89,7 +89,7 @@ export class Subtree {
      * @returns {Subtree}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Subtree]: Subtree[_K] }>
+        _o: { [_K in keyof Subtree]: Subtree[_K] }
     ): Subtree {
         return new Subtree(
             _o.rdn,

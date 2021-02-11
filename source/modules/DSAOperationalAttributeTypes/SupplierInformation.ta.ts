@@ -140,9 +140,7 @@ export class SupplierInformation {
      * @returns {SupplierInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SupplierInformation]: SupplierInformation[_K] }
-        >
+        _o: { [_K in keyof SupplierInformation]: SupplierInformation[_K] }
     ): SupplierInformation {
         return new SupplierInformation(
             _o.ae_title,

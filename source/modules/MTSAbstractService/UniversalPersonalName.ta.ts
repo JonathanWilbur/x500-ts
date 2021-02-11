@@ -85,9 +85,7 @@ export class UniversalPersonalName {
      * @returns {UniversalPersonalName}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof UniversalPersonalName]: UniversalPersonalName[_K] }
-        >
+        _o: { [_K in keyof UniversalPersonalName]: UniversalPersonalName[_K] }
     ): UniversalPersonalName {
         return new UniversalPersonalName(
             _o.surname,

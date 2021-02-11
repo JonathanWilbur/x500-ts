@@ -68,7 +68,7 @@ export class DeltaInformation {
      * @returns {DeltaInformation}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DeltaInformation]: DeltaInformation[_K] }>
+        _o: { [_K in keyof DeltaInformation]: DeltaInformation[_K] }
     ): DeltaInformation {
         return new DeltaInformation(
             _o.deltaLocation,

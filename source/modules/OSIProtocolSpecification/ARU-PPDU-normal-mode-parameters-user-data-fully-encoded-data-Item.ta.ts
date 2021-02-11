@@ -68,11 +68,9 @@ export class ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item {
      * @returns {ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item]: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item[_K];
-            }
-        >
+        _o: {
+            [_K in keyof ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item]: ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item[_K];
+        }
     ): ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item {
         return new ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item(
             _o.presentation_context_identifier,

@@ -128,7 +128,7 @@ export class AadClientAE {
      * @returns {AadClientAE}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AadClientAE]: AadClientAE[_K] }>
+        _o: { [_K in keyof AadClientAE]: AadClientAE[_K] }
     ): AadClientAE {
         return new AadClientAE(
             _o.invokeID,

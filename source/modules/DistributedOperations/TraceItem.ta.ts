@@ -84,7 +84,7 @@ export class TraceItem {
      * @returns {TraceItem}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TraceItem]: TraceItem[_K] }>
+        _o: { [_K in keyof TraceItem]: TraceItem[_K] }
     ): TraceItem {
         return new TraceItem(
             _o.dsa,

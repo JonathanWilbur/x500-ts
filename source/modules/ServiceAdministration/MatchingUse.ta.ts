@@ -61,7 +61,7 @@ export class MatchingUse {
      * @returns {MatchingUse}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof MatchingUse]: MatchingUse[_K] }>
+        _o: { [_K in keyof MatchingUse]: MatchingUse[_K] }
     ): MatchingUse {
         return new MatchingUse(
             _o.restrictionType,

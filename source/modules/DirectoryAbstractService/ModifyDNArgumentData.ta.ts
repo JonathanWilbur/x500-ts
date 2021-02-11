@@ -274,9 +274,7 @@ export class ModifyDNArgumentData {
      * @returns {ModifyDNArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ModifyDNArgumentData]: ModifyDNArgumentData[_K] }
-        >
+        _o: { [_K in keyof ModifyDNArgumentData]: ModifyDNArgumentData[_K] }
     ): ModifyDNArgumentData {
         return new ModifyDNArgumentData(
             _o.object,

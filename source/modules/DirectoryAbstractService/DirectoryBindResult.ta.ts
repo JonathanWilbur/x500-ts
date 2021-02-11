@@ -100,9 +100,7 @@ export class DirectoryBindResult {
      * @returns {DirectoryBindResult}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof DirectoryBindResult]: DirectoryBindResult[_K] }
-        >
+        _o: { [_K in keyof DirectoryBindResult]: DirectoryBindResult[_K] }
     ): DirectoryBindResult {
         return new DirectoryBindResult(
             _o.credentials,

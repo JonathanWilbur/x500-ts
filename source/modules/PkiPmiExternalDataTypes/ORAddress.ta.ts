@@ -88,7 +88,7 @@ export class ORAddress {
      * @returns {ORAddress}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ORAddress]: ORAddress[_K] }>
+        _o: { [_K in keyof ORAddress]: ORAddress[_K] }
     ): ORAddress {
         return new ORAddress(
             _o.built_in_standard_attributes,

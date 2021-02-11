@@ -218,7 +218,7 @@ export class ExtendedResponse {
      * @returns {ExtendedResponse}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ExtendedResponse]: ExtendedResponse[_K] }>
+        _o: { [_K in keyof ExtendedResponse]: ExtendedResponse[_K] }
     ): ExtendedResponse {
         return new ExtendedResponse(
             _o.resultCode,

@@ -101,7 +101,7 @@ export class UserClasses {
      * @returns {UserClasses}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UserClasses]: UserClasses[_K] }>
+        _o: { [_K in keyof UserClasses]: UserClasses[_K] }
     ): UserClasses {
         return new UserClasses(
             _o.allUsers,

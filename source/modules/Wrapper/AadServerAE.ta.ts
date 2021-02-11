@@ -135,7 +135,7 @@ export class AadServerAE {
      * @returns {AadServerAE}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AadServerAE]: AadServerAE[_K] }>
+        _o: { [_K in keyof AadServerAE]: AadServerAE[_K] }
     ): AadServerAE {
         return new AadServerAE(
             _o.invokeID,

@@ -103,7 +103,7 @@ export class AbortAVL {
      * @returns {AbortAVL}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AbortAVL]: AbortAVL[_K] }>
+        _o: { [_K in keyof AbortAVL]: AbortAVL[_K] }
     ): AbortAVL {
         return new AbortAVL(
             _o.invokeID,

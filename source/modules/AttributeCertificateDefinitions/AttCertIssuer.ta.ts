@@ -97,7 +97,7 @@ export class AttCertIssuer {
      * @returns {AttCertIssuer}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AttCertIssuer]: AttCertIssuer[_K] }>
+        _o: { [_K in keyof AttCertIssuer]: AttCertIssuer[_K] }
     ): AttCertIssuer {
         return new AttCertIssuer(
             _o.issuerName,

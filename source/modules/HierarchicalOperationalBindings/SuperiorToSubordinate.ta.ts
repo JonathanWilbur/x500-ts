@@ -86,9 +86,7 @@ export class SuperiorToSubordinate {
      * @returns {SuperiorToSubordinate}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SuperiorToSubordinate]: SuperiorToSubordinate[_K] }
-        >
+        _o: { [_K in keyof SuperiorToSubordinate]: SuperiorToSubordinate[_K] }
     ): SuperiorToSubordinate {
         return new SuperiorToSubordinate(
             _o.contextPrefixInfo,

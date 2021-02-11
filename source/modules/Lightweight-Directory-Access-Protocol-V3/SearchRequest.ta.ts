@@ -173,7 +173,7 @@ export class SearchRequest {
      * @returns {SearchRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SearchRequest]: SearchRequest[_K] }>
+        _o: { [_K in keyof SearchRequest]: SearchRequest[_K] }
     ): SearchRequest {
         return new SearchRequest(
             _o.baseObject,

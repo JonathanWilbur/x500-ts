@@ -53,7 +53,7 @@ export class OsiRes_result {
      * @returns {OsiRes_result}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof OsiRes_result]: OsiRes_result[_K] }>
+        _o: { [_K in keyof OsiRes_result]: OsiRes_result[_K] }
     ): OsiRes_result {
         return new OsiRes_result(_o.opcode, _o.result);
     }

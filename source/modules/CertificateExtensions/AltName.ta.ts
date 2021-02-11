@@ -66,7 +66,7 @@ export class AltName {
      * @returns {AltName}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AltName]: AltName[_K] }>
+        _o: { [_K in keyof AltName]: AltName[_K] }
     ): AltName {
         return new AltName(_o.altnameType, _o.altNameValue);
     }

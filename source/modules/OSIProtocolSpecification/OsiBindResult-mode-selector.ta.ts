@@ -42,11 +42,9 @@ export class OsiBindResult_mode_selector {
      * @returns {OsiBindResult_mode_selector}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiBindResult_mode_selector]: OsiBindResult_mode_selector[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiBindResult_mode_selector]: OsiBindResult_mode_selector[_K];
+        }
     ): OsiBindResult_mode_selector {
         return new OsiBindResult_mode_selector(_o.mode_value);
     }
@@ -119,7 +117,7 @@ export function _decode_OsiBindResult_mode_selector(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "mode-value": (_el: _Element): void => {
-                    mode_value = $._decode_explicit<INTEGER>(
+                    mode_value = $._decode_implicit<INTEGER>(
                         () => $._decodeInteger
                     )(_el);
                 },
@@ -166,7 +164,7 @@ export function _encode_OsiBindResult_mode_selector(
             return $._encodeSet(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => $._encodeInteger,

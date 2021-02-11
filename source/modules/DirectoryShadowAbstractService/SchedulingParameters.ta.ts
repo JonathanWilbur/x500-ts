@@ -69,9 +69,7 @@ export class SchedulingParameters {
      * @returns {SchedulingParameters}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SchedulingParameters]: SchedulingParameters[_K] }
-        >
+        _o: { [_K in keyof SchedulingParameters]: SchedulingParameters[_K] }
     ): SchedulingParameters {
         return new SchedulingParameters(
             _o.periodic,

@@ -160,7 +160,7 @@ export class RejectAVL {
      * @returns {RejectAVL}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RejectAVL]: RejectAVL[_K] }>
+        _o: { [_K in keyof RejectAVL]: RejectAVL[_K] }
     ): RejectAVL {
         return new RejectAVL(
             _o.version,

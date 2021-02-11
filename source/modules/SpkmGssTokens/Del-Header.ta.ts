@@ -96,7 +96,7 @@ export class Del_Header {
      * @returns {Del_Header}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Del_Header]: Del_Header[_K] }>
+        _o: { [_K in keyof Del_Header]: Del_Header[_K] }
     ): Del_Header {
         return new Del_Header(_o.tok_id, _o.context_id, _o.int_alg, _o.snd_seq);
     }

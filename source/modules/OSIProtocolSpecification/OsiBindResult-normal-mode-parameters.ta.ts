@@ -104,11 +104,9 @@ export class OsiBindResult_normal_mode_parameters {
      * @returns {OsiBindResult_normal_mode_parameters}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiBindResult_normal_mode_parameters]: OsiBindResult_normal_mode_parameters[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiBindResult_normal_mode_parameters]: OsiBindResult_normal_mode_parameters[_K];
+        }
     ): OsiBindResult_normal_mode_parameters {
         return new OsiBindResult_normal_mode_parameters(
             _o.protocol_version,
@@ -221,20 +219,20 @@ export function _decode_OsiBindResult_normal_mode_parameters(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "protocol-version": (_el: _Element): void => {
-                    protocol_version = $._decode_explicit<OsiBindResult_normal_mode_parameters_protocol_version>(
+                    protocol_version = $._decode_implicit<OsiBindResult_normal_mode_parameters_protocol_version>(
                         () =>
                             _decode_OsiBindResult_normal_mode_parameters_protocol_version
                     )(_el);
                 },
                 "responding-presentation-selector": (_el: _Element): void => {
-                    responding_presentation_selector = $._decode_explicit<Presentation_selector>(
+                    responding_presentation_selector = $._decode_implicit<Presentation_selector>(
                         () => _decode_Presentation_selector
                     )(_el);
                 },
                 "presentation-context-definition-result-list": (
                     _el: _Element
                 ): void => {
-                    presentation_context_definition_result_list = $._decode_explicit<
+                    presentation_context_definition_result_list = $._decode_implicit<
                         OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item[]
                     >(() =>
                         $._decodeSequenceOf<OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item>(
@@ -300,7 +298,7 @@ export function _encode_OsiBindResult_normal_mode_parameters(
                             OsiBindResult_normal_mode_parameters._default_value_for_protocol_version
                         )
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   0,
                                   () =>
@@ -310,13 +308,13 @@ export function _encode_OsiBindResult_normal_mode_parameters(
                         /* IF_ABSENT  */ value.responding_presentation_selector ===
                         undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   3,
                                   () => _encode_Presentation_selector,
                                   $.BER
                               )(value.responding_presentation_selector, $.BER),
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             5,
                             () =>

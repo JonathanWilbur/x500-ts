@@ -80,7 +80,7 @@ export class CertReplaceRsp {
      * @returns {CertReplaceRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertReplaceRsp]: CertReplaceRsp[_K] }>
+        _o: { [_K in keyof CertReplaceRsp]: CertReplaceRsp[_K] }
     ): CertReplaceRsp {
         return new CertReplaceRsp(
             _o.invokeID,

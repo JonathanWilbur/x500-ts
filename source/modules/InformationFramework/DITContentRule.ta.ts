@@ -81,7 +81,7 @@ export class DITContentRule {
      * @returns {DITContentRule}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DITContentRule]: DITContentRule[_K] }>
+        _o: { [_K in keyof DITContentRule]: DITContentRule[_K] }
     ): DITContentRule {
         return new DITContentRule(
             _o.structuralObjectClass,

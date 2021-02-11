@@ -67,7 +67,7 @@ export class DITContextUse {
      * @returns {DITContextUse}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DITContextUse]: DITContextUse[_K] }>
+        _o: { [_K in keyof DITContextUse]: DITContextUse[_K] }
     ): DITContextUse {
         return new DITContextUse(
             _o.attributeType,

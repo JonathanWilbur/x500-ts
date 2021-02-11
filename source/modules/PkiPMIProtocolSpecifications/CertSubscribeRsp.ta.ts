@@ -110,7 +110,7 @@ export class CertSubscribeRsp {
      * @returns {CertSubscribeRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertSubscribeRsp]: CertSubscribeRsp[_K] }>
+        _o: { [_K in keyof CertSubscribeRsp]: CertSubscribeRsp[_K] }
     ): CertSubscribeRsp {
         return new CertSubscribeRsp(
             _o.version,

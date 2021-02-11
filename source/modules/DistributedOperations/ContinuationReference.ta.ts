@@ -185,9 +185,7 @@ export class ContinuationReference {
      * @returns {ContinuationReference}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ContinuationReference]: ContinuationReference[_K] }
-        >
+        _o: { [_K in keyof ContinuationReference]: ContinuationReference[_K] }
     ): ContinuationReference {
         return new ContinuationReference(
             _o.targetObject,

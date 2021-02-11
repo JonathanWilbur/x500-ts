@@ -90,7 +90,7 @@ export class Holder {
      * @returns {Holder}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Holder]: Holder[_K] }>
+        _o: { [_K in keyof Holder]: Holder[_K] }
     ): Holder {
         return new Holder(
             _o.baseCertificateID,

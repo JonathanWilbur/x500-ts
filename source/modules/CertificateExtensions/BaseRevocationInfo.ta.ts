@@ -85,9 +85,7 @@ export class BaseRevocationInfo {
      * @returns {BaseRevocationInfo}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof BaseRevocationInfo]: BaseRevocationInfo[_K] }
-        >
+        _o: { [_K in keyof BaseRevocationInfo]: BaseRevocationInfo[_K] }
     ): BaseRevocationInfo {
         return new BaseRevocationInfo(
             _o.cRLStreamIdentifier,

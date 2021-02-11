@@ -70,7 +70,7 @@ export class SPKM_WRAP {
      * @returns {SPKM_WRAP}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_WRAP]: SPKM_WRAP[_K] }>
+        _o: { [_K in keyof SPKM_WRAP]: SPKM_WRAP[_K] }
     ): SPKM_WRAP {
         return new SPKM_WRAP(_o.wrap_header, _o.wrap_body);
     }

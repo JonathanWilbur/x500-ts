@@ -69,9 +69,7 @@ export class InitializationAbort {
      * @returns {InitializationAbort}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof InitializationAbort]: InitializationAbort[_K] }
-        >
+        _o: { [_K in keyof InitializationAbort]: InitializationAbort[_K] }
     ): InitializationAbort {
         return new InitializationAbort(_o.diag, _o._unrecognizedExtensionsList);
     }

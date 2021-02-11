@@ -69,7 +69,7 @@ export class FamilyEntries {
      * @returns {FamilyEntries}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof FamilyEntries]: FamilyEntries[_K] }>
+        _o: { [_K in keyof FamilyEntries]: FamilyEntries[_K] }
     ): FamilyEntries {
         return new FamilyEntries(
             _o.family_class,

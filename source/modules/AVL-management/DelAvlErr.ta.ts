@@ -86,7 +86,7 @@ export class DelAvlErr {
      * @returns {DelAvlErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DelAvlErr]: DelAvlErr[_K] }>
+        _o: { [_K in keyof DelAvlErr]: DelAvlErr[_K] }
     ): DelAvlErr {
         return new DelAvlErr(_o.notOK, _o._unrecognizedExtensionsList);
     }

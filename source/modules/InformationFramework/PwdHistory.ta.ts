@@ -58,7 +58,7 @@ export class PwdHistory {
      * @returns {PwdHistory}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PwdHistory]: PwdHistory[_K] }>
+        _o: { [_K in keyof PwdHistory]: PwdHistory[_K] }
     ): PwdHistory {
         return new PwdHistory(
             _o.time,

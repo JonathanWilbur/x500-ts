@@ -114,7 +114,7 @@ export class DistributionPoint {
      * @returns {DistributionPoint}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DistributionPoint]: DistributionPoint[_K] }>
+        _o: { [_K in keyof DistributionPoint]: DistributionPoint[_K] }
     ): DistributionPoint {
         return new DistributionPoint(
             _o.distributionPoint,

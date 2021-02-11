@@ -61,7 +61,7 @@ export class ContextProfile {
      * @returns {ContextProfile}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ContextProfile]: ContextProfile[_K] }>
+        _o: { [_K in keyof ContextProfile]: ContextProfile[_K] }
     ): ContextProfile {
         return new ContextProfile(
             _o.contextType,

@@ -102,9 +102,7 @@ export class MatchingRuleAssertion {
      * @returns {MatchingRuleAssertion}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof MatchingRuleAssertion]: MatchingRuleAssertion[_K] }
-        >
+        _o: { [_K in keyof MatchingRuleAssertion]: MatchingRuleAssertion[_K] }
     ): MatchingRuleAssertion {
         return new MatchingRuleAssertion(
             _o.matchingRule,

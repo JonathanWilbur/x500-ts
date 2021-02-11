@@ -145,7 +145,7 @@ export class AbandonFailedData {
      * @returns {AbandonFailedData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AbandonFailedData]: AbandonFailedData[_K] }>
+        _o: { [_K in keyof AbandonFailedData]: AbandonFailedData[_K] }
     ): AbandonFailedData {
         return new AbandonFailedData(
             _o.problem,

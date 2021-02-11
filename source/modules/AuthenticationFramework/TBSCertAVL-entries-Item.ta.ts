@@ -186,12 +186,12 @@ export function _decode_TBSCertAVL_entries_Item(el: _Element) {
                     idType = _decode_TBSCertAVL_entries_Item_idType(_el);
                 },
                 scope: (_el: _Element): void => {
-                    scope = $._decode_explicit<ScopeRestrictions>(
+                    scope = $._decode_implicit<ScopeRestrictions>(
                         () => _decode_ScopeRestrictions
                     )(_el);
                 },
                 entryExtensions: (_el: _Element): void => {
-                    entryExtensions = $._decode_explicit<Extensions>(
+                    entryExtensions = $._decode_implicit<Extensions>(
                         () => _decode_Extensions
                     )(_el);
                 },
@@ -246,31 +246,31 @@ export function _encode_TBSCertAVL_entries_Item(
                         [
                             /* REQUIRED   */ _encode_TBSCertAVL_entries_Item_idType(
                                 value.idType,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.scope === undefined
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_ScopeRestrictions,
-                                      $.BER
-                                  )(value.scope, $.BER),
+                                      $.DER
+                                  )(value.scope, $.DER),
                             /* IF_ABSENT  */ value.entryExtensions === undefined
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_Extensions,
-                                      $.BER
-                                  )(value.entryExtensions, $.BER),
+                                      $.DER
+                                  )(value.entryExtensions, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

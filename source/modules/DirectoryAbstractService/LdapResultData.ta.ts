@@ -129,7 +129,7 @@ export class LdapResultData {
      * @returns {LdapResultData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof LdapResultData]: LdapResultData[_K] }>
+        _o: { [_K in keyof LdapResultData]: LdapResultData[_K] }
     ): LdapResultData {
         return new LdapResultData(
             _o.ldapMessages,

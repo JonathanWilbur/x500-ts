@@ -77,7 +77,7 @@ export class TotalRefresh {
      * @returns {TotalRefresh}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TotalRefresh]: TotalRefresh[_K] }>
+        _o: { [_K in keyof TotalRefresh]: TotalRefresh[_K] }
     ): TotalRefresh {
         return new TotalRefresh(
             _o.sDSE,

@@ -84,7 +84,7 @@ export class EpcFormat {
      * @returns {EpcFormat}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EpcFormat]: EpcFormat[_K] }>
+        _o: { [_K in keyof EpcFormat]: EpcFormat[_K] }
     ): EpcFormat {
         return new EpcFormat(
             _o.fields,

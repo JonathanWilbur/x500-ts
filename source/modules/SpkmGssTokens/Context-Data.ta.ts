@@ -144,7 +144,7 @@ export class Context_Data {
      * @returns {Context_Data}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Context_Data]: Context_Data[_K] }>
+        _o: { [_K in keyof Context_Data]: Context_Data[_K] }
     ): Context_Data {
         return new Context_Data(
             _o.channelId,

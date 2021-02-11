@@ -122,7 +122,7 @@ export class ReferralData {
      * @returns {ReferralData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReferralData]: ReferralData[_K] }>
+        _o: { [_K in keyof ReferralData]: ReferralData[_K] }
     ): ReferralData {
         return new ReferralData(
             _o.candidate,

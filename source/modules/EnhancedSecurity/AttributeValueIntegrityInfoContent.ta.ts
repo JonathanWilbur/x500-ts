@@ -216,10 +216,10 @@ export function _encode_AttributeValueIntegrityInfoContent(
                         [
                             /* IF_ABSENT  */ value.signer === undefined
                                 ? undefined
-                                : _encode_Signer(value.signer, $.BER),
+                                : _encode_Signer(value.signer, $.DER),
                             /* REQUIRED   */ _encode_AVIHash(
                                 value.aVIHash,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -227,7 +227,7 @@ export function _encode_AttributeValueIntegrityInfoContent(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

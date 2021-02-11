@@ -77,9 +77,7 @@ export class IssuerSerialNumber {
      * @returns {IssuerSerialNumber}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof IssuerSerialNumber]: IssuerSerialNumber[_K] }
-        >
+        _o: { [_K in keyof IssuerSerialNumber]: IssuerSerialNumber[_K] }
     ): IssuerSerialNumber {
         return new IssuerSerialNumber(
             _o.issuer,

@@ -61,9 +61,7 @@ export class PolicyQualifierInfo {
      * @returns {PolicyQualifierInfo}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof PolicyQualifierInfo]: PolicyQualifierInfo[_K] }
-        >
+        _o: { [_K in keyof PolicyQualifierInfo]: PolicyQualifierInfo[_K] }
     ): PolicyQualifierInfo {
         return new PolicyQualifierInfo(
             _o.policyQualifierId,

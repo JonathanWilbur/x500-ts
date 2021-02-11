@@ -94,7 +94,7 @@ export class SenderStaticInfo {
      * @returns {SenderStaticInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SenderStaticInfo]: SenderStaticInfo[_K] }>
+        _o: { [_K in keyof SenderStaticInfo]: SenderStaticInfo[_K] }
     ): SenderStaticInfo {
         return new SenderStaticInfo(
             _o.issuer,

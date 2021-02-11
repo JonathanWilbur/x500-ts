@@ -124,7 +124,7 @@ export class TbsReleaseReq {
      * @returns {TbsReleaseReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsReleaseReq]: TbsReleaseReq[_K] }>
+        _o: { [_K in keyof TbsReleaseReq]: TbsReleaseReq[_K] }
     ): TbsReleaseReq {
         return new TbsReleaseReq(
             _o.version,

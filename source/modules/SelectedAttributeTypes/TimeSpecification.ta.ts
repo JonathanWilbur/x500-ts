@@ -90,7 +90,7 @@ export class TimeSpecification {
      * @returns {TimeSpecification}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TimeSpecification]: TimeSpecification[_K] }>
+        _o: { [_K in keyof TimeSpecification]: TimeSpecification[_K] }
     ): TimeSpecification {
         return new TimeSpecification(
             _o.time,

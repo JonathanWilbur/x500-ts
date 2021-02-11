@@ -92,7 +92,7 @@ export class ModifyDNRequest {
      * @returns {ModifyDNRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ModifyDNRequest]: ModifyDNRequest[_K] }>
+        _o: { [_K in keyof ModifyDNRequest]: ModifyDNRequest[_K] }
     ): ModifyDNRequest {
         return new ModifyDNRequest(
             _o.entry,

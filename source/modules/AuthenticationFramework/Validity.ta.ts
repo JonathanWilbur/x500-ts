@@ -66,7 +66,7 @@ export class Validity {
      * @returns {Validity}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Validity]: Validity[_K] }>
+        _o: { [_K in keyof Validity]: Validity[_K] }
     ): Validity {
         return new Validity(
             _o.notBefore,

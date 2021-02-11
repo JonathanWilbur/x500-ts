@@ -65,7 +65,7 @@ export class TelexNumber {
      * @returns {TelexNumber}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TelexNumber]: TelexNumber[_K] }>
+        _o: { [_K in keyof TelexNumber]: TelexNumber[_K] }
     ): TelexNumber {
         return new TelexNumber(
             _o.telexNumber,

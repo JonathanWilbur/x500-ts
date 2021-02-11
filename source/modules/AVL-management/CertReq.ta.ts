@@ -60,7 +60,7 @@ export class CertReq {
      * @returns {CertReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertReq]: CertReq[_K] }>
+        _o: { [_K in keyof CertReq]: CertReq[_K] }
     ): CertReq {
         return new CertReq(_o.invokeID, _o._unrecognizedExtensionsList);
     }

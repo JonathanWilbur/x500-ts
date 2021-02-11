@@ -101,7 +101,7 @@ export class UiiFormat {
      * @returns {UiiFormat}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UiiFormat]: UiiFormat[_K] }>
+        _o: { [_K in keyof UiiFormat]: UiiFormat[_K] }
     ): UiiFormat {
         return new UiiFormat(_o.baseObject, _o.subset, _o.next);
     }

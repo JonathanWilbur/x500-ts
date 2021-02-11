@@ -88,7 +88,7 @@ export class REQ_TOKEN {
      * @returns {REQ_TOKEN}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof REQ_TOKEN]: REQ_TOKEN[_K] }>
+        _o: { [_K in keyof REQ_TOKEN]: REQ_TOKEN[_K] }
     ): REQ_TOKEN {
         return new REQ_TOKEN(_o.req_contents, _o.algId, _o.req_integrity);
     }

@@ -60,9 +60,7 @@ export class ModificationParameter {
      * @returns {ModificationParameter}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ModificationParameter]: ModificationParameter[_K] }
-        >
+        _o: { [_K in keyof ModificationParameter]: ModificationParameter[_K] }
     ): ModificationParameter {
         return new ModificationParameter(
             _o.secondaryShadows,

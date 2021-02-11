@@ -132,7 +132,7 @@ export class UnitOfReplication {
      * @returns {UnitOfReplication}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UnitOfReplication]: UnitOfReplication[_K] }>
+        _o: { [_K in keyof UnitOfReplication]: UnitOfReplication[_K] }
     ): UnitOfReplication {
         return new UnitOfReplication(
             _o.area,

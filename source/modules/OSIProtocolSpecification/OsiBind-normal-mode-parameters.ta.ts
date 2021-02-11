@@ -110,11 +110,9 @@ export class OsiBind_normal_mode_parameters {
      * @returns {OsiBind_normal_mode_parameters}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiBind_normal_mode_parameters]: OsiBind_normal_mode_parameters[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiBind_normal_mode_parameters]: OsiBind_normal_mode_parameters[_K];
+        }
     ): OsiBind_normal_mode_parameters {
         return new OsiBind_normal_mode_parameters(
             _o.protocol_version,
@@ -236,25 +234,25 @@ export function _decode_OsiBind_normal_mode_parameters(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "protocol-version": (_el: _Element): void => {
-                    protocol_version = $._decode_explicit<OsiBind_normal_mode_parameters_protocol_version>(
+                    protocol_version = $._decode_implicit<OsiBind_normal_mode_parameters_protocol_version>(
                         () =>
                             _decode_OsiBind_normal_mode_parameters_protocol_version
                     )(_el);
                 },
                 "calling-presentation-selector": (_el: _Element): void => {
-                    calling_presentation_selector = $._decode_explicit<Presentation_selector>(
+                    calling_presentation_selector = $._decode_implicit<Presentation_selector>(
                         () => _decode_Presentation_selector
                     )(_el);
                 },
                 "called-presentation-selector": (_el: _Element): void => {
-                    called_presentation_selector = $._decode_explicit<Presentation_selector>(
+                    called_presentation_selector = $._decode_implicit<Presentation_selector>(
                         () => _decode_Presentation_selector
                     )(_el);
                 },
                 "presentation-context-definition-list": (
                     _el: _Element
                 ): void => {
-                    presentation_context_definition_list = $._decode_explicit<Context_list>(
+                    presentation_context_definition_list = $._decode_implicit<Context_list>(
                         () => _decode_Context_list
                     )(_el);
                 },
@@ -316,7 +314,7 @@ export function _encode_OsiBind_normal_mode_parameters(
                             OsiBind_normal_mode_parameters._default_value_for_protocol_version
                         )
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   0,
                                   () =>
@@ -326,7 +324,7 @@ export function _encode_OsiBind_normal_mode_parameters(
                         /* IF_ABSENT  */ value.calling_presentation_selector ===
                         undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_Presentation_selector,
@@ -335,13 +333,13 @@ export function _encode_OsiBind_normal_mode_parameters(
                         /* IF_ABSENT  */ value.called_presentation_selector ===
                         undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   2,
                                   () => _encode_Presentation_selector,
                                   $.BER
                               )(value.called_presentation_selector, $.BER),
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             4,
                             () => _encode_Context_list,

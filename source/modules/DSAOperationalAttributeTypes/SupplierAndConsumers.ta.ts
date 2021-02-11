@@ -111,9 +111,7 @@ export class SupplierAndConsumers {
      * @returns {SupplierAndConsumers}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SupplierAndConsumers]: SupplierAndConsumers[_K] }
-        >
+        _o: { [_K in keyof SupplierAndConsumers]: SupplierAndConsumers[_K] }
     ): SupplierAndConsumers {
         return new SupplierAndConsumers(
             _o.ae_title,

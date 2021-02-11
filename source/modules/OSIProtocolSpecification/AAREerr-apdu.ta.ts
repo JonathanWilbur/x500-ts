@@ -219,7 +219,7 @@ export class AAREerr_apdu {
      * @returns {AAREerr_apdu}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AAREerr_apdu]: AAREerr_apdu[_K] }>
+        _o: { [_K in keyof AAREerr_apdu]: AAREerr_apdu[_K] }
     ): AAREerr_apdu {
         return new AAREerr_apdu(
             _o.protocol_version,
@@ -371,7 +371,7 @@ let _cached_decoder_for_AAREerr_apdu: $.ASN1Decoder<AAREerr_apdu> | null = null;
  */
 export function _decode_AAREerr_apdu(el: _Element) {
     if (!_cached_decoder_for_AAREerr_apdu) {
-        _cached_decoder_for_AAREerr_apdu = $._decode_explicit<AAREerr_apdu>(
+        _cached_decoder_for_AAREerr_apdu = $._decode_implicit<AAREerr_apdu>(
             () =>
                 function (el: _Element): AAREerr_apdu {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -390,7 +390,7 @@ export function _decode_AAREerr_apdu(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         "protocol-version": (_el: _Element): void => {
-                            protocol_version = $._decode_explicit<AAREerr_apdu_protocol_version>(
+                            protocol_version = $._decode_implicit<AAREerr_apdu_protocol_version>(
                                 () => _decode_AAREerr_apdu_protocol_version
                             )(_el);
                         },
@@ -434,12 +434,12 @@ export function _decode_AAREerr_apdu(el: _Element) {
                             )(_el);
                         },
                         "implementation-information": (_el: _Element): void => {
-                            implementation_information = $._decode_explicit<Implementation_data>(
+                            implementation_information = $._decode_implicit<Implementation_data>(
                                 () => _decode_Implementation_data
                             )(_el);
                         },
                         "user-information": (_el: _Element): void => {
-                            user_information = $._decode_explicit<Association_informationBindErr>(
+                            user_information = $._decode_implicit<Association_informationBindErr>(
                                 () => _decode_Association_informationBindErr
                             )(_el);
                         },
@@ -489,7 +489,7 @@ export function _encode_AAREerr_apdu(
     elGetter: $.ASN1Encoder<AAREerr_apdu>
 ) {
     if (!_cached_encoder_for_AAREerr_apdu) {
-        _cached_encoder_for_AAREerr_apdu = $._encode_explicit(
+        _cached_encoder_for_AAREerr_apdu = $._encode_implicit(
             _TagClass.application,
             1,
             () =>
@@ -507,7 +507,7 @@ export function _encode_AAREerr_apdu(
                                     AAREerr_apdu._default_value_for_protocol_version
                                 )
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           0,
                                           () =>
@@ -580,7 +580,7 @@ export function _encode_AAREerr_apdu(
                                 /* IF_ABSENT  */ value.implementation_information ===
                                 undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           29,
                                           () => _encode_Implementation_data,
@@ -592,7 +592,7 @@ export function _encode_AAREerr_apdu(
                                 /* IF_ABSENT  */ value.user_information ===
                                 undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           30,
                                           () =>

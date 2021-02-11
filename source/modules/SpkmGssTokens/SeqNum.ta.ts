@@ -52,7 +52,7 @@ export class SeqNum {
      * @returns {SeqNum}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SeqNum]: SeqNum[_K] }>
+        _o: { [_K in keyof SeqNum]: SeqNum[_K] }
     ): SeqNum {
         return new SeqNum(_o.num, _o.dir_ind);
     }

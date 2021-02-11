@@ -81,7 +81,7 @@ export class FamilyReturn {
      * @returns {FamilyReturn}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof FamilyReturn]: FamilyReturn[_K] }>
+        _o: { [_K in keyof FamilyReturn]: FamilyReturn[_K] }
     ): FamilyReturn {
         return new FamilyReturn(
             _o.memberSelect,

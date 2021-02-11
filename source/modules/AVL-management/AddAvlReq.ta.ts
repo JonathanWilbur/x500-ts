@@ -77,7 +77,7 @@ export class AddAvlReq {
      * @returns {AddAvlReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AddAvlReq]: AddAvlReq[_K] }>
+        _o: { [_K in keyof AddAvlReq]: AddAvlReq[_K] }
     ): AddAvlReq {
         return new AddAvlReq(
             _o.invokeID,

@@ -98,9 +98,7 @@ export class AuthorityKeyIdentifier {
      * @returns {AuthorityKeyIdentifier}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AuthorityKeyIdentifier]: AuthorityKeyIdentifier[_K] }
-        >
+        _o: { [_K in keyof AuthorityKeyIdentifier]: AuthorityKeyIdentifier[_K] }
     ): AuthorityKeyIdentifier {
         return new AuthorityKeyIdentifier(
             _o.keyIdentifier,

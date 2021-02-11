@@ -103,7 +103,7 @@ export class CommonResults {
      * @returns {CommonResults}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CommonResults]: CommonResults[_K] }>
+        _o: { [_K in keyof CommonResults]: CommonResults[_K] }
     ): CommonResults {
         return new CommonResults(
             _o.securityParameters,

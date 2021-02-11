@@ -108,7 +108,7 @@ export class REP_IT_TOKEN {
      * @returns {REP_IT_TOKEN}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof REP_IT_TOKEN]: REP_IT_TOKEN[_K] }>
+        _o: { [_K in keyof REP_IT_TOKEN]: REP_IT_TOKEN[_K] }
     ): REP_IT_TOKEN {
         return new REP_IT_TOKEN(
             _o.tok_id,

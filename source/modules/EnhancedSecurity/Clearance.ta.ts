@@ -99,7 +99,7 @@ export class Clearance {
      * @returns {Clearance}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Clearance]: Clearance[_K] }>
+        _o: { [_K in keyof Clearance]: Clearance[_K] }
     ): Clearance {
         return new Clearance(
             _o.policyId,

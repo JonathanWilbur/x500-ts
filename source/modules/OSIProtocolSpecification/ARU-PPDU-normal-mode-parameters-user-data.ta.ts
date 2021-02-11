@@ -47,7 +47,7 @@ export function _decode_ARU_PPDU_normal_mode_parameters_user_data(
             {
                 "APPLICATION 1": [
                     "fully_encoded_data",
-                    $._decode_explicit<
+                    $._decode_implicit<
                         ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item[]
                     >(() =>
                         $._decodeSequenceOf<ARU_PPDU_normal_mode_parameters_user_data_fully_encoded_data_Item>(
@@ -82,7 +82,7 @@ export function _encode_ARU_PPDU_normal_mode_parameters_user_data(
     if (!_cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data) {
         _cached_encoder_for_ARU_PPDU_normal_mode_parameters_user_data = $._encode_choice<ARU_PPDU_normal_mode_parameters_user_data>(
             {
-                fully_encoded_data: $._encode_explicit(
+                fully_encoded_data: $._encode_implicit(
                     _TagClass.application,
                     1,
                     () =>

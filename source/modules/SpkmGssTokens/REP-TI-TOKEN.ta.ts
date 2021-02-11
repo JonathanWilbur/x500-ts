@@ -88,7 +88,7 @@ export class REP_TI_TOKEN {
      * @returns {REP_TI_TOKEN}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof REP_TI_TOKEN]: REP_TI_TOKEN[_K] }>
+        _o: { [_K in keyof REP_TI_TOKEN]: REP_TI_TOKEN[_K] }
     ): REP_TI_TOKEN {
         return new REP_TI_TOKEN(_o.rep_ti_contents, _o.algId, _o.rep_ti_integ);
     }

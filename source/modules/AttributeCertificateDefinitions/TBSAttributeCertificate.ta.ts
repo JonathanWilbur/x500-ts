@@ -439,37 +439,37 @@ export function _encode_TBSAttributeCertificate(
                         [
                             /* REQUIRED   */ _encode_AttCertVersion(
                                 value.version,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_Holder(
                                 value.holder,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_AttCertIssuer(
                                 value.issuer,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_AttCertValidityPeriod(
                                 value.attrCertValidityPeriod,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ $._encodeSequenceOf<Attribute>(
                                 () => _encode_Attribute,
-                                $.BER
-                            )(value.attributes, $.BER),
+                                $.DER
+                            )(value.attributes, $.DER),
                             /* IF_ABSENT  */ value.issuerUniqueID === undefined
                                 ? undefined
                                 : _encode_UniqueIdentifier(
                                       value.issuerUniqueID,
-                                      $.BER
+                                      $.DER
                                   ),
                         ],
                         value._unrecognizedExtensionsList
@@ -478,11 +478,11 @@ export function _encode_TBSAttributeCertificate(
                         [
                             /* IF_ABSENT  */ value.extensions === undefined
                                 ? undefined
-                                : _encode_Extensions(value.extensions, $.BER),
+                                : _encode_Extensions(value.extensions, $.DER),
                         ]
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

@@ -87,7 +87,7 @@ export class TargetCert {
      * @returns {TargetCert}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TargetCert]: TargetCert[_K] }>
+        _o: { [_K in keyof TargetCert]: TargetCert[_K] }
     ): TargetCert {
         return new TargetCert(
             _o.targetCertificate,

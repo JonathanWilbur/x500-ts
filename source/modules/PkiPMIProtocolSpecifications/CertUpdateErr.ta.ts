@@ -80,7 +80,7 @@ export class CertUpdateErr {
      * @returns {CertUpdateErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertUpdateErr]: CertUpdateErr[_K] }>
+        _o: { [_K in keyof CertUpdateErr]: CertUpdateErr[_K] }
     ): CertUpdateErr {
         return new CertUpdateErr(_o.code, _o._unrecognizedExtensionsList);
     }

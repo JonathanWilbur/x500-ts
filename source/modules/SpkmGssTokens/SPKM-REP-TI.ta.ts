@@ -72,7 +72,7 @@ export class SPKM_REP_TI {
      * @returns {SPKM_REP_TI}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_REP_TI]: SPKM_REP_TI[_K] }>
+        _o: { [_K in keyof SPKM_REP_TI]: SPKM_REP_TI[_K] }
     ): SPKM_REP_TI {
         return new SPKM_REP_TI(_o.responseToken, _o.certif_data);
     }

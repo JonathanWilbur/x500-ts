@@ -64,9 +64,7 @@ export class UniversalOrBMPString {
      * @returns {UniversalOrBMPString}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof UniversalOrBMPString]: UniversalOrBMPString[_K] }
-        >
+        _o: { [_K in keyof UniversalOrBMPString]: UniversalOrBMPString[_K] }
     ): UniversalOrBMPString {
         return new UniversalOrBMPString(
             _o.character_encoding,

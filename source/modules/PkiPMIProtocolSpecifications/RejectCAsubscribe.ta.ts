@@ -127,7 +127,7 @@ export class RejectCAsubscribe {
      * @returns {RejectCAsubscribe}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RejectCAsubscribe]: RejectCAsubscribe[_K] }>
+        _o: { [_K in keyof RejectCAsubscribe]: RejectCAsubscribe[_K] }
     ): RejectCAsubscribe {
         return new RejectCAsubscribe(
             _o.version,

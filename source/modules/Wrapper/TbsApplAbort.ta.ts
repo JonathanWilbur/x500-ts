@@ -137,7 +137,7 @@ export class TbsApplAbort {
      * @returns {TbsApplAbort}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsApplAbort]: TbsApplAbort[_K] }>
+        _o: { [_K in keyof TbsApplAbort]: TbsApplAbort[_K] }
     ): TbsApplAbort {
         return new TbsApplAbort(
             _o.sigAlg,

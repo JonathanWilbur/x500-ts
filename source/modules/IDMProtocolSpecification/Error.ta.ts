@@ -65,9 +65,7 @@ export class Error {
      * @param {Object} _o An object having all of the keys and values of a `Error`.
      * @returns {Error}
      */
-    public static _from_object(
-        _o: Partial<{ [_K in keyof Error]: Error[_K] }>
-    ): Error {
+    public static _from_object(_o: { [_K in keyof Error]: Error[_K] }): Error {
         return new Error(
             _o.invokeID,
             _o.errcode,

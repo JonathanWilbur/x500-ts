@@ -61,9 +61,7 @@ export class extensionSyntax_Type {
      * @returns {extensionSyntax_Type}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof extensionSyntax_Type]: extensionSyntax_Type[_K] }
-        >
+        _o: { [_K in keyof extensionSyntax_Type]: extensionSyntax_Type[_K] }
     ): extensionSyntax_Type {
         return new extensionSyntax_Type(
             _o.mandatory,

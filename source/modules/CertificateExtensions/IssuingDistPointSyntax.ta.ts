@@ -128,9 +128,7 @@ export class IssuingDistPointSyntax {
      * @returns {IssuingDistPointSyntax}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof IssuingDistPointSyntax]: IssuingDistPointSyntax[_K] }
-        >
+        _o: { [_K in keyof IssuingDistPointSyntax]: IssuingDistPointSyntax[_K] }
     ): IssuingDistPointSyntax {
         return new IssuingDistPointSyntax(
             _o.distributionPoint,

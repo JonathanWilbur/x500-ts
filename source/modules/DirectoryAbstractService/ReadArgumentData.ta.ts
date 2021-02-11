@@ -277,7 +277,7 @@ export class ReadArgumentData {
      * @returns {ReadArgumentData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReadArgumentData]: ReadArgumentData[_K] }>
+        _o: { [_K in keyof ReadArgumentData]: ReadArgumentData[_K] }
     ): ReadArgumentData {
         return new ReadArgumentData(
             _o.object,

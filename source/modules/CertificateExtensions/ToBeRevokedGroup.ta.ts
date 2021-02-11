@@ -102,7 +102,7 @@ export class ToBeRevokedGroup {
      * @returns {ToBeRevokedGroup}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ToBeRevokedGroup]: ToBeRevokedGroup[_K] }>
+        _o: { [_K in keyof ToBeRevokedGroup]: ToBeRevokedGroup[_K] }
     ): ToBeRevokedGroup {
         return new ToBeRevokedGroup(
             _o.certificateIssuer,

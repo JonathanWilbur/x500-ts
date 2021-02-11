@@ -95,7 +95,7 @@ export class AccessPoint {
      * @returns {AccessPoint}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AccessPoint]: AccessPoint[_K] }>
+        _o: { [_K in keyof AccessPoint]: AccessPoint[_K] }
     ): AccessPoint {
         return new AccessPoint(
             _o.ae_title,

@@ -60,9 +60,7 @@ export class PrivateKeyUsagePeriod {
      * @returns {PrivateKeyUsagePeriod}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof PrivateKeyUsagePeriod]: PrivateKeyUsagePeriod[_K] }
-        >
+        _o: { [_K in keyof PrivateKeyUsagePeriod]: PrivateKeyUsagePeriod[_K] }
     ): PrivateKeyUsagePeriod {
         return new PrivateKeyUsagePeriod(
             _o.notBefore,

@@ -78,7 +78,7 @@ export class EncPwdInfo {
      * @returns {EncPwdInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EncPwdInfo]: EncPwdInfo[_K] }>
+        _o: { [_K in keyof EncPwdInfo]: EncPwdInfo[_K] }
     ): EncPwdInfo {
         return new EncPwdInfo(
             _o.algorithms,

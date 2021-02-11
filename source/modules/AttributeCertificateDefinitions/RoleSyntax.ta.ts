@@ -77,7 +77,7 @@ export class RoleSyntax {
      * @returns {RoleSyntax}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RoleSyntax]: RoleSyntax[_K] }>
+        _o: { [_K in keyof RoleSyntax]: RoleSyntax[_K] }
     ): RoleSyntax {
         return new RoleSyntax(
             _o.roleAuthority,

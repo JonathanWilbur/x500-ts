@@ -62,7 +62,7 @@ export class InitializationReq {
      * @returns {InitializationReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof InitializationReq]: InitializationReq[_K] }>
+        _o: { [_K in keyof InitializationReq]: InitializationReq[_K] }
     ): InitializationReq {
         return new InitializationReq(
             _o.version,

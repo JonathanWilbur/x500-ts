@@ -77,7 +77,7 @@ export class SubentryInfo {
      * @returns {SubentryInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SubentryInfo]: SubentryInfo[_K] }>
+        _o: { [_K in keyof SubentryInfo]: SubentryInfo[_K] }
     ): SubentryInfo {
         return new SubentryInfo(
             _o.rdn,

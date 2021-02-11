@@ -270,9 +270,7 @@ export class CompareArgumentData {
      * @returns {CompareArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CompareArgumentData]: CompareArgumentData[_K] }
-        >
+        _o: { [_K in keyof CompareArgumentData]: CompareArgumentData[_K] }
     ): CompareArgumentData {
         return new CompareArgumentData(
             _o.object,

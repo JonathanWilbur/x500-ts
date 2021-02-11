@@ -59,9 +59,7 @@ export class AlgorithmIdentifier {
      * @returns {AlgorithmIdentifier}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AlgorithmIdentifier]: AlgorithmIdentifier[_K] }
-        >
+        _o: { [_K in keyof AlgorithmIdentifier]: AlgorithmIdentifier[_K] }
     ): AlgorithmIdentifier {
         return new AlgorithmIdentifier(
             _o.algorithm,

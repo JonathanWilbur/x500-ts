@@ -148,9 +148,7 @@ export class AccessPointInformation {
      * @returns {AccessPointInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AccessPointInformation]: AccessPointInformation[_K] }
-        >
+        _o: { [_K in keyof AccessPointInformation]: AccessPointInformation[_K] }
     ): AccessPointInformation {
         return new AccessPointInformation(
             _o.ae_title,

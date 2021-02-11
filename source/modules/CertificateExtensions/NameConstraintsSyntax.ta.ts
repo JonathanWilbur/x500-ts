@@ -69,9 +69,7 @@ export class NameConstraintsSyntax {
      * @returns {NameConstraintsSyntax}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof NameConstraintsSyntax]: NameConstraintsSyntax[_K] }
-        >
+        _o: { [_K in keyof NameConstraintsSyntax]: NameConstraintsSyntax[_K] }
     ): NameConstraintsSyntax {
         return new NameConstraintsSyntax(
             _o.permittedSubtrees,

@@ -218,7 +218,7 @@ export class AARE_apdu {
      * @returns {AARE_apdu}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AARE_apdu]: AARE_apdu[_K] }>
+        _o: { [_K in keyof AARE_apdu]: AARE_apdu[_K] }
     ): AARE_apdu {
         return new AARE_apdu(
             _o.protocol_version,
@@ -370,7 +370,7 @@ let _cached_decoder_for_AARE_apdu: $.ASN1Decoder<AARE_apdu> | null = null;
  */
 export function _decode_AARE_apdu(el: _Element) {
     if (!_cached_decoder_for_AARE_apdu) {
-        _cached_decoder_for_AARE_apdu = $._decode_explicit<AARE_apdu>(
+        _cached_decoder_for_AARE_apdu = $._decode_implicit<AARE_apdu>(
             () =>
                 function (el: _Element): AARE_apdu {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -389,7 +389,7 @@ export function _decode_AARE_apdu(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         "protocol-version": (_el: _Element): void => {
-                            protocol_version = $._decode_explicit<AARE_apdu_protocol_version>(
+                            protocol_version = $._decode_implicit<AARE_apdu_protocol_version>(
                                 () => _decode_AARE_apdu_protocol_version
                             )(_el);
                         },
@@ -433,12 +433,12 @@ export function _decode_AARE_apdu(el: _Element) {
                             )(_el);
                         },
                         "implementation-information": (_el: _Element): void => {
-                            implementation_information = $._decode_explicit<Implementation_data>(
+                            implementation_information = $._decode_implicit<Implementation_data>(
                                 () => _decode_Implementation_data
                             )(_el);
                         },
                         "user-information": (_el: _Element): void => {
-                            user_information = $._decode_explicit<Association_informationBindRes>(
+                            user_information = $._decode_implicit<Association_informationBindRes>(
                                 () => _decode_Association_informationBindRes
                             )(_el);
                         },
@@ -488,7 +488,7 @@ export function _encode_AARE_apdu(
     elGetter: $.ASN1Encoder<AARE_apdu>
 ) {
     if (!_cached_encoder_for_AARE_apdu) {
-        _cached_encoder_for_AARE_apdu = $._encode_explicit(
+        _cached_encoder_for_AARE_apdu = $._encode_implicit(
             _TagClass.application,
             1,
             () =>
@@ -506,7 +506,7 @@ export function _encode_AARE_apdu(
                                     AARE_apdu._default_value_for_protocol_version
                                 )
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           0,
                                           () =>
@@ -579,7 +579,7 @@ export function _encode_AARE_apdu(
                                 /* IF_ABSENT  */ value.implementation_information ===
                                 undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           29,
                                           () => _encode_Implementation_data,
@@ -588,7 +588,7 @@ export function _encode_AARE_apdu(
                                           value.implementation_information,
                                           $.BER
                                       ),
-                                /* REQUIRED   */ $._encode_explicit(
+                                /* REQUIRED   */ $._encode_implicit(
                                     _TagClass.context,
                                     30,
                                     () =>

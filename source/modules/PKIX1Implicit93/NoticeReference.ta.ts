@@ -62,7 +62,7 @@ export class NoticeReference {
      * @returns {NoticeReference}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof NoticeReference]: NoticeReference[_K] }>
+        _o: { [_K in keyof NoticeReference]: NoticeReference[_K] }
     ): NoticeReference {
         return new NoticeReference(_o.organization, _o.noticeNumbers);
     }

@@ -83,7 +83,7 @@ export class DSABindArgument {
      * @returns {DSABindArgument}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DSABindArgument]: DSABindArgument[_K] }>
+        _o: { [_K in keyof DSABindArgument]: DSABindArgument[_K] }
     ): DSABindArgument {
         return new DSABindArgument(
             _o.credentials,

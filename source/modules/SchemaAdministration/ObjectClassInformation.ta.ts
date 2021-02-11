@@ -93,9 +93,7 @@ export class ObjectClassInformation {
      * @returns {ObjectClassInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ObjectClassInformation]: ObjectClassInformation[_K] }
-        >
+        _o: { [_K in keyof ObjectClassInformation]: ObjectClassInformation[_K] }
     ): ObjectClassInformation {
         return new ObjectClassInformation(
             _o.subclassOf,

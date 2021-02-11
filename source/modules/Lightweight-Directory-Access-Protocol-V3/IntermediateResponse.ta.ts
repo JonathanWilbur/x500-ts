@@ -68,9 +68,7 @@ export class IntermediateResponse {
      * @returns {IntermediateResponse}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof IntermediateResponse]: IntermediateResponse[_K] }
-        >
+        _o: { [_K in keyof IntermediateResponse]: IntermediateResponse[_K] }
     ): IntermediateResponse {
         return new IntermediateResponse(
             _o.responseName,

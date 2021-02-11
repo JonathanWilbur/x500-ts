@@ -59,7 +59,7 @@ export class UtmCoordinates {
      * @returns {UtmCoordinates}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UtmCoordinates]: UtmCoordinates[_K] }>
+        _o: { [_K in keyof UtmCoordinates]: UtmCoordinates[_K] }
     ): UtmCoordinates {
         return new UtmCoordinates(_o.zone, _o.easting, _o.northing);
     }

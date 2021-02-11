@@ -113,7 +113,7 @@ export class IdmReject {
      * @returns {IdmReject}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof IdmReject]: IdmReject[_K] }>
+        _o: { [_K in keyof IdmReject]: IdmReject[_K] }
     ): IdmReject {
         return new IdmReject(
             _o.invokeID,

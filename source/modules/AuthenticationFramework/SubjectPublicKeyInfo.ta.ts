@@ -77,9 +77,7 @@ export class SubjectPublicKeyInfo {
      * @returns {SubjectPublicKeyInfo}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SubjectPublicKeyInfo]: SubjectPublicKeyInfo[_K] }
-        >
+        _o: { [_K in keyof SubjectPublicKeyInfo]: SubjectPublicKeyInfo[_K] }
     ): SubjectPublicKeyInfo {
         return new SubjectPublicKeyInfo(
             _o.algorithm,

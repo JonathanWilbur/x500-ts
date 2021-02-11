@@ -107,7 +107,7 @@ export class EncryptedPduInfo {
      * @returns {EncryptedPduInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EncryptedPduInfo]: EncryptedPduInfo[_K] }>
+        _o: { [_K in keyof EncryptedPduInfo]: EncryptedPduInfo[_K] }
     ): EncryptedPduInfo {
         return new EncryptedPduInfo(
             _o.pduType,

@@ -122,9 +122,7 @@ export class TbsHandshakeProRej {
      * @returns {TbsHandshakeProRej}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TbsHandshakeProRej]: TbsHandshakeProRej[_K] }
-        >
+        _o: { [_K in keyof TbsHandshakeProRej]: TbsHandshakeProRej[_K] }
     ): TbsHandshakeProRej {
         return new TbsHandshakeProRej(
             _o.sigSel,

@@ -50,7 +50,7 @@ export function _decode_OsiOperation(el: _Element) {
             {
                 "APPLICATION 1": [
                     "fully_encoded_data",
-                    $._decode_explicit<OsiOperation_fully_encoded_data_Item[]>(
+                    $._decode_implicit<OsiOperation_fully_encoded_data_Item[]>(
                         () =>
                             $._decodeSequenceOf<OsiOperation_fully_encoded_data_Item>(
                                 () =>
@@ -84,7 +84,7 @@ export function _encode_OsiOperation(
     if (!_cached_encoder_for_OsiOperation) {
         _cached_encoder_for_OsiOperation = $._encode_choice<OsiOperation>(
             {
-                fully_encoded_data: $._encode_explicit(
+                fully_encoded_data: $._encode_implicit(
                     _TagClass.application,
                     1,
                     () =>

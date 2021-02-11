@@ -60,9 +60,7 @@ export class AttributeTypeAndValue {
      * @returns {AttributeTypeAndValue}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AttributeTypeAndValue]: AttributeTypeAndValue[_K] }
-        >
+        _o: { [_K in keyof AttributeTypeAndValue]: AttributeTypeAndValue[_K] }
     ): AttributeTypeAndValue {
         return new AttributeTypeAndValue(
             _o.type_,

@@ -311,9 +311,7 @@ export class SearchRuleDescription {
      * @returns {SearchRuleDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SearchRuleDescription]: SearchRuleDescription[_K] }
-        >
+        _o: { [_K in keyof SearchRuleDescription]: SearchRuleDescription[_K] }
     ): SearchRuleDescription {
         return new SearchRuleDescription(
             _o.id,

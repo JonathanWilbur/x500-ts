@@ -222,7 +222,7 @@ export class LDAPResult {
      * @returns {LDAPResult}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof LDAPResult]: LDAPResult[_K] }>
+        _o: { [_K in keyof LDAPResult]: LDAPResult[_K] }
     ): LDAPResult {
         return new LDAPResult(
             _o.resultCode,

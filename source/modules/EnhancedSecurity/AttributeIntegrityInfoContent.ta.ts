@@ -238,13 +238,13 @@ export function _encode_AttributeIntegrityInfoContent(
                 ([] as (_Element | undefined)[])
                     .concat(
                         [
-                            /* REQUIRED   */ _encode_Scope(value.scope, $.BER),
+                            /* REQUIRED   */ _encode_Scope(value.scope, $.DER),
                             /* IF_ABSENT  */ value.signer === undefined
                                 ? undefined
-                                : _encode_Signer(value.signer, $.BER),
+                                : _encode_Signer(value.signer, $.DER),
                             /* REQUIRED   */ _encode_AttribsHash(
                                 value.attribsHash,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -252,7 +252,7 @@ export function _encode_AttributeIntegrityInfoContent(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

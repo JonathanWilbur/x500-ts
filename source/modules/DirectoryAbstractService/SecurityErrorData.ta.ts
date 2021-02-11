@@ -178,7 +178,7 @@ export class SecurityErrorData {
      * @returns {SecurityErrorData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SecurityErrorData]: SecurityErrorData[_K] }>
+        _o: { [_K in keyof SecurityErrorData]: SecurityErrorData[_K] }
     ): SecurityErrorData {
         return new SecurityErrorData(
             _o.problem,

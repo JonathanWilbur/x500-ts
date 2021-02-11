@@ -85,7 +85,7 @@ export function _decode_PKCertIdentifier(el: _Element) {
                 ],
                 "CONTEXT 0": [
                     "fingerprintPKC",
-                    $._decode_explicit<FingerPrint<Certificate>>(() =>
+                    $._decode_implicit<FingerPrint<Certificate>>(() =>
                         _get_decoder_for_FingerPrint<Certificate>(
                             _decode_Certificate
                         )
@@ -93,7 +93,7 @@ export function _decode_PKCertIdentifier(el: _Element) {
                 ],
                 "CONTEXT 1": [
                     "fingerprintPK",
-                    $._decode_explicit<FingerPrint<PublicKey>>(() =>
+                    $._decode_implicit<FingerPrint<PublicKey>>(() =>
                         _get_decoder_for_FingerPrint<PublicKey>(
                             _decode_PublicKey
                         )
@@ -126,7 +126,7 @@ export function _encode_PKCertIdentifier(
         _cached_encoder_for_PKCertIdentifier = $._encode_choice<PKCertIdentifier>(
             {
                 issuerSerialNumber: _encode_IssuerSerialNumber,
-                fingerprintPKC: $._encode_explicit(
+                fingerprintPKC: $._encode_implicit(
                     _TagClass.context,
                     0,
                     () =>
@@ -135,7 +135,7 @@ export function _encode_PKCertIdentifier(
                         ),
                     $.BER
                 ),
-                fingerprintPK: $._encode_explicit(
+                fingerprintPK: $._encode_implicit(
                     _TagClass.context,
                     1,
                     () =>

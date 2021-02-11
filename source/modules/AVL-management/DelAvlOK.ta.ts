@@ -51,7 +51,7 @@ export class DelAvlOK {
      * @returns {DelAvlOK}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DelAvlOK]: DelAvlOK[_K] }>
+        _o: { [_K in keyof DelAvlOK]: DelAvlOK[_K] }
     ): DelAvlOK {
         return new DelAvlOK(_o.ok, _o._unrecognizedExtensionsList);
     }

@@ -72,9 +72,7 @@ export class PresentationAddress {
      * @returns {PresentationAddress}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof PresentationAddress]: PresentationAddress[_K] }
-        >
+        _o: { [_K in keyof PresentationAddress]: PresentationAddress[_K] }
     ): PresentationAddress {
         return new PresentationAddress(
             _o.pSelector,

@@ -77,9 +77,7 @@ export class DitBridgeKnowledge {
      * @returns {DitBridgeKnowledge}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof DitBridgeKnowledge]: DitBridgeKnowledge[_K] }
-        >
+        _o: { [_K in keyof DitBridgeKnowledge]: DitBridgeKnowledge[_K] }
     ): DitBridgeKnowledge {
         return new DitBridgeKnowledge(
             _o.domainLocalID,

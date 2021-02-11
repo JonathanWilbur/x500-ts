@@ -68,7 +68,7 @@ export class SenderDhPublicKey {
      * @returns {SenderDhPublicKey}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SenderDhPublicKey]: SenderDhPublicKey[_K] }>
+        _o: { [_K in keyof SenderDhPublicKey]: SenderDhPublicKey[_K] }
     ): SenderDhPublicKey {
         return new SenderDhPublicKey(
             _o.algorithm,

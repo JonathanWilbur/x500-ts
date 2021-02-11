@@ -77,7 +77,7 @@ export class DITStructureRule {
      * @returns {DITStructureRule}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DITStructureRule]: DITStructureRule[_K] }>
+        _o: { [_K in keyof DITStructureRule]: DITStructureRule[_K] }
     ): DITStructureRule {
         return new DITStructureRule(
             _o.ruleIdentifier,

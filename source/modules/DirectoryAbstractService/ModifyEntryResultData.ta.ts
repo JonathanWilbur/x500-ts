@@ -122,9 +122,7 @@ export class ModifyEntryResultData {
      * @returns {ModifyEntryResultData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ModifyEntryResultData]: ModifyEntryResultData[_K] }
-        >
+        _o: { [_K in keyof ModifyEntryResultData]: ModifyEntryResultData[_K] }
     ): ModifyEntryResultData {
         return new ModifyEntryResultData(
             _o.entry,

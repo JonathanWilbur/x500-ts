@@ -66,7 +66,7 @@ export class InitializationRej {
      * @returns {InitializationRej}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof InitializationRej]: InitializationRej[_K] }>
+        _o: { [_K in keyof InitializationRej]: InitializationRej[_K] }
     ): InitializationRej {
         return new InitializationRej(_o.diag, _o._unrecognizedExtensionsList);
     }

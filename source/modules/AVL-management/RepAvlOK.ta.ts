@@ -51,7 +51,7 @@ export class RepAvlOK {
      * @returns {RepAvlOK}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RepAvlOK]: RepAvlOK[_K] }>
+        _o: { [_K in keyof RepAvlOK]: RepAvlOK[_K] }
     ): RepAvlOK {
         return new RepAvlOK(_o.ok, _o._unrecognizedExtensionsList);
     }

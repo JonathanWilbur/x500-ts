@@ -77,7 +77,7 @@ export class AddRequest {
      * @returns {AddRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AddRequest]: AddRequest[_K] }>
+        _o: { [_K in keyof AddRequest]: AddRequest[_K] }
     ): AddRequest {
         return new AddRequest(
             _o.entry,

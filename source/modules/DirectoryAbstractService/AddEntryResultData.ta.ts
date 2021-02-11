@@ -105,9 +105,7 @@ export class AddEntryResultData {
      * @returns {AddEntryResultData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AddEntryResultData]: AddEntryResultData[_K] }
-        >
+        _o: { [_K in keyof AddEntryResultData]: AddEntryResultData[_K] }
     ): AddEntryResultData {
         return new AddEntryResultData(
             _o._unrecognizedExtensionsList,

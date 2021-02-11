@@ -178,7 +178,7 @@ export class ShadowErrorData {
      * @returns {ShadowErrorData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ShadowErrorData]: ShadowErrorData[_K] }>
+        _o: { [_K in keyof ShadowErrorData]: ShadowErrorData[_K] }
     ): ShadowErrorData {
         return new ShadowErrorData(
             _o.problem,

@@ -98,7 +98,7 @@ export class TBerror {
      * @returns {TBerror}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TBerror]: TBerror[_K] }>
+        _o: { [_K in keyof TBerror]: TBerror[_K] }
     ): TBerror {
         return new TBerror(
             _o.code,

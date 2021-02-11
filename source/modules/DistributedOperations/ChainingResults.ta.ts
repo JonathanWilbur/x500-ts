@@ -111,7 +111,7 @@ export class ChainingResults {
      * @returns {ChainingResults}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ChainingResults]: ChainingResults[_K] }>
+        _o: { [_K in keyof ChainingResults]: ChainingResults[_K] }
     ): ChainingResults {
         return new ChainingResults(
             _o.info,

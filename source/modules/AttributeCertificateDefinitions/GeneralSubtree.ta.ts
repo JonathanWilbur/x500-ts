@@ -84,7 +84,7 @@ export class GeneralSubtree {
      * @returns {GeneralSubtree}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof GeneralSubtree]: GeneralSubtree[_K] }>
+        _o: { [_K in keyof GeneralSubtree]: GeneralSubtree[_K] }
     ): GeneralSubtree {
         return new GeneralSubtree(
             _o.base,

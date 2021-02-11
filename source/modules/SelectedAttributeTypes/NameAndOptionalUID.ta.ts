@@ -77,9 +77,7 @@ export class NameAndOptionalUID {
      * @returns {NameAndOptionalUID}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof NameAndOptionalUID]: NameAndOptionalUID[_K] }
-        >
+        _o: { [_K in keyof NameAndOptionalUID]: NameAndOptionalUID[_K] }
     ): NameAndOptionalUID {
         return new NameAndOptionalUID(
             _o.dn,

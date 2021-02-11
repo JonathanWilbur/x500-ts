@@ -94,9 +94,7 @@ export class AVMPcommonComponents {
      * @returns {AVMPcommonComponents}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AVMPcommonComponents]: AVMPcommonComponents[_K] }
-        >
+        _o: { [_K in keyof AVMPcommonComponents]: AVMPcommonComponents[_K] }
     ): AVMPcommonComponents {
         return new AVMPcommonComponents(
             _o.version,

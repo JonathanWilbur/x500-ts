@@ -66,9 +66,7 @@ export class AlgorithmWithInvoke {
      * @returns {AlgorithmWithInvoke}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AlgorithmWithInvoke]: AlgorithmWithInvoke[_K] }
-        >
+        _o: { [_K in keyof AlgorithmWithInvoke]: AlgorithmWithInvoke[_K] }
     ): AlgorithmWithInvoke {
         return new AlgorithmWithInvoke(
             _o.algorithm,

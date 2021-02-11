@@ -120,7 +120,7 @@ export class ACIItem {
      * @returns {ACIItem}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ACIItem]: ACIItem[_K] }>
+        _o: { [_K in keyof ACIItem]: ACIItem[_K] }
     ): ACIItem {
         return new ACIItem(
             _o.identificationTag,

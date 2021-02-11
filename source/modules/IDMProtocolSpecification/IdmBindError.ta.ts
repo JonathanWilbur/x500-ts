@@ -104,7 +104,7 @@ export class IdmBindError {
      * @returns {IdmBindError}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof IdmBindError]: IdmBindError[_K] }>
+        _o: { [_K in keyof IdmBindError]: IdmBindError[_K] }
     ): IdmBindError {
         return new IdmBindError(
             _o.protocolID,

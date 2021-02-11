@@ -101,9 +101,7 @@ export class ObjectClassDescription {
      * @returns {ObjectClassDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ObjectClassDescription]: ObjectClassDescription[_K] }
-        >
+        _o: { [_K in keyof ObjectClassDescription]: ObjectClassDescription[_K] }
     ): ObjectClassDescription {
         return new ObjectClassDescription(
             _o.identifier,

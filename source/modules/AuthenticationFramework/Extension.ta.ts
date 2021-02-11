@@ -72,7 +72,7 @@ export class Extension {
      * @returns {Extension}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Extension]: Extension[_K] }>
+        _o: { [_K in keyof Extension]: Extension[_K] }
     ): Extension {
         return new Extension(
             _o.extnId,
@@ -235,7 +235,7 @@ export function _encode_Extension(
                         [
                             /* REQUIRED   */ $._encodeObjectIdentifier(
                                 value.extnId,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_DEFAULT */ value.critical === undefined ||
                             $.deepEq(
@@ -243,10 +243,10 @@ export function _encode_Extension(
                                 Extension._default_value_for_critical
                             )
                                 ? undefined
-                                : $._encodeBoolean(value.critical, $.BER),
+                                : $._encodeBoolean(value.critical, $.DER),
                             /* REQUIRED   */ $._encodeOctetString(
                                 value.extnValue,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -254,7 +254,7 @@ export function _encode_Extension(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

@@ -288,19 +288,19 @@ export function _encode_SignedSecurityLabelContent(
                         [
                             /* REQUIRED   */ _get_encoder_for_HASH<AttributeTypeAndValue>(
                                 _encode_AttributeTypeAndValue
-                            )(value.attHash, $.BER),
+                            )(value.attHash, $.DER),
                             /* IF_ABSENT  */ value.issuer === undefined
                                 ? undefined
-                                : _encode_Name(value.issuer, $.BER),
+                                : _encode_Name(value.issuer, $.DER),
                             /* IF_ABSENT  */ value.keyIdentifier === undefined
                                 ? undefined
                                 : _encode_KeyIdentifier(
                                       value.keyIdentifier,
-                                      $.BER
+                                      $.DER
                                   ),
                             /* REQUIRED   */ _encode_SecurityLabel(
                                 value.securityLabel,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -308,7 +308,7 @@ export function _encode_SignedSecurityLabelContent(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

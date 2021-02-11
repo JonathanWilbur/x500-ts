@@ -77,7 +77,7 @@ export class PolicyInformation {
      * @returns {PolicyInformation}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PolicyInformation]: PolicyInformation[_K] }>
+        _o: { [_K in keyof PolicyInformation]: PolicyInformation[_K] }
     ): PolicyInformation {
         return new PolicyInformation(
             _o.policyIdentifier,

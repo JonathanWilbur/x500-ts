@@ -172,7 +172,7 @@ export class UpdateErrorData {
      * @returns {UpdateErrorData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UpdateErrorData]: UpdateErrorData[_K] }>
+        _o: { [_K in keyof UpdateErrorData]: UpdateErrorData[_K] }
     ): UpdateErrorData {
         return new UpdateErrorData(
             _o.problem,

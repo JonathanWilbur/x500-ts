@@ -76,7 +76,7 @@ export class MRSubstitution {
      * @returns {MRSubstitution}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof MRSubstitution]: MRSubstitution[_K] }>
+        _o: { [_K in keyof MRSubstitution]: MRSubstitution[_K] }
     ): MRSubstitution {
         return new MRSubstitution(
             _o.attribute,

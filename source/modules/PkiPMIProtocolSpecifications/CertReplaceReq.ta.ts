@@ -110,7 +110,7 @@ export class CertReplaceReq {
      * @returns {CertReplaceReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertReplaceReq]: CertReplaceReq[_K] }>
+        _o: { [_K in keyof CertReplaceReq]: CertReplaceReq[_K] }
     ): CertReplaceReq {
         return new CertReplaceReq(
             _o.version,

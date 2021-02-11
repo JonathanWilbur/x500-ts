@@ -74,11 +74,9 @@ export class OsiBindResult_normal_mode_parameters_presentation_context_definitio
      * @returns {OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item]: OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item]: OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item[_K];
+        }
     ): OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item {
         return new OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item(
             _o.result,
@@ -171,10 +169,10 @@ export function _decode_OsiBindResult_normal_mode_parameters_presentation_contex
             sequence[1].name = "transfer-syntax-name";
             let result!: Result;
             let transfer_syntax_name!: Transfer_syntax_name;
-            result = $._decode_explicit<Result>(() => _decode_Result)(
+            result = $._decode_implicit<Result>(() => _decode_Result)(
                 sequence[0]
             );
-            transfer_syntax_name = $._decode_explicit<Transfer_syntax_name>(
+            transfer_syntax_name = $._decode_implicit<Transfer_syntax_name>(
                 () => _decode_Transfer_syntax_name
             )(sequence[1]);
             return new OsiBindResult_normal_mode_parameters_presentation_context_definition_result_list_Item(
@@ -215,13 +213,13 @@ export function _encode_OsiBindResult_normal_mode_parameters_presentation_contex
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => _encode_Result,
                             $.BER
                         )(value.result, $.BER),
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             1,
                             () => _encode_Transfer_syntax_name,

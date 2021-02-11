@@ -201,7 +201,7 @@ export class TbsHandshakeAcc {
      * @returns {TbsHandshakeAcc}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsHandshakeAcc]: TbsHandshakeAcc[_K] }>
+        _o: { [_K in keyof TbsHandshakeAcc]: TbsHandshakeAcc[_K] }
     ): TbsHandshakeAcc {
         return new TbsHandshakeAcc(
             _o.version,

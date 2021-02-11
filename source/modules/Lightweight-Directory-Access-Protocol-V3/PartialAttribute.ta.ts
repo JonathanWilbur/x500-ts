@@ -77,7 +77,7 @@ export class PartialAttribute {
      * @returns {PartialAttribute}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PartialAttribute]: PartialAttribute[_K] }>
+        _o: { [_K in keyof PartialAttribute]: PartialAttribute[_K] }
     ): PartialAttribute {
         return new PartialAttribute(
             _o.type_,

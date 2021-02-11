@@ -49,7 +49,7 @@ export function _decode_OsiUnbindResult(el: _Element) {
             {
                 "APPLICATION 1": [
                     "fully_encoded_data",
-                    $._decode_explicit<
+                    $._decode_implicit<
                         OsiUnbindResult_fully_encoded_data_Item[]
                     >(() =>
                         $._decodeSequenceOf<OsiUnbindResult_fully_encoded_data_Item>(
@@ -84,7 +84,7 @@ export function _encode_OsiUnbindResult(
     if (!_cached_encoder_for_OsiUnbindResult) {
         _cached_encoder_for_OsiUnbindResult = $._encode_choice<OsiUnbindResult>(
             {
-                fully_encoded_data: $._encode_explicit(
+                fully_encoded_data: $._encode_implicit(
                     _TagClass.application,
                     1,
                     () =>

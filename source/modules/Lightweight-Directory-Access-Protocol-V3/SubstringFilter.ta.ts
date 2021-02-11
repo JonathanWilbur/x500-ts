@@ -81,7 +81,7 @@ export class SubstringFilter {
      * @returns {SubstringFilter}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SubstringFilter]: SubstringFilter[_K] }>
+        _o: { [_K in keyof SubstringFilter]: SubstringFilter[_K] }
     ): SubstringFilter {
         return new SubstringFilter(
             _o.type_,

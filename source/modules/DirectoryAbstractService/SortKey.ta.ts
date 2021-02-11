@@ -69,7 +69,7 @@ export class SortKey {
      * @returns {SortKey}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SortKey]: SortKey[_K] }>
+        _o: { [_K in keyof SortKey]: SortKey[_K] }
     ): SortKey {
         return new SortKey(
             _o.type_,

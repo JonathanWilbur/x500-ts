@@ -67,7 +67,7 @@ export class UpdateWindow {
      * @returns {UpdateWindow}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UpdateWindow]: UpdateWindow[_K] }>
+        _o: { [_K in keyof UpdateWindow]: UpdateWindow[_K] }
     ): UpdateWindow {
         return new UpdateWindow(
             _o.start,

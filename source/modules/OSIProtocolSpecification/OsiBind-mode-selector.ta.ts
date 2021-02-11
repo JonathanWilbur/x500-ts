@@ -42,9 +42,7 @@ export class OsiBind_mode_selector {
      * @returns {OsiBind_mode_selector}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof OsiBind_mode_selector]: OsiBind_mode_selector[_K] }
-        >
+        _o: { [_K in keyof OsiBind_mode_selector]: OsiBind_mode_selector[_K] }
     ): OsiBind_mode_selector {
         return new OsiBind_mode_selector(_o.mode_value);
     }
@@ -117,7 +115,7 @@ export function _decode_OsiBind_mode_selector(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "mode-value": (_el: _Element): void => {
-                    mode_value = $._decode_explicit<INTEGER>(
+                    mode_value = $._decode_implicit<INTEGER>(
                         () => $._decodeInteger
                     )(_el);
                 },
@@ -164,7 +162,7 @@ export function _encode_OsiBind_mode_selector(
             return $._encodeSet(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => $._encodeInteger,

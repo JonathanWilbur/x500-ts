@@ -79,9 +79,7 @@ export class SpecificallyIdentified {
      * @returns {SpecificallyIdentified}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SpecificallyIdentified]: SpecificallyIdentified[_K] }
-        >
+        _o: { [_K in keyof SpecificallyIdentified]: SpecificallyIdentified[_K] }
     ): SpecificallyIdentified {
         return new SpecificallyIdentified(_o.name, _o.issuer, _o.serial);
     }

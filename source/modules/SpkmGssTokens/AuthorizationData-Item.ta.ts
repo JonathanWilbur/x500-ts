@@ -50,9 +50,7 @@ export class AuthorizationData_Item {
      * @returns {AuthorizationData_Item}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AuthorizationData_Item]: AuthorizationData_Item[_K] }
-        >
+        _o: { [_K in keyof AuthorizationData_Item]: AuthorizationData_Item[_K] }
     ): AuthorizationData_Item {
         return new AuthorizationData_Item(_o.ad_type, _o.ad_data);
     }

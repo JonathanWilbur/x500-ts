@@ -59,9 +59,7 @@ export class BasicConstraintsSyntax {
      * @returns {BasicConstraintsSyntax}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof BasicConstraintsSyntax]: BasicConstraintsSyntax[_K] }
-        >
+        _o: { [_K in keyof BasicConstraintsSyntax]: BasicConstraintsSyntax[_K] }
     ): BasicConstraintsSyntax {
         return new BasicConstraintsSyntax(
             _o.cA,

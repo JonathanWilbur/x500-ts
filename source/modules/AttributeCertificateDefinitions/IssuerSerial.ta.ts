@@ -94,7 +94,7 @@ export class IssuerSerial {
      * @returns {IssuerSerial}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof IssuerSerial]: IssuerSerial[_K] }>
+        _o: { [_K in keyof IssuerSerial]: IssuerSerial[_K] }
     ): IssuerSerial {
         return new IssuerSerial(
             _o.issuer,

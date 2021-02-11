@@ -84,7 +84,7 @@ export class JoinAttPair {
      * @returns {JoinAttPair}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof JoinAttPair]: JoinAttPair[_K] }>
+        _o: { [_K in keyof JoinAttPair]: JoinAttPair[_K] }
     ): JoinAttPair {
         return new JoinAttPair(
             _o.baseAtt,

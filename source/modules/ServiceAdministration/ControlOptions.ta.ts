@@ -170,7 +170,7 @@ export class ControlOptions {
      * @returns {ControlOptions}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ControlOptions]: ControlOptions[_K] }>
+        _o: { [_K in keyof ControlOptions]: ControlOptions[_K] }
     ): ControlOptions {
         return new ControlOptions(
             _o.serviceControls,

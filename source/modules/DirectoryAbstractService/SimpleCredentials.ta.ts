@@ -99,7 +99,7 @@ export class SimpleCredentials {
      * @returns {SimpleCredentials}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SimpleCredentials]: SimpleCredentials[_K] }>
+        _o: { [_K in keyof SimpleCredentials]: SimpleCredentials[_K] }
     ): SimpleCredentials {
         return new SimpleCredentials(_o.name, _o.validity, _o.password);
     }

@@ -284,9 +284,7 @@ export class LinkedArgumentData {
      * @returns {LinkedArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof LinkedArgumentData]: LinkedArgumentData[_K] }
-        >
+        _o: { [_K in keyof LinkedArgumentData]: LinkedArgumentData[_K] }
     ): LinkedArgumentData {
         return new LinkedArgumentData(
             _o.object,

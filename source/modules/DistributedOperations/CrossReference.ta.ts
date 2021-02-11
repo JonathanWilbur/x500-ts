@@ -73,7 +73,7 @@ export class CrossReference {
      * @returns {CrossReference}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CrossReference]: CrossReference[_K] }>
+        _o: { [_K in keyof CrossReference]: CrossReference[_K] }
     ): CrossReference {
         return new CrossReference(
             _o.contextPrefix,

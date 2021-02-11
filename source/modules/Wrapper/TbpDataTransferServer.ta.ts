@@ -155,9 +155,7 @@ export class TbpDataTransferServer {
      * @returns {TbpDataTransferServer}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TbpDataTransferServer]: TbpDataTransferServer[_K] }
-        >
+        _o: { [_K in keyof TbpDataTransferServer]: TbpDataTransferServer[_K] }
     ): TbpDataTransferServer {
         return new TbpDataTransferServer(
             _o.invokeID,

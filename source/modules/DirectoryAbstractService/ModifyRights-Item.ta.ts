@@ -82,7 +82,7 @@ export class ModifyRights_Item {
      * @returns {ModifyRights_Item}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ModifyRights_Item]: ModifyRights_Item[_K] }>
+        _o: { [_K in keyof ModifyRights_Item]: ModifyRights_Item[_K] }
     ): ModifyRights_Item {
         return new ModifyRights_Item(
             _o.item,

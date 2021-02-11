@@ -60,7 +60,7 @@ export class CertOK {
      * @returns {CertOK}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertOK]: CertOK[_K] }>
+        _o: { [_K in keyof CertOK]: CertOK[_K] }
     ): CertOK {
         return new CertOK(_o.dhCert, _o._unrecognizedExtensionsList);
     }

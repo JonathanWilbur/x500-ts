@@ -126,7 +126,7 @@ export class AbandonedData {
      * @returns {AbandonedData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AbandonedData]: AbandonedData[_K] }>
+        _o: { [_K in keyof AbandonedData]: AbandonedData[_K] }
     ): AbandonedData {
         return new AbandonedData(
             _o.problem,

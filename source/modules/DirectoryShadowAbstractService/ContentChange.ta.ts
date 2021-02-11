@@ -130,7 +130,7 @@ export class ContentChange {
      * @returns {ContentChange}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ContentChange]: ContentChange[_K] }>
+        _o: { [_K in keyof ContentChange]: ContentChange[_K] }
     ): ContentChange {
         return new ContentChange(
             _o.rename,

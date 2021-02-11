@@ -39,7 +39,7 @@ export function _decode_OsiUnbindResult_fully_encoded_data_Item_presentation_dat
             {
                 "CONTEXT 0": [
                     "single_ASN1_type",
-                    $._decode_explicit<_Element>(() => $._decodeAny),
+                    $._decode_implicit<_Element>(() => $._decodeAny),
                 ],
             }
         );
@@ -71,7 +71,7 @@ export function _encode_OsiUnbindResult_fully_encoded_data_Item_presentation_dat
     ) {
         _cached_encoder_for_OsiUnbindResult_fully_encoded_data_Item_presentation_data_values = $._encode_choice<OsiUnbindResult_fully_encoded_data_Item_presentation_data_values>(
             {
-                single_ASN1_type: $._encode_explicit(
+                single_ASN1_type: $._encode_implicit(
                     _TagClass.context,
                     0,
                     () => $._encodeAny,

@@ -77,7 +77,7 @@ export class ACPathData {
      * @returns {ACPathData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ACPathData]: ACPathData[_K] }>
+        _o: { [_K in keyof ACPathData]: ACPathData[_K] }
     ): ACPathData {
         return new ACPathData(
             _o.certificate,

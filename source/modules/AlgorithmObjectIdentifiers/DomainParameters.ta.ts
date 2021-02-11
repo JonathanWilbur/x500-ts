@@ -89,7 +89,7 @@ export class DomainParameters {
      * @returns {DomainParameters}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DomainParameters]: DomainParameters[_K] }>
+        _o: { [_K in keyof DomainParameters]: DomainParameters[_K] }
     ): DomainParameters {
         return new DomainParameters(
             _o.p,

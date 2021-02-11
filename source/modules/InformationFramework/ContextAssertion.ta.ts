@@ -61,7 +61,7 @@ export class ContextAssertion {
      * @returns {ContextAssertion}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ContextAssertion]: ContextAssertion[_K] }>
+        _o: { [_K in keyof ContextAssertion]: ContextAssertion[_K] }
     ): ContextAssertion {
         return new ContextAssertion(
             _o.contextType,

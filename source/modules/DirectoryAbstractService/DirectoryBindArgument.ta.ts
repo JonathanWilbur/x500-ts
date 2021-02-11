@@ -83,9 +83,7 @@ export class DirectoryBindArgument {
      * @returns {DirectoryBindArgument}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof DirectoryBindArgument]: DirectoryBindArgument[_K] }
-        >
+        _o: { [_K in keyof DirectoryBindArgument]: DirectoryBindArgument[_K] }
     ): DirectoryBindArgument {
         return new DirectoryBindArgument(
             _o.credentials,

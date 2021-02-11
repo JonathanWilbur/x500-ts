@@ -111,7 +111,7 @@ export class CertUpdateReq {
      * @returns {CertUpdateReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertUpdateReq]: CertUpdateReq[_K] }>
+        _o: { [_K in keyof CertUpdateReq]: CertUpdateReq[_K] }
     ): CertUpdateReq {
         return new CertUpdateReq(
             _o.version,

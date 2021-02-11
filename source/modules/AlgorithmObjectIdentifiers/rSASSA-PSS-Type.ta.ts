@@ -65,7 +65,7 @@ export class rSASSA_PSS_Type {
      * @returns {rSASSA_PSS_Type}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof rSASSA_PSS_Type]: rSASSA_PSS_Type[_K] }>
+        _o: { [_K in keyof rSASSA_PSS_Type]: rSASSA_PSS_Type[_K] }
     ): rSASSA_PSS_Type {
         return new rSASSA_PSS_Type(
             _o.hashAlgorithm,

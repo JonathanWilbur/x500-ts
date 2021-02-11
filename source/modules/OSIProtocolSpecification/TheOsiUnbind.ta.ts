@@ -55,7 +55,7 @@ export class TheOsiUnbind {
      * @returns {TheOsiUnbind}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TheOsiUnbind]: TheOsiUnbind[_K] }>
+        _o: { [_K in keyof TheOsiUnbind]: TheOsiUnbind[_K] }
     ): TheOsiUnbind {
         return new TheOsiUnbind(_o.reason);
     }
@@ -119,7 +119,7 @@ let _cached_decoder_for_TheOsiUnbind: $.ASN1Decoder<TheOsiUnbind> | null = null;
  */
 export function _decode_TheOsiUnbind(el: _Element) {
     if (!_cached_decoder_for_TheOsiUnbind) {
-        _cached_decoder_for_TheOsiUnbind = $._decode_explicit<TheOsiUnbind>(
+        _cached_decoder_for_TheOsiUnbind = $._decode_implicit<TheOsiUnbind>(
             () =>
                 function (el: _Element): TheOsiUnbind {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -128,7 +128,7 @@ export function _decode_TheOsiUnbind(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         reason: (_el: _Element): void => {
-                            reason = $._decode_explicit<Release_request_reason>(
+                            reason = $._decode_implicit<Release_request_reason>(
                                 () => _decode_Release_request_reason
                             )(_el);
                         },
@@ -169,7 +169,7 @@ export function _encode_TheOsiUnbind(
     elGetter: $.ASN1Encoder<TheOsiUnbind>
 ) {
     if (!_cached_encoder_for_TheOsiUnbind) {
-        _cached_encoder_for_TheOsiUnbind = $._encode_explicit(
+        _cached_encoder_for_TheOsiUnbind = $._encode_implicit(
             _TagClass.application,
             2,
             () =>
@@ -182,7 +182,7 @@ export function _encode_TheOsiUnbind(
                             .concat([
                                 /* IF_ABSENT  */ value.reason === undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           0,
                                           () => _encode_Release_request_reason,

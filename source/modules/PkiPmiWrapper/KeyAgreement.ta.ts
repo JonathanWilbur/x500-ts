@@ -80,7 +80,7 @@ export class KeyAgreement {
      * @returns {KeyAgreement}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof KeyAgreement]: KeyAgreement[_K] }>
+        _o: { [_K in keyof KeyAgreement]: KeyAgreement[_K] }
     ): KeyAgreement {
         return new KeyAgreement(
             _o.senderDhInfo,

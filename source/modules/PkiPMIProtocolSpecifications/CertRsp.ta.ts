@@ -117,7 +117,7 @@ export class CertRsp {
      * @returns {CertRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertRsp]: CertRsp[_K] }>
+        _o: { [_K in keyof CertRsp]: CertRsp[_K] }
     ): CertRsp {
         return new CertRsp(
             _o.version,

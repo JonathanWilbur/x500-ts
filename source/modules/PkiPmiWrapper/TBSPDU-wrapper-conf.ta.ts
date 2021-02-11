@@ -96,16 +96,16 @@ export function _encode_TBSPDU_wrapper_conf(
                     _TagClass.context,
                     2,
                     () => _encode_WrappedPDUInfo,
-                    $.BER
+                    $.DER
                 ),
                 protected_: $._encode_explicit(
                     _TagClass.context,
                     3,
                     () => _encode_EncryptedInfo,
-                    $.BER
+                    $.DER
                 ),
             },
-            $.BER
+            $.DER
         );
     }
     return _cached_encoder_for_TBSPDU_wrapper_conf(value, elGetter);

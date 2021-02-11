@@ -113,7 +113,7 @@ export class Wrap_Header {
      * @returns {Wrap_Header}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Wrap_Header]: Wrap_Header[_K] }>
+        _o: { [_K in keyof Wrap_Header]: Wrap_Header[_K] }
     ): Wrap_Header {
         return new Wrap_Header(
             _o.tok_id,

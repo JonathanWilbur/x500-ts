@@ -97,7 +97,7 @@ export class CAsubscribeAbort {
      * @returns {CAsubscribeAbort}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CAsubscribeAbort]: CAsubscribeAbort[_K] }>
+        _o: { [_K in keyof CAsubscribeAbort]: CAsubscribeAbort[_K] }
     ): CAsubscribeAbort {
         return new CAsubscribeAbort(
             _o.invokeID,

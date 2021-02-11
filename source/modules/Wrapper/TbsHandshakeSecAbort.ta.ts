@@ -215,9 +215,7 @@ export class TbsHandshakeSecAbort {
      * @returns {TbsHandshakeSecAbort}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TbsHandshakeSecAbort]: TbsHandshakeSecAbort[_K] }
-        >
+        _o: { [_K in keyof TbsHandshakeSecAbort]: TbsHandshakeSecAbort[_K] }
     ): TbsHandshakeSecAbort {
         return new TbsHandshakeSecAbort(
             _o.version,

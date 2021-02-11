@@ -76,7 +76,7 @@ export class Control {
      * @returns {Control}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Control]: Control[_K] }>
+        _o: { [_K in keyof Control]: Control[_K] }
     ): Control {
         return new Control(
             _o.controlType,

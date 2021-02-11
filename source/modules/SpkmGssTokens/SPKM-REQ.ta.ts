@@ -88,7 +88,7 @@ export class SPKM_REQ {
      * @returns {SPKM_REQ}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_REQ]: SPKM_REQ[_K] }>
+        _o: { [_K in keyof SPKM_REQ]: SPKM_REQ[_K] }
     ): SPKM_REQ {
         return new SPKM_REQ(_o.requestToken, _o.certif_data, _o.auth_data);
     }

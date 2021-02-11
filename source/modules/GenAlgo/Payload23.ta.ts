@@ -58,7 +58,7 @@ export class Payload23 {
      * @returns {Payload23}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Payload23]: Payload23[_K] }>
+        _o: { [_K in keyof Payload23]: Payload23[_K] }
     ): Payload23 {
         return new Payload23(
             _o.dhPublicKey,

@@ -138,7 +138,7 @@ export class TBSPDU_wrapper {
      * @returns {TBSPDU_wrapper}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TBSPDU_wrapper]: TBSPDU_wrapper[_K] }>
+        _o: { [_K in keyof TBSPDU_wrapper]: TBSPDU_wrapper[_K] }
     ): TBSPDU_wrapper {
         return new TBSPDU_wrapper(
             _o.version,
@@ -262,12 +262,12 @@ export function _decode_TBSPDU_wrapper(el: _Element) {
                     signatureAlgorithm = _decode_AlgorithmIdentifier(_el);
                 },
                 certPath: (_el: _Element): void => {
-                    certPath = $._decode_explicit<PkiPath>(
+                    certPath = $._decode_implicit<PkiPath>(
                         () => _decode_PkiPath
                     )(_el);
                 },
                 signedAttrs: (_el: _Element): void => {
-                    signedAttrs = $._decode_explicit<SignedAttributes>(
+                    signedAttrs = $._decode_implicit<SignedAttributes>(
                         () => _decode_SignedAttributes
                     )(_el);
                 },
@@ -331,28 +331,28 @@ export function _encode_TBSPDU_wrapper(
                                 TBSPDU_wrapper._default_value_for_version
                             )
                                 ? undefined
-                                : _encode_Version(value.version, $.BER),
+                                : _encode_Version(value.version, $.DER),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signatureAlgorithm,
-                                $.BER
+                                $.DER
                             ),
-                            /* REQUIRED   */ $._encode_explicit(
+                            /* REQUIRED   */ $._encode_implicit(
                                 _TagClass.context,
                                 0,
                                 () => _encode_PkiPath,
-                                $.BER
-                            )(value.certPath, $.BER),
+                                $.DER
+                            )(value.certPath, $.DER),
                             /* IF_ABSENT  */ value.signedAttrs === undefined
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_SignedAttributes,
-                                      $.BER
-                                  )(value.signedAttrs, $.BER),
+                                      $.DER
+                                  )(value.signedAttrs, $.DER),
                             /* REQUIRED   */ _encode_TBSPDU_wrapper_conf(
                                 value.conf,
-                                $.BER
+                                $.DER
                             ),
                         ],
                         value._unrecognizedExtensionsList
@@ -360,7 +360,7 @@ export function _encode_TBSPDU_wrapper(
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

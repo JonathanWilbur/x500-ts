@@ -68,11 +68,9 @@ export class OsiUnbindResult_fully_encoded_data_Item {
      * @returns {OsiUnbindResult_fully_encoded_data_Item}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof OsiUnbindResult_fully_encoded_data_Item]: OsiUnbindResult_fully_encoded_data_Item[_K];
-            }
-        >
+        _o: {
+            [_K in keyof OsiUnbindResult_fully_encoded_data_Item]: OsiUnbindResult_fully_encoded_data_Item[_K];
+        }
     ): OsiUnbindResult_fully_encoded_data_Item {
         return new OsiUnbindResult_fully_encoded_data_Item(
             _o.presentation_context_identifier,

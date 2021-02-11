@@ -61,7 +61,7 @@ export class AccessDescription {
      * @returns {AccessDescription}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AccessDescription]: AccessDescription[_K] }>
+        _o: { [_K in keyof AccessDescription]: AccessDescription[_K] }
     ): AccessDescription {
         return new AccessDescription(_o.accessMethod, _o.accessLocation);
     }

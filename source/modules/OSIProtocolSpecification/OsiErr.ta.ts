@@ -68,7 +68,7 @@ export class OsiErr {
      * @returns {OsiErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof OsiErr]: OsiErr[_K] }>
+        _o: { [_K in keyof OsiErr]: OsiErr[_K] }
     ): OsiErr {
         return new OsiErr(_o.invokeID, _o.errcode, _o.error);
     }
@@ -128,7 +128,7 @@ let _cached_decoder_for_OsiErr: $.ASN1Decoder<OsiErr> | null = null;
  */
 export function _decode_OsiErr(el: _Element) {
     if (!_cached_decoder_for_OsiErr) {
-        _cached_decoder_for_OsiErr = $._decode_explicit<OsiErr>(
+        _cached_decoder_for_OsiErr = $._decode_implicit<OsiErr>(
             () =>
                 function (el: _Element): OsiErr {
                     const sequence: _Element[] = el.sequence;
@@ -170,7 +170,7 @@ let _cached_encoder_for_OsiErr: $.ASN1Encoder<OsiErr> | null = null;
  */
 export function _encode_OsiErr(value: OsiErr, elGetter: $.ASN1Encoder<OsiErr>) {
     if (!_cached_encoder_for_OsiErr) {
-        _cached_encoder_for_OsiErr = $._encode_explicit(
+        _cached_encoder_for_OsiErr = $._encode_implicit(
             _TagClass.context,
             3,
             () =>

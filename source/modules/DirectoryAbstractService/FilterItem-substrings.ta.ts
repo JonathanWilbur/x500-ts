@@ -67,9 +67,7 @@ export class FilterItem_substrings {
      * @returns {FilterItem_substrings}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof FilterItem_substrings]: FilterItem_substrings[_K] }
-        >
+        _o: { [_K in keyof FilterItem_substrings]: FilterItem_substrings[_K] }
     ): FilterItem_substrings {
         return new FilterItem_substrings(
             _o.type_,

@@ -139,9 +139,7 @@ export class UpdateShadowResultData {
      * @returns {UpdateShadowResultData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof UpdateShadowResultData]: UpdateShadowResultData[_K] }
-        >
+        _o: { [_K in keyof UpdateShadowResultData]: UpdateShadowResultData[_K] }
     ): UpdateShadowResultData {
         return new UpdateShadowResultData(
             _o.agreementID,

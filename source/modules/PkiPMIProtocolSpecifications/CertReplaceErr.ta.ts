@@ -63,7 +63,7 @@ export class CertReplaceErr {
      * @returns {CertReplaceErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertReplaceErr]: CertReplaceErr[_K] }>
+        _o: { [_K in keyof CertReplaceErr]: CertReplaceErr[_K] }
     ): CertReplaceErr {
         return new CertReplaceErr(_o.code, _o._unrecognizedExtensionsList);
     }

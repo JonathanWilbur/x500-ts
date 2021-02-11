@@ -58,7 +58,7 @@ export class EntryLimit {
      * @returns {EntryLimit}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EntryLimit]: EntryLimit[_K] }>
+        _o: { [_K in keyof EntryLimit]: EntryLimit[_K] }
     ): EntryLimit {
         return new EntryLimit(
             _o.default_,

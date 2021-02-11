@@ -52,7 +52,7 @@ export class PDSParameter {
      * @returns {PDSParameter}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PDSParameter]: PDSParameter[_K] }>
+        _o: { [_K in keyof PDSParameter]: PDSParameter[_K] }
     ): PDSParameter {
         return new PDSParameter(_o.printable_string, _o.teletex_string);
     }

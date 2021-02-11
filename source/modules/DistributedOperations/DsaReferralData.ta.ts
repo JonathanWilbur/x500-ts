@@ -129,7 +129,7 @@ export class DsaReferralData {
      * @returns {DsaReferralData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DsaReferralData]: DsaReferralData[_K] }>
+        _o: { [_K in keyof DsaReferralData]: DsaReferralData[_K] }
     ): DsaReferralData {
         return new DsaReferralData(
             _o.reference,

@@ -105,9 +105,7 @@ export class RemoveEntryResultData {
      * @returns {RemoveEntryResultData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof RemoveEntryResultData]: RemoveEntryResultData[_K] }
-        >
+        _o: { [_K in keyof RemoveEntryResultData]: RemoveEntryResultData[_K] }
     ): RemoveEntryResultData {
         return new RemoveEntryResultData(
             _o._unrecognizedExtensionsList,

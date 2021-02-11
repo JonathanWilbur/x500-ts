@@ -51,7 +51,7 @@ export class AddAvlOK {
      * @returns {AddAvlOK}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AddAvlOK]: AddAvlOK[_K] }>
+        _o: { [_K in keyof AddAvlOK]: AddAvlOK[_K] }
     ): AddAvlOK {
         return new AddAvlOK(_o.ok, _o._unrecognizedExtensionsList);
     }

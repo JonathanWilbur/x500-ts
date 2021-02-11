@@ -76,9 +76,7 @@ export class AvlId {
      * @param {Object} _o An object having all of the keys and values of a `AvlId`.
      * @returns {AvlId}
      */
-    public static _from_object(
-        _o: Partial<{ [_K in keyof AvlId]: AvlId[_K] }>
-    ): AvlId {
+    public static _from_object(_o: { [_K in keyof AvlId]: AvlId[_K] }): AvlId {
         return new AvlId(
             _o.issuer,
             _o.serialNumber,

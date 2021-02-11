@@ -68,7 +68,7 @@ export class MaxValueCount {
      * @returns {MaxValueCount}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof MaxValueCount]: MaxValueCount[_K] }>
+        _o: { [_K in keyof MaxValueCount]: MaxValueCount[_K] }
     ): MaxValueCount {
         return new MaxValueCount(
             _o.type_,

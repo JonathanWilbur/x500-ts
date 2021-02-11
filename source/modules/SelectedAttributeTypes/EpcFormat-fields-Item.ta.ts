@@ -84,9 +84,7 @@ export class EpcFormat_fields_Item {
      * @returns {EpcFormat_fields_Item}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof EpcFormat_fields_Item]: EpcFormat_fields_Item[_K] }
-        >
+        _o: { [_K in keyof EpcFormat_fields_Item]: EpcFormat_fields_Item[_K] }
     ): EpcFormat_fields_Item {
         return new EpcFormat_fields_Item(_o.bits, _o.charField, _o.result);
     }

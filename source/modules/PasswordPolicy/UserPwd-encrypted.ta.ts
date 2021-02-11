@@ -65,7 +65,7 @@ export class UserPwd_encrypted {
      * @returns {UserPwd_encrypted}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UserPwd_encrypted]: UserPwd_encrypted[_K] }>
+        _o: { [_K in keyof UserPwd_encrypted]: UserPwd_encrypted[_K] }
     ): UserPwd_encrypted {
         return new UserPwd_encrypted(
             _o.algorithmIdentifier,

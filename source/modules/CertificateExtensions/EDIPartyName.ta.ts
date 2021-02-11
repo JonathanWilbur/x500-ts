@@ -67,7 +67,7 @@ export class EDIPartyName {
      * @returns {EDIPartyName}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EDIPartyName]: EDIPartyName[_K] }>
+        _o: { [_K in keyof EDIPartyName]: EDIPartyName[_K] }
     ): EDIPartyName {
         return new EDIPartyName(
             _o.nameAssigner,

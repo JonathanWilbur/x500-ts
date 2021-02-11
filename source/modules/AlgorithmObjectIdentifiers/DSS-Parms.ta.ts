@@ -65,7 +65,7 @@ export class DSS_Parms {
      * @returns {DSS_Parms}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DSS_Parms]: DSS_Parms[_K] }>
+        _o: { [_K in keyof DSS_Parms]: DSS_Parms[_K] }
     ): DSS_Parms {
         return new DSS_Parms(_o.p, _o.q, _o.g, _o._unrecognizedExtensionsList);
     }

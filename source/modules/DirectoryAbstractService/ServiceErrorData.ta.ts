@@ -158,7 +158,7 @@ export class ServiceErrorData {
      * @returns {ServiceErrorData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ServiceErrorData]: ServiceErrorData[_K] }>
+        _o: { [_K in keyof ServiceErrorData]: ServiceErrorData[_K] }
     ): ServiceErrorData {
         return new ServiceErrorData(
             _o.problem,

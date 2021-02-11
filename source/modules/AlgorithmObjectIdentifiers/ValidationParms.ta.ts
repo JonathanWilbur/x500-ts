@@ -59,7 +59,7 @@ export class ValidationParms {
      * @returns {ValidationParms}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ValidationParms]: ValidationParms[_K] }>
+        _o: { [_K in keyof ValidationParms]: ValidationParms[_K] }
     ): ValidationParms {
         return new ValidationParms(
             _o.seed,

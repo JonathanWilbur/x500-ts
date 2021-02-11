@@ -242,7 +242,7 @@ export class CommonArguments {
      * @returns {CommonArguments}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CommonArguments]: CommonArguments[_K] }>
+        _o: { [_K in keyof CommonArguments]: CommonArguments[_K] }
     ): CommonArguments {
         return new CommonArguments(
             _o.serviceControls,

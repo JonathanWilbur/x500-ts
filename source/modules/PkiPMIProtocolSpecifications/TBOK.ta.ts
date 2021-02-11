@@ -73,9 +73,7 @@ export class TBOK {
      * @param {Object} _o An object having all of the keys and values of a `TBOK`.
      * @returns {TBOK}
      */
-    public static _from_object(
-        _o: Partial<{ [_K in keyof TBOK]: TBOK[_K] }>
-    ): TBOK {
+    public static _from_object(_o: { [_K in keyof TBOK]: TBOK[_K] }): TBOK {
         return new TBOK(
             _o.levelOfAssurance,
             _o.confidenceLevel,

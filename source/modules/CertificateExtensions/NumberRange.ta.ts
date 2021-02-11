@@ -65,7 +65,7 @@ export class NumberRange {
      * @returns {NumberRange}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof NumberRange]: NumberRange[_K] }>
+        _o: { [_K in keyof NumberRange]: NumberRange[_K] }
     ): NumberRange {
         return new NumberRange(
             _o.startingNumber,

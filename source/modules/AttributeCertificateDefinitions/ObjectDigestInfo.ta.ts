@@ -104,7 +104,7 @@ export class ObjectDigestInfo {
      * @returns {ObjectDigestInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ObjectDigestInfo]: ObjectDigestInfo[_K] }>
+        _o: { [_K in keyof ObjectDigestInfo]: ObjectDigestInfo[_K] }
     ): ObjectDigestInfo {
         return new ObjectDigestInfo(
             _o.digestedObjectType,

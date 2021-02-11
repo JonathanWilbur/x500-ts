@@ -147,7 +147,7 @@ export class NameErrorData {
      * @returns {NameErrorData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof NameErrorData]: NameErrorData[_K] }>
+        _o: { [_K in keyof NameErrorData]: NameErrorData[_K] }
     ): NameErrorData {
         return new NameErrorData(
             _o.problem,

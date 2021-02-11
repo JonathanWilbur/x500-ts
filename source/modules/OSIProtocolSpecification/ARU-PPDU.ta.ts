@@ -52,7 +52,7 @@ export function _decode_ARU_PPDU(el: _Element) {
         _cached_decoder_for_ARU_PPDU = $._decode_inextensible_choice<ARU_PPDU>({
             "CONTEXT 0": [
                 "normal_mode_parameters",
-                $._decode_explicit<ARU_PPDU_normal_mode_parameters>(
+                $._decode_implicit<ARU_PPDU_normal_mode_parameters>(
                     () => _decode_ARU_PPDU_normal_mode_parameters
                 ),
             ],
@@ -81,7 +81,7 @@ export function _encode_ARU_PPDU(
     if (!_cached_encoder_for_ARU_PPDU) {
         _cached_encoder_for_ARU_PPDU = $._encode_choice<ARU_PPDU>(
             {
-                normal_mode_parameters: $._encode_explicit(
+                normal_mode_parameters: $._encode_implicit(
                     _TagClass.context,
                     0,
                     () => _encode_ARU_PPDU_normal_mode_parameters,

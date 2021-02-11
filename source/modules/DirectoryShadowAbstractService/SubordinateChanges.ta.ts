@@ -77,9 +77,7 @@ export class SubordinateChanges {
      * @returns {SubordinateChanges}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SubordinateChanges]: SubordinateChanges[_K] }
-        >
+        _o: { [_K in keyof SubordinateChanges]: SubordinateChanges[_K] }
     ): SubordinateChanges {
         return new SubordinateChanges(
             _o.subordinate,

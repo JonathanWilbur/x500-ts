@@ -67,7 +67,7 @@ export class DualStringSyntax {
      * @returns {DualStringSyntax}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DualStringSyntax]: DualStringSyntax[_K] }>
+        _o: { [_K in keyof DualStringSyntax]: DualStringSyntax[_K] }
     ): DualStringSyntax {
         return new DualStringSyntax(
             _o.operation,

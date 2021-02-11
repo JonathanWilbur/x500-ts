@@ -71,7 +71,7 @@ export class IdmResult {
      * @returns {IdmResult}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof IdmResult]: IdmResult[_K] }>
+        _o: { [_K in keyof IdmResult]: IdmResult[_K] }
     ): IdmResult {
         return new IdmResult(
             _o.invokeID,

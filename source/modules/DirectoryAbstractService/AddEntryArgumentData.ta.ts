@@ -287,9 +287,7 @@ export class AddEntryArgumentData {
      * @returns {AddEntryArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AddEntryArgumentData]: AddEntryArgumentData[_K] }
-        >
+        _o: { [_K in keyof AddEntryArgumentData]: AddEntryArgumentData[_K] }
     ): AddEntryArgumentData {
         return new AddEntryArgumentData(
             _o.object,

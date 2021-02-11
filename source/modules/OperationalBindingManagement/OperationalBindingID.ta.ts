@@ -58,9 +58,7 @@ export class OperationalBindingID {
      * @returns {OperationalBindingID}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof OperationalBindingID]: OperationalBindingID[_K] }
-        >
+        _o: { [_K in keyof OperationalBindingID]: OperationalBindingID[_K] }
     ): OperationalBindingID {
         return new OperationalBindingID(
             _o.identifier,

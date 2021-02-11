@@ -185,7 +185,7 @@ export class Req_contents {
      * @returns {Req_contents}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Req_contents]: Req_contents[_K] }>
+        _o: { [_K in keyof Req_contents]: Req_contents[_K] }
     ): Req_contents {
         return new Req_contents(
             _o.tok_id,

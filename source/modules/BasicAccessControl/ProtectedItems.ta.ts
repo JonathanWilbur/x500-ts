@@ -213,7 +213,7 @@ export class ProtectedItems {
      * @returns {ProtectedItems}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ProtectedItems]: ProtectedItems[_K] }>
+        _o: { [_K in keyof ProtectedItems]: ProtectedItems[_K] }
     ): ProtectedItems {
         return new ProtectedItems(
             _o.entry,

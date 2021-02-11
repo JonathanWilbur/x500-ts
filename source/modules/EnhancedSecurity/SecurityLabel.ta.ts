@@ -124,7 +124,7 @@ export class SecurityLabel {
      * @returns {SecurityLabel}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SecurityLabel]: SecurityLabel[_K] }>
+        _o: { [_K in keyof SecurityLabel]: SecurityLabel[_K] }
     ): SecurityLabel {
         return new SecurityLabel(
             _o.security_policy_identifier,

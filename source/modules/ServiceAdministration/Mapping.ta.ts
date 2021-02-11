@@ -60,7 +60,7 @@ export class Mapping {
      * @returns {Mapping}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Mapping]: Mapping[_K] }>
+        _o: { [_K in keyof Mapping]: Mapping[_K] }
     ): Mapping {
         return new Mapping(
             _o.mappingFunction,

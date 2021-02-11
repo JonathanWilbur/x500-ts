@@ -75,7 +75,7 @@ export class PeriodicStrategy {
      * @returns {PeriodicStrategy}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PeriodicStrategy]: PeriodicStrategy[_K] }>
+        _o: { [_K in keyof PeriodicStrategy]: PeriodicStrategy[_K] }
     ): PeriodicStrategy {
         return new PeriodicStrategy(
             _o.beginTime,

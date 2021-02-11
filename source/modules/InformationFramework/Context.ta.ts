@@ -69,7 +69,7 @@ export class Context {
      * @returns {Context}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Context]: Context[_K] }>
+        _o: { [_K in keyof Context]: Context[_K] }
     ): Context {
         return new Context(
             _o.contextType,

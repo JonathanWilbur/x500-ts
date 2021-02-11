@@ -111,7 +111,7 @@ export class StrongCredentials {
      * @returns {StrongCredentials}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof StrongCredentials]: StrongCredentials[_K] }>
+        _o: { [_K in keyof StrongCredentials]: StrongCredentials[_K] }
     ): StrongCredentials {
         return new StrongCredentials(
             _o.certification_path,

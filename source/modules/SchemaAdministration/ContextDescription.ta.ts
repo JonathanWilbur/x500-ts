@@ -101,9 +101,7 @@ export class ContextDescription {
      * @returns {ContextDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ContextDescription]: ContextDescription[_K] }
-        >
+        _o: { [_K in keyof ContextDescription]: ContextDescription[_K] }
     ): ContextDescription {
         return new ContextDescription(
             _o.identifier,

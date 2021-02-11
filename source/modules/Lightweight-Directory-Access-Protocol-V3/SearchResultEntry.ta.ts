@@ -77,7 +77,7 @@ export class SearchResultEntry {
      * @returns {SearchResultEntry}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SearchResultEntry]: SearchResultEntry[_K] }>
+        _o: { [_K in keyof SearchResultEntry]: SearchResultEntry[_K] }
     ): SearchResultEntry {
         return new SearchResultEntry(
             _o.objectName,

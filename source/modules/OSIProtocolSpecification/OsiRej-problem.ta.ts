@@ -108,25 +108,25 @@ export function _decode_OsiRej_problem(el: _Element) {
             {
                 "CONTEXT 0": [
                     "general",
-                    $._decode_explicit<GeneralProblem>(
+                    $._decode_implicit<GeneralProblem>(
                         () => _decode_GeneralProblem
                     ),
                 ],
                 "CONTEXT 1": [
                     "invoke",
-                    $._decode_explicit<InvokeProblem>(
+                    $._decode_implicit<InvokeProblem>(
                         () => _decode_InvokeProblem
                     ),
                 ],
                 "CONTEXT 2": [
                     "returnResult",
-                    $._decode_explicit<ReturnResultProblem>(
+                    $._decode_implicit<ReturnResultProblem>(
                         () => _decode_ReturnResultProblem
                     ),
                 ],
                 "CONTEXT 3": [
                     "returnError",
-                    $._decode_explicit<ReturnErrorProblem>(
+                    $._decode_implicit<ReturnErrorProblem>(
                         () => _decode_ReturnErrorProblem
                     ),
                 ],
@@ -156,25 +156,25 @@ export function _encode_OsiRej_problem(
     if (!_cached_encoder_for_OsiRej_problem) {
         _cached_encoder_for_OsiRej_problem = $._encode_choice<OsiRej_problem>(
             {
-                general: $._encode_explicit(
+                general: $._encode_implicit(
                     _TagClass.context,
                     0,
                     () => _encode_GeneralProblem,
                     $.BER
                 ),
-                invoke: $._encode_explicit(
+                invoke: $._encode_implicit(
                     _TagClass.context,
                     1,
                     () => _encode_InvokeProblem,
                     $.BER
                 ),
-                returnResult: $._encode_explicit(
+                returnResult: $._encode_implicit(
                     _TagClass.context,
                     2,
                     () => _encode_ReturnResultProblem,
                     $.BER
                 ),
-                returnError: $._encode_explicit(
+                returnError: $._encode_implicit(
                     _TagClass.context,
                     3,
                     () => _encode_ReturnErrorProblem,

@@ -225,7 +225,7 @@ export class TbsHandshakeReq {
      * @returns {TbsHandshakeReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsHandshakeReq]: TbsHandshakeReq[_K] }>
+        _o: { [_K in keyof TbsHandshakeReq]: TbsHandshakeReq[_K] }
     ): TbsHandshakeReq {
         return new TbsHandshakeReq(
             _o.version,

@@ -77,7 +77,7 @@ export class EncryptedInfo {
      * @returns {EncryptedInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EncryptedInfo]: EncryptedInfo[_K] }>
+        _o: { [_K in keyof EncryptedInfo]: EncryptedInfo[_K] }
     ): EncryptedInfo {
         return new EncryptedInfo(
             _o.keyAgreement,

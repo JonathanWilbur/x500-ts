@@ -147,7 +147,7 @@ export class ItemPermission {
      * @returns {ItemPermission}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ItemPermission]: ItemPermission[_K] }>
+        _o: { [_K in keyof ItemPermission]: ItemPermission[_K] }
     ): ItemPermission {
         return new ItemPermission(
             _o.precedence,

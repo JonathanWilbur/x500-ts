@@ -117,7 +117,7 @@ export class CRLReferral {
      * @returns {CRLReferral}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CRLReferral]: CRLReferral[_K] }>
+        _o: { [_K in keyof CRLReferral]: CRLReferral[_K] }
     ): CRLReferral {
         return new CRLReferral(
             _o.issuer,

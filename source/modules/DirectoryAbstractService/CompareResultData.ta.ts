@@ -153,7 +153,7 @@ export class CompareResultData {
      * @returns {CompareResultData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CompareResultData]: CompareResultData[_K] }>
+        _o: { [_K in keyof CompareResultData]: CompareResultData[_K] }
     ): CompareResultData {
         return new CompareResultData(
             _o.name,

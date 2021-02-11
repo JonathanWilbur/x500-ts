@@ -90,7 +90,7 @@ export class ResultAttribute {
      * @returns {ResultAttribute}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ResultAttribute]: ResultAttribute[_K] }>
+        _o: { [_K in keyof ResultAttribute]: ResultAttribute[_K] }
     ): ResultAttribute {
         return new ResultAttribute(
             _o.attributeType,

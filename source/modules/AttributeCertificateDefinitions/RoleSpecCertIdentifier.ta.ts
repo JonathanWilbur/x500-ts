@@ -101,9 +101,7 @@ export class RoleSpecCertIdentifier {
      * @returns {RoleSpecCertIdentifier}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof RoleSpecCertIdentifier]: RoleSpecCertIdentifier[_K] }
-        >
+        _o: { [_K in keyof RoleSpecCertIdentifier]: RoleSpecCertIdentifier[_K] }
     ): RoleSpecCertIdentifier {
         return new RoleSpecCertIdentifier(
             _o.roleName,

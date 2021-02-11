@@ -109,7 +109,7 @@ export class SDSEContent {
      * @returns {SDSEContent}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SDSEContent]: SDSEContent[_K] }>
+        _o: { [_K in keyof SDSEContent]: SDSEContent[_K] }
     ): SDSEContent {
         return new SDSEContent(
             _o.sDSEType,

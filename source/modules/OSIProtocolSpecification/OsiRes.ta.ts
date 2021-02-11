@@ -72,7 +72,7 @@ export class OsiRes {
      * @returns {OsiRes}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof OsiRes]: OsiRes[_K] }>
+        _o: { [_K in keyof OsiRes]: OsiRes[_K] }
     ): OsiRes {
         return new OsiRes(_o.invokeId, _o.result);
     }
@@ -137,7 +137,7 @@ let _cached_decoder_for_OsiRes: $.ASN1Decoder<OsiRes> | null = null;
  */
 export function _decode_OsiRes(el: _Element) {
     if (!_cached_decoder_for_OsiRes) {
-        _cached_decoder_for_OsiRes = $._decode_explicit<OsiRes>(
+        _cached_decoder_for_OsiRes = $._decode_implicit<OsiRes>(
             () =>
                 function (el: _Element): OsiRes {
                     const sequence: _Element[] = el.sequence;
@@ -176,7 +176,7 @@ let _cached_encoder_for_OsiRes: $.ASN1Encoder<OsiRes> | null = null;
  */
 export function _encode_OsiRes(value: OsiRes, elGetter: $.ASN1Encoder<OsiRes>) {
     if (!_cached_encoder_for_OsiRes) {
-        _cached_encoder_for_OsiRes = $._encode_explicit(
+        _cached_encoder_for_OsiRes = $._encode_implicit(
             _TagClass.context,
             2,
             () =>

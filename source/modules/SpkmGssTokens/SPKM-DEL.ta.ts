@@ -61,7 +61,7 @@ export class SPKM_DEL {
      * @returns {SPKM_DEL}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_DEL]: SPKM_DEL[_K] }>
+        _o: { [_K in keyof SPKM_DEL]: SPKM_DEL[_K] }
     ): SPKM_DEL {
         return new SPKM_DEL(_o.del_header, _o.int_cksum);
     }

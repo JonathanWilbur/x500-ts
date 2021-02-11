@@ -109,7 +109,7 @@ export class EntryInformation {
      * @returns {EntryInformation}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EntryInformation]: EntryInformation[_K] }>
+        _o: { [_K in keyof EntryInformation]: EntryInformation[_K] }
     ): EntryInformation {
         return new EntryInformation(
             _o.name,

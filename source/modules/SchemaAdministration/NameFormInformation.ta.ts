@@ -67,9 +67,7 @@ export class NameFormInformation {
      * @returns {NameFormInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof NameFormInformation]: NameFormInformation[_K] }
-        >
+        _o: { [_K in keyof NameFormInformation]: NameFormInformation[_K] }
     ): NameFormInformation {
         return new NameFormInformation(
             _o.subordinate,

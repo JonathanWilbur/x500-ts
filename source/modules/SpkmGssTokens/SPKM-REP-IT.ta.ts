@@ -88,7 +88,7 @@ export class SPKM_REP_IT {
      * @returns {SPKM_REP_IT}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_REP_IT]: SPKM_REP_IT[_K] }>
+        _o: { [_K in keyof SPKM_REP_IT]: SPKM_REP_IT[_K] }
     ): SPKM_REP_IT {
         return new SPKM_REP_IT(_o.responseToken, _o.algId, _o.rep_it_integ);
     }

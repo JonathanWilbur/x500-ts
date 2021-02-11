@@ -100,7 +100,7 @@ export class ARP_PPDU {
      * @returns {ARP_PPDU}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ARP_PPDU]: ARP_PPDU[_K] }>
+        _o: { [_K in keyof ARP_PPDU]: ARP_PPDU[_K] }
     ): ARP_PPDU {
         return new ARP_PPDU(_o.provider_reason, _o.event_identifier);
     }
@@ -179,12 +179,12 @@ export function _decode_ARP_PPDU(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "provider-reason": (_el: _Element): void => {
-                    provider_reason = $._decode_explicit<Abort_reason>(
+                    provider_reason = $._decode_implicit<Abort_reason>(
                         () => _decode_Abort_reason
                     )(_el);
                 },
                 "event-identifier": (_el: _Element): void => {
-                    event_identifier = $._decode_explicit<Event_identifier>(
+                    event_identifier = $._decode_implicit<Event_identifier>(
                         () => _decode_Event_identifier
                     )(_el);
                 },
@@ -234,7 +234,7 @@ export function _encode_ARP_PPDU(
                     .concat([
                         /* IF_ABSENT  */ value.provider_reason === undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   0,
                                   () => _encode_Abort_reason,
@@ -242,7 +242,7 @@ export function _encode_ARP_PPDU(
                               )(value.provider_reason, $.BER),
                         /* IF_ABSENT  */ value.event_identifier === undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_Event_identifier,

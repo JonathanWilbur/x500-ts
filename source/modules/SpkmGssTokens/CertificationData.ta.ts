@@ -71,7 +71,7 @@ export class CertificationData {
      * @returns {CertificationData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertificationData]: CertificationData[_K] }>
+        _o: { [_K in keyof CertificationData]: CertificationData[_K] }
     ): CertificationData {
         return new CertificationData(
             _o.certificationPath,

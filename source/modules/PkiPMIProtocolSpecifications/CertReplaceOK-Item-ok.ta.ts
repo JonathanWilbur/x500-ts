@@ -74,9 +74,7 @@ export class CertReplaceOK_Item_ok {
      * @returns {CertReplaceOK_Item_ok}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CertReplaceOK_Item_ok]: CertReplaceOK_Item_ok[_K] }
-        >
+        _o: { [_K in keyof CertReplaceOK_Item_ok]: CertReplaceOK_Item_ok[_K] }
     ): CertReplaceOK_Item_ok {
         return new CertReplaceOK_Item_ok(
             _o.issuer,

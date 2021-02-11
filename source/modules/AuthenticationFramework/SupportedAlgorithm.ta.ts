@@ -112,9 +112,7 @@ export class SupportedAlgorithm {
      * @returns {SupportedAlgorithm}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SupportedAlgorithm]: SupportedAlgorithm[_K] }
-        >
+        _o: { [_K in keyof SupportedAlgorithm]: SupportedAlgorithm[_K] }
     ): SupportedAlgorithm {
         return new SupportedAlgorithm(
             _o.algorithmIdentifier,

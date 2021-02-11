@@ -62,9 +62,7 @@ export class TimeAssertion_between {
      * @returns {TimeAssertion_between}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TimeAssertion_between]: TimeAssertion_between[_K] }
-        >
+        _o: { [_K in keyof TimeAssertion_between]: TimeAssertion_between[_K] }
     ): TimeAssertion_between {
         return new TimeAssertion_between(
             _o.startTime,

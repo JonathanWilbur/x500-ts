@@ -62,7 +62,7 @@ export class ERROR_TOKEN {
      * @returns {ERROR_TOKEN}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ERROR_TOKEN]: ERROR_TOKEN[_K] }>
+        _o: { [_K in keyof ERROR_TOKEN]: ERROR_TOKEN[_K] }
     ): ERROR_TOKEN {
         return new ERROR_TOKEN(_o.tok_id, _o.context_id);
     }

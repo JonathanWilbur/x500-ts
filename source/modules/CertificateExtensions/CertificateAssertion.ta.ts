@@ -244,9 +244,7 @@ export class CertificateAssertion {
      * @returns {CertificateAssertion}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CertificateAssertion]: CertificateAssertion[_K] }
-        >
+        _o: { [_K in keyof CertificateAssertion]: CertificateAssertion[_K] }
     ): CertificateAssertion {
         return new CertificateAssertion(
             _o.serialNumber,

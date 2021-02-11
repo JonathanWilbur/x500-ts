@@ -141,7 +141,7 @@ export class RequestAttribute {
      * @returns {RequestAttribute}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RequestAttribute]: RequestAttribute[_K] }>
+        _o: { [_K in keyof RequestAttribute]: RequestAttribute[_K] }
     ): RequestAttribute {
         return new RequestAttribute(
             _o.attributeType,

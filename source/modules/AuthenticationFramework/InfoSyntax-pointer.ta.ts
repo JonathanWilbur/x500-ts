@@ -84,9 +84,7 @@ export class InfoSyntax_pointer {
      * @returns {InfoSyntax_pointer}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof InfoSyntax_pointer]: InfoSyntax_pointer[_K] }
-        >
+        _o: { [_K in keyof InfoSyntax_pointer]: InfoSyntax_pointer[_K] }
     ): InfoSyntax_pointer {
         return new InfoSyntax_pointer(
             _o.name,

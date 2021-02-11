@@ -77,7 +77,7 @@ export class AreaSpecification {
      * @returns {AreaSpecification}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AreaSpecification]: AreaSpecification[_K] }>
+        _o: { [_K in keyof AreaSpecification]: AreaSpecification[_K] }
     ): AreaSpecification {
         return new AreaSpecification(
             _o.contextPrefix,

@@ -63,9 +63,7 @@ export class ContextInformation {
      * @returns {ContextInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ContextInformation]: ContextInformation[_K] }
-        >
+        _o: { [_K in keyof ContextInformation]: ContextInformation[_K] }
     ): ContextInformation {
         return new ContextInformation(
             _o.syntax,

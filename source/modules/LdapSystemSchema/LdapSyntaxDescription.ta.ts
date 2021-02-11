@@ -69,9 +69,7 @@ export class LdapSyntaxDescription {
      * @returns {LdapSyntaxDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof LdapSyntaxDescription]: LdapSyntaxDescription[_K] }
-        >
+        _o: { [_K in keyof LdapSyntaxDescription]: LdapSyntaxDescription[_K] }
     ): LdapSyntaxDescription {
         return new LdapSyntaxDescription(
             _o.identifier,

@@ -85,7 +85,7 @@ export class BindRequest {
      * @returns {BindRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof BindRequest]: BindRequest[_K] }>
+        _o: { [_K in keyof BindRequest]: BindRequest[_K] }
     ): BindRequest {
         return new BindRequest(
             _o.version,

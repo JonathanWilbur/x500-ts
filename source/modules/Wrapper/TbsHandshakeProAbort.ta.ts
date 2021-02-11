@@ -120,9 +120,7 @@ export class TbsHandshakeProAbort {
      * @returns {TbsHandshakeProAbort}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TbsHandshakeProAbort]: TbsHandshakeProAbort[_K] }
-        >
+        _o: { [_K in keyof TbsHandshakeProAbort]: TbsHandshakeProAbort[_K] }
     ): TbsHandshakeProAbort {
         return new TbsHandshakeProAbort(
             _o.sigAlg,

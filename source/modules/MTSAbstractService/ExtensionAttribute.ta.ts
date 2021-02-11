@@ -57,9 +57,7 @@ export class ExtensionAttribute {
      * @returns {ExtensionAttribute}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ExtensionAttribute]: ExtensionAttribute[_K] }
-        >
+        _o: { [_K in keyof ExtensionAttribute]: ExtensionAttribute[_K] }
     ): ExtensionAttribute {
         return new ExtensionAttribute(
             _o.extension_attribute_type,

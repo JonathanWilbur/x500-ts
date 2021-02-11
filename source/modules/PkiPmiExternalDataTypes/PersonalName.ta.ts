@@ -68,7 +68,7 @@ export class PersonalName {
      * @returns {PersonalName}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PersonalName]: PersonalName[_K] }>
+        _o: { [_K in keyof PersonalName]: PersonalName[_K] }
     ): PersonalName {
         return new PersonalName(
             _o.surname,

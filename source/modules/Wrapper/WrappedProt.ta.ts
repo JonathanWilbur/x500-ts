@@ -59,7 +59,7 @@ export class WrappedProt {
      * @returns {WrappedProt}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof WrappedProt]: WrappedProt[_K] }>
+        _o: { [_K in keyof WrappedProt]: WrappedProt[_K] }
     ): WrappedProt {
         return new WrappedProt(_o.id, _o.prot, _o._unrecognizedExtensionsList);
     }

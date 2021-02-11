@@ -91,9 +91,7 @@ export class FriendsDescription {
      * @returns {FriendsDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof FriendsDescription]: FriendsDescription[_K] }
-        >
+        _o: { [_K in keyof FriendsDescription]: FriendsDescription[_K] }
     ): FriendsDescription {
         return new FriendsDescription(
             _o.anchor,

@@ -45,7 +45,7 @@ export function _decode_OsiBind_normal_mode_parameters_user_data(el: _Element) {
             {
                 "APPLICATION 1": [
                     "fully_encoded_data",
-                    $._decode_explicit<
+                    $._decode_implicit<
                         OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item[]
                     >(() =>
                         $._decodeSequenceOf<OsiBind_normal_mode_parameters_user_data_fully_encoded_data_Item>(
@@ -80,7 +80,7 @@ export function _encode_OsiBind_normal_mode_parameters_user_data(
     if (!_cached_encoder_for_OsiBind_normal_mode_parameters_user_data) {
         _cached_encoder_for_OsiBind_normal_mode_parameters_user_data = $._encode_choice<OsiBind_normal_mode_parameters_user_data>(
             {
-                fully_encoded_data: $._encode_explicit(
+                fully_encoded_data: $._encode_implicit(
                     _TagClass.application,
                     1,
                     () =>

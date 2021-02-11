@@ -68,9 +68,7 @@ export class Guide {
      * @param {Object} _o An object having all of the keys and values of a `Guide`.
      * @returns {Guide}
      */
-    public static _from_object(
-        _o: Partial<{ [_K in keyof Guide]: Guide[_K] }>
-    ): Guide {
+    public static _from_object(_o: { [_K in keyof Guide]: Guide[_K] }): Guide {
         return new Guide(
             _o.objectClass,
             _o.criteria,

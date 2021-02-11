@@ -96,7 +96,7 @@ export class Result_list_Item {
      * @returns {Result_list_Item}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Result_list_Item]: Result_list_Item[_K] }>
+        _o: { [_K in keyof Result_list_Item]: Result_list_Item[_K] }
     ): Result_list_Item {
         return new Result_list_Item(
             _o.result,
@@ -189,17 +189,17 @@ export function _decode_Result_list_Item(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 result: (_el: _Element): void => {
-                    result = $._decode_explicit<Result>(() => _decode_Result)(
+                    result = $._decode_implicit<Result>(() => _decode_Result)(
                         _el
                     );
                 },
                 "transfer-syntax-name": (_el: _Element): void => {
-                    transfer_syntax_name = $._decode_explicit<Transfer_syntax_name>(
+                    transfer_syntax_name = $._decode_implicit<Transfer_syntax_name>(
                         () => _decode_Transfer_syntax_name
                     )(_el);
                 },
                 "provider-reason": (_el: _Element): void => {
-                    provider_reason = $._decode_explicit<Result_list_Item_provider_reason>(
+                    provider_reason = $._decode_implicit<Result_list_Item_provider_reason>(
                         () => _decode_Result_list_Item_provider_reason
                     )(_el);
                 },
@@ -248,7 +248,7 @@ export function _encode_Result_list_Item(
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => _encode_Result,
@@ -257,7 +257,7 @@ export function _encode_Result_list_Item(
                         /* IF_ABSENT  */ value.transfer_syntax_name ===
                         undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   1,
                                   () => _encode_Transfer_syntax_name,
@@ -265,7 +265,7 @@ export function _encode_Result_list_Item(
                               )(value.transfer_syntax_name, $.BER),
                         /* IF_ABSENT  */ value.provider_reason === undefined
                             ? undefined
-                            : $._encode_explicit(
+                            : $._encode_implicit(
                                   _TagClass.context,
                                   2,
                                   () =>

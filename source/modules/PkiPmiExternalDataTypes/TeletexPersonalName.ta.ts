@@ -68,9 +68,7 @@ export class TeletexPersonalName {
      * @returns {TeletexPersonalName}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof TeletexPersonalName]: TeletexPersonalName[_K] }
-        >
+        _o: { [_K in keyof TeletexPersonalName]: TeletexPersonalName[_K] }
     ): TeletexPersonalName {
         return new TeletexPersonalName(
             _o.surname,

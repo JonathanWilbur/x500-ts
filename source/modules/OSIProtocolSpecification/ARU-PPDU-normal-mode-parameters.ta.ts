@@ -68,11 +68,9 @@ export class ARU_PPDU_normal_mode_parameters {
      * @returns {ARU_PPDU_normal_mode_parameters}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof ARU_PPDU_normal_mode_parameters]: ARU_PPDU_normal_mode_parameters[_K];
-            }
-        >
+        _o: {
+            [_K in keyof ARU_PPDU_normal_mode_parameters]: ARU_PPDU_normal_mode_parameters[_K];
+        }
     ): ARU_PPDU_normal_mode_parameters {
         return new ARU_PPDU_normal_mode_parameters(
             _o.presentation_context_identifier_list,
@@ -155,7 +153,7 @@ export function _decode_ARU_PPDU_normal_mode_parameters(el: _Element) {
             sequence[1].name = "user-data";
             let presentation_context_identifier_list!: Presentation_context_identifier_list;
             let user_data!: ARU_PPDU_normal_mode_parameters_user_data;
-            presentation_context_identifier_list = $._decode_explicit<Presentation_context_identifier_list>(
+            presentation_context_identifier_list = $._decode_implicit<Presentation_context_identifier_list>(
                 () => _decode_Presentation_context_identifier_list
             )(sequence[0]);
             user_data = _decode_ARU_PPDU_normal_mode_parameters_user_data(
@@ -195,7 +193,7 @@ export function _encode_ARU_PPDU_normal_mode_parameters(
             return $._encodeSequence(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => _encode_Presentation_context_identifier_list,

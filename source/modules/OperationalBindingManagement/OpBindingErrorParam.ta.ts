@@ -199,9 +199,7 @@ export class OpBindingErrorParam {
      * @returns {OpBindingErrorParam}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof OpBindingErrorParam]: OpBindingErrorParam[_K] }
-        >
+        _o: { [_K in keyof OpBindingErrorParam]: OpBindingErrorParam[_K] }
     ): OpBindingErrorParam {
         return new OpBindingErrorParam(
             _o.problem,

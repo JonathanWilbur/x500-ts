@@ -88,7 +88,7 @@ export class SPKM_ERROR {
      * @returns {SPKM_ERROR}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_ERROR]: SPKM_ERROR[_K] }>
+        _o: { [_K in keyof SPKM_ERROR]: SPKM_ERROR[_K] }
     ): SPKM_ERROR {
         return new SPKM_ERROR(_o.errorToken, _o.algId, _o.integrity);
     }

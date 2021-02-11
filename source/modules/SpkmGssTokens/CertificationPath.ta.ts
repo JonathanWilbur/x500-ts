@@ -93,7 +93,7 @@ export class CertificationPath {
      * @returns {CertificationPath}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertificationPath]: CertificationPath[_K] }>
+        _o: { [_K in keyof CertificationPath]: CertificationPath[_K] }
     ): CertificationPath {
         return new CertificationPath(
             _o.userKeyId,

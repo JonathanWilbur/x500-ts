@@ -109,7 +109,7 @@ export class TokenContent {
      * @returns {TokenContent}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TokenContent]: TokenContent[_K] }>
+        _o: { [_K in keyof TokenContent]: TokenContent[_K] }
     ): TokenContent {
         return new TokenContent(
             _o.algorithm,
@@ -299,41 +299,41 @@ export function _encode_TokenContent(
                                 _TagClass.context,
                                 0,
                                 () => _encode_AlgorithmIdentifier,
-                                $.BER
-                            )(value.algorithm, $.BER),
+                                $.DER
+                            )(value.algorithm, $.DER),
                             /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 1,
                                 () => _encode_DistinguishedName,
-                                $.BER
-                            )(value.name, $.BER),
+                                $.DER
+                            )(value.name, $.DER),
                             /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 2,
                                 () => _encode_Time,
-                                $.BER
-                            )(value.time, $.BER),
+                                $.DER
+                            )(value.time, $.DER),
                             /* REQUIRED   */ $._encode_explicit(
                                 _TagClass.context,
                                 3,
                                 () => $._encodeBitString,
-                                $.BER
-                            )(value.random, $.BER),
+                                $.DER
+                            )(value.random, $.DER),
                             /* IF_ABSENT  */ value.response === undefined
                                 ? undefined
                                 : $._encode_explicit(
                                       _TagClass.context,
                                       4,
                                       () => $._encodeBitString,
-                                      $.BER
-                                  )(value.response, $.BER),
+                                      $.DER
+                                  )(value.response, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
                             : []
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

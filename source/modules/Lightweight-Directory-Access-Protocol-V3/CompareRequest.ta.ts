@@ -77,7 +77,7 @@ export class CompareRequest {
      * @returns {CompareRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CompareRequest]: CompareRequest[_K] }>
+        _o: { [_K in keyof CompareRequest]: CompareRequest[_K] }
     ): CompareRequest {
         return new CompareRequest(
             _o.entry,

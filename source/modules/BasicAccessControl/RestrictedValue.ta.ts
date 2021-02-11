@@ -67,7 +67,7 @@ export class RestrictedValue {
      * @returns {RestrictedValue}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RestrictedValue]: RestrictedValue[_K] }>
+        _o: { [_K in keyof RestrictedValue]: RestrictedValue[_K] }
     ): RestrictedValue {
         return new RestrictedValue(
             _o.type_,

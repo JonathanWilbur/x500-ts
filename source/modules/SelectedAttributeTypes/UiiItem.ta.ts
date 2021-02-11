@@ -53,7 +53,7 @@ export class UiiItem {
      * @returns {UiiItem}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UiiItem]: UiiItem[_K] }>
+        _o: { [_K in keyof UiiItem]: UiiItem[_K] }
     ): UiiItem {
         return new UiiItem(_o.type_, _o.length);
     }

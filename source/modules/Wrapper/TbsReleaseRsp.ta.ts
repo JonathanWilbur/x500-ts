@@ -124,7 +124,7 @@ export class TbsReleaseRsp {
      * @returns {TbsReleaseRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsReleaseRsp]: TbsReleaseRsp[_K] }>
+        _o: { [_K in keyof TbsReleaseRsp]: TbsReleaseRsp[_K] }
     ): TbsReleaseRsp {
         return new TbsReleaseRsp(
             _o.version,

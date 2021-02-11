@@ -60,7 +60,7 @@ export class SecurityCategory {
      * @returns {SecurityCategory}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SecurityCategory]: SecurityCategory[_K] }>
+        _o: { [_K in keyof SecurityCategory]: SecurityCategory[_K] }
     ): SecurityCategory {
         return new SecurityCategory(
             _o.type_,

@@ -79,7 +79,7 @@ export class Knowledge {
      * @returns {Knowledge}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Knowledge]: Knowledge[_K] }>
+        _o: { [_K in keyof Knowledge]: Knowledge[_K] }
     ): Knowledge {
         return new Knowledge(
             _o.knowledgeType,

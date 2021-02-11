@@ -61,7 +61,7 @@ export class SPKM_MIC {
      * @returns {SPKM_MIC}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SPKM_MIC]: SPKM_MIC[_K] }>
+        _o: { [_K in keyof SPKM_MIC]: SPKM_MIC[_K] }
     ): SPKM_MIC {
         return new SPKM_MIC(_o.mic_header, _o.int_cksum);
     }

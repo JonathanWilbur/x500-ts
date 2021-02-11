@@ -95,9 +95,7 @@ export class ShadowingAgreementInfo {
      * @returns {ShadowingAgreementInfo}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ShadowingAgreementInfo]: ShadowingAgreementInfo[_K] }
-        >
+        _o: { [_K in keyof ShadowingAgreementInfo]: ShadowingAgreementInfo[_K] }
     ): ShadowingAgreementInfo {
         return new ShadowingAgreementInfo(
             _o.shadowSubject,

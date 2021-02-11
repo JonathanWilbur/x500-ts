@@ -166,9 +166,7 @@ export class CertificateListContent {
      * @returns {CertificateListContent}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CertificateListContent]: CertificateListContent[_K] }
-        >
+        _o: { [_K in keyof CertificateListContent]: CertificateListContent[_K] }
     ): CertificateListContent {
         return new CertificateListContent(
             _o.version,
@@ -364,27 +362,27 @@ export function _encode_CertificateListContent(
                         [
                             /* IF_ABSENT  */ value.version === undefined
                                 ? undefined
-                                : _encode_Version(value.version, $.BER),
+                                : _encode_Version(value.version, $.DER),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                $.BER
+                                $.DER
                             ),
-                            /* REQUIRED   */ _encode_Name(value.issuer, $.BER),
+                            /* REQUIRED   */ _encode_Name(value.issuer, $.DER),
                             /* REQUIRED   */ _encode_Time(
                                 value.thisUpdate,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.nextUpdate === undefined
                                 ? undefined
-                                : _encode_Time(value.nextUpdate, $.BER),
+                                : _encode_Time(value.nextUpdate, $.DER),
                             /* IF_ABSENT  */ value.revokedCertificates ===
                             undefined
                                 ? undefined
                                 : $._encodeSequenceOf<CertificateListContent_revokedCertificates_Item>(
                                       () =>
                                           _encode_CertificateListContent_revokedCertificates_Item,
-                                      $.BER
-                                  )(value.revokedCertificates, $.BER),
+                                      $.DER
+                                  )(value.revokedCertificates, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -396,12 +394,12 @@ export function _encode_CertificateListContent(
                                       _TagClass.context,
                                       0,
                                       () => _encode_Extensions,
-                                      $.BER
-                                  )(value.crlExtensions, $.BER),
+                                      $.DER
+                                  )(value.crlExtensions, $.DER),
                         ]
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

@@ -174,7 +174,7 @@ export class Rep_ti_contents {
      * @returns {Rep_ti_contents}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Rep_ti_contents]: Rep_ti_contents[_K] }>
+        _o: { [_K in keyof Rep_ti_contents]: Rep_ti_contents[_K] }
     ): Rep_ti_contents {
         return new Rep_ti_contents(
             _o.tok_id,

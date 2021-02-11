@@ -58,9 +58,7 @@ export class AttCertValidityPeriod {
      * @returns {AttCertValidityPeriod}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AttCertValidityPeriod]: AttCertValidityPeriod[_K] }
-        >
+        _o: { [_K in keyof AttCertValidityPeriod]: AttCertValidityPeriod[_K] }
     ): AttCertValidityPeriod {
         return new AttCertValidityPeriod(
             _o.notBeforeTime,

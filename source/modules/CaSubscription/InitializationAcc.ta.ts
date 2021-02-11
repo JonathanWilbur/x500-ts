@@ -62,7 +62,7 @@ export class InitializationAcc {
      * @returns {InitializationAcc}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof InitializationAcc]: InitializationAcc[_K] }>
+        _o: { [_K in keyof InitializationAcc]: InitializationAcc[_K] }
     ): InitializationAcc {
         return new InitializationAcc(
             _o.version,

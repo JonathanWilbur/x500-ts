@@ -66,9 +66,7 @@ export class PkiPathMatchSyntax {
      * @returns {PkiPathMatchSyntax}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof PkiPathMatchSyntax]: PkiPathMatchSyntax[_K] }
-        >
+        _o: { [_K in keyof PkiPathMatchSyntax]: PkiPathMatchSyntax[_K] }
     ): PkiPathMatchSyntax {
         return new PkiPathMatchSyntax(
             _o.firstIssuer,

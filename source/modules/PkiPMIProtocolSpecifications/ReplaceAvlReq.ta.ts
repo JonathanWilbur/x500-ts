@@ -131,7 +131,7 @@ export class ReplaceAvlReq {
      * @returns {ReplaceAvlReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReplaceAvlReq]: ReplaceAvlReq[_K] }>
+        _o: { [_K in keyof ReplaceAvlReq]: ReplaceAvlReq[_K] }
     ): ReplaceAvlReq {
         return new ReplaceAvlReq(
             _o.version,

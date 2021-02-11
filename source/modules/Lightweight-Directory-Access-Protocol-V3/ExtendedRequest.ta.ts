@@ -68,7 +68,7 @@ export class ExtendedRequest {
      * @returns {ExtendedRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ExtendedRequest]: ExtendedRequest[_K] }>
+        _o: { [_K in keyof ExtendedRequest]: ExtendedRequest[_K] }
     ): ExtendedRequest {
         return new ExtendedRequest(
             _o.requestName,

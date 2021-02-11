@@ -508,9 +508,7 @@ export class SearchArgumentData {
      * @returns {SearchArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SearchArgumentData]: SearchArgumentData[_K] }
-        >
+        _o: { [_K in keyof SearchArgumentData]: SearchArgumentData[_K] }
     ): SearchArgumentData {
         return new SearchArgumentData(
             _o.baseObject,

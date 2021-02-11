@@ -60,9 +60,7 @@ export class AbandonArgumentData {
      * @returns {AbandonArgumentData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AbandonArgumentData]: AbandonArgumentData[_K] }
-        >
+        _o: { [_K in keyof AbandonArgumentData]: AbandonArgumentData[_K] }
     ): AbandonArgumentData {
         return new AbandonArgumentData(
             _o.invokeID,

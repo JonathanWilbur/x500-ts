@@ -71,9 +71,7 @@ export class InitialContextToken {
      * @returns {InitialContextToken}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof InitialContextToken]: InitialContextToken[_K] }
-        >
+        _o: { [_K in keyof InitialContextToken]: InitialContextToken[_K] }
     ): InitialContextToken {
         return new InitialContextToken(_o.thisMech, _o.innerContextToken);
     }

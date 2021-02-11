@@ -139,7 +139,7 @@ export class ReadResultData {
      * @returns {ReadResultData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ReadResultData]: ReadResultData[_K] }>
+        _o: { [_K in keyof ReadResultData]: ReadResultData[_K] }
     ): ReadResultData {
         return new ReadResultData(
             _o.entry,

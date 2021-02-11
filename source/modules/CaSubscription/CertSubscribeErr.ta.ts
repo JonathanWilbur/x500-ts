@@ -80,7 +80,7 @@ export class CertSubscribeErr {
      * @returns {CertSubscribeErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertSubscribeErr]: CertSubscribeErr[_K] }>
+        _o: { [_K in keyof CertSubscribeErr]: CertSubscribeErr[_K] }
     ): CertSubscribeErr {
         return new CertSubscribeErr(_o.code, _o._unrecognizedExtensionsList);
     }

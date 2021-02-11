@@ -80,7 +80,7 @@ export class CertSubscribeReq {
      * @returns {CertSubscribeReq}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertSubscribeReq]: CertSubscribeReq[_K] }>
+        _o: { [_K in keyof CertSubscribeReq]: CertSubscribeReq[_K] }
     ): CertSubscribeReq {
         return new CertSubscribeReq(
             _o.invokeID,

@@ -167,7 +167,7 @@ export class TBSCertAVL {
      * @returns {TBSCertAVL}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TBSCertAVL]: TBSCertAVL[_K] }>
+        _o: { [_K in keyof TBSCertAVL]: TBSCertAVL[_K] }
     ): TBSCertAVL {
         return new TBSCertAVL(
             _o.version,
@@ -302,7 +302,7 @@ export function _decode_TBSCertAVL(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 version: (_el: _Element): void => {
-                    version = $._decode_explicit<Version>(
+                    version = $._decode_implicit<Version>(
                         () => _decode_Version
                     )(_el);
                 },
@@ -385,31 +385,31 @@ export function _encode_TBSCertAVL(
                                 TBSCertAVL._default_value_for_version
                             )
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
                                       0,
                                       () => _encode_Version,
-                                      $.BER
-                                  )(value.version, $.BER),
+                                      $.DER
+                                  )(value.version, $.DER),
                             /* IF_ABSENT  */ value.serialNumber === undefined
                                 ? undefined
                                 : _encode_AvlSerialNumber(
                                       value.serialNumber,
-                                      $.BER
+                                      $.DER
                                   ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                $.BER
+                                $.DER
                             ),
-                            /* REQUIRED   */ _encode_Name(value.issuer, $.BER),
+                            /* REQUIRED   */ _encode_Name(value.issuer, $.DER),
                             /* REQUIRED   */ $._encodeBoolean(
                                 value.constrained,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ $._encodeSequenceOf<TBSCertAVL_entries_Item>(
                                 () => _encode_TBSCertAVL_entries_Item,
-                                $.BER
-                            )(value.entries, $.BER),
+                                $.DER
+                            )(value.entries, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -419,12 +419,12 @@ export function _encode_TBSCertAVL(
                                 ? undefined
                                 : _encode_Extensions(
                                       value.avlExtensions,
-                                      $.BER
+                                      $.DER
                                   ),
                         ]
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

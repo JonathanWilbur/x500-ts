@@ -86,9 +86,7 @@ export class CASPcommonComponents {
      * @returns {CASPcommonComponents}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CASPcommonComponents]: CASPcommonComponents[_K] }
-        >
+        _o: { [_K in keyof CASPcommonComponents]: CASPcommonComponents[_K] }
     ): CASPcommonComponents {
         return new CASPcommonComponents(
             _o.version,

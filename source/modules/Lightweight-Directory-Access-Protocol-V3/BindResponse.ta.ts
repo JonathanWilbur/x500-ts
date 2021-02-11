@@ -201,7 +201,7 @@ export class BindResponse {
      * @returns {BindResponse}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof BindResponse]: BindResponse[_K] }>
+        _o: { [_K in keyof BindResponse]: BindResponse[_K] }
     ): BindResponse {
         return new BindResponse(
             _o.resultCode,

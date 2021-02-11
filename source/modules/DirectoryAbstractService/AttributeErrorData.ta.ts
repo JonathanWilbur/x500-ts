@@ -143,9 +143,7 @@ export class AttributeErrorData {
      * @returns {AttributeErrorData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof AttributeErrorData]: AttributeErrorData[_K] }
-        >
+        _o: { [_K in keyof AttributeErrorData]: AttributeErrorData[_K] }
     ): AttributeErrorData {
         return new AttributeErrorData(
             _o.object,

@@ -106,7 +106,7 @@ export class RepAvlErr {
      * @returns {RepAvlErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RepAvlErr]: RepAvlErr[_K] }>
+        _o: { [_K in keyof RepAvlErr]: RepAvlErr[_K] }
     ): RepAvlErr {
         return new RepAvlErr(_o.notOK, _o._unrecognizedExtensionsList);
     }

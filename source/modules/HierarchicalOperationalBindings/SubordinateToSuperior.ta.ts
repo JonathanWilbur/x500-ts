@@ -102,9 +102,7 @@ export class SubordinateToSuperior {
      * @returns {SubordinateToSuperior}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof SubordinateToSuperior]: SubordinateToSuperior[_K] }
-        >
+        _o: { [_K in keyof SubordinateToSuperior]: SubordinateToSuperior[_K] }
     ): SubordinateToSuperior {
         return new SubordinateToSuperior(
             _o.accessPoints,

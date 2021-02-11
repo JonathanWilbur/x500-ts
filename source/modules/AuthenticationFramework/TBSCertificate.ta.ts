@@ -380,17 +380,19 @@ export function _decode_TBSCertificate(el: _Element) {
                     subjectPublicKeyInfo = _decode_SubjectPublicKeyInfo(_el);
                 },
                 issuerUniqueIdentifier: (_el: _Element): void => {
-                    issuerUniqueIdentifier = $._decode_explicit<UniqueIdentifier>(
+                    issuerUniqueIdentifier = $._decode_implicit<UniqueIdentifier>(
                         () => _decode_UniqueIdentifier
                     )(_el);
                 },
                 subjectUniqueIdentifier: (_el: _Element): void => {
-                    subjectUniqueIdentifier = $._decode_explicit<UniqueIdentifier>(
+                    subjectUniqueIdentifier = $._decode_implicit<UniqueIdentifier>(
                         () => _decode_UniqueIdentifier
                     )(_el);
                 },
                 extensions: (_el: _Element): void => {
-                    extensions = _decode_Extensions(_el);
+                    extensions = $._decode_explicit<Extensions>(
+                        () => _decode_Extensions
+                    )(_el);
                 },
             };
             /* END_OF_CALLBACKS_MAP */
@@ -458,35 +460,35 @@ export function _encode_TBSCertificate(
                                       _TagClass.context,
                                       0,
                                       () => _encode_Version,
-                                      $.BER
-                                  )(value.version, $.BER),
+                                      $.DER
+                                  )(value.version, $.DER),
                             /* REQUIRED   */ _encode_CertificateSerialNumber(
                                 value.serialNumber,
-                                $.BER
+                                $.DER
                             ),
                             /* REQUIRED   */ _encode_AlgorithmIdentifier(
                                 value.signature,
-                                $.BER
+                                $.DER
                             ),
-                            /* REQUIRED   */ _encode_Name(value.issuer, $.BER),
+                            /* REQUIRED   */ _encode_Name(value.issuer, $.DER),
                             /* REQUIRED   */ _encode_Validity(
                                 value.validity,
-                                $.BER
+                                $.DER
                             ),
-                            /* REQUIRED   */ _encode_Name(value.subject, $.BER),
+                            /* REQUIRED   */ _encode_Name(value.subject, $.DER),
                             /* REQUIRED   */ _encode_SubjectPublicKeyInfo(
                                 value.subjectPublicKeyInfo,
-                                $.BER
+                                $.DER
                             ),
                             /* IF_ABSENT  */ value.issuerUniqueIdentifier ===
                             undefined
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
                                       1,
                                       () => _encode_UniqueIdentifier,
-                                      $.BER
-                                  )(value.issuerUniqueIdentifier, $.BER),
+                                      $.DER
+                                  )(value.issuerUniqueIdentifier, $.DER),
                         ],
                         value._unrecognizedExtensionsList
                             ? value._unrecognizedExtensionsList
@@ -495,19 +497,24 @@ export function _encode_TBSCertificate(
                             /* IF_ABSENT  */ value.subjectUniqueIdentifier ===
                             undefined
                                 ? undefined
-                                : $._encode_explicit(
+                                : $._encode_implicit(
                                       _TagClass.context,
-                                      1,
+                                      2,
                                       () => _encode_UniqueIdentifier,
-                                      $.BER
-                                  )(value.subjectUniqueIdentifier, $.BER),
+                                      $.DER
+                                  )(value.subjectUniqueIdentifier, $.DER),
                             /* IF_ABSENT  */ value.extensions === undefined
                                 ? undefined
-                                : _encode_Extensions(value.extensions, $.BER),
+                                : $._encode_explicit(
+                                      _TagClass.context,
+                                      3,
+                                      () => _encode_Extensions,
+                                      $.DER
+                                  )(value.extensions, $.DER),
                         ]
                     )
                     .filter((c: _Element | undefined): c is _Element => !!c),
-                $.BER
+                $.DER
             );
         };
     }

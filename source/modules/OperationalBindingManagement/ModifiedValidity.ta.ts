@@ -84,7 +84,7 @@ export class ModifiedValidity {
      * @returns {ModifiedValidity}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ModifiedValidity]: ModifiedValidity[_K] }>
+        _o: { [_K in keyof ModifiedValidity]: ModifiedValidity[_K] }
     ): ModifiedValidity {
         return new ModifiedValidity(
             _o.validFrom,

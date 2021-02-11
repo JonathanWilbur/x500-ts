@@ -77,9 +77,7 @@ export class HierarchicalAgreement {
      * @returns {HierarchicalAgreement}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof HierarchicalAgreement]: HierarchicalAgreement[_K] }
-        >
+        _o: { [_K in keyof HierarchicalAgreement]: HierarchicalAgreement[_K] }
     ): HierarchicalAgreement {
         return new HierarchicalAgreement(
             _o.rdn,

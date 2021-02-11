@@ -68,11 +68,9 @@ export class Presentation_context_identifier_list_Item {
      * @returns {Presentation_context_identifier_list_Item}
      */
     public static _from_object(
-        _o: Partial<
-            {
-                [_K in keyof Presentation_context_identifier_list_Item]: Presentation_context_identifier_list_Item[_K];
-            }
-        >
+        _o: {
+            [_K in keyof Presentation_context_identifier_list_Item]: Presentation_context_identifier_list_Item[_K];
+        }
     ): Presentation_context_identifier_list_Item {
         return new Presentation_context_identifier_list_Item(
             _o.presentation_context_identifier,

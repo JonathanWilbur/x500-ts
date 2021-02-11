@@ -80,7 +80,7 @@ export class OsiBind {
      * @returns {OsiBind}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof OsiBind]: OsiBind[_K] }>
+        _o: { [_K in keyof OsiBind]: OsiBind[_K] }
     ): OsiBind {
         return new OsiBind(_o.mode_selector, _o.normal_mode_parameters);
     }
@@ -159,12 +159,12 @@ export function _decode_OsiBind(el: _Element) {
             /* START_OF_CALLBACKS_MAP */
             const callbacks: $.DecodingMap = {
                 "mode-selector": (_el: _Element): void => {
-                    mode_selector = $._decode_explicit<OsiBind_mode_selector>(
+                    mode_selector = $._decode_implicit<OsiBind_mode_selector>(
                         () => _decode_OsiBind_mode_selector
                     )(_el);
                 },
                 "normal-mode-parameters": (_el: _Element): void => {
-                    normal_mode_parameters = $._decode_explicit<OsiBind_normal_mode_parameters>(
+                    normal_mode_parameters = $._decode_implicit<OsiBind_normal_mode_parameters>(
                         () => _decode_OsiBind_normal_mode_parameters
                     )(_el);
                 },
@@ -212,13 +212,13 @@ export function _encode_OsiBind(
             return $._encodeSet(
                 ([] as (_Element | undefined)[])
                     .concat([
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             0,
                             () => _encode_OsiBind_mode_selector,
                             $.BER
                         )(value.mode_selector, $.BER),
-                        /* REQUIRED   */ $._encode_explicit(
+                        /* REQUIRED   */ $._encode_implicit(
                             _TagClass.context,
                             2,
                             () => _encode_OsiBind_normal_mode_parameters,

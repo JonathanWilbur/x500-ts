@@ -68,7 +68,7 @@ export class SIGNATURE {
      * @returns {SIGNATURE}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SIGNATURE]: SIGNATURE[_K] }>
+        _o: { [_K in keyof SIGNATURE]: SIGNATURE[_K] }
     ): SIGNATURE {
         return new SIGNATURE(
             _o.agorithmIdentifier,

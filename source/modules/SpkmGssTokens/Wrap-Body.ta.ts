@@ -51,7 +51,7 @@ export class Wrap_Body {
      * @returns {Wrap_Body}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Wrap_Body]: Wrap_Body[_K] }>
+        _o: { [_K in keyof Wrap_Body]: Wrap_Body[_K] }
     ): Wrap_Body {
         return new Wrap_Body(_o.int_cksum, _o.data);
     }

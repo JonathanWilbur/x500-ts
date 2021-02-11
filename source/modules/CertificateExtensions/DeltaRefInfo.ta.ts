@@ -68,7 +68,7 @@ export class DeltaRefInfo {
      * @returns {DeltaRefInfo}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DeltaRefInfo]: DeltaRefInfo[_K] }>
+        _o: { [_K in keyof DeltaRefInfo]: DeltaRefInfo[_K] }
     ): DeltaRefInfo {
         return new DeltaRefInfo(
             _o.deltaLocation,

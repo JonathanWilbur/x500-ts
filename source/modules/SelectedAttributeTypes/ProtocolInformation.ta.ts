@@ -52,9 +52,7 @@ export class ProtocolInformation {
      * @returns {ProtocolInformation}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ProtocolInformation]: ProtocolInformation[_K] }
-        >
+        _o: { [_K in keyof ProtocolInformation]: ProtocolInformation[_K] }
     ): ProtocolInformation {
         return new ProtocolInformation(_o.nAddress, _o.profiles);
     }

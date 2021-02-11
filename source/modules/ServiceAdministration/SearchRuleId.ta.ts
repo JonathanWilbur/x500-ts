@@ -52,7 +52,7 @@ export class SearchRuleId {
      * @returns {SearchRuleId}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SearchRuleId]: SearchRuleId[_K] }>
+        _o: { [_K in keyof SearchRuleId]: SearchRuleId[_K] }
     ): SearchRuleId {
         return new SearchRuleId(_o.id, _o.dmdId);
     }

@@ -67,7 +67,7 @@ export class UUIDPair {
      * @returns {UUIDPair}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UUIDPair]: UUIDPair[_K] }>
+        _o: { [_K in keyof UUIDPair]: UUIDPair[_K] }
     ): UUIDPair {
         return new UUIDPair(
             _o.issuerUUID,

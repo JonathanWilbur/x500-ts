@@ -31,7 +31,7 @@ let _cached_decoder_for_TheOsiBindRes: $.ASN1Decoder<TheOsiBindRes> | null = nul
  */
 export function _decode_TheOsiBindRes(el: _Element) {
     if (!_cached_decoder_for_TheOsiBindRes) {
-        _cached_decoder_for_TheOsiBindRes = $._decode_explicit<TheOsiBindRes>(
+        _cached_decoder_for_TheOsiBindRes = $._decode_implicit<TheOsiBindRes>(
             () => $._decodeAny
         );
     }
@@ -56,7 +56,7 @@ export function _encode_TheOsiBindRes(
     elGetter: $.ASN1Encoder<TheOsiBindRes>
 ) {
     if (!_cached_encoder_for_TheOsiBindRes) {
-        _cached_encoder_for_TheOsiBindRes = $._encode_explicit(
+        _cached_encoder_for_TheOsiBindRes = $._encode_implicit(
             _TagClass.context,
             17,
             () => $._encodeAny,

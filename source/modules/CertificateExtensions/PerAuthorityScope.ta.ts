@@ -195,7 +195,7 @@ export class PerAuthorityScope {
      * @returns {PerAuthorityScope}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PerAuthorityScope]: PerAuthorityScope[_K] }>
+        _o: { [_K in keyof PerAuthorityScope]: PerAuthorityScope[_K] }
     ): PerAuthorityScope {
         return new PerAuthorityScope(
             _o.authorityName,

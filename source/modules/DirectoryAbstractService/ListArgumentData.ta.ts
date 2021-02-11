@@ -278,7 +278,7 @@ export class ListArgumentData {
      * @returns {ListArgumentData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ListArgumentData]: ListArgumentData[_K] }>
+        _o: { [_K in keyof ListArgumentData]: ListArgumentData[_K] }
     ): ListArgumentData {
         return new ListArgumentData(
             _o.object,

@@ -96,7 +96,7 @@ export class Mic_Header {
      * @returns {Mic_Header}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Mic_Header]: Mic_Header[_K] }>
+        _o: { [_K in keyof Mic_Header]: Mic_Header[_K] }
     ): Mic_Header {
         return new Mic_Header(_o.tok_id, _o.context_id, _o.int_alg, _o.snd_seq);
     }

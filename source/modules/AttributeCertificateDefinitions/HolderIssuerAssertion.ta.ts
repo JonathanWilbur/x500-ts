@@ -77,9 +77,7 @@ export class HolderIssuerAssertion {
      * @returns {HolderIssuerAssertion}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof HolderIssuerAssertion]: HolderIssuerAssertion[_K] }
-        >
+        _o: { [_K in keyof HolderIssuerAssertion]: HolderIssuerAssertion[_K] }
     ): HolderIssuerAssertion {
         return new HolderIssuerAssertion(
             _o.holder,

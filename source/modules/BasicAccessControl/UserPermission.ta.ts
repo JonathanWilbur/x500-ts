@@ -147,7 +147,7 @@ export class UserPermission {
      * @returns {UserPermission}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof UserPermission]: UserPermission[_K] }>
+        _o: { [_K in keyof UserPermission]: UserPermission[_K] }
     ): UserPermission {
         return new UserPermission(
             _o.precedence,

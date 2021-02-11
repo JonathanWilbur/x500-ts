@@ -122,9 +122,7 @@ export class ModifyDNResultData {
      * @returns {ModifyDNResultData}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof ModifyDNResultData]: ModifyDNResultData[_K] }
-        >
+        _o: { [_K in keyof ModifyDNResultData]: ModifyDNResultData[_K] }
     ): ModifyDNResultData {
         return new ModifyDNResultData(
             _o.newRDN,

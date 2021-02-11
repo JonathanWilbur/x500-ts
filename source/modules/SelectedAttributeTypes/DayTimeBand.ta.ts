@@ -67,7 +67,7 @@ export class DayTimeBand {
      * @returns {DayTimeBand}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DayTimeBand]: DayTimeBand[_K] }>
+        _o: { [_K in keyof DayTimeBand]: DayTimeBand[_K] }
     ): DayTimeBand {
         return new DayTimeBand(
             _o.startDayTime,

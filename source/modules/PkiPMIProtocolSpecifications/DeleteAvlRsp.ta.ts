@@ -117,7 +117,7 @@ export class DeleteAvlRsp {
      * @returns {DeleteAvlRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DeleteAvlRsp]: DeleteAvlRsp[_K] }>
+        _o: { [_K in keyof DeleteAvlRsp]: DeleteAvlRsp[_K] }
     ): DeleteAvlRsp {
         return new DeleteAvlRsp(
             _o.version,

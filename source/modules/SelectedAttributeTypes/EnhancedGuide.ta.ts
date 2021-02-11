@@ -96,7 +96,7 @@ export class EnhancedGuide {
      * @returns {EnhancedGuide}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof EnhancedGuide]: EnhancedGuide[_K] }>
+        _o: { [_K in keyof EnhancedGuide]: EnhancedGuide[_K] }
     ): EnhancedGuide {
         return new EnhancedGuide(
             _o.objectClass,

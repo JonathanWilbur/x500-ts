@@ -81,7 +81,7 @@ export class ModifyRequest {
      * @returns {ModifyRequest}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ModifyRequest]: ModifyRequest[_K] }>
+        _o: { [_K in keyof ModifyRequest]: ModifyRequest[_K] }
     ): ModifyRequest {
         return new ModifyRequest(
             _o.object,

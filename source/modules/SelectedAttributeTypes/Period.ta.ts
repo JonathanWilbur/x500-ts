@@ -155,7 +155,7 @@ export class Period {
      * @returns {Period}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Period]: Period[_K] }>
+        _o: { [_K in keyof Period]: Period[_K] }
     ): Period {
         return new Period(
             _o.timesOfDay,

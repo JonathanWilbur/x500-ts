@@ -101,9 +101,7 @@ export class NameFormDescription {
      * @returns {NameFormDescription}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof NameFormDescription]: NameFormDescription[_K] }
-        >
+        _o: { [_K in keyof NameFormDescription]: NameFormDescription[_K] }
     ): NameFormDescription {
         return new NameFormDescription(
             _o.identifier,

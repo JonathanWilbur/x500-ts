@@ -86,7 +86,7 @@ export class ChopSpecification {
      * @returns {ChopSpecification}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ChopSpecification]: ChopSpecification[_K] }>
+        _o: { [_K in keyof ChopSpecification]: ChopSpecification[_K] }
     ): ChopSpecification {
         return new ChopSpecification(
             _o.specificExclusions,

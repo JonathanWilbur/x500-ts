@@ -350,7 +350,7 @@ export class ChainingArguments {
      * @returns {ChainingArguments}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ChainingArguments]: ChainingArguments[_K] }>
+        _o: { [_K in keyof ChainingArguments]: ChainingArguments[_K] }
     ): ChainingArguments {
         return new ChainingArguments(
             _o.originator,

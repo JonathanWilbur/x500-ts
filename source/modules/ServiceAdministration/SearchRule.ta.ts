@@ -291,7 +291,7 @@ export class SearchRule {
      * @returns {SearchRule}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SearchRule]: SearchRule[_K] }>
+        _o: { [_K in keyof SearchRule]: SearchRule[_K] }
     ): SearchRule {
         return new SearchRule(
             _o.id,

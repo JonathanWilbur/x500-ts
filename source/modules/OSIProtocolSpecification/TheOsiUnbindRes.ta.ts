@@ -55,7 +55,7 @@ export class TheOsiUnbindRes {
      * @returns {TheOsiUnbindRes}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TheOsiUnbindRes]: TheOsiUnbindRes[_K] }>
+        _o: { [_K in keyof TheOsiUnbindRes]: TheOsiUnbindRes[_K] }
     ): TheOsiUnbindRes {
         return new TheOsiUnbindRes(_o.reason);
     }
@@ -119,7 +119,7 @@ let _cached_decoder_for_TheOsiUnbindRes: $.ASN1Decoder<TheOsiUnbindRes> | null =
  */
 export function _decode_TheOsiUnbindRes(el: _Element) {
     if (!_cached_decoder_for_TheOsiUnbindRes) {
-        _cached_decoder_for_TheOsiUnbindRes = $._decode_explicit<TheOsiUnbindRes>(
+        _cached_decoder_for_TheOsiUnbindRes = $._decode_implicit<TheOsiUnbindRes>(
             () =>
                 function (el: _Element): TheOsiUnbindRes {
                     /* START_OF_SEQUENCE_COMPONENT_DECLARATIONS */
@@ -128,7 +128,7 @@ export function _decode_TheOsiUnbindRes(el: _Element) {
                     /* START_OF_CALLBACKS_MAP */
                     const callbacks: $.DecodingMap = {
                         reason: (_el: _Element): void => {
-                            reason = $._decode_explicit<Release_response_reason>(
+                            reason = $._decode_implicit<Release_response_reason>(
                                 () => _decode_Release_response_reason
                             )(_el);
                         },
@@ -169,7 +169,7 @@ export function _encode_TheOsiUnbindRes(
     elGetter: $.ASN1Encoder<TheOsiUnbindRes>
 ) {
     if (!_cached_encoder_for_TheOsiUnbindRes) {
-        _cached_encoder_for_TheOsiUnbindRes = $._encode_explicit(
+        _cached_encoder_for_TheOsiUnbindRes = $._encode_implicit(
             _TagClass.application,
             3,
             () =>
@@ -182,7 +182,7 @@ export function _encode_TheOsiUnbindRes(
                             .concat([
                                 /* IF_ABSENT  */ value.reason === undefined
                                     ? undefined
-                                    : $._encode_explicit(
+                                    : $._encode_implicit(
                                           _TagClass.context,
                                           0,
                                           () => _encode_Release_response_reason,

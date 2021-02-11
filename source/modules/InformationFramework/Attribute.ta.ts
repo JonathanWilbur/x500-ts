@@ -81,7 +81,7 @@ export class Attribute {
      * @returns {Attribute}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Attribute]: Attribute[_K] }>
+        _o: { [_K in keyof Attribute]: Attribute[_K] }
     ): Attribute {
         return new Attribute(
             _o.type_,

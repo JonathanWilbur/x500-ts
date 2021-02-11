@@ -122,7 +122,7 @@ export class AbandonResultData {
      * @returns {AbandonResultData}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AbandonResultData]: AbandonResultData[_K] }>
+        _o: { [_K in keyof AbandonResultData]: AbandonResultData[_K] }
     ): AbandonResultData {
         return new AbandonResultData(
             _o.invokeID,

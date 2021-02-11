@@ -242,9 +242,7 @@ export class CommonArgumentsSeq {
      * @returns {CommonArgumentsSeq}
      */
     public static _from_object(
-        _o: Partial<
-            { [_K in keyof CommonArgumentsSeq]: CommonArgumentsSeq[_K] }
-        >
+        _o: { [_K in keyof CommonArgumentsSeq]: CommonArgumentsSeq[_K] }
     ): CommonArgumentsSeq {
         return new CommonArgumentsSeq(
             _o.serviceControls,

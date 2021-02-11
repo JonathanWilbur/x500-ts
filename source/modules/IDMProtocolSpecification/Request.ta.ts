@@ -71,7 +71,7 @@ export class Request {
      * @returns {Request}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof Request]: Request[_K] }>
+        _o: { [_K in keyof Request]: Request[_K] }
     ): Request {
         return new Request(
             _o.invokeID,

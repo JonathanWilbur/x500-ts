@@ -57,7 +57,7 @@ export class ABRT_apdu {
      * @returns {ABRT_apdu}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ABRT_apdu]: ABRT_apdu[_K] }>
+        _o: { [_K in keyof ABRT_apdu]: ABRT_apdu[_K] }
     ): ABRT_apdu {
         return new ABRT_apdu(_o.abort_source);
     }
@@ -121,7 +121,7 @@ let _cached_decoder_for_ABRT_apdu: $.ASN1Decoder<ABRT_apdu> | null = null;
  */
 export function _decode_ABRT_apdu(el: _Element) {
     if (!_cached_decoder_for_ABRT_apdu) {
-        _cached_decoder_for_ABRT_apdu = $._decode_explicit<ABRT_apdu>(
+        _cached_decoder_for_ABRT_apdu = $._decode_implicit<ABRT_apdu>(
             () =>
                 function (el: _Element): ABRT_apdu {
                     const sequence: _Element[] = el.sequence;
@@ -134,7 +134,7 @@ export function _decode_ABRT_apdu(el: _Element) {
                     }
                     sequence[0].name = "abort-source";
                     let abort_source!: ABRT_source;
-                    abort_source = $._decode_explicit<ABRT_source>(
+                    abort_source = $._decode_implicit<ABRT_source>(
                         () => _decode_ABRT_source
                     )(sequence[0]);
                     return new ABRT_apdu(abort_source);
@@ -162,7 +162,7 @@ export function _encode_ABRT_apdu(
     elGetter: $.ASN1Encoder<ABRT_apdu>
 ) {
     if (!_cached_encoder_for_ABRT_apdu) {
-        _cached_encoder_for_ABRT_apdu = $._encode_explicit(
+        _cached_encoder_for_ABRT_apdu = $._encode_implicit(
             _TagClass.application,
             4,
             () =>
@@ -173,7 +173,7 @@ export function _encode_ABRT_apdu(
                     return $._encodeSequence(
                         ([] as (_Element | undefined)[])
                             .concat([
-                                /* REQUIRED   */ $._encode_explicit(
+                                /* REQUIRED   */ $._encode_implicit(
                                     _TagClass.context,
                                     0,
                                     () => _encode_ABRT_source,

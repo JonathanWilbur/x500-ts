@@ -77,7 +77,7 @@ export class PolicySyntax {
      * @returns {PolicySyntax}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PolicySyntax]: PolicySyntax[_K] }>
+        _o: { [_K in keyof PolicySyntax]: PolicySyntax[_K] }
     ): PolicySyntax {
         return new PolicySyntax(
             _o.policyIdentifier,

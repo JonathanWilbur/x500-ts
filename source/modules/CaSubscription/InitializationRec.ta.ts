@@ -62,7 +62,7 @@ export class InitializationRec {
      * @returns {InitializationRec}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof InitializationRec]: InitializationRec[_K] }>
+        _o: { [_K in keyof InitializationRec]: InitializationRec[_K] }
     ): InitializationRec {
         return new InitializationRec(
             _o.version,

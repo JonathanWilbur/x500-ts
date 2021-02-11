@@ -117,7 +117,7 @@ export class AddAvlRsp {
      * @returns {AddAvlRsp}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AddAvlRsp]: AddAvlRsp[_K] }>
+        _o: { [_K in keyof AddAvlRsp]: AddAvlRsp[_K] }
     ): AddAvlRsp {
         return new AddAvlRsp(
             _o.version,

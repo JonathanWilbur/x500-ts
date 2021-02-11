@@ -77,7 +77,7 @@ export class SaslCredentials {
      * @returns {SaslCredentials}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof SaslCredentials]: SaslCredentials[_K] }>
+        _o: { [_K in keyof SaslCredentials]: SaslCredentials[_K] }
     ): SaslCredentials {
         return new SaslCredentials(
             _o.mechanism,

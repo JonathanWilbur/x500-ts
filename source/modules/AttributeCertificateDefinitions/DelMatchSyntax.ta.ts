@@ -77,7 +77,7 @@ export class DelMatchSyntax {
      * @returns {DelMatchSyntax}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof DelMatchSyntax]: DelMatchSyntax[_K] }>
+        _o: { [_K in keyof DelMatchSyntax]: DelMatchSyntax[_K] }
     ): DelMatchSyntax {
         return new DelMatchSyntax(
             _o.firstIssuer,

@@ -103,7 +103,7 @@ export class CertErr {
      * @returns {CertErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof CertErr]: CertErr[_K] }>
+        _o: { [_K in keyof CertErr]: CertErr[_K] }
     ): CertErr {
         return new CertErr(_o.notOK, _o.note, _o._unrecognizedExtensionsList);
     }

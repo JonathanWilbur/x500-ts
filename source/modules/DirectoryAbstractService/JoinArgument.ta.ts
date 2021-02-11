@@ -158,7 +158,7 @@ export class JoinArgument {
      * @returns {JoinArgument}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof JoinArgument]: JoinArgument[_K] }>
+        _o: { [_K in keyof JoinArgument]: JoinArgument[_K] }
     ): JoinArgument {
         return new JoinArgument(
             _o.joinBaseObject,

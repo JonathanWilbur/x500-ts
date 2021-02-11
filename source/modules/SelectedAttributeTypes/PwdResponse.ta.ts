@@ -82,7 +82,7 @@ export class PwdResponse {
      * @returns {PwdResponse}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof PwdResponse]: PwdResponse[_K] }>
+        _o: { [_K in keyof PwdResponse]: PwdResponse[_K] }
     ): PwdResponse {
         return new PwdResponse(_o.warning, _o.error);
     }

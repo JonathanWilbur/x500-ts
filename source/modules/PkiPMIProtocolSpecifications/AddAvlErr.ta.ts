@@ -106,7 +106,7 @@ export class AddAvlErr {
      * @returns {AddAvlErr}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof AddAvlErr]: AddAvlErr[_K] }>
+        _o: { [_K in keyof AddAvlErr]: AddAvlErr[_K] }
     ): AddAvlErr {
         return new AddAvlErr(_o.notOK, _o._unrecognizedExtensionsList);
     }

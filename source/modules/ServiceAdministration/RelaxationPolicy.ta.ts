@@ -89,7 +89,7 @@ export class RelaxationPolicy {
      * @returns {RelaxationPolicy}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof RelaxationPolicy]: RelaxationPolicy[_K] }>
+        _o: { [_K in keyof RelaxationPolicy]: RelaxationPolicy[_K] }
     ): RelaxationPolicy {
         return new RelaxationPolicy(
             _o.basic,

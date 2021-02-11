@@ -211,7 +211,7 @@ export class TbsDtSecAbort {
      * @returns {TbsDtSecAbort}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof TbsDtSecAbort]: TbsDtSecAbort[_K] }>
+        _o: { [_K in keyof TbsDtSecAbort]: TbsDtSecAbort[_K] }
     ): TbsDtSecAbort {
         return new TbsDtSecAbort(
             _o.sigAlg,

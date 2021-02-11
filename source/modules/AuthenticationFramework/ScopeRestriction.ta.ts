@@ -59,7 +59,7 @@ export class ScopeRestriction {
      * @returns {ScopeRestriction}
      */
     public static _from_object(
-        _o: Partial<{ [_K in keyof ScopeRestriction]: ScopeRestriction[_K] }>
+        _o: { [_K in keyof ScopeRestriction]: ScopeRestriction[_K] }
     ): ScopeRestriction {
         return new ScopeRestriction(
             _o.id,
