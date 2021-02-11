@@ -155,7 +155,22 @@ export const _root_component_type_list_2_spec_for_SIGNED: $.ComponentSpec[] = []
  *
  * @constant
  */
-export const _extension_additions_list_spec_for_SIGNED: $.ComponentSpec[] = [];
+export const _extension_additions_list_spec_for_SIGNED: $.ComponentSpec[] = [
+    new $.ComponentSpec(
+        "altAlgorithmIdentifier",
+        true,
+        $.hasTag(_TagClass.universal, 16),
+        0,
+        4
+    ),
+    new $.ComponentSpec(
+        "altSignature",
+        true,
+        $.hasTag(_TagClass.universal, 3),
+        0,
+        4
+    ),
+];
 /* END_OF_SYMBOL_DEFINITION _extension_additions_list_spec_for_SIGNED */
 
 /* START_OF_SYMBOL_DEFINITION _get_decoder_for_SIGNED */
